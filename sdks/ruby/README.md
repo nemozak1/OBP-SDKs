@@ -5,7 +5,7 @@ OpenBankProject - the Ruby gem for the Open Bank Project API v6.0.0
 The Open Bank Project API v6.0.0 provides standardized banking APIs.
 
 This specification was automatically generated from the OBP API codebase.
-Generated on: 2026-03-22T07:16:47.250257
+Generated on: 2026-03-25T12:23:21.276369
 
 For more information, visit: https://github.com/OpenBankProject/OBP-API
 
@@ -76,2954 +76,2082 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::ABACApi.new
-obpv600_update_abac_rule_request = OpenBankProject::OBPv600UpdateAbacRuleRequest.new({type: 'type_example', properties: OpenBankProject::OBPv600UpdateAbacRuleRequestProperties.new({rule_code: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), is_active: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), description: , rule_name: , policy: })}) # OBPv600UpdateAbacRuleRequest | Request body
+update_abac_rule_request = OpenBankProject::UpdateAbacRuleRequest.new # UpdateAbacRuleRequest | Request body
 
 begin
   #Create ABAC Rule
-  result = api_instance.o_bpv6_0_0_create_abac_rule(obpv600_update_abac_rule_request)
+  result = api_instance.create_abac_rule(update_abac_rule_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Exception when calling ABACApi->o_bpv6_0_0_create_abac_rule: #{e}"
+  puts "Exception when calling ABACApi->create_abac_rule: #{e}"
 end
 
 ```
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*OpenBankProject::ABACApi* | [**o_bpv6_0_0_create_abac_rule**](docs/ABACApi.md#o_bpv6_0_0_create_abac_rule) | **POST** /obp/v6.0.0/management/abac-rules | Create ABAC Rule
-*OpenBankProject::ABACApi* | [**o_bpv6_0_0_delete_abac_rule**](docs/ABACApi.md#o_bpv6_0_0_delete_abac_rule) | **DELETE** /obp/v6.0.0/management/abac-rules/{abacruleid} | Delete ABAC Rule
-*OpenBankProject::ABACApi* | [**o_bpv6_0_0_execute_abac_policy**](docs/ABACApi.md#o_bpv6_0_0_execute_abac_policy) | **POST** /obp/v6.0.0/management/abac-policies/{policy}/execute | Execute ABAC Policy
-*OpenBankProject::ABACApi* | [**o_bpv6_0_0_execute_abac_rule**](docs/ABACApi.md#o_bpv6_0_0_execute_abac_rule) | **POST** /obp/v6.0.0/management/abac-rules/{abacruleid}/execute | Execute ABAC Rule
-*OpenBankProject::ABACApi* | [**o_bpv6_0_0_get_abac_policies**](docs/ABACApi.md#o_bpv6_0_0_get_abac_policies) | **GET** /obp/v6.0.0/management/abac-policies | Get ABAC Policies
-*OpenBankProject::ABACApi* | [**o_bpv6_0_0_get_abac_rule**](docs/ABACApi.md#o_bpv6_0_0_get_abac_rule) | **GET** /obp/v6.0.0/management/abac-rules/{abacruleid} | Get ABAC Rule
-*OpenBankProject::ABACApi* | [**o_bpv6_0_0_get_abac_rule_schema**](docs/ABACApi.md#o_bpv6_0_0_get_abac_rule_schema) | **GET** /obp/v6.0.0/management/abac-rules-schema | Get ABAC Rule Schema
-*OpenBankProject::ABACApi* | [**o_bpv6_0_0_get_abac_rules**](docs/ABACApi.md#o_bpv6_0_0_get_abac_rules) | **GET** /obp/v6.0.0/management/abac-rules | Get ABAC Rules
-*OpenBankProject::ABACApi* | [**o_bpv6_0_0_get_abac_rules_by_policy**](docs/ABACApi.md#o_bpv6_0_0_get_abac_rules_by_policy) | **GET** /obp/v6.0.0/management/abac-rules/policy/{policy} | Get ABAC Rules by Policy
-*OpenBankProject::ABACApi* | [**o_bpv6_0_0_update_abac_rule**](docs/ABACApi.md#o_bpv6_0_0_update_abac_rule) | **PUT** /obp/v6.0.0/management/abac-rules/{abacruleid} | Update ABAC Rule
-*OpenBankProject::ABACApi* | [**o_bpv6_0_0_validate_abac_rule**](docs/ABACApi.md#o_bpv6_0_0_validate_abac_rule) | **POST** /obp/v6.0.0/management/abac-rules/validate | Validate ABAC Rule
-*OpenBankProject::AIAgentApi* | [**o_bpv6_0_0_delete_signal_channel**](docs/AIAgentApi.md#o_bpv6_0_0_delete_signal_channel) | **DELETE** /obp/v6.0.0/signal/channels/{channelname} | Delete Signal Channel
-*OpenBankProject::AIAgentApi* | [**o_bpv6_0_0_get_signal_channel_info**](docs/AIAgentApi.md#o_bpv6_0_0_get_signal_channel_info) | **GET** /obp/v6.0.0/signal/channels/{channelname}/info | Get Signal Channel Info
-*OpenBankProject::AIAgentApi* | [**o_bpv6_0_0_get_signal_channels**](docs/AIAgentApi.md#o_bpv6_0_0_get_signal_channels) | **GET** /obp/v6.0.0/signal/channels | List Signal Channels
-*OpenBankProject::AIAgentApi* | [**o_bpv6_0_0_get_signal_messages**](docs/AIAgentApi.md#o_bpv6_0_0_get_signal_messages) | **GET** /obp/v6.0.0/signal/channels/{channelname}/messages | Get Signal Messages
-*OpenBankProject::AIAgentApi* | [**o_bpv6_0_0_get_signal_stats**](docs/AIAgentApi.md#o_bpv6_0_0_get_signal_stats) | **GET** /obp/v6.0.0/signal/channels/stats | Get Signal Channel Stats
-*OpenBankProject::AIAgentApi* | [**o_bpv6_0_0_publish_signal_message**](docs/AIAgentApi.md#o_bpv6_0_0_publish_signal_message) | **POST** /obp/v6.0.0/signal/channels/{channelname}/messages | Publish Signal Message
-*OpenBankProject::APIApi* | [**o_bpv1_4_0_get_bank_level_dynamic_resource_docs_obp**](docs/APIApi.md#o_bpv1_4_0_get_bank_level_dynamic_resource_docs_obp) | **GET** /obp/v1.4.0/banks/{bankid}/resource-docs/{apiversion}/obp | Get Bank Level Dynamic Resource Docs
-*OpenBankProject::APIApi* | [**o_bpv1_4_0_get_resource_docs_obp**](docs/APIApi.md#o_bpv1_4_0_get_resource_docs_obp) | **GET** /obp/v1.4.0/resource-docs/{apiversion}/obp | Get Resource Docs
-*OpenBankProject::APIApi* | [**o_bpv1_4_0_get_resource_docs_open_api31**](docs/APIApi.md#o_bpv1_4_0_get_resource_docs_open_api31) | **GET** /obp/v1.4.0/resource-docs/{apiversion}/openapi | Get OpenAPI 3.1 documentation
-*OpenBankProject::APIApi* | [**o_bpv1_4_0_get_resource_docs_swagger**](docs/APIApi.md#o_bpv1_4_0_get_resource_docs_swagger) | **GET** /obp/v1.4.0/resource-docs/{apiversion}/swagger | Get Swagger documentation
-*OpenBankProject::APIApi* | [**o_bpv2_0_0_elastic_search_metrics**](docs/APIApi.md#o_bpv2_0_0_elastic_search_metrics) | **GET** /obp/v2.0.0/search/metrics | Search API Metrics via Elasticsearch
-*OpenBankProject::APIApi* | [**o_bpv2_2_0_get_connector_metrics**](docs/APIApi.md#o_bpv2_2_0_get_connector_metrics) | **GET** /obp/v2.2.0/management/connector/metrics | Get Connector Metrics
-*OpenBankProject::APIApi* | [**o_bpv2_2_0_get_message_docs**](docs/APIApi.md#o_bpv2_2_0_get_message_docs) | **GET** /obp/v2.2.0/message-docs/{connector} | Get Message Docs
-*OpenBankProject::APIApi* | [**o_bpv3_0_0_get_adapter_info_for_bank**](docs/APIApi.md#o_bpv3_0_0_get_adapter_info_for_bank) | **GET** /obp/v3.0.0/banks/{bankid}/adapter | Get Adapter Info for a bank
-*OpenBankProject::APIApi* | [**o_bpv3_1_0_config**](docs/APIApi.md#o_bpv3_1_0_config) | **GET** /obp/v3.1.0/config | Get API Configuration
-*OpenBankProject::APIApi* | [**o_bpv3_1_0_create_method_routing**](docs/APIApi.md#o_bpv3_1_0_create_method_routing) | **POST** /obp/v3.1.0/management/method_routings | Create MethodRouting
-*OpenBankProject::APIApi* | [**o_bpv3_1_0_delete_method_routing**](docs/APIApi.md#o_bpv3_1_0_delete_method_routing) | **DELETE** /obp/v3.1.0/management/method_routings/{methodroutingid} | Delete MethodRouting
-*OpenBankProject::APIApi* | [**o_bpv3_1_0_get_message_docs_swagger**](docs/APIApi.md#o_bpv3_1_0_get_message_docs_swagger) | **GET** /obp/v3.1.0/message-docs/{connector}/swagger2.0 | Get Message Docs Swagger
-*OpenBankProject::APIApi* | [**o_bpv3_1_0_get_method_routings**](docs/APIApi.md#o_bpv3_1_0_get_method_routings) | **GET** /obp/v3.1.0/management/method_routings | Get MethodRoutings
-*OpenBankProject::APIApi* | [**o_bpv3_1_0_get_o_auth2_server_jwks_uris**](docs/APIApi.md#o_bpv3_1_0_get_o_auth2_server_jwks_uris) | **GET** /obp/v3.1.0/jwks-uris | Get JSON Web Key (JWK) URIs
-*OpenBankProject::APIApi* | [**o_bpv3_1_0_get_obp_connector_loopback**](docs/APIApi.md#o_bpv3_1_0_get_obp_connector_loopback) | **GET** /obp/v3.1.0/connector/loopback | Get Connector Status (Loopback)
-*OpenBankProject::APIApi* | [**o_bpv3_1_0_get_rate_limiting_info**](docs/APIApi.md#o_bpv3_1_0_get_rate_limiting_info) | **GET** /obp/v3.1.0/rate-limiting | Get Rate Limiting Info
-*OpenBankProject::APIApi* | [**o_bpv3_1_0_get_server_jwk**](docs/APIApi.md#o_bpv3_1_0_get_server_jwk) | **GET** /obp/v3.1.0/certs | Get JSON Web Key (JWK)
-*OpenBankProject::APIApi* | [**o_bpv3_1_0_update_method_routing**](docs/APIApi.md#o_bpv3_1_0_update_method_routing) | **PUT** /obp/v3.1.0/management/method_routings/{methodroutingid} | Update MethodRouting
-*OpenBankProject::APIApi* | [**o_bpv4_0_0_create_bank_level_dynamic_endpoint**](docs/APIApi.md#o_bpv4_0_0_create_bank_level_dynamic_endpoint) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Create Bank Level Dynamic Endpoint
-*OpenBankProject::APIApi* | [**o_bpv4_0_0_create_bank_level_endpoint_tag**](docs/APIApi.md#o_bpv4_0_0_create_bank_level_endpoint_tag) | **POST** /obp/v4.0.0/management/banks/{bankid}/endpoints/{operationid}/tags | Create Bank Level Endpoint Tag
-*OpenBankProject::APIApi* | [**o_bpv4_0_0_create_dynamic_endpoint**](docs/APIApi.md#o_bpv4_0_0_create_dynamic_endpoint) | **POST** /obp/v4.0.0/management/dynamic-endpoints | Create Dynamic Endpoint
-*OpenBankProject::APIApi* | [**o_bpv4_0_0_create_system_level_endpoint_tag**](docs/APIApi.md#o_bpv4_0_0_create_system_level_endpoint_tag) | **POST** /obp/v4.0.0/management/endpoints/{operationid}/tags | Create System Level Endpoint Tag
-*OpenBankProject::APIApi* | [**o_bpv4_0_0_delete_bank_level_dynamic_endpoint**](docs/APIApi.md#o_bpv4_0_0_delete_bank_level_dynamic_endpoint) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Delete Bank Level Dynamic Endpoint
-*OpenBankProject::APIApi* | [**o_bpv4_0_0_delete_bank_level_dynamic_entity**](docs/APIApi.md#o_bpv4_0_0_delete_bank_level_dynamic_entity) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid} | Delete Bank Level Dynamic Entity
-*OpenBankProject::APIApi* | [**o_bpv4_0_0_delete_bank_level_endpoint_tag**](docs/APIApi.md#o_bpv4_0_0_delete_bank_level_endpoint_tag) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/endpoints/{operationid}/tags/{endpointtagid} | Delete Bank Level Endpoint Tag
-*OpenBankProject::APIApi* | [**o_bpv4_0_0_delete_dynamic_endpoint**](docs/APIApi.md#o_bpv4_0_0_delete_dynamic_endpoint) | **DELETE** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} |  Delete Dynamic Endpoint
-*OpenBankProject::APIApi* | [**o_bpv4_0_0_delete_my_dynamic_endpoint**](docs/APIApi.md#o_bpv4_0_0_delete_my_dynamic_endpoint) | **DELETE** /obp/v4.0.0/my/dynamic-endpoints/{dynamicendpointid} | Delete My Dynamic Endpoint
-*OpenBankProject::APIApi* | [**o_bpv4_0_0_delete_my_dynamic_entity**](docs/APIApi.md#o_bpv4_0_0_delete_my_dynamic_entity) | **DELETE** /obp/v4.0.0/my/dynamic-entities/{dynamicentityid} | Delete My Dynamic Entity
-*OpenBankProject::APIApi* | [**o_bpv4_0_0_delete_system_dynamic_entity**](docs/APIApi.md#o_bpv4_0_0_delete_system_dynamic_entity) | **DELETE** /obp/v4.0.0/management/system-dynamic-entities/{dynamicentityid} | Delete System Level Dynamic Entity
-*OpenBankProject::APIApi* | [**o_bpv4_0_0_delete_system_level_endpoint_tag**](docs/APIApi.md#o_bpv4_0_0_delete_system_level_endpoint_tag) | **DELETE** /obp/v4.0.0/management/endpoints/{operationid}/tags/{endpointtagid} | Delete System Level Endpoint Tag
-*OpenBankProject::APIApi* | [**o_bpv4_0_0_get_bank_level_dynamic_endpoint**](docs/APIApi.md#o_bpv4_0_0_get_bank_level_dynamic_endpoint) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Get Bank Level Dynamic Endpoint
-*OpenBankProject::APIApi* | [**o_bpv4_0_0_get_bank_level_dynamic_endpoints**](docs/APIApi.md#o_bpv4_0_0_get_bank_level_dynamic_endpoints) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Get Bank Level Dynamic Endpoints
-*OpenBankProject::APIApi* | [**o_bpv4_0_0_get_bank_level_endpoint_tags**](docs/APIApi.md#o_bpv4_0_0_get_bank_level_endpoint_tags) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoints/{operationid}/tags | Get Bank Level Endpoint Tags
-*OpenBankProject::APIApi* | [**o_bpv4_0_0_get_call_context**](docs/APIApi.md#o_bpv4_0_0_get_call_context) | **GET** /obp/v4.0.0/development/call_context | Get the Call Context of a current call
-*OpenBankProject::APIApi* | [**o_bpv4_0_0_get_dynamic_endpoint**](docs/APIApi.md#o_bpv4_0_0_get_dynamic_endpoint) | **GET** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} | Get Dynamic Endpoint
-*OpenBankProject::APIApi* | [**o_bpv4_0_0_get_dynamic_endpoints**](docs/APIApi.md#o_bpv4_0_0_get_dynamic_endpoints) | **GET** /obp/v4.0.0/management/dynamic-endpoints |  Get Dynamic Endpoints
-*OpenBankProject::APIApi* | [**o_bpv4_0_0_get_mapper_database_info**](docs/APIApi.md#o_bpv4_0_0_get_mapper_database_info) | **GET** /obp/v4.0.0/database/info | Get Mapper Database Info
-*OpenBankProject::APIApi* | [**o_bpv4_0_0_get_my_dynamic_endpoints**](docs/APIApi.md#o_bpv4_0_0_get_my_dynamic_endpoints) | **GET** /obp/v4.0.0/my/dynamic-endpoints | Get My Dynamic Endpoints
-*OpenBankProject::APIApi* | [**o_bpv4_0_0_get_system_level_endpoint_tags**](docs/APIApi.md#o_bpv4_0_0_get_system_level_endpoint_tags) | **GET** /obp/v4.0.0/management/endpoints/{operationid}/tags | Get System Level Endpoint Tags
-*OpenBankProject::APIApi* | [**o_bpv4_0_0_update_bank_level_dynamic_endpoint_host**](docs/APIApi.md#o_bpv4_0_0_update_bank_level_dynamic_endpoint_host) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}/host |  Update Bank Level Dynamic Endpoint Host
-*OpenBankProject::APIApi* | [**o_bpv4_0_0_update_bank_level_endpoint_tag**](docs/APIApi.md#o_bpv4_0_0_update_bank_level_endpoint_tag) | **PUT** /obp/v4.0.0/management/banks/{bankid}/endpoints/{operationid}/tags/{endpointtagid} | Update Bank Level Endpoint Tag
-*OpenBankProject::APIApi* | [**o_bpv4_0_0_update_dynamic_endpoint_host**](docs/APIApi.md#o_bpv4_0_0_update_dynamic_endpoint_host) | **PUT** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}/host |  Update Dynamic Endpoint Host
-*OpenBankProject::APIApi* | [**o_bpv4_0_0_update_system_level_endpoint_tag**](docs/APIApi.md#o_bpv4_0_0_update_system_level_endpoint_tag) | **PUT** /obp/v4.0.0/management/endpoints/{operationid}/tags/{endpointtagid} | Update System Level Endpoint Tag
-*OpenBankProject::APIApi* | [**o_bpv4_0_0_verify_request_sign_response**](docs/APIApi.md#o_bpv4_0_0_verify_request_sign_response) | **GET** /obp/v4.0.0/development/echo/jws-verified-request-jws-signed-response | Verify Request and Sign Response of a current call
-*OpenBankProject::APIApi* | [**o_bpv5_0_0_get_adapter_info**](docs/APIApi.md#o_bpv5_0_0_get_adapter_info) | **GET** /obp/v5.0.0/adapter | Get Adapter Info
-*OpenBankProject::APIApi* | [**o_bpv5_0_0_get_metrics_at_bank**](docs/APIApi.md#o_bpv5_0_0_get_metrics_at_bank) | **GET** /obp/v5.0.0/management/metrics/banks/{bankid} | Get Metrics at Bank
-*OpenBankProject::APIApi* | [**o_bpv5_1_0_create_regulated_entity**](docs/APIApi.md#o_bpv5_1_0_create_regulated_entity) | **POST** /obp/v5.1.0/regulated-entities | Create Regulated Entity
-*OpenBankProject::APIApi* | [**o_bpv5_1_0_create_regulated_entity_attribute**](docs/APIApi.md#o_bpv5_1_0_create_regulated_entity_attribute) | **POST** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes | Create Regulated Entity Attribute
-*OpenBankProject::APIApi* | [**o_bpv5_1_0_delete_regulated_entity**](docs/APIApi.md#o_bpv5_1_0_delete_regulated_entity) | **DELETE** /obp/v5.1.0/regulated-entities/{regulatedentityid} | Delete Regulated Entity
-*OpenBankProject::APIApi* | [**o_bpv5_1_0_delete_regulated_entity_attribute**](docs/APIApi.md#o_bpv5_1_0_delete_regulated_entity_attribute) | **DELETE** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Delete Regulated Entity Attribute
-*OpenBankProject::APIApi* | [**o_bpv5_1_0_get_all_regulated_entity_attributes**](docs/APIApi.md#o_bpv5_1_0_get_all_regulated_entity_attributes) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes | Get All Regulated Entity Attributes
-*OpenBankProject::APIApi* | [**o_bpv5_1_0_get_api_tags**](docs/APIApi.md#o_bpv5_1_0_get_api_tags) | **GET** /obp/v5.1.0/tags | Get API Tags
-*OpenBankProject::APIApi* | [**o_bpv5_1_0_get_o_auth2_server_well_known**](docs/APIApi.md#o_bpv5_1_0_get_o_auth2_server_well_known) | **GET** /obp/v5.1.0/well-known | Get Well Known URIs
-*OpenBankProject::APIApi* | [**o_bpv5_1_0_get_regulated_entity_attribute_by_id**](docs/APIApi.md#o_bpv5_1_0_get_regulated_entity_attribute_by_id) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Get Regulated Entity Attribute By ID
-*OpenBankProject::APIApi* | [**o_bpv5_1_0_get_regulated_entity_by_id**](docs/APIApi.md#o_bpv5_1_0_get_regulated_entity_by_id) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid} | Get Regulated Entity
-*OpenBankProject::APIApi* | [**o_bpv5_1_0_log_cache_all_endpoint**](docs/APIApi.md#o_bpv5_1_0_log_cache_all_endpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache
-*OpenBankProject::APIApi* | [**o_bpv5_1_0_log_cache_debug_endpoint**](docs/APIApi.md#o_bpv5_1_0_log_cache_debug_endpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache
-*OpenBankProject::APIApi* | [**o_bpv5_1_0_log_cache_error_endpoint**](docs/APIApi.md#o_bpv5_1_0_log_cache_error_endpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache
-*OpenBankProject::APIApi* | [**o_bpv5_1_0_log_cache_info_endpoint**](docs/APIApi.md#o_bpv5_1_0_log_cache_info_endpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache
-*OpenBankProject::APIApi* | [**o_bpv5_1_0_log_cache_trace_endpoint**](docs/APIApi.md#o_bpv5_1_0_log_cache_trace_endpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache
-*OpenBankProject::APIApi* | [**o_bpv5_1_0_log_cache_warning_endpoint**](docs/APIApi.md#o_bpv5_1_0_log_cache_warning_endpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache
-*OpenBankProject::APIApi* | [**o_bpv5_1_0_regulated_entities**](docs/APIApi.md#o_bpv5_1_0_regulated_entities) | **GET** /obp/v5.1.0/regulated-entities | Get Regulated Entities
-*OpenBankProject::APIApi* | [**o_bpv5_1_0_suggested_session_timeout**](docs/APIApi.md#o_bpv5_1_0_suggested_session_timeout) | **GET** /obp/v5.1.0/ui/suggested-session-timeout | Get Suggested Session Timeout
-*OpenBankProject::APIApi* | [**o_bpv5_1_0_update_regulated_entity_attribute**](docs/APIApi.md#o_bpv5_1_0_update_regulated_entity_attribute) | **PUT** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Update Regulated Entity Attribute
-*OpenBankProject::APIApi* | [**o_bpv5_1_0_waiting_for_godot**](docs/APIApi.md#o_bpv5_1_0_waiting_for_godot) | **GET** /obp/v5.1.0/waiting-for-godot | Waiting For Godot
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_backup_bank_level_dynamic_entity**](docs/APIApi.md#o_bpv6_0_0_backup_bank_level_dynamic_entity) | **POST** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}/backup | Backup Bank Level Dynamic Entity
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_backup_system_dynamic_entity**](docs/APIApi.md#o_bpv6_0_0_backup_system_dynamic_entity) | **POST** /obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid}/backup | Backup System Level Dynamic Entity
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_cleanup_orphaned_dynamic_entity_records**](docs/APIApi.md#o_bpv6_0_0_cleanup_orphaned_dynamic_entity_records) | **DELETE** /obp/v6.0.0/management/diagnostics/dynamic-entities/orphaned-records | Cleanup Orphaned Dynamic Entity Records
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_create_api_product**](docs/APIApi.md#o_bpv6_0_0_create_api_product) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create Api Product
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_create_api_product_attribute**](docs/APIApi.md#o_bpv6_0_0_create_api_product_attribute) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attribute | Create Api Product Attribute
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_create_bank_level_dynamic_entity**](docs/APIApi.md#o_bpv6_0_0_create_bank_level_dynamic_entity) | **POST** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities | Create Bank Level Dynamic Entity
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_create_featured_api_collection**](docs/APIApi.md#o_bpv6_0_0_create_featured_api_collection) | **POST** /obp/v6.0.0/management/api-collections/featured | Create Featured Api Collection
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_create_or_update_api_product**](docs/APIApi.md#o_bpv6_0_0_create_or_update_api_product) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create or Update Api Product
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_create_system_dynamic_entity**](docs/APIApi.md#o_bpv6_0_0_create_system_dynamic_entity) | **POST** /obp/v6.0.0/management/system-dynamic-entities | Create System Level Dynamic Entity
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_delete_api_product**](docs/APIApi.md#o_bpv6_0_0_delete_api_product) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Delete Api Product
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_delete_api_product_attribute**](docs/APIApi.md#o_bpv6_0_0_delete_api_product_attribute) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Delete Api Product Attribute
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_delete_featured_api_collection**](docs/APIApi.md#o_bpv6_0_0_delete_featured_api_collection) | **DELETE** /obp/v6.0.0/management/api-collections/featured/{apicollectionid} | Delete Featured Api Collection
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_delete_system_dynamic_entity_cascade**](docs/APIApi.md#o_bpv6_0_0_delete_system_dynamic_entity_cascade) | **DELETE** /obp/v6.0.0/management/system-dynamic-entities/cascade/{dynamicentityid} | Delete System Level Dynamic Entity Cascade
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_get_api_product**](docs/APIApi.md#o_bpv6_0_0_get_api_product) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Get Api Product
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_get_api_product_attribute**](docs/APIApi.md#o_bpv6_0_0_get_api_product_attribute) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Get Api Product Attribute
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_get_api_products**](docs/APIApi.md#o_bpv6_0_0_get_api_products) | **GET** /obp/v6.0.0/banks/{bankid}/api-products | Get Api Products
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_get_available_personal_dynamic_entities**](docs/APIApi.md#o_bpv6_0_0_get_available_personal_dynamic_entities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_get_bank_level_dynamic_entities**](docs/APIApi.md#o_bpv6_0_0_get_bank_level_dynamic_entities) | **GET** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities | Get Bank Level Dynamic Entities
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_get_cache_config**](docs/APIApi.md#o_bpv6_0_0_get_cache_config) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_get_cache_info**](docs/APIApi.md#o_bpv6_0_0_get_cache_info) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_get_cache_namespaces**](docs/APIApi.md#o_bpv6_0_0_get_cache_namespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_get_config_props**](docs/APIApi.md#o_bpv6_0_0_get_config_props) | **GET** /obp/v6.0.0/management/config-props | Get Config Props
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_get_connector_call_counts**](docs/APIApi.md#o_bpv6_0_0_get_connector_call_counts) | **GET** /obp/v6.0.0/management/connector/metrics/counts | Get Connector Call Counts
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_get_connector_method_names**](docs/APIApi.md#o_bpv6_0_0_get_connector_method_names) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_get_connector_traces**](docs/APIApi.md#o_bpv6_0_0_get_connector_traces) | **GET** /obp/v6.0.0/management/connector/traces | Get Connector Traces
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_get_connectors**](docs/APIApi.md#o_bpv6_0_0_get_connectors) | **GET** /obp/v6.0.0/system/connectors | Get Connectors
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_get_current_consumer**](docs/APIApi.md#o_bpv6_0_0_get_current_consumer) | **GET** /obp/v6.0.0/consumers/current | Get Current Consumer
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_get_database_pool_info**](docs/APIApi.md#o_bpv6_0_0_get_database_pool_info) | **GET** /obp/v6.0.0/system/database/pool | Get Database Pool Information
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_get_dynamic_entity_diagnostics**](docs/APIApi.md#o_bpv6_0_0_get_dynamic_entity_diagnostics) | **GET** /obp/v6.0.0/management/diagnostics/dynamic-entities | Get Dynamic Entity Diagnostics
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_get_featured_api_collections_admin**](docs/APIApi.md#o_bpv6_0_0_get_featured_api_collections_admin) | **GET** /obp/v6.0.0/management/api-collections/featured | Get Featured Api Collections (Admin)
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_get_message_docs_json_schema**](docs/APIApi.md#o_bpv6_0_0_get_message_docs_json_schema) | **GET** /obp/v6.0.0/message-docs/{connector}/json-schema | Get Message Docs as JSON Schema
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_get_metrics**](docs/APIApi.md#o_bpv6_0_0_get_metrics) | **GET** /obp/v6.0.0/management/metrics | Get Metrics
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_get_migrations**](docs/APIApi.md#o_bpv6_0_0_get_migrations) | **GET** /obp/v6.0.0/system/migrations | Get Database Migrations
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_get_my_dynamic_entities**](docs/APIApi.md#o_bpv6_0_0_get_my_dynamic_entities) | **GET** /obp/v6.0.0/my/dynamic-entities | Get My Dynamic Entities
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_get_popular_apis**](docs/APIApi.md#o_bpv6_0_0_get_popular_apis) | **GET** /obp/v6.0.0/api/popular-endpoints | Get Popular Endpoints
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_get_reference_types**](docs/APIApi.md#o_bpv6_0_0_get_reference_types) | **GET** /obp/v6.0.0/management/dynamic-entities/reference-types | Get Reference Types for Dynamic Entities
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_get_scanned_api_versions**](docs/APIApi.md#o_bpv6_0_0_get_scanned_api_versions) | **GET** /obp/v6.0.0/api/versions | Get Scanned API Versions
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_get_stored_procedure_connector_health**](docs/APIApi.md#o_bpv6_0_0_get_stored_procedure_connector_health) | **GET** /obp/v6.0.0/system/connectors/stored_procedure_vDec2019/health | Get Stored Procedure Connector Health
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_get_system_dynamic_entities**](docs/APIApi.md#o_bpv6_0_0_get_system_dynamic_entities) | **GET** /obp/v6.0.0/management/system-dynamic-entities | Get System Dynamic Entities
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_get_top_apis**](docs/APIApi.md#o_bpv6_0_0_get_top_apis) | **GET** /obp/v6.0.0/management/metrics/top-apis | Get Top APIs
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_invalidate_cache_namespace**](docs/APIApi.md#o_bpv6_0_0_invalidate_cache_namespace) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_root**](docs/APIApi.md#o_bpv6_0_0_root) | **GET** /obp/v6.0.0/root | Get API Info (root)
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_update_api_product_attribute**](docs/APIApi.md#o_bpv6_0_0_update_api_product_attribute) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Update Api Product Attribute
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_update_bank_level_dynamic_entity**](docs/APIApi.md#o_bpv6_0_0_update_bank_level_dynamic_entity) | **PUT** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid} | Update Bank Level Dynamic Entity
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_update_featured_api_collection**](docs/APIApi.md#o_bpv6_0_0_update_featured_api_collection) | **PUT** /obp/v6.0.0/management/api-collections/featured/{apicollectionid} | Update Featured Api Collection
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_update_my_dynamic_entity**](docs/APIApi.md#o_bpv6_0_0_update_my_dynamic_entity) | **PUT** /obp/v6.0.0/my/dynamic-entities/{dynamicentityid} | Update My Dynamic Entity
-*OpenBankProject::APIApi* | [**o_bpv6_0_0_update_system_dynamic_entity**](docs/APIApi.md#o_bpv6_0_0_update_system_dynamic_entity) | **PUT** /obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid} | Update System Level Dynamic Entity
-*OpenBankProject::ATMApi* | [**o_bpv4_0_0_update_atm_accessibility_features**](docs/ATMApi.md#o_bpv4_0_0_update_atm_accessibility_features) | **PUT** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/accessibility-features | Update ATM Accessibility Features
-*OpenBankProject::ATMApi* | [**o_bpv4_0_0_update_atm_location_categories**](docs/ATMApi.md#o_bpv4_0_0_update_atm_location_categories) | **PUT** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/location-categories | Update ATM Location Categories
-*OpenBankProject::ATMApi* | [**o_bpv4_0_0_update_atm_notes**](docs/ATMApi.md#o_bpv4_0_0_update_atm_notes) | **PUT** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/notes | Update ATM Notes
-*OpenBankProject::ATMApi* | [**o_bpv4_0_0_update_atm_services**](docs/ATMApi.md#o_bpv4_0_0_update_atm_services) | **PUT** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/services | Update ATM Services
-*OpenBankProject::ATMApi* | [**o_bpv4_0_0_update_atm_supported_currencies**](docs/ATMApi.md#o_bpv4_0_0_update_atm_supported_currencies) | **PUT** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/supported-currencies | Update ATM Supported Currencies
-*OpenBankProject::ATMApi* | [**o_bpv4_0_0_update_atm_supported_languages**](docs/ATMApi.md#o_bpv4_0_0_update_atm_supported_languages) | **PUT** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/supported-languages | Update ATM Supported Languages
-*OpenBankProject::ATMApi* | [**o_bpv5_0_0_head_atms**](docs/ATMApi.md#o_bpv5_0_0_head_atms) | **HEAD** /obp/v5.0.0/banks/{bankid}/atms | Head Bank ATMS
-*OpenBankProject::ATMApi* | [**o_bpv5_1_0_create_atm**](docs/ATMApi.md#o_bpv5_1_0_create_atm) | **POST** /obp/v5.1.0/banks/{bankid}/atms | Create ATM
-*OpenBankProject::ATMApi* | [**o_bpv5_1_0_create_atm_attribute**](docs/ATMApi.md#o_bpv5_1_0_create_atm_attribute) | **POST** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Create ATM Attribute
-*OpenBankProject::ATMApi* | [**o_bpv5_1_0_delete_atm**](docs/ATMApi.md#o_bpv5_1_0_delete_atm) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid} | Delete ATM
-*OpenBankProject::ATMApi* | [**o_bpv5_1_0_delete_atm_attribute**](docs/ATMApi.md#o_bpv5_1_0_delete_atm_attribute) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Delete ATM Attribute
-*OpenBankProject::ATMApi* | [**o_bpv5_1_0_get_atm**](docs/ATMApi.md#o_bpv5_1_0_get_atm) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid} | Get Bank ATM
-*OpenBankProject::ATMApi* | [**o_bpv5_1_0_get_atm_attribute**](docs/ATMApi.md#o_bpv5_1_0_get_atm_attribute) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Get ATM Attribute By ATM_ATTRIBUTE_ID
-*OpenBankProject::ATMApi* | [**o_bpv5_1_0_get_atm_attributes**](docs/ATMApi.md#o_bpv5_1_0_get_atm_attributes) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Get ATM Attributes
-*OpenBankProject::ATMApi* | [**o_bpv5_1_0_get_atms**](docs/ATMApi.md#o_bpv5_1_0_get_atms) | **GET** /obp/v5.1.0/banks/{bankid}/atms | Get Bank ATMS
-*OpenBankProject::ATMApi* | [**o_bpv5_1_0_update_atm**](docs/ATMApi.md#o_bpv5_1_0_update_atm) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid} | UPDATE ATM
-*OpenBankProject::ATMApi* | [**o_bpv5_1_0_update_atm_attribute**](docs/ATMApi.md#o_bpv5_1_0_update_atm_attribute) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Update ATM Attribute
-*OpenBankProject::ATMAttributeApi* | [**o_bpv5_1_0_create_atm_attribute**](docs/ATMAttributeApi.md#o_bpv5_1_0_create_atm_attribute) | **POST** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Create ATM Attribute
-*OpenBankProject::ATMAttributeApi* | [**o_bpv5_1_0_delete_atm_attribute**](docs/ATMAttributeApi.md#o_bpv5_1_0_delete_atm_attribute) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Delete ATM Attribute
-*OpenBankProject::ATMAttributeApi* | [**o_bpv5_1_0_get_atm_attribute**](docs/ATMAttributeApi.md#o_bpv5_1_0_get_atm_attribute) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Get ATM Attribute By ATM_ATTRIBUTE_ID
-*OpenBankProject::ATMAttributeApi* | [**o_bpv5_1_0_get_atm_attributes**](docs/ATMAttributeApi.md#o_bpv5_1_0_get_atm_attributes) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Get ATM Attributes
-*OpenBankProject::ATMAttributeApi* | [**o_bpv5_1_0_update_atm_attribute**](docs/ATMAttributeApi.md#o_bpv5_1_0_update_atm_attribute) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Update ATM Attribute
-*OpenBankProject::AccountApi* | [**o_bpv1_2_1_delete_view_for_bank_account**](docs/AccountApi.md#o_bpv1_2_1_delete_view_for_bank_account) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/views/{viewid} | Delete Custom View
-*OpenBankProject::AccountApi* | [**o_bpv2_0_0_get_permissions_for_bank_account**](docs/AccountApi.md#o_bpv2_0_0_get_permissions_for_bank_account) | **GET** /obp/v2.0.0/banks/{bankid}/accounts/{accountid}/permissions | Get access
-*OpenBankProject::AccountApi* | [**o_bpv2_0_0_public_accounts_all_banks**](docs/AccountApi.md#o_bpv2_0_0_public_accounts_all_banks) | **GET** /obp/v2.0.0/accounts/public | Get Public Accounts at all Banks
-*OpenBankProject::AccountApi* | [**o_bpv2_0_0_public_accounts_at_one_bank**](docs/AccountApi.md#o_bpv2_0_0_public_accounts_at_one_bank) | **GET** /obp/v2.0.0/banks/{bankid}/accounts/public | Get Public Accounts at Bank
-*OpenBankProject::AccountApi* | [**o_bpv3_0_0_core_private_accounts_all_banks**](docs/AccountApi.md#o_bpv3_0_0_core_private_accounts_all_banks) | **GET** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private)
-*OpenBankProject::AccountApi* | [**o_bpv3_0_0_create_view_for_bank_account**](docs/AccountApi.md#o_bpv3_0_0_create_view_for_bank_account) | **POST** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/views | Create Custom View
-*OpenBankProject::AccountApi* | [**o_bpv3_0_0_get_accounts_held**](docs/AccountApi.md#o_bpv3_0_0_get_accounts_held) | **GET** /obp/v3.0.0/banks/{bankid}/accounts-held | Get Accounts Held
-*OpenBankProject::AccountApi* | [**o_bpv3_0_0_get_core_transactions_for_bank_account**](docs/AccountApi.md#o_bpv3_0_0_get_core_transactions_for_bank_account) | **GET** /obp/v3.0.0/my/banks/{bankid}/accounts/{accountid}/transactions | Get Transactions for Account (Core)
-*OpenBankProject::AccountApi* | [**o_bpv3_0_0_get_other_account_by_id_for_bank_account**](docs/AccountApi.md#o_bpv3_0_0_get_other_account_by_id_for_bank_account) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid} | Get Other Account by Id
-*OpenBankProject::AccountApi* | [**o_bpv3_0_0_get_other_accounts_for_bank_account**](docs/AccountApi.md#o_bpv3_0_0_get_other_accounts_for_bank_account) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts | Get Other Accounts of one Account
-*OpenBankProject::AccountApi* | [**o_bpv3_0_0_get_permission_for_user_for_bank_account**](docs/AccountApi.md#o_bpv3_0_0_get_permission_for_user_for_bank_account) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/permissions/{provider}/{providerid} | Get Account access for User
-*OpenBankProject::AccountApi* | [**o_bpv3_0_0_get_private_account_idsby_bank_id**](docs/AccountApi.md#o_bpv3_0_0_get_private_account_idsby_bank_id) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/account_ids/private | Get Accounts at Bank (IDs only)
-*OpenBankProject::AccountApi* | [**o_bpv3_0_0_get_public_account_by_id**](docs/AccountApi.md#o_bpv3_0_0_get_public_account_by_id) | **GET** /obp/v3.0.0/banks/{bankid}/public/accounts/{accountid}/{viewid}/account | Get Public Account by Id
-*OpenBankProject::AccountApi* | [**o_bpv3_0_0_private_accounts_at_one_bank**](docs/AccountApi.md#o_bpv3_0_0_private_accounts_at_one_bank) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/private | Get Accounts at Bank (Minimal)
-*OpenBankProject::AccountApi* | [**o_bpv3_0_0_update_view_for_bank_account**](docs/AccountApi.md#o_bpv3_0_0_update_view_for_bank_account) | **PUT** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/views/{viewid} | Update Custom View
-*OpenBankProject::AccountApi* | [**o_bpv3_1_0_check_funds_available**](docs/AccountApi.md#o_bpv3_1_0_check_funds_available) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available | Check Available Funds
-*OpenBankProject::AccountApi* | [**o_bpv3_1_0_create_account_application**](docs/AccountApi.md#o_bpv3_1_0_create_account_application) | **POST** /obp/v3.1.0/banks/{bankid}/account-applications | Create Account Application
-*OpenBankProject::AccountApi* | [**o_bpv3_1_0_create_account_attribute**](docs/AccountApi.md#o_bpv3_1_0_create_account_attribute) | **POST** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attribute | Create Account Attribute
-*OpenBankProject::AccountApi* | [**o_bpv3_1_0_get_account_application**](docs/AccountApi.md#o_bpv3_1_0_get_account_application) | **GET** /obp/v3.1.0/banks/{bankid}/account-applications/{accountapplicationid} | Get Account Application by Id
-*OpenBankProject::AccountApi* | [**o_bpv3_1_0_get_account_applications**](docs/AccountApi.md#o_bpv3_1_0_get_account_applications) | **GET** /obp/v3.1.0/banks/{bankid}/account-applications | Get Account Applications
-*OpenBankProject::AccountApi* | [**o_bpv3_1_0_get_checkbook_orders**](docs/AccountApi.md#o_bpv3_1_0_get_checkbook_orders) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/checkbook/orders | Get Checkbook orders
-*OpenBankProject::AccountApi* | [**o_bpv3_1_0_update_account**](docs/AccountApi.md#o_bpv3_1_0_update_account) | **PUT** /obp/v3.1.0/management/banks/{bankid}/accounts/{accountid} | Update Account
-*OpenBankProject::AccountApi* | [**o_bpv3_1_0_update_account_application_status**](docs/AccountApi.md#o_bpv3_1_0_update_account_application_status) | **PUT** /obp/v3.1.0/banks/{bankid}/account-applications/{accountapplicationid} | Update Account Application Status
-*OpenBankProject::AccountApi* | [**o_bpv3_1_0_update_account_attribute**](docs/AccountApi.md#o_bpv3_1_0_update_account_attribute) | **PUT** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attributes/{accountattributeid} | Update Account Attribute
-*OpenBankProject::AccountApi* | [**o_bpv4_0_0_add_account**](docs/AccountApi.md#o_bpv4_0_0_add_account) | **POST** /obp/v4.0.0/banks/{bankid}/accounts | Create Account (POST)
-*OpenBankProject::AccountApi* | [**o_bpv4_0_0_add_tag_for_view_on_account**](docs/AccountApi.md#o_bpv4_0_0_add_tag_for_view_on_account) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Create a tag on account
-*OpenBankProject::AccountApi* | [**o_bpv4_0_0_create_counterparty**](docs/AccountApi.md#o_bpv4_0_0_create_counterparty) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Create Counterparty (Explicit)
-*OpenBankProject::AccountApi* | [**o_bpv4_0_0_create_counterparty_for_any_account**](docs/AccountApi.md#o_bpv4_0_0_create_counterparty_for_any_account) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Create Counterparty for any account (Explicit)
-*OpenBankProject::AccountApi* | [**o_bpv4_0_0_create_direct_debit**](docs/AccountApi.md#o_bpv4_0_0_create_direct_debit) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/direct-debit | Create Direct Debit
-*OpenBankProject::AccountApi* | [**o_bpv4_0_0_create_direct_debit_management**](docs/AccountApi.md#o_bpv4_0_0_create_direct_debit_management) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/direct-debit | Create Direct Debit (management)
-*OpenBankProject::AccountApi* | [**o_bpv4_0_0_create_or_update_account_attribute_definition**](docs/AccountApi.md#o_bpv4_0_0_create_or_update_account_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Create or Update Account Attribute Definition
-*OpenBankProject::AccountApi* | [**o_bpv4_0_0_create_standing_order**](docs/AccountApi.md#o_bpv4_0_0_create_standing_order) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/standing-order | Create Standing Order
-*OpenBankProject::AccountApi* | [**o_bpv4_0_0_create_standing_order_management**](docs/AccountApi.md#o_bpv4_0_0_create_standing_order_management) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/standing-order | Create Standing Order (management)
-*OpenBankProject::AccountApi* | [**o_bpv4_0_0_delete_account_attribute_definition**](docs/AccountApi.md#o_bpv4_0_0_delete_account_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/account | Delete Account Attribute Definition
-*OpenBankProject::AccountApi* | [**o_bpv4_0_0_delete_account_cascade**](docs/AccountApi.md#o_bpv4_0_0_delete_account_cascade) | **DELETE** /obp/v4.0.0/management/cascading/banks/{bankid}/accounts/{accountid} | Delete Account Cascade
-*OpenBankProject::AccountApi* | [**o_bpv4_0_0_delete_counterparty_for_any_account**](docs/AccountApi.md#o_bpv4_0_0_delete_counterparty_for_any_account) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Delete Counterparty for any account (Explicit)
-*OpenBankProject::AccountApi* | [**o_bpv4_0_0_delete_explicit_counterparty**](docs/AccountApi.md#o_bpv4_0_0_delete_explicit_counterparty) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Delete Counterparty (Explicit)
-*OpenBankProject::AccountApi* | [**o_bpv4_0_0_delete_tag_for_view_on_account**](docs/AccountApi.md#o_bpv4_0_0_delete_tag_for_view_on_account) | **DELETE** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags/{tagid} | Delete a tag on account
-*OpenBankProject::AccountApi* | [**o_bpv4_0_0_get_account_attribute_definition**](docs/AccountApi.md#o_bpv4_0_0_get_account_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Get Account Attribute Definition
-*OpenBankProject::AccountApi* | [**o_bpv4_0_0_get_account_by_account_routing**](docs/AccountApi.md#o_bpv4_0_0_get_account_by_account_routing) | **POST** /obp/v4.0.0/management/accounts/account-routing-query | Get Account by Account Routing
-*OpenBankProject::AccountApi* | [**o_bpv4_0_0_get_accounts_by_account_routing_regex**](docs/AccountApi.md#o_bpv4_0_0_get_accounts_by_account_routing_regex) | **POST** /obp/v4.0.0/management/accounts/account-routing-regex-query | Get Accounts by Account Routing Regex
-*OpenBankProject::AccountApi* | [**o_bpv4_0_0_get_accounts_minimal_by_customer_id**](docs/AccountApi.md#o_bpv4_0_0_get_accounts_minimal_by_customer_id) | **GET** /obp/v4.0.0/customers/{customerid}/accounts-minimal | Get Accounts Minimal for a Customer
-*OpenBankProject::AccountApi* | [**o_bpv4_0_0_get_counterparties_for_any_account**](docs/AccountApi.md#o_bpv4_0_0_get_counterparties_for_any_account) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties for any account (Explicit)
-*OpenBankProject::AccountApi* | [**o_bpv4_0_0_get_counterparty_by_id_for_any_account**](docs/AccountApi.md#o_bpv4_0_0_get_counterparty_by_id_for_any_account) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id for any account (Explicit)
-*OpenBankProject::AccountApi* | [**o_bpv4_0_0_get_counterparty_by_name_for_any_account**](docs/AccountApi.md#o_bpv4_0_0_get_counterparty_by_name_for_any_account) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparty-names/{counterpartyname} | Get Counterparty by name for any account (Explicit) 
-*OpenBankProject::AccountApi* | [**o_bpv4_0_0_get_explicit_counterparties_for_account**](docs/AccountApi.md#o_bpv4_0_0_get_explicit_counterparties_for_account) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties (Explicit)
-*OpenBankProject::AccountApi* | [**o_bpv4_0_0_get_fast_firehose_accounts_at_one_bank**](docs/AccountApi.md#o_bpv4_0_0_get_fast_firehose_accounts_at_one_bank) | **GET** /obp/v4.0.0/management/banks/{bankid}/fast-firehose/accounts | Get Fast Firehose Accounts at Bank
-*OpenBankProject::AccountApi* | [**o_bpv4_0_0_get_firehose_accounts_at_one_bank**](docs/AccountApi.md#o_bpv4_0_0_get_firehose_accounts_at_one_bank) | **GET** /obp/v4.0.0/banks/{bankid}/firehose/accounts/views/{viewid} | Get Firehose Accounts at Bank
-*OpenBankProject::AccountApi* | [**o_bpv4_0_0_get_private_account_by_id_full**](docs/AccountApi.md#o_bpv4_0_0_get_private_account_by_id_full) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/account | Get Account by Id (Full)
-*OpenBankProject::AccountApi* | [**o_bpv4_0_0_get_tags_for_view_on_account**](docs/AccountApi.md#o_bpv4_0_0_get_tags_for_view_on_account) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Get tags on account
-*OpenBankProject::AccountApi* | [**o_bpv4_0_0_iban_checker**](docs/AccountApi.md#o_bpv4_0_0_iban_checker) | **POST** /obp/v4.0.0/account/check/scheme/iban | Validate and check IBAN
-*OpenBankProject::AccountApi* | [**o_bpv4_0_0_update_account_label**](docs/AccountApi.md#o_bpv4_0_0_update_account_label) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid} | Update Account Label
-*OpenBankProject::AccountApi* | [**o_bpv5_0_0_create_account**](docs/AccountApi.md#o_bpv5_0_0_create_account) | **PUT** /obp/v5.0.0/banks/{bankid}/accounts/{accountid} | Create Account (PUT)
-*OpenBankProject::AccountApi* | [**o_bpv5_0_0_create_customer_account_link**](docs/AccountApi.md#o_bpv5_0_0_create_customer_account_link) | **POST** /obp/v5.0.0/banks/{bankid}/customer-account-links | Create Customer Account Link
-*OpenBankProject::AccountApi* | [**o_bpv5_0_0_get_views_for_bank_account**](docs/AccountApi.md#o_bpv5_0_0_get_views_for_bank_account) | **GET** /obp/v5.0.0/banks/{bankid}/accounts/{accountid}/views | Get Views for Account
-*OpenBankProject::AccountApi* | [**o_bpv5_1_0_create_bank_account_balance**](docs/AccountApi.md#o_bpv5_1_0_create_bank_account_balance) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Create Bank Account Balance
-*OpenBankProject::AccountApi* | [**o_bpv5_1_0_create_custom_view**](docs/AccountApi.md#o_bpv5_1_0_create_custom_view) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views | Create Custom View
-*OpenBankProject::AccountApi* | [**o_bpv5_1_0_create_user_with_account_access_by_id**](docs/AccountApi.md#o_bpv5_1_0_create_user_with_account_access_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/user-account-access | Create (DAuth) User with Account Access
-*OpenBankProject::AccountApi* | [**o_bpv5_1_0_delete_bank_account_balance**](docs/AccountApi.md#o_bpv5_1_0_delete_bank_account_balance) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Delete Bank Account Balance
-*OpenBankProject::AccountApi* | [**o_bpv5_1_0_delete_custom_view**](docs/AccountApi.md#o_bpv5_1_0_delete_custom_view) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views/{targetviewid} | Delete Custom View
-*OpenBankProject::AccountApi* | [**o_bpv5_1_0_get_account_access_by_user_id**](docs/AccountApi.md#o_bpv5_1_0_get_account_access_by_user_id) | **GET** /obp/v5.1.0/users/{userid}/account-access | Get Account Access by USER_ID
-*OpenBankProject::AccountApi* | [**o_bpv5_1_0_get_accounts_held_by_user**](docs/AccountApi.md#o_bpv5_1_0_get_accounts_held_by_user) | **GET** /obp/v5.1.0/users/{userid}/accounts-held | Get Accounts Held By User
-*OpenBankProject::AccountApi* | [**o_bpv5_1_0_get_accounts_held_by_user_at_bank**](docs/AccountApi.md#o_bpv5_1_0_get_accounts_held_by_user_at_bank) | **GET** /obp/v5.1.0/users/{userid}/banks/{bankid}/accounts-held | Get Accounts Held By User
-*OpenBankProject::AccountApi* | [**o_bpv5_1_0_get_agent**](docs/AccountApi.md#o_bpv5_1_0_get_agent) | **GET** /obp/v5.1.0/banks/{bankid}/agents/{agentid} | Get Agent
-*OpenBankProject::AccountApi* | [**o_bpv5_1_0_get_agents**](docs/AccountApi.md#o_bpv5_1_0_get_agents) | **GET** /obp/v5.1.0/banks/{bankid}/agents | Get Agents at Bank
-*OpenBankProject::AccountApi* | [**o_bpv5_1_0_get_all_bank_account_balances**](docs/AccountApi.md#o_bpv5_1_0_get_all_bank_account_balances) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Get All Bank Account Balances
-*OpenBankProject::AccountApi* | [**o_bpv5_1_0_get_bank_account_balance_by_id**](docs/AccountApi.md#o_bpv5_1_0_get_bank_account_balance_by_id) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Get Bank Account Balance By ID
-*OpenBankProject::AccountApi* | [**o_bpv5_1_0_get_bank_account_balances**](docs/AccountApi.md#o_bpv5_1_0_get_bank_account_balances) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/balances | Get Account Balances by BANK_ID and ACCOUNT_ID through the VIEW_ID
-*OpenBankProject::AccountApi* | [**o_bpv5_1_0_get_bank_accounts_balances**](docs/AccountApi.md#o_bpv5_1_0_get_bank_accounts_balances) | **GET** /obp/v5.1.0/banks/{bankid}/balances | Get Account Balances by BANK_ID
-*OpenBankProject::AccountApi* | [**o_bpv5_1_0_get_bank_accounts_balances_through_view**](docs/AccountApi.md#o_bpv5_1_0_get_bank_accounts_balances_through_view) | **GET** /obp/v5.1.0/banks/{bankid}/views/{viewid}/balances | Get Account Balances by BANK_ID through the VIEW_ID
-*OpenBankProject::AccountApi* | [**o_bpv5_1_0_get_core_account_by_id_through_view**](docs/AccountApi.md#o_bpv5_1_0_get_core_account_by_id_through_view) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid} | Get Account by Id (Core) through the VIEW_ID
-*OpenBankProject::AccountApi* | [**o_bpv5_1_0_get_custom_view**](docs/AccountApi.md#o_bpv5_1_0_get_custom_view) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views/{targetviewid} | Get Custom View
-*OpenBankProject::AccountApi* | [**o_bpv5_1_0_grant_user_access_to_view_by_id**](docs/AccountApi.md#o_bpv5_1_0_grant_user_access_to_view_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/grant | Grant User access to View
-*OpenBankProject::AccountApi* | [**o_bpv5_1_0_revoke_user_access_to_view_by_id**](docs/AccountApi.md#o_bpv5_1_0_revoke_user_access_to_view_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/revoke | Revoke User access to View
-*OpenBankProject::AccountApi* | [**o_bpv5_1_0_update_bank_account_balance**](docs/AccountApi.md#o_bpv5_1_0_update_bank_account_balance) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Update Bank Account Balance
-*OpenBankProject::AccountApi* | [**o_bpv5_1_0_update_custom_view**](docs/AccountApi.md#o_bpv5_1_0_update_custom_view) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views/{targetviewid} | Update Custom View
-*OpenBankProject::AccountApi* | [**o_bpv6_0_0_create_custom_view_management**](docs/AccountApi.md#o_bpv6_0_0_create_custom_view_management) | **POST** /obp/v6.0.0/management/banks/{bankid}/accounts/{accountid}/views | Create Custom View (Management)
-*OpenBankProject::AccountApi* | [**o_bpv6_0_0_get_account_directory**](docs/AccountApi.md#o_bpv6_0_0_get_account_directory) | **GET** /obp/v6.0.0/banks/{bankid}/account-directory | Get Account Directory at Bank
-*OpenBankProject::AccountApi* | [**o_bpv6_0_0_get_accounts_at_bank**](docs/AccountApi.md#o_bpv6_0_0_get_accounts_at_bank) | **GET** /obp/v6.0.0/banks/{bankid}/accounts | Get Accounts at Bank
-*OpenBankProject::AccountApi* | [**o_bpv6_0_0_get_core_account_by_id_v600**](docs/AccountApi.md#o_bpv6_0_0_get_core_account_by_id_v600) | **GET** /obp/v6.0.0/my/banks/{bankid}/accounts/{accountid}/account | Get Account by Id (Core)
-*OpenBankProject::AccountApi* | [**o_bpv6_0_0_get_holding_account_by_releaser**](docs/AccountApi.md#o_bpv6_0_0_get_holding_account_by_releaser) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/holding-accounts | Get Holding Accounts By Releaser
-*OpenBankProject::AccountApi* | [**o_bpv6_0_0_get_transactions_for_bank_account**](docs/AccountApi.md#o_bpv6_0_0_get_transactions_for_bank_account) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions | Get Transactions for Account (Full)
-*OpenBankProject::AccountApi* | [**o_bpv6_0_0_has_account_access**](docs/AccountApi.md#o_bpv6_0_0_has_account_access) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/has-account-access | Has Account Access
-*OpenBankProject::AccountAccessApi* | [**o_bpv5_1_0_create_user_with_account_access_by_id**](docs/AccountAccessApi.md#o_bpv5_1_0_create_user_with_account_access_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/user-account-access | Create (DAuth) User with Account Access
-*OpenBankProject::AccountAccessApi* | [**o_bpv5_1_0_grant_user_access_to_view_by_id**](docs/AccountAccessApi.md#o_bpv5_1_0_grant_user_access_to_view_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/grant | Grant User access to View
-*OpenBankProject::AccountAccessApi* | [**o_bpv5_1_0_revoke_user_access_to_view_by_id**](docs/AccountAccessApi.md#o_bpv5_1_0_revoke_user_access_to_view_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/revoke | Revoke User access to View
-*OpenBankProject::AccountAccessRequestApi* | [**o_bpv6_0_0_approve_account_access_request**](docs/AccountAccessRequestApi.md#o_bpv6_0_0_approve_account_access_request) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/approval | Approve Account Access Request
-*OpenBankProject::AccountAccessRequestApi* | [**o_bpv6_0_0_create_account_access_request**](docs/AccountAccessRequestApi.md#o_bpv6_0_0_create_account_access_request) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Create Account Access Request
-*OpenBankProject::AccountAccessRequestApi* | [**o_bpv6_0_0_get_account_access_request_by_id**](docs/AccountAccessRequestApi.md#o_bpv6_0_0_get_account_access_request_by_id) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid} | Get Account Access Request by Id
-*OpenBankProject::AccountAccessRequestApi* | [**o_bpv6_0_0_get_account_access_requests_for_account**](docs/AccountAccessRequestApi.md#o_bpv6_0_0_get_account_access_requests_for_account) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Get Account Access Requests for Account
-*OpenBankProject::AccountAccessRequestApi* | [**o_bpv6_0_0_get_my_account_access_requests**](docs/AccountAccessRequestApi.md#o_bpv6_0_0_get_my_account_access_requests) | **GET** /obp/v6.0.0/my/account-access-requests | Get My Account Access Requests
-*OpenBankProject::AccountAccessRequestApi* | [**o_bpv6_0_0_reject_account_access_request**](docs/AccountAccessRequestApi.md#o_bpv6_0_0_reject_account_access_request) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/rejection | Reject Account Access Request
-*OpenBankProject::AccountApplicationApi* | [**o_bpv3_1_0_create_account_application**](docs/AccountApplicationApi.md#o_bpv3_1_0_create_account_application) | **POST** /obp/v3.1.0/banks/{bankid}/account-applications | Create Account Application
-*OpenBankProject::AccountApplicationApi* | [**o_bpv3_1_0_get_account_application**](docs/AccountApplicationApi.md#o_bpv3_1_0_get_account_application) | **GET** /obp/v3.1.0/banks/{bankid}/account-applications/{accountapplicationid} | Get Account Application by Id
-*OpenBankProject::AccountApplicationApi* | [**o_bpv3_1_0_get_account_applications**](docs/AccountApplicationApi.md#o_bpv3_1_0_get_account_applications) | **GET** /obp/v3.1.0/banks/{bankid}/account-applications | Get Account Applications
-*OpenBankProject::AccountApplicationApi* | [**o_bpv3_1_0_update_account_application_status**](docs/AccountApplicationApi.md#o_bpv3_1_0_update_account_application_status) | **PUT** /obp/v3.1.0/banks/{bankid}/account-applications/{accountapplicationid} | Update Account Application Status
-*OpenBankProject::AccountAttributeApi* | [**o_bpv3_1_0_create_account_attribute**](docs/AccountAttributeApi.md#o_bpv3_1_0_create_account_attribute) | **POST** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attribute | Create Account Attribute
-*OpenBankProject::AccountAttributeApi* | [**o_bpv3_1_0_update_account_attribute**](docs/AccountAttributeApi.md#o_bpv3_1_0_update_account_attribute) | **PUT** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attributes/{accountattributeid} | Update Account Attribute
-*OpenBankProject::AccountAttributeApi* | [**o_bpv4_0_0_create_or_update_account_attribute_definition**](docs/AccountAttributeApi.md#o_bpv4_0_0_create_or_update_account_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Create or Update Account Attribute Definition
-*OpenBankProject::AccountAttributeApi* | [**o_bpv4_0_0_delete_account_attribute_definition**](docs/AccountAttributeApi.md#o_bpv4_0_0_delete_account_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/account | Delete Account Attribute Definition
-*OpenBankProject::AccountAttributeApi* | [**o_bpv4_0_0_get_account_attribute_definition**](docs/AccountAttributeApi.md#o_bpv4_0_0_get_account_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Get Account Attribute Definition
-*OpenBankProject::AccountFirehoseApi* | [**o_bpv3_0_0_get_firehose_transactions_for_bank_account**](docs/AccountFirehoseApi.md#o_bpv3_0_0_get_firehose_transactions_for_bank_account) | **GET** /obp/v3.0.0/banks/{bankid}/firehose/accounts/{accountid}/views/{viewid}/transactions | Get Firehose Transactions for Account
-*OpenBankProject::AccountFirehoseApi* | [**o_bpv4_0_0_get_fast_firehose_accounts_at_one_bank**](docs/AccountFirehoseApi.md#o_bpv4_0_0_get_fast_firehose_accounts_at_one_bank) | **GET** /obp/v4.0.0/management/banks/{bankid}/fast-firehose/accounts | Get Fast Firehose Accounts at Bank
-*OpenBankProject::AccountFirehoseApi* | [**o_bpv4_0_0_get_firehose_accounts_at_one_bank**](docs/AccountFirehoseApi.md#o_bpv4_0_0_get_firehose_accounts_at_one_bank) | **GET** /obp/v4.0.0/banks/{bankid}/firehose/accounts/views/{viewid} | Get Firehose Accounts at Bank
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv2_0_0_get_transaction_types**](docs/AccountInformationServiceAISApi.md#o_bpv2_0_0_get_transaction_types) | **GET** /obp/v2.0.0/banks/{bankid}/transaction-types | Get Transaction Types at Bank
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv3_0_0_core_private_accounts_all_banks**](docs/AccountInformationServiceAISApi.md#o_bpv3_0_0_core_private_accounts_all_banks) | **GET** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private)
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv3_0_0_get_accounts_held**](docs/AccountInformationServiceAISApi.md#o_bpv3_0_0_get_accounts_held) | **GET** /obp/v3.0.0/banks/{bankid}/accounts-held | Get Accounts Held
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv3_0_0_get_core_transactions_for_bank_account**](docs/AccountInformationServiceAISApi.md#o_bpv3_0_0_get_core_transactions_for_bank_account) | **GET** /obp/v3.0.0/my/banks/{bankid}/accounts/{accountid}/transactions | Get Transactions for Account (Core)
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv3_0_0_get_private_account_idsby_bank_id**](docs/AccountInformationServiceAISApi.md#o_bpv3_0_0_get_private_account_idsby_bank_id) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/account_ids/private | Get Accounts at Bank (IDs only)
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv3_0_0_private_accounts_at_one_bank**](docs/AccountInformationServiceAISApi.md#o_bpv3_0_0_private_accounts_at_one_bank) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/private | Get Accounts at Bank (Minimal)
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv3_1_0_answer_consent_challenge**](docs/AccountInformationServiceAISApi.md#o_bpv3_1_0_answer_consent_challenge) | **POST** /obp/v3.1.0/banks/{bankid}/consents/{consentid}/challenge | Answer Consent Challenge
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv3_1_0_create_consent_email**](docs/AccountInformationServiceAISApi.md#o_bpv3_1_0_create_consent_email) | **POST** /obp/v3.1.0/banks/{bankid}/my/consents/{email} | Create Consent (EMAIL)
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv3_1_0_create_consent_implicit**](docs/AccountInformationServiceAISApi.md#o_bpv3_1_0_create_consent_implicit) | **POST** /obp/v3.1.0/banks/{bankid}/my/consents/{implicit} | Create Consent (IMPLICIT)
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv3_1_0_create_consent_sms**](docs/AccountInformationServiceAISApi.md#o_bpv3_1_0_create_consent_sms) | **POST** /obp/v3.1.0/banks/{bankid}/my/consents/{sms} | Create Consent (SMS)
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv3_1_0_get_server_jwk**](docs/AccountInformationServiceAISApi.md#o_bpv3_1_0_get_server_jwk) | **GET** /obp/v3.1.0/certs | Get JSON Web Key (JWK)
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv4_0_0_add_consent_user**](docs/AccountInformationServiceAISApi.md#o_bpv4_0_0_add_consent_user) | **PUT** /obp/v4.0.0/banks/{bankid}/consents/{consentid}/user-update-request | Add User to a Consent
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv4_0_0_get_consent_infos**](docs/AccountInformationServiceAISApi.md#o_bpv4_0_0_get_consent_infos) | **GET** /obp/v4.0.0/my/consent-infos | Get My Consents Info
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv4_0_0_get_consent_infos_by_bank**](docs/AccountInformationServiceAISApi.md#o_bpv4_0_0_get_consent_infos_by_bank) | **GET** /obp/v4.0.0/banks/{bankid}/my/consent-infos | Get My Consents Info At Bank
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv4_0_0_update_consent_status**](docs/AccountInformationServiceAISApi.md#o_bpv4_0_0_update_consent_status) | **PUT** /obp/v4.0.0/banks/{bankid}/consents/{consentid} | Update Consent Status
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv5_0_0_create_consent_by_consent_request_id_email**](docs/AccountInformationServiceAISApi.md#o_bpv5_0_0_create_consent_by_consent_request_id_email) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{email}/consents | Create Consent By CONSENT_REQUEST_ID (EMAIL)
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv5_0_0_create_consent_by_consent_request_id_implicit**](docs/AccountInformationServiceAISApi.md#o_bpv5_0_0_create_consent_by_consent_request_id_implicit) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{implicit}/consents | Create Consent By CONSENT_REQUEST_ID (IMPLICIT)
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv5_0_0_create_consent_by_consent_request_id_sms**](docs/AccountInformationServiceAISApi.md#o_bpv5_0_0_create_consent_by_consent_request_id_sms) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{sms}/consents | Create Consent By CONSENT_REQUEST_ID (SMS)
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv5_0_0_create_consent_request**](docs/AccountInformationServiceAISApi.md#o_bpv5_0_0_create_consent_request) | **POST** /obp/v5.0.0/consumer/consent-requests | Create Consent Request
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv5_0_0_get_consent_by_consent_request_id**](docs/AccountInformationServiceAISApi.md#o_bpv5_0_0_get_consent_by_consent_request_id) | **GET** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/consents | Get Consent By Consent Request Id via Consumer
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv5_0_0_get_consent_request**](docs/AccountInformationServiceAISApi.md#o_bpv5_0_0_get_consent_request) | **GET** /obp/v5.0.0/consumer/consent-requests/{consentrequestid} | Get Consent Request
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv5_1_0_create_consent_implicit**](docs/AccountInformationServiceAISApi.md#o_bpv5_1_0_create_consent_implicit) | **POST** /obp/v5.1.0/my/consents/{implicit} | Create Consent (IMPLICIT)
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv5_1_0_get_bank_account_balances**](docs/AccountInformationServiceAISApi.md#o_bpv5_1_0_get_bank_account_balances) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/balances | Get Account Balances by BANK_ID and ACCOUNT_ID through the VIEW_ID
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv5_1_0_get_bank_accounts_balances**](docs/AccountInformationServiceAISApi.md#o_bpv5_1_0_get_bank_accounts_balances) | **GET** /obp/v5.1.0/banks/{bankid}/balances | Get Account Balances by BANK_ID
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv5_1_0_get_bank_accounts_balances_through_view**](docs/AccountInformationServiceAISApi.md#o_bpv5_1_0_get_bank_accounts_balances_through_view) | **GET** /obp/v5.1.0/banks/{bankid}/views/{viewid}/balances | Get Account Balances by BANK_ID through the VIEW_ID
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv5_1_0_get_consent_by_consent_id**](docs/AccountInformationServiceAISApi.md#o_bpv5_1_0_get_consent_by_consent_id) | **GET** /obp/v5.1.0/user/current/consents/{consentid} | Get Consent By Consent Id via User
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv5_1_0_get_consent_by_consent_id_via_consumer**](docs/AccountInformationServiceAISApi.md#o_bpv5_1_0_get_consent_by_consent_id_via_consumer) | **GET** /obp/v5.1.0/consumer/current/consents/{consentid} | Get Consent By Consent Id via Consumer
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv5_1_0_get_consents**](docs/AccountInformationServiceAISApi.md#o_bpv5_1_0_get_consents) | **GET** /obp/v5.1.0/management/consents | Get Consents
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv5_1_0_get_consents_at_bank**](docs/AccountInformationServiceAISApi.md#o_bpv5_1_0_get_consents_at_bank) | **GET** /obp/v5.1.0/management/consents/banks/{bankid} | Get Consents at Bank
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv5_1_0_get_core_account_by_id_through_view**](docs/AccountInformationServiceAISApi.md#o_bpv5_1_0_get_core_account_by_id_through_view) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid} | Get Account by Id (Core) through the VIEW_ID
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv5_1_0_get_my_consents**](docs/AccountInformationServiceAISApi.md#o_bpv5_1_0_get_my_consents) | **GET** /obp/v5.1.0/my/consents | Get My Consents
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv5_1_0_get_my_consents_by_bank**](docs/AccountInformationServiceAISApi.md#o_bpv5_1_0_get_my_consents_by_bank) | **GET** /obp/v5.1.0/banks/{bankid}/my/consents | Get My Consents at Bank
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv5_1_0_mtls_client_certificate_info**](docs/AccountInformationServiceAISApi.md#o_bpv5_1_0_mtls_client_certificate_info) | **GET** /obp/v5.1.0/my/mtls/certificate/current | Provide client's certificate info of a current call
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv5_1_0_revoke_consent_at_bank**](docs/AccountInformationServiceAISApi.md#o_bpv5_1_0_revoke_consent_at_bank) | **DELETE** /obp/v5.1.0/banks/{bankid}/consents/{consentid} | Revoke Consent at Bank
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv5_1_0_revoke_my_consent**](docs/AccountInformationServiceAISApi.md#o_bpv5_1_0_revoke_my_consent) | **DELETE** /obp/v5.1.0/my/consents/{consentid} | Revoke My Consent
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv5_1_0_self_revoke_consent**](docs/AccountInformationServiceAISApi.md#o_bpv5_1_0_self_revoke_consent) | **DELETE** /obp/v5.1.0/my/consent/current | Revoke Consent used in the Current Call
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv5_1_0_update_consent_account_access_by_consent_id**](docs/AccountInformationServiceAISApi.md#o_bpv5_1_0_update_consent_account_access_by_consent_id) | **PUT** /obp/v5.1.0/management/banks/{bankid}/consents/{consentid}/account-access | Update Consent Account Access by CONSENT_ID
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv5_1_0_update_consent_status_by_consent**](docs/AccountInformationServiceAISApi.md#o_bpv5_1_0_update_consent_status_by_consent) | **PUT** /obp/v5.1.0/management/banks/{bankid}/consents/{consentid} | Update Consent Status by CONSENT_ID
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv5_1_0_update_consent_user_id_by_consent_id**](docs/AccountInformationServiceAISApi.md#o_bpv5_1_0_update_consent_user_id_by_consent_id) | **PUT** /obp/v5.1.0/management/banks/{bankid}/consents/{consentid}/created-by-user | Update Created by User of Consent by CONSENT_ID
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv6_0_0_get_bank**](docs/AccountInformationServiceAISApi.md#o_bpv6_0_0_get_bank) | **GET** /obp/v6.0.0/banks/{bankid} | Get Bank
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv6_0_0_get_banks**](docs/AccountInformationServiceAISApi.md#o_bpv6_0_0_get_banks) | **GET** /obp/v6.0.0/banks | Get Banks
-*OpenBankProject::AccountInformationServiceAISApi* | [**o_bpv6_0_0_get_core_account_by_id_v600**](docs/AccountInformationServiceAISApi.md#o_bpv6_0_0_get_core_account_by_id_v600) | **GET** /obp/v6.0.0/my/banks/{bankid}/accounts/{accountid}/account | Get Account by Id (Core)
-*OpenBankProject::AccountMetadataApi* | [**o_bpv4_0_0_add_tag_for_view_on_account**](docs/AccountMetadataApi.md#o_bpv4_0_0_add_tag_for_view_on_account) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Create a tag on account
-*OpenBankProject::AccountMetadataApi* | [**o_bpv4_0_0_delete_tag_for_view_on_account**](docs/AccountMetadataApi.md#o_bpv4_0_0_delete_tag_for_view_on_account) | **DELETE** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags/{tagid} | Delete a tag on account
-*OpenBankProject::AccountMetadataApi* | [**o_bpv4_0_0_get_tags_for_view_on_account**](docs/AccountMetadataApi.md#o_bpv4_0_0_get_tags_for_view_on_account) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Get tags on account
-*OpenBankProject::AccountPublicApi* | [**o_bpv2_0_0_public_accounts_all_banks**](docs/AccountPublicApi.md#o_bpv2_0_0_public_accounts_all_banks) | **GET** /obp/v2.0.0/accounts/public | Get Public Accounts at all Banks
-*OpenBankProject::AccountPublicApi* | [**o_bpv2_0_0_public_accounts_at_one_bank**](docs/AccountPublicApi.md#o_bpv2_0_0_public_accounts_at_one_bank) | **GET** /obp/v2.0.0/banks/{bankid}/accounts/public | Get Public Accounts at Bank
-*OpenBankProject::AccountPublicApi* | [**o_bpv3_0_0_get_public_account_by_id**](docs/AccountPublicApi.md#o_bpv3_0_0_get_public_account_by_id) | **GET** /obp/v3.0.0/banks/{bankid}/public/accounts/{accountid}/{viewid}/account | Get Public Account by Id
-*OpenBankProject::AggregateMetricsApi* | [**o_bpv6_0_0_get_aggregate_metrics**](docs/AggregateMetricsApi.md#o_bpv6_0_0_get_aggregate_metrics) | **GET** /obp/v6.0.0/management/aggregate-metrics | Get Aggregate Metrics
-*OpenBankProject::ApiCollectionApi* | [**o_bpv4_0_0_create_my_api_collection**](docs/ApiCollectionApi.md#o_bpv4_0_0_create_my_api_collection) | **POST** /obp/v4.0.0/my/api-collections | Create My Api Collection
-*OpenBankProject::ApiCollectionApi* | [**o_bpv4_0_0_create_my_api_collection_endpoint**](docs/ApiCollectionApi.md#o_bpv4_0_0_create_my_api_collection_endpoint) | **POST** /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints | Create My Api Collection Endpoint
-*OpenBankProject::ApiCollectionApi* | [**o_bpv4_0_0_create_my_api_collection_endpoint_by_id**](docs/ApiCollectionApi.md#o_bpv4_0_0_create_my_api_collection_endpoint_by_id) | **POST** /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints | Create My Api Collection Endpoint By Id
-*OpenBankProject::ApiCollectionApi* | [**o_bpv4_0_0_delete_my_api_collection**](docs/ApiCollectionApi.md#o_bpv4_0_0_delete_my_api_collection) | **DELETE** /obp/v4.0.0/my/api-collections/{apicollectionid} | Delete My Api Collection
-*OpenBankProject::ApiCollectionApi* | [**o_bpv4_0_0_delete_my_api_collection_endpoint**](docs/ApiCollectionApi.md#o_bpv4_0_0_delete_my_api_collection_endpoint) | **DELETE** /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints/{operationid} | Delete My Api Collection Endpoint
-*OpenBankProject::ApiCollectionApi* | [**o_bpv4_0_0_delete_my_api_collection_endpoint_by_id**](docs/ApiCollectionApi.md#o_bpv4_0_0_delete_my_api_collection_endpoint_by_id) | **DELETE** /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoint-ids/{apicollectionendpointid} | Delete My Api Collection Endpoint By Id
-*OpenBankProject::ApiCollectionApi* | [**o_bpv4_0_0_delete_my_api_collection_endpoint_by_operation_id**](docs/ApiCollectionApi.md#o_bpv4_0_0_delete_my_api_collection_endpoint_by_operation_id) | **DELETE** /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints/{operationid} | Delete My Api Collection Endpoint By Id
-*OpenBankProject::ApiCollectionApi* | [**o_bpv4_0_0_get_api_collection_endpoints**](docs/ApiCollectionApi.md#o_bpv4_0_0_get_api_collection_endpoints) | **GET** /obp/v4.0.0/api-collections/{apicollectionid}/api-collection-endpoints | Get Api Collection Endpoints
-*OpenBankProject::ApiCollectionApi* | [**o_bpv4_0_0_get_api_collections_for_user**](docs/ApiCollectionApi.md#o_bpv4_0_0_get_api_collections_for_user) | **GET** /obp/v4.0.0/users/{userid}/api-collections | Get Api Collections for User
-*OpenBankProject::ApiCollectionApi* | [**o_bpv4_0_0_get_featured_api_collections**](docs/ApiCollectionApi.md#o_bpv4_0_0_get_featured_api_collections) | **GET** /obp/v4.0.0/api-collections/featured | Get Featured Api Collections
-*OpenBankProject::ApiCollectionApi* | [**o_bpv4_0_0_get_my_api_collection_by_id**](docs/ApiCollectionApi.md#o_bpv4_0_0_get_my_api_collection_by_id) | **GET** /obp/v4.0.0/my/api-collections/{apicollectionid} | Get My Api Collection By Id
-*OpenBankProject::ApiCollectionApi* | [**o_bpv4_0_0_get_my_api_collection_by_name**](docs/ApiCollectionApi.md#o_bpv4_0_0_get_my_api_collection_by_name) | **GET** /obp/v4.0.0/my/api-collections/name/{apicollectionname} | Get My Api Collection By Name
-*OpenBankProject::ApiCollectionApi* | [**o_bpv4_0_0_get_my_api_collection_endpoint**](docs/ApiCollectionApi.md#o_bpv4_0_0_get_my_api_collection_endpoint) | **GET** /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints/{operationid} | Get My Api Collection Endpoint
-*OpenBankProject::ApiCollectionApi* | [**o_bpv4_0_0_get_my_api_collection_endpoints**](docs/ApiCollectionApi.md#o_bpv4_0_0_get_my_api_collection_endpoints) | **GET** /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints | Get My Api Collection Endpoints
-*OpenBankProject::ApiCollectionApi* | [**o_bpv4_0_0_get_my_api_collection_endpoints_by_id**](docs/ApiCollectionApi.md#o_bpv4_0_0_get_my_api_collection_endpoints_by_id) | **GET** /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints | Get My Api Collection Endpoints By Id
-*OpenBankProject::ApiCollectionApi* | [**o_bpv4_0_0_get_my_api_collections**](docs/ApiCollectionApi.md#o_bpv4_0_0_get_my_api_collections) | **GET** /obp/v4.0.0/my/api-collections | Get My Api Collections
-*OpenBankProject::ApiCollectionApi* | [**o_bpv4_0_0_get_sharable_api_collection_by_id**](docs/ApiCollectionApi.md#o_bpv4_0_0_get_sharable_api_collection_by_id) | **GET** /obp/v4.0.0/api-collections/sharable/{apicollectionid} | Get Sharable Api Collection By Id
-*OpenBankProject::ApiCollectionApi* | [**o_bpv5_1_0_get_all_api_collections**](docs/ApiCollectionApi.md#o_bpv5_1_0_get_all_api_collections) | **GET** /obp/v5.1.0/management/api-collections | Get All API Collections
-*OpenBankProject::ApiCollectionApi* | [**o_bpv5_1_0_update_my_api_collection**](docs/ApiCollectionApi.md#o_bpv5_1_0_update_my_api_collection) | **PUT** /obp/v5.1.0/my/api-collections/{apicollectionid} | Update My Api Collection By API_COLLECTION_ID
-*OpenBankProject::ApiCollectionApi* | [**o_bpv6_0_0_create_featured_api_collection**](docs/ApiCollectionApi.md#o_bpv6_0_0_create_featured_api_collection) | **POST** /obp/v6.0.0/management/api-collections/featured | Create Featured Api Collection
-*OpenBankProject::ApiCollectionApi* | [**o_bpv6_0_0_delete_featured_api_collection**](docs/ApiCollectionApi.md#o_bpv6_0_0_delete_featured_api_collection) | **DELETE** /obp/v6.0.0/management/api-collections/featured/{apicollectionid} | Delete Featured Api Collection
-*OpenBankProject::ApiCollectionApi* | [**o_bpv6_0_0_get_featured_api_collections_admin**](docs/ApiCollectionApi.md#o_bpv6_0_0_get_featured_api_collections_admin) | **GET** /obp/v6.0.0/management/api-collections/featured | Get Featured Api Collections (Admin)
-*OpenBankProject::ApiCollectionApi* | [**o_bpv6_0_0_update_featured_api_collection**](docs/ApiCollectionApi.md#o_bpv6_0_0_update_featured_api_collection) | **PUT** /obp/v6.0.0/management/api-collections/featured/{apicollectionid} | Update Featured Api Collection
-*OpenBankProject::ApiProductApi* | [**o_bpv6_0_0_create_api_product**](docs/ApiProductApi.md#o_bpv6_0_0_create_api_product) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create Api Product
-*OpenBankProject::ApiProductApi* | [**o_bpv6_0_0_create_or_update_api_product**](docs/ApiProductApi.md#o_bpv6_0_0_create_or_update_api_product) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create or Update Api Product
-*OpenBankProject::ApiProductApi* | [**o_bpv6_0_0_delete_api_product**](docs/ApiProductApi.md#o_bpv6_0_0_delete_api_product) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Delete Api Product
-*OpenBankProject::ApiProductApi* | [**o_bpv6_0_0_get_api_product**](docs/ApiProductApi.md#o_bpv6_0_0_get_api_product) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Get Api Product
-*OpenBankProject::ApiProductApi* | [**o_bpv6_0_0_get_api_products**](docs/ApiProductApi.md#o_bpv6_0_0_get_api_products) | **GET** /obp/v6.0.0/banks/{bankid}/api-products | Get Api Products
-*OpenBankProject::ApiProductAttributeApi* | [**o_bpv6_0_0_create_api_product_attribute**](docs/ApiProductAttributeApi.md#o_bpv6_0_0_create_api_product_attribute) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attribute | Create Api Product Attribute
-*OpenBankProject::ApiProductAttributeApi* | [**o_bpv6_0_0_delete_api_product_attribute**](docs/ApiProductAttributeApi.md#o_bpv6_0_0_delete_api_product_attribute) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Delete Api Product Attribute
-*OpenBankProject::ApiProductAttributeApi* | [**o_bpv6_0_0_get_api_product_attribute**](docs/ApiProductAttributeApi.md#o_bpv6_0_0_get_api_product_attribute) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Get Api Product Attribute
-*OpenBankProject::ApiProductAttributeApi* | [**o_bpv6_0_0_update_api_product_attribute**](docs/ApiProductAttributeApi.md#o_bpv6_0_0_update_api_product_attribute) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Update Api Product Attribute
-*OpenBankProject::AttributeApi* | [**o_bpv3_1_0_create_account_attribute**](docs/AttributeApi.md#o_bpv3_1_0_create_account_attribute) | **POST** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attribute | Create Account Attribute
-*OpenBankProject::AttributeApi* | [**o_bpv3_1_0_create_card_attribute**](docs/AttributeApi.md#o_bpv3_1_0_create_card_attribute) | **POST** /obp/v3.1.0/management/banks/{bankid}/cards/{cardid}/attribute | Create Card Attribute
-*OpenBankProject::AttributeApi* | [**o_bpv3_1_0_delete_product_attribute**](docs/AttributeApi.md#o_bpv3_1_0_delete_product_attribute) | **DELETE** /obp/v3.1.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Delete Product Attribute
-*OpenBankProject::AttributeApi* | [**o_bpv3_1_0_update_account_attribute**](docs/AttributeApi.md#o_bpv3_1_0_update_account_attribute) | **PUT** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attributes/{accountattributeid} | Update Account Attribute
-*OpenBankProject::AttributeApi* | [**o_bpv3_1_0_update_card_attribute**](docs/AttributeApi.md#o_bpv3_1_0_update_card_attribute) | **PUT** /obp/v3.1.0/management/banks/{bankid}/cards/{cardid}/attributes/{cardattributeid} | Update Card Attribute
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_create_bank_attribute**](docs/AttributeApi.md#o_bpv4_0_0_create_bank_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/attribute | Create Bank Attribute
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_create_customer_attribute**](docs/AttributeApi.md#o_bpv4_0_0_create_customer_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attribute | Create Customer Attribute
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_create_or_update_account_attribute_definition**](docs/AttributeApi.md#o_bpv4_0_0_create_or_update_account_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Create or Update Account Attribute Definition
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_create_or_update_bank_attribute_definition**](docs/AttributeApi.md#o_bpv4_0_0_create_or_update_bank_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/bank | Create or Update Bank Attribute Definition
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_create_or_update_card_attribute_definition**](docs/AttributeApi.md#o_bpv4_0_0_create_or_update_card_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/card | Create or Update Card Attribute Definition
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition**](docs/AttributeApi.md#o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Create or Update Customer Attribute Definition
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_create_or_update_product_attribute_definition**](docs/AttributeApi.md#o_bpv4_0_0_create_or_update_product_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/product | Create or Update Product Attribute Definition
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_create_or_update_transaction_attribute_definition**](docs/AttributeApi.md#o_bpv4_0_0_create_or_update_transaction_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Create or Update Transaction Attribute Definition
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_create_or_update_transaction_request_attribute_definition**](docs/AttributeApi.md#o_bpv4_0_0_create_or_update_transaction_request_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Create or Update Transaction Request Attribute Definition
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_create_product_attribute**](docs/AttributeApi.md#o_bpv4_0_0_create_product_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attribute | Create Product Attribute
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_create_transaction_attribute**](docs/AttributeApi.md#o_bpv4_0_0_create_transaction_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attribute | Create Transaction Attribute
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_create_transaction_request_attribute**](docs/AttributeApi.md#o_bpv4_0_0_create_transaction_request_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attribute | Create Transaction Request Attribute
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_delete_account_attribute_definition**](docs/AttributeApi.md#o_bpv4_0_0_delete_account_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/account | Delete Account Attribute Definition
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_delete_bank_attribute**](docs/AttributeApi.md#o_bpv4_0_0_delete_bank_attribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Delete Bank Attribute
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_delete_card_attribute_definition**](docs/AttributeApi.md#o_bpv4_0_0_delete_card_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/card | Delete Card Attribute Definition
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_delete_customer_attribute**](docs/AttributeApi.md#o_bpv4_0_0_delete_customer_attribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/{customerid}/attributes/{customerattributeid} | Delete Customer Attribute
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_delete_customer_attribute_definition**](docs/AttributeApi.md#o_bpv4_0_0_delete_customer_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/customer | Delete Customer Attribute Definition
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_delete_product_attribute_definition**](docs/AttributeApi.md#o_bpv4_0_0_delete_product_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/product | Delete Product Attribute Definition
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_delete_transaction_attribute_definition**](docs/AttributeApi.md#o_bpv4_0_0_delete_transaction_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction | Delete Transaction Attribute Definition
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_delete_transaction_request_attribute_definition**](docs/AttributeApi.md#o_bpv4_0_0_delete_transaction_request_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction-request | Delete Transaction Request Attribute Definition
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_get_account_attribute_definition**](docs/AttributeApi.md#o_bpv4_0_0_get_account_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Get Account Attribute Definition
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_get_bank_attribute**](docs/AttributeApi.md#o_bpv4_0_0_get_bank_attribute) | **GET** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Get Bank Attribute By BANK_ATTRIBUTE_ID
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_get_bank_attributes**](docs/AttributeApi.md#o_bpv4_0_0_get_bank_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/attributes | Get Bank Attributes
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_get_card_attribute_definition**](docs/AttributeApi.md#o_bpv4_0_0_get_card_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/card | Get Card Attribute Definition
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_get_customer_attribute_by_id**](docs/AttributeApi.md#o_bpv4_0_0_get_customer_attribute_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{attributeid} | Get Customer Attribute By Id
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_get_customer_attribute_definition**](docs/AttributeApi.md#o_bpv4_0_0_get_customer_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Get Customer Attribute Definition
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_get_customer_attributes**](docs/AttributeApi.md#o_bpv4_0_0_get_customer_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes | Get Customer Attributes
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_get_product_attribute**](docs/AttributeApi.md#o_bpv4_0_0_get_product_attribute) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Get Product Attribute
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_get_product_attribute_definition**](docs/AttributeApi.md#o_bpv4_0_0_get_product_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/product | Get Product Attribute Definition
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_get_transaction_attribute_by_id**](docs/AttributeApi.md#o_bpv4_0_0_get_transaction_attribute_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{attributeid} | Get Transaction Attribute By Id
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_get_transaction_attribute_definition**](docs/AttributeApi.md#o_bpv4_0_0_get_transaction_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Get Transaction Attribute Definition
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_get_transaction_attributes**](docs/AttributeApi.md#o_bpv4_0_0_get_transaction_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes | Get Transaction Attributes
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_get_transaction_request_attribute_by_id**](docs/AttributeApi.md#o_bpv4_0_0_get_transaction_request_attribute_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Get Transaction Request Attribute By Id
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_get_transaction_request_attribute_definition**](docs/AttributeApi.md#o_bpv4_0_0_get_transaction_request_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Get Transaction Request Attribute Definition
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_get_transaction_request_attributes**](docs/AttributeApi.md#o_bpv4_0_0_get_transaction_request_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes | Get Transaction Request Attributes
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_update_bank_attribute**](docs/AttributeApi.md#o_bpv4_0_0_update_bank_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Update Bank Attribute
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_update_customer_attribute**](docs/AttributeApi.md#o_bpv4_0_0_update_customer_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{customerattributeid} | Update Customer Attribute
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_update_product_attribute**](docs/AttributeApi.md#o_bpv4_0_0_update_product_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Update Product Attribute
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_update_transaction_attribute**](docs/AttributeApi.md#o_bpv4_0_0_update_transaction_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{accountattributeid} | Update Transaction Attribute
-*OpenBankProject::AttributeApi* | [**o_bpv4_0_0_update_transaction_request_attribute**](docs/AttributeApi.md#o_bpv4_0_0_update_transaction_request_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Update Transaction Request Attribute
-*OpenBankProject::AttributeApi* | [**o_bpv5_1_0_create_atm_attribute**](docs/AttributeApi.md#o_bpv5_1_0_create_atm_attribute) | **POST** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Create ATM Attribute
-*OpenBankProject::AttributeApi* | [**o_bpv5_1_0_delete_atm_attribute**](docs/AttributeApi.md#o_bpv5_1_0_delete_atm_attribute) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Delete ATM Attribute
-*OpenBankProject::AttributeApi* | [**o_bpv5_1_0_get_atm_attribute**](docs/AttributeApi.md#o_bpv5_1_0_get_atm_attribute) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Get ATM Attribute By ATM_ATTRIBUTE_ID
-*OpenBankProject::AttributeApi* | [**o_bpv5_1_0_get_atm_attributes**](docs/AttributeApi.md#o_bpv5_1_0_get_atm_attributes) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Get ATM Attributes
-*OpenBankProject::AttributeApi* | [**o_bpv5_1_0_update_atm_attribute**](docs/AttributeApi.md#o_bpv5_1_0_update_atm_attribute) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Update ATM Attribute
-*OpenBankProject::AttributeApi* | [**o_bpv6_0_0_create_personal_data_field**](docs/AttributeApi.md#o_bpv6_0_0_create_personal_data_field) | **POST** /obp/v6.0.0/my/personal-data-fields | Create Personal Data Field
-*OpenBankProject::AttributeApi* | [**o_bpv6_0_0_create_user_attribute**](docs/AttributeApi.md#o_bpv6_0_0_create_user_attribute) | **POST** /obp/v6.0.0/users/{userid}/attributes | Create User Attribute
-*OpenBankProject::AttributeApi* | [**o_bpv6_0_0_delete_personal_data_field**](docs/AttributeApi.md#o_bpv6_0_0_delete_personal_data_field) | **DELETE** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Delete Personal Data Field
-*OpenBankProject::AttributeApi* | [**o_bpv6_0_0_delete_user_attribute**](docs/AttributeApi.md#o_bpv6_0_0_delete_user_attribute) | **DELETE** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Delete User Attribute
-*OpenBankProject::AttributeApi* | [**o_bpv6_0_0_get_personal_data_field_by_id**](docs/AttributeApi.md#o_bpv6_0_0_get_personal_data_field_by_id) | **GET** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Get Personal Data Field By Id
-*OpenBankProject::AttributeApi* | [**o_bpv6_0_0_get_personal_data_fields**](docs/AttributeApi.md#o_bpv6_0_0_get_personal_data_fields) | **GET** /obp/v6.0.0/my/personal-data-fields | Get Personal Data Fields
-*OpenBankProject::AttributeApi* | [**o_bpv6_0_0_get_user_attribute_by_id**](docs/AttributeApi.md#o_bpv6_0_0_get_user_attribute_by_id) | **GET** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Get User Attribute By Id
-*OpenBankProject::AttributeApi* | [**o_bpv6_0_0_get_user_attributes**](docs/AttributeApi.md#o_bpv6_0_0_get_user_attributes) | **GET** /obp/v6.0.0/users/{userid}/attributes | Get User Attributes
-*OpenBankProject::AttributeApi* | [**o_bpv6_0_0_update_personal_data_field**](docs/AttributeApi.md#o_bpv6_0_0_update_personal_data_field) | **PUT** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Update Personal Data Field
-*OpenBankProject::AttributeApi* | [**o_bpv6_0_0_update_user_attribute**](docs/AttributeApi.md#o_bpv6_0_0_update_user_attribute) | **PUT** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Update User Attribute
-*OpenBankProject::AuthenticationTypeValidationApi* | [**o_bpv4_0_0_create_authentication_type_validation**](docs/AuthenticationTypeValidationApi.md#o_bpv4_0_0_create_authentication_type_validation) | **POST** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Create an Authentication Type Validation
-*OpenBankProject::AuthenticationTypeValidationApi* | [**o_bpv4_0_0_delete_authentication_type_validation**](docs/AuthenticationTypeValidationApi.md#o_bpv4_0_0_delete_authentication_type_validation) | **DELETE** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Delete an Authentication Type Validation
-*OpenBankProject::AuthenticationTypeValidationApi* | [**o_bpv4_0_0_get_all_authentication_type_validations**](docs/AuthenticationTypeValidationApi.md#o_bpv4_0_0_get_all_authentication_type_validations) | **GET** /obp/v4.0.0/management/authentication-type-validations | Get all Authentication Type Validations
-*OpenBankProject::AuthenticationTypeValidationApi* | [**o_bpv4_0_0_get_all_authentication_type_validations_public**](docs/AuthenticationTypeValidationApi.md#o_bpv4_0_0_get_all_authentication_type_validations_public) | **GET** /obp/v4.0.0/endpoints/authentication-type-validations | Get all Authentication Type Validations - public
-*OpenBankProject::AuthenticationTypeValidationApi* | [**o_bpv4_0_0_get_authentication_type_validation**](docs/AuthenticationTypeValidationApi.md#o_bpv4_0_0_get_authentication_type_validation) | **GET** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Get an Authentication Type Validation
-*OpenBankProject::AuthenticationTypeValidationApi* | [**o_bpv4_0_0_update_authentication_type_validation**](docs/AuthenticationTypeValidationApi.md#o_bpv4_0_0_update_authentication_type_validation) | **PUT** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Update an Authentication Type Validation
-*OpenBankProject::BalanceApi* | [**o_bpv5_1_0_create_bank_account_balance**](docs/BalanceApi.md#o_bpv5_1_0_create_bank_account_balance) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Create Bank Account Balance
-*OpenBankProject::BalanceApi* | [**o_bpv5_1_0_delete_bank_account_balance**](docs/BalanceApi.md#o_bpv5_1_0_delete_bank_account_balance) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Delete Bank Account Balance
-*OpenBankProject::BalanceApi* | [**o_bpv5_1_0_get_all_bank_account_balances**](docs/BalanceApi.md#o_bpv5_1_0_get_all_bank_account_balances) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Get All Bank Account Balances
-*OpenBankProject::BalanceApi* | [**o_bpv5_1_0_get_bank_account_balance_by_id**](docs/BalanceApi.md#o_bpv5_1_0_get_bank_account_balance_by_id) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Get Bank Account Balance By ID
-*OpenBankProject::BalanceApi* | [**o_bpv5_1_0_update_bank_account_balance**](docs/BalanceApi.md#o_bpv5_1_0_update_bank_account_balance) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Update Bank Account Balance
-*OpenBankProject::BankApi* | [**o_bpv2_0_0_get_transaction_types**](docs/BankApi.md#o_bpv2_0_0_get_transaction_types) | **GET** /obp/v2.0.0/banks/{bankid}/transaction-types | Get Transaction Types at Bank
-*OpenBankProject::BankApi* | [**o_bpv2_1_0_create_transaction_type**](docs/BankApi.md#o_bpv2_1_0_create_transaction_type) | **PUT** /obp/v2.1.0/banks/{bankid}/transaction-types | Create Transaction Type at bank
-*OpenBankProject::BankApi* | [**o_bpv2_1_0_get_transaction_request_types_supported_by_bank**](docs/BankApi.md#o_bpv2_1_0_get_transaction_request_types_supported_by_bank) | **GET** /obp/v2.1.0/banks/{bankid}/transaction-request-types | Get Transaction Request Types at Bank
-*OpenBankProject::BankApi* | [**o_bpv3_0_0_get_branch**](docs/BankApi.md#o_bpv3_0_0_get_branch) | **GET** /obp/v3.0.0/banks/{bankid}/branches/{branchid} | Get Branch
-*OpenBankProject::BankApi* | [**o_bpv3_0_0_get_branches**](docs/BankApi.md#o_bpv3_0_0_get_branches) | **GET** /obp/v3.0.0/banks/{bankid}/branches | Get Branches for a Bank
-*OpenBankProject::BankApi* | [**o_bpv3_1_0_create_account_webhook**](docs/BankApi.md#o_bpv3_1_0_create_account_webhook) | **POST** /obp/v3.1.0/banks/{bankid}/account-web-hooks | Create an Account Webhook
-*OpenBankProject::BankApi* | [**o_bpv3_1_0_enable_disable_account_webhook**](docs/BankApi.md#o_bpv3_1_0_enable_disable_account_webhook) | **PUT** /obp/v3.1.0/banks/{bankid}/account-web-hooks | Enable/Disable an Account Webhook
-*OpenBankProject::BankApi* | [**o_bpv3_1_0_get_account_webhooks**](docs/BankApi.md#o_bpv3_1_0_get_account_webhooks) | **GET** /obp/v3.1.0/management/banks/{bankid}/account-web-hooks | Get Account Webhooks
-*OpenBankProject::BankApi* | [**o_bpv4_0_0_create_bank_account_notification_webhook**](docs/BankApi.md#o_bpv4_0_0_create_bank_account_notification_webhook) | **POST** /obp/v4.0.0/banks/{bankid}/web-hooks/account/notifications/on-create-transaction | Create bank level Account Notification Webhook
-*OpenBankProject::BankApi* | [**o_bpv4_0_0_create_bank_attribute**](docs/BankApi.md#o_bpv4_0_0_create_bank_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/attribute | Create Bank Attribute
-*OpenBankProject::BankApi* | [**o_bpv4_0_0_create_or_update_bank_attribute_definition**](docs/BankApi.md#o_bpv4_0_0_create_or_update_bank_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/bank | Create or Update Bank Attribute Definition
-*OpenBankProject::BankApi* | [**o_bpv4_0_0_create_settlement_account**](docs/BankApi.md#o_bpv4_0_0_create_settlement_account) | **POST** /obp/v4.0.0/banks/{bankid}/settlement-accounts | Create Settlement Account
-*OpenBankProject::BankApi* | [**o_bpv4_0_0_create_system_account_notification_webhook**](docs/BankApi.md#o_bpv4_0_0_create_system_account_notification_webhook) | **POST** /obp/v4.0.0/web-hooks/account/notifications/on-create-transaction | Create system level Account Notification Webhook
-*OpenBankProject::BankApi* | [**o_bpv4_0_0_delete_bank_attribute**](docs/BankApi.md#o_bpv4_0_0_delete_bank_attribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Delete Bank Attribute
-*OpenBankProject::BankApi* | [**o_bpv4_0_0_delete_bank_cascade**](docs/BankApi.md#o_bpv4_0_0_delete_bank_cascade) | **DELETE** /obp/v4.0.0/management/cascading/banks/{bankid} | Delete Bank Cascade
-*OpenBankProject::BankApi* | [**o_bpv4_0_0_get_bank_attribute**](docs/BankApi.md#o_bpv4_0_0_get_bank_attribute) | **GET** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Get Bank Attribute By BANK_ATTRIBUTE_ID
-*OpenBankProject::BankApi* | [**o_bpv4_0_0_get_bank_attributes**](docs/BankApi.md#o_bpv4_0_0_get_bank_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/attributes | Get Bank Attributes
-*OpenBankProject::BankApi* | [**o_bpv4_0_0_get_settlement_accounts**](docs/BankApi.md#o_bpv4_0_0_get_settlement_accounts) | **GET** /obp/v4.0.0/banks/{bankid}/settlement-accounts | Get Settlement accounts at Bank
-*OpenBankProject::BankApi* | [**o_bpv4_0_0_update_bank_attribute**](docs/BankApi.md#o_bpv4_0_0_update_bank_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Update Bank Attribute
-*OpenBankProject::BankApi* | [**o_bpv5_0_0_update_bank**](docs/BankApi.md#o_bpv5_0_0_update_bank) | **PUT** /obp/v5.0.0/banks | Update Bank
-*OpenBankProject::BankApi* | [**o_bpv6_0_0_create_bank**](docs/BankApi.md#o_bpv6_0_0_create_bank) | **POST** /obp/v6.0.0/banks | Create Bank
-*OpenBankProject::BankApi* | [**o_bpv6_0_0_get_bank**](docs/BankApi.md#o_bpv6_0_0_get_bank) | **GET** /obp/v6.0.0/banks/{bankid} | Get Bank
-*OpenBankProject::BankApi* | [**o_bpv6_0_0_get_banks**](docs/BankApi.md#o_bpv6_0_0_get_banks) | **GET** /obp/v6.0.0/banks | Get Banks
-*OpenBankProject::BankAttributeApi* | [**o_bpv4_0_0_create_bank_attribute**](docs/BankAttributeApi.md#o_bpv4_0_0_create_bank_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/attribute | Create Bank Attribute
-*OpenBankProject::BankAttributeApi* | [**o_bpv4_0_0_create_or_update_bank_attribute_definition**](docs/BankAttributeApi.md#o_bpv4_0_0_create_or_update_bank_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/bank | Create or Update Bank Attribute Definition
-*OpenBankProject::BankAttributeApi* | [**o_bpv4_0_0_delete_bank_attribute**](docs/BankAttributeApi.md#o_bpv4_0_0_delete_bank_attribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Delete Bank Attribute
-*OpenBankProject::BankAttributeApi* | [**o_bpv4_0_0_get_bank_attribute**](docs/BankAttributeApi.md#o_bpv4_0_0_get_bank_attribute) | **GET** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Get Bank Attribute By BANK_ATTRIBUTE_ID
-*OpenBankProject::BankAttributeApi* | [**o_bpv4_0_0_get_bank_attributes**](docs/BankAttributeApi.md#o_bpv4_0_0_get_bank_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/attributes | Get Bank Attributes
-*OpenBankProject::BankAttributeApi* | [**o_bpv4_0_0_update_bank_attribute**](docs/BankAttributeApi.md#o_bpv4_0_0_update_bank_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Update Bank Attribute
-*OpenBankProject::BranchApi* | [**o_bpv3_0_0_create_branch**](docs/BranchApi.md#o_bpv3_0_0_create_branch) | **POST** /obp/v3.0.0/banks/{bankid}/branches | Create Branch
-*OpenBankProject::BranchApi* | [**o_bpv3_0_0_get_branch**](docs/BranchApi.md#o_bpv3_0_0_get_branch) | **GET** /obp/v3.0.0/banks/{bankid}/branches/{branchid} | Get Branch
-*OpenBankProject::BranchApi* | [**o_bpv3_0_0_get_branches**](docs/BranchApi.md#o_bpv3_0_0_get_branches) | **GET** /obp/v3.0.0/banks/{bankid}/branches | Get Branches for a Bank
-*OpenBankProject::BranchApi* | [**o_bpv3_1_0_delete_branch**](docs/BranchApi.md#o_bpv3_1_0_delete_branch) | **DELETE** /obp/v3.1.0/banks/{bankid}/branches/{branchid} | Delete Branch
-*OpenBankProject::CacheApi* | [**o_bpv6_0_0_get_cache_config**](docs/CacheApi.md#o_bpv6_0_0_get_cache_config) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration
-*OpenBankProject::CacheApi* | [**o_bpv6_0_0_get_cache_info**](docs/CacheApi.md#o_bpv6_0_0_get_cache_info) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information
-*OpenBankProject::CacheApi* | [**o_bpv6_0_0_get_cache_namespaces**](docs/CacheApi.md#o_bpv6_0_0_get_cache_namespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces
-*OpenBankProject::CacheApi* | [**o_bpv6_0_0_invalidate_cache_namespace**](docs/CacheApi.md#o_bpv6_0_0_invalidate_cache_namespace) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace
-*OpenBankProject::CardApi* | [**o_bpv1_3_0_get_cards**](docs/CardApi.md#o_bpv1_3_0_get_cards) | **GET** /obp/v1.3.0/cards | Get cards for the current user
-*OpenBankProject::CardApi* | [**o_bpv3_1_0_create_card_attribute**](docs/CardApi.md#o_bpv3_1_0_create_card_attribute) | **POST** /obp/v3.1.0/management/banks/{bankid}/cards/{cardid}/attribute | Create Card Attribute
-*OpenBankProject::CardApi* | [**o_bpv3_1_0_delete_card_for_bank**](docs/CardApi.md#o_bpv3_1_0_delete_card_for_bank) | **DELETE** /obp/v3.1.0/management/banks/{bankid}/cards/{cardid} | Delete Card
-*OpenBankProject::CardApi* | [**o_bpv3_1_0_get_card_for_bank**](docs/CardApi.md#o_bpv3_1_0_get_card_for_bank) | **GET** /obp/v3.1.0/management/banks/{bankid}/cards/{cardid} | Get Card By Id
-*OpenBankProject::CardApi* | [**o_bpv3_1_0_get_cards_for_bank**](docs/CardApi.md#o_bpv3_1_0_get_cards_for_bank) | **GET** /obp/v3.1.0/management/banks/{bankid}/cards | Get Cards for the specified bank
-*OpenBankProject::CardApi* | [**o_bpv3_1_0_get_status_of_credit_card_order**](docs/CardApi.md#o_bpv3_1_0_get_status_of_credit_card_order) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/credit_cards/orders | Get status of Credit Card order 
-*OpenBankProject::CardApi* | [**o_bpv3_1_0_update_card_attribute**](docs/CardApi.md#o_bpv3_1_0_update_card_attribute) | **PUT** /obp/v3.1.0/management/banks/{bankid}/cards/{cardid}/attributes/{cardattributeid} | Update Card Attribute
-*OpenBankProject::CardApi* | [**o_bpv3_1_0_updated_card_for_bank**](docs/CardApi.md#o_bpv3_1_0_updated_card_for_bank) | **PUT** /obp/v3.1.0/management/banks/{bankid}/cards/{cardid} | Update Card
-*OpenBankProject::CardApi* | [**o_bpv4_0_0_create_or_update_card_attribute_definition**](docs/CardApi.md#o_bpv4_0_0_create_or_update_card_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/card | Create or Update Card Attribute Definition
-*OpenBankProject::CardApi* | [**o_bpv4_0_0_delete_card_attribute_definition**](docs/CardApi.md#o_bpv4_0_0_delete_card_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/card | Delete Card Attribute Definition
-*OpenBankProject::CardApi* | [**o_bpv4_0_0_get_card_attribute_definition**](docs/CardApi.md#o_bpv4_0_0_get_card_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/card | Get Card Attribute Definition
-*OpenBankProject::CardApi* | [**o_bpv5_0_0_add_card_for_bank**](docs/CardApi.md#o_bpv5_0_0_add_card_for_bank) | **POST** /obp/v5.0.0/management/banks/{bankid}/cards | Create Card
-*OpenBankProject::CardAttributeApi* | [**o_bpv3_1_0_create_card_attribute**](docs/CardAttributeApi.md#o_bpv3_1_0_create_card_attribute) | **POST** /obp/v3.1.0/management/banks/{bankid}/cards/{cardid}/attribute | Create Card Attribute
-*OpenBankProject::CardAttributeApi* | [**o_bpv3_1_0_update_card_attribute**](docs/CardAttributeApi.md#o_bpv3_1_0_update_card_attribute) | **PUT** /obp/v3.1.0/management/banks/{bankid}/cards/{cardid}/attributes/{cardattributeid} | Update Card Attribute
-*OpenBankProject::CardAttributeApi* | [**o_bpv4_0_0_create_or_update_card_attribute_definition**](docs/CardAttributeApi.md#o_bpv4_0_0_create_or_update_card_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/card | Create or Update Card Attribute Definition
-*OpenBankProject::CardAttributeApi* | [**o_bpv4_0_0_delete_card_attribute_definition**](docs/CardAttributeApi.md#o_bpv4_0_0_delete_card_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/card | Delete Card Attribute Definition
-*OpenBankProject::CardAttributeApi* | [**o_bpv4_0_0_get_card_attribute_definition**](docs/CardAttributeApi.md#o_bpv4_0_0_get_card_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/card | Get Card Attribute Definition
-*OpenBankProject::ChannelApi* | [**o_bpv6_0_0_delete_signal_channel**](docs/ChannelApi.md#o_bpv6_0_0_delete_signal_channel) | **DELETE** /obp/v6.0.0/signal/channels/{channelname} | Delete Signal Channel
-*OpenBankProject::ChannelApi* | [**o_bpv6_0_0_get_signal_channel_info**](docs/ChannelApi.md#o_bpv6_0_0_get_signal_channel_info) | **GET** /obp/v6.0.0/signal/channels/{channelname}/info | Get Signal Channel Info
-*OpenBankProject::ChannelApi* | [**o_bpv6_0_0_get_signal_channels**](docs/ChannelApi.md#o_bpv6_0_0_get_signal_channels) | **GET** /obp/v6.0.0/signal/channels | List Signal Channels
-*OpenBankProject::ChannelApi* | [**o_bpv6_0_0_get_signal_messages**](docs/ChannelApi.md#o_bpv6_0_0_get_signal_messages) | **GET** /obp/v6.0.0/signal/channels/{channelname}/messages | Get Signal Messages
-*OpenBankProject::ChannelApi* | [**o_bpv6_0_0_get_signal_stats**](docs/ChannelApi.md#o_bpv6_0_0_get_signal_stats) | **GET** /obp/v6.0.0/signal/channels/stats | Get Signal Channel Stats
-*OpenBankProject::ChannelApi* | [**o_bpv6_0_0_publish_signal_message**](docs/ChannelApi.md#o_bpv6_0_0_publish_signal_message) | **POST** /obp/v6.0.0/signal/channels/{channelname}/messages | Publish Signal Message
-*OpenBankProject::ConfirmationOfFundsServicePIISApi* | [**o_bpv3_1_0_check_funds_available**](docs/ConfirmationOfFundsServicePIISApi.md#o_bpv3_1_0_check_funds_available) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available | Check Available Funds
-*OpenBankProject::ConnectorApi* | [**o_bpv6_0_0_get_connectors**](docs/ConnectorApi.md#o_bpv6_0_0_get_connectors) | **GET** /obp/v6.0.0/system/connectors | Get Connectors
-*OpenBankProject::ConnectorApi* | [**o_bpv6_0_0_get_stored_procedure_connector_health**](docs/ConnectorApi.md#o_bpv6_0_0_get_stored_procedure_connector_health) | **GET** /obp/v6.0.0/system/connectors/stored_procedure_vDec2019/health | Get Stored Procedure Connector Health
-*OpenBankProject::ConnectorMethodApi* | [**o_bpv4_0_0_create_connector_method**](docs/ConnectorMethodApi.md#o_bpv4_0_0_create_connector_method) | **POST** /obp/v4.0.0/management/connector-methods | Create Connector Method
-*OpenBankProject::ConnectorMethodApi* | [**o_bpv4_0_0_get_all_connector_methods**](docs/ConnectorMethodApi.md#o_bpv4_0_0_get_all_connector_methods) | **GET** /obp/v4.0.0/management/connector-methods | Get all Connector Methods
-*OpenBankProject::ConnectorMethodApi* | [**o_bpv4_0_0_get_connector_method**](docs/ConnectorMethodApi.md#o_bpv4_0_0_get_connector_method) | **GET** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Get Connector Method by Id
-*OpenBankProject::ConnectorMethodApi* | [**o_bpv4_0_0_update_connector_method**](docs/ConnectorMethodApi.md#o_bpv4_0_0_update_connector_method) | **PUT** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Update Connector Method
-*OpenBankProject::ConnectorMethodApi* | [**o_bpv6_0_0_get_connector_method_names**](docs/ConnectorMethodApi.md#o_bpv6_0_0_get_connector_method_names) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names
-*OpenBankProject::ConsentApi* | [**o_bpv3_1_0_answer_consent_challenge**](docs/ConsentApi.md#o_bpv3_1_0_answer_consent_challenge) | **POST** /obp/v3.1.0/banks/{bankid}/consents/{consentid}/challenge | Answer Consent Challenge
-*OpenBankProject::ConsentApi* | [**o_bpv3_1_0_create_consent_email**](docs/ConsentApi.md#o_bpv3_1_0_create_consent_email) | **POST** /obp/v3.1.0/banks/{bankid}/my/consents/{email} | Create Consent (EMAIL)
-*OpenBankProject::ConsentApi* | [**o_bpv3_1_0_create_consent_implicit**](docs/ConsentApi.md#o_bpv3_1_0_create_consent_implicit) | **POST** /obp/v3.1.0/banks/{bankid}/my/consents/{implicit} | Create Consent (IMPLICIT)
-*OpenBankProject::ConsentApi* | [**o_bpv3_1_0_create_consent_sms**](docs/ConsentApi.md#o_bpv3_1_0_create_consent_sms) | **POST** /obp/v3.1.0/banks/{bankid}/my/consents/{sms} | Create Consent (SMS)
-*OpenBankProject::ConsentApi* | [**o_bpv4_0_0_add_consent_user**](docs/ConsentApi.md#o_bpv4_0_0_add_consent_user) | **PUT** /obp/v4.0.0/banks/{bankid}/consents/{consentid}/user-update-request | Add User to a Consent
-*OpenBankProject::ConsentApi* | [**o_bpv4_0_0_get_consent_infos**](docs/ConsentApi.md#o_bpv4_0_0_get_consent_infos) | **GET** /obp/v4.0.0/my/consent-infos | Get My Consents Info
-*OpenBankProject::ConsentApi* | [**o_bpv4_0_0_get_consent_infos_by_bank**](docs/ConsentApi.md#o_bpv4_0_0_get_consent_infos_by_bank) | **GET** /obp/v4.0.0/banks/{bankid}/my/consent-infos | Get My Consents Info At Bank
-*OpenBankProject::ConsentApi* | [**o_bpv4_0_0_update_consent_status**](docs/ConsentApi.md#o_bpv4_0_0_update_consent_status) | **PUT** /obp/v4.0.0/banks/{bankid}/consents/{consentid} | Update Consent Status
-*OpenBankProject::ConsentApi* | [**o_bpv5_0_0_create_consent_by_consent_request_id_email**](docs/ConsentApi.md#o_bpv5_0_0_create_consent_by_consent_request_id_email) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{email}/consents | Create Consent By CONSENT_REQUEST_ID (EMAIL)
-*OpenBankProject::ConsentApi* | [**o_bpv5_0_0_create_consent_by_consent_request_id_implicit**](docs/ConsentApi.md#o_bpv5_0_0_create_consent_by_consent_request_id_implicit) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{implicit}/consents | Create Consent By CONSENT_REQUEST_ID (IMPLICIT)
-*OpenBankProject::ConsentApi* | [**o_bpv5_0_0_create_consent_by_consent_request_id_sms**](docs/ConsentApi.md#o_bpv5_0_0_create_consent_by_consent_request_id_sms) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{sms}/consents | Create Consent By CONSENT_REQUEST_ID (SMS)
-*OpenBankProject::ConsentApi* | [**o_bpv5_0_0_create_consent_request**](docs/ConsentApi.md#o_bpv5_0_0_create_consent_request) | **POST** /obp/v5.0.0/consumer/consent-requests | Create Consent Request
-*OpenBankProject::ConsentApi* | [**o_bpv5_0_0_get_consent_by_consent_request_id**](docs/ConsentApi.md#o_bpv5_0_0_get_consent_by_consent_request_id) | **GET** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/consents | Get Consent By Consent Request Id via Consumer
-*OpenBankProject::ConsentApi* | [**o_bpv5_0_0_get_consent_request**](docs/ConsentApi.md#o_bpv5_0_0_get_consent_request) | **GET** /obp/v5.0.0/consumer/consent-requests/{consentrequestid} | Get Consent Request
-*OpenBankProject::ConsentApi* | [**o_bpv5_1_0_create_consent_implicit**](docs/ConsentApi.md#o_bpv5_1_0_create_consent_implicit) | **POST** /obp/v5.1.0/my/consents/{implicit} | Create Consent (IMPLICIT)
-*OpenBankProject::ConsentApi* | [**o_bpv5_1_0_create_vrp_consent_request**](docs/ConsentApi.md#o_bpv5_1_0_create_vrp_consent_request) | **POST** /obp/v5.1.0/consumer/vrp-consent-requests | Create Consent Request VRP
-*OpenBankProject::ConsentApi* | [**o_bpv5_1_0_get_consent_by_consent_id**](docs/ConsentApi.md#o_bpv5_1_0_get_consent_by_consent_id) | **GET** /obp/v5.1.0/user/current/consents/{consentid} | Get Consent By Consent Id via User
-*OpenBankProject::ConsentApi* | [**o_bpv5_1_0_get_consent_by_consent_id_via_consumer**](docs/ConsentApi.md#o_bpv5_1_0_get_consent_by_consent_id_via_consumer) | **GET** /obp/v5.1.0/consumer/current/consents/{consentid} | Get Consent By Consent Id via Consumer
-*OpenBankProject::ConsentApi* | [**o_bpv5_1_0_get_consents**](docs/ConsentApi.md#o_bpv5_1_0_get_consents) | **GET** /obp/v5.1.0/management/consents | Get Consents
-*OpenBankProject::ConsentApi* | [**o_bpv5_1_0_get_consents_at_bank**](docs/ConsentApi.md#o_bpv5_1_0_get_consents_at_bank) | **GET** /obp/v5.1.0/management/consents/banks/{bankid} | Get Consents at Bank
-*OpenBankProject::ConsentApi* | [**o_bpv5_1_0_get_my_consents**](docs/ConsentApi.md#o_bpv5_1_0_get_my_consents) | **GET** /obp/v5.1.0/my/consents | Get My Consents
-*OpenBankProject::ConsentApi* | [**o_bpv5_1_0_get_my_consents_by_bank**](docs/ConsentApi.md#o_bpv5_1_0_get_my_consents_by_bank) | **GET** /obp/v5.1.0/banks/{bankid}/my/consents | Get My Consents at Bank
-*OpenBankProject::ConsentApi* | [**o_bpv5_1_0_mtls_client_certificate_info**](docs/ConsentApi.md#o_bpv5_1_0_mtls_client_certificate_info) | **GET** /obp/v5.1.0/my/mtls/certificate/current | Provide client's certificate info of a current call
-*OpenBankProject::ConsentApi* | [**o_bpv5_1_0_revoke_consent_at_bank**](docs/ConsentApi.md#o_bpv5_1_0_revoke_consent_at_bank) | **DELETE** /obp/v5.1.0/banks/{bankid}/consents/{consentid} | Revoke Consent at Bank
-*OpenBankProject::ConsentApi* | [**o_bpv5_1_0_revoke_my_consent**](docs/ConsentApi.md#o_bpv5_1_0_revoke_my_consent) | **DELETE** /obp/v5.1.0/my/consents/{consentid} | Revoke My Consent
-*OpenBankProject::ConsentApi* | [**o_bpv5_1_0_self_revoke_consent**](docs/ConsentApi.md#o_bpv5_1_0_self_revoke_consent) | **DELETE** /obp/v5.1.0/my/consent/current | Revoke Consent used in the Current Call
-*OpenBankProject::ConsentApi* | [**o_bpv5_1_0_update_consent_account_access_by_consent_id**](docs/ConsentApi.md#o_bpv5_1_0_update_consent_account_access_by_consent_id) | **PUT** /obp/v5.1.0/management/banks/{bankid}/consents/{consentid}/account-access | Update Consent Account Access by CONSENT_ID
-*OpenBankProject::ConsentApi* | [**o_bpv5_1_0_update_consent_status_by_consent**](docs/ConsentApi.md#o_bpv5_1_0_update_consent_status_by_consent) | **PUT** /obp/v5.1.0/management/banks/{bankid}/consents/{consentid} | Update Consent Status by CONSENT_ID
-*OpenBankProject::ConsentApi* | [**o_bpv5_1_0_update_consent_user_id_by_consent_id**](docs/ConsentApi.md#o_bpv5_1_0_update_consent_user_id_by_consent_id) | **PUT** /obp/v5.1.0/management/banks/{bankid}/consents/{consentid}/created-by-user | Update Created by User of Consent by CONSENT_ID
-*OpenBankProject::ConsumerApi* | [**o_bpv3_0_0_delete_scope**](docs/ConsumerApi.md#o_bpv3_0_0_delete_scope) | **DELETE** /obp/v3.0.0/consumers/{consumerid}/scope/{scopeid} | Delete Consumer Scope
-*OpenBankProject::ConsumerApi* | [**o_bpv3_1_0_enable_disable_consumers**](docs/ConsumerApi.md#o_bpv3_1_0_enable_disable_consumers) | **PUT** /obp/v3.1.0/management/consumers/{consumerid} | Enable or Disable Consumers
-*OpenBankProject::ConsumerApi* | [**o_bpv3_1_0_get_calls_limit**](docs/ConsumerApi.md#o_bpv3_1_0_get_calls_limit) | **GET** /obp/v3.1.0/management/consumers/{consumerid}/consumer/call-limits | Get Rate Limits for a Consumer
-*OpenBankProject::ConsumerApi* | [**o_bpv3_1_0_get_consumers_for_current_user**](docs/ConsumerApi.md#o_bpv3_1_0_get_consumers_for_current_user) | **GET** /obp/v3.1.0/management/users/current/consumers | Get Consumers (logged in User)
-*OpenBankProject::ConsumerApi* | [**o_bpv4_0_0_add_scope**](docs/ConsumerApi.md#o_bpv4_0_0_add_scope) | **POST** /obp/v4.0.0/consumers/{consumerid}/scopes | Create Scope for a Consumer
-*OpenBankProject::ConsumerApi* | [**o_bpv4_0_0_calls_limit**](docs/ConsumerApi.md#o_bpv4_0_0_calls_limit) | **PUT** /obp/v4.0.0/management/consumers/{consumerid}/consumer/call-limits | Set Rate Limits / Call Limits per Consumer
-*OpenBankProject::ConsumerApi* | [**o_bpv4_0_0_get_scopes**](docs/ConsumerApi.md#o_bpv4_0_0_get_scopes) | **GET** /obp/v4.0.0/consumers/{consumerid}/scopes | Get Scopes for Consumer
-*OpenBankProject::ConsumerApi* | [**o_bpv5_1_0_create_consumer**](docs/ConsumerApi.md#o_bpv5_1_0_create_consumer) | **POST** /obp/v5.1.0/management/consumers | Create a Consumer
-*OpenBankProject::ConsumerApi* | [**o_bpv5_1_0_create_consumer_dynamic_registration**](docs/ConsumerApi.md#o_bpv5_1_0_create_consumer_dynamic_registration) | **POST** /obp/v5.1.0/dynamic-registration/consumers | Create a Consumer(Dynamic Registration)
-*OpenBankProject::ConsumerApi* | [**o_bpv5_1_0_create_my_consumer**](docs/ConsumerApi.md#o_bpv5_1_0_create_my_consumer) | **POST** /obp/v5.1.0/my/consumers | Create a Consumer
-*OpenBankProject::ConsumerApi* | [**o_bpv5_1_0_get_calls_limit**](docs/ConsumerApi.md#o_bpv5_1_0_get_calls_limit) | **GET** /obp/v5.1.0/management/consumers/{consumerid}/consumer/rate-limits | Get Rate Limits for a Consumer
-*OpenBankProject::ConsumerApi* | [**o_bpv5_1_0_get_consumers**](docs/ConsumerApi.md#o_bpv5_1_0_get_consumers) | **GET** /obp/v5.1.0/management/consumers | Get Consumers
-*OpenBankProject::ConsumerApi* | [**o_bpv5_1_0_update_consumer_certificate**](docs/ConsumerApi.md#o_bpv5_1_0_update_consumer_certificate) | **PUT** /obp/v5.1.0/management/consumers/{consumerid}/consumer/certificate | Update Consumer Certificate
-*OpenBankProject::ConsumerApi* | [**o_bpv5_1_0_update_consumer_logo_url**](docs/ConsumerApi.md#o_bpv5_1_0_update_consumer_logo_url) | **PUT** /obp/v5.1.0/management/consumers/{consumerid}/consumer/logo_url | Update Consumer LogoURL
-*OpenBankProject::ConsumerApi* | [**o_bpv5_1_0_update_consumer_name**](docs/ConsumerApi.md#o_bpv5_1_0_update_consumer_name) | **PUT** /obp/v5.1.0/management/consumers/{consumerid}/consumer/name | Update Consumer Name
-*OpenBankProject::ConsumerApi* | [**o_bpv5_1_0_update_consumer_redirect_url**](docs/ConsumerApi.md#o_bpv5_1_0_update_consumer_redirect_url) | **PUT** /obp/v5.1.0/management/consumers/{consumerid}/consumer/redirect_url | Update Consumer RedirectURL
-*OpenBankProject::ConsumerApi* | [**o_bpv6_0_0_create_call_limits**](docs/ConsumerApi.md#o_bpv6_0_0_create_call_limits) | **POST** /obp/v6.0.0/management/consumers/{consumerid}/consumer/rate-limits | Create Rate Limits for a Consumer
-*OpenBankProject::ConsumerApi* | [**o_bpv6_0_0_delete_call_limits**](docs/ConsumerApi.md#o_bpv6_0_0_delete_call_limits) | **DELETE** /obp/v6.0.0/management/consumers/{consumerid}/consumer/rate-limits/{ratelimitingid} | Delete Rate Limit by Rate Limiting ID
-*OpenBankProject::ConsumerApi* | [**o_bpv6_0_0_get_active_rate_limits_at_date**](docs/ConsumerApi.md#o_bpv6_0_0_get_active_rate_limits_at_date) | **GET** /obp/v6.0.0/management/consumers/{consumerid}/active-rate-limits/{datewithhour} | Get Active Rate Limits for Hour
-*OpenBankProject::ConsumerApi* | [**o_bpv6_0_0_get_active_rate_limits_now**](docs/ConsumerApi.md#o_bpv6_0_0_get_active_rate_limits_now) | **GET** /obp/v6.0.0/management/consumers/{consumerid}/active-rate-limits | Get Active Rate Limits (Current)
-*OpenBankProject::ConsumerApi* | [**o_bpv6_0_0_get_consumer**](docs/ConsumerApi.md#o_bpv6_0_0_get_consumer) | **GET** /obp/v6.0.0/management/consumers/{consumerid} | Get Consumer
-*OpenBankProject::ConsumerApi* | [**o_bpv6_0_0_get_consumer_call_counters**](docs/ConsumerApi.md#o_bpv6_0_0_get_consumer_call_counters) | **GET** /obp/v6.0.0/management/consumers/{consumerid}/call-counters | Get Call Counts for Consumer
-*OpenBankProject::ConsumerApi* | [**o_bpv6_0_0_get_current_consumer**](docs/ConsumerApi.md#o_bpv6_0_0_get_current_consumer) | **GET** /obp/v6.0.0/consumers/current | Get Current Consumer
-*OpenBankProject::ConsumerApi* | [**o_bpv6_0_0_get_oidc_client**](docs/ConsumerApi.md#o_bpv6_0_0_get_oidc_client) | **GET** /obp/v6.0.0/oidc/clients/{clientid} | Get OIDC Client
-*OpenBankProject::ConsumerApi* | [**o_bpv6_0_0_update_rate_limits**](docs/ConsumerApi.md#o_bpv6_0_0_update_rate_limits) | **PUT** /obp/v6.0.0/management/consumers/{consumerid}/consumer/rate-limits/{ratelimitingid} | Set Rate Limits / Call Limits per Consumer
-*OpenBankProject::ConsumerApi* | [**o_bpv6_0_0_verify_oidc_client**](docs/ConsumerApi.md#o_bpv6_0_0_verify_oidc_client) | **POST** /obp/v6.0.0/oidc/clients/verify | Verify OIDC Client
-*OpenBankProject::CorporateCustomerApi* | [**o_bpv6_0_0_create_corporate_customer**](docs/CorporateCustomerApi.md#o_bpv6_0_0_create_corporate_customer) | **POST** /obp/v6.0.0/banks/{bankid}/corporate-customers | Create Corporate Customer
-*OpenBankProject::CorporateCustomerApi* | [**o_bpv6_0_0_get_corporate_customer_by_customer_id**](docs/CorporateCustomerApi.md#o_bpv6_0_0_get_corporate_customer_by_customer_id) | **GET** /obp/v6.0.0/banks/{bankid}/corporate-customers/{customerid} | Get Corporate Customer by CUSTOMER_ID
-*OpenBankProject::CorporateCustomerApi* | [**o_bpv6_0_0_get_corporate_customer_subsidiaries**](docs/CorporateCustomerApi.md#o_bpv6_0_0_get_corporate_customer_subsidiaries) | **GET** /obp/v6.0.0/banks/{bankid}/corporate-customers/{customerid}/subsidiaries | Get Corporate Customer Subsidiaries
-*OpenBankProject::CorporateCustomerApi* | [**o_bpv6_0_0_get_corporate_customers_at_one_bank**](docs/CorporateCustomerApi.md#o_bpv6_0_0_get_corporate_customers_at_one_bank) | **GET** /obp/v6.0.0/banks/{bankid}/corporate-customers | Get Corporate Customers at Bank
-*OpenBankProject::CounterpartyApi* | [**o_bpv1_2_1_add_counterparty_corporate_location**](docs/CounterpartyApi.md#o_bpv1_2_1_add_counterparty_corporate_location) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Add Corporate Location to Counterparty
-*OpenBankProject::CounterpartyApi* | [**o_bpv1_2_1_add_counterparty_image_url**](docs/CounterpartyApi.md#o_bpv1_2_1_add_counterparty_image_url) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Add image url to other bank account
-*OpenBankProject::CounterpartyApi* | [**o_bpv1_2_1_add_counterparty_more_info**](docs/CounterpartyApi.md#o_bpv1_2_1_add_counterparty_more_info) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Add Counterparty More Info
-*OpenBankProject::CounterpartyApi* | [**o_bpv1_2_1_add_counterparty_open_corporates_url**](docs/CounterpartyApi.md#o_bpv1_2_1_add_counterparty_open_corporates_url) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Add Open Corporates URL to Counterparty
-*OpenBankProject::CounterpartyApi* | [**o_bpv1_2_1_add_counterparty_physical_location**](docs/CounterpartyApi.md#o_bpv1_2_1_add_counterparty_physical_location) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Add physical location to other bank account
-*OpenBankProject::CounterpartyApi* | [**o_bpv1_2_1_add_counterparty_public_alias**](docs/CounterpartyApi.md#o_bpv1_2_1_add_counterparty_public_alias) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Add public alias to other bank account
-*OpenBankProject::CounterpartyApi* | [**o_bpv1_2_1_add_counterparty_url**](docs/CounterpartyApi.md#o_bpv1_2_1_add_counterparty_url) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Add url to other bank account
-*OpenBankProject::CounterpartyApi* | [**o_bpv1_2_1_add_other_account_private_alias**](docs/CounterpartyApi.md#o_bpv1_2_1_add_other_account_private_alias) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Create Other Account Private Alias
-*OpenBankProject::CounterpartyApi* | [**o_bpv1_2_1_delete_counterparty_corporate_location**](docs/CounterpartyApi.md#o_bpv1_2_1_delete_counterparty_corporate_location) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Delete Counterparty Corporate Location
-*OpenBankProject::CounterpartyApi* | [**o_bpv1_2_1_delete_counterparty_image_url**](docs/CounterpartyApi.md#o_bpv1_2_1_delete_counterparty_image_url) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Delete Counterparty Image URL
-*OpenBankProject::CounterpartyApi* | [**o_bpv1_2_1_delete_counterparty_more_info**](docs/CounterpartyApi.md#o_bpv1_2_1_delete_counterparty_more_info) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Delete more info of other bank account
-*OpenBankProject::CounterpartyApi* | [**o_bpv1_2_1_delete_counterparty_open_corporates_url**](docs/CounterpartyApi.md#o_bpv1_2_1_delete_counterparty_open_corporates_url) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Delete Counterparty Open Corporates URL
-*OpenBankProject::CounterpartyApi* | [**o_bpv1_2_1_delete_counterparty_physical_location**](docs/CounterpartyApi.md#o_bpv1_2_1_delete_counterparty_physical_location) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Delete Counterparty Physical Location
-*OpenBankProject::CounterpartyApi* | [**o_bpv1_2_1_delete_counterparty_private_alias**](docs/CounterpartyApi.md#o_bpv1_2_1_delete_counterparty_private_alias) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Delete Counterparty Private Alias
-*OpenBankProject::CounterpartyApi* | [**o_bpv1_2_1_delete_counterparty_public_alias**](docs/CounterpartyApi.md#o_bpv1_2_1_delete_counterparty_public_alias) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Delete Counterparty Public Alias
-*OpenBankProject::CounterpartyApi* | [**o_bpv1_2_1_delete_counterparty_url**](docs/CounterpartyApi.md#o_bpv1_2_1_delete_counterparty_url) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Delete url of other bank account
-*OpenBankProject::CounterpartyApi* | [**o_bpv1_2_1_get_counterparty_public_alias**](docs/CounterpartyApi.md#o_bpv1_2_1_get_counterparty_public_alias) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Get public alias of other bank account
-*OpenBankProject::CounterpartyApi* | [**o_bpv1_2_1_get_other_account_for_transaction**](docs/CounterpartyApi.md#o_bpv1_2_1_get_other_account_for_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/other_account | Get Other Account of Transaction
-*OpenBankProject::CounterpartyApi* | [**o_bpv1_2_1_get_other_account_metadata**](docs/CounterpartyApi.md#o_bpv1_2_1_get_other_account_metadata) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata | Get Other Account Metadata
-*OpenBankProject::CounterpartyApi* | [**o_bpv1_2_1_get_other_account_private_alias**](docs/CounterpartyApi.md#o_bpv1_2_1_get_other_account_private_alias) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Get Other Account Private Alias
-*OpenBankProject::CounterpartyApi* | [**o_bpv1_2_1_update_counterparty_corporate_location**](docs/CounterpartyApi.md#o_bpv1_2_1_update_counterparty_corporate_location) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Update Counterparty Corporate Location
-*OpenBankProject::CounterpartyApi* | [**o_bpv1_2_1_update_counterparty_image_url**](docs/CounterpartyApi.md#o_bpv1_2_1_update_counterparty_image_url) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Update Counterparty Image Url
-*OpenBankProject::CounterpartyApi* | [**o_bpv1_2_1_update_counterparty_more_info**](docs/CounterpartyApi.md#o_bpv1_2_1_update_counterparty_more_info) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Update Counterparty More Info
-*OpenBankProject::CounterpartyApi* | [**o_bpv1_2_1_update_counterparty_open_corporates_url**](docs/CounterpartyApi.md#o_bpv1_2_1_update_counterparty_open_corporates_url) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Update Open Corporates Url of Counterparty
-*OpenBankProject::CounterpartyApi* | [**o_bpv1_2_1_update_counterparty_physical_location**](docs/CounterpartyApi.md#o_bpv1_2_1_update_counterparty_physical_location) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Update Counterparty Physical Location
-*OpenBankProject::CounterpartyApi* | [**o_bpv1_2_1_update_counterparty_private_alias**](docs/CounterpartyApi.md#o_bpv1_2_1_update_counterparty_private_alias) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Update Counterparty Private Alias
-*OpenBankProject::CounterpartyApi* | [**o_bpv1_2_1_update_counterparty_public_alias**](docs/CounterpartyApi.md#o_bpv1_2_1_update_counterparty_public_alias) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Update public alias of other bank account
-*OpenBankProject::CounterpartyApi* | [**o_bpv1_2_1_update_counterparty_url**](docs/CounterpartyApi.md#o_bpv1_2_1_update_counterparty_url) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Update url of other bank account
-*OpenBankProject::CounterpartyApi* | [**o_bpv3_0_0_get_other_account_by_id_for_bank_account**](docs/CounterpartyApi.md#o_bpv3_0_0_get_other_account_by_id_for_bank_account) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid} | Get Other Account by Id
-*OpenBankProject::CounterpartyApi* | [**o_bpv3_0_0_get_other_accounts_for_bank_account**](docs/CounterpartyApi.md#o_bpv3_0_0_get_other_accounts_for_bank_account) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts | Get Other Accounts of one Account
-*OpenBankProject::CounterpartyApi* | [**o_bpv4_0_0_create_counterparty**](docs/CounterpartyApi.md#o_bpv4_0_0_create_counterparty) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Create Counterparty (Explicit)
-*OpenBankProject::CounterpartyApi* | [**o_bpv4_0_0_create_counterparty_for_any_account**](docs/CounterpartyApi.md#o_bpv4_0_0_create_counterparty_for_any_account) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Create Counterparty for any account (Explicit)
-*OpenBankProject::CounterpartyApi* | [**o_bpv4_0_0_delete_counterparty_for_any_account**](docs/CounterpartyApi.md#o_bpv4_0_0_delete_counterparty_for_any_account) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Delete Counterparty for any account (Explicit)
-*OpenBankProject::CounterpartyApi* | [**o_bpv4_0_0_delete_explicit_counterparty**](docs/CounterpartyApi.md#o_bpv4_0_0_delete_explicit_counterparty) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Delete Counterparty (Explicit)
-*OpenBankProject::CounterpartyApi* | [**o_bpv4_0_0_get_counterparties_for_any_account**](docs/CounterpartyApi.md#o_bpv4_0_0_get_counterparties_for_any_account) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties for any account (Explicit)
-*OpenBankProject::CounterpartyApi* | [**o_bpv4_0_0_get_counterparty_by_id_for_any_account**](docs/CounterpartyApi.md#o_bpv4_0_0_get_counterparty_by_id_for_any_account) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id for any account (Explicit)
-*OpenBankProject::CounterpartyApi* | [**o_bpv4_0_0_get_counterparty_by_name_for_any_account**](docs/CounterpartyApi.md#o_bpv4_0_0_get_counterparty_by_name_for_any_account) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparty-names/{counterpartyname} | Get Counterparty by name for any account (Explicit) 
-*OpenBankProject::CounterpartyApi* | [**o_bpv4_0_0_get_explicit_counterparties_for_account**](docs/CounterpartyApi.md#o_bpv4_0_0_get_explicit_counterparties_for_account) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties (Explicit)
-*OpenBankProject::CounterpartyApi* | [**o_bpv4_0_0_get_explicit_counterparty_by_id**](docs/CounterpartyApi.md#o_bpv4_0_0_get_explicit_counterparty_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id (Explicit)
-*OpenBankProject::CounterpartyLimitsApi* | [**o_bpv5_1_0_create_counterparty_limit**](docs/CounterpartyLimitsApi.md#o_bpv5_1_0_create_counterparty_limit) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Create Counterparty Limit
-*OpenBankProject::CounterpartyLimitsApi* | [**o_bpv5_1_0_delete_counterparty_limit**](docs/CounterpartyLimitsApi.md#o_bpv5_1_0_delete_counterparty_limit) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Delete Counterparty Limit
-*OpenBankProject::CounterpartyLimitsApi* | [**o_bpv5_1_0_get_counterparty_limit**](docs/CounterpartyLimitsApi.md#o_bpv5_1_0_get_counterparty_limit) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Get Counterparty Limit
-*OpenBankProject::CounterpartyLimitsApi* | [**o_bpv5_1_0_get_counterparty_limit_status**](docs/CounterpartyLimitsApi.md#o_bpv5_1_0_get_counterparty_limit_status) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limit-status | Get Counterparty Limit Status
-*OpenBankProject::CounterpartyLimitsApi* | [**o_bpv5_1_0_update_counterparty_limit**](docs/CounterpartyLimitsApi.md#o_bpv5_1_0_update_counterparty_limit) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Update Counterparty Limit
-*OpenBankProject::CounterpartyMetadataApi* | [**o_bpv1_2_1_add_counterparty_corporate_location**](docs/CounterpartyMetadataApi.md#o_bpv1_2_1_add_counterparty_corporate_location) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Add Corporate Location to Counterparty
-*OpenBankProject::CounterpartyMetadataApi* | [**o_bpv1_2_1_add_counterparty_image_url**](docs/CounterpartyMetadataApi.md#o_bpv1_2_1_add_counterparty_image_url) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Add image url to other bank account
-*OpenBankProject::CounterpartyMetadataApi* | [**o_bpv1_2_1_add_counterparty_more_info**](docs/CounterpartyMetadataApi.md#o_bpv1_2_1_add_counterparty_more_info) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Add Counterparty More Info
-*OpenBankProject::CounterpartyMetadataApi* | [**o_bpv1_2_1_add_counterparty_open_corporates_url**](docs/CounterpartyMetadataApi.md#o_bpv1_2_1_add_counterparty_open_corporates_url) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Add Open Corporates URL to Counterparty
-*OpenBankProject::CounterpartyMetadataApi* | [**o_bpv1_2_1_add_counterparty_physical_location**](docs/CounterpartyMetadataApi.md#o_bpv1_2_1_add_counterparty_physical_location) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Add physical location to other bank account
-*OpenBankProject::CounterpartyMetadataApi* | [**o_bpv1_2_1_add_counterparty_public_alias**](docs/CounterpartyMetadataApi.md#o_bpv1_2_1_add_counterparty_public_alias) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Add public alias to other bank account
-*OpenBankProject::CounterpartyMetadataApi* | [**o_bpv1_2_1_add_counterparty_url**](docs/CounterpartyMetadataApi.md#o_bpv1_2_1_add_counterparty_url) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Add url to other bank account
-*OpenBankProject::CounterpartyMetadataApi* | [**o_bpv1_2_1_add_other_account_private_alias**](docs/CounterpartyMetadataApi.md#o_bpv1_2_1_add_other_account_private_alias) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Create Other Account Private Alias
-*OpenBankProject::CounterpartyMetadataApi* | [**o_bpv1_2_1_delete_counterparty_corporate_location**](docs/CounterpartyMetadataApi.md#o_bpv1_2_1_delete_counterparty_corporate_location) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Delete Counterparty Corporate Location
-*OpenBankProject::CounterpartyMetadataApi* | [**o_bpv1_2_1_delete_counterparty_image_url**](docs/CounterpartyMetadataApi.md#o_bpv1_2_1_delete_counterparty_image_url) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Delete Counterparty Image URL
-*OpenBankProject::CounterpartyMetadataApi* | [**o_bpv1_2_1_delete_counterparty_more_info**](docs/CounterpartyMetadataApi.md#o_bpv1_2_1_delete_counterparty_more_info) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Delete more info of other bank account
-*OpenBankProject::CounterpartyMetadataApi* | [**o_bpv1_2_1_delete_counterparty_open_corporates_url**](docs/CounterpartyMetadataApi.md#o_bpv1_2_1_delete_counterparty_open_corporates_url) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Delete Counterparty Open Corporates URL
-*OpenBankProject::CounterpartyMetadataApi* | [**o_bpv1_2_1_delete_counterparty_physical_location**](docs/CounterpartyMetadataApi.md#o_bpv1_2_1_delete_counterparty_physical_location) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Delete Counterparty Physical Location
-*OpenBankProject::CounterpartyMetadataApi* | [**o_bpv1_2_1_delete_counterparty_private_alias**](docs/CounterpartyMetadataApi.md#o_bpv1_2_1_delete_counterparty_private_alias) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Delete Counterparty Private Alias
-*OpenBankProject::CounterpartyMetadataApi* | [**o_bpv1_2_1_delete_counterparty_public_alias**](docs/CounterpartyMetadataApi.md#o_bpv1_2_1_delete_counterparty_public_alias) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Delete Counterparty Public Alias
-*OpenBankProject::CounterpartyMetadataApi* | [**o_bpv1_2_1_delete_counterparty_url**](docs/CounterpartyMetadataApi.md#o_bpv1_2_1_delete_counterparty_url) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Delete url of other bank account
-*OpenBankProject::CounterpartyMetadataApi* | [**o_bpv1_2_1_get_counterparty_public_alias**](docs/CounterpartyMetadataApi.md#o_bpv1_2_1_get_counterparty_public_alias) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Get public alias of other bank account
-*OpenBankProject::CounterpartyMetadataApi* | [**o_bpv1_2_1_get_other_account_metadata**](docs/CounterpartyMetadataApi.md#o_bpv1_2_1_get_other_account_metadata) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata | Get Other Account Metadata
-*OpenBankProject::CounterpartyMetadataApi* | [**o_bpv1_2_1_get_other_account_private_alias**](docs/CounterpartyMetadataApi.md#o_bpv1_2_1_get_other_account_private_alias) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Get Other Account Private Alias
-*OpenBankProject::CounterpartyMetadataApi* | [**o_bpv1_2_1_update_counterparty_corporate_location**](docs/CounterpartyMetadataApi.md#o_bpv1_2_1_update_counterparty_corporate_location) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Update Counterparty Corporate Location
-*OpenBankProject::CounterpartyMetadataApi* | [**o_bpv1_2_1_update_counterparty_image_url**](docs/CounterpartyMetadataApi.md#o_bpv1_2_1_update_counterparty_image_url) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Update Counterparty Image Url
-*OpenBankProject::CounterpartyMetadataApi* | [**o_bpv1_2_1_update_counterparty_more_info**](docs/CounterpartyMetadataApi.md#o_bpv1_2_1_update_counterparty_more_info) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Update Counterparty More Info
-*OpenBankProject::CounterpartyMetadataApi* | [**o_bpv1_2_1_update_counterparty_open_corporates_url**](docs/CounterpartyMetadataApi.md#o_bpv1_2_1_update_counterparty_open_corporates_url) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Update Open Corporates Url of Counterparty
-*OpenBankProject::CounterpartyMetadataApi* | [**o_bpv1_2_1_update_counterparty_physical_location**](docs/CounterpartyMetadataApi.md#o_bpv1_2_1_update_counterparty_physical_location) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Update Counterparty Physical Location
-*OpenBankProject::CounterpartyMetadataApi* | [**o_bpv1_2_1_update_counterparty_private_alias**](docs/CounterpartyMetadataApi.md#o_bpv1_2_1_update_counterparty_private_alias) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Update Counterparty Private Alias
-*OpenBankProject::CounterpartyMetadataApi* | [**o_bpv1_2_1_update_counterparty_public_alias**](docs/CounterpartyMetadataApi.md#o_bpv1_2_1_update_counterparty_public_alias) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Update public alias of other bank account
-*OpenBankProject::CounterpartyMetadataApi* | [**o_bpv1_2_1_update_counterparty_url**](docs/CounterpartyMetadataApi.md#o_bpv1_2_1_update_counterparty_url) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Update url of other bank account
-*OpenBankProject::CounterpartyMetadataApi* | [**o_bpv4_0_0_get_explicit_counterparty_by_id**](docs/CounterpartyMetadataApi.md#o_bpv4_0_0_get_explicit_counterparty_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id (Explicit)
-*OpenBankProject::CustomerApi* | [**o_bpv1_4_0_add_customer_message**](docs/CustomerApi.md#o_bpv1_4_0_add_customer_message) | **POST** /obp/v1.4.0/banks/{bankid}/customer/{customerid}/messages | Create Customer Message
-*OpenBankProject::CustomerApi* | [**o_bpv1_4_0_get_crm_events**](docs/CustomerApi.md#o_bpv1_4_0_get_crm_events) | **GET** /obp/v1.4.0/banks/{bankid}/crm-events | Get CRM Events
-*OpenBankProject::CustomerApi* | [**o_bpv1_4_0_get_customers_messages**](docs/CustomerApi.md#o_bpv1_4_0_get_customers_messages) | **GET** /obp/v1.4.0/banks/{bankid}/customer/messages | Get Customer Messages for all Customers
-*OpenBankProject::CustomerApi* | [**o_bpv2_0_0_add_kyc_check**](docs/CustomerApi.md#o_bpv2_0_0_add_kyc_check) | **PUT** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_check/{kyccheckid} | Add KYC Check
-*OpenBankProject::CustomerApi* | [**o_bpv2_0_0_add_kyc_document**](docs/CustomerApi.md#o_bpv2_0_0_add_kyc_document) | **PUT** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_documents/{kycdocumentid} | Add KYC Document
-*OpenBankProject::CustomerApi* | [**o_bpv2_0_0_add_kyc_media**](docs/CustomerApi.md#o_bpv2_0_0_add_kyc_media) | **PUT** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_media/{kycmediaid} | Add KYC Media
-*OpenBankProject::CustomerApi* | [**o_bpv2_0_0_add_kyc_status**](docs/CustomerApi.md#o_bpv2_0_0_add_kyc_status) | **PUT** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_statuses | Add KYC Status
-*OpenBankProject::CustomerApi* | [**o_bpv2_0_0_add_social_media_handle**](docs/CustomerApi.md#o_bpv2_0_0_add_social_media_handle) | **POST** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/social_media_handles | Create Customer Social Media Handle
-*OpenBankProject::CustomerApi* | [**o_bpv2_0_0_get_kyc_checks**](docs/CustomerApi.md#o_bpv2_0_0_get_kyc_checks) | **GET** /obp/v2.0.0/customers/{customerid}/kyc_checks | Get Customer KYC Checks
-*OpenBankProject::CustomerApi* | [**o_bpv2_0_0_get_kyc_documents**](docs/CustomerApi.md#o_bpv2_0_0_get_kyc_documents) | **GET** /obp/v2.0.0/customers/{customerid}/kyc_documents | Get Customer KYC Documents
-*OpenBankProject::CustomerApi* | [**o_bpv2_0_0_get_kyc_media**](docs/CustomerApi.md#o_bpv2_0_0_get_kyc_media) | **GET** /obp/v2.0.0/customers/{customerid}/kyc_media | Get KYC Media for a customer
-*OpenBankProject::CustomerApi* | [**o_bpv2_0_0_get_kyc_statuses**](docs/CustomerApi.md#o_bpv2_0_0_get_kyc_statuses) | **GET** /obp/v2.0.0/customers/{customerid}/kyc_statuses | Get Customer KYC statuses
-*OpenBankProject::CustomerApi* | [**o_bpv2_0_0_get_social_media_handles**](docs/CustomerApi.md#o_bpv2_0_0_get_social_media_handles) | **GET** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/social_media_handles | Get Customer Social Media Handles
-*OpenBankProject::CustomerApi* | [**o_bpv3_0_0_get_customers_for_user**](docs/CustomerApi.md#o_bpv3_0_0_get_customers_for_user) | **GET** /obp/v3.0.0/users/current/customers | Get Customers for Current User
-*OpenBankProject::CustomerApi* | [**o_bpv3_1_0_create_customer_address**](docs/CustomerApi.md#o_bpv3_1_0_create_customer_address) | **POST** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/address | Create Address
-*OpenBankProject::CustomerApi* | [**o_bpv3_1_0_create_meeting**](docs/CustomerApi.md#o_bpv3_1_0_create_meeting) | **POST** /obp/v3.1.0/banks/{bankid}/meetings | Create Meeting (video conference/call)
-*OpenBankProject::CustomerApi* | [**o_bpv3_1_0_create_tax_residence**](docs/CustomerApi.md#o_bpv3_1_0_create_tax_residence) | **POST** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/tax-residence | Create Tax Residence
-*OpenBankProject::CustomerApi* | [**o_bpv3_1_0_delete_customer_address**](docs/CustomerApi.md#o_bpv3_1_0_delete_customer_address) | **DELETE** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/addresses/{customeraddressid} | Delete Customer Address
-*OpenBankProject::CustomerApi* | [**o_bpv3_1_0_delete_tax_residence**](docs/CustomerApi.md#o_bpv3_1_0_delete_tax_residence) | **DELETE** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/tax_residencies/{taxresidenceid} | Delete Tax Residence
-*OpenBankProject::CustomerApi* | [**o_bpv3_1_0_get_customer_addresses**](docs/CustomerApi.md#o_bpv3_1_0_get_customer_addresses) | **GET** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/addresses | Get Customer Addresses
-*OpenBankProject::CustomerApi* | [**o_bpv3_1_0_get_firehose_customers**](docs/CustomerApi.md#o_bpv3_1_0_get_firehose_customers) | **GET** /obp/v3.1.0/banks/{bankid}/firehose/customers | Get Firehose Customers
-*OpenBankProject::CustomerApi* | [**o_bpv3_1_0_get_meeting**](docs/CustomerApi.md#o_bpv3_1_0_get_meeting) | **GET** /obp/v3.1.0/banks/{bankid}/meetings/{meetingid} | Get Meeting
-*OpenBankProject::CustomerApi* | [**o_bpv3_1_0_get_meetings**](docs/CustomerApi.md#o_bpv3_1_0_get_meetings) | **GET** /obp/v3.1.0/banks/{bankid}/meetings | Get Meetings
-*OpenBankProject::CustomerApi* | [**o_bpv3_1_0_get_tax_residence**](docs/CustomerApi.md#o_bpv3_1_0_get_tax_residence) | **GET** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/tax-residences | Get Tax Residences of Customer
-*OpenBankProject::CustomerApi* | [**o_bpv3_1_0_update_customer_address**](docs/CustomerApi.md#o_bpv3_1_0_update_customer_address) | **PUT** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/addresses/{customeraddressid} | Update the Address of a Customer
-*OpenBankProject::CustomerApi* | [**o_bpv3_1_0_update_customer_branch**](docs/CustomerApi.md#o_bpv3_1_0_update_customer_branch) | **PUT** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/branch | Update the Branch of a Customer
-*OpenBankProject::CustomerApi* | [**o_bpv3_1_0_update_customer_credit_limit**](docs/CustomerApi.md#o_bpv3_1_0_update_customer_credit_limit) | **PUT** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/credit-limit | Update the credit limit of a Customer
-*OpenBankProject::CustomerApi* | [**o_bpv3_1_0_update_customer_credit_rating_and_source**](docs/CustomerApi.md#o_bpv3_1_0_update_customer_credit_rating_and_source) | **PUT** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/credit-rating-and-source | Update the credit rating and source of a Customer
-*OpenBankProject::CustomerApi* | [**o_bpv3_1_0_update_customer_data**](docs/CustomerApi.md#o_bpv3_1_0_update_customer_data) | **PUT** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/data | Update the other data of a Customer
-*OpenBankProject::CustomerApi* | [**o_bpv3_1_0_update_customer_email**](docs/CustomerApi.md#o_bpv3_1_0_update_customer_email) | **PUT** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/email | Update the email of a Customer
-*OpenBankProject::CustomerApi* | [**o_bpv3_1_0_update_customer_identity**](docs/CustomerApi.md#o_bpv3_1_0_update_customer_identity) | **PUT** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/identity | Update the identity data of a Customer
-*OpenBankProject::CustomerApi* | [**o_bpv3_1_0_update_customer_mobile_number**](docs/CustomerApi.md#o_bpv3_1_0_update_customer_mobile_number) | **PUT** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/mobile-number | Update the mobile number of a Customer
-*OpenBankProject::CustomerApi* | [**o_bpv3_1_0_update_customer_number**](docs/CustomerApi.md#o_bpv3_1_0_update_customer_number) | **PUT** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/number | Update the number of a Customer
-*OpenBankProject::CustomerApi* | [**o_bpv4_0_0_create_customer_attribute**](docs/CustomerApi.md#o_bpv4_0_0_create_customer_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attribute | Create Customer Attribute
-*OpenBankProject::CustomerApi* | [**o_bpv4_0_0_create_customer_message**](docs/CustomerApi.md#o_bpv4_0_0_create_customer_message) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages | Create Customer Message
-*OpenBankProject::CustomerApi* | [**o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition**](docs/CustomerApi.md#o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Create or Update Customer Attribute Definition
-*OpenBankProject::CustomerApi* | [**o_bpv4_0_0_create_user_customer_links**](docs/CustomerApi.md#o_bpv4_0_0_create_user_customer_links) | **POST** /obp/v4.0.0/banks/{bankid}/user_customer_links | Create User Customer Link
-*OpenBankProject::CustomerApi* | [**o_bpv4_0_0_delete_customer_attribute**](docs/CustomerApi.md#o_bpv4_0_0_delete_customer_attribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/{customerid}/attributes/{customerattributeid} | Delete Customer Attribute
-*OpenBankProject::CustomerApi* | [**o_bpv4_0_0_delete_customer_attribute_definition**](docs/CustomerApi.md#o_bpv4_0_0_delete_customer_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/customer | Delete Customer Attribute Definition
-*OpenBankProject::CustomerApi* | [**o_bpv4_0_0_delete_customer_cascade**](docs/CustomerApi.md#o_bpv4_0_0_delete_customer_cascade) | **DELETE** /obp/v4.0.0/management/cascading/banks/{bankid}/customers/{customerid} | Delete Customer Cascade
-*OpenBankProject::CustomerApi* | [**o_bpv4_0_0_delete_user_customer_link**](docs/CustomerApi.md#o_bpv4_0_0_delete_user_customer_link) | **DELETE** /obp/v4.0.0/banks/{bankid}/user_customer_links/{usercustomerlinkid} | Delete User Customer Link
-*OpenBankProject::CustomerApi* | [**o_bpv4_0_0_get_correlated_users_info_by_customer_id**](docs/CustomerApi.md#o_bpv4_0_0_get_correlated_users_info_by_customer_id) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/correlated-users | Get Correlated User Info by Customer
-*OpenBankProject::CustomerApi* | [**o_bpv4_0_0_get_customer_attribute_by_id**](docs/CustomerApi.md#o_bpv4_0_0_get_customer_attribute_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{attributeid} | Get Customer Attribute By Id
-*OpenBankProject::CustomerApi* | [**o_bpv4_0_0_get_customer_attribute_definition**](docs/CustomerApi.md#o_bpv4_0_0_get_customer_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Get Customer Attribute Definition
-*OpenBankProject::CustomerApi* | [**o_bpv4_0_0_get_customer_attributes**](docs/CustomerApi.md#o_bpv4_0_0_get_customer_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes | Get Customer Attributes
-*OpenBankProject::CustomerApi* | [**o_bpv4_0_0_get_customer_messages**](docs/CustomerApi.md#o_bpv4_0_0_get_customer_messages) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages | Get Customer Messages for a Customer
-*OpenBankProject::CustomerApi* | [**o_bpv4_0_0_get_customers_by_customer_phone_number**](docs/CustomerApi.md#o_bpv4_0_0_get_customers_by_customer_phone_number) | **POST** /obp/v4.0.0/banks/{bankid}/search/customers/mobile-phone-number | Get Customers by MOBILE_PHONE_NUMBER
-*OpenBankProject::CustomerApi* | [**o_bpv4_0_0_get_customers_minimal_at_any_bank**](docs/CustomerApi.md#o_bpv4_0_0_get_customers_minimal_at_any_bank) | **GET** /obp/v4.0.0/customers-minimal | Get Customers Minimal at Any Bank
-*OpenBankProject::CustomerApi* | [**o_bpv4_0_0_get_my_correlated_entities**](docs/CustomerApi.md#o_bpv4_0_0_get_my_correlated_entities) | **GET** /obp/v4.0.0/my/correlated-entities | Get Correlated Entities for the current User
-*OpenBankProject::CustomerApi* | [**o_bpv4_0_0_get_user_customer_links_by_customer_id**](docs/CustomerApi.md#o_bpv4_0_0_get_user_customer_links_by_customer_id) | **GET** /obp/v4.0.0/banks/{bankid}/user_customer_links/customers/{customerid} | Get User Customer Links by Customer
-*OpenBankProject::CustomerApi* | [**o_bpv4_0_0_get_user_customer_links_by_user_id**](docs/CustomerApi.md#o_bpv4_0_0_get_user_customer_links_by_user_id) | **GET** /obp/v4.0.0/banks/{bankid}/user_customer_links/users/{userid} | Get User Customer Links by User
-*OpenBankProject::CustomerApi* | [**o_bpv4_0_0_update_customer_attribute**](docs/CustomerApi.md#o_bpv4_0_0_update_customer_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{customerattributeid} | Update Customer Attribute
-*OpenBankProject::CustomerApi* | [**o_bpv5_0_0_create_customer_account_link**](docs/CustomerApi.md#o_bpv5_0_0_create_customer_account_link) | **POST** /obp/v5.0.0/banks/{bankid}/customer-account-links | Create Customer Account Link
-*OpenBankProject::CustomerApi* | [**o_bpv5_0_0_delete_customer_account_link_by_id**](docs/CustomerApi.md#o_bpv5_0_0_delete_customer_account_link_by_id) | **DELETE** /obp/v5.0.0/banks/{bankid}/customer-account-links/{customeraccountlinkid} | Delete Customer Account Link
-*OpenBankProject::CustomerApi* | [**o_bpv5_0_0_get_customer_account_link_by_id**](docs/CustomerApi.md#o_bpv5_0_0_get_customer_account_link_by_id) | **GET** /obp/v5.0.0/banks/{bankid}/customer-account-links/{customeraccountlinkid} | Get Customer Account Link by Id
-*OpenBankProject::CustomerApi* | [**o_bpv5_0_0_get_customer_account_links_by_bank_id_account_id**](docs/CustomerApi.md#o_bpv5_0_0_get_customer_account_links_by_bank_id_account_id) | **GET** /obp/v5.0.0/banks/{bankid}/accounts/{accountid}/customer-account-links | Get Customer Account Links by ACCOUNT_ID
-*OpenBankProject::CustomerApi* | [**o_bpv5_0_0_get_customer_account_links_by_customer_id**](docs/CustomerApi.md#o_bpv5_0_0_get_customer_account_links_by_customer_id) | **GET** /obp/v5.0.0/banks/{bankid}/customers/{customerid}/customer-account-links | Get Customer Account Links by CUSTOMER_ID
-*OpenBankProject::CustomerApi* | [**o_bpv5_0_0_get_customer_overview**](docs/CustomerApi.md#o_bpv5_0_0_get_customer_overview) | **POST** /obp/v5.0.0/banks/{bankid}/customers/customer-number-query/overview | Get Customer Overview
-*OpenBankProject::CustomerApi* | [**o_bpv5_0_0_get_customer_overview_flat**](docs/CustomerApi.md#o_bpv5_0_0_get_customer_overview_flat) | **POST** /obp/v5.0.0/banks/{bankid}/customers/customer-number-query/overview-flat | Get Customer Overview Flat
-*OpenBankProject::CustomerApi* | [**o_bpv5_0_0_get_customers_minimal_at_one_bank**](docs/CustomerApi.md#o_bpv5_0_0_get_customers_minimal_at_one_bank) | **GET** /obp/v5.0.0/banks/{bankid}/customers-minimal | Get Customers Minimal at Bank
-*OpenBankProject::CustomerApi* | [**o_bpv5_0_0_get_my_customers_at_any_bank**](docs/CustomerApi.md#o_bpv5_0_0_get_my_customers_at_any_bank) | **GET** /obp/v5.0.0/my/customers | Get My Customers
-*OpenBankProject::CustomerApi* | [**o_bpv5_0_0_get_my_customers_at_bank**](docs/CustomerApi.md#o_bpv5_0_0_get_my_customers_at_bank) | **GET** /obp/v5.0.0/banks/{bankid}/my/customers | Get My Customers at Bank
-*OpenBankProject::CustomerApi* | [**o_bpv5_0_0_update_customer_account_link_by_id**](docs/CustomerApi.md#o_bpv5_0_0_update_customer_account_link_by_id) | **PUT** /obp/v5.0.0/banks/{bankid}/customer-account-links/{customeraccountlinkid} | Update Customer Account Link by Id
-*OpenBankProject::CustomerApi* | [**o_bpv5_1_0_create_agent**](docs/CustomerApi.md#o_bpv5_1_0_create_agent) | **POST** /obp/v5.1.0/banks/{bankid}/agents | Create Agent
-*OpenBankProject::CustomerApi* | [**o_bpv5_1_0_get_customers_for_user_ids_only**](docs/CustomerApi.md#o_bpv5_1_0_get_customers_for_user_ids_only) | **GET** /obp/v5.1.0/users/current/customers/customer_ids | Get Customers for Current User (IDs only)
-*OpenBankProject::CustomerApi* | [**o_bpv5_1_0_update_agent_status**](docs/CustomerApi.md#o_bpv5_1_0_update_agent_status) | **PUT** /obp/v5.1.0/banks/{bankid}/agents/{agentid} | Update Agent status
-*OpenBankProject::CustomerApi* | [**o_bpv6_0_0_create_corporate_customer**](docs/CustomerApi.md#o_bpv6_0_0_create_corporate_customer) | **POST** /obp/v6.0.0/banks/{bankid}/corporate-customers | Create Corporate Customer
-*OpenBankProject::CustomerApi* | [**o_bpv6_0_0_create_customer**](docs/CustomerApi.md#o_bpv6_0_0_create_customer) | **POST** /obp/v6.0.0/banks/{bankid}/customers | Create Customer
-*OpenBankProject::CustomerApi* | [**o_bpv6_0_0_create_retail_customer**](docs/CustomerApi.md#o_bpv6_0_0_create_retail_customer) | **POST** /obp/v6.0.0/banks/{bankid}/retail-customers | Create Retail Customer
-*OpenBankProject::CustomerApi* | [**o_bpv6_0_0_get_corporate_customer_by_customer_id**](docs/CustomerApi.md#o_bpv6_0_0_get_corporate_customer_by_customer_id) | **GET** /obp/v6.0.0/banks/{bankid}/corporate-customers/{customerid} | Get Corporate Customer by CUSTOMER_ID
-*OpenBankProject::CustomerApi* | [**o_bpv6_0_0_get_corporate_customer_subsidiaries**](docs/CustomerApi.md#o_bpv6_0_0_get_corporate_customer_subsidiaries) | **GET** /obp/v6.0.0/banks/{bankid}/corporate-customers/{customerid}/subsidiaries | Get Corporate Customer Subsidiaries
-*OpenBankProject::CustomerApi* | [**o_bpv6_0_0_get_corporate_customers_at_one_bank**](docs/CustomerApi.md#o_bpv6_0_0_get_corporate_customers_at_one_bank) | **GET** /obp/v6.0.0/banks/{bankid}/corporate-customers | Get Corporate Customers at Bank
-*OpenBankProject::CustomerApi* | [**o_bpv6_0_0_get_customer_by_customer_id**](docs/CustomerApi.md#o_bpv6_0_0_get_customer_by_customer_id) | **GET** /obp/v6.0.0/banks/{bankid}/customers/{customerid} | Get Customer by CUSTOMER_ID
-*OpenBankProject::CustomerApi* | [**o_bpv6_0_0_get_customer_by_customer_number**](docs/CustomerApi.md#o_bpv6_0_0_get_customer_by_customer_number) | **POST** /obp/v6.0.0/banks/{bankid}/customers/customer-number | Get Customer by CUSTOMER_NUMBER
-*OpenBankProject::CustomerApi* | [**o_bpv6_0_0_get_customer_children**](docs/CustomerApi.md#o_bpv6_0_0_get_customer_children) | **GET** /obp/v6.0.0/banks/{bankid}/customers/{customerid}/children | Get Customer Children
-*OpenBankProject::CustomerApi* | [**o_bpv6_0_0_get_customers_at_all_banks**](docs/CustomerApi.md#o_bpv6_0_0_get_customers_at_all_banks) | **GET** /obp/v6.0.0/customers | Get Customers at All Banks
-*OpenBankProject::CustomerApi* | [**o_bpv6_0_0_get_customers_at_one_bank**](docs/CustomerApi.md#o_bpv6_0_0_get_customers_at_one_bank) | **GET** /obp/v6.0.0/banks/{bankid}/customers | Get Customers at Bank
-*OpenBankProject::CustomerApi* | [**o_bpv6_0_0_get_customers_by_legal_name**](docs/CustomerApi.md#o_bpv6_0_0_get_customers_by_legal_name) | **POST** /obp/v6.0.0/banks/{bankid}/customers/legal-name | Get Customers by Legal Name
-*OpenBankProject::CustomerApi* | [**o_bpv6_0_0_get_retail_customer_by_customer_id**](docs/CustomerApi.md#o_bpv6_0_0_get_retail_customer_by_customer_id) | **GET** /obp/v6.0.0/banks/{bankid}/retail-customers/{customerid} | Get Retail Customer by CUSTOMER_ID
-*OpenBankProject::CustomerApi* | [**o_bpv6_0_0_get_retail_customers_at_one_bank**](docs/CustomerApi.md#o_bpv6_0_0_get_retail_customers_at_one_bank) | **GET** /obp/v6.0.0/banks/{bankid}/retail-customers | Get Retail Customers at Bank
-*OpenBankProject::CustomerAttributeApi* | [**o_bpv4_0_0_create_customer_attribute**](docs/CustomerAttributeApi.md#o_bpv4_0_0_create_customer_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attribute | Create Customer Attribute
-*OpenBankProject::CustomerAttributeApi* | [**o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition**](docs/CustomerAttributeApi.md#o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Create or Update Customer Attribute Definition
-*OpenBankProject::CustomerAttributeApi* | [**o_bpv4_0_0_delete_customer_attribute**](docs/CustomerAttributeApi.md#o_bpv4_0_0_delete_customer_attribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/{customerid}/attributes/{customerattributeid} | Delete Customer Attribute
-*OpenBankProject::CustomerAttributeApi* | [**o_bpv4_0_0_delete_customer_attribute_definition**](docs/CustomerAttributeApi.md#o_bpv4_0_0_delete_customer_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/customer | Delete Customer Attribute Definition
-*OpenBankProject::CustomerAttributeApi* | [**o_bpv4_0_0_get_customer_attribute_by_id**](docs/CustomerAttributeApi.md#o_bpv4_0_0_get_customer_attribute_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{attributeid} | Get Customer Attribute By Id
-*OpenBankProject::CustomerAttributeApi* | [**o_bpv4_0_0_get_customer_attribute_definition**](docs/CustomerAttributeApi.md#o_bpv4_0_0_get_customer_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Get Customer Attribute Definition
-*OpenBankProject::CustomerAttributeApi* | [**o_bpv4_0_0_get_customer_attributes**](docs/CustomerAttributeApi.md#o_bpv4_0_0_get_customer_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes | Get Customer Attributes
-*OpenBankProject::CustomerAttributeApi* | [**o_bpv4_0_0_update_customer_attribute**](docs/CustomerAttributeApi.md#o_bpv4_0_0_update_customer_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{customerattributeid} | Update Customer Attribute
-*OpenBankProject::CustomerMeetingApi* | [**o_bpv3_1_0_create_meeting**](docs/CustomerMeetingApi.md#o_bpv3_1_0_create_meeting) | **POST** /obp/v3.1.0/banks/{bankid}/meetings | Create Meeting (video conference/call)
-*OpenBankProject::CustomerMeetingApi* | [**o_bpv3_1_0_get_meeting**](docs/CustomerMeetingApi.md#o_bpv3_1_0_get_meeting) | **GET** /obp/v3.1.0/banks/{bankid}/meetings/{meetingid} | Get Meeting
-*OpenBankProject::CustomerMeetingApi* | [**o_bpv3_1_0_get_meetings**](docs/CustomerMeetingApi.md#o_bpv3_1_0_get_meetings) | **GET** /obp/v3.1.0/banks/{bankid}/meetings | Get Meetings
-*OpenBankProject::CustomerMessageApi* | [**o_bpv1_4_0_add_customer_message**](docs/CustomerMessageApi.md#o_bpv1_4_0_add_customer_message) | **POST** /obp/v1.4.0/banks/{bankid}/customer/{customerid}/messages | Create Customer Message
-*OpenBankProject::CustomerMessageApi* | [**o_bpv1_4_0_get_customers_messages**](docs/CustomerMessageApi.md#o_bpv1_4_0_get_customers_messages) | **GET** /obp/v1.4.0/banks/{bankid}/customer/messages | Get Customer Messages for all Customers
-*OpenBankProject::CustomerMessageApi* | [**o_bpv4_0_0_create_customer_message**](docs/CustomerMessageApi.md#o_bpv4_0_0_create_customer_message) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages | Create Customer Message
-*OpenBankProject::CustomerMessageApi* | [**o_bpv4_0_0_get_customer_messages**](docs/CustomerMessageApi.md#o_bpv4_0_0_get_customer_messages) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages | Get Customer Messages for a Customer
-*OpenBankProject::DAuthApi* | [**o_bpv4_0_0_create_user_with_roles**](docs/DAuthApi.md#o_bpv4_0_0_create_user_with_roles) | **POST** /obp/v4.0.0/user-entitlements | Create (DAuth) User with Roles
-*OpenBankProject::DAuthApi* | [**o_bpv5_1_0_create_user_with_account_access_by_id**](docs/DAuthApi.md#o_bpv5_1_0_create_user_with_account_access_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/user-account-access | Create (DAuth) User with Account Access
-*OpenBankProject::DataWarehouseApi* | [**o_bpv3_0_0_data_warehouse_search**](docs/DataWarehouseApi.md#o_bpv3_0_0_data_warehouse_search) | **POST** /obp/v3.0.0/search/warehouse/{index} | Data Warehouse Search
-*OpenBankProject::DataWarehouseApi* | [**o_bpv3_0_0_data_warehouse_statistics**](docs/DataWarehouseApi.md#o_bpv3_0_0_data_warehouse_statistics) | **POST** /obp/v3.0.0/search/warehouse/statistics/{index}/{field} | Data Warehouse Statistics
-*OpenBankProject::DirectDebitApi* | [**o_bpv4_0_0_create_direct_debit**](docs/DirectDebitApi.md#o_bpv4_0_0_create_direct_debit) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/direct-debit | Create Direct Debit
-*OpenBankProject::DirectDebitApi* | [**o_bpv4_0_0_create_direct_debit_management**](docs/DirectDebitApi.md#o_bpv4_0_0_create_direct_debit_management) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/direct-debit | Create Direct Debit (management)
-*OpenBankProject::DirectoryApi* | [**o_bpv5_1_0_create_consumer_dynamic_registration**](docs/DirectoryApi.md#o_bpv5_1_0_create_consumer_dynamic_registration) | **POST** /obp/v5.1.0/dynamic-registration/consumers | Create a Consumer(Dynamic Registration)
-*OpenBankProject::DirectoryApi* | [**o_bpv5_1_0_create_regulated_entity**](docs/DirectoryApi.md#o_bpv5_1_0_create_regulated_entity) | **POST** /obp/v5.1.0/regulated-entities | Create Regulated Entity
-*OpenBankProject::DirectoryApi* | [**o_bpv5_1_0_create_regulated_entity_attribute**](docs/DirectoryApi.md#o_bpv5_1_0_create_regulated_entity_attribute) | **POST** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes | Create Regulated Entity Attribute
-*OpenBankProject::DirectoryApi* | [**o_bpv5_1_0_delete_regulated_entity**](docs/DirectoryApi.md#o_bpv5_1_0_delete_regulated_entity) | **DELETE** /obp/v5.1.0/regulated-entities/{regulatedentityid} | Delete Regulated Entity
-*OpenBankProject::DirectoryApi* | [**o_bpv5_1_0_delete_regulated_entity_attribute**](docs/DirectoryApi.md#o_bpv5_1_0_delete_regulated_entity_attribute) | **DELETE** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Delete Regulated Entity Attribute
-*OpenBankProject::DirectoryApi* | [**o_bpv5_1_0_get_all_regulated_entity_attributes**](docs/DirectoryApi.md#o_bpv5_1_0_get_all_regulated_entity_attributes) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes | Get All Regulated Entity Attributes
-*OpenBankProject::DirectoryApi* | [**o_bpv5_1_0_get_regulated_entity_attribute_by_id**](docs/DirectoryApi.md#o_bpv5_1_0_get_regulated_entity_attribute_by_id) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Get Regulated Entity Attribute By ID
-*OpenBankProject::DirectoryApi* | [**o_bpv5_1_0_get_regulated_entity_by_id**](docs/DirectoryApi.md#o_bpv5_1_0_get_regulated_entity_by_id) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid} | Get Regulated Entity
-*OpenBankProject::DirectoryApi* | [**o_bpv5_1_0_regulated_entities**](docs/DirectoryApi.md#o_bpv5_1_0_regulated_entities) | **GET** /obp/v5.1.0/regulated-entities | Get Regulated Entities
-*OpenBankProject::DirectoryApi* | [**o_bpv5_1_0_update_regulated_entity_attribute**](docs/DirectoryApi.md#o_bpv5_1_0_update_regulated_entity_attribute) | **PUT** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Update Regulated Entity Attribute
-*OpenBankProject::DocumentationApi* | [**o_bpv1_4_0_get_bank_level_dynamic_resource_docs_obp**](docs/DocumentationApi.md#o_bpv1_4_0_get_bank_level_dynamic_resource_docs_obp) | **GET** /obp/v1.4.0/banks/{bankid}/resource-docs/{apiversion}/obp | Get Bank Level Dynamic Resource Docs
-*OpenBankProject::DocumentationApi* | [**o_bpv1_4_0_get_resource_docs_obp**](docs/DocumentationApi.md#o_bpv1_4_0_get_resource_docs_obp) | **GET** /obp/v1.4.0/resource-docs/{apiversion}/obp | Get Resource Docs
-*OpenBankProject::DocumentationApi* | [**o_bpv1_4_0_get_resource_docs_open_api31**](docs/DocumentationApi.md#o_bpv1_4_0_get_resource_docs_open_api31) | **GET** /obp/v1.4.0/resource-docs/{apiversion}/openapi | Get OpenAPI 3.1 documentation
-*OpenBankProject::DocumentationApi* | [**o_bpv1_4_0_get_resource_docs_swagger**](docs/DocumentationApi.md#o_bpv1_4_0_get_resource_docs_swagger) | **GET** /obp/v1.4.0/resource-docs/{apiversion}/swagger | Get Swagger documentation
-*OpenBankProject::DocumentationApi* | [**o_bpv2_2_0_get_message_docs**](docs/DocumentationApi.md#o_bpv2_2_0_get_message_docs) | **GET** /obp/v2.2.0/message-docs/{connector} | Get Message Docs
-*OpenBankProject::DocumentationApi* | [**o_bpv3_0_0_get_api_glossary**](docs/DocumentationApi.md#o_bpv3_0_0_get_api_glossary) | **GET** /obp/v3.0.0/api/glossary | Get Glossary of the API
-*OpenBankProject::DocumentationApi* | [**o_bpv3_1_0_get_message_docs_swagger**](docs/DocumentationApi.md#o_bpv3_1_0_get_message_docs_swagger) | **GET** /obp/v3.1.0/message-docs/{connector}/swagger2.0 | Get Message Docs Swagger
-*OpenBankProject::DocumentationApi* | [**o_bpv6_0_0_get_message_docs_json_schema**](docs/DocumentationApi.md#o_bpv6_0_0_get_message_docs_json_schema) | **GET** /obp/v6.0.0/message-docs/{connector}/json-schema | Get Message Docs as JSON Schema
-*OpenBankProject::DocumentationApi* | [**o_bpv6_0_0_get_scanned_api_versions**](docs/DocumentationApi.md#o_bpv6_0_0_get_scanned_api_versions) | **GET** /obp/v6.0.0/api/versions | Get Scanned API Versions
-*OpenBankProject::DynamicEndpointManageApi* | [**o_bpv4_0_0_create_bank_level_dynamic_endpoint**](docs/DynamicEndpointManageApi.md#o_bpv4_0_0_create_bank_level_dynamic_endpoint) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Create Bank Level Dynamic Endpoint
-*OpenBankProject::DynamicEndpointManageApi* | [**o_bpv4_0_0_create_dynamic_endpoint**](docs/DynamicEndpointManageApi.md#o_bpv4_0_0_create_dynamic_endpoint) | **POST** /obp/v4.0.0/management/dynamic-endpoints | Create Dynamic Endpoint
-*OpenBankProject::DynamicEndpointManageApi* | [**o_bpv4_0_0_delete_bank_level_dynamic_endpoint**](docs/DynamicEndpointManageApi.md#o_bpv4_0_0_delete_bank_level_dynamic_endpoint) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Delete Bank Level Dynamic Endpoint
-*OpenBankProject::DynamicEndpointManageApi* | [**o_bpv4_0_0_delete_dynamic_endpoint**](docs/DynamicEndpointManageApi.md#o_bpv4_0_0_delete_dynamic_endpoint) | **DELETE** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} |  Delete Dynamic Endpoint
-*OpenBankProject::DynamicEndpointManageApi* | [**o_bpv4_0_0_delete_my_dynamic_endpoint**](docs/DynamicEndpointManageApi.md#o_bpv4_0_0_delete_my_dynamic_endpoint) | **DELETE** /obp/v4.0.0/my/dynamic-endpoints/{dynamicendpointid} | Delete My Dynamic Endpoint
-*OpenBankProject::DynamicEndpointManageApi* | [**o_bpv4_0_0_get_bank_level_dynamic_endpoint**](docs/DynamicEndpointManageApi.md#o_bpv4_0_0_get_bank_level_dynamic_endpoint) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Get Bank Level Dynamic Endpoint
-*OpenBankProject::DynamicEndpointManageApi* | [**o_bpv4_0_0_get_bank_level_dynamic_endpoints**](docs/DynamicEndpointManageApi.md#o_bpv4_0_0_get_bank_level_dynamic_endpoints) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Get Bank Level Dynamic Endpoints
-*OpenBankProject::DynamicEndpointManageApi* | [**o_bpv4_0_0_get_dynamic_endpoint**](docs/DynamicEndpointManageApi.md#o_bpv4_0_0_get_dynamic_endpoint) | **GET** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} | Get Dynamic Endpoint
-*OpenBankProject::DynamicEndpointManageApi* | [**o_bpv4_0_0_get_dynamic_endpoints**](docs/DynamicEndpointManageApi.md#o_bpv4_0_0_get_dynamic_endpoints) | **GET** /obp/v4.0.0/management/dynamic-endpoints |  Get Dynamic Endpoints
-*OpenBankProject::DynamicEndpointManageApi* | [**o_bpv4_0_0_get_my_dynamic_endpoints**](docs/DynamicEndpointManageApi.md#o_bpv4_0_0_get_my_dynamic_endpoints) | **GET** /obp/v4.0.0/my/dynamic-endpoints | Get My Dynamic Endpoints
-*OpenBankProject::DynamicEndpointManageApi* | [**o_bpv4_0_0_update_bank_level_dynamic_endpoint_host**](docs/DynamicEndpointManageApi.md#o_bpv4_0_0_update_bank_level_dynamic_endpoint_host) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}/host |  Update Bank Level Dynamic Endpoint Host
-*OpenBankProject::DynamicEndpointManageApi* | [**o_bpv4_0_0_update_dynamic_endpoint_host**](docs/DynamicEndpointManageApi.md#o_bpv4_0_0_update_dynamic_endpoint_host) | **PUT** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}/host |  Update Dynamic Endpoint Host
-*OpenBankProject::DynamicEntityApi* | [**o_bpv6_0_0_cleanup_orphaned_dynamic_entity_records**](docs/DynamicEntityApi.md#o_bpv6_0_0_cleanup_orphaned_dynamic_entity_records) | **DELETE** /obp/v6.0.0/management/diagnostics/dynamic-entities/orphaned-records | Cleanup Orphaned Dynamic Entity Records
-*OpenBankProject::DynamicEntityApi* | [**o_bpv6_0_0_get_available_personal_dynamic_entities**](docs/DynamicEntityApi.md#o_bpv6_0_0_get_available_personal_dynamic_entities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities
-*OpenBankProject::DynamicEntityApi* | [**o_bpv6_0_0_get_dynamic_entity_diagnostics**](docs/DynamicEntityApi.md#o_bpv6_0_0_get_dynamic_entity_diagnostics) | **GET** /obp/v6.0.0/management/diagnostics/dynamic-entities | Get Dynamic Entity Diagnostics
-*OpenBankProject::DynamicEntityApi* | [**o_bpv6_0_0_get_reference_types**](docs/DynamicEntityApi.md#o_bpv6_0_0_get_reference_types) | **GET** /obp/v6.0.0/management/dynamic-entities/reference-types | Get Reference Types for Dynamic Entities
-*OpenBankProject::DynamicEntityManageApi* | [**o_bpv4_0_0_delete_bank_level_dynamic_entity**](docs/DynamicEntityManageApi.md#o_bpv4_0_0_delete_bank_level_dynamic_entity) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid} | Delete Bank Level Dynamic Entity
-*OpenBankProject::DynamicEntityManageApi* | [**o_bpv4_0_0_delete_my_dynamic_entity**](docs/DynamicEntityManageApi.md#o_bpv4_0_0_delete_my_dynamic_entity) | **DELETE** /obp/v4.0.0/my/dynamic-entities/{dynamicentityid} | Delete My Dynamic Entity
-*OpenBankProject::DynamicEntityManageApi* | [**o_bpv4_0_0_delete_system_dynamic_entity**](docs/DynamicEntityManageApi.md#o_bpv4_0_0_delete_system_dynamic_entity) | **DELETE** /obp/v4.0.0/management/system-dynamic-entities/{dynamicentityid} | Delete System Level Dynamic Entity
-*OpenBankProject::DynamicEntityManageApi* | [**o_bpv6_0_0_backup_bank_level_dynamic_entity**](docs/DynamicEntityManageApi.md#o_bpv6_0_0_backup_bank_level_dynamic_entity) | **POST** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}/backup | Backup Bank Level Dynamic Entity
-*OpenBankProject::DynamicEntityManageApi* | [**o_bpv6_0_0_backup_system_dynamic_entity**](docs/DynamicEntityManageApi.md#o_bpv6_0_0_backup_system_dynamic_entity) | **POST** /obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid}/backup | Backup System Level Dynamic Entity
-*OpenBankProject::DynamicEntityManageApi* | [**o_bpv6_0_0_create_bank_level_dynamic_entity**](docs/DynamicEntityManageApi.md#o_bpv6_0_0_create_bank_level_dynamic_entity) | **POST** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities | Create Bank Level Dynamic Entity
-*OpenBankProject::DynamicEntityManageApi* | [**o_bpv6_0_0_create_system_dynamic_entity**](docs/DynamicEntityManageApi.md#o_bpv6_0_0_create_system_dynamic_entity) | **POST** /obp/v6.0.0/management/system-dynamic-entities | Create System Level Dynamic Entity
-*OpenBankProject::DynamicEntityManageApi* | [**o_bpv6_0_0_delete_system_dynamic_entity_cascade**](docs/DynamicEntityManageApi.md#o_bpv6_0_0_delete_system_dynamic_entity_cascade) | **DELETE** /obp/v6.0.0/management/system-dynamic-entities/cascade/{dynamicentityid} | Delete System Level Dynamic Entity Cascade
-*OpenBankProject::DynamicEntityManageApi* | [**o_bpv6_0_0_get_bank_level_dynamic_entities**](docs/DynamicEntityManageApi.md#o_bpv6_0_0_get_bank_level_dynamic_entities) | **GET** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities | Get Bank Level Dynamic Entities
-*OpenBankProject::DynamicEntityManageApi* | [**o_bpv6_0_0_get_my_dynamic_entities**](docs/DynamicEntityManageApi.md#o_bpv6_0_0_get_my_dynamic_entities) | **GET** /obp/v6.0.0/my/dynamic-entities | Get My Dynamic Entities
-*OpenBankProject::DynamicEntityManageApi* | [**o_bpv6_0_0_get_system_dynamic_entities**](docs/DynamicEntityManageApi.md#o_bpv6_0_0_get_system_dynamic_entities) | **GET** /obp/v6.0.0/management/system-dynamic-entities | Get System Dynamic Entities
-*OpenBankProject::DynamicEntityManageApi* | [**o_bpv6_0_0_update_bank_level_dynamic_entity**](docs/DynamicEntityManageApi.md#o_bpv6_0_0_update_bank_level_dynamic_entity) | **PUT** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid} | Update Bank Level Dynamic Entity
-*OpenBankProject::DynamicEntityManageApi* | [**o_bpv6_0_0_update_my_dynamic_entity**](docs/DynamicEntityManageApi.md#o_bpv6_0_0_update_my_dynamic_entity) | **PUT** /obp/v6.0.0/my/dynamic-entities/{dynamicentityid} | Update My Dynamic Entity
-*OpenBankProject::DynamicEntityManageApi* | [**o_bpv6_0_0_update_system_dynamic_entity**](docs/DynamicEntityManageApi.md#o_bpv6_0_0_update_system_dynamic_entity) | **PUT** /obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid} | Update System Level Dynamic Entity
-*OpenBankProject::DynamicMessageDocApi* | [**o_bpv4_0_0_create_bank_level_dynamic_message_doc**](docs/DynamicMessageDocApi.md#o_bpv4_0_0_create_bank_level_dynamic_message_doc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Create Bank Level Dynamic Message Doc
-*OpenBankProject::DynamicMessageDocApi* | [**o_bpv4_0_0_create_dynamic_message_doc**](docs/DynamicMessageDocApi.md#o_bpv4_0_0_create_dynamic_message_doc) | **POST** /obp/v4.0.0/management/dynamic-message-docs | Create Dynamic Message Doc
-*OpenBankProject::DynamicMessageDocApi* | [**o_bpv4_0_0_delete_bank_level_dynamic_message_doc**](docs/DynamicMessageDocApi.md#o_bpv4_0_0_delete_bank_level_dynamic_message_doc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Delete Bank Level Dynamic Message Doc
-*OpenBankProject::DynamicMessageDocApi* | [**o_bpv4_0_0_delete_dynamic_message_doc**](docs/DynamicMessageDocApi.md#o_bpv4_0_0_delete_dynamic_message_doc) | **DELETE** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Delete Dynamic Message Doc
-*OpenBankProject::DynamicMessageDocApi* | [**o_bpv4_0_0_get_all_bank_level_dynamic_message_docs**](docs/DynamicMessageDocApi.md#o_bpv4_0_0_get_all_bank_level_dynamic_message_docs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Get all Bank Level Dynamic Message Docs
-*OpenBankProject::DynamicMessageDocApi* | [**o_bpv4_0_0_get_all_dynamic_message_docs**](docs/DynamicMessageDocApi.md#o_bpv4_0_0_get_all_dynamic_message_docs) | **GET** /obp/v4.0.0/management/dynamic-message-docs | Get all Dynamic Message Docs
-*OpenBankProject::DynamicMessageDocApi* | [**o_bpv4_0_0_get_bank_level_dynamic_message_doc**](docs/DynamicMessageDocApi.md#o_bpv4_0_0_get_bank_level_dynamic_message_doc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Get Bank Level Dynamic Message Doc
-*OpenBankProject::DynamicMessageDocApi* | [**o_bpv4_0_0_get_dynamic_message_doc**](docs/DynamicMessageDocApi.md#o_bpv4_0_0_get_dynamic_message_doc) | **GET** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Get Dynamic Message Doc
-*OpenBankProject::DynamicMessageDocApi* | [**o_bpv4_0_0_update_bank_level_dynamic_message_doc**](docs/DynamicMessageDocApi.md#o_bpv4_0_0_update_bank_level_dynamic_message_doc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Update Bank Level Dynamic Message Doc
-*OpenBankProject::DynamicMessageDocApi* | [**o_bpv4_0_0_update_dynamic_message_doc**](docs/DynamicMessageDocApi.md#o_bpv4_0_0_update_dynamic_message_doc) | **PUT** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Update Dynamic Message Doc
-*OpenBankProject::DynamicResourceDocApi* | [**o_bpv4_0_0_build_dynamic_endpoint_template**](docs/DynamicResourceDocApi.md#o_bpv4_0_0_build_dynamic_endpoint_template) | **POST** /obp/v4.0.0/management/dynamic-resource-docs/endpoint-code | Create Dynamic Resource Doc endpoint code
-*OpenBankProject::DynamicResourceDocApi* | [**o_bpv4_0_0_create_bank_level_dynamic_resource_doc**](docs/DynamicResourceDocApi.md#o_bpv4_0_0_create_bank_level_dynamic_resource_doc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Create Bank Level Dynamic Resource Doc
-*OpenBankProject::DynamicResourceDocApi* | [**o_bpv4_0_0_create_dynamic_resource_doc**](docs/DynamicResourceDocApi.md#o_bpv4_0_0_create_dynamic_resource_doc) | **POST** /obp/v4.0.0/management/dynamic-resource-docs | Create Dynamic Resource Doc
-*OpenBankProject::DynamicResourceDocApi* | [**o_bpv4_0_0_delete_bank_level_dynamic_resource_doc**](docs/DynamicResourceDocApi.md#o_bpv4_0_0_delete_bank_level_dynamic_resource_doc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Bank Level Dynamic Resource Doc
-*OpenBankProject::DynamicResourceDocApi* | [**o_bpv4_0_0_delete_dynamic_resource_doc**](docs/DynamicResourceDocApi.md#o_bpv4_0_0_delete_dynamic_resource_doc) | **DELETE** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Dynamic Resource Doc
-*OpenBankProject::DynamicResourceDocApi* | [**o_bpv4_0_0_get_all_bank_level_dynamic_resource_docs**](docs/DynamicResourceDocApi.md#o_bpv4_0_0_get_all_bank_level_dynamic_resource_docs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Get all Bank Level Dynamic Resource Docs
-*OpenBankProject::DynamicResourceDocApi* | [**o_bpv4_0_0_get_all_dynamic_resource_docs**](docs/DynamicResourceDocApi.md#o_bpv4_0_0_get_all_dynamic_resource_docs) | **GET** /obp/v4.0.0/management/dynamic-resource-docs | Get all Dynamic Resource Docs
-*OpenBankProject::DynamicResourceDocApi* | [**o_bpv4_0_0_get_bank_level_dynamic_resource_doc**](docs/DynamicResourceDocApi.md#o_bpv4_0_0_get_bank_level_dynamic_resource_doc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Bank Level Dynamic Resource Doc by Id
-*OpenBankProject::DynamicResourceDocApi* | [**o_bpv4_0_0_get_dynamic_resource_doc**](docs/DynamicResourceDocApi.md#o_bpv4_0_0_get_dynamic_resource_doc) | **GET** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Dynamic Resource Doc by Id
-*OpenBankProject::DynamicResourceDocApi* | [**o_bpv4_0_0_update_bank_level_dynamic_resource_doc**](docs/DynamicResourceDocApi.md#o_bpv4_0_0_update_bank_level_dynamic_resource_doc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Bank Level Dynamic Resource Doc
-*OpenBankProject::DynamicResourceDocApi* | [**o_bpv4_0_0_update_dynamic_resource_doc**](docs/DynamicResourceDocApi.md#o_bpv4_0_0_update_dynamic_resource_doc) | **PUT** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Dynamic Resource Doc
-*OpenBankProject::EndpointMappingApi* | [**o_bpv4_0_0_create_bank_level_endpoint_mapping**](docs/EndpointMappingApi.md#o_bpv4_0_0_create_bank_level_endpoint_mapping) | **POST** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Create Bank Level Endpoint Mapping
-*OpenBankProject::EndpointMappingApi* | [**o_bpv4_0_0_create_endpoint_mapping**](docs/EndpointMappingApi.md#o_bpv4_0_0_create_endpoint_mapping) | **POST** /obp/v4.0.0/management/endpoint-mappings | Create Endpoint Mapping
-*OpenBankProject::EndpointMappingApi* | [**o_bpv4_0_0_delete_bank_level_endpoint_mapping**](docs/EndpointMappingApi.md#o_bpv4_0_0_delete_bank_level_endpoint_mapping) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Delete Bank Level Endpoint Mapping
-*OpenBankProject::EndpointMappingApi* | [**o_bpv4_0_0_delete_endpoint_mapping**](docs/EndpointMappingApi.md#o_bpv4_0_0_delete_endpoint_mapping) | **DELETE** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Delete Endpoint Mapping
-*OpenBankProject::EndpointMappingApi* | [**o_bpv4_0_0_get_all_bank_level_endpoint_mappings**](docs/EndpointMappingApi.md#o_bpv4_0_0_get_all_bank_level_endpoint_mappings) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Get all Bank Level Endpoint Mappings
-*OpenBankProject::EndpointMappingApi* | [**o_bpv4_0_0_get_all_endpoint_mappings**](docs/EndpointMappingApi.md#o_bpv4_0_0_get_all_endpoint_mappings) | **GET** /obp/v4.0.0/management/endpoint-mappings | Get all Endpoint Mappings
-*OpenBankProject::EndpointMappingApi* | [**o_bpv4_0_0_get_bank_level_endpoint_mapping**](docs/EndpointMappingApi.md#o_bpv4_0_0_get_bank_level_endpoint_mapping) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Get Bank Level Endpoint Mapping
-*OpenBankProject::EndpointMappingApi* | [**o_bpv4_0_0_get_endpoint_mapping**](docs/EndpointMappingApi.md#o_bpv4_0_0_get_endpoint_mapping) | **GET** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Get Endpoint Mapping by Id
-*OpenBankProject::EndpointMappingApi* | [**o_bpv4_0_0_update_bank_level_endpoint_mapping**](docs/EndpointMappingApi.md#o_bpv4_0_0_update_bank_level_endpoint_mapping) | **PUT** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Update Bank Level Endpoint Mapping
-*OpenBankProject::EndpointMappingApi* | [**o_bpv4_0_0_update_endpoint_mapping**](docs/EndpointMappingApi.md#o_bpv4_0_0_update_endpoint_mapping) | **PUT** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Update Endpoint Mapping
-*OpenBankProject::EntitlementApi* | [**o_bpv2_0_0_add_entitlement**](docs/EntitlementApi.md#o_bpv2_0_0_add_entitlement) | **POST** /obp/v2.0.0/users/{userid}/entitlements | Add Entitlement for a User
-*OpenBankProject::EntitlementApi* | [**o_bpv2_0_0_delete_entitlement**](docs/EntitlementApi.md#o_bpv2_0_0_delete_entitlement) | **DELETE** /obp/v2.0.0/users/{userid}/entitlement/{entitlementid} | Delete Entitlement
-*OpenBankProject::EntitlementApi* | [**o_bpv2_0_0_get_permissions_for_bank_account**](docs/EntitlementApi.md#o_bpv2_0_0_get_permissions_for_bank_account) | **GET** /obp/v2.0.0/banks/{bankid}/accounts/{accountid}/permissions | Get access
-*OpenBankProject::EntitlementApi* | [**o_bpv2_1_0_get_entitlements_by_bank_and_user**](docs/EntitlementApi.md#o_bpv2_1_0_get_entitlements_by_bank_and_user) | **GET** /obp/v2.1.0/banks/{bankid}/users/{userid}/entitlements | Get Entitlements for User at Bank
-*OpenBankProject::EntitlementApi* | [**o_bpv3_0_0_add_entitlement_request**](docs/EntitlementApi.md#o_bpv3_0_0_add_entitlement_request) | **POST** /obp/v3.0.0/entitlement-requests | Create Entitlement Request for current User
-*OpenBankProject::EntitlementApi* | [**o_bpv3_0_0_delete_entitlement_request**](docs/EntitlementApi.md#o_bpv3_0_0_delete_entitlement_request) | **DELETE** /obp/v3.0.0/entitlement-requests/{entitlementrequestid} | Delete Entitlement Request
-*OpenBankProject::EntitlementApi* | [**o_bpv3_0_0_get_all_entitlement_requests**](docs/EntitlementApi.md#o_bpv3_0_0_get_all_entitlement_requests) | **GET** /obp/v3.0.0/entitlement-requests | Get all Entitlement Requests
-*OpenBankProject::EntitlementApi* | [**o_bpv3_0_0_get_entitlement_requests**](docs/EntitlementApi.md#o_bpv3_0_0_get_entitlement_requests) | **GET** /obp/v3.0.0/users/{userid}/entitlement-requests | Get Entitlement Requests for a User
-*OpenBankProject::EntitlementApi* | [**o_bpv3_0_0_get_entitlement_requests_for_current_user**](docs/EntitlementApi.md#o_bpv3_0_0_get_entitlement_requests_for_current_user) | **GET** /obp/v3.0.0/my/entitlement-requests | Get Entitlement Requests for the current User
-*OpenBankProject::EntitlementApi* | [**o_bpv3_0_0_get_entitlements_for_current_user**](docs/EntitlementApi.md#o_bpv3_0_0_get_entitlements_for_current_user) | **GET** /obp/v3.0.0/my/entitlements | Get Entitlements for the current User
-*OpenBankProject::EntitlementApi* | [**o_bpv3_1_0_get_all_entitlements**](docs/EntitlementApi.md#o_bpv3_1_0_get_all_entitlements) | **GET** /obp/v3.1.0/entitlements | Get all Entitlements
-*OpenBankProject::EntitlementApi* | [**o_bpv4_0_0_create_user_with_roles**](docs/EntitlementApi.md#o_bpv4_0_0_create_user_with_roles) | **POST** /obp/v4.0.0/user-entitlements | Create (DAuth) User with Roles
-*OpenBankProject::EntitlementApi* | [**o_bpv4_0_0_get_entitlements**](docs/EntitlementApi.md#o_bpv4_0_0_get_entitlements) | **GET** /obp/v4.0.0/users/{userid}/entitlements | Get Entitlements for User
-*OpenBankProject::EntitlementApi* | [**o_bpv4_0_0_get_entitlements_for_bank**](docs/EntitlementApi.md#o_bpv4_0_0_get_entitlements_for_bank) | **GET** /obp/v4.0.0/banks/{bankid}/entitlements | Get Entitlements for One Bank
-*OpenBankProject::EntitlementApi* | [**o_bpv5_1_0_get_entitlements_and_permissions**](docs/EntitlementApi.md#o_bpv5_1_0_get_entitlements_and_permissions) | **GET** /obp/v5.1.0/users/{userid}/entitlements-and-permissions | Get Entitlements and Permissions for a User
-*OpenBankProject::EntitlementApi* | [**o_bpv6_0_0_add_user_to_group**](docs/EntitlementApi.md#o_bpv6_0_0_add_user_to_group) | **POST** /obp/v6.0.0/users/{userid}/group-entitlements | Grant User Membership to Group Entitlements
-*OpenBankProject::EntitlementApi* | [**o_bpv6_0_0_delete_entitlement**](docs/EntitlementApi.md#o_bpv6_0_0_delete_entitlement) | **DELETE** /obp/v6.0.0/entitlements/{entitlementid} | Delete Entitlement
-*OpenBankProject::EntitlementApi* | [**o_bpv6_0_0_get_group_entitlements**](docs/EntitlementApi.md#o_bpv6_0_0_get_group_entitlements) | **GET** /obp/v6.0.0/management/groups/{groupid}/entitlements | Get Group Entitlements
-*OpenBankProject::EntitlementApi* | [**o_bpv6_0_0_get_roles_with_entitlement_counts_at_all_banks**](docs/EntitlementApi.md#o_bpv6_0_0_get_roles_with_entitlement_counts_at_all_banks) | **GET** /obp/v6.0.0/management/roles-with-entitlement-counts | Get Roles with Entitlement Counts
-*OpenBankProject::EntitlementApi* | [**o_bpv6_0_0_get_user_group_memberships**](docs/EntitlementApi.md#o_bpv6_0_0_get_user_group_memberships) | **GET** /obp/v6.0.0/users/{userid}/group-entitlements | Get User's Group Memberships
-*OpenBankProject::EntitlementApi* | [**o_bpv6_0_0_remove_user_from_group**](docs/EntitlementApi.md#o_bpv6_0_0_remove_user_from_group) | **DELETE** /obp/v6.0.0/users/{userid}/group-entitlements/{groupid} | Remove User from Group
-*OpenBankProject::ExperimentalApi* | [**o_bpv3_1_0_create_meeting**](docs/ExperimentalApi.md#o_bpv3_1_0_create_meeting) | **POST** /obp/v3.1.0/banks/{bankid}/meetings | Create Meeting (video conference/call)
-*OpenBankProject::ExperimentalApi* | [**o_bpv3_1_0_get_meeting**](docs/ExperimentalApi.md#o_bpv3_1_0_get_meeting) | **GET** /obp/v3.1.0/banks/{bankid}/meetings/{meetingid} | Get Meeting
-*OpenBankProject::ExperimentalApi* | [**o_bpv3_1_0_get_meetings**](docs/ExperimentalApi.md#o_bpv3_1_0_get_meetings) | **GET** /obp/v3.1.0/banks/{bankid}/meetings | Get Meetings
-*OpenBankProject::FXApi* | [**o_bpv2_2_0_create_fx**](docs/FXApi.md#o_bpv2_2_0_create_fx) | **PUT** /obp/v2.2.0/banks/{bankid}/fx | Create Fx
-*OpenBankProject::FXApi* | [**o_bpv2_2_0_get_current_fx_rate**](docs/FXApi.md#o_bpv2_2_0_get_current_fx_rate) | **GET** /obp/v2.2.0/banks/{bankid}/fx/{fromcurrencycode}/{tocurrencycode} | Get Current FxRate
-*OpenBankProject::FXApi* | [**o_bpv5_1_0_get_currencies_at_bank**](docs/FXApi.md#o_bpv5_1_0_get_currencies_at_bank) | **GET** /obp/v5.1.0/banks/{bankid}/currencies | Get Currencies at a Bank
-*OpenBankProject::FirehoseDataApi* | [**o_bpv3_0_0_get_firehose_transactions_for_bank_account**](docs/FirehoseDataApi.md#o_bpv3_0_0_get_firehose_transactions_for_bank_account) | **GET** /obp/v3.0.0/banks/{bankid}/firehose/accounts/{accountid}/views/{viewid}/transactions | Get Firehose Transactions for Account
-*OpenBankProject::FirehoseDataApi* | [**o_bpv3_1_0_get_firehose_customers**](docs/FirehoseDataApi.md#o_bpv3_1_0_get_firehose_customers) | **GET** /obp/v3.1.0/banks/{bankid}/firehose/customers | Get Firehose Customers
-*OpenBankProject::FirehoseDataApi* | [**o_bpv4_0_0_get_fast_firehose_accounts_at_one_bank**](docs/FirehoseDataApi.md#o_bpv4_0_0_get_fast_firehose_accounts_at_one_bank) | **GET** /obp/v4.0.0/management/banks/{bankid}/fast-firehose/accounts | Get Fast Firehose Accounts at Bank
-*OpenBankProject::FirehoseDataApi* | [**o_bpv4_0_0_get_firehose_accounts_at_one_bank**](docs/FirehoseDataApi.md#o_bpv4_0_0_get_firehose_accounts_at_one_bank) | **GET** /obp/v4.0.0/banks/{bankid}/firehose/accounts/views/{viewid} | Get Firehose Accounts at Bank
-*OpenBankProject::GroupApi* | [**o_bpv6_0_0_add_user_to_group**](docs/GroupApi.md#o_bpv6_0_0_add_user_to_group) | **POST** /obp/v6.0.0/users/{userid}/group-entitlements | Grant User Membership to Group Entitlements
-*OpenBankProject::GroupApi* | [**o_bpv6_0_0_create_group**](docs/GroupApi.md#o_bpv6_0_0_create_group) | **POST** /obp/v6.0.0/management/groups | Create Group
-*OpenBankProject::GroupApi* | [**o_bpv6_0_0_delete_group**](docs/GroupApi.md#o_bpv6_0_0_delete_group) | **DELETE** /obp/v6.0.0/management/groups/{groupid} | Delete Group
-*OpenBankProject::GroupApi* | [**o_bpv6_0_0_get_group**](docs/GroupApi.md#o_bpv6_0_0_get_group) | **GET** /obp/v6.0.0/management/groups/{groupid} | Get Group
-*OpenBankProject::GroupApi* | [**o_bpv6_0_0_get_group_entitlements**](docs/GroupApi.md#o_bpv6_0_0_get_group_entitlements) | **GET** /obp/v6.0.0/management/groups/{groupid}/entitlements | Get Group Entitlements
-*OpenBankProject::GroupApi* | [**o_bpv6_0_0_get_groups**](docs/GroupApi.md#o_bpv6_0_0_get_groups) | **GET** /obp/v6.0.0/management/groups | Get Groups
-*OpenBankProject::GroupApi* | [**o_bpv6_0_0_get_user_group_memberships**](docs/GroupApi.md#o_bpv6_0_0_get_user_group_memberships) | **GET** /obp/v6.0.0/users/{userid}/group-entitlements | Get User's Group Memberships
-*OpenBankProject::GroupApi* | [**o_bpv6_0_0_remove_user_from_group**](docs/GroupApi.md#o_bpv6_0_0_remove_user_from_group) | **DELETE** /obp/v6.0.0/users/{userid}/group-entitlements/{groupid} | Remove User from Group
-*OpenBankProject::GroupApi* | [**o_bpv6_0_0_update_group**](docs/GroupApi.md#o_bpv6_0_0_update_group) | **PUT** /obp/v6.0.0/management/groups/{groupid} | Update Group
-*OpenBankProject::JSONSchemaValidationApi* | [**o_bpv4_0_0_create_json_schema_validation**](docs/JSONSchemaValidationApi.md#o_bpv4_0_0_create_json_schema_validation) | **POST** /obp/v4.0.0/management/json-schema-validations/{operationid} | Create a JSON Schema Validation
-*OpenBankProject::JSONSchemaValidationApi* | [**o_bpv4_0_0_delete_json_schema_validation**](docs/JSONSchemaValidationApi.md#o_bpv4_0_0_delete_json_schema_validation) | **DELETE** /obp/v4.0.0/management/json-schema-validations/{operationid} | Delete a JSON Schema Validation
-*OpenBankProject::JSONSchemaValidationApi* | [**o_bpv4_0_0_get_all_json_schema_validations**](docs/JSONSchemaValidationApi.md#o_bpv4_0_0_get_all_json_schema_validations) | **GET** /obp/v4.0.0/management/json-schema-validations | Get all JSON Schema Validations
-*OpenBankProject::JSONSchemaValidationApi* | [**o_bpv4_0_0_get_all_json_schema_validations_public**](docs/JSONSchemaValidationApi.md#o_bpv4_0_0_get_all_json_schema_validations_public) | **GET** /obp/v4.0.0/endpoints/json-schema-validations | Get all JSON Schema Validations - public
-*OpenBankProject::JSONSchemaValidationApi* | [**o_bpv4_0_0_get_json_schema_validation**](docs/JSONSchemaValidationApi.md#o_bpv4_0_0_get_json_schema_validation) | **GET** /obp/v4.0.0/management/json-schema-validations/{operationid} | Get a JSON Schema Validation
-*OpenBankProject::JSONSchemaValidationApi* | [**o_bpv4_0_0_update_json_schema_validation**](docs/JSONSchemaValidationApi.md#o_bpv4_0_0_update_json_schema_validation) | **PUT** /obp/v4.0.0/management/json-schema-validations/{operationid} | Update a JSON Schema Validation
-*OpenBankProject::KYCApi* | [**o_bpv2_0_0_add_kyc_check**](docs/KYCApi.md#o_bpv2_0_0_add_kyc_check) | **PUT** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_check/{kyccheckid} | Add KYC Check
-*OpenBankProject::KYCApi* | [**o_bpv2_0_0_add_kyc_document**](docs/KYCApi.md#o_bpv2_0_0_add_kyc_document) | **PUT** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_documents/{kycdocumentid} | Add KYC Document
-*OpenBankProject::KYCApi* | [**o_bpv2_0_0_add_kyc_media**](docs/KYCApi.md#o_bpv2_0_0_add_kyc_media) | **PUT** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_media/{kycmediaid} | Add KYC Media
-*OpenBankProject::KYCApi* | [**o_bpv2_0_0_add_kyc_status**](docs/KYCApi.md#o_bpv2_0_0_add_kyc_status) | **PUT** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_statuses | Add KYC Status
-*OpenBankProject::KYCApi* | [**o_bpv2_0_0_get_kyc_checks**](docs/KYCApi.md#o_bpv2_0_0_get_kyc_checks) | **GET** /obp/v2.0.0/customers/{customerid}/kyc_checks | Get Customer KYC Checks
-*OpenBankProject::KYCApi* | [**o_bpv2_0_0_get_kyc_documents**](docs/KYCApi.md#o_bpv2_0_0_get_kyc_documents) | **GET** /obp/v2.0.0/customers/{customerid}/kyc_documents | Get Customer KYC Documents
-*OpenBankProject::KYCApi* | [**o_bpv2_0_0_get_kyc_media**](docs/KYCApi.md#o_bpv2_0_0_get_kyc_media) | **GET** /obp/v2.0.0/customers/{customerid}/kyc_media | Get KYC Media for a customer
-*OpenBankProject::KYCApi* | [**o_bpv2_0_0_get_kyc_statuses**](docs/KYCApi.md#o_bpv2_0_0_get_kyc_statuses) | **GET** /obp/v2.0.0/customers/{customerid}/kyc_statuses | Get Customer KYC statuses
-*OpenBankProject::KYCApi* | [**o_bpv3_1_0_create_tax_residence**](docs/KYCApi.md#o_bpv3_1_0_create_tax_residence) | **POST** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/tax-residence | Create Tax Residence
-*OpenBankProject::KYCApi* | [**o_bpv3_1_0_delete_customer_address**](docs/KYCApi.md#o_bpv3_1_0_delete_customer_address) | **DELETE** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/addresses/{customeraddressid} | Delete Customer Address
-*OpenBankProject::KYCApi* | [**o_bpv3_1_0_delete_tax_residence**](docs/KYCApi.md#o_bpv3_1_0_delete_tax_residence) | **DELETE** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/tax_residencies/{taxresidenceid} | Delete Tax Residence
-*OpenBankProject::KYCApi* | [**o_bpv3_1_0_get_customer_addresses**](docs/KYCApi.md#o_bpv3_1_0_get_customer_addresses) | **GET** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/addresses | Get Customer Addresses
-*OpenBankProject::KYCApi* | [**o_bpv3_1_0_get_tax_residence**](docs/KYCApi.md#o_bpv3_1_0_get_tax_residence) | **GET** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/tax-residences | Get Tax Residences of Customer
-*OpenBankProject::KYCApi* | [**o_bpv4_0_0_create_user_invitation**](docs/KYCApi.md#o_bpv4_0_0_create_user_invitation) | **POST** /obp/v4.0.0/banks/{bankid}/user-invitation | Create User Invitation
-*OpenBankProject::KYCApi* | [**o_bpv4_0_0_get_customers_by_customer_phone_number**](docs/KYCApi.md#o_bpv4_0_0_get_customers_by_customer_phone_number) | **POST** /obp/v4.0.0/banks/{bankid}/search/customers/mobile-phone-number | Get Customers by MOBILE_PHONE_NUMBER
-*OpenBankProject::KYCApi* | [**o_bpv4_0_0_get_user_invitation_anonymous**](docs/KYCApi.md#o_bpv4_0_0_get_user_invitation_anonymous) | **POST** /obp/v4.0.0/banks/{bankid}/user-invitations | Get User Invitation Information
-*OpenBankProject::KYCApi* | [**o_bpv5_0_0_get_customer_overview**](docs/KYCApi.md#o_bpv5_0_0_get_customer_overview) | **POST** /obp/v5.0.0/banks/{bankid}/customers/customer-number-query/overview | Get Customer Overview
-*OpenBankProject::KYCApi* | [**o_bpv5_0_0_get_customer_overview_flat**](docs/KYCApi.md#o_bpv5_0_0_get_customer_overview_flat) | **POST** /obp/v5.0.0/banks/{bankid}/customers/customer-number-query/overview-flat | Get Customer Overview Flat
-*OpenBankProject::KYCApi* | [**o_bpv6_0_0_get_customer_by_customer_number**](docs/KYCApi.md#o_bpv6_0_0_get_customer_by_customer_number) | **POST** /obp/v6.0.0/banks/{bankid}/customers/customer-number | Get Customer by CUSTOMER_NUMBER
-*OpenBankProject::KYCApi* | [**o_bpv6_0_0_get_customers_by_legal_name**](docs/KYCApi.md#o_bpv6_0_0_get_customers_by_legal_name) | **POST** /obp/v6.0.0/banks/{bankid}/customers/legal-name | Get Customers by Legal Name
-*OpenBankProject::LogCacheApi* | [**o_bpv5_1_0_log_cache_all_endpoint**](docs/LogCacheApi.md#o_bpv5_1_0_log_cache_all_endpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache
-*OpenBankProject::LogCacheApi* | [**o_bpv5_1_0_log_cache_debug_endpoint**](docs/LogCacheApi.md#o_bpv5_1_0_log_cache_debug_endpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache
-*OpenBankProject::LogCacheApi* | [**o_bpv5_1_0_log_cache_error_endpoint**](docs/LogCacheApi.md#o_bpv5_1_0_log_cache_error_endpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache
-*OpenBankProject::LogCacheApi* | [**o_bpv5_1_0_log_cache_info_endpoint**](docs/LogCacheApi.md#o_bpv5_1_0_log_cache_info_endpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache
-*OpenBankProject::LogCacheApi* | [**o_bpv5_1_0_log_cache_trace_endpoint**](docs/LogCacheApi.md#o_bpv5_1_0_log_cache_trace_endpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache
-*OpenBankProject::LogCacheApi* | [**o_bpv5_1_0_log_cache_warning_endpoint**](docs/LogCacheApi.md#o_bpv5_1_0_log_cache_warning_endpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache
-*OpenBankProject::MessageDocApi* | [**o_bpv2_2_0_get_message_docs**](docs/MessageDocApi.md#o_bpv2_2_0_get_message_docs) | **GET** /obp/v2.2.0/message-docs/{connector} | Get Message Docs
-*OpenBankProject::MessageDocApi* | [**o_bpv3_1_0_get_message_docs_swagger**](docs/MessageDocApi.md#o_bpv3_1_0_get_message_docs_swagger) | **GET** /obp/v3.1.0/message-docs/{connector}/swagger2.0 | Get Message Docs Swagger
-*OpenBankProject::MessageDocApi* | [**o_bpv6_0_0_get_message_docs_json_schema**](docs/MessageDocApi.md#o_bpv6_0_0_get_message_docs_json_schema) | **GET** /obp/v6.0.0/message-docs/{connector}/json-schema | Get Message Docs as JSON Schema
-*OpenBankProject::MethodRoutingApi* | [**o_bpv3_1_0_create_method_routing**](docs/MethodRoutingApi.md#o_bpv3_1_0_create_method_routing) | **POST** /obp/v3.1.0/management/method_routings | Create MethodRouting
-*OpenBankProject::MethodRoutingApi* | [**o_bpv3_1_0_delete_method_routing**](docs/MethodRoutingApi.md#o_bpv3_1_0_delete_method_routing) | **DELETE** /obp/v3.1.0/management/method_routings/{methodroutingid} | Delete MethodRouting
-*OpenBankProject::MethodRoutingApi* | [**o_bpv3_1_0_get_method_routings**](docs/MethodRoutingApi.md#o_bpv3_1_0_get_method_routings) | **GET** /obp/v3.1.0/management/method_routings | Get MethodRoutings
-*OpenBankProject::MethodRoutingApi* | [**o_bpv3_1_0_update_method_routing**](docs/MethodRoutingApi.md#o_bpv3_1_0_update_method_routing) | **PUT** /obp/v3.1.0/management/method_routings/{methodroutingid} | Update MethodRouting
-*OpenBankProject::MethodRoutingApi* | [**o_bpv6_0_0_get_connector_method_names**](docs/MethodRoutingApi.md#o_bpv6_0_0_get_connector_method_names) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names
-*OpenBankProject::MetricApi* | [**o_bpv2_0_0_elastic_search_metrics**](docs/MetricApi.md#o_bpv2_0_0_elastic_search_metrics) | **GET** /obp/v2.0.0/search/metrics | Search API Metrics via Elasticsearch
-*OpenBankProject::MetricApi* | [**o_bpv2_2_0_get_connector_metrics**](docs/MetricApi.md#o_bpv2_2_0_get_connector_metrics) | **GET** /obp/v2.2.0/management/connector/metrics | Get Connector Metrics
-*OpenBankProject::MetricApi* | [**o_bpv3_1_0_get_metrics_top_consumers**](docs/MetricApi.md#o_bpv3_1_0_get_metrics_top_consumers) | **GET** /obp/v3.1.0/management/metrics/top-consumers | Get Top Consumers
-*OpenBankProject::MetricApi* | [**o_bpv5_0_0_get_metrics_at_bank**](docs/MetricApi.md#o_bpv5_0_0_get_metrics_at_bank) | **GET** /obp/v5.0.0/management/metrics/banks/{bankid} | Get Metrics at Bank
-*OpenBankProject::MetricApi* | [**o_bpv6_0_0_get_aggregate_metrics**](docs/MetricApi.md#o_bpv6_0_0_get_aggregate_metrics) | **GET** /obp/v6.0.0/management/aggregate-metrics | Get Aggregate Metrics
-*OpenBankProject::MetricApi* | [**o_bpv6_0_0_get_connector_call_counts**](docs/MetricApi.md#o_bpv6_0_0_get_connector_call_counts) | **GET** /obp/v6.0.0/management/connector/metrics/counts | Get Connector Call Counts
-*OpenBankProject::MetricApi* | [**o_bpv6_0_0_get_connector_traces**](docs/MetricApi.md#o_bpv6_0_0_get_connector_traces) | **GET** /obp/v6.0.0/management/connector/traces | Get Connector Traces
-*OpenBankProject::MetricApi* | [**o_bpv6_0_0_get_metrics**](docs/MetricApi.md#o_bpv6_0_0_get_metrics) | **GET** /obp/v6.0.0/management/metrics | Get Metrics
-*OpenBankProject::MetricApi* | [**o_bpv6_0_0_get_popular_apis**](docs/MetricApi.md#o_bpv6_0_0_get_popular_apis) | **GET** /obp/v6.0.0/api/popular-endpoints | Get Popular Endpoints
-*OpenBankProject::MetricApi* | [**o_bpv6_0_0_get_top_apis**](docs/MetricApi.md#o_bpv6_0_0_get_top_apis) | **GET** /obp/v6.0.0/management/metrics/top-apis | Get Top APIs
-*OpenBankProject::OAuthApi* | [**o_bpv3_1_0_get_o_auth2_server_jwks_uris**](docs/OAuthApi.md#o_bpv3_1_0_get_o_auth2_server_jwks_uris) | **GET** /obp/v3.1.0/jwks-uris | Get JSON Web Key (JWK) URIs
-*OpenBankProject::OAuthApi* | [**o_bpv3_1_0_get_obp_connector_loopback**](docs/OAuthApi.md#o_bpv3_1_0_get_obp_connector_loopback) | **GET** /obp/v3.1.0/connector/loopback | Get Connector Status (Loopback)
-*OpenBankProject::OAuthApi* | [**o_bpv6_0_0_get_oidc_client**](docs/OAuthApi.md#o_bpv6_0_0_get_oidc_client) | **GET** /obp/v6.0.0/oidc/clients/{clientid} | Get OIDC Client
-*OpenBankProject::OAuthApi* | [**o_bpv6_0_0_verify_oidc_client**](docs/OAuthApi.md#o_bpv6_0_0_verify_oidc_client) | **POST** /obp/v6.0.0/oidc/clients/verify | Verify OIDC Client
-*OpenBankProject::OIDCApi* | [**o_bpv3_1_0_get_o_auth2_server_jwks_uris**](docs/OIDCApi.md#o_bpv3_1_0_get_o_auth2_server_jwks_uris) | **GET** /obp/v3.1.0/jwks-uris | Get JSON Web Key (JWK) URIs
-*OpenBankProject::OIDCApi* | [**o_bpv3_1_0_get_obp_connector_loopback**](docs/OIDCApi.md#o_bpv3_1_0_get_obp_connector_loopback) | **GET** /obp/v3.1.0/connector/loopback | Get Connector Status (Loopback)
-*OpenBankProject::OIDCApi* | [**o_bpv6_0_0_get_oidc_client**](docs/OIDCApi.md#o_bpv6_0_0_get_oidc_client) | **GET** /obp/v6.0.0/oidc/clients/{clientid} | Get OIDC Client
-*OpenBankProject::OIDCApi* | [**o_bpv6_0_0_verify_oidc_client**](docs/OIDCApi.md#o_bpv6_0_0_verify_oidc_client) | **POST** /obp/v6.0.0/oidc/clients/verify | Verify OIDC Client
-*OpenBankProject::OldStyleApi* | [**o_bpv2_0_0_elastic_search_metrics**](docs/OldStyleApi.md#o_bpv2_0_0_elastic_search_metrics) | **GET** /obp/v2.0.0/search/metrics | Search API Metrics via Elasticsearch
-*OpenBankProject::OnboardingApi* | [**o_bpv5_0_0_create_account**](docs/OnboardingApi.md#o_bpv5_0_0_create_account) | **PUT** /obp/v5.0.0/banks/{bankid}/accounts/{accountid} | Create Account (PUT)
-*OpenBankProject::OnboardingApi* | [**o_bpv6_0_0_create_user**](docs/OnboardingApi.md#o_bpv6_0_0_create_user) | **POST** /obp/v6.0.0/users | Create User (v6.0.0)
-*OpenBankProject::OwnerViewRequiredApi* | [**o_bpv5_1_0_create_user_with_account_access_by_id**](docs/OwnerViewRequiredApi.md#o_bpv5_1_0_create_user_with_account_access_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/user-account-access | Create (DAuth) User with Account Access
-*OpenBankProject::OwnerViewRequiredApi* | [**o_bpv5_1_0_grant_user_access_to_view_by_id**](docs/OwnerViewRequiredApi.md#o_bpv5_1_0_grant_user_access_to_view_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/grant | Grant User access to View
-*OpenBankProject::OwnerViewRequiredApi* | [**o_bpv5_1_0_revoke_user_access_to_view_by_id**](docs/OwnerViewRequiredApi.md#o_bpv5_1_0_revoke_user_access_to_view_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/revoke | Revoke User access to View
-*OpenBankProject::PSD2Api* | [**o_bpv1_4_0_get_transaction_request_types**](docs/PSD2Api.md#o_bpv1_4_0_get_transaction_request_types) | **GET** /obp/v1.4.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types | Get Transaction Request Types for Account
-*OpenBankProject::PSD2Api* | [**o_bpv2_0_0_get_transaction_types**](docs/PSD2Api.md#o_bpv2_0_0_get_transaction_types) | **GET** /obp/v2.0.0/banks/{bankid}/transaction-types | Get Transaction Types at Bank
-*OpenBankProject::PSD2Api* | [**o_bpv2_1_0_create_transaction_request_sandbox_tan**](docs/PSD2Api.md#o_bpv2_1_0_create_transaction_request_sandbox_tan) | **POST** /obp/v2.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sandboxtan}/transaction-requests | Create Transaction Request (SANDBOX_TAN)
-*OpenBankProject::PSD2Api* | [**o_bpv3_0_0_core_private_accounts_all_banks**](docs/PSD2Api.md#o_bpv3_0_0_core_private_accounts_all_banks) | **GET** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private)
-*OpenBankProject::PSD2Api* | [**o_bpv3_0_0_get_accounts_held**](docs/PSD2Api.md#o_bpv3_0_0_get_accounts_held) | **GET** /obp/v3.0.0/banks/{bankid}/accounts-held | Get Accounts Held
-*OpenBankProject::PSD2Api* | [**o_bpv3_0_0_get_core_transactions_for_bank_account**](docs/PSD2Api.md#o_bpv3_0_0_get_core_transactions_for_bank_account) | **GET** /obp/v3.0.0/my/banks/{bankid}/accounts/{accountid}/transactions | Get Transactions for Account (Core)
-*OpenBankProject::PSD2Api* | [**o_bpv3_0_0_get_private_account_idsby_bank_id**](docs/PSD2Api.md#o_bpv3_0_0_get_private_account_idsby_bank_id) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/account_ids/private | Get Accounts at Bank (IDs only)
-*OpenBankProject::PSD2Api* | [**o_bpv3_0_0_private_accounts_at_one_bank**](docs/PSD2Api.md#o_bpv3_0_0_private_accounts_at_one_bank) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/private | Get Accounts at Bank (Minimal)
-*OpenBankProject::PSD2Api* | [**o_bpv3_1_0_answer_consent_challenge**](docs/PSD2Api.md#o_bpv3_1_0_answer_consent_challenge) | **POST** /obp/v3.1.0/banks/{bankid}/consents/{consentid}/challenge | Answer Consent Challenge
-*OpenBankProject::PSD2Api* | [**o_bpv3_1_0_check_funds_available**](docs/PSD2Api.md#o_bpv3_1_0_check_funds_available) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available | Check Available Funds
-*OpenBankProject::PSD2Api* | [**o_bpv3_1_0_create_consent_email**](docs/PSD2Api.md#o_bpv3_1_0_create_consent_email) | **POST** /obp/v3.1.0/banks/{bankid}/my/consents/{email} | Create Consent (EMAIL)
-*OpenBankProject::PSD2Api* | [**o_bpv3_1_0_create_consent_implicit**](docs/PSD2Api.md#o_bpv3_1_0_create_consent_implicit) | **POST** /obp/v3.1.0/banks/{bankid}/my/consents/{implicit} | Create Consent (IMPLICIT)
-*OpenBankProject::PSD2Api* | [**o_bpv3_1_0_create_consent_sms**](docs/PSD2Api.md#o_bpv3_1_0_create_consent_sms) | **POST** /obp/v3.1.0/banks/{bankid}/my/consents/{sms} | Create Consent (SMS)
-*OpenBankProject::PSD2Api* | [**o_bpv3_1_0_get_server_jwk**](docs/PSD2Api.md#o_bpv3_1_0_get_server_jwk) | **GET** /obp/v3.1.0/certs | Get JSON Web Key (JWK)
-*OpenBankProject::PSD2Api* | [**o_bpv4_0_0_answer_transaction_request_challenge**](docs/PSD2Api.md#o_bpv4_0_0_answer_transaction_request_challenge) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{transactionrequesttype}/transaction-requests/{transactionrequestid}/challenge | Answer Transaction Request Challenge
-*OpenBankProject::PSD2Api* | [**o_bpv4_0_0_create_transaction_request_account**](docs/PSD2Api.md#o_bpv4_0_0_create_transaction_request_account) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{account}/transaction-requests | Create Transaction Request (ACCOUNT)
-*OpenBankProject::PSD2Api* | [**o_bpv4_0_0_create_transaction_request_account_otp**](docs/PSD2Api.md#o_bpv4_0_0_create_transaction_request_account_otp) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{accountotp}/transaction-requests | Create Transaction Request (ACCOUNT_OTP)
-*OpenBankProject::PSD2Api* | [**o_bpv4_0_0_create_transaction_request_agent_cash_with_drawal**](docs/PSD2Api.md#o_bpv4_0_0_create_transaction_request_agent_cash_with_drawal) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{agentcashwithdrawal}/transaction-requests | Create Transaction Request (AGENT_CASH_WITHDRAWAL)
-*OpenBankProject::PSD2Api* | [**o_bpv4_0_0_create_transaction_request_card**](docs/PSD2Api.md#o_bpv4_0_0_create_transaction_request_card) | **POST** /obp/v4.0.0/transaction-request-types/{card}/transaction-requests | Create Transaction Request (CARD)
-*OpenBankProject::PSD2Api* | [**o_bpv4_0_0_create_transaction_request_counterparty**](docs/PSD2Api.md#o_bpv4_0_0_create_transaction_request_counterparty) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{counterparty}/transaction-requests | Create Transaction Request (COUNTERPARTY)
-*OpenBankProject::PSD2Api* | [**o_bpv4_0_0_create_transaction_request_refund**](docs/PSD2Api.md#o_bpv4_0_0_create_transaction_request_refund) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{refund}/transaction-requests | Create Transaction Request (REFUND)
-*OpenBankProject::PSD2Api* | [**o_bpv4_0_0_create_transaction_request_sepa**](docs/PSD2Api.md#o_bpv4_0_0_create_transaction_request_sepa) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sepa}/transaction-requests | Create Transaction Request (SEPA)
-*OpenBankProject::PSD2Api* | [**o_bpv4_0_0_create_transaction_request_simple**](docs/PSD2Api.md#o_bpv4_0_0_create_transaction_request_simple) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{simple}/transaction-requests | Create Transaction Request (SIMPLE)
-*OpenBankProject::PSD2Api* | [**o_bpv4_0_0_get_consent_infos**](docs/PSD2Api.md#o_bpv4_0_0_get_consent_infos) | **GET** /obp/v4.0.0/my/consent-infos | Get My Consents Info
-*OpenBankProject::PSD2Api* | [**o_bpv4_0_0_get_consent_infos_by_bank**](docs/PSD2Api.md#o_bpv4_0_0_get_consent_infos_by_bank) | **GET** /obp/v4.0.0/banks/{bankid}/my/consent-infos | Get My Consents Info At Bank
-*OpenBankProject::PSD2Api* | [**o_bpv4_0_0_get_counterparties_for_any_account**](docs/PSD2Api.md#o_bpv4_0_0_get_counterparties_for_any_account) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties for any account (Explicit)
-*OpenBankProject::PSD2Api* | [**o_bpv4_0_0_get_explicit_counterparties_for_account**](docs/PSD2Api.md#o_bpv4_0_0_get_explicit_counterparties_for_account) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties (Explicit)
-*OpenBankProject::PSD2Api* | [**o_bpv4_0_0_get_explicit_counterparty_by_id**](docs/PSD2Api.md#o_bpv4_0_0_get_explicit_counterparty_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id (Explicit)
-*OpenBankProject::PSD2Api* | [**o_bpv4_0_0_get_settlement_accounts**](docs/PSD2Api.md#o_bpv4_0_0_get_settlement_accounts) | **GET** /obp/v4.0.0/banks/{bankid}/settlement-accounts | Get Settlement accounts at Bank
-*OpenBankProject::PSD2Api* | [**o_bpv4_0_0_get_transaction_request**](docs/PSD2Api.md#o_bpv4_0_0_get_transaction_request) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-requests/{transactionrequestid} | Get Transaction Request
-*OpenBankProject::PSD2Api* | [**o_bpv5_0_0_create_consent_by_consent_request_id_email**](docs/PSD2Api.md#o_bpv5_0_0_create_consent_by_consent_request_id_email) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{email}/consents | Create Consent By CONSENT_REQUEST_ID (EMAIL)
-*OpenBankProject::PSD2Api* | [**o_bpv5_0_0_create_consent_by_consent_request_id_implicit**](docs/PSD2Api.md#o_bpv5_0_0_create_consent_by_consent_request_id_implicit) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{implicit}/consents | Create Consent By CONSENT_REQUEST_ID (IMPLICIT)
-*OpenBankProject::PSD2Api* | [**o_bpv5_0_0_create_consent_by_consent_request_id_sms**](docs/PSD2Api.md#o_bpv5_0_0_create_consent_by_consent_request_id_sms) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{sms}/consents | Create Consent By CONSENT_REQUEST_ID (SMS)
-*OpenBankProject::PSD2Api* | [**o_bpv5_0_0_create_consent_request**](docs/PSD2Api.md#o_bpv5_0_0_create_consent_request) | **POST** /obp/v5.0.0/consumer/consent-requests | Create Consent Request
-*OpenBankProject::PSD2Api* | [**o_bpv5_0_0_get_consent_by_consent_request_id**](docs/PSD2Api.md#o_bpv5_0_0_get_consent_by_consent_request_id) | **GET** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/consents | Get Consent By Consent Request Id via Consumer
-*OpenBankProject::PSD2Api* | [**o_bpv5_0_0_get_consent_request**](docs/PSD2Api.md#o_bpv5_0_0_get_consent_request) | **GET** /obp/v5.0.0/consumer/consent-requests/{consentrequestid} | Get Consent Request
-*OpenBankProject::PSD2Api* | [**o_bpv5_1_0_create_consent_implicit**](docs/PSD2Api.md#o_bpv5_1_0_create_consent_implicit) | **POST** /obp/v5.1.0/my/consents/{implicit} | Create Consent (IMPLICIT)
-*OpenBankProject::PSD2Api* | [**o_bpv5_1_0_get_bank_account_balances**](docs/PSD2Api.md#o_bpv5_1_0_get_bank_account_balances) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/balances | Get Account Balances by BANK_ID and ACCOUNT_ID through the VIEW_ID
-*OpenBankProject::PSD2Api* | [**o_bpv5_1_0_get_bank_accounts_balances**](docs/PSD2Api.md#o_bpv5_1_0_get_bank_accounts_balances) | **GET** /obp/v5.1.0/banks/{bankid}/balances | Get Account Balances by BANK_ID
-*OpenBankProject::PSD2Api* | [**o_bpv5_1_0_get_bank_accounts_balances_through_view**](docs/PSD2Api.md#o_bpv5_1_0_get_bank_accounts_balances_through_view) | **GET** /obp/v5.1.0/banks/{bankid}/views/{viewid}/balances | Get Account Balances by BANK_ID through the VIEW_ID
-*OpenBankProject::PSD2Api* | [**o_bpv5_1_0_get_consent_by_consent_id**](docs/PSD2Api.md#o_bpv5_1_0_get_consent_by_consent_id) | **GET** /obp/v5.1.0/user/current/consents/{consentid} | Get Consent By Consent Id via User
-*OpenBankProject::PSD2Api* | [**o_bpv5_1_0_get_consent_by_consent_id_via_consumer**](docs/PSD2Api.md#o_bpv5_1_0_get_consent_by_consent_id_via_consumer) | **GET** /obp/v5.1.0/consumer/current/consents/{consentid} | Get Consent By Consent Id via Consumer
-*OpenBankProject::PSD2Api* | [**o_bpv5_1_0_get_consents**](docs/PSD2Api.md#o_bpv5_1_0_get_consents) | **GET** /obp/v5.1.0/management/consents | Get Consents
-*OpenBankProject::PSD2Api* | [**o_bpv5_1_0_get_consents_at_bank**](docs/PSD2Api.md#o_bpv5_1_0_get_consents_at_bank) | **GET** /obp/v5.1.0/management/consents/banks/{bankid} | Get Consents at Bank
-*OpenBankProject::PSD2Api* | [**o_bpv5_1_0_get_core_account_by_id_through_view**](docs/PSD2Api.md#o_bpv5_1_0_get_core_account_by_id_through_view) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid} | Get Account by Id (Core) through the VIEW_ID
-*OpenBankProject::PSD2Api* | [**o_bpv5_1_0_get_my_consents**](docs/PSD2Api.md#o_bpv5_1_0_get_my_consents) | **GET** /obp/v5.1.0/my/consents | Get My Consents
-*OpenBankProject::PSD2Api* | [**o_bpv5_1_0_get_my_consents_by_bank**](docs/PSD2Api.md#o_bpv5_1_0_get_my_consents_by_bank) | **GET** /obp/v5.1.0/banks/{bankid}/my/consents | Get My Consents at Bank
-*OpenBankProject::PSD2Api* | [**o_bpv5_1_0_get_transaction_request_by_id**](docs/PSD2Api.md#o_bpv5_1_0_get_transaction_request_by_id) | **GET** /obp/v5.1.0/management/transaction-requests/{transactionrequestid} | Get Transaction Request by ID
-*OpenBankProject::PSD2Api* | [**o_bpv5_1_0_mtls_client_certificate_info**](docs/PSD2Api.md#o_bpv5_1_0_mtls_client_certificate_info) | **GET** /obp/v5.1.0/my/mtls/certificate/current | Provide client's certificate info of a current call
-*OpenBankProject::PSD2Api* | [**o_bpv5_1_0_revoke_consent_at_bank**](docs/PSD2Api.md#o_bpv5_1_0_revoke_consent_at_bank) | **DELETE** /obp/v5.1.0/banks/{bankid}/consents/{consentid} | Revoke Consent at Bank
-*OpenBankProject::PSD2Api* | [**o_bpv5_1_0_revoke_my_consent**](docs/PSD2Api.md#o_bpv5_1_0_revoke_my_consent) | **DELETE** /obp/v5.1.0/my/consents/{consentid} | Revoke My Consent
-*OpenBankProject::PSD2Api* | [**o_bpv5_1_0_self_revoke_consent**](docs/PSD2Api.md#o_bpv5_1_0_self_revoke_consent) | **DELETE** /obp/v5.1.0/my/consent/current | Revoke Consent used in the Current Call
-*OpenBankProject::PSD2Api* | [**o_bpv6_0_0_create_transaction_request_cardano**](docs/PSD2Api.md#o_bpv6_0_0_create_transaction_request_cardano) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{cardano}/transaction-requests | Create Transaction Request (CARDANO)
-*OpenBankProject::PSD2Api* | [**o_bpv6_0_0_create_transaction_request_eth_send_raw_transaction**](docs/PSD2Api.md#o_bpv6_0_0_create_transaction_request_eth_send_raw_transaction) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendrawtransaction}/transaction-requests | CREATE TRANSACTION REQUEST (ETH_SEND_RAW_TRANSACTION )
-*OpenBankProject::PSD2Api* | [**o_bpv6_0_0_create_transaction_request_ethereume_send_transaction**](docs/PSD2Api.md#o_bpv6_0_0_create_transaction_request_ethereume_send_transaction) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendtransaction}/transaction-requests | Create Transaction Request (ETH_SEND_TRANSACTION)
-*OpenBankProject::PSD2Api* | [**o_bpv6_0_0_create_transaction_request_hold**](docs/PSD2Api.md#o_bpv6_0_0_create_transaction_request_hold) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{hold}/transaction-requests | Create Transaction Request (HOLD)
-*OpenBankProject::PSD2Api* | [**o_bpv6_0_0_get_bank**](docs/PSD2Api.md#o_bpv6_0_0_get_bank) | **GET** /obp/v6.0.0/banks/{bankid} | Get Bank
-*OpenBankProject::PSD2Api* | [**o_bpv6_0_0_get_banks**](docs/PSD2Api.md#o_bpv6_0_0_get_banks) | **GET** /obp/v6.0.0/banks | Get Banks
-*OpenBankProject::PSD2Api* | [**o_bpv6_0_0_get_core_account_by_id_v600**](docs/PSD2Api.md#o_bpv6_0_0_get_core_account_by_id_v600) | **GET** /obp/v6.0.0/my/banks/{bankid}/accounts/{accountid}/account | Get Account by Id (Core)
-*OpenBankProject::PaymentInitiationServicePISApi* | [**o_bpv1_4_0_get_transaction_request_types**](docs/PaymentInitiationServicePISApi.md#o_bpv1_4_0_get_transaction_request_types) | **GET** /obp/v1.4.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types | Get Transaction Request Types for Account
-*OpenBankProject::PaymentInitiationServicePISApi* | [**o_bpv2_1_0_create_transaction_request_sandbox_tan**](docs/PaymentInitiationServicePISApi.md#o_bpv2_1_0_create_transaction_request_sandbox_tan) | **POST** /obp/v2.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sandboxtan}/transaction-requests | Create Transaction Request (SANDBOX_TAN)
-*OpenBankProject::PaymentInitiationServicePISApi* | [**o_bpv4_0_0_answer_transaction_request_challenge**](docs/PaymentInitiationServicePISApi.md#o_bpv4_0_0_answer_transaction_request_challenge) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{transactionrequesttype}/transaction-requests/{transactionrequestid}/challenge | Answer Transaction Request Challenge
-*OpenBankProject::PaymentInitiationServicePISApi* | [**o_bpv4_0_0_create_transaction_request_account**](docs/PaymentInitiationServicePISApi.md#o_bpv4_0_0_create_transaction_request_account) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{account}/transaction-requests | Create Transaction Request (ACCOUNT)
-*OpenBankProject::PaymentInitiationServicePISApi* | [**o_bpv4_0_0_create_transaction_request_account_otp**](docs/PaymentInitiationServicePISApi.md#o_bpv4_0_0_create_transaction_request_account_otp) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{accountotp}/transaction-requests | Create Transaction Request (ACCOUNT_OTP)
-*OpenBankProject::PaymentInitiationServicePISApi* | [**o_bpv4_0_0_create_transaction_request_agent_cash_with_drawal**](docs/PaymentInitiationServicePISApi.md#o_bpv4_0_0_create_transaction_request_agent_cash_with_drawal) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{agentcashwithdrawal}/transaction-requests | Create Transaction Request (AGENT_CASH_WITHDRAWAL)
-*OpenBankProject::PaymentInitiationServicePISApi* | [**o_bpv4_0_0_create_transaction_request_card**](docs/PaymentInitiationServicePISApi.md#o_bpv4_0_0_create_transaction_request_card) | **POST** /obp/v4.0.0/transaction-request-types/{card}/transaction-requests | Create Transaction Request (CARD)
-*OpenBankProject::PaymentInitiationServicePISApi* | [**o_bpv4_0_0_create_transaction_request_counterparty**](docs/PaymentInitiationServicePISApi.md#o_bpv4_0_0_create_transaction_request_counterparty) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{counterparty}/transaction-requests | Create Transaction Request (COUNTERPARTY)
-*OpenBankProject::PaymentInitiationServicePISApi* | [**o_bpv4_0_0_create_transaction_request_free_form**](docs/PaymentInitiationServicePISApi.md#o_bpv4_0_0_create_transaction_request_free_form) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{freeform}/transaction-requests | Create Transaction Request (FREE_FORM)
-*OpenBankProject::PaymentInitiationServicePISApi* | [**o_bpv4_0_0_create_transaction_request_refund**](docs/PaymentInitiationServicePISApi.md#o_bpv4_0_0_create_transaction_request_refund) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{refund}/transaction-requests | Create Transaction Request (REFUND)
-*OpenBankProject::PaymentInitiationServicePISApi* | [**o_bpv4_0_0_create_transaction_request_sepa**](docs/PaymentInitiationServicePISApi.md#o_bpv4_0_0_create_transaction_request_sepa) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sepa}/transaction-requests | Create Transaction Request (SEPA)
-*OpenBankProject::PaymentInitiationServicePISApi* | [**o_bpv4_0_0_create_transaction_request_simple**](docs/PaymentInitiationServicePISApi.md#o_bpv4_0_0_create_transaction_request_simple) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{simple}/transaction-requests | Create Transaction Request (SIMPLE)
-*OpenBankProject::PaymentInitiationServicePISApi* | [**o_bpv4_0_0_get_counterparties_for_any_account**](docs/PaymentInitiationServicePISApi.md#o_bpv4_0_0_get_counterparties_for_any_account) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties for any account (Explicit)
-*OpenBankProject::PaymentInitiationServicePISApi* | [**o_bpv4_0_0_get_explicit_counterparties_for_account**](docs/PaymentInitiationServicePISApi.md#o_bpv4_0_0_get_explicit_counterparties_for_account) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties (Explicit)
-*OpenBankProject::PaymentInitiationServicePISApi* | [**o_bpv4_0_0_get_explicit_counterparty_by_id**](docs/PaymentInitiationServicePISApi.md#o_bpv4_0_0_get_explicit_counterparty_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id (Explicit)
-*OpenBankProject::PaymentInitiationServicePISApi* | [**o_bpv4_0_0_get_transaction_request**](docs/PaymentInitiationServicePISApi.md#o_bpv4_0_0_get_transaction_request) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-requests/{transactionrequestid} | Get Transaction Request
-*OpenBankProject::PaymentInitiationServicePISApi* | [**o_bpv5_1_0_get_transaction_request_by_id**](docs/PaymentInitiationServicePISApi.md#o_bpv5_1_0_get_transaction_request_by_id) | **GET** /obp/v5.1.0/management/transaction-requests/{transactionrequestid} | Get Transaction Request by ID
-*OpenBankProject::PaymentInitiationServicePISApi* | [**o_bpv5_1_0_get_transaction_requests**](docs/PaymentInitiationServicePISApi.md#o_bpv5_1_0_get_transaction_requests) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-requests | Get Transaction Requests
-*OpenBankProject::PaymentInitiationServicePISApi* | [**o_bpv6_0_0_create_transaction_request_cardano**](docs/PaymentInitiationServicePISApi.md#o_bpv6_0_0_create_transaction_request_cardano) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{cardano}/transaction-requests | Create Transaction Request (CARDANO)
-*OpenBankProject::PaymentInitiationServicePISApi* | [**o_bpv6_0_0_create_transaction_request_eth_send_raw_transaction**](docs/PaymentInitiationServicePISApi.md#o_bpv6_0_0_create_transaction_request_eth_send_raw_transaction) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendrawtransaction}/transaction-requests | CREATE TRANSACTION REQUEST (ETH_SEND_RAW_TRANSACTION )
-*OpenBankProject::PaymentInitiationServicePISApi* | [**o_bpv6_0_0_create_transaction_request_ethereume_send_transaction**](docs/PaymentInitiationServicePISApi.md#o_bpv6_0_0_create_transaction_request_ethereume_send_transaction) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendtransaction}/transaction-requests | Create Transaction Request (ETH_SEND_TRANSACTION)
-*OpenBankProject::PaymentInitiationServicePISApi* | [**o_bpv6_0_0_create_transaction_request_hold**](docs/PaymentInitiationServicePISApi.md#o_bpv6_0_0_create_transaction_request_hold) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{hold}/transaction-requests | Create Transaction Request (HOLD)
-*OpenBankProject::PersonApi* | [**o_bpv1_4_0_add_customer_message**](docs/PersonApi.md#o_bpv1_4_0_add_customer_message) | **POST** /obp/v1.4.0/banks/{bankid}/customer/{customerid}/messages | Create Customer Message
-*OpenBankProject::PersonApi* | [**o_bpv4_0_0_create_customer_message**](docs/PersonApi.md#o_bpv4_0_0_create_customer_message) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages | Create Customer Message
-*OpenBankProject::PersonApi* | [**o_bpv5_1_0_create_agent**](docs/PersonApi.md#o_bpv5_1_0_create_agent) | **POST** /obp/v5.1.0/banks/{bankid}/agents | Create Agent
-*OpenBankProject::PersonApi* | [**o_bpv5_1_0_update_agent_status**](docs/PersonApi.md#o_bpv5_1_0_update_agent_status) | **PUT** /obp/v5.1.0/banks/{bankid}/agents/{agentid} | Update Agent status
-*OpenBankProject::PersonApi* | [**o_bpv6_0_0_create_customer**](docs/PersonApi.md#o_bpv6_0_0_create_customer) | **POST** /obp/v6.0.0/banks/{bankid}/customers | Create Customer
-*OpenBankProject::PersonalDynamicEntityApi* | [**o_bpv6_0_0_get_available_personal_dynamic_entities**](docs/PersonalDynamicEntityApi.md#o_bpv6_0_0_get_available_personal_dynamic_entities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities
-*OpenBankProject::PrivateDataApi* | [**o_bpv3_0_0_core_private_accounts_all_banks**](docs/PrivateDataApi.md#o_bpv3_0_0_core_private_accounts_all_banks) | **GET** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private)
-*OpenBankProject::PrivateDataApi* | [**o_bpv6_0_0_get_accounts_at_bank**](docs/PrivateDataApi.md#o_bpv6_0_0_get_accounts_at_bank) | **GET** /obp/v6.0.0/banks/{bankid}/accounts | Get Accounts at Bank
-*OpenBankProject::ProductApi* | [**o_bpv3_1_0_create_product_collection**](docs/ProductApi.md#o_bpv3_1_0_create_product_collection) | **PUT** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Create Product Collection
-*OpenBankProject::ProductApi* | [**o_bpv3_1_0_delete_product_attribute**](docs/ProductApi.md#o_bpv3_1_0_delete_product_attribute) | **DELETE** /obp/v3.1.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Delete Product Attribute
-*OpenBankProject::ProductApi* | [**o_bpv3_1_0_get_product_collection**](docs/ProductApi.md#o_bpv3_1_0_get_product_collection) | **GET** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Get Product Collection
-*OpenBankProject::ProductApi* | [**o_bpv3_1_0_get_product_tree**](docs/ProductApi.md#o_bpv3_1_0_get_product_tree) | **GET** /obp/v3.1.0/banks/{bankid}/product-tree/{productcode} | Get Product Tree
-*OpenBankProject::ProductApi* | [**o_bpv4_0_0_create_or_update_product_attribute_definition**](docs/ProductApi.md#o_bpv4_0_0_create_or_update_product_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/product | Create or Update Product Attribute Definition
-*OpenBankProject::ProductApi* | [**o_bpv4_0_0_create_product_attribute**](docs/ProductApi.md#o_bpv4_0_0_create_product_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attribute | Create Product Attribute
-*OpenBankProject::ProductApi* | [**o_bpv4_0_0_create_product_fee**](docs/ProductApi.md#o_bpv4_0_0_create_product_fee) | **POST** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fee | Create Product Fee
-*OpenBankProject::ProductApi* | [**o_bpv4_0_0_delete_product_attribute_definition**](docs/ProductApi.md#o_bpv4_0_0_delete_product_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/product | Delete Product Attribute Definition
-*OpenBankProject::ProductApi* | [**o_bpv4_0_0_delete_product_cascade**](docs/ProductApi.md#o_bpv4_0_0_delete_product_cascade) | **DELETE** /obp/v4.0.0/management/cascading/banks/{bankid}/products/{productcode} | Delete Product Cascade
-*OpenBankProject::ProductApi* | [**o_bpv4_0_0_delete_product_fee**](docs/ProductApi.md#o_bpv4_0_0_delete_product_fee) | **DELETE** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid} | Delete Product Fee
-*OpenBankProject::ProductApi* | [**o_bpv4_0_0_get_product**](docs/ProductApi.md#o_bpv4_0_0_get_product) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode} | Get Bank Product
-*OpenBankProject::ProductApi* | [**o_bpv4_0_0_get_product_attribute**](docs/ProductApi.md#o_bpv4_0_0_get_product_attribute) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Get Product Attribute
-*OpenBankProject::ProductApi* | [**o_bpv4_0_0_get_product_attribute_definition**](docs/ProductApi.md#o_bpv4_0_0_get_product_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/product | Get Product Attribute Definition
-*OpenBankProject::ProductApi* | [**o_bpv4_0_0_get_product_fee**](docs/ProductApi.md#o_bpv4_0_0_get_product_fee) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid} | Get Product Fee
-*OpenBankProject::ProductApi* | [**o_bpv4_0_0_get_product_fees**](docs/ProductApi.md#o_bpv4_0_0_get_product_fees) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees | Get Product Fees
-*OpenBankProject::ProductApi* | [**o_bpv4_0_0_get_products**](docs/ProductApi.md#o_bpv4_0_0_get_products) | **GET** /obp/v4.0.0/banks/{bankid}/products | Get Products
-*OpenBankProject::ProductApi* | [**o_bpv4_0_0_update_product_attribute**](docs/ProductApi.md#o_bpv4_0_0_update_product_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Update Product Attribute
-*OpenBankProject::ProductApi* | [**o_bpv4_0_0_update_product_fee**](docs/ProductApi.md#o_bpv4_0_0_update_product_fee) | **PUT** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid} | Update Product Fee
-*OpenBankProject::ProductApi* | [**o_bpv5_0_0_create_product**](docs/ProductApi.md#o_bpv5_0_0_create_product) | **PUT** /obp/v5.0.0/banks/{bankid}/products/{productcode} | Create Product
-*OpenBankProject::ProductAttributeApi* | [**o_bpv3_1_0_delete_product_attribute**](docs/ProductAttributeApi.md#o_bpv3_1_0_delete_product_attribute) | **DELETE** /obp/v3.1.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Delete Product Attribute
-*OpenBankProject::ProductAttributeApi* | [**o_bpv4_0_0_create_or_update_product_attribute_definition**](docs/ProductAttributeApi.md#o_bpv4_0_0_create_or_update_product_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/product | Create or Update Product Attribute Definition
-*OpenBankProject::ProductAttributeApi* | [**o_bpv4_0_0_create_product_attribute**](docs/ProductAttributeApi.md#o_bpv4_0_0_create_product_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attribute | Create Product Attribute
-*OpenBankProject::ProductAttributeApi* | [**o_bpv4_0_0_delete_product_attribute_definition**](docs/ProductAttributeApi.md#o_bpv4_0_0_delete_product_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/product | Delete Product Attribute Definition
-*OpenBankProject::ProductAttributeApi* | [**o_bpv4_0_0_get_product_attribute**](docs/ProductAttributeApi.md#o_bpv4_0_0_get_product_attribute) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Get Product Attribute
-*OpenBankProject::ProductAttributeApi* | [**o_bpv4_0_0_get_product_attribute_definition**](docs/ProductAttributeApi.md#o_bpv4_0_0_get_product_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/product | Get Product Attribute Definition
-*OpenBankProject::ProductAttributeApi* | [**o_bpv4_0_0_update_product_attribute**](docs/ProductAttributeApi.md#o_bpv4_0_0_update_product_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Update Product Attribute
-*OpenBankProject::ProductCollectionApi* | [**o_bpv3_1_0_create_product_collection**](docs/ProductCollectionApi.md#o_bpv3_1_0_create_product_collection) | **PUT** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Create Product Collection
-*OpenBankProject::ProductCollectionApi* | [**o_bpv3_1_0_get_product_collection**](docs/ProductCollectionApi.md#o_bpv3_1_0_get_product_collection) | **GET** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Get Product Collection
-*OpenBankProject::PublicDataApi* | [**o_bpv2_0_0_public_accounts_all_banks**](docs/PublicDataApi.md#o_bpv2_0_0_public_accounts_all_banks) | **GET** /obp/v2.0.0/accounts/public | Get Public Accounts at all Banks
-*OpenBankProject::PublicDataApi* | [**o_bpv2_0_0_public_accounts_at_one_bank**](docs/PublicDataApi.md#o_bpv2_0_0_public_accounts_at_one_bank) | **GET** /obp/v2.0.0/banks/{bankid}/accounts/public | Get Public Accounts at Bank
-*OpenBankProject::PublicDataApi* | [**o_bpv6_0_0_get_accounts_at_bank**](docs/PublicDataApi.md#o_bpv6_0_0_get_accounts_at_bank) | **GET** /obp/v6.0.0/banks/{bankid}/accounts | Get Accounts at Bank
-*OpenBankProject::RateLimitsApi* | [**o_bpv3_1_0_get_rate_limiting_info**](docs/RateLimitsApi.md#o_bpv3_1_0_get_rate_limiting_info) | **GET** /obp/v3.1.0/rate-limiting | Get Rate Limiting Info
-*OpenBankProject::RateLimitsApi* | [**o_bpv4_0_0_calls_limit**](docs/RateLimitsApi.md#o_bpv4_0_0_calls_limit) | **PUT** /obp/v4.0.0/management/consumers/{consumerid}/consumer/call-limits | Set Rate Limits / Call Limits per Consumer
-*OpenBankProject::RateLimitsApi* | [**o_bpv6_0_0_update_rate_limits**](docs/RateLimitsApi.md#o_bpv6_0_0_update_rate_limits) | **PUT** /obp/v6.0.0/management/consumers/{consumerid}/consumer/rate-limits/{ratelimitingid} | Set Rate Limits / Call Limits per Consumer
-*OpenBankProject::RetailCustomerApi* | [**o_bpv6_0_0_create_retail_customer**](docs/RetailCustomerApi.md#o_bpv6_0_0_create_retail_customer) | **POST** /obp/v6.0.0/banks/{bankid}/retail-customers | Create Retail Customer
-*OpenBankProject::RetailCustomerApi* | [**o_bpv6_0_0_get_retail_customer_by_customer_id**](docs/RetailCustomerApi.md#o_bpv6_0_0_get_retail_customer_by_customer_id) | **GET** /obp/v6.0.0/banks/{bankid}/retail-customers/{customerid} | Get Retail Customer by CUSTOMER_ID
-*OpenBankProject::RetailCustomerApi* | [**o_bpv6_0_0_get_retail_customers_at_one_bank**](docs/RetailCustomerApi.md#o_bpv6_0_0_get_retail_customers_at_one_bank) | **GET** /obp/v6.0.0/banks/{bankid}/retail-customers | Get Retail Customers at Bank
-*OpenBankProject::RoleApi* | [**o_bpv2_0_0_add_entitlement**](docs/RoleApi.md#o_bpv2_0_0_add_entitlement) | **POST** /obp/v2.0.0/users/{userid}/entitlements | Add Entitlement for a User
-*OpenBankProject::RoleApi* | [**o_bpv2_0_0_delete_entitlement**](docs/RoleApi.md#o_bpv2_0_0_delete_entitlement) | **DELETE** /obp/v2.0.0/users/{userid}/entitlement/{entitlementid} | Delete Entitlement
-*OpenBankProject::RoleApi* | [**o_bpv2_1_0_get_entitlements_by_bank_and_user**](docs/RoleApi.md#o_bpv2_1_0_get_entitlements_by_bank_and_user) | **GET** /obp/v2.1.0/banks/{bankid}/users/{userid}/entitlements | Get Entitlements for User at Bank
-*OpenBankProject::RoleApi* | [**o_bpv2_1_0_get_roles**](docs/RoleApi.md#o_bpv2_1_0_get_roles) | **GET** /obp/v2.1.0/roles | Get Roles
-*OpenBankProject::RoleApi* | [**o_bpv3_0_0_add_entitlement_request**](docs/RoleApi.md#o_bpv3_0_0_add_entitlement_request) | **POST** /obp/v3.0.0/entitlement-requests | Create Entitlement Request for current User
-*OpenBankProject::RoleApi* | [**o_bpv3_0_0_delete_entitlement_request**](docs/RoleApi.md#o_bpv3_0_0_delete_entitlement_request) | **DELETE** /obp/v3.0.0/entitlement-requests/{entitlementrequestid} | Delete Entitlement Request
-*OpenBankProject::RoleApi* | [**o_bpv3_0_0_get_all_entitlement_requests**](docs/RoleApi.md#o_bpv3_0_0_get_all_entitlement_requests) | **GET** /obp/v3.0.0/entitlement-requests | Get all Entitlement Requests
-*OpenBankProject::RoleApi* | [**o_bpv3_0_0_get_entitlement_requests**](docs/RoleApi.md#o_bpv3_0_0_get_entitlement_requests) | **GET** /obp/v3.0.0/users/{userid}/entitlement-requests | Get Entitlement Requests for a User
-*OpenBankProject::RoleApi* | [**o_bpv3_0_0_get_entitlement_requests_for_current_user**](docs/RoleApi.md#o_bpv3_0_0_get_entitlement_requests_for_current_user) | **GET** /obp/v3.0.0/my/entitlement-requests | Get Entitlement Requests for the current User
-*OpenBankProject::RoleApi* | [**o_bpv3_0_0_get_entitlements_for_current_user**](docs/RoleApi.md#o_bpv3_0_0_get_entitlements_for_current_user) | **GET** /obp/v3.0.0/my/entitlements | Get Entitlements for the current User
-*OpenBankProject::RoleApi* | [**o_bpv3_1_0_get_all_entitlements**](docs/RoleApi.md#o_bpv3_1_0_get_all_entitlements) | **GET** /obp/v3.1.0/entitlements | Get all Entitlements
-*OpenBankProject::RoleApi* | [**o_bpv4_0_0_create_user_with_roles**](docs/RoleApi.md#o_bpv4_0_0_create_user_with_roles) | **POST** /obp/v4.0.0/user-entitlements | Create (DAuth) User with Roles
-*OpenBankProject::RoleApi* | [**o_bpv4_0_0_get_entitlements**](docs/RoleApi.md#o_bpv4_0_0_get_entitlements) | **GET** /obp/v4.0.0/users/{userid}/entitlements | Get Entitlements for User
-*OpenBankProject::RoleApi* | [**o_bpv4_0_0_get_entitlements_for_bank**](docs/RoleApi.md#o_bpv4_0_0_get_entitlements_for_bank) | **GET** /obp/v4.0.0/banks/{bankid}/entitlements | Get Entitlements for One Bank
-*OpenBankProject::RoleApi* | [**o_bpv5_1_0_get_entitlements_and_permissions**](docs/RoleApi.md#o_bpv5_1_0_get_entitlements_and_permissions) | **GET** /obp/v5.1.0/users/{userid}/entitlements-and-permissions | Get Entitlements and Permissions for a User
-*OpenBankProject::RoleApi* | [**o_bpv6_0_0_delete_entitlement**](docs/RoleApi.md#o_bpv6_0_0_delete_entitlement) | **DELETE** /obp/v6.0.0/entitlements/{entitlementid} | Delete Entitlement
-*OpenBankProject::RoleApi* | [**o_bpv6_0_0_get_roles_with_entitlement_counts_at_all_banks**](docs/RoleApi.md#o_bpv6_0_0_get_roles_with_entitlement_counts_at_all_banks) | **GET** /obp/v6.0.0/management/roles-with-entitlement-counts | Get Roles with Entitlement Counts
-*OpenBankProject::SandboxApi* | [**o_bpv2_1_0_sandbox_data_import**](docs/SandboxApi.md#o_bpv2_1_0_sandbox_data_import) | **POST** /obp/v2.1.0/sandbox/data-import | Create sandbox
-*OpenBankProject::ScopeApi* | [**o_bpv3_0_0_delete_scope**](docs/ScopeApi.md#o_bpv3_0_0_delete_scope) | **DELETE** /obp/v3.0.0/consumers/{consumerid}/scope/{scopeid} | Delete Consumer Scope
-*OpenBankProject::ScopeApi* | [**o_bpv4_0_0_add_scope**](docs/ScopeApi.md#o_bpv4_0_0_add_scope) | **POST** /obp/v4.0.0/consumers/{consumerid}/scopes | Create Scope for a Consumer
-*OpenBankProject::ScopeApi* | [**o_bpv4_0_0_get_scopes**](docs/ScopeApi.md#o_bpv4_0_0_get_scopes) | **GET** /obp/v4.0.0/consumers/{consumerid}/scopes | Get Scopes for Consumer
-*OpenBankProject::SignalApi* | [**o_bpv6_0_0_delete_signal_channel**](docs/SignalApi.md#o_bpv6_0_0_delete_signal_channel) | **DELETE** /obp/v6.0.0/signal/channels/{channelname} | Delete Signal Channel
-*OpenBankProject::SignalApi* | [**o_bpv6_0_0_get_signal_channel_info**](docs/SignalApi.md#o_bpv6_0_0_get_signal_channel_info) | **GET** /obp/v6.0.0/signal/channels/{channelname}/info | Get Signal Channel Info
-*OpenBankProject::SignalApi* | [**o_bpv6_0_0_get_signal_channels**](docs/SignalApi.md#o_bpv6_0_0_get_signal_channels) | **GET** /obp/v6.0.0/signal/channels | List Signal Channels
-*OpenBankProject::SignalApi* | [**o_bpv6_0_0_get_signal_messages**](docs/SignalApi.md#o_bpv6_0_0_get_signal_messages) | **GET** /obp/v6.0.0/signal/channels/{channelname}/messages | Get Signal Messages
-*OpenBankProject::SignalApi* | [**o_bpv6_0_0_get_signal_stats**](docs/SignalApi.md#o_bpv6_0_0_get_signal_stats) | **GET** /obp/v6.0.0/signal/channels/stats | Get Signal Channel Stats
-*OpenBankProject::SignalApi* | [**o_bpv6_0_0_publish_signal_message**](docs/SignalApi.md#o_bpv6_0_0_publish_signal_message) | **POST** /obp/v6.0.0/signal/channels/{channelname}/messages | Publish Signal Message
-*OpenBankProject::SignallingApi* | [**o_bpv6_0_0_delete_signal_channel**](docs/SignallingApi.md#o_bpv6_0_0_delete_signal_channel) | **DELETE** /obp/v6.0.0/signal/channels/{channelname} | Delete Signal Channel
-*OpenBankProject::SignallingApi* | [**o_bpv6_0_0_get_signal_channel_info**](docs/SignallingApi.md#o_bpv6_0_0_get_signal_channel_info) | **GET** /obp/v6.0.0/signal/channels/{channelname}/info | Get Signal Channel Info
-*OpenBankProject::SignallingApi* | [**o_bpv6_0_0_get_signal_channels**](docs/SignallingApi.md#o_bpv6_0_0_get_signal_channels) | **GET** /obp/v6.0.0/signal/channels | List Signal Channels
-*OpenBankProject::SignallingApi* | [**o_bpv6_0_0_get_signal_messages**](docs/SignallingApi.md#o_bpv6_0_0_get_signal_messages) | **GET** /obp/v6.0.0/signal/channels/{channelname}/messages | Get Signal Messages
-*OpenBankProject::SignallingApi* | [**o_bpv6_0_0_get_signal_stats**](docs/SignallingApi.md#o_bpv6_0_0_get_signal_stats) | **GET** /obp/v6.0.0/signal/channels/stats | Get Signal Channel Stats
-*OpenBankProject::SignallingApi* | [**o_bpv6_0_0_publish_signal_message**](docs/SignallingApi.md#o_bpv6_0_0_publish_signal_message) | **POST** /obp/v6.0.0/signal/channels/{channelname}/messages | Publish Signal Message
-*OpenBankProject::StandingOrderApi* | [**o_bpv4_0_0_create_standing_order**](docs/StandingOrderApi.md#o_bpv4_0_0_create_standing_order) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/standing-order | Create Standing Order
-*OpenBankProject::StandingOrderApi* | [**o_bpv4_0_0_create_standing_order_management**](docs/StandingOrderApi.md#o_bpv4_0_0_create_standing_order_management) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/standing-order | Create Standing Order (management)
-*OpenBankProject::SystemApi* | [**o_bpv5_1_0_log_cache_all_endpoint**](docs/SystemApi.md#o_bpv5_1_0_log_cache_all_endpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache
-*OpenBankProject::SystemApi* | [**o_bpv5_1_0_log_cache_debug_endpoint**](docs/SystemApi.md#o_bpv5_1_0_log_cache_debug_endpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache
-*OpenBankProject::SystemApi* | [**o_bpv5_1_0_log_cache_error_endpoint**](docs/SystemApi.md#o_bpv5_1_0_log_cache_error_endpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache
-*OpenBankProject::SystemApi* | [**o_bpv5_1_0_log_cache_info_endpoint**](docs/SystemApi.md#o_bpv5_1_0_log_cache_info_endpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache
-*OpenBankProject::SystemApi* | [**o_bpv5_1_0_log_cache_trace_endpoint**](docs/SystemApi.md#o_bpv5_1_0_log_cache_trace_endpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache
-*OpenBankProject::SystemApi* | [**o_bpv5_1_0_log_cache_warning_endpoint**](docs/SystemApi.md#o_bpv5_1_0_log_cache_warning_endpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache
-*OpenBankProject::SystemApi* | [**o_bpv6_0_0_get_cache_config**](docs/SystemApi.md#o_bpv6_0_0_get_cache_config) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration
-*OpenBankProject::SystemApi* | [**o_bpv6_0_0_get_cache_info**](docs/SystemApi.md#o_bpv6_0_0_get_cache_info) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information
-*OpenBankProject::SystemApi* | [**o_bpv6_0_0_get_cache_namespaces**](docs/SystemApi.md#o_bpv6_0_0_get_cache_namespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces
-*OpenBankProject::SystemApi* | [**o_bpv6_0_0_get_connector_method_names**](docs/SystemApi.md#o_bpv6_0_0_get_connector_method_names) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names
-*OpenBankProject::SystemApi* | [**o_bpv6_0_0_get_connectors**](docs/SystemApi.md#o_bpv6_0_0_get_connectors) | **GET** /obp/v6.0.0/system/connectors | Get Connectors
-*OpenBankProject::SystemApi* | [**o_bpv6_0_0_get_database_pool_info**](docs/SystemApi.md#o_bpv6_0_0_get_database_pool_info) | **GET** /obp/v6.0.0/system/database/pool | Get Database Pool Information
-*OpenBankProject::SystemApi* | [**o_bpv6_0_0_get_migrations**](docs/SystemApi.md#o_bpv6_0_0_get_migrations) | **GET** /obp/v6.0.0/system/migrations | Get Database Migrations
-*OpenBankProject::SystemApi* | [**o_bpv6_0_0_get_stored_procedure_connector_health**](docs/SystemApi.md#o_bpv6_0_0_get_stored_procedure_connector_health) | **GET** /obp/v6.0.0/system/connectors/stored_procedure_vDec2019/health | Get Stored Procedure Connector Health
-*OpenBankProject::SystemApi* | [**o_bpv6_0_0_invalidate_cache_namespace**](docs/SystemApi.md#o_bpv6_0_0_invalidate_cache_namespace) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace
-*OpenBankProject::SystemIntegrityApi* | [**o_bpv5_1_0_account_access_unique_index_check**](docs/SystemIntegrityApi.md#o_bpv5_1_0_account_access_unique_index_check) | **GET** /obp/v5.1.0/management/system/integrity/account-access-unique-index-1-check | Check Unique Index at Account Access
-*OpenBankProject::SystemIntegrityApi* | [**o_bpv5_1_0_account_currency_check**](docs/SystemIntegrityApi.md#o_bpv5_1_0_account_currency_check) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/account-currency-check | Check for Sensible Currencies
-*OpenBankProject::SystemIntegrityApi* | [**o_bpv5_1_0_custom_view_names_check**](docs/SystemIntegrityApi.md#o_bpv5_1_0_custom_view_names_check) | **GET** /obp/v5.1.0/management/system/integrity/custom-view-names-check | Check Custom View Names
-*OpenBankProject::SystemIntegrityApi* | [**o_bpv5_1_0_orphaned_account_check**](docs/SystemIntegrityApi.md#o_bpv5_1_0_orphaned_account_check) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/orphaned-account-check | Check for Orphaned Accounts
-*OpenBankProject::SystemIntegrityApi* | [**o_bpv5_1_0_system_view_names_check**](docs/SystemIntegrityApi.md#o_bpv5_1_0_system_view_names_check) | **GET** /obp/v5.1.0/management/system/integrity/system-view-names-check | Check System View Names
-*OpenBankProject::TransactionApi* | [**o_bpv1_2_1_add_comment_for_view_on_transaction**](docs/TransactionApi.md#o_bpv1_2_1_add_comment_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Add a Transaction Comment
-*OpenBankProject::TransactionApi* | [**o_bpv1_2_1_add_image_for_view_on_transaction**](docs/TransactionApi.md#o_bpv1_2_1_add_image_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Add a Transaction Image
-*OpenBankProject::TransactionApi* | [**o_bpv1_2_1_add_tag_for_view_on_transaction**](docs/TransactionApi.md#o_bpv1_2_1_add_tag_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Add a Transaction Tag
-*OpenBankProject::TransactionApi* | [**o_bpv1_2_1_add_transaction_narrative**](docs/TransactionApi.md#o_bpv1_2_1_add_transaction_narrative) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Add a Transaction Narrative
-*OpenBankProject::TransactionApi* | [**o_bpv1_2_1_add_where_tag_for_view_on_transaction**](docs/TransactionApi.md#o_bpv1_2_1_add_where_tag_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Add a Transaction where Tag
-*OpenBankProject::TransactionApi* | [**o_bpv1_2_1_delete_comment_for_view_on_transaction**](docs/TransactionApi.md#o_bpv1_2_1_delete_comment_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments/{commentid} | Delete a Transaction Comment
-*OpenBankProject::TransactionApi* | [**o_bpv1_2_1_delete_image_for_view_on_transaction**](docs/TransactionApi.md#o_bpv1_2_1_delete_image_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images/{imageid} | Delete a Transaction Image
-*OpenBankProject::TransactionApi* | [**o_bpv1_2_1_delete_tag_for_view_on_transaction**](docs/TransactionApi.md#o_bpv1_2_1_delete_tag_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags/{tagid} | Delete a Transaction Tag
-*OpenBankProject::TransactionApi* | [**o_bpv1_2_1_delete_transaction_narrative**](docs/TransactionApi.md#o_bpv1_2_1_delete_transaction_narrative) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Delete a Transaction Narrative
-*OpenBankProject::TransactionApi* | [**o_bpv1_2_1_delete_where_tag_for_view_on_transaction**](docs/TransactionApi.md#o_bpv1_2_1_delete_where_tag_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Delete a Transaction Tag
-*OpenBankProject::TransactionApi* | [**o_bpv1_2_1_get_comments_for_view_on_transaction**](docs/TransactionApi.md#o_bpv1_2_1_get_comments_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Get Transaction Comments
-*OpenBankProject::TransactionApi* | [**o_bpv1_2_1_get_images_for_view_on_transaction**](docs/TransactionApi.md#o_bpv1_2_1_get_images_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Get Transaction Images
-*OpenBankProject::TransactionApi* | [**o_bpv1_2_1_get_other_account_for_transaction**](docs/TransactionApi.md#o_bpv1_2_1_get_other_account_for_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/other_account | Get Other Account of Transaction
-*OpenBankProject::TransactionApi* | [**o_bpv1_2_1_get_tags_for_view_on_transaction**](docs/TransactionApi.md#o_bpv1_2_1_get_tags_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Get Transaction Tags
-*OpenBankProject::TransactionApi* | [**o_bpv1_2_1_get_transaction_narrative**](docs/TransactionApi.md#o_bpv1_2_1_get_transaction_narrative) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Get a Transaction Narrative
-*OpenBankProject::TransactionApi* | [**o_bpv1_2_1_get_where_tag_for_view_on_transaction**](docs/TransactionApi.md#o_bpv1_2_1_get_where_tag_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Get a Transaction where Tag
-*OpenBankProject::TransactionApi* | [**o_bpv1_2_1_update_transaction_narrative**](docs/TransactionApi.md#o_bpv1_2_1_update_transaction_narrative) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Update a Transaction Narrative
-*OpenBankProject::TransactionApi* | [**o_bpv1_2_1_update_where_tag_for_view_on_transaction**](docs/TransactionApi.md#o_bpv1_2_1_update_where_tag_for_view_on_transaction) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Update a Transaction where Tag
-*OpenBankProject::TransactionApi* | [**o_bpv3_0_0_get_core_transactions_for_bank_account**](docs/TransactionApi.md#o_bpv3_0_0_get_core_transactions_for_bank_account) | **GET** /obp/v3.0.0/my/banks/{bankid}/accounts/{accountid}/transactions | Get Transactions for Account (Core)
-*OpenBankProject::TransactionApi* | [**o_bpv3_0_0_get_firehose_transactions_for_bank_account**](docs/TransactionApi.md#o_bpv3_0_0_get_firehose_transactions_for_bank_account) | **GET** /obp/v3.0.0/banks/{bankid}/firehose/accounts/{accountid}/views/{viewid}/transactions | Get Firehose Transactions for Account
-*OpenBankProject::TransactionApi* | [**o_bpv3_1_0_get_transaction_by_id_for_bank_account**](docs/TransactionApi.md#o_bpv3_1_0_get_transaction_by_id_for_bank_account) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/transaction | Get Transaction by Id
-*OpenBankProject::TransactionApi* | [**o_bpv4_0_0_create_or_update_transaction_attribute_definition**](docs/TransactionApi.md#o_bpv4_0_0_create_or_update_transaction_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Create or Update Transaction Attribute Definition
-*OpenBankProject::TransactionApi* | [**o_bpv4_0_0_create_transaction_attribute**](docs/TransactionApi.md#o_bpv4_0_0_create_transaction_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attribute | Create Transaction Attribute
-*OpenBankProject::TransactionApi* | [**o_bpv4_0_0_delete_transaction_attribute_definition**](docs/TransactionApi.md#o_bpv4_0_0_delete_transaction_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction | Delete Transaction Attribute Definition
-*OpenBankProject::TransactionApi* | [**o_bpv4_0_0_delete_transaction_cascade**](docs/TransactionApi.md#o_bpv4_0_0_delete_transaction_cascade) | **DELETE** /obp/v4.0.0/management/cascading/banks/{bankid}/accounts/{accountid}/transactions/{transactionid} | Delete Transaction Cascade
-*OpenBankProject::TransactionApi* | [**o_bpv4_0_0_get_balancing_transaction**](docs/TransactionApi.md#o_bpv4_0_0_get_balancing_transaction) | **GET** /obp/v4.0.0/transactions/{transactionid}/balancing-transaction | Get Balancing Transaction
-*OpenBankProject::TransactionApi* | [**o_bpv4_0_0_get_double_entry_transaction**](docs/TransactionApi.md#o_bpv4_0_0_get_double_entry_transaction) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/double-entry-transaction | Get Double Entry Transaction
-*OpenBankProject::TransactionApi* | [**o_bpv4_0_0_get_transaction_attribute_by_id**](docs/TransactionApi.md#o_bpv4_0_0_get_transaction_attribute_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{attributeid} | Get Transaction Attribute By Id
-*OpenBankProject::TransactionApi* | [**o_bpv4_0_0_get_transaction_attribute_definition**](docs/TransactionApi.md#o_bpv4_0_0_get_transaction_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Get Transaction Attribute Definition
-*OpenBankProject::TransactionApi* | [**o_bpv4_0_0_get_transaction_attributes**](docs/TransactionApi.md#o_bpv4_0_0_get_transaction_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes | Get Transaction Attributes
-*OpenBankProject::TransactionApi* | [**o_bpv4_0_0_update_transaction_attribute**](docs/TransactionApi.md#o_bpv4_0_0_update_transaction_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{accountattributeid} | Update Transaction Attribute
-*OpenBankProject::TransactionApi* | [**o_bpv6_0_0_get_transactions_for_bank_account**](docs/TransactionApi.md#o_bpv6_0_0_get_transactions_for_bank_account) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions | Get Transactions for Account (Full)
-*OpenBankProject::TransactionAttributeApi* | [**o_bpv4_0_0_create_or_update_transaction_attribute_definition**](docs/TransactionAttributeApi.md#o_bpv4_0_0_create_or_update_transaction_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Create or Update Transaction Attribute Definition
-*OpenBankProject::TransactionAttributeApi* | [**o_bpv4_0_0_create_transaction_attribute**](docs/TransactionAttributeApi.md#o_bpv4_0_0_create_transaction_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attribute | Create Transaction Attribute
-*OpenBankProject::TransactionAttributeApi* | [**o_bpv4_0_0_delete_transaction_attribute_definition**](docs/TransactionAttributeApi.md#o_bpv4_0_0_delete_transaction_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction | Delete Transaction Attribute Definition
-*OpenBankProject::TransactionAttributeApi* | [**o_bpv4_0_0_get_transaction_attribute_by_id**](docs/TransactionAttributeApi.md#o_bpv4_0_0_get_transaction_attribute_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{attributeid} | Get Transaction Attribute By Id
-*OpenBankProject::TransactionAttributeApi* | [**o_bpv4_0_0_get_transaction_attribute_definition**](docs/TransactionAttributeApi.md#o_bpv4_0_0_get_transaction_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Get Transaction Attribute Definition
-*OpenBankProject::TransactionAttributeApi* | [**o_bpv4_0_0_get_transaction_attributes**](docs/TransactionAttributeApi.md#o_bpv4_0_0_get_transaction_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes | Get Transaction Attributes
-*OpenBankProject::TransactionAttributeApi* | [**o_bpv4_0_0_update_transaction_attribute**](docs/TransactionAttributeApi.md#o_bpv4_0_0_update_transaction_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{accountattributeid} | Update Transaction Attribute
-*OpenBankProject::TransactionFirehoseApi* | [**o_bpv3_0_0_get_firehose_transactions_for_bank_account**](docs/TransactionFirehoseApi.md#o_bpv3_0_0_get_firehose_transactions_for_bank_account) | **GET** /obp/v3.0.0/banks/{bankid}/firehose/accounts/{accountid}/views/{viewid}/transactions | Get Firehose Transactions for Account
-*OpenBankProject::TransactionMetadataApi* | [**o_bpv1_2_1_add_comment_for_view_on_transaction**](docs/TransactionMetadataApi.md#o_bpv1_2_1_add_comment_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Add a Transaction Comment
-*OpenBankProject::TransactionMetadataApi* | [**o_bpv1_2_1_add_image_for_view_on_transaction**](docs/TransactionMetadataApi.md#o_bpv1_2_1_add_image_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Add a Transaction Image
-*OpenBankProject::TransactionMetadataApi* | [**o_bpv1_2_1_add_tag_for_view_on_transaction**](docs/TransactionMetadataApi.md#o_bpv1_2_1_add_tag_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Add a Transaction Tag
-*OpenBankProject::TransactionMetadataApi* | [**o_bpv1_2_1_add_transaction_narrative**](docs/TransactionMetadataApi.md#o_bpv1_2_1_add_transaction_narrative) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Add a Transaction Narrative
-*OpenBankProject::TransactionMetadataApi* | [**o_bpv1_2_1_add_where_tag_for_view_on_transaction**](docs/TransactionMetadataApi.md#o_bpv1_2_1_add_where_tag_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Add a Transaction where Tag
-*OpenBankProject::TransactionMetadataApi* | [**o_bpv1_2_1_delete_comment_for_view_on_transaction**](docs/TransactionMetadataApi.md#o_bpv1_2_1_delete_comment_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments/{commentid} | Delete a Transaction Comment
-*OpenBankProject::TransactionMetadataApi* | [**o_bpv1_2_1_delete_image_for_view_on_transaction**](docs/TransactionMetadataApi.md#o_bpv1_2_1_delete_image_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images/{imageid} | Delete a Transaction Image
-*OpenBankProject::TransactionMetadataApi* | [**o_bpv1_2_1_delete_tag_for_view_on_transaction**](docs/TransactionMetadataApi.md#o_bpv1_2_1_delete_tag_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags/{tagid} | Delete a Transaction Tag
-*OpenBankProject::TransactionMetadataApi* | [**o_bpv1_2_1_delete_transaction_narrative**](docs/TransactionMetadataApi.md#o_bpv1_2_1_delete_transaction_narrative) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Delete a Transaction Narrative
-*OpenBankProject::TransactionMetadataApi* | [**o_bpv1_2_1_delete_where_tag_for_view_on_transaction**](docs/TransactionMetadataApi.md#o_bpv1_2_1_delete_where_tag_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Delete a Transaction Tag
-*OpenBankProject::TransactionMetadataApi* | [**o_bpv1_2_1_get_comments_for_view_on_transaction**](docs/TransactionMetadataApi.md#o_bpv1_2_1_get_comments_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Get Transaction Comments
-*OpenBankProject::TransactionMetadataApi* | [**o_bpv1_2_1_get_images_for_view_on_transaction**](docs/TransactionMetadataApi.md#o_bpv1_2_1_get_images_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Get Transaction Images
-*OpenBankProject::TransactionMetadataApi* | [**o_bpv1_2_1_get_tags_for_view_on_transaction**](docs/TransactionMetadataApi.md#o_bpv1_2_1_get_tags_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Get Transaction Tags
-*OpenBankProject::TransactionMetadataApi* | [**o_bpv1_2_1_get_transaction_narrative**](docs/TransactionMetadataApi.md#o_bpv1_2_1_get_transaction_narrative) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Get a Transaction Narrative
-*OpenBankProject::TransactionMetadataApi* | [**o_bpv1_2_1_get_where_tag_for_view_on_transaction**](docs/TransactionMetadataApi.md#o_bpv1_2_1_get_where_tag_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Get a Transaction where Tag
-*OpenBankProject::TransactionMetadataApi* | [**o_bpv1_2_1_update_transaction_narrative**](docs/TransactionMetadataApi.md#o_bpv1_2_1_update_transaction_narrative) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Update a Transaction Narrative
-*OpenBankProject::TransactionMetadataApi* | [**o_bpv1_2_1_update_where_tag_for_view_on_transaction**](docs/TransactionMetadataApi.md#o_bpv1_2_1_update_where_tag_for_view_on_transaction) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Update a Transaction where Tag
-*OpenBankProject::TransactionRequestApi* | [**o_bpv1_4_0_get_transaction_request_types**](docs/TransactionRequestApi.md#o_bpv1_4_0_get_transaction_request_types) | **GET** /obp/v1.4.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types | Get Transaction Request Types for Account
-*OpenBankProject::TransactionRequestApi* | [**o_bpv2_1_0_create_transaction_request_sandbox_tan**](docs/TransactionRequestApi.md#o_bpv2_1_0_create_transaction_request_sandbox_tan) | **POST** /obp/v2.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sandboxtan}/transaction-requests | Create Transaction Request (SANDBOX_TAN)
-*OpenBankProject::TransactionRequestApi* | [**o_bpv2_1_0_get_transaction_request_types_supported_by_bank**](docs/TransactionRequestApi.md#o_bpv2_1_0_get_transaction_request_types_supported_by_bank) | **GET** /obp/v2.1.0/banks/{bankid}/transaction-request-types | Get Transaction Request Types at Bank
-*OpenBankProject::TransactionRequestApi* | [**o_bpv3_1_0_save_historical_transaction**](docs/TransactionRequestApi.md#o_bpv3_1_0_save_historical_transaction) | **POST** /obp/v3.1.0/management/historical/transactions  | Save Historical Transactions 
-*OpenBankProject::TransactionRequestApi* | [**o_bpv4_0_0_answer_transaction_request_challenge**](docs/TransactionRequestApi.md#o_bpv4_0_0_answer_transaction_request_challenge) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{transactionrequesttype}/transaction-requests/{transactionrequestid}/challenge | Answer Transaction Request Challenge
-*OpenBankProject::TransactionRequestApi* | [**o_bpv4_0_0_create_historical_transaction_at_bank**](docs/TransactionRequestApi.md#o_bpv4_0_0_create_historical_transaction_at_bank) | **POST** /obp/v4.0.0/banks/{bankid}/management/historical/transactions | Create Historical Transactions 
-*OpenBankProject::TransactionRequestApi* | [**o_bpv4_0_0_create_or_update_transaction_request_attribute_definition**](docs/TransactionRequestApi.md#o_bpv4_0_0_create_or_update_transaction_request_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Create or Update Transaction Request Attribute Definition
-*OpenBankProject::TransactionRequestApi* | [**o_bpv4_0_0_create_transaction_request_account**](docs/TransactionRequestApi.md#o_bpv4_0_0_create_transaction_request_account) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{account}/transaction-requests | Create Transaction Request (ACCOUNT)
-*OpenBankProject::TransactionRequestApi* | [**o_bpv4_0_0_create_transaction_request_account_otp**](docs/TransactionRequestApi.md#o_bpv4_0_0_create_transaction_request_account_otp) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{accountotp}/transaction-requests | Create Transaction Request (ACCOUNT_OTP)
-*OpenBankProject::TransactionRequestApi* | [**o_bpv4_0_0_create_transaction_request_agent_cash_with_drawal**](docs/TransactionRequestApi.md#o_bpv4_0_0_create_transaction_request_agent_cash_with_drawal) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{agentcashwithdrawal}/transaction-requests | Create Transaction Request (AGENT_CASH_WITHDRAWAL)
-*OpenBankProject::TransactionRequestApi* | [**o_bpv4_0_0_create_transaction_request_attribute**](docs/TransactionRequestApi.md#o_bpv4_0_0_create_transaction_request_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attribute | Create Transaction Request Attribute
-*OpenBankProject::TransactionRequestApi* | [**o_bpv4_0_0_create_transaction_request_card**](docs/TransactionRequestApi.md#o_bpv4_0_0_create_transaction_request_card) | **POST** /obp/v4.0.0/transaction-request-types/{card}/transaction-requests | Create Transaction Request (CARD)
-*OpenBankProject::TransactionRequestApi* | [**o_bpv4_0_0_create_transaction_request_counterparty**](docs/TransactionRequestApi.md#o_bpv4_0_0_create_transaction_request_counterparty) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{counterparty}/transaction-requests | Create Transaction Request (COUNTERPARTY)
-*OpenBankProject::TransactionRequestApi* | [**o_bpv4_0_0_create_transaction_request_free_form**](docs/TransactionRequestApi.md#o_bpv4_0_0_create_transaction_request_free_form) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{freeform}/transaction-requests | Create Transaction Request (FREE_FORM)
-*OpenBankProject::TransactionRequestApi* | [**o_bpv4_0_0_create_transaction_request_refund**](docs/TransactionRequestApi.md#o_bpv4_0_0_create_transaction_request_refund) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{refund}/transaction-requests | Create Transaction Request (REFUND)
-*OpenBankProject::TransactionRequestApi* | [**o_bpv4_0_0_create_transaction_request_sepa**](docs/TransactionRequestApi.md#o_bpv4_0_0_create_transaction_request_sepa) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sepa}/transaction-requests | Create Transaction Request (SEPA)
-*OpenBankProject::TransactionRequestApi* | [**o_bpv4_0_0_create_transaction_request_simple**](docs/TransactionRequestApi.md#o_bpv4_0_0_create_transaction_request_simple) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{simple}/transaction-requests | Create Transaction Request (SIMPLE)
-*OpenBankProject::TransactionRequestApi* | [**o_bpv4_0_0_delete_transaction_request_attribute_definition**](docs/TransactionRequestApi.md#o_bpv4_0_0_delete_transaction_request_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction-request | Delete Transaction Request Attribute Definition
-*OpenBankProject::TransactionRequestApi* | [**o_bpv4_0_0_get_transaction_request**](docs/TransactionRequestApi.md#o_bpv4_0_0_get_transaction_request) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-requests/{transactionrequestid} | Get Transaction Request
-*OpenBankProject::TransactionRequestApi* | [**o_bpv4_0_0_get_transaction_request_attribute_by_id**](docs/TransactionRequestApi.md#o_bpv4_0_0_get_transaction_request_attribute_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Get Transaction Request Attribute By Id
-*OpenBankProject::TransactionRequestApi* | [**o_bpv4_0_0_get_transaction_request_attribute_definition**](docs/TransactionRequestApi.md#o_bpv4_0_0_get_transaction_request_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Get Transaction Request Attribute Definition
-*OpenBankProject::TransactionRequestApi* | [**o_bpv4_0_0_get_transaction_request_attributes**](docs/TransactionRequestApi.md#o_bpv4_0_0_get_transaction_request_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes | Get Transaction Request Attributes
-*OpenBankProject::TransactionRequestApi* | [**o_bpv4_0_0_update_transaction_request_attribute**](docs/TransactionRequestApi.md#o_bpv4_0_0_update_transaction_request_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Update Transaction Request Attribute
-*OpenBankProject::TransactionRequestApi* | [**o_bpv5_1_0_create_vrp_consent_request**](docs/TransactionRequestApi.md#o_bpv5_1_0_create_vrp_consent_request) | **POST** /obp/v5.1.0/consumer/vrp-consent-requests | Create Consent Request VRP
-*OpenBankProject::TransactionRequestApi* | [**o_bpv5_1_0_get_transaction_request_by_id**](docs/TransactionRequestApi.md#o_bpv5_1_0_get_transaction_request_by_id) | **GET** /obp/v5.1.0/management/transaction-requests/{transactionrequestid} | Get Transaction Request by ID
-*OpenBankProject::TransactionRequestApi* | [**o_bpv5_1_0_get_transaction_requests**](docs/TransactionRequestApi.md#o_bpv5_1_0_get_transaction_requests) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-requests | Get Transaction Requests
-*OpenBankProject::TransactionRequestApi* | [**o_bpv5_1_0_update_transaction_request_status**](docs/TransactionRequestApi.md#o_bpv5_1_0_update_transaction_request_status) | **PUT** /obp/v5.1.0/management/transaction-requests/{transactionrequestid} | Update Transaction Request Status
-*OpenBankProject::TransactionRequestApi* | [**o_bpv6_0_0_create_transaction_request_cardano**](docs/TransactionRequestApi.md#o_bpv6_0_0_create_transaction_request_cardano) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{cardano}/transaction-requests | Create Transaction Request (CARDANO)
-*OpenBankProject::TransactionRequestApi* | [**o_bpv6_0_0_create_transaction_request_eth_send_raw_transaction**](docs/TransactionRequestApi.md#o_bpv6_0_0_create_transaction_request_eth_send_raw_transaction) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendrawtransaction}/transaction-requests | CREATE TRANSACTION REQUEST (ETH_SEND_RAW_TRANSACTION )
-*OpenBankProject::TransactionRequestApi* | [**o_bpv6_0_0_create_transaction_request_ethereume_send_transaction**](docs/TransactionRequestApi.md#o_bpv6_0_0_create_transaction_request_ethereume_send_transaction) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendtransaction}/transaction-requests | Create Transaction Request (ETH_SEND_TRANSACTION)
-*OpenBankProject::TransactionRequestApi* | [**o_bpv6_0_0_create_transaction_request_hold**](docs/TransactionRequestApi.md#o_bpv6_0_0_create_transaction_request_hold) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{hold}/transaction-requests | Create Transaction Request (HOLD)
-*OpenBankProject::TransactionRequestAttributeApi* | [**o_bpv4_0_0_create_or_update_transaction_request_attribute_definition**](docs/TransactionRequestAttributeApi.md#o_bpv4_0_0_create_or_update_transaction_request_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Create or Update Transaction Request Attribute Definition
-*OpenBankProject::TransactionRequestAttributeApi* | [**o_bpv4_0_0_create_transaction_request_attribute**](docs/TransactionRequestAttributeApi.md#o_bpv4_0_0_create_transaction_request_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attribute | Create Transaction Request Attribute
-*OpenBankProject::TransactionRequestAttributeApi* | [**o_bpv4_0_0_delete_transaction_request_attribute_definition**](docs/TransactionRequestAttributeApi.md#o_bpv4_0_0_delete_transaction_request_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction-request | Delete Transaction Request Attribute Definition
-*OpenBankProject::TransactionRequestAttributeApi* | [**o_bpv4_0_0_get_transaction_request_attribute_by_id**](docs/TransactionRequestAttributeApi.md#o_bpv4_0_0_get_transaction_request_attribute_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Get Transaction Request Attribute By Id
-*OpenBankProject::TransactionRequestAttributeApi* | [**o_bpv4_0_0_get_transaction_request_attribute_definition**](docs/TransactionRequestAttributeApi.md#o_bpv4_0_0_get_transaction_request_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Get Transaction Request Attribute Definition
-*OpenBankProject::TransactionRequestAttributeApi* | [**o_bpv4_0_0_get_transaction_request_attributes**](docs/TransactionRequestAttributeApi.md#o_bpv4_0_0_get_transaction_request_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes | Get Transaction Request Attributes
-*OpenBankProject::TransactionRequestAttributeApi* | [**o_bpv4_0_0_update_transaction_request_attribute**](docs/TransactionRequestAttributeApi.md#o_bpv4_0_0_update_transaction_request_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Update Transaction Request Attribute
-*OpenBankProject::UserApi* | [**o_bpv2_0_0_add_entitlement**](docs/UserApi.md#o_bpv2_0_0_add_entitlement) | **POST** /obp/v2.0.0/users/{userid}/entitlements | Add Entitlement for a User
-*OpenBankProject::UserApi* | [**o_bpv2_0_0_delete_entitlement**](docs/UserApi.md#o_bpv2_0_0_delete_entitlement) | **DELETE** /obp/v2.0.0/users/{userid}/entitlement/{entitlementid} | Delete Entitlement
-*OpenBankProject::UserApi* | [**o_bpv2_0_0_get_permissions_for_bank_account**](docs/UserApi.md#o_bpv2_0_0_get_permissions_for_bank_account) | **GET** /obp/v2.0.0/banks/{bankid}/accounts/{accountid}/permissions | Get access
-*OpenBankProject::UserApi* | [**o_bpv2_1_0_get_entitlements_by_bank_and_user**](docs/UserApi.md#o_bpv2_1_0_get_entitlements_by_bank_and_user) | **GET** /obp/v2.1.0/banks/{bankid}/users/{userid}/entitlements | Get Entitlements for User at Bank
-*OpenBankProject::UserApi* | [**o_bpv3_0_0_add_entitlement_request**](docs/UserApi.md#o_bpv3_0_0_add_entitlement_request) | **POST** /obp/v3.0.0/entitlement-requests | Create Entitlement Request for current User
-*OpenBankProject::UserApi* | [**o_bpv3_0_0_delete_entitlement_request**](docs/UserApi.md#o_bpv3_0_0_delete_entitlement_request) | **DELETE** /obp/v3.0.0/entitlement-requests/{entitlementrequestid} | Delete Entitlement Request
-*OpenBankProject::UserApi* | [**o_bpv3_0_0_get_all_entitlement_requests**](docs/UserApi.md#o_bpv3_0_0_get_all_entitlement_requests) | **GET** /obp/v3.0.0/entitlement-requests | Get all Entitlement Requests
-*OpenBankProject::UserApi* | [**o_bpv3_0_0_get_customers_for_user**](docs/UserApi.md#o_bpv3_0_0_get_customers_for_user) | **GET** /obp/v3.0.0/users/current/customers | Get Customers for Current User
-*OpenBankProject::UserApi* | [**o_bpv3_0_0_get_entitlement_requests**](docs/UserApi.md#o_bpv3_0_0_get_entitlement_requests) | **GET** /obp/v3.0.0/users/{userid}/entitlement-requests | Get Entitlement Requests for a User
-*OpenBankProject::UserApi* | [**o_bpv3_0_0_get_entitlement_requests_for_current_user**](docs/UserApi.md#o_bpv3_0_0_get_entitlement_requests_for_current_user) | **GET** /obp/v3.0.0/my/entitlement-requests | Get Entitlement Requests for the current User
-*OpenBankProject::UserApi* | [**o_bpv3_0_0_get_entitlements_for_current_user**](docs/UserApi.md#o_bpv3_0_0_get_entitlements_for_current_user) | **GET** /obp/v3.0.0/my/entitlements | Get Entitlements for the current User
-*OpenBankProject::UserApi* | [**o_bpv3_0_0_get_permission_for_user_for_bank_account**](docs/UserApi.md#o_bpv3_0_0_get_permission_for_user_for_bank_account) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/permissions/{provider}/{providerid} | Get Account access for User
-*OpenBankProject::UserApi* | [**o_bpv3_1_0_delete_user_auth_context_by_id**](docs/UserApi.md#o_bpv3_1_0_delete_user_auth_context_by_id) | **DELETE** /obp/v3.1.0/users/{userid}/auth-context/{userauthcontextid} | Delete User Auth Context
-*OpenBankProject::UserApi* | [**o_bpv3_1_0_delete_user_auth_contexts**](docs/UserApi.md#o_bpv3_1_0_delete_user_auth_contexts) | **DELETE** /obp/v3.1.0/users/{userid}/auth-context | Delete User's Auth Contexts
-*OpenBankProject::UserApi* | [**o_bpv3_1_0_refresh_user**](docs/UserApi.md#o_bpv3_1_0_refresh_user) | **POST** /obp/v3.1.0/users/{userid}/refresh | Refresh User
-*OpenBankProject::UserApi* | [**o_bpv4_0_0_create_user_customer_links**](docs/UserApi.md#o_bpv4_0_0_create_user_customer_links) | **POST** /obp/v4.0.0/banks/{bankid}/user_customer_links | Create User Customer Link
-*OpenBankProject::UserApi* | [**o_bpv4_0_0_create_user_with_roles**](docs/UserApi.md#o_bpv4_0_0_create_user_with_roles) | **POST** /obp/v4.0.0/user-entitlements | Create (DAuth) User with Roles
-*OpenBankProject::UserApi* | [**o_bpv4_0_0_delete_user**](docs/UserApi.md#o_bpv4_0_0_delete_user) | **DELETE** /obp/v4.0.0/users/{userid} | Delete a User
-*OpenBankProject::UserApi* | [**o_bpv4_0_0_get_current_user_id**](docs/UserApi.md#o_bpv4_0_0_get_current_user_id) | **GET** /obp/v4.0.0/users/current/user_id | Get User Id (Current)
-*OpenBankProject::UserApi* | [**o_bpv4_0_0_get_customers_minimal_at_any_bank**](docs/UserApi.md#o_bpv4_0_0_get_customers_minimal_at_any_bank) | **GET** /obp/v4.0.0/customers-minimal | Get Customers Minimal at Any Bank
-*OpenBankProject::UserApi* | [**o_bpv4_0_0_get_entitlements**](docs/UserApi.md#o_bpv4_0_0_get_entitlements) | **GET** /obp/v4.0.0/users/{userid}/entitlements | Get Entitlements for User
-*OpenBankProject::UserApi* | [**o_bpv4_0_0_get_entitlements_for_bank**](docs/UserApi.md#o_bpv4_0_0_get_entitlements_for_bank) | **GET** /obp/v4.0.0/banks/{bankid}/entitlements | Get Entitlements for One Bank
-*OpenBankProject::UserApi* | [**o_bpv4_0_0_get_logout_link**](docs/UserApi.md#o_bpv4_0_0_get_logout_link) | **GET** /obp/v4.0.0/users/current/logout-link | Get Logout Link
-*OpenBankProject::UserApi* | [**o_bpv4_0_0_get_my_spaces**](docs/UserApi.md#o_bpv4_0_0_get_my_spaces) | **GET** /obp/v4.0.0/my/spaces | Get My Spaces
-*OpenBankProject::UserApi* | [**o_bpv4_0_0_get_user_by_user_id**](docs/UserApi.md#o_bpv4_0_0_get_user_by_user_id) | **GET** /obp/v4.0.0/users/user_id/{userid} | Get User by USER_ID
-*OpenBankProject::UserApi* | [**o_bpv4_0_0_get_users_by_email**](docs/UserApi.md#o_bpv4_0_0_get_users_by_email) | **GET** /obp/v4.0.0/users/email/{email}/terminator | Get Users by Email Address
-*OpenBankProject::UserApi* | [**o_bpv5_0_0_answer_user_auth_context_update_challenge**](docs/UserApi.md#o_bpv5_0_0_answer_user_auth_context_update_challenge) | **POST** /obp/v5.0.0/banks/{bankid}/users/current/auth-context-updates/{authcontextupdateid}/challenge | Answer User Auth Context Update Challenge
-*OpenBankProject::UserApi* | [**o_bpv5_0_0_create_user_auth_context**](docs/UserApi.md#o_bpv5_0_0_create_user_auth_context) | **POST** /obp/v5.0.0/users/{userid}/auth-context | Create User Auth Context
-*OpenBankProject::UserApi* | [**o_bpv5_0_0_create_user_auth_context_update_request**](docs/UserApi.md#o_bpv5_0_0_create_user_auth_context_update_request) | **POST** /obp/v5.0.0/banks/{bankid}/users/current/auth-context-updates/{scamethod} | Create User Auth Context Update Request
-*OpenBankProject::UserApi* | [**o_bpv5_0_0_get_customers_minimal_at_one_bank**](docs/UserApi.md#o_bpv5_0_0_get_customers_minimal_at_one_bank) | **GET** /obp/v5.0.0/banks/{bankid}/customers-minimal | Get Customers Minimal at Bank
-*OpenBankProject::UserApi* | [**o_bpv5_0_0_get_my_customers_at_any_bank**](docs/UserApi.md#o_bpv5_0_0_get_my_customers_at_any_bank) | **GET** /obp/v5.0.0/my/customers | Get My Customers
-*OpenBankProject::UserApi* | [**o_bpv5_0_0_get_user_auth_contexts**](docs/UserApi.md#o_bpv5_0_0_get_user_auth_contexts) | **GET** /obp/v5.0.0/users/{userid}/auth-context | Get User Auth Contexts
-*OpenBankProject::UserApi* | [**o_bpv5_1_0_create_user_with_account_access_by_id**](docs/UserApi.md#o_bpv5_1_0_create_user_with_account_access_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/user-account-access | Create (DAuth) User with Account Access
-*OpenBankProject::UserApi* | [**o_bpv5_1_0_get_customers_for_user_ids_only**](docs/UserApi.md#o_bpv5_1_0_get_customers_for_user_ids_only) | **GET** /obp/v5.1.0/users/current/customers/customer_ids | Get Customers for Current User (IDs only)
-*OpenBankProject::UserApi* | [**o_bpv5_1_0_get_entitlements_and_permissions**](docs/UserApi.md#o_bpv5_1_0_get_entitlements_and_permissions) | **GET** /obp/v5.1.0/users/{userid}/entitlements-and-permissions | Get Entitlements and Permissions for a User
-*OpenBankProject::UserApi* | [**o_bpv5_1_0_get_user_by_provider_and_username**](docs/UserApi.md#o_bpv5_1_0_get_user_by_provider_and_username) | **GET** /obp/v5.1.0/users/provider/{provider}/username/{username} | Get User by USERNAME
-*OpenBankProject::UserApi* | [**o_bpv5_1_0_get_user_lock_status**](docs/UserApi.md#o_bpv5_1_0_get_user_lock_status) | **GET** /obp/v5.1.0/users/{provider}/{username}/lock-status | Get User Lock Status
-*OpenBankProject::UserApi* | [**o_bpv5_1_0_grant_user_access_to_view_by_id**](docs/UserApi.md#o_bpv5_1_0_grant_user_access_to_view_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/grant | Grant User access to View
-*OpenBankProject::UserApi* | [**o_bpv5_1_0_lock_user_by_provider_and_username**](docs/UserApi.md#o_bpv5_1_0_lock_user_by_provider_and_username) | **POST** /obp/v5.1.0/users/{provider}/{username}/locks | Lock the user
-*OpenBankProject::UserApi* | [**o_bpv5_1_0_revoke_user_access_to_view_by_id**](docs/UserApi.md#o_bpv5_1_0_revoke_user_access_to_view_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/revoke | Revoke User access to View
-*OpenBankProject::UserApi* | [**o_bpv5_1_0_sync_external_user**](docs/UserApi.md#o_bpv5_1_0_sync_external_user) | **POST** /obp/v5.1.0/users/{provider}/{providerid}/sync | Sync User
-*OpenBankProject::UserApi* | [**o_bpv5_1_0_unlock_user_by_provider_and_username**](docs/UserApi.md#o_bpv5_1_0_unlock_user_by_provider_and_username) | **PUT** /obp/v5.1.0/users/{provider}/{username}/lock-status | Unlock the user
-*OpenBankProject::UserApi* | [**o_bpv5_1_0_validate_user_by_user_id**](docs/UserApi.md#o_bpv5_1_0_validate_user_by_user_id) | **PUT** /obp/v5.1.0/management/users/{userid} | Validate a user
-*OpenBankProject::UserApi* | [**o_bpv6_0_0_add_user_to_group**](docs/UserApi.md#o_bpv6_0_0_add_user_to_group) | **POST** /obp/v6.0.0/users/{userid}/group-entitlements | Grant User Membership to Group Entitlements
-*OpenBankProject::UserApi* | [**o_bpv6_0_0_create_personal_data_field**](docs/UserApi.md#o_bpv6_0_0_create_personal_data_field) | **POST** /obp/v6.0.0/my/personal-data-fields | Create Personal Data Field
-*OpenBankProject::UserApi* | [**o_bpv6_0_0_create_user**](docs/UserApi.md#o_bpv6_0_0_create_user) | **POST** /obp/v6.0.0/users | Create User (v6.0.0)
-*OpenBankProject::UserApi* | [**o_bpv6_0_0_create_user_attribute**](docs/UserApi.md#o_bpv6_0_0_create_user_attribute) | **POST** /obp/v6.0.0/users/{userid}/attributes | Create User Attribute
-*OpenBankProject::UserApi* | [**o_bpv6_0_0_delete_entitlement**](docs/UserApi.md#o_bpv6_0_0_delete_entitlement) | **DELETE** /obp/v6.0.0/entitlements/{entitlementid} | Delete Entitlement
-*OpenBankProject::UserApi* | [**o_bpv6_0_0_delete_personal_data_field**](docs/UserApi.md#o_bpv6_0_0_delete_personal_data_field) | **DELETE** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Delete Personal Data Field
-*OpenBankProject::UserApi* | [**o_bpv6_0_0_delete_user_attribute**](docs/UserApi.md#o_bpv6_0_0_delete_user_attribute) | **DELETE** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Delete User Attribute
-*OpenBankProject::UserApi* | [**o_bpv6_0_0_direct_login_endpoint**](docs/UserApi.md#o_bpv6_0_0_direct_login_endpoint) | **POST** /obp/v6.0.0/my/logins/direct | Direct Login
-*OpenBankProject::UserApi* | [**o_bpv6_0_0_get_current_user**](docs/UserApi.md#o_bpv6_0_0_get_current_user) | **GET** /obp/v6.0.0/users/current | Get User (Current)
-*OpenBankProject::UserApi* | [**o_bpv6_0_0_get_customers_at_all_banks**](docs/UserApi.md#o_bpv6_0_0_get_customers_at_all_banks) | **GET** /obp/v6.0.0/customers | Get Customers at All Banks
-*OpenBankProject::UserApi* | [**o_bpv6_0_0_get_customers_at_one_bank**](docs/UserApi.md#o_bpv6_0_0_get_customers_at_one_bank) | **GET** /obp/v6.0.0/banks/{bankid}/customers | Get Customers at Bank
-*OpenBankProject::UserApi* | [**o_bpv6_0_0_get_personal_data_field_by_id**](docs/UserApi.md#o_bpv6_0_0_get_personal_data_field_by_id) | **GET** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Get Personal Data Field By Id
-*OpenBankProject::UserApi* | [**o_bpv6_0_0_get_personal_data_fields**](docs/UserApi.md#o_bpv6_0_0_get_personal_data_fields) | **GET** /obp/v6.0.0/my/personal-data-fields | Get Personal Data Fields
-*OpenBankProject::UserApi* | [**o_bpv6_0_0_get_providers**](docs/UserApi.md#o_bpv6_0_0_get_providers) | **GET** /obp/v6.0.0/providers | Get Providers
-*OpenBankProject::UserApi* | [**o_bpv6_0_0_get_user_attribute_by_id**](docs/UserApi.md#o_bpv6_0_0_get_user_attribute_by_id) | **GET** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Get User Attribute By Id
-*OpenBankProject::UserApi* | [**o_bpv6_0_0_get_user_attributes**](docs/UserApi.md#o_bpv6_0_0_get_user_attributes) | **GET** /obp/v6.0.0/users/{userid}/attributes | Get User Attributes
-*OpenBankProject::UserApi* | [**o_bpv6_0_0_get_user_by_user_id**](docs/UserApi.md#o_bpv6_0_0_get_user_by_user_id) | **GET** /obp/v6.0.0/users/user-id/{userid} | Get User by USER_ID
-*OpenBankProject::UserApi* | [**o_bpv6_0_0_get_user_group_memberships**](docs/UserApi.md#o_bpv6_0_0_get_user_group_memberships) | **GET** /obp/v6.0.0/users/{userid}/group-entitlements | Get User's Group Memberships
-*OpenBankProject::UserApi* | [**o_bpv6_0_0_get_users**](docs/UserApi.md#o_bpv6_0_0_get_users) | **GET** /obp/v6.0.0/users | Get all Users
-*OpenBankProject::UserApi* | [**o_bpv6_0_0_remove_user_from_group**](docs/UserApi.md#o_bpv6_0_0_remove_user_from_group) | **DELETE** /obp/v6.0.0/users/{userid}/group-entitlements/{groupid} | Remove User from Group
-*OpenBankProject::UserApi* | [**o_bpv6_0_0_reset_password_complete**](docs/UserApi.md#o_bpv6_0_0_reset_password_complete) | **POST** /obp/v6.0.0/users/password | Complete Password Reset
-*OpenBankProject::UserApi* | [**o_bpv6_0_0_reset_password_url**](docs/UserApi.md#o_bpv6_0_0_reset_password_url) | **POST** /obp/v6.0.0/management/user/reset-password-url | Create Password Reset URL and Send Email
-*OpenBankProject::UserApi* | [**o_bpv6_0_0_reset_password_url_anonymous**](docs/UserApi.md#o_bpv6_0_0_reset_password_url_anonymous) | **POST** /obp/v6.0.0/users/password-reset-url | Request Password Reset Email
-*OpenBankProject::UserApi* | [**o_bpv6_0_0_update_personal_data_field**](docs/UserApi.md#o_bpv6_0_0_update_personal_data_field) | **PUT** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Update Personal Data Field
-*OpenBankProject::UserApi* | [**o_bpv6_0_0_update_user_attribute**](docs/UserApi.md#o_bpv6_0_0_update_user_attribute) | **PUT** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Update User Attribute
-*OpenBankProject::UserApi* | [**o_bpv6_0_0_validate_user_email**](docs/UserApi.md#o_bpv6_0_0_validate_user_email) | **POST** /obp/v6.0.0/users/email-validation | Validate User Email
-*OpenBankProject::UserApi* | [**o_bpv6_0_0_verify_user_credentials**](docs/UserApi.md#o_bpv6_0_0_verify_user_credentials) | **POST** /obp/v6.0.0/users/verify-credentials | Verify User Credentials
-*OpenBankProject::UserAttributeApi* | [**o_bpv6_0_0_create_personal_data_field**](docs/UserAttributeApi.md#o_bpv6_0_0_create_personal_data_field) | **POST** /obp/v6.0.0/my/personal-data-fields | Create Personal Data Field
-*OpenBankProject::UserAttributeApi* | [**o_bpv6_0_0_create_user_attribute**](docs/UserAttributeApi.md#o_bpv6_0_0_create_user_attribute) | **POST** /obp/v6.0.0/users/{userid}/attributes | Create User Attribute
-*OpenBankProject::UserAttributeApi* | [**o_bpv6_0_0_delete_personal_data_field**](docs/UserAttributeApi.md#o_bpv6_0_0_delete_personal_data_field) | **DELETE** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Delete Personal Data Field
-*OpenBankProject::UserAttributeApi* | [**o_bpv6_0_0_delete_user_attribute**](docs/UserAttributeApi.md#o_bpv6_0_0_delete_user_attribute) | **DELETE** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Delete User Attribute
-*OpenBankProject::UserAttributeApi* | [**o_bpv6_0_0_get_personal_data_field_by_id**](docs/UserAttributeApi.md#o_bpv6_0_0_get_personal_data_field_by_id) | **GET** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Get Personal Data Field By Id
-*OpenBankProject::UserAttributeApi* | [**o_bpv6_0_0_get_personal_data_fields**](docs/UserAttributeApi.md#o_bpv6_0_0_get_personal_data_fields) | **GET** /obp/v6.0.0/my/personal-data-fields | Get Personal Data Fields
-*OpenBankProject::UserAttributeApi* | [**o_bpv6_0_0_get_user_attribute_by_id**](docs/UserAttributeApi.md#o_bpv6_0_0_get_user_attribute_by_id) | **GET** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Get User Attribute By Id
-*OpenBankProject::UserAttributeApi* | [**o_bpv6_0_0_get_user_attributes**](docs/UserAttributeApi.md#o_bpv6_0_0_get_user_attributes) | **GET** /obp/v6.0.0/users/{userid}/attributes | Get User Attributes
-*OpenBankProject::UserAttributeApi* | [**o_bpv6_0_0_update_personal_data_field**](docs/UserAttributeApi.md#o_bpv6_0_0_update_personal_data_field) | **PUT** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Update Personal Data Field
-*OpenBankProject::UserAttributeApi* | [**o_bpv6_0_0_update_user_attribute**](docs/UserAttributeApi.md#o_bpv6_0_0_update_user_attribute) | **PUT** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Update User Attribute
-*OpenBankProject::UserInvitationApi* | [**o_bpv4_0_0_create_user_invitation**](docs/UserInvitationApi.md#o_bpv4_0_0_create_user_invitation) | **POST** /obp/v4.0.0/banks/{bankid}/user-invitation | Create User Invitation
-*OpenBankProject::UserInvitationApi* | [**o_bpv4_0_0_get_user_invitation**](docs/UserInvitationApi.md#o_bpv4_0_0_get_user_invitation) | **GET** /obp/v4.0.0/banks/{bankid}/user-invitations/{secretlink} | Get User Invitation
-*OpenBankProject::UserInvitationApi* | [**o_bpv4_0_0_get_user_invitation_anonymous**](docs/UserInvitationApi.md#o_bpv4_0_0_get_user_invitation_anonymous) | **POST** /obp/v4.0.0/banks/{bankid}/user-invitations | Get User Invitation Information
-*OpenBankProject::UserInvitationApi* | [**o_bpv4_0_0_get_user_invitations**](docs/UserInvitationApi.md#o_bpv4_0_0_get_user_invitations) | **GET** /obp/v4.0.0/banks/{bankid}/user-invitations | Get User Invitations
-*OpenBankProject::VRPApi* | [**o_bpv5_0_0_create_consent_by_consent_request_id_email**](docs/VRPApi.md#o_bpv5_0_0_create_consent_by_consent_request_id_email) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{email}/consents | Create Consent By CONSENT_REQUEST_ID (EMAIL)
-*OpenBankProject::VRPApi* | [**o_bpv5_1_0_create_vrp_consent_request**](docs/VRPApi.md#o_bpv5_1_0_create_vrp_consent_request) | **POST** /obp/v5.1.0/consumer/vrp-consent-requests | Create Consent Request VRP
-*OpenBankProject::ViewCustomApi* | [**o_bpv1_2_1_delete_view_for_bank_account**](docs/ViewCustomApi.md#o_bpv1_2_1_delete_view_for_bank_account) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/views/{viewid} | Delete Custom View
-*OpenBankProject::ViewCustomApi* | [**o_bpv2_0_0_get_permissions_for_bank_account**](docs/ViewCustomApi.md#o_bpv2_0_0_get_permissions_for_bank_account) | **GET** /obp/v2.0.0/banks/{bankid}/accounts/{accountid}/permissions | Get access
-*OpenBankProject::ViewCustomApi* | [**o_bpv3_0_0_create_view_for_bank_account**](docs/ViewCustomApi.md#o_bpv3_0_0_create_view_for_bank_account) | **POST** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/views | Create Custom View
-*OpenBankProject::ViewCustomApi* | [**o_bpv3_0_0_get_accounts_held**](docs/ViewCustomApi.md#o_bpv3_0_0_get_accounts_held) | **GET** /obp/v3.0.0/banks/{bankid}/accounts-held | Get Accounts Held
-*OpenBankProject::ViewCustomApi* | [**o_bpv3_0_0_get_permission_for_user_for_bank_account**](docs/ViewCustomApi.md#o_bpv3_0_0_get_permission_for_user_for_bank_account) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/permissions/{provider}/{providerid} | Get Account access for User
-*OpenBankProject::ViewCustomApi* | [**o_bpv3_0_0_update_view_for_bank_account**](docs/ViewCustomApi.md#o_bpv3_0_0_update_view_for_bank_account) | **PUT** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/views/{viewid} | Update Custom View
-*OpenBankProject::ViewCustomApi* | [**o_bpv5_0_0_get_views_for_bank_account**](docs/ViewCustomApi.md#o_bpv5_0_0_get_views_for_bank_account) | **GET** /obp/v5.0.0/banks/{bankid}/accounts/{accountid}/views | Get Views for Account
-*OpenBankProject::ViewCustomApi* | [**o_bpv5_1_0_create_custom_view**](docs/ViewCustomApi.md#o_bpv5_1_0_create_custom_view) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views | Create Custom View
-*OpenBankProject::ViewCustomApi* | [**o_bpv5_1_0_create_user_with_account_access_by_id**](docs/ViewCustomApi.md#o_bpv5_1_0_create_user_with_account_access_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/user-account-access | Create (DAuth) User with Account Access
-*OpenBankProject::ViewCustomApi* | [**o_bpv5_1_0_delete_custom_view**](docs/ViewCustomApi.md#o_bpv5_1_0_delete_custom_view) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views/{targetviewid} | Delete Custom View
-*OpenBankProject::ViewCustomApi* | [**o_bpv5_1_0_get_custom_view**](docs/ViewCustomApi.md#o_bpv5_1_0_get_custom_view) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views/{targetviewid} | Get Custom View
-*OpenBankProject::ViewCustomApi* | [**o_bpv5_1_0_grant_user_access_to_view_by_id**](docs/ViewCustomApi.md#o_bpv5_1_0_grant_user_access_to_view_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/grant | Grant User access to View
-*OpenBankProject::ViewCustomApi* | [**o_bpv5_1_0_revoke_user_access_to_view_by_id**](docs/ViewCustomApi.md#o_bpv5_1_0_revoke_user_access_to_view_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/revoke | Revoke User access to View
-*OpenBankProject::ViewCustomApi* | [**o_bpv5_1_0_update_custom_view**](docs/ViewCustomApi.md#o_bpv5_1_0_update_custom_view) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views/{targetviewid} | Update Custom View
-*OpenBankProject::ViewCustomApi* | [**o_bpv6_0_0_create_custom_view_management**](docs/ViewCustomApi.md#o_bpv6_0_0_create_custom_view_management) | **POST** /obp/v6.0.0/management/banks/{bankid}/accounts/{accountid}/views | Create Custom View (Management)
-*OpenBankProject::ViewCustomApi* | [**o_bpv6_0_0_get_custom_views**](docs/ViewCustomApi.md#o_bpv6_0_0_get_custom_views) | **GET** /obp/v6.0.0/management/custom-views | Get Custom Views
-*OpenBankProject::ViewCustomApi* | [**o_bpv6_0_0_get_system_view_by_id**](docs/ViewCustomApi.md#o_bpv6_0_0_get_system_view_by_id) | **GET** /obp/v6.0.0/management/system-views/{viewid} | Get System View
-*OpenBankProject::ViewCustomApi* | [**o_bpv6_0_0_get_system_views**](docs/ViewCustomApi.md#o_bpv6_0_0_get_system_views) | **GET** /obp/v6.0.0/management/system-views | Get System Views
-*OpenBankProject::ViewCustomApi* | [**o_bpv6_0_0_get_view_permissions**](docs/ViewCustomApi.md#o_bpv6_0_0_get_view_permissions) | **GET** /obp/v6.0.0/management/view-permissions | Get View Permissions
-*OpenBankProject::ViewCustomApi* | [**o_bpv6_0_0_has_account_access**](docs/ViewCustomApi.md#o_bpv6_0_0_has_account_access) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/has-account-access | Has Account Access
-*OpenBankProject::ViewCustomApi* | [**o_bpv6_0_0_update_system_view**](docs/ViewCustomApi.md#o_bpv6_0_0_update_system_view) | **PUT** /obp/v6.0.0/system-views/{viewid} | Update System View
-*OpenBankProject::ViewSystemApi* | [**o_bpv5_0_0_create_system_view**](docs/ViewSystemApi.md#o_bpv5_0_0_create_system_view) | **POST** /obp/v5.0.0/system-views | Create System View
-*OpenBankProject::ViewSystemApi* | [**o_bpv5_0_0_delete_system_view**](docs/ViewSystemApi.md#o_bpv5_0_0_delete_system_view) | **DELETE** /obp/v5.0.0/system-views/{viewid} | Delete System View
-*OpenBankProject::ViewSystemApi* | [**o_bpv5_0_0_get_system_view**](docs/ViewSystemApi.md#o_bpv5_0_0_get_system_view) | **GET** /obp/v5.0.0/system-views/{viewid} | Get System View
-*OpenBankProject::ViewSystemApi* | [**o_bpv5_0_0_get_system_views_ids**](docs/ViewSystemApi.md#o_bpv5_0_0_get_system_views_ids) | **GET** /obp/v5.0.0/system-views-ids | Get Ids of System Views
-*OpenBankProject::ViewSystemApi* | [**o_bpv5_1_0_add_system_view_permission**](docs/ViewSystemApi.md#o_bpv5_1_0_add_system_view_permission) | **POST** /obp/v5.1.0/system-views/{viewid}/permissions | Add Permission to a System View
-*OpenBankProject::ViewSystemApi* | [**o_bpv5_1_0_delete_system_view_permission**](docs/ViewSystemApi.md#o_bpv5_1_0_delete_system_view_permission) | **DELETE** /obp/v5.1.0/system-views/{viewid}/permissions/{permissionname} | Delete Permission to a System View
-*OpenBankProject::ViewSystemApi* | [**o_bpv6_0_0_get_custom_views**](docs/ViewSystemApi.md#o_bpv6_0_0_get_custom_views) | **GET** /obp/v6.0.0/management/custom-views | Get Custom Views
-*OpenBankProject::ViewSystemApi* | [**o_bpv6_0_0_get_system_view_by_id**](docs/ViewSystemApi.md#o_bpv6_0_0_get_system_view_by_id) | **GET** /obp/v6.0.0/management/system-views/{viewid} | Get System View
-*OpenBankProject::ViewSystemApi* | [**o_bpv6_0_0_get_system_views**](docs/ViewSystemApi.md#o_bpv6_0_0_get_system_views) | **GET** /obp/v6.0.0/management/system-views | Get System Views
-*OpenBankProject::ViewSystemApi* | [**o_bpv6_0_0_get_view_permissions**](docs/ViewSystemApi.md#o_bpv6_0_0_get_view_permissions) | **GET** /obp/v6.0.0/management/view-permissions | Get View Permissions
-*OpenBankProject::ViewSystemApi* | [**o_bpv6_0_0_update_system_view**](docs/ViewSystemApi.md#o_bpv6_0_0_update_system_view) | **PUT** /obp/v6.0.0/system-views/{viewid} | Update System View
-*OpenBankProject::WebUiPropsApi* | [**o_bpv3_1_0_create_web_ui_props**](docs/WebUiPropsApi.md#o_bpv3_1_0_create_web_ui_props) | **POST** /obp/v3.1.0/management/webui_props | Create WebUiProps
-*OpenBankProject::WebUiPropsApi* | [**o_bpv3_1_0_delete_web_ui_props**](docs/WebUiPropsApi.md#o_bpv3_1_0_delete_web_ui_props) | **DELETE** /obp/v3.1.0/management/webui_props/{webuipropsid} | Delete WebUiProps
-*OpenBankProject::WebUiPropsApi* | [**o_bpv3_1_0_get_web_ui_props**](docs/WebUiPropsApi.md#o_bpv3_1_0_get_web_ui_props) | **GET** /obp/v3.1.0/management/webui_props | Get WebUiProps
-*OpenBankProject::WebUiPropsApi* | [**o_bpv6_0_0_create_or_update_web_ui_props**](docs/WebUiPropsApi.md#o_bpv6_0_0_create_or_update_web_ui_props) | **PUT** /obp/v6.0.0/management/webui_props/{webuipropname} | Create or Update WebUiProps
-*OpenBankProject::WebUiPropsApi* | [**o_bpv6_0_0_delete_web_ui_props**](docs/WebUiPropsApi.md#o_bpv6_0_0_delete_web_ui_props) | **DELETE** /obp/v6.0.0/management/webui_props/{webuipropname} | Delete WebUiProps
-*OpenBankProject::WebUiPropsApi* | [**o_bpv6_0_0_get_web_ui_prop**](docs/WebUiPropsApi.md#o_bpv6_0_0_get_web_ui_prop) | **GET** /obp/v6.0.0/webui-props/{webuipropname} | Get WebUiProp by Name
-*OpenBankProject::WebUiPropsApi* | [**o_bpv6_0_0_get_web_ui_props**](docs/WebUiPropsApi.md#o_bpv6_0_0_get_web_ui_props) | **GET** /obp/v6.0.0/webui-props | Get WebUiProps
-*OpenBankProject::WebhookApi* | [**o_bpv3_1_0_create_account_webhook**](docs/WebhookApi.md#o_bpv3_1_0_create_account_webhook) | **POST** /obp/v3.1.0/banks/{bankid}/account-web-hooks | Create an Account Webhook
-*OpenBankProject::WebhookApi* | [**o_bpv3_1_0_enable_disable_account_webhook**](docs/WebhookApi.md#o_bpv3_1_0_enable_disable_account_webhook) | **PUT** /obp/v3.1.0/banks/{bankid}/account-web-hooks | Enable/Disable an Account Webhook
-*OpenBankProject::WebhookApi* | [**o_bpv3_1_0_get_account_webhooks**](docs/WebhookApi.md#o_bpv3_1_0_get_account_webhooks) | **GET** /obp/v3.1.0/management/banks/{bankid}/account-web-hooks | Get Account Webhooks
-*OpenBankProject::WebhookApi* | [**o_bpv4_0_0_create_bank_account_notification_webhook**](docs/WebhookApi.md#o_bpv4_0_0_create_bank_account_notification_webhook) | **POST** /obp/v4.0.0/banks/{bankid}/web-hooks/account/notifications/on-create-transaction | Create bank level Account Notification Webhook
-*OpenBankProject::WebhookApi* | [**o_bpv4_0_0_create_system_account_notification_webhook**](docs/WebhookApi.md#o_bpv4_0_0_create_system_account_notification_webhook) | **POST** /obp/v4.0.0/web-hooks/account/notifications/on-create-transaction | Create system level Account Notification Webhook
+*OpenBankProject::ABACApi* | [**create_abac_rule**](docs/ABACApi.md#create_abac_rule) | **POST** /obp/v6.0.0/management/abac-rules | Create ABAC Rule
+*OpenBankProject::ABACApi* | [**delete_abac_rule**](docs/ABACApi.md#delete_abac_rule) | **DELETE** /obp/v6.0.0/management/abac-rules/{abacruleid} | Delete ABAC Rule
+*OpenBankProject::ABACApi* | [**execute_abac_policy**](docs/ABACApi.md#execute_abac_policy) | **POST** /obp/v6.0.0/management/abac-policies/{policy}/execute | Execute ABAC Policy
+*OpenBankProject::ABACApi* | [**execute_abac_rule**](docs/ABACApi.md#execute_abac_rule) | **POST** /obp/v6.0.0/management/abac-rules/{abacruleid}/execute | Execute ABAC Rule
+*OpenBankProject::ABACApi* | [**get_abac_policies**](docs/ABACApi.md#get_abac_policies) | **GET** /obp/v6.0.0/management/abac-policies | Get ABAC Policies
+*OpenBankProject::ABACApi* | [**get_abac_rule**](docs/ABACApi.md#get_abac_rule) | **GET** /obp/v6.0.0/management/abac-rules/{abacruleid} | Get ABAC Rule
+*OpenBankProject::ABACApi* | [**get_abac_rule_schema**](docs/ABACApi.md#get_abac_rule_schema) | **GET** /obp/v6.0.0/management/abac-rules-schema | Get ABAC Rule Schema
+*OpenBankProject::ABACApi* | [**get_abac_rules**](docs/ABACApi.md#get_abac_rules) | **GET** /obp/v6.0.0/management/abac-rules | Get ABAC Rules
+*OpenBankProject::ABACApi* | [**get_abac_rules_by_policy**](docs/ABACApi.md#get_abac_rules_by_policy) | **GET** /obp/v6.0.0/management/abac-rules/policy/{policy} | Get ABAC Rules by Policy
+*OpenBankProject::ABACApi* | [**update_abac_rule**](docs/ABACApi.md#update_abac_rule) | **PUT** /obp/v6.0.0/management/abac-rules/{abacruleid} | Update ABAC Rule
+*OpenBankProject::ABACApi* | [**validate_abac_rule**](docs/ABACApi.md#validate_abac_rule) | **POST** /obp/v6.0.0/management/abac-rules/validate | Validate ABAC Rule
+*OpenBankProject::AIAgentApi* | [**delete_signal_channel**](docs/AIAgentApi.md#delete_signal_channel) | **DELETE** /obp/v6.0.0/signal/channels/{channelname} | Delete Signal Channel
+*OpenBankProject::AIAgentApi* | [**get_signal_channel_info**](docs/AIAgentApi.md#get_signal_channel_info) | **GET** /obp/v6.0.0/signal/channels/{channelname}/info | Get Signal Channel Info
+*OpenBankProject::AIAgentApi* | [**get_signal_channels**](docs/AIAgentApi.md#get_signal_channels) | **GET** /obp/v6.0.0/signal/channels | List Signal Channels
+*OpenBankProject::AIAgentApi* | [**get_signal_messages**](docs/AIAgentApi.md#get_signal_messages) | **GET** /obp/v6.0.0/signal/channels/{channelname}/messages | Get Signal Messages
+*OpenBankProject::AIAgentApi* | [**get_signal_stats**](docs/AIAgentApi.md#get_signal_stats) | **GET** /obp/v6.0.0/signal/channels/stats | Get Signal Channel Stats
+*OpenBankProject::AIAgentApi* | [**publish_signal_message**](docs/AIAgentApi.md#publish_signal_message) | **POST** /obp/v6.0.0/signal/channels/{channelname}/messages | Publish Signal Message
+*OpenBankProject::APIApi* | [**backup_bank_level_dynamic_entity**](docs/APIApi.md#backup_bank_level_dynamic_entity) | **POST** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}/backup | Backup Bank Level Dynamic Entity
+*OpenBankProject::APIApi* | [**backup_system_dynamic_entity**](docs/APIApi.md#backup_system_dynamic_entity) | **POST** /obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid}/backup | Backup System Level Dynamic Entity
+*OpenBankProject::APIApi* | [**cleanup_orphaned_dynamic_entity_records**](docs/APIApi.md#cleanup_orphaned_dynamic_entity_records) | **DELETE** /obp/v6.0.0/management/diagnostics/dynamic-entities/orphaned-records | Cleanup Orphaned Dynamic Entity Records
+*OpenBankProject::APIApi* | [**config**](docs/APIApi.md#config) | **GET** /obp/v3.1.0/config | Get API Configuration
+*OpenBankProject::APIApi* | [**create_api_product**](docs/APIApi.md#create_api_product) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create Api Product
+*OpenBankProject::APIApi* | [**create_api_product_attribute**](docs/APIApi.md#create_api_product_attribute) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attribute | Create Api Product Attribute
+*OpenBankProject::APIApi* | [**create_bank_level_dynamic_endpoint**](docs/APIApi.md#create_bank_level_dynamic_endpoint) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Create Bank Level Dynamic Endpoint
+*OpenBankProject::APIApi* | [**create_bank_level_dynamic_entity**](docs/APIApi.md#create_bank_level_dynamic_entity) | **POST** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities | Create Bank Level Dynamic Entity
+*OpenBankProject::APIApi* | [**create_bank_level_endpoint_tag**](docs/APIApi.md#create_bank_level_endpoint_tag) | **POST** /obp/v4.0.0/management/banks/{bankid}/endpoints/{operationid}/tags | Create Bank Level Endpoint Tag
+*OpenBankProject::APIApi* | [**create_counterparty_attribute**](docs/APIApi.md#create_counterparty_attribute) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes | Create Counterparty Attribute
+*OpenBankProject::APIApi* | [**create_dynamic_endpoint**](docs/APIApi.md#create_dynamic_endpoint) | **POST** /obp/v4.0.0/management/dynamic-endpoints | Create Dynamic Endpoint
+*OpenBankProject::APIApi* | [**create_featured_api_collection**](docs/APIApi.md#create_featured_api_collection) | **POST** /obp/v6.0.0/management/api-collections/featured | Create Featured Api Collection
+*OpenBankProject::APIApi* | [**create_method_routing**](docs/APIApi.md#create_method_routing) | **POST** /obp/v3.1.0/management/method_routings | Create MethodRouting
+*OpenBankProject::APIApi* | [**create_or_update_api_product**](docs/APIApi.md#create_or_update_api_product) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create or Update Api Product
+*OpenBankProject::APIApi* | [**create_regulated_entity**](docs/APIApi.md#create_regulated_entity) | **POST** /obp/v5.1.0/regulated-entities | Create Regulated Entity
+*OpenBankProject::APIApi* | [**create_regulated_entity_attribute**](docs/APIApi.md#create_regulated_entity_attribute) | **POST** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes | Create Regulated Entity Attribute
+*OpenBankProject::APIApi* | [**create_system_dynamic_entity**](docs/APIApi.md#create_system_dynamic_entity) | **POST** /obp/v6.0.0/management/system-dynamic-entities | Create System Level Dynamic Entity
+*OpenBankProject::APIApi* | [**create_system_level_endpoint_tag**](docs/APIApi.md#create_system_level_endpoint_tag) | **POST** /obp/v4.0.0/management/endpoints/{operationid}/tags | Create System Level Endpoint Tag
+*OpenBankProject::APIApi* | [**delete_api_product**](docs/APIApi.md#delete_api_product) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Delete Api Product
+*OpenBankProject::APIApi* | [**delete_api_product_attribute**](docs/APIApi.md#delete_api_product_attribute) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Delete Api Product Attribute
+*OpenBankProject::APIApi* | [**delete_bank_level_dynamic_endpoint**](docs/APIApi.md#delete_bank_level_dynamic_endpoint) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Delete Bank Level Dynamic Endpoint
+*OpenBankProject::APIApi* | [**delete_bank_level_dynamic_entity**](docs/APIApi.md#delete_bank_level_dynamic_entity) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid} | Delete Bank Level Dynamic Entity
+*OpenBankProject::APIApi* | [**delete_bank_level_endpoint_tag**](docs/APIApi.md#delete_bank_level_endpoint_tag) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/endpoints/{operationid}/tags/{endpointtagid} | Delete Bank Level Endpoint Tag
+*OpenBankProject::APIApi* | [**delete_counterparty_attribute**](docs/APIApi.md#delete_counterparty_attribute) | **DELETE** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes/{counterpartyattributeid} | Delete Counterparty Attribute
+*OpenBankProject::APIApi* | [**delete_dynamic_endpoint**](docs/APIApi.md#delete_dynamic_endpoint) | **DELETE** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} |  Delete Dynamic Endpoint
+*OpenBankProject::APIApi* | [**delete_featured_api_collection**](docs/APIApi.md#delete_featured_api_collection) | **DELETE** /obp/v6.0.0/management/api-collections/featured/{apicollectionid} | Delete Featured Api Collection
+*OpenBankProject::APIApi* | [**delete_method_routing**](docs/APIApi.md#delete_method_routing) | **DELETE** /obp/v3.1.0/management/method_routings/{methodroutingid} | Delete MethodRouting
+*OpenBankProject::APIApi* | [**delete_my_dynamic_endpoint**](docs/APIApi.md#delete_my_dynamic_endpoint) | **DELETE** /obp/v4.0.0/my/dynamic-endpoints/{dynamicendpointid} | Delete My Dynamic Endpoint
+*OpenBankProject::APIApi* | [**delete_my_dynamic_entity**](docs/APIApi.md#delete_my_dynamic_entity) | **DELETE** /obp/v4.0.0/my/dynamic-entities/{dynamicentityid} | Delete My Dynamic Entity
+*OpenBankProject::APIApi* | [**delete_regulated_entity**](docs/APIApi.md#delete_regulated_entity) | **DELETE** /obp/v5.1.0/regulated-entities/{regulatedentityid} | Delete Regulated Entity
+*OpenBankProject::APIApi* | [**delete_regulated_entity_attribute**](docs/APIApi.md#delete_regulated_entity_attribute) | **DELETE** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Delete Regulated Entity Attribute
+*OpenBankProject::APIApi* | [**delete_system_dynamic_entity**](docs/APIApi.md#delete_system_dynamic_entity) | **DELETE** /obp/v4.0.0/management/system-dynamic-entities/{dynamicentityid} | Delete System Level Dynamic Entity
+*OpenBankProject::APIApi* | [**delete_system_dynamic_entity_cascade**](docs/APIApi.md#delete_system_dynamic_entity_cascade) | **DELETE** /obp/v6.0.0/management/system-dynamic-entities/cascade/{dynamicentityid} | Delete System Level Dynamic Entity Cascade
+*OpenBankProject::APIApi* | [**delete_system_level_endpoint_tag**](docs/APIApi.md#delete_system_level_endpoint_tag) | **DELETE** /obp/v4.0.0/management/endpoints/{operationid}/tags/{endpointtagid} | Delete System Level Endpoint Tag
+*OpenBankProject::APIApi* | [**elastic_search_metrics**](docs/APIApi.md#elastic_search_metrics) | **GET** /obp/v2.0.0/search/metrics | Search API Metrics via Elasticsearch
+*OpenBankProject::APIApi* | [**get_adapter_info**](docs/APIApi.md#get_adapter_info) | **GET** /obp/v5.0.0/adapter | Get Adapter Info
+*OpenBankProject::APIApi* | [**get_adapter_info_for_bank**](docs/APIApi.md#get_adapter_info_for_bank) | **GET** /obp/v3.0.0/banks/{bankid}/adapter | Get Adapter Info for a bank
+*OpenBankProject::APIApi* | [**get_all_counterparty_attributes**](docs/APIApi.md#get_all_counterparty_attributes) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes | Get All Counterparty Attributes
+*OpenBankProject::APIApi* | [**get_all_regulated_entity_attributes**](docs/APIApi.md#get_all_regulated_entity_attributes) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes | Get All Regulated Entity Attributes
+*OpenBankProject::APIApi* | [**get_api_product**](docs/APIApi.md#get_api_product) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Get Api Product
+*OpenBankProject::APIApi* | [**get_api_product_attribute**](docs/APIApi.md#get_api_product_attribute) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Get Api Product Attribute
+*OpenBankProject::APIApi* | [**get_api_products**](docs/APIApi.md#get_api_products) | **GET** /obp/v6.0.0/banks/{bankid}/api-products | Get Api Products
+*OpenBankProject::APIApi* | [**get_api_tags**](docs/APIApi.md#get_api_tags) | **GET** /obp/v5.1.0/tags | Get API Tags
+*OpenBankProject::APIApi* | [**get_app_directory**](docs/APIApi.md#get_app_directory) | **GET** /obp/v6.0.0/app-directory | Get App Directory
+*OpenBankProject::APIApi* | [**get_available_personal_dynamic_entities**](docs/APIApi.md#get_available_personal_dynamic_entities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities
+*OpenBankProject::APIApi* | [**get_bank_level_dynamic_endpoint**](docs/APIApi.md#get_bank_level_dynamic_endpoint) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Get Bank Level Dynamic Endpoint
+*OpenBankProject::APIApi* | [**get_bank_level_dynamic_endpoints**](docs/APIApi.md#get_bank_level_dynamic_endpoints) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Get Bank Level Dynamic Endpoints
+*OpenBankProject::APIApi* | [**get_bank_level_dynamic_entities**](docs/APIApi.md#get_bank_level_dynamic_entities) | **GET** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities | Get Bank Level Dynamic Entities
+*OpenBankProject::APIApi* | [**get_bank_level_dynamic_resource_docs_obp**](docs/APIApi.md#get_bank_level_dynamic_resource_docs_obp) | **GET** /obp/v1.4.0/banks/{bankid}/resource-docs/{apiversion}/obp | Get Bank Level Dynamic Resource Docs
+*OpenBankProject::APIApi* | [**get_bank_level_endpoint_tags**](docs/APIApi.md#get_bank_level_endpoint_tags) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoints/{operationid}/tags | Get Bank Level Endpoint Tags
+*OpenBankProject::APIApi* | [**get_cache_config**](docs/APIApi.md#get_cache_config) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration
+*OpenBankProject::APIApi* | [**get_cache_info**](docs/APIApi.md#get_cache_info) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information
+*OpenBankProject::APIApi* | [**get_cache_namespaces**](docs/APIApi.md#get_cache_namespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces
+*OpenBankProject::APIApi* | [**get_call_context**](docs/APIApi.md#get_call_context) | **GET** /obp/v4.0.0/development/call_context | Get the Call Context of a current call
+*OpenBankProject::APIApi* | [**get_config_props**](docs/APIApi.md#get_config_props) | **GET** /obp/v6.0.0/management/config-props | Get Config Props
+*OpenBankProject::APIApi* | [**get_connector_call_counts**](docs/APIApi.md#get_connector_call_counts) | **GET** /obp/v6.0.0/management/connector/metrics/counts | Get Connector Call Counts
+*OpenBankProject::APIApi* | [**get_connector_method_names**](docs/APIApi.md#get_connector_method_names) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names
+*OpenBankProject::APIApi* | [**get_connector_metrics**](docs/APIApi.md#get_connector_metrics) | **GET** /obp/v2.2.0/management/connector/metrics | Get Connector Metrics
+*OpenBankProject::APIApi* | [**get_connector_traces**](docs/APIApi.md#get_connector_traces) | **GET** /obp/v6.0.0/management/connector/traces | Get Connector Traces
+*OpenBankProject::APIApi* | [**get_connectors**](docs/APIApi.md#get_connectors) | **GET** /obp/v6.0.0/system/connectors | Get Connectors
+*OpenBankProject::APIApi* | [**get_counterparty_attribute_by_id**](docs/APIApi.md#get_counterparty_attribute_by_id) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes/{counterpartyattributeid} | Get Counterparty Attribute By ID
+*OpenBankProject::APIApi* | [**get_current_consumer**](docs/APIApi.md#get_current_consumer) | **GET** /obp/v6.0.0/consumers/current | Get Current Consumer
+*OpenBankProject::APIApi* | [**get_database_pool_info**](docs/APIApi.md#get_database_pool_info) | **GET** /obp/v6.0.0/system/database/pool | Get Database Pool Information
+*OpenBankProject::APIApi* | [**get_dynamic_endpoint**](docs/APIApi.md#get_dynamic_endpoint) | **GET** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} | Get Dynamic Endpoint
+*OpenBankProject::APIApi* | [**get_dynamic_endpoints**](docs/APIApi.md#get_dynamic_endpoints) | **GET** /obp/v4.0.0/management/dynamic-endpoints |  Get Dynamic Endpoints
+*OpenBankProject::APIApi* | [**get_dynamic_entity_diagnostics**](docs/APIApi.md#get_dynamic_entity_diagnostics) | **GET** /obp/v6.0.0/management/diagnostics/dynamic-entities | Get Dynamic Entity Diagnostics
+*OpenBankProject::APIApi* | [**get_featured_api_collections_admin**](docs/APIApi.md#get_featured_api_collections_admin) | **GET** /obp/v6.0.0/management/api-collections/featured | Get Featured Api Collections (Admin)
+*OpenBankProject::APIApi* | [**get_features**](docs/APIApi.md#get_features) | **GET** /obp/v6.0.0/features | Get Features
+*OpenBankProject::APIApi* | [**get_mapper_database_info**](docs/APIApi.md#get_mapper_database_info) | **GET** /obp/v4.0.0/database/info | Get Mapper Database Info
+*OpenBankProject::APIApi* | [**get_message_docs**](docs/APIApi.md#get_message_docs) | **GET** /obp/v2.2.0/message-docs/{connector} | Get Message Docs
+*OpenBankProject::APIApi* | [**get_message_docs_json_schema**](docs/APIApi.md#get_message_docs_json_schema) | **GET** /obp/v6.0.0/message-docs/{connector}/json-schema | Get Message Docs as JSON Schema
+*OpenBankProject::APIApi* | [**get_message_docs_swagger**](docs/APIApi.md#get_message_docs_swagger) | **GET** /obp/v3.1.0/message-docs/{connector}/swagger2.0 | Get Message Docs Swagger
+*OpenBankProject::APIApi* | [**get_method_routings**](docs/APIApi.md#get_method_routings) | **GET** /obp/v3.1.0/management/method_routings | Get MethodRoutings
+*OpenBankProject::APIApi* | [**get_metrics**](docs/APIApi.md#get_metrics) | **GET** /obp/v6.0.0/management/metrics | Get Metrics
+*OpenBankProject::APIApi* | [**get_metrics_at_bank**](docs/APIApi.md#get_metrics_at_bank) | **GET** /obp/v5.0.0/management/metrics/banks/{bankid} | Get Metrics at Bank
+*OpenBankProject::APIApi* | [**get_migrations**](docs/APIApi.md#get_migrations) | **GET** /obp/v6.0.0/system/migrations | Get Database Migrations
+*OpenBankProject::APIApi* | [**get_my_dynamic_endpoints**](docs/APIApi.md#get_my_dynamic_endpoints) | **GET** /obp/v4.0.0/my/dynamic-endpoints | Get My Dynamic Endpoints
+*OpenBankProject::APIApi* | [**get_my_dynamic_entities**](docs/APIApi.md#get_my_dynamic_entities) | **GET** /obp/v6.0.0/my/dynamic-entities | Get My Dynamic Entities
+*OpenBankProject::APIApi* | [**get_o_auth2_server_jwks_uris**](docs/APIApi.md#get_o_auth2_server_jwks_uris) | **GET** /obp/v3.1.0/jwks-uris | Get JSON Web Key (JWK) URIs
+*OpenBankProject::APIApi* | [**get_o_auth2_server_well_known**](docs/APIApi.md#get_o_auth2_server_well_known) | **GET** /obp/v5.1.0/well-known | Get Well Known URIs
+*OpenBankProject::APIApi* | [**get_obp_connector_loopback**](docs/APIApi.md#get_obp_connector_loopback) | **GET** /obp/v3.1.0/connector/loopback | Get Connector Status (Loopback)
+*OpenBankProject::APIApi* | [**get_popular_apis**](docs/APIApi.md#get_popular_apis) | **GET** /obp/v6.0.0/api/popular-endpoints | Get Popular Endpoints
+*OpenBankProject::APIApi* | [**get_rate_limiting_info**](docs/APIApi.md#get_rate_limiting_info) | **GET** /obp/v3.1.0/rate-limiting | Get Rate Limiting Info
+*OpenBankProject::APIApi* | [**get_reference_types**](docs/APIApi.md#get_reference_types) | **GET** /obp/v6.0.0/management/dynamic-entities/reference-types | Get Reference Types for Dynamic Entities
+*OpenBankProject::APIApi* | [**get_regulated_entity_attribute_by_id**](docs/APIApi.md#get_regulated_entity_attribute_by_id) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Get Regulated Entity Attribute By ID
+*OpenBankProject::APIApi* | [**get_regulated_entity_by_id**](docs/APIApi.md#get_regulated_entity_by_id) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid} | Get Regulated Entity
+*OpenBankProject::APIApi* | [**get_resource_docs_obp**](docs/APIApi.md#get_resource_docs_obp) | **GET** /obp/v1.4.0/resource-docs/{apiversion}/obp | Get Resource Docs
+*OpenBankProject::APIApi* | [**get_resource_docs_open_api31**](docs/APIApi.md#get_resource_docs_open_api31) | **GET** /obp/v1.4.0/resource-docs/{apiversion}/openapi | Get OpenAPI 3.1 documentation
+*OpenBankProject::APIApi* | [**get_resource_docs_swagger**](docs/APIApi.md#get_resource_docs_swagger) | **GET** /obp/v1.4.0/resource-docs/{apiversion}/swagger | Get Swagger documentation
+*OpenBankProject::APIApi* | [**get_scanned_api_versions**](docs/APIApi.md#get_scanned_api_versions) | **GET** /obp/v6.0.0/api/versions | Get Scanned API Versions
+*OpenBankProject::APIApi* | [**get_server_jwk**](docs/APIApi.md#get_server_jwk) | **GET** /obp/v3.1.0/certs | Get JSON Web Key (JWK)
+*OpenBankProject::APIApi* | [**get_stored_procedure_connector_health**](docs/APIApi.md#get_stored_procedure_connector_health) | **GET** /obp/v6.0.0/system/connectors/stored_procedure_vDec2019/health | Get Stored Procedure Connector Health
+*OpenBankProject::APIApi* | [**get_system_dynamic_entities**](docs/APIApi.md#get_system_dynamic_entities) | **GET** /obp/v6.0.0/management/system-dynamic-entities | Get System Dynamic Entities
+*OpenBankProject::APIApi* | [**get_system_level_endpoint_tags**](docs/APIApi.md#get_system_level_endpoint_tags) | **GET** /obp/v4.0.0/management/endpoints/{operationid}/tags | Get System Level Endpoint Tags
+*OpenBankProject::APIApi* | [**get_top_apis**](docs/APIApi.md#get_top_apis) | **GET** /obp/v6.0.0/management/metrics/top-apis | Get Top APIs
+*OpenBankProject::APIApi* | [**invalidate_cache_namespace**](docs/APIApi.md#invalidate_cache_namespace) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace
+*OpenBankProject::APIApi* | [**log_cache_all_endpoint**](docs/APIApi.md#log_cache_all_endpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache
+*OpenBankProject::APIApi* | [**log_cache_debug_endpoint**](docs/APIApi.md#log_cache_debug_endpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache
+*OpenBankProject::APIApi* | [**log_cache_error_endpoint**](docs/APIApi.md#log_cache_error_endpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache
+*OpenBankProject::APIApi* | [**log_cache_info_endpoint**](docs/APIApi.md#log_cache_info_endpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache
+*OpenBankProject::APIApi* | [**log_cache_trace_endpoint**](docs/APIApi.md#log_cache_trace_endpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache
+*OpenBankProject::APIApi* | [**log_cache_warning_endpoint**](docs/APIApi.md#log_cache_warning_endpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache
+*OpenBankProject::APIApi* | [**regulated_entities**](docs/APIApi.md#regulated_entities) | **GET** /obp/v5.1.0/regulated-entities | Get Regulated Entities
+*OpenBankProject::APIApi* | [**root**](docs/APIApi.md#root) | **GET** /obp/v6.0.0/root | Get API Info (root)
+*OpenBankProject::APIApi* | [**suggested_session_timeout**](docs/APIApi.md#suggested_session_timeout) | **GET** /obp/v5.1.0/ui/suggested-session-timeout | Get Suggested Session Timeout
+*OpenBankProject::APIApi* | [**update_api_product_attribute**](docs/APIApi.md#update_api_product_attribute) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Update Api Product Attribute
+*OpenBankProject::APIApi* | [**update_bank_level_dynamic_endpoint_host**](docs/APIApi.md#update_bank_level_dynamic_endpoint_host) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}/host |  Update Bank Level Dynamic Endpoint Host
+*OpenBankProject::APIApi* | [**update_bank_level_dynamic_entity**](docs/APIApi.md#update_bank_level_dynamic_entity) | **PUT** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid} | Update Bank Level Dynamic Entity
+*OpenBankProject::APIApi* | [**update_bank_level_endpoint_tag**](docs/APIApi.md#update_bank_level_endpoint_tag) | **PUT** /obp/v4.0.0/management/banks/{bankid}/endpoints/{operationid}/tags/{endpointtagid} | Update Bank Level Endpoint Tag
+*OpenBankProject::APIApi* | [**update_counterparty_attribute**](docs/APIApi.md#update_counterparty_attribute) | **PUT** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes/{counterpartyattributeid} | Update Counterparty Attribute
+*OpenBankProject::APIApi* | [**update_dynamic_endpoint_host**](docs/APIApi.md#update_dynamic_endpoint_host) | **PUT** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}/host |  Update Dynamic Endpoint Host
+*OpenBankProject::APIApi* | [**update_featured_api_collection**](docs/APIApi.md#update_featured_api_collection) | **PUT** /obp/v6.0.0/management/api-collections/featured/{apicollectionid} | Update Featured Api Collection
+*OpenBankProject::APIApi* | [**update_method_routing**](docs/APIApi.md#update_method_routing) | **PUT** /obp/v3.1.0/management/method_routings/{methodroutingid} | Update MethodRouting
+*OpenBankProject::APIApi* | [**update_my_dynamic_entity**](docs/APIApi.md#update_my_dynamic_entity) | **PUT** /obp/v6.0.0/my/dynamic-entities/{dynamicentityid} | Update My Dynamic Entity
+*OpenBankProject::APIApi* | [**update_regulated_entity_attribute**](docs/APIApi.md#update_regulated_entity_attribute) | **PUT** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Update Regulated Entity Attribute
+*OpenBankProject::APIApi* | [**update_system_dynamic_entity**](docs/APIApi.md#update_system_dynamic_entity) | **PUT** /obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid} | Update System Level Dynamic Entity
+*OpenBankProject::APIApi* | [**update_system_level_endpoint_tag**](docs/APIApi.md#update_system_level_endpoint_tag) | **PUT** /obp/v4.0.0/management/endpoints/{operationid}/tags/{endpointtagid} | Update System Level Endpoint Tag
+*OpenBankProject::APIApi* | [**verify_request_sign_response**](docs/APIApi.md#verify_request_sign_response) | **GET** /obp/v4.0.0/development/echo/jws-verified-request-jws-signed-response | Verify Request and Sign Response of a current call
+*OpenBankProject::APIApi* | [**waiting_for_godot**](docs/APIApi.md#waiting_for_godot) | **GET** /obp/v5.1.0/waiting-for-godot | Waiting For Godot
+*OpenBankProject::ATMApi* | [**create_atm**](docs/ATMApi.md#create_atm) | **POST** /obp/v5.1.0/banks/{bankid}/atms | Create ATM
+*OpenBankProject::ATMApi* | [**create_atm_attribute**](docs/ATMApi.md#create_atm_attribute) | **POST** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Create ATM Attribute
+*OpenBankProject::ATMApi* | [**delete_atm**](docs/ATMApi.md#delete_atm) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid} | Delete ATM
+*OpenBankProject::ATMApi* | [**delete_atm_attribute**](docs/ATMApi.md#delete_atm_attribute) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Delete ATM Attribute
+*OpenBankProject::ATMApi* | [**get_atm**](docs/ATMApi.md#get_atm) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid} | Get Bank ATM
+*OpenBankProject::ATMApi* | [**get_atm_attribute**](docs/ATMApi.md#get_atm_attribute) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Get ATM Attribute By ATM_ATTRIBUTE_ID
+*OpenBankProject::ATMApi* | [**get_atm_attributes**](docs/ATMApi.md#get_atm_attributes) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Get ATM Attributes
+*OpenBankProject::ATMApi* | [**get_atms**](docs/ATMApi.md#get_atms) | **GET** /obp/v5.1.0/banks/{bankid}/atms | Get Bank ATMS
+*OpenBankProject::ATMApi* | [**head_atms**](docs/ATMApi.md#head_atms) | **HEAD** /obp/v5.0.0/banks/{bankid}/atms | Head Bank ATMS
+*OpenBankProject::ATMApi* | [**update_atm**](docs/ATMApi.md#update_atm) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid} | UPDATE ATM
+*OpenBankProject::ATMApi* | [**update_atm_accessibility_features**](docs/ATMApi.md#update_atm_accessibility_features) | **PUT** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/accessibility-features | Update ATM Accessibility Features
+*OpenBankProject::ATMApi* | [**update_atm_attribute**](docs/ATMApi.md#update_atm_attribute) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Update ATM Attribute
+*OpenBankProject::ATMApi* | [**update_atm_location_categories**](docs/ATMApi.md#update_atm_location_categories) | **PUT** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/location-categories | Update ATM Location Categories
+*OpenBankProject::ATMApi* | [**update_atm_notes**](docs/ATMApi.md#update_atm_notes) | **PUT** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/notes | Update ATM Notes
+*OpenBankProject::ATMApi* | [**update_atm_services**](docs/ATMApi.md#update_atm_services) | **PUT** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/services | Update ATM Services
+*OpenBankProject::ATMApi* | [**update_atm_supported_currencies**](docs/ATMApi.md#update_atm_supported_currencies) | **PUT** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/supported-currencies | Update ATM Supported Currencies
+*OpenBankProject::ATMApi* | [**update_atm_supported_languages**](docs/ATMApi.md#update_atm_supported_languages) | **PUT** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/supported-languages | Update ATM Supported Languages
+*OpenBankProject::ATMAttributeApi* | [**create_atm_attribute**](docs/ATMAttributeApi.md#create_atm_attribute) | **POST** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Create ATM Attribute
+*OpenBankProject::ATMAttributeApi* | [**delete_atm_attribute**](docs/ATMAttributeApi.md#delete_atm_attribute) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Delete ATM Attribute
+*OpenBankProject::ATMAttributeApi* | [**get_atm_attribute**](docs/ATMAttributeApi.md#get_atm_attribute) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Get ATM Attribute By ATM_ATTRIBUTE_ID
+*OpenBankProject::ATMAttributeApi* | [**get_atm_attributes**](docs/ATMAttributeApi.md#get_atm_attributes) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Get ATM Attributes
+*OpenBankProject::ATMAttributeApi* | [**update_atm_attribute**](docs/ATMAttributeApi.md#update_atm_attribute) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Update ATM Attribute
+*OpenBankProject::AccountApi* | [**add_account**](docs/AccountApi.md#add_account) | **POST** /obp/v4.0.0/banks/{bankid}/accounts | Create Account (POST)
+*OpenBankProject::AccountApi* | [**add_tag_for_view_on_account**](docs/AccountApi.md#add_tag_for_view_on_account) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Create a tag on account
+*OpenBankProject::AccountApi* | [**check_funds_available**](docs/AccountApi.md#check_funds_available) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available | Check Available Funds
+*OpenBankProject::AccountApi* | [**core_private_accounts_all_banks**](docs/AccountApi.md#core_private_accounts_all_banks) | **GET** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private)
+*OpenBankProject::AccountApi* | [**create_account**](docs/AccountApi.md#create_account) | **PUT** /obp/v5.0.0/banks/{bankid}/accounts/{accountid} | Create Account (PUT)
+*OpenBankProject::AccountApi* | [**create_account_application**](docs/AccountApi.md#create_account_application) | **POST** /obp/v3.1.0/banks/{bankid}/account-applications | Create Account Application
+*OpenBankProject::AccountApi* | [**create_account_attribute**](docs/AccountApi.md#create_account_attribute) | **POST** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attribute | Create Account Attribute
+*OpenBankProject::AccountApi* | [**create_bank_account_balance**](docs/AccountApi.md#create_bank_account_balance) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Create Bank Account Balance
+*OpenBankProject::AccountApi* | [**create_counterparty**](docs/AccountApi.md#create_counterparty) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Create Counterparty (Explicit)
+*OpenBankProject::AccountApi* | [**create_counterparty_for_any_account**](docs/AccountApi.md#create_counterparty_for_any_account) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Create Counterparty for any account (Explicit)
+*OpenBankProject::AccountApi* | [**create_custom_view**](docs/AccountApi.md#create_custom_view) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views | Create Custom View
+*OpenBankProject::AccountApi* | [**create_custom_view_management**](docs/AccountApi.md#create_custom_view_management) | **POST** /obp/v6.0.0/management/banks/{bankid}/accounts/{accountid}/views | Create Custom View (Management)
+*OpenBankProject::AccountApi* | [**create_customer_account_link**](docs/AccountApi.md#create_customer_account_link) | **POST** /obp/v5.0.0/banks/{bankid}/customer-account-links | Create Customer Account Link
+*OpenBankProject::AccountApi* | [**create_direct_debit**](docs/AccountApi.md#create_direct_debit) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/direct-debit | Create Direct Debit
+*OpenBankProject::AccountApi* | [**create_direct_debit_management**](docs/AccountApi.md#create_direct_debit_management) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/direct-debit | Create Direct Debit (management)
+*OpenBankProject::AccountApi* | [**create_or_update_account_attribute_definition**](docs/AccountApi.md#create_or_update_account_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Create or Update Account Attribute Definition
+*OpenBankProject::AccountApi* | [**create_standing_order**](docs/AccountApi.md#create_standing_order) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/standing-order | Create Standing Order
+*OpenBankProject::AccountApi* | [**create_standing_order_management**](docs/AccountApi.md#create_standing_order_management) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/standing-order | Create Standing Order (management)
+*OpenBankProject::AccountApi* | [**create_user_with_account_access_by_id**](docs/AccountApi.md#create_user_with_account_access_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/user-account-access | Create (DAuth) User with Account Access
+*OpenBankProject::AccountApi* | [**create_view_for_bank_account**](docs/AccountApi.md#create_view_for_bank_account) | **POST** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/views | Create Custom View
+*OpenBankProject::AccountApi* | [**delete_account_attribute_definition**](docs/AccountApi.md#delete_account_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/account | Delete Account Attribute Definition
+*OpenBankProject::AccountApi* | [**delete_account_cascade**](docs/AccountApi.md#delete_account_cascade) | **DELETE** /obp/v4.0.0/management/cascading/banks/{bankid}/accounts/{accountid} | Delete Account Cascade
+*OpenBankProject::AccountApi* | [**delete_bank_account_balance**](docs/AccountApi.md#delete_bank_account_balance) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Delete Bank Account Balance
+*OpenBankProject::AccountApi* | [**delete_counterparty_for_any_account**](docs/AccountApi.md#delete_counterparty_for_any_account) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Delete Counterparty for any account (Explicit)
+*OpenBankProject::AccountApi* | [**delete_custom_view**](docs/AccountApi.md#delete_custom_view) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views/{targetviewid} | Delete Custom View
+*OpenBankProject::AccountApi* | [**delete_explicit_counterparty**](docs/AccountApi.md#delete_explicit_counterparty) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Delete Counterparty (Explicit)
+*OpenBankProject::AccountApi* | [**delete_tag_for_view_on_account**](docs/AccountApi.md#delete_tag_for_view_on_account) | **DELETE** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags/{tagid} | Delete a tag on account
+*OpenBankProject::AccountApi* | [**delete_view_for_bank_account**](docs/AccountApi.md#delete_view_for_bank_account) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/views/{viewid} | Delete Custom View
+*OpenBankProject::AccountApi* | [**get_account_access_by_user_id**](docs/AccountApi.md#get_account_access_by_user_id) | **GET** /obp/v5.1.0/users/{userid}/account-access | Get Account Access by USER_ID
+*OpenBankProject::AccountApi* | [**get_account_application**](docs/AccountApi.md#get_account_application) | **GET** /obp/v3.1.0/banks/{bankid}/account-applications/{accountapplicationid} | Get Account Application by Id
+*OpenBankProject::AccountApi* | [**get_account_applications**](docs/AccountApi.md#get_account_applications) | **GET** /obp/v3.1.0/banks/{bankid}/account-applications | Get Account Applications
+*OpenBankProject::AccountApi* | [**get_account_attribute_definition**](docs/AccountApi.md#get_account_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Get Account Attribute Definition
+*OpenBankProject::AccountApi* | [**get_account_by_account_routing**](docs/AccountApi.md#get_account_by_account_routing) | **POST** /obp/v4.0.0/management/accounts/account-routing-query | Get Account by Account Routing
+*OpenBankProject::AccountApi* | [**get_account_directory**](docs/AccountApi.md#get_account_directory) | **GET** /obp/v6.0.0/banks/{bankid}/account-directory | Get Account Directory at Bank
+*OpenBankProject::AccountApi* | [**get_accounts_at_bank**](docs/AccountApi.md#get_accounts_at_bank) | **GET** /obp/v6.0.0/banks/{bankid}/accounts | Get Accounts at Bank
+*OpenBankProject::AccountApi* | [**get_accounts_by_account_routing_regex**](docs/AccountApi.md#get_accounts_by_account_routing_regex) | **POST** /obp/v4.0.0/management/accounts/account-routing-regex-query | Get Accounts by Account Routing Regex
+*OpenBankProject::AccountApi* | [**get_accounts_held**](docs/AccountApi.md#get_accounts_held) | **GET** /obp/v3.0.0/banks/{bankid}/accounts-held | Get Accounts Held
+*OpenBankProject::AccountApi* | [**get_accounts_held_by_user**](docs/AccountApi.md#get_accounts_held_by_user) | **GET** /obp/v5.1.0/users/{userid}/accounts-held | Get Accounts Held By User
+*OpenBankProject::AccountApi* | [**get_accounts_held_by_user_at_bank**](docs/AccountApi.md#get_accounts_held_by_user_at_bank) | **GET** /obp/v5.1.0/users/{userid}/banks/{bankid}/accounts-held | Get Accounts Held By User
+*OpenBankProject::AccountApi* | [**get_accounts_minimal_by_customer_id**](docs/AccountApi.md#get_accounts_minimal_by_customer_id) | **GET** /obp/v4.0.0/customers/{customerid}/accounts-minimal | Get Accounts Minimal for a Customer
+*OpenBankProject::AccountApi* | [**get_agent**](docs/AccountApi.md#get_agent) | **GET** /obp/v5.1.0/banks/{bankid}/agents/{agentid} | Get Agent
+*OpenBankProject::AccountApi* | [**get_agents**](docs/AccountApi.md#get_agents) | **GET** /obp/v5.1.0/banks/{bankid}/agents | Get Agents at Bank
+*OpenBankProject::AccountApi* | [**get_all_bank_account_balances**](docs/AccountApi.md#get_all_bank_account_balances) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Get All Bank Account Balances
+*OpenBankProject::AccountApi* | [**get_bank_account_balance_by_id**](docs/AccountApi.md#get_bank_account_balance_by_id) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Get Bank Account Balance By ID
+*OpenBankProject::AccountApi* | [**get_bank_account_balances**](docs/AccountApi.md#get_bank_account_balances) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/balances | Get Account Balances by BANK_ID and ACCOUNT_ID through the VIEW_ID
+*OpenBankProject::AccountApi* | [**get_bank_accounts_balances**](docs/AccountApi.md#get_bank_accounts_balances) | **GET** /obp/v5.1.0/banks/{bankid}/balances | Get Account Balances by BANK_ID
+*OpenBankProject::AccountApi* | [**get_bank_accounts_balances_through_view**](docs/AccountApi.md#get_bank_accounts_balances_through_view) | **GET** /obp/v5.1.0/banks/{bankid}/views/{viewid}/balances | Get Account Balances by BANK_ID through the VIEW_ID
+*OpenBankProject::AccountApi* | [**get_checkbook_orders**](docs/AccountApi.md#get_checkbook_orders) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/checkbook/orders | Get Checkbook orders
+*OpenBankProject::AccountApi* | [**get_core_account_by_id_through_view**](docs/AccountApi.md#get_core_account_by_id_through_view) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid} | Get Account by Id (Core) through the VIEW_ID
+*OpenBankProject::AccountApi* | [**get_core_account_by_id_v600**](docs/AccountApi.md#get_core_account_by_id_v600) | **GET** /obp/v6.0.0/my/banks/{bankid}/accounts/{accountid}/account | Get Account by Id (Core)
+*OpenBankProject::AccountApi* | [**get_core_transactions_for_bank_account**](docs/AccountApi.md#get_core_transactions_for_bank_account) | **GET** /obp/v3.0.0/my/banks/{bankid}/accounts/{accountid}/transactions | Get Transactions for Account (Core)
+*OpenBankProject::AccountApi* | [**get_counterparties_for_any_account**](docs/AccountApi.md#get_counterparties_for_any_account) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties for any account (Explicit)
+*OpenBankProject::AccountApi* | [**get_counterparty_by_id_for_any_account**](docs/AccountApi.md#get_counterparty_by_id_for_any_account) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id for any account (Explicit)
+*OpenBankProject::AccountApi* | [**get_counterparty_by_name_for_any_account**](docs/AccountApi.md#get_counterparty_by_name_for_any_account) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparty-names/{counterpartyname} | Get Counterparty by name for any account (Explicit) 
+*OpenBankProject::AccountApi* | [**get_custom_view**](docs/AccountApi.md#get_custom_view) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views/{targetviewid} | Get Custom View
+*OpenBankProject::AccountApi* | [**get_explicit_counterparties_for_account**](docs/AccountApi.md#get_explicit_counterparties_for_account) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties (Explicit)
+*OpenBankProject::AccountApi* | [**get_fast_firehose_accounts_at_one_bank**](docs/AccountApi.md#get_fast_firehose_accounts_at_one_bank) | **GET** /obp/v4.0.0/management/banks/{bankid}/fast-firehose/accounts | Get Fast Firehose Accounts at Bank
+*OpenBankProject::AccountApi* | [**get_firehose_accounts_at_one_bank**](docs/AccountApi.md#get_firehose_accounts_at_one_bank) | **GET** /obp/v4.0.0/banks/{bankid}/firehose/accounts/views/{viewid} | Get Firehose Accounts at Bank
+*OpenBankProject::AccountApi* | [**get_holding_account_by_releaser**](docs/AccountApi.md#get_holding_account_by_releaser) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/holding-accounts | Get Holding Accounts By Releaser
+*OpenBankProject::AccountApi* | [**get_other_account_by_id_for_bank_account**](docs/AccountApi.md#get_other_account_by_id_for_bank_account) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid} | Get Other Account by Id
+*OpenBankProject::AccountApi* | [**get_other_accounts_for_bank_account**](docs/AccountApi.md#get_other_accounts_for_bank_account) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts | Get Other Accounts of one Account
+*OpenBankProject::AccountApi* | [**get_permission_for_user_for_bank_account**](docs/AccountApi.md#get_permission_for_user_for_bank_account) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/permissions/{provider}/{providerid} | Get Account access for User
+*OpenBankProject::AccountApi* | [**get_permissions_for_bank_account**](docs/AccountApi.md#get_permissions_for_bank_account) | **GET** /obp/v2.0.0/banks/{bankid}/accounts/{accountid}/permissions | Get access
+*OpenBankProject::AccountApi* | [**get_private_account_by_id_full**](docs/AccountApi.md#get_private_account_by_id_full) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/account | Get Account by Id (Full)
+*OpenBankProject::AccountApi* | [**get_private_account_idsby_bank_id**](docs/AccountApi.md#get_private_account_idsby_bank_id) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/account_ids/private | Get Accounts at Bank (IDs only)
+*OpenBankProject::AccountApi* | [**get_public_account_by_id**](docs/AccountApi.md#get_public_account_by_id) | **GET** /obp/v3.0.0/banks/{bankid}/public/accounts/{accountid}/{viewid}/account | Get Public Account by Id
+*OpenBankProject::AccountApi* | [**get_tags_for_view_on_account**](docs/AccountApi.md#get_tags_for_view_on_account) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Get tags on account
+*OpenBankProject::AccountApi* | [**get_transactions_for_bank_account**](docs/AccountApi.md#get_transactions_for_bank_account) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions | Get Transactions for Account (Full)
+*OpenBankProject::AccountApi* | [**get_users_with_account_access**](docs/AccountApi.md#get_users_with_account_access) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/users-with-access | Get Users With Account Access
+*OpenBankProject::AccountApi* | [**get_views_for_bank_account**](docs/AccountApi.md#get_views_for_bank_account) | **GET** /obp/v5.0.0/banks/{bankid}/accounts/{accountid}/views | Get Views for Account
+*OpenBankProject::AccountApi* | [**grant_user_access_to_view_by_id**](docs/AccountApi.md#grant_user_access_to_view_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/grant | Grant User access to View
+*OpenBankProject::AccountApi* | [**has_account_access**](docs/AccountApi.md#has_account_access) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/has-account-access | Has Account Access
+*OpenBankProject::AccountApi* | [**iban_checker**](docs/AccountApi.md#iban_checker) | **POST** /obp/v4.0.0/account/check/scheme/iban | Validate and check IBAN
+*OpenBankProject::AccountApi* | [**private_accounts_at_one_bank**](docs/AccountApi.md#private_accounts_at_one_bank) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/private | Get Accounts at Bank (Minimal)
+*OpenBankProject::AccountApi* | [**public_accounts_all_banks**](docs/AccountApi.md#public_accounts_all_banks) | **GET** /obp/v2.0.0/accounts/public | Get Public Accounts at all Banks
+*OpenBankProject::AccountApi* | [**public_accounts_at_one_bank**](docs/AccountApi.md#public_accounts_at_one_bank) | **GET** /obp/v2.0.0/banks/{bankid}/accounts/public | Get Public Accounts at Bank
+*OpenBankProject::AccountApi* | [**revoke_user_access_to_view_by_id**](docs/AccountApi.md#revoke_user_access_to_view_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/revoke | Revoke User access to View
+*OpenBankProject::AccountApi* | [**update_account**](docs/AccountApi.md#update_account) | **PUT** /obp/v3.1.0/management/banks/{bankid}/accounts/{accountid} | Update Account
+*OpenBankProject::AccountApi* | [**update_account_application_status**](docs/AccountApi.md#update_account_application_status) | **PUT** /obp/v3.1.0/banks/{bankid}/account-applications/{accountapplicationid} | Update Account Application Status
+*OpenBankProject::AccountApi* | [**update_account_attribute**](docs/AccountApi.md#update_account_attribute) | **PUT** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attributes/{accountattributeid} | Update Account Attribute
+*OpenBankProject::AccountApi* | [**update_account_label**](docs/AccountApi.md#update_account_label) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid} | Update Account Label
+*OpenBankProject::AccountApi* | [**update_bank_account_balance**](docs/AccountApi.md#update_bank_account_balance) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Update Bank Account Balance
+*OpenBankProject::AccountApi* | [**update_custom_view**](docs/AccountApi.md#update_custom_view) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views/{targetviewid} | Update Custom View
+*OpenBankProject::AccountApi* | [**update_view_for_bank_account**](docs/AccountApi.md#update_view_for_bank_account) | **PUT** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/views/{viewid} | Update Custom View
+*OpenBankProject::AccountAccessApi* | [**create_user_with_account_access_by_id**](docs/AccountAccessApi.md#create_user_with_account_access_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/user-account-access | Create (DAuth) User with Account Access
+*OpenBankProject::AccountAccessApi* | [**grant_user_access_to_view_by_id**](docs/AccountAccessApi.md#grant_user_access_to_view_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/grant | Grant User access to View
+*OpenBankProject::AccountAccessApi* | [**revoke_user_access_to_view_by_id**](docs/AccountAccessApi.md#revoke_user_access_to_view_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/revoke | Revoke User access to View
+*OpenBankProject::AccountAccessRequestApi* | [**approve_account_access_request**](docs/AccountAccessRequestApi.md#approve_account_access_request) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/approval | Approve Account Access Request
+*OpenBankProject::AccountAccessRequestApi* | [**create_account_access_request**](docs/AccountAccessRequestApi.md#create_account_access_request) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Create Account Access Request
+*OpenBankProject::AccountAccessRequestApi* | [**get_account_access_request_by_id**](docs/AccountAccessRequestApi.md#get_account_access_request_by_id) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid} | Get Account Access Request by Id
+*OpenBankProject::AccountAccessRequestApi* | [**get_account_access_requests_for_account**](docs/AccountAccessRequestApi.md#get_account_access_requests_for_account) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Get Account Access Requests for Account
+*OpenBankProject::AccountAccessRequestApi* | [**get_my_account_access_requests**](docs/AccountAccessRequestApi.md#get_my_account_access_requests) | **GET** /obp/v6.0.0/my/account-access-requests | Get My Account Access Requests
+*OpenBankProject::AccountAccessRequestApi* | [**reject_account_access_request**](docs/AccountAccessRequestApi.md#reject_account_access_request) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/rejection | Reject Account Access Request
+*OpenBankProject::AccountApplicationApi* | [**create_account_application**](docs/AccountApplicationApi.md#create_account_application) | **POST** /obp/v3.1.0/banks/{bankid}/account-applications | Create Account Application
+*OpenBankProject::AccountApplicationApi* | [**get_account_application**](docs/AccountApplicationApi.md#get_account_application) | **GET** /obp/v3.1.0/banks/{bankid}/account-applications/{accountapplicationid} | Get Account Application by Id
+*OpenBankProject::AccountApplicationApi* | [**get_account_applications**](docs/AccountApplicationApi.md#get_account_applications) | **GET** /obp/v3.1.0/banks/{bankid}/account-applications | Get Account Applications
+*OpenBankProject::AccountApplicationApi* | [**update_account_application_status**](docs/AccountApplicationApi.md#update_account_application_status) | **PUT** /obp/v3.1.0/banks/{bankid}/account-applications/{accountapplicationid} | Update Account Application Status
+*OpenBankProject::AccountAttributeApi* | [**create_account_attribute**](docs/AccountAttributeApi.md#create_account_attribute) | **POST** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attribute | Create Account Attribute
+*OpenBankProject::AccountAttributeApi* | [**create_or_update_account_attribute_definition**](docs/AccountAttributeApi.md#create_or_update_account_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Create or Update Account Attribute Definition
+*OpenBankProject::AccountAttributeApi* | [**delete_account_attribute_definition**](docs/AccountAttributeApi.md#delete_account_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/account | Delete Account Attribute Definition
+*OpenBankProject::AccountAttributeApi* | [**get_account_attribute_definition**](docs/AccountAttributeApi.md#get_account_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Get Account Attribute Definition
+*OpenBankProject::AccountAttributeApi* | [**update_account_attribute**](docs/AccountAttributeApi.md#update_account_attribute) | **PUT** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attributes/{accountattributeid} | Update Account Attribute
+*OpenBankProject::AccountFirehoseApi* | [**get_fast_firehose_accounts_at_one_bank**](docs/AccountFirehoseApi.md#get_fast_firehose_accounts_at_one_bank) | **GET** /obp/v4.0.0/management/banks/{bankid}/fast-firehose/accounts | Get Fast Firehose Accounts at Bank
+*OpenBankProject::AccountFirehoseApi* | [**get_firehose_accounts_at_one_bank**](docs/AccountFirehoseApi.md#get_firehose_accounts_at_one_bank) | **GET** /obp/v4.0.0/banks/{bankid}/firehose/accounts/views/{viewid} | Get Firehose Accounts at Bank
+*OpenBankProject::AccountFirehoseApi* | [**get_firehose_transactions_for_bank_account**](docs/AccountFirehoseApi.md#get_firehose_transactions_for_bank_account) | **GET** /obp/v3.0.0/banks/{bankid}/firehose/accounts/{accountid}/views/{viewid}/transactions | Get Firehose Transactions for Account
+*OpenBankProject::AccountInformationServiceAISApi* | [**add_consent_user**](docs/AccountInformationServiceAISApi.md#add_consent_user) | **PUT** /obp/v4.0.0/banks/{bankid}/consents/{consentid}/user-update-request | Add User to a Consent
+*OpenBankProject::AccountInformationServiceAISApi* | [**answer_consent_challenge**](docs/AccountInformationServiceAISApi.md#answer_consent_challenge) | **POST** /obp/v3.1.0/banks/{bankid}/consents/{consentid}/challenge | Answer Consent Challenge
+*OpenBankProject::AccountInformationServiceAISApi* | [**core_private_accounts_all_banks**](docs/AccountInformationServiceAISApi.md#core_private_accounts_all_banks) | **GET** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private)
+*OpenBankProject::AccountInformationServiceAISApi* | [**create_consent_by_consent_request_id_email**](docs/AccountInformationServiceAISApi.md#create_consent_by_consent_request_id_email) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{email}/consents | Create Consent By CONSENT_REQUEST_ID (EMAIL)
+*OpenBankProject::AccountInformationServiceAISApi* | [**create_consent_by_consent_request_id_implicit**](docs/AccountInformationServiceAISApi.md#create_consent_by_consent_request_id_implicit) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{implicit}/consents | Create Consent By CONSENT_REQUEST_ID (IMPLICIT)
+*OpenBankProject::AccountInformationServiceAISApi* | [**create_consent_by_consent_request_id_sms**](docs/AccountInformationServiceAISApi.md#create_consent_by_consent_request_id_sms) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{sms}/consents | Create Consent By CONSENT_REQUEST_ID (SMS)
+*OpenBankProject::AccountInformationServiceAISApi* | [**create_consent_email**](docs/AccountInformationServiceAISApi.md#create_consent_email) | **POST** /obp/v3.1.0/banks/{bankid}/my/consents/{email} | Create Consent (EMAIL)
+*OpenBankProject::AccountInformationServiceAISApi* | [**create_consent_implicit**](docs/AccountInformationServiceAISApi.md#create_consent_implicit) | **POST** /obp/v5.1.0/my/consents/{implicit} | Create Consent (IMPLICIT)
+*OpenBankProject::AccountInformationServiceAISApi* | [**create_consent_request**](docs/AccountInformationServiceAISApi.md#create_consent_request) | **POST** /obp/v5.0.0/consumer/consent-requests | Create Consent Request
+*OpenBankProject::AccountInformationServiceAISApi* | [**create_consent_sms**](docs/AccountInformationServiceAISApi.md#create_consent_sms) | **POST** /obp/v3.1.0/banks/{bankid}/my/consents/{sms} | Create Consent (SMS)
+*OpenBankProject::AccountInformationServiceAISApi* | [**get_accounts_held**](docs/AccountInformationServiceAISApi.md#get_accounts_held) | **GET** /obp/v3.0.0/banks/{bankid}/accounts-held | Get Accounts Held
+*OpenBankProject::AccountInformationServiceAISApi* | [**get_bank**](docs/AccountInformationServiceAISApi.md#get_bank) | **GET** /obp/v6.0.0/banks/{bankid} | Get Bank
+*OpenBankProject::AccountInformationServiceAISApi* | [**get_bank_account_balances**](docs/AccountInformationServiceAISApi.md#get_bank_account_balances) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/balances | Get Account Balances by BANK_ID and ACCOUNT_ID through the VIEW_ID
+*OpenBankProject::AccountInformationServiceAISApi* | [**get_bank_accounts_balances**](docs/AccountInformationServiceAISApi.md#get_bank_accounts_balances) | **GET** /obp/v5.1.0/banks/{bankid}/balances | Get Account Balances by BANK_ID
+*OpenBankProject::AccountInformationServiceAISApi* | [**get_bank_accounts_balances_through_view**](docs/AccountInformationServiceAISApi.md#get_bank_accounts_balances_through_view) | **GET** /obp/v5.1.0/banks/{bankid}/views/{viewid}/balances | Get Account Balances by BANK_ID through the VIEW_ID
+*OpenBankProject::AccountInformationServiceAISApi* | [**get_banks**](docs/AccountInformationServiceAISApi.md#get_banks) | **GET** /obp/v6.0.0/banks | Get Banks
+*OpenBankProject::AccountInformationServiceAISApi* | [**get_consent_by_consent_id**](docs/AccountInformationServiceAISApi.md#get_consent_by_consent_id) | **GET** /obp/v5.1.0/user/current/consents/{consentid} | Get Consent By Consent Id via User
+*OpenBankProject::AccountInformationServiceAISApi* | [**get_consent_by_consent_id_via_consumer**](docs/AccountInformationServiceAISApi.md#get_consent_by_consent_id_via_consumer) | **GET** /obp/v5.1.0/consumer/current/consents/{consentid} | Get Consent By Consent Id via Consumer
+*OpenBankProject::AccountInformationServiceAISApi* | [**get_consent_by_consent_request_id**](docs/AccountInformationServiceAISApi.md#get_consent_by_consent_request_id) | **GET** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/consents | Get Consent By Consent Request Id via Consumer
+*OpenBankProject::AccountInformationServiceAISApi* | [**get_consent_infos**](docs/AccountInformationServiceAISApi.md#get_consent_infos) | **GET** /obp/v4.0.0/my/consent-infos | Get My Consents Info
+*OpenBankProject::AccountInformationServiceAISApi* | [**get_consent_infos_by_bank**](docs/AccountInformationServiceAISApi.md#get_consent_infos_by_bank) | **GET** /obp/v4.0.0/banks/{bankid}/my/consent-infos | Get My Consents Info At Bank
+*OpenBankProject::AccountInformationServiceAISApi* | [**get_consent_request**](docs/AccountInformationServiceAISApi.md#get_consent_request) | **GET** /obp/v5.0.0/consumer/consent-requests/{consentrequestid} | Get Consent Request
+*OpenBankProject::AccountInformationServiceAISApi* | [**get_consents**](docs/AccountInformationServiceAISApi.md#get_consents) | **GET** /obp/v5.1.0/management/consents | Get Consents
+*OpenBankProject::AccountInformationServiceAISApi* | [**get_consents_at_bank**](docs/AccountInformationServiceAISApi.md#get_consents_at_bank) | **GET** /obp/v5.1.0/management/consents/banks/{bankid} | Get Consents at Bank
+*OpenBankProject::AccountInformationServiceAISApi* | [**get_core_account_by_id_through_view**](docs/AccountInformationServiceAISApi.md#get_core_account_by_id_through_view) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid} | Get Account by Id (Core) through the VIEW_ID
+*OpenBankProject::AccountInformationServiceAISApi* | [**get_core_account_by_id_v600**](docs/AccountInformationServiceAISApi.md#get_core_account_by_id_v600) | **GET** /obp/v6.0.0/my/banks/{bankid}/accounts/{accountid}/account | Get Account by Id (Core)
+*OpenBankProject::AccountInformationServiceAISApi* | [**get_core_transactions_for_bank_account**](docs/AccountInformationServiceAISApi.md#get_core_transactions_for_bank_account) | **GET** /obp/v3.0.0/my/banks/{bankid}/accounts/{accountid}/transactions | Get Transactions for Account (Core)
+*OpenBankProject::AccountInformationServiceAISApi* | [**get_my_consents**](docs/AccountInformationServiceAISApi.md#get_my_consents) | **GET** /obp/v5.1.0/my/consents | Get My Consents
+*OpenBankProject::AccountInformationServiceAISApi* | [**get_my_consents_by_bank**](docs/AccountInformationServiceAISApi.md#get_my_consents_by_bank) | **GET** /obp/v5.1.0/banks/{bankid}/my/consents | Get My Consents at Bank
+*OpenBankProject::AccountInformationServiceAISApi* | [**get_private_account_idsby_bank_id**](docs/AccountInformationServiceAISApi.md#get_private_account_idsby_bank_id) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/account_ids/private | Get Accounts at Bank (IDs only)
+*OpenBankProject::AccountInformationServiceAISApi* | [**get_server_jwk**](docs/AccountInformationServiceAISApi.md#get_server_jwk) | **GET** /obp/v3.1.0/certs | Get JSON Web Key (JWK)
+*OpenBankProject::AccountInformationServiceAISApi* | [**get_transaction_types**](docs/AccountInformationServiceAISApi.md#get_transaction_types) | **GET** /obp/v2.0.0/banks/{bankid}/transaction-types | Get Transaction Types at Bank
+*OpenBankProject::AccountInformationServiceAISApi* | [**mtls_client_certificate_info**](docs/AccountInformationServiceAISApi.md#mtls_client_certificate_info) | **GET** /obp/v5.1.0/my/mtls/certificate/current | Provide client's certificate info of a current call
+*OpenBankProject::AccountInformationServiceAISApi* | [**private_accounts_at_one_bank**](docs/AccountInformationServiceAISApi.md#private_accounts_at_one_bank) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/private | Get Accounts at Bank (Minimal)
+*OpenBankProject::AccountInformationServiceAISApi* | [**revoke_consent_at_bank**](docs/AccountInformationServiceAISApi.md#revoke_consent_at_bank) | **DELETE** /obp/v5.1.0/banks/{bankid}/consents/{consentid} | Revoke Consent at Bank
+*OpenBankProject::AccountInformationServiceAISApi* | [**revoke_my_consent**](docs/AccountInformationServiceAISApi.md#revoke_my_consent) | **DELETE** /obp/v5.1.0/my/consents/{consentid} | Revoke My Consent
+*OpenBankProject::AccountInformationServiceAISApi* | [**self_revoke_consent**](docs/AccountInformationServiceAISApi.md#self_revoke_consent) | **DELETE** /obp/v5.1.0/my/consent/current | Revoke Consent used in the Current Call
+*OpenBankProject::AccountInformationServiceAISApi* | [**update_consent_account_access_by_consent_id**](docs/AccountInformationServiceAISApi.md#update_consent_account_access_by_consent_id) | **PUT** /obp/v5.1.0/management/banks/{bankid}/consents/{consentid}/account-access | Update Consent Account Access by CONSENT_ID
+*OpenBankProject::AccountInformationServiceAISApi* | [**update_consent_status**](docs/AccountInformationServiceAISApi.md#update_consent_status) | **PUT** /obp/v4.0.0/banks/{bankid}/consents/{consentid} | Update Consent Status
+*OpenBankProject::AccountInformationServiceAISApi* | [**update_consent_status_by_consent**](docs/AccountInformationServiceAISApi.md#update_consent_status_by_consent) | **PUT** /obp/v5.1.0/management/banks/{bankid}/consents/{consentid} | Update Consent Status by CONSENT_ID
+*OpenBankProject::AccountInformationServiceAISApi* | [**update_consent_user_id_by_consent_id**](docs/AccountInformationServiceAISApi.md#update_consent_user_id_by_consent_id) | **PUT** /obp/v5.1.0/management/banks/{bankid}/consents/{consentid}/created-by-user | Update Created by User of Consent by CONSENT_ID
+*OpenBankProject::AccountMetadataApi* | [**add_tag_for_view_on_account**](docs/AccountMetadataApi.md#add_tag_for_view_on_account) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Create a tag on account
+*OpenBankProject::AccountMetadataApi* | [**delete_tag_for_view_on_account**](docs/AccountMetadataApi.md#delete_tag_for_view_on_account) | **DELETE** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags/{tagid} | Delete a tag on account
+*OpenBankProject::AccountMetadataApi* | [**get_tags_for_view_on_account**](docs/AccountMetadataApi.md#get_tags_for_view_on_account) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Get tags on account
+*OpenBankProject::AccountPublicApi* | [**get_public_account_by_id**](docs/AccountPublicApi.md#get_public_account_by_id) | **GET** /obp/v3.0.0/banks/{bankid}/public/accounts/{accountid}/{viewid}/account | Get Public Account by Id
+*OpenBankProject::AccountPublicApi* | [**public_accounts_all_banks**](docs/AccountPublicApi.md#public_accounts_all_banks) | **GET** /obp/v2.0.0/accounts/public | Get Public Accounts at all Banks
+*OpenBankProject::AccountPublicApi* | [**public_accounts_at_one_bank**](docs/AccountPublicApi.md#public_accounts_at_one_bank) | **GET** /obp/v2.0.0/banks/{bankid}/accounts/public | Get Public Accounts at Bank
+*OpenBankProject::AggregateMetricsApi* | [**get_aggregate_metrics**](docs/AggregateMetricsApi.md#get_aggregate_metrics) | **GET** /obp/v6.0.0/management/aggregate-metrics | Get Aggregate Metrics
+*OpenBankProject::ApiCollectionApi* | [**create_featured_api_collection**](docs/ApiCollectionApi.md#create_featured_api_collection) | **POST** /obp/v6.0.0/management/api-collections/featured | Create Featured Api Collection
+*OpenBankProject::ApiCollectionApi* | [**create_my_api_collection**](docs/ApiCollectionApi.md#create_my_api_collection) | **POST** /obp/v4.0.0/my/api-collections | Create My Api Collection
+*OpenBankProject::ApiCollectionApi* | [**create_my_api_collection_endpoint**](docs/ApiCollectionApi.md#create_my_api_collection_endpoint) | **POST** /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints | Create My Api Collection Endpoint
+*OpenBankProject::ApiCollectionApi* | [**create_my_api_collection_endpoint_by_id**](docs/ApiCollectionApi.md#create_my_api_collection_endpoint_by_id) | **POST** /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints | Create My Api Collection Endpoint By Id
+*OpenBankProject::ApiCollectionApi* | [**delete_featured_api_collection**](docs/ApiCollectionApi.md#delete_featured_api_collection) | **DELETE** /obp/v6.0.0/management/api-collections/featured/{apicollectionid} | Delete Featured Api Collection
+*OpenBankProject::ApiCollectionApi* | [**delete_my_api_collection**](docs/ApiCollectionApi.md#delete_my_api_collection) | **DELETE** /obp/v4.0.0/my/api-collections/{apicollectionid} | Delete My Api Collection
+*OpenBankProject::ApiCollectionApi* | [**delete_my_api_collection_endpoint**](docs/ApiCollectionApi.md#delete_my_api_collection_endpoint) | **DELETE** /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints/{operationid} | Delete My Api Collection Endpoint
+*OpenBankProject::ApiCollectionApi* | [**delete_my_api_collection_endpoint_by_id**](docs/ApiCollectionApi.md#delete_my_api_collection_endpoint_by_id) | **DELETE** /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoint-ids/{apicollectionendpointid} | Delete My Api Collection Endpoint By Id
+*OpenBankProject::ApiCollectionApi* | [**delete_my_api_collection_endpoint_by_operation_id**](docs/ApiCollectionApi.md#delete_my_api_collection_endpoint_by_operation_id) | **DELETE** /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints/{operationid} | Delete My Api Collection Endpoint By Id
+*OpenBankProject::ApiCollectionApi* | [**get_all_api_collections**](docs/ApiCollectionApi.md#get_all_api_collections) | **GET** /obp/v5.1.0/management/api-collections | Get All API Collections
+*OpenBankProject::ApiCollectionApi* | [**get_api_collection_endpoints**](docs/ApiCollectionApi.md#get_api_collection_endpoints) | **GET** /obp/v4.0.0/api-collections/{apicollectionid}/api-collection-endpoints | Get Api Collection Endpoints
+*OpenBankProject::ApiCollectionApi* | [**get_api_collections_for_user**](docs/ApiCollectionApi.md#get_api_collections_for_user) | **GET** /obp/v4.0.0/users/{userid}/api-collections | Get Api Collections for User
+*OpenBankProject::ApiCollectionApi* | [**get_featured_api_collections**](docs/ApiCollectionApi.md#get_featured_api_collections) | **GET** /obp/v4.0.0/api-collections/featured | Get Featured Api Collections
+*OpenBankProject::ApiCollectionApi* | [**get_featured_api_collections_admin**](docs/ApiCollectionApi.md#get_featured_api_collections_admin) | **GET** /obp/v6.0.0/management/api-collections/featured | Get Featured Api Collections (Admin)
+*OpenBankProject::ApiCollectionApi* | [**get_my_api_collection_by_id**](docs/ApiCollectionApi.md#get_my_api_collection_by_id) | **GET** /obp/v4.0.0/my/api-collections/{apicollectionid} | Get My Api Collection By Id
+*OpenBankProject::ApiCollectionApi* | [**get_my_api_collection_by_name**](docs/ApiCollectionApi.md#get_my_api_collection_by_name) | **GET** /obp/v4.0.0/my/api-collections/name/{apicollectionname} | Get My Api Collection By Name
+*OpenBankProject::ApiCollectionApi* | [**get_my_api_collection_endpoint**](docs/ApiCollectionApi.md#get_my_api_collection_endpoint) | **GET** /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints/{operationid} | Get My Api Collection Endpoint
+*OpenBankProject::ApiCollectionApi* | [**get_my_api_collection_endpoints**](docs/ApiCollectionApi.md#get_my_api_collection_endpoints) | **GET** /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints | Get My Api Collection Endpoints
+*OpenBankProject::ApiCollectionApi* | [**get_my_api_collection_endpoints_by_id**](docs/ApiCollectionApi.md#get_my_api_collection_endpoints_by_id) | **GET** /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints | Get My Api Collection Endpoints By Id
+*OpenBankProject::ApiCollectionApi* | [**get_my_api_collections**](docs/ApiCollectionApi.md#get_my_api_collections) | **GET** /obp/v4.0.0/my/api-collections | Get My Api Collections
+*OpenBankProject::ApiCollectionApi* | [**get_sharable_api_collection_by_id**](docs/ApiCollectionApi.md#get_sharable_api_collection_by_id) | **GET** /obp/v4.0.0/api-collections/sharable/{apicollectionid} | Get Sharable Api Collection By Id
+*OpenBankProject::ApiCollectionApi* | [**update_featured_api_collection**](docs/ApiCollectionApi.md#update_featured_api_collection) | **PUT** /obp/v6.0.0/management/api-collections/featured/{apicollectionid} | Update Featured Api Collection
+*OpenBankProject::ApiCollectionApi* | [**update_my_api_collection**](docs/ApiCollectionApi.md#update_my_api_collection) | **PUT** /obp/v5.1.0/my/api-collections/{apicollectionid} | Update My Api Collection By API_COLLECTION_ID
+*OpenBankProject::ApiProductApi* | [**create_api_product**](docs/ApiProductApi.md#create_api_product) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create Api Product
+*OpenBankProject::ApiProductApi* | [**create_or_update_api_product**](docs/ApiProductApi.md#create_or_update_api_product) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create or Update Api Product
+*OpenBankProject::ApiProductApi* | [**delete_api_product**](docs/ApiProductApi.md#delete_api_product) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Delete Api Product
+*OpenBankProject::ApiProductApi* | [**get_api_product**](docs/ApiProductApi.md#get_api_product) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Get Api Product
+*OpenBankProject::ApiProductApi* | [**get_api_products**](docs/ApiProductApi.md#get_api_products) | **GET** /obp/v6.0.0/banks/{bankid}/api-products | Get Api Products
+*OpenBankProject::ApiProductAttributeApi* | [**create_api_product_attribute**](docs/ApiProductAttributeApi.md#create_api_product_attribute) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attribute | Create Api Product Attribute
+*OpenBankProject::ApiProductAttributeApi* | [**delete_api_product_attribute**](docs/ApiProductAttributeApi.md#delete_api_product_attribute) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Delete Api Product Attribute
+*OpenBankProject::ApiProductAttributeApi* | [**get_api_product_attribute**](docs/ApiProductAttributeApi.md#get_api_product_attribute) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Get Api Product Attribute
+*OpenBankProject::ApiProductAttributeApi* | [**update_api_product_attribute**](docs/ApiProductAttributeApi.md#update_api_product_attribute) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Update Api Product Attribute
+*OpenBankProject::AttributeApi* | [**create_account_attribute**](docs/AttributeApi.md#create_account_attribute) | **POST** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attribute | Create Account Attribute
+*OpenBankProject::AttributeApi* | [**create_atm_attribute**](docs/AttributeApi.md#create_atm_attribute) | **POST** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Create ATM Attribute
+*OpenBankProject::AttributeApi* | [**create_bank_attribute**](docs/AttributeApi.md#create_bank_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/attribute | Create Bank Attribute
+*OpenBankProject::AttributeApi* | [**create_card_attribute**](docs/AttributeApi.md#create_card_attribute) | **POST** /obp/v3.1.0/management/banks/{bankid}/cards/{cardid}/attribute | Create Card Attribute
+*OpenBankProject::AttributeApi* | [**create_customer_attribute**](docs/AttributeApi.md#create_customer_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attribute | Create Customer Attribute
+*OpenBankProject::AttributeApi* | [**create_or_update_account_attribute_definition**](docs/AttributeApi.md#create_or_update_account_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Create or Update Account Attribute Definition
+*OpenBankProject::AttributeApi* | [**create_or_update_bank_attribute_definition**](docs/AttributeApi.md#create_or_update_bank_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/bank | Create or Update Bank Attribute Definition
+*OpenBankProject::AttributeApi* | [**create_or_update_card_attribute_definition**](docs/AttributeApi.md#create_or_update_card_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/card | Create or Update Card Attribute Definition
+*OpenBankProject::AttributeApi* | [**create_or_update_customer_attribute_attribute_definition**](docs/AttributeApi.md#create_or_update_customer_attribute_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Create or Update Customer Attribute Definition
+*OpenBankProject::AttributeApi* | [**create_or_update_product_attribute_definition**](docs/AttributeApi.md#create_or_update_product_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/product | Create or Update Product Attribute Definition
+*OpenBankProject::AttributeApi* | [**create_or_update_transaction_attribute_definition**](docs/AttributeApi.md#create_or_update_transaction_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Create or Update Transaction Attribute Definition
+*OpenBankProject::AttributeApi* | [**create_or_update_transaction_request_attribute_definition**](docs/AttributeApi.md#create_or_update_transaction_request_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Create or Update Transaction Request Attribute Definition
+*OpenBankProject::AttributeApi* | [**create_personal_data_field**](docs/AttributeApi.md#create_personal_data_field) | **POST** /obp/v6.0.0/my/personal-data-fields | Create Personal Data Field
+*OpenBankProject::AttributeApi* | [**create_product_attribute**](docs/AttributeApi.md#create_product_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attribute | Create Product Attribute
+*OpenBankProject::AttributeApi* | [**create_transaction_attribute**](docs/AttributeApi.md#create_transaction_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attribute | Create Transaction Attribute
+*OpenBankProject::AttributeApi* | [**create_transaction_request_attribute**](docs/AttributeApi.md#create_transaction_request_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attribute | Create Transaction Request Attribute
+*OpenBankProject::AttributeApi* | [**create_user_attribute**](docs/AttributeApi.md#create_user_attribute) | **POST** /obp/v6.0.0/users/{userid}/attributes | Create User Attribute
+*OpenBankProject::AttributeApi* | [**delete_account_attribute_definition**](docs/AttributeApi.md#delete_account_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/account | Delete Account Attribute Definition
+*OpenBankProject::AttributeApi* | [**delete_atm_attribute**](docs/AttributeApi.md#delete_atm_attribute) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Delete ATM Attribute
+*OpenBankProject::AttributeApi* | [**delete_bank_attribute**](docs/AttributeApi.md#delete_bank_attribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Delete Bank Attribute
+*OpenBankProject::AttributeApi* | [**delete_card_attribute_definition**](docs/AttributeApi.md#delete_card_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/card | Delete Card Attribute Definition
+*OpenBankProject::AttributeApi* | [**delete_customer_attribute**](docs/AttributeApi.md#delete_customer_attribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/{customerid}/attributes/{customerattributeid} | Delete Customer Attribute
+*OpenBankProject::AttributeApi* | [**delete_customer_attribute_definition**](docs/AttributeApi.md#delete_customer_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/customer | Delete Customer Attribute Definition
+*OpenBankProject::AttributeApi* | [**delete_personal_data_field**](docs/AttributeApi.md#delete_personal_data_field) | **DELETE** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Delete Personal Data Field
+*OpenBankProject::AttributeApi* | [**delete_product_attribute**](docs/AttributeApi.md#delete_product_attribute) | **DELETE** /obp/v3.1.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Delete Product Attribute
+*OpenBankProject::AttributeApi* | [**delete_product_attribute_definition**](docs/AttributeApi.md#delete_product_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/product | Delete Product Attribute Definition
+*OpenBankProject::AttributeApi* | [**delete_transaction_attribute_definition**](docs/AttributeApi.md#delete_transaction_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction | Delete Transaction Attribute Definition
+*OpenBankProject::AttributeApi* | [**delete_transaction_request_attribute_definition**](docs/AttributeApi.md#delete_transaction_request_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction-request | Delete Transaction Request Attribute Definition
+*OpenBankProject::AttributeApi* | [**delete_user_attribute**](docs/AttributeApi.md#delete_user_attribute) | **DELETE** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Delete User Attribute
+*OpenBankProject::AttributeApi* | [**get_account_attribute_definition**](docs/AttributeApi.md#get_account_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Get Account Attribute Definition
+*OpenBankProject::AttributeApi* | [**get_atm_attribute**](docs/AttributeApi.md#get_atm_attribute) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Get ATM Attribute By ATM_ATTRIBUTE_ID
+*OpenBankProject::AttributeApi* | [**get_atm_attributes**](docs/AttributeApi.md#get_atm_attributes) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Get ATM Attributes
+*OpenBankProject::AttributeApi* | [**get_bank_attribute**](docs/AttributeApi.md#get_bank_attribute) | **GET** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Get Bank Attribute By BANK_ATTRIBUTE_ID
+*OpenBankProject::AttributeApi* | [**get_bank_attributes**](docs/AttributeApi.md#get_bank_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/attributes | Get Bank Attributes
+*OpenBankProject::AttributeApi* | [**get_card_attribute_definition**](docs/AttributeApi.md#get_card_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/card | Get Card Attribute Definition
+*OpenBankProject::AttributeApi* | [**get_customer_attribute_by_id**](docs/AttributeApi.md#get_customer_attribute_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{attributeid} | Get Customer Attribute By Id
+*OpenBankProject::AttributeApi* | [**get_customer_attribute_definition**](docs/AttributeApi.md#get_customer_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Get Customer Attribute Definition
+*OpenBankProject::AttributeApi* | [**get_customer_attributes**](docs/AttributeApi.md#get_customer_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes | Get Customer Attributes
+*OpenBankProject::AttributeApi* | [**get_personal_data_field_by_id**](docs/AttributeApi.md#get_personal_data_field_by_id) | **GET** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Get Personal Data Field By Id
+*OpenBankProject::AttributeApi* | [**get_personal_data_fields**](docs/AttributeApi.md#get_personal_data_fields) | **GET** /obp/v6.0.0/my/personal-data-fields | Get Personal Data Fields
+*OpenBankProject::AttributeApi* | [**get_product_attribute**](docs/AttributeApi.md#get_product_attribute) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Get Product Attribute
+*OpenBankProject::AttributeApi* | [**get_product_attribute_definition**](docs/AttributeApi.md#get_product_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/product | Get Product Attribute Definition
+*OpenBankProject::AttributeApi* | [**get_transaction_attribute_by_id**](docs/AttributeApi.md#get_transaction_attribute_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{attributeid} | Get Transaction Attribute By Id
+*OpenBankProject::AttributeApi* | [**get_transaction_attribute_definition**](docs/AttributeApi.md#get_transaction_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Get Transaction Attribute Definition
+*OpenBankProject::AttributeApi* | [**get_transaction_attributes**](docs/AttributeApi.md#get_transaction_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes | Get Transaction Attributes
+*OpenBankProject::AttributeApi* | [**get_transaction_request_attribute_by_id**](docs/AttributeApi.md#get_transaction_request_attribute_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Get Transaction Request Attribute By Id
+*OpenBankProject::AttributeApi* | [**get_transaction_request_attribute_definition**](docs/AttributeApi.md#get_transaction_request_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Get Transaction Request Attribute Definition
+*OpenBankProject::AttributeApi* | [**get_transaction_request_attributes**](docs/AttributeApi.md#get_transaction_request_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes | Get Transaction Request Attributes
+*OpenBankProject::AttributeApi* | [**get_user_attribute_by_id**](docs/AttributeApi.md#get_user_attribute_by_id) | **GET** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Get User Attribute By Id
+*OpenBankProject::AttributeApi* | [**get_user_attributes**](docs/AttributeApi.md#get_user_attributes) | **GET** /obp/v6.0.0/users/{userid}/attributes | Get User Attributes
+*OpenBankProject::AttributeApi* | [**update_account_attribute**](docs/AttributeApi.md#update_account_attribute) | **PUT** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attributes/{accountattributeid} | Update Account Attribute
+*OpenBankProject::AttributeApi* | [**update_atm_attribute**](docs/AttributeApi.md#update_atm_attribute) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Update ATM Attribute
+*OpenBankProject::AttributeApi* | [**update_bank_attribute**](docs/AttributeApi.md#update_bank_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Update Bank Attribute
+*OpenBankProject::AttributeApi* | [**update_card_attribute**](docs/AttributeApi.md#update_card_attribute) | **PUT** /obp/v3.1.0/management/banks/{bankid}/cards/{cardid}/attributes/{cardattributeid} | Update Card Attribute
+*OpenBankProject::AttributeApi* | [**update_customer_attribute**](docs/AttributeApi.md#update_customer_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{customerattributeid} | Update Customer Attribute
+*OpenBankProject::AttributeApi* | [**update_personal_data_field**](docs/AttributeApi.md#update_personal_data_field) | **PUT** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Update Personal Data Field
+*OpenBankProject::AttributeApi* | [**update_product_attribute**](docs/AttributeApi.md#update_product_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Update Product Attribute
+*OpenBankProject::AttributeApi* | [**update_transaction_attribute**](docs/AttributeApi.md#update_transaction_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{accountattributeid} | Update Transaction Attribute
+*OpenBankProject::AttributeApi* | [**update_transaction_request_attribute**](docs/AttributeApi.md#update_transaction_request_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Update Transaction Request Attribute
+*OpenBankProject::AttributeApi* | [**update_user_attribute**](docs/AttributeApi.md#update_user_attribute) | **PUT** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Update User Attribute
+*OpenBankProject::AuthenticationTypeValidationApi* | [**create_authentication_type_validation**](docs/AuthenticationTypeValidationApi.md#create_authentication_type_validation) | **POST** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Create an Authentication Type Validation
+*OpenBankProject::AuthenticationTypeValidationApi* | [**delete_authentication_type_validation**](docs/AuthenticationTypeValidationApi.md#delete_authentication_type_validation) | **DELETE** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Delete an Authentication Type Validation
+*OpenBankProject::AuthenticationTypeValidationApi* | [**get_all_authentication_type_validations**](docs/AuthenticationTypeValidationApi.md#get_all_authentication_type_validations) | **GET** /obp/v4.0.0/management/authentication-type-validations | Get all Authentication Type Validations
+*OpenBankProject::AuthenticationTypeValidationApi* | [**get_all_authentication_type_validations_public**](docs/AuthenticationTypeValidationApi.md#get_all_authentication_type_validations_public) | **GET** /obp/v4.0.0/endpoints/authentication-type-validations | Get all Authentication Type Validations - public
+*OpenBankProject::AuthenticationTypeValidationApi* | [**get_authentication_type_validation**](docs/AuthenticationTypeValidationApi.md#get_authentication_type_validation) | **GET** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Get an Authentication Type Validation
+*OpenBankProject::AuthenticationTypeValidationApi* | [**update_authentication_type_validation**](docs/AuthenticationTypeValidationApi.md#update_authentication_type_validation) | **PUT** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Update an Authentication Type Validation
+*OpenBankProject::BalanceApi* | [**create_bank_account_balance**](docs/BalanceApi.md#create_bank_account_balance) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Create Bank Account Balance
+*OpenBankProject::BalanceApi* | [**delete_bank_account_balance**](docs/BalanceApi.md#delete_bank_account_balance) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Delete Bank Account Balance
+*OpenBankProject::BalanceApi* | [**get_all_bank_account_balances**](docs/BalanceApi.md#get_all_bank_account_balances) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Get All Bank Account Balances
+*OpenBankProject::BalanceApi* | [**get_bank_account_balance_by_id**](docs/BalanceApi.md#get_bank_account_balance_by_id) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Get Bank Account Balance By ID
+*OpenBankProject::BalanceApi* | [**update_bank_account_balance**](docs/BalanceApi.md#update_bank_account_balance) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Update Bank Account Balance
+*OpenBankProject::BankApi* | [**create_account_webhook**](docs/BankApi.md#create_account_webhook) | **POST** /obp/v3.1.0/banks/{bankid}/account-web-hooks | Create an Account Webhook
+*OpenBankProject::BankApi* | [**create_bank**](docs/BankApi.md#create_bank) | **POST** /obp/v6.0.0/banks | Create Bank
+*OpenBankProject::BankApi* | [**create_bank_account_notification_webhook**](docs/BankApi.md#create_bank_account_notification_webhook) | **POST** /obp/v4.0.0/banks/{bankid}/web-hooks/account/notifications/on-create-transaction | Create bank level Account Notification Webhook
+*OpenBankProject::BankApi* | [**create_bank_attribute**](docs/BankApi.md#create_bank_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/attribute | Create Bank Attribute
+*OpenBankProject::BankApi* | [**create_or_update_bank_attribute_definition**](docs/BankApi.md#create_or_update_bank_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/bank | Create or Update Bank Attribute Definition
+*OpenBankProject::BankApi* | [**create_settlement_account**](docs/BankApi.md#create_settlement_account) | **POST** /obp/v4.0.0/banks/{bankid}/settlement-accounts | Create Settlement Account
+*OpenBankProject::BankApi* | [**create_system_account_notification_webhook**](docs/BankApi.md#create_system_account_notification_webhook) | **POST** /obp/v4.0.0/web-hooks/account/notifications/on-create-transaction | Create system level Account Notification Webhook
+*OpenBankProject::BankApi* | [**create_transaction_type**](docs/BankApi.md#create_transaction_type) | **PUT** /obp/v2.1.0/banks/{bankid}/transaction-types | Create Transaction Type at bank
+*OpenBankProject::BankApi* | [**delete_bank_attribute**](docs/BankApi.md#delete_bank_attribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Delete Bank Attribute
+*OpenBankProject::BankApi* | [**delete_bank_cascade**](docs/BankApi.md#delete_bank_cascade) | **DELETE** /obp/v4.0.0/management/cascading/banks/{bankid} | Delete Bank Cascade
+*OpenBankProject::BankApi* | [**enable_disable_account_webhook**](docs/BankApi.md#enable_disable_account_webhook) | **PUT** /obp/v3.1.0/banks/{bankid}/account-web-hooks | Enable/Disable an Account Webhook
+*OpenBankProject::BankApi* | [**get_account_webhooks**](docs/BankApi.md#get_account_webhooks) | **GET** /obp/v3.1.0/management/banks/{bankid}/account-web-hooks | Get Account Webhooks
+*OpenBankProject::BankApi* | [**get_bank**](docs/BankApi.md#get_bank) | **GET** /obp/v6.0.0/banks/{bankid} | Get Bank
+*OpenBankProject::BankApi* | [**get_bank_attribute**](docs/BankApi.md#get_bank_attribute) | **GET** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Get Bank Attribute By BANK_ATTRIBUTE_ID
+*OpenBankProject::BankApi* | [**get_bank_attributes**](docs/BankApi.md#get_bank_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/attributes | Get Bank Attributes
+*OpenBankProject::BankApi* | [**get_banks**](docs/BankApi.md#get_banks) | **GET** /obp/v6.0.0/banks | Get Banks
+*OpenBankProject::BankApi* | [**get_branch**](docs/BankApi.md#get_branch) | **GET** /obp/v3.0.0/banks/{bankid}/branches/{branchid} | Get Branch
+*OpenBankProject::BankApi* | [**get_branches**](docs/BankApi.md#get_branches) | **GET** /obp/v3.0.0/banks/{bankid}/branches | Get Branches for a Bank
+*OpenBankProject::BankApi* | [**get_settlement_accounts**](docs/BankApi.md#get_settlement_accounts) | **GET** /obp/v4.0.0/banks/{bankid}/settlement-accounts | Get Settlement accounts at Bank
+*OpenBankProject::BankApi* | [**get_transaction_request_types_supported_by_bank**](docs/BankApi.md#get_transaction_request_types_supported_by_bank) | **GET** /obp/v2.1.0/banks/{bankid}/transaction-request-types | Get Transaction Request Types at Bank
+*OpenBankProject::BankApi* | [**get_transaction_types**](docs/BankApi.md#get_transaction_types) | **GET** /obp/v2.0.0/banks/{bankid}/transaction-types | Get Transaction Types at Bank
+*OpenBankProject::BankApi* | [**update_bank**](docs/BankApi.md#update_bank) | **PUT** /obp/v5.0.0/banks | Update Bank
+*OpenBankProject::BankApi* | [**update_bank_attribute**](docs/BankApi.md#update_bank_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Update Bank Attribute
+*OpenBankProject::BankAttributeApi* | [**create_bank_attribute**](docs/BankAttributeApi.md#create_bank_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/attribute | Create Bank Attribute
+*OpenBankProject::BankAttributeApi* | [**create_or_update_bank_attribute_definition**](docs/BankAttributeApi.md#create_or_update_bank_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/bank | Create or Update Bank Attribute Definition
+*OpenBankProject::BankAttributeApi* | [**delete_bank_attribute**](docs/BankAttributeApi.md#delete_bank_attribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Delete Bank Attribute
+*OpenBankProject::BankAttributeApi* | [**get_bank_attribute**](docs/BankAttributeApi.md#get_bank_attribute) | **GET** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Get Bank Attribute By BANK_ATTRIBUTE_ID
+*OpenBankProject::BankAttributeApi* | [**get_bank_attributes**](docs/BankAttributeApi.md#get_bank_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/attributes | Get Bank Attributes
+*OpenBankProject::BankAttributeApi* | [**update_bank_attribute**](docs/BankAttributeApi.md#update_bank_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Update Bank Attribute
+*OpenBankProject::BranchApi* | [**create_branch**](docs/BranchApi.md#create_branch) | **POST** /obp/v3.0.0/banks/{bankid}/branches | Create Branch
+*OpenBankProject::BranchApi* | [**delete_branch**](docs/BranchApi.md#delete_branch) | **DELETE** /obp/v3.1.0/banks/{bankid}/branches/{branchid} | Delete Branch
+*OpenBankProject::BranchApi* | [**get_branch**](docs/BranchApi.md#get_branch) | **GET** /obp/v3.0.0/banks/{bankid}/branches/{branchid} | Get Branch
+*OpenBankProject::BranchApi* | [**get_branches**](docs/BranchApi.md#get_branches) | **GET** /obp/v3.0.0/banks/{bankid}/branches | Get Branches for a Bank
+*OpenBankProject::CacheApi* | [**get_cache_config**](docs/CacheApi.md#get_cache_config) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration
+*OpenBankProject::CacheApi* | [**get_cache_info**](docs/CacheApi.md#get_cache_info) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information
+*OpenBankProject::CacheApi* | [**get_cache_namespaces**](docs/CacheApi.md#get_cache_namespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces
+*OpenBankProject::CacheApi* | [**invalidate_cache_namespace**](docs/CacheApi.md#invalidate_cache_namespace) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace
+*OpenBankProject::CardApi* | [**add_card_for_bank**](docs/CardApi.md#add_card_for_bank) | **POST** /obp/v5.0.0/management/banks/{bankid}/cards | Create Card
+*OpenBankProject::CardApi* | [**create_card_attribute**](docs/CardApi.md#create_card_attribute) | **POST** /obp/v3.1.0/management/banks/{bankid}/cards/{cardid}/attribute | Create Card Attribute
+*OpenBankProject::CardApi* | [**create_or_update_card_attribute_definition**](docs/CardApi.md#create_or_update_card_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/card | Create or Update Card Attribute Definition
+*OpenBankProject::CardApi* | [**delete_card_attribute_definition**](docs/CardApi.md#delete_card_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/card | Delete Card Attribute Definition
+*OpenBankProject::CardApi* | [**delete_card_for_bank**](docs/CardApi.md#delete_card_for_bank) | **DELETE** /obp/v3.1.0/management/banks/{bankid}/cards/{cardid} | Delete Card
+*OpenBankProject::CardApi* | [**get_card_attribute_definition**](docs/CardApi.md#get_card_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/card | Get Card Attribute Definition
+*OpenBankProject::CardApi* | [**get_card_for_bank**](docs/CardApi.md#get_card_for_bank) | **GET** /obp/v3.1.0/management/banks/{bankid}/cards/{cardid} | Get Card By Id
+*OpenBankProject::CardApi* | [**get_cards**](docs/CardApi.md#get_cards) | **GET** /obp/v1.3.0/cards | Get cards for the current user
+*OpenBankProject::CardApi* | [**get_cards_for_bank**](docs/CardApi.md#get_cards_for_bank) | **GET** /obp/v3.1.0/management/banks/{bankid}/cards | Get Cards for the specified bank
+*OpenBankProject::CardApi* | [**get_status_of_credit_card_order**](docs/CardApi.md#get_status_of_credit_card_order) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/credit_cards/orders | Get status of Credit Card order 
+*OpenBankProject::CardApi* | [**update_card_attribute**](docs/CardApi.md#update_card_attribute) | **PUT** /obp/v3.1.0/management/banks/{bankid}/cards/{cardid}/attributes/{cardattributeid} | Update Card Attribute
+*OpenBankProject::CardApi* | [**updated_card_for_bank**](docs/CardApi.md#updated_card_for_bank) | **PUT** /obp/v3.1.0/management/banks/{bankid}/cards/{cardid} | Update Card
+*OpenBankProject::CardAttributeApi* | [**create_card_attribute**](docs/CardAttributeApi.md#create_card_attribute) | **POST** /obp/v3.1.0/management/banks/{bankid}/cards/{cardid}/attribute | Create Card Attribute
+*OpenBankProject::CardAttributeApi* | [**create_or_update_card_attribute_definition**](docs/CardAttributeApi.md#create_or_update_card_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/card | Create or Update Card Attribute Definition
+*OpenBankProject::CardAttributeApi* | [**delete_card_attribute_definition**](docs/CardAttributeApi.md#delete_card_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/card | Delete Card Attribute Definition
+*OpenBankProject::CardAttributeApi* | [**get_card_attribute_definition**](docs/CardAttributeApi.md#get_card_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/card | Get Card Attribute Definition
+*OpenBankProject::CardAttributeApi* | [**update_card_attribute**](docs/CardAttributeApi.md#update_card_attribute) | **PUT** /obp/v3.1.0/management/banks/{bankid}/cards/{cardid}/attributes/{cardattributeid} | Update Card Attribute
+*OpenBankProject::ChannelApi* | [**delete_signal_channel**](docs/ChannelApi.md#delete_signal_channel) | **DELETE** /obp/v6.0.0/signal/channels/{channelname} | Delete Signal Channel
+*OpenBankProject::ChannelApi* | [**get_signal_channel_info**](docs/ChannelApi.md#get_signal_channel_info) | **GET** /obp/v6.0.0/signal/channels/{channelname}/info | Get Signal Channel Info
+*OpenBankProject::ChannelApi* | [**get_signal_channels**](docs/ChannelApi.md#get_signal_channels) | **GET** /obp/v6.0.0/signal/channels | List Signal Channels
+*OpenBankProject::ChannelApi* | [**get_signal_messages**](docs/ChannelApi.md#get_signal_messages) | **GET** /obp/v6.0.0/signal/channels/{channelname}/messages | Get Signal Messages
+*OpenBankProject::ChannelApi* | [**get_signal_stats**](docs/ChannelApi.md#get_signal_stats) | **GET** /obp/v6.0.0/signal/channels/stats | Get Signal Channel Stats
+*OpenBankProject::ChannelApi* | [**publish_signal_message**](docs/ChannelApi.md#publish_signal_message) | **POST** /obp/v6.0.0/signal/channels/{channelname}/messages | Publish Signal Message
+*OpenBankProject::ConfirmationOfFundsServicePIISApi* | [**check_funds_available**](docs/ConfirmationOfFundsServicePIISApi.md#check_funds_available) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available | Check Available Funds
+*OpenBankProject::ConnectorApi* | [**get_connectors**](docs/ConnectorApi.md#get_connectors) | **GET** /obp/v6.0.0/system/connectors | Get Connectors
+*OpenBankProject::ConnectorApi* | [**get_stored_procedure_connector_health**](docs/ConnectorApi.md#get_stored_procedure_connector_health) | **GET** /obp/v6.0.0/system/connectors/stored_procedure_vDec2019/health | Get Stored Procedure Connector Health
+*OpenBankProject::ConnectorMethodApi* | [**create_connector_method**](docs/ConnectorMethodApi.md#create_connector_method) | **POST** /obp/v4.0.0/management/connector-methods | Create Connector Method
+*OpenBankProject::ConnectorMethodApi* | [**get_all_connector_methods**](docs/ConnectorMethodApi.md#get_all_connector_methods) | **GET** /obp/v4.0.0/management/connector-methods | Get all Connector Methods
+*OpenBankProject::ConnectorMethodApi* | [**get_connector_method**](docs/ConnectorMethodApi.md#get_connector_method) | **GET** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Get Connector Method by Id
+*OpenBankProject::ConnectorMethodApi* | [**get_connector_method_names**](docs/ConnectorMethodApi.md#get_connector_method_names) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names
+*OpenBankProject::ConnectorMethodApi* | [**update_connector_method**](docs/ConnectorMethodApi.md#update_connector_method) | **PUT** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Update Connector Method
+*OpenBankProject::ConsentApi* | [**add_consent_user**](docs/ConsentApi.md#add_consent_user) | **PUT** /obp/v4.0.0/banks/{bankid}/consents/{consentid}/user-update-request | Add User to a Consent
+*OpenBankProject::ConsentApi* | [**answer_consent_challenge**](docs/ConsentApi.md#answer_consent_challenge) | **POST** /obp/v3.1.0/banks/{bankid}/consents/{consentid}/challenge | Answer Consent Challenge
+*OpenBankProject::ConsentApi* | [**create_consent_by_consent_request_id_email**](docs/ConsentApi.md#create_consent_by_consent_request_id_email) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{email}/consents | Create Consent By CONSENT_REQUEST_ID (EMAIL)
+*OpenBankProject::ConsentApi* | [**create_consent_by_consent_request_id_implicit**](docs/ConsentApi.md#create_consent_by_consent_request_id_implicit) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{implicit}/consents | Create Consent By CONSENT_REQUEST_ID (IMPLICIT)
+*OpenBankProject::ConsentApi* | [**create_consent_by_consent_request_id_sms**](docs/ConsentApi.md#create_consent_by_consent_request_id_sms) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{sms}/consents | Create Consent By CONSENT_REQUEST_ID (SMS)
+*OpenBankProject::ConsentApi* | [**create_consent_email**](docs/ConsentApi.md#create_consent_email) | **POST** /obp/v3.1.0/banks/{bankid}/my/consents/{email} | Create Consent (EMAIL)
+*OpenBankProject::ConsentApi* | [**create_consent_implicit**](docs/ConsentApi.md#create_consent_implicit) | **POST** /obp/v5.1.0/my/consents/{implicit} | Create Consent (IMPLICIT)
+*OpenBankProject::ConsentApi* | [**create_consent_request**](docs/ConsentApi.md#create_consent_request) | **POST** /obp/v5.0.0/consumer/consent-requests | Create Consent Request
+*OpenBankProject::ConsentApi* | [**create_consent_sms**](docs/ConsentApi.md#create_consent_sms) | **POST** /obp/v3.1.0/banks/{bankid}/my/consents/{sms} | Create Consent (SMS)
+*OpenBankProject::ConsentApi* | [**create_vrp_consent_request**](docs/ConsentApi.md#create_vrp_consent_request) | **POST** /obp/v5.1.0/consumer/vrp-consent-requests | Create Consent Request VRP
+*OpenBankProject::ConsentApi* | [**get_consent_by_consent_id**](docs/ConsentApi.md#get_consent_by_consent_id) | **GET** /obp/v5.1.0/user/current/consents/{consentid} | Get Consent By Consent Id via User
+*OpenBankProject::ConsentApi* | [**get_consent_by_consent_id_via_consumer**](docs/ConsentApi.md#get_consent_by_consent_id_via_consumer) | **GET** /obp/v5.1.0/consumer/current/consents/{consentid} | Get Consent By Consent Id via Consumer
+*OpenBankProject::ConsentApi* | [**get_consent_by_consent_request_id**](docs/ConsentApi.md#get_consent_by_consent_request_id) | **GET** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/consents | Get Consent By Consent Request Id via Consumer
+*OpenBankProject::ConsentApi* | [**get_consent_infos**](docs/ConsentApi.md#get_consent_infos) | **GET** /obp/v4.0.0/my/consent-infos | Get My Consents Info
+*OpenBankProject::ConsentApi* | [**get_consent_infos_by_bank**](docs/ConsentApi.md#get_consent_infos_by_bank) | **GET** /obp/v4.0.0/banks/{bankid}/my/consent-infos | Get My Consents Info At Bank
+*OpenBankProject::ConsentApi* | [**get_consent_request**](docs/ConsentApi.md#get_consent_request) | **GET** /obp/v5.0.0/consumer/consent-requests/{consentrequestid} | Get Consent Request
+*OpenBankProject::ConsentApi* | [**get_consents**](docs/ConsentApi.md#get_consents) | **GET** /obp/v5.1.0/management/consents | Get Consents
+*OpenBankProject::ConsentApi* | [**get_consents_at_bank**](docs/ConsentApi.md#get_consents_at_bank) | **GET** /obp/v5.1.0/management/consents/banks/{bankid} | Get Consents at Bank
+*OpenBankProject::ConsentApi* | [**get_my_consents**](docs/ConsentApi.md#get_my_consents) | **GET** /obp/v5.1.0/my/consents | Get My Consents
+*OpenBankProject::ConsentApi* | [**get_my_consents_by_bank**](docs/ConsentApi.md#get_my_consents_by_bank) | **GET** /obp/v5.1.0/banks/{bankid}/my/consents | Get My Consents at Bank
+*OpenBankProject::ConsentApi* | [**mtls_client_certificate_info**](docs/ConsentApi.md#mtls_client_certificate_info) | **GET** /obp/v5.1.0/my/mtls/certificate/current | Provide client's certificate info of a current call
+*OpenBankProject::ConsentApi* | [**revoke_consent_at_bank**](docs/ConsentApi.md#revoke_consent_at_bank) | **DELETE** /obp/v5.1.0/banks/{bankid}/consents/{consentid} | Revoke Consent at Bank
+*OpenBankProject::ConsentApi* | [**revoke_my_consent**](docs/ConsentApi.md#revoke_my_consent) | **DELETE** /obp/v5.1.0/my/consents/{consentid} | Revoke My Consent
+*OpenBankProject::ConsentApi* | [**self_revoke_consent**](docs/ConsentApi.md#self_revoke_consent) | **DELETE** /obp/v5.1.0/my/consent/current | Revoke Consent used in the Current Call
+*OpenBankProject::ConsentApi* | [**update_consent_account_access_by_consent_id**](docs/ConsentApi.md#update_consent_account_access_by_consent_id) | **PUT** /obp/v5.1.0/management/banks/{bankid}/consents/{consentid}/account-access | Update Consent Account Access by CONSENT_ID
+*OpenBankProject::ConsentApi* | [**update_consent_status**](docs/ConsentApi.md#update_consent_status) | **PUT** /obp/v4.0.0/banks/{bankid}/consents/{consentid} | Update Consent Status
+*OpenBankProject::ConsentApi* | [**update_consent_status_by_consent**](docs/ConsentApi.md#update_consent_status_by_consent) | **PUT** /obp/v5.1.0/management/banks/{bankid}/consents/{consentid} | Update Consent Status by CONSENT_ID
+*OpenBankProject::ConsentApi* | [**update_consent_user_id_by_consent_id**](docs/ConsentApi.md#update_consent_user_id_by_consent_id) | **PUT** /obp/v5.1.0/management/banks/{bankid}/consents/{consentid}/created-by-user | Update Created by User of Consent by CONSENT_ID
+*OpenBankProject::ConsumerApi* | [**add_scope**](docs/ConsumerApi.md#add_scope) | **POST** /obp/v4.0.0/consumers/{consumerid}/scopes | Create Scope for a Consumer
+*OpenBankProject::ConsumerApi* | [**calls_limit**](docs/ConsumerApi.md#calls_limit) | **PUT** /obp/v4.0.0/management/consumers/{consumerid}/consumer/call-limits | Set Rate Limits / Call Limits per Consumer
+*OpenBankProject::ConsumerApi* | [**create_call_limits**](docs/ConsumerApi.md#create_call_limits) | **POST** /obp/v6.0.0/management/consumers/{consumerid}/consumer/rate-limits | Create Rate Limits for a Consumer
+*OpenBankProject::ConsumerApi* | [**create_consumer**](docs/ConsumerApi.md#create_consumer) | **POST** /obp/v5.1.0/management/consumers | Create a Consumer
+*OpenBankProject::ConsumerApi* | [**create_consumer_dynamic_registration**](docs/ConsumerApi.md#create_consumer_dynamic_registration) | **POST** /obp/v5.1.0/dynamic-registration/consumers | Create a Consumer(Dynamic Registration)
+*OpenBankProject::ConsumerApi* | [**create_my_consumer**](docs/ConsumerApi.md#create_my_consumer) | **POST** /obp/v5.1.0/my/consumers | Create a Consumer
+*OpenBankProject::ConsumerApi* | [**delete_call_limits**](docs/ConsumerApi.md#delete_call_limits) | **DELETE** /obp/v6.0.0/management/consumers/{consumerid}/consumer/rate-limits/{ratelimitingid} | Delete Rate Limit by Rate Limiting ID
+*OpenBankProject::ConsumerApi* | [**delete_scope**](docs/ConsumerApi.md#delete_scope) | **DELETE** /obp/v3.0.0/consumers/{consumerid}/scope/{scopeid} | Delete Consumer Scope
+*OpenBankProject::ConsumerApi* | [**enable_disable_consumers**](docs/ConsumerApi.md#enable_disable_consumers) | **PUT** /obp/v3.1.0/management/consumers/{consumerid} | Enable or Disable Consumers
+*OpenBankProject::ConsumerApi* | [**get_active_rate_limits_at_date**](docs/ConsumerApi.md#get_active_rate_limits_at_date) | **GET** /obp/v6.0.0/management/consumers/{consumerid}/active-rate-limits/{datewithhour} | Get Active Rate Limits for Hour
+*OpenBankProject::ConsumerApi* | [**get_active_rate_limits_now**](docs/ConsumerApi.md#get_active_rate_limits_now) | **GET** /obp/v6.0.0/management/consumers/{consumerid}/active-rate-limits | Get Active Rate Limits (Current)
+*OpenBankProject::ConsumerApi* | [**get_calls_limit**](docs/ConsumerApi.md#get_calls_limit) | **GET** /obp/v5.1.0/management/consumers/{consumerid}/consumer/rate-limits | Get Rate Limits for a Consumer
+*OpenBankProject::ConsumerApi* | [**get_consumer**](docs/ConsumerApi.md#get_consumer) | **GET** /obp/v6.0.0/management/consumers/{consumerid} | Get Consumer
+*OpenBankProject::ConsumerApi* | [**get_consumer_call_counters**](docs/ConsumerApi.md#get_consumer_call_counters) | **GET** /obp/v6.0.0/management/consumers/{consumerid}/call-counters | Get Call Counts for Consumer
+*OpenBankProject::ConsumerApi* | [**get_consumers**](docs/ConsumerApi.md#get_consumers) | **GET** /obp/v5.1.0/management/consumers | Get Consumers
+*OpenBankProject::ConsumerApi* | [**get_consumers_for_current_user**](docs/ConsumerApi.md#get_consumers_for_current_user) | **GET** /obp/v3.1.0/management/users/current/consumers | Get Consumers (logged in User)
+*OpenBankProject::ConsumerApi* | [**get_current_consumer**](docs/ConsumerApi.md#get_current_consumer) | **GET** /obp/v6.0.0/consumers/current | Get Current Consumer
+*OpenBankProject::ConsumerApi* | [**get_oidc_client**](docs/ConsumerApi.md#get_oidc_client) | **GET** /obp/v6.0.0/oidc/clients/{clientid} | Get OIDC Client
+*OpenBankProject::ConsumerApi* | [**get_scopes**](docs/ConsumerApi.md#get_scopes) | **GET** /obp/v4.0.0/consumers/{consumerid}/scopes | Get Scopes for Consumer
+*OpenBankProject::ConsumerApi* | [**update_consumer_certificate**](docs/ConsumerApi.md#update_consumer_certificate) | **PUT** /obp/v5.1.0/management/consumers/{consumerid}/consumer/certificate | Update Consumer Certificate
+*OpenBankProject::ConsumerApi* | [**update_consumer_logo_url**](docs/ConsumerApi.md#update_consumer_logo_url) | **PUT** /obp/v5.1.0/management/consumers/{consumerid}/consumer/logo_url | Update Consumer LogoURL
+*OpenBankProject::ConsumerApi* | [**update_consumer_name**](docs/ConsumerApi.md#update_consumer_name) | **PUT** /obp/v5.1.0/management/consumers/{consumerid}/consumer/name | Update Consumer Name
+*OpenBankProject::ConsumerApi* | [**update_consumer_redirect_url**](docs/ConsumerApi.md#update_consumer_redirect_url) | **PUT** /obp/v5.1.0/management/consumers/{consumerid}/consumer/redirect_url | Update Consumer RedirectURL
+*OpenBankProject::ConsumerApi* | [**update_rate_limits**](docs/ConsumerApi.md#update_rate_limits) | **PUT** /obp/v6.0.0/management/consumers/{consumerid}/consumer/rate-limits/{ratelimitingid} | Set Rate Limits / Call Limits per Consumer
+*OpenBankProject::ConsumerApi* | [**verify_oidc_client**](docs/ConsumerApi.md#verify_oidc_client) | **POST** /obp/v6.0.0/oidc/clients/verify | Verify OIDC Client
+*OpenBankProject::CorporateCustomerApi* | [**create_corporate_customer**](docs/CorporateCustomerApi.md#create_corporate_customer) | **POST** /obp/v6.0.0/banks/{bankid}/corporate-customers | Create Corporate Customer
+*OpenBankProject::CorporateCustomerApi* | [**get_corporate_customer_by_customer_id**](docs/CorporateCustomerApi.md#get_corporate_customer_by_customer_id) | **GET** /obp/v6.0.0/banks/{bankid}/corporate-customers/{customerid} | Get Corporate Customer by CUSTOMER_ID
+*OpenBankProject::CorporateCustomerApi* | [**get_corporate_customer_subsidiaries**](docs/CorporateCustomerApi.md#get_corporate_customer_subsidiaries) | **GET** /obp/v6.0.0/banks/{bankid}/corporate-customers/{customerid}/subsidiaries | Get Corporate Customer Subsidiaries
+*OpenBankProject::CorporateCustomerApi* | [**get_corporate_customers_at_one_bank**](docs/CorporateCustomerApi.md#get_corporate_customers_at_one_bank) | **GET** /obp/v6.0.0/banks/{bankid}/corporate-customers | Get Corporate Customers at Bank
+*OpenBankProject::CounterpartyApi* | [**add_counterparty_corporate_location**](docs/CounterpartyApi.md#add_counterparty_corporate_location) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Add Corporate Location to Counterparty
+*OpenBankProject::CounterpartyApi* | [**add_counterparty_image_url**](docs/CounterpartyApi.md#add_counterparty_image_url) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Add image url to other bank account
+*OpenBankProject::CounterpartyApi* | [**add_counterparty_more_info**](docs/CounterpartyApi.md#add_counterparty_more_info) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Add Counterparty More Info
+*OpenBankProject::CounterpartyApi* | [**add_counterparty_open_corporates_url**](docs/CounterpartyApi.md#add_counterparty_open_corporates_url) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Add Open Corporates URL to Counterparty
+*OpenBankProject::CounterpartyApi* | [**add_counterparty_physical_location**](docs/CounterpartyApi.md#add_counterparty_physical_location) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Add physical location to other bank account
+*OpenBankProject::CounterpartyApi* | [**add_counterparty_public_alias**](docs/CounterpartyApi.md#add_counterparty_public_alias) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Add public alias to other bank account
+*OpenBankProject::CounterpartyApi* | [**add_counterparty_url**](docs/CounterpartyApi.md#add_counterparty_url) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Add url to other bank account
+*OpenBankProject::CounterpartyApi* | [**add_other_account_private_alias**](docs/CounterpartyApi.md#add_other_account_private_alias) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Create Other Account Private Alias
+*OpenBankProject::CounterpartyApi* | [**create_counterparty**](docs/CounterpartyApi.md#create_counterparty) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Create Counterparty (Explicit)
+*OpenBankProject::CounterpartyApi* | [**create_counterparty_for_any_account**](docs/CounterpartyApi.md#create_counterparty_for_any_account) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Create Counterparty for any account (Explicit)
+*OpenBankProject::CounterpartyApi* | [**delete_counterparty_corporate_location**](docs/CounterpartyApi.md#delete_counterparty_corporate_location) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Delete Counterparty Corporate Location
+*OpenBankProject::CounterpartyApi* | [**delete_counterparty_for_any_account**](docs/CounterpartyApi.md#delete_counterparty_for_any_account) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Delete Counterparty for any account (Explicit)
+*OpenBankProject::CounterpartyApi* | [**delete_counterparty_image_url**](docs/CounterpartyApi.md#delete_counterparty_image_url) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Delete Counterparty Image URL
+*OpenBankProject::CounterpartyApi* | [**delete_counterparty_more_info**](docs/CounterpartyApi.md#delete_counterparty_more_info) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Delete more info of other bank account
+*OpenBankProject::CounterpartyApi* | [**delete_counterparty_open_corporates_url**](docs/CounterpartyApi.md#delete_counterparty_open_corporates_url) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Delete Counterparty Open Corporates URL
+*OpenBankProject::CounterpartyApi* | [**delete_counterparty_physical_location**](docs/CounterpartyApi.md#delete_counterparty_physical_location) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Delete Counterparty Physical Location
+*OpenBankProject::CounterpartyApi* | [**delete_counterparty_private_alias**](docs/CounterpartyApi.md#delete_counterparty_private_alias) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Delete Counterparty Private Alias
+*OpenBankProject::CounterpartyApi* | [**delete_counterparty_public_alias**](docs/CounterpartyApi.md#delete_counterparty_public_alias) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Delete Counterparty Public Alias
+*OpenBankProject::CounterpartyApi* | [**delete_counterparty_url**](docs/CounterpartyApi.md#delete_counterparty_url) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Delete url of other bank account
+*OpenBankProject::CounterpartyApi* | [**delete_explicit_counterparty**](docs/CounterpartyApi.md#delete_explicit_counterparty) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Delete Counterparty (Explicit)
+*OpenBankProject::CounterpartyApi* | [**get_counterparties_for_any_account**](docs/CounterpartyApi.md#get_counterparties_for_any_account) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties for any account (Explicit)
+*OpenBankProject::CounterpartyApi* | [**get_counterparty_by_id_for_any_account**](docs/CounterpartyApi.md#get_counterparty_by_id_for_any_account) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id for any account (Explicit)
+*OpenBankProject::CounterpartyApi* | [**get_counterparty_by_name_for_any_account**](docs/CounterpartyApi.md#get_counterparty_by_name_for_any_account) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparty-names/{counterpartyname} | Get Counterparty by name for any account (Explicit) 
+*OpenBankProject::CounterpartyApi* | [**get_counterparty_public_alias**](docs/CounterpartyApi.md#get_counterparty_public_alias) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Get public alias of other bank account
+*OpenBankProject::CounterpartyApi* | [**get_explicit_counterparties_for_account**](docs/CounterpartyApi.md#get_explicit_counterparties_for_account) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties (Explicit)
+*OpenBankProject::CounterpartyApi* | [**get_explicit_counterparty_by_id**](docs/CounterpartyApi.md#get_explicit_counterparty_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id (Explicit)
+*OpenBankProject::CounterpartyApi* | [**get_other_account_by_id_for_bank_account**](docs/CounterpartyApi.md#get_other_account_by_id_for_bank_account) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid} | Get Other Account by Id
+*OpenBankProject::CounterpartyApi* | [**get_other_account_for_transaction**](docs/CounterpartyApi.md#get_other_account_for_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/other_account | Get Other Account of Transaction
+*OpenBankProject::CounterpartyApi* | [**get_other_account_metadata**](docs/CounterpartyApi.md#get_other_account_metadata) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata | Get Other Account Metadata
+*OpenBankProject::CounterpartyApi* | [**get_other_account_private_alias**](docs/CounterpartyApi.md#get_other_account_private_alias) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Get Other Account Private Alias
+*OpenBankProject::CounterpartyApi* | [**get_other_accounts_for_bank_account**](docs/CounterpartyApi.md#get_other_accounts_for_bank_account) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts | Get Other Accounts of one Account
+*OpenBankProject::CounterpartyApi* | [**update_counterparty_corporate_location**](docs/CounterpartyApi.md#update_counterparty_corporate_location) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Update Counterparty Corporate Location
+*OpenBankProject::CounterpartyApi* | [**update_counterparty_image_url**](docs/CounterpartyApi.md#update_counterparty_image_url) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Update Counterparty Image Url
+*OpenBankProject::CounterpartyApi* | [**update_counterparty_more_info**](docs/CounterpartyApi.md#update_counterparty_more_info) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Update Counterparty More Info
+*OpenBankProject::CounterpartyApi* | [**update_counterparty_open_corporates_url**](docs/CounterpartyApi.md#update_counterparty_open_corporates_url) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Update Open Corporates Url of Counterparty
+*OpenBankProject::CounterpartyApi* | [**update_counterparty_physical_location**](docs/CounterpartyApi.md#update_counterparty_physical_location) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Update Counterparty Physical Location
+*OpenBankProject::CounterpartyApi* | [**update_counterparty_private_alias**](docs/CounterpartyApi.md#update_counterparty_private_alias) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Update Counterparty Private Alias
+*OpenBankProject::CounterpartyApi* | [**update_counterparty_public_alias**](docs/CounterpartyApi.md#update_counterparty_public_alias) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Update public alias of other bank account
+*OpenBankProject::CounterpartyApi* | [**update_counterparty_url**](docs/CounterpartyApi.md#update_counterparty_url) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Update url of other bank account
+*OpenBankProject::CounterpartyAttributeApi* | [**create_counterparty_attribute**](docs/CounterpartyAttributeApi.md#create_counterparty_attribute) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes | Create Counterparty Attribute
+*OpenBankProject::CounterpartyAttributeApi* | [**delete_counterparty_attribute**](docs/CounterpartyAttributeApi.md#delete_counterparty_attribute) | **DELETE** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes/{counterpartyattributeid} | Delete Counterparty Attribute
+*OpenBankProject::CounterpartyAttributeApi* | [**get_all_counterparty_attributes**](docs/CounterpartyAttributeApi.md#get_all_counterparty_attributes) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes | Get All Counterparty Attributes
+*OpenBankProject::CounterpartyAttributeApi* | [**get_counterparty_attribute_by_id**](docs/CounterpartyAttributeApi.md#get_counterparty_attribute_by_id) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes/{counterpartyattributeid} | Get Counterparty Attribute By ID
+*OpenBankProject::CounterpartyAttributeApi* | [**update_counterparty_attribute**](docs/CounterpartyAttributeApi.md#update_counterparty_attribute) | **PUT** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes/{counterpartyattributeid} | Update Counterparty Attribute
+*OpenBankProject::CounterpartyLimitsApi* | [**create_counterparty_limit**](docs/CounterpartyLimitsApi.md#create_counterparty_limit) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Create Counterparty Limit
+*OpenBankProject::CounterpartyLimitsApi* | [**delete_counterparty_limit**](docs/CounterpartyLimitsApi.md#delete_counterparty_limit) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Delete Counterparty Limit
+*OpenBankProject::CounterpartyLimitsApi* | [**get_counterparty_limit**](docs/CounterpartyLimitsApi.md#get_counterparty_limit) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Get Counterparty Limit
+*OpenBankProject::CounterpartyLimitsApi* | [**get_counterparty_limit_status**](docs/CounterpartyLimitsApi.md#get_counterparty_limit_status) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limit-status | Get Counterparty Limit Status
+*OpenBankProject::CounterpartyLimitsApi* | [**update_counterparty_limit**](docs/CounterpartyLimitsApi.md#update_counterparty_limit) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Update Counterparty Limit
+*OpenBankProject::CounterpartyMetadataApi* | [**add_counterparty_corporate_location**](docs/CounterpartyMetadataApi.md#add_counterparty_corporate_location) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Add Corporate Location to Counterparty
+*OpenBankProject::CounterpartyMetadataApi* | [**add_counterparty_image_url**](docs/CounterpartyMetadataApi.md#add_counterparty_image_url) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Add image url to other bank account
+*OpenBankProject::CounterpartyMetadataApi* | [**add_counterparty_more_info**](docs/CounterpartyMetadataApi.md#add_counterparty_more_info) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Add Counterparty More Info
+*OpenBankProject::CounterpartyMetadataApi* | [**add_counterparty_open_corporates_url**](docs/CounterpartyMetadataApi.md#add_counterparty_open_corporates_url) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Add Open Corporates URL to Counterparty
+*OpenBankProject::CounterpartyMetadataApi* | [**add_counterparty_physical_location**](docs/CounterpartyMetadataApi.md#add_counterparty_physical_location) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Add physical location to other bank account
+*OpenBankProject::CounterpartyMetadataApi* | [**add_counterparty_public_alias**](docs/CounterpartyMetadataApi.md#add_counterparty_public_alias) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Add public alias to other bank account
+*OpenBankProject::CounterpartyMetadataApi* | [**add_counterparty_url**](docs/CounterpartyMetadataApi.md#add_counterparty_url) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Add url to other bank account
+*OpenBankProject::CounterpartyMetadataApi* | [**add_other_account_private_alias**](docs/CounterpartyMetadataApi.md#add_other_account_private_alias) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Create Other Account Private Alias
+*OpenBankProject::CounterpartyMetadataApi* | [**delete_counterparty_corporate_location**](docs/CounterpartyMetadataApi.md#delete_counterparty_corporate_location) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Delete Counterparty Corporate Location
+*OpenBankProject::CounterpartyMetadataApi* | [**delete_counterparty_image_url**](docs/CounterpartyMetadataApi.md#delete_counterparty_image_url) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Delete Counterparty Image URL
+*OpenBankProject::CounterpartyMetadataApi* | [**delete_counterparty_more_info**](docs/CounterpartyMetadataApi.md#delete_counterparty_more_info) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Delete more info of other bank account
+*OpenBankProject::CounterpartyMetadataApi* | [**delete_counterparty_open_corporates_url**](docs/CounterpartyMetadataApi.md#delete_counterparty_open_corporates_url) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Delete Counterparty Open Corporates URL
+*OpenBankProject::CounterpartyMetadataApi* | [**delete_counterparty_physical_location**](docs/CounterpartyMetadataApi.md#delete_counterparty_physical_location) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Delete Counterparty Physical Location
+*OpenBankProject::CounterpartyMetadataApi* | [**delete_counterparty_private_alias**](docs/CounterpartyMetadataApi.md#delete_counterparty_private_alias) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Delete Counterparty Private Alias
+*OpenBankProject::CounterpartyMetadataApi* | [**delete_counterparty_public_alias**](docs/CounterpartyMetadataApi.md#delete_counterparty_public_alias) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Delete Counterparty Public Alias
+*OpenBankProject::CounterpartyMetadataApi* | [**delete_counterparty_url**](docs/CounterpartyMetadataApi.md#delete_counterparty_url) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Delete url of other bank account
+*OpenBankProject::CounterpartyMetadataApi* | [**get_counterparty_public_alias**](docs/CounterpartyMetadataApi.md#get_counterparty_public_alias) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Get public alias of other bank account
+*OpenBankProject::CounterpartyMetadataApi* | [**get_explicit_counterparty_by_id**](docs/CounterpartyMetadataApi.md#get_explicit_counterparty_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id (Explicit)
+*OpenBankProject::CounterpartyMetadataApi* | [**get_other_account_metadata**](docs/CounterpartyMetadataApi.md#get_other_account_metadata) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata | Get Other Account Metadata
+*OpenBankProject::CounterpartyMetadataApi* | [**get_other_account_private_alias**](docs/CounterpartyMetadataApi.md#get_other_account_private_alias) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Get Other Account Private Alias
+*OpenBankProject::CounterpartyMetadataApi* | [**update_counterparty_corporate_location**](docs/CounterpartyMetadataApi.md#update_counterparty_corporate_location) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Update Counterparty Corporate Location
+*OpenBankProject::CounterpartyMetadataApi* | [**update_counterparty_image_url**](docs/CounterpartyMetadataApi.md#update_counterparty_image_url) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Update Counterparty Image Url
+*OpenBankProject::CounterpartyMetadataApi* | [**update_counterparty_more_info**](docs/CounterpartyMetadataApi.md#update_counterparty_more_info) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Update Counterparty More Info
+*OpenBankProject::CounterpartyMetadataApi* | [**update_counterparty_open_corporates_url**](docs/CounterpartyMetadataApi.md#update_counterparty_open_corporates_url) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Update Open Corporates Url of Counterparty
+*OpenBankProject::CounterpartyMetadataApi* | [**update_counterparty_physical_location**](docs/CounterpartyMetadataApi.md#update_counterparty_physical_location) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Update Counterparty Physical Location
+*OpenBankProject::CounterpartyMetadataApi* | [**update_counterparty_private_alias**](docs/CounterpartyMetadataApi.md#update_counterparty_private_alias) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Update Counterparty Private Alias
+*OpenBankProject::CounterpartyMetadataApi* | [**update_counterparty_public_alias**](docs/CounterpartyMetadataApi.md#update_counterparty_public_alias) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Update public alias of other bank account
+*OpenBankProject::CounterpartyMetadataApi* | [**update_counterparty_url**](docs/CounterpartyMetadataApi.md#update_counterparty_url) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Update url of other bank account
+*OpenBankProject::CustomerApi* | [**add_customer_message**](docs/CustomerApi.md#add_customer_message) | **POST** /obp/v1.4.0/banks/{bankid}/customer/{customerid}/messages | Create Customer Message
+*OpenBankProject::CustomerApi* | [**add_kyc_check**](docs/CustomerApi.md#add_kyc_check) | **PUT** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_check/{kyccheckid} | Add KYC Check
+*OpenBankProject::CustomerApi* | [**add_kyc_document**](docs/CustomerApi.md#add_kyc_document) | **PUT** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_documents/{kycdocumentid} | Add KYC Document
+*OpenBankProject::CustomerApi* | [**add_kyc_media**](docs/CustomerApi.md#add_kyc_media) | **PUT** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_media/{kycmediaid} | Add KYC Media
+*OpenBankProject::CustomerApi* | [**add_kyc_status**](docs/CustomerApi.md#add_kyc_status) | **PUT** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_statuses | Add KYC Status
+*OpenBankProject::CustomerApi* | [**add_social_media_handle**](docs/CustomerApi.md#add_social_media_handle) | **POST** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/social_media_handles | Create Customer Social Media Handle
+*OpenBankProject::CustomerApi* | [**create_agent**](docs/CustomerApi.md#create_agent) | **POST** /obp/v5.1.0/banks/{bankid}/agents | Create Agent
+*OpenBankProject::CustomerApi* | [**create_corporate_customer**](docs/CustomerApi.md#create_corporate_customer) | **POST** /obp/v6.0.0/banks/{bankid}/corporate-customers | Create Corporate Customer
+*OpenBankProject::CustomerApi* | [**create_customer**](docs/CustomerApi.md#create_customer) | **POST** /obp/v6.0.0/banks/{bankid}/customers | Create Customer
+*OpenBankProject::CustomerApi* | [**create_customer_account_link**](docs/CustomerApi.md#create_customer_account_link) | **POST** /obp/v5.0.0/banks/{bankid}/customer-account-links | Create Customer Account Link
+*OpenBankProject::CustomerApi* | [**create_customer_address**](docs/CustomerApi.md#create_customer_address) | **POST** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/address | Create Address
+*OpenBankProject::CustomerApi* | [**create_customer_attribute**](docs/CustomerApi.md#create_customer_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attribute | Create Customer Attribute
+*OpenBankProject::CustomerApi* | [**create_customer_message**](docs/CustomerApi.md#create_customer_message) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages | Create Customer Message
+*OpenBankProject::CustomerApi* | [**create_meeting**](docs/CustomerApi.md#create_meeting) | **POST** /obp/v3.1.0/banks/{bankid}/meetings | Create Meeting (video conference/call)
+*OpenBankProject::CustomerApi* | [**create_or_update_customer_attribute_attribute_definition**](docs/CustomerApi.md#create_or_update_customer_attribute_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Create or Update Customer Attribute Definition
+*OpenBankProject::CustomerApi* | [**create_retail_customer**](docs/CustomerApi.md#create_retail_customer) | **POST** /obp/v6.0.0/banks/{bankid}/retail-customers | Create Retail Customer
+*OpenBankProject::CustomerApi* | [**create_tax_residence**](docs/CustomerApi.md#create_tax_residence) | **POST** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/tax-residence | Create Tax Residence
+*OpenBankProject::CustomerApi* | [**create_user_customer_links**](docs/CustomerApi.md#create_user_customer_links) | **POST** /obp/v4.0.0/banks/{bankid}/user_customer_links | Create User Customer Link
+*OpenBankProject::CustomerApi* | [**delete_customer_account_link_by_id**](docs/CustomerApi.md#delete_customer_account_link_by_id) | **DELETE** /obp/v5.0.0/banks/{bankid}/customer-account-links/{customeraccountlinkid} | Delete Customer Account Link
+*OpenBankProject::CustomerApi* | [**delete_customer_address**](docs/CustomerApi.md#delete_customer_address) | **DELETE** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/addresses/{customeraddressid} | Delete Customer Address
+*OpenBankProject::CustomerApi* | [**delete_customer_attribute**](docs/CustomerApi.md#delete_customer_attribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/{customerid}/attributes/{customerattributeid} | Delete Customer Attribute
+*OpenBankProject::CustomerApi* | [**delete_customer_attribute_definition**](docs/CustomerApi.md#delete_customer_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/customer | Delete Customer Attribute Definition
+*OpenBankProject::CustomerApi* | [**delete_customer_cascade**](docs/CustomerApi.md#delete_customer_cascade) | **DELETE** /obp/v4.0.0/management/cascading/banks/{bankid}/customers/{customerid} | Delete Customer Cascade
+*OpenBankProject::CustomerApi* | [**delete_tax_residence**](docs/CustomerApi.md#delete_tax_residence) | **DELETE** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/tax_residencies/{taxresidenceid} | Delete Tax Residence
+*OpenBankProject::CustomerApi* | [**delete_user_customer_link**](docs/CustomerApi.md#delete_user_customer_link) | **DELETE** /obp/v4.0.0/banks/{bankid}/user_customer_links/{usercustomerlinkid} | Delete User Customer Link
+*OpenBankProject::CustomerApi* | [**get_corporate_customer_by_customer_id**](docs/CustomerApi.md#get_corporate_customer_by_customer_id) | **GET** /obp/v6.0.0/banks/{bankid}/corporate-customers/{customerid} | Get Corporate Customer by CUSTOMER_ID
+*OpenBankProject::CustomerApi* | [**get_corporate_customer_subsidiaries**](docs/CustomerApi.md#get_corporate_customer_subsidiaries) | **GET** /obp/v6.0.0/banks/{bankid}/corporate-customers/{customerid}/subsidiaries | Get Corporate Customer Subsidiaries
+*OpenBankProject::CustomerApi* | [**get_corporate_customers_at_one_bank**](docs/CustomerApi.md#get_corporate_customers_at_one_bank) | **GET** /obp/v6.0.0/banks/{bankid}/corporate-customers | Get Corporate Customers at Bank
+*OpenBankProject::CustomerApi* | [**get_correlated_users_info_by_customer_id**](docs/CustomerApi.md#get_correlated_users_info_by_customer_id) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/correlated-users | Get Correlated User Info by Customer
+*OpenBankProject::CustomerApi* | [**get_crm_events**](docs/CustomerApi.md#get_crm_events) | **GET** /obp/v1.4.0/banks/{bankid}/crm-events | Get CRM Events
+*OpenBankProject::CustomerApi* | [**get_customer_account_link_by_id**](docs/CustomerApi.md#get_customer_account_link_by_id) | **GET** /obp/v5.0.0/banks/{bankid}/customer-account-links/{customeraccountlinkid} | Get Customer Account Link by Id
+*OpenBankProject::CustomerApi* | [**get_customer_account_links_by_bank_id_account_id**](docs/CustomerApi.md#get_customer_account_links_by_bank_id_account_id) | **GET** /obp/v5.0.0/banks/{bankid}/accounts/{accountid}/customer-account-links | Get Customer Account Links by ACCOUNT_ID
+*OpenBankProject::CustomerApi* | [**get_customer_account_links_by_customer_id**](docs/CustomerApi.md#get_customer_account_links_by_customer_id) | **GET** /obp/v5.0.0/banks/{bankid}/customers/{customerid}/customer-account-links | Get Customer Account Links by CUSTOMER_ID
+*OpenBankProject::CustomerApi* | [**get_customer_addresses**](docs/CustomerApi.md#get_customer_addresses) | **GET** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/addresses | Get Customer Addresses
+*OpenBankProject::CustomerApi* | [**get_customer_attribute_by_id**](docs/CustomerApi.md#get_customer_attribute_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{attributeid} | Get Customer Attribute By Id
+*OpenBankProject::CustomerApi* | [**get_customer_attribute_definition**](docs/CustomerApi.md#get_customer_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Get Customer Attribute Definition
+*OpenBankProject::CustomerApi* | [**get_customer_attributes**](docs/CustomerApi.md#get_customer_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes | Get Customer Attributes
+*OpenBankProject::CustomerApi* | [**get_customer_by_customer_id**](docs/CustomerApi.md#get_customer_by_customer_id) | **GET** /obp/v6.0.0/banks/{bankid}/customers/{customerid} | Get Customer by CUSTOMER_ID
+*OpenBankProject::CustomerApi* | [**get_customer_by_customer_number**](docs/CustomerApi.md#get_customer_by_customer_number) | **POST** /obp/v6.0.0/banks/{bankid}/customers/customer-number | Get Customer by CUSTOMER_NUMBER
+*OpenBankProject::CustomerApi* | [**get_customer_children**](docs/CustomerApi.md#get_customer_children) | **GET** /obp/v6.0.0/banks/{bankid}/customers/{customerid}/children | Get Customer Children
+*OpenBankProject::CustomerApi* | [**get_customer_messages**](docs/CustomerApi.md#get_customer_messages) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages | Get Customer Messages for a Customer
+*OpenBankProject::CustomerApi* | [**get_customer_overview**](docs/CustomerApi.md#get_customer_overview) | **POST** /obp/v5.0.0/banks/{bankid}/customers/customer-number-query/overview | Get Customer Overview
+*OpenBankProject::CustomerApi* | [**get_customer_overview_flat**](docs/CustomerApi.md#get_customer_overview_flat) | **POST** /obp/v5.0.0/banks/{bankid}/customers/customer-number-query/overview-flat | Get Customer Overview Flat
+*OpenBankProject::CustomerApi* | [**get_customers_at_all_banks**](docs/CustomerApi.md#get_customers_at_all_banks) | **GET** /obp/v6.0.0/customers | Get Customers at All Banks
+*OpenBankProject::CustomerApi* | [**get_customers_at_one_bank**](docs/CustomerApi.md#get_customers_at_one_bank) | **GET** /obp/v6.0.0/banks/{bankid}/customers | Get Customers at Bank
+*OpenBankProject::CustomerApi* | [**get_customers_by_customer_phone_number**](docs/CustomerApi.md#get_customers_by_customer_phone_number) | **POST** /obp/v4.0.0/banks/{bankid}/search/customers/mobile-phone-number | Get Customers by MOBILE_PHONE_NUMBER
+*OpenBankProject::CustomerApi* | [**get_customers_by_legal_name**](docs/CustomerApi.md#get_customers_by_legal_name) | **POST** /obp/v6.0.0/banks/{bankid}/customers/legal-name | Get Customers by Legal Name
+*OpenBankProject::CustomerApi* | [**get_customers_for_user**](docs/CustomerApi.md#get_customers_for_user) | **GET** /obp/v3.0.0/users/current/customers | Get Customers for Current User
+*OpenBankProject::CustomerApi* | [**get_customers_for_user_ids_only**](docs/CustomerApi.md#get_customers_for_user_ids_only) | **GET** /obp/v5.1.0/users/current/customers/customer_ids | Get Customers for Current User (IDs only)
+*OpenBankProject::CustomerApi* | [**get_customers_messages**](docs/CustomerApi.md#get_customers_messages) | **GET** /obp/v1.4.0/banks/{bankid}/customer/messages | Get Customer Messages for all Customers
+*OpenBankProject::CustomerApi* | [**get_customers_minimal_at_any_bank**](docs/CustomerApi.md#get_customers_minimal_at_any_bank) | **GET** /obp/v4.0.0/customers-minimal | Get Customers Minimal at Any Bank
+*OpenBankProject::CustomerApi* | [**get_customers_minimal_at_one_bank**](docs/CustomerApi.md#get_customers_minimal_at_one_bank) | **GET** /obp/v5.0.0/banks/{bankid}/customers-minimal | Get Customers Minimal at Bank
+*OpenBankProject::CustomerApi* | [**get_firehose_customers**](docs/CustomerApi.md#get_firehose_customers) | **GET** /obp/v3.1.0/banks/{bankid}/firehose/customers | Get Firehose Customers
+*OpenBankProject::CustomerApi* | [**get_kyc_checks**](docs/CustomerApi.md#get_kyc_checks) | **GET** /obp/v2.0.0/customers/{customerid}/kyc_checks | Get Customer KYC Checks
+*OpenBankProject::CustomerApi* | [**get_kyc_documents**](docs/CustomerApi.md#get_kyc_documents) | **GET** /obp/v2.0.0/customers/{customerid}/kyc_documents | Get Customer KYC Documents
+*OpenBankProject::CustomerApi* | [**get_kyc_media**](docs/CustomerApi.md#get_kyc_media) | **GET** /obp/v2.0.0/customers/{customerid}/kyc_media | Get KYC Media for a customer
+*OpenBankProject::CustomerApi* | [**get_kyc_statuses**](docs/CustomerApi.md#get_kyc_statuses) | **GET** /obp/v2.0.0/customers/{customerid}/kyc_statuses | Get Customer KYC statuses
+*OpenBankProject::CustomerApi* | [**get_meeting**](docs/CustomerApi.md#get_meeting) | **GET** /obp/v3.1.0/banks/{bankid}/meetings/{meetingid} | Get Meeting
+*OpenBankProject::CustomerApi* | [**get_meetings**](docs/CustomerApi.md#get_meetings) | **GET** /obp/v3.1.0/banks/{bankid}/meetings | Get Meetings
+*OpenBankProject::CustomerApi* | [**get_my_correlated_entities**](docs/CustomerApi.md#get_my_correlated_entities) | **GET** /obp/v4.0.0/my/correlated-entities | Get Correlated Entities for the current User
+*OpenBankProject::CustomerApi* | [**get_my_customers_at_any_bank**](docs/CustomerApi.md#get_my_customers_at_any_bank) | **GET** /obp/v5.0.0/my/customers | Get My Customers
+*OpenBankProject::CustomerApi* | [**get_my_customers_at_bank**](docs/CustomerApi.md#get_my_customers_at_bank) | **GET** /obp/v5.0.0/banks/{bankid}/my/customers | Get My Customers at Bank
+*OpenBankProject::CustomerApi* | [**get_retail_customer_by_customer_id**](docs/CustomerApi.md#get_retail_customer_by_customer_id) | **GET** /obp/v6.0.0/banks/{bankid}/retail-customers/{customerid} | Get Retail Customer by CUSTOMER_ID
+*OpenBankProject::CustomerApi* | [**get_retail_customers_at_one_bank**](docs/CustomerApi.md#get_retail_customers_at_one_bank) | **GET** /obp/v6.0.0/banks/{bankid}/retail-customers | Get Retail Customers at Bank
+*OpenBankProject::CustomerApi* | [**get_social_media_handles**](docs/CustomerApi.md#get_social_media_handles) | **GET** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/social_media_handles | Get Customer Social Media Handles
+*OpenBankProject::CustomerApi* | [**get_tax_residence**](docs/CustomerApi.md#get_tax_residence) | **GET** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/tax-residences | Get Tax Residences of Customer
+*OpenBankProject::CustomerApi* | [**get_user_customer_links_by_customer_id**](docs/CustomerApi.md#get_user_customer_links_by_customer_id) | **GET** /obp/v4.0.0/banks/{bankid}/user_customer_links/customers/{customerid} | Get User Customer Links by Customer
+*OpenBankProject::CustomerApi* | [**get_user_customer_links_by_user_id**](docs/CustomerApi.md#get_user_customer_links_by_user_id) | **GET** /obp/v4.0.0/banks/{bankid}/user_customer_links/users/{userid} | Get User Customer Links by User
+*OpenBankProject::CustomerApi* | [**update_agent_status**](docs/CustomerApi.md#update_agent_status) | **PUT** /obp/v5.1.0/banks/{bankid}/agents/{agentid} | Update Agent status
+*OpenBankProject::CustomerApi* | [**update_customer_account_link_by_id**](docs/CustomerApi.md#update_customer_account_link_by_id) | **PUT** /obp/v5.0.0/banks/{bankid}/customer-account-links/{customeraccountlinkid} | Update Customer Account Link by Id
+*OpenBankProject::CustomerApi* | [**update_customer_address**](docs/CustomerApi.md#update_customer_address) | **PUT** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/addresses/{customeraddressid} | Update the Address of a Customer
+*OpenBankProject::CustomerApi* | [**update_customer_attribute**](docs/CustomerApi.md#update_customer_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{customerattributeid} | Update Customer Attribute
+*OpenBankProject::CustomerApi* | [**update_customer_branch**](docs/CustomerApi.md#update_customer_branch) | **PUT** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/branch | Update the Branch of a Customer
+*OpenBankProject::CustomerApi* | [**update_customer_credit_limit**](docs/CustomerApi.md#update_customer_credit_limit) | **PUT** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/credit-limit | Update the credit limit of a Customer
+*OpenBankProject::CustomerApi* | [**update_customer_credit_rating_and_source**](docs/CustomerApi.md#update_customer_credit_rating_and_source) | **PUT** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/credit-rating-and-source | Update the credit rating and source of a Customer
+*OpenBankProject::CustomerApi* | [**update_customer_data**](docs/CustomerApi.md#update_customer_data) | **PUT** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/data | Update the other data of a Customer
+*OpenBankProject::CustomerApi* | [**update_customer_email**](docs/CustomerApi.md#update_customer_email) | **PUT** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/email | Update the email of a Customer
+*OpenBankProject::CustomerApi* | [**update_customer_identity**](docs/CustomerApi.md#update_customer_identity) | **PUT** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/identity | Update the identity data of a Customer
+*OpenBankProject::CustomerApi* | [**update_customer_mobile_number**](docs/CustomerApi.md#update_customer_mobile_number) | **PUT** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/mobile-number | Update the mobile number of a Customer
+*OpenBankProject::CustomerApi* | [**update_customer_number**](docs/CustomerApi.md#update_customer_number) | **PUT** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/number | Update the number of a Customer
+*OpenBankProject::CustomerAttributeApi* | [**create_customer_attribute**](docs/CustomerAttributeApi.md#create_customer_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attribute | Create Customer Attribute
+*OpenBankProject::CustomerAttributeApi* | [**create_or_update_customer_attribute_attribute_definition**](docs/CustomerAttributeApi.md#create_or_update_customer_attribute_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Create or Update Customer Attribute Definition
+*OpenBankProject::CustomerAttributeApi* | [**delete_customer_attribute**](docs/CustomerAttributeApi.md#delete_customer_attribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/{customerid}/attributes/{customerattributeid} | Delete Customer Attribute
+*OpenBankProject::CustomerAttributeApi* | [**delete_customer_attribute_definition**](docs/CustomerAttributeApi.md#delete_customer_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/customer | Delete Customer Attribute Definition
+*OpenBankProject::CustomerAttributeApi* | [**get_customer_attribute_by_id**](docs/CustomerAttributeApi.md#get_customer_attribute_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{attributeid} | Get Customer Attribute By Id
+*OpenBankProject::CustomerAttributeApi* | [**get_customer_attribute_definition**](docs/CustomerAttributeApi.md#get_customer_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Get Customer Attribute Definition
+*OpenBankProject::CustomerAttributeApi* | [**get_customer_attributes**](docs/CustomerAttributeApi.md#get_customer_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes | Get Customer Attributes
+*OpenBankProject::CustomerAttributeApi* | [**update_customer_attribute**](docs/CustomerAttributeApi.md#update_customer_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{customerattributeid} | Update Customer Attribute
+*OpenBankProject::CustomerMeetingApi* | [**create_meeting**](docs/CustomerMeetingApi.md#create_meeting) | **POST** /obp/v3.1.0/banks/{bankid}/meetings | Create Meeting (video conference/call)
+*OpenBankProject::CustomerMeetingApi* | [**get_meeting**](docs/CustomerMeetingApi.md#get_meeting) | **GET** /obp/v3.1.0/banks/{bankid}/meetings/{meetingid} | Get Meeting
+*OpenBankProject::CustomerMeetingApi* | [**get_meetings**](docs/CustomerMeetingApi.md#get_meetings) | **GET** /obp/v3.1.0/banks/{bankid}/meetings | Get Meetings
+*OpenBankProject::CustomerMessageApi* | [**add_customer_message**](docs/CustomerMessageApi.md#add_customer_message) | **POST** /obp/v1.4.0/banks/{bankid}/customer/{customerid}/messages | Create Customer Message
+*OpenBankProject::CustomerMessageApi* | [**create_customer_message**](docs/CustomerMessageApi.md#create_customer_message) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages | Create Customer Message
+*OpenBankProject::CustomerMessageApi* | [**get_customer_messages**](docs/CustomerMessageApi.md#get_customer_messages) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages | Get Customer Messages for a Customer
+*OpenBankProject::CustomerMessageApi* | [**get_customers_messages**](docs/CustomerMessageApi.md#get_customers_messages) | **GET** /obp/v1.4.0/banks/{bankid}/customer/messages | Get Customer Messages for all Customers
+*OpenBankProject::DAuthApi* | [**create_user_with_account_access_by_id**](docs/DAuthApi.md#create_user_with_account_access_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/user-account-access | Create (DAuth) User with Account Access
+*OpenBankProject::DAuthApi* | [**create_user_with_roles**](docs/DAuthApi.md#create_user_with_roles) | **POST** /obp/v4.0.0/user-entitlements | Create (DAuth) User with Roles
+*OpenBankProject::DataWarehouseApi* | [**data_warehouse_search**](docs/DataWarehouseApi.md#data_warehouse_search) | **POST** /obp/v3.0.0/search/warehouse/{index} | Data Warehouse Search
+*OpenBankProject::DataWarehouseApi* | [**data_warehouse_statistics**](docs/DataWarehouseApi.md#data_warehouse_statistics) | **POST** /obp/v3.0.0/search/warehouse/statistics/{index}/{field} | Data Warehouse Statistics
+*OpenBankProject::DirectDebitApi* | [**create_direct_debit**](docs/DirectDebitApi.md#create_direct_debit) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/direct-debit | Create Direct Debit
+*OpenBankProject::DirectDebitApi* | [**create_direct_debit_management**](docs/DirectDebitApi.md#create_direct_debit_management) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/direct-debit | Create Direct Debit (management)
+*OpenBankProject::DirectoryApi* | [**create_consumer_dynamic_registration**](docs/DirectoryApi.md#create_consumer_dynamic_registration) | **POST** /obp/v5.1.0/dynamic-registration/consumers | Create a Consumer(Dynamic Registration)
+*OpenBankProject::DirectoryApi* | [**create_regulated_entity**](docs/DirectoryApi.md#create_regulated_entity) | **POST** /obp/v5.1.0/regulated-entities | Create Regulated Entity
+*OpenBankProject::DirectoryApi* | [**create_regulated_entity_attribute**](docs/DirectoryApi.md#create_regulated_entity_attribute) | **POST** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes | Create Regulated Entity Attribute
+*OpenBankProject::DirectoryApi* | [**delete_regulated_entity**](docs/DirectoryApi.md#delete_regulated_entity) | **DELETE** /obp/v5.1.0/regulated-entities/{regulatedentityid} | Delete Regulated Entity
+*OpenBankProject::DirectoryApi* | [**delete_regulated_entity_attribute**](docs/DirectoryApi.md#delete_regulated_entity_attribute) | **DELETE** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Delete Regulated Entity Attribute
+*OpenBankProject::DirectoryApi* | [**get_all_regulated_entity_attributes**](docs/DirectoryApi.md#get_all_regulated_entity_attributes) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes | Get All Regulated Entity Attributes
+*OpenBankProject::DirectoryApi* | [**get_regulated_entity_attribute_by_id**](docs/DirectoryApi.md#get_regulated_entity_attribute_by_id) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Get Regulated Entity Attribute By ID
+*OpenBankProject::DirectoryApi* | [**get_regulated_entity_by_id**](docs/DirectoryApi.md#get_regulated_entity_by_id) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid} | Get Regulated Entity
+*OpenBankProject::DirectoryApi* | [**regulated_entities**](docs/DirectoryApi.md#regulated_entities) | **GET** /obp/v5.1.0/regulated-entities | Get Regulated Entities
+*OpenBankProject::DirectoryApi* | [**update_regulated_entity_attribute**](docs/DirectoryApi.md#update_regulated_entity_attribute) | **PUT** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Update Regulated Entity Attribute
+*OpenBankProject::DocumentationApi* | [**get_api_glossary**](docs/DocumentationApi.md#get_api_glossary) | **GET** /obp/v3.0.0/api/glossary | Get Glossary of the API
+*OpenBankProject::DocumentationApi* | [**get_bank_level_dynamic_resource_docs_obp**](docs/DocumentationApi.md#get_bank_level_dynamic_resource_docs_obp) | **GET** /obp/v1.4.0/banks/{bankid}/resource-docs/{apiversion}/obp | Get Bank Level Dynamic Resource Docs
+*OpenBankProject::DocumentationApi* | [**get_message_docs**](docs/DocumentationApi.md#get_message_docs) | **GET** /obp/v2.2.0/message-docs/{connector} | Get Message Docs
+*OpenBankProject::DocumentationApi* | [**get_message_docs_json_schema**](docs/DocumentationApi.md#get_message_docs_json_schema) | **GET** /obp/v6.0.0/message-docs/{connector}/json-schema | Get Message Docs as JSON Schema
+*OpenBankProject::DocumentationApi* | [**get_message_docs_swagger**](docs/DocumentationApi.md#get_message_docs_swagger) | **GET** /obp/v3.1.0/message-docs/{connector}/swagger2.0 | Get Message Docs Swagger
+*OpenBankProject::DocumentationApi* | [**get_resource_docs_obp**](docs/DocumentationApi.md#get_resource_docs_obp) | **GET** /obp/v1.4.0/resource-docs/{apiversion}/obp | Get Resource Docs
+*OpenBankProject::DocumentationApi* | [**get_resource_docs_open_api31**](docs/DocumentationApi.md#get_resource_docs_open_api31) | **GET** /obp/v1.4.0/resource-docs/{apiversion}/openapi | Get OpenAPI 3.1 documentation
+*OpenBankProject::DocumentationApi* | [**get_resource_docs_swagger**](docs/DocumentationApi.md#get_resource_docs_swagger) | **GET** /obp/v1.4.0/resource-docs/{apiversion}/swagger | Get Swagger documentation
+*OpenBankProject::DocumentationApi* | [**get_scanned_api_versions**](docs/DocumentationApi.md#get_scanned_api_versions) | **GET** /obp/v6.0.0/api/versions | Get Scanned API Versions
+*OpenBankProject::DynamicEndpointManageApi* | [**create_bank_level_dynamic_endpoint**](docs/DynamicEndpointManageApi.md#create_bank_level_dynamic_endpoint) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Create Bank Level Dynamic Endpoint
+*OpenBankProject::DynamicEndpointManageApi* | [**create_dynamic_endpoint**](docs/DynamicEndpointManageApi.md#create_dynamic_endpoint) | **POST** /obp/v4.0.0/management/dynamic-endpoints | Create Dynamic Endpoint
+*OpenBankProject::DynamicEndpointManageApi* | [**delete_bank_level_dynamic_endpoint**](docs/DynamicEndpointManageApi.md#delete_bank_level_dynamic_endpoint) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Delete Bank Level Dynamic Endpoint
+*OpenBankProject::DynamicEndpointManageApi* | [**delete_dynamic_endpoint**](docs/DynamicEndpointManageApi.md#delete_dynamic_endpoint) | **DELETE** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} |  Delete Dynamic Endpoint
+*OpenBankProject::DynamicEndpointManageApi* | [**delete_my_dynamic_endpoint**](docs/DynamicEndpointManageApi.md#delete_my_dynamic_endpoint) | **DELETE** /obp/v4.0.0/my/dynamic-endpoints/{dynamicendpointid} | Delete My Dynamic Endpoint
+*OpenBankProject::DynamicEndpointManageApi* | [**get_bank_level_dynamic_endpoint**](docs/DynamicEndpointManageApi.md#get_bank_level_dynamic_endpoint) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Get Bank Level Dynamic Endpoint
+*OpenBankProject::DynamicEndpointManageApi* | [**get_bank_level_dynamic_endpoints**](docs/DynamicEndpointManageApi.md#get_bank_level_dynamic_endpoints) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Get Bank Level Dynamic Endpoints
+*OpenBankProject::DynamicEndpointManageApi* | [**get_dynamic_endpoint**](docs/DynamicEndpointManageApi.md#get_dynamic_endpoint) | **GET** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} | Get Dynamic Endpoint
+*OpenBankProject::DynamicEndpointManageApi* | [**get_dynamic_endpoints**](docs/DynamicEndpointManageApi.md#get_dynamic_endpoints) | **GET** /obp/v4.0.0/management/dynamic-endpoints |  Get Dynamic Endpoints
+*OpenBankProject::DynamicEndpointManageApi* | [**get_my_dynamic_endpoints**](docs/DynamicEndpointManageApi.md#get_my_dynamic_endpoints) | **GET** /obp/v4.0.0/my/dynamic-endpoints | Get My Dynamic Endpoints
+*OpenBankProject::DynamicEndpointManageApi* | [**update_bank_level_dynamic_endpoint_host**](docs/DynamicEndpointManageApi.md#update_bank_level_dynamic_endpoint_host) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}/host |  Update Bank Level Dynamic Endpoint Host
+*OpenBankProject::DynamicEndpointManageApi* | [**update_dynamic_endpoint_host**](docs/DynamicEndpointManageApi.md#update_dynamic_endpoint_host) | **PUT** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}/host |  Update Dynamic Endpoint Host
+*OpenBankProject::DynamicEntityApi* | [**cleanup_orphaned_dynamic_entity_records**](docs/DynamicEntityApi.md#cleanup_orphaned_dynamic_entity_records) | **DELETE** /obp/v6.0.0/management/diagnostics/dynamic-entities/orphaned-records | Cleanup Orphaned Dynamic Entity Records
+*OpenBankProject::DynamicEntityApi* | [**get_available_personal_dynamic_entities**](docs/DynamicEntityApi.md#get_available_personal_dynamic_entities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities
+*OpenBankProject::DynamicEntityApi* | [**get_dynamic_entity_diagnostics**](docs/DynamicEntityApi.md#get_dynamic_entity_diagnostics) | **GET** /obp/v6.0.0/management/diagnostics/dynamic-entities | Get Dynamic Entity Diagnostics
+*OpenBankProject::DynamicEntityApi* | [**get_reference_types**](docs/DynamicEntityApi.md#get_reference_types) | **GET** /obp/v6.0.0/management/dynamic-entities/reference-types | Get Reference Types for Dynamic Entities
+*OpenBankProject::DynamicEntityManageApi* | [**backup_bank_level_dynamic_entity**](docs/DynamicEntityManageApi.md#backup_bank_level_dynamic_entity) | **POST** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}/backup | Backup Bank Level Dynamic Entity
+*OpenBankProject::DynamicEntityManageApi* | [**backup_system_dynamic_entity**](docs/DynamicEntityManageApi.md#backup_system_dynamic_entity) | **POST** /obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid}/backup | Backup System Level Dynamic Entity
+*OpenBankProject::DynamicEntityManageApi* | [**create_bank_level_dynamic_entity**](docs/DynamicEntityManageApi.md#create_bank_level_dynamic_entity) | **POST** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities | Create Bank Level Dynamic Entity
+*OpenBankProject::DynamicEntityManageApi* | [**create_system_dynamic_entity**](docs/DynamicEntityManageApi.md#create_system_dynamic_entity) | **POST** /obp/v6.0.0/management/system-dynamic-entities | Create System Level Dynamic Entity
+*OpenBankProject::DynamicEntityManageApi* | [**delete_bank_level_dynamic_entity**](docs/DynamicEntityManageApi.md#delete_bank_level_dynamic_entity) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid} | Delete Bank Level Dynamic Entity
+*OpenBankProject::DynamicEntityManageApi* | [**delete_my_dynamic_entity**](docs/DynamicEntityManageApi.md#delete_my_dynamic_entity) | **DELETE** /obp/v4.0.0/my/dynamic-entities/{dynamicentityid} | Delete My Dynamic Entity
+*OpenBankProject::DynamicEntityManageApi* | [**delete_system_dynamic_entity**](docs/DynamicEntityManageApi.md#delete_system_dynamic_entity) | **DELETE** /obp/v4.0.0/management/system-dynamic-entities/{dynamicentityid} | Delete System Level Dynamic Entity
+*OpenBankProject::DynamicEntityManageApi* | [**delete_system_dynamic_entity_cascade**](docs/DynamicEntityManageApi.md#delete_system_dynamic_entity_cascade) | **DELETE** /obp/v6.0.0/management/system-dynamic-entities/cascade/{dynamicentityid} | Delete System Level Dynamic Entity Cascade
+*OpenBankProject::DynamicEntityManageApi* | [**get_bank_level_dynamic_entities**](docs/DynamicEntityManageApi.md#get_bank_level_dynamic_entities) | **GET** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities | Get Bank Level Dynamic Entities
+*OpenBankProject::DynamicEntityManageApi* | [**get_my_dynamic_entities**](docs/DynamicEntityManageApi.md#get_my_dynamic_entities) | **GET** /obp/v6.0.0/my/dynamic-entities | Get My Dynamic Entities
+*OpenBankProject::DynamicEntityManageApi* | [**get_system_dynamic_entities**](docs/DynamicEntityManageApi.md#get_system_dynamic_entities) | **GET** /obp/v6.0.0/management/system-dynamic-entities | Get System Dynamic Entities
+*OpenBankProject::DynamicEntityManageApi* | [**update_bank_level_dynamic_entity**](docs/DynamicEntityManageApi.md#update_bank_level_dynamic_entity) | **PUT** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid} | Update Bank Level Dynamic Entity
+*OpenBankProject::DynamicEntityManageApi* | [**update_my_dynamic_entity**](docs/DynamicEntityManageApi.md#update_my_dynamic_entity) | **PUT** /obp/v6.0.0/my/dynamic-entities/{dynamicentityid} | Update My Dynamic Entity
+*OpenBankProject::DynamicEntityManageApi* | [**update_system_dynamic_entity**](docs/DynamicEntityManageApi.md#update_system_dynamic_entity) | **PUT** /obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid} | Update System Level Dynamic Entity
+*OpenBankProject::DynamicMessageDocApi* | [**create_bank_level_dynamic_message_doc**](docs/DynamicMessageDocApi.md#create_bank_level_dynamic_message_doc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Create Bank Level Dynamic Message Doc
+*OpenBankProject::DynamicMessageDocApi* | [**create_dynamic_message_doc**](docs/DynamicMessageDocApi.md#create_dynamic_message_doc) | **POST** /obp/v4.0.0/management/dynamic-message-docs | Create Dynamic Message Doc
+*OpenBankProject::DynamicMessageDocApi* | [**delete_bank_level_dynamic_message_doc**](docs/DynamicMessageDocApi.md#delete_bank_level_dynamic_message_doc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Delete Bank Level Dynamic Message Doc
+*OpenBankProject::DynamicMessageDocApi* | [**delete_dynamic_message_doc**](docs/DynamicMessageDocApi.md#delete_dynamic_message_doc) | **DELETE** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Delete Dynamic Message Doc
+*OpenBankProject::DynamicMessageDocApi* | [**get_all_bank_level_dynamic_message_docs**](docs/DynamicMessageDocApi.md#get_all_bank_level_dynamic_message_docs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Get all Bank Level Dynamic Message Docs
+*OpenBankProject::DynamicMessageDocApi* | [**get_all_dynamic_message_docs**](docs/DynamicMessageDocApi.md#get_all_dynamic_message_docs) | **GET** /obp/v4.0.0/management/dynamic-message-docs | Get all Dynamic Message Docs
+*OpenBankProject::DynamicMessageDocApi* | [**get_bank_level_dynamic_message_doc**](docs/DynamicMessageDocApi.md#get_bank_level_dynamic_message_doc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Get Bank Level Dynamic Message Doc
+*OpenBankProject::DynamicMessageDocApi* | [**get_dynamic_message_doc**](docs/DynamicMessageDocApi.md#get_dynamic_message_doc) | **GET** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Get Dynamic Message Doc
+*OpenBankProject::DynamicMessageDocApi* | [**update_bank_level_dynamic_message_doc**](docs/DynamicMessageDocApi.md#update_bank_level_dynamic_message_doc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Update Bank Level Dynamic Message Doc
+*OpenBankProject::DynamicMessageDocApi* | [**update_dynamic_message_doc**](docs/DynamicMessageDocApi.md#update_dynamic_message_doc) | **PUT** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Update Dynamic Message Doc
+*OpenBankProject::DynamicResourceDocApi* | [**build_dynamic_endpoint_template**](docs/DynamicResourceDocApi.md#build_dynamic_endpoint_template) | **POST** /obp/v4.0.0/management/dynamic-resource-docs/endpoint-code | Create Dynamic Resource Doc endpoint code
+*OpenBankProject::DynamicResourceDocApi* | [**create_bank_level_dynamic_resource_doc**](docs/DynamicResourceDocApi.md#create_bank_level_dynamic_resource_doc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Create Bank Level Dynamic Resource Doc
+*OpenBankProject::DynamicResourceDocApi* | [**create_dynamic_resource_doc**](docs/DynamicResourceDocApi.md#create_dynamic_resource_doc) | **POST** /obp/v4.0.0/management/dynamic-resource-docs | Create Dynamic Resource Doc
+*OpenBankProject::DynamicResourceDocApi* | [**delete_bank_level_dynamic_resource_doc**](docs/DynamicResourceDocApi.md#delete_bank_level_dynamic_resource_doc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Bank Level Dynamic Resource Doc
+*OpenBankProject::DynamicResourceDocApi* | [**delete_dynamic_resource_doc**](docs/DynamicResourceDocApi.md#delete_dynamic_resource_doc) | **DELETE** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Dynamic Resource Doc
+*OpenBankProject::DynamicResourceDocApi* | [**get_all_bank_level_dynamic_resource_docs**](docs/DynamicResourceDocApi.md#get_all_bank_level_dynamic_resource_docs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Get all Bank Level Dynamic Resource Docs
+*OpenBankProject::DynamicResourceDocApi* | [**get_all_dynamic_resource_docs**](docs/DynamicResourceDocApi.md#get_all_dynamic_resource_docs) | **GET** /obp/v4.0.0/management/dynamic-resource-docs | Get all Dynamic Resource Docs
+*OpenBankProject::DynamicResourceDocApi* | [**get_bank_level_dynamic_resource_doc**](docs/DynamicResourceDocApi.md#get_bank_level_dynamic_resource_doc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Bank Level Dynamic Resource Doc by Id
+*OpenBankProject::DynamicResourceDocApi* | [**get_dynamic_resource_doc**](docs/DynamicResourceDocApi.md#get_dynamic_resource_doc) | **GET** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Dynamic Resource Doc by Id
+*OpenBankProject::DynamicResourceDocApi* | [**update_bank_level_dynamic_resource_doc**](docs/DynamicResourceDocApi.md#update_bank_level_dynamic_resource_doc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Bank Level Dynamic Resource Doc
+*OpenBankProject::DynamicResourceDocApi* | [**update_dynamic_resource_doc**](docs/DynamicResourceDocApi.md#update_dynamic_resource_doc) | **PUT** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Dynamic Resource Doc
+*OpenBankProject::EndpointMappingApi* | [**create_bank_level_endpoint_mapping**](docs/EndpointMappingApi.md#create_bank_level_endpoint_mapping) | **POST** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Create Bank Level Endpoint Mapping
+*OpenBankProject::EndpointMappingApi* | [**create_endpoint_mapping**](docs/EndpointMappingApi.md#create_endpoint_mapping) | **POST** /obp/v4.0.0/management/endpoint-mappings | Create Endpoint Mapping
+*OpenBankProject::EndpointMappingApi* | [**delete_bank_level_endpoint_mapping**](docs/EndpointMappingApi.md#delete_bank_level_endpoint_mapping) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Delete Bank Level Endpoint Mapping
+*OpenBankProject::EndpointMappingApi* | [**delete_endpoint_mapping**](docs/EndpointMappingApi.md#delete_endpoint_mapping) | **DELETE** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Delete Endpoint Mapping
+*OpenBankProject::EndpointMappingApi* | [**get_all_bank_level_endpoint_mappings**](docs/EndpointMappingApi.md#get_all_bank_level_endpoint_mappings) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Get all Bank Level Endpoint Mappings
+*OpenBankProject::EndpointMappingApi* | [**get_all_endpoint_mappings**](docs/EndpointMappingApi.md#get_all_endpoint_mappings) | **GET** /obp/v4.0.0/management/endpoint-mappings | Get all Endpoint Mappings
+*OpenBankProject::EndpointMappingApi* | [**get_bank_level_endpoint_mapping**](docs/EndpointMappingApi.md#get_bank_level_endpoint_mapping) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Get Bank Level Endpoint Mapping
+*OpenBankProject::EndpointMappingApi* | [**get_endpoint_mapping**](docs/EndpointMappingApi.md#get_endpoint_mapping) | **GET** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Get Endpoint Mapping by Id
+*OpenBankProject::EndpointMappingApi* | [**update_bank_level_endpoint_mapping**](docs/EndpointMappingApi.md#update_bank_level_endpoint_mapping) | **PUT** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Update Bank Level Endpoint Mapping
+*OpenBankProject::EndpointMappingApi* | [**update_endpoint_mapping**](docs/EndpointMappingApi.md#update_endpoint_mapping) | **PUT** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Update Endpoint Mapping
+*OpenBankProject::EntitlementApi* | [**add_entitlement**](docs/EntitlementApi.md#add_entitlement) | **POST** /obp/v2.0.0/users/{userid}/entitlements | Add Entitlement for a User
+*OpenBankProject::EntitlementApi* | [**add_entitlement_request**](docs/EntitlementApi.md#add_entitlement_request) | **POST** /obp/v3.0.0/entitlement-requests | Create Entitlement Request for current User
+*OpenBankProject::EntitlementApi* | [**add_user_to_group**](docs/EntitlementApi.md#add_user_to_group) | **POST** /obp/v6.0.0/users/{userid}/group-entitlements | Grant User Membership to Group Entitlements
+*OpenBankProject::EntitlementApi* | [**create_user_with_roles**](docs/EntitlementApi.md#create_user_with_roles) | **POST** /obp/v4.0.0/user-entitlements | Create (DAuth) User with Roles
+*OpenBankProject::EntitlementApi* | [**delete_entitlement**](docs/EntitlementApi.md#delete_entitlement) | **DELETE** /obp/v6.0.0/entitlements/{entitlementid} | Delete Entitlement
+*OpenBankProject::EntitlementApi* | [**delete_entitlement_request**](docs/EntitlementApi.md#delete_entitlement_request) | **DELETE** /obp/v3.0.0/entitlement-requests/{entitlementrequestid} | Delete Entitlement Request
+*OpenBankProject::EntitlementApi* | [**get_all_entitlement_requests**](docs/EntitlementApi.md#get_all_entitlement_requests) | **GET** /obp/v3.0.0/entitlement-requests | Get all Entitlement Requests
+*OpenBankProject::EntitlementApi* | [**get_all_entitlements**](docs/EntitlementApi.md#get_all_entitlements) | **GET** /obp/v3.1.0/entitlements | Get all Entitlements
+*OpenBankProject::EntitlementApi* | [**get_entitlement_requests**](docs/EntitlementApi.md#get_entitlement_requests) | **GET** /obp/v3.0.0/users/{userid}/entitlement-requests | Get Entitlement Requests for a User
+*OpenBankProject::EntitlementApi* | [**get_entitlement_requests_for_current_user**](docs/EntitlementApi.md#get_entitlement_requests_for_current_user) | **GET** /obp/v3.0.0/my/entitlement-requests | Get Entitlement Requests for the current User
+*OpenBankProject::EntitlementApi* | [**get_entitlements**](docs/EntitlementApi.md#get_entitlements) | **GET** /obp/v4.0.0/users/{userid}/entitlements | Get Entitlements for User
+*OpenBankProject::EntitlementApi* | [**get_entitlements_and_permissions**](docs/EntitlementApi.md#get_entitlements_and_permissions) | **GET** /obp/v5.1.0/users/{userid}/entitlements-and-permissions | Get Entitlements and Permissions for a User
+*OpenBankProject::EntitlementApi* | [**get_entitlements_by_bank_and_user**](docs/EntitlementApi.md#get_entitlements_by_bank_and_user) | **GET** /obp/v2.1.0/banks/{bankid}/users/{userid}/entitlements | Get Entitlements for User at Bank
+*OpenBankProject::EntitlementApi* | [**get_entitlements_for_bank**](docs/EntitlementApi.md#get_entitlements_for_bank) | **GET** /obp/v4.0.0/banks/{bankid}/entitlements | Get Entitlements for One Bank
+*OpenBankProject::EntitlementApi* | [**get_entitlements_for_current_user**](docs/EntitlementApi.md#get_entitlements_for_current_user) | **GET** /obp/v3.0.0/my/entitlements | Get Entitlements for the current User
+*OpenBankProject::EntitlementApi* | [**get_group_entitlements**](docs/EntitlementApi.md#get_group_entitlements) | **GET** /obp/v6.0.0/management/groups/{groupid}/entitlements | Get Group Entitlements
+*OpenBankProject::EntitlementApi* | [**get_permissions_for_bank_account**](docs/EntitlementApi.md#get_permissions_for_bank_account) | **GET** /obp/v2.0.0/banks/{bankid}/accounts/{accountid}/permissions | Get access
+*OpenBankProject::EntitlementApi* | [**get_roles_with_entitlement_counts_at_all_banks**](docs/EntitlementApi.md#get_roles_with_entitlement_counts_at_all_banks) | **GET** /obp/v6.0.0/management/roles-with-entitlement-counts | Get Roles with Entitlement Counts
+*OpenBankProject::EntitlementApi* | [**get_user_group_memberships**](docs/EntitlementApi.md#get_user_group_memberships) | **GET** /obp/v6.0.0/users/{userid}/group-entitlements | Get User's Group Memberships
+*OpenBankProject::EntitlementApi* | [**remove_user_from_group**](docs/EntitlementApi.md#remove_user_from_group) | **DELETE** /obp/v6.0.0/users/{userid}/group-entitlements/{groupid} | Remove User from Group
+*OpenBankProject::ExperimentalApi* | [**create_meeting**](docs/ExperimentalApi.md#create_meeting) | **POST** /obp/v3.1.0/banks/{bankid}/meetings | Create Meeting (video conference/call)
+*OpenBankProject::ExperimentalApi* | [**get_meeting**](docs/ExperimentalApi.md#get_meeting) | **GET** /obp/v3.1.0/banks/{bankid}/meetings/{meetingid} | Get Meeting
+*OpenBankProject::ExperimentalApi* | [**get_meetings**](docs/ExperimentalApi.md#get_meetings) | **GET** /obp/v3.1.0/banks/{bankid}/meetings | Get Meetings
+*OpenBankProject::FXApi* | [**create_fx**](docs/FXApi.md#create_fx) | **PUT** /obp/v2.2.0/banks/{bankid}/fx | Create Fx
+*OpenBankProject::FXApi* | [**get_currencies_at_bank**](docs/FXApi.md#get_currencies_at_bank) | **GET** /obp/v5.1.0/banks/{bankid}/currencies | Get Currencies at a Bank
+*OpenBankProject::FXApi* | [**get_current_fx_rate**](docs/FXApi.md#get_current_fx_rate) | **GET** /obp/v2.2.0/banks/{bankid}/fx/{fromcurrencycode}/{tocurrencycode} | Get Current FxRate
+*OpenBankProject::FirehoseDataApi* | [**get_fast_firehose_accounts_at_one_bank**](docs/FirehoseDataApi.md#get_fast_firehose_accounts_at_one_bank) | **GET** /obp/v4.0.0/management/banks/{bankid}/fast-firehose/accounts | Get Fast Firehose Accounts at Bank
+*OpenBankProject::FirehoseDataApi* | [**get_firehose_accounts_at_one_bank**](docs/FirehoseDataApi.md#get_firehose_accounts_at_one_bank) | **GET** /obp/v4.0.0/banks/{bankid}/firehose/accounts/views/{viewid} | Get Firehose Accounts at Bank
+*OpenBankProject::FirehoseDataApi* | [**get_firehose_customers**](docs/FirehoseDataApi.md#get_firehose_customers) | **GET** /obp/v3.1.0/banks/{bankid}/firehose/customers | Get Firehose Customers
+*OpenBankProject::FirehoseDataApi* | [**get_firehose_transactions_for_bank_account**](docs/FirehoseDataApi.md#get_firehose_transactions_for_bank_account) | **GET** /obp/v3.0.0/banks/{bankid}/firehose/accounts/{accountid}/views/{viewid}/transactions | Get Firehose Transactions for Account
+*OpenBankProject::GroupApi* | [**add_user_to_group**](docs/GroupApi.md#add_user_to_group) | **POST** /obp/v6.0.0/users/{userid}/group-entitlements | Grant User Membership to Group Entitlements
+*OpenBankProject::GroupApi* | [**create_group**](docs/GroupApi.md#create_group) | **POST** /obp/v6.0.0/management/groups | Create Group
+*OpenBankProject::GroupApi* | [**delete_group**](docs/GroupApi.md#delete_group) | **DELETE** /obp/v6.0.0/management/groups/{groupid} | Delete Group
+*OpenBankProject::GroupApi* | [**get_group**](docs/GroupApi.md#get_group) | **GET** /obp/v6.0.0/management/groups/{groupid} | Get Group
+*OpenBankProject::GroupApi* | [**get_group_entitlements**](docs/GroupApi.md#get_group_entitlements) | **GET** /obp/v6.0.0/management/groups/{groupid}/entitlements | Get Group Entitlements
+*OpenBankProject::GroupApi* | [**get_groups**](docs/GroupApi.md#get_groups) | **GET** /obp/v6.0.0/management/groups | Get Groups
+*OpenBankProject::GroupApi* | [**get_user_group_memberships**](docs/GroupApi.md#get_user_group_memberships) | **GET** /obp/v6.0.0/users/{userid}/group-entitlements | Get User's Group Memberships
+*OpenBankProject::GroupApi* | [**remove_user_from_group**](docs/GroupApi.md#remove_user_from_group) | **DELETE** /obp/v6.0.0/users/{userid}/group-entitlements/{groupid} | Remove User from Group
+*OpenBankProject::GroupApi* | [**update_group**](docs/GroupApi.md#update_group) | **PUT** /obp/v6.0.0/management/groups/{groupid} | Update Group
+*OpenBankProject::JSONSchemaValidationApi* | [**create_json_schema_validation**](docs/JSONSchemaValidationApi.md#create_json_schema_validation) | **POST** /obp/v4.0.0/management/json-schema-validations/{operationid} | Create a JSON Schema Validation
+*OpenBankProject::JSONSchemaValidationApi* | [**delete_json_schema_validation**](docs/JSONSchemaValidationApi.md#delete_json_schema_validation) | **DELETE** /obp/v4.0.0/management/json-schema-validations/{operationid} | Delete a JSON Schema Validation
+*OpenBankProject::JSONSchemaValidationApi* | [**get_all_json_schema_validations**](docs/JSONSchemaValidationApi.md#get_all_json_schema_validations) | **GET** /obp/v4.0.0/management/json-schema-validations | Get all JSON Schema Validations
+*OpenBankProject::JSONSchemaValidationApi* | [**get_all_json_schema_validations_public**](docs/JSONSchemaValidationApi.md#get_all_json_schema_validations_public) | **GET** /obp/v4.0.0/endpoints/json-schema-validations | Get all JSON Schema Validations - public
+*OpenBankProject::JSONSchemaValidationApi* | [**get_json_schema_validation**](docs/JSONSchemaValidationApi.md#get_json_schema_validation) | **GET** /obp/v4.0.0/management/json-schema-validations/{operationid} | Get a JSON Schema Validation
+*OpenBankProject::JSONSchemaValidationApi* | [**update_json_schema_validation**](docs/JSONSchemaValidationApi.md#update_json_schema_validation) | **PUT** /obp/v4.0.0/management/json-schema-validations/{operationid} | Update a JSON Schema Validation
+*OpenBankProject::KYCApi* | [**add_kyc_check**](docs/KYCApi.md#add_kyc_check) | **PUT** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_check/{kyccheckid} | Add KYC Check
+*OpenBankProject::KYCApi* | [**add_kyc_document**](docs/KYCApi.md#add_kyc_document) | **PUT** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_documents/{kycdocumentid} | Add KYC Document
+*OpenBankProject::KYCApi* | [**add_kyc_media**](docs/KYCApi.md#add_kyc_media) | **PUT** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_media/{kycmediaid} | Add KYC Media
+*OpenBankProject::KYCApi* | [**add_kyc_status**](docs/KYCApi.md#add_kyc_status) | **PUT** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_statuses | Add KYC Status
+*OpenBankProject::KYCApi* | [**create_tax_residence**](docs/KYCApi.md#create_tax_residence) | **POST** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/tax-residence | Create Tax Residence
+*OpenBankProject::KYCApi* | [**create_user_invitation**](docs/KYCApi.md#create_user_invitation) | **POST** /obp/v4.0.0/banks/{bankid}/user-invitation | Create User Invitation
+*OpenBankProject::KYCApi* | [**delete_customer_address**](docs/KYCApi.md#delete_customer_address) | **DELETE** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/addresses/{customeraddressid} | Delete Customer Address
+*OpenBankProject::KYCApi* | [**delete_tax_residence**](docs/KYCApi.md#delete_tax_residence) | **DELETE** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/tax_residencies/{taxresidenceid} | Delete Tax Residence
+*OpenBankProject::KYCApi* | [**get_customer_addresses**](docs/KYCApi.md#get_customer_addresses) | **GET** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/addresses | Get Customer Addresses
+*OpenBankProject::KYCApi* | [**get_customer_by_customer_number**](docs/KYCApi.md#get_customer_by_customer_number) | **POST** /obp/v6.0.0/banks/{bankid}/customers/customer-number | Get Customer by CUSTOMER_NUMBER
+*OpenBankProject::KYCApi* | [**get_customer_overview**](docs/KYCApi.md#get_customer_overview) | **POST** /obp/v5.0.0/banks/{bankid}/customers/customer-number-query/overview | Get Customer Overview
+*OpenBankProject::KYCApi* | [**get_customer_overview_flat**](docs/KYCApi.md#get_customer_overview_flat) | **POST** /obp/v5.0.0/banks/{bankid}/customers/customer-number-query/overview-flat | Get Customer Overview Flat
+*OpenBankProject::KYCApi* | [**get_customers_by_customer_phone_number**](docs/KYCApi.md#get_customers_by_customer_phone_number) | **POST** /obp/v4.0.0/banks/{bankid}/search/customers/mobile-phone-number | Get Customers by MOBILE_PHONE_NUMBER
+*OpenBankProject::KYCApi* | [**get_customers_by_legal_name**](docs/KYCApi.md#get_customers_by_legal_name) | **POST** /obp/v6.0.0/banks/{bankid}/customers/legal-name | Get Customers by Legal Name
+*OpenBankProject::KYCApi* | [**get_kyc_checks**](docs/KYCApi.md#get_kyc_checks) | **GET** /obp/v2.0.0/customers/{customerid}/kyc_checks | Get Customer KYC Checks
+*OpenBankProject::KYCApi* | [**get_kyc_documents**](docs/KYCApi.md#get_kyc_documents) | **GET** /obp/v2.0.0/customers/{customerid}/kyc_documents | Get Customer KYC Documents
+*OpenBankProject::KYCApi* | [**get_kyc_media**](docs/KYCApi.md#get_kyc_media) | **GET** /obp/v2.0.0/customers/{customerid}/kyc_media | Get KYC Media for a customer
+*OpenBankProject::KYCApi* | [**get_kyc_statuses**](docs/KYCApi.md#get_kyc_statuses) | **GET** /obp/v2.0.0/customers/{customerid}/kyc_statuses | Get Customer KYC statuses
+*OpenBankProject::KYCApi* | [**get_tax_residence**](docs/KYCApi.md#get_tax_residence) | **GET** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/tax-residences | Get Tax Residences of Customer
+*OpenBankProject::KYCApi* | [**get_user_invitation_anonymous**](docs/KYCApi.md#get_user_invitation_anonymous) | **POST** /obp/v4.0.0/banks/{bankid}/user-invitations | Get User Invitation Information
+*OpenBankProject::LogCacheApi* | [**log_cache_all_endpoint**](docs/LogCacheApi.md#log_cache_all_endpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache
+*OpenBankProject::LogCacheApi* | [**log_cache_debug_endpoint**](docs/LogCacheApi.md#log_cache_debug_endpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache
+*OpenBankProject::LogCacheApi* | [**log_cache_error_endpoint**](docs/LogCacheApi.md#log_cache_error_endpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache
+*OpenBankProject::LogCacheApi* | [**log_cache_info_endpoint**](docs/LogCacheApi.md#log_cache_info_endpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache
+*OpenBankProject::LogCacheApi* | [**log_cache_trace_endpoint**](docs/LogCacheApi.md#log_cache_trace_endpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache
+*OpenBankProject::LogCacheApi* | [**log_cache_warning_endpoint**](docs/LogCacheApi.md#log_cache_warning_endpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache
+*OpenBankProject::MandateApi* | [**create_mandate**](docs/MandateApi.md#create_mandate) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/mandates | Create Mandate
+*OpenBankProject::MandateApi* | [**create_mandate_provision**](docs/MandateApi.md#create_mandate_provision) | **POST** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/provisions | Create Mandate Provision
+*OpenBankProject::MandateApi* | [**create_signatory_panel**](docs/MandateApi.md#create_signatory_panel) | **POST** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/signatory-panels | Create Signatory Panel
+*OpenBankProject::MandateApi* | [**delete_mandate**](docs/MandateApi.md#delete_mandate) | **DELETE** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/mandates/{mandateid} | Delete Mandate
+*OpenBankProject::MandateApi* | [**delete_mandate_provision**](docs/MandateApi.md#delete_mandate_provision) | **DELETE** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/provisions/{provisionid} | Delete Mandate Provision
+*OpenBankProject::MandateApi* | [**delete_signatory_panel**](docs/MandateApi.md#delete_signatory_panel) | **DELETE** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/signatory-panels/{panelid} | Delete Signatory Panel
+*OpenBankProject::MandateApi* | [**get_mandate**](docs/MandateApi.md#get_mandate) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/mandates/{mandateid} | Get Mandate
+*OpenBankProject::MandateApi* | [**get_mandate_provision**](docs/MandateApi.md#get_mandate_provision) | **GET** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/provisions/{provisionid} | Get Mandate Provision
+*OpenBankProject::MandateApi* | [**get_mandate_provisions**](docs/MandateApi.md#get_mandate_provisions) | **GET** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/provisions | Get Mandate Provisions
+*OpenBankProject::MandateApi* | [**get_mandates**](docs/MandateApi.md#get_mandates) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/mandates | Get Mandates for Account
+*OpenBankProject::MandateApi* | [**get_signatory_panel**](docs/MandateApi.md#get_signatory_panel) | **GET** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/signatory-panels/{panelid} | Get Signatory Panel
+*OpenBankProject::MandateApi* | [**get_signatory_panels**](docs/MandateApi.md#get_signatory_panels) | **GET** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/signatory-panels | Get Signatory Panels
+*OpenBankProject::MandateApi* | [**update_mandate**](docs/MandateApi.md#update_mandate) | **PUT** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/mandates/{mandateid} | Update Mandate
+*OpenBankProject::MandateApi* | [**update_mandate_provision**](docs/MandateApi.md#update_mandate_provision) | **PUT** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/provisions/{provisionid} | Update Mandate Provision
+*OpenBankProject::MandateApi* | [**update_signatory_panel**](docs/MandateApi.md#update_signatory_panel) | **PUT** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/signatory-panels/{panelid} | Update Signatory Panel
+*OpenBankProject::MessageDocApi* | [**get_message_docs**](docs/MessageDocApi.md#get_message_docs) | **GET** /obp/v2.2.0/message-docs/{connector} | Get Message Docs
+*OpenBankProject::MessageDocApi* | [**get_message_docs_json_schema**](docs/MessageDocApi.md#get_message_docs_json_schema) | **GET** /obp/v6.0.0/message-docs/{connector}/json-schema | Get Message Docs as JSON Schema
+*OpenBankProject::MessageDocApi* | [**get_message_docs_swagger**](docs/MessageDocApi.md#get_message_docs_swagger) | **GET** /obp/v3.1.0/message-docs/{connector}/swagger2.0 | Get Message Docs Swagger
+*OpenBankProject::MethodRoutingApi* | [**create_method_routing**](docs/MethodRoutingApi.md#create_method_routing) | **POST** /obp/v3.1.0/management/method_routings | Create MethodRouting
+*OpenBankProject::MethodRoutingApi* | [**delete_method_routing**](docs/MethodRoutingApi.md#delete_method_routing) | **DELETE** /obp/v3.1.0/management/method_routings/{methodroutingid} | Delete MethodRouting
+*OpenBankProject::MethodRoutingApi* | [**get_connector_method_names**](docs/MethodRoutingApi.md#get_connector_method_names) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names
+*OpenBankProject::MethodRoutingApi* | [**get_method_routings**](docs/MethodRoutingApi.md#get_method_routings) | **GET** /obp/v3.1.0/management/method_routings | Get MethodRoutings
+*OpenBankProject::MethodRoutingApi* | [**update_method_routing**](docs/MethodRoutingApi.md#update_method_routing) | **PUT** /obp/v3.1.0/management/method_routings/{methodroutingid} | Update MethodRouting
+*OpenBankProject::MetricApi* | [**elastic_search_metrics**](docs/MetricApi.md#elastic_search_metrics) | **GET** /obp/v2.0.0/search/metrics | Search API Metrics via Elasticsearch
+*OpenBankProject::MetricApi* | [**get_aggregate_metrics**](docs/MetricApi.md#get_aggregate_metrics) | **GET** /obp/v6.0.0/management/aggregate-metrics | Get Aggregate Metrics
+*OpenBankProject::MetricApi* | [**get_connector_call_counts**](docs/MetricApi.md#get_connector_call_counts) | **GET** /obp/v6.0.0/management/connector/metrics/counts | Get Connector Call Counts
+*OpenBankProject::MetricApi* | [**get_connector_metrics**](docs/MetricApi.md#get_connector_metrics) | **GET** /obp/v2.2.0/management/connector/metrics | Get Connector Metrics
+*OpenBankProject::MetricApi* | [**get_connector_traces**](docs/MetricApi.md#get_connector_traces) | **GET** /obp/v6.0.0/management/connector/traces | Get Connector Traces
+*OpenBankProject::MetricApi* | [**get_metrics**](docs/MetricApi.md#get_metrics) | **GET** /obp/v6.0.0/management/metrics | Get Metrics
+*OpenBankProject::MetricApi* | [**get_metrics_at_bank**](docs/MetricApi.md#get_metrics_at_bank) | **GET** /obp/v5.0.0/management/metrics/banks/{bankid} | Get Metrics at Bank
+*OpenBankProject::MetricApi* | [**get_metrics_top_consumers**](docs/MetricApi.md#get_metrics_top_consumers) | **GET** /obp/v3.1.0/management/metrics/top-consumers | Get Top Consumers
+*OpenBankProject::MetricApi* | [**get_popular_apis**](docs/MetricApi.md#get_popular_apis) | **GET** /obp/v6.0.0/api/popular-endpoints | Get Popular Endpoints
+*OpenBankProject::MetricApi* | [**get_top_apis**](docs/MetricApi.md#get_top_apis) | **GET** /obp/v6.0.0/management/metrics/top-apis | Get Top APIs
+*OpenBankProject::OAuthApi* | [**get_o_auth2_server_jwks_uris**](docs/OAuthApi.md#get_o_auth2_server_jwks_uris) | **GET** /obp/v3.1.0/jwks-uris | Get JSON Web Key (JWK) URIs
+*OpenBankProject::OAuthApi* | [**get_obp_connector_loopback**](docs/OAuthApi.md#get_obp_connector_loopback) | **GET** /obp/v3.1.0/connector/loopback | Get Connector Status (Loopback)
+*OpenBankProject::OAuthApi* | [**get_oidc_client**](docs/OAuthApi.md#get_oidc_client) | **GET** /obp/v6.0.0/oidc/clients/{clientid} | Get OIDC Client
+*OpenBankProject::OAuthApi* | [**verify_oidc_client**](docs/OAuthApi.md#verify_oidc_client) | **POST** /obp/v6.0.0/oidc/clients/verify | Verify OIDC Client
+*OpenBankProject::OIDCApi* | [**get_o_auth2_server_jwks_uris**](docs/OIDCApi.md#get_o_auth2_server_jwks_uris) | **GET** /obp/v3.1.0/jwks-uris | Get JSON Web Key (JWK) URIs
+*OpenBankProject::OIDCApi* | [**get_obp_connector_loopback**](docs/OIDCApi.md#get_obp_connector_loopback) | **GET** /obp/v3.1.0/connector/loopback | Get Connector Status (Loopback)
+*OpenBankProject::OIDCApi* | [**get_oidc_client**](docs/OIDCApi.md#get_oidc_client) | **GET** /obp/v6.0.0/oidc/clients/{clientid} | Get OIDC Client
+*OpenBankProject::OIDCApi* | [**verify_oidc_client**](docs/OIDCApi.md#verify_oidc_client) | **POST** /obp/v6.0.0/oidc/clients/verify | Verify OIDC Client
+*OpenBankProject::OldStyleApi* | [**elastic_search_metrics**](docs/OldStyleApi.md#elastic_search_metrics) | **GET** /obp/v2.0.0/search/metrics | Search API Metrics via Elasticsearch
+*OpenBankProject::OnboardingApi* | [**create_account**](docs/OnboardingApi.md#create_account) | **PUT** /obp/v5.0.0/banks/{bankid}/accounts/{accountid} | Create Account (PUT)
+*OpenBankProject::OnboardingApi* | [**create_user**](docs/OnboardingApi.md#create_user) | **POST** /obp/v6.0.0/users | Create User (v6.0.0)
+*OpenBankProject::OwnerViewRequiredApi* | [**create_user_with_account_access_by_id**](docs/OwnerViewRequiredApi.md#create_user_with_account_access_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/user-account-access | Create (DAuth) User with Account Access
+*OpenBankProject::OwnerViewRequiredApi* | [**grant_user_access_to_view_by_id**](docs/OwnerViewRequiredApi.md#grant_user_access_to_view_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/grant | Grant User access to View
+*OpenBankProject::OwnerViewRequiredApi* | [**revoke_user_access_to_view_by_id**](docs/OwnerViewRequiredApi.md#revoke_user_access_to_view_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/revoke | Revoke User access to View
+*OpenBankProject::PSD2Api* | [**answer_consent_challenge**](docs/PSD2Api.md#answer_consent_challenge) | **POST** /obp/v3.1.0/banks/{bankid}/consents/{consentid}/challenge | Answer Consent Challenge
+*OpenBankProject::PSD2Api* | [**answer_transaction_request_challenge**](docs/PSD2Api.md#answer_transaction_request_challenge) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{transactionrequesttype}/transaction-requests/{transactionrequestid}/challenge | Answer Transaction Request Challenge
+*OpenBankProject::PSD2Api* | [**check_funds_available**](docs/PSD2Api.md#check_funds_available) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available | Check Available Funds
+*OpenBankProject::PSD2Api* | [**core_private_accounts_all_banks**](docs/PSD2Api.md#core_private_accounts_all_banks) | **GET** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private)
+*OpenBankProject::PSD2Api* | [**create_consent_by_consent_request_id_email**](docs/PSD2Api.md#create_consent_by_consent_request_id_email) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{email}/consents | Create Consent By CONSENT_REQUEST_ID (EMAIL)
+*OpenBankProject::PSD2Api* | [**create_consent_by_consent_request_id_implicit**](docs/PSD2Api.md#create_consent_by_consent_request_id_implicit) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{implicit}/consents | Create Consent By CONSENT_REQUEST_ID (IMPLICIT)
+*OpenBankProject::PSD2Api* | [**create_consent_by_consent_request_id_sms**](docs/PSD2Api.md#create_consent_by_consent_request_id_sms) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{sms}/consents | Create Consent By CONSENT_REQUEST_ID (SMS)
+*OpenBankProject::PSD2Api* | [**create_consent_email**](docs/PSD2Api.md#create_consent_email) | **POST** /obp/v3.1.0/banks/{bankid}/my/consents/{email} | Create Consent (EMAIL)
+*OpenBankProject::PSD2Api* | [**create_consent_implicit**](docs/PSD2Api.md#create_consent_implicit) | **POST** /obp/v5.1.0/my/consents/{implicit} | Create Consent (IMPLICIT)
+*OpenBankProject::PSD2Api* | [**create_consent_request**](docs/PSD2Api.md#create_consent_request) | **POST** /obp/v5.0.0/consumer/consent-requests | Create Consent Request
+*OpenBankProject::PSD2Api* | [**create_consent_sms**](docs/PSD2Api.md#create_consent_sms) | **POST** /obp/v3.1.0/banks/{bankid}/my/consents/{sms} | Create Consent (SMS)
+*OpenBankProject::PSD2Api* | [**create_transaction_request_account**](docs/PSD2Api.md#create_transaction_request_account) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{account}/transaction-requests | Create Transaction Request (ACCOUNT)
+*OpenBankProject::PSD2Api* | [**create_transaction_request_account_otp**](docs/PSD2Api.md#create_transaction_request_account_otp) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{accountotp}/transaction-requests | Create Transaction Request (ACCOUNT_OTP)
+*OpenBankProject::PSD2Api* | [**create_transaction_request_agent_cash_with_drawal**](docs/PSD2Api.md#create_transaction_request_agent_cash_with_drawal) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{agentcashwithdrawal}/transaction-requests | Create Transaction Request (AGENT_CASH_WITHDRAWAL)
+*OpenBankProject::PSD2Api* | [**create_transaction_request_card**](docs/PSD2Api.md#create_transaction_request_card) | **POST** /obp/v4.0.0/transaction-request-types/{card}/transaction-requests | Create Transaction Request (CARD)
+*OpenBankProject::PSD2Api* | [**create_transaction_request_cardano**](docs/PSD2Api.md#create_transaction_request_cardano) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{cardano}/transaction-requests | Create Transaction Request (CARDANO)
+*OpenBankProject::PSD2Api* | [**create_transaction_request_counterparty**](docs/PSD2Api.md#create_transaction_request_counterparty) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{counterparty}/transaction-requests | Create Transaction Request (COUNTERPARTY)
+*OpenBankProject::PSD2Api* | [**create_transaction_request_eth_send_raw_transaction**](docs/PSD2Api.md#create_transaction_request_eth_send_raw_transaction) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendrawtransaction}/transaction-requests | CREATE TRANSACTION REQUEST (ETH_SEND_RAW_TRANSACTION )
+*OpenBankProject::PSD2Api* | [**create_transaction_request_ethereume_send_transaction**](docs/PSD2Api.md#create_transaction_request_ethereume_send_transaction) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendtransaction}/transaction-requests | Create Transaction Request (ETH_SEND_TRANSACTION)
+*OpenBankProject::PSD2Api* | [**create_transaction_request_hold**](docs/PSD2Api.md#create_transaction_request_hold) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{hold}/transaction-requests | Create Transaction Request (HOLD)
+*OpenBankProject::PSD2Api* | [**create_transaction_request_refund**](docs/PSD2Api.md#create_transaction_request_refund) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{refund}/transaction-requests | Create Transaction Request (REFUND)
+*OpenBankProject::PSD2Api* | [**create_transaction_request_sandbox_tan**](docs/PSD2Api.md#create_transaction_request_sandbox_tan) | **POST** /obp/v2.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sandboxtan}/transaction-requests | Create Transaction Request (SANDBOX_TAN)
+*OpenBankProject::PSD2Api* | [**create_transaction_request_sepa**](docs/PSD2Api.md#create_transaction_request_sepa) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sepa}/transaction-requests | Create Transaction Request (SEPA)
+*OpenBankProject::PSD2Api* | [**create_transaction_request_simple**](docs/PSD2Api.md#create_transaction_request_simple) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{simple}/transaction-requests | Create Transaction Request (SIMPLE)
+*OpenBankProject::PSD2Api* | [**get_accounts_held**](docs/PSD2Api.md#get_accounts_held) | **GET** /obp/v3.0.0/banks/{bankid}/accounts-held | Get Accounts Held
+*OpenBankProject::PSD2Api* | [**get_bank**](docs/PSD2Api.md#get_bank) | **GET** /obp/v6.0.0/banks/{bankid} | Get Bank
+*OpenBankProject::PSD2Api* | [**get_bank_account_balances**](docs/PSD2Api.md#get_bank_account_balances) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/balances | Get Account Balances by BANK_ID and ACCOUNT_ID through the VIEW_ID
+*OpenBankProject::PSD2Api* | [**get_bank_accounts_balances**](docs/PSD2Api.md#get_bank_accounts_balances) | **GET** /obp/v5.1.0/banks/{bankid}/balances | Get Account Balances by BANK_ID
+*OpenBankProject::PSD2Api* | [**get_bank_accounts_balances_through_view**](docs/PSD2Api.md#get_bank_accounts_balances_through_view) | **GET** /obp/v5.1.0/banks/{bankid}/views/{viewid}/balances | Get Account Balances by BANK_ID through the VIEW_ID
+*OpenBankProject::PSD2Api* | [**get_banks**](docs/PSD2Api.md#get_banks) | **GET** /obp/v6.0.0/banks | Get Banks
+*OpenBankProject::PSD2Api* | [**get_consent_by_consent_id**](docs/PSD2Api.md#get_consent_by_consent_id) | **GET** /obp/v5.1.0/user/current/consents/{consentid} | Get Consent By Consent Id via User
+*OpenBankProject::PSD2Api* | [**get_consent_by_consent_id_via_consumer**](docs/PSD2Api.md#get_consent_by_consent_id_via_consumer) | **GET** /obp/v5.1.0/consumer/current/consents/{consentid} | Get Consent By Consent Id via Consumer
+*OpenBankProject::PSD2Api* | [**get_consent_by_consent_request_id**](docs/PSD2Api.md#get_consent_by_consent_request_id) | **GET** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/consents | Get Consent By Consent Request Id via Consumer
+*OpenBankProject::PSD2Api* | [**get_consent_infos**](docs/PSD2Api.md#get_consent_infos) | **GET** /obp/v4.0.0/my/consent-infos | Get My Consents Info
+*OpenBankProject::PSD2Api* | [**get_consent_infos_by_bank**](docs/PSD2Api.md#get_consent_infos_by_bank) | **GET** /obp/v4.0.0/banks/{bankid}/my/consent-infos | Get My Consents Info At Bank
+*OpenBankProject::PSD2Api* | [**get_consent_request**](docs/PSD2Api.md#get_consent_request) | **GET** /obp/v5.0.0/consumer/consent-requests/{consentrequestid} | Get Consent Request
+*OpenBankProject::PSD2Api* | [**get_consents**](docs/PSD2Api.md#get_consents) | **GET** /obp/v5.1.0/management/consents | Get Consents
+*OpenBankProject::PSD2Api* | [**get_consents_at_bank**](docs/PSD2Api.md#get_consents_at_bank) | **GET** /obp/v5.1.0/management/consents/banks/{bankid} | Get Consents at Bank
+*OpenBankProject::PSD2Api* | [**get_core_account_by_id_through_view**](docs/PSD2Api.md#get_core_account_by_id_through_view) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid} | Get Account by Id (Core) through the VIEW_ID
+*OpenBankProject::PSD2Api* | [**get_core_account_by_id_v600**](docs/PSD2Api.md#get_core_account_by_id_v600) | **GET** /obp/v6.0.0/my/banks/{bankid}/accounts/{accountid}/account | Get Account by Id (Core)
+*OpenBankProject::PSD2Api* | [**get_core_transactions_for_bank_account**](docs/PSD2Api.md#get_core_transactions_for_bank_account) | **GET** /obp/v3.0.0/my/banks/{bankid}/accounts/{accountid}/transactions | Get Transactions for Account (Core)
+*OpenBankProject::PSD2Api* | [**get_counterparties_for_any_account**](docs/PSD2Api.md#get_counterparties_for_any_account) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties for any account (Explicit)
+*OpenBankProject::PSD2Api* | [**get_explicit_counterparties_for_account**](docs/PSD2Api.md#get_explicit_counterparties_for_account) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties (Explicit)
+*OpenBankProject::PSD2Api* | [**get_explicit_counterparty_by_id**](docs/PSD2Api.md#get_explicit_counterparty_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id (Explicit)
+*OpenBankProject::PSD2Api* | [**get_my_consents**](docs/PSD2Api.md#get_my_consents) | **GET** /obp/v5.1.0/my/consents | Get My Consents
+*OpenBankProject::PSD2Api* | [**get_my_consents_by_bank**](docs/PSD2Api.md#get_my_consents_by_bank) | **GET** /obp/v5.1.0/banks/{bankid}/my/consents | Get My Consents at Bank
+*OpenBankProject::PSD2Api* | [**get_private_account_idsby_bank_id**](docs/PSD2Api.md#get_private_account_idsby_bank_id) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/account_ids/private | Get Accounts at Bank (IDs only)
+*OpenBankProject::PSD2Api* | [**get_server_jwk**](docs/PSD2Api.md#get_server_jwk) | **GET** /obp/v3.1.0/certs | Get JSON Web Key (JWK)
+*OpenBankProject::PSD2Api* | [**get_settlement_accounts**](docs/PSD2Api.md#get_settlement_accounts) | **GET** /obp/v4.0.0/banks/{bankid}/settlement-accounts | Get Settlement accounts at Bank
+*OpenBankProject::PSD2Api* | [**get_transaction_request**](docs/PSD2Api.md#get_transaction_request) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-requests/{transactionrequestid} | Get Transaction Request
+*OpenBankProject::PSD2Api* | [**get_transaction_request_by_id**](docs/PSD2Api.md#get_transaction_request_by_id) | **GET** /obp/v5.1.0/management/transaction-requests/{transactionrequestid} | Get Transaction Request by ID
+*OpenBankProject::PSD2Api* | [**get_transaction_request_types**](docs/PSD2Api.md#get_transaction_request_types) | **GET** /obp/v1.4.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types | Get Transaction Request Types for Account
+*OpenBankProject::PSD2Api* | [**get_transaction_types**](docs/PSD2Api.md#get_transaction_types) | **GET** /obp/v2.0.0/banks/{bankid}/transaction-types | Get Transaction Types at Bank
+*OpenBankProject::PSD2Api* | [**mtls_client_certificate_info**](docs/PSD2Api.md#mtls_client_certificate_info) | **GET** /obp/v5.1.0/my/mtls/certificate/current | Provide client's certificate info of a current call
+*OpenBankProject::PSD2Api* | [**private_accounts_at_one_bank**](docs/PSD2Api.md#private_accounts_at_one_bank) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/private | Get Accounts at Bank (Minimal)
+*OpenBankProject::PSD2Api* | [**revoke_consent_at_bank**](docs/PSD2Api.md#revoke_consent_at_bank) | **DELETE** /obp/v5.1.0/banks/{bankid}/consents/{consentid} | Revoke Consent at Bank
+*OpenBankProject::PSD2Api* | [**revoke_my_consent**](docs/PSD2Api.md#revoke_my_consent) | **DELETE** /obp/v5.1.0/my/consents/{consentid} | Revoke My Consent
+*OpenBankProject::PSD2Api* | [**self_revoke_consent**](docs/PSD2Api.md#self_revoke_consent) | **DELETE** /obp/v5.1.0/my/consent/current | Revoke Consent used in the Current Call
+*OpenBankProject::PaymentInitiationServicePISApi* | [**answer_transaction_request_challenge**](docs/PaymentInitiationServicePISApi.md#answer_transaction_request_challenge) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{transactionrequesttype}/transaction-requests/{transactionrequestid}/challenge | Answer Transaction Request Challenge
+*OpenBankProject::PaymentInitiationServicePISApi* | [**create_transaction_request_account**](docs/PaymentInitiationServicePISApi.md#create_transaction_request_account) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{account}/transaction-requests | Create Transaction Request (ACCOUNT)
+*OpenBankProject::PaymentInitiationServicePISApi* | [**create_transaction_request_account_otp**](docs/PaymentInitiationServicePISApi.md#create_transaction_request_account_otp) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{accountotp}/transaction-requests | Create Transaction Request (ACCOUNT_OTP)
+*OpenBankProject::PaymentInitiationServicePISApi* | [**create_transaction_request_agent_cash_with_drawal**](docs/PaymentInitiationServicePISApi.md#create_transaction_request_agent_cash_with_drawal) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{agentcashwithdrawal}/transaction-requests | Create Transaction Request (AGENT_CASH_WITHDRAWAL)
+*OpenBankProject::PaymentInitiationServicePISApi* | [**create_transaction_request_card**](docs/PaymentInitiationServicePISApi.md#create_transaction_request_card) | **POST** /obp/v4.0.0/transaction-request-types/{card}/transaction-requests | Create Transaction Request (CARD)
+*OpenBankProject::PaymentInitiationServicePISApi* | [**create_transaction_request_cardano**](docs/PaymentInitiationServicePISApi.md#create_transaction_request_cardano) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{cardano}/transaction-requests | Create Transaction Request (CARDANO)
+*OpenBankProject::PaymentInitiationServicePISApi* | [**create_transaction_request_counterparty**](docs/PaymentInitiationServicePISApi.md#create_transaction_request_counterparty) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{counterparty}/transaction-requests | Create Transaction Request (COUNTERPARTY)
+*OpenBankProject::PaymentInitiationServicePISApi* | [**create_transaction_request_eth_send_raw_transaction**](docs/PaymentInitiationServicePISApi.md#create_transaction_request_eth_send_raw_transaction) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendrawtransaction}/transaction-requests | CREATE TRANSACTION REQUEST (ETH_SEND_RAW_TRANSACTION )
+*OpenBankProject::PaymentInitiationServicePISApi* | [**create_transaction_request_ethereume_send_transaction**](docs/PaymentInitiationServicePISApi.md#create_transaction_request_ethereume_send_transaction) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendtransaction}/transaction-requests | Create Transaction Request (ETH_SEND_TRANSACTION)
+*OpenBankProject::PaymentInitiationServicePISApi* | [**create_transaction_request_free_form**](docs/PaymentInitiationServicePISApi.md#create_transaction_request_free_form) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{freeform}/transaction-requests | Create Transaction Request (FREE_FORM)
+*OpenBankProject::PaymentInitiationServicePISApi* | [**create_transaction_request_hold**](docs/PaymentInitiationServicePISApi.md#create_transaction_request_hold) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{hold}/transaction-requests | Create Transaction Request (HOLD)
+*OpenBankProject::PaymentInitiationServicePISApi* | [**create_transaction_request_refund**](docs/PaymentInitiationServicePISApi.md#create_transaction_request_refund) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{refund}/transaction-requests | Create Transaction Request (REFUND)
+*OpenBankProject::PaymentInitiationServicePISApi* | [**create_transaction_request_sandbox_tan**](docs/PaymentInitiationServicePISApi.md#create_transaction_request_sandbox_tan) | **POST** /obp/v2.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sandboxtan}/transaction-requests | Create Transaction Request (SANDBOX_TAN)
+*OpenBankProject::PaymentInitiationServicePISApi* | [**create_transaction_request_sepa**](docs/PaymentInitiationServicePISApi.md#create_transaction_request_sepa) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sepa}/transaction-requests | Create Transaction Request (SEPA)
+*OpenBankProject::PaymentInitiationServicePISApi* | [**create_transaction_request_simple**](docs/PaymentInitiationServicePISApi.md#create_transaction_request_simple) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{simple}/transaction-requests | Create Transaction Request (SIMPLE)
+*OpenBankProject::PaymentInitiationServicePISApi* | [**get_counterparties_for_any_account**](docs/PaymentInitiationServicePISApi.md#get_counterparties_for_any_account) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties for any account (Explicit)
+*OpenBankProject::PaymentInitiationServicePISApi* | [**get_explicit_counterparties_for_account**](docs/PaymentInitiationServicePISApi.md#get_explicit_counterparties_for_account) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties (Explicit)
+*OpenBankProject::PaymentInitiationServicePISApi* | [**get_explicit_counterparty_by_id**](docs/PaymentInitiationServicePISApi.md#get_explicit_counterparty_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id (Explicit)
+*OpenBankProject::PaymentInitiationServicePISApi* | [**get_transaction_request**](docs/PaymentInitiationServicePISApi.md#get_transaction_request) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-requests/{transactionrequestid} | Get Transaction Request
+*OpenBankProject::PaymentInitiationServicePISApi* | [**get_transaction_request_by_id**](docs/PaymentInitiationServicePISApi.md#get_transaction_request_by_id) | **GET** /obp/v5.1.0/management/transaction-requests/{transactionrequestid} | Get Transaction Request by ID
+*OpenBankProject::PaymentInitiationServicePISApi* | [**get_transaction_request_types**](docs/PaymentInitiationServicePISApi.md#get_transaction_request_types) | **GET** /obp/v1.4.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types | Get Transaction Request Types for Account
+*OpenBankProject::PaymentInitiationServicePISApi* | [**get_transaction_requests**](docs/PaymentInitiationServicePISApi.md#get_transaction_requests) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-requests | Get Transaction Requests
+*OpenBankProject::PersonApi* | [**add_customer_message**](docs/PersonApi.md#add_customer_message) | **POST** /obp/v1.4.0/banks/{bankid}/customer/{customerid}/messages | Create Customer Message
+*OpenBankProject::PersonApi* | [**create_agent**](docs/PersonApi.md#create_agent) | **POST** /obp/v5.1.0/banks/{bankid}/agents | Create Agent
+*OpenBankProject::PersonApi* | [**create_customer**](docs/PersonApi.md#create_customer) | **POST** /obp/v6.0.0/banks/{bankid}/customers | Create Customer
+*OpenBankProject::PersonApi* | [**create_customer_message**](docs/PersonApi.md#create_customer_message) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages | Create Customer Message
+*OpenBankProject::PersonApi* | [**update_agent_status**](docs/PersonApi.md#update_agent_status) | **PUT** /obp/v5.1.0/banks/{bankid}/agents/{agentid} | Update Agent status
+*OpenBankProject::PersonalDynamicEntityApi* | [**get_available_personal_dynamic_entities**](docs/PersonalDynamicEntityApi.md#get_available_personal_dynamic_entities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities
+*OpenBankProject::PrivateDataApi* | [**core_private_accounts_all_banks**](docs/PrivateDataApi.md#core_private_accounts_all_banks) | **GET** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private)
+*OpenBankProject::PrivateDataApi* | [**get_accounts_at_bank**](docs/PrivateDataApi.md#get_accounts_at_bank) | **GET** /obp/v6.0.0/banks/{bankid}/accounts | Get Accounts at Bank
+*OpenBankProject::ProductApi* | [**create_or_update_product_attribute_definition**](docs/ProductApi.md#create_or_update_product_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/product | Create or Update Product Attribute Definition
+*OpenBankProject::ProductApi* | [**create_product**](docs/ProductApi.md#create_product) | **PUT** /obp/v5.0.0/banks/{bankid}/products/{productcode} | Create Product
+*OpenBankProject::ProductApi* | [**create_product_attribute**](docs/ProductApi.md#create_product_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attribute | Create Product Attribute
+*OpenBankProject::ProductApi* | [**create_product_collection**](docs/ProductApi.md#create_product_collection) | **PUT** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Create Product Collection
+*OpenBankProject::ProductApi* | [**create_product_fee**](docs/ProductApi.md#create_product_fee) | **POST** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fee | Create Product Fee
+*OpenBankProject::ProductApi* | [**delete_product_attribute**](docs/ProductApi.md#delete_product_attribute) | **DELETE** /obp/v3.1.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Delete Product Attribute
+*OpenBankProject::ProductApi* | [**delete_product_attribute_definition**](docs/ProductApi.md#delete_product_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/product | Delete Product Attribute Definition
+*OpenBankProject::ProductApi* | [**delete_product_cascade**](docs/ProductApi.md#delete_product_cascade) | **DELETE** /obp/v4.0.0/management/cascading/banks/{bankid}/products/{productcode} | Delete Product Cascade
+*OpenBankProject::ProductApi* | [**delete_product_fee**](docs/ProductApi.md#delete_product_fee) | **DELETE** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid} | Delete Product Fee
+*OpenBankProject::ProductApi* | [**get_product**](docs/ProductApi.md#get_product) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode} | Get Bank Product
+*OpenBankProject::ProductApi* | [**get_product_attribute**](docs/ProductApi.md#get_product_attribute) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Get Product Attribute
+*OpenBankProject::ProductApi* | [**get_product_attribute_definition**](docs/ProductApi.md#get_product_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/product | Get Product Attribute Definition
+*OpenBankProject::ProductApi* | [**get_product_collection**](docs/ProductApi.md#get_product_collection) | **GET** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Get Product Collection
+*OpenBankProject::ProductApi* | [**get_product_fee**](docs/ProductApi.md#get_product_fee) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid} | Get Product Fee
+*OpenBankProject::ProductApi* | [**get_product_fees**](docs/ProductApi.md#get_product_fees) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees | Get Product Fees
+*OpenBankProject::ProductApi* | [**get_product_tree**](docs/ProductApi.md#get_product_tree) | **GET** /obp/v3.1.0/banks/{bankid}/product-tree/{productcode} | Get Product Tree
+*OpenBankProject::ProductApi* | [**get_products**](docs/ProductApi.md#get_products) | **GET** /obp/v4.0.0/banks/{bankid}/products | Get Products
+*OpenBankProject::ProductApi* | [**update_product_attribute**](docs/ProductApi.md#update_product_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Update Product Attribute
+*OpenBankProject::ProductApi* | [**update_product_fee**](docs/ProductApi.md#update_product_fee) | **PUT** /obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid} | Update Product Fee
+*OpenBankProject::ProductAttributeApi* | [**create_or_update_product_attribute_definition**](docs/ProductAttributeApi.md#create_or_update_product_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/product | Create or Update Product Attribute Definition
+*OpenBankProject::ProductAttributeApi* | [**create_product_attribute**](docs/ProductAttributeApi.md#create_product_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attribute | Create Product Attribute
+*OpenBankProject::ProductAttributeApi* | [**delete_product_attribute**](docs/ProductAttributeApi.md#delete_product_attribute) | **DELETE** /obp/v3.1.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Delete Product Attribute
+*OpenBankProject::ProductAttributeApi* | [**delete_product_attribute_definition**](docs/ProductAttributeApi.md#delete_product_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/product | Delete Product Attribute Definition
+*OpenBankProject::ProductAttributeApi* | [**get_product_attribute**](docs/ProductAttributeApi.md#get_product_attribute) | **GET** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Get Product Attribute
+*OpenBankProject::ProductAttributeApi* | [**get_product_attribute_definition**](docs/ProductAttributeApi.md#get_product_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/product | Get Product Attribute Definition
+*OpenBankProject::ProductAttributeApi* | [**update_product_attribute**](docs/ProductAttributeApi.md#update_product_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid} | Update Product Attribute
+*OpenBankProject::ProductCollectionApi* | [**create_product_collection**](docs/ProductCollectionApi.md#create_product_collection) | **PUT** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Create Product Collection
+*OpenBankProject::ProductCollectionApi* | [**get_product_collection**](docs/ProductCollectionApi.md#get_product_collection) | **GET** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Get Product Collection
+*OpenBankProject::PublicDataApi* | [**get_accounts_at_bank**](docs/PublicDataApi.md#get_accounts_at_bank) | **GET** /obp/v6.0.0/banks/{bankid}/accounts | Get Accounts at Bank
+*OpenBankProject::PublicDataApi* | [**public_accounts_all_banks**](docs/PublicDataApi.md#public_accounts_all_banks) | **GET** /obp/v2.0.0/accounts/public | Get Public Accounts at all Banks
+*OpenBankProject::PublicDataApi* | [**public_accounts_at_one_bank**](docs/PublicDataApi.md#public_accounts_at_one_bank) | **GET** /obp/v2.0.0/banks/{bankid}/accounts/public | Get Public Accounts at Bank
+*OpenBankProject::RateLimitsApi* | [**calls_limit**](docs/RateLimitsApi.md#calls_limit) | **PUT** /obp/v4.0.0/management/consumers/{consumerid}/consumer/call-limits | Set Rate Limits / Call Limits per Consumer
+*OpenBankProject::RateLimitsApi* | [**get_rate_limiting_info**](docs/RateLimitsApi.md#get_rate_limiting_info) | **GET** /obp/v3.1.0/rate-limiting | Get Rate Limiting Info
+*OpenBankProject::RateLimitsApi* | [**update_rate_limits**](docs/RateLimitsApi.md#update_rate_limits) | **PUT** /obp/v6.0.0/management/consumers/{consumerid}/consumer/rate-limits/{ratelimitingid} | Set Rate Limits / Call Limits per Consumer
+*OpenBankProject::RetailCustomerApi* | [**create_retail_customer**](docs/RetailCustomerApi.md#create_retail_customer) | **POST** /obp/v6.0.0/banks/{bankid}/retail-customers | Create Retail Customer
+*OpenBankProject::RetailCustomerApi* | [**get_retail_customer_by_customer_id**](docs/RetailCustomerApi.md#get_retail_customer_by_customer_id) | **GET** /obp/v6.0.0/banks/{bankid}/retail-customers/{customerid} | Get Retail Customer by CUSTOMER_ID
+*OpenBankProject::RetailCustomerApi* | [**get_retail_customers_at_one_bank**](docs/RetailCustomerApi.md#get_retail_customers_at_one_bank) | **GET** /obp/v6.0.0/banks/{bankid}/retail-customers | Get Retail Customers at Bank
+*OpenBankProject::RoleApi* | [**add_entitlement**](docs/RoleApi.md#add_entitlement) | **POST** /obp/v2.0.0/users/{userid}/entitlements | Add Entitlement for a User
+*OpenBankProject::RoleApi* | [**add_entitlement_request**](docs/RoleApi.md#add_entitlement_request) | **POST** /obp/v3.0.0/entitlement-requests | Create Entitlement Request for current User
+*OpenBankProject::RoleApi* | [**create_user_with_roles**](docs/RoleApi.md#create_user_with_roles) | **POST** /obp/v4.0.0/user-entitlements | Create (DAuth) User with Roles
+*OpenBankProject::RoleApi* | [**delete_entitlement**](docs/RoleApi.md#delete_entitlement) | **DELETE** /obp/v6.0.0/entitlements/{entitlementid} | Delete Entitlement
+*OpenBankProject::RoleApi* | [**delete_entitlement_request**](docs/RoleApi.md#delete_entitlement_request) | **DELETE** /obp/v3.0.0/entitlement-requests/{entitlementrequestid} | Delete Entitlement Request
+*OpenBankProject::RoleApi* | [**get_all_entitlement_requests**](docs/RoleApi.md#get_all_entitlement_requests) | **GET** /obp/v3.0.0/entitlement-requests | Get all Entitlement Requests
+*OpenBankProject::RoleApi* | [**get_all_entitlements**](docs/RoleApi.md#get_all_entitlements) | **GET** /obp/v3.1.0/entitlements | Get all Entitlements
+*OpenBankProject::RoleApi* | [**get_entitlement_requests**](docs/RoleApi.md#get_entitlement_requests) | **GET** /obp/v3.0.0/users/{userid}/entitlement-requests | Get Entitlement Requests for a User
+*OpenBankProject::RoleApi* | [**get_entitlement_requests_for_current_user**](docs/RoleApi.md#get_entitlement_requests_for_current_user) | **GET** /obp/v3.0.0/my/entitlement-requests | Get Entitlement Requests for the current User
+*OpenBankProject::RoleApi* | [**get_entitlements**](docs/RoleApi.md#get_entitlements) | **GET** /obp/v4.0.0/users/{userid}/entitlements | Get Entitlements for User
+*OpenBankProject::RoleApi* | [**get_entitlements_and_permissions**](docs/RoleApi.md#get_entitlements_and_permissions) | **GET** /obp/v5.1.0/users/{userid}/entitlements-and-permissions | Get Entitlements and Permissions for a User
+*OpenBankProject::RoleApi* | [**get_entitlements_by_bank_and_user**](docs/RoleApi.md#get_entitlements_by_bank_and_user) | **GET** /obp/v2.1.0/banks/{bankid}/users/{userid}/entitlements | Get Entitlements for User at Bank
+*OpenBankProject::RoleApi* | [**get_entitlements_for_bank**](docs/RoleApi.md#get_entitlements_for_bank) | **GET** /obp/v4.0.0/banks/{bankid}/entitlements | Get Entitlements for One Bank
+*OpenBankProject::RoleApi* | [**get_entitlements_for_current_user**](docs/RoleApi.md#get_entitlements_for_current_user) | **GET** /obp/v3.0.0/my/entitlements | Get Entitlements for the current User
+*OpenBankProject::RoleApi* | [**get_roles**](docs/RoleApi.md#get_roles) | **GET** /obp/v2.1.0/roles | Get Roles
+*OpenBankProject::RoleApi* | [**get_roles_with_entitlement_counts_at_all_banks**](docs/RoleApi.md#get_roles_with_entitlement_counts_at_all_banks) | **GET** /obp/v6.0.0/management/roles-with-entitlement-counts | Get Roles with Entitlement Counts
+*OpenBankProject::SandboxApi* | [**sandbox_data_import**](docs/SandboxApi.md#sandbox_data_import) | **POST** /obp/v2.1.0/sandbox/data-import | Create sandbox
+*OpenBankProject::ScopeApi* | [**add_scope**](docs/ScopeApi.md#add_scope) | **POST** /obp/v4.0.0/consumers/{consumerid}/scopes | Create Scope for a Consumer
+*OpenBankProject::ScopeApi* | [**delete_scope**](docs/ScopeApi.md#delete_scope) | **DELETE** /obp/v3.0.0/consumers/{consumerid}/scope/{scopeid} | Delete Consumer Scope
+*OpenBankProject::ScopeApi* | [**get_scopes**](docs/ScopeApi.md#get_scopes) | **GET** /obp/v4.0.0/consumers/{consumerid}/scopes | Get Scopes for Consumer
+*OpenBankProject::SignalApi* | [**delete_signal_channel**](docs/SignalApi.md#delete_signal_channel) | **DELETE** /obp/v6.0.0/signal/channels/{channelname} | Delete Signal Channel
+*OpenBankProject::SignalApi* | [**get_signal_channel_info**](docs/SignalApi.md#get_signal_channel_info) | **GET** /obp/v6.0.0/signal/channels/{channelname}/info | Get Signal Channel Info
+*OpenBankProject::SignalApi* | [**get_signal_channels**](docs/SignalApi.md#get_signal_channels) | **GET** /obp/v6.0.0/signal/channels | List Signal Channels
+*OpenBankProject::SignalApi* | [**get_signal_messages**](docs/SignalApi.md#get_signal_messages) | **GET** /obp/v6.0.0/signal/channels/{channelname}/messages | Get Signal Messages
+*OpenBankProject::SignalApi* | [**get_signal_stats**](docs/SignalApi.md#get_signal_stats) | **GET** /obp/v6.0.0/signal/channels/stats | Get Signal Channel Stats
+*OpenBankProject::SignalApi* | [**publish_signal_message**](docs/SignalApi.md#publish_signal_message) | **POST** /obp/v6.0.0/signal/channels/{channelname}/messages | Publish Signal Message
+*OpenBankProject::SignallingApi* | [**delete_signal_channel**](docs/SignallingApi.md#delete_signal_channel) | **DELETE** /obp/v6.0.0/signal/channels/{channelname} | Delete Signal Channel
+*OpenBankProject::SignallingApi* | [**get_signal_channel_info**](docs/SignallingApi.md#get_signal_channel_info) | **GET** /obp/v6.0.0/signal/channels/{channelname}/info | Get Signal Channel Info
+*OpenBankProject::SignallingApi* | [**get_signal_channels**](docs/SignallingApi.md#get_signal_channels) | **GET** /obp/v6.0.0/signal/channels | List Signal Channels
+*OpenBankProject::SignallingApi* | [**get_signal_messages**](docs/SignallingApi.md#get_signal_messages) | **GET** /obp/v6.0.0/signal/channels/{channelname}/messages | Get Signal Messages
+*OpenBankProject::SignallingApi* | [**get_signal_stats**](docs/SignallingApi.md#get_signal_stats) | **GET** /obp/v6.0.0/signal/channels/stats | Get Signal Channel Stats
+*OpenBankProject::SignallingApi* | [**publish_signal_message**](docs/SignallingApi.md#publish_signal_message) | **POST** /obp/v6.0.0/signal/channels/{channelname}/messages | Publish Signal Message
+*OpenBankProject::StandingOrderApi* | [**create_standing_order**](docs/StandingOrderApi.md#create_standing_order) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/standing-order | Create Standing Order
+*OpenBankProject::StandingOrderApi* | [**create_standing_order_management**](docs/StandingOrderApi.md#create_standing_order_management) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/standing-order | Create Standing Order (management)
+*OpenBankProject::SystemApi* | [**get_cache_config**](docs/SystemApi.md#get_cache_config) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration
+*OpenBankProject::SystemApi* | [**get_cache_info**](docs/SystemApi.md#get_cache_info) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information
+*OpenBankProject::SystemApi* | [**get_cache_namespaces**](docs/SystemApi.md#get_cache_namespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces
+*OpenBankProject::SystemApi* | [**get_connector_method_names**](docs/SystemApi.md#get_connector_method_names) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names
+*OpenBankProject::SystemApi* | [**get_connectors**](docs/SystemApi.md#get_connectors) | **GET** /obp/v6.0.0/system/connectors | Get Connectors
+*OpenBankProject::SystemApi* | [**get_database_pool_info**](docs/SystemApi.md#get_database_pool_info) | **GET** /obp/v6.0.0/system/database/pool | Get Database Pool Information
+*OpenBankProject::SystemApi* | [**get_migrations**](docs/SystemApi.md#get_migrations) | **GET** /obp/v6.0.0/system/migrations | Get Database Migrations
+*OpenBankProject::SystemApi* | [**get_stored_procedure_connector_health**](docs/SystemApi.md#get_stored_procedure_connector_health) | **GET** /obp/v6.0.0/system/connectors/stored_procedure_vDec2019/health | Get Stored Procedure Connector Health
+*OpenBankProject::SystemApi* | [**invalidate_cache_namespace**](docs/SystemApi.md#invalidate_cache_namespace) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace
+*OpenBankProject::SystemApi* | [**log_cache_all_endpoint**](docs/SystemApi.md#log_cache_all_endpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache
+*OpenBankProject::SystemApi* | [**log_cache_debug_endpoint**](docs/SystemApi.md#log_cache_debug_endpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache
+*OpenBankProject::SystemApi* | [**log_cache_error_endpoint**](docs/SystemApi.md#log_cache_error_endpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache
+*OpenBankProject::SystemApi* | [**log_cache_info_endpoint**](docs/SystemApi.md#log_cache_info_endpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache
+*OpenBankProject::SystemApi* | [**log_cache_trace_endpoint**](docs/SystemApi.md#log_cache_trace_endpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache
+*OpenBankProject::SystemApi* | [**log_cache_warning_endpoint**](docs/SystemApi.md#log_cache_warning_endpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache
+*OpenBankProject::SystemIntegrityApi* | [**account_access_unique_index_check**](docs/SystemIntegrityApi.md#account_access_unique_index_check) | **GET** /obp/v5.1.0/management/system/integrity/account-access-unique-index-1-check | Check Unique Index at Account Access
+*OpenBankProject::SystemIntegrityApi* | [**account_currency_check**](docs/SystemIntegrityApi.md#account_currency_check) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/account-currency-check | Check for Sensible Currencies
+*OpenBankProject::SystemIntegrityApi* | [**custom_view_names_check**](docs/SystemIntegrityApi.md#custom_view_names_check) | **GET** /obp/v5.1.0/management/system/integrity/custom-view-names-check | Check Custom View Names
+*OpenBankProject::SystemIntegrityApi* | [**orphaned_account_check**](docs/SystemIntegrityApi.md#orphaned_account_check) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/orphaned-account-check | Check for Orphaned Accounts
+*OpenBankProject::SystemIntegrityApi* | [**system_view_names_check**](docs/SystemIntegrityApi.md#system_view_names_check) | **GET** /obp/v5.1.0/management/system/integrity/system-view-names-check | Check System View Names
+*OpenBankProject::TransactionApi* | [**add_comment_for_view_on_transaction**](docs/TransactionApi.md#add_comment_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Add a Transaction Comment
+*OpenBankProject::TransactionApi* | [**add_image_for_view_on_transaction**](docs/TransactionApi.md#add_image_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Add a Transaction Image
+*OpenBankProject::TransactionApi* | [**add_tag_for_view_on_transaction**](docs/TransactionApi.md#add_tag_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Add a Transaction Tag
+*OpenBankProject::TransactionApi* | [**add_transaction_narrative**](docs/TransactionApi.md#add_transaction_narrative) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Add a Transaction Narrative
+*OpenBankProject::TransactionApi* | [**add_where_tag_for_view_on_transaction**](docs/TransactionApi.md#add_where_tag_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Add a Transaction where Tag
+*OpenBankProject::TransactionApi* | [**create_or_update_transaction_attribute_definition**](docs/TransactionApi.md#create_or_update_transaction_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Create or Update Transaction Attribute Definition
+*OpenBankProject::TransactionApi* | [**create_transaction_attribute**](docs/TransactionApi.md#create_transaction_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attribute | Create Transaction Attribute
+*OpenBankProject::TransactionApi* | [**delete_comment_for_view_on_transaction**](docs/TransactionApi.md#delete_comment_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments/{commentid} | Delete a Transaction Comment
+*OpenBankProject::TransactionApi* | [**delete_image_for_view_on_transaction**](docs/TransactionApi.md#delete_image_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images/{imageid} | Delete a Transaction Image
+*OpenBankProject::TransactionApi* | [**delete_tag_for_view_on_transaction**](docs/TransactionApi.md#delete_tag_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags/{tagid} | Delete a Transaction Tag
+*OpenBankProject::TransactionApi* | [**delete_transaction_attribute_definition**](docs/TransactionApi.md#delete_transaction_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction | Delete Transaction Attribute Definition
+*OpenBankProject::TransactionApi* | [**delete_transaction_cascade**](docs/TransactionApi.md#delete_transaction_cascade) | **DELETE** /obp/v4.0.0/management/cascading/banks/{bankid}/accounts/{accountid}/transactions/{transactionid} | Delete Transaction Cascade
+*OpenBankProject::TransactionApi* | [**delete_transaction_narrative**](docs/TransactionApi.md#delete_transaction_narrative) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Delete a Transaction Narrative
+*OpenBankProject::TransactionApi* | [**delete_where_tag_for_view_on_transaction**](docs/TransactionApi.md#delete_where_tag_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Delete a Transaction Tag
+*OpenBankProject::TransactionApi* | [**get_balancing_transaction**](docs/TransactionApi.md#get_balancing_transaction) | **GET** /obp/v4.0.0/transactions/{transactionid}/balancing-transaction | Get Balancing Transaction
+*OpenBankProject::TransactionApi* | [**get_comments_for_view_on_transaction**](docs/TransactionApi.md#get_comments_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Get Transaction Comments
+*OpenBankProject::TransactionApi* | [**get_core_transactions_for_bank_account**](docs/TransactionApi.md#get_core_transactions_for_bank_account) | **GET** /obp/v3.0.0/my/banks/{bankid}/accounts/{accountid}/transactions | Get Transactions for Account (Core)
+*OpenBankProject::TransactionApi* | [**get_double_entry_transaction**](docs/TransactionApi.md#get_double_entry_transaction) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/double-entry-transaction | Get Double Entry Transaction
+*OpenBankProject::TransactionApi* | [**get_firehose_transactions_for_bank_account**](docs/TransactionApi.md#get_firehose_transactions_for_bank_account) | **GET** /obp/v3.0.0/banks/{bankid}/firehose/accounts/{accountid}/views/{viewid}/transactions | Get Firehose Transactions for Account
+*OpenBankProject::TransactionApi* | [**get_images_for_view_on_transaction**](docs/TransactionApi.md#get_images_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Get Transaction Images
+*OpenBankProject::TransactionApi* | [**get_other_account_for_transaction**](docs/TransactionApi.md#get_other_account_for_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/other_account | Get Other Account of Transaction
+*OpenBankProject::TransactionApi* | [**get_tags_for_view_on_transaction**](docs/TransactionApi.md#get_tags_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Get Transaction Tags
+*OpenBankProject::TransactionApi* | [**get_transaction_attribute_by_id**](docs/TransactionApi.md#get_transaction_attribute_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{attributeid} | Get Transaction Attribute By Id
+*OpenBankProject::TransactionApi* | [**get_transaction_attribute_definition**](docs/TransactionApi.md#get_transaction_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Get Transaction Attribute Definition
+*OpenBankProject::TransactionApi* | [**get_transaction_attributes**](docs/TransactionApi.md#get_transaction_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes | Get Transaction Attributes
+*OpenBankProject::TransactionApi* | [**get_transaction_by_id_for_bank_account**](docs/TransactionApi.md#get_transaction_by_id_for_bank_account) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/transaction | Get Transaction by Id
+*OpenBankProject::TransactionApi* | [**get_transaction_narrative**](docs/TransactionApi.md#get_transaction_narrative) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Get a Transaction Narrative
+*OpenBankProject::TransactionApi* | [**get_transactions_for_bank_account**](docs/TransactionApi.md#get_transactions_for_bank_account) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions | Get Transactions for Account (Full)
+*OpenBankProject::TransactionApi* | [**get_where_tag_for_view_on_transaction**](docs/TransactionApi.md#get_where_tag_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Get a Transaction where Tag
+*OpenBankProject::TransactionApi* | [**update_transaction_attribute**](docs/TransactionApi.md#update_transaction_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{accountattributeid} | Update Transaction Attribute
+*OpenBankProject::TransactionApi* | [**update_transaction_narrative**](docs/TransactionApi.md#update_transaction_narrative) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Update a Transaction Narrative
+*OpenBankProject::TransactionApi* | [**update_where_tag_for_view_on_transaction**](docs/TransactionApi.md#update_where_tag_for_view_on_transaction) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Update a Transaction where Tag
+*OpenBankProject::TransactionAttributeApi* | [**create_or_update_transaction_attribute_definition**](docs/TransactionAttributeApi.md#create_or_update_transaction_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Create or Update Transaction Attribute Definition
+*OpenBankProject::TransactionAttributeApi* | [**create_transaction_attribute**](docs/TransactionAttributeApi.md#create_transaction_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attribute | Create Transaction Attribute
+*OpenBankProject::TransactionAttributeApi* | [**delete_transaction_attribute_definition**](docs/TransactionAttributeApi.md#delete_transaction_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction | Delete Transaction Attribute Definition
+*OpenBankProject::TransactionAttributeApi* | [**get_transaction_attribute_by_id**](docs/TransactionAttributeApi.md#get_transaction_attribute_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{attributeid} | Get Transaction Attribute By Id
+*OpenBankProject::TransactionAttributeApi* | [**get_transaction_attribute_definition**](docs/TransactionAttributeApi.md#get_transaction_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Get Transaction Attribute Definition
+*OpenBankProject::TransactionAttributeApi* | [**get_transaction_attributes**](docs/TransactionAttributeApi.md#get_transaction_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes | Get Transaction Attributes
+*OpenBankProject::TransactionAttributeApi* | [**update_transaction_attribute**](docs/TransactionAttributeApi.md#update_transaction_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{accountattributeid} | Update Transaction Attribute
+*OpenBankProject::TransactionFirehoseApi* | [**get_firehose_transactions_for_bank_account**](docs/TransactionFirehoseApi.md#get_firehose_transactions_for_bank_account) | **GET** /obp/v3.0.0/banks/{bankid}/firehose/accounts/{accountid}/views/{viewid}/transactions | Get Firehose Transactions for Account
+*OpenBankProject::TransactionMetadataApi* | [**add_comment_for_view_on_transaction**](docs/TransactionMetadataApi.md#add_comment_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Add a Transaction Comment
+*OpenBankProject::TransactionMetadataApi* | [**add_image_for_view_on_transaction**](docs/TransactionMetadataApi.md#add_image_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Add a Transaction Image
+*OpenBankProject::TransactionMetadataApi* | [**add_tag_for_view_on_transaction**](docs/TransactionMetadataApi.md#add_tag_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Add a Transaction Tag
+*OpenBankProject::TransactionMetadataApi* | [**add_transaction_narrative**](docs/TransactionMetadataApi.md#add_transaction_narrative) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Add a Transaction Narrative
+*OpenBankProject::TransactionMetadataApi* | [**add_where_tag_for_view_on_transaction**](docs/TransactionMetadataApi.md#add_where_tag_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Add a Transaction where Tag
+*OpenBankProject::TransactionMetadataApi* | [**delete_comment_for_view_on_transaction**](docs/TransactionMetadataApi.md#delete_comment_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments/{commentid} | Delete a Transaction Comment
+*OpenBankProject::TransactionMetadataApi* | [**delete_image_for_view_on_transaction**](docs/TransactionMetadataApi.md#delete_image_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images/{imageid} | Delete a Transaction Image
+*OpenBankProject::TransactionMetadataApi* | [**delete_tag_for_view_on_transaction**](docs/TransactionMetadataApi.md#delete_tag_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags/{tagid} | Delete a Transaction Tag
+*OpenBankProject::TransactionMetadataApi* | [**delete_transaction_narrative**](docs/TransactionMetadataApi.md#delete_transaction_narrative) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Delete a Transaction Narrative
+*OpenBankProject::TransactionMetadataApi* | [**delete_where_tag_for_view_on_transaction**](docs/TransactionMetadataApi.md#delete_where_tag_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Delete a Transaction Tag
+*OpenBankProject::TransactionMetadataApi* | [**get_comments_for_view_on_transaction**](docs/TransactionMetadataApi.md#get_comments_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Get Transaction Comments
+*OpenBankProject::TransactionMetadataApi* | [**get_images_for_view_on_transaction**](docs/TransactionMetadataApi.md#get_images_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Get Transaction Images
+*OpenBankProject::TransactionMetadataApi* | [**get_tags_for_view_on_transaction**](docs/TransactionMetadataApi.md#get_tags_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Get Transaction Tags
+*OpenBankProject::TransactionMetadataApi* | [**get_transaction_narrative**](docs/TransactionMetadataApi.md#get_transaction_narrative) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Get a Transaction Narrative
+*OpenBankProject::TransactionMetadataApi* | [**get_where_tag_for_view_on_transaction**](docs/TransactionMetadataApi.md#get_where_tag_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Get a Transaction where Tag
+*OpenBankProject::TransactionMetadataApi* | [**update_transaction_narrative**](docs/TransactionMetadataApi.md#update_transaction_narrative) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Update a Transaction Narrative
+*OpenBankProject::TransactionMetadataApi* | [**update_where_tag_for_view_on_transaction**](docs/TransactionMetadataApi.md#update_where_tag_for_view_on_transaction) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Update a Transaction where Tag
+*OpenBankProject::TransactionRequestApi* | [**answer_transaction_request_challenge**](docs/TransactionRequestApi.md#answer_transaction_request_challenge) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{transactionrequesttype}/transaction-requests/{transactionrequestid}/challenge | Answer Transaction Request Challenge
+*OpenBankProject::TransactionRequestApi* | [**create_historical_transaction_at_bank**](docs/TransactionRequestApi.md#create_historical_transaction_at_bank) | **POST** /obp/v4.0.0/banks/{bankid}/management/historical/transactions | Create Historical Transactions 
+*OpenBankProject::TransactionRequestApi* | [**create_or_update_transaction_request_attribute_definition**](docs/TransactionRequestApi.md#create_or_update_transaction_request_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Create or Update Transaction Request Attribute Definition
+*OpenBankProject::TransactionRequestApi* | [**create_transaction_request_account**](docs/TransactionRequestApi.md#create_transaction_request_account) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{account}/transaction-requests | Create Transaction Request (ACCOUNT)
+*OpenBankProject::TransactionRequestApi* | [**create_transaction_request_account_otp**](docs/TransactionRequestApi.md#create_transaction_request_account_otp) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{accountotp}/transaction-requests | Create Transaction Request (ACCOUNT_OTP)
+*OpenBankProject::TransactionRequestApi* | [**create_transaction_request_agent_cash_with_drawal**](docs/TransactionRequestApi.md#create_transaction_request_agent_cash_with_drawal) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{agentcashwithdrawal}/transaction-requests | Create Transaction Request (AGENT_CASH_WITHDRAWAL)
+*OpenBankProject::TransactionRequestApi* | [**create_transaction_request_attribute**](docs/TransactionRequestApi.md#create_transaction_request_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attribute | Create Transaction Request Attribute
+*OpenBankProject::TransactionRequestApi* | [**create_transaction_request_card**](docs/TransactionRequestApi.md#create_transaction_request_card) | **POST** /obp/v4.0.0/transaction-request-types/{card}/transaction-requests | Create Transaction Request (CARD)
+*OpenBankProject::TransactionRequestApi* | [**create_transaction_request_cardano**](docs/TransactionRequestApi.md#create_transaction_request_cardano) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{cardano}/transaction-requests | Create Transaction Request (CARDANO)
+*OpenBankProject::TransactionRequestApi* | [**create_transaction_request_counterparty**](docs/TransactionRequestApi.md#create_transaction_request_counterparty) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{counterparty}/transaction-requests | Create Transaction Request (COUNTERPARTY)
+*OpenBankProject::TransactionRequestApi* | [**create_transaction_request_eth_send_raw_transaction**](docs/TransactionRequestApi.md#create_transaction_request_eth_send_raw_transaction) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendrawtransaction}/transaction-requests | CREATE TRANSACTION REQUEST (ETH_SEND_RAW_TRANSACTION )
+*OpenBankProject::TransactionRequestApi* | [**create_transaction_request_ethereume_send_transaction**](docs/TransactionRequestApi.md#create_transaction_request_ethereume_send_transaction) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendtransaction}/transaction-requests | Create Transaction Request (ETH_SEND_TRANSACTION)
+*OpenBankProject::TransactionRequestApi* | [**create_transaction_request_free_form**](docs/TransactionRequestApi.md#create_transaction_request_free_form) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{freeform}/transaction-requests | Create Transaction Request (FREE_FORM)
+*OpenBankProject::TransactionRequestApi* | [**create_transaction_request_hold**](docs/TransactionRequestApi.md#create_transaction_request_hold) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{hold}/transaction-requests | Create Transaction Request (HOLD)
+*OpenBankProject::TransactionRequestApi* | [**create_transaction_request_refund**](docs/TransactionRequestApi.md#create_transaction_request_refund) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{refund}/transaction-requests | Create Transaction Request (REFUND)
+*OpenBankProject::TransactionRequestApi* | [**create_transaction_request_sandbox_tan**](docs/TransactionRequestApi.md#create_transaction_request_sandbox_tan) | **POST** /obp/v2.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sandboxtan}/transaction-requests | Create Transaction Request (SANDBOX_TAN)
+*OpenBankProject::TransactionRequestApi* | [**create_transaction_request_sepa**](docs/TransactionRequestApi.md#create_transaction_request_sepa) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sepa}/transaction-requests | Create Transaction Request (SEPA)
+*OpenBankProject::TransactionRequestApi* | [**create_transaction_request_simple**](docs/TransactionRequestApi.md#create_transaction_request_simple) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{simple}/transaction-requests | Create Transaction Request (SIMPLE)
+*OpenBankProject::TransactionRequestApi* | [**create_vrp_consent_request**](docs/TransactionRequestApi.md#create_vrp_consent_request) | **POST** /obp/v5.1.0/consumer/vrp-consent-requests | Create Consent Request VRP
+*OpenBankProject::TransactionRequestApi* | [**delete_transaction_request_attribute_definition**](docs/TransactionRequestApi.md#delete_transaction_request_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction-request | Delete Transaction Request Attribute Definition
+*OpenBankProject::TransactionRequestApi* | [**get_transaction_request**](docs/TransactionRequestApi.md#get_transaction_request) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-requests/{transactionrequestid} | Get Transaction Request
+*OpenBankProject::TransactionRequestApi* | [**get_transaction_request_attribute_by_id**](docs/TransactionRequestApi.md#get_transaction_request_attribute_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Get Transaction Request Attribute By Id
+*OpenBankProject::TransactionRequestApi* | [**get_transaction_request_attribute_definition**](docs/TransactionRequestApi.md#get_transaction_request_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Get Transaction Request Attribute Definition
+*OpenBankProject::TransactionRequestApi* | [**get_transaction_request_attributes**](docs/TransactionRequestApi.md#get_transaction_request_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes | Get Transaction Request Attributes
+*OpenBankProject::TransactionRequestApi* | [**get_transaction_request_by_id**](docs/TransactionRequestApi.md#get_transaction_request_by_id) | **GET** /obp/v5.1.0/management/transaction-requests/{transactionrequestid} | Get Transaction Request by ID
+*OpenBankProject::TransactionRequestApi* | [**get_transaction_request_types**](docs/TransactionRequestApi.md#get_transaction_request_types) | **GET** /obp/v1.4.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types | Get Transaction Request Types for Account
+*OpenBankProject::TransactionRequestApi* | [**get_transaction_request_types_supported_by_bank**](docs/TransactionRequestApi.md#get_transaction_request_types_supported_by_bank) | **GET** /obp/v2.1.0/banks/{bankid}/transaction-request-types | Get Transaction Request Types at Bank
+*OpenBankProject::TransactionRequestApi* | [**get_transaction_requests**](docs/TransactionRequestApi.md#get_transaction_requests) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-requests | Get Transaction Requests
+*OpenBankProject::TransactionRequestApi* | [**save_historical_transaction**](docs/TransactionRequestApi.md#save_historical_transaction) | **POST** /obp/v3.1.0/management/historical/transactions  | Save Historical Transactions 
+*OpenBankProject::TransactionRequestApi* | [**update_transaction_request_attribute**](docs/TransactionRequestApi.md#update_transaction_request_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Update Transaction Request Attribute
+*OpenBankProject::TransactionRequestApi* | [**update_transaction_request_status**](docs/TransactionRequestApi.md#update_transaction_request_status) | **PUT** /obp/v5.1.0/management/transaction-requests/{transactionrequestid} | Update Transaction Request Status
+*OpenBankProject::TransactionRequestAttributeApi* | [**create_or_update_transaction_request_attribute_definition**](docs/TransactionRequestAttributeApi.md#create_or_update_transaction_request_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Create or Update Transaction Request Attribute Definition
+*OpenBankProject::TransactionRequestAttributeApi* | [**create_transaction_request_attribute**](docs/TransactionRequestAttributeApi.md#create_transaction_request_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attribute | Create Transaction Request Attribute
+*OpenBankProject::TransactionRequestAttributeApi* | [**delete_transaction_request_attribute_definition**](docs/TransactionRequestAttributeApi.md#delete_transaction_request_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction-request | Delete Transaction Request Attribute Definition
+*OpenBankProject::TransactionRequestAttributeApi* | [**get_transaction_request_attribute_by_id**](docs/TransactionRequestAttributeApi.md#get_transaction_request_attribute_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Get Transaction Request Attribute By Id
+*OpenBankProject::TransactionRequestAttributeApi* | [**get_transaction_request_attribute_definition**](docs/TransactionRequestAttributeApi.md#get_transaction_request_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Get Transaction Request Attribute Definition
+*OpenBankProject::TransactionRequestAttributeApi* | [**get_transaction_request_attributes**](docs/TransactionRequestAttributeApi.md#get_transaction_request_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes | Get Transaction Request Attributes
+*OpenBankProject::TransactionRequestAttributeApi* | [**update_transaction_request_attribute**](docs/TransactionRequestAttributeApi.md#update_transaction_request_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Update Transaction Request Attribute
+*OpenBankProject::UserApi* | [**add_entitlement**](docs/UserApi.md#add_entitlement) | **POST** /obp/v2.0.0/users/{userid}/entitlements | Add Entitlement for a User
+*OpenBankProject::UserApi* | [**add_entitlement_request**](docs/UserApi.md#add_entitlement_request) | **POST** /obp/v3.0.0/entitlement-requests | Create Entitlement Request for current User
+*OpenBankProject::UserApi* | [**add_user_to_group**](docs/UserApi.md#add_user_to_group) | **POST** /obp/v6.0.0/users/{userid}/group-entitlements | Grant User Membership to Group Entitlements
+*OpenBankProject::UserApi* | [**answer_user_auth_context_update_challenge**](docs/UserApi.md#answer_user_auth_context_update_challenge) | **POST** /obp/v5.0.0/banks/{bankid}/users/current/auth-context-updates/{authcontextupdateid}/challenge | Answer User Auth Context Update Challenge
+*OpenBankProject::UserApi* | [**create_personal_data_field**](docs/UserApi.md#create_personal_data_field) | **POST** /obp/v6.0.0/my/personal-data-fields | Create Personal Data Field
+*OpenBankProject::UserApi* | [**create_user**](docs/UserApi.md#create_user) | **POST** /obp/v6.0.0/users | Create User (v6.0.0)
+*OpenBankProject::UserApi* | [**create_user_attribute**](docs/UserApi.md#create_user_attribute) | **POST** /obp/v6.0.0/users/{userid}/attributes | Create User Attribute
+*OpenBankProject::UserApi* | [**create_user_auth_context**](docs/UserApi.md#create_user_auth_context) | **POST** /obp/v5.0.0/users/{userid}/auth-context | Create User Auth Context
+*OpenBankProject::UserApi* | [**create_user_auth_context_update_request**](docs/UserApi.md#create_user_auth_context_update_request) | **POST** /obp/v5.0.0/banks/{bankid}/users/current/auth-context-updates/{scamethod} | Create User Auth Context Update Request
+*OpenBankProject::UserApi* | [**create_user_customer_links**](docs/UserApi.md#create_user_customer_links) | **POST** /obp/v4.0.0/banks/{bankid}/user_customer_links | Create User Customer Link
+*OpenBankProject::UserApi* | [**create_user_with_account_access_by_id**](docs/UserApi.md#create_user_with_account_access_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/user-account-access | Create (DAuth) User with Account Access
+*OpenBankProject::UserApi* | [**create_user_with_roles**](docs/UserApi.md#create_user_with_roles) | **POST** /obp/v4.0.0/user-entitlements | Create (DAuth) User with Roles
+*OpenBankProject::UserApi* | [**delete_entitlement**](docs/UserApi.md#delete_entitlement) | **DELETE** /obp/v6.0.0/entitlements/{entitlementid} | Delete Entitlement
+*OpenBankProject::UserApi* | [**delete_entitlement_request**](docs/UserApi.md#delete_entitlement_request) | **DELETE** /obp/v3.0.0/entitlement-requests/{entitlementrequestid} | Delete Entitlement Request
+*OpenBankProject::UserApi* | [**delete_personal_data_field**](docs/UserApi.md#delete_personal_data_field) | **DELETE** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Delete Personal Data Field
+*OpenBankProject::UserApi* | [**delete_user**](docs/UserApi.md#delete_user) | **DELETE** /obp/v4.0.0/users/{userid} | Delete a User
+*OpenBankProject::UserApi* | [**delete_user_attribute**](docs/UserApi.md#delete_user_attribute) | **DELETE** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Delete User Attribute
+*OpenBankProject::UserApi* | [**delete_user_auth_context_by_id**](docs/UserApi.md#delete_user_auth_context_by_id) | **DELETE** /obp/v3.1.0/users/{userid}/auth-context/{userauthcontextid} | Delete User Auth Context
+*OpenBankProject::UserApi* | [**delete_user_auth_contexts**](docs/UserApi.md#delete_user_auth_contexts) | **DELETE** /obp/v3.1.0/users/{userid}/auth-context | Delete User's Auth Contexts
+*OpenBankProject::UserApi* | [**direct_login_endpoint**](docs/UserApi.md#direct_login_endpoint) | **POST** /obp/v6.0.0/my/logins/direct | Direct Login
+*OpenBankProject::UserApi* | [**get_all_entitlement_requests**](docs/UserApi.md#get_all_entitlement_requests) | **GET** /obp/v3.0.0/entitlement-requests | Get all Entitlement Requests
+*OpenBankProject::UserApi* | [**get_current_user**](docs/UserApi.md#get_current_user) | **GET** /obp/v6.0.0/users/current | Get User (Current)
+*OpenBankProject::UserApi* | [**get_current_user_id**](docs/UserApi.md#get_current_user_id) | **GET** /obp/v4.0.0/users/current/user_id | Get User Id (Current)
+*OpenBankProject::UserApi* | [**get_customers_at_all_banks**](docs/UserApi.md#get_customers_at_all_banks) | **GET** /obp/v6.0.0/customers | Get Customers at All Banks
+*OpenBankProject::UserApi* | [**get_customers_at_one_bank**](docs/UserApi.md#get_customers_at_one_bank) | **GET** /obp/v6.0.0/banks/{bankid}/customers | Get Customers at Bank
+*OpenBankProject::UserApi* | [**get_customers_for_user**](docs/UserApi.md#get_customers_for_user) | **GET** /obp/v3.0.0/users/current/customers | Get Customers for Current User
+*OpenBankProject::UserApi* | [**get_customers_for_user_ids_only**](docs/UserApi.md#get_customers_for_user_ids_only) | **GET** /obp/v5.1.0/users/current/customers/customer_ids | Get Customers for Current User (IDs only)
+*OpenBankProject::UserApi* | [**get_customers_minimal_at_any_bank**](docs/UserApi.md#get_customers_minimal_at_any_bank) | **GET** /obp/v4.0.0/customers-minimal | Get Customers Minimal at Any Bank
+*OpenBankProject::UserApi* | [**get_customers_minimal_at_one_bank**](docs/UserApi.md#get_customers_minimal_at_one_bank) | **GET** /obp/v5.0.0/banks/{bankid}/customers-minimal | Get Customers Minimal at Bank
+*OpenBankProject::UserApi* | [**get_entitlement_requests**](docs/UserApi.md#get_entitlement_requests) | **GET** /obp/v3.0.0/users/{userid}/entitlement-requests | Get Entitlement Requests for a User
+*OpenBankProject::UserApi* | [**get_entitlement_requests_for_current_user**](docs/UserApi.md#get_entitlement_requests_for_current_user) | **GET** /obp/v3.0.0/my/entitlement-requests | Get Entitlement Requests for the current User
+*OpenBankProject::UserApi* | [**get_entitlements**](docs/UserApi.md#get_entitlements) | **GET** /obp/v4.0.0/users/{userid}/entitlements | Get Entitlements for User
+*OpenBankProject::UserApi* | [**get_entitlements_and_permissions**](docs/UserApi.md#get_entitlements_and_permissions) | **GET** /obp/v5.1.0/users/{userid}/entitlements-and-permissions | Get Entitlements and Permissions for a User
+*OpenBankProject::UserApi* | [**get_entitlements_by_bank_and_user**](docs/UserApi.md#get_entitlements_by_bank_and_user) | **GET** /obp/v2.1.0/banks/{bankid}/users/{userid}/entitlements | Get Entitlements for User at Bank
+*OpenBankProject::UserApi* | [**get_entitlements_for_bank**](docs/UserApi.md#get_entitlements_for_bank) | **GET** /obp/v4.0.0/banks/{bankid}/entitlements | Get Entitlements for One Bank
+*OpenBankProject::UserApi* | [**get_entitlements_for_current_user**](docs/UserApi.md#get_entitlements_for_current_user) | **GET** /obp/v3.0.0/my/entitlements | Get Entitlements for the current User
+*OpenBankProject::UserApi* | [**get_logout_link**](docs/UserApi.md#get_logout_link) | **GET** /obp/v4.0.0/users/current/logout-link | Get Logout Link
+*OpenBankProject::UserApi* | [**get_my_customers_at_any_bank**](docs/UserApi.md#get_my_customers_at_any_bank) | **GET** /obp/v5.0.0/my/customers | Get My Customers
+*OpenBankProject::UserApi* | [**get_my_spaces**](docs/UserApi.md#get_my_spaces) | **GET** /obp/v4.0.0/my/spaces | Get My Spaces
+*OpenBankProject::UserApi* | [**get_permission_for_user_for_bank_account**](docs/UserApi.md#get_permission_for_user_for_bank_account) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/permissions/{provider}/{providerid} | Get Account access for User
+*OpenBankProject::UserApi* | [**get_permissions_for_bank_account**](docs/UserApi.md#get_permissions_for_bank_account) | **GET** /obp/v2.0.0/banks/{bankid}/accounts/{accountid}/permissions | Get access
+*OpenBankProject::UserApi* | [**get_personal_data_field_by_id**](docs/UserApi.md#get_personal_data_field_by_id) | **GET** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Get Personal Data Field By Id
+*OpenBankProject::UserApi* | [**get_personal_data_fields**](docs/UserApi.md#get_personal_data_fields) | **GET** /obp/v6.0.0/my/personal-data-fields | Get Personal Data Fields
+*OpenBankProject::UserApi* | [**get_providers**](docs/UserApi.md#get_providers) | **GET** /obp/v6.0.0/providers | Get Providers
+*OpenBankProject::UserApi* | [**get_user_attribute_by_id**](docs/UserApi.md#get_user_attribute_by_id) | **GET** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Get User Attribute By Id
+*OpenBankProject::UserApi* | [**get_user_attributes**](docs/UserApi.md#get_user_attributes) | **GET** /obp/v6.0.0/users/{userid}/attributes | Get User Attributes
+*OpenBankProject::UserApi* | [**get_user_auth_contexts**](docs/UserApi.md#get_user_auth_contexts) | **GET** /obp/v5.0.0/users/{userid}/auth-context | Get User Auth Contexts
+*OpenBankProject::UserApi* | [**get_user_by_provider_and_username**](docs/UserApi.md#get_user_by_provider_and_username) | **GET** /obp/v5.1.0/users/provider/{provider}/username/{username} | Get User by USERNAME
+*OpenBankProject::UserApi* | [**get_user_by_user_id**](docs/UserApi.md#get_user_by_user_id) | **GET** /obp/v6.0.0/users/user-id/{userid} | Get User by USER_ID
+*OpenBankProject::UserApi* | [**get_user_group_memberships**](docs/UserApi.md#get_user_group_memberships) | **GET** /obp/v6.0.0/users/{userid}/group-entitlements | Get User's Group Memberships
+*OpenBankProject::UserApi* | [**get_user_lock_status**](docs/UserApi.md#get_user_lock_status) | **GET** /obp/v5.1.0/users/{provider}/{username}/lock-status | Get User Lock Status
+*OpenBankProject::UserApi* | [**get_users**](docs/UserApi.md#get_users) | **GET** /obp/v6.0.0/users | Get all Users
+*OpenBankProject::UserApi* | [**get_users_by_email**](docs/UserApi.md#get_users_by_email) | **GET** /obp/v4.0.0/users/email/{email}/terminator | Get Users by Email Address
+*OpenBankProject::UserApi* | [**grant_user_access_to_view_by_id**](docs/UserApi.md#grant_user_access_to_view_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/grant | Grant User access to View
+*OpenBankProject::UserApi* | [**lock_user_by_provider_and_username**](docs/UserApi.md#lock_user_by_provider_and_username) | **POST** /obp/v5.1.0/users/{provider}/{username}/locks | Lock the user
+*OpenBankProject::UserApi* | [**refresh_user**](docs/UserApi.md#refresh_user) | **POST** /obp/v3.1.0/users/{userid}/refresh | Refresh User
+*OpenBankProject::UserApi* | [**remove_user_from_group**](docs/UserApi.md#remove_user_from_group) | **DELETE** /obp/v6.0.0/users/{userid}/group-entitlements/{groupid} | Remove User from Group
+*OpenBankProject::UserApi* | [**reset_password_complete**](docs/UserApi.md#reset_password_complete) | **POST** /obp/v6.0.0/users/password | Complete Password Reset
+*OpenBankProject::UserApi* | [**reset_password_url**](docs/UserApi.md#reset_password_url) | **POST** /obp/v6.0.0/management/user/reset-password-url | Create Password Reset URL and Send Email
+*OpenBankProject::UserApi* | [**reset_password_url_anonymous**](docs/UserApi.md#reset_password_url_anonymous) | **POST** /obp/v6.0.0/users/password-reset-url | Request Password Reset Email
+*OpenBankProject::UserApi* | [**revoke_user_access_to_view_by_id**](docs/UserApi.md#revoke_user_access_to_view_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/revoke | Revoke User access to View
+*OpenBankProject::UserApi* | [**sync_external_user**](docs/UserApi.md#sync_external_user) | **POST** /obp/v5.1.0/users/{provider}/{providerid}/sync | Sync User
+*OpenBankProject::UserApi* | [**unlock_user_by_provider_and_username**](docs/UserApi.md#unlock_user_by_provider_and_username) | **PUT** /obp/v5.1.0/users/{provider}/{username}/lock-status | Unlock the user
+*OpenBankProject::UserApi* | [**update_personal_data_field**](docs/UserApi.md#update_personal_data_field) | **PUT** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Update Personal Data Field
+*OpenBankProject::UserApi* | [**update_user_attribute**](docs/UserApi.md#update_user_attribute) | **PUT** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Update User Attribute
+*OpenBankProject::UserApi* | [**validate_user_by_user_id**](docs/UserApi.md#validate_user_by_user_id) | **PUT** /obp/v5.1.0/management/users/{userid} | Validate a user
+*OpenBankProject::UserApi* | [**validate_user_email**](docs/UserApi.md#validate_user_email) | **POST** /obp/v6.0.0/users/email-validation | Validate User Email
+*OpenBankProject::UserApi* | [**verify_user_credentials**](docs/UserApi.md#verify_user_credentials) | **POST** /obp/v6.0.0/users/verify-credentials | Verify User Credentials
+*OpenBankProject::UserAttributeApi* | [**create_personal_data_field**](docs/UserAttributeApi.md#create_personal_data_field) | **POST** /obp/v6.0.0/my/personal-data-fields | Create Personal Data Field
+*OpenBankProject::UserAttributeApi* | [**create_user_attribute**](docs/UserAttributeApi.md#create_user_attribute) | **POST** /obp/v6.0.0/users/{userid}/attributes | Create User Attribute
+*OpenBankProject::UserAttributeApi* | [**delete_personal_data_field**](docs/UserAttributeApi.md#delete_personal_data_field) | **DELETE** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Delete Personal Data Field
+*OpenBankProject::UserAttributeApi* | [**delete_user_attribute**](docs/UserAttributeApi.md#delete_user_attribute) | **DELETE** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Delete User Attribute
+*OpenBankProject::UserAttributeApi* | [**get_personal_data_field_by_id**](docs/UserAttributeApi.md#get_personal_data_field_by_id) | **GET** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Get Personal Data Field By Id
+*OpenBankProject::UserAttributeApi* | [**get_personal_data_fields**](docs/UserAttributeApi.md#get_personal_data_fields) | **GET** /obp/v6.0.0/my/personal-data-fields | Get Personal Data Fields
+*OpenBankProject::UserAttributeApi* | [**get_user_attribute_by_id**](docs/UserAttributeApi.md#get_user_attribute_by_id) | **GET** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Get User Attribute By Id
+*OpenBankProject::UserAttributeApi* | [**get_user_attributes**](docs/UserAttributeApi.md#get_user_attributes) | **GET** /obp/v6.0.0/users/{userid}/attributes | Get User Attributes
+*OpenBankProject::UserAttributeApi* | [**update_personal_data_field**](docs/UserAttributeApi.md#update_personal_data_field) | **PUT** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Update Personal Data Field
+*OpenBankProject::UserAttributeApi* | [**update_user_attribute**](docs/UserAttributeApi.md#update_user_attribute) | **PUT** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Update User Attribute
+*OpenBankProject::UserInvitationApi* | [**create_user_invitation**](docs/UserInvitationApi.md#create_user_invitation) | **POST** /obp/v4.0.0/banks/{bankid}/user-invitation | Create User Invitation
+*OpenBankProject::UserInvitationApi* | [**get_user_invitation**](docs/UserInvitationApi.md#get_user_invitation) | **GET** /obp/v4.0.0/banks/{bankid}/user-invitations/{secretlink} | Get User Invitation
+*OpenBankProject::UserInvitationApi* | [**get_user_invitation_anonymous**](docs/UserInvitationApi.md#get_user_invitation_anonymous) | **POST** /obp/v4.0.0/banks/{bankid}/user-invitations | Get User Invitation Information
+*OpenBankProject::UserInvitationApi* | [**get_user_invitations**](docs/UserInvitationApi.md#get_user_invitations) | **GET** /obp/v4.0.0/banks/{bankid}/user-invitations | Get User Invitations
+*OpenBankProject::VRPApi* | [**create_consent_by_consent_request_id_email**](docs/VRPApi.md#create_consent_by_consent_request_id_email) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{email}/consents | Create Consent By CONSENT_REQUEST_ID (EMAIL)
+*OpenBankProject::VRPApi* | [**create_vrp_consent_request**](docs/VRPApi.md#create_vrp_consent_request) | **POST** /obp/v5.1.0/consumer/vrp-consent-requests | Create Consent Request VRP
+*OpenBankProject::ViewCustomApi* | [**create_custom_view**](docs/ViewCustomApi.md#create_custom_view) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views | Create Custom View
+*OpenBankProject::ViewCustomApi* | [**create_custom_view_management**](docs/ViewCustomApi.md#create_custom_view_management) | **POST** /obp/v6.0.0/management/banks/{bankid}/accounts/{accountid}/views | Create Custom View (Management)
+*OpenBankProject::ViewCustomApi* | [**create_user_with_account_access_by_id**](docs/ViewCustomApi.md#create_user_with_account_access_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/user-account-access | Create (DAuth) User with Account Access
+*OpenBankProject::ViewCustomApi* | [**create_view_for_bank_account**](docs/ViewCustomApi.md#create_view_for_bank_account) | **POST** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/views | Create Custom View
+*OpenBankProject::ViewCustomApi* | [**delete_custom_view**](docs/ViewCustomApi.md#delete_custom_view) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views/{targetviewid} | Delete Custom View
+*OpenBankProject::ViewCustomApi* | [**delete_view_for_bank_account**](docs/ViewCustomApi.md#delete_view_for_bank_account) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/views/{viewid} | Delete Custom View
+*OpenBankProject::ViewCustomApi* | [**get_accounts_held**](docs/ViewCustomApi.md#get_accounts_held) | **GET** /obp/v3.0.0/banks/{bankid}/accounts-held | Get Accounts Held
+*OpenBankProject::ViewCustomApi* | [**get_custom_view**](docs/ViewCustomApi.md#get_custom_view) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views/{targetviewid} | Get Custom View
+*OpenBankProject::ViewCustomApi* | [**get_custom_view_by_id**](docs/ViewCustomApi.md#get_custom_view_by_id) | **GET** /obp/v6.0.0/management/banks/{bankid}/accounts/{accountid}/views/{viewid} | Get Custom View
+*OpenBankProject::ViewCustomApi* | [**get_custom_views**](docs/ViewCustomApi.md#get_custom_views) | **GET** /obp/v6.0.0/management/custom-views | Get Custom Views
+*OpenBankProject::ViewCustomApi* | [**get_permission_for_user_for_bank_account**](docs/ViewCustomApi.md#get_permission_for_user_for_bank_account) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/permissions/{provider}/{providerid} | Get Account access for User
+*OpenBankProject::ViewCustomApi* | [**get_permissions_for_bank_account**](docs/ViewCustomApi.md#get_permissions_for_bank_account) | **GET** /obp/v2.0.0/banks/{bankid}/accounts/{accountid}/permissions | Get access
+*OpenBankProject::ViewCustomApi* | [**get_system_view_by_id**](docs/ViewCustomApi.md#get_system_view_by_id) | **GET** /obp/v6.0.0/management/system-views/{viewid} | Get System View
+*OpenBankProject::ViewCustomApi* | [**get_system_views**](docs/ViewCustomApi.md#get_system_views) | **GET** /obp/v6.0.0/management/system-views | Get System Views
+*OpenBankProject::ViewCustomApi* | [**get_users_with_account_access**](docs/ViewCustomApi.md#get_users_with_account_access) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/users-with-access | Get Users With Account Access
+*OpenBankProject::ViewCustomApi* | [**get_view_permissions**](docs/ViewCustomApi.md#get_view_permissions) | **GET** /obp/v6.0.0/management/view-permissions | Get View Permissions
+*OpenBankProject::ViewCustomApi* | [**get_views_for_bank_account**](docs/ViewCustomApi.md#get_views_for_bank_account) | **GET** /obp/v5.0.0/banks/{bankid}/accounts/{accountid}/views | Get Views for Account
+*OpenBankProject::ViewCustomApi* | [**grant_user_access_to_view_by_id**](docs/ViewCustomApi.md#grant_user_access_to_view_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/grant | Grant User access to View
+*OpenBankProject::ViewCustomApi* | [**has_account_access**](docs/ViewCustomApi.md#has_account_access) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/has-account-access | Has Account Access
+*OpenBankProject::ViewCustomApi* | [**revoke_user_access_to_view_by_id**](docs/ViewCustomApi.md#revoke_user_access_to_view_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/revoke | Revoke User access to View
+*OpenBankProject::ViewCustomApi* | [**update_custom_view**](docs/ViewCustomApi.md#update_custom_view) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views/{targetviewid} | Update Custom View
+*OpenBankProject::ViewCustomApi* | [**update_system_view**](docs/ViewCustomApi.md#update_system_view) | **PUT** /obp/v6.0.0/system-views/{viewid} | Update System View
+*OpenBankProject::ViewCustomApi* | [**update_view_for_bank_account**](docs/ViewCustomApi.md#update_view_for_bank_account) | **PUT** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/views/{viewid} | Update Custom View
+*OpenBankProject::ViewSystemApi* | [**add_system_view_permission**](docs/ViewSystemApi.md#add_system_view_permission) | **POST** /obp/v5.1.0/system-views/{viewid}/permissions | Add Permission to a System View
+*OpenBankProject::ViewSystemApi* | [**create_system_view**](docs/ViewSystemApi.md#create_system_view) | **POST** /obp/v5.0.0/system-views | Create System View
+*OpenBankProject::ViewSystemApi* | [**delete_system_view**](docs/ViewSystemApi.md#delete_system_view) | **DELETE** /obp/v5.0.0/system-views/{viewid} | Delete System View
+*OpenBankProject::ViewSystemApi* | [**delete_system_view_permission**](docs/ViewSystemApi.md#delete_system_view_permission) | **DELETE** /obp/v5.1.0/system-views/{viewid}/permissions/{permissionname} | Delete Permission to a System View
+*OpenBankProject::ViewSystemApi* | [**get_custom_view_by_id**](docs/ViewSystemApi.md#get_custom_view_by_id) | **GET** /obp/v6.0.0/management/banks/{bankid}/accounts/{accountid}/views/{viewid} | Get Custom View
+*OpenBankProject::ViewSystemApi* | [**get_custom_views**](docs/ViewSystemApi.md#get_custom_views) | **GET** /obp/v6.0.0/management/custom-views | Get Custom Views
+*OpenBankProject::ViewSystemApi* | [**get_system_view**](docs/ViewSystemApi.md#get_system_view) | **GET** /obp/v5.0.0/system-views/{viewid} | Get System View
+*OpenBankProject::ViewSystemApi* | [**get_system_view_by_id**](docs/ViewSystemApi.md#get_system_view_by_id) | **GET** /obp/v6.0.0/management/system-views/{viewid} | Get System View
+*OpenBankProject::ViewSystemApi* | [**get_system_views**](docs/ViewSystemApi.md#get_system_views) | **GET** /obp/v6.0.0/management/system-views | Get System Views
+*OpenBankProject::ViewSystemApi* | [**get_system_views_ids**](docs/ViewSystemApi.md#get_system_views_ids) | **GET** /obp/v5.0.0/system-views-ids | Get Ids of System Views
+*OpenBankProject::ViewSystemApi* | [**get_view_permissions**](docs/ViewSystemApi.md#get_view_permissions) | **GET** /obp/v6.0.0/management/view-permissions | Get View Permissions
+*OpenBankProject::ViewSystemApi* | [**update_system_view**](docs/ViewSystemApi.md#update_system_view) | **PUT** /obp/v6.0.0/system-views/{viewid} | Update System View
+*OpenBankProject::WebUiPropsApi* | [**create_or_update_web_ui_props**](docs/WebUiPropsApi.md#create_or_update_web_ui_props) | **PUT** /obp/v6.0.0/management/webui_props/{webuipropname} | Create or Update WebUiProps
+*OpenBankProject::WebUiPropsApi* | [**create_web_ui_props**](docs/WebUiPropsApi.md#create_web_ui_props) | **POST** /obp/v3.1.0/management/webui_props | Create WebUiProps
+*OpenBankProject::WebUiPropsApi* | [**delete_web_ui_props**](docs/WebUiPropsApi.md#delete_web_ui_props) | **DELETE** /obp/v6.0.0/management/webui_props/{webuipropname} | Delete WebUiProps
+*OpenBankProject::WebUiPropsApi* | [**get_web_ui_prop**](docs/WebUiPropsApi.md#get_web_ui_prop) | **GET** /obp/v6.0.0/webui-props/{webuipropname} | Get WebUiProp by Name
+*OpenBankProject::WebUiPropsApi* | [**get_web_ui_props**](docs/WebUiPropsApi.md#get_web_ui_props) | **GET** /obp/v6.0.0/webui-props | Get WebUiProps
+*OpenBankProject::WebhookApi* | [**create_account_webhook**](docs/WebhookApi.md#create_account_webhook) | **POST** /obp/v3.1.0/banks/{bankid}/account-web-hooks | Create an Account Webhook
+*OpenBankProject::WebhookApi* | [**create_bank_account_notification_webhook**](docs/WebhookApi.md#create_bank_account_notification_webhook) | **POST** /obp/v4.0.0/banks/{bankid}/web-hooks/account/notifications/on-create-transaction | Create bank level Account Notification Webhook
+*OpenBankProject::WebhookApi* | [**create_system_account_notification_webhook**](docs/WebhookApi.md#create_system_account_notification_webhook) | **POST** /obp/v4.0.0/web-hooks/account/notifications/on-create-transaction | Create system level Account Notification Webhook
+*OpenBankProject::WebhookApi* | [**enable_disable_account_webhook**](docs/WebhookApi.md#enable_disable_account_webhook) | **PUT** /obp/v3.1.0/banks/{bankid}/account-web-hooks | Enable/Disable an Account Webhook
+*OpenBankProject::WebhookApi* | [**get_account_webhooks**](docs/WebhookApi.md#get_account_webhooks) | **GET** /obp/v3.1.0/management/banks/{bankid}/account-web-hooks | Get Account Webhooks
 
 
 ## Documentation for Models
 
- - [OpenBankProject::OBPv121AddImageForViewOnTransactionRequest](docs/OBPv121AddImageForViewOnTransactionRequest.md)
- - [OpenBankProject::OBPv121AddImageForViewOnTransactionRequestProperties](docs/OBPv121AddImageForViewOnTransactionRequestProperties.md)
- - [OpenBankProject::OBPv121GetCommentsForViewOnTransaction200Response](docs/OBPv121GetCommentsForViewOnTransaction200Response.md)
- - [OpenBankProject::OBPv121GetCommentsForViewOnTransaction200ResponseProperties](docs/OBPv121GetCommentsForViewOnTransaction200ResponseProperties.md)
- - [OpenBankProject::OBPv121GetCounterpartyPublicAlias200Response](docs/OBPv121GetCounterpartyPublicAlias200Response.md)
- - [OpenBankProject::OBPv121GetCounterpartyPublicAlias200ResponseProperties](docs/OBPv121GetCounterpartyPublicAlias200ResponseProperties.md)
- - [OpenBankProject::OBPv121GetImagesForViewOnTransaction200Response](docs/OBPv121GetImagesForViewOnTransaction200Response.md)
- - [OpenBankProject::OBPv121GetImagesForViewOnTransaction200ResponseProperties](docs/OBPv121GetImagesForViewOnTransaction200ResponseProperties.md)
- - [OpenBankProject::OBPv121GetOtherAccountForTransaction200Response](docs/OBPv121GetOtherAccountForTransaction200Response.md)
- - [OpenBankProject::OBPv121GetOtherAccountForTransaction200ResponseProperties](docs/OBPv121GetOtherAccountForTransaction200ResponseProperties.md)
- - [OpenBankProject::OBPv121GetOtherAccountForTransaction200ResponsePropertiesBank](docs/OBPv121GetOtherAccountForTransaction200ResponsePropertiesBank.md)
- - [OpenBankProject::OBPv121GetOtherAccountForTransaction200ResponsePropertiesBankProperties](docs/OBPv121GetOtherAccountForTransaction200ResponsePropertiesBankProperties.md)
- - [OpenBankProject::OBPv121GetOtherAccountMetadata200Response](docs/OBPv121GetOtherAccountMetadata200Response.md)
- - [OpenBankProject::OBPv121GetOtherAccountMetadata200ResponseProperties](docs/OBPv121GetOtherAccountMetadata200ResponseProperties.md)
- - [OpenBankProject::OBPv121GetOtherAccountMetadata200ResponsePropertiesPhysicalLocation](docs/OBPv121GetOtherAccountMetadata200ResponsePropertiesPhysicalLocation.md)
- - [OpenBankProject::OBPv121GetOtherAccountMetadata200ResponsePropertiesPhysicalLocationProperties](docs/OBPv121GetOtherAccountMetadata200ResponsePropertiesPhysicalLocationProperties.md)
- - [OpenBankProject::OBPv121GetTransactionNarrative200Response](docs/OBPv121GetTransactionNarrative200Response.md)
- - [OpenBankProject::OBPv121GetTransactionNarrative200ResponseProperties](docs/OBPv121GetTransactionNarrative200ResponseProperties.md)
- - [OpenBankProject::OBPv121GetWhereTagForViewOnTransaction200Response](docs/OBPv121GetWhereTagForViewOnTransaction200Response.md)
- - [OpenBankProject::OBPv121GetWhereTagForViewOnTransaction200ResponseProperties](docs/OBPv121GetWhereTagForViewOnTransaction200ResponseProperties.md)
- - [OpenBankProject::OBPv121UpdateCounterpartyCorporateLocationRequest](docs/OBPv121UpdateCounterpartyCorporateLocationRequest.md)
- - [OpenBankProject::OBPv121UpdateCounterpartyCorporateLocationRequestProperties](docs/OBPv121UpdateCounterpartyCorporateLocationRequestProperties.md)
- - [OpenBankProject::OBPv121UpdateCounterpartyImageUrlRequest](docs/OBPv121UpdateCounterpartyImageUrlRequest.md)
- - [OpenBankProject::OBPv121UpdateCounterpartyImageUrlRequestProperties](docs/OBPv121UpdateCounterpartyImageUrlRequestProperties.md)
- - [OpenBankProject::OBPv121UpdateCounterpartyMoreInfoRequest](docs/OBPv121UpdateCounterpartyMoreInfoRequest.md)
- - [OpenBankProject::OBPv121UpdateCounterpartyMoreInfoRequestProperties](docs/OBPv121UpdateCounterpartyMoreInfoRequestProperties.md)
- - [OpenBankProject::OBPv121UpdateCounterpartyOpenCorporatesUrlRequest](docs/OBPv121UpdateCounterpartyOpenCorporatesUrlRequest.md)
- - [OpenBankProject::OBPv121UpdateCounterpartyOpenCorporatesUrlRequestProperties](docs/OBPv121UpdateCounterpartyOpenCorporatesUrlRequestProperties.md)
- - [OpenBankProject::OBPv121UpdateCounterpartyPhysicalLocationRequest](docs/OBPv121UpdateCounterpartyPhysicalLocationRequest.md)
- - [OpenBankProject::OBPv121UpdateCounterpartyPhysicalLocationRequestProperties](docs/OBPv121UpdateCounterpartyPhysicalLocationRequestProperties.md)
- - [OpenBankProject::OBPv121UpdateCounterpartyUrlRequest](docs/OBPv121UpdateCounterpartyUrlRequest.md)
- - [OpenBankProject::OBPv121UpdateCounterpartyUrlRequestProperties](docs/OBPv121UpdateCounterpartyUrlRequestProperties.md)
- - [OpenBankProject::OBPv121UpdateTransactionNarrative200Response](docs/OBPv121UpdateTransactionNarrative200Response.md)
- - [OpenBankProject::OBPv121UpdateTransactionNarrative200ResponseProperties](docs/OBPv121UpdateTransactionNarrative200ResponseProperties.md)
- - [OpenBankProject::OBPv121UpdateWhereTagForViewOnTransactionRequest](docs/OBPv121UpdateWhereTagForViewOnTransactionRequest.md)
- - [OpenBankProject::OBPv121UpdateWhereTagForViewOnTransactionRequestProperties](docs/OBPv121UpdateWhereTagForViewOnTransactionRequestProperties.md)
- - [OpenBankProject::OBPv130GetCards200Response](docs/OBPv130GetCards200Response.md)
- - [OpenBankProject::OBPv130GetCards200ResponseProperties](docs/OBPv130GetCards200ResponseProperties.md)
- - [OpenBankProject::OBPv130GetCards200ResponsePropertiesCards](docs/OBPv130GetCards200ResponsePropertiesCards.md)
- - [OpenBankProject::OBPv130GetCards200ResponsePropertiesCardsItems](docs/OBPv130GetCards200ResponsePropertiesCardsItems.md)
- - [OpenBankProject::OBPv130GetCards200ResponsePropertiesCardsItemsProperties](docs/OBPv130GetCards200ResponsePropertiesCardsItemsProperties.md)
- - [OpenBankProject::OBPv140AddCustomerMessageRequest](docs/OBPv140AddCustomerMessageRequest.md)
- - [OpenBankProject::OBPv140AddCustomerMessageRequestProperties](docs/OBPv140AddCustomerMessageRequestProperties.md)
- - [OpenBankProject::OBPv140GetCrmEvents200Response](docs/OBPv140GetCrmEvents200Response.md)
- - [OpenBankProject::OBPv140GetCrmEvents200ResponseProperties](docs/OBPv140GetCrmEvents200ResponseProperties.md)
- - [OpenBankProject::OBPv140GetCrmEvents200ResponsePropertiesCrmEvents](docs/OBPv140GetCrmEvents200ResponsePropertiesCrmEvents.md)
- - [OpenBankProject::OBPv140GetCrmEvents200ResponsePropertiesCrmEventsItems](docs/OBPv140GetCrmEvents200ResponsePropertiesCrmEventsItems.md)
- - [OpenBankProject::OBPv140GetCrmEvents200ResponsePropertiesCrmEventsItemsProperties](docs/OBPv140GetCrmEvents200ResponsePropertiesCrmEventsItemsProperties.md)
- - [OpenBankProject::OBPv140GetCustomersMessages200Response](docs/OBPv140GetCustomersMessages200Response.md)
- - [OpenBankProject::OBPv140GetCustomersMessages200ResponseProperties](docs/OBPv140GetCustomersMessages200ResponseProperties.md)
- - [OpenBankProject::OBPv140GetCustomersMessages200ResponsePropertiesMessages](docs/OBPv140GetCustomersMessages200ResponsePropertiesMessages.md)
- - [OpenBankProject::OBPv140GetCustomersMessages200ResponsePropertiesMessagesItems](docs/OBPv140GetCustomersMessages200ResponsePropertiesMessagesItems.md)
- - [OpenBankProject::OBPv140GetCustomersMessages200ResponsePropertiesMessagesItemsProperties](docs/OBPv140GetCustomersMessages200ResponsePropertiesMessagesItemsProperties.md)
- - [OpenBankProject::OBPv140GetTransactionRequestTypes200Response](docs/OBPv140GetTransactionRequestTypes200Response.md)
- - [OpenBankProject::OBPv140GetTransactionRequestTypes200ResponseProperties](docs/OBPv140GetTransactionRequestTypes200ResponseProperties.md)
- - [OpenBankProject::OBPv140GetTransactionRequestTypes200ResponsePropertiesTransactionRequestTypes](docs/OBPv140GetTransactionRequestTypes200ResponsePropertiesTransactionRequestTypes.md)
- - [OpenBankProject::OBPv140GetTransactionRequestTypes200ResponsePropertiesTransactionRequestTypesItems](docs/OBPv140GetTransactionRequestTypes200ResponsePropertiesTransactionRequestTypesItems.md)
- - [OpenBankProject::OBPv140GetTransactionRequestTypes200ResponsePropertiesTransactionRequestTypesItemsProperties](docs/OBPv140GetTransactionRequestTypes200ResponsePropertiesTransactionRequestTypesItemsProperties.md)
- - [OpenBankProject::OBPv200AddKycCheckRequest](docs/OBPv200AddKycCheckRequest.md)
- - [OpenBankProject::OBPv200AddKycCheckRequestProperties](docs/OBPv200AddKycCheckRequestProperties.md)
- - [OpenBankProject::OBPv200AddKycDocument200Response](docs/OBPv200AddKycDocument200Response.md)
- - [OpenBankProject::OBPv200AddKycDocument200ResponseProperties](docs/OBPv200AddKycDocument200ResponseProperties.md)
- - [OpenBankProject::OBPv200AddKycDocumentRequest](docs/OBPv200AddKycDocumentRequest.md)
- - [OpenBankProject::OBPv200AddKycDocumentRequestProperties](docs/OBPv200AddKycDocumentRequestProperties.md)
- - [OpenBankProject::OBPv200AddKycMedia200Response](docs/OBPv200AddKycMedia200Response.md)
- - [OpenBankProject::OBPv200AddKycMedia200ResponseProperties](docs/OBPv200AddKycMedia200ResponseProperties.md)
- - [OpenBankProject::OBPv200AddKycMediaRequest](docs/OBPv200AddKycMediaRequest.md)
- - [OpenBankProject::OBPv200AddKycMediaRequestProperties](docs/OBPv200AddKycMediaRequestProperties.md)
- - [OpenBankProject::OBPv200AddKycStatusRequest](docs/OBPv200AddKycStatusRequest.md)
- - [OpenBankProject::OBPv200AddKycStatusRequestProperties](docs/OBPv200AddKycStatusRequestProperties.md)
- - [OpenBankProject::OBPv200GetKycChecks200Response](docs/OBPv200GetKycChecks200Response.md)
- - [OpenBankProject::OBPv200GetKycChecks200ResponseProperties](docs/OBPv200GetKycChecks200ResponseProperties.md)
- - [OpenBankProject::OBPv200GetKycChecks200ResponsePropertiesChecks](docs/OBPv200GetKycChecks200ResponsePropertiesChecks.md)
- - [OpenBankProject::OBPv200GetKycChecks200ResponsePropertiesChecksItems](docs/OBPv200GetKycChecks200ResponsePropertiesChecksItems.md)
- - [OpenBankProject::OBPv200GetKycChecks200ResponsePropertiesChecksItemsProperties](docs/OBPv200GetKycChecks200ResponsePropertiesChecksItemsProperties.md)
- - [OpenBankProject::OBPv200GetKycDocuments200Response](docs/OBPv200GetKycDocuments200Response.md)
- - [OpenBankProject::OBPv200GetKycDocuments200ResponseProperties](docs/OBPv200GetKycDocuments200ResponseProperties.md)
- - [OpenBankProject::OBPv200GetKycDocuments200ResponsePropertiesDocuments](docs/OBPv200GetKycDocuments200ResponsePropertiesDocuments.md)
- - [OpenBankProject::OBPv200GetKycMedia200Response](docs/OBPv200GetKycMedia200Response.md)
- - [OpenBankProject::OBPv200GetKycMedia200ResponseProperties](docs/OBPv200GetKycMedia200ResponseProperties.md)
- - [OpenBankProject::OBPv200GetKycMedia200ResponsePropertiesMedias](docs/OBPv200GetKycMedia200ResponsePropertiesMedias.md)
- - [OpenBankProject::OBPv200GetKycStatuses200Response](docs/OBPv200GetKycStatuses200Response.md)
- - [OpenBankProject::OBPv200GetKycStatuses200ResponseProperties](docs/OBPv200GetKycStatuses200ResponseProperties.md)
- - [OpenBankProject::OBPv200GetKycStatuses200ResponsePropertiesStatuses](docs/OBPv200GetKycStatuses200ResponsePropertiesStatuses.md)
- - [OpenBankProject::OBPv200GetKycStatuses200ResponsePropertiesStatusesItems](docs/OBPv200GetKycStatuses200ResponsePropertiesStatusesItems.md)
- - [OpenBankProject::OBPv200GetKycStatuses200ResponsePropertiesStatusesItemsProperties](docs/OBPv200GetKycStatuses200ResponsePropertiesStatusesItemsProperties.md)
- - [OpenBankProject::OBPv200GetPermissionsForBankAccount200Response](docs/OBPv200GetPermissionsForBankAccount200Response.md)
- - [OpenBankProject::OBPv200GetPermissionsForBankAccount200ResponseProperties](docs/OBPv200GetPermissionsForBankAccount200ResponseProperties.md)
- - [OpenBankProject::OBPv200GetPermissionsForBankAccount200ResponsePropertiesPermissions](docs/OBPv200GetPermissionsForBankAccount200ResponsePropertiesPermissions.md)
- - [OpenBankProject::OBPv200GetPermissionsForBankAccount200ResponsePropertiesPermissionsItems](docs/OBPv200GetPermissionsForBankAccount200ResponsePropertiesPermissionsItems.md)
- - [OpenBankProject::OBPv200GetPermissionsForBankAccount200ResponsePropertiesPermissionsItemsProperties](docs/OBPv200GetPermissionsForBankAccount200ResponsePropertiesPermissionsItemsProperties.md)
- - [OpenBankProject::OBPv200GetSocialMediaHandles200Response](docs/OBPv200GetSocialMediaHandles200Response.md)
- - [OpenBankProject::OBPv200GetSocialMediaHandles200ResponseProperties](docs/OBPv200GetSocialMediaHandles200ResponseProperties.md)
- - [OpenBankProject::OBPv200GetSocialMediaHandles200ResponsePropertiesChecks](docs/OBPv200GetSocialMediaHandles200ResponsePropertiesChecks.md)
- - [OpenBankProject::OBPv200GetSocialMediaHandles200ResponsePropertiesChecksItems](docs/OBPv200GetSocialMediaHandles200ResponsePropertiesChecksItems.md)
- - [OpenBankProject::OBPv200GetSocialMediaHandles200ResponsePropertiesChecksItemsProperties](docs/OBPv200GetSocialMediaHandles200ResponsePropertiesChecksItemsProperties.md)
- - [OpenBankProject::OBPv200GetTransactionTypes200Response](docs/OBPv200GetTransactionTypes200Response.md)
- - [OpenBankProject::OBPv200GetTransactionTypes200ResponseProperties](docs/OBPv200GetTransactionTypes200ResponseProperties.md)
- - [OpenBankProject::OBPv200GetTransactionTypes200ResponsePropertiesTransactionTypes](docs/OBPv200GetTransactionTypes200ResponsePropertiesTransactionTypes.md)
- - [OpenBankProject::OBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems](docs/OBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems.md)
- - [OpenBankProject::OBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItemsProperties](docs/OBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItemsProperties.md)
- - [OpenBankProject::OBPv200PublicAccountsAllBanks200Response](docs/OBPv200PublicAccountsAllBanks200Response.md)
- - [OpenBankProject::OBPv200PublicAccountsAllBanks200ResponseProperties](docs/OBPv200PublicAccountsAllBanks200ResponseProperties.md)
- - [OpenBankProject::OBPv200PublicAccountsAllBanks200ResponsePropertiesAccounts](docs/OBPv200PublicAccountsAllBanks200ResponsePropertiesAccounts.md)
- - [OpenBankProject::OBPv200PublicAccountsAllBanks200ResponsePropertiesAccountsItems](docs/OBPv200PublicAccountsAllBanks200ResponsePropertiesAccountsItems.md)
- - [OpenBankProject::OBPv200PublicAccountsAllBanks200ResponsePropertiesAccountsItemsProperties](docs/OBPv200PublicAccountsAllBanks200ResponsePropertiesAccountsItemsProperties.md)
- - [OpenBankProject::OBPv200PublicAccountsAllBanks200ResponsePropertiesAccountsItemsPropertiesViewsAvailable](docs/OBPv200PublicAccountsAllBanks200ResponsePropertiesAccountsItemsPropertiesViewsAvailable.md)
- - [OpenBankProject::OBPv200PublicAccountsAllBanks200ResponsePropertiesAccountsItemsPropertiesViewsAvailableItems](docs/OBPv200PublicAccountsAllBanks200ResponsePropertiesAccountsItemsPropertiesViewsAvailableItems.md)
- - [OpenBankProject::OBPv200PublicAccountsAllBanks200ResponsePropertiesAccountsItemsPropertiesViewsAvailableItemsProperties](docs/OBPv200PublicAccountsAllBanks200ResponsePropertiesAccountsItemsPropertiesViewsAvailableItemsProperties.md)
- - [OpenBankProject::OBPv210CreateTransactionType200Response](docs/OBPv210CreateTransactionType200Response.md)
- - [OpenBankProject::OBPv210CreateTransactionType200ResponseProperties](docs/OBPv210CreateTransactionType200ResponseProperties.md)
- - [OpenBankProject::OBPv210GetRoles200Response](docs/OBPv210GetRoles200Response.md)
- - [OpenBankProject::OBPv210GetRoles200ResponseProperties](docs/OBPv210GetRoles200ResponseProperties.md)
- - [OpenBankProject::OBPv210GetRoles200ResponsePropertiesRoles](docs/OBPv210GetRoles200ResponsePropertiesRoles.md)
- - [OpenBankProject::OBPv210GetRoles200ResponsePropertiesRolesItems](docs/OBPv210GetRoles200ResponsePropertiesRolesItems.md)
- - [OpenBankProject::OBPv210GetRoles200ResponsePropertiesRolesItemsProperties](docs/OBPv210GetRoles200ResponsePropertiesRolesItemsProperties.md)
- - [OpenBankProject::OBPv210GetTransactionRequestTypesSupportedByBank200Response](docs/OBPv210GetTransactionRequestTypesSupportedByBank200Response.md)
- - [OpenBankProject::OBPv210GetTransactionRequestTypesSupportedByBank200ResponseProperties](docs/OBPv210GetTransactionRequestTypesSupportedByBank200ResponseProperties.md)
- - [OpenBankProject::OBPv210GetTransactionRequestTypesSupportedByBank200ResponsePropertiesTransactionRequestTypes](docs/OBPv210GetTransactionRequestTypesSupportedByBank200ResponsePropertiesTransactionRequestTypes.md)
- - [OpenBankProject::OBPv210GetTransactionRequestTypesSupportedByBank200ResponsePropertiesTransactionRequestTypesItems](docs/OBPv210GetTransactionRequestTypesSupportedByBank200ResponsePropertiesTransactionRequestTypesItems.md)
- - [OpenBankProject::OBPv210GetTransactionRequestTypesSupportedByBank200ResponsePropertiesTransactionRequestTypesItemsProperties](docs/OBPv210GetTransactionRequestTypesSupportedByBank200ResponsePropertiesTransactionRequestTypesItemsProperties.md)
- - [OpenBankProject::OBPv210SandboxDataImportRequest](docs/OBPv210SandboxDataImportRequest.md)
- - [OpenBankProject::OBPv210SandboxDataImportRequestProperties](docs/OBPv210SandboxDataImportRequestProperties.md)
- - [OpenBankProject::OBPv210SandboxDataImportRequestPropertiesAccounts](docs/OBPv210SandboxDataImportRequestPropertiesAccounts.md)
- - [OpenBankProject::OBPv210SandboxDataImportRequestPropertiesAccountsItems](docs/OBPv210SandboxDataImportRequestPropertiesAccountsItems.md)
- - [OpenBankProject::OBPv210SandboxDataImportRequestPropertiesAccountsItemsProperties](docs/OBPv210SandboxDataImportRequestPropertiesAccountsItemsProperties.md)
- - [OpenBankProject::OBPv210SandboxDataImportRequestPropertiesAtms](docs/OBPv210SandboxDataImportRequestPropertiesAtms.md)
- - [OpenBankProject::OBPv210SandboxDataImportRequestPropertiesAtmsItems](docs/OBPv210SandboxDataImportRequestPropertiesAtmsItems.md)
- - [OpenBankProject::OBPv210SandboxDataImportRequestPropertiesAtmsItemsProperties](docs/OBPv210SandboxDataImportRequestPropertiesAtmsItemsProperties.md)
- - [OpenBankProject::OBPv210SandboxDataImportRequestPropertiesBanks](docs/OBPv210SandboxDataImportRequestPropertiesBanks.md)
- - [OpenBankProject::OBPv210SandboxDataImportRequestPropertiesBanksItems](docs/OBPv210SandboxDataImportRequestPropertiesBanksItems.md)
- - [OpenBankProject::OBPv210SandboxDataImportRequestPropertiesBanksItemsProperties](docs/OBPv210SandboxDataImportRequestPropertiesBanksItemsProperties.md)
- - [OpenBankProject::OBPv210SandboxDataImportRequestPropertiesBranches](docs/OBPv210SandboxDataImportRequestPropertiesBranches.md)
- - [OpenBankProject::OBPv210SandboxDataImportRequestPropertiesBranchesItems](docs/OBPv210SandboxDataImportRequestPropertiesBranchesItems.md)
- - [OpenBankProject::OBPv210SandboxDataImportRequestPropertiesBranchesItemsProperties](docs/OBPv210SandboxDataImportRequestPropertiesBranchesItemsProperties.md)
- - [OpenBankProject::OBPv210SandboxDataImportRequestPropertiesBranchesItemsPropertiesAddress](docs/OBPv210SandboxDataImportRequestPropertiesBranchesItemsPropertiesAddress.md)
- - [OpenBankProject::OBPv210SandboxDataImportRequestPropertiesBranchesItemsPropertiesAddressProperties](docs/OBPv210SandboxDataImportRequestPropertiesBranchesItemsPropertiesAddressProperties.md)
- - [OpenBankProject::OBPv210SandboxDataImportRequestPropertiesBranchesItemsPropertiesDriveUp](docs/OBPv210SandboxDataImportRequestPropertiesBranchesItemsPropertiesDriveUp.md)
- - [OpenBankProject::OBPv210SandboxDataImportRequestPropertiesBranchesItemsPropertiesDriveUpProperties](docs/OBPv210SandboxDataImportRequestPropertiesBranchesItemsPropertiesDriveUpProperties.md)
- - [OpenBankProject::OBPv210SandboxDataImportRequestPropertiesCrmEvents](docs/OBPv210SandboxDataImportRequestPropertiesCrmEvents.md)
- - [OpenBankProject::OBPv210SandboxDataImportRequestPropertiesCrmEventsItems](docs/OBPv210SandboxDataImportRequestPropertiesCrmEventsItems.md)
- - [OpenBankProject::OBPv210SandboxDataImportRequestPropertiesCrmEventsItemsProperties](docs/OBPv210SandboxDataImportRequestPropertiesCrmEventsItemsProperties.md)
- - [OpenBankProject::OBPv210SandboxDataImportRequestPropertiesCrmEventsItemsPropertiesCustomer](docs/OBPv210SandboxDataImportRequestPropertiesCrmEventsItemsPropertiesCustomer.md)
- - [OpenBankProject::OBPv210SandboxDataImportRequestPropertiesCrmEventsItemsPropertiesCustomerProperties](docs/OBPv210SandboxDataImportRequestPropertiesCrmEventsItemsPropertiesCustomerProperties.md)
- - [OpenBankProject::OBPv210SandboxDataImportRequestPropertiesProducts](docs/OBPv210SandboxDataImportRequestPropertiesProducts.md)
- - [OpenBankProject::OBPv210SandboxDataImportRequestPropertiesProductsItems](docs/OBPv210SandboxDataImportRequestPropertiesProductsItems.md)
- - [OpenBankProject::OBPv210SandboxDataImportRequestPropertiesProductsItemsProperties](docs/OBPv210SandboxDataImportRequestPropertiesProductsItemsProperties.md)
- - [OpenBankProject::OBPv210SandboxDataImportRequestPropertiesTransactions](docs/OBPv210SandboxDataImportRequestPropertiesTransactions.md)
- - [OpenBankProject::OBPv210SandboxDataImportRequestPropertiesTransactionsItems](docs/OBPv210SandboxDataImportRequestPropertiesTransactionsItems.md)
- - [OpenBankProject::OBPv210SandboxDataImportRequestPropertiesTransactionsItemsProperties](docs/OBPv210SandboxDataImportRequestPropertiesTransactionsItemsProperties.md)
- - [OpenBankProject::OBPv210SandboxDataImportRequestPropertiesTransactionsItemsPropertiesDetails](docs/OBPv210SandboxDataImportRequestPropertiesTransactionsItemsPropertiesDetails.md)
- - [OpenBankProject::OBPv210SandboxDataImportRequestPropertiesTransactionsItemsPropertiesDetailsProperties](docs/OBPv210SandboxDataImportRequestPropertiesTransactionsItemsPropertiesDetailsProperties.md)
- - [OpenBankProject::OBPv210SandboxDataImportRequestPropertiesTransactionsItemsPropertiesThisAccount](docs/OBPv210SandboxDataImportRequestPropertiesTransactionsItemsPropertiesThisAccount.md)
- - [OpenBankProject::OBPv210SandboxDataImportRequestPropertiesTransactionsItemsPropertiesThisAccountProperties](docs/OBPv210SandboxDataImportRequestPropertiesTransactionsItemsPropertiesThisAccountProperties.md)
- - [OpenBankProject::OBPv210SandboxDataImportRequestPropertiesUsers](docs/OBPv210SandboxDataImportRequestPropertiesUsers.md)
- - [OpenBankProject::OBPv210SandboxDataImportRequestPropertiesUsersItems](docs/OBPv210SandboxDataImportRequestPropertiesUsersItems.md)
- - [OpenBankProject::OBPv210SandboxDataImportRequestPropertiesUsersItemsProperties](docs/OBPv210SandboxDataImportRequestPropertiesUsersItemsProperties.md)
- - [OpenBankProject::OBPv220CreateFxRequest](docs/OBPv220CreateFxRequest.md)
- - [OpenBankProject::OBPv220CreateFxRequestProperties](docs/OBPv220CreateFxRequestProperties.md)
- - [OpenBankProject::OBPv220GetConnectorMetrics200Response](docs/OBPv220GetConnectorMetrics200Response.md)
- - [OpenBankProject::OBPv220GetConnectorMetrics200ResponseProperties](docs/OBPv220GetConnectorMetrics200ResponseProperties.md)
- - [OpenBankProject::OBPv220GetConnectorMetrics200ResponsePropertiesMetrics](docs/OBPv220GetConnectorMetrics200ResponsePropertiesMetrics.md)
- - [OpenBankProject::OBPv220GetConnectorMetrics200ResponsePropertiesMetricsItems](docs/OBPv220GetConnectorMetrics200ResponsePropertiesMetricsItems.md)
- - [OpenBankProject::OBPv220GetConnectorMetrics200ResponsePropertiesMetricsItemsProperties](docs/OBPv220GetConnectorMetrics200ResponsePropertiesMetricsItemsProperties.md)
- - [OpenBankProject::OBPv220GetMessageDocs200Response](docs/OBPv220GetMessageDocs200Response.md)
- - [OpenBankProject::OBPv220GetMessageDocs200ResponseProperties](docs/OBPv220GetMessageDocs200ResponseProperties.md)
- - [OpenBankProject::OBPv220GetMessageDocs200ResponsePropertiesMessageDocs](docs/OBPv220GetMessageDocs200ResponsePropertiesMessageDocs.md)
- - [OpenBankProject::OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItems](docs/OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItems.md)
- - [OpenBankProject::OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsProperties](docs/OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsProperties.md)
- - [OpenBankProject::OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsPropertiesAdapterImplementation](docs/OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsPropertiesAdapterImplementation.md)
- - [OpenBankProject::OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsPropertiesAdapterImplementationProperties](docs/OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsPropertiesAdapterImplementationProperties.md)
- - [OpenBankProject::OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsPropertiesDependentEndpoints](docs/OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsPropertiesDependentEndpoints.md)
- - [OpenBankProject::OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsPropertiesDependentEndpointsItems](docs/OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsPropertiesDependentEndpointsItems.md)
- - [OpenBankProject::OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsPropertiesDependentEndpointsItemsProperties](docs/OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsPropertiesDependentEndpointsItemsProperties.md)
- - [OpenBankProject::OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsPropertiesOutboundAvroSchema](docs/OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsPropertiesOutboundAvroSchema.md)
- - [OpenBankProject::OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsPropertiesOutboundAvroSchemaProperties](docs/OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsPropertiesOutboundAvroSchemaProperties.md)
- - [OpenBankProject::OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsPropertiesRequiredFieldInfo](docs/OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsPropertiesRequiredFieldInfo.md)
- - [OpenBankProject::OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsPropertiesRequiredFieldInfoProperties](docs/OBPv220GetMessageDocs200ResponsePropertiesMessageDocsItemsPropertiesRequiredFieldInfoProperties.md)
- - [OpenBankProject::OBPv300DataWarehouseSearchRequest](docs/OBPv300DataWarehouseSearchRequest.md)
- - [OpenBankProject::OBPv300DataWarehouseSearchRequestProperties](docs/OBPv300DataWarehouseSearchRequestProperties.md)
- - [OpenBankProject::OBPv300DataWarehouseSearchRequestPropertiesQuery](docs/OBPv300DataWarehouseSearchRequestPropertiesQuery.md)
- - [OpenBankProject::OBPv300DataWarehouseSearchRequestPropertiesQueryProperties](docs/OBPv300DataWarehouseSearchRequestPropertiesQueryProperties.md)
- - [OpenBankProject::OBPv300GetAllEntitlementRequests200Response](docs/OBPv300GetAllEntitlementRequests200Response.md)
- - [OpenBankProject::OBPv300GetAllEntitlementRequests200ResponseProperties](docs/OBPv300GetAllEntitlementRequests200ResponseProperties.md)
- - [OpenBankProject::OBPv300GetAllEntitlementRequests200ResponsePropertiesEntitlementRequests](docs/OBPv300GetAllEntitlementRequests200ResponsePropertiesEntitlementRequests.md)
- - [OpenBankProject::OBPv300GetAllEntitlementRequests200ResponsePropertiesEntitlementRequestsItems](docs/OBPv300GetAllEntitlementRequests200ResponsePropertiesEntitlementRequestsItems.md)
- - [OpenBankProject::OBPv300GetAllEntitlementRequests200ResponsePropertiesEntitlementRequestsItemsProperties](docs/OBPv300GetAllEntitlementRequests200ResponsePropertiesEntitlementRequestsItemsProperties.md)
- - [OpenBankProject::OBPv300GetApiGlossary200Response](docs/OBPv300GetApiGlossary200Response.md)
- - [OpenBankProject::OBPv300GetApiGlossary200ResponseProperties](docs/OBPv300GetApiGlossary200ResponseProperties.md)
- - [OpenBankProject::OBPv300GetApiGlossary200ResponsePropertiesGlossaryItems](docs/OBPv300GetApiGlossary200ResponsePropertiesGlossaryItems.md)
- - [OpenBankProject::OBPv300GetApiGlossary200ResponsePropertiesGlossaryItemsItems](docs/OBPv300GetApiGlossary200ResponsePropertiesGlossaryItemsItems.md)
- - [OpenBankProject::OBPv300GetApiGlossary200ResponsePropertiesGlossaryItemsItemsProperties](docs/OBPv300GetApiGlossary200ResponsePropertiesGlossaryItemsItemsProperties.md)
- - [OpenBankProject::OBPv300GetApiGlossary200ResponsePropertiesGlossaryItemsItemsPropertiesDescription](docs/OBPv300GetApiGlossary200ResponsePropertiesGlossaryItemsItemsPropertiesDescription.md)
- - [OpenBankProject::OBPv300GetApiGlossary200ResponsePropertiesGlossaryItemsItemsPropertiesDescriptionProperties](docs/OBPv300GetApiGlossary200ResponsePropertiesGlossaryItemsItemsPropertiesDescriptionProperties.md)
- - [OpenBankProject::OBPv300GetBranches200Response](docs/OBPv300GetBranches200Response.md)
- - [OpenBankProject::OBPv300GetBranches200ResponseProperties](docs/OBPv300GetBranches200ResponseProperties.md)
- - [OpenBankProject::OBPv300GetBranches200ResponsePropertiesBranches](docs/OBPv300GetBranches200ResponsePropertiesBranches.md)
- - [OpenBankProject::OBPv300GetBranches200ResponsePropertiesBranchesItems](docs/OBPv300GetBranches200ResponsePropertiesBranchesItems.md)
- - [OpenBankProject::OBPv300GetBranches200ResponsePropertiesBranchesItemsProperties](docs/OBPv300GetBranches200ResponsePropertiesBranchesItemsProperties.md)
- - [OpenBankProject::OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesAddress](docs/OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesAddress.md)
- - [OpenBankProject::OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesAddressProperties](docs/OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesAddressProperties.md)
- - [OpenBankProject::OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUp](docs/OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUp.md)
- - [OpenBankProject::OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpProperties](docs/OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpProperties.md)
- - [OpenBankProject::OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSunday](docs/OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSunday.md)
- - [OpenBankProject::OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSundayProperties](docs/OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSundayProperties.md)
- - [OpenBankProject::OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLobby](docs/OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLobby.md)
- - [OpenBankProject::OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLobbyProperties](docs/OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLobbyProperties.md)
- - [OpenBankProject::OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLobbyPropertiesSunday](docs/OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLobbyPropertiesSunday.md)
- - [OpenBankProject::OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLocation](docs/OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLocation.md)
- - [OpenBankProject::OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLocationProperties](docs/OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLocationProperties.md)
- - [OpenBankProject::OBPv300GetCoreTransactionsForBankAccount200Response](docs/OBPv300GetCoreTransactionsForBankAccount200Response.md)
- - [OpenBankProject::OBPv300GetCoreTransactionsForBankAccount200ResponseProperties](docs/OBPv300GetCoreTransactionsForBankAccount200ResponseProperties.md)
- - [OpenBankProject::OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactions](docs/OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactions.md)
- - [OpenBankProject::OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItems](docs/OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItems.md)
- - [OpenBankProject::OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsProperties](docs/OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsProperties.md)
- - [OpenBankProject::OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesDetails](docs/OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesDetails.md)
- - [OpenBankProject::OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesDetailsProperties](docs/OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesDetailsProperties.md)
- - [OpenBankProject::OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesOtherAccount](docs/OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesOtherAccount.md)
- - [OpenBankProject::OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesOtherAccountProperties](docs/OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesOtherAccountProperties.md)
- - [OpenBankProject::OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesThisAccount](docs/OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesThisAccount.md)
- - [OpenBankProject::OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesThisAccountProperties](docs/OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesThisAccountProperties.md)
- - [OpenBankProject::OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesThisAccountPropertiesHolders](docs/OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesThisAccountPropertiesHolders.md)
- - [OpenBankProject::OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesThisAccountPropertiesHoldersItems](docs/OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesThisAccountPropertiesHoldersItems.md)
- - [OpenBankProject::OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesThisAccountPropertiesHoldersItemsProperties](docs/OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesThisAccountPropertiesHoldersItemsProperties.md)
- - [OpenBankProject::OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributes](docs/OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributes.md)
- - [OpenBankProject::OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems](docs/OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems.md)
- - [OpenBankProject::OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItemsProperties](docs/OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItemsProperties.md)
- - [OpenBankProject::OBPv300GetCustomersForUser200Response](docs/OBPv300GetCustomersForUser200Response.md)
- - [OpenBankProject::OBPv300GetCustomersForUser200ResponseProperties](docs/OBPv300GetCustomersForUser200ResponseProperties.md)
- - [OpenBankProject::OBPv300GetCustomersForUser200ResponsePropertiesCustomers](docs/OBPv300GetCustomersForUser200ResponsePropertiesCustomers.md)
- - [OpenBankProject::OBPv300GetCustomersForUser200ResponsePropertiesCustomersItems](docs/OBPv300GetCustomersForUser200ResponsePropertiesCustomersItems.md)
- - [OpenBankProject::OBPv300GetCustomersForUser200ResponsePropertiesCustomersItemsProperties](docs/OBPv300GetCustomersForUser200ResponsePropertiesCustomersItemsProperties.md)
- - [OpenBankProject::OBPv300GetFirehoseTransactionsForBankAccount200Response](docs/OBPv300GetFirehoseTransactionsForBankAccount200Response.md)
- - [OpenBankProject::OBPv300GetFirehoseTransactionsForBankAccount200ResponseProperties](docs/OBPv300GetFirehoseTransactionsForBankAccount200ResponseProperties.md)
- - [OpenBankProject::OBPv300GetFirehoseTransactionsForBankAccount200ResponsePropertiesTransactions](docs/OBPv300GetFirehoseTransactionsForBankAccount200ResponsePropertiesTransactions.md)
- - [OpenBankProject::OBPv300GetOtherAccountsForBankAccount200Response](docs/OBPv300GetOtherAccountsForBankAccount200Response.md)
- - [OpenBankProject::OBPv300GetOtherAccountsForBankAccount200ResponseProperties](docs/OBPv300GetOtherAccountsForBankAccount200ResponseProperties.md)
- - [OpenBankProject::OBPv300GetOtherAccountsForBankAccount200ResponsePropertiesOtherAccounts](docs/OBPv300GetOtherAccountsForBankAccount200ResponsePropertiesOtherAccounts.md)
- - [OpenBankProject::OBPv300GetPermissionForUserForBankAccount200Response](docs/OBPv300GetPermissionForUserForBankAccount200Response.md)
- - [OpenBankProject::OBPv300GetPermissionForUserForBankAccount200ResponseProperties](docs/OBPv300GetPermissionForUserForBankAccount200ResponseProperties.md)
- - [OpenBankProject::OBPv300GetPermissionForUserForBankAccount200ResponsePropertiesViews](docs/OBPv300GetPermissionForUserForBankAccount200ResponsePropertiesViews.md)
- - [OpenBankProject::OBPv300GetPrivateAccountIdsbyBankId200Response](docs/OBPv300GetPrivateAccountIdsbyBankId200Response.md)
- - [OpenBankProject::OBPv300GetPrivateAccountIdsbyBankId200ResponseProperties](docs/OBPv300GetPrivateAccountIdsbyBankId200ResponseProperties.md)
- - [OpenBankProject::OBPv300GetPublicAccountById200Response](docs/OBPv300GetPublicAccountById200Response.md)
- - [OpenBankProject::OBPv300GetPublicAccountById200ResponseProperties](docs/OBPv300GetPublicAccountById200ResponseProperties.md)
- - [OpenBankProject::OBPv300GetPublicAccountById200ResponsePropertiesAccountRules](docs/OBPv300GetPublicAccountById200ResponsePropertiesAccountRules.md)
- - [OpenBankProject::OBPv300GetPublicAccountById200ResponsePropertiesAccountRulesItems](docs/OBPv300GetPublicAccountById200ResponsePropertiesAccountRulesItems.md)
- - [OpenBankProject::OBPv300GetPublicAccountById200ResponsePropertiesAccountRulesItemsProperties](docs/OBPv300GetPublicAccountById200ResponsePropertiesAccountRulesItemsProperties.md)
- - [OpenBankProject::OBPv300PrivateAccountsAtOneBank200Response](docs/OBPv300PrivateAccountsAtOneBank200Response.md)
- - [OpenBankProject::OBPv300PrivateAccountsAtOneBank200ResponseProperties](docs/OBPv300PrivateAccountsAtOneBank200ResponseProperties.md)
- - [OpenBankProject::OBPv300PrivateAccountsAtOneBank200ResponsePropertiesAccounts](docs/OBPv300PrivateAccountsAtOneBank200ResponsePropertiesAccounts.md)
- - [OpenBankProject::OBPv300PrivateAccountsAtOneBank200ResponsePropertiesAccountsItems](docs/OBPv300PrivateAccountsAtOneBank200ResponsePropertiesAccountsItems.md)
- - [OpenBankProject::OBPv300PrivateAccountsAtOneBank200ResponsePropertiesAccountsItemsProperties](docs/OBPv300PrivateAccountsAtOneBank200ResponsePropertiesAccountsItemsProperties.md)
- - [OpenBankProject::OBPv300PrivateAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesViews](docs/OBPv300PrivateAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesViews.md)
- - [OpenBankProject::OBPv300PrivateAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesViewsItems](docs/OBPv300PrivateAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesViewsItems.md)
- - [OpenBankProject::OBPv300PrivateAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesViewsItemsProperties](docs/OBPv300PrivateAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesViewsItemsProperties.md)
- - [OpenBankProject::OBPv300UpdateViewForBankAccountRequest](docs/OBPv300UpdateViewForBankAccountRequest.md)
- - [OpenBankProject::OBPv300UpdateViewForBankAccountRequestProperties](docs/OBPv300UpdateViewForBankAccountRequestProperties.md)
- - [OpenBankProject::OBPv310AnswerConsentChallengeRequest](docs/OBPv310AnswerConsentChallengeRequest.md)
- - [OpenBankProject::OBPv310AnswerConsentChallengeRequestProperties](docs/OBPv310AnswerConsentChallengeRequestProperties.md)
- - [OpenBankProject::OBPv310CheckFundsAvailable200Response](docs/OBPv310CheckFundsAvailable200Response.md)
- - [OpenBankProject::OBPv310CheckFundsAvailable200ResponseProperties](docs/OBPv310CheckFundsAvailable200ResponseProperties.md)
- - [OpenBankProject::OBPv310Config200Response](docs/OBPv310Config200Response.md)
- - [OpenBankProject::OBPv310Config200ResponseProperties](docs/OBPv310Config200ResponseProperties.md)
- - [OpenBankProject::OBPv310Config200ResponsePropertiesAkka](docs/OBPv310Config200ResponsePropertiesAkka.md)
- - [OpenBankProject::OBPv310Config200ResponsePropertiesAkkaProperties](docs/OBPv310Config200ResponsePropertiesAkkaProperties.md)
- - [OpenBankProject::OBPv310Config200ResponsePropertiesCache](docs/OBPv310Config200ResponsePropertiesCache.md)
- - [OpenBankProject::OBPv310Config200ResponsePropertiesCacheItems](docs/OBPv310Config200ResponsePropertiesCacheItems.md)
- - [OpenBankProject::OBPv310Config200ResponsePropertiesCacheItemsProperties](docs/OBPv310Config200ResponsePropertiesCacheItemsProperties.md)
- - [OpenBankProject::OBPv310Config200ResponsePropertiesElasticSearch](docs/OBPv310Config200ResponsePropertiesElasticSearch.md)
- - [OpenBankProject::OBPv310Config200ResponsePropertiesElasticSearchProperties](docs/OBPv310Config200ResponsePropertiesElasticSearchProperties.md)
- - [OpenBankProject::OBPv310Config200ResponsePropertiesElasticSearchPropertiesMetrics](docs/OBPv310Config200ResponsePropertiesElasticSearchPropertiesMetrics.md)
- - [OpenBankProject::OBPv310Config200ResponsePropertiesElasticSearchPropertiesMetricsItems](docs/OBPv310Config200ResponsePropertiesElasticSearchPropertiesMetricsItems.md)
- - [OpenBankProject::OBPv310Config200ResponsePropertiesElasticSearchPropertiesMetricsItemsProperties](docs/OBPv310Config200ResponsePropertiesElasticSearchPropertiesMetricsItemsProperties.md)
- - [OpenBankProject::OBPv310Config200ResponsePropertiesScopes](docs/OBPv310Config200ResponsePropertiesScopes.md)
- - [OpenBankProject::OBPv310Config200ResponsePropertiesScopesProperties](docs/OBPv310Config200ResponsePropertiesScopesProperties.md)
- - [OpenBankProject::OBPv310CreateAccountApplicationRequest](docs/OBPv310CreateAccountApplicationRequest.md)
- - [OpenBankProject::OBPv310CreateAccountApplicationRequestProperties](docs/OBPv310CreateAccountApplicationRequestProperties.md)
- - [OpenBankProject::OBPv310CreateAccountWebhookRequest](docs/OBPv310CreateAccountWebhookRequest.md)
- - [OpenBankProject::OBPv310CreateAccountWebhookRequestProperties](docs/OBPv310CreateAccountWebhookRequestProperties.md)
- - [OpenBankProject::OBPv310CreateCardAttribute200Response](docs/OBPv310CreateCardAttribute200Response.md)
- - [OpenBankProject::OBPv310CreateCardAttribute200ResponseProperties](docs/OBPv310CreateCardAttribute200ResponseProperties.md)
- - [OpenBankProject::OBPv310CreateCardAttribute200ResponsePropertiesAttributeType](docs/OBPv310CreateCardAttribute200ResponsePropertiesAttributeType.md)
- - [OpenBankProject::OBPv310CreateConsentEmailRequest](docs/OBPv310CreateConsentEmailRequest.md)
- - [OpenBankProject::OBPv310CreateConsentEmailRequestProperties](docs/OBPv310CreateConsentEmailRequestProperties.md)
- - [OpenBankProject::OBPv310CreateConsentSmsRequest](docs/OBPv310CreateConsentSmsRequest.md)
- - [OpenBankProject::OBPv310CreateConsentSmsRequestProperties](docs/OBPv310CreateConsentSmsRequestProperties.md)
- - [OpenBankProject::OBPv310CreateCustomerAddress200Response](docs/OBPv310CreateCustomerAddress200Response.md)
- - [OpenBankProject::OBPv310CreateCustomerAddress200ResponseProperties](docs/OBPv310CreateCustomerAddress200ResponseProperties.md)
- - [OpenBankProject::OBPv310CreateCustomerAddressRequest](docs/OBPv310CreateCustomerAddressRequest.md)
- - [OpenBankProject::OBPv310CreateCustomerAddressRequestProperties](docs/OBPv310CreateCustomerAddressRequestProperties.md)
- - [OpenBankProject::OBPv310CreateMeetingRequest](docs/OBPv310CreateMeetingRequest.md)
- - [OpenBankProject::OBPv310CreateMeetingRequestProperties](docs/OBPv310CreateMeetingRequestProperties.md)
- - [OpenBankProject::OBPv310CreateMethodRoutingRequest](docs/OBPv310CreateMethodRoutingRequest.md)
- - [OpenBankProject::OBPv310CreateMethodRoutingRequestProperties](docs/OBPv310CreateMethodRoutingRequestProperties.md)
- - [OpenBankProject::OBPv310CreateProductCollection200Response](docs/OBPv310CreateProductCollection200Response.md)
- - [OpenBankProject::OBPv310CreateProductCollection200ResponseProperties](docs/OBPv310CreateProductCollection200ResponseProperties.md)
- - [OpenBankProject::OBPv310CreateProductCollection200ResponsePropertiesProductCollection](docs/OBPv310CreateProductCollection200ResponsePropertiesProductCollection.md)
- - [OpenBankProject::OBPv310CreateProductCollection200ResponsePropertiesProductCollectionItems](docs/OBPv310CreateProductCollection200ResponsePropertiesProductCollectionItems.md)
- - [OpenBankProject::OBPv310CreateProductCollection200ResponsePropertiesProductCollectionItemsProperties](docs/OBPv310CreateProductCollection200ResponsePropertiesProductCollectionItemsProperties.md)
- - [OpenBankProject::OBPv310CreateProductCollection200ResponsePropertiesProductCollectionItemsPropertiesItems](docs/OBPv310CreateProductCollection200ResponsePropertiesProductCollectionItemsPropertiesItems.md)
- - [OpenBankProject::OBPv310CreateProductCollection200ResponsePropertiesProductCollectionItemsPropertiesItemsItems](docs/OBPv310CreateProductCollection200ResponsePropertiesProductCollectionItemsPropertiesItemsItems.md)
- - [OpenBankProject::OBPv310CreateProductCollection200ResponsePropertiesProductCollectionItemsPropertiesItemsItemsProperties](docs/OBPv310CreateProductCollection200ResponsePropertiesProductCollectionItemsPropertiesItemsItemsProperties.md)
- - [OpenBankProject::OBPv310CreateProductCollectionRequest](docs/OBPv310CreateProductCollectionRequest.md)
- - [OpenBankProject::OBPv310CreateProductCollectionRequestProperties](docs/OBPv310CreateProductCollectionRequestProperties.md)
- - [OpenBankProject::OBPv310CreateTaxResidence200Response](docs/OBPv310CreateTaxResidence200Response.md)
- - [OpenBankProject::OBPv310CreateTaxResidence200ResponseProperties](docs/OBPv310CreateTaxResidence200ResponseProperties.md)
- - [OpenBankProject::OBPv310CreateTaxResidenceRequest](docs/OBPv310CreateTaxResidenceRequest.md)
- - [OpenBankProject::OBPv310CreateTaxResidenceRequestProperties](docs/OBPv310CreateTaxResidenceRequestProperties.md)
- - [OpenBankProject::OBPv310EnableDisableAccountWebhook200Response](docs/OBPv310EnableDisableAccountWebhook200Response.md)
- - [OpenBankProject::OBPv310EnableDisableAccountWebhook200ResponseProperties](docs/OBPv310EnableDisableAccountWebhook200ResponseProperties.md)
- - [OpenBankProject::OBPv310EnableDisableAccountWebhookRequest](docs/OBPv310EnableDisableAccountWebhookRequest.md)
- - [OpenBankProject::OBPv310EnableDisableAccountWebhookRequestProperties](docs/OBPv310EnableDisableAccountWebhookRequestProperties.md)
- - [OpenBankProject::OBPv310EnableDisableConsumersRequest](docs/OBPv310EnableDisableConsumersRequest.md)
- - [OpenBankProject::OBPv310EnableDisableConsumersRequestProperties](docs/OBPv310EnableDisableConsumersRequestProperties.md)
- - [OpenBankProject::OBPv310GetAccountApplications200Response](docs/OBPv310GetAccountApplications200Response.md)
- - [OpenBankProject::OBPv310GetAccountApplications200ResponseProperties](docs/OBPv310GetAccountApplications200ResponseProperties.md)
- - [OpenBankProject::OBPv310GetAccountApplications200ResponsePropertiesAccountApplications](docs/OBPv310GetAccountApplications200ResponsePropertiesAccountApplications.md)
- - [OpenBankProject::OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems](docs/OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems.md)
- - [OpenBankProject::OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItemsProperties](docs/OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItemsProperties.md)
- - [OpenBankProject::OBPv310GetAccountWebhooks200Response](docs/OBPv310GetAccountWebhooks200Response.md)
- - [OpenBankProject::OBPv310GetAccountWebhooks200ResponseProperties](docs/OBPv310GetAccountWebhooks200ResponseProperties.md)
- - [OpenBankProject::OBPv310GetAccountWebhooks200ResponsePropertiesWebHooks](docs/OBPv310GetAccountWebhooks200ResponsePropertiesWebHooks.md)
- - [OpenBankProject::OBPv310GetAllEntitlements200Response](docs/OBPv310GetAllEntitlements200Response.md)
- - [OpenBankProject::OBPv310GetAllEntitlements200ResponseProperties](docs/OBPv310GetAllEntitlements200ResponseProperties.md)
- - [OpenBankProject::OBPv310GetAllEntitlements200ResponsePropertiesList](docs/OBPv310GetAllEntitlements200ResponsePropertiesList.md)
- - [OpenBankProject::OBPv310GetAllEntitlements200ResponsePropertiesListItems](docs/OBPv310GetAllEntitlements200ResponsePropertiesListItems.md)
- - [OpenBankProject::OBPv310GetAllEntitlements200ResponsePropertiesListItemsProperties](docs/OBPv310GetAllEntitlements200ResponsePropertiesListItemsProperties.md)
- - [OpenBankProject::OBPv310GetCallsLimit200Response](docs/OBPv310GetCallsLimit200Response.md)
- - [OpenBankProject::OBPv310GetCallsLimit200ResponseProperties](docs/OBPv310GetCallsLimit200ResponseProperties.md)
- - [OpenBankProject::OBPv310GetCallsLimit200ResponsePropertiesCurrentState](docs/OBPv310GetCallsLimit200ResponsePropertiesCurrentState.md)
- - [OpenBankProject::OBPv310GetCallsLimit200ResponsePropertiesCurrentStateProperties](docs/OBPv310GetCallsLimit200ResponsePropertiesCurrentStateProperties.md)
- - [OpenBankProject::OBPv310GetCallsLimit200ResponsePropertiesCurrentStatePropertiesPerWeek](docs/OBPv310GetCallsLimit200ResponsePropertiesCurrentStatePropertiesPerWeek.md)
- - [OpenBankProject::OBPv310GetCallsLimit200ResponsePropertiesCurrentStatePropertiesPerWeekProperties](docs/OBPv310GetCallsLimit200ResponsePropertiesCurrentStatePropertiesPerWeekProperties.md)
- - [OpenBankProject::OBPv310GetCardForBank200Response](docs/OBPv310GetCardForBank200Response.md)
- - [OpenBankProject::OBPv310GetCardForBank200ResponseProperties](docs/OBPv310GetCardForBank200ResponseProperties.md)
- - [OpenBankProject::OBPv310GetCardForBank200ResponsePropertiesAccount](docs/OBPv310GetCardForBank200ResponsePropertiesAccount.md)
- - [OpenBankProject::OBPv310GetCardForBank200ResponsePropertiesAccountProperties](docs/OBPv310GetCardForBank200ResponsePropertiesAccountProperties.md)
- - [OpenBankProject::OBPv310GetCardForBank200ResponsePropertiesAccountPropertiesViewsAvailable](docs/OBPv310GetCardForBank200ResponsePropertiesAccountPropertiesViewsAvailable.md)
- - [OpenBankProject::OBPv310GetCardForBank200ResponsePropertiesAccountPropertiesViewsAvailableItems](docs/OBPv310GetCardForBank200ResponsePropertiesAccountPropertiesViewsAvailableItems.md)
- - [OpenBankProject::OBPv310GetCardForBank200ResponsePropertiesAccountPropertiesViewsAvailableItemsProperties](docs/OBPv310GetCardForBank200ResponsePropertiesAccountPropertiesViewsAvailableItemsProperties.md)
- - [OpenBankProject::OBPv310GetCardForBank200ResponsePropertiesCardAttributes](docs/OBPv310GetCardForBank200ResponsePropertiesCardAttributes.md)
- - [OpenBankProject::OBPv310GetCardsForBank200Response](docs/OBPv310GetCardsForBank200Response.md)
- - [OpenBankProject::OBPv310GetCardsForBank200ResponseProperties](docs/OBPv310GetCardsForBank200ResponseProperties.md)
- - [OpenBankProject::OBPv310GetCardsForBank200ResponsePropertiesCards](docs/OBPv310GetCardsForBank200ResponsePropertiesCards.md)
- - [OpenBankProject::OBPv310GetCardsForBank200ResponsePropertiesCardsItems](docs/OBPv310GetCardsForBank200ResponsePropertiesCardsItems.md)
- - [OpenBankProject::OBPv310GetCardsForBank200ResponsePropertiesCardsItemsProperties](docs/OBPv310GetCardsForBank200ResponsePropertiesCardsItemsProperties.md)
- - [OpenBankProject::OBPv310GetCardsForBank200ResponsePropertiesCardsItemsPropertiesAccount](docs/OBPv310GetCardsForBank200ResponsePropertiesCardsItemsPropertiesAccount.md)
- - [OpenBankProject::OBPv310GetCardsForBank200ResponsePropertiesCardsItemsPropertiesAccountProperties](docs/OBPv310GetCardsForBank200ResponsePropertiesCardsItemsPropertiesAccountProperties.md)
- - [OpenBankProject::OBPv310GetCardsForBank200ResponsePropertiesCardsItemsPropertiesAccountPropertiesViewsAvailable](docs/OBPv310GetCardsForBank200ResponsePropertiesCardsItemsPropertiesAccountPropertiesViewsAvailable.md)
- - [OpenBankProject::OBPv310GetCardsForBank200ResponsePropertiesCardsItemsPropertiesAccountPropertiesViewsAvailableItems](docs/OBPv310GetCardsForBank200ResponsePropertiesCardsItemsPropertiesAccountPropertiesViewsAvailableItems.md)
- - [OpenBankProject::OBPv310GetCardsForBank200ResponsePropertiesCardsItemsPropertiesAccountPropertiesViewsAvailableItemsProperties](docs/OBPv310GetCardsForBank200ResponsePropertiesCardsItemsPropertiesAccountPropertiesViewsAvailableItemsProperties.md)
- - [OpenBankProject::OBPv310GetCardsForBank200ResponsePropertiesCardsItemsPropertiesPinReset](docs/OBPv310GetCardsForBank200ResponsePropertiesCardsItemsPropertiesPinReset.md)
- - [OpenBankProject::OBPv310GetCardsForBank200ResponsePropertiesCardsItemsPropertiesReplacement](docs/OBPv310GetCardsForBank200ResponsePropertiesCardsItemsPropertiesReplacement.md)
- - [OpenBankProject::OBPv310GetCardsForBank200ResponsePropertiesCardsItemsPropertiesReplacementProperties](docs/OBPv310GetCardsForBank200ResponsePropertiesCardsItemsPropertiesReplacementProperties.md)
- - [OpenBankProject::OBPv310GetCheckbookOrders200Response](docs/OBPv310GetCheckbookOrders200Response.md)
- - [OpenBankProject::OBPv310GetCheckbookOrders200ResponseProperties](docs/OBPv310GetCheckbookOrders200ResponseProperties.md)
- - [OpenBankProject::OBPv310GetCheckbookOrders200ResponsePropertiesAccount](docs/OBPv310GetCheckbookOrders200ResponsePropertiesAccount.md)
- - [OpenBankProject::OBPv310GetCheckbookOrders200ResponsePropertiesAccountProperties](docs/OBPv310GetCheckbookOrders200ResponsePropertiesAccountProperties.md)
- - [OpenBankProject::OBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutings](docs/OBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutings.md)
- - [OpenBankProject::OBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItems](docs/OBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItems.md)
- - [OpenBankProject::OBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItemsProperties](docs/OBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItemsProperties.md)
- - [OpenBankProject::OBPv310GetCheckbookOrders200ResponsePropertiesOrders](docs/OBPv310GetCheckbookOrders200ResponsePropertiesOrders.md)
- - [OpenBankProject::OBPv310GetCheckbookOrders200ResponsePropertiesOrdersItems](docs/OBPv310GetCheckbookOrders200ResponsePropertiesOrdersItems.md)
- - [OpenBankProject::OBPv310GetCheckbookOrders200ResponsePropertiesOrdersItemsProperties](docs/OBPv310GetCheckbookOrders200ResponsePropertiesOrdersItemsProperties.md)
- - [OpenBankProject::OBPv310GetCheckbookOrders200ResponsePropertiesOrdersItemsPropertiesOrder](docs/OBPv310GetCheckbookOrders200ResponsePropertiesOrdersItemsPropertiesOrder.md)
- - [OpenBankProject::OBPv310GetCheckbookOrders200ResponsePropertiesOrdersItemsPropertiesOrderProperties](docs/OBPv310GetCheckbookOrders200ResponsePropertiesOrdersItemsPropertiesOrderProperties.md)
- - [OpenBankProject::OBPv310GetConsumersForCurrentUser200Response](docs/OBPv310GetConsumersForCurrentUser200Response.md)
- - [OpenBankProject::OBPv310GetConsumersForCurrentUser200ResponseProperties](docs/OBPv310GetConsumersForCurrentUser200ResponseProperties.md)
- - [OpenBankProject::OBPv310GetConsumersForCurrentUser200ResponsePropertiesConsumers](docs/OBPv310GetConsumersForCurrentUser200ResponsePropertiesConsumers.md)
- - [OpenBankProject::OBPv310GetConsumersForCurrentUser200ResponsePropertiesConsumersItems](docs/OBPv310GetConsumersForCurrentUser200ResponsePropertiesConsumersItems.md)
- - [OpenBankProject::OBPv310GetConsumersForCurrentUser200ResponsePropertiesConsumersItemsProperties](docs/OBPv310GetConsumersForCurrentUser200ResponsePropertiesConsumersItemsProperties.md)
- - [OpenBankProject::OBPv310GetCustomerAddresses200Response](docs/OBPv310GetCustomerAddresses200Response.md)
- - [OpenBankProject::OBPv310GetCustomerAddresses200ResponseProperties](docs/OBPv310GetCustomerAddresses200ResponseProperties.md)
- - [OpenBankProject::OBPv310GetCustomerAddresses200ResponsePropertiesAddresses](docs/OBPv310GetCustomerAddresses200ResponsePropertiesAddresses.md)
- - [OpenBankProject::OBPv310GetMeeting200Response](docs/OBPv310GetMeeting200Response.md)
- - [OpenBankProject::OBPv310GetMeeting200ResponseProperties](docs/OBPv310GetMeeting200ResponseProperties.md)
- - [OpenBankProject::OBPv310GetMeeting200ResponsePropertiesCreator](docs/OBPv310GetMeeting200ResponsePropertiesCreator.md)
- - [OpenBankProject::OBPv310GetMeeting200ResponsePropertiesCreatorProperties](docs/OBPv310GetMeeting200ResponsePropertiesCreatorProperties.md)
- - [OpenBankProject::OBPv310GetMeeting200ResponsePropertiesInvitees](docs/OBPv310GetMeeting200ResponsePropertiesInvitees.md)
- - [OpenBankProject::OBPv310GetMeeting200ResponsePropertiesInviteesItems](docs/OBPv310GetMeeting200ResponsePropertiesInviteesItems.md)
- - [OpenBankProject::OBPv310GetMeeting200ResponsePropertiesInviteesItemsProperties](docs/OBPv310GetMeeting200ResponsePropertiesInviteesItemsProperties.md)
- - [OpenBankProject::OBPv310GetMeeting200ResponsePropertiesKeys](docs/OBPv310GetMeeting200ResponsePropertiesKeys.md)
- - [OpenBankProject::OBPv310GetMeeting200ResponsePropertiesKeysProperties](docs/OBPv310GetMeeting200ResponsePropertiesKeysProperties.md)
- - [OpenBankProject::OBPv310GetMeeting200ResponsePropertiesPresent](docs/OBPv310GetMeeting200ResponsePropertiesPresent.md)
- - [OpenBankProject::OBPv310GetMeeting200ResponsePropertiesPresentProperties](docs/OBPv310GetMeeting200ResponsePropertiesPresentProperties.md)
- - [OpenBankProject::OBPv310GetMeetings200Response](docs/OBPv310GetMeetings200Response.md)
- - [OpenBankProject::OBPv310GetMeetings200ResponseProperties](docs/OBPv310GetMeetings200ResponseProperties.md)
- - [OpenBankProject::OBPv310GetMeetings200ResponsePropertiesMeetings](docs/OBPv310GetMeetings200ResponsePropertiesMeetings.md)
- - [OpenBankProject::OBPv310GetMethodRoutings200Response](docs/OBPv310GetMethodRoutings200Response.md)
- - [OpenBankProject::OBPv310GetMethodRoutings200ResponseProperties](docs/OBPv310GetMethodRoutings200ResponseProperties.md)
- - [OpenBankProject::OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutings](docs/OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutings.md)
- - [OpenBankProject::OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems](docs/OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems.md)
- - [OpenBankProject::OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItemsProperties](docs/OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItemsProperties.md)
- - [OpenBankProject::OBPv310GetMetricsTopConsumers200Response](docs/OBPv310GetMetricsTopConsumers200Response.md)
- - [OpenBankProject::OBPv310GetMetricsTopConsumers200ResponseProperties](docs/OBPv310GetMetricsTopConsumers200ResponseProperties.md)
- - [OpenBankProject::OBPv310GetMetricsTopConsumers200ResponsePropertiesTopConsumers](docs/OBPv310GetMetricsTopConsumers200ResponsePropertiesTopConsumers.md)
- - [OpenBankProject::OBPv310GetMetricsTopConsumers200ResponsePropertiesTopConsumersItems](docs/OBPv310GetMetricsTopConsumers200ResponsePropertiesTopConsumersItems.md)
- - [OpenBankProject::OBPv310GetMetricsTopConsumers200ResponsePropertiesTopConsumersItemsProperties](docs/OBPv310GetMetricsTopConsumers200ResponsePropertiesTopConsumersItemsProperties.md)
- - [OpenBankProject::OBPv310GetOAuth2ServerJWKsURIs200Response](docs/OBPv310GetOAuth2ServerJWKsURIs200Response.md)
- - [OpenBankProject::OBPv310GetOAuth2ServerJWKsURIs200ResponseProperties](docs/OBPv310GetOAuth2ServerJWKsURIs200ResponseProperties.md)
- - [OpenBankProject::OBPv310GetOAuth2ServerJWKsURIs200ResponsePropertiesJwksUris](docs/OBPv310GetOAuth2ServerJWKsURIs200ResponsePropertiesJwksUris.md)
- - [OpenBankProject::OBPv310GetOAuth2ServerJWKsURIs200ResponsePropertiesJwksUrisItems](docs/OBPv310GetOAuth2ServerJWKsURIs200ResponsePropertiesJwksUrisItems.md)
- - [OpenBankProject::OBPv310GetOAuth2ServerJWKsURIs200ResponsePropertiesJwksUrisItemsProperties](docs/OBPv310GetOAuth2ServerJWKsURIs200ResponsePropertiesJwksUrisItemsProperties.md)
- - [OpenBankProject::OBPv310GetObpConnectorLoopback200Response](docs/OBPv310GetObpConnectorLoopback200Response.md)
- - [OpenBankProject::OBPv310GetObpConnectorLoopback200ResponseProperties](docs/OBPv310GetObpConnectorLoopback200ResponseProperties.md)
- - [OpenBankProject::OBPv310GetProductCollection200Response](docs/OBPv310GetProductCollection200Response.md)
- - [OpenBankProject::OBPv310GetProductCollection200ResponseProperties](docs/OBPv310GetProductCollection200ResponseProperties.md)
- - [OpenBankProject::OBPv310GetProductCollection200ResponsePropertiesProducts](docs/OBPv310GetProductCollection200ResponsePropertiesProducts.md)
- - [OpenBankProject::OBPv310GetProductCollection200ResponsePropertiesProductsItems](docs/OBPv310GetProductCollection200ResponsePropertiesProductsItems.md)
- - [OpenBankProject::OBPv310GetProductCollection200ResponsePropertiesProductsItemsProperties](docs/OBPv310GetProductCollection200ResponsePropertiesProductsItemsProperties.md)
- - [OpenBankProject::OBPv310GetProductTree200Response](docs/OBPv310GetProductTree200Response.md)
- - [OpenBankProject::OBPv310GetProductTree200ResponseProperties](docs/OBPv310GetProductTree200ResponseProperties.md)
- - [OpenBankProject::OBPv310GetProductTree200ResponsePropertiesParentProduct](docs/OBPv310GetProductTree200ResponsePropertiesParentProduct.md)
- - [OpenBankProject::OBPv310GetProductTree200ResponsePropertiesParentProductProperties](docs/OBPv310GetProductTree200ResponsePropertiesParentProductProperties.md)
- - [OpenBankProject::OBPv310GetProductTree200ResponsePropertiesParentProductPropertiesParentProduct](docs/OBPv310GetProductTree200ResponsePropertiesParentProductPropertiesParentProduct.md)
- - [OpenBankProject::OBPv310GetProductTree200ResponsePropertiesParentProductPropertiesParentProductProperties](docs/OBPv310GetProductTree200ResponsePropertiesParentProductPropertiesParentProductProperties.md)
- - [OpenBankProject::OBPv310GetProductTree200ResponsePropertiesParentProductPropertiesParentProductPropertiesMeta](docs/OBPv310GetProductTree200ResponsePropertiesParentProductPropertiesParentProductPropertiesMeta.md)
- - [OpenBankProject::OBPv310GetProductTree200ResponsePropertiesParentProductPropertiesParentProductPropertiesMetaProperties](docs/OBPv310GetProductTree200ResponsePropertiesParentProductPropertiesParentProductPropertiesMetaProperties.md)
- - [OpenBankProject::OBPv310GetProductTree200ResponsePropertiesParentProductPropertiesParentProductPropertiesMetaPropertiesLicense](docs/OBPv310GetProductTree200ResponsePropertiesParentProductPropertiesParentProductPropertiesMetaPropertiesLicense.md)
- - [OpenBankProject::OBPv310GetProductTree200ResponsePropertiesParentProductPropertiesParentProductPropertiesMetaPropertiesLicenseProperties](docs/OBPv310GetProductTree200ResponsePropertiesParentProductPropertiesParentProductPropertiesMetaPropertiesLicenseProperties.md)
- - [OpenBankProject::OBPv310GetRateLimitingInfo200Response](docs/OBPv310GetRateLimitingInfo200Response.md)
- - [OpenBankProject::OBPv310GetRateLimitingInfo200ResponseProperties](docs/OBPv310GetRateLimitingInfo200ResponseProperties.md)
- - [OpenBankProject::OBPv310GetServerJWK200Response](docs/OBPv310GetServerJWK200Response.md)
- - [OpenBankProject::OBPv310GetServerJWK200ResponseProperties](docs/OBPv310GetServerJWK200ResponseProperties.md)
- - [OpenBankProject::OBPv310GetStatusOfCreditCardOrder200Response](docs/OBPv310GetStatusOfCreditCardOrder200Response.md)
- - [OpenBankProject::OBPv310GetStatusOfCreditCardOrder200ResponseProperties](docs/OBPv310GetStatusOfCreditCardOrder200ResponseProperties.md)
- - [OpenBankProject::OBPv310GetStatusOfCreditCardOrder200ResponsePropertiesCards](docs/OBPv310GetStatusOfCreditCardOrder200ResponsePropertiesCards.md)
- - [OpenBankProject::OBPv310GetStatusOfCreditCardOrder200ResponsePropertiesCardsItems](docs/OBPv310GetStatusOfCreditCardOrder200ResponsePropertiesCardsItems.md)
- - [OpenBankProject::OBPv310GetStatusOfCreditCardOrder200ResponsePropertiesCardsItemsProperties](docs/OBPv310GetStatusOfCreditCardOrder200ResponsePropertiesCardsItemsProperties.md)
- - [OpenBankProject::OBPv310GetTaxResidence200Response](docs/OBPv310GetTaxResidence200Response.md)
- - [OpenBankProject::OBPv310GetTaxResidence200ResponseProperties](docs/OBPv310GetTaxResidence200ResponseProperties.md)
- - [OpenBankProject::OBPv310GetTaxResidence200ResponsePropertiesTaxResidence](docs/OBPv310GetTaxResidence200ResponsePropertiesTaxResidence.md)
- - [OpenBankProject::OBPv310GetTransactionByIdForBankAccount200Response](docs/OBPv310GetTransactionByIdForBankAccount200Response.md)
- - [OpenBankProject::OBPv310GetTransactionByIdForBankAccount200ResponseProperties](docs/OBPv310GetTransactionByIdForBankAccount200ResponseProperties.md)
- - [OpenBankProject::OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadata](docs/OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadata.md)
- - [OpenBankProject::OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataProperties](docs/OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataProperties.md)
- - [OpenBankProject::OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImages](docs/OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImages.md)
- - [OpenBankProject::OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems](docs/OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems.md)
- - [OpenBankProject::OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItemsProperties](docs/OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItemsProperties.md)
- - [OpenBankProject::OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccount](docs/OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccount.md)
- - [OpenBankProject::OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccountProperties](docs/OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccountProperties.md)
- - [OpenBankProject::OBPv310GetWebUiProps200Response](docs/OBPv310GetWebUiProps200Response.md)
- - [OpenBankProject::OBPv310GetWebUiProps200ResponseProperties](docs/OBPv310GetWebUiProps200ResponseProperties.md)
- - [OpenBankProject::OBPv310GetWebUiProps200ResponsePropertiesWebuiProps](docs/OBPv310GetWebUiProps200ResponsePropertiesWebuiProps.md)
- - [OpenBankProject::OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems](docs/OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems.md)
- - [OpenBankProject::OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItemsProperties](docs/OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItemsProperties.md)
- - [OpenBankProject::OBPv310RefreshUser200Response](docs/OBPv310RefreshUser200Response.md)
- - [OpenBankProject::OBPv310RefreshUser200ResponseProperties](docs/OBPv310RefreshUser200ResponseProperties.md)
- - [OpenBankProject::OBPv310SaveHistoricalTransaction200Response](docs/OBPv310SaveHistoricalTransaction200Response.md)
- - [OpenBankProject::OBPv310SaveHistoricalTransaction200ResponseProperties](docs/OBPv310SaveHistoricalTransaction200ResponseProperties.md)
- - [OpenBankProject::OBPv310SaveHistoricalTransactionRequest](docs/OBPv310SaveHistoricalTransactionRequest.md)
- - [OpenBankProject::OBPv310SaveHistoricalTransactionRequestProperties](docs/OBPv310SaveHistoricalTransactionRequestProperties.md)
- - [OpenBankProject::OBPv310SaveHistoricalTransactionRequestPropertiesTo](docs/OBPv310SaveHistoricalTransactionRequestPropertiesTo.md)
- - [OpenBankProject::OBPv310SaveHistoricalTransactionRequestPropertiesToProperties](docs/OBPv310SaveHistoricalTransactionRequestPropertiesToProperties.md)
- - [OpenBankProject::OBPv310UpdateAccount200Response](docs/OBPv310UpdateAccount200Response.md)
- - [OpenBankProject::OBPv310UpdateAccount200ResponseProperties](docs/OBPv310UpdateAccount200ResponseProperties.md)
- - [OpenBankProject::OBPv310UpdateAccountAttributeRequest](docs/OBPv310UpdateAccountAttributeRequest.md)
- - [OpenBankProject::OBPv310UpdateAccountAttributeRequestProperties](docs/OBPv310UpdateAccountAttributeRequestProperties.md)
- - [OpenBankProject::OBPv310UpdateAccountRequest](docs/OBPv310UpdateAccountRequest.md)
- - [OpenBankProject::OBPv310UpdateAccountRequestProperties](docs/OBPv310UpdateAccountRequestProperties.md)
- - [OpenBankProject::OBPv310UpdateCustomerBranch200Response](docs/OBPv310UpdateCustomerBranch200Response.md)
- - [OpenBankProject::OBPv310UpdateCustomerBranch200ResponseProperties](docs/OBPv310UpdateCustomerBranch200ResponseProperties.md)
- - [OpenBankProject::OBPv310UpdateCustomerBranchRequest](docs/OBPv310UpdateCustomerBranchRequest.md)
- - [OpenBankProject::OBPv310UpdateCustomerBranchRequestProperties](docs/OBPv310UpdateCustomerBranchRequestProperties.md)
- - [OpenBankProject::OBPv310UpdateCustomerCreditLimitRequest](docs/OBPv310UpdateCustomerCreditLimitRequest.md)
- - [OpenBankProject::OBPv310UpdateCustomerCreditLimitRequestProperties](docs/OBPv310UpdateCustomerCreditLimitRequestProperties.md)
- - [OpenBankProject::OBPv310UpdateCustomerCreditRatingAndSourceRequest](docs/OBPv310UpdateCustomerCreditRatingAndSourceRequest.md)
- - [OpenBankProject::OBPv310UpdateCustomerCreditRatingAndSourceRequestProperties](docs/OBPv310UpdateCustomerCreditRatingAndSourceRequestProperties.md)
- - [OpenBankProject::OBPv310UpdateCustomerDataRequest](docs/OBPv310UpdateCustomerDataRequest.md)
- - [OpenBankProject::OBPv310UpdateCustomerDataRequestProperties](docs/OBPv310UpdateCustomerDataRequestProperties.md)
- - [OpenBankProject::OBPv310UpdateCustomerEmailRequest](docs/OBPv310UpdateCustomerEmailRequest.md)
- - [OpenBankProject::OBPv310UpdateCustomerEmailRequestProperties](docs/OBPv310UpdateCustomerEmailRequestProperties.md)
- - [OpenBankProject::OBPv310UpdateCustomerIdentityRequest](docs/OBPv310UpdateCustomerIdentityRequest.md)
- - [OpenBankProject::OBPv310UpdateCustomerIdentityRequestProperties](docs/OBPv310UpdateCustomerIdentityRequestProperties.md)
- - [OpenBankProject::OBPv310UpdatedCardForBankRequest](docs/OBPv310UpdatedCardForBankRequest.md)
- - [OpenBankProject::OBPv310UpdatedCardForBankRequestProperties](docs/OBPv310UpdatedCardForBankRequestProperties.md)
- - [OpenBankProject::OBPv400AddAccount200Response](docs/OBPv400AddAccount200Response.md)
- - [OpenBankProject::OBPv400AddAccount200ResponseProperties](docs/OBPv400AddAccount200ResponseProperties.md)
- - [OpenBankProject::OBPv400AddAccountRequest](docs/OBPv400AddAccountRequest.md)
- - [OpenBankProject::OBPv400AddAccountRequestProperties](docs/OBPv400AddAccountRequestProperties.md)
- - [OpenBankProject::OBPv400AddConsentUserRequest](docs/OBPv400AddConsentUserRequest.md)
- - [OpenBankProject::OBPv400AddConsentUserRequestProperties](docs/OBPv400AddConsentUserRequestProperties.md)
- - [OpenBankProject::OBPv400AnswerTransactionRequestChallengeRequest](docs/OBPv400AnswerTransactionRequestChallengeRequest.md)
- - [OpenBankProject::OBPv400AnswerTransactionRequestChallengeRequestProperties](docs/OBPv400AnswerTransactionRequestChallengeRequestProperties.md)
- - [OpenBankProject::OBPv400BuildDynamicEndpointTemplate200Response](docs/OBPv400BuildDynamicEndpointTemplate200Response.md)
- - [OpenBankProject::OBPv400BuildDynamicEndpointTemplate200ResponseProperties](docs/OBPv400BuildDynamicEndpointTemplate200ResponseProperties.md)
- - [OpenBankProject::OBPv400BuildDynamicEndpointTemplateRequest](docs/OBPv400BuildDynamicEndpointTemplateRequest.md)
- - [OpenBankProject::OBPv400BuildDynamicEndpointTemplateRequestProperties](docs/OBPv400BuildDynamicEndpointTemplateRequestProperties.md)
- - [OpenBankProject::OBPv400CreateBankAccountNotificationWebhook200Response](docs/OBPv400CreateBankAccountNotificationWebhook200Response.md)
- - [OpenBankProject::OBPv400CreateBankAccountNotificationWebhook200ResponseProperties](docs/OBPv400CreateBankAccountNotificationWebhook200ResponseProperties.md)
- - [OpenBankProject::OBPv400CreateConnectorMethodRequest](docs/OBPv400CreateConnectorMethodRequest.md)
- - [OpenBankProject::OBPv400CreateConnectorMethodRequestProperties](docs/OBPv400CreateConnectorMethodRequestProperties.md)
- - [OpenBankProject::OBPv400CreateCounterpartyForAnyAccountRequest](docs/OBPv400CreateCounterpartyForAnyAccountRequest.md)
- - [OpenBankProject::OBPv400CreateCounterpartyForAnyAccountRequestProperties](docs/OBPv400CreateCounterpartyForAnyAccountRequestProperties.md)
- - [OpenBankProject::OBPv400CreateCustomerMessageRequest](docs/OBPv400CreateCustomerMessageRequest.md)
- - [OpenBankProject::OBPv400CreateCustomerMessageRequestProperties](docs/OBPv400CreateCustomerMessageRequestProperties.md)
- - [OpenBankProject::OBPv400CreateDirectDebit200Response](docs/OBPv400CreateDirectDebit200Response.md)
- - [OpenBankProject::OBPv400CreateDirectDebit200ResponseProperties](docs/OBPv400CreateDirectDebit200ResponseProperties.md)
- - [OpenBankProject::OBPv400CreateDirectDebitRequest](docs/OBPv400CreateDirectDebitRequest.md)
- - [OpenBankProject::OBPv400CreateDirectDebitRequestProperties](docs/OBPv400CreateDirectDebitRequestProperties.md)
- - [OpenBankProject::OBPv400CreateEndpointMappingRequest](docs/OBPv400CreateEndpointMappingRequest.md)
- - [OpenBankProject::OBPv400CreateEndpointMappingRequestProperties](docs/OBPv400CreateEndpointMappingRequestProperties.md)
- - [OpenBankProject::OBPv400CreateHistoricalTransactionAtBankRequest](docs/OBPv400CreateHistoricalTransactionAtBankRequest.md)
- - [OpenBankProject::OBPv400CreateHistoricalTransactionAtBankRequestProperties](docs/OBPv400CreateHistoricalTransactionAtBankRequestProperties.md)
- - [OpenBankProject::OBPv400CreateMyApiCollectionEndpointRequest](docs/OBPv400CreateMyApiCollectionEndpointRequest.md)
- - [OpenBankProject::OBPv400CreateMyApiCollectionEndpointRequestProperties](docs/OBPv400CreateMyApiCollectionEndpointRequestProperties.md)
- - [OpenBankProject::OBPv400CreateMyApiCollectionRequest](docs/OBPv400CreateMyApiCollectionRequest.md)
- - [OpenBankProject::OBPv400CreateMyApiCollectionRequestProperties](docs/OBPv400CreateMyApiCollectionRequestProperties.md)
- - [OpenBankProject::OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest](docs/OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)
- - [OpenBankProject::OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequestProperties](docs/OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequestProperties.md)
- - [OpenBankProject::OBPv400CreateProductAttribute200Response](docs/OBPv400CreateProductAttribute200Response.md)
- - [OpenBankProject::OBPv400CreateProductAttribute200ResponseProperties](docs/OBPv400CreateProductAttribute200ResponseProperties.md)
- - [OpenBankProject::OBPv400CreateSettlementAccount200Response](docs/OBPv400CreateSettlementAccount200Response.md)
- - [OpenBankProject::OBPv400CreateSettlementAccount200ResponseProperties](docs/OBPv400CreateSettlementAccount200ResponseProperties.md)
- - [OpenBankProject::OBPv400CreateSettlementAccountRequest](docs/OBPv400CreateSettlementAccountRequest.md)
- - [OpenBankProject::OBPv400CreateSettlementAccountRequestProperties](docs/OBPv400CreateSettlementAccountRequestProperties.md)
- - [OpenBankProject::OBPv400CreateStandingOrder200Response](docs/OBPv400CreateStandingOrder200Response.md)
- - [OpenBankProject::OBPv400CreateStandingOrder200ResponseProperties](docs/OBPv400CreateStandingOrder200ResponseProperties.md)
- - [OpenBankProject::OBPv400CreateStandingOrderRequest](docs/OBPv400CreateStandingOrderRequest.md)
- - [OpenBankProject::OBPv400CreateStandingOrderRequestProperties](docs/OBPv400CreateStandingOrderRequestProperties.md)
- - [OpenBankProject::OBPv400CreateStandingOrderRequestPropertiesWhen](docs/OBPv400CreateStandingOrderRequestPropertiesWhen.md)
- - [OpenBankProject::OBPv400CreateStandingOrderRequestPropertiesWhenProperties](docs/OBPv400CreateStandingOrderRequestPropertiesWhenProperties.md)
- - [OpenBankProject::OBPv400CreateSystemAccountNotificationWebhook200Response](docs/OBPv400CreateSystemAccountNotificationWebhook200Response.md)
- - [OpenBankProject::OBPv400CreateSystemAccountNotificationWebhook200ResponseProperties](docs/OBPv400CreateSystemAccountNotificationWebhook200ResponseProperties.md)
- - [OpenBankProject::OBPv400CreateSystemAccountNotificationWebhookRequest](docs/OBPv400CreateSystemAccountNotificationWebhookRequest.md)
- - [OpenBankProject::OBPv400CreateSystemAccountNotificationWebhookRequestProperties](docs/OBPv400CreateSystemAccountNotificationWebhookRequestProperties.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestAccountRequest](docs/OBPv400CreateTransactionRequestAccountRequest.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestAccountRequestProperties](docs/OBPv400CreateTransactionRequestAccountRequestProperties.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestAgentCashWithDrawalRequest](docs/OBPv400CreateTransactionRequestAgentCashWithDrawalRequest.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestAgentCashWithDrawalRequestProperties](docs/OBPv400CreateTransactionRequestAgentCashWithDrawalRequestProperties.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCardRequest](docs/OBPv400CreateTransactionRequestCardRequest.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCardRequestProperties](docs/OBPv400CreateTransactionRequestCardRequestProperties.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCardRequestPropertiesCard](docs/OBPv400CreateTransactionRequestCardRequestPropertiesCard.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCardRequestPropertiesCardProperties](docs/OBPv400CreateTransactionRequestCardRequestPropertiesCardProperties.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200Response](docs/OBPv400CreateTransactionRequestCounterparty200Response.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponseProperties](docs/OBPv400CreateTransactionRequestCounterparty200ResponseProperties.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributes](docs/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributes.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems](docs/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItemsProperties](docs/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItemsProperties.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesChallenges](docs/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesChallenges.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesChallengesItems](docs/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesChallengesItems.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesChallengesItemsProperties](docs/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesChallengesItemsProperties.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesCharge](docs/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesCharge.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesChargeProperties](docs/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesChargeProperties.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetails](docs/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetails.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsProperties](docs/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsProperties.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToAgent](docs/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToAgent.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToAgentProperties](docs/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToAgentProperties.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToSepaCreditTransfers](docs/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToSepaCreditTransfers.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToSepaCreditTransfersProperties](docs/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToSepaCreditTransfersProperties.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToSepaCreditTransfersPropertiesDebtorAccount](docs/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToSepaCreditTransfersPropertiesDebtorAccount.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToSepaCreditTransfersPropertiesDebtorAccountProperties](docs/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToSepaCreditTransfersPropertiesDebtorAccountProperties.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToSimple](docs/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToSimple.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToSimpleProperties](docs/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToSimpleProperties.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAccount](docs/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAccount.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAccountProperties](docs/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAccountProperties.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAccountPropertiesTo](docs/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAccountPropertiesTo.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAccountPropertiesToProperties](docs/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAccountPropertiesToProperties.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAccountPropertiesToPropertiesAccount](docs/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAccountPropertiesToPropertiesAccount.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAccountPropertiesToPropertiesAccountProperties](docs/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAccountPropertiesToPropertiesAccountProperties.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAtm](docs/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAtm.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAtmProperties](docs/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAtmProperties.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAtmPropertiesTo](docs/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAtmPropertiesTo.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAtmPropertiesToProperties](docs/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAtmPropertiesToProperties.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAtmPropertiesToPropertiesKycDocument](docs/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAtmPropertiesToPropertiesKycDocument.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAtmPropertiesToPropertiesKycDocumentProperties](docs/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToAtmPropertiesToPropertiesKycDocumentProperties.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhone](docs/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhone.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhoneProperties](docs/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhoneProperties.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesFrom](docs/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesFrom.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesFromProperties](docs/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesFromProperties.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo](docs/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesToProperties](docs/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesToProperties.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesFrom](docs/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesFrom.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesFromProperties](docs/OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesFromProperties.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterpartyRequest](docs/OBPv400CreateTransactionRequestCounterpartyRequest.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterpartyRequestProperties](docs/OBPv400CreateTransactionRequestCounterpartyRequestProperties.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributes](docs/OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributes.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems](docs/OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItemsProperties](docs/OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItemsProperties.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterpartyRequestPropertiesTo](docs/OBPv400CreateTransactionRequestCounterpartyRequestPropertiesTo.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestCounterpartyRequestPropertiesToProperties](docs/OBPv400CreateTransactionRequestCounterpartyRequestPropertiesToProperties.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestFreeFormRequest](docs/OBPv400CreateTransactionRequestFreeFormRequest.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestFreeFormRequestProperties](docs/OBPv400CreateTransactionRequestFreeFormRequestProperties.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestRefundRequest](docs/OBPv400CreateTransactionRequestRefundRequest.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestRefundRequestProperties](docs/OBPv400CreateTransactionRequestRefundRequestProperties.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestRefundRequestPropertiesRefund](docs/OBPv400CreateTransactionRequestRefundRequestPropertiesRefund.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestRefundRequestPropertiesRefundProperties](docs/OBPv400CreateTransactionRequestRefundRequestPropertiesRefundProperties.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestSepaRequest](docs/OBPv400CreateTransactionRequestSepaRequest.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestSepaRequestProperties](docs/OBPv400CreateTransactionRequestSepaRequestProperties.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestSepaRequestPropertiesReasons](docs/OBPv400CreateTransactionRequestSepaRequestPropertiesReasons.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestSepaRequestPropertiesReasonsItems](docs/OBPv400CreateTransactionRequestSepaRequestPropertiesReasonsItems.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestSepaRequestPropertiesReasonsItemsProperties](docs/OBPv400CreateTransactionRequestSepaRequestPropertiesReasonsItemsProperties.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestSimpleRequest](docs/OBPv400CreateTransactionRequestSimpleRequest.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestSimpleRequestProperties](docs/OBPv400CreateTransactionRequestSimpleRequestProperties.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestSimpleRequestPropertiesTo](docs/OBPv400CreateTransactionRequestSimpleRequestPropertiesTo.md)
- - [OpenBankProject::OBPv400CreateTransactionRequestSimpleRequestPropertiesToProperties](docs/OBPv400CreateTransactionRequestSimpleRequestPropertiesToProperties.md)
- - [OpenBankProject::OBPv400CreateUserCustomerLinksRequest](docs/OBPv400CreateUserCustomerLinksRequest.md)
- - [OpenBankProject::OBPv400CreateUserCustomerLinksRequestProperties](docs/OBPv400CreateUserCustomerLinksRequestProperties.md)
- - [OpenBankProject::OBPv400CreateUserInvitationRequest](docs/OBPv400CreateUserInvitationRequest.md)
- - [OpenBankProject::OBPv400CreateUserInvitationRequestProperties](docs/OBPv400CreateUserInvitationRequestProperties.md)
- - [OpenBankProject::OBPv400CreateUserWithRolesRequest](docs/OBPv400CreateUserWithRolesRequest.md)
- - [OpenBankProject::OBPv400CreateUserWithRolesRequestProperties](docs/OBPv400CreateUserWithRolesRequestProperties.md)
- - [OpenBankProject::OBPv400DeleteSystemLevelEndpointTag200Response](docs/OBPv400DeleteSystemLevelEndpointTag200Response.md)
- - [OpenBankProject::OBPv400DeleteSystemLevelEndpointTag200ResponseProperties](docs/OBPv400DeleteSystemLevelEndpointTag200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetAccountsByAccountRoutingRegex200Response](docs/OBPv400GetAccountsByAccountRoutingRegex200Response.md)
- - [OpenBankProject::OBPv400GetAccountsByAccountRoutingRegex200ResponseProperties](docs/OBPv400GetAccountsByAccountRoutingRegex200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetAccountsByAccountRoutingRegex200ResponsePropertiesAccounts](docs/OBPv400GetAccountsByAccountRoutingRegex200ResponsePropertiesAccounts.md)
- - [OpenBankProject::OBPv400GetAccountsByAccountRoutingRegexRequest](docs/OBPv400GetAccountsByAccountRoutingRegexRequest.md)
- - [OpenBankProject::OBPv400GetAccountsByAccountRoutingRegexRequestProperties](docs/OBPv400GetAccountsByAccountRoutingRegexRequestProperties.md)
- - [OpenBankProject::OBPv400GetAllAuthenticationTypeValidationsPublic200Response](docs/OBPv400GetAllAuthenticationTypeValidationsPublic200Response.md)
- - [OpenBankProject::OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseProperties](docs/OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidations](docs/OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidations.md)
- - [OpenBankProject::OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems](docs/OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems.md)
- - [OpenBankProject::OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItemsProperties](docs/OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItemsProperties.md)
- - [OpenBankProject::OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItemsPropertiesAuthTypes](docs/OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItemsPropertiesAuthTypes.md)
- - [OpenBankProject::OBPv400GetAllBankLevelDynamicMessageDocs200Response](docs/OBPv400GetAllBankLevelDynamicMessageDocs200Response.md)
- - [OpenBankProject::OBPv400GetAllBankLevelDynamicMessageDocs200ResponseProperties](docs/OBPv400GetAllBankLevelDynamicMessageDocs200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetAllBankLevelDynamicMessageDocs200ResponsePropertiesDynamicMessageDocs](docs/OBPv400GetAllBankLevelDynamicMessageDocs200ResponsePropertiesDynamicMessageDocs.md)
- - [OpenBankProject::OBPv400GetAllConnectorMethods200Response](docs/OBPv400GetAllConnectorMethods200Response.md)
- - [OpenBankProject::OBPv400GetAllConnectorMethods200ResponseProperties](docs/OBPv400GetAllConnectorMethods200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethods](docs/OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethods.md)
- - [OpenBankProject::OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems](docs/OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems.md)
- - [OpenBankProject::OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItemsProperties](docs/OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItemsProperties.md)
- - [OpenBankProject::OBPv400GetAllDynamicResourceDocs200Response](docs/OBPv400GetAllDynamicResourceDocs200Response.md)
- - [OpenBankProject::OBPv400GetAllDynamicResourceDocs200ResponseProperties](docs/OBPv400GetAllDynamicResourceDocs200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetAllDynamicResourceDocs200ResponsePropertiesDynamicResourceDocs](docs/OBPv400GetAllDynamicResourceDocs200ResponsePropertiesDynamicResourceDocs.md)
- - [OpenBankProject::OBPv400GetAllEndpointMappings200Response](docs/OBPv400GetAllEndpointMappings200Response.md)
- - [OpenBankProject::OBPv400GetAllEndpointMappings200ResponseProperties](docs/OBPv400GetAllEndpointMappings200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappings](docs/OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappings.md)
- - [OpenBankProject::OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems](docs/OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
- - [OpenBankProject::OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsProperties](docs/OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsProperties.md)
- - [OpenBankProject::OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMapping](docs/OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMapping.md)
- - [OpenBankProject::OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMappingProperties](docs/OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMappingProperties.md)
- - [OpenBankProject::OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMappingPropertiesName](docs/OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMappingPropertiesName.md)
- - [OpenBankProject::OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMappingPropertiesNameProperties](docs/OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMappingPropertiesNameProperties.md)
- - [OpenBankProject::OBPv400GetAllJsonSchemaValidationsPublic200Response](docs/OBPv400GetAllJsonSchemaValidationsPublic200Response.md)
- - [OpenBankProject::OBPv400GetAllJsonSchemaValidationsPublic200ResponseProperties](docs/OBPv400GetAllJsonSchemaValidationsPublic200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidations](docs/OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidations.md)
- - [OpenBankProject::OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems](docs/OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems.md)
- - [OpenBankProject::OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsProperties](docs/OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsProperties.md)
- - [OpenBankProject::OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema](docs/OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema.md)
- - [OpenBankProject::OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchemaProperties](docs/OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchemaProperties.md)
- - [OpenBankProject::OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchemaPropertiesProperties](docs/OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchemaPropertiesProperties.md)
- - [OpenBankProject::OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchemaPropertiesPropertiesProperties](docs/OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchemaPropertiesPropertiesProperties.md)
- - [OpenBankProject::OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchemaPropertiesPropertiesPropertiesXxxId](docs/OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchemaPropertiesPropertiesPropertiesXxxId.md)
- - [OpenBankProject::OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchemaPropertiesPropertiesPropertiesXxxIdProperties](docs/OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchemaPropertiesPropertiesPropertiesXxxIdProperties.md)
- - [OpenBankProject::OBPv400GetApiCollectionsForUser200Response](docs/OBPv400GetApiCollectionsForUser200Response.md)
- - [OpenBankProject::OBPv400GetApiCollectionsForUser200ResponseProperties](docs/OBPv400GetApiCollectionsForUser200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollections](docs/OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollections.md)
- - [OpenBankProject::OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems](docs/OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems.md)
- - [OpenBankProject::OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItemsProperties](docs/OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItemsProperties.md)
- - [OpenBankProject::OBPv400GetBankAttributes200Response](docs/OBPv400GetBankAttributes200Response.md)
- - [OpenBankProject::OBPv400GetBankAttributes200ResponseProperties](docs/OBPv400GetBankAttributes200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetBankAttributes200ResponsePropertiesBankAttributes](docs/OBPv400GetBankAttributes200ResponsePropertiesBankAttributes.md)
- - [OpenBankProject::OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems](docs/OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems.md)
- - [OpenBankProject::OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItemsProperties](docs/OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItemsProperties.md)
- - [OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200Response](docs/OBPv400GetBankLevelDynamicResourceDoc200Response.md)
- - [OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponseProperties](docs/OBPv400GetBankLevelDynamicResourceDoc200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesExampleRequestBody](docs/OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesExampleRequestBody.md)
- - [OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesExampleRequestBodyProperties](docs/OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesExampleRequestBodyProperties.md)
- - [OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBody](docs/OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBody.md)
- - [OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyProperties](docs/OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyProperties.md)
- - [OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields](docs/OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields.md)
- - [OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems](docs/OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems.md)
- - [OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties](docs/OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties.md)
- - [OpenBankProject::OBPv400GetBankLevelEndpointTags200Response](docs/OBPv400GetBankLevelEndpointTags200Response.md)
- - [OpenBankProject::OBPv400GetBankLevelEndpointTags200ResponseProperties](docs/OBPv400GetBankLevelEndpointTags200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetConsentInfos200Response](docs/OBPv400GetConsentInfos200Response.md)
- - [OpenBankProject::OBPv400GetConsentInfos200ResponseProperties](docs/OBPv400GetConsentInfos200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetConsentInfos200ResponsePropertiesConsents](docs/OBPv400GetConsentInfos200ResponsePropertiesConsents.md)
- - [OpenBankProject::OBPv400GetConsentInfos200ResponsePropertiesConsentsItems](docs/OBPv400GetConsentInfos200ResponsePropertiesConsentsItems.md)
- - [OpenBankProject::OBPv400GetConsentInfos200ResponsePropertiesConsentsItemsProperties](docs/OBPv400GetConsentInfos200ResponsePropertiesConsentsItemsProperties.md)
- - [OpenBankProject::OBPv400GetCounterpartiesForAnyAccount200Response](docs/OBPv400GetCounterpartiesForAnyAccount200Response.md)
- - [OpenBankProject::OBPv400GetCounterpartiesForAnyAccount200ResponseProperties](docs/OBPv400GetCounterpartiesForAnyAccount200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetCounterpartiesForAnyAccount200ResponsePropertiesCounterparties](docs/OBPv400GetCounterpartiesForAnyAccount200ResponsePropertiesCounterparties.md)
- - [OpenBankProject::OBPv400GetCounterpartiesForAnyAccount200ResponsePropertiesCounterpartiesItems](docs/OBPv400GetCounterpartiesForAnyAccount200ResponsePropertiesCounterpartiesItems.md)
- - [OpenBankProject::OBPv400GetCounterpartiesForAnyAccount200ResponsePropertiesCounterpartiesItemsProperties](docs/OBPv400GetCounterpartiesForAnyAccount200ResponsePropertiesCounterpartiesItemsProperties.md)
- - [OpenBankProject::OBPv400GetCustomerAttributes200Response](docs/OBPv400GetCustomerAttributes200Response.md)
- - [OpenBankProject::OBPv400GetCustomerAttributes200ResponseProperties](docs/OBPv400GetCustomerAttributes200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributes](docs/OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributes.md)
- - [OpenBankProject::OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems](docs/OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems.md)
- - [OpenBankProject::OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItemsProperties](docs/OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItemsProperties.md)
- - [OpenBankProject::OBPv400GetCustomerMessages200Response](docs/OBPv400GetCustomerMessages200Response.md)
- - [OpenBankProject::OBPv400GetCustomerMessages200ResponseProperties](docs/OBPv400GetCustomerMessages200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetCustomerMessages200ResponsePropertiesMessages](docs/OBPv400GetCustomerMessages200ResponsePropertiesMessages.md)
- - [OpenBankProject::OBPv400GetCustomerMessages200ResponsePropertiesMessagesItems](docs/OBPv400GetCustomerMessages200ResponsePropertiesMessagesItems.md)
- - [OpenBankProject::OBPv400GetCustomerMessages200ResponsePropertiesMessagesItemsProperties](docs/OBPv400GetCustomerMessages200ResponsePropertiesMessagesItemsProperties.md)
- - [OpenBankProject::OBPv400GetCustomersMinimalAtAnyBank200Response](docs/OBPv400GetCustomersMinimalAtAnyBank200Response.md)
- - [OpenBankProject::OBPv400GetCustomersMinimalAtAnyBank200ResponseProperties](docs/OBPv400GetCustomersMinimalAtAnyBank200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetCustomersMinimalAtAnyBank200ResponsePropertiesCustomers](docs/OBPv400GetCustomersMinimalAtAnyBank200ResponsePropertiesCustomers.md)
- - [OpenBankProject::OBPv400GetCustomersMinimalAtAnyBank200ResponsePropertiesCustomersItems](docs/OBPv400GetCustomersMinimalAtAnyBank200ResponsePropertiesCustomersItems.md)
- - [OpenBankProject::OBPv400GetCustomersMinimalAtAnyBank200ResponsePropertiesCustomersItemsProperties](docs/OBPv400GetCustomersMinimalAtAnyBank200ResponsePropertiesCustomersItemsProperties.md)
- - [OpenBankProject::OBPv400GetDoubleEntryTransaction200Response](docs/OBPv400GetDoubleEntryTransaction200Response.md)
- - [OpenBankProject::OBPv400GetDoubleEntryTransaction200ResponseProperties](docs/OBPv400GetDoubleEntryTransaction200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetDoubleEntryTransaction200ResponsePropertiesDebitTransaction](docs/OBPv400GetDoubleEntryTransaction200ResponsePropertiesDebitTransaction.md)
- - [OpenBankProject::OBPv400GetDoubleEntryTransaction200ResponsePropertiesDebitTransactionProperties](docs/OBPv400GetDoubleEntryTransaction200ResponsePropertiesDebitTransactionProperties.md)
- - [OpenBankProject::OBPv400GetDoubleEntryTransaction200ResponsePropertiesTransactionRequest](docs/OBPv400GetDoubleEntryTransaction200ResponsePropertiesTransactionRequest.md)
- - [OpenBankProject::OBPv400GetDoubleEntryTransaction200ResponsePropertiesTransactionRequestProperties](docs/OBPv400GetDoubleEntryTransaction200ResponsePropertiesTransactionRequestProperties.md)
- - [OpenBankProject::OBPv400GetDynamicEndpoints200Response](docs/OBPv400GetDynamicEndpoints200Response.md)
- - [OpenBankProject::OBPv400GetDynamicEndpoints200ResponseProperties](docs/OBPv400GetDynamicEndpoints200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpoints](docs/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpoints.md)
- - [OpenBankProject::OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems](docs/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)
- - [OpenBankProject::OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsProperties](docs/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsProperties.md)
- - [OpenBankProject::OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString](docs/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString.md)
- - [OpenBankProject::OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringProperties](docs/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringProperties.md)
- - [OpenBankProject::OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitions](docs/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitions.md)
- - [OpenBankProject::OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsProperties](docs/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsProperties.md)
- - [OpenBankProject::OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountName](docs/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountName.md)
- - [OpenBankProject::OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNameProperties](docs/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNameProperties.md)
- - [OpenBankProject::OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesProperties](docs/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesProperties.md)
- - [OpenBankProject::OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesProperties](docs/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesProperties.md)
- - [OpenBankProject::OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesPropertiesBalance](docs/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesPropertiesBalance.md)
- - [OpenBankProject::OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesPropertiesBalanceProperties](docs/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesPropertiesBalanceProperties.md)
- - [OpenBankProject::OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesPropertiesName](docs/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesPropertiesName.md)
- - [OpenBankProject::OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesPropertiesNameProperties](docs/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesDefinitionsPropertiesAccountNamePropertiesPropertiesPropertiesNameProperties.md)
- - [OpenBankProject::OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesInfo](docs/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesInfo.md)
- - [OpenBankProject::OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesInfoProperties](docs/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesInfoProperties.md)
- - [OpenBankProject::OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPaths](docs/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPaths.md)
- - [OpenBankProject::OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsProperties](docs/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsProperties.md)
- - [OpenBankProject::OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccounts](docs/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccounts.md)
- - [OpenBankProject::OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountId](docs/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountId.md)
- - [OpenBankProject::OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdProperties](docs/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdProperties.md)
- - [OpenBankProject::OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdPropertiesGet](docs/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdPropertiesGet.md)
- - [OpenBankProject::OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdPropertiesGetProperties](docs/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdPropertiesGetProperties.md)
- - [OpenBankProject::OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdPropertiesGetPropertiesResponses](docs/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdPropertiesGetPropertiesResponses.md)
- - [OpenBankProject::OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdPropertiesGetPropertiesResponsesProperties](docs/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsAccountIdPropertiesGetPropertiesResponsesProperties.md)
- - [OpenBankProject::OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsProperties](docs/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsProperties.md)
- - [OpenBankProject::OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPost](docs/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPost.md)
- - [OpenBankProject::OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostProperties](docs/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostProperties.md)
- - [OpenBankProject::OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponses](docs/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponses.md)
- - [OpenBankProject::OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties](docs/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties.md)
- - [OpenBankProject::OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201](docs/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201.md)
- - [OpenBankProject::OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201Properties](docs/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201Properties.md)
- - [OpenBankProject::OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201PropertiesSchema](docs/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201PropertiesSchema.md)
- - [OpenBankProject::OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201PropertiesSchemaProperties](docs/OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringPropertiesPathsPropertiesAccountsPropertiesPostPropertiesResponsesProperties201PropertiesSchemaProperties.md)
- - [OpenBankProject::OBPv400GetDynamicMessageDoc200Response](docs/OBPv400GetDynamicMessageDoc200Response.md)
- - [OpenBankProject::OBPv400GetDynamicMessageDoc200ResponseProperties](docs/OBPv400GetDynamicMessageDoc200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage](docs/OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.md)
- - [OpenBankProject::OBPv400GetEntitlements200Response](docs/OBPv400GetEntitlements200Response.md)
- - [OpenBankProject::OBPv400GetEntitlements200ResponseProperties](docs/OBPv400GetEntitlements200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetEntitlements200ResponsePropertiesList](docs/OBPv400GetEntitlements200ResponsePropertiesList.md)
- - [OpenBankProject::OBPv400GetEntitlements200ResponsePropertiesListItems](docs/OBPv400GetEntitlements200ResponsePropertiesListItems.md)
- - [OpenBankProject::OBPv400GetEntitlements200ResponsePropertiesListItemsProperties](docs/OBPv400GetEntitlements200ResponsePropertiesListItemsProperties.md)
- - [OpenBankProject::OBPv400GetExplicitCounterpartyById200Response](docs/OBPv400GetExplicitCounterpartyById200Response.md)
- - [OpenBankProject::OBPv400GetExplicitCounterpartyById200ResponseProperties](docs/OBPv400GetExplicitCounterpartyById200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetExplicitCounterpartyById200ResponsePropertiesBespoke](docs/OBPv400GetExplicitCounterpartyById200ResponsePropertiesBespoke.md)
- - [OpenBankProject::OBPv400GetExplicitCounterpartyById200ResponsePropertiesBespokeItems](docs/OBPv400GetExplicitCounterpartyById200ResponsePropertiesBespokeItems.md)
- - [OpenBankProject::OBPv400GetExplicitCounterpartyById200ResponsePropertiesBespokeItemsProperties](docs/OBPv400GetExplicitCounterpartyById200ResponsePropertiesBespokeItemsProperties.md)
- - [OpenBankProject::OBPv400GetExplicitCounterpartyById200ResponsePropertiesMetadata](docs/OBPv400GetExplicitCounterpartyById200ResponsePropertiesMetadata.md)
- - [OpenBankProject::OBPv400GetExplicitCounterpartyById200ResponsePropertiesMetadataProperties](docs/OBPv400GetExplicitCounterpartyById200ResponsePropertiesMetadataProperties.md)
- - [OpenBankProject::OBPv400GetExplicitCounterpartyById200ResponsePropertiesMetadataPropertiesPhysicalLocation](docs/OBPv400GetExplicitCounterpartyById200ResponsePropertiesMetadataPropertiesPhysicalLocation.md)
- - [OpenBankProject::OBPv400GetExplicitCounterpartyById200ResponsePropertiesMetadataPropertiesPhysicalLocationProperties](docs/OBPv400GetExplicitCounterpartyById200ResponsePropertiesMetadataPropertiesPhysicalLocationProperties.md)
- - [OpenBankProject::OBPv400GetExplicitCounterpartyById200ResponsePropertiesMetadataPropertiesPhysicalLocationPropertiesUser](docs/OBPv400GetExplicitCounterpartyById200ResponsePropertiesMetadataPropertiesPhysicalLocationPropertiesUser.md)
- - [OpenBankProject::OBPv400GetExplicitCounterpartyById200ResponsePropertiesMetadataPropertiesPhysicalLocationPropertiesUserProperties](docs/OBPv400GetExplicitCounterpartyById200ResponsePropertiesMetadataPropertiesPhysicalLocationPropertiesUserProperties.md)
- - [OpenBankProject::OBPv400GetFastFirehoseAccountsAtOneBank200Response](docs/OBPv400GetFastFirehoseAccountsAtOneBank200Response.md)
- - [OpenBankProject::OBPv400GetFastFirehoseAccountsAtOneBank200ResponseProperties](docs/OBPv400GetFastFirehoseAccountsAtOneBank200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccounts](docs/OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccounts.md)
- - [OpenBankProject::OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItems](docs/OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItems.md)
- - [OpenBankProject::OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItemsProperties](docs/OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItemsProperties.md)
- - [OpenBankProject::OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesAccountAttributes](docs/OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesAccountAttributes.md)
- - [OpenBankProject::OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesAccountAttributesItems](docs/OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesAccountAttributesItems.md)
- - [OpenBankProject::OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesAccountAttributesItemsProperties](docs/OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesAccountAttributesItemsProperties.md)
- - [OpenBankProject::OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesAccountRoutings](docs/OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesAccountRoutings.md)
- - [OpenBankProject::OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesOwners](docs/OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesOwners.md)
- - [OpenBankProject::OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesOwnersItems](docs/OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesOwnersItems.md)
- - [OpenBankProject::OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesOwnersItemsProperties](docs/OBPv400GetFastFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItemsPropertiesOwnersItemsProperties.md)
- - [OpenBankProject::OBPv400GetFirehoseAccountsAtOneBank200Response](docs/OBPv400GetFirehoseAccountsAtOneBank200Response.md)
- - [OpenBankProject::OBPv400GetFirehoseAccountsAtOneBank200ResponseProperties](docs/OBPv400GetFirehoseAccountsAtOneBank200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetFirehoseAccountsAtOneBank200ResponsePropertiesAccounts](docs/OBPv400GetFirehoseAccountsAtOneBank200ResponsePropertiesAccounts.md)
- - [OpenBankProject::OBPv400GetFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItems](docs/OBPv400GetFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItems.md)
- - [OpenBankProject::OBPv400GetFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItemsProperties](docs/OBPv400GetFirehoseAccountsAtOneBank200ResponsePropertiesAccountsItemsProperties.md)
- - [OpenBankProject::OBPv400GetLogoutLink200Response](docs/OBPv400GetLogoutLink200Response.md)
- - [OpenBankProject::OBPv400GetLogoutLink200ResponseProperties](docs/OBPv400GetLogoutLink200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetMapperDatabaseInfo200Response](docs/OBPv400GetMapperDatabaseInfo200Response.md)
- - [OpenBankProject::OBPv400GetMapperDatabaseInfo200ResponseProperties](docs/OBPv400GetMapperDatabaseInfo200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetMyApiCollectionEndpoints200Response](docs/OBPv400GetMyApiCollectionEndpoints200Response.md)
- - [OpenBankProject::OBPv400GetMyApiCollectionEndpoints200ResponseProperties](docs/OBPv400GetMyApiCollectionEndpoints200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpoints](docs/OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpoints.md)
- - [OpenBankProject::OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems](docs/OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems.md)
- - [OpenBankProject::OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItemsProperties](docs/OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItemsProperties.md)
- - [OpenBankProject::OBPv400GetMyCorrelatedEntities200Response](docs/OBPv400GetMyCorrelatedEntities200Response.md)
- - [OpenBankProject::OBPv400GetMyCorrelatedEntities200ResponseProperties](docs/OBPv400GetMyCorrelatedEntities200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntities](docs/OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntities.md)
- - [OpenBankProject::OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItems](docs/OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItems.md)
- - [OpenBankProject::OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItemsProperties](docs/OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItemsProperties.md)
- - [OpenBankProject::OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItemsPropertiesUsers](docs/OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItemsPropertiesUsers.md)
- - [OpenBankProject::OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItemsPropertiesUsersItems](docs/OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItemsPropertiesUsersItems.md)
- - [OpenBankProject::OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItemsPropertiesUsersItemsProperties](docs/OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItemsPropertiesUsersItemsProperties.md)
- - [OpenBankProject::OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItemsPropertiesUsersItemsPropertiesUserAttributes](docs/OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItemsPropertiesUsersItemsPropertiesUserAttributes.md)
- - [OpenBankProject::OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItemsPropertiesUsersItemsPropertiesUserAttributesItems](docs/OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItemsPropertiesUsersItemsPropertiesUserAttributesItems.md)
- - [OpenBankProject::OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItemsPropertiesUsersItemsPropertiesUserAttributesItemsProperties](docs/OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItemsPropertiesUsersItemsPropertiesUserAttributesItemsProperties.md)
- - [OpenBankProject::OBPv400GetMySpaces200Response](docs/OBPv400GetMySpaces200Response.md)
- - [OpenBankProject::OBPv400GetMySpaces200ResponseProperties](docs/OBPv400GetMySpaces200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetPrivateAccountByIdFull200Response](docs/OBPv400GetPrivateAccountByIdFull200Response.md)
- - [OpenBankProject::OBPv400GetPrivateAccountByIdFull200ResponseProperties](docs/OBPv400GetPrivateAccountByIdFull200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributes](docs/OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributes.md)
- - [OpenBankProject::OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems](docs/OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems.md)
- - [OpenBankProject::OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItemsProperties](docs/OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItemsProperties.md)
- - [OpenBankProject::OBPv400GetPrivateAccountByIdFull200ResponsePropertiesOwners](docs/OBPv400GetPrivateAccountByIdFull200ResponsePropertiesOwners.md)
- - [OpenBankProject::OBPv400GetProduct200Response](docs/OBPv400GetProduct200Response.md)
- - [OpenBankProject::OBPv400GetProduct200ResponseProperties](docs/OBPv400GetProduct200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetProduct200ResponsePropertiesAttributes](docs/OBPv400GetProduct200ResponsePropertiesAttributes.md)
- - [OpenBankProject::OBPv400GetProduct200ResponsePropertiesAttributesItems](docs/OBPv400GetProduct200ResponsePropertiesAttributesItems.md)
- - [OpenBankProject::OBPv400GetProduct200ResponsePropertiesAttributesItemsProperties](docs/OBPv400GetProduct200ResponsePropertiesAttributesItemsProperties.md)
- - [OpenBankProject::OBPv400GetProduct200ResponsePropertiesFees](docs/OBPv400GetProduct200ResponsePropertiesFees.md)
- - [OpenBankProject::OBPv400GetProduct200ResponsePropertiesFeesItems](docs/OBPv400GetProduct200ResponsePropertiesFeesItems.md)
- - [OpenBankProject::OBPv400GetProduct200ResponsePropertiesFeesItemsProperties](docs/OBPv400GetProduct200ResponsePropertiesFeesItemsProperties.md)
- - [OpenBankProject::OBPv400GetProductFee200Response](docs/OBPv400GetProductFee200Response.md)
- - [OpenBankProject::OBPv400GetProductFee200ResponseProperties](docs/OBPv400GetProductFee200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetProductFee200ResponsePropertiesValue](docs/OBPv400GetProductFee200ResponsePropertiesValue.md)
- - [OpenBankProject::OBPv400GetProductFee200ResponsePropertiesValueProperties](docs/OBPv400GetProductFee200ResponsePropertiesValueProperties.md)
- - [OpenBankProject::OBPv400GetProductFees200Response](docs/OBPv400GetProductFees200Response.md)
- - [OpenBankProject::OBPv400GetProductFees200ResponseProperties](docs/OBPv400GetProductFees200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetProductFees200ResponsePropertiesProductFees](docs/OBPv400GetProductFees200ResponsePropertiesProductFees.md)
- - [OpenBankProject::OBPv400GetProducts200Response](docs/OBPv400GetProducts200Response.md)
- - [OpenBankProject::OBPv400GetProducts200ResponseProperties](docs/OBPv400GetProducts200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetProducts200ResponsePropertiesProducts](docs/OBPv400GetProducts200ResponsePropertiesProducts.md)
- - [OpenBankProject::OBPv400GetScopes200Response](docs/OBPv400GetScopes200Response.md)
- - [OpenBankProject::OBPv400GetScopes200ResponseProperties](docs/OBPv400GetScopes200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetScopes200ResponsePropertiesList](docs/OBPv400GetScopes200ResponsePropertiesList.md)
- - [OpenBankProject::OBPv400GetScopes200ResponsePropertiesListItems](docs/OBPv400GetScopes200ResponsePropertiesListItems.md)
- - [OpenBankProject::OBPv400GetScopes200ResponsePropertiesListItemsProperties](docs/OBPv400GetScopes200ResponsePropertiesListItemsProperties.md)
- - [OpenBankProject::OBPv400GetSettlementAccounts200Response](docs/OBPv400GetSettlementAccounts200Response.md)
- - [OpenBankProject::OBPv400GetSettlementAccounts200ResponseProperties](docs/OBPv400GetSettlementAccounts200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetSettlementAccounts200ResponsePropertiesSettlementAccounts](docs/OBPv400GetSettlementAccounts200ResponsePropertiesSettlementAccounts.md)
- - [OpenBankProject::OBPv400GetSettlementAccounts200ResponsePropertiesSettlementAccountsItems](docs/OBPv400GetSettlementAccounts200ResponsePropertiesSettlementAccountsItems.md)
- - [OpenBankProject::OBPv400GetSettlementAccounts200ResponsePropertiesSettlementAccountsItemsProperties](docs/OBPv400GetSettlementAccounts200ResponsePropertiesSettlementAccountsItemsProperties.md)
- - [OpenBankProject::OBPv400GetTagsForViewOnAccount200Response](docs/OBPv400GetTagsForViewOnAccount200Response.md)
- - [OpenBankProject::OBPv400GetTagsForViewOnAccount200ResponseProperties](docs/OBPv400GetTagsForViewOnAccount200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetTagsForViewOnAccount200ResponsePropertiesTags](docs/OBPv400GetTagsForViewOnAccount200ResponsePropertiesTags.md)
- - [OpenBankProject::OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems](docs/OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)
- - [OpenBankProject::OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItemsProperties](docs/OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItemsProperties.md)
- - [OpenBankProject::OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItemsPropertiesUser](docs/OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItemsPropertiesUser.md)
- - [OpenBankProject::OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItemsPropertiesUserProperties](docs/OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItemsPropertiesUserProperties.md)
- - [OpenBankProject::OBPv400GetTransactionAttributes200Response](docs/OBPv400GetTransactionAttributes200Response.md)
- - [OpenBankProject::OBPv400GetTransactionAttributes200ResponseProperties](docs/OBPv400GetTransactionAttributes200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetTransactionRequestAttributeById200Response](docs/OBPv400GetTransactionRequestAttributeById200Response.md)
- - [OpenBankProject::OBPv400GetTransactionRequestAttributeById200ResponseProperties](docs/OBPv400GetTransactionRequestAttributeById200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetTransactionRequestAttributeDefinition200Response](docs/OBPv400GetTransactionRequestAttributeDefinition200Response.md)
- - [OpenBankProject::OBPv400GetTransactionRequestAttributeDefinition200ResponseProperties](docs/OBPv400GetTransactionRequestAttributeDefinition200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributes](docs/OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributes.md)
- - [OpenBankProject::OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems](docs/OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
- - [OpenBankProject::OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItemsProperties](docs/OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItemsProperties.md)
- - [OpenBankProject::OBPv400GetTransactionRequestAttributes200Response](docs/OBPv400GetTransactionRequestAttributes200Response.md)
- - [OpenBankProject::OBPv400GetTransactionRequestAttributes200ResponseProperties](docs/OBPv400GetTransactionRequestAttributes200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetTransactionRequestAttributes200ResponsePropertiesTransactionRequestAttributes](docs/OBPv400GetTransactionRequestAttributes200ResponsePropertiesTransactionRequestAttributes.md)
- - [OpenBankProject::OBPv400GetUserCustomerLinksByCustomerId200Response](docs/OBPv400GetUserCustomerLinksByCustomerId200Response.md)
- - [OpenBankProject::OBPv400GetUserCustomerLinksByCustomerId200ResponseProperties](docs/OBPv400GetUserCustomerLinksByCustomerId200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetUserCustomerLinksByCustomerId200ResponsePropertiesUserCustomerLinks](docs/OBPv400GetUserCustomerLinksByCustomerId200ResponsePropertiesUserCustomerLinks.md)
- - [OpenBankProject::OBPv400GetUserCustomerLinksByCustomerId200ResponsePropertiesUserCustomerLinksItems](docs/OBPv400GetUserCustomerLinksByCustomerId200ResponsePropertiesUserCustomerLinksItems.md)
- - [OpenBankProject::OBPv400GetUserCustomerLinksByCustomerId200ResponsePropertiesUserCustomerLinksItemsProperties](docs/OBPv400GetUserCustomerLinksByCustomerId200ResponsePropertiesUserCustomerLinksItemsProperties.md)
- - [OpenBankProject::OBPv400GetUserInvitationAnonymousRequest](docs/OBPv400GetUserInvitationAnonymousRequest.md)
- - [OpenBankProject::OBPv400GetUserInvitationAnonymousRequestProperties](docs/OBPv400GetUserInvitationAnonymousRequestProperties.md)
- - [OpenBankProject::OBPv400GetUserInvitations200Response](docs/OBPv400GetUserInvitations200Response.md)
- - [OpenBankProject::OBPv400GetUserInvitations200ResponseProperties](docs/OBPv400GetUserInvitations200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetUsersByEmail200Response](docs/OBPv400GetUsersByEmail200Response.md)
- - [OpenBankProject::OBPv400GetUsersByEmail200ResponseProperties](docs/OBPv400GetUsersByEmail200ResponseProperties.md)
- - [OpenBankProject::OBPv400GetUsersByEmail200ResponsePropertiesUsers](docs/OBPv400GetUsersByEmail200ResponsePropertiesUsers.md)
- - [OpenBankProject::OBPv400IbanChecker200Response](docs/OBPv400IbanChecker200Response.md)
- - [OpenBankProject::OBPv400IbanChecker200ResponseProperties](docs/OBPv400IbanChecker200ResponseProperties.md)
- - [OpenBankProject::OBPv400IbanChecker200ResponsePropertiesDetails](docs/OBPv400IbanChecker200ResponsePropertiesDetails.md)
- - [OpenBankProject::OBPv400IbanChecker200ResponsePropertiesDetailsProperties](docs/OBPv400IbanChecker200ResponsePropertiesDetailsProperties.md)
- - [OpenBankProject::OBPv400IbanCheckerRequest](docs/OBPv400IbanCheckerRequest.md)
- - [OpenBankProject::OBPv400IbanCheckerRequestProperties](docs/OBPv400IbanCheckerRequestProperties.md)
- - [OpenBankProject::OBPv400UpdateAccountLabelRequest](docs/OBPv400UpdateAccountLabelRequest.md)
- - [OpenBankProject::OBPv400UpdateAccountLabelRequestProperties](docs/OBPv400UpdateAccountLabelRequestProperties.md)
- - [OpenBankProject::OBPv400UpdateAtmAccessibilityFeatures200Response](docs/OBPv400UpdateAtmAccessibilityFeatures200Response.md)
- - [OpenBankProject::OBPv400UpdateAtmAccessibilityFeatures200ResponseProperties](docs/OBPv400UpdateAtmAccessibilityFeatures200ResponseProperties.md)
- - [OpenBankProject::OBPv400UpdateAtmAccessibilityFeaturesRequest](docs/OBPv400UpdateAtmAccessibilityFeaturesRequest.md)
- - [OpenBankProject::OBPv400UpdateAtmAccessibilityFeaturesRequestProperties](docs/OBPv400UpdateAtmAccessibilityFeaturesRequestProperties.md)
- - [OpenBankProject::OBPv400UpdateAtmLocationCategories200Response](docs/OBPv400UpdateAtmLocationCategories200Response.md)
- - [OpenBankProject::OBPv400UpdateAtmLocationCategories200ResponseProperties](docs/OBPv400UpdateAtmLocationCategories200ResponseProperties.md)
- - [OpenBankProject::OBPv400UpdateAtmLocationCategoriesRequest](docs/OBPv400UpdateAtmLocationCategoriesRequest.md)
- - [OpenBankProject::OBPv400UpdateAtmLocationCategoriesRequestProperties](docs/OBPv400UpdateAtmLocationCategoriesRequestProperties.md)
- - [OpenBankProject::OBPv400UpdateAtmNotes200Response](docs/OBPv400UpdateAtmNotes200Response.md)
- - [OpenBankProject::OBPv400UpdateAtmNotes200ResponseProperties](docs/OBPv400UpdateAtmNotes200ResponseProperties.md)
- - [OpenBankProject::OBPv400UpdateAtmNotesRequest](docs/OBPv400UpdateAtmNotesRequest.md)
- - [OpenBankProject::OBPv400UpdateAtmNotesRequestProperties](docs/OBPv400UpdateAtmNotesRequestProperties.md)
- - [OpenBankProject::OBPv400UpdateAtmServices200Response](docs/OBPv400UpdateAtmServices200Response.md)
- - [OpenBankProject::OBPv400UpdateAtmServices200ResponseProperties](docs/OBPv400UpdateAtmServices200ResponseProperties.md)
- - [OpenBankProject::OBPv400UpdateAtmServicesRequest](docs/OBPv400UpdateAtmServicesRequest.md)
- - [OpenBankProject::OBPv400UpdateAtmServicesRequestProperties](docs/OBPv400UpdateAtmServicesRequestProperties.md)
- - [OpenBankProject::OBPv400UpdateAtmSupportedCurrencies200Response](docs/OBPv400UpdateAtmSupportedCurrencies200Response.md)
- - [OpenBankProject::OBPv400UpdateAtmSupportedCurrencies200ResponseProperties](docs/OBPv400UpdateAtmSupportedCurrencies200ResponseProperties.md)
- - [OpenBankProject::OBPv400UpdateAtmSupportedCurrenciesRequest](docs/OBPv400UpdateAtmSupportedCurrenciesRequest.md)
- - [OpenBankProject::OBPv400UpdateAtmSupportedCurrenciesRequestProperties](docs/OBPv400UpdateAtmSupportedCurrenciesRequestProperties.md)
- - [OpenBankProject::OBPv400UpdateAtmSupportedLanguages200Response](docs/OBPv400UpdateAtmSupportedLanguages200Response.md)
- - [OpenBankProject::OBPv400UpdateAtmSupportedLanguages200ResponseProperties](docs/OBPv400UpdateAtmSupportedLanguages200ResponseProperties.md)
- - [OpenBankProject::OBPv400UpdateAtmSupportedLanguagesRequest](docs/OBPv400UpdateAtmSupportedLanguagesRequest.md)
- - [OpenBankProject::OBPv400UpdateAtmSupportedLanguagesRequestProperties](docs/OBPv400UpdateAtmSupportedLanguagesRequestProperties.md)
- - [OpenBankProject::OBPv400UpdateAuthenticationTypeValidationRequest](docs/OBPv400UpdateAuthenticationTypeValidationRequest.md)
- - [OpenBankProject::OBPv400UpdateAuthenticationTypeValidationRequestProperties](docs/OBPv400UpdateAuthenticationTypeValidationRequestProperties.md)
- - [OpenBankProject::OBPv400UpdateBankLevelDynamicEndpointHostRequest](docs/OBPv400UpdateBankLevelDynamicEndpointHostRequest.md)
- - [OpenBankProject::OBPv400UpdateBankLevelDynamicEndpointHostRequestProperties](docs/OBPv400UpdateBankLevelDynamicEndpointHostRequestProperties.md)
- - [OpenBankProject::OBPv400UpdateBankLevelDynamicResourceDocRequest](docs/OBPv400UpdateBankLevelDynamicResourceDocRequest.md)
- - [OpenBankProject::OBPv400UpdateBankLevelDynamicResourceDocRequestProperties](docs/OBPv400UpdateBankLevelDynamicResourceDocRequestProperties.md)
- - [OpenBankProject::OBPv400UpdateConnectorMethodRequest](docs/OBPv400UpdateConnectorMethodRequest.md)
- - [OpenBankProject::OBPv400UpdateConnectorMethodRequestProperties](docs/OBPv400UpdateConnectorMethodRequestProperties.md)
- - [OpenBankProject::OBPv400UpdateDynamicMessageDocRequest](docs/OBPv400UpdateDynamicMessageDocRequest.md)
- - [OpenBankProject::OBPv400UpdateDynamicMessageDocRequestProperties](docs/OBPv400UpdateDynamicMessageDocRequestProperties.md)
- - [OpenBankProject::OBPv400UpdateProductFeeRequest](docs/OBPv400UpdateProductFeeRequest.md)
- - [OpenBankProject::OBPv400UpdateProductFeeRequestProperties](docs/OBPv400UpdateProductFeeRequestProperties.md)
- - [OpenBankProject::OBPv400UpdateSystemLevelEndpointTag200Response](docs/OBPv400UpdateSystemLevelEndpointTag200Response.md)
- - [OpenBankProject::OBPv400UpdateSystemLevelEndpointTag200ResponseProperties](docs/OBPv400UpdateSystemLevelEndpointTag200ResponseProperties.md)
- - [OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequest](docs/OBPv400UpdateSystemLevelEndpointTagRequest.md)
- - [OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestProperties](docs/OBPv400UpdateSystemLevelEndpointTagRequestProperties.md)
- - [OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName](docs/OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.md)
- - [OpenBankProject::OBPv500AddCardForBank200Response](docs/OBPv500AddCardForBank200Response.md)
- - [OpenBankProject::OBPv500AddCardForBank200ResponseProperties](docs/OBPv500AddCardForBank200ResponseProperties.md)
- - [OpenBankProject::OBPv500AddCardForBankRequest](docs/OBPv500AddCardForBankRequest.md)
- - [OpenBankProject::OBPv500AddCardForBankRequestProperties](docs/OBPv500AddCardForBankRequestProperties.md)
- - [OpenBankProject::OBPv500AnswerUserAuthContextUpdateChallenge200Response](docs/OBPv500AnswerUserAuthContextUpdateChallenge200Response.md)
- - [OpenBankProject::OBPv500AnswerUserAuthContextUpdateChallenge200ResponseProperties](docs/OBPv500AnswerUserAuthContextUpdateChallenge200ResponseProperties.md)
- - [OpenBankProject::OBPv500CreateConsentRequestRequest](docs/OBPv500CreateConsentRequestRequest.md)
- - [OpenBankProject::OBPv500CreateConsentRequestRequestProperties](docs/OBPv500CreateConsentRequestRequestProperties.md)
- - [OpenBankProject::OBPv500CreateCustomerAccountLinkRequest](docs/OBPv500CreateCustomerAccountLinkRequest.md)
- - [OpenBankProject::OBPv500CreateCustomerAccountLinkRequestProperties](docs/OBPv500CreateCustomerAccountLinkRequestProperties.md)
- - [OpenBankProject::OBPv500CreateProduct200Response](docs/OBPv500CreateProduct200Response.md)
- - [OpenBankProject::OBPv500CreateProduct200ResponseProperties](docs/OBPv500CreateProduct200ResponseProperties.md)
- - [OpenBankProject::OBPv500CreateProductRequest](docs/OBPv500CreateProductRequest.md)
- - [OpenBankProject::OBPv500CreateProductRequestProperties](docs/OBPv500CreateProductRequestProperties.md)
- - [OpenBankProject::OBPv500CreateSystemViewRequest](docs/OBPv500CreateSystemViewRequest.md)
- - [OpenBankProject::OBPv500CreateSystemViewRequestProperties](docs/OBPv500CreateSystemViewRequestProperties.md)
- - [OpenBankProject::OBPv500GetAdapterInfo200Response](docs/OBPv500GetAdapterInfo200Response.md)
- - [OpenBankProject::OBPv500GetAdapterInfo200ResponseProperties](docs/OBPv500GetAdapterInfo200ResponseProperties.md)
- - [OpenBankProject::OBPv500GetAdapterInfo200ResponsePropertiesBackendMessages](docs/OBPv500GetAdapterInfo200ResponsePropertiesBackendMessages.md)
- - [OpenBankProject::OBPv500GetAdapterInfo200ResponsePropertiesBackendMessagesItems](docs/OBPv500GetAdapterInfo200ResponsePropertiesBackendMessagesItems.md)
- - [OpenBankProject::OBPv500GetAdapterInfo200ResponsePropertiesBackendMessagesItemsProperties](docs/OBPv500GetAdapterInfo200ResponsePropertiesBackendMessagesItemsProperties.md)
- - [OpenBankProject::OBPv500GetConsentByConsentRequestId200Response](docs/OBPv500GetConsentByConsentRequestId200Response.md)
- - [OpenBankProject::OBPv500GetConsentByConsentRequestId200ResponseProperties](docs/OBPv500GetConsentByConsentRequestId200ResponseProperties.md)
- - [OpenBankProject::OBPv500GetConsentRequest200Response](docs/OBPv500GetConsentRequest200Response.md)
- - [OpenBankProject::OBPv500GetConsentRequest200ResponseProperties](docs/OBPv500GetConsentRequest200ResponseProperties.md)
- - [OpenBankProject::OBPv500GetConsentRequest200ResponsePropertiesPayload](docs/OBPv500GetConsentRequest200ResponsePropertiesPayload.md)
- - [OpenBankProject::OBPv500GetConsentRequest200ResponsePropertiesPayloadProperties](docs/OBPv500GetConsentRequest200ResponsePropertiesPayloadProperties.md)
- - [OpenBankProject::OBPv500GetConsentRequest200ResponsePropertiesPayloadPropertiesAccountAccess](docs/OBPv500GetConsentRequest200ResponsePropertiesPayloadPropertiesAccountAccess.md)
- - [OpenBankProject::OBPv500GetConsentRequest200ResponsePropertiesPayloadPropertiesAccountAccessItems](docs/OBPv500GetConsentRequest200ResponsePropertiesPayloadPropertiesAccountAccessItems.md)
- - [OpenBankProject::OBPv500GetConsentRequest200ResponsePropertiesPayloadPropertiesAccountAccessItemsProperties](docs/OBPv500GetConsentRequest200ResponsePropertiesPayloadPropertiesAccountAccessItemsProperties.md)
- - [OpenBankProject::OBPv500GetCustomerAccountLinksByCustomerId200Response](docs/OBPv500GetCustomerAccountLinksByCustomerId200Response.md)
- - [OpenBankProject::OBPv500GetCustomerAccountLinksByCustomerId200ResponseProperties](docs/OBPv500GetCustomerAccountLinksByCustomerId200ResponseProperties.md)
- - [OpenBankProject::OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinks](docs/OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinks.md)
- - [OpenBankProject::OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems](docs/OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems.md)
- - [OpenBankProject::OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItemsProperties](docs/OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItemsProperties.md)
- - [OpenBankProject::OBPv500GetCustomerOverview200Response](docs/OBPv500GetCustomerOverview200Response.md)
- - [OpenBankProject::OBPv500GetCustomerOverview200ResponseProperties](docs/OBPv500GetCustomerOverview200ResponseProperties.md)
- - [OpenBankProject::OBPv500GetCustomerOverview200ResponsePropertiesAccounts](docs/OBPv500GetCustomerOverview200ResponsePropertiesAccounts.md)
- - [OpenBankProject::OBPv500GetCustomerOverview200ResponsePropertiesAccountsItems](docs/OBPv500GetCustomerOverview200ResponsePropertiesAccountsItems.md)
- - [OpenBankProject::OBPv500GetCustomerOverview200ResponsePropertiesAccountsItemsProperties](docs/OBPv500GetCustomerOverview200ResponsePropertiesAccountsItemsProperties.md)
- - [OpenBankProject::OBPv500GetCustomerOverviewFlat200Response](docs/OBPv500GetCustomerOverviewFlat200Response.md)
- - [OpenBankProject::OBPv500GetCustomerOverviewFlat200ResponseProperties](docs/OBPv500GetCustomerOverviewFlat200ResponseProperties.md)
- - [OpenBankProject::OBPv500GetCustomerOverviewFlat200ResponsePropertiesAccounts](docs/OBPv500GetCustomerOverviewFlat200ResponsePropertiesAccounts.md)
- - [OpenBankProject::OBPv500GetCustomerOverviewFlat200ResponsePropertiesAccountsItems](docs/OBPv500GetCustomerOverviewFlat200ResponsePropertiesAccountsItems.md)
- - [OpenBankProject::OBPv500GetCustomerOverviewFlat200ResponsePropertiesAccountsItemsProperties](docs/OBPv500GetCustomerOverviewFlat200ResponsePropertiesAccountsItemsProperties.md)
- - [OpenBankProject::OBPv500GetCustomerOverviewFlat200ResponsePropertiesAccountsItemsPropertiesAccountAttributes](docs/OBPv500GetCustomerOverviewFlat200ResponsePropertiesAccountsItemsPropertiesAccountAttributes.md)
- - [OpenBankProject::OBPv500GetCustomerOverviewFlat200ResponsePropertiesAccountsItemsPropertiesAccountAttributesItems](docs/OBPv500GetCustomerOverviewFlat200ResponsePropertiesAccountsItemsPropertiesAccountAttributesItems.md)
- - [OpenBankProject::OBPv500GetCustomerOverviewFlat200ResponsePropertiesAccountsItemsPropertiesAccountAttributesItemsProperties](docs/OBPv500GetCustomerOverviewFlat200ResponsePropertiesAccountsItemsPropertiesAccountAttributesItemsProperties.md)
- - [OpenBankProject::OBPv500GetCustomerOverviewFlat200ResponsePropertiesAccountsItemsPropertiesContracts](docs/OBPv500GetCustomerOverviewFlat200ResponsePropertiesAccountsItemsPropertiesContracts.md)
- - [OpenBankProject::OBPv500GetCustomerOverviewFlat200ResponsePropertiesAccountsItemsPropertiesContractsItems](docs/OBPv500GetCustomerOverviewFlat200ResponsePropertiesAccountsItemsPropertiesContractsItems.md)
- - [OpenBankProject::OBPv500GetCustomerOverviewFlat200ResponsePropertiesAccountsItemsPropertiesContractsItemsProperties](docs/OBPv500GetCustomerOverviewFlat200ResponsePropertiesAccountsItemsPropertiesContractsItemsProperties.md)
- - [OpenBankProject::OBPv500GetCustomerOverviewFlatRequest](docs/OBPv500GetCustomerOverviewFlatRequest.md)
- - [OpenBankProject::OBPv500GetCustomerOverviewFlatRequestProperties](docs/OBPv500GetCustomerOverviewFlatRequestProperties.md)
- - [OpenBankProject::OBPv500GetMetricsAtBank200Response](docs/OBPv500GetMetricsAtBank200Response.md)
- - [OpenBankProject::OBPv500GetMetricsAtBank200ResponseProperties](docs/OBPv500GetMetricsAtBank200ResponseProperties.md)
- - [OpenBankProject::OBPv500GetMetricsAtBank200ResponsePropertiesMetrics](docs/OBPv500GetMetricsAtBank200ResponsePropertiesMetrics.md)
- - [OpenBankProject::OBPv500GetMetricsAtBank200ResponsePropertiesMetricsItems](docs/OBPv500GetMetricsAtBank200ResponsePropertiesMetricsItems.md)
- - [OpenBankProject::OBPv500GetMetricsAtBank200ResponsePropertiesMetricsItemsProperties](docs/OBPv500GetMetricsAtBank200ResponsePropertiesMetricsItemsProperties.md)
- - [OpenBankProject::OBPv500GetMyCustomersAtBank200Response](docs/OBPv500GetMyCustomersAtBank200Response.md)
- - [OpenBankProject::OBPv500GetMyCustomersAtBank200ResponseProperties](docs/OBPv500GetMyCustomersAtBank200ResponseProperties.md)
- - [OpenBankProject::OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomers](docs/OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomers.md)
- - [OpenBankProject::OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItems](docs/OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItems.md)
- - [OpenBankProject::OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsProperties](docs/OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsProperties.md)
- - [OpenBankProject::OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimit](docs/OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimit.md)
- - [OpenBankProject::OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimitProperties](docs/OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimitProperties.md)
- - [OpenBankProject::OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditRating](docs/OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditRating.md)
- - [OpenBankProject::OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditRatingProperties](docs/OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditRatingProperties.md)
- - [OpenBankProject::OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesDobOfDependants](docs/OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesDobOfDependants.md)
- - [OpenBankProject::OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesFaceImage](docs/OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesFaceImage.md)
- - [OpenBankProject::OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesFaceImageProperties](docs/OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesFaceImageProperties.md)
- - [OpenBankProject::OBPv500GetSystemViewsIds200Response](docs/OBPv500GetSystemViewsIds200Response.md)
- - [OpenBankProject::OBPv500GetSystemViewsIds200ResponseProperties](docs/OBPv500GetSystemViewsIds200ResponseProperties.md)
- - [OpenBankProject::OBPv500GetSystemViewsIds200ResponsePropertiesViews](docs/OBPv500GetSystemViewsIds200ResponsePropertiesViews.md)
- - [OpenBankProject::OBPv500GetSystemViewsIds200ResponsePropertiesViewsItems](docs/OBPv500GetSystemViewsIds200ResponsePropertiesViewsItems.md)
- - [OpenBankProject::OBPv500GetSystemViewsIds200ResponsePropertiesViewsItemsProperties](docs/OBPv500GetSystemViewsIds200ResponsePropertiesViewsItemsProperties.md)
- - [OpenBankProject::OBPv500GetUserAuthContexts200Response](docs/OBPv500GetUserAuthContexts200Response.md)
- - [OpenBankProject::OBPv500GetUserAuthContexts200ResponseProperties](docs/OBPv500GetUserAuthContexts200ResponseProperties.md)
- - [OpenBankProject::OBPv500GetViewsForBankAccount200Response](docs/OBPv500GetViewsForBankAccount200Response.md)
- - [OpenBankProject::OBPv500GetViewsForBankAccount200ResponseProperties](docs/OBPv500GetViewsForBankAccount200ResponseProperties.md)
- - [OpenBankProject::OBPv500GetViewsForBankAccount200ResponsePropertiesViews](docs/OBPv500GetViewsForBankAccount200ResponsePropertiesViews.md)
- - [OpenBankProject::OBPv500GetViewsForBankAccount200ResponsePropertiesViewsItems](docs/OBPv500GetViewsForBankAccount200ResponsePropertiesViewsItems.md)
- - [OpenBankProject::OBPv500GetViewsForBankAccount200ResponsePropertiesViewsItemsProperties](docs/OBPv500GetViewsForBankAccount200ResponsePropertiesViewsItemsProperties.md)
- - [OpenBankProject::OBPv500HeadAtms200Response](docs/OBPv500HeadAtms200Response.md)
- - [OpenBankProject::OBPv500HeadAtms200ResponseProperties](docs/OBPv500HeadAtms200ResponseProperties.md)
- - [OpenBankProject::OBPv500HeadAtms200ResponsePropertiesAtms](docs/OBPv500HeadAtms200ResponsePropertiesAtms.md)
- - [OpenBankProject::OBPv500HeadAtms200ResponsePropertiesAtmsItems](docs/OBPv500HeadAtms200ResponsePropertiesAtmsItems.md)
- - [OpenBankProject::OBPv500HeadAtms200ResponsePropertiesAtmsItemsProperties](docs/OBPv500HeadAtms200ResponsePropertiesAtmsItemsProperties.md)
- - [OpenBankProject::OBPv500UpdateBank200Response](docs/OBPv500UpdateBank200Response.md)
- - [OpenBankProject::OBPv500UpdateBank200ResponseProperties](docs/OBPv500UpdateBank200ResponseProperties.md)
- - [OpenBankProject::OBPv500UpdateBankRequest](docs/OBPv500UpdateBankRequest.md)
- - [OpenBankProject::OBPv500UpdateBankRequestProperties](docs/OBPv500UpdateBankRequestProperties.md)
- - [OpenBankProject::OBPv500UpdateCustomerAccountLinkByIdRequest](docs/OBPv500UpdateCustomerAccountLinkByIdRequest.md)
- - [OpenBankProject::OBPv500UpdateCustomerAccountLinkByIdRequestProperties](docs/OBPv500UpdateCustomerAccountLinkByIdRequestProperties.md)
- - [OpenBankProject::OBPv510AddSystemViewPermission200Response](docs/OBPv510AddSystemViewPermission200Response.md)
- - [OpenBankProject::OBPv510AddSystemViewPermission200ResponseProperties](docs/OBPv510AddSystemViewPermission200ResponseProperties.md)
- - [OpenBankProject::OBPv510AddSystemViewPermissionRequest](docs/OBPv510AddSystemViewPermissionRequest.md)
- - [OpenBankProject::OBPv510AddSystemViewPermissionRequestProperties](docs/OBPv510AddSystemViewPermissionRequestProperties.md)
- - [OpenBankProject::OBPv510CreateAgentRequest](docs/OBPv510CreateAgentRequest.md)
- - [OpenBankProject::OBPv510CreateAgentRequestProperties](docs/OBPv510CreateAgentRequestProperties.md)
- - [OpenBankProject::OBPv510CreateAtmRequest](docs/OBPv510CreateAtmRequest.md)
- - [OpenBankProject::OBPv510CreateAtmRequestProperties](docs/OBPv510CreateAtmRequestProperties.md)
- - [OpenBankProject::OBPv510CreateBankAccountBalanceRequest](docs/OBPv510CreateBankAccountBalanceRequest.md)
- - [OpenBankProject::OBPv510CreateBankAccountBalanceRequestProperties](docs/OBPv510CreateBankAccountBalanceRequestProperties.md)
- - [OpenBankProject::OBPv510CreateConsentImplicit200Response](docs/OBPv510CreateConsentImplicit200Response.md)
- - [OpenBankProject::OBPv510CreateConsentImplicit200ResponseProperties](docs/OBPv510CreateConsentImplicit200ResponseProperties.md)
- - [OpenBankProject::OBPv510CreateConsentImplicitRequest](docs/OBPv510CreateConsentImplicitRequest.md)
- - [OpenBankProject::OBPv510CreateConsentImplicitRequestProperties](docs/OBPv510CreateConsentImplicitRequestProperties.md)
- - [OpenBankProject::OBPv510CreateConsumer200Response](docs/OBPv510CreateConsumer200Response.md)
- - [OpenBankProject::OBPv510CreateConsumer200ResponseProperties](docs/OBPv510CreateConsumer200ResponseProperties.md)
- - [OpenBankProject::OBPv510CreateConsumerDynamicRegistrationRequest](docs/OBPv510CreateConsumerDynamicRegistrationRequest.md)
- - [OpenBankProject::OBPv510CreateConsumerDynamicRegistrationRequestProperties](docs/OBPv510CreateConsumerDynamicRegistrationRequestProperties.md)
- - [OpenBankProject::OBPv510CreateConsumerRequest](docs/OBPv510CreateConsumerRequest.md)
- - [OpenBankProject::OBPv510CreateConsumerRequestProperties](docs/OBPv510CreateConsumerRequestProperties.md)
- - [OpenBankProject::OBPv510CreateCustomView200Response](docs/OBPv510CreateCustomView200Response.md)
- - [OpenBankProject::OBPv510CreateCustomView200ResponseProperties](docs/OBPv510CreateCustomView200ResponseProperties.md)
- - [OpenBankProject::OBPv510CreateCustomViewRequest](docs/OBPv510CreateCustomViewRequest.md)
- - [OpenBankProject::OBPv510CreateCustomViewRequestProperties](docs/OBPv510CreateCustomViewRequestProperties.md)
- - [OpenBankProject::OBPv510CreateRegulatedEntityRequest](docs/OBPv510CreateRegulatedEntityRequest.md)
- - [OpenBankProject::OBPv510CreateRegulatedEntityRequestProperties](docs/OBPv510CreateRegulatedEntityRequestProperties.md)
- - [OpenBankProject::OBPv510CreateUserWithAccountAccessById200Response](docs/OBPv510CreateUserWithAccountAccessById200Response.md)
- - [OpenBankProject::OBPv510CreateUserWithAccountAccessById200ResponseProperties](docs/OBPv510CreateUserWithAccountAccessById200ResponseProperties.md)
- - [OpenBankProject::OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead](docs/OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead.md)
- - [OpenBankProject::OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHeadProperties](docs/OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHeadProperties.md)
- - [OpenBankProject::OBPv510CreateUserWithAccountAccessByIdRequest](docs/OBPv510CreateUserWithAccountAccessByIdRequest.md)
- - [OpenBankProject::OBPv510CreateUserWithAccountAccessByIdRequestProperties](docs/OBPv510CreateUserWithAccountAccessByIdRequestProperties.md)
- - [OpenBankProject::OBPv510CreateUserWithAccountAccessByIdRequestPropertiesViews](docs/OBPv510CreateUserWithAccountAccessByIdRequestPropertiesViews.md)
- - [OpenBankProject::OBPv510CreateUserWithAccountAccessByIdRequestPropertiesViewsItems](docs/OBPv510CreateUserWithAccountAccessByIdRequestPropertiesViewsItems.md)
- - [OpenBankProject::OBPv510CreateUserWithAccountAccessByIdRequestPropertiesViewsItemsProperties](docs/OBPv510CreateUserWithAccountAccessByIdRequestPropertiesViewsItemsProperties.md)
- - [OpenBankProject::OBPv510CreateVRPConsentRequest200Response](docs/OBPv510CreateVRPConsentRequest200Response.md)
- - [OpenBankProject::OBPv510CreateVRPConsentRequest200ResponseProperties](docs/OBPv510CreateVRPConsentRequest200ResponseProperties.md)
- - [OpenBankProject::OBPv510CreateVRPConsentRequest200ResponsePropertiesPayload](docs/OBPv510CreateVRPConsentRequest200ResponsePropertiesPayload.md)
- - [OpenBankProject::OBPv510CreateVRPConsentRequest200ResponsePropertiesPayloadProperties](docs/OBPv510CreateVRPConsentRequest200ResponsePropertiesPayloadProperties.md)
- - [OpenBankProject::OBPv510CreateVRPConsentRequest200ResponsePropertiesPayloadPropertiesToAccount](docs/OBPv510CreateVRPConsentRequest200ResponsePropertiesPayloadPropertiesToAccount.md)
- - [OpenBankProject::OBPv510CreateVRPConsentRequest200ResponsePropertiesPayloadPropertiesToAccountProperties](docs/OBPv510CreateVRPConsentRequest200ResponsePropertiesPayloadPropertiesToAccountProperties.md)
- - [OpenBankProject::OBPv510CreateVRPConsentRequest200ResponsePropertiesPayloadPropertiesToAccountPropertiesLimit](docs/OBPv510CreateVRPConsentRequest200ResponsePropertiesPayloadPropertiesToAccountPropertiesLimit.md)
- - [OpenBankProject::OBPv510CreateVRPConsentRequest200ResponsePropertiesPayloadPropertiesToAccountPropertiesLimitProperties](docs/OBPv510CreateVRPConsentRequest200ResponsePropertiesPayloadPropertiesToAccountPropertiesLimitProperties.md)
- - [OpenBankProject::OBPv510CreateVRPConsentRequestRequest](docs/OBPv510CreateVRPConsentRequestRequest.md)
- - [OpenBankProject::OBPv510CreateVRPConsentRequestRequestProperties](docs/OBPv510CreateVRPConsentRequestRequestProperties.md)
- - [OpenBankProject::OBPv510CreateVRPConsentRequestRequestPropertiesFromAccount](docs/OBPv510CreateVRPConsentRequestRequestPropertiesFromAccount.md)
- - [OpenBankProject::OBPv510CreateVRPConsentRequestRequestPropertiesFromAccountProperties](docs/OBPv510CreateVRPConsentRequestRequestPropertiesFromAccountProperties.md)
- - [OpenBankProject::OBPv510CreateVRPConsentRequestRequestPropertiesToAccount](docs/OBPv510CreateVRPConsentRequestRequestPropertiesToAccount.md)
- - [OpenBankProject::OBPv510CreateVRPConsentRequestRequestPropertiesToAccountProperties](docs/OBPv510CreateVRPConsentRequestRequestPropertiesToAccountProperties.md)
- - [OpenBankProject::OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit](docs/OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit.md)
- - [OpenBankProject::OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimitProperties](docs/OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimitProperties.md)
- - [OpenBankProject::OBPv510GetAccountsHeldByUserAtBank200Response](docs/OBPv510GetAccountsHeldByUserAtBank200Response.md)
- - [OpenBankProject::OBPv510GetAccountsHeldByUserAtBank200ResponseProperties](docs/OBPv510GetAccountsHeldByUserAtBank200ResponseProperties.md)
- - [OpenBankProject::OBPv510GetAccountsHeldByUserAtBank200ResponsePropertiesAccounts](docs/OBPv510GetAccountsHeldByUserAtBank200ResponsePropertiesAccounts.md)
- - [OpenBankProject::OBPv510GetAccountsHeldByUserAtBank200ResponsePropertiesAccountsItems](docs/OBPv510GetAccountsHeldByUserAtBank200ResponsePropertiesAccountsItems.md)
- - [OpenBankProject::OBPv510GetAccountsHeldByUserAtBank200ResponsePropertiesAccountsItemsProperties](docs/OBPv510GetAccountsHeldByUserAtBank200ResponsePropertiesAccountsItemsProperties.md)
- - [OpenBankProject::OBPv510GetAgent200Response](docs/OBPv510GetAgent200Response.md)
- - [OpenBankProject::OBPv510GetAgent200ResponseProperties](docs/OBPv510GetAgent200ResponseProperties.md)
- - [OpenBankProject::OBPv510GetAgents200Response](docs/OBPv510GetAgents200Response.md)
- - [OpenBankProject::OBPv510GetAgents200ResponseProperties](docs/OBPv510GetAgents200ResponseProperties.md)
- - [OpenBankProject::OBPv510GetAgents200ResponsePropertiesAgents](docs/OBPv510GetAgents200ResponsePropertiesAgents.md)
- - [OpenBankProject::OBPv510GetAgents200ResponsePropertiesAgentsItems](docs/OBPv510GetAgents200ResponsePropertiesAgentsItems.md)
- - [OpenBankProject::OBPv510GetAgents200ResponsePropertiesAgentsItemsProperties](docs/OBPv510GetAgents200ResponsePropertiesAgentsItemsProperties.md)
- - [OpenBankProject::OBPv510GetAllBankAccountBalances200Response](docs/OBPv510GetAllBankAccountBalances200Response.md)
- - [OpenBankProject::OBPv510GetAllBankAccountBalances200ResponseProperties](docs/OBPv510GetAllBankAccountBalances200ResponseProperties.md)
- - [OpenBankProject::OBPv510GetAllBankAccountBalances200ResponsePropertiesBalances](docs/OBPv510GetAllBankAccountBalances200ResponsePropertiesBalances.md)
- - [OpenBankProject::OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems](docs/OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems.md)
- - [OpenBankProject::OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItemsProperties](docs/OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItemsProperties.md)
- - [OpenBankProject::OBPv510GetAllRegulatedEntityAttributes200Response](docs/OBPv510GetAllRegulatedEntityAttributes200Response.md)
- - [OpenBankProject::OBPv510GetAllRegulatedEntityAttributes200ResponseProperties](docs/OBPv510GetAllRegulatedEntityAttributes200ResponseProperties.md)
- - [OpenBankProject::OBPv510GetAllRegulatedEntityAttributes200ResponsePropertiesAttributes](docs/OBPv510GetAllRegulatedEntityAttributes200ResponsePropertiesAttributes.md)
- - [OpenBankProject::OBPv510GetApiTags200Response](docs/OBPv510GetApiTags200Response.md)
- - [OpenBankProject::OBPv510GetApiTags200ResponseProperties](docs/OBPv510GetApiTags200ResponseProperties.md)
- - [OpenBankProject::OBPv510GetApiTags200ResponsePropertiesAccounts](docs/OBPv510GetApiTags200ResponsePropertiesAccounts.md)
- - [OpenBankProject::OBPv510GetApiTags200ResponsePropertiesAccountsItems](docs/OBPv510GetApiTags200ResponsePropertiesAccountsItems.md)
- - [OpenBankProject::OBPv510GetApiTags200ResponsePropertiesAccountsItemsProperties](docs/OBPv510GetApiTags200ResponsePropertiesAccountsItemsProperties.md)
- - [OpenBankProject::OBPv510GetAtm200Response](docs/OBPv510GetAtm200Response.md)
- - [OpenBankProject::OBPv510GetAtm200ResponseProperties](docs/OBPv510GetAtm200ResponseProperties.md)
- - [OpenBankProject::OBPv510GetAtm200ResponsePropertiesAttributes](docs/OBPv510GetAtm200ResponsePropertiesAttributes.md)
- - [OpenBankProject::OBPv510GetAtmAttribute200Response](docs/OBPv510GetAtmAttribute200Response.md)
- - [OpenBankProject::OBPv510GetAtmAttribute200ResponseProperties](docs/OBPv510GetAtmAttribute200ResponseProperties.md)
- - [OpenBankProject::OBPv510GetAtmAttributes200Response](docs/OBPv510GetAtmAttributes200Response.md)
- - [OpenBankProject::OBPv510GetAtmAttributes200ResponseProperties](docs/OBPv510GetAtmAttributes200ResponseProperties.md)
- - [OpenBankProject::OBPv510GetAtms200Response](docs/OBPv510GetAtms200Response.md)
- - [OpenBankProject::OBPv510GetAtms200ResponseProperties](docs/OBPv510GetAtms200ResponseProperties.md)
- - [OpenBankProject::OBPv510GetAtms200ResponsePropertiesAtms](docs/OBPv510GetAtms200ResponsePropertiesAtms.md)
- - [OpenBankProject::OBPv510GetBankAccountsBalances200Response](docs/OBPv510GetBankAccountsBalances200Response.md)
- - [OpenBankProject::OBPv510GetBankAccountsBalances200ResponseProperties](docs/OBPv510GetBankAccountsBalances200ResponseProperties.md)
- - [OpenBankProject::OBPv510GetBankAccountsBalances200ResponsePropertiesAccounts](docs/OBPv510GetBankAccountsBalances200ResponsePropertiesAccounts.md)
- - [OpenBankProject::OBPv510GetBankAccountsBalances200ResponsePropertiesAccountsItems](docs/OBPv510GetBankAccountsBalances200ResponsePropertiesAccountsItems.md)
- - [OpenBankProject::OBPv510GetBankAccountsBalances200ResponsePropertiesAccountsItemsProperties](docs/OBPv510GetBankAccountsBalances200ResponsePropertiesAccountsItemsProperties.md)
- - [OpenBankProject::OBPv510GetBankAccountsBalances200ResponsePropertiesAccountsItemsPropertiesBalances](docs/OBPv510GetBankAccountsBalances200ResponsePropertiesAccountsItemsPropertiesBalances.md)
- - [OpenBankProject::OBPv510GetBankAccountsBalances200ResponsePropertiesAccountsItemsPropertiesBalancesItems](docs/OBPv510GetBankAccountsBalances200ResponsePropertiesAccountsItemsPropertiesBalancesItems.md)
- - [OpenBankProject::OBPv510GetBankAccountsBalances200ResponsePropertiesAccountsItemsPropertiesBalancesItemsProperties](docs/OBPv510GetBankAccountsBalances200ResponsePropertiesAccountsItemsPropertiesBalancesItemsProperties.md)
- - [OpenBankProject::OBPv510GetCallsLimit200Response](docs/OBPv510GetCallsLimit200Response.md)
- - [OpenBankProject::OBPv510GetCallsLimit200ResponseProperties](docs/OBPv510GetCallsLimit200ResponseProperties.md)
- - [OpenBankProject::OBPv510GetCallsLimit200ResponsePropertiesLimits](docs/OBPv510GetCallsLimit200ResponsePropertiesLimits.md)
- - [OpenBankProject::OBPv510GetCallsLimit200ResponsePropertiesLimitsItems](docs/OBPv510GetCallsLimit200ResponsePropertiesLimitsItems.md)
- - [OpenBankProject::OBPv510GetCallsLimit200ResponsePropertiesLimitsItemsProperties](docs/OBPv510GetCallsLimit200ResponsePropertiesLimitsItemsProperties.md)
- - [OpenBankProject::OBPv510GetConsentByConsentId200Response](docs/OBPv510GetConsentByConsentId200Response.md)
- - [OpenBankProject::OBPv510GetConsentByConsentId200ResponseProperties](docs/OBPv510GetConsentByConsentId200ResponseProperties.md)
- - [OpenBankProject::OBPv510GetConsents200Response](docs/OBPv510GetConsents200Response.md)
- - [OpenBankProject::OBPv510GetConsents200ResponseProperties](docs/OBPv510GetConsents200ResponseProperties.md)
- - [OpenBankProject::OBPv510GetConsents200ResponsePropertiesConsents](docs/OBPv510GetConsents200ResponsePropertiesConsents.md)
- - [OpenBankProject::OBPv510GetConsents200ResponsePropertiesConsentsItems](docs/OBPv510GetConsents200ResponsePropertiesConsentsItems.md)
- - [OpenBankProject::OBPv510GetConsents200ResponsePropertiesConsentsItemsProperties](docs/OBPv510GetConsents200ResponsePropertiesConsentsItemsProperties.md)
- - [OpenBankProject::OBPv510GetConsumers200Response](docs/OBPv510GetConsumers200Response.md)
- - [OpenBankProject::OBPv510GetConsumers200ResponseProperties](docs/OBPv510GetConsumers200ResponseProperties.md)
- - [OpenBankProject::OBPv510GetConsumers200ResponsePropertiesConsumers](docs/OBPv510GetConsumers200ResponsePropertiesConsumers.md)
- - [OpenBankProject::OBPv510GetCoreAccountByIdThroughView200Response](docs/OBPv510GetCoreAccountByIdThroughView200Response.md)
- - [OpenBankProject::OBPv510GetCoreAccountByIdThroughView200ResponseProperties](docs/OBPv510GetCoreAccountByIdThroughView200ResponseProperties.md)
- - [OpenBankProject::OBPv510GetCounterpartyLimit200Response](docs/OBPv510GetCounterpartyLimit200Response.md)
- - [OpenBankProject::OBPv510GetCounterpartyLimit200ResponseProperties](docs/OBPv510GetCounterpartyLimit200ResponseProperties.md)
- - [OpenBankProject::OBPv510GetCounterpartyLimitStatus200Response](docs/OBPv510GetCounterpartyLimitStatus200Response.md)
- - [OpenBankProject::OBPv510GetCounterpartyLimitStatus200ResponseProperties](docs/OBPv510GetCounterpartyLimitStatus200ResponseProperties.md)
- - [OpenBankProject::OBPv510GetCounterpartyLimitStatus200ResponsePropertiesStatus](docs/OBPv510GetCounterpartyLimitStatus200ResponsePropertiesStatus.md)
- - [OpenBankProject::OBPv510GetCounterpartyLimitStatus200ResponsePropertiesStatusProperties](docs/OBPv510GetCounterpartyLimitStatus200ResponsePropertiesStatusProperties.md)
- - [OpenBankProject::OBPv510GetCurrenciesAtBank200Response](docs/OBPv510GetCurrenciesAtBank200Response.md)
- - [OpenBankProject::OBPv510GetCurrenciesAtBank200ResponseProperties](docs/OBPv510GetCurrenciesAtBank200ResponseProperties.md)
- - [OpenBankProject::OBPv510GetCurrenciesAtBank200ResponsePropertiesCurrencies](docs/OBPv510GetCurrenciesAtBank200ResponsePropertiesCurrencies.md)
- - [OpenBankProject::OBPv510GetCurrenciesAtBank200ResponsePropertiesCurrenciesItems](docs/OBPv510GetCurrenciesAtBank200ResponsePropertiesCurrenciesItems.md)
- - [OpenBankProject::OBPv510GetCurrenciesAtBank200ResponsePropertiesCurrenciesItemsProperties](docs/OBPv510GetCurrenciesAtBank200ResponsePropertiesCurrenciesItemsProperties.md)
- - [OpenBankProject::OBPv510GetEntitlementsAndPermissions200Response](docs/OBPv510GetEntitlementsAndPermissions200Response.md)
- - [OpenBankProject::OBPv510GetEntitlementsAndPermissions200ResponseProperties](docs/OBPv510GetEntitlementsAndPermissions200ResponseProperties.md)
- - [OpenBankProject::OBPv510GetMyConsentsByBank200Response](docs/OBPv510GetMyConsentsByBank200Response.md)
- - [OpenBankProject::OBPv510GetMyConsentsByBank200ResponseProperties](docs/OBPv510GetMyConsentsByBank200ResponseProperties.md)
- - [OpenBankProject::OBPv510GetMyConsentsByBank200ResponsePropertiesConsents](docs/OBPv510GetMyConsentsByBank200ResponsePropertiesConsents.md)
- - [OpenBankProject::OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItems](docs/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItems.md)
- - [OpenBankProject::OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsProperties](docs/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsProperties.md)
- - [OpenBankProject::OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayload](docs/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayload.md)
- - [OpenBankProject::OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadProperties](docs/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadProperties.md)
- - [OpenBankProject::OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesAccess](docs/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesAccess.md)
- - [OpenBankProject::OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesAccessProperties](docs/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesAccessProperties.md)
- - [OpenBankProject::OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesAccessPropertiesTransactions](docs/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesAccessPropertiesTransactions.md)
- - [OpenBankProject::OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesAccessPropertiesTransactionsItems](docs/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesAccessPropertiesTransactionsItems.md)
- - [OpenBankProject::OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesAccessPropertiesTransactionsItemsProperties](docs/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesAccessPropertiesTransactionsItemsProperties.md)
- - [OpenBankProject::OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlements](docs/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlements.md)
- - [OpenBankProject::OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems](docs/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems.md)
- - [OpenBankProject::OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItemsProperties](docs/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItemsProperties.md)
- - [OpenBankProject::OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesRequestHeaders](docs/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesRequestHeaders.md)
- - [OpenBankProject::OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesRequestHeadersItems](docs/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesRequestHeadersItems.md)
- - [OpenBankProject::OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesRequestHeadersItemsProperties](docs/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesRequestHeadersItemsProperties.md)
- - [OpenBankProject::OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesViews](docs/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesViews.md)
- - [OpenBankProject::OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesViewsItems](docs/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesViewsItems.md)
- - [OpenBankProject::OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesViewsItemsProperties](docs/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesViewsItemsProperties.md)
- - [OpenBankProject::OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesViewsItemsPropertiesHelperInfo](docs/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesViewsItemsPropertiesHelperInfo.md)
- - [OpenBankProject::OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesViewsItemsPropertiesHelperInfoProperties](docs/OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesViewsItemsPropertiesHelperInfoProperties.md)
- - [OpenBankProject::OBPv510GetRegulatedEntityAttributeById200Response](docs/OBPv510GetRegulatedEntityAttributeById200Response.md)
- - [OpenBankProject::OBPv510GetRegulatedEntityAttributeById200ResponseProperties](docs/OBPv510GetRegulatedEntityAttributeById200ResponseProperties.md)
- - [OpenBankProject::OBPv510GetRegulatedEntityById200Response](docs/OBPv510GetRegulatedEntityById200Response.md)
- - [OpenBankProject::OBPv510GetRegulatedEntityById200ResponseProperties](docs/OBPv510GetRegulatedEntityById200ResponseProperties.md)
- - [OpenBankProject::OBPv510GetRegulatedEntityById200ResponsePropertiesAttributes](docs/OBPv510GetRegulatedEntityById200ResponsePropertiesAttributes.md)
- - [OpenBankProject::OBPv510GetRegulatedEntityById200ResponsePropertiesAttributesItems](docs/OBPv510GetRegulatedEntityById200ResponsePropertiesAttributesItems.md)
- - [OpenBankProject::OBPv510GetRegulatedEntityById200ResponsePropertiesAttributesItemsProperties](docs/OBPv510GetRegulatedEntityById200ResponsePropertiesAttributesItemsProperties.md)
- - [OpenBankProject::OBPv510GetRegulatedEntityById200ResponsePropertiesServices](docs/OBPv510GetRegulatedEntityById200ResponsePropertiesServices.md)
- - [OpenBankProject::OBPv510GetRegulatedEntityById200ResponsePropertiesServicesItems](docs/OBPv510GetRegulatedEntityById200ResponsePropertiesServicesItems.md)
- - [OpenBankProject::OBPv510GetRegulatedEntityById200ResponsePropertiesServicesItemsProperties](docs/OBPv510GetRegulatedEntityById200ResponsePropertiesServicesItemsProperties.md)
- - [OpenBankProject::OBPv510GetTransactionRequestById200Response](docs/OBPv510GetTransactionRequestById200Response.md)
- - [OpenBankProject::OBPv510GetTransactionRequestById200ResponseProperties](docs/OBPv510GetTransactionRequestById200ResponseProperties.md)
- - [OpenBankProject::OBPv510GetTransactionRequestById200ResponsePropertiesChallenge](docs/OBPv510GetTransactionRequestById200ResponsePropertiesChallenge.md)
- - [OpenBankProject::OBPv510GetTransactionRequestById200ResponsePropertiesChallengeProperties](docs/OBPv510GetTransactionRequestById200ResponsePropertiesChallengeProperties.md)
- - [OpenBankProject::OBPv510GetTransactionRequests200Response](docs/OBPv510GetTransactionRequests200Response.md)
- - [OpenBankProject::OBPv510GetTransactionRequests200ResponseProperties](docs/OBPv510GetTransactionRequests200ResponseProperties.md)
- - [OpenBankProject::OBPv510GetTransactionRequests200ResponsePropertiesTransactionRequestsWithCharges](docs/OBPv510GetTransactionRequests200ResponsePropertiesTransactionRequestsWithCharges.md)
- - [OpenBankProject::OBPv510GetUserByProviderAndUsername200Response](docs/OBPv510GetUserByProviderAndUsername200Response.md)
- - [OpenBankProject::OBPv510GetUserByProviderAndUsername200ResponseProperties](docs/OBPv510GetUserByProviderAndUsername200ResponseProperties.md)
- - [OpenBankProject::OBPv510GetUserByProviderAndUsername200ResponsePropertiesAgreements](docs/OBPv510GetUserByProviderAndUsername200ResponsePropertiesAgreements.md)
- - [OpenBankProject::OBPv510GetUserByProviderAndUsername200ResponsePropertiesAgreementsItems](docs/OBPv510GetUserByProviderAndUsername200ResponsePropertiesAgreementsItems.md)
- - [OpenBankProject::OBPv510GetUserByProviderAndUsername200ResponsePropertiesAgreementsItemsProperties](docs/OBPv510GetUserByProviderAndUsername200ResponsePropertiesAgreementsItemsProperties.md)
- - [OpenBankProject::OBPv510GetUserByProviderAndUsername200ResponsePropertiesEntitlements](docs/OBPv510GetUserByProviderAndUsername200ResponsePropertiesEntitlements.md)
- - [OpenBankProject::OBPv510GetUserByProviderAndUsername200ResponsePropertiesEntitlementsProperties](docs/OBPv510GetUserByProviderAndUsername200ResponsePropertiesEntitlementsProperties.md)
- - [OpenBankProject::OBPv510GetUserByProviderAndUsername200ResponsePropertiesEntitlementsPropertiesList](docs/OBPv510GetUserByProviderAndUsername200ResponsePropertiesEntitlementsPropertiesList.md)
- - [OpenBankProject::OBPv510GetUserByProviderAndUsername200ResponsePropertiesViews](docs/OBPv510GetUserByProviderAndUsername200ResponsePropertiesViews.md)
- - [OpenBankProject::OBPv510GetUserByProviderAndUsername200ResponsePropertiesViewsProperties](docs/OBPv510GetUserByProviderAndUsername200ResponsePropertiesViewsProperties.md)
- - [OpenBankProject::OBPv510GetUserLockStatus200Response](docs/OBPv510GetUserLockStatus200Response.md)
- - [OpenBankProject::OBPv510GetUserLockStatus200ResponseProperties](docs/OBPv510GetUserLockStatus200ResponseProperties.md)
- - [OpenBankProject::OBPv510LockUserByProviderAndUsername200Response](docs/OBPv510LockUserByProviderAndUsername200Response.md)
- - [OpenBankProject::OBPv510LockUserByProviderAndUsername200ResponseProperties](docs/OBPv510LockUserByProviderAndUsername200ResponseProperties.md)
- - [OpenBankProject::OBPv510RegulatedEntities200Response](docs/OBPv510RegulatedEntities200Response.md)
- - [OpenBankProject::OBPv510RegulatedEntities200ResponseProperties](docs/OBPv510RegulatedEntities200ResponseProperties.md)
- - [OpenBankProject::OBPv510RegulatedEntities200ResponsePropertiesEntities](docs/OBPv510RegulatedEntities200ResponsePropertiesEntities.md)
- - [OpenBankProject::OBPv510RevokeUserAccessToViewById200Response](docs/OBPv510RevokeUserAccessToViewById200Response.md)
- - [OpenBankProject::OBPv510RevokeUserAccessToViewById200ResponseProperties](docs/OBPv510RevokeUserAccessToViewById200ResponseProperties.md)
- - [OpenBankProject::OBPv510RevokeUserAccessToViewByIdRequest](docs/OBPv510RevokeUserAccessToViewByIdRequest.md)
- - [OpenBankProject::OBPv510RevokeUserAccessToViewByIdRequestProperties](docs/OBPv510RevokeUserAccessToViewByIdRequestProperties.md)
- - [OpenBankProject::OBPv510SuggestedSessionTimeout200Response](docs/OBPv510SuggestedSessionTimeout200Response.md)
- - [OpenBankProject::OBPv510SuggestedSessionTimeout200ResponseProperties](docs/OBPv510SuggestedSessionTimeout200ResponseProperties.md)
- - [OpenBankProject::OBPv510UpdateAgentStatusRequest](docs/OBPv510UpdateAgentStatusRequest.md)
- - [OpenBankProject::OBPv510UpdateAgentStatusRequestProperties](docs/OBPv510UpdateAgentStatusRequestProperties.md)
- - [OpenBankProject::OBPv510UpdateAtmAttributeRequest](docs/OBPv510UpdateAtmAttributeRequest.md)
- - [OpenBankProject::OBPv510UpdateAtmAttributeRequestProperties](docs/OBPv510UpdateAtmAttributeRequestProperties.md)
- - [OpenBankProject::OBPv510UpdateAtmRequest](docs/OBPv510UpdateAtmRequest.md)
- - [OpenBankProject::OBPv510UpdateAtmRequestProperties](docs/OBPv510UpdateAtmRequestProperties.md)
- - [OpenBankProject::OBPv510UpdateConsentAccountAccessByConsentIdRequest](docs/OBPv510UpdateConsentAccountAccessByConsentIdRequest.md)
- - [OpenBankProject::OBPv510UpdateConsentAccountAccessByConsentIdRequestProperties](docs/OBPv510UpdateConsentAccountAccessByConsentIdRequestProperties.md)
- - [OpenBankProject::OBPv510UpdateConsentAccountAccessByConsentIdRequestPropertiesAccess](docs/OBPv510UpdateConsentAccountAccessByConsentIdRequestPropertiesAccess.md)
- - [OpenBankProject::OBPv510UpdateConsentAccountAccessByConsentIdRequestPropertiesAccessProperties](docs/OBPv510UpdateConsentAccountAccessByConsentIdRequestPropertiesAccessProperties.md)
- - [OpenBankProject::OBPv510UpdateConsentAccountAccessByConsentIdRequestPropertiesAccessPropertiesAccounts](docs/OBPv510UpdateConsentAccountAccessByConsentIdRequestPropertiesAccessPropertiesAccounts.md)
- - [OpenBankProject::OBPv510UpdateConsumerCertificateRequest](docs/OBPv510UpdateConsumerCertificateRequest.md)
- - [OpenBankProject::OBPv510UpdateConsumerCertificateRequestProperties](docs/OBPv510UpdateConsumerCertificateRequestProperties.md)
- - [OpenBankProject::OBPv510UpdateConsumerLogoURLRequest](docs/OBPv510UpdateConsumerLogoURLRequest.md)
- - [OpenBankProject::OBPv510UpdateConsumerLogoURLRequestProperties](docs/OBPv510UpdateConsumerLogoURLRequestProperties.md)
- - [OpenBankProject::OBPv510UpdateConsumerName200Response](docs/OBPv510UpdateConsumerName200Response.md)
- - [OpenBankProject::OBPv510UpdateConsumerName200ResponseProperties](docs/OBPv510UpdateConsumerName200ResponseProperties.md)
- - [OpenBankProject::OBPv510UpdateConsumerName200ResponsePropertiesCertificateInfo](docs/OBPv510UpdateConsumerName200ResponsePropertiesCertificateInfo.md)
- - [OpenBankProject::OBPv510UpdateConsumerName200ResponsePropertiesCertificateInfoProperties](docs/OBPv510UpdateConsumerName200ResponsePropertiesCertificateInfoProperties.md)
- - [OpenBankProject::OBPv510UpdateConsumerName200ResponsePropertiesCreatedByUser](docs/OBPv510UpdateConsumerName200ResponsePropertiesCreatedByUser.md)
- - [OpenBankProject::OBPv510UpdateConsumerName200ResponsePropertiesCreatedByUserProperties](docs/OBPv510UpdateConsumerName200ResponsePropertiesCreatedByUserProperties.md)
- - [OpenBankProject::OBPv510UpdateConsumerNameRequest](docs/OBPv510UpdateConsumerNameRequest.md)
- - [OpenBankProject::OBPv510UpdateConsumerNameRequestProperties](docs/OBPv510UpdateConsumerNameRequestProperties.md)
- - [OpenBankProject::OBPv510UpdateConsumerRedirectURL200Response](docs/OBPv510UpdateConsumerRedirectURL200Response.md)
- - [OpenBankProject::OBPv510UpdateConsumerRedirectURL200ResponseProperties](docs/OBPv510UpdateConsumerRedirectURL200ResponseProperties.md)
- - [OpenBankProject::OBPv510UpdateConsumerRedirectURLRequest](docs/OBPv510UpdateConsumerRedirectURLRequest.md)
- - [OpenBankProject::OBPv510UpdateConsumerRedirectURLRequestProperties](docs/OBPv510UpdateConsumerRedirectURLRequestProperties.md)
- - [OpenBankProject::OBPv510UpdateCustomViewRequest](docs/OBPv510UpdateCustomViewRequest.md)
- - [OpenBankProject::OBPv510UpdateCustomViewRequestProperties](docs/OBPv510UpdateCustomViewRequestProperties.md)
- - [OpenBankProject::OBPv510UpdateRegulatedEntityAttributeRequest](docs/OBPv510UpdateRegulatedEntityAttributeRequest.md)
- - [OpenBankProject::OBPv510UpdateRegulatedEntityAttributeRequestProperties](docs/OBPv510UpdateRegulatedEntityAttributeRequestProperties.md)
- - [OpenBankProject::OBPv510UpdateTransactionRequestStatusRequest](docs/OBPv510UpdateTransactionRequestStatusRequest.md)
- - [OpenBankProject::OBPv510UpdateTransactionRequestStatusRequestProperties](docs/OBPv510UpdateTransactionRequestStatusRequestProperties.md)
- - [OpenBankProject::OBPv510WaitingForGodot200Response](docs/OBPv510WaitingForGodot200Response.md)
- - [OpenBankProject::OBPv510WaitingForGodot200ResponseProperties](docs/OBPv510WaitingForGodot200ResponseProperties.md)
- - [OpenBankProject::OBPv600AddUserToGroup200Response](docs/OBPv600AddUserToGroup200Response.md)
- - [OpenBankProject::OBPv600AddUserToGroup200ResponseProperties](docs/OBPv600AddUserToGroup200ResponseProperties.md)
- - [OpenBankProject::OBPv600AddUserToGroupRequest](docs/OBPv600AddUserToGroupRequest.md)
- - [OpenBankProject::OBPv600AddUserToGroupRequestProperties](docs/OBPv600AddUserToGroupRequestProperties.md)
- - [OpenBankProject::OBPv600BackupBankLevelDynamicEntity200Response](docs/OBPv600BackupBankLevelDynamicEntity200Response.md)
- - [OpenBankProject::OBPv600BackupBankLevelDynamicEntity200ResponseProperties](docs/OBPv600BackupBankLevelDynamicEntity200ResponseProperties.md)
- - [OpenBankProject::OBPv600BackupBankLevelDynamicEntity200ResponsePropertiesSchema](docs/OBPv600BackupBankLevelDynamicEntity200ResponsePropertiesSchema.md)
- - [OpenBankProject::OBPv600BackupBankLevelDynamicEntity200ResponsePropertiesSchemaProperties](docs/OBPv600BackupBankLevelDynamicEntity200ResponsePropertiesSchemaProperties.md)
- - [OpenBankProject::OBPv600BackupBankLevelDynamicEntity200ResponsePropertiesSchemaPropertiesProperties](docs/OBPv600BackupBankLevelDynamicEntity200ResponsePropertiesSchemaPropertiesProperties.md)
- - [OpenBankProject::OBPv600BackupBankLevelDynamicEntity200ResponsePropertiesSchemaPropertiesPropertiesProperties](docs/OBPv600BackupBankLevelDynamicEntity200ResponsePropertiesSchemaPropertiesPropertiesProperties.md)
- - [OpenBankProject::OBPv600BackupSystemDynamicEntity200Response](docs/OBPv600BackupSystemDynamicEntity200Response.md)
- - [OpenBankProject::OBPv600BackupSystemDynamicEntity200ResponseProperties](docs/OBPv600BackupSystemDynamicEntity200ResponseProperties.md)
- - [OpenBankProject::OBPv600CleanupOrphanedDynamicEntityRecords200Response](docs/OBPv600CleanupOrphanedDynamicEntityRecords200Response.md)
- - [OpenBankProject::OBPv600CleanupOrphanedDynamicEntityRecords200ResponseProperties](docs/OBPv600CleanupOrphanedDynamicEntityRecords200ResponseProperties.md)
- - [OpenBankProject::OBPv600CleanupOrphanedDynamicEntityRecords200ResponsePropertiesDeletedOrphanedEntities](docs/OBPv600CleanupOrphanedDynamicEntityRecords200ResponsePropertiesDeletedOrphanedEntities.md)
- - [OpenBankProject::OBPv600CleanupOrphanedDynamicEntityRecords200ResponsePropertiesDeletedOrphanedEntitiesItems](docs/OBPv600CleanupOrphanedDynamicEntityRecords200ResponsePropertiesDeletedOrphanedEntitiesItems.md)
- - [OpenBankProject::OBPv600CleanupOrphanedDynamicEntityRecords200ResponsePropertiesDeletedOrphanedEntitiesItemsProperties](docs/OBPv600CleanupOrphanedDynamicEntityRecords200ResponsePropertiesDeletedOrphanedEntitiesItemsProperties.md)
- - [OpenBankProject::OBPv600CreateAccountAccessRequestRequest](docs/OBPv600CreateAccountAccessRequestRequest.md)
- - [OpenBankProject::OBPv600CreateAccountAccessRequestRequestProperties](docs/OBPv600CreateAccountAccessRequestRequestProperties.md)
- - [OpenBankProject::OBPv600CreateApiProductAttribute200Response](docs/OBPv600CreateApiProductAttribute200Response.md)
- - [OpenBankProject::OBPv600CreateApiProductAttribute200ResponseProperties](docs/OBPv600CreateApiProductAttribute200ResponseProperties.md)
- - [OpenBankProject::OBPv600CreateBankLevelDynamicEntity200Response](docs/OBPv600CreateBankLevelDynamicEntity200Response.md)
- - [OpenBankProject::OBPv600CreateBankLevelDynamicEntity200ResponseProperties](docs/OBPv600CreateBankLevelDynamicEntity200ResponseProperties.md)
- - [OpenBankProject::OBPv600CreateBankRequest](docs/OBPv600CreateBankRequest.md)
- - [OpenBankProject::OBPv600CreateBankRequestProperties](docs/OBPv600CreateBankRequestProperties.md)
- - [OpenBankProject::OBPv600CreateCallLimits200Response](docs/OBPv600CreateCallLimits200Response.md)
- - [OpenBankProject::OBPv600CreateCallLimits200ResponseProperties](docs/OBPv600CreateCallLimits200ResponseProperties.md)
- - [OpenBankProject::OBPv600CreateCallLimitsRequest](docs/OBPv600CreateCallLimitsRequest.md)
- - [OpenBankProject::OBPv600CreateCallLimitsRequestProperties](docs/OBPv600CreateCallLimitsRequestProperties.md)
- - [OpenBankProject::OBPv600CreateCorporateCustomerRequest](docs/OBPv600CreateCorporateCustomerRequest.md)
- - [OpenBankProject::OBPv600CreateCorporateCustomerRequestProperties](docs/OBPv600CreateCorporateCustomerRequestProperties.md)
- - [OpenBankProject::OBPv600CreateCustomViewManagementRequest](docs/OBPv600CreateCustomViewManagementRequest.md)
- - [OpenBankProject::OBPv600CreateCustomViewManagementRequestProperties](docs/OBPv600CreateCustomViewManagementRequestProperties.md)
- - [OpenBankProject::OBPv600CreateCustomerRequest](docs/OBPv600CreateCustomerRequest.md)
- - [OpenBankProject::OBPv600CreateCustomerRequestProperties](docs/OBPv600CreateCustomerRequestProperties.md)
- - [OpenBankProject::OBPv600CreateFeaturedApiCollectionRequest](docs/OBPv600CreateFeaturedApiCollectionRequest.md)
- - [OpenBankProject::OBPv600CreateFeaturedApiCollectionRequestProperties](docs/OBPv600CreateFeaturedApiCollectionRequestProperties.md)
- - [OpenBankProject::OBPv600CreateGroupRequest](docs/OBPv600CreateGroupRequest.md)
- - [OpenBankProject::OBPv600CreateGroupRequestProperties](docs/OBPv600CreateGroupRequestProperties.md)
- - [OpenBankProject::OBPv600CreateOrUpdateApiProductRequest](docs/OBPv600CreateOrUpdateApiProductRequest.md)
- - [OpenBankProject::OBPv600CreateOrUpdateApiProductRequestProperties](docs/OBPv600CreateOrUpdateApiProductRequestProperties.md)
- - [OpenBankProject::OBPv600CreatePersonalDataFieldRequest](docs/OBPv600CreatePersonalDataFieldRequest.md)
- - [OpenBankProject::OBPv600CreatePersonalDataFieldRequestProperties](docs/OBPv600CreatePersonalDataFieldRequestProperties.md)
- - [OpenBankProject::OBPv600CreateRetailCustomerRequest](docs/OBPv600CreateRetailCustomerRequest.md)
- - [OpenBankProject::OBPv600CreateRetailCustomerRequestProperties](docs/OBPv600CreateRetailCustomerRequestProperties.md)
- - [OpenBankProject::OBPv600CreateSystemDynamicEntity200Response](docs/OBPv600CreateSystemDynamicEntity200Response.md)
- - [OpenBankProject::OBPv600CreateSystemDynamicEntity200ResponseProperties](docs/OBPv600CreateSystemDynamicEntity200ResponseProperties.md)
- - [OpenBankProject::OBPv600CreateSystemDynamicEntityRequest](docs/OBPv600CreateSystemDynamicEntityRequest.md)
- - [OpenBankProject::OBPv600CreateSystemDynamicEntityRequestProperties](docs/OBPv600CreateSystemDynamicEntityRequestProperties.md)
- - [OpenBankProject::OBPv600CreateSystemDynamicEntityRequestPropertiesSchema](docs/OBPv600CreateSystemDynamicEntityRequestPropertiesSchema.md)
- - [OpenBankProject::OBPv600CreateSystemDynamicEntityRequestPropertiesSchemaProperties](docs/OBPv600CreateSystemDynamicEntityRequestPropertiesSchemaProperties.md)
- - [OpenBankProject::OBPv600CreateSystemDynamicEntityRequestPropertiesSchemaPropertiesProperties](docs/OBPv600CreateSystemDynamicEntityRequestPropertiesSchemaPropertiesProperties.md)
- - [OpenBankProject::OBPv600CreateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesProperties](docs/OBPv600CreateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesProperties.md)
- - [OpenBankProject::OBPv600CreateTransactionRequestCardanoRequest](docs/OBPv600CreateTransactionRequestCardanoRequest.md)
- - [OpenBankProject::OBPv600CreateTransactionRequestCardanoRequestProperties](docs/OBPv600CreateTransactionRequestCardanoRequestProperties.md)
- - [OpenBankProject::OBPv600CreateTransactionRequestCardanoRequestPropertiesMetadata](docs/OBPv600CreateTransactionRequestCardanoRequestPropertiesMetadata.md)
- - [OpenBankProject::OBPv600CreateTransactionRequestCardanoRequestPropertiesMetadataProperties](docs/OBPv600CreateTransactionRequestCardanoRequestPropertiesMetadataProperties.md)
- - [OpenBankProject::OBPv600CreateTransactionRequestCardanoRequestPropertiesMetadataPropertiesValue1](docs/OBPv600CreateTransactionRequestCardanoRequestPropertiesMetadataPropertiesValue1.md)
- - [OpenBankProject::OBPv600CreateTransactionRequestCardanoRequestPropertiesMetadataPropertiesValue1Properties](docs/OBPv600CreateTransactionRequestCardanoRequestPropertiesMetadataPropertiesValue1Properties.md)
- - [OpenBankProject::OBPv600CreateTransactionRequestCardanoRequestPropertiesTo](docs/OBPv600CreateTransactionRequestCardanoRequestPropertiesTo.md)
- - [OpenBankProject::OBPv600CreateTransactionRequestCardanoRequestPropertiesToProperties](docs/OBPv600CreateTransactionRequestCardanoRequestPropertiesToProperties.md)
- - [OpenBankProject::OBPv600CreateTransactionRequestCardanoRequestPropertiesToPropertiesAmount](docs/OBPv600CreateTransactionRequestCardanoRequestPropertiesToPropertiesAmount.md)
- - [OpenBankProject::OBPv600CreateTransactionRequestCardanoRequestPropertiesToPropertiesAmountProperties](docs/OBPv600CreateTransactionRequestCardanoRequestPropertiesToPropertiesAmountProperties.md)
- - [OpenBankProject::OBPv600CreateTransactionRequestCardanoRequestPropertiesToPropertiesAssets](docs/OBPv600CreateTransactionRequestCardanoRequestPropertiesToPropertiesAssets.md)
- - [OpenBankProject::OBPv600CreateTransactionRequestCardanoRequestPropertiesToPropertiesAssetsItems](docs/OBPv600CreateTransactionRequestCardanoRequestPropertiesToPropertiesAssetsItems.md)
- - [OpenBankProject::OBPv600CreateTransactionRequestCardanoRequestPropertiesToPropertiesAssetsItemsProperties](docs/OBPv600CreateTransactionRequestCardanoRequestPropertiesToPropertiesAssetsItemsProperties.md)
- - [OpenBankProject::OBPv600CreateTransactionRequestEthSendRawTransactionRequest](docs/OBPv600CreateTransactionRequestEthSendRawTransactionRequest.md)
- - [OpenBankProject::OBPv600CreateTransactionRequestEthSendRawTransactionRequestProperties](docs/OBPv600CreateTransactionRequestEthSendRawTransactionRequestProperties.md)
- - [OpenBankProject::OBPv600CreateTransactionRequestEthereumeSendTransactionRequest](docs/OBPv600CreateTransactionRequestEthereumeSendTransactionRequest.md)
- - [OpenBankProject::OBPv600CreateTransactionRequestEthereumeSendTransactionRequestProperties](docs/OBPv600CreateTransactionRequestEthereumeSendTransactionRequestProperties.md)
- - [OpenBankProject::OBPv600CreateUserRequest](docs/OBPv600CreateUserRequest.md)
- - [OpenBankProject::OBPv600CreateUserRequestProperties](docs/OBPv600CreateUserRequestProperties.md)
- - [OpenBankProject::OBPv600DeleteSignalChannel200Response](docs/OBPv600DeleteSignalChannel200Response.md)
- - [OpenBankProject::OBPv600DeleteSignalChannel200ResponseProperties](docs/OBPv600DeleteSignalChannel200ResponseProperties.md)
- - [OpenBankProject::OBPv600ExecuteAbacPolicy200Response](docs/OBPv600ExecuteAbacPolicy200Response.md)
- - [OpenBankProject::OBPv600ExecuteAbacPolicy200ResponseProperties](docs/OBPv600ExecuteAbacPolicy200ResponseProperties.md)
- - [OpenBankProject::OBPv600ExecuteAbacPolicyRequest](docs/OBPv600ExecuteAbacPolicyRequest.md)
- - [OpenBankProject::OBPv600ExecuteAbacPolicyRequestProperties](docs/OBPv600ExecuteAbacPolicyRequestProperties.md)
- - [OpenBankProject::OBPv600GetAbacPolicies200Response](docs/OBPv600GetAbacPolicies200Response.md)
- - [OpenBankProject::OBPv600GetAbacPolicies200ResponseProperties](docs/OBPv600GetAbacPolicies200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetAbacPolicies200ResponsePropertiesPolicies](docs/OBPv600GetAbacPolicies200ResponsePropertiesPolicies.md)
- - [OpenBankProject::OBPv600GetAbacPolicies200ResponsePropertiesPoliciesItems](docs/OBPv600GetAbacPolicies200ResponsePropertiesPoliciesItems.md)
- - [OpenBankProject::OBPv600GetAbacPolicies200ResponsePropertiesPoliciesItemsProperties](docs/OBPv600GetAbacPolicies200ResponsePropertiesPoliciesItemsProperties.md)
- - [OpenBankProject::OBPv600GetAbacRule200Response](docs/OBPv600GetAbacRule200Response.md)
- - [OpenBankProject::OBPv600GetAbacRule200ResponseProperties](docs/OBPv600GetAbacRule200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetAbacRuleSchema200Response](docs/OBPv600GetAbacRuleSchema200Response.md)
- - [OpenBankProject::OBPv600GetAbacRuleSchema200ResponseProperties](docs/OBPv600GetAbacRuleSchema200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetAbacRuleSchema200ResponsePropertiesExamples](docs/OBPv600GetAbacRuleSchema200ResponsePropertiesExamples.md)
- - [OpenBankProject::OBPv600GetAbacRuleSchema200ResponsePropertiesObjectTypes](docs/OBPv600GetAbacRuleSchema200ResponsePropertiesObjectTypes.md)
- - [OpenBankProject::OBPv600GetAbacRuleSchema200ResponsePropertiesObjectTypesItems](docs/OBPv600GetAbacRuleSchema200ResponsePropertiesObjectTypesItems.md)
- - [OpenBankProject::OBPv600GetAbacRuleSchema200ResponsePropertiesObjectTypesItemsProperties](docs/OBPv600GetAbacRuleSchema200ResponsePropertiesObjectTypesItemsProperties.md)
- - [OpenBankProject::OBPv600GetAbacRuleSchema200ResponsePropertiesObjectTypesItemsPropertiesProperties](docs/OBPv600GetAbacRuleSchema200ResponsePropertiesObjectTypesItemsPropertiesProperties.md)
- - [OpenBankProject::OBPv600GetAbacRuleSchema200ResponsePropertiesObjectTypesItemsPropertiesPropertiesItems](docs/OBPv600GetAbacRuleSchema200ResponsePropertiesObjectTypesItemsPropertiesPropertiesItems.md)
- - [OpenBankProject::OBPv600GetAbacRuleSchema200ResponsePropertiesObjectTypesItemsPropertiesPropertiesItemsProperties](docs/OBPv600GetAbacRuleSchema200ResponsePropertiesObjectTypesItemsPropertiesPropertiesItemsProperties.md)
- - [OpenBankProject::OBPv600GetAbacRuleSchema200ResponsePropertiesParameters](docs/OBPv600GetAbacRuleSchema200ResponsePropertiesParameters.md)
- - [OpenBankProject::OBPv600GetAbacRuleSchema200ResponsePropertiesParametersItems](docs/OBPv600GetAbacRuleSchema200ResponsePropertiesParametersItems.md)
- - [OpenBankProject::OBPv600GetAbacRuleSchema200ResponsePropertiesParametersItemsProperties](docs/OBPv600GetAbacRuleSchema200ResponsePropertiesParametersItemsProperties.md)
- - [OpenBankProject::OBPv600GetAbacRulesByPolicy200Response](docs/OBPv600GetAbacRulesByPolicy200Response.md)
- - [OpenBankProject::OBPv600GetAbacRulesByPolicy200ResponseProperties](docs/OBPv600GetAbacRulesByPolicy200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetAbacRulesByPolicy200ResponsePropertiesAbacRules](docs/OBPv600GetAbacRulesByPolicy200ResponsePropertiesAbacRules.md)
- - [OpenBankProject::OBPv600GetAccountAccessRequestsForAccount200Response](docs/OBPv600GetAccountAccessRequestsForAccount200Response.md)
- - [OpenBankProject::OBPv600GetAccountAccessRequestsForAccount200ResponseProperties](docs/OBPv600GetAccountAccessRequestsForAccount200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetAccountAccessRequestsForAccount200ResponsePropertiesAccountAccessRequests](docs/OBPv600GetAccountAccessRequestsForAccount200ResponsePropertiesAccountAccessRequests.md)
- - [OpenBankProject::OBPv600GetAccountDirectory200Response](docs/OBPv600GetAccountDirectory200Response.md)
- - [OpenBankProject::OBPv600GetAccountDirectory200ResponseProperties](docs/OBPv600GetAccountDirectory200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetAccountDirectory200ResponsePropertiesAccounts](docs/OBPv600GetAccountDirectory200ResponsePropertiesAccounts.md)
- - [OpenBankProject::OBPv600GetAccountDirectory200ResponsePropertiesAccountsItems](docs/OBPv600GetAccountDirectory200ResponsePropertiesAccountsItems.md)
- - [OpenBankProject::OBPv600GetAccountDirectory200ResponsePropertiesAccountsItemsProperties](docs/OBPv600GetAccountDirectory200ResponsePropertiesAccountsItemsProperties.md)
- - [OpenBankProject::OBPv600GetAccountsAtBank200Response](docs/OBPv600GetAccountsAtBank200Response.md)
- - [OpenBankProject::OBPv600GetAccountsAtBank200ResponseProperties](docs/OBPv600GetAccountsAtBank200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetAccountsAtBank200ResponsePropertiesAccounts](docs/OBPv600GetAccountsAtBank200ResponsePropertiesAccounts.md)
- - [OpenBankProject::OBPv600GetAccountsAtBank200ResponsePropertiesAccountsItems](docs/OBPv600GetAccountsAtBank200ResponsePropertiesAccountsItems.md)
- - [OpenBankProject::OBPv600GetAccountsAtBank200ResponsePropertiesAccountsItemsProperties](docs/OBPv600GetAccountsAtBank200ResponsePropertiesAccountsItemsProperties.md)
- - [OpenBankProject::OBPv600GetActiveRateLimitsAtDate200Response](docs/OBPv600GetActiveRateLimitsAtDate200Response.md)
- - [OpenBankProject::OBPv600GetActiveRateLimitsAtDate200ResponseProperties](docs/OBPv600GetActiveRateLimitsAtDate200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds](docs/OBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds.md)
- - [OpenBankProject::OBPv600GetAggregateMetrics200Response](docs/OBPv600GetAggregateMetrics200Response.md)
- - [OpenBankProject::OBPv600GetAggregateMetrics200ResponseProperties](docs/OBPv600GetAggregateMetrics200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetApiProducts200Response](docs/OBPv600GetApiProducts200Response.md)
- - [OpenBankProject::OBPv600GetApiProducts200ResponseProperties](docs/OBPv600GetApiProducts200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetApiProducts200ResponsePropertiesApiProducts](docs/OBPv600GetApiProducts200ResponsePropertiesApiProducts.md)
- - [OpenBankProject::OBPv600GetApiProducts200ResponsePropertiesApiProductsItems](docs/OBPv600GetApiProducts200ResponsePropertiesApiProductsItems.md)
- - [OpenBankProject::OBPv600GetApiProducts200ResponsePropertiesApiProductsItemsProperties](docs/OBPv600GetApiProducts200ResponsePropertiesApiProductsItemsProperties.md)
- - [OpenBankProject::OBPv600GetApiProducts200ResponsePropertiesApiProductsItemsPropertiesAttributes](docs/OBPv600GetApiProducts200ResponsePropertiesApiProductsItemsPropertiesAttributes.md)
- - [OpenBankProject::OBPv600GetAvailablePersonalDynamicEntities200Response](docs/OBPv600GetAvailablePersonalDynamicEntities200Response.md)
- - [OpenBankProject::OBPv600GetAvailablePersonalDynamicEntities200ResponseProperties](docs/OBPv600GetAvailablePersonalDynamicEntities200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntities](docs/OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntities.md)
- - [OpenBankProject::OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItems](docs/OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItems.md)
- - [OpenBankProject::OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsProperties](docs/OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsProperties.md)
- - [OpenBankProject::OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesLinks](docs/OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesLinks.md)
- - [OpenBankProject::OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesLinksProperties](docs/OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesLinksProperties.md)
- - [OpenBankProject::OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesLinksPropertiesRelated](docs/OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesLinksPropertiesRelated.md)
- - [OpenBankProject::OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesLinksPropertiesRelatedItems](docs/OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesLinksPropertiesRelatedItems.md)
- - [OpenBankProject::OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesLinksPropertiesRelatedItemsProperties](docs/OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesLinksPropertiesRelatedItemsProperties.md)
- - [OpenBankProject::OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesSchema](docs/OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesSchema.md)
- - [OpenBankProject::OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesSchemaProperties](docs/OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesSchemaProperties.md)
- - [OpenBankProject::OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesSchemaPropertiesProperties](docs/OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesSchemaPropertiesProperties.md)
- - [OpenBankProject::OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesSchemaPropertiesPropertiesProperties](docs/OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesSchemaPropertiesPropertiesProperties.md)
- - [OpenBankProject::OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesSchemaPropertiesPropertiesPropertiesTheme](docs/OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesSchemaPropertiesPropertiesPropertiesTheme.md)
- - [OpenBankProject::OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesSchemaPropertiesPropertiesPropertiesThemeProperties](docs/OBPv600GetAvailablePersonalDynamicEntities200ResponsePropertiesDynamicEntitiesItemsPropertiesSchemaPropertiesPropertiesPropertiesThemeProperties.md)
- - [OpenBankProject::OBPv600GetBank200Response](docs/OBPv600GetBank200Response.md)
- - [OpenBankProject::OBPv600GetBank200ResponseProperties](docs/OBPv600GetBank200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetBankLevelDynamicEntities200Response](docs/OBPv600GetBankLevelDynamicEntities200Response.md)
- - [OpenBankProject::OBPv600GetBankLevelDynamicEntities200ResponseProperties](docs/OBPv600GetBankLevelDynamicEntities200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetBankLevelDynamicEntities200ResponsePropertiesDynamicEntities](docs/OBPv600GetBankLevelDynamicEntities200ResponsePropertiesDynamicEntities.md)
- - [OpenBankProject::OBPv600GetBankLevelDynamicEntities200ResponsePropertiesDynamicEntitiesItems](docs/OBPv600GetBankLevelDynamicEntities200ResponsePropertiesDynamicEntitiesItems.md)
- - [OpenBankProject::OBPv600GetBankLevelDynamicEntities200ResponsePropertiesDynamicEntitiesItemsProperties](docs/OBPv600GetBankLevelDynamicEntities200ResponsePropertiesDynamicEntitiesItemsProperties.md)
- - [OpenBankProject::OBPv600GetBanks200Response](docs/OBPv600GetBanks200Response.md)
- - [OpenBankProject::OBPv600GetBanks200ResponseProperties](docs/OBPv600GetBanks200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetBanks200ResponsePropertiesBanks](docs/OBPv600GetBanks200ResponsePropertiesBanks.md)
- - [OpenBankProject::OBPv600GetCacheConfig200Response](docs/OBPv600GetCacheConfig200Response.md)
- - [OpenBankProject::OBPv600GetCacheConfig200ResponseProperties](docs/OBPv600GetCacheConfig200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetCacheConfig200ResponsePropertiesInMemoryStatus](docs/OBPv600GetCacheConfig200ResponsePropertiesInMemoryStatus.md)
- - [OpenBankProject::OBPv600GetCacheConfig200ResponsePropertiesInMemoryStatusProperties](docs/OBPv600GetCacheConfig200ResponsePropertiesInMemoryStatusProperties.md)
- - [OpenBankProject::OBPv600GetCacheConfig200ResponsePropertiesRedisStatus](docs/OBPv600GetCacheConfig200ResponsePropertiesRedisStatus.md)
- - [OpenBankProject::OBPv600GetCacheConfig200ResponsePropertiesRedisStatusProperties](docs/OBPv600GetCacheConfig200ResponsePropertiesRedisStatusProperties.md)
- - [OpenBankProject::OBPv600GetCacheInfo200Response](docs/OBPv600GetCacheInfo200Response.md)
- - [OpenBankProject::OBPv600GetCacheInfo200ResponseProperties](docs/OBPv600GetCacheInfo200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetCacheInfo200ResponsePropertiesNamespaces](docs/OBPv600GetCacheInfo200ResponsePropertiesNamespaces.md)
- - [OpenBankProject::OBPv600GetCacheInfo200ResponsePropertiesNamespacesItems](docs/OBPv600GetCacheInfo200ResponsePropertiesNamespacesItems.md)
- - [OpenBankProject::OBPv600GetCacheInfo200ResponsePropertiesNamespacesItemsProperties](docs/OBPv600GetCacheInfo200ResponsePropertiesNamespacesItemsProperties.md)
- - [OpenBankProject::OBPv600GetCacheNamespaces200Response](docs/OBPv600GetCacheNamespaces200Response.md)
- - [OpenBankProject::OBPv600GetCacheNamespaces200ResponseProperties](docs/OBPv600GetCacheNamespaces200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetCacheNamespaces200ResponsePropertiesNamespaces](docs/OBPv600GetCacheNamespaces200ResponsePropertiesNamespaces.md)
- - [OpenBankProject::OBPv600GetCacheNamespaces200ResponsePropertiesNamespacesItems](docs/OBPv600GetCacheNamespaces200ResponsePropertiesNamespacesItems.md)
- - [OpenBankProject::OBPv600GetCacheNamespaces200ResponsePropertiesNamespacesItemsProperties](docs/OBPv600GetCacheNamespaces200ResponsePropertiesNamespacesItemsProperties.md)
- - [OpenBankProject::OBPv600GetConfigProps200Response](docs/OBPv600GetConfigProps200Response.md)
- - [OpenBankProject::OBPv600GetConfigProps200ResponseProperties](docs/OBPv600GetConfigProps200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetConnectorCallCounts200Response](docs/OBPv600GetConnectorCallCounts200Response.md)
- - [OpenBankProject::OBPv600GetConnectorCallCounts200ResponseProperties](docs/OBPv600GetConnectorCallCounts200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetConnectorCallCounts200ResponsePropertiesConnectorCounts](docs/OBPv600GetConnectorCallCounts200ResponsePropertiesConnectorCounts.md)
- - [OpenBankProject::OBPv600GetConnectorCallCounts200ResponsePropertiesConnectorCountsItems](docs/OBPv600GetConnectorCallCounts200ResponsePropertiesConnectorCountsItems.md)
- - [OpenBankProject::OBPv600GetConnectorCallCounts200ResponsePropertiesConnectorCountsItemsProperties](docs/OBPv600GetConnectorCallCounts200ResponsePropertiesConnectorCountsItemsProperties.md)
- - [OpenBankProject::OBPv600GetConnectorMethodNames200Response](docs/OBPv600GetConnectorMethodNames200Response.md)
- - [OpenBankProject::OBPv600GetConnectorMethodNames200ResponseProperties](docs/OBPv600GetConnectorMethodNames200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetConnectorTraces200Response](docs/OBPv600GetConnectorTraces200Response.md)
- - [OpenBankProject::OBPv600GetConnectorTraces200ResponseProperties](docs/OBPv600GetConnectorTraces200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetConnectorTraces200ResponsePropertiesConnectorTraces](docs/OBPv600GetConnectorTraces200ResponsePropertiesConnectorTraces.md)
- - [OpenBankProject::OBPv600GetConnectorTraces200ResponsePropertiesConnectorTracesItems](docs/OBPv600GetConnectorTraces200ResponsePropertiesConnectorTracesItems.md)
- - [OpenBankProject::OBPv600GetConnectorTraces200ResponsePropertiesConnectorTracesItemsProperties](docs/OBPv600GetConnectorTraces200ResponsePropertiesConnectorTracesItemsProperties.md)
- - [OpenBankProject::OBPv600GetConnectors200Response](docs/OBPv600GetConnectors200Response.md)
- - [OpenBankProject::OBPv600GetConnectors200ResponseProperties](docs/OBPv600GetConnectors200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetConnectors200ResponsePropertiesConnectors](docs/OBPv600GetConnectors200ResponsePropertiesConnectors.md)
- - [OpenBankProject::OBPv600GetConnectors200ResponsePropertiesConnectorsItems](docs/OBPv600GetConnectors200ResponsePropertiesConnectorsItems.md)
- - [OpenBankProject::OBPv600GetConnectors200ResponsePropertiesConnectorsItemsProperties](docs/OBPv600GetConnectors200ResponsePropertiesConnectorsItemsProperties.md)
- - [OpenBankProject::OBPv600GetConsumer200Response](docs/OBPv600GetConsumer200Response.md)
- - [OpenBankProject::OBPv600GetConsumer200ResponseProperties](docs/OBPv600GetConsumer200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetCoreAccountByIdV600200Response](docs/OBPv600GetCoreAccountByIdV600200Response.md)
- - [OpenBankProject::OBPv600GetCoreAccountByIdV600200ResponseProperties](docs/OBPv600GetCoreAccountByIdV600200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetCurrentConsumer200Response](docs/OBPv600GetCurrentConsumer200Response.md)
- - [OpenBankProject::OBPv600GetCurrentConsumer200ResponseProperties](docs/OBPv600GetCurrentConsumer200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetCurrentConsumer200ResponsePropertiesCallCounters](docs/OBPv600GetCurrentConsumer200ResponsePropertiesCallCounters.md)
- - [OpenBankProject::OBPv600GetCurrentConsumer200ResponsePropertiesCallCountersProperties](docs/OBPv600GetCurrentConsumer200ResponsePropertiesCallCountersProperties.md)
- - [OpenBankProject::OBPv600GetCurrentConsumer200ResponsePropertiesCallCountersPropertiesPerWeek](docs/OBPv600GetCurrentConsumer200ResponsePropertiesCallCountersPropertiesPerWeek.md)
- - [OpenBankProject::OBPv600GetCurrentConsumer200ResponsePropertiesCallCountersPropertiesPerWeekProperties](docs/OBPv600GetCurrentConsumer200ResponsePropertiesCallCountersPropertiesPerWeekProperties.md)
- - [OpenBankProject::OBPv600GetCustomViews200Response](docs/OBPv600GetCustomViews200Response.md)
- - [OpenBankProject::OBPv600GetCustomViews200ResponseProperties](docs/OBPv600GetCustomViews200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetCustomerByCustomerNumber200Response](docs/OBPv600GetCustomerByCustomerNumber200Response.md)
- - [OpenBankProject::OBPv600GetCustomerByCustomerNumber200ResponseProperties](docs/OBPv600GetCustomerByCustomerNumber200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetCustomerChildren200Response](docs/OBPv600GetCustomerChildren200Response.md)
- - [OpenBankProject::OBPv600GetCustomerChildren200ResponseProperties](docs/OBPv600GetCustomerChildren200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetCustomerChildren200ResponsePropertiesCustomers](docs/OBPv600GetCustomerChildren200ResponsePropertiesCustomers.md)
- - [OpenBankProject::OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems](docs/OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems.md)
- - [OpenBankProject::OBPv600GetCustomerChildren200ResponsePropertiesCustomersItemsProperties](docs/OBPv600GetCustomerChildren200ResponsePropertiesCustomersItemsProperties.md)
- - [OpenBankProject::OBPv600GetCustomersByLegalNameRequest](docs/OBPv600GetCustomersByLegalNameRequest.md)
- - [OpenBankProject::OBPv600GetCustomersByLegalNameRequestProperties](docs/OBPv600GetCustomersByLegalNameRequestProperties.md)
- - [OpenBankProject::OBPv600GetDatabasePoolInfo200Response](docs/OBPv600GetDatabasePoolInfo200Response.md)
- - [OpenBankProject::OBPv600GetDatabasePoolInfo200ResponseProperties](docs/OBPv600GetDatabasePoolInfo200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetDynamicEntityDiagnostics200Response](docs/OBPv600GetDynamicEntityDiagnostics200Response.md)
- - [OpenBankProject::OBPv600GetDynamicEntityDiagnostics200ResponseProperties](docs/OBPv600GetDynamicEntityDiagnostics200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetDynamicEntityDiagnostics200ResponsePropertiesIssues](docs/OBPv600GetDynamicEntityDiagnostics200ResponsePropertiesIssues.md)
- - [OpenBankProject::OBPv600GetDynamicEntityDiagnostics200ResponsePropertiesIssuesItems](docs/OBPv600GetDynamicEntityDiagnostics200ResponsePropertiesIssuesItems.md)
- - [OpenBankProject::OBPv600GetDynamicEntityDiagnostics200ResponsePropertiesIssuesItemsProperties](docs/OBPv600GetDynamicEntityDiagnostics200ResponsePropertiesIssuesItemsProperties.md)
- - [OpenBankProject::OBPv600GetFeaturedApiCollectionsAdmin200Response](docs/OBPv600GetFeaturedApiCollectionsAdmin200Response.md)
- - [OpenBankProject::OBPv600GetFeaturedApiCollectionsAdmin200ResponseProperties](docs/OBPv600GetFeaturedApiCollectionsAdmin200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollections](docs/OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollections.md)
- - [OpenBankProject::OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems](docs/OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems.md)
- - [OpenBankProject::OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItemsProperties](docs/OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItemsProperties.md)
- - [OpenBankProject::OBPv600GetGroupEntitlements200Response](docs/OBPv600GetGroupEntitlements200Response.md)
- - [OpenBankProject::OBPv600GetGroupEntitlements200ResponseProperties](docs/OBPv600GetGroupEntitlements200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetGroupEntitlements200ResponsePropertiesEntitlements](docs/OBPv600GetGroupEntitlements200ResponsePropertiesEntitlements.md)
- - [OpenBankProject::OBPv600GetGroupEntitlements200ResponsePropertiesEntitlementsItems](docs/OBPv600GetGroupEntitlements200ResponsePropertiesEntitlementsItems.md)
- - [OpenBankProject::OBPv600GetGroupEntitlements200ResponsePropertiesEntitlementsItemsProperties](docs/OBPv600GetGroupEntitlements200ResponsePropertiesEntitlementsItemsProperties.md)
- - [OpenBankProject::OBPv600GetGroups200Response](docs/OBPv600GetGroups200Response.md)
- - [OpenBankProject::OBPv600GetGroups200ResponseProperties](docs/OBPv600GetGroups200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetGroups200ResponsePropertiesGroups](docs/OBPv600GetGroups200ResponsePropertiesGroups.md)
- - [OpenBankProject::OBPv600GetGroups200ResponsePropertiesGroupsItems](docs/OBPv600GetGroups200ResponsePropertiesGroupsItems.md)
- - [OpenBankProject::OBPv600GetGroups200ResponsePropertiesGroupsItemsProperties](docs/OBPv600GetGroups200ResponsePropertiesGroupsItemsProperties.md)
- - [OpenBankProject::OBPv600GetHoldingAccountByReleaser200Response](docs/OBPv600GetHoldingAccountByReleaser200Response.md)
- - [OpenBankProject::OBPv600GetHoldingAccountByReleaser200ResponseProperties](docs/OBPv600GetHoldingAccountByReleaser200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetHoldingAccountByReleaser200ResponsePropertiesAccounts](docs/OBPv600GetHoldingAccountByReleaser200ResponsePropertiesAccounts.md)
- - [OpenBankProject::OBPv600GetMetrics200Response](docs/OBPv600GetMetrics200Response.md)
- - [OpenBankProject::OBPv600GetMetrics200ResponseProperties](docs/OBPv600GetMetrics200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetMetrics200ResponsePropertiesMetrics](docs/OBPv600GetMetrics200ResponsePropertiesMetrics.md)
- - [OpenBankProject::OBPv600GetMetrics200ResponsePropertiesMetricsItems](docs/OBPv600GetMetrics200ResponsePropertiesMetricsItems.md)
- - [OpenBankProject::OBPv600GetMetrics200ResponsePropertiesMetricsItemsProperties](docs/OBPv600GetMetrics200ResponsePropertiesMetricsItemsProperties.md)
- - [OpenBankProject::OBPv600GetMetrics200ResponsePropertiesMetricsItemsPropertiesResponseBody](docs/OBPv600GetMetrics200ResponsePropertiesMetricsItemsPropertiesResponseBody.md)
- - [OpenBankProject::OBPv600GetMetrics200ResponsePropertiesMetricsItemsPropertiesResponseBodyProperties](docs/OBPv600GetMetrics200ResponsePropertiesMetricsItemsPropertiesResponseBodyProperties.md)
- - [OpenBankProject::OBPv600GetMigrations200Response](docs/OBPv600GetMigrations200Response.md)
- - [OpenBankProject::OBPv600GetMigrations200ResponseProperties](docs/OBPv600GetMigrations200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetMigrations200ResponsePropertiesMigrationScriptLogs](docs/OBPv600GetMigrations200ResponsePropertiesMigrationScriptLogs.md)
- - [OpenBankProject::OBPv600GetMigrations200ResponsePropertiesMigrationScriptLogsItems](docs/OBPv600GetMigrations200ResponsePropertiesMigrationScriptLogsItems.md)
- - [OpenBankProject::OBPv600GetMigrations200ResponsePropertiesMigrationScriptLogsItemsProperties](docs/OBPv600GetMigrations200ResponsePropertiesMigrationScriptLogsItemsProperties.md)
- - [OpenBankProject::OBPv600GetOidcClient200Response](docs/OBPv600GetOidcClient200Response.md)
- - [OpenBankProject::OBPv600GetOidcClient200ResponseProperties](docs/OBPv600GetOidcClient200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetPersonalDataFields200Response](docs/OBPv600GetPersonalDataFields200Response.md)
- - [OpenBankProject::OBPv600GetPersonalDataFields200ResponseProperties](docs/OBPv600GetPersonalDataFields200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributes](docs/OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributes.md)
- - [OpenBankProject::OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems](docs/OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
- - [OpenBankProject::OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItemsProperties](docs/OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItemsProperties.md)
- - [OpenBankProject::OBPv600GetPopularApis200Response](docs/OBPv600GetPopularApis200Response.md)
- - [OpenBankProject::OBPv600GetPopularApis200ResponseProperties](docs/OBPv600GetPopularApis200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetProviders200Response](docs/OBPv600GetProviders200Response.md)
- - [OpenBankProject::OBPv600GetProviders200ResponseProperties](docs/OBPv600GetProviders200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetReferenceTypes200Response](docs/OBPv600GetReferenceTypes200Response.md)
- - [OpenBankProject::OBPv600GetReferenceTypes200ResponseProperties](docs/OBPv600GetReferenceTypes200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetReferenceTypes200ResponsePropertiesReferenceTypes](docs/OBPv600GetReferenceTypes200ResponsePropertiesReferenceTypes.md)
- - [OpenBankProject::OBPv600GetReferenceTypes200ResponsePropertiesReferenceTypesItems](docs/OBPv600GetReferenceTypes200ResponsePropertiesReferenceTypesItems.md)
- - [OpenBankProject::OBPv600GetReferenceTypes200ResponsePropertiesReferenceTypesItemsProperties](docs/OBPv600GetReferenceTypes200ResponsePropertiesReferenceTypesItemsProperties.md)
- - [OpenBankProject::OBPv600GetRolesWithEntitlementCountsAtAllBanks200Response](docs/OBPv600GetRolesWithEntitlementCountsAtAllBanks200Response.md)
- - [OpenBankProject::OBPv600GetRolesWithEntitlementCountsAtAllBanks200ResponseProperties](docs/OBPv600GetRolesWithEntitlementCountsAtAllBanks200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetRolesWithEntitlementCountsAtAllBanks200ResponsePropertiesRoles](docs/OBPv600GetRolesWithEntitlementCountsAtAllBanks200ResponsePropertiesRoles.md)
- - [OpenBankProject::OBPv600GetRolesWithEntitlementCountsAtAllBanks200ResponsePropertiesRolesItems](docs/OBPv600GetRolesWithEntitlementCountsAtAllBanks200ResponsePropertiesRolesItems.md)
- - [OpenBankProject::OBPv600GetRolesWithEntitlementCountsAtAllBanks200ResponsePropertiesRolesItemsProperties](docs/OBPv600GetRolesWithEntitlementCountsAtAllBanks200ResponsePropertiesRolesItemsProperties.md)
- - [OpenBankProject::OBPv600GetScannedApiVersions200Response](docs/OBPv600GetScannedApiVersions200Response.md)
- - [OpenBankProject::OBPv600GetScannedApiVersions200ResponseProperties](docs/OBPv600GetScannedApiVersions200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetScannedApiVersions200ResponsePropertiesScannedApiVersions](docs/OBPv600GetScannedApiVersions200ResponsePropertiesScannedApiVersions.md)
- - [OpenBankProject::OBPv600GetScannedApiVersions200ResponsePropertiesScannedApiVersionsItems](docs/OBPv600GetScannedApiVersions200ResponsePropertiesScannedApiVersionsItems.md)
- - [OpenBankProject::OBPv600GetScannedApiVersions200ResponsePropertiesScannedApiVersionsItemsProperties](docs/OBPv600GetScannedApiVersions200ResponsePropertiesScannedApiVersionsItemsProperties.md)
- - [OpenBankProject::OBPv600GetSignalChannelInfo200Response](docs/OBPv600GetSignalChannelInfo200Response.md)
- - [OpenBankProject::OBPv600GetSignalChannelInfo200ResponseProperties](docs/OBPv600GetSignalChannelInfo200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetSignalChannels200Response](docs/OBPv600GetSignalChannels200Response.md)
- - [OpenBankProject::OBPv600GetSignalChannels200ResponseProperties](docs/OBPv600GetSignalChannels200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetSignalChannels200ResponsePropertiesChannels](docs/OBPv600GetSignalChannels200ResponsePropertiesChannels.md)
- - [OpenBankProject::OBPv600GetSignalMessages200Response](docs/OBPv600GetSignalMessages200Response.md)
- - [OpenBankProject::OBPv600GetSignalMessages200ResponseProperties](docs/OBPv600GetSignalMessages200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetSignalMessages200ResponsePropertiesMessages](docs/OBPv600GetSignalMessages200ResponsePropertiesMessages.md)
- - [OpenBankProject::OBPv600GetSignalMessages200ResponsePropertiesMessagesItems](docs/OBPv600GetSignalMessages200ResponsePropertiesMessagesItems.md)
- - [OpenBankProject::OBPv600GetSignalMessages200ResponsePropertiesMessagesItemsProperties](docs/OBPv600GetSignalMessages200ResponsePropertiesMessagesItemsProperties.md)
- - [OpenBankProject::OBPv600GetSignalMessages200ResponsePropertiesMessagesItemsPropertiesPayload](docs/OBPv600GetSignalMessages200ResponsePropertiesMessagesItemsPropertiesPayload.md)
- - [OpenBankProject::OBPv600GetSignalMessages200ResponsePropertiesMessagesItemsPropertiesPayloadProperties](docs/OBPv600GetSignalMessages200ResponsePropertiesMessagesItemsPropertiesPayloadProperties.md)
- - [OpenBankProject::OBPv600GetSignalStats200Response](docs/OBPv600GetSignalStats200Response.md)
- - [OpenBankProject::OBPv600GetSignalStats200ResponseProperties](docs/OBPv600GetSignalStats200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetStoredProcedureConnectorHealth200Response](docs/OBPv600GetStoredProcedureConnectorHealth200Response.md)
- - [OpenBankProject::OBPv600GetStoredProcedureConnectorHealth200ResponseProperties](docs/OBPv600GetStoredProcedureConnectorHealth200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetSystemDynamicEntities200Response](docs/OBPv600GetSystemDynamicEntities200Response.md)
- - [OpenBankProject::OBPv600GetSystemDynamicEntities200ResponseProperties](docs/OBPv600GetSystemDynamicEntities200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetSystemDynamicEntities200ResponsePropertiesDynamicEntities](docs/OBPv600GetSystemDynamicEntities200ResponsePropertiesDynamicEntities.md)
- - [OpenBankProject::OBPv600GetSystemDynamicEntities200ResponsePropertiesDynamicEntitiesItems](docs/OBPv600GetSystemDynamicEntities200ResponsePropertiesDynamicEntitiesItems.md)
- - [OpenBankProject::OBPv600GetSystemDynamicEntities200ResponsePropertiesDynamicEntitiesItemsProperties](docs/OBPv600GetSystemDynamicEntities200ResponsePropertiesDynamicEntitiesItemsProperties.md)
- - [OpenBankProject::OBPv600GetSystemViewById200Response](docs/OBPv600GetSystemViewById200Response.md)
- - [OpenBankProject::OBPv600GetSystemViewById200ResponseProperties](docs/OBPv600GetSystemViewById200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetSystemViews200Response](docs/OBPv600GetSystemViews200Response.md)
- - [OpenBankProject::OBPv600GetSystemViews200ResponseProperties](docs/OBPv600GetSystemViews200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetSystemViews200ResponsePropertiesViews](docs/OBPv600GetSystemViews200ResponsePropertiesViews.md)
- - [OpenBankProject::OBPv600GetTopAPIs200Response](docs/OBPv600GetTopAPIs200Response.md)
- - [OpenBankProject::OBPv600GetTopAPIs200ResponseProperties](docs/OBPv600GetTopAPIs200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetTopAPIs200ResponsePropertiesTopApis](docs/OBPv600GetTopAPIs200ResponsePropertiesTopApis.md)
- - [OpenBankProject::OBPv600GetTopAPIs200ResponsePropertiesTopApisItems](docs/OBPv600GetTopAPIs200ResponsePropertiesTopApisItems.md)
- - [OpenBankProject::OBPv600GetTopAPIs200ResponsePropertiesTopApisItemsProperties](docs/OBPv600GetTopAPIs200ResponsePropertiesTopApisItemsProperties.md)
- - [OpenBankProject::OBPv600GetTransactionsForBankAccount200Response](docs/OBPv600GetTransactionsForBankAccount200Response.md)
- - [OpenBankProject::OBPv600GetTransactionsForBankAccount200ResponseProperties](docs/OBPv600GetTransactionsForBankAccount200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetTransactionsForBankAccount200ResponsePropertiesTransactions](docs/OBPv600GetTransactionsForBankAccount200ResponsePropertiesTransactions.md)
- - [OpenBankProject::OBPv600GetTransactionsForBankAccount200ResponsePropertiesTransactionsItems](docs/OBPv600GetTransactionsForBankAccount200ResponsePropertiesTransactionsItems.md)
- - [OpenBankProject::OBPv600GetTransactionsForBankAccount200ResponsePropertiesTransactionsItemsProperties](docs/OBPv600GetTransactionsForBankAccount200ResponsePropertiesTransactionsItemsProperties.md)
- - [OpenBankProject::OBPv600GetTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesOtherAccount](docs/OBPv600GetTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesOtherAccount.md)
- - [OpenBankProject::OBPv600GetTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesOtherAccountProperties](docs/OBPv600GetTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesOtherAccountProperties.md)
- - [OpenBankProject::OBPv600GetTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesThisAccount](docs/OBPv600GetTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesThisAccount.md)
- - [OpenBankProject::OBPv600GetTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesThisAccountProperties](docs/OBPv600GetTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesThisAccountProperties.md)
- - [OpenBankProject::OBPv600GetUserGroupMemberships200Response](docs/OBPv600GetUserGroupMemberships200Response.md)
- - [OpenBankProject::OBPv600GetUserGroupMemberships200ResponseProperties](docs/OBPv600GetUserGroupMemberships200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetUserGroupMemberships200ResponsePropertiesGroupEntitlements](docs/OBPv600GetUserGroupMemberships200ResponsePropertiesGroupEntitlements.md)
- - [OpenBankProject::OBPv600GetUserGroupMemberships200ResponsePropertiesGroupEntitlementsItems](docs/OBPv600GetUserGroupMemberships200ResponsePropertiesGroupEntitlementsItems.md)
- - [OpenBankProject::OBPv600GetUserGroupMemberships200ResponsePropertiesGroupEntitlementsItemsProperties](docs/OBPv600GetUserGroupMemberships200ResponsePropertiesGroupEntitlementsItemsProperties.md)
- - [OpenBankProject::OBPv600GetUsers200Response](docs/OBPv600GetUsers200Response.md)
- - [OpenBankProject::OBPv600GetUsers200ResponseProperties](docs/OBPv600GetUsers200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetUsers200ResponsePropertiesUsers](docs/OBPv600GetUsers200ResponsePropertiesUsers.md)
- - [OpenBankProject::OBPv600GetUsers200ResponsePropertiesUsersItems](docs/OBPv600GetUsers200ResponsePropertiesUsersItems.md)
- - [OpenBankProject::OBPv600GetUsers200ResponsePropertiesUsersItemsProperties](docs/OBPv600GetUsers200ResponsePropertiesUsersItemsProperties.md)
- - [OpenBankProject::OBPv600GetViewPermissions200Response](docs/OBPv600GetViewPermissions200Response.md)
- - [OpenBankProject::OBPv600GetViewPermissions200ResponseProperties](docs/OBPv600GetViewPermissions200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetViewPermissions200ResponsePropertiesPermissions](docs/OBPv600GetViewPermissions200ResponsePropertiesPermissions.md)
- - [OpenBankProject::OBPv600GetViewPermissions200ResponsePropertiesPermissionsItems](docs/OBPv600GetViewPermissions200ResponsePropertiesPermissionsItems.md)
- - [OpenBankProject::OBPv600GetViewPermissions200ResponsePropertiesPermissionsItemsProperties](docs/OBPv600GetViewPermissions200ResponsePropertiesPermissionsItemsProperties.md)
- - [OpenBankProject::OBPv600GetWebUiProps200Response](docs/OBPv600GetWebUiProps200Response.md)
- - [OpenBankProject::OBPv600GetWebUiProps200ResponseProperties](docs/OBPv600GetWebUiProps200ResponseProperties.md)
- - [OpenBankProject::OBPv600GetWebUiProps200ResponsePropertiesWebuiProps](docs/OBPv600GetWebUiProps200ResponsePropertiesWebuiProps.md)
- - [OpenBankProject::OBPv600GetWebUiProps200ResponsePropertiesWebuiPropsItems](docs/OBPv600GetWebUiProps200ResponsePropertiesWebuiPropsItems.md)
- - [OpenBankProject::OBPv600GetWebUiProps200ResponsePropertiesWebuiPropsItemsProperties](docs/OBPv600GetWebUiProps200ResponsePropertiesWebuiPropsItemsProperties.md)
- - [OpenBankProject::OBPv600HasAccountAccess200Response](docs/OBPv600HasAccountAccess200Response.md)
- - [OpenBankProject::OBPv600HasAccountAccess200ResponseProperties](docs/OBPv600HasAccountAccess200ResponseProperties.md)
- - [OpenBankProject::OBPv600InvalidateCacheNamespace200Response](docs/OBPv600InvalidateCacheNamespace200Response.md)
- - [OpenBankProject::OBPv600InvalidateCacheNamespace200ResponseProperties](docs/OBPv600InvalidateCacheNamespace200ResponseProperties.md)
- - [OpenBankProject::OBPv600InvalidateCacheNamespaceRequest](docs/OBPv600InvalidateCacheNamespaceRequest.md)
- - [OpenBankProject::OBPv600InvalidateCacheNamespaceRequestProperties](docs/OBPv600InvalidateCacheNamespaceRequestProperties.md)
- - [OpenBankProject::OBPv600PublishSignalMessage200Response](docs/OBPv600PublishSignalMessage200Response.md)
- - [OpenBankProject::OBPv600PublishSignalMessage200ResponseProperties](docs/OBPv600PublishSignalMessage200ResponseProperties.md)
- - [OpenBankProject::OBPv600PublishSignalMessageRequest](docs/OBPv600PublishSignalMessageRequest.md)
- - [OpenBankProject::OBPv600PublishSignalMessageRequestProperties](docs/OBPv600PublishSignalMessageRequestProperties.md)
- - [OpenBankProject::OBPv600RejectAccountAccessRequest200Response](docs/OBPv600RejectAccountAccessRequest200Response.md)
- - [OpenBankProject::OBPv600RejectAccountAccessRequest200ResponseProperties](docs/OBPv600RejectAccountAccessRequest200ResponseProperties.md)
- - [OpenBankProject::OBPv600RejectAccountAccessRequestRequest](docs/OBPv600RejectAccountAccessRequestRequest.md)
- - [OpenBankProject::OBPv600RejectAccountAccessRequestRequestProperties](docs/OBPv600RejectAccountAccessRequestRequestProperties.md)
- - [OpenBankProject::OBPv600ResetPasswordComplete200Response](docs/OBPv600ResetPasswordComplete200Response.md)
- - [OpenBankProject::OBPv600ResetPasswordComplete200ResponseProperties](docs/OBPv600ResetPasswordComplete200ResponseProperties.md)
- - [OpenBankProject::OBPv600ResetPasswordCompleteRequest](docs/OBPv600ResetPasswordCompleteRequest.md)
- - [OpenBankProject::OBPv600ResetPasswordCompleteRequestProperties](docs/OBPv600ResetPasswordCompleteRequestProperties.md)
- - [OpenBankProject::OBPv600ResetPasswordUrl200Response](docs/OBPv600ResetPasswordUrl200Response.md)
- - [OpenBankProject::OBPv600ResetPasswordUrl200ResponseProperties](docs/OBPv600ResetPasswordUrl200ResponseProperties.md)
- - [OpenBankProject::OBPv600ResetPasswordUrlAnonymousRequest](docs/OBPv600ResetPasswordUrlAnonymousRequest.md)
- - [OpenBankProject::OBPv600ResetPasswordUrlAnonymousRequestProperties](docs/OBPv600ResetPasswordUrlAnonymousRequestProperties.md)
- - [OpenBankProject::OBPv600ResetPasswordUrlRequest](docs/OBPv600ResetPasswordUrlRequest.md)
- - [OpenBankProject::OBPv600ResetPasswordUrlRequestProperties](docs/OBPv600ResetPasswordUrlRequestProperties.md)
- - [OpenBankProject::OBPv600Root200Response](docs/OBPv600Root200Response.md)
- - [OpenBankProject::OBPv600Root200ResponseProperties](docs/OBPv600Root200ResponseProperties.md)
- - [OpenBankProject::OBPv600Root200ResponsePropertiesHostedAt](docs/OBPv600Root200ResponsePropertiesHostedAt.md)
- - [OpenBankProject::OBPv600Root200ResponsePropertiesHostedAtProperties](docs/OBPv600Root200ResponsePropertiesHostedAtProperties.md)
- - [OpenBankProject::OBPv600Root200ResponsePropertiesHostedBy](docs/OBPv600Root200ResponsePropertiesHostedBy.md)
- - [OpenBankProject::OBPv600Root200ResponsePropertiesHostedByProperties](docs/OBPv600Root200ResponsePropertiesHostedByProperties.md)
- - [OpenBankProject::OBPv600UpdateAbacRuleRequest](docs/OBPv600UpdateAbacRuleRequest.md)
- - [OpenBankProject::OBPv600UpdateAbacRuleRequestProperties](docs/OBPv600UpdateAbacRuleRequestProperties.md)
- - [OpenBankProject::OBPv600UpdateBankLevelDynamicEntity200Response](docs/OBPv600UpdateBankLevelDynamicEntity200Response.md)
- - [OpenBankProject::OBPv600UpdateBankLevelDynamicEntity200ResponseProperties](docs/OBPv600UpdateBankLevelDynamicEntity200ResponseProperties.md)
- - [OpenBankProject::OBPv600UpdateFeaturedApiCollectionRequest](docs/OBPv600UpdateFeaturedApiCollectionRequest.md)
- - [OpenBankProject::OBPv600UpdateFeaturedApiCollectionRequestProperties](docs/OBPv600UpdateFeaturedApiCollectionRequestProperties.md)
- - [OpenBankProject::OBPv600UpdateGroupRequest](docs/OBPv600UpdateGroupRequest.md)
- - [OpenBankProject::OBPv600UpdateGroupRequestProperties](docs/OBPv600UpdateGroupRequestProperties.md)
- - [OpenBankProject::OBPv600UpdateRateLimitsRequest](docs/OBPv600UpdateRateLimitsRequest.md)
- - [OpenBankProject::OBPv600UpdateRateLimitsRequestProperties](docs/OBPv600UpdateRateLimitsRequestProperties.md)
- - [OpenBankProject::OBPv600UpdateRateLimitsRequestPropertiesFromDate](docs/OBPv600UpdateRateLimitsRequestPropertiesFromDate.md)
- - [OpenBankProject::OBPv600UpdateSystemDynamicEntity200Response](docs/OBPv600UpdateSystemDynamicEntity200Response.md)
- - [OpenBankProject::OBPv600UpdateSystemDynamicEntity200ResponseProperties](docs/OBPv600UpdateSystemDynamicEntity200ResponseProperties.md)
- - [OpenBankProject::OBPv600UpdateSystemDynamicEntityRequest](docs/OBPv600UpdateSystemDynamicEntityRequest.md)
- - [OpenBankProject::OBPv600UpdateSystemDynamicEntityRequestProperties](docs/OBPv600UpdateSystemDynamicEntityRequestProperties.md)
- - [OpenBankProject::OBPv600UpdateSystemDynamicEntityRequestPropertiesSchema](docs/OBPv600UpdateSystemDynamicEntityRequestPropertiesSchema.md)
- - [OpenBankProject::OBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaProperties](docs/OBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaProperties.md)
- - [OpenBankProject::OBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesProperties](docs/OBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesProperties.md)
- - [OpenBankProject::OBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesProperties](docs/OBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesProperties.md)
- - [OpenBankProject::OBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesNotificationsEnabled](docs/OBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesNotificationsEnabled.md)
- - [OpenBankProject::OBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesNotificationsEnabledProperties](docs/OBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesNotificationsEnabledProperties.md)
- - [OpenBankProject::OBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesTheme](docs/OBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesTheme.md)
- - [OpenBankProject::OBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesThemeProperties](docs/OBPv600UpdateSystemDynamicEntityRequestPropertiesSchemaPropertiesPropertiesPropertiesThemeProperties.md)
- - [OpenBankProject::OBPv600UpdateSystemViewRequest](docs/OBPv600UpdateSystemViewRequest.md)
- - [OpenBankProject::OBPv600UpdateSystemViewRequestProperties](docs/OBPv600UpdateSystemViewRequestProperties.md)
- - [OpenBankProject::OBPv600ValidateAbacRule200Response](docs/OBPv600ValidateAbacRule200Response.md)
- - [OpenBankProject::OBPv600ValidateAbacRule200ResponseProperties](docs/OBPv600ValidateAbacRule200ResponseProperties.md)
- - [OpenBankProject::OBPv600ValidateAbacRuleRequest](docs/OBPv600ValidateAbacRuleRequest.md)
- - [OpenBankProject::OBPv600ValidateAbacRuleRequestProperties](docs/OBPv600ValidateAbacRuleRequestProperties.md)
- - [OpenBankProject::OBPv600ValidateUserEmail200Response](docs/OBPv600ValidateUserEmail200Response.md)
- - [OpenBankProject::OBPv600ValidateUserEmail200ResponseProperties](docs/OBPv600ValidateUserEmail200ResponseProperties.md)
- - [OpenBankProject::OBPv600ValidateUserEmailRequest](docs/OBPv600ValidateUserEmailRequest.md)
- - [OpenBankProject::OBPv600ValidateUserEmailRequestProperties](docs/OBPv600ValidateUserEmailRequestProperties.md)
- - [OpenBankProject::OBPv600VerifyOidcClient200Response](docs/OBPv600VerifyOidcClient200Response.md)
- - [OpenBankProject::OBPv600VerifyOidcClient200ResponseProperties](docs/OBPv600VerifyOidcClient200ResponseProperties.md)
- - [OpenBankProject::OBPv600VerifyOidcClientRequest](docs/OBPv600VerifyOidcClientRequest.md)
- - [OpenBankProject::OBPv600VerifyOidcClientRequestProperties](docs/OBPv600VerifyOidcClientRequestProperties.md)
- - [OpenBankProject::OBPv600VerifyUserCredentials200Response](docs/OBPv600VerifyUserCredentials200Response.md)
- - [OpenBankProject::OBPv600VerifyUserCredentials200ResponseProperties](docs/OBPv600VerifyUserCredentials200ResponseProperties.md)
- - [OpenBankProject::OBPv600VerifyUserCredentialsRequest](docs/OBPv600VerifyUserCredentialsRequest.md)
- - [OpenBankProject::OBPv600VerifyUserCredentialsRequestProperties](docs/OBPv600VerifyUserCredentialsRequestProperties.md)
+ - [OpenBankProject::AccountAccessUniqueIndexCheck200Response](docs/AccountAccessUniqueIndexCheck200Response.md)
+ - [OpenBankProject::AddAccount200Response](docs/AddAccount200Response.md)
+ - [OpenBankProject::AddAccountRequest](docs/AddAccountRequest.md)
+ - [OpenBankProject::AddCardForBank200Response](docs/AddCardForBank200Response.md)
+ - [OpenBankProject::AddCardForBankRequest](docs/AddCardForBankRequest.md)
+ - [OpenBankProject::AddConsentUserRequest](docs/AddConsentUserRequest.md)
+ - [OpenBankProject::AddCustomerMessageRequest](docs/AddCustomerMessageRequest.md)
+ - [OpenBankProject::AddImageForViewOnTransactionRequest](docs/AddImageForViewOnTransactionRequest.md)
+ - [OpenBankProject::AddKycCheckRequest](docs/AddKycCheckRequest.md)
+ - [OpenBankProject::AddKycDocument200Response](docs/AddKycDocument200Response.md)
+ - [OpenBankProject::AddKycDocumentRequest](docs/AddKycDocumentRequest.md)
+ - [OpenBankProject::AddKycMedia200Response](docs/AddKycMedia200Response.md)
+ - [OpenBankProject::AddKycMediaRequest](docs/AddKycMediaRequest.md)
+ - [OpenBankProject::AddKycStatusRequest](docs/AddKycStatusRequest.md)
+ - [OpenBankProject::AddSystemViewPermission200Response](docs/AddSystemViewPermission200Response.md)
+ - [OpenBankProject::AddSystemViewPermissionRequest](docs/AddSystemViewPermissionRequest.md)
+ - [OpenBankProject::AddUserToGroup200Response](docs/AddUserToGroup200Response.md)
+ - [OpenBankProject::AddUserToGroupRequest](docs/AddUserToGroupRequest.md)
+ - [OpenBankProject::AnswerConsentChallengeRequest](docs/AnswerConsentChallengeRequest.md)
+ - [OpenBankProject::AnswerTransactionRequestChallengeRequest](docs/AnswerTransactionRequestChallengeRequest.md)
+ - [OpenBankProject::AnswerUserAuthContextUpdateChallenge200Response](docs/AnswerUserAuthContextUpdateChallenge200Response.md)
+ - [OpenBankProject::BackupBankLevelDynamicEntity200Response](docs/BackupBankLevelDynamicEntity200Response.md)
+ - [OpenBankProject::BackupBankLevelDynamicEntity200ResponseSchema](docs/BackupBankLevelDynamicEntity200ResponseSchema.md)
+ - [OpenBankProject::BackupBankLevelDynamicEntity200ResponseSchemaProperties](docs/BackupBankLevelDynamicEntity200ResponseSchemaProperties.md)
+ - [OpenBankProject::BackupSystemDynamicEntity200Response](docs/BackupSystemDynamicEntity200Response.md)
+ - [OpenBankProject::BuildDynamicEndpointTemplate200Response](docs/BuildDynamicEndpointTemplate200Response.md)
+ - [OpenBankProject::BuildDynamicEndpointTemplateRequest](docs/BuildDynamicEndpointTemplateRequest.md)
+ - [OpenBankProject::CheckFundsAvailable200Response](docs/CheckFundsAvailable200Response.md)
+ - [OpenBankProject::CleanupOrphanedDynamicEntityRecords200Response](docs/CleanupOrphanedDynamicEntityRecords200Response.md)
+ - [OpenBankProject::CleanupOrphanedDynamicEntityRecords200ResponseDeletedOrphanedEntitiesInner](docs/CleanupOrphanedDynamicEntityRecords200ResponseDeletedOrphanedEntitiesInner.md)
+ - [OpenBankProject::Config200Response](docs/Config200Response.md)
+ - [OpenBankProject::Config200ResponseAkka](docs/Config200ResponseAkka.md)
+ - [OpenBankProject::Config200ResponseCacheInner](docs/Config200ResponseCacheInner.md)
+ - [OpenBankProject::Config200ResponseElasticSearch](docs/Config200ResponseElasticSearch.md)
+ - [OpenBankProject::Config200ResponseElasticSearchMetricsInner](docs/Config200ResponseElasticSearchMetricsInner.md)
+ - [OpenBankProject::Config200ResponseScopes](docs/Config200ResponseScopes.md)
+ - [OpenBankProject::CreateAccountAccessRequestRequest](docs/CreateAccountAccessRequestRequest.md)
+ - [OpenBankProject::CreateAccountApplicationRequest](docs/CreateAccountApplicationRequest.md)
+ - [OpenBankProject::CreateAccountWebhookRequest](docs/CreateAccountWebhookRequest.md)
+ - [OpenBankProject::CreateAgentRequest](docs/CreateAgentRequest.md)
+ - [OpenBankProject::CreateApiProductAttribute200Response](docs/CreateApiProductAttribute200Response.md)
+ - [OpenBankProject::CreateAtmRequest](docs/CreateAtmRequest.md)
+ - [OpenBankProject::CreateBankAccountBalanceRequest](docs/CreateBankAccountBalanceRequest.md)
+ - [OpenBankProject::CreateBankAccountNotificationWebhook200Response](docs/CreateBankAccountNotificationWebhook200Response.md)
+ - [OpenBankProject::CreateBankLevelDynamicEntity200Response](docs/CreateBankLevelDynamicEntity200Response.md)
+ - [OpenBankProject::CreateBankRequest](docs/CreateBankRequest.md)
+ - [OpenBankProject::CreateCallLimits200Response](docs/CreateCallLimits200Response.md)
+ - [OpenBankProject::CreateCallLimitsRequest](docs/CreateCallLimitsRequest.md)
+ - [OpenBankProject::CreateCardAttribute200Response](docs/CreateCardAttribute200Response.md)
+ - [OpenBankProject::CreateConnectorMethodRequest](docs/CreateConnectorMethodRequest.md)
+ - [OpenBankProject::CreateConsentEmailRequest](docs/CreateConsentEmailRequest.md)
+ - [OpenBankProject::CreateConsentImplicit200Response](docs/CreateConsentImplicit200Response.md)
+ - [OpenBankProject::CreateConsentImplicitRequest](docs/CreateConsentImplicitRequest.md)
+ - [OpenBankProject::CreateConsentImplicitRequestEntitlementsInner](docs/CreateConsentImplicitRequestEntitlementsInner.md)
+ - [OpenBankProject::CreateConsentRequestRequest](docs/CreateConsentRequestRequest.md)
+ - [OpenBankProject::CreateConsentSmsRequest](docs/CreateConsentSmsRequest.md)
+ - [OpenBankProject::CreateConsumer200Response](docs/CreateConsumer200Response.md)
+ - [OpenBankProject::CreateConsumerDynamicRegistrationRequest](docs/CreateConsumerDynamicRegistrationRequest.md)
+ - [OpenBankProject::CreateConsumerRequest](docs/CreateConsumerRequest.md)
+ - [OpenBankProject::CreateCorporateCustomerRequest](docs/CreateCorporateCustomerRequest.md)
+ - [OpenBankProject::CreateCounterpartyAttributeRequest](docs/CreateCounterpartyAttributeRequest.md)
+ - [OpenBankProject::CreateCounterpartyForAnyAccountRequest](docs/CreateCounterpartyForAnyAccountRequest.md)
+ - [OpenBankProject::CreateCustomView200Response](docs/CreateCustomView200Response.md)
+ - [OpenBankProject::CreateCustomViewManagementRequest](docs/CreateCustomViewManagementRequest.md)
+ - [OpenBankProject::CreateCustomViewRequest](docs/CreateCustomViewRequest.md)
+ - [OpenBankProject::CreateCustomerAccountLinkRequest](docs/CreateCustomerAccountLinkRequest.md)
+ - [OpenBankProject::CreateCustomerAddress200Response](docs/CreateCustomerAddress200Response.md)
+ - [OpenBankProject::CreateCustomerAddressRequest](docs/CreateCustomerAddressRequest.md)
+ - [OpenBankProject::CreateCustomerMessageRequest](docs/CreateCustomerMessageRequest.md)
+ - [OpenBankProject::CreateCustomerRequest](docs/CreateCustomerRequest.md)
+ - [OpenBankProject::CreateDirectDebit200Response](docs/CreateDirectDebit200Response.md)
+ - [OpenBankProject::CreateDirectDebitRequest](docs/CreateDirectDebitRequest.md)
+ - [OpenBankProject::CreateEndpointMappingRequest](docs/CreateEndpointMappingRequest.md)
+ - [OpenBankProject::CreateFeaturedApiCollectionRequest](docs/CreateFeaturedApiCollectionRequest.md)
+ - [OpenBankProject::CreateFxRequest](docs/CreateFxRequest.md)
+ - [OpenBankProject::CreateGroupRequest](docs/CreateGroupRequest.md)
+ - [OpenBankProject::CreateHistoricalTransactionAtBankRequest](docs/CreateHistoricalTransactionAtBankRequest.md)
+ - [OpenBankProject::CreateMandateRequest](docs/CreateMandateRequest.md)
+ - [OpenBankProject::CreateMeetingRequest](docs/CreateMeetingRequest.md)
+ - [OpenBankProject::CreateMethodRoutingRequest](docs/CreateMethodRoutingRequest.md)
+ - [OpenBankProject::CreateMyApiCollectionEndpointRequest](docs/CreateMyApiCollectionEndpointRequest.md)
+ - [OpenBankProject::CreateMyApiCollectionRequest](docs/CreateMyApiCollectionRequest.md)
+ - [OpenBankProject::CreateOrUpdateApiProductRequest](docs/CreateOrUpdateApiProductRequest.md)
+ - [OpenBankProject::CreateOrUpdateTransactionRequestAttributeDefinitionRequest](docs/CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)
+ - [OpenBankProject::CreatePersonalDataFieldRequest](docs/CreatePersonalDataFieldRequest.md)
+ - [OpenBankProject::CreateProduct200Response](docs/CreateProduct200Response.md)
+ - [OpenBankProject::CreateProductAttribute200Response](docs/CreateProductAttribute200Response.md)
+ - [OpenBankProject::CreateProductCollection200Response](docs/CreateProductCollection200Response.md)
+ - [OpenBankProject::CreateProductCollection200ResponseProductCollectionInner](docs/CreateProductCollection200ResponseProductCollectionInner.md)
+ - [OpenBankProject::CreateProductCollection200ResponseProductCollectionInnerItemsInner](docs/CreateProductCollection200ResponseProductCollectionInnerItemsInner.md)
+ - [OpenBankProject::CreateProductCollectionRequest](docs/CreateProductCollectionRequest.md)
+ - [OpenBankProject::CreateProductRequest](docs/CreateProductRequest.md)
+ - [OpenBankProject::CreateRegulatedEntityRequest](docs/CreateRegulatedEntityRequest.md)
+ - [OpenBankProject::CreateRetailCustomerRequest](docs/CreateRetailCustomerRequest.md)
+ - [OpenBankProject::CreateSettlementAccount200Response](docs/CreateSettlementAccount200Response.md)
+ - [OpenBankProject::CreateSettlementAccountRequest](docs/CreateSettlementAccountRequest.md)
+ - [OpenBankProject::CreateStandingOrder200Response](docs/CreateStandingOrder200Response.md)
+ - [OpenBankProject::CreateStandingOrderRequest](docs/CreateStandingOrderRequest.md)
+ - [OpenBankProject::CreateStandingOrderRequestWhen](docs/CreateStandingOrderRequestWhen.md)
+ - [OpenBankProject::CreateSystemAccountNotificationWebhook200Response](docs/CreateSystemAccountNotificationWebhook200Response.md)
+ - [OpenBankProject::CreateSystemAccountNotificationWebhookRequest](docs/CreateSystemAccountNotificationWebhookRequest.md)
+ - [OpenBankProject::CreateSystemDynamicEntity200Response](docs/CreateSystemDynamicEntity200Response.md)
+ - [OpenBankProject::CreateSystemDynamicEntityRequest](docs/CreateSystemDynamicEntityRequest.md)
+ - [OpenBankProject::CreateSystemDynamicEntityRequestSchema](docs/CreateSystemDynamicEntityRequestSchema.md)
+ - [OpenBankProject::CreateSystemDynamicEntityRequestSchemaProperties](docs/CreateSystemDynamicEntityRequestSchemaProperties.md)
+ - [OpenBankProject::CreateSystemViewRequest](docs/CreateSystemViewRequest.md)
+ - [OpenBankProject::CreateTaxResidence200Response](docs/CreateTaxResidence200Response.md)
+ - [OpenBankProject::CreateTaxResidenceRequest](docs/CreateTaxResidenceRequest.md)
+ - [OpenBankProject::CreateTransactionRequestAccountRequest](docs/CreateTransactionRequestAccountRequest.md)
+ - [OpenBankProject::CreateTransactionRequestAgentCashWithDrawalRequest](docs/CreateTransactionRequestAgentCashWithDrawalRequest.md)
+ - [OpenBankProject::CreateTransactionRequestCardRequest](docs/CreateTransactionRequestCardRequest.md)
+ - [OpenBankProject::CreateTransactionRequestCardRequestCard](docs/CreateTransactionRequestCardRequestCard.md)
+ - [OpenBankProject::CreateTransactionRequestCardanoRequest](docs/CreateTransactionRequestCardanoRequest.md)
+ - [OpenBankProject::CreateTransactionRequestCardanoRequestMetadata](docs/CreateTransactionRequestCardanoRequestMetadata.md)
+ - [OpenBankProject::CreateTransactionRequestCardanoRequestMetadataValue1](docs/CreateTransactionRequestCardanoRequestMetadataValue1.md)
+ - [OpenBankProject::CreateTransactionRequestCardanoRequestTo](docs/CreateTransactionRequestCardanoRequestTo.md)
+ - [OpenBankProject::CreateTransactionRequestCardanoRequestToAmount](docs/CreateTransactionRequestCardanoRequestToAmount.md)
+ - [OpenBankProject::CreateTransactionRequestCardanoRequestToAssetsInner](docs/CreateTransactionRequestCardanoRequestToAssetsInner.md)
+ - [OpenBankProject::CreateTransactionRequestCounterparty200Response](docs/CreateTransactionRequestCounterparty200Response.md)
+ - [OpenBankProject::CreateTransactionRequestCounterparty200ResponseAttributesInner](docs/CreateTransactionRequestCounterparty200ResponseAttributesInner.md)
+ - [OpenBankProject::CreateTransactionRequestCounterparty200ResponseChallengesInner](docs/CreateTransactionRequestCounterparty200ResponseChallengesInner.md)
+ - [OpenBankProject::CreateTransactionRequestCounterparty200ResponseCharge](docs/CreateTransactionRequestCounterparty200ResponseCharge.md)
+ - [OpenBankProject::CreateTransactionRequestCounterparty200ResponseDetails](docs/CreateTransactionRequestCounterparty200ResponseDetails.md)
+ - [OpenBankProject::CreateTransactionRequestCounterparty200ResponseDetailsToAgent](docs/CreateTransactionRequestCounterparty200ResponseDetailsToAgent.md)
+ - [OpenBankProject::CreateTransactionRequestCounterparty200ResponseDetailsToSepaCreditTransfers](docs/CreateTransactionRequestCounterparty200ResponseDetailsToSepaCreditTransfers.md)
+ - [OpenBankProject::CreateTransactionRequestCounterparty200ResponseDetailsToSepaCreditTransfersDebtorAccount](docs/CreateTransactionRequestCounterparty200ResponseDetailsToSepaCreditTransfersDebtorAccount.md)
+ - [OpenBankProject::CreateTransactionRequestCounterparty200ResponseDetailsToSimple](docs/CreateTransactionRequestCounterparty200ResponseDetailsToSimple.md)
+ - [OpenBankProject::CreateTransactionRequestCounterparty200ResponseDetailsToTransferToAccount](docs/CreateTransactionRequestCounterparty200ResponseDetailsToTransferToAccount.md)
+ - [OpenBankProject::CreateTransactionRequestCounterparty200ResponseDetailsToTransferToAccountTo](docs/CreateTransactionRequestCounterparty200ResponseDetailsToTransferToAccountTo.md)
+ - [OpenBankProject::CreateTransactionRequestCounterparty200ResponseDetailsToTransferToAccountToAccount](docs/CreateTransactionRequestCounterparty200ResponseDetailsToTransferToAccountToAccount.md)
+ - [OpenBankProject::CreateTransactionRequestCounterparty200ResponseDetailsToTransferToAtm](docs/CreateTransactionRequestCounterparty200ResponseDetailsToTransferToAtm.md)
+ - [OpenBankProject::CreateTransactionRequestCounterparty200ResponseDetailsToTransferToAtmTo](docs/CreateTransactionRequestCounterparty200ResponseDetailsToTransferToAtmTo.md)
+ - [OpenBankProject::CreateTransactionRequestCounterparty200ResponseDetailsToTransferToAtmToKycDocument](docs/CreateTransactionRequestCounterparty200ResponseDetailsToTransferToAtmToKycDocument.md)
+ - [OpenBankProject::CreateTransactionRequestCounterparty200ResponseDetailsToTransferToPhone](docs/CreateTransactionRequestCounterparty200ResponseDetailsToTransferToPhone.md)
+ - [OpenBankProject::CreateTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneFrom](docs/CreateTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneFrom.md)
+ - [OpenBankProject::CreateTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo](docs/CreateTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo.md)
+ - [OpenBankProject::CreateTransactionRequestCounterparty200ResponseFrom](docs/CreateTransactionRequestCounterparty200ResponseFrom.md)
+ - [OpenBankProject::CreateTransactionRequestCounterpartyRequest](docs/CreateTransactionRequestCounterpartyRequest.md)
+ - [OpenBankProject::CreateTransactionRequestCounterpartyRequestAttributesInner](docs/CreateTransactionRequestCounterpartyRequestAttributesInner.md)
+ - [OpenBankProject::CreateTransactionRequestCounterpartyRequestTo](docs/CreateTransactionRequestCounterpartyRequestTo.md)
+ - [OpenBankProject::CreateTransactionRequestEthSendRawTransactionRequest](docs/CreateTransactionRequestEthSendRawTransactionRequest.md)
+ - [OpenBankProject::CreateTransactionRequestEthereumeSendTransactionRequest](docs/CreateTransactionRequestEthereumeSendTransactionRequest.md)
+ - [OpenBankProject::CreateTransactionRequestFreeFormRequest](docs/CreateTransactionRequestFreeFormRequest.md)
+ - [OpenBankProject::CreateTransactionRequestRefundRequest](docs/CreateTransactionRequestRefundRequest.md)
+ - [OpenBankProject::CreateTransactionRequestRefundRequestRefund](docs/CreateTransactionRequestRefundRequestRefund.md)
+ - [OpenBankProject::CreateTransactionRequestSepaRequest](docs/CreateTransactionRequestSepaRequest.md)
+ - [OpenBankProject::CreateTransactionRequestSepaRequestReasonsInner](docs/CreateTransactionRequestSepaRequestReasonsInner.md)
+ - [OpenBankProject::CreateTransactionRequestSimpleRequest](docs/CreateTransactionRequestSimpleRequest.md)
+ - [OpenBankProject::CreateTransactionRequestSimpleRequestTo](docs/CreateTransactionRequestSimpleRequestTo.md)
+ - [OpenBankProject::CreateTransactionType200Response](docs/CreateTransactionType200Response.md)
+ - [OpenBankProject::CreateUserCustomerLinksRequest](docs/CreateUserCustomerLinksRequest.md)
+ - [OpenBankProject::CreateUserInvitationRequest](docs/CreateUserInvitationRequest.md)
+ - [OpenBankProject::CreateUserRequest](docs/CreateUserRequest.md)
+ - [OpenBankProject::CreateUserWithAccountAccessById200Response](docs/CreateUserWithAccountAccessById200Response.md)
+ - [OpenBankProject::CreateUserWithAccountAccessById200ResponseHead](docs/CreateUserWithAccountAccessById200ResponseHead.md)
+ - [OpenBankProject::CreateUserWithAccountAccessByIdRequest](docs/CreateUserWithAccountAccessByIdRequest.md)
+ - [OpenBankProject::CreateUserWithAccountAccessByIdRequestViewsInner](docs/CreateUserWithAccountAccessByIdRequestViewsInner.md)
+ - [OpenBankProject::CreateUserWithRolesRequest](docs/CreateUserWithRolesRequest.md)
+ - [OpenBankProject::CreateVRPConsentRequest200Response](docs/CreateVRPConsentRequest200Response.md)
+ - [OpenBankProject::CreateVRPConsentRequest200ResponsePayload](docs/CreateVRPConsentRequest200ResponsePayload.md)
+ - [OpenBankProject::CreateVRPConsentRequest200ResponsePayloadToAccount](docs/CreateVRPConsentRequest200ResponsePayloadToAccount.md)
+ - [OpenBankProject::CreateVRPConsentRequest200ResponsePayloadToAccountLimit](docs/CreateVRPConsentRequest200ResponsePayloadToAccountLimit.md)
+ - [OpenBankProject::CreateVRPConsentRequestRequest](docs/CreateVRPConsentRequestRequest.md)
+ - [OpenBankProject::CreateVRPConsentRequestRequestFromAccount](docs/CreateVRPConsentRequestRequestFromAccount.md)
+ - [OpenBankProject::CreateVRPConsentRequestRequestToAccount](docs/CreateVRPConsentRequestRequestToAccount.md)
+ - [OpenBankProject::CreateVRPConsentRequestRequestToAccountLimit](docs/CreateVRPConsentRequestRequestToAccountLimit.md)
+ - [OpenBankProject::CreateWebUiProps200Response](docs/CreateWebUiProps200Response.md)
+ - [OpenBankProject::DataWarehouseSearchRequest](docs/DataWarehouseSearchRequest.md)
+ - [OpenBankProject::DataWarehouseSearchRequestQuery](docs/DataWarehouseSearchRequestQuery.md)
+ - [OpenBankProject::DeleteSignalChannel200Response](docs/DeleteSignalChannel200Response.md)
+ - [OpenBankProject::DeleteSystemLevelEndpointTag200Response](docs/DeleteSystemLevelEndpointTag200Response.md)
+ - [OpenBankProject::EnableDisableAccountWebhook200Response](docs/EnableDisableAccountWebhook200Response.md)
+ - [OpenBankProject::EnableDisableAccountWebhookRequest](docs/EnableDisableAccountWebhookRequest.md)
+ - [OpenBankProject::EnableDisableConsumersRequest](docs/EnableDisableConsumersRequest.md)
+ - [OpenBankProject::ExecuteAbacPolicy200Response](docs/ExecuteAbacPolicy200Response.md)
+ - [OpenBankProject::ExecuteAbacPolicyRequest](docs/ExecuteAbacPolicyRequest.md)
+ - [OpenBankProject::GetAbacPolicies200Response](docs/GetAbacPolicies200Response.md)
+ - [OpenBankProject::GetAbacPolicies200ResponsePoliciesInner](docs/GetAbacPolicies200ResponsePoliciesInner.md)
+ - [OpenBankProject::GetAbacRule200Response](docs/GetAbacRule200Response.md)
+ - [OpenBankProject::GetAbacRuleSchema200Response](docs/GetAbacRuleSchema200Response.md)
+ - [OpenBankProject::GetAbacRuleSchema200ResponseObjectTypesInner](docs/GetAbacRuleSchema200ResponseObjectTypesInner.md)
+ - [OpenBankProject::GetAbacRuleSchema200ResponseObjectTypesInnerPropertiesInner](docs/GetAbacRuleSchema200ResponseObjectTypesInnerPropertiesInner.md)
+ - [OpenBankProject::GetAbacRuleSchema200ResponseParametersInner](docs/GetAbacRuleSchema200ResponseParametersInner.md)
+ - [OpenBankProject::GetAbacRulesByPolicy200Response](docs/GetAbacRulesByPolicy200Response.md)
+ - [OpenBankProject::GetAccountAccessRequestsForAccount200Response](docs/GetAccountAccessRequestsForAccount200Response.md)
+ - [OpenBankProject::GetAccountApplications200Response](docs/GetAccountApplications200Response.md)
+ - [OpenBankProject::GetAccountApplications200ResponseAccountApplicationsInner](docs/GetAccountApplications200ResponseAccountApplicationsInner.md)
+ - [OpenBankProject::GetAccountDirectory200Response](docs/GetAccountDirectory200Response.md)
+ - [OpenBankProject::GetAccountDirectory200ResponseAccountsInner](docs/GetAccountDirectory200ResponseAccountsInner.md)
+ - [OpenBankProject::GetAccountWebhooks200Response](docs/GetAccountWebhooks200Response.md)
+ - [OpenBankProject::GetAccountsAtBank200Response](docs/GetAccountsAtBank200Response.md)
+ - [OpenBankProject::GetAccountsAtBank200ResponseAccountsInner](docs/GetAccountsAtBank200ResponseAccountsInner.md)
+ - [OpenBankProject::GetAccountsByAccountRoutingRegex200Response](docs/GetAccountsByAccountRoutingRegex200Response.md)
+ - [OpenBankProject::GetAccountsByAccountRoutingRegex200ResponseAccountsInner](docs/GetAccountsByAccountRoutingRegex200ResponseAccountsInner.md)
+ - [OpenBankProject::GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner](docs/GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner.md)
+ - [OpenBankProject::GetAccountsByAccountRoutingRegexRequest](docs/GetAccountsByAccountRoutingRegexRequest.md)
+ - [OpenBankProject::GetAccountsHeldByUserAtBank200Response](docs/GetAccountsHeldByUserAtBank200Response.md)
+ - [OpenBankProject::GetAccountsHeldByUserAtBank200ResponseAccountsInner](docs/GetAccountsHeldByUserAtBank200ResponseAccountsInner.md)
+ - [OpenBankProject::GetActiveRateLimitsAtDate200Response](docs/GetActiveRateLimitsAtDate200Response.md)
+ - [OpenBankProject::GetAdapterInfo200Response](docs/GetAdapterInfo200Response.md)
+ - [OpenBankProject::GetAdapterInfo200ResponseBackendMessagesInner](docs/GetAdapterInfo200ResponseBackendMessagesInner.md)
+ - [OpenBankProject::GetAgent200Response](docs/GetAgent200Response.md)
+ - [OpenBankProject::GetAgents200Response](docs/GetAgents200Response.md)
+ - [OpenBankProject::GetAgents200ResponseAgentsInner](docs/GetAgents200ResponseAgentsInner.md)
+ - [OpenBankProject::GetAggregateMetrics200Response](docs/GetAggregateMetrics200Response.md)
+ - [OpenBankProject::GetAllAuthenticationTypeValidationsPublic200Response](docs/GetAllAuthenticationTypeValidationsPublic200Response.md)
+ - [OpenBankProject::GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner](docs/GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md)
+ - [OpenBankProject::GetAllBankAccountBalances200Response](docs/GetAllBankAccountBalances200Response.md)
+ - [OpenBankProject::GetAllBankAccountBalances200ResponseBalancesInner](docs/GetAllBankAccountBalances200ResponseBalancesInner.md)
+ - [OpenBankProject::GetAllBankLevelDynamicMessageDocs200Response](docs/GetAllBankLevelDynamicMessageDocs200Response.md)
+ - [OpenBankProject::GetAllConnectorMethods200Response](docs/GetAllConnectorMethods200Response.md)
+ - [OpenBankProject::GetAllConnectorMethods200ResponseConnectorsMethodsInner](docs/GetAllConnectorMethods200ResponseConnectorsMethodsInner.md)
+ - [OpenBankProject::GetAllCounterpartyAttributes200Response](docs/GetAllCounterpartyAttributes200Response.md)
+ - [OpenBankProject::GetAllCounterpartyAttributes200ResponseAttributesInner](docs/GetAllCounterpartyAttributes200ResponseAttributesInner.md)
+ - [OpenBankProject::GetAllDynamicResourceDocs200Response](docs/GetAllDynamicResourceDocs200Response.md)
+ - [OpenBankProject::GetAllEndpointMappings200Response](docs/GetAllEndpointMappings200Response.md)
+ - [OpenBankProject::GetAllEndpointMappings200ResponseEndpointMappingsInner](docs/GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
+ - [OpenBankProject::GetAllEndpointMappings200ResponseEndpointMappingsInnerResponseMapping](docs/GetAllEndpointMappings200ResponseEndpointMappingsInnerResponseMapping.md)
+ - [OpenBankProject::GetAllEndpointMappings200ResponseEndpointMappingsInnerResponseMappingName](docs/GetAllEndpointMappings200ResponseEndpointMappingsInnerResponseMappingName.md)
+ - [OpenBankProject::GetAllEntitlementRequests200Response](docs/GetAllEntitlementRequests200Response.md)
+ - [OpenBankProject::GetAllEntitlementRequests200ResponseEntitlementRequestsInner](docs/GetAllEntitlementRequests200ResponseEntitlementRequestsInner.md)
+ - [OpenBankProject::GetAllEntitlements200Response](docs/GetAllEntitlements200Response.md)
+ - [OpenBankProject::GetAllEntitlements200ResponseListInner](docs/GetAllEntitlements200ResponseListInner.md)
+ - [OpenBankProject::GetAllJsonSchemaValidationsPublic200Response](docs/GetAllJsonSchemaValidationsPublic200Response.md)
+ - [OpenBankProject::GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner](docs/GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md)
+ - [OpenBankProject::GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema](docs/GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema.md)
+ - [OpenBankProject::GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchemaProperties](docs/GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchemaProperties.md)
+ - [OpenBankProject::GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchemaPropertiesXxxId](docs/GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchemaPropertiesXxxId.md)
+ - [OpenBankProject::GetAllRegulatedEntityAttributes200Response](docs/GetAllRegulatedEntityAttributes200Response.md)
+ - [OpenBankProject::GetApiCollectionsForUser200Response](docs/GetApiCollectionsForUser200Response.md)
+ - [OpenBankProject::GetApiCollectionsForUser200ResponseApiCollectionsInner](docs/GetApiCollectionsForUser200ResponseApiCollectionsInner.md)
+ - [OpenBankProject::GetApiGlossary200Response](docs/GetApiGlossary200Response.md)
+ - [OpenBankProject::GetApiGlossary200ResponseGlossaryItemsInner](docs/GetApiGlossary200ResponseGlossaryItemsInner.md)
+ - [OpenBankProject::GetApiGlossary200ResponseGlossaryItemsInnerDescription](docs/GetApiGlossary200ResponseGlossaryItemsInnerDescription.md)
+ - [OpenBankProject::GetApiProducts200Response](docs/GetApiProducts200Response.md)
+ - [OpenBankProject::GetApiProducts200ResponseApiProductsInner](docs/GetApiProducts200ResponseApiProductsInner.md)
+ - [OpenBankProject::GetApiTags200Response](docs/GetApiTags200Response.md)
+ - [OpenBankProject::GetApiTags200ResponseAccountsInner](docs/GetApiTags200ResponseAccountsInner.md)
+ - [OpenBankProject::GetAppDirectory200Response](docs/GetAppDirectory200Response.md)
+ - [OpenBankProject::GetAtm200Response](docs/GetAtm200Response.md)
+ - [OpenBankProject::GetAtmAttribute200Response](docs/GetAtmAttribute200Response.md)
+ - [OpenBankProject::GetAtmAttributes200Response](docs/GetAtmAttributes200Response.md)
+ - [OpenBankProject::GetAtms200Response](docs/GetAtms200Response.md)
+ - [OpenBankProject::GetAvailablePersonalDynamicEntities200Response](docs/GetAvailablePersonalDynamicEntities200Response.md)
+ - [OpenBankProject::GetAvailablePersonalDynamicEntities200ResponseDynamicEntitiesInner](docs/GetAvailablePersonalDynamicEntities200ResponseDynamicEntitiesInner.md)
+ - [OpenBankProject::GetAvailablePersonalDynamicEntities200ResponseDynamicEntitiesInnerLinks](docs/GetAvailablePersonalDynamicEntities200ResponseDynamicEntitiesInnerLinks.md)
+ - [OpenBankProject::GetAvailablePersonalDynamicEntities200ResponseDynamicEntitiesInnerLinksRelatedInner](docs/GetAvailablePersonalDynamicEntities200ResponseDynamicEntitiesInnerLinksRelatedInner.md)
+ - [OpenBankProject::GetAvailablePersonalDynamicEntities200ResponseDynamicEntitiesInnerSchema](docs/GetAvailablePersonalDynamicEntities200ResponseDynamicEntitiesInnerSchema.md)
+ - [OpenBankProject::GetAvailablePersonalDynamicEntities200ResponseDynamicEntitiesInnerSchemaProperties](docs/GetAvailablePersonalDynamicEntities200ResponseDynamicEntitiesInnerSchemaProperties.md)
+ - [OpenBankProject::GetAvailablePersonalDynamicEntities200ResponseDynamicEntitiesInnerSchemaPropertiesTheme](docs/GetAvailablePersonalDynamicEntities200ResponseDynamicEntitiesInnerSchemaPropertiesTheme.md)
+ - [OpenBankProject::GetBank200Response](docs/GetBank200Response.md)
+ - [OpenBankProject::GetBankAccountsBalances200Response](docs/GetBankAccountsBalances200Response.md)
+ - [OpenBankProject::GetBankAccountsBalances200ResponseAccountsInner](docs/GetBankAccountsBalances200ResponseAccountsInner.md)
+ - [OpenBankProject::GetBankAccountsBalances200ResponseAccountsInnerBalancesInner](docs/GetBankAccountsBalances200ResponseAccountsInnerBalancesInner.md)
+ - [OpenBankProject::GetBankAttributes200Response](docs/GetBankAttributes200Response.md)
+ - [OpenBankProject::GetBankAttributes200ResponseBankAttributesInner](docs/GetBankAttributes200ResponseBankAttributesInner.md)
+ - [OpenBankProject::GetBankLevelDynamicEntities200Response](docs/GetBankLevelDynamicEntities200Response.md)
+ - [OpenBankProject::GetBankLevelDynamicEntities200ResponseDynamicEntitiesInner](docs/GetBankLevelDynamicEntities200ResponseDynamicEntitiesInner.md)
+ - [OpenBankProject::GetBankLevelDynamicResourceDoc200Response](docs/GetBankLevelDynamicResourceDoc200Response.md)
+ - [OpenBankProject::GetBankLevelDynamicResourceDoc200ResponseExampleRequestBody](docs/GetBankLevelDynamicResourceDoc200ResponseExampleRequestBody.md)
+ - [OpenBankProject::GetBankLevelDynamicResourceDoc200ResponseSuccessResponseBody](docs/GetBankLevelDynamicResourceDoc200ResponseSuccessResponseBody.md)
+ - [OpenBankProject::GetBankLevelDynamicResourceDoc200ResponseSuccessResponseBodyOptionalFieldsInner](docs/GetBankLevelDynamicResourceDoc200ResponseSuccessResponseBodyOptionalFieldsInner.md)
+ - [OpenBankProject::GetBankLevelEndpointTags200Response](docs/GetBankLevelEndpointTags200Response.md)
+ - [OpenBankProject::GetBanks200Response](docs/GetBanks200Response.md)
+ - [OpenBankProject::GetBranches200Response](docs/GetBranches200Response.md)
+ - [OpenBankProject::GetBranches200ResponseBranchesInner](docs/GetBranches200ResponseBranchesInner.md)
+ - [OpenBankProject::GetBranches200ResponseBranchesInnerAddress](docs/GetBranches200ResponseBranchesInnerAddress.md)
+ - [OpenBankProject::GetBranches200ResponseBranchesInnerDriveUp](docs/GetBranches200ResponseBranchesInnerDriveUp.md)
+ - [OpenBankProject::GetBranches200ResponseBranchesInnerDriveUpSunday](docs/GetBranches200ResponseBranchesInnerDriveUpSunday.md)
+ - [OpenBankProject::GetBranches200ResponseBranchesInnerLobby](docs/GetBranches200ResponseBranchesInnerLobby.md)
+ - [OpenBankProject::GetBranches200ResponseBranchesInnerLocation](docs/GetBranches200ResponseBranchesInnerLocation.md)
+ - [OpenBankProject::GetCacheConfig200Response](docs/GetCacheConfig200Response.md)
+ - [OpenBankProject::GetCacheConfig200ResponseInMemoryStatus](docs/GetCacheConfig200ResponseInMemoryStatus.md)
+ - [OpenBankProject::GetCacheConfig200ResponseRedisStatus](docs/GetCacheConfig200ResponseRedisStatus.md)
+ - [OpenBankProject::GetCacheInfo200Response](docs/GetCacheInfo200Response.md)
+ - [OpenBankProject::GetCacheInfo200ResponseNamespacesInner](docs/GetCacheInfo200ResponseNamespacesInner.md)
+ - [OpenBankProject::GetCacheNamespaces200Response](docs/GetCacheNamespaces200Response.md)
+ - [OpenBankProject::GetCacheNamespaces200ResponseNamespacesInner](docs/GetCacheNamespaces200ResponseNamespacesInner.md)
+ - [OpenBankProject::GetCallsLimit200Response](docs/GetCallsLimit200Response.md)
+ - [OpenBankProject::GetCallsLimit200ResponseLimitsInner](docs/GetCallsLimit200ResponseLimitsInner.md)
+ - [OpenBankProject::GetCardForBank200Response](docs/GetCardForBank200Response.md)
+ - [OpenBankProject::GetCardForBank200ResponseAccount](docs/GetCardForBank200ResponseAccount.md)
+ - [OpenBankProject::GetCardForBank200ResponseAccountViewsAvailableInner](docs/GetCardForBank200ResponseAccountViewsAvailableInner.md)
+ - [OpenBankProject::GetCards200Response](docs/GetCards200Response.md)
+ - [OpenBankProject::GetCards200ResponseCardsInner](docs/GetCards200ResponseCardsInner.md)
+ - [OpenBankProject::GetCardsForBank200Response](docs/GetCardsForBank200Response.md)
+ - [OpenBankProject::GetCardsForBank200ResponseCardsInner](docs/GetCardsForBank200ResponseCardsInner.md)
+ - [OpenBankProject::GetCardsForBank200ResponseCardsInnerAccount](docs/GetCardsForBank200ResponseCardsInnerAccount.md)
+ - [OpenBankProject::GetCardsForBank200ResponseCardsInnerAccountViewsAvailableInner](docs/GetCardsForBank200ResponseCardsInnerAccountViewsAvailableInner.md)
+ - [OpenBankProject::GetCardsForBank200ResponseCardsInnerReplacement](docs/GetCardsForBank200ResponseCardsInnerReplacement.md)
+ - [OpenBankProject::GetCheckbookOrders200Response](docs/GetCheckbookOrders200Response.md)
+ - [OpenBankProject::GetCheckbookOrders200ResponseAccount](docs/GetCheckbookOrders200ResponseAccount.md)
+ - [OpenBankProject::GetCheckbookOrders200ResponseAccountAccountRoutingsInner](docs/GetCheckbookOrders200ResponseAccountAccountRoutingsInner.md)
+ - [OpenBankProject::GetCheckbookOrders200ResponseOrdersInner](docs/GetCheckbookOrders200ResponseOrdersInner.md)
+ - [OpenBankProject::GetCheckbookOrders200ResponseOrdersInnerOrder](docs/GetCheckbookOrders200ResponseOrdersInnerOrder.md)
+ - [OpenBankProject::GetCommentsForViewOnTransaction200Response](docs/GetCommentsForViewOnTransaction200Response.md)
+ - [OpenBankProject::GetConfigProps200Response](docs/GetConfigProps200Response.md)
+ - [OpenBankProject::GetConnectorCallCounts200Response](docs/GetConnectorCallCounts200Response.md)
+ - [OpenBankProject::GetConnectorCallCounts200ResponseConnectorCountsInner](docs/GetConnectorCallCounts200ResponseConnectorCountsInner.md)
+ - [OpenBankProject::GetConnectorMethodNames200Response](docs/GetConnectorMethodNames200Response.md)
+ - [OpenBankProject::GetConnectorMetrics200Response](docs/GetConnectorMetrics200Response.md)
+ - [OpenBankProject::GetConnectorMetrics200ResponseMetricsInner](docs/GetConnectorMetrics200ResponseMetricsInner.md)
+ - [OpenBankProject::GetConnectorTraces200Response](docs/GetConnectorTraces200Response.md)
+ - [OpenBankProject::GetConnectorTraces200ResponseConnectorTracesInner](docs/GetConnectorTraces200ResponseConnectorTracesInner.md)
+ - [OpenBankProject::GetConnectors200Response](docs/GetConnectors200Response.md)
+ - [OpenBankProject::GetConnectors200ResponseConnectorsInner](docs/GetConnectors200ResponseConnectorsInner.md)
+ - [OpenBankProject::GetConsentByConsentId200Response](docs/GetConsentByConsentId200Response.md)
+ - [OpenBankProject::GetConsentByConsentRequestId200Response](docs/GetConsentByConsentRequestId200Response.md)
+ - [OpenBankProject::GetConsentInfos200Response](docs/GetConsentInfos200Response.md)
+ - [OpenBankProject::GetConsentInfos200ResponseConsentsInner](docs/GetConsentInfos200ResponseConsentsInner.md)
+ - [OpenBankProject::GetConsentRequest200Response](docs/GetConsentRequest200Response.md)
+ - [OpenBankProject::GetConsentRequest200ResponsePayload](docs/GetConsentRequest200ResponsePayload.md)
+ - [OpenBankProject::GetConsentRequest200ResponsePayloadAccountAccessInner](docs/GetConsentRequest200ResponsePayloadAccountAccessInner.md)
+ - [OpenBankProject::GetConsents200Response](docs/GetConsents200Response.md)
+ - [OpenBankProject::GetConsents200ResponseConsentsInner](docs/GetConsents200ResponseConsentsInner.md)
+ - [OpenBankProject::GetConsents200ResponseConsentsInnerJwtPayload](docs/GetConsents200ResponseConsentsInnerJwtPayload.md)
+ - [OpenBankProject::GetConsents200ResponseConsentsInnerJwtPayloadAccess](docs/GetConsents200ResponseConsentsInnerJwtPayloadAccess.md)
+ - [OpenBankProject::GetConsents200ResponseConsentsInnerJwtPayloadAccessTransactionsInner](docs/GetConsents200ResponseConsentsInnerJwtPayloadAccessTransactionsInner.md)
+ - [OpenBankProject::GetConsents200ResponseConsentsInnerJwtPayloadRequestHeadersInner](docs/GetConsents200ResponseConsentsInnerJwtPayloadRequestHeadersInner.md)
+ - [OpenBankProject::GetConsents200ResponseConsentsInnerJwtPayloadViewsInner](docs/GetConsents200ResponseConsentsInnerJwtPayloadViewsInner.md)
+ - [OpenBankProject::GetConsents200ResponseConsentsInnerJwtPayloadViewsInnerHelperInfo](docs/GetConsents200ResponseConsentsInnerJwtPayloadViewsInnerHelperInfo.md)
+ - [OpenBankProject::GetConsumer200Response](docs/GetConsumer200Response.md)
+ - [OpenBankProject::GetConsumers200Response](docs/GetConsumers200Response.md)
+ - [OpenBankProject::GetConsumersForCurrentUser200Response](docs/GetConsumersForCurrentUser200Response.md)
+ - [OpenBankProject::GetConsumersForCurrentUser200ResponseConsumersInner](docs/GetConsumersForCurrentUser200ResponseConsumersInner.md)
+ - [OpenBankProject::GetCoreAccountByIdThroughView200Response](docs/GetCoreAccountByIdThroughView200Response.md)
+ - [OpenBankProject::GetCoreAccountByIdV600200Response](docs/GetCoreAccountByIdV600200Response.md)
+ - [OpenBankProject::GetCoreTransactionsForBankAccount200Response](docs/GetCoreTransactionsForBankAccount200Response.md)
+ - [OpenBankProject::GetCoreTransactionsForBankAccount200ResponseTransactionsInner](docs/GetCoreTransactionsForBankAccount200ResponseTransactionsInner.md)
+ - [OpenBankProject::GetCoreTransactionsForBankAccount200ResponseTransactionsInnerDetails](docs/GetCoreTransactionsForBankAccount200ResponseTransactionsInnerDetails.md)
+ - [OpenBankProject::GetCoreTransactionsForBankAccount200ResponseTransactionsInnerOtherAccount](docs/GetCoreTransactionsForBankAccount200ResponseTransactionsInnerOtherAccount.md)
+ - [OpenBankProject::GetCoreTransactionsForBankAccount200ResponseTransactionsInnerThisAccount](docs/GetCoreTransactionsForBankAccount200ResponseTransactionsInnerThisAccount.md)
+ - [OpenBankProject::GetCoreTransactionsForBankAccount200ResponseTransactionsInnerThisAccountHoldersInner](docs/GetCoreTransactionsForBankAccount200ResponseTransactionsInnerThisAccountHoldersInner.md)
+ - [OpenBankProject::GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner](docs/GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner.md)
+ - [OpenBankProject::GetCounterpartiesForAnyAccount200Response](docs/GetCounterpartiesForAnyAccount200Response.md)
+ - [OpenBankProject::GetCounterpartiesForAnyAccount200ResponseCounterpartiesInner](docs/GetCounterpartiesForAnyAccount200ResponseCounterpartiesInner.md)
+ - [OpenBankProject::GetCounterpartyLimit200Response](docs/GetCounterpartyLimit200Response.md)
+ - [OpenBankProject::GetCounterpartyLimitStatus200Response](docs/GetCounterpartyLimitStatus200Response.md)
+ - [OpenBankProject::GetCounterpartyLimitStatus200ResponseStatus](docs/GetCounterpartyLimitStatus200ResponseStatus.md)
+ - [OpenBankProject::GetCounterpartyPublicAlias200Response](docs/GetCounterpartyPublicAlias200Response.md)
+ - [OpenBankProject::GetCrmEvents200Response](docs/GetCrmEvents200Response.md)
+ - [OpenBankProject::GetCrmEvents200ResponseCrmEventsInner](docs/GetCrmEvents200ResponseCrmEventsInner.md)
+ - [OpenBankProject::GetCurrenciesAtBank200Response](docs/GetCurrenciesAtBank200Response.md)
+ - [OpenBankProject::GetCurrenciesAtBank200ResponseCurrenciesInner](docs/GetCurrenciesAtBank200ResponseCurrenciesInner.md)
+ - [OpenBankProject::GetCurrentConsumer200Response](docs/GetCurrentConsumer200Response.md)
+ - [OpenBankProject::GetCurrentConsumer200ResponseCallCounters](docs/GetCurrentConsumer200ResponseCallCounters.md)
+ - [OpenBankProject::GetCurrentConsumer200ResponseCallCountersPerWeek](docs/GetCurrentConsumer200ResponseCallCountersPerWeek.md)
+ - [OpenBankProject::GetCustomViews200Response](docs/GetCustomViews200Response.md)
+ - [OpenBankProject::GetCustomerAccountLinksByCustomerId200Response](docs/GetCustomerAccountLinksByCustomerId200Response.md)
+ - [OpenBankProject::GetCustomerAccountLinksByCustomerId200ResponseLinksInner](docs/GetCustomerAccountLinksByCustomerId200ResponseLinksInner.md)
+ - [OpenBankProject::GetCustomerAddresses200Response](docs/GetCustomerAddresses200Response.md)
+ - [OpenBankProject::GetCustomerAttributes200Response](docs/GetCustomerAttributes200Response.md)
+ - [OpenBankProject::GetCustomerAttributes200ResponseCustomerAttributesInner](docs/GetCustomerAttributes200ResponseCustomerAttributesInner.md)
+ - [OpenBankProject::GetCustomerByCustomerNumber200Response](docs/GetCustomerByCustomerNumber200Response.md)
+ - [OpenBankProject::GetCustomerChildren200Response](docs/GetCustomerChildren200Response.md)
+ - [OpenBankProject::GetCustomerChildren200ResponseCustomersInner](docs/GetCustomerChildren200ResponseCustomersInner.md)
+ - [OpenBankProject::GetCustomerMessages200Response](docs/GetCustomerMessages200Response.md)
+ - [OpenBankProject::GetCustomerMessages200ResponseMessagesInner](docs/GetCustomerMessages200ResponseMessagesInner.md)
+ - [OpenBankProject::GetCustomerOverview200Response](docs/GetCustomerOverview200Response.md)
+ - [OpenBankProject::GetCustomerOverview200ResponseAccountsInner](docs/GetCustomerOverview200ResponseAccountsInner.md)
+ - [OpenBankProject::GetCustomerOverviewFlat200Response](docs/GetCustomerOverviewFlat200Response.md)
+ - [OpenBankProject::GetCustomerOverviewFlat200ResponseAccountsInner](docs/GetCustomerOverviewFlat200ResponseAccountsInner.md)
+ - [OpenBankProject::GetCustomerOverviewFlat200ResponseAccountsInnerAccountAttributesInner](docs/GetCustomerOverviewFlat200ResponseAccountsInnerAccountAttributesInner.md)
+ - [OpenBankProject::GetCustomerOverviewFlat200ResponseAccountsInnerContractsInner](docs/GetCustomerOverviewFlat200ResponseAccountsInnerContractsInner.md)
+ - [OpenBankProject::GetCustomerOverviewFlatRequest](docs/GetCustomerOverviewFlatRequest.md)
+ - [OpenBankProject::GetCustomersByLegalNameRequest](docs/GetCustomersByLegalNameRequest.md)
+ - [OpenBankProject::GetCustomersForUser200Response](docs/GetCustomersForUser200Response.md)
+ - [OpenBankProject::GetCustomersForUser200ResponseCustomersInner](docs/GetCustomersForUser200ResponseCustomersInner.md)
+ - [OpenBankProject::GetCustomersMessages200Response](docs/GetCustomersMessages200Response.md)
+ - [OpenBankProject::GetCustomersMessages200ResponseMessagesInner](docs/GetCustomersMessages200ResponseMessagesInner.md)
+ - [OpenBankProject::GetCustomersMinimalAtAnyBank200Response](docs/GetCustomersMinimalAtAnyBank200Response.md)
+ - [OpenBankProject::GetCustomersMinimalAtAnyBank200ResponseCustomersInner](docs/GetCustomersMinimalAtAnyBank200ResponseCustomersInner.md)
+ - [OpenBankProject::GetDatabasePoolInfo200Response](docs/GetDatabasePoolInfo200Response.md)
+ - [OpenBankProject::GetDoubleEntryTransaction200Response](docs/GetDoubleEntryTransaction200Response.md)
+ - [OpenBankProject::GetDoubleEntryTransaction200ResponseDebitTransaction](docs/GetDoubleEntryTransaction200ResponseDebitTransaction.md)
+ - [OpenBankProject::GetDoubleEntryTransaction200ResponseTransactionRequest](docs/GetDoubleEntryTransaction200ResponseTransactionRequest.md)
+ - [OpenBankProject::GetDynamicEndpoints200Response](docs/GetDynamicEndpoints200Response.md)
+ - [OpenBankProject::GetDynamicEndpoints200ResponseDynamicEndpointsInner](docs/GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
+ - [OpenBankProject::GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString](docs/GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString.md)
+ - [OpenBankProject::GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringDefinitions](docs/GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringDefinitions.md)
+ - [OpenBankProject::GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringDefinitionsAccountName](docs/GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringDefinitionsAccountName.md)
+ - [OpenBankProject::GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringDefinitionsAccountNameProperties](docs/GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringDefinitionsAccountNameProperties.md)
+ - [OpenBankProject::GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringDefinitionsAccountNamePropertiesBalance](docs/GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringDefinitionsAccountNamePropertiesBalance.md)
+ - [OpenBankProject::GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringDefinitionsAccountNamePropertiesName](docs/GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringDefinitionsAccountNamePropertiesName.md)
+ - [OpenBankProject::GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringInfo](docs/GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringInfo.md)
+ - [OpenBankProject::GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringPaths](docs/GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringPaths.md)
+ - [OpenBankProject::GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringPathsAccounts](docs/GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringPathsAccounts.md)
+ - [OpenBankProject::GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringPathsAccountsAccountId](docs/GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringPathsAccountsAccountId.md)
+ - [OpenBankProject::GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringPathsAccountsAccountIdGet](docs/GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringPathsAccountsAccountIdGet.md)
+ - [OpenBankProject::GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringPathsAccountsAccountIdGetResponses](docs/GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringPathsAccountsAccountIdGetResponses.md)
+ - [OpenBankProject::GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringPathsAccountsPost](docs/GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringPathsAccountsPost.md)
+ - [OpenBankProject::GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringPathsAccountsPostResponses](docs/GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringPathsAccountsPostResponses.md)
+ - [OpenBankProject::GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringPathsAccountsPostResponses201](docs/GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringPathsAccountsPostResponses201.md)
+ - [OpenBankProject::GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringPathsAccountsPostResponses201Schema](docs/GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringPathsAccountsPostResponses201Schema.md)
+ - [OpenBankProject::GetDynamicEntityDiagnostics200Response](docs/GetDynamicEntityDiagnostics200Response.md)
+ - [OpenBankProject::GetDynamicEntityDiagnostics200ResponseIssuesInner](docs/GetDynamicEntityDiagnostics200ResponseIssuesInner.md)
+ - [OpenBankProject::GetDynamicMessageDoc200Response](docs/GetDynamicMessageDoc200Response.md)
+ - [OpenBankProject::GetEntitlements200Response](docs/GetEntitlements200Response.md)
+ - [OpenBankProject::GetEntitlements200ResponseListInner](docs/GetEntitlements200ResponseListInner.md)
+ - [OpenBankProject::GetEntitlementsAndPermissions200Response](docs/GetEntitlementsAndPermissions200Response.md)
+ - [OpenBankProject::GetExplicitCounterpartyById200Response](docs/GetExplicitCounterpartyById200Response.md)
+ - [OpenBankProject::GetExplicitCounterpartyById200ResponseBespokeInner](docs/GetExplicitCounterpartyById200ResponseBespokeInner.md)
+ - [OpenBankProject::GetExplicitCounterpartyById200ResponseMetadata](docs/GetExplicitCounterpartyById200ResponseMetadata.md)
+ - [OpenBankProject::GetExplicitCounterpartyById200ResponseMetadataPhysicalLocation](docs/GetExplicitCounterpartyById200ResponseMetadataPhysicalLocation.md)
+ - [OpenBankProject::GetExplicitCounterpartyById200ResponseMetadataPhysicalLocationUser](docs/GetExplicitCounterpartyById200ResponseMetadataPhysicalLocationUser.md)
+ - [OpenBankProject::GetFastFirehoseAccountsAtOneBank200Response](docs/GetFastFirehoseAccountsAtOneBank200Response.md)
+ - [OpenBankProject::GetFastFirehoseAccountsAtOneBank200ResponseAccountsInner](docs/GetFastFirehoseAccountsAtOneBank200ResponseAccountsInner.md)
+ - [OpenBankProject::GetFastFirehoseAccountsAtOneBank200ResponseAccountsInnerAccountAttributesInner](docs/GetFastFirehoseAccountsAtOneBank200ResponseAccountsInnerAccountAttributesInner.md)
+ - [OpenBankProject::GetFastFirehoseAccountsAtOneBank200ResponseAccountsInnerOwnersInner](docs/GetFastFirehoseAccountsAtOneBank200ResponseAccountsInnerOwnersInner.md)
+ - [OpenBankProject::GetFeaturedApiCollectionsAdmin200Response](docs/GetFeaturedApiCollectionsAdmin200Response.md)
+ - [OpenBankProject::GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner](docs/GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner.md)
+ - [OpenBankProject::GetFeatures200Response](docs/GetFeatures200Response.md)
+ - [OpenBankProject::GetFirehoseAccountsAtOneBank200Response](docs/GetFirehoseAccountsAtOneBank200Response.md)
+ - [OpenBankProject::GetFirehoseAccountsAtOneBank200ResponseAccountsInner](docs/GetFirehoseAccountsAtOneBank200ResponseAccountsInner.md)
+ - [OpenBankProject::GetFirehoseTransactionsForBankAccount200Response](docs/GetFirehoseTransactionsForBankAccount200Response.md)
+ - [OpenBankProject::GetGroupEntitlements200Response](docs/GetGroupEntitlements200Response.md)
+ - [OpenBankProject::GetGroupEntitlements200ResponseEntitlementsInner](docs/GetGroupEntitlements200ResponseEntitlementsInner.md)
+ - [OpenBankProject::GetGroups200Response](docs/GetGroups200Response.md)
+ - [OpenBankProject::GetGroups200ResponseGroupsInner](docs/GetGroups200ResponseGroupsInner.md)
+ - [OpenBankProject::GetHoldingAccountByReleaser200Response](docs/GetHoldingAccountByReleaser200Response.md)
+ - [OpenBankProject::GetImagesForViewOnTransaction200Response](docs/GetImagesForViewOnTransaction200Response.md)
+ - [OpenBankProject::GetKycChecks200Response](docs/GetKycChecks200Response.md)
+ - [OpenBankProject::GetKycChecks200ResponseChecksInner](docs/GetKycChecks200ResponseChecksInner.md)
+ - [OpenBankProject::GetKycDocuments200Response](docs/GetKycDocuments200Response.md)
+ - [OpenBankProject::GetKycMedia200Response](docs/GetKycMedia200Response.md)
+ - [OpenBankProject::GetKycStatuses200Response](docs/GetKycStatuses200Response.md)
+ - [OpenBankProject::GetKycStatuses200ResponseStatusesInner](docs/GetKycStatuses200ResponseStatusesInner.md)
+ - [OpenBankProject::GetLogoutLink200Response](docs/GetLogoutLink200Response.md)
+ - [OpenBankProject::GetMandate200Response](docs/GetMandate200Response.md)
+ - [OpenBankProject::GetMandateProvision200Response](docs/GetMandateProvision200Response.md)
+ - [OpenBankProject::GetMandateProvision200ResponseSignatoryRequirementsInner](docs/GetMandateProvision200ResponseSignatoryRequirementsInner.md)
+ - [OpenBankProject::GetMandateProvisions200Response](docs/GetMandateProvisions200Response.md)
+ - [OpenBankProject::GetMandates200Response](docs/GetMandates200Response.md)
+ - [OpenBankProject::GetMapperDatabaseInfo200Response](docs/GetMapperDatabaseInfo200Response.md)
+ - [OpenBankProject::GetMeeting200Response](docs/GetMeeting200Response.md)
+ - [OpenBankProject::GetMeeting200ResponseCreator](docs/GetMeeting200ResponseCreator.md)
+ - [OpenBankProject::GetMeeting200ResponseInviteesInner](docs/GetMeeting200ResponseInviteesInner.md)
+ - [OpenBankProject::GetMeeting200ResponseKeys](docs/GetMeeting200ResponseKeys.md)
+ - [OpenBankProject::GetMeeting200ResponsePresent](docs/GetMeeting200ResponsePresent.md)
+ - [OpenBankProject::GetMeetings200Response](docs/GetMeetings200Response.md)
+ - [OpenBankProject::GetMessageDocs200Response](docs/GetMessageDocs200Response.md)
+ - [OpenBankProject::GetMessageDocs200ResponseMessageDocsInner](docs/GetMessageDocs200ResponseMessageDocsInner.md)
+ - [OpenBankProject::GetMessageDocs200ResponseMessageDocsInnerAdapterImplementation](docs/GetMessageDocs200ResponseMessageDocsInnerAdapterImplementation.md)
+ - [OpenBankProject::GetMessageDocs200ResponseMessageDocsInnerDependentEndpointsInner](docs/GetMessageDocs200ResponseMessageDocsInnerDependentEndpointsInner.md)
+ - [OpenBankProject::GetMessageDocs200ResponseMessageDocsInnerOutboundAvroSchema](docs/GetMessageDocs200ResponseMessageDocsInnerOutboundAvroSchema.md)
+ - [OpenBankProject::GetMessageDocs200ResponseMessageDocsInnerRequiredFieldInfo](docs/GetMessageDocs200ResponseMessageDocsInnerRequiredFieldInfo.md)
+ - [OpenBankProject::GetMethodRoutings200Response](docs/GetMethodRoutings200Response.md)
+ - [OpenBankProject::GetMethodRoutings200ResponseMethodRoutingsInner](docs/GetMethodRoutings200ResponseMethodRoutingsInner.md)
+ - [OpenBankProject::GetMetrics200Response](docs/GetMetrics200Response.md)
+ - [OpenBankProject::GetMetrics200ResponseMetricsInner](docs/GetMetrics200ResponseMetricsInner.md)
+ - [OpenBankProject::GetMetrics200ResponseMetricsInnerResponseBody](docs/GetMetrics200ResponseMetricsInnerResponseBody.md)
+ - [OpenBankProject::GetMetricsAtBank200Response](docs/GetMetricsAtBank200Response.md)
+ - [OpenBankProject::GetMetricsAtBank200ResponseMetricsInner](docs/GetMetricsAtBank200ResponseMetricsInner.md)
+ - [OpenBankProject::GetMetricsTopConsumers200Response](docs/GetMetricsTopConsumers200Response.md)
+ - [OpenBankProject::GetMetricsTopConsumers200ResponseTopConsumersInner](docs/GetMetricsTopConsumers200ResponseTopConsumersInner.md)
+ - [OpenBankProject::GetMigrations200Response](docs/GetMigrations200Response.md)
+ - [OpenBankProject::GetMigrations200ResponseMigrationScriptLogsInner](docs/GetMigrations200ResponseMigrationScriptLogsInner.md)
+ - [OpenBankProject::GetMyApiCollectionEndpoints200Response](docs/GetMyApiCollectionEndpoints200Response.md)
+ - [OpenBankProject::GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner](docs/GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner.md)
+ - [OpenBankProject::GetMyConsentsByBank200Response](docs/GetMyConsentsByBank200Response.md)
+ - [OpenBankProject::GetMyConsentsByBank200ResponseConsentsInner](docs/GetMyConsentsByBank200ResponseConsentsInner.md)
+ - [OpenBankProject::GetMyCorrelatedEntities200Response](docs/GetMyCorrelatedEntities200Response.md)
+ - [OpenBankProject::GetMyCorrelatedEntities200ResponseCorrelatedEntitiesInner](docs/GetMyCorrelatedEntities200ResponseCorrelatedEntitiesInner.md)
+ - [OpenBankProject::GetMyCorrelatedEntities200ResponseCorrelatedEntitiesInnerUsersInner](docs/GetMyCorrelatedEntities200ResponseCorrelatedEntitiesInnerUsersInner.md)
+ - [OpenBankProject::GetMyCorrelatedEntities200ResponseCorrelatedEntitiesInnerUsersInnerUserAttributesInner](docs/GetMyCorrelatedEntities200ResponseCorrelatedEntitiesInnerUsersInnerUserAttributesInner.md)
+ - [OpenBankProject::GetMyCustomersAtBank200Response](docs/GetMyCustomersAtBank200Response.md)
+ - [OpenBankProject::GetMyCustomersAtBank200ResponseCustomersInner](docs/GetMyCustomersAtBank200ResponseCustomersInner.md)
+ - [OpenBankProject::GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit](docs/GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit.md)
+ - [OpenBankProject::GetMyCustomersAtBank200ResponseCustomersInnerCreditRating](docs/GetMyCustomersAtBank200ResponseCustomersInnerCreditRating.md)
+ - [OpenBankProject::GetMyCustomersAtBank200ResponseCustomersInnerFaceImage](docs/GetMyCustomersAtBank200ResponseCustomersInnerFaceImage.md)
+ - [OpenBankProject::GetMySpaces200Response](docs/GetMySpaces200Response.md)
+ - [OpenBankProject::GetOAuth2ServerJWKsURIs200Response](docs/GetOAuth2ServerJWKsURIs200Response.md)
+ - [OpenBankProject::GetOAuth2ServerJWKsURIs200ResponseJwksUrisInner](docs/GetOAuth2ServerJWKsURIs200ResponseJwksUrisInner.md)
+ - [OpenBankProject::GetObpConnectorLoopback200Response](docs/GetObpConnectorLoopback200Response.md)
+ - [OpenBankProject::GetOidcClient200Response](docs/GetOidcClient200Response.md)
+ - [OpenBankProject::GetOtherAccountForTransaction200Response](docs/GetOtherAccountForTransaction200Response.md)
+ - [OpenBankProject::GetOtherAccountForTransaction200ResponseBank](docs/GetOtherAccountForTransaction200ResponseBank.md)
+ - [OpenBankProject::GetOtherAccountMetadata200Response](docs/GetOtherAccountMetadata200Response.md)
+ - [OpenBankProject::GetOtherAccountMetadata200ResponsePhysicalLocation](docs/GetOtherAccountMetadata200ResponsePhysicalLocation.md)
+ - [OpenBankProject::GetOtherAccountsForBankAccount200Response](docs/GetOtherAccountsForBankAccount200Response.md)
+ - [OpenBankProject::GetPermissionForUserForBankAccount200Response](docs/GetPermissionForUserForBankAccount200Response.md)
+ - [OpenBankProject::GetPermissionsForBankAccount200Response](docs/GetPermissionsForBankAccount200Response.md)
+ - [OpenBankProject::GetPermissionsForBankAccount200ResponsePermissionsInner](docs/GetPermissionsForBankAccount200ResponsePermissionsInner.md)
+ - [OpenBankProject::GetPersonalDataFields200Response](docs/GetPersonalDataFields200Response.md)
+ - [OpenBankProject::GetPersonalDataFields200ResponseUserAttributesInner](docs/GetPersonalDataFields200ResponseUserAttributesInner.md)
+ - [OpenBankProject::GetPopularApis200Response](docs/GetPopularApis200Response.md)
+ - [OpenBankProject::GetPrivateAccountByIdFull200Response](docs/GetPrivateAccountByIdFull200Response.md)
+ - [OpenBankProject::GetPrivateAccountIdsbyBankId200Response](docs/GetPrivateAccountIdsbyBankId200Response.md)
+ - [OpenBankProject::GetProduct200Response](docs/GetProduct200Response.md)
+ - [OpenBankProject::GetProduct200ResponseAttributesInner](docs/GetProduct200ResponseAttributesInner.md)
+ - [OpenBankProject::GetProduct200ResponseFeesInner](docs/GetProduct200ResponseFeesInner.md)
+ - [OpenBankProject::GetProductCollection200Response](docs/GetProductCollection200Response.md)
+ - [OpenBankProject::GetProductCollection200ResponseProductsInner](docs/GetProductCollection200ResponseProductsInner.md)
+ - [OpenBankProject::GetProductFee200Response](docs/GetProductFee200Response.md)
+ - [OpenBankProject::GetProductFee200ResponseValue](docs/GetProductFee200ResponseValue.md)
+ - [OpenBankProject::GetProductFees200Response](docs/GetProductFees200Response.md)
+ - [OpenBankProject::GetProductTree200Response](docs/GetProductTree200Response.md)
+ - [OpenBankProject::GetProductTree200ResponseParentProduct](docs/GetProductTree200ResponseParentProduct.md)
+ - [OpenBankProject::GetProductTree200ResponseParentProductParentProduct](docs/GetProductTree200ResponseParentProductParentProduct.md)
+ - [OpenBankProject::GetProductTree200ResponseParentProductParentProductMeta](docs/GetProductTree200ResponseParentProductParentProductMeta.md)
+ - [OpenBankProject::GetProductTree200ResponseParentProductParentProductMetaLicense](docs/GetProductTree200ResponseParentProductParentProductMetaLicense.md)
+ - [OpenBankProject::GetProducts200Response](docs/GetProducts200Response.md)
+ - [OpenBankProject::GetProviders200Response](docs/GetProviders200Response.md)
+ - [OpenBankProject::GetPublicAccountById200Response](docs/GetPublicAccountById200Response.md)
+ - [OpenBankProject::GetPublicAccountById200ResponseAccountRulesInner](docs/GetPublicAccountById200ResponseAccountRulesInner.md)
+ - [OpenBankProject::GetRateLimitingInfo200Response](docs/GetRateLimitingInfo200Response.md)
+ - [OpenBankProject::GetReferenceTypes200Response](docs/GetReferenceTypes200Response.md)
+ - [OpenBankProject::GetReferenceTypes200ResponseReferenceTypesInner](docs/GetReferenceTypes200ResponseReferenceTypesInner.md)
+ - [OpenBankProject::GetRegulatedEntityAttributeById200Response](docs/GetRegulatedEntityAttributeById200Response.md)
+ - [OpenBankProject::GetRegulatedEntityById200Response](docs/GetRegulatedEntityById200Response.md)
+ - [OpenBankProject::GetRegulatedEntityById200ResponseAttributesInner](docs/GetRegulatedEntityById200ResponseAttributesInner.md)
+ - [OpenBankProject::GetRegulatedEntityById200ResponseServicesInner](docs/GetRegulatedEntityById200ResponseServicesInner.md)
+ - [OpenBankProject::GetRoles200Response](docs/GetRoles200Response.md)
+ - [OpenBankProject::GetRoles200ResponseRolesInner](docs/GetRoles200ResponseRolesInner.md)
+ - [OpenBankProject::GetRolesWithEntitlementCountsAtAllBanks200Response](docs/GetRolesWithEntitlementCountsAtAllBanks200Response.md)
+ - [OpenBankProject::GetRolesWithEntitlementCountsAtAllBanks200ResponseRolesInner](docs/GetRolesWithEntitlementCountsAtAllBanks200ResponseRolesInner.md)
+ - [OpenBankProject::GetScannedApiVersions200Response](docs/GetScannedApiVersions200Response.md)
+ - [OpenBankProject::GetScannedApiVersions200ResponseScannedApiVersionsInner](docs/GetScannedApiVersions200ResponseScannedApiVersionsInner.md)
+ - [OpenBankProject::GetScopes200Response](docs/GetScopes200Response.md)
+ - [OpenBankProject::GetScopes200ResponseListInner](docs/GetScopes200ResponseListInner.md)
+ - [OpenBankProject::GetServerJWK200Response](docs/GetServerJWK200Response.md)
+ - [OpenBankProject::GetSettlementAccounts200Response](docs/GetSettlementAccounts200Response.md)
+ - [OpenBankProject::GetSettlementAccounts200ResponseSettlementAccountsInner](docs/GetSettlementAccounts200ResponseSettlementAccountsInner.md)
+ - [OpenBankProject::GetSignalChannelInfo200Response](docs/GetSignalChannelInfo200Response.md)
+ - [OpenBankProject::GetSignalChannels200Response](docs/GetSignalChannels200Response.md)
+ - [OpenBankProject::GetSignalMessages200Response](docs/GetSignalMessages200Response.md)
+ - [OpenBankProject::GetSignalMessages200ResponseMessagesInner](docs/GetSignalMessages200ResponseMessagesInner.md)
+ - [OpenBankProject::GetSignalMessages200ResponseMessagesInnerPayload](docs/GetSignalMessages200ResponseMessagesInnerPayload.md)
+ - [OpenBankProject::GetSignalStats200Response](docs/GetSignalStats200Response.md)
+ - [OpenBankProject::GetSignatoryPanel200Response](docs/GetSignatoryPanel200Response.md)
+ - [OpenBankProject::GetSignatoryPanels200Response](docs/GetSignatoryPanels200Response.md)
+ - [OpenBankProject::GetSocialMediaHandles200Response](docs/GetSocialMediaHandles200Response.md)
+ - [OpenBankProject::GetSocialMediaHandles200ResponseChecksInner](docs/GetSocialMediaHandles200ResponseChecksInner.md)
+ - [OpenBankProject::GetStatusOfCreditCardOrder200Response](docs/GetStatusOfCreditCardOrder200Response.md)
+ - [OpenBankProject::GetStatusOfCreditCardOrder200ResponseCardsInner](docs/GetStatusOfCreditCardOrder200ResponseCardsInner.md)
+ - [OpenBankProject::GetStoredProcedureConnectorHealth200Response](docs/GetStoredProcedureConnectorHealth200Response.md)
+ - [OpenBankProject::GetSystemDynamicEntities200Response](docs/GetSystemDynamicEntities200Response.md)
+ - [OpenBankProject::GetSystemDynamicEntities200ResponseDynamicEntitiesInner](docs/GetSystemDynamicEntities200ResponseDynamicEntitiesInner.md)
+ - [OpenBankProject::GetSystemViewById200Response](docs/GetSystemViewById200Response.md)
+ - [OpenBankProject::GetSystemViews200Response](docs/GetSystemViews200Response.md)
+ - [OpenBankProject::GetSystemViewsIds200Response](docs/GetSystemViewsIds200Response.md)
+ - [OpenBankProject::GetSystemViewsIds200ResponseViewsInner](docs/GetSystemViewsIds200ResponseViewsInner.md)
+ - [OpenBankProject::GetTagsForViewOnAccount200Response](docs/GetTagsForViewOnAccount200Response.md)
+ - [OpenBankProject::GetTagsForViewOnAccount200ResponseTagsInner](docs/GetTagsForViewOnAccount200ResponseTagsInner.md)
+ - [OpenBankProject::GetTagsForViewOnAccount200ResponseTagsInnerUser](docs/GetTagsForViewOnAccount200ResponseTagsInnerUser.md)
+ - [OpenBankProject::GetTaxResidence200Response](docs/GetTaxResidence200Response.md)
+ - [OpenBankProject::GetTopAPIs200Response](docs/GetTopAPIs200Response.md)
+ - [OpenBankProject::GetTopAPIs200ResponseTopApisInner](docs/GetTopAPIs200ResponseTopApisInner.md)
+ - [OpenBankProject::GetTransactionAttributes200Response](docs/GetTransactionAttributes200Response.md)
+ - [OpenBankProject::GetTransactionByIdForBankAccount200Response](docs/GetTransactionByIdForBankAccount200Response.md)
+ - [OpenBankProject::GetTransactionByIdForBankAccount200ResponseMetadata](docs/GetTransactionByIdForBankAccount200ResponseMetadata.md)
+ - [OpenBankProject::GetTransactionByIdForBankAccount200ResponseMetadataImagesInner](docs/GetTransactionByIdForBankAccount200ResponseMetadataImagesInner.md)
+ - [OpenBankProject::GetTransactionByIdForBankAccount200ResponseOtherAccount](docs/GetTransactionByIdForBankAccount200ResponseOtherAccount.md)
+ - [OpenBankProject::GetTransactionNarrative200Response](docs/GetTransactionNarrative200Response.md)
+ - [OpenBankProject::GetTransactionRequestAttributeById200Response](docs/GetTransactionRequestAttributeById200Response.md)
+ - [OpenBankProject::GetTransactionRequestAttributeDefinition200Response](docs/GetTransactionRequestAttributeDefinition200Response.md)
+ - [OpenBankProject::GetTransactionRequestAttributeDefinition200ResponseAttributesInner](docs/GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
+ - [OpenBankProject::GetTransactionRequestAttributes200Response](docs/GetTransactionRequestAttributes200Response.md)
+ - [OpenBankProject::GetTransactionRequestById200Response](docs/GetTransactionRequestById200Response.md)
+ - [OpenBankProject::GetTransactionRequestById200ResponseChallenge](docs/GetTransactionRequestById200ResponseChallenge.md)
+ - [OpenBankProject::GetTransactionRequestTypes200Response](docs/GetTransactionRequestTypes200Response.md)
+ - [OpenBankProject::GetTransactionRequestTypes200ResponseTransactionRequestTypesInner](docs/GetTransactionRequestTypes200ResponseTransactionRequestTypesInner.md)
+ - [OpenBankProject::GetTransactionRequestTypesSupportedByBank200Response](docs/GetTransactionRequestTypesSupportedByBank200Response.md)
+ - [OpenBankProject::GetTransactionRequestTypesSupportedByBank200ResponseTransactionRequestTypesInner](docs/GetTransactionRequestTypesSupportedByBank200ResponseTransactionRequestTypesInner.md)
+ - [OpenBankProject::GetTransactionRequests200Response](docs/GetTransactionRequests200Response.md)
+ - [OpenBankProject::GetTransactionTypes200Response](docs/GetTransactionTypes200Response.md)
+ - [OpenBankProject::GetTransactionTypes200ResponseTransactionTypesInner](docs/GetTransactionTypes200ResponseTransactionTypesInner.md)
+ - [OpenBankProject::GetTransactionTypes200ResponseTransactionTypesInnerId](docs/GetTransactionTypes200ResponseTransactionTypesInnerId.md)
+ - [OpenBankProject::GetTransactionsForBankAccount200Response](docs/GetTransactionsForBankAccount200Response.md)
+ - [OpenBankProject::GetTransactionsForBankAccount200ResponseTransactionsInner](docs/GetTransactionsForBankAccount200ResponseTransactionsInner.md)
+ - [OpenBankProject::GetTransactionsForBankAccount200ResponseTransactionsInnerOtherAccount](docs/GetTransactionsForBankAccount200ResponseTransactionsInnerOtherAccount.md)
+ - [OpenBankProject::GetTransactionsForBankAccount200ResponseTransactionsInnerThisAccount](docs/GetTransactionsForBankAccount200ResponseTransactionsInnerThisAccount.md)
+ - [OpenBankProject::GetUserAuthContexts200Response](docs/GetUserAuthContexts200Response.md)
+ - [OpenBankProject::GetUserByProviderAndUsername200Response](docs/GetUserByProviderAndUsername200Response.md)
+ - [OpenBankProject::GetUserByProviderAndUsername200ResponseAgreementsInner](docs/GetUserByProviderAndUsername200ResponseAgreementsInner.md)
+ - [OpenBankProject::GetUserByProviderAndUsername200ResponseEntitlements](docs/GetUserByProviderAndUsername200ResponseEntitlements.md)
+ - [OpenBankProject::GetUserByProviderAndUsername200ResponseViews](docs/GetUserByProviderAndUsername200ResponseViews.md)
+ - [OpenBankProject::GetUserCustomerLinksByCustomerId200Response](docs/GetUserCustomerLinksByCustomerId200Response.md)
+ - [OpenBankProject::GetUserCustomerLinksByCustomerId200ResponseUserCustomerLinksInner](docs/GetUserCustomerLinksByCustomerId200ResponseUserCustomerLinksInner.md)
+ - [OpenBankProject::GetUserGroupMemberships200Response](docs/GetUserGroupMemberships200Response.md)
+ - [OpenBankProject::GetUserGroupMemberships200ResponseGroupEntitlementsInner](docs/GetUserGroupMemberships200ResponseGroupEntitlementsInner.md)
+ - [OpenBankProject::GetUserInvitationAnonymousRequest](docs/GetUserInvitationAnonymousRequest.md)
+ - [OpenBankProject::GetUserInvitations200Response](docs/GetUserInvitations200Response.md)
+ - [OpenBankProject::GetUserLockStatus200Response](docs/GetUserLockStatus200Response.md)
+ - [OpenBankProject::GetUsers200Response](docs/GetUsers200Response.md)
+ - [OpenBankProject::GetUsers200ResponseUsersInner](docs/GetUsers200ResponseUsersInner.md)
+ - [OpenBankProject::GetUsersByEmail200Response](docs/GetUsersByEmail200Response.md)
+ - [OpenBankProject::GetUsersByEmail200ResponseUsersInner](docs/GetUsersByEmail200ResponseUsersInner.md)
+ - [OpenBankProject::GetUsersWithAccountAccess200Response](docs/GetUsersWithAccountAccess200Response.md)
+ - [OpenBankProject::GetUsersWithAccountAccess200ResponseUsersInner](docs/GetUsersWithAccountAccess200ResponseUsersInner.md)
+ - [OpenBankProject::GetViewPermissions200Response](docs/GetViewPermissions200Response.md)
+ - [OpenBankProject::GetViewPermissions200ResponsePermissionsInner](docs/GetViewPermissions200ResponsePermissionsInner.md)
+ - [OpenBankProject::GetViewsForBankAccount200Response](docs/GetViewsForBankAccount200Response.md)
+ - [OpenBankProject::GetViewsForBankAccount200ResponseViewsInner](docs/GetViewsForBankAccount200ResponseViewsInner.md)
+ - [OpenBankProject::GetWebUiProps200Response](docs/GetWebUiProps200Response.md)
+ - [OpenBankProject::GetWebUiProps200ResponseWebuiPropsInner](docs/GetWebUiProps200ResponseWebuiPropsInner.md)
+ - [OpenBankProject::GetWhereTagForViewOnTransaction200Response](docs/GetWhereTagForViewOnTransaction200Response.md)
+ - [OpenBankProject::HasAccountAccess200Response](docs/HasAccountAccess200Response.md)
+ - [OpenBankProject::HeadAtms200Response](docs/HeadAtms200Response.md)
+ - [OpenBankProject::HeadAtms200ResponseAtmsInner](docs/HeadAtms200ResponseAtmsInner.md)
+ - [OpenBankProject::IbanChecker200Response](docs/IbanChecker200Response.md)
+ - [OpenBankProject::IbanChecker200ResponseDetails](docs/IbanChecker200ResponseDetails.md)
+ - [OpenBankProject::IbanCheckerRequest](docs/IbanCheckerRequest.md)
+ - [OpenBankProject::InvalidateCacheNamespace200Response](docs/InvalidateCacheNamespace200Response.md)
+ - [OpenBankProject::InvalidateCacheNamespaceRequest](docs/InvalidateCacheNamespaceRequest.md)
+ - [OpenBankProject::LockUserByProviderAndUsername200Response](docs/LockUserByProviderAndUsername200Response.md)
+ - [OpenBankProject::PrivateAccountsAtOneBank200Response](docs/PrivateAccountsAtOneBank200Response.md)
+ - [OpenBankProject::PrivateAccountsAtOneBank200ResponseAccountsInner](docs/PrivateAccountsAtOneBank200ResponseAccountsInner.md)
+ - [OpenBankProject::PrivateAccountsAtOneBank200ResponseAccountsInnerViewsInner](docs/PrivateAccountsAtOneBank200ResponseAccountsInnerViewsInner.md)
+ - [OpenBankProject::PublicAccountsAllBanks200Response](docs/PublicAccountsAllBanks200Response.md)
+ - [OpenBankProject::PublicAccountsAllBanks200ResponseAccountsInner](docs/PublicAccountsAllBanks200ResponseAccountsInner.md)
+ - [OpenBankProject::PublicAccountsAllBanks200ResponseAccountsInnerViewsAvailableInner](docs/PublicAccountsAllBanks200ResponseAccountsInnerViewsAvailableInner.md)
+ - [OpenBankProject::PublishSignalMessage200Response](docs/PublishSignalMessage200Response.md)
+ - [OpenBankProject::PublishSignalMessageRequest](docs/PublishSignalMessageRequest.md)
+ - [OpenBankProject::RefreshUser200Response](docs/RefreshUser200Response.md)
+ - [OpenBankProject::RegulatedEntities200Response](docs/RegulatedEntities200Response.md)
+ - [OpenBankProject::RejectAccountAccessRequest200Response](docs/RejectAccountAccessRequest200Response.md)
+ - [OpenBankProject::RejectAccountAccessRequestRequest](docs/RejectAccountAccessRequestRequest.md)
+ - [OpenBankProject::ResetPasswordComplete200Response](docs/ResetPasswordComplete200Response.md)
+ - [OpenBankProject::ResetPasswordCompleteRequest](docs/ResetPasswordCompleteRequest.md)
+ - [OpenBankProject::ResetPasswordUrl200Response](docs/ResetPasswordUrl200Response.md)
+ - [OpenBankProject::ResetPasswordUrlAnonymousRequest](docs/ResetPasswordUrlAnonymousRequest.md)
+ - [OpenBankProject::ResetPasswordUrlRequest](docs/ResetPasswordUrlRequest.md)
+ - [OpenBankProject::RevokeUserAccessToViewById200Response](docs/RevokeUserAccessToViewById200Response.md)
+ - [OpenBankProject::RevokeUserAccessToViewByIdRequest](docs/RevokeUserAccessToViewByIdRequest.md)
+ - [OpenBankProject::Root200Response](docs/Root200Response.md)
+ - [OpenBankProject::Root200ResponseHostedAt](docs/Root200ResponseHostedAt.md)
+ - [OpenBankProject::Root200ResponseHostedBy](docs/Root200ResponseHostedBy.md)
+ - [OpenBankProject::SandboxDataImportRequest](docs/SandboxDataImportRequest.md)
+ - [OpenBankProject::SandboxDataImportRequestAccountsInner](docs/SandboxDataImportRequestAccountsInner.md)
+ - [OpenBankProject::SandboxDataImportRequestAtmsInner](docs/SandboxDataImportRequestAtmsInner.md)
+ - [OpenBankProject::SandboxDataImportRequestBanksInner](docs/SandboxDataImportRequestBanksInner.md)
+ - [OpenBankProject::SandboxDataImportRequestBranchesInner](docs/SandboxDataImportRequestBranchesInner.md)
+ - [OpenBankProject::SandboxDataImportRequestBranchesInnerAddress](docs/SandboxDataImportRequestBranchesInnerAddress.md)
+ - [OpenBankProject::SandboxDataImportRequestBranchesInnerDriveUp](docs/SandboxDataImportRequestBranchesInnerDriveUp.md)
+ - [OpenBankProject::SandboxDataImportRequestCrmEventsInner](docs/SandboxDataImportRequestCrmEventsInner.md)
+ - [OpenBankProject::SandboxDataImportRequestCrmEventsInnerCustomer](docs/SandboxDataImportRequestCrmEventsInnerCustomer.md)
+ - [OpenBankProject::SandboxDataImportRequestProductsInner](docs/SandboxDataImportRequestProductsInner.md)
+ - [OpenBankProject::SandboxDataImportRequestTransactionsInner](docs/SandboxDataImportRequestTransactionsInner.md)
+ - [OpenBankProject::SandboxDataImportRequestTransactionsInnerDetails](docs/SandboxDataImportRequestTransactionsInnerDetails.md)
+ - [OpenBankProject::SandboxDataImportRequestTransactionsInnerThisAccount](docs/SandboxDataImportRequestTransactionsInnerThisAccount.md)
+ - [OpenBankProject::SandboxDataImportRequestUsersInner](docs/SandboxDataImportRequestUsersInner.md)
+ - [OpenBankProject::SaveHistoricalTransaction200Response](docs/SaveHistoricalTransaction200Response.md)
+ - [OpenBankProject::SaveHistoricalTransactionRequest](docs/SaveHistoricalTransactionRequest.md)
+ - [OpenBankProject::SaveHistoricalTransactionRequestTo](docs/SaveHistoricalTransactionRequestTo.md)
+ - [OpenBankProject::SuggestedSessionTimeout200Response](docs/SuggestedSessionTimeout200Response.md)
+ - [OpenBankProject::UpdateAbacRuleRequest](docs/UpdateAbacRuleRequest.md)
+ - [OpenBankProject::UpdateAccount200Response](docs/UpdateAccount200Response.md)
+ - [OpenBankProject::UpdateAccountAttributeRequest](docs/UpdateAccountAttributeRequest.md)
+ - [OpenBankProject::UpdateAccountLabelRequest](docs/UpdateAccountLabelRequest.md)
+ - [OpenBankProject::UpdateAccountRequest](docs/UpdateAccountRequest.md)
+ - [OpenBankProject::UpdateAgentStatusRequest](docs/UpdateAgentStatusRequest.md)
+ - [OpenBankProject::UpdateAtmAccessibilityFeatures200Response](docs/UpdateAtmAccessibilityFeatures200Response.md)
+ - [OpenBankProject::UpdateAtmAccessibilityFeaturesRequest](docs/UpdateAtmAccessibilityFeaturesRequest.md)
+ - [OpenBankProject::UpdateAtmAttributeRequest](docs/UpdateAtmAttributeRequest.md)
+ - [OpenBankProject::UpdateAtmLocationCategories200Response](docs/UpdateAtmLocationCategories200Response.md)
+ - [OpenBankProject::UpdateAtmLocationCategoriesRequest](docs/UpdateAtmLocationCategoriesRequest.md)
+ - [OpenBankProject::UpdateAtmNotes200Response](docs/UpdateAtmNotes200Response.md)
+ - [OpenBankProject::UpdateAtmNotesRequest](docs/UpdateAtmNotesRequest.md)
+ - [OpenBankProject::UpdateAtmRequest](docs/UpdateAtmRequest.md)
+ - [OpenBankProject::UpdateAtmServices200Response](docs/UpdateAtmServices200Response.md)
+ - [OpenBankProject::UpdateAtmServicesRequest](docs/UpdateAtmServicesRequest.md)
+ - [OpenBankProject::UpdateAtmSupportedCurrencies200Response](docs/UpdateAtmSupportedCurrencies200Response.md)
+ - [OpenBankProject::UpdateAtmSupportedCurrenciesRequest](docs/UpdateAtmSupportedCurrenciesRequest.md)
+ - [OpenBankProject::UpdateAtmSupportedLanguages200Response](docs/UpdateAtmSupportedLanguages200Response.md)
+ - [OpenBankProject::UpdateAtmSupportedLanguagesRequest](docs/UpdateAtmSupportedLanguagesRequest.md)
+ - [OpenBankProject::UpdateAuthenticationTypeValidationRequest](docs/UpdateAuthenticationTypeValidationRequest.md)
+ - [OpenBankProject::UpdateBank200Response](docs/UpdateBank200Response.md)
+ - [OpenBankProject::UpdateBankLevelDynamicEndpointHostRequest](docs/UpdateBankLevelDynamicEndpointHostRequest.md)
+ - [OpenBankProject::UpdateBankLevelDynamicEntity200Response](docs/UpdateBankLevelDynamicEntity200Response.md)
+ - [OpenBankProject::UpdateBankLevelDynamicResourceDocRequest](docs/UpdateBankLevelDynamicResourceDocRequest.md)
+ - [OpenBankProject::UpdateBankRequest](docs/UpdateBankRequest.md)
+ - [OpenBankProject::UpdateConnectorMethodRequest](docs/UpdateConnectorMethodRequest.md)
+ - [OpenBankProject::UpdateConsentAccountAccessByConsentIdRequest](docs/UpdateConsentAccountAccessByConsentIdRequest.md)
+ - [OpenBankProject::UpdateConsentAccountAccessByConsentIdRequestAccess](docs/UpdateConsentAccountAccessByConsentIdRequestAccess.md)
+ - [OpenBankProject::UpdateConsumerCertificateRequest](docs/UpdateConsumerCertificateRequest.md)
+ - [OpenBankProject::UpdateConsumerLogoURLRequest](docs/UpdateConsumerLogoURLRequest.md)
+ - [OpenBankProject::UpdateConsumerName200Response](docs/UpdateConsumerName200Response.md)
+ - [OpenBankProject::UpdateConsumerName200ResponseCertificateInfo](docs/UpdateConsumerName200ResponseCertificateInfo.md)
+ - [OpenBankProject::UpdateConsumerName200ResponseCreatedByUser](docs/UpdateConsumerName200ResponseCreatedByUser.md)
+ - [OpenBankProject::UpdateConsumerNameRequest](docs/UpdateConsumerNameRequest.md)
+ - [OpenBankProject::UpdateConsumerRedirectURL200Response](docs/UpdateConsumerRedirectURL200Response.md)
+ - [OpenBankProject::UpdateConsumerRedirectURLRequest](docs/UpdateConsumerRedirectURLRequest.md)
+ - [OpenBankProject::UpdateCounterpartyCorporateLocationRequest](docs/UpdateCounterpartyCorporateLocationRequest.md)
+ - [OpenBankProject::UpdateCounterpartyImageUrlRequest](docs/UpdateCounterpartyImageUrlRequest.md)
+ - [OpenBankProject::UpdateCounterpartyMoreInfoRequest](docs/UpdateCounterpartyMoreInfoRequest.md)
+ - [OpenBankProject::UpdateCounterpartyOpenCorporatesUrlRequest](docs/UpdateCounterpartyOpenCorporatesUrlRequest.md)
+ - [OpenBankProject::UpdateCounterpartyPhysicalLocationRequest](docs/UpdateCounterpartyPhysicalLocationRequest.md)
+ - [OpenBankProject::UpdateCounterpartyUrlRequest](docs/UpdateCounterpartyUrlRequest.md)
+ - [OpenBankProject::UpdateCustomViewRequest](docs/UpdateCustomViewRequest.md)
+ - [OpenBankProject::UpdateCustomerAccountLinkByIdRequest](docs/UpdateCustomerAccountLinkByIdRequest.md)
+ - [OpenBankProject::UpdateCustomerBranch200Response](docs/UpdateCustomerBranch200Response.md)
+ - [OpenBankProject::UpdateCustomerBranchRequest](docs/UpdateCustomerBranchRequest.md)
+ - [OpenBankProject::UpdateCustomerCreditLimitRequest](docs/UpdateCustomerCreditLimitRequest.md)
+ - [OpenBankProject::UpdateCustomerCreditRatingAndSourceRequest](docs/UpdateCustomerCreditRatingAndSourceRequest.md)
+ - [OpenBankProject::UpdateCustomerDataRequest](docs/UpdateCustomerDataRequest.md)
+ - [OpenBankProject::UpdateCustomerEmailRequest](docs/UpdateCustomerEmailRequest.md)
+ - [OpenBankProject::UpdateCustomerIdentityRequest](docs/UpdateCustomerIdentityRequest.md)
+ - [OpenBankProject::UpdateDynamicMessageDocRequest](docs/UpdateDynamicMessageDocRequest.md)
+ - [OpenBankProject::UpdateFeaturedApiCollectionRequest](docs/UpdateFeaturedApiCollectionRequest.md)
+ - [OpenBankProject::UpdateGroupRequest](docs/UpdateGroupRequest.md)
+ - [OpenBankProject::UpdateMandateProvisionRequest](docs/UpdateMandateProvisionRequest.md)
+ - [OpenBankProject::UpdateMandateRequest](docs/UpdateMandateRequest.md)
+ - [OpenBankProject::UpdateProductFeeRequest](docs/UpdateProductFeeRequest.md)
+ - [OpenBankProject::UpdateRateLimitsRequest](docs/UpdateRateLimitsRequest.md)
+ - [OpenBankProject::UpdateSignatoryPanelRequest](docs/UpdateSignatoryPanelRequest.md)
+ - [OpenBankProject::UpdateSystemDynamicEntity200Response](docs/UpdateSystemDynamicEntity200Response.md)
+ - [OpenBankProject::UpdateSystemDynamicEntityRequest](docs/UpdateSystemDynamicEntityRequest.md)
+ - [OpenBankProject::UpdateSystemDynamicEntityRequestSchema](docs/UpdateSystemDynamicEntityRequestSchema.md)
+ - [OpenBankProject::UpdateSystemDynamicEntityRequestSchemaProperties](docs/UpdateSystemDynamicEntityRequestSchemaProperties.md)
+ - [OpenBankProject::UpdateSystemDynamicEntityRequestSchemaPropertiesNotificationsEnabled](docs/UpdateSystemDynamicEntityRequestSchemaPropertiesNotificationsEnabled.md)
+ - [OpenBankProject::UpdateSystemDynamicEntityRequestSchemaPropertiesTheme](docs/UpdateSystemDynamicEntityRequestSchemaPropertiesTheme.md)
+ - [OpenBankProject::UpdateSystemLevelEndpointTag200Response](docs/UpdateSystemLevelEndpointTag200Response.md)
+ - [OpenBankProject::UpdateSystemLevelEndpointTagRequest](docs/UpdateSystemLevelEndpointTagRequest.md)
+ - [OpenBankProject::UpdateSystemViewRequest](docs/UpdateSystemViewRequest.md)
+ - [OpenBankProject::UpdateTransactionNarrative200Response](docs/UpdateTransactionNarrative200Response.md)
+ - [OpenBankProject::UpdateTransactionRequestStatusRequest](docs/UpdateTransactionRequestStatusRequest.md)
+ - [OpenBankProject::UpdateViewForBankAccountRequest](docs/UpdateViewForBankAccountRequest.md)
+ - [OpenBankProject::UpdateWhereTagForViewOnTransactionRequest](docs/UpdateWhereTagForViewOnTransactionRequest.md)
+ - [OpenBankProject::UpdatedCardForBankRequest](docs/UpdatedCardForBankRequest.md)
+ - [OpenBankProject::ValidateAbacRule200Response](docs/ValidateAbacRule200Response.md)
+ - [OpenBankProject::ValidateAbacRuleRequest](docs/ValidateAbacRuleRequest.md)
+ - [OpenBankProject::ValidateUserByUserId200Response](docs/ValidateUserByUserId200Response.md)
+ - [OpenBankProject::ValidateUserEmail200Response](docs/ValidateUserEmail200Response.md)
+ - [OpenBankProject::ValidateUserEmailRequest](docs/ValidateUserEmailRequest.md)
+ - [OpenBankProject::VerifyOidcClient200Response](docs/VerifyOidcClient200Response.md)
+ - [OpenBankProject::VerifyOidcClientRequest](docs/VerifyOidcClientRequest.md)
+ - [OpenBankProject::VerifyUserCredentials200Response](docs/VerifyUserCredentials200Response.md)
+ - [OpenBankProject::VerifyUserCredentialsRequest](docs/VerifyUserCredentialsRequest.md)
+ - [OpenBankProject::WaitingForGodot200Response](docs/WaitingForGodot200Response.md)
 
 
 ## Documentation for Authorization
@@ -3034,7 +2162,7 @@ Authentication schemes defined for the API:
 
 
 - **Type**: API key
-- **API key parameter name**: Authorization
+- **API key parameter name**: DirectLogin
 - **Location**: HTTP header
 
 ### GatewayLogin
@@ -3049,6 +2177,6 @@ Authentication schemes defined for the API:
 
 - **Type**: OAuth
 - **Flow**: accessCode
-- **Authorization URL**: /oauth/authorize
+- **Authorization URL**: http://127.0.0.1:8080/oauth/authorize
 - **Scopes**: N/A
 

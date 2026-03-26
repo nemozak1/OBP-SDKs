@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,19 +75,19 @@ class CardAttributeApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv310CreateCardAttribute' => [
+        'createCardAttribute' => [
             'application/json',
         ],
-        'oBPv310UpdateCardAttribute' => [
+        'createOrUpdateCardAttributeDefinition' => [
             'application/json',
         ],
-        'oBPv400CreateOrUpdateCardAttributeDefinition' => [
+        'deleteCardAttributeDefinition' => [
             'application/json',
         ],
-        'oBPv400DeleteCardAttributeDefinition' => [
+        'getCardAttributeDefinition' => [
             'application/json',
         ],
-        'oBPv400GetCardAttributeDefinition' => [
+        'updateCardAttribute' => [
             'application/json',
         ],
     ];
@@ -139,42 +139,42 @@ class CardAttributeApi
     }
 
     /**
-     * Operation oBPv310CreateCardAttribute
+     * Operation createCardAttribute
      *
      * Create Card Attribute
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $cardid The CARDID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CreateCardAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCardAttribute'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv310CreateCardAttribute200Response
+     * @return \OpenBankProject\Model\CreateCardAttribute200Response
      */
-    public function oBPv310CreateCardAttribute($bankid, $cardid, $obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv310CreateCardAttribute'][0])
+    public function createCardAttribute($bankid, $cardid, $create_personal_data_field_request, string $contentType = self::contentTypes['createCardAttribute'][0])
     {
-        list($response) = $this->oBPv310CreateCardAttributeWithHttpInfo($bankid, $cardid, $obpv600_create_personal_data_field_request, $contentType);
+        list($response) = $this->createCardAttributeWithHttpInfo($bankid, $cardid, $create_personal_data_field_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv310CreateCardAttributeWithHttpInfo
+     * Operation createCardAttributeWithHttpInfo
      *
      * Create Card Attribute
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $cardid The CARDID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CreateCardAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCardAttribute'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv310CreateCardAttribute200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\CreateCardAttribute200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv310CreateCardAttributeWithHttpInfo($bankid, $cardid, $obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv310CreateCardAttribute'][0])
+    public function createCardAttributeWithHttpInfo($bankid, $cardid, $create_personal_data_field_request, string $contentType = self::contentTypes['createCardAttribute'][0])
     {
-        $request = $this->oBPv310CreateCardAttributeRequest($bankid, $cardid, $obpv600_create_personal_data_field_request, $contentType);
+        $request = $this->createCardAttributeRequest($bankid, $cardid, $create_personal_data_field_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -202,7 +202,7 @@ class CardAttributeApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv310CreateCardAttribute200Response',
+                        '\OpenBankProject\Model\CreateCardAttribute200Response',
                         $request,
                         $response,
                     );
@@ -224,7 +224,7 @@ class CardAttributeApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv310CreateCardAttribute200Response',
+                '\OpenBankProject\Model\CreateCardAttribute200Response',
                 $request,
                 $response,
             );
@@ -233,7 +233,7 @@ class CardAttributeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv310CreateCardAttribute200Response',
+                        '\OpenBankProject\Model\CreateCardAttribute200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -246,21 +246,21 @@ class CardAttributeApi
     }
 
     /**
-     * Operation oBPv310CreateCardAttributeAsync
+     * Operation createCardAttributeAsync
      *
      * Create Card Attribute
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $cardid The CARDID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CreateCardAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCardAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310CreateCardAttributeAsync($bankid, $cardid, $obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv310CreateCardAttribute'][0])
+    public function createCardAttributeAsync($bankid, $cardid, $create_personal_data_field_request, string $contentType = self::contentTypes['createCardAttribute'][0])
     {
-        return $this->oBPv310CreateCardAttributeAsyncWithHttpInfo($bankid, $cardid, $obpv600_create_personal_data_field_request, $contentType)
+        return $this->createCardAttributeAsyncWithHttpInfo($bankid, $cardid, $create_personal_data_field_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -269,22 +269,22 @@ class CardAttributeApi
     }
 
     /**
-     * Operation oBPv310CreateCardAttributeAsyncWithHttpInfo
+     * Operation createCardAttributeAsyncWithHttpInfo
      *
      * Create Card Attribute
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $cardid The CARDID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CreateCardAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCardAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310CreateCardAttributeAsyncWithHttpInfo($bankid, $cardid, $obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv310CreateCardAttribute'][0])
+    public function createCardAttributeAsyncWithHttpInfo($bankid, $cardid, $create_personal_data_field_request, string $contentType = self::contentTypes['createCardAttribute'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv310CreateCardAttribute200Response';
-        $request = $this->oBPv310CreateCardAttributeRequest($bankid, $cardid, $obpv600_create_personal_data_field_request, $contentType);
+        $returnType = '\OpenBankProject\Model\CreateCardAttribute200Response';
+        $request = $this->createCardAttributeRequest($bankid, $cardid, $create_personal_data_field_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -323,37 +323,37 @@ class CardAttributeApi
     }
 
     /**
-     * Create request for operation 'oBPv310CreateCardAttribute'
+     * Create request for operation 'createCardAttribute'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $cardid The CARDID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CreateCardAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCardAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv310CreateCardAttributeRequest($bankid, $cardid, $obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv310CreateCardAttribute'][0])
+    public function createCardAttributeRequest($bankid, $cardid, $create_personal_data_field_request, string $contentType = self::contentTypes['createCardAttribute'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv310CreateCardAttribute'
+                'Missing the required parameter $bankid when calling createCardAttribute'
             );
         }
 
         // verify the required parameter 'cardid' is set
         if ($cardid === null || (is_array($cardid) && count($cardid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $cardid when calling oBPv310CreateCardAttribute'
+                'Missing the required parameter $cardid when calling createCardAttribute'
             );
         }
 
-        // verify the required parameter 'obpv600_create_personal_data_field_request' is set
-        if ($obpv600_create_personal_data_field_request === null || (is_array($obpv600_create_personal_data_field_request) && count($obpv600_create_personal_data_field_request) === 0)) {
+        // verify the required parameter 'create_personal_data_field_request' is set
+        if ($create_personal_data_field_request === null || (is_array($create_personal_data_field_request) && count($create_personal_data_field_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_create_personal_data_field_request when calling oBPv310CreateCardAttribute'
+                'Missing the required parameter $create_personal_data_field_request when calling createCardAttribute'
             );
         }
 
@@ -392,12 +392,12 @@ class CardAttributeApi
         );
 
         // for model (json/xml)
-        if (isset($obpv600_create_personal_data_field_request)) {
+        if (isset($create_personal_data_field_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_create_personal_data_field_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_personal_data_field_request));
             } else {
-                $httpBody = $obpv600_create_personal_data_field_request;
+                $httpBody = $create_personal_data_field_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -433,9 +433,9 @@ class CardAttributeApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -460,44 +460,40 @@ class CardAttributeApi
     }
 
     /**
-     * Operation oBPv310UpdateCardAttribute
+     * Operation createOrUpdateCardAttributeDefinition
      *
-     * Update Card Attribute
+     * Create or Update Card Attribute Definition
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $cardid The CARDID identifier (required)
-     * @param  string $cardattributeid The CARDATTRIBUTEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310UpdateCardAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateOrUpdateTransactionRequestAttributeDefinitionRequest $create_or_update_transaction_request_attribute_definition_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createOrUpdateCardAttributeDefinition'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv310CreateCardAttribute200Response
+     * @return \OpenBankProject\Model\GetTransactionRequestAttributeDefinition200ResponseAttributesInner
      */
-    public function oBPv310UpdateCardAttribute($bankid, $cardid, $cardattributeid, $obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv310UpdateCardAttribute'][0])
+    public function createOrUpdateCardAttributeDefinition($bankid, $create_or_update_transaction_request_attribute_definition_request, string $contentType = self::contentTypes['createOrUpdateCardAttributeDefinition'][0])
     {
-        list($response) = $this->oBPv310UpdateCardAttributeWithHttpInfo($bankid, $cardid, $cardattributeid, $obpv600_create_personal_data_field_request, $contentType);
+        list($response) = $this->createOrUpdateCardAttributeDefinitionWithHttpInfo($bankid, $create_or_update_transaction_request_attribute_definition_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv310UpdateCardAttributeWithHttpInfo
+     * Operation createOrUpdateCardAttributeDefinitionWithHttpInfo
      *
-     * Update Card Attribute
+     * Create or Update Card Attribute Definition
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $cardid The CARDID identifier (required)
-     * @param  string $cardattributeid The CARDATTRIBUTEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310UpdateCardAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateOrUpdateTransactionRequestAttributeDefinitionRequest $create_or_update_transaction_request_attribute_definition_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createOrUpdateCardAttributeDefinition'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv310CreateCardAttribute200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetTransactionRequestAttributeDefinition200ResponseAttributesInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv310UpdateCardAttributeWithHttpInfo($bankid, $cardid, $cardattributeid, $obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv310UpdateCardAttribute'][0])
+    public function createOrUpdateCardAttributeDefinitionWithHttpInfo($bankid, $create_or_update_transaction_request_attribute_definition_request, string $contentType = self::contentTypes['createOrUpdateCardAttributeDefinition'][0])
     {
-        $request = $this->oBPv310UpdateCardAttributeRequest($bankid, $cardid, $cardattributeid, $obpv600_create_personal_data_field_request, $contentType);
+        $request = $this->createOrUpdateCardAttributeDefinitionRequest($bankid, $create_or_update_transaction_request_attribute_definition_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -525,7 +521,7 @@ class CardAttributeApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv310CreateCardAttribute200Response',
+                        '\OpenBankProject\Model\GetTransactionRequestAttributeDefinition200ResponseAttributesInner',
                         $request,
                         $response,
                     );
@@ -547,7 +543,7 @@ class CardAttributeApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv310CreateCardAttribute200Response',
+                '\OpenBankProject\Model\GetTransactionRequestAttributeDefinition200ResponseAttributesInner',
                 $request,
                 $response,
             );
@@ -556,7 +552,7 @@ class CardAttributeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv310CreateCardAttribute200Response',
+                        '\OpenBankProject\Model\GetTransactionRequestAttributeDefinition200ResponseAttributesInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -569,22 +565,20 @@ class CardAttributeApi
     }
 
     /**
-     * Operation oBPv310UpdateCardAttributeAsync
+     * Operation createOrUpdateCardAttributeDefinitionAsync
      *
-     * Update Card Attribute
+     * Create or Update Card Attribute Definition
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $cardid The CARDID identifier (required)
-     * @param  string $cardattributeid The CARDATTRIBUTEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310UpdateCardAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateOrUpdateTransactionRequestAttributeDefinitionRequest $create_or_update_transaction_request_attribute_definition_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createOrUpdateCardAttributeDefinition'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310UpdateCardAttributeAsync($bankid, $cardid, $cardattributeid, $obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv310UpdateCardAttribute'][0])
+    public function createOrUpdateCardAttributeDefinitionAsync($bankid, $create_or_update_transaction_request_attribute_definition_request, string $contentType = self::contentTypes['createOrUpdateCardAttributeDefinition'][0])
     {
-        return $this->oBPv310UpdateCardAttributeAsyncWithHttpInfo($bankid, $cardid, $cardattributeid, $obpv600_create_personal_data_field_request, $contentType)
+        return $this->createOrUpdateCardAttributeDefinitionAsyncWithHttpInfo($bankid, $create_or_update_transaction_request_attribute_definition_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -593,23 +587,21 @@ class CardAttributeApi
     }
 
     /**
-     * Operation oBPv310UpdateCardAttributeAsyncWithHttpInfo
+     * Operation createOrUpdateCardAttributeDefinitionAsyncWithHttpInfo
      *
-     * Update Card Attribute
+     * Create or Update Card Attribute Definition
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $cardid The CARDID identifier (required)
-     * @param  string $cardattributeid The CARDATTRIBUTEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310UpdateCardAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateOrUpdateTransactionRequestAttributeDefinitionRequest $create_or_update_transaction_request_attribute_definition_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createOrUpdateCardAttributeDefinition'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310UpdateCardAttributeAsyncWithHttpInfo($bankid, $cardid, $cardattributeid, $obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv310UpdateCardAttribute'][0])
+    public function createOrUpdateCardAttributeDefinitionAsyncWithHttpInfo($bankid, $create_or_update_transaction_request_attribute_definition_request, string $contentType = self::contentTypes['createOrUpdateCardAttributeDefinition'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv310CreateCardAttribute200Response';
-        $request = $this->oBPv310UpdateCardAttributeRequest($bankid, $cardid, $cardattributeid, $obpv600_create_personal_data_field_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetTransactionRequestAttributeDefinition200ResponseAttributesInner';
+        $request = $this->createOrUpdateCardAttributeDefinitionRequest($bankid, $create_or_update_transaction_request_attribute_definition_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -648,362 +640,29 @@ class CardAttributeApi
     }
 
     /**
-     * Create request for operation 'oBPv310UpdateCardAttribute'
+     * Create request for operation 'createOrUpdateCardAttributeDefinition'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $cardid The CARDID identifier (required)
-     * @param  string $cardattributeid The CARDATTRIBUTEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310UpdateCardAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateOrUpdateTransactionRequestAttributeDefinitionRequest $create_or_update_transaction_request_attribute_definition_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createOrUpdateCardAttributeDefinition'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv310UpdateCardAttributeRequest($bankid, $cardid, $cardattributeid, $obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv310UpdateCardAttribute'][0])
+    public function createOrUpdateCardAttributeDefinitionRequest($bankid, $create_or_update_transaction_request_attribute_definition_request, string $contentType = self::contentTypes['createOrUpdateCardAttributeDefinition'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv310UpdateCardAttribute'
+                'Missing the required parameter $bankid when calling createOrUpdateCardAttributeDefinition'
             );
         }
 
-        // verify the required parameter 'cardid' is set
-        if ($cardid === null || (is_array($cardid) && count($cardid) === 0)) {
+        // verify the required parameter 'create_or_update_transaction_request_attribute_definition_request' is set
+        if ($create_or_update_transaction_request_attribute_definition_request === null || (is_array($create_or_update_transaction_request_attribute_definition_request) && count($create_or_update_transaction_request_attribute_definition_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $cardid when calling oBPv310UpdateCardAttribute'
-            );
-        }
-
-        // verify the required parameter 'cardattributeid' is set
-        if ($cardattributeid === null || (is_array($cardattributeid) && count($cardattributeid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $cardattributeid when calling oBPv310UpdateCardAttribute'
-            );
-        }
-
-        // verify the required parameter 'obpv600_create_personal_data_field_request' is set
-        if ($obpv600_create_personal_data_field_request === null || (is_array($obpv600_create_personal_data_field_request) && count($obpv600_create_personal_data_field_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_create_personal_data_field_request when calling oBPv310UpdateCardAttribute'
-            );
-        }
-
-
-        $resourcePath = '/obp/v3.1.0/management/banks/{bankid}/cards/{cardid}/attributes/{cardattributeid}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($bankid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'bankid' . '}',
-                ObjectSerializer::toPathValue($bankid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($cardid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'cardid' . '}',
-                ObjectSerializer::toPathValue($cardid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($cardattributeid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'cardattributeid' . '}',
-                ObjectSerializer::toPathValue($cardattributeid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($obpv600_create_personal_data_field_request)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_create_personal_data_field_request));
-            } else {
-                $httpBody = $obpv600_create_personal_data_field_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv400CreateOrUpdateCardAttributeDefinition
-     *
-     * Create or Update Card Attribute Definition
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest $obpv400_create_or_update_transaction_request_attribute_definition_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateOrUpdateCardAttributeDefinition'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
-     */
-    public function oBPv400CreateOrUpdateCardAttributeDefinition($bankid, $obpv400_create_or_update_transaction_request_attribute_definition_request, string $contentType = self::contentTypes['oBPv400CreateOrUpdateCardAttributeDefinition'][0])
-    {
-        list($response) = $this->oBPv400CreateOrUpdateCardAttributeDefinitionWithHttpInfo($bankid, $obpv400_create_or_update_transaction_request_attribute_definition_request, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv400CreateOrUpdateCardAttributeDefinitionWithHttpInfo
-     *
-     * Create or Update Card Attribute Definition
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest $obpv400_create_or_update_transaction_request_attribute_definition_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateOrUpdateCardAttributeDefinition'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv400CreateOrUpdateCardAttributeDefinitionWithHttpInfo($bankid, $obpv400_create_or_update_transaction_request_attribute_definition_request, string $contentType = self::contentTypes['oBPv400CreateOrUpdateCardAttributeDefinition'][0])
-    {
-        $request = $this->oBPv400CreateOrUpdateCardAttributeDefinitionRequest($bankid, $obpv400_create_or_update_transaction_request_attribute_definition_request, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv400CreateOrUpdateCardAttributeDefinitionAsync
-     *
-     * Create or Update Card Attribute Definition
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest $obpv400_create_or_update_transaction_request_attribute_definition_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateOrUpdateCardAttributeDefinition'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv400CreateOrUpdateCardAttributeDefinitionAsync($bankid, $obpv400_create_or_update_transaction_request_attribute_definition_request, string $contentType = self::contentTypes['oBPv400CreateOrUpdateCardAttributeDefinition'][0])
-    {
-        return $this->oBPv400CreateOrUpdateCardAttributeDefinitionAsyncWithHttpInfo($bankid, $obpv400_create_or_update_transaction_request_attribute_definition_request, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv400CreateOrUpdateCardAttributeDefinitionAsyncWithHttpInfo
-     *
-     * Create or Update Card Attribute Definition
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest $obpv400_create_or_update_transaction_request_attribute_definition_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateOrUpdateCardAttributeDefinition'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv400CreateOrUpdateCardAttributeDefinitionAsyncWithHttpInfo($bankid, $obpv400_create_or_update_transaction_request_attribute_definition_request, string $contentType = self::contentTypes['oBPv400CreateOrUpdateCardAttributeDefinition'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems';
-        $request = $this->oBPv400CreateOrUpdateCardAttributeDefinitionRequest($bankid, $obpv400_create_or_update_transaction_request_attribute_definition_request, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv400CreateOrUpdateCardAttributeDefinition'
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest $obpv400_create_or_update_transaction_request_attribute_definition_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateOrUpdateCardAttributeDefinition'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv400CreateOrUpdateCardAttributeDefinitionRequest($bankid, $obpv400_create_or_update_transaction_request_attribute_definition_request, string $contentType = self::contentTypes['oBPv400CreateOrUpdateCardAttributeDefinition'][0])
-    {
-
-        // verify the required parameter 'bankid' is set
-        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400CreateOrUpdateCardAttributeDefinition'
-            );
-        }
-
-        // verify the required parameter 'obpv400_create_or_update_transaction_request_attribute_definition_request' is set
-        if ($obpv400_create_or_update_transaction_request_attribute_definition_request === null || (is_array($obpv400_create_or_update_transaction_request_attribute_definition_request) && count($obpv400_create_or_update_transaction_request_attribute_definition_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_create_or_update_transaction_request_attribute_definition_request when calling oBPv400CreateOrUpdateCardAttributeDefinition'
+                'Missing the required parameter $create_or_update_transaction_request_attribute_definition_request when calling createOrUpdateCardAttributeDefinition'
             );
         }
 
@@ -1034,12 +693,12 @@ class CardAttributeApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_create_or_update_transaction_request_attribute_definition_request)) {
+        if (isset($create_or_update_transaction_request_attribute_definition_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_create_or_update_transaction_request_attribute_definition_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_or_update_transaction_request_attribute_definition_request));
             } else {
-                $httpBody = $obpv400_create_or_update_transaction_request_attribute_definition_request;
+                $httpBody = $create_or_update_transaction_request_attribute_definition_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1075,9 +734,9 @@ class CardAttributeApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1102,39 +761,39 @@ class CardAttributeApi
     }
 
     /**
-     * Operation oBPv400DeleteCardAttributeDefinition
+     * Operation deleteCardAttributeDefinition
      *
      * Delete Card Attribute Definition
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $attributedefinitionid The ATTRIBUTEDEFINITIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteCardAttributeDefinition'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCardAttributeDefinition'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv400DeleteCardAttributeDefinition($bankid, $attributedefinitionid, string $contentType = self::contentTypes['oBPv400DeleteCardAttributeDefinition'][0])
+    public function deleteCardAttributeDefinition($bankid, $attributedefinitionid, string $contentType = self::contentTypes['deleteCardAttributeDefinition'][0])
     {
-        $this->oBPv400DeleteCardAttributeDefinitionWithHttpInfo($bankid, $attributedefinitionid, $contentType);
+        $this->deleteCardAttributeDefinitionWithHttpInfo($bankid, $attributedefinitionid, $contentType);
     }
 
     /**
-     * Operation oBPv400DeleteCardAttributeDefinitionWithHttpInfo
+     * Operation deleteCardAttributeDefinitionWithHttpInfo
      *
      * Delete Card Attribute Definition
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $attributedefinitionid The ATTRIBUTEDEFINITIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteCardAttributeDefinition'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCardAttributeDefinition'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400DeleteCardAttributeDefinitionWithHttpInfo($bankid, $attributedefinitionid, string $contentType = self::contentTypes['oBPv400DeleteCardAttributeDefinition'][0])
+    public function deleteCardAttributeDefinitionWithHttpInfo($bankid, $attributedefinitionid, string $contentType = self::contentTypes['deleteCardAttributeDefinition'][0])
     {
-        $request = $this->oBPv400DeleteCardAttributeDefinitionRequest($bankid, $attributedefinitionid, $contentType);
+        $request = $this->deleteCardAttributeDefinitionRequest($bankid, $attributedefinitionid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1170,20 +829,20 @@ class CardAttributeApi
     }
 
     /**
-     * Operation oBPv400DeleteCardAttributeDefinitionAsync
+     * Operation deleteCardAttributeDefinitionAsync
      *
      * Delete Card Attribute Definition
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $attributedefinitionid The ATTRIBUTEDEFINITIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteCardAttributeDefinition'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCardAttributeDefinition'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400DeleteCardAttributeDefinitionAsync($bankid, $attributedefinitionid, string $contentType = self::contentTypes['oBPv400DeleteCardAttributeDefinition'][0])
+    public function deleteCardAttributeDefinitionAsync($bankid, $attributedefinitionid, string $contentType = self::contentTypes['deleteCardAttributeDefinition'][0])
     {
-        return $this->oBPv400DeleteCardAttributeDefinitionAsyncWithHttpInfo($bankid, $attributedefinitionid, $contentType)
+        return $this->deleteCardAttributeDefinitionAsyncWithHttpInfo($bankid, $attributedefinitionid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1192,21 +851,21 @@ class CardAttributeApi
     }
 
     /**
-     * Operation oBPv400DeleteCardAttributeDefinitionAsyncWithHttpInfo
+     * Operation deleteCardAttributeDefinitionAsyncWithHttpInfo
      *
      * Delete Card Attribute Definition
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $attributedefinitionid The ATTRIBUTEDEFINITIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteCardAttributeDefinition'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCardAttributeDefinition'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400DeleteCardAttributeDefinitionAsyncWithHttpInfo($bankid, $attributedefinitionid, string $contentType = self::contentTypes['oBPv400DeleteCardAttributeDefinition'][0])
+    public function deleteCardAttributeDefinitionAsyncWithHttpInfo($bankid, $attributedefinitionid, string $contentType = self::contentTypes['deleteCardAttributeDefinition'][0])
     {
         $returnType = '';
-        $request = $this->oBPv400DeleteCardAttributeDefinitionRequest($bankid, $attributedefinitionid, $contentType);
+        $request = $this->deleteCardAttributeDefinitionRequest($bankid, $attributedefinitionid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1232,29 +891,29 @@ class CardAttributeApi
     }
 
     /**
-     * Create request for operation 'oBPv400DeleteCardAttributeDefinition'
+     * Create request for operation 'deleteCardAttributeDefinition'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $attributedefinitionid The ATTRIBUTEDEFINITIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteCardAttributeDefinition'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCardAttributeDefinition'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400DeleteCardAttributeDefinitionRequest($bankid, $attributedefinitionid, string $contentType = self::contentTypes['oBPv400DeleteCardAttributeDefinition'][0])
+    public function deleteCardAttributeDefinitionRequest($bankid, $attributedefinitionid, string $contentType = self::contentTypes['deleteCardAttributeDefinition'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400DeleteCardAttributeDefinition'
+                'Missing the required parameter $bankid when calling deleteCardAttributeDefinition'
             );
         }
 
         // verify the required parameter 'attributedefinitionid' is set
         if ($attributedefinitionid === null || (is_array($attributedefinitionid) && count($attributedefinitionid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $attributedefinitionid when calling oBPv400DeleteCardAttributeDefinition'
+                'Missing the required parameter $attributedefinitionid when calling deleteCardAttributeDefinition'
             );
         }
 
@@ -1327,9 +986,9 @@ class CardAttributeApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1354,38 +1013,38 @@ class CardAttributeApi
     }
 
     /**
-     * Operation oBPv400GetCardAttributeDefinition
+     * Operation getCardAttributeDefinition
      *
      * Get Card Attribute Definition
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetCardAttributeDefinition'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCardAttributeDefinition'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetTransactionRequestAttributeDefinition200Response
+     * @return \OpenBankProject\Model\GetTransactionRequestAttributeDefinition200Response
      */
-    public function oBPv400GetCardAttributeDefinition($bankid, string $contentType = self::contentTypes['oBPv400GetCardAttributeDefinition'][0])
+    public function getCardAttributeDefinition($bankid, string $contentType = self::contentTypes['getCardAttributeDefinition'][0])
     {
-        list($response) = $this->oBPv400GetCardAttributeDefinitionWithHttpInfo($bankid, $contentType);
+        list($response) = $this->getCardAttributeDefinitionWithHttpInfo($bankid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetCardAttributeDefinitionWithHttpInfo
+     * Operation getCardAttributeDefinitionWithHttpInfo
      *
      * Get Card Attribute Definition
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetCardAttributeDefinition'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCardAttributeDefinition'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetTransactionRequestAttributeDefinition200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetTransactionRequestAttributeDefinition200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetCardAttributeDefinitionWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv400GetCardAttributeDefinition'][0])
+    public function getCardAttributeDefinitionWithHttpInfo($bankid, string $contentType = self::contentTypes['getCardAttributeDefinition'][0])
     {
-        $request = $this->oBPv400GetCardAttributeDefinitionRequest($bankid, $contentType);
+        $request = $this->getCardAttributeDefinitionRequest($bankid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1413,7 +1072,7 @@ class CardAttributeApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetTransactionRequestAttributeDefinition200Response',
+                        '\OpenBankProject\Model\GetTransactionRequestAttributeDefinition200Response',
                         $request,
                         $response,
                     );
@@ -1435,7 +1094,7 @@ class CardAttributeApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetTransactionRequestAttributeDefinition200Response',
+                '\OpenBankProject\Model\GetTransactionRequestAttributeDefinition200Response',
                 $request,
                 $response,
             );
@@ -1444,7 +1103,7 @@ class CardAttributeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetTransactionRequestAttributeDefinition200Response',
+                        '\OpenBankProject\Model\GetTransactionRequestAttributeDefinition200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1457,19 +1116,19 @@ class CardAttributeApi
     }
 
     /**
-     * Operation oBPv400GetCardAttributeDefinitionAsync
+     * Operation getCardAttributeDefinitionAsync
      *
      * Get Card Attribute Definition
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetCardAttributeDefinition'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCardAttributeDefinition'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetCardAttributeDefinitionAsync($bankid, string $contentType = self::contentTypes['oBPv400GetCardAttributeDefinition'][0])
+    public function getCardAttributeDefinitionAsync($bankid, string $contentType = self::contentTypes['getCardAttributeDefinition'][0])
     {
-        return $this->oBPv400GetCardAttributeDefinitionAsyncWithHttpInfo($bankid, $contentType)
+        return $this->getCardAttributeDefinitionAsyncWithHttpInfo($bankid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1478,20 +1137,20 @@ class CardAttributeApi
     }
 
     /**
-     * Operation oBPv400GetCardAttributeDefinitionAsyncWithHttpInfo
+     * Operation getCardAttributeDefinitionAsyncWithHttpInfo
      *
      * Get Card Attribute Definition
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetCardAttributeDefinition'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCardAttributeDefinition'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetCardAttributeDefinitionAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv400GetCardAttributeDefinition'][0])
+    public function getCardAttributeDefinitionAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['getCardAttributeDefinition'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetTransactionRequestAttributeDefinition200Response';
-        $request = $this->oBPv400GetCardAttributeDefinitionRequest($bankid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetTransactionRequestAttributeDefinition200Response';
+        $request = $this->getCardAttributeDefinitionRequest($bankid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1530,21 +1189,21 @@ class CardAttributeApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetCardAttributeDefinition'
+     * Create request for operation 'getCardAttributeDefinition'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetCardAttributeDefinition'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCardAttributeDefinition'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetCardAttributeDefinitionRequest($bankid, string $contentType = self::contentTypes['oBPv400GetCardAttributeDefinition'][0])
+    public function getCardAttributeDefinitionRequest($bankid, string $contentType = self::contentTypes['getCardAttributeDefinition'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400GetCardAttributeDefinition'
+                'Missing the required parameter $bankid when calling getCardAttributeDefinition'
             );
         }
 
@@ -1609,9 +1268,9 @@ class CardAttributeApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1629,6 +1288,347 @@ class CardAttributeApi
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation updateCardAttribute
+     *
+     * Update Card Attribute
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $cardid The CARDID identifier (required)
+     * @param  string $cardattributeid The CARDATTRIBUTEID identifier (required)
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCardAttribute'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\CreateCardAttribute200Response
+     */
+    public function updateCardAttribute($bankid, $cardid, $cardattributeid, $create_personal_data_field_request, string $contentType = self::contentTypes['updateCardAttribute'][0])
+    {
+        list($response) = $this->updateCardAttributeWithHttpInfo($bankid, $cardid, $cardattributeid, $create_personal_data_field_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation updateCardAttributeWithHttpInfo
+     *
+     * Update Card Attribute
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $cardid The CARDID identifier (required)
+     * @param  string $cardattributeid The CARDATTRIBUTEID identifier (required)
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCardAttribute'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\CreateCardAttribute200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateCardAttributeWithHttpInfo($bankid, $cardid, $cardattributeid, $create_personal_data_field_request, string $contentType = self::contentTypes['updateCardAttribute'][0])
+    {
+        $request = $this->updateCardAttributeRequest($bankid, $cardid, $cardattributeid, $create_personal_data_field_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\CreateCardAttribute200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\CreateCardAttribute200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\CreateCardAttribute200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateCardAttributeAsync
+     *
+     * Update Card Attribute
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $cardid The CARDID identifier (required)
+     * @param  string $cardattributeid The CARDATTRIBUTEID identifier (required)
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCardAttribute'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateCardAttributeAsync($bankid, $cardid, $cardattributeid, $create_personal_data_field_request, string $contentType = self::contentTypes['updateCardAttribute'][0])
+    {
+        return $this->updateCardAttributeAsyncWithHttpInfo($bankid, $cardid, $cardattributeid, $create_personal_data_field_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation updateCardAttributeAsyncWithHttpInfo
+     *
+     * Update Card Attribute
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $cardid The CARDID identifier (required)
+     * @param  string $cardattributeid The CARDATTRIBUTEID identifier (required)
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCardAttribute'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateCardAttributeAsyncWithHttpInfo($bankid, $cardid, $cardattributeid, $create_personal_data_field_request, string $contentType = self::contentTypes['updateCardAttribute'][0])
+    {
+        $returnType = '\OpenBankProject\Model\CreateCardAttribute200Response';
+        $request = $this->updateCardAttributeRequest($bankid, $cardid, $cardattributeid, $create_personal_data_field_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateCardAttribute'
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $cardid The CARDID identifier (required)
+     * @param  string $cardattributeid The CARDATTRIBUTEID identifier (required)
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCardAttribute'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function updateCardAttributeRequest($bankid, $cardid, $cardattributeid, $create_personal_data_field_request, string $contentType = self::contentTypes['updateCardAttribute'][0])
+    {
+
+        // verify the required parameter 'bankid' is set
+        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $bankid when calling updateCardAttribute'
+            );
+        }
+
+        // verify the required parameter 'cardid' is set
+        if ($cardid === null || (is_array($cardid) && count($cardid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $cardid when calling updateCardAttribute'
+            );
+        }
+
+        // verify the required parameter 'cardattributeid' is set
+        if ($cardattributeid === null || (is_array($cardattributeid) && count($cardattributeid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $cardattributeid when calling updateCardAttribute'
+            );
+        }
+
+        // verify the required parameter 'create_personal_data_field_request' is set
+        if ($create_personal_data_field_request === null || (is_array($create_personal_data_field_request) && count($create_personal_data_field_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $create_personal_data_field_request when calling updateCardAttribute'
+            );
+        }
+
+
+        $resourcePath = '/obp/v3.1.0/management/banks/{bankid}/cards/{cardid}/attributes/{cardattributeid}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($bankid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'bankid' . '}',
+                ObjectSerializer::toPathValue($bankid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($cardid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'cardid' . '}',
+                ObjectSerializer::toPathValue($cardid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($cardattributeid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'cardattributeid' . '}',
+                ObjectSerializer::toPathValue($cardattributeid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($create_personal_data_field_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_personal_data_field_request));
+            } else {
+                $httpBody = $create_personal_data_field_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'PUT',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

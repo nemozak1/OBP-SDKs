@@ -1,19 +1,19 @@
 # OpenBankProject.Api.JSONSchemaValidationApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OBPv400CreateJsonSchemaValidation**](JSONSchemaValidationApi.md#obpv400createjsonschemavalidation) | **POST** /obp/v4.0.0/management/json-schema-validations/{operationid} | Create a JSON Schema Validation |
-| [**OBPv400DeleteJsonSchemaValidation**](JSONSchemaValidationApi.md#obpv400deletejsonschemavalidation) | **DELETE** /obp/v4.0.0/management/json-schema-validations/{operationid} | Delete a JSON Schema Validation |
-| [**OBPv400GetAllJsonSchemaValidations**](JSONSchemaValidationApi.md#obpv400getalljsonschemavalidations) | **GET** /obp/v4.0.0/management/json-schema-validations | Get all JSON Schema Validations |
-| [**OBPv400GetAllJsonSchemaValidationsPublic**](JSONSchemaValidationApi.md#obpv400getalljsonschemavalidationspublic) | **GET** /obp/v4.0.0/endpoints/json-schema-validations | Get all JSON Schema Validations - public |
-| [**OBPv400GetJsonSchemaValidation**](JSONSchemaValidationApi.md#obpv400getjsonschemavalidation) | **GET** /obp/v4.0.0/management/json-schema-validations/{operationid} | Get a JSON Schema Validation |
-| [**OBPv400UpdateJsonSchemaValidation**](JSONSchemaValidationApi.md#obpv400updatejsonschemavalidation) | **PUT** /obp/v4.0.0/management/json-schema-validations/{operationid} | Update a JSON Schema Validation |
+| [**CreateJsonSchemaValidation**](JSONSchemaValidationApi.md#createjsonschemavalidation) | **POST** /obp/v4.0.0/management/json-schema-validations/{operationid} | Create a JSON Schema Validation |
+| [**DeleteJsonSchemaValidation**](JSONSchemaValidationApi.md#deletejsonschemavalidation) | **DELETE** /obp/v4.0.0/management/json-schema-validations/{operationid} | Delete a JSON Schema Validation |
+| [**GetAllJsonSchemaValidations**](JSONSchemaValidationApi.md#getalljsonschemavalidations) | **GET** /obp/v4.0.0/management/json-schema-validations | Get all JSON Schema Validations |
+| [**GetAllJsonSchemaValidationsPublic**](JSONSchemaValidationApi.md#getalljsonschemavalidationspublic) | **GET** /obp/v4.0.0/endpoints/json-schema-validations | Get all JSON Schema Validations - public |
+| [**GetJsonSchemaValidation**](JSONSchemaValidationApi.md#getjsonschemavalidation) | **GET** /obp/v4.0.0/management/json-schema-validations/{operationid} | Get a JSON Schema Validation |
+| [**UpdateJsonSchemaValidation**](JSONSchemaValidationApi.md#updatejsonschemavalidation) | **PUT** /obp/v4.0.0/management/json-schema-validations/{operationid} | Update a JSON Schema Validation |
 
-<a id="obpv400createjsonschemavalidation"></a>
-# **OBPv400CreateJsonSchemaValidation**
-> OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems OBPv400CreateJsonSchemaValidation (string operationid, OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema)
+<a id="createjsonschemavalidation"></a>
+# **CreateJsonSchemaValidation**
+> GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner CreateJsonSchemaValidation (string operationid, GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema)
 
 Create a JSON Schema Validation
 
@@ -25,11 +25,11 @@ Create a JSON Schema Validation
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **operationid** | **string** | The OPERATIONID identifier |  |
-| **oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema** | [**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema.md) | Request body |  |
+| **getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema** | [**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems.md)
+[**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md)
 
 ### Authorization
 
@@ -49,9 +49,9 @@ Create a JSON Schema Validation
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400deletejsonschemavalidation"></a>
-# **OBPv400DeleteJsonSchemaValidation**
-> void OBPv400DeleteJsonSchemaValidation (string operationid)
+<a id="deletejsonschemavalidation"></a>
+# **DeleteJsonSchemaValidation**
+> void DeleteJsonSchemaValidation (string operationid)
 
 Delete a JSON Schema Validation
 
@@ -86,9 +86,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400getalljsonschemavalidations"></a>
-# **OBPv400GetAllJsonSchemaValidations**
-> OBPv400GetAllJsonSchemaValidationsPublic200Response OBPv400GetAllJsonSchemaValidations ()
+<a id="getalljsonschemavalidations"></a>
+# **GetAllJsonSchemaValidations**
+> GetAllJsonSchemaValidationsPublic200Response GetAllJsonSchemaValidations ()
 
 Get all JSON Schema Validations
 
@@ -99,7 +99,7 @@ Get all JSON Schema Validations
 This endpoint does not need any parameter.
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200Response**](OBPv400GetAllJsonSchemaValidationsPublic200Response.md)
+[**GetAllJsonSchemaValidationsPublic200Response**](GetAllJsonSchemaValidationsPublic200Response.md)
 
 ### Authorization
 
@@ -119,9 +119,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400getalljsonschemavalidationspublic"></a>
-# **OBPv400GetAllJsonSchemaValidationsPublic**
-> OBPv400GetAllJsonSchemaValidationsPublic200Response OBPv400GetAllJsonSchemaValidationsPublic ()
+<a id="getalljsonschemavalidationspublic"></a>
+# **GetAllJsonSchemaValidationsPublic**
+> GetAllJsonSchemaValidationsPublic200Response GetAllJsonSchemaValidationsPublic ()
 
 Get all JSON Schema Validations - public
 
@@ -132,7 +132,7 @@ Get all JSON Schema Validations - public
 This endpoint does not need any parameter.
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200Response**](OBPv400GetAllJsonSchemaValidationsPublic200Response.md)
+[**GetAllJsonSchemaValidationsPublic200Response**](GetAllJsonSchemaValidationsPublic200Response.md)
 
 ### Authorization
 
@@ -152,9 +152,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400getjsonschemavalidation"></a>
-# **OBPv400GetJsonSchemaValidation**
-> OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems OBPv400GetJsonSchemaValidation (string operationid)
+<a id="getjsonschemavalidation"></a>
+# **GetJsonSchemaValidation**
+> GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner GetJsonSchemaValidation (string operationid)
 
 Get a JSON Schema Validation
 
@@ -169,7 +169,7 @@ Get a JSON Schema Validation
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems.md)
+[**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md)
 
 ### Authorization
 
@@ -189,9 +189,9 @@ Get a JSON Schema Validation
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400updatejsonschemavalidation"></a>
-# **OBPv400UpdateJsonSchemaValidation**
-> OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems OBPv400UpdateJsonSchemaValidation (string operationid, OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema)
+<a id="updatejsonschemavalidation"></a>
+# **UpdateJsonSchemaValidation**
+> GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner UpdateJsonSchemaValidation (string operationid, GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema)
 
 Update a JSON Schema Validation
 
@@ -203,11 +203,11 @@ Update a JSON Schema Validation
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **operationid** | **string** | The OPERATIONID identifier |  |
-| **oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema** | [**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema.md) | Request body |  |
+| **getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema** | [**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems.md)
+[**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md)
 
 ### Authorization
 

@@ -1,19 +1,19 @@
 # OpenBankProject.Api.AuthenticationTypeValidationApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OBPv400CreateAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#obpv400createauthenticationtypevalidation) | **POST** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Create an Authentication Type Validation |
-| [**OBPv400DeleteAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#obpv400deleteauthenticationtypevalidation) | **DELETE** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Delete an Authentication Type Validation |
-| [**OBPv400GetAllAuthenticationTypeValidations**](AuthenticationTypeValidationApi.md#obpv400getallauthenticationtypevalidations) | **GET** /obp/v4.0.0/management/authentication-type-validations | Get all Authentication Type Validations |
-| [**OBPv400GetAllAuthenticationTypeValidationsPublic**](AuthenticationTypeValidationApi.md#obpv400getallauthenticationtypevalidationspublic) | **GET** /obp/v4.0.0/endpoints/authentication-type-validations | Get all Authentication Type Validations - public |
-| [**OBPv400GetAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#obpv400getauthenticationtypevalidation) | **GET** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Get an Authentication Type Validation |
-| [**OBPv400UpdateAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#obpv400updateauthenticationtypevalidation) | **PUT** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Update an Authentication Type Validation |
+| [**CreateAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#createauthenticationtypevalidation) | **POST** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Create an Authentication Type Validation |
+| [**DeleteAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#deleteauthenticationtypevalidation) | **DELETE** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Delete an Authentication Type Validation |
+| [**GetAllAuthenticationTypeValidations**](AuthenticationTypeValidationApi.md#getallauthenticationtypevalidations) | **GET** /obp/v4.0.0/management/authentication-type-validations | Get all Authentication Type Validations |
+| [**GetAllAuthenticationTypeValidationsPublic**](AuthenticationTypeValidationApi.md#getallauthenticationtypevalidationspublic) | **GET** /obp/v4.0.0/endpoints/authentication-type-validations | Get all Authentication Type Validations - public |
+| [**GetAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#getauthenticationtypevalidation) | **GET** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Get an Authentication Type Validation |
+| [**UpdateAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#updateauthenticationtypevalidation) | **PUT** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Update an Authentication Type Validation |
 
-<a id="obpv400createauthenticationtypevalidation"></a>
-# **OBPv400CreateAuthenticationTypeValidation**
-> OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems OBPv400CreateAuthenticationTypeValidation (string operationid, OBPv400UpdateAuthenticationTypeValidationRequest oBPv400UpdateAuthenticationTypeValidationRequest)
+<a id="createauthenticationtypevalidation"></a>
+# **CreateAuthenticationTypeValidation**
+> GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner CreateAuthenticationTypeValidation (string operationid, UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest)
 
 Create an Authentication Type Validation
 
@@ -25,11 +25,11 @@ Create an Authentication Type Validation
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **operationid** | **string** | The OPERATIONID identifier |  |
-| **oBPv400UpdateAuthenticationTypeValidationRequest** | [**OBPv400UpdateAuthenticationTypeValidationRequest**](OBPv400UpdateAuthenticationTypeValidationRequest.md) | Request body |  |
+| **updateAuthenticationTypeValidationRequest** | [**UpdateAuthenticationTypeValidationRequest**](UpdateAuthenticationTypeValidationRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems**](OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems.md)
+[**GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner**](GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md)
 
 ### Authorization
 
@@ -49,9 +49,9 @@ Create an Authentication Type Validation
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400deleteauthenticationtypevalidation"></a>
-# **OBPv400DeleteAuthenticationTypeValidation**
-> void OBPv400DeleteAuthenticationTypeValidation (string operationid)
+<a id="deleteauthenticationtypevalidation"></a>
+# **DeleteAuthenticationTypeValidation**
+> void DeleteAuthenticationTypeValidation (string operationid)
 
 Delete an Authentication Type Validation
 
@@ -86,9 +86,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400getallauthenticationtypevalidations"></a>
-# **OBPv400GetAllAuthenticationTypeValidations**
-> OBPv400GetAllAuthenticationTypeValidationsPublic200Response OBPv400GetAllAuthenticationTypeValidations ()
+<a id="getallauthenticationtypevalidations"></a>
+# **GetAllAuthenticationTypeValidations**
+> GetAllAuthenticationTypeValidationsPublic200Response GetAllAuthenticationTypeValidations ()
 
 Get all Authentication Type Validations
 
@@ -99,7 +99,7 @@ Get all Authentication Type Validations
 This endpoint does not need any parameter.
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200Response**](OBPv400GetAllAuthenticationTypeValidationsPublic200Response.md)
+[**GetAllAuthenticationTypeValidationsPublic200Response**](GetAllAuthenticationTypeValidationsPublic200Response.md)
 
 ### Authorization
 
@@ -119,9 +119,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400getallauthenticationtypevalidationspublic"></a>
-# **OBPv400GetAllAuthenticationTypeValidationsPublic**
-> OBPv400GetAllAuthenticationTypeValidationsPublic200Response OBPv400GetAllAuthenticationTypeValidationsPublic ()
+<a id="getallauthenticationtypevalidationspublic"></a>
+# **GetAllAuthenticationTypeValidationsPublic**
+> GetAllAuthenticationTypeValidationsPublic200Response GetAllAuthenticationTypeValidationsPublic ()
 
 Get all Authentication Type Validations - public
 
@@ -132,7 +132,7 @@ Get all Authentication Type Validations - public
 This endpoint does not need any parameter.
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200Response**](OBPv400GetAllAuthenticationTypeValidationsPublic200Response.md)
+[**GetAllAuthenticationTypeValidationsPublic200Response**](GetAllAuthenticationTypeValidationsPublic200Response.md)
 
 ### Authorization
 
@@ -152,9 +152,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400getauthenticationtypevalidation"></a>
-# **OBPv400GetAuthenticationTypeValidation**
-> OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems OBPv400GetAuthenticationTypeValidation (string operationid)
+<a id="getauthenticationtypevalidation"></a>
+# **GetAuthenticationTypeValidation**
+> GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner GetAuthenticationTypeValidation (string operationid)
 
 Get an Authentication Type Validation
 
@@ -169,7 +169,7 @@ Get an Authentication Type Validation
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems**](OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems.md)
+[**GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner**](GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md)
 
 ### Authorization
 
@@ -189,9 +189,9 @@ Get an Authentication Type Validation
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400updateauthenticationtypevalidation"></a>
-# **OBPv400UpdateAuthenticationTypeValidation**
-> OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems OBPv400UpdateAuthenticationTypeValidation (string operationid, OBPv400UpdateAuthenticationTypeValidationRequest oBPv400UpdateAuthenticationTypeValidationRequest)
+<a id="updateauthenticationtypevalidation"></a>
+# **UpdateAuthenticationTypeValidation**
+> GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner UpdateAuthenticationTypeValidation (string operationid, UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest)
 
 Update an Authentication Type Validation
 
@@ -203,11 +203,11 @@ Update an Authentication Type Validation
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **operationid** | **string** | The OPERATIONID identifier |  |
-| **oBPv400UpdateAuthenticationTypeValidationRequest** | [**OBPv400UpdateAuthenticationTypeValidationRequest**](OBPv400UpdateAuthenticationTypeValidationRequest.md) | Request body |  |
+| **updateAuthenticationTypeValidationRequest** | [**UpdateAuthenticationTypeValidationRequest**](UpdateAuthenticationTypeValidationRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems**](OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems.md)
+[**GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner**](GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md)
 
 ### Authorization
 

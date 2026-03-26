@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,19 +24,134 @@ import (
 // DocumentationAPIService DocumentationAPI service
 type DocumentationAPIService service
 
-type ApiOBPv140GetBankLevelDynamicResourceDocsObpRequest struct {
+type ApiGetApiGlossaryRequest struct {
+	ctx context.Context
+	ApiService *DocumentationAPIService
+}
+
+func (r ApiGetApiGlossaryRequest) Execute() (*GetApiGlossary200Response, *http.Response, error) {
+	return r.ApiService.GetApiGlossaryExecute(r)
+}
+
+/*
+GetApiGlossary Get Glossary of the API
+
+<p>Get API Glossary</p>
+<p>Returns the glossary of the API.</p>
+<p>The glossary content is static and only changes when the API is redeployed.<br />
+This endpoint supports HTTP caching:</p>
+<ul>
+<li>The response includes a <strong>Cache-Control</strong> header (max-age=3600) indicating clients should cache for 1 hour.</li>
+<li>The response includes an <strong>ETag</strong> header. Clients can send <strong>If-None-Match</strong> with the ETag value on subsequent requests to receive a <strong>304 Not Modified</strong> if the content has not changed.</li>
+</ul>
+<p>Clients and agents are encouraged to cache the glossary response locally.</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#glossary_items"><strong>glossary_items</strong></a>:</p>
+<p><a href="/glossary#html"><strong>html</strong></a>: html format content</p>
+<p><a href="/glossary#markdown"><strong>markdown</strong></a>:</p>
+<p><a href="/glossary#"><strong>title</strong></a>: Dr.</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetApiGlossaryRequest
+*/
+func (a *DocumentationAPIService) GetApiGlossary(ctx context.Context) ApiGetApiGlossaryRequest {
+	return ApiGetApiGlossaryRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return GetApiGlossary200Response
+func (a *DocumentationAPIService) GetApiGlossaryExecute(r ApiGetApiGlossaryRequest) (*GetApiGlossary200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetApiGlossary200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentationAPIService.GetApiGlossary")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v3.0.0/api/glossary"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetBankLevelDynamicResourceDocsObpRequest struct {
 	ctx context.Context
 	ApiService *DocumentationAPIService
 	bankid string
 	apiversion string
 }
 
-func (r ApiOBPv140GetBankLevelDynamicResourceDocsObpRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv140GetBankLevelDynamicResourceDocsObpExecute(r)
+func (r ApiGetBankLevelDynamicResourceDocsObpRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetBankLevelDynamicResourceDocsObpExecute(r)
 }
 
 /*
-OBPv140GetBankLevelDynamicResourceDocsObp Get Bank Level Dynamic Resource Docs
+GetBankLevelDynamicResourceDocsObp Get Bank Level Dynamic Resource Docs
 
 <p>Get documentation about the RESTful resources on this server including example bodies for POST and PUT requests.</p>
 <p>This is the native data format used to document OBP endpoints. Each endpoint has a Resource Doc (a Scala case class) defined in the source code.</p>
@@ -54,12 +169,12 @@ if set content=dynamic, only show dynamic endpoints, if content=static, only sho
 <p>Note: Dynamic Resource Docs are cached, TTL is 3600 seconds<br />
 Static Resource Docs are cached, TTL is 3600 seconds</p>
 <p>Following are more examples:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp">https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?tags=Account,Bank">https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?tags=Account,Bank</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?functions=getBanks,bankById">https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?functions=getBanks,bankById</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?locale=es_ES">https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?locale=es_ES</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?content=static,dynamic,all">https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?content=static,dynamic,all</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221">https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221</a></p>
+<a href="http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp">http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?tags=Account,Bank">http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?tags=Account,Bank</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?functions=getBanks,bankById">http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?functions=getBanks,bankById</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?locale=es_ES">http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?locale=es_ES</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?content=static,dynamic,all">http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?content=static,dynamic,all</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221">http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221</a></p>
 <ul>
 <li> operation_id is concatenation of "v", version and function and should be unique (used for DOM element IDs etc. maybe used to link to source code) </li>
 <li> version references the version that the API call is defined in.</li>
@@ -79,10 +194,10 @@ Static Resource Docs are cached, TTL is 3600 seconds</p>
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param apiversion The APIVERSION identifier
- @return ApiOBPv140GetBankLevelDynamicResourceDocsObpRequest
+ @return ApiGetBankLevelDynamicResourceDocsObpRequest
 */
-func (a *DocumentationAPIService) OBPv140GetBankLevelDynamicResourceDocsObp(ctx context.Context, bankid string, apiversion string) ApiOBPv140GetBankLevelDynamicResourceDocsObpRequest {
-	return ApiOBPv140GetBankLevelDynamicResourceDocsObpRequest{
+func (a *DocumentationAPIService) GetBankLevelDynamicResourceDocsObp(ctx context.Context, bankid string, apiversion string) ApiGetBankLevelDynamicResourceDocsObpRequest {
+	return ApiGetBankLevelDynamicResourceDocsObpRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -91,14 +206,14 @@ func (a *DocumentationAPIService) OBPv140GetBankLevelDynamicResourceDocsObp(ctx 
 }
 
 // Execute executes the request
-func (a *DocumentationAPIService) OBPv140GetBankLevelDynamicResourceDocsObpExecute(r ApiOBPv140GetBankLevelDynamicResourceDocsObpRequest) (*http.Response, error) {
+func (a *DocumentationAPIService) GetBankLevelDynamicResourceDocsObpExecute(r ApiGetBankLevelDynamicResourceDocsObpRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentationAPIService.OBPv140GetBankLevelDynamicResourceDocsObp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentationAPIService.GetBankLevelDynamicResourceDocsObp")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -152,7 +267,7 @@ func (a *DocumentationAPIService) OBPv140GetBankLevelDynamicResourceDocsObpExecu
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -184,425 +299,18 @@ func (a *DocumentationAPIService) OBPv140GetBankLevelDynamicResourceDocsObpExecu
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv140GetResourceDocsObpRequest struct {
-	ctx context.Context
-	ApiService *DocumentationAPIService
-	apiversion string
-}
-
-func (r ApiOBPv140GetResourceDocsObpRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv140GetResourceDocsObpExecute(r)
-}
-
-/*
-OBPv140GetResourceDocsObp Get Resource Docs
-
-<p>Get documentation about the RESTful resources on this server including example bodies for POST and PUT requests.</p>
-<p>This is the native data format used to document OBP endpoints. Each endpoint has a Resource Doc (a Scala case class) defined in the source code.</p>
-<p>This endpoint is used by OBP API Explorer to display and work with the API documentation.</p>
-<p>Most (but not all) fields are also available in swagger format. (The Swagger endpoint is built from Resource Docs.)</p>
-<p>API_VERSION is the version you want documentation about e.g. v3.0.0</p>
-<p>You may filter this endpoint with tags parameter e.g. ?tags=Account,Bank</p>
-<p>You may filter this endpoint with functions parameter e.g. ?functions=enableDisableConsumers,getConnectorMetrics</p>
-<p>For possible function values, see implemented_by.function in the JSON returned by this endpoint or the OBP source code or the footer of the API Explorer which produces a comma separated list of functions that reflect the server or filtering by API Explorer based on tags etc.</p>
-<p>You may filter this endpoint using the 'content' url parameter, e.g. ?content=dynamic<br />
-if set content=dynamic, only show dynamic endpoints, if content=static, only show the static endpoints. if omit this parameter, we will show all the endpoints.</p>
-<p>You may need some other language resource docs, now we support en_GB and es_ES at the moment.</p>
-<p>You can filter with api-collection-id, but api-collection-id can not be used with others together. If api-collection-id is used in URL, it will ignore all other parameters.</p>
-<p>See the Resource Doc endpoint for more information.</p>
-<p>Note: Dynamic Resource Docs are cached, TTL is 3600 seconds<br />
-Static Resource Docs are cached, TTL is 3600 seconds</p>
-<p>Following are more examples:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp">https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?tags=Account,Bank">https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?tags=Account,Bank</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?functions=getBanks,bankById">https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?functions=getBanks,bankById</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?locale=es_ES">https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?locale=es_ES</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?content=static,dynamic,all">https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?content=static,dynamic,all</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221">https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221</a></p>
-<ul>
-<li> operation_id is concatenation of "v", version and function and should be unique (used for DOM element IDs etc. maybe used to link to source code) </li>
-<li> version references the version that the API call is defined in.</li>
-<li> function is the (scala) partial function that implements this endpoint. It is unique per version of the API.</li>
-<li> request_url is empty for the root call, else the path. It contains the standard prefix (e.g. /obp) and the implemented version (the version where this endpoint was defined) e.g. /obp/v1.2.0/resource</li>
-<li> specified_url (recommended to use) is empty for the root call, else the path. It contains the standard prefix (e.g. /obp) and the version specified in the call e.g. /obp/v3.1.0/resource. In OBP, endpoints are first made available at the request_url, but the same resource (function call) is often made available under later versions (specified_url). To access the latest version of all endpoints use the latest version available on your OBP instance e.g. /obp/v3.1.0 - To get the original version use the request_url. We recommend to use the specified_url since non semantic improvements are more likely to be applied to later implementations of the call.</li>
-<li> summary is a short description inline with the swagger terminology. </li>
-<li> description may contain html markup (generated from markdown on the server).</li>
-</ul>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#api_version">API_VERSION</a>:</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param apiversion The APIVERSION identifier
- @return ApiOBPv140GetResourceDocsObpRequest
-*/
-func (a *DocumentationAPIService) OBPv140GetResourceDocsObp(ctx context.Context, apiversion string) ApiOBPv140GetResourceDocsObpRequest {
-	return ApiOBPv140GetResourceDocsObpRequest{
-		ApiService: a,
-		ctx: ctx,
-		apiversion: apiversion,
-	}
-}
-
-// Execute executes the request
-func (a *DocumentationAPIService) OBPv140GetResourceDocsObpExecute(r ApiOBPv140GetResourceDocsObpRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentationAPIService.OBPv140GetResourceDocsObp")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v1.4.0/resource-docs/{apiversion}/obp"
-	localVarPath = strings.Replace(localVarPath, "{"+"apiversion"+"}", url.PathEscape(parameterValueToString(r.apiversion, "apiversion")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv140GetResourceDocsOpenAPI31Request struct {
-	ctx context.Context
-	ApiService *DocumentationAPIService
-	apiversion string
-}
-
-func (r ApiOBPv140GetResourceDocsOpenAPI31Request) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv140GetResourceDocsOpenAPI31Execute(r)
-}
-
-/*
-OBPv140GetResourceDocsOpenAPI31 Get OpenAPI 3.1 documentation
-
-<p>Returns documentation about the RESTful resources on this server in OpenAPI 3.1 format.</p>
-<p>API_VERSION is the version you want documentation about e.g. v6.0.0</p>
-<h2><a href="#query-parameters" id="query-parameters">Query Parameters</a></h2>
-<p>You may filter this endpoint using the following optional query parameters:</p>
-<p><strong>tags</strong> - Filter by endpoint tags (comma-separated list)<br />
-• Example: ?tags=Account,Bank or ?tags=Account-Firehose<br />
-• All endpoints are given one or more tags which are used for grouping<br />
-• Empty values will return error OBP-10053</p>
-<p><strong>functions</strong> - Filter by function names (comma-separated list)<br />
-• Example: ?functions=getBanks,bankById<br />
-• Each endpoint is implemented in the OBP Scala code by a 'function'<br />
-• Empty values will return error OBP-10054</p>
-<p><strong>content</strong> - Filter by endpoint type<br />
-• Values: static, dynamic, all (case-insensitive)<br />
-• static: Only show static/core API endpoints<br />
-• dynamic: Only show dynamic/custom endpoints<br />
-• all: Show both static and dynamic endpoints (default)<br />
-• Invalid values will return error OBP-10052</p>
-<p><strong>locale</strong> - Language for localized documentation<br />
-• Example: ?locale=en_GB or ?locale=es_ES<br />
-• Supported locales: en_GB, es_ES, ro_RO<br />
-• Invalid locales will return error OBP-10041</p>
-<p><strong>api-collection-id</strong> - Filter by API collection UUID<br />
-• Example: ?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221<br />
-• Returns only endpoints belonging to the specified collection<br />
-• Empty values will return error OBP-10055</p>
-<p>This endpoint generates OpenAPI 3.1 compliant documentation with modern JSON Schema support.</p>
-<p>For YAML format, use the corresponding endpoint: /resource-docs/API_VERSION/openapi.yaml</p>
-<p>See the Resource Doc endpoint for more information.</p>
-<p>Note: Resource Docs are cached, TTL is 3600 seconds</p>
-<h2><a href="#examples" id="examples">Examples</a></h2>
-<p>Basic usage:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi</a></p>
-<p>Filter by tags:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account,Bank">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account,Bank</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account-Firehose">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account-Firehose</a></p>
-<p>Filter by content type:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=dynamic">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=dynamic</a></p>
-<p>Filter by functions:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?functions=getBanks,bankById">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?functions=getBanks,bankById</a></p>
-<p>Combine multiple parameters:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static&amp;tags=Account-Firehose">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static&amp;tags=Account-Firehose</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account,Bank,PSD2&amp;functions=getBanks,bankById">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account,Bank,PSD2&amp;functions=getBanks,bankById</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static&amp;locale=en_GB&amp;tags=Account">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static&amp;locale=en_GB&amp;tags=Account</a></p>
-<p>Filter by API collection:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221</a></p>
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#api_version">API_VERSION</a>:</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param apiversion The APIVERSION identifier
- @return ApiOBPv140GetResourceDocsOpenAPI31Request
-*/
-func (a *DocumentationAPIService) OBPv140GetResourceDocsOpenAPI31(ctx context.Context, apiversion string) ApiOBPv140GetResourceDocsOpenAPI31Request {
-	return ApiOBPv140GetResourceDocsOpenAPI31Request{
-		ApiService: a,
-		ctx: ctx,
-		apiversion: apiversion,
-	}
-}
-
-// Execute executes the request
-func (a *DocumentationAPIService) OBPv140GetResourceDocsOpenAPI31Execute(r ApiOBPv140GetResourceDocsOpenAPI31Request) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentationAPIService.OBPv140GetResourceDocsOpenAPI31")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v1.4.0/resource-docs/{apiversion}/openapi"
-	localVarPath = strings.Replace(localVarPath, "{"+"apiversion"+"}", url.PathEscape(parameterValueToString(r.apiversion, "apiversion")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv140GetResourceDocsSwaggerRequest struct {
-	ctx context.Context
-	ApiService *DocumentationAPIService
-	apiversion string
-}
-
-func (r ApiOBPv140GetResourceDocsSwaggerRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv140GetResourceDocsSwaggerExecute(r)
-}
-
-/*
-OBPv140GetResourceDocsSwagger Get Swagger documentation
-
-<p>Returns documentation about the RESTful resources on this server in Swagger format.</p>
-<p>API_VERSION is the version you want documentation about e.g. v3.0.0</p>
-<p>You may filter this endpoint using the 'tags' url parameter e.g. ?tags=Account,Bank</p>
-<p>(All endpoints are given one or more tags which for used in grouping)</p>
-<p>You may filter this endpoint using the 'functions' url parameter e.g. ?functions=getBanks,bankById</p>
-<p>(Each endpoint is implemented in the OBP Scala code by a 'function')</p>
-<p>See the Resource Doc endpoint for more information.</p>
-<p>Note: Resource Docs are cached, TTL is 3600 seconds</p>
-<p>Following are more examples:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger">https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags=Account,Bank">https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags=Account,Bank</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger?functions=getBanks,bankById">https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger?functions=getBanks,bankById</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags=Account,Bank,PSD2&amp;functions=getBanks,bankById">https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags=Account,Bank,PSD2&amp;functions=getBanks,bankById</a></p>
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#api_version">API_VERSION</a>:</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param apiversion The APIVERSION identifier
- @return ApiOBPv140GetResourceDocsSwaggerRequest
-*/
-func (a *DocumentationAPIService) OBPv140GetResourceDocsSwagger(ctx context.Context, apiversion string) ApiOBPv140GetResourceDocsSwaggerRequest {
-	return ApiOBPv140GetResourceDocsSwaggerRequest{
-		ApiService: a,
-		ctx: ctx,
-		apiversion: apiversion,
-	}
-}
-
-// Execute executes the request
-func (a *DocumentationAPIService) OBPv140GetResourceDocsSwaggerExecute(r ApiOBPv140GetResourceDocsSwaggerRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentationAPIService.OBPv140GetResourceDocsSwagger")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v1.4.0/resource-docs/{apiversion}/swagger"
-	localVarPath = strings.Replace(localVarPath, "{"+"apiversion"+"}", url.PathEscape(parameterValueToString(r.apiversion, "apiversion")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv220GetMessageDocsRequest struct {
+type ApiGetMessageDocsRequest struct {
 	ctx context.Context
 	ApiService *DocumentationAPIService
 	connector string
 }
 
-func (r ApiOBPv220GetMessageDocsRequest) Execute() (*OBPv220GetMessageDocs200Response, *http.Response, error) {
-	return r.ApiService.OBPv220GetMessageDocsExecute(r)
+func (r ApiGetMessageDocsRequest) Execute() (*GetMessageDocs200Response, *http.Response, error) {
+	return r.ApiService.GetMessageDocsExecute(r)
 }
 
 /*
-OBPv220GetMessageDocs Get Message Docs
+GetMessageDocs Get Message Docs
 
 <p>These message docs provide example messages sent by OBP to the (RabbitMq) message queue for processing by the Core Banking / Payment system Adapter - together with an example expected response and possible error codes.<br />
 Integrators can use these messages to build Adapters that provide core banking services to OBP.</p>
@@ -633,10 +341,10 @@ Integrators can use these messages to build Adapters that provide core banking s
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param connector The CONNECTOR identifier
- @return ApiOBPv220GetMessageDocsRequest
+ @return ApiGetMessageDocsRequest
 */
-func (a *DocumentationAPIService) OBPv220GetMessageDocs(ctx context.Context, connector string) ApiOBPv220GetMessageDocsRequest {
-	return ApiOBPv220GetMessageDocsRequest{
+func (a *DocumentationAPIService) GetMessageDocs(ctx context.Context, connector string) ApiGetMessageDocsRequest {
+	return ApiGetMessageDocsRequest{
 		ApiService: a,
 		ctx: ctx,
 		connector: connector,
@@ -644,16 +352,16 @@ func (a *DocumentationAPIService) OBPv220GetMessageDocs(ctx context.Context, con
 }
 
 // Execute executes the request
-//  @return OBPv220GetMessageDocs200Response
-func (a *DocumentationAPIService) OBPv220GetMessageDocsExecute(r ApiOBPv220GetMessageDocsRequest) (*OBPv220GetMessageDocs200Response, *http.Response, error) {
+//  @return GetMessageDocs200Response
+func (a *DocumentationAPIService) GetMessageDocsExecute(r ApiGetMessageDocsRequest) (*GetMessageDocs200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv220GetMessageDocs200Response
+		localVarReturnValue  *GetMessageDocs200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentationAPIService.OBPv220GetMessageDocs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentationAPIService.GetMessageDocs")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -719,228 +427,18 @@ func (a *DocumentationAPIService) OBPv220GetMessageDocsExecute(r ApiOBPv220GetMe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv300GetApiGlossaryRequest struct {
-	ctx context.Context
-	ApiService *DocumentationAPIService
-}
-
-func (r ApiOBPv300GetApiGlossaryRequest) Execute() (*OBPv300GetApiGlossary200Response, *http.Response, error) {
-	return r.ApiService.OBPv300GetApiGlossaryExecute(r)
-}
-
-/*
-OBPv300GetApiGlossary Get Glossary of the API
-
-<p>Get API Glossary</p>
-<p>Returns the glossary of the API</p>
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#glossary_items"><strong>glossary_items</strong></a>:</p>
-<p><a href="/glossary#html"><strong>html</strong></a>: html format content</p>
-<p><a href="/glossary#markdown"><strong>markdown</strong></a>:</p>
-<p><a href="/glossary#"><strong>title</strong></a>: Dr.</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv300GetApiGlossaryRequest
-*/
-func (a *DocumentationAPIService) OBPv300GetApiGlossary(ctx context.Context) ApiOBPv300GetApiGlossaryRequest {
-	return ApiOBPv300GetApiGlossaryRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv300GetApiGlossary200Response
-func (a *DocumentationAPIService) OBPv300GetApiGlossaryExecute(r ApiOBPv300GetApiGlossaryRequest) (*OBPv300GetApiGlossary200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv300GetApiGlossary200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentationAPIService.OBPv300GetApiGlossary")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v3.0.0/api/glossary"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv310GetMessageDocsSwaggerRequest struct {
+type ApiGetMessageDocsJsonSchemaRequest struct {
 	ctx context.Context
 	ApiService *DocumentationAPIService
 	connector string
 }
 
-func (r ApiOBPv310GetMessageDocsSwaggerRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv310GetMessageDocsSwaggerExecute(r)
+func (r ApiGetMessageDocsJsonSchemaRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetMessageDocsJsonSchemaExecute(r)
 }
 
 /*
-OBPv310GetMessageDocsSwagger Get Message Docs Swagger
-
-<p>This endpoint provides example message docs in swagger format.<br />
-It is only relavent for REST Connectors.</p>
-<p>This endpoint can be used by the developer building a REST Adapter that connects to the Core Banking System (CBS).<br />
-That is, the Adapter developer can use the Swagger surfaced here to build the REST APIs that the OBP REST connector will call to consume CBS services.</p>
-<p>i.e.:</p>
-<p>OBP API (Core OBP API code) -&gt; OBP REST Connector (OBP REST Connector code) -&gt; OBP REST Adapter (Adapter developer code) -&gt; CBS (Main Frame)</p>
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Connector">CONNECTOR</a>: CONNECTOR</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param connector The CONNECTOR identifier
- @return ApiOBPv310GetMessageDocsSwaggerRequest
-*/
-func (a *DocumentationAPIService) OBPv310GetMessageDocsSwagger(ctx context.Context, connector string) ApiOBPv310GetMessageDocsSwaggerRequest {
-	return ApiOBPv310GetMessageDocsSwaggerRequest{
-		ApiService: a,
-		ctx: ctx,
-		connector: connector,
-	}
-}
-
-// Execute executes the request
-func (a *DocumentationAPIService) OBPv310GetMessageDocsSwaggerExecute(r ApiOBPv310GetMessageDocsSwaggerRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentationAPIService.OBPv310GetMessageDocsSwagger")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v3.1.0/message-docs/{connector}/swagger2.0"
-	localVarPath = strings.Replace(localVarPath, "{"+"connector"+"}", url.PathEscape(parameterValueToString(r.connector, "connector")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv600GetMessageDocsJsonSchemaRequest struct {
-	ctx context.Context
-	ApiService *DocumentationAPIService
-	connector string
-}
-
-func (r ApiOBPv600GetMessageDocsJsonSchemaRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv600GetMessageDocsJsonSchemaExecute(r)
-}
-
-/*
-OBPv600GetMessageDocsJsonSchema Get Message Docs as JSON Schema
+GetMessageDocsJsonSchema Get Message Docs as JSON Schema
 
 <p>Returns message documentation as JSON Schema format for code generation in any language.</p>
 <p>This endpoint provides machine-readable schemas instead of just examples, making it ideal for:<br />
@@ -980,10 +478,10 @@ This endpoint is publicly accessible (no authentication required) to facilitate 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param connector The CONNECTOR identifier
- @return ApiOBPv600GetMessageDocsJsonSchemaRequest
+ @return ApiGetMessageDocsJsonSchemaRequest
 */
-func (a *DocumentationAPIService) OBPv600GetMessageDocsJsonSchema(ctx context.Context, connector string) ApiOBPv600GetMessageDocsJsonSchemaRequest {
-	return ApiOBPv600GetMessageDocsJsonSchemaRequest{
+func (a *DocumentationAPIService) GetMessageDocsJsonSchema(ctx context.Context, connector string) ApiGetMessageDocsJsonSchemaRequest {
+	return ApiGetMessageDocsJsonSchemaRequest{
 		ApiService: a,
 		ctx: ctx,
 		connector: connector,
@@ -991,14 +489,14 @@ func (a *DocumentationAPIService) OBPv600GetMessageDocsJsonSchema(ctx context.Co
 }
 
 // Execute executes the request
-func (a *DocumentationAPIService) OBPv600GetMessageDocsJsonSchemaExecute(r ApiOBPv600GetMessageDocsJsonSchemaRequest) (*http.Response, error) {
+func (a *DocumentationAPIService) GetMessageDocsJsonSchemaExecute(r ApiGetMessageDocsJsonSchemaRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentationAPIService.OBPv600GetMessageDocsJsonSchema")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentationAPIService.GetMessageDocsJsonSchema")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1055,17 +553,526 @@ func (a *DocumentationAPIService) OBPv600GetMessageDocsJsonSchemaExecute(r ApiOB
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetScannedApiVersionsRequest struct {
+type ApiGetMessageDocsSwaggerRequest struct {
+	ctx context.Context
+	ApiService *DocumentationAPIService
+	connector string
+}
+
+func (r ApiGetMessageDocsSwaggerRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetMessageDocsSwaggerExecute(r)
+}
+
+/*
+GetMessageDocsSwagger Get Message Docs Swagger
+
+<p>This endpoint provides example message docs in swagger format.<br />
+It is only relavent for REST Connectors.</p>
+<p>This endpoint can be used by the developer building a REST Adapter that connects to the Core Banking System (CBS).<br />
+That is, the Adapter developer can use the Swagger surfaced here to build the REST APIs that the OBP REST connector will call to consume CBS services.</p>
+<p>i.e.:</p>
+<p>OBP API (Core OBP API code) -&gt; OBP REST Connector (OBP REST Connector code) -&gt; OBP REST Adapter (Adapter developer code) -&gt; CBS (Main Frame)</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Connector">CONNECTOR</a>: CONNECTOR</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param connector The CONNECTOR identifier
+ @return ApiGetMessageDocsSwaggerRequest
+*/
+func (a *DocumentationAPIService) GetMessageDocsSwagger(ctx context.Context, connector string) ApiGetMessageDocsSwaggerRequest {
+	return ApiGetMessageDocsSwaggerRequest{
+		ApiService: a,
+		ctx: ctx,
+		connector: connector,
+	}
+}
+
+// Execute executes the request
+func (a *DocumentationAPIService) GetMessageDocsSwaggerExecute(r ApiGetMessageDocsSwaggerRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentationAPIService.GetMessageDocsSwagger")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v3.1.0/message-docs/{connector}/swagger2.0"
+	localVarPath = strings.Replace(localVarPath, "{"+"connector"+"}", url.PathEscape(parameterValueToString(r.connector, "connector")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiGetResourceDocsObpRequest struct {
+	ctx context.Context
+	ApiService *DocumentationAPIService
+	apiversion string
+}
+
+func (r ApiGetResourceDocsObpRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetResourceDocsObpExecute(r)
+}
+
+/*
+GetResourceDocsObp Get Resource Docs
+
+<p>Get documentation about the RESTful resources on this server including example bodies for POST and PUT requests.</p>
+<p>This is the native data format used to document OBP endpoints. Each endpoint has a Resource Doc (a Scala case class) defined in the source code.</p>
+<p>This endpoint is used by OBP API Explorer to display and work with the API documentation.</p>
+<p>Most (but not all) fields are also available in swagger format. (The Swagger endpoint is built from Resource Docs.)</p>
+<p>API_VERSION is the version you want documentation about e.g. v3.0.0</p>
+<p>You may filter this endpoint with tags parameter e.g. ?tags=Account,Bank</p>
+<p>You may filter this endpoint with functions parameter e.g. ?functions=enableDisableConsumers,getConnectorMetrics</p>
+<p>For possible function values, see implemented_by.function in the JSON returned by this endpoint or the OBP source code or the footer of the API Explorer which produces a comma separated list of functions that reflect the server or filtering by API Explorer based on tags etc.</p>
+<p>You may filter this endpoint using the 'content' url parameter, e.g. ?content=dynamic<br />
+if set content=dynamic, only show dynamic endpoints, if content=static, only show the static endpoints. if omit this parameter, we will show all the endpoints.</p>
+<p>You may need some other language resource docs, now we support en_GB and es_ES at the moment.</p>
+<p>You can filter with api-collection-id, but api-collection-id can not be used with others together. If api-collection-id is used in URL, it will ignore all other parameters.</p>
+<p>See the Resource Doc endpoint for more information.</p>
+<p>Note: Dynamic Resource Docs are cached, TTL is 3600 seconds<br />
+Static Resource Docs are cached, TTL is 3600 seconds</p>
+<p>Following are more examples:<br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp">http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?tags=Account,Bank">http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?tags=Account,Bank</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?functions=getBanks,bankById">http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?functions=getBanks,bankById</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?locale=es_ES">http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?locale=es_ES</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?content=static,dynamic,all">http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?content=static,dynamic,all</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221">http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221</a></p>
+<ul>
+<li> operation_id is concatenation of "v", version and function and should be unique (used for DOM element IDs etc. maybe used to link to source code) </li>
+<li> version references the version that the API call is defined in.</li>
+<li> function is the (scala) partial function that implements this endpoint. It is unique per version of the API.</li>
+<li> request_url is empty for the root call, else the path. It contains the standard prefix (e.g. /obp) and the implemented version (the version where this endpoint was defined) e.g. /obp/v1.2.0/resource</li>
+<li> specified_url (recommended to use) is empty for the root call, else the path. It contains the standard prefix (e.g. /obp) and the version specified in the call e.g. /obp/v3.1.0/resource. In OBP, endpoints are first made available at the request_url, but the same resource (function call) is often made available under later versions (specified_url). To access the latest version of all endpoints use the latest version available on your OBP instance e.g. /obp/v3.1.0 - To get the original version use the request_url. We recommend to use the specified_url since non semantic improvements are more likely to be applied to later implementations of the call.</li>
+<li> summary is a short description inline with the swagger terminology. </li>
+<li> description may contain html markup (generated from markdown on the server).</li>
+</ul>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#api_version">API_VERSION</a>:</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param apiversion The APIVERSION identifier
+ @return ApiGetResourceDocsObpRequest
+*/
+func (a *DocumentationAPIService) GetResourceDocsObp(ctx context.Context, apiversion string) ApiGetResourceDocsObpRequest {
+	return ApiGetResourceDocsObpRequest{
+		ApiService: a,
+		ctx: ctx,
+		apiversion: apiversion,
+	}
+}
+
+// Execute executes the request
+func (a *DocumentationAPIService) GetResourceDocsObpExecute(r ApiGetResourceDocsObpRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentationAPIService.GetResourceDocsObp")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v1.4.0/resource-docs/{apiversion}/obp"
+	localVarPath = strings.Replace(localVarPath, "{"+"apiversion"+"}", url.PathEscape(parameterValueToString(r.apiversion, "apiversion")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiGetResourceDocsOpenAPI31Request struct {
+	ctx context.Context
+	ApiService *DocumentationAPIService
+	apiversion string
+}
+
+func (r ApiGetResourceDocsOpenAPI31Request) Execute() (*http.Response, error) {
+	return r.ApiService.GetResourceDocsOpenAPI31Execute(r)
+}
+
+/*
+GetResourceDocsOpenAPI31 Get OpenAPI 3.1 documentation
+
+<p>Returns documentation about the RESTful resources on this server in OpenAPI 3.1 format.</p>
+<p>API_VERSION is the version you want documentation about e.g. v6.0.0</p>
+<h2><a href="#query-parameters" id="query-parameters">Query Parameters</a></h2>
+<p>You may filter this endpoint using the following optional query parameters:</p>
+<p><strong>tags</strong> - Filter by endpoint tags (comma-separated list)<br />
+• Example: ?tags=Account,Bank or ?tags=Account-Firehose<br />
+• All endpoints are given one or more tags which are used for grouping<br />
+• Empty values will return error OBP-10053</p>
+<p><strong>functions</strong> - Filter by function names (comma-separated list)<br />
+• Example: ?functions=getBanks,bankById<br />
+• Each endpoint is implemented in the OBP Scala code by a 'function'<br />
+• Empty values will return error OBP-10054</p>
+<p><strong>content</strong> - Filter by endpoint type<br />
+• Values: static, dynamic, all (case-insensitive)<br />
+• static: Only show static/core API endpoints<br />
+• dynamic: Only show dynamic/custom endpoints<br />
+• all: Show both static and dynamic endpoints (default)<br />
+• Invalid values will return error OBP-10052</p>
+<p><strong>locale</strong> - Language for localized documentation<br />
+• Example: ?locale=en_GB or ?locale=es_ES<br />
+• Supported locales: en_GB, es_ES, ro_RO<br />
+• Invalid locales will return error OBP-10041</p>
+<p><strong>api-collection-id</strong> - Filter by API collection UUID<br />
+• Example: ?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221<br />
+• Returns only endpoints belonging to the specified collection<br />
+• Empty values will return error OBP-10055</p>
+<p>This endpoint generates OpenAPI 3.1 compliant documentation with modern JSON Schema support.</p>
+<p>For YAML format, use the corresponding endpoint: /resource-docs/API_VERSION/openapi.yaml</p>
+<p>See the Resource Doc endpoint for more information.</p>
+<p>Note: Resource Docs are cached, TTL is 3600 seconds</p>
+<h2><a href="#examples" id="examples">Examples</a></h2>
+<p>Basic usage:<br />
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi</a></p>
+<p>Filter by tags:<br />
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account,Bank">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account,Bank</a><br />
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account-Firehose">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account-Firehose</a></p>
+<p>Filter by content type:<br />
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static</a><br />
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=dynamic">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=dynamic</a></p>
+<p>Filter by functions:<br />
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?functions=getBanks,bankById">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?functions=getBanks,bankById</a></p>
+<p>Combine multiple parameters:<br />
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static&amp;tags=Account-Firehose">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static&amp;tags=Account-Firehose</a><br />
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account,Bank,PSD2&amp;functions=getBanks,bankById">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account,Bank,PSD2&amp;functions=getBanks,bankById</a><br />
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static&amp;locale=en_GB&amp;tags=Account">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static&amp;locale=en_GB&amp;tags=Account</a></p>
+<p>Filter by API collection:<br />
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221</a></p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#api_version">API_VERSION</a>:</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param apiversion The APIVERSION identifier
+ @return ApiGetResourceDocsOpenAPI31Request
+*/
+func (a *DocumentationAPIService) GetResourceDocsOpenAPI31(ctx context.Context, apiversion string) ApiGetResourceDocsOpenAPI31Request {
+	return ApiGetResourceDocsOpenAPI31Request{
+		ApiService: a,
+		ctx: ctx,
+		apiversion: apiversion,
+	}
+}
+
+// Execute executes the request
+func (a *DocumentationAPIService) GetResourceDocsOpenAPI31Execute(r ApiGetResourceDocsOpenAPI31Request) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentationAPIService.GetResourceDocsOpenAPI31")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v1.4.0/resource-docs/{apiversion}/openapi"
+	localVarPath = strings.Replace(localVarPath, "{"+"apiversion"+"}", url.PathEscape(parameterValueToString(r.apiversion, "apiversion")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiGetResourceDocsSwaggerRequest struct {
+	ctx context.Context
+	ApiService *DocumentationAPIService
+	apiversion string
+}
+
+func (r ApiGetResourceDocsSwaggerRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetResourceDocsSwaggerExecute(r)
+}
+
+/*
+GetResourceDocsSwagger Get Swagger documentation
+
+<p>Returns documentation about the RESTful resources on this server in Swagger format.</p>
+<p>API_VERSION is the version you want documentation about e.g. v3.0.0</p>
+<p>You may filter this endpoint using the 'tags' url parameter e.g. ?tags=Account,Bank</p>
+<p>(All endpoints are given one or more tags which for used in grouping)</p>
+<p>You may filter this endpoint using the 'functions' url parameter e.g. ?functions=getBanks,bankById</p>
+<p>(Each endpoint is implemented in the OBP Scala code by a 'function')</p>
+<p>See the Resource Doc endpoint for more information.</p>
+<p>Note: Resource Docs are cached, TTL is 3600 seconds</p>
+<p>Following are more examples:<br />
+<a href="http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger">http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger</a><br />
+<a href="http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags=Account,Bank">http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags=Account,Bank</a><br />
+<a href="http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger?functions=getBanks,bankById">http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger?functions=getBanks,bankById</a><br />
+<a href="http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags=Account,Bank,PSD2&amp;functions=getBanks,bankById">http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags=Account,Bank,PSD2&amp;functions=getBanks,bankById</a></p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#api_version">API_VERSION</a>:</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param apiversion The APIVERSION identifier
+ @return ApiGetResourceDocsSwaggerRequest
+*/
+func (a *DocumentationAPIService) GetResourceDocsSwagger(ctx context.Context, apiversion string) ApiGetResourceDocsSwaggerRequest {
+	return ApiGetResourceDocsSwaggerRequest{
+		ApiService: a,
+		ctx: ctx,
+		apiversion: apiversion,
+	}
+}
+
+// Execute executes the request
+func (a *DocumentationAPIService) GetResourceDocsSwaggerExecute(r ApiGetResourceDocsSwaggerRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentationAPIService.GetResourceDocsSwagger")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v1.4.0/resource-docs/{apiversion}/swagger"
+	localVarPath = strings.Replace(localVarPath, "{"+"apiversion"+"}", url.PathEscape(parameterValueToString(r.apiversion, "apiversion")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiGetScannedApiVersionsRequest struct {
 	ctx context.Context
 	ApiService *DocumentationAPIService
 }
 
-func (r ApiOBPv600GetScannedApiVersionsRequest) Execute() (*OBPv600GetScannedApiVersions200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetScannedApiVersionsExecute(r)
+func (r ApiGetScannedApiVersionsRequest) Execute() (*GetScannedApiVersions200Response, *http.Response, error) {
+	return r.ApiService.GetScannedApiVersionsExecute(r)
 }
 
 /*
-OBPv600GetScannedApiVersions Get Scanned API Versions
+GetScannedApiVersions Get Scanned API Versions
 
 <p>Get all scanned API versions available in this codebase.</p>
 <p>This endpoint returns all API versions that have been discovered/scanned, along with their active status.</p>
@@ -1100,26 +1107,26 @@ OBPv600GetScannedApiVersions Get Scanned API Versions
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetScannedApiVersionsRequest
+ @return ApiGetScannedApiVersionsRequest
 */
-func (a *DocumentationAPIService) OBPv600GetScannedApiVersions(ctx context.Context) ApiOBPv600GetScannedApiVersionsRequest {
-	return ApiOBPv600GetScannedApiVersionsRequest{
+func (a *DocumentationAPIService) GetScannedApiVersions(ctx context.Context) ApiGetScannedApiVersionsRequest {
+	return ApiGetScannedApiVersionsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetScannedApiVersions200Response
-func (a *DocumentationAPIService) OBPv600GetScannedApiVersionsExecute(r ApiOBPv600GetScannedApiVersionsRequest) (*OBPv600GetScannedApiVersions200Response, *http.Response, error) {
+//  @return GetScannedApiVersions200Response
+func (a *DocumentationAPIService) GetScannedApiVersionsExecute(r ApiGetScannedApiVersionsRequest) (*GetScannedApiVersions200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetScannedApiVersions200Response
+		localVarReturnValue  *GetScannedApiVersions200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentationAPIService.OBPv600GetScannedApiVersions")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentationAPIService.GetScannedApiVersions")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1171,7 +1178,7 @@ func (a *DocumentationAPIService) OBPv600GetScannedApiVersionsExecute(r ApiOBPv6
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

@@ -1,18 +1,18 @@
 # OpenBankProject.Api.BalanceApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OBPv510CreateBankAccountBalance**](BalanceApi.md#obpv510createbankaccountbalance) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Create Bank Account Balance |
-| [**OBPv510DeleteBankAccountBalance**](BalanceApi.md#obpv510deletebankaccountbalance) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Delete Bank Account Balance |
-| [**OBPv510GetAllBankAccountBalances**](BalanceApi.md#obpv510getallbankaccountbalances) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Get All Bank Account Balances |
-| [**OBPv510GetBankAccountBalanceById**](BalanceApi.md#obpv510getbankaccountbalancebyid) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Get Bank Account Balance By ID |
-| [**OBPv510UpdateBankAccountBalance**](BalanceApi.md#obpv510updatebankaccountbalance) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Update Bank Account Balance |
+| [**CreateBankAccountBalance**](BalanceApi.md#createbankaccountbalance) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Create Bank Account Balance |
+| [**DeleteBankAccountBalance**](BalanceApi.md#deletebankaccountbalance) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Delete Bank Account Balance |
+| [**GetAllBankAccountBalances**](BalanceApi.md#getallbankaccountbalances) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Get All Bank Account Balances |
+| [**GetBankAccountBalanceById**](BalanceApi.md#getbankaccountbalancebyid) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Get Bank Account Balance By ID |
+| [**UpdateBankAccountBalance**](BalanceApi.md#updatebankaccountbalance) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Update Bank Account Balance |
 
-<a id="obpv510createbankaccountbalance"></a>
-# **OBPv510CreateBankAccountBalance**
-> OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems OBPv510CreateBankAccountBalance (string bankid, string accountid, OBPv510CreateBankAccountBalanceRequest oBPv510CreateBankAccountBalanceRequest)
+<a id="createbankaccountbalance"></a>
+# **CreateBankAccountBalance**
+> GetAllBankAccountBalances200ResponseBalancesInner CreateBankAccountBalance (string bankid, string accountid, CreateBankAccountBalanceRequest createBankAccountBalanceRequest)
 
 Create Bank Account Balance
 
@@ -25,11 +25,11 @@ Create Bank Account Balance
 |------|------|-------------|-------|
 | **bankid** | **string** | The BANKID identifier |  |
 | **accountid** | **string** | The ACCOUNTID identifier |  |
-| **oBPv510CreateBankAccountBalanceRequest** | [**OBPv510CreateBankAccountBalanceRequest**](OBPv510CreateBankAccountBalanceRequest.md) | Request body |  |
+| **createBankAccountBalanceRequest** | [**CreateBankAccountBalanceRequest**](CreateBankAccountBalanceRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems**](OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems.md)
+[**GetAllBankAccountBalances200ResponseBalancesInner**](GetAllBankAccountBalances200ResponseBalancesInner.md)
 
 ### Authorization
 
@@ -49,9 +49,9 @@ Create Bank Account Balance
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv510deletebankaccountbalance"></a>
-# **OBPv510DeleteBankAccountBalance**
-> void OBPv510DeleteBankAccountBalance (string bankid, string accountid, string balanceid)
+<a id="deletebankaccountbalance"></a>
+# **DeleteBankAccountBalance**
+> void DeleteBankAccountBalance (string bankid, string accountid, string balanceid)
 
 Delete Bank Account Balance
 
@@ -88,9 +88,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv510getallbankaccountbalances"></a>
-# **OBPv510GetAllBankAccountBalances**
-> OBPv510GetAllBankAccountBalances200Response OBPv510GetAllBankAccountBalances (string bankid, string accountid)
+<a id="getallbankaccountbalances"></a>
+# **GetAllBankAccountBalances**
+> GetAllBankAccountBalances200Response GetAllBankAccountBalances (string bankid, string accountid)
 
 Get All Bank Account Balances
 
@@ -106,7 +106,7 @@ Get All Bank Account Balances
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200Response**](OBPv510GetAllBankAccountBalances200Response.md)
+[**GetAllBankAccountBalances200Response**](GetAllBankAccountBalances200Response.md)
 
 ### Authorization
 
@@ -126,9 +126,9 @@ Get All Bank Account Balances
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv510getbankaccountbalancebyid"></a>
-# **OBPv510GetBankAccountBalanceById**
-> OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems OBPv510GetBankAccountBalanceById (string bankid, string accountid, string balanceid)
+<a id="getbankaccountbalancebyid"></a>
+# **GetBankAccountBalanceById**
+> GetAllBankAccountBalances200ResponseBalancesInner GetBankAccountBalanceById (string bankid, string accountid, string balanceid)
 
 Get Bank Account Balance By ID
 
@@ -145,7 +145,7 @@ Get Bank Account Balance By ID
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems**](OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems.md)
+[**GetAllBankAccountBalances200ResponseBalancesInner**](GetAllBankAccountBalances200ResponseBalancesInner.md)
 
 ### Authorization
 
@@ -165,9 +165,9 @@ Get Bank Account Balance By ID
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv510updatebankaccountbalance"></a>
-# **OBPv510UpdateBankAccountBalance**
-> OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems OBPv510UpdateBankAccountBalance (string bankid, string accountid, string balanceid, OBPv510CreateBankAccountBalanceRequest oBPv510CreateBankAccountBalanceRequest)
+<a id="updatebankaccountbalance"></a>
+# **UpdateBankAccountBalance**
+> GetAllBankAccountBalances200ResponseBalancesInner UpdateBankAccountBalance (string bankid, string accountid, string balanceid, CreateBankAccountBalanceRequest createBankAccountBalanceRequest)
 
 Update Bank Account Balance
 
@@ -181,11 +181,11 @@ Update Bank Account Balance
 | **bankid** | **string** | The BANKID identifier |  |
 | **accountid** | **string** | The ACCOUNTID identifier |  |
 | **balanceid** | **string** | The BALANCEID identifier |  |
-| **oBPv510CreateBankAccountBalanceRequest** | [**OBPv510CreateBankAccountBalanceRequest**](OBPv510CreateBankAccountBalanceRequest.md) | Request body |  |
+| **createBankAccountBalanceRequest** | [**CreateBankAccountBalanceRequest**](CreateBankAccountBalanceRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems**](OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems.md)
+[**GetAllBankAccountBalances200ResponseBalancesInner**](GetAllBankAccountBalances200ResponseBalancesInner.md)
 
 ### Authorization
 

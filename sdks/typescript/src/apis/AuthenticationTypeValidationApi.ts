@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,35 +15,35 @@
 
 import * as runtime from '../runtime';
 import type {
-  OBPv400GetAllAuthenticationTypeValidationsPublic200Response,
-  OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems,
-  OBPv400UpdateAuthenticationTypeValidationRequest,
+  GetAllAuthenticationTypeValidationsPublic200Response,
+  GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner,
+  UpdateAuthenticationTypeValidationRequest,
 } from '../models/index';
 import {
-    OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseFromJSON,
-    OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseToJSON,
-    OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItemsFromJSON,
-    OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItemsToJSON,
-    OBPv400UpdateAuthenticationTypeValidationRequestFromJSON,
-    OBPv400UpdateAuthenticationTypeValidationRequestToJSON,
+    GetAllAuthenticationTypeValidationsPublic200ResponseFromJSON,
+    GetAllAuthenticationTypeValidationsPublic200ResponseToJSON,
+    GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInnerFromJSON,
+    GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInnerToJSON,
+    UpdateAuthenticationTypeValidationRequestFromJSON,
+    UpdateAuthenticationTypeValidationRequestToJSON,
 } from '../models/index';
 
-export interface OBPv400CreateAuthenticationTypeValidationRequest {
+export interface CreateAuthenticationTypeValidationRequest {
     operationid: string;
-    oBPv400UpdateAuthenticationTypeValidationRequest: OBPv400UpdateAuthenticationTypeValidationRequest;
+    updateAuthenticationTypeValidationRequest: UpdateAuthenticationTypeValidationRequest;
 }
 
-export interface OBPv400DeleteAuthenticationTypeValidationRequest {
-    operationid: string;
-}
-
-export interface OBPv400GetAuthenticationTypeValidationRequest {
+export interface DeleteAuthenticationTypeValidationRequest {
     operationid: string;
 }
 
-export interface OBPv400UpdateAuthenticationTypeValidationOperationRequest {
+export interface GetAuthenticationTypeValidationRequest {
     operationid: string;
-    oBPv400UpdateAuthenticationTypeValidationRequest: OBPv400UpdateAuthenticationTypeValidationRequest;
+}
+
+export interface UpdateAuthenticationTypeValidationOperationRequest {
+    operationid: string;
+    updateAuthenticationTypeValidationRequest: UpdateAuthenticationTypeValidationRequest;
 }
 
 /**
@@ -52,20 +52,20 @@ export interface OBPv400UpdateAuthenticationTypeValidationOperationRequest {
 export class AuthenticationTypeValidationApi extends runtime.BaseAPI {
 
     /**
-     * Creates request options for oBPv400CreateAuthenticationTypeValidation without sending the request
+     * Creates request options for createAuthenticationTypeValidation without sending the request
      */
-    async oBPv400CreateAuthenticationTypeValidationRequestOpts(requestParameters: OBPv400CreateAuthenticationTypeValidationRequest): Promise<runtime.RequestOpts> {
+    async createAuthenticationTypeValidationRequestOpts(requestParameters: CreateAuthenticationTypeValidationRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['operationid'] == null) {
             throw new runtime.RequiredError(
                 'operationid',
-                'Required parameter "operationid" was null or undefined when calling oBPv400CreateAuthenticationTypeValidation().'
+                'Required parameter "operationid" was null or undefined when calling createAuthenticationTypeValidation().'
             );
         }
 
-        if (requestParameters['oBPv400UpdateAuthenticationTypeValidationRequest'] == null) {
+        if (requestParameters['updateAuthenticationTypeValidationRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv400UpdateAuthenticationTypeValidationRequest',
-                'Required parameter "oBPv400UpdateAuthenticationTypeValidationRequest" was null or undefined when calling oBPv400CreateAuthenticationTypeValidation().'
+                'updateAuthenticationTypeValidationRequest',
+                'Required parameter "updateAuthenticationTypeValidationRequest" was null or undefined when calling createAuthenticationTypeValidation().'
             );
         }
 
@@ -85,7 +85,7 @@ export class AuthenticationTypeValidationApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -97,7 +97,7 @@ export class AuthenticationTypeValidationApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv400UpdateAuthenticationTypeValidationRequestToJSON(requestParameters['oBPv400UpdateAuthenticationTypeValidationRequest']),
+            body: UpdateAuthenticationTypeValidationRequestToJSON(requestParameters['updateAuthenticationTypeValidationRequest']),
         };
     }
 
@@ -105,30 +105,30 @@ export class AuthenticationTypeValidationApi extends runtime.BaseAPI {
      * <p>Create an Authentication Type Validation.</p> <p>Please supply allowed authentication types.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON request body fields:</strong></p> <p><strong>JSON response body fields:</strong></p> 
      * Create an Authentication Type Validation
      */
-    async oBPv400CreateAuthenticationTypeValidationRaw(requestParameters: OBPv400CreateAuthenticationTypeValidationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems>> {
-        const requestOptions = await this.oBPv400CreateAuthenticationTypeValidationRequestOpts(requestParameters);
+    async createAuthenticationTypeValidationRaw(requestParameters: CreateAuthenticationTypeValidationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner>> {
+        const requestOptions = await this.createAuthenticationTypeValidationRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Create an Authentication Type Validation.</p> <p>Please supply allowed authentication types.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON request body fields:</strong></p> <p><strong>JSON response body fields:</strong></p> 
      * Create an Authentication Type Validation
      */
-    async oBPv400CreateAuthenticationTypeValidation(requestParameters: OBPv400CreateAuthenticationTypeValidationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems> {
-        const response = await this.oBPv400CreateAuthenticationTypeValidationRaw(requestParameters, initOverrides);
+    async createAuthenticationTypeValidation(requestParameters: CreateAuthenticationTypeValidationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner> {
+        const response = await this.createAuthenticationTypeValidationRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400DeleteAuthenticationTypeValidation without sending the request
+     * Creates request options for deleteAuthenticationTypeValidation without sending the request
      */
-    async oBPv400DeleteAuthenticationTypeValidationRequestOpts(requestParameters: OBPv400DeleteAuthenticationTypeValidationRequest): Promise<runtime.RequestOpts> {
+    async deleteAuthenticationTypeValidationRequestOpts(requestParameters: DeleteAuthenticationTypeValidationRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['operationid'] == null) {
             throw new runtime.RequiredError(
                 'operationid',
-                'Required parameter "operationid" was null or undefined when calling oBPv400DeleteAuthenticationTypeValidation().'
+                'Required parameter "operationid" was null or undefined when calling deleteAuthenticationTypeValidation().'
             );
         }
 
@@ -146,7 +146,7 @@ export class AuthenticationTypeValidationApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -165,8 +165,8 @@ export class AuthenticationTypeValidationApi extends runtime.BaseAPI {
      * <p>Delete an Authentication Type Validation by operation_id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete an Authentication Type Validation
      */
-    async oBPv400DeleteAuthenticationTypeValidationRaw(requestParameters: OBPv400DeleteAuthenticationTypeValidationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv400DeleteAuthenticationTypeValidationRequestOpts(requestParameters);
+    async deleteAuthenticationTypeValidationRaw(requestParameters: DeleteAuthenticationTypeValidationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteAuthenticationTypeValidationRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -176,14 +176,14 @@ export class AuthenticationTypeValidationApi extends runtime.BaseAPI {
      * <p>Delete an Authentication Type Validation by operation_id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete an Authentication Type Validation
      */
-    async oBPv400DeleteAuthenticationTypeValidation(requestParameters: OBPv400DeleteAuthenticationTypeValidationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv400DeleteAuthenticationTypeValidationRaw(requestParameters, initOverrides);
+    async deleteAuthenticationTypeValidation(requestParameters: DeleteAuthenticationTypeValidationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteAuthenticationTypeValidationRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Creates request options for oBPv400GetAllAuthenticationTypeValidations without sending the request
+     * Creates request options for getAllAuthenticationTypeValidations without sending the request
      */
-    async oBPv400GetAllAuthenticationTypeValidationsRequestOpts(): Promise<runtime.RequestOpts> {
+    async getAllAuthenticationTypeValidationsRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -198,7 +198,7 @@ export class AuthenticationTypeValidationApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -216,26 +216,26 @@ export class AuthenticationTypeValidationApi extends runtime.BaseAPI {
      * <p>Get all Authentication Type Validations.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
      * Get all Authentication Type Validations
      */
-    async oBPv400GetAllAuthenticationTypeValidationsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200Response>> {
-        const requestOptions = await this.oBPv400GetAllAuthenticationTypeValidationsRequestOpts();
+    async getAllAuthenticationTypeValidationsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAllAuthenticationTypeValidationsPublic200Response>> {
+        const requestOptions = await this.getAllAuthenticationTypeValidationsRequestOpts();
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetAllAuthenticationTypeValidationsPublic200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get all Authentication Type Validations.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
      * Get all Authentication Type Validations
      */
-    async oBPv400GetAllAuthenticationTypeValidations(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetAllAuthenticationTypeValidationsPublic200Response> {
-        const response = await this.oBPv400GetAllAuthenticationTypeValidationsRaw(initOverrides);
+    async getAllAuthenticationTypeValidations(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAllAuthenticationTypeValidationsPublic200Response> {
+        const response = await this.getAllAuthenticationTypeValidationsRaw(initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400GetAllAuthenticationTypeValidationsPublic without sending the request
+     * Creates request options for getAllAuthenticationTypeValidationsPublic without sending the request
      */
-    async oBPv400GetAllAuthenticationTypeValidationsPublicRequestOpts(): Promise<runtime.RequestOpts> {
+    async getAllAuthenticationTypeValidationsPublicRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -255,30 +255,30 @@ export class AuthenticationTypeValidationApi extends runtime.BaseAPI {
      * <p>Get all Authentication Type Validations - public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> 
      * Get all Authentication Type Validations - public
      */
-    async oBPv400GetAllAuthenticationTypeValidationsPublicRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200Response>> {
-        const requestOptions = await this.oBPv400GetAllAuthenticationTypeValidationsPublicRequestOpts();
+    async getAllAuthenticationTypeValidationsPublicRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAllAuthenticationTypeValidationsPublic200Response>> {
+        const requestOptions = await this.getAllAuthenticationTypeValidationsPublicRequestOpts();
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetAllAuthenticationTypeValidationsPublic200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get all Authentication Type Validations - public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> 
      * Get all Authentication Type Validations - public
      */
-    async oBPv400GetAllAuthenticationTypeValidationsPublic(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetAllAuthenticationTypeValidationsPublic200Response> {
-        const response = await this.oBPv400GetAllAuthenticationTypeValidationsPublicRaw(initOverrides);
+    async getAllAuthenticationTypeValidationsPublic(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAllAuthenticationTypeValidationsPublic200Response> {
+        const response = await this.getAllAuthenticationTypeValidationsPublicRaw(initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400GetAuthenticationTypeValidation without sending the request
+     * Creates request options for getAuthenticationTypeValidation without sending the request
      */
-    async oBPv400GetAuthenticationTypeValidationRequestOpts(requestParameters: OBPv400GetAuthenticationTypeValidationRequest): Promise<runtime.RequestOpts> {
+    async getAuthenticationTypeValidationRequestOpts(requestParameters: GetAuthenticationTypeValidationRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['operationid'] == null) {
             throw new runtime.RequiredError(
                 'operationid',
-                'Required parameter "operationid" was null or undefined when calling oBPv400GetAuthenticationTypeValidation().'
+                'Required parameter "operationid" was null or undefined when calling getAuthenticationTypeValidation().'
             );
         }
 
@@ -296,7 +296,7 @@ export class AuthenticationTypeValidationApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -315,37 +315,37 @@ export class AuthenticationTypeValidationApi extends runtime.BaseAPI {
      * <p>Get an Authentication Type Validation by operation_id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
      * Get an Authentication Type Validation
      */
-    async oBPv400GetAuthenticationTypeValidationRaw(requestParameters: OBPv400GetAuthenticationTypeValidationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems>> {
-        const requestOptions = await this.oBPv400GetAuthenticationTypeValidationRequestOpts(requestParameters);
+    async getAuthenticationTypeValidationRaw(requestParameters: GetAuthenticationTypeValidationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner>> {
+        const requestOptions = await this.getAuthenticationTypeValidationRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Get an Authentication Type Validation by operation_id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
      * Get an Authentication Type Validation
      */
-    async oBPv400GetAuthenticationTypeValidation(requestParameters: OBPv400GetAuthenticationTypeValidationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems> {
-        const response = await this.oBPv400GetAuthenticationTypeValidationRaw(requestParameters, initOverrides);
+    async getAuthenticationTypeValidation(requestParameters: GetAuthenticationTypeValidationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner> {
+        const response = await this.getAuthenticationTypeValidationRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400UpdateAuthenticationTypeValidation without sending the request
+     * Creates request options for updateAuthenticationTypeValidation without sending the request
      */
-    async oBPv400UpdateAuthenticationTypeValidationRequestOpts(requestParameters: OBPv400UpdateAuthenticationTypeValidationOperationRequest): Promise<runtime.RequestOpts> {
+    async updateAuthenticationTypeValidationRequestOpts(requestParameters: UpdateAuthenticationTypeValidationOperationRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['operationid'] == null) {
             throw new runtime.RequiredError(
                 'operationid',
-                'Required parameter "operationid" was null or undefined when calling oBPv400UpdateAuthenticationTypeValidation().'
+                'Required parameter "operationid" was null or undefined when calling updateAuthenticationTypeValidation().'
             );
         }
 
-        if (requestParameters['oBPv400UpdateAuthenticationTypeValidationRequest'] == null) {
+        if (requestParameters['updateAuthenticationTypeValidationRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv400UpdateAuthenticationTypeValidationRequest',
-                'Required parameter "oBPv400UpdateAuthenticationTypeValidationRequest" was null or undefined when calling oBPv400UpdateAuthenticationTypeValidation().'
+                'updateAuthenticationTypeValidationRequest',
+                'Required parameter "updateAuthenticationTypeValidationRequest" was null or undefined when calling updateAuthenticationTypeValidation().'
             );
         }
 
@@ -365,7 +365,7 @@ export class AuthenticationTypeValidationApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -377,7 +377,7 @@ export class AuthenticationTypeValidationApi extends runtime.BaseAPI {
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv400UpdateAuthenticationTypeValidationRequestToJSON(requestParameters['oBPv400UpdateAuthenticationTypeValidationRequest']),
+            body: UpdateAuthenticationTypeValidationRequestToJSON(requestParameters['updateAuthenticationTypeValidationRequest']),
         };
     }
 
@@ -385,19 +385,19 @@ export class AuthenticationTypeValidationApi extends runtime.BaseAPI {
      * <p>Update an Authentication Type Validation.</p> <p>Please supply allowed authentication types.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
      * Update an Authentication Type Validation
      */
-    async oBPv400UpdateAuthenticationTypeValidationRaw(requestParameters: OBPv400UpdateAuthenticationTypeValidationOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems>> {
-        const requestOptions = await this.oBPv400UpdateAuthenticationTypeValidationRequestOpts(requestParameters);
+    async updateAuthenticationTypeValidationRaw(requestParameters: UpdateAuthenticationTypeValidationOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner>> {
+        const requestOptions = await this.updateAuthenticationTypeValidationRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Update an Authentication Type Validation.</p> <p>Please supply allowed authentication types.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
      * Update an Authentication Type Validation
      */
-    async oBPv400UpdateAuthenticationTypeValidation(requestParameters: OBPv400UpdateAuthenticationTypeValidationOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems> {
-        const response = await this.oBPv400UpdateAuthenticationTypeValidationRaw(requestParameters, initOverrides);
+    async updateAuthenticationTypeValidation(requestParameters: UpdateAuthenticationTypeValidationOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner> {
+        const response = await this.updateAuthenticationTypeValidationRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

@@ -2,24 +2,24 @@
 
 
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv400CreateCustomerAttribute()**](CustomerAttributeApi.md#oBPv400CreateCustomerAttribute) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attribute | Create Customer Attribute |
-| [**oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition()**](CustomerAttributeApi.md#oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Create or Update Customer Attribute Definition |
-| [**oBPv400DeleteCustomerAttribute()**](CustomerAttributeApi.md#oBPv400DeleteCustomerAttribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/{customerid}/attributes/{customerattributeid} | Delete Customer Attribute |
-| [**oBPv400DeleteCustomerAttributeDefinition()**](CustomerAttributeApi.md#oBPv400DeleteCustomerAttributeDefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/customer | Delete Customer Attribute Definition |
-| [**oBPv400GetCustomerAttributeById()**](CustomerAttributeApi.md#oBPv400GetCustomerAttributeById) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{attributeid} | Get Customer Attribute By Id |
-| [**oBPv400GetCustomerAttributeDefinition()**](CustomerAttributeApi.md#oBPv400GetCustomerAttributeDefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Get Customer Attribute Definition |
-| [**oBPv400GetCustomerAttributes()**](CustomerAttributeApi.md#oBPv400GetCustomerAttributes) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes | Get Customer Attributes |
-| [**oBPv400UpdateCustomerAttribute()**](CustomerAttributeApi.md#oBPv400UpdateCustomerAttribute) | **PUT** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{customerattributeid} | Update Customer Attribute |
+| [**createCustomerAttribute()**](CustomerAttributeApi.md#createCustomerAttribute) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attribute | Create Customer Attribute |
+| [**createOrUpdateCustomerAttributeAttributeDefinition()**](CustomerAttributeApi.md#createOrUpdateCustomerAttributeAttributeDefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Create or Update Customer Attribute Definition |
+| [**deleteCustomerAttribute()**](CustomerAttributeApi.md#deleteCustomerAttribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/{customerid}/attributes/{customerattributeid} | Delete Customer Attribute |
+| [**deleteCustomerAttributeDefinition()**](CustomerAttributeApi.md#deleteCustomerAttributeDefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/customer | Delete Customer Attribute Definition |
+| [**getCustomerAttributeById()**](CustomerAttributeApi.md#getCustomerAttributeById) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{attributeid} | Get Customer Attribute By Id |
+| [**getCustomerAttributeDefinition()**](CustomerAttributeApi.md#getCustomerAttributeDefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Get Customer Attribute Definition |
+| [**getCustomerAttributes()**](CustomerAttributeApi.md#getCustomerAttributes) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes | Get Customer Attributes |
+| [**updateCustomerAttribute()**](CustomerAttributeApi.md#updateCustomerAttribute) | **PUT** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{customerattributeid} | Update Customer Attribute |
 
 
-## `oBPv400CreateCustomerAttribute()`
+## `createCustomerAttribute()`
 
 ```php
-oBPv400CreateCustomerAttribute($bankid, $customerid, $obpv600_create_personal_data_field_request): \OpenBankProject\Model\OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems
+createCustomerAttribute($bankid, $customerid, $create_personal_data_field_request): \OpenBankProject\Model\GetCustomerAttributes200ResponseCustomerAttributesInner
 ```
 
 Create Customer Attribute
@@ -42,9 +42,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CustomerAttributeApi(
@@ -55,13 +55,13 @@ $apiInstance = new OpenBankProject\Api\CustomerAttributeApi(
 );
 $bankid = 'bankid_example'; // string | The BANKID identifier
 $customerid = 'customerid_example'; // string | The CUSTOMERID identifier
-$obpv600_create_personal_data_field_request = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}}; // \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest | Request body
+$create_personal_data_field_request = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}}; // \OpenBankProject\Model\CreatePersonalDataFieldRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv400CreateCustomerAttribute($bankid, $customerid, $obpv600_create_personal_data_field_request);
+    $result = $apiInstance->createCustomerAttribute($bankid, $customerid, $create_personal_data_field_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerAttributeApi->oBPv400CreateCustomerAttribute: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerAttributeApi->createCustomerAttribute: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -71,11 +71,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **bankid** | **string**| The BANKID identifier | |
 | **customerid** | **string**| The CUSTOMERID identifier | |
-| **obpv600_create_personal_data_field_request** | [**\OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest**](../Model/OBPv600CreatePersonalDataFieldRequest.md)| Request body | |
+| **create_personal_data_field_request** | [**\OpenBankProject\Model\CreatePersonalDataFieldRequest**](../Model/CreatePersonalDataFieldRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems**](../Model/OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems.md)
+[**\OpenBankProject\Model\GetCustomerAttributes200ResponseCustomerAttributesInner**](../Model/GetCustomerAttributes200ResponseCustomerAttributesInner.md)
 
 ### Authorization
 
@@ -90,10 +90,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition()`
+## `createOrUpdateCustomerAttributeAttributeDefinition()`
 
 ```php
-oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition($bankid, $obpv400_create_or_update_transaction_request_attribute_definition_request): \OpenBankProject\Model\OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
+createOrUpdateCustomerAttributeAttributeDefinition($bankid, $create_or_update_transaction_request_attribute_definition_request): \OpenBankProject\Model\GetTransactionRequestAttributeDefinition200ResponseAttributesInner
 ```
 
 Create or Update Customer Attribute Definition
@@ -116,9 +116,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CustomerAttributeApi(
@@ -128,13 +128,13 @@ $apiInstance = new OpenBankProject\Api\CustomerAttributeApi(
     $config
 );
 $bankid = 'bankid_example'; // string | The BANKID identifier
-$obpv400_create_or_update_transaction_request_attribute_definition_request = {type=object, properties={can_be_seen_on_views={type=array, items={type=string}}, description={type=string}, is_active={type=boolean}, name={type=string}, type={type=string}, category={type=string}, alias={type=string}}}; // \OpenBankProject\Model\OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+$create_or_update_transaction_request_attribute_definition_request = {type=object, properties={can_be_seen_on_views={type=array, items={type=string}}, description={type=string}, is_active={type=boolean}, name={type=string}, type={type=string}, category={type=string}, alias={type=string}}}; // \OpenBankProject\Model\CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition($bankid, $obpv400_create_or_update_transaction_request_attribute_definition_request);
+    $result = $apiInstance->createOrUpdateCustomerAttributeAttributeDefinition($bankid, $create_or_update_transaction_request_attribute_definition_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerAttributeApi->oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerAttributeApi->createOrUpdateCustomerAttributeAttributeDefinition: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -143,11 +143,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **bankid** | **string**| The BANKID identifier | |
-| **obpv400_create_or_update_transaction_request_attribute_definition_request** | [**\OpenBankProject\Model\OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](../Model/OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | |
+| **create_or_update_transaction_request_attribute_definition_request** | [**\OpenBankProject\Model\CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](../Model/CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](../Model/OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
+[**\OpenBankProject\Model\GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](../Model/GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
 
 ### Authorization
 
@@ -162,10 +162,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400DeleteCustomerAttribute()`
+## `deleteCustomerAttribute()`
 
 ```php
-oBPv400DeleteCustomerAttribute($bankid, $customerid, $customerattributeid)
+deleteCustomerAttribute($bankid, $customerid, $customerattributeid)
 ```
 
 Delete Customer Attribute
@@ -188,9 +188,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CustomerAttributeApi(
@@ -204,9 +204,9 @@ $customerid = 'customerid_example'; // string | The CUSTOMERID identifier
 $customerattributeid = 'customerattributeid_example'; // string | The CUSTOMERATTRIBUTEID identifier
 
 try {
-    $apiInstance->oBPv400DeleteCustomerAttribute($bankid, $customerid, $customerattributeid);
+    $apiInstance->deleteCustomerAttribute($bankid, $customerid, $customerattributeid);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerAttributeApi->oBPv400DeleteCustomerAttribute: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerAttributeApi->deleteCustomerAttribute: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -235,10 +235,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400DeleteCustomerAttributeDefinition()`
+## `deleteCustomerAttributeDefinition()`
 
 ```php
-oBPv400DeleteCustomerAttributeDefinition($bankid, $attributedefinitionid)
+deleteCustomerAttributeDefinition($bankid, $attributedefinitionid)
 ```
 
 Delete Customer Attribute Definition
@@ -261,9 +261,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CustomerAttributeApi(
@@ -276,9 +276,9 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $attributedefinitionid = 'attributedefinitionid_example'; // string | The ATTRIBUTEDEFINITIONID identifier
 
 try {
-    $apiInstance->oBPv400DeleteCustomerAttributeDefinition($bankid, $attributedefinitionid);
+    $apiInstance->deleteCustomerAttributeDefinition($bankid, $attributedefinitionid);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerAttributeApi->oBPv400DeleteCustomerAttributeDefinition: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerAttributeApi->deleteCustomerAttributeDefinition: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -306,10 +306,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400GetCustomerAttributeById()`
+## `getCustomerAttributeById()`
 
 ```php
-oBPv400GetCustomerAttributeById($bankid, $customerid, $attributeid): \OpenBankProject\Model\OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems
+getCustomerAttributeById($bankid, $customerid, $attributeid): \OpenBankProject\Model\GetCustomerAttributes200ResponseCustomerAttributesInner
 ```
 
 Get Customer Attribute By Id
@@ -332,9 +332,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CustomerAttributeApi(
@@ -348,10 +348,10 @@ $customerid = 'customerid_example'; // string | The CUSTOMERID identifier
 $attributeid = 'attributeid_example'; // string | The ATTRIBUTEID identifier
 
 try {
-    $result = $apiInstance->oBPv400GetCustomerAttributeById($bankid, $customerid, $attributeid);
+    $result = $apiInstance->getCustomerAttributeById($bankid, $customerid, $attributeid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerAttributeApi->oBPv400GetCustomerAttributeById: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerAttributeApi->getCustomerAttributeById: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -365,7 +365,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems**](../Model/OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems.md)
+[**\OpenBankProject\Model\GetCustomerAttributes200ResponseCustomerAttributesInner**](../Model/GetCustomerAttributes200ResponseCustomerAttributesInner.md)
 
 ### Authorization
 
@@ -380,10 +380,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400GetCustomerAttributeDefinition()`
+## `getCustomerAttributeDefinition()`
 
 ```php
-oBPv400GetCustomerAttributeDefinition($bankid): \OpenBankProject\Model\OBPv400GetTransactionRequestAttributeDefinition200Response
+getCustomerAttributeDefinition($bankid): \OpenBankProject\Model\GetTransactionRequestAttributeDefinition200Response
 ```
 
 Get Customer Attribute Definition
@@ -406,9 +406,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CustomerAttributeApi(
@@ -420,10 +420,10 @@ $apiInstance = new OpenBankProject\Api\CustomerAttributeApi(
 $bankid = 'bankid_example'; // string | The BANKID identifier
 
 try {
-    $result = $apiInstance->oBPv400GetCustomerAttributeDefinition($bankid);
+    $result = $apiInstance->getCustomerAttributeDefinition($bankid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerAttributeApi->oBPv400GetCustomerAttributeDefinition: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerAttributeApi->getCustomerAttributeDefinition: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -435,7 +435,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetTransactionRequestAttributeDefinition200Response**](../Model/OBPv400GetTransactionRequestAttributeDefinition200Response.md)
+[**\OpenBankProject\Model\GetTransactionRequestAttributeDefinition200Response**](../Model/GetTransactionRequestAttributeDefinition200Response.md)
 
 ### Authorization
 
@@ -450,10 +450,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400GetCustomerAttributes()`
+## `getCustomerAttributes()`
 
 ```php
-oBPv400GetCustomerAttributes($bankid, $customerid): \OpenBankProject\Model\OBPv400GetCustomerAttributes200Response
+getCustomerAttributes($bankid, $customerid): \OpenBankProject\Model\GetCustomerAttributes200Response
 ```
 
 Get Customer Attributes
@@ -476,9 +476,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CustomerAttributeApi(
@@ -491,10 +491,10 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $customerid = 'customerid_example'; // string | The CUSTOMERID identifier
 
 try {
-    $result = $apiInstance->oBPv400GetCustomerAttributes($bankid, $customerid);
+    $result = $apiInstance->getCustomerAttributes($bankid, $customerid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerAttributeApi->oBPv400GetCustomerAttributes: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerAttributeApi->getCustomerAttributes: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -507,7 +507,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetCustomerAttributes200Response**](../Model/OBPv400GetCustomerAttributes200Response.md)
+[**\OpenBankProject\Model\GetCustomerAttributes200Response**](../Model/GetCustomerAttributes200Response.md)
 
 ### Authorization
 
@@ -522,10 +522,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400UpdateCustomerAttribute()`
+## `updateCustomerAttribute()`
 
 ```php
-oBPv400UpdateCustomerAttribute($bankid, $customerid, $customerattributeid, $obpv600_create_personal_data_field_request): \OpenBankProject\Model\OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems
+updateCustomerAttribute($bankid, $customerid, $customerattributeid, $create_personal_data_field_request): \OpenBankProject\Model\GetCustomerAttributes200ResponseCustomerAttributesInner
 ```
 
 Update Customer Attribute
@@ -548,9 +548,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CustomerAttributeApi(
@@ -562,13 +562,13 @@ $apiInstance = new OpenBankProject\Api\CustomerAttributeApi(
 $bankid = 'bankid_example'; // string | The BANKID identifier
 $customerid = 'customerid_example'; // string | The CUSTOMERID identifier
 $customerattributeid = 'customerattributeid_example'; // string | The CUSTOMERATTRIBUTEID identifier
-$obpv600_create_personal_data_field_request = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}}; // \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest | Request body
+$create_personal_data_field_request = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}}; // \OpenBankProject\Model\CreatePersonalDataFieldRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv400UpdateCustomerAttribute($bankid, $customerid, $customerattributeid, $obpv600_create_personal_data_field_request);
+    $result = $apiInstance->updateCustomerAttribute($bankid, $customerid, $customerattributeid, $create_personal_data_field_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerAttributeApi->oBPv400UpdateCustomerAttribute: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerAttributeApi->updateCustomerAttribute: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -579,11 +579,11 @@ try {
 | **bankid** | **string**| The BANKID identifier | |
 | **customerid** | **string**| The CUSTOMERID identifier | |
 | **customerattributeid** | **string**| The CUSTOMERATTRIBUTEID identifier | |
-| **obpv600_create_personal_data_field_request** | [**\OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest**](../Model/OBPv600CreatePersonalDataFieldRequest.md)| Request body | |
+| **create_personal_data_field_request** | [**\OpenBankProject\Model\CreatePersonalDataFieldRequest**](../Model/CreatePersonalDataFieldRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems**](../Model/OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems.md)
+[**\OpenBankProject\Model\GetCustomerAttributes200ResponseCustomerAttributesInner**](../Model/GetCustomerAttributes200ResponseCustomerAttributesInner.md)
 
 ### Authorization
 

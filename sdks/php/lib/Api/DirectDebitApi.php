@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,10 +75,10 @@ class DirectDebitApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv400CreateDirectDebit' => [
+        'createDirectDebit' => [
             'application/json',
         ],
-        'oBPv400CreateDirectDebitManagement' => [
+        'createDirectDebitManagement' => [
             'application/json',
         ],
     ];
@@ -130,44 +130,44 @@ class DirectDebitApi
     }
 
     /**
-     * Operation oBPv400CreateDirectDebit
+     * Operation createDirectDebit
      *
      * Create Direct Debit
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateDirectDebitRequest $obpv400_create_direct_debit_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateDirectDebit'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateDirectDebitRequest $create_direct_debit_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDirectDebit'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400CreateDirectDebit200Response
+     * @return \OpenBankProject\Model\CreateDirectDebit200Response
      */
-    public function oBPv400CreateDirectDebit($bankid, $accountid, $viewid, $obpv400_create_direct_debit_request, string $contentType = self::contentTypes['oBPv400CreateDirectDebit'][0])
+    public function createDirectDebit($bankid, $accountid, $viewid, $create_direct_debit_request, string $contentType = self::contentTypes['createDirectDebit'][0])
     {
-        list($response) = $this->oBPv400CreateDirectDebitWithHttpInfo($bankid, $accountid, $viewid, $obpv400_create_direct_debit_request, $contentType);
+        list($response) = $this->createDirectDebitWithHttpInfo($bankid, $accountid, $viewid, $create_direct_debit_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400CreateDirectDebitWithHttpInfo
+     * Operation createDirectDebitWithHttpInfo
      *
      * Create Direct Debit
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateDirectDebitRequest $obpv400_create_direct_debit_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateDirectDebit'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateDirectDebitRequest $create_direct_debit_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDirectDebit'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400CreateDirectDebit200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\CreateDirectDebit200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400CreateDirectDebitWithHttpInfo($bankid, $accountid, $viewid, $obpv400_create_direct_debit_request, string $contentType = self::contentTypes['oBPv400CreateDirectDebit'][0])
+    public function createDirectDebitWithHttpInfo($bankid, $accountid, $viewid, $create_direct_debit_request, string $contentType = self::contentTypes['createDirectDebit'][0])
     {
-        $request = $this->oBPv400CreateDirectDebitRequest($bankid, $accountid, $viewid, $obpv400_create_direct_debit_request, $contentType);
+        $request = $this->createDirectDebitRequest($bankid, $accountid, $viewid, $create_direct_debit_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -195,7 +195,7 @@ class DirectDebitApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400CreateDirectDebit200Response',
+                        '\OpenBankProject\Model\CreateDirectDebit200Response',
                         $request,
                         $response,
                     );
@@ -217,7 +217,7 @@ class DirectDebitApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400CreateDirectDebit200Response',
+                '\OpenBankProject\Model\CreateDirectDebit200Response',
                 $request,
                 $response,
             );
@@ -226,7 +226,7 @@ class DirectDebitApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400CreateDirectDebit200Response',
+                        '\OpenBankProject\Model\CreateDirectDebit200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -239,22 +239,22 @@ class DirectDebitApi
     }
 
     /**
-     * Operation oBPv400CreateDirectDebitAsync
+     * Operation createDirectDebitAsync
      *
      * Create Direct Debit
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateDirectDebitRequest $obpv400_create_direct_debit_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateDirectDebit'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateDirectDebitRequest $create_direct_debit_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDirectDebit'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateDirectDebitAsync($bankid, $accountid, $viewid, $obpv400_create_direct_debit_request, string $contentType = self::contentTypes['oBPv400CreateDirectDebit'][0])
+    public function createDirectDebitAsync($bankid, $accountid, $viewid, $create_direct_debit_request, string $contentType = self::contentTypes['createDirectDebit'][0])
     {
-        return $this->oBPv400CreateDirectDebitAsyncWithHttpInfo($bankid, $accountid, $viewid, $obpv400_create_direct_debit_request, $contentType)
+        return $this->createDirectDebitAsyncWithHttpInfo($bankid, $accountid, $viewid, $create_direct_debit_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -263,23 +263,23 @@ class DirectDebitApi
     }
 
     /**
-     * Operation oBPv400CreateDirectDebitAsyncWithHttpInfo
+     * Operation createDirectDebitAsyncWithHttpInfo
      *
      * Create Direct Debit
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateDirectDebitRequest $obpv400_create_direct_debit_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateDirectDebit'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateDirectDebitRequest $create_direct_debit_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDirectDebit'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateDirectDebitAsyncWithHttpInfo($bankid, $accountid, $viewid, $obpv400_create_direct_debit_request, string $contentType = self::contentTypes['oBPv400CreateDirectDebit'][0])
+    public function createDirectDebitAsyncWithHttpInfo($bankid, $accountid, $viewid, $create_direct_debit_request, string $contentType = self::contentTypes['createDirectDebit'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400CreateDirectDebit200Response';
-        $request = $this->oBPv400CreateDirectDebitRequest($bankid, $accountid, $viewid, $obpv400_create_direct_debit_request, $contentType);
+        $returnType = '\OpenBankProject\Model\CreateDirectDebit200Response';
+        $request = $this->createDirectDebitRequest($bankid, $accountid, $viewid, $create_direct_debit_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -318,45 +318,45 @@ class DirectDebitApi
     }
 
     /**
-     * Create request for operation 'oBPv400CreateDirectDebit'
+     * Create request for operation 'createDirectDebit'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateDirectDebitRequest $obpv400_create_direct_debit_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateDirectDebit'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateDirectDebitRequest $create_direct_debit_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDirectDebit'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400CreateDirectDebitRequest($bankid, $accountid, $viewid, $obpv400_create_direct_debit_request, string $contentType = self::contentTypes['oBPv400CreateDirectDebit'][0])
+    public function createDirectDebitRequest($bankid, $accountid, $viewid, $create_direct_debit_request, string $contentType = self::contentTypes['createDirectDebit'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400CreateDirectDebit'
+                'Missing the required parameter $bankid when calling createDirectDebit'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv400CreateDirectDebit'
+                'Missing the required parameter $accountid when calling createDirectDebit'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv400CreateDirectDebit'
+                'Missing the required parameter $viewid when calling createDirectDebit'
             );
         }
 
-        // verify the required parameter 'obpv400_create_direct_debit_request' is set
-        if ($obpv400_create_direct_debit_request === null || (is_array($obpv400_create_direct_debit_request) && count($obpv400_create_direct_debit_request) === 0)) {
+        // verify the required parameter 'create_direct_debit_request' is set
+        if ($create_direct_debit_request === null || (is_array($create_direct_debit_request) && count($create_direct_debit_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_create_direct_debit_request when calling oBPv400CreateDirectDebit'
+                'Missing the required parameter $create_direct_debit_request when calling createDirectDebit'
             );
         }
 
@@ -403,12 +403,12 @@ class DirectDebitApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_create_direct_debit_request)) {
+        if (isset($create_direct_debit_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_create_direct_debit_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_direct_debit_request));
             } else {
-                $httpBody = $obpv400_create_direct_debit_request;
+                $httpBody = $create_direct_debit_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -444,9 +444,9 @@ class DirectDebitApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -471,42 +471,42 @@ class DirectDebitApi
     }
 
     /**
-     * Operation oBPv400CreateDirectDebitManagement
+     * Operation createDirectDebitManagement
      *
      * Create Direct Debit (management)
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateDirectDebitRequest $obpv400_create_direct_debit_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateDirectDebitManagement'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateDirectDebitRequest $create_direct_debit_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDirectDebitManagement'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400CreateDirectDebit200Response
+     * @return \OpenBankProject\Model\CreateDirectDebit200Response
      */
-    public function oBPv400CreateDirectDebitManagement($bankid, $accountid, $obpv400_create_direct_debit_request, string $contentType = self::contentTypes['oBPv400CreateDirectDebitManagement'][0])
+    public function createDirectDebitManagement($bankid, $accountid, $create_direct_debit_request, string $contentType = self::contentTypes['createDirectDebitManagement'][0])
     {
-        list($response) = $this->oBPv400CreateDirectDebitManagementWithHttpInfo($bankid, $accountid, $obpv400_create_direct_debit_request, $contentType);
+        list($response) = $this->createDirectDebitManagementWithHttpInfo($bankid, $accountid, $create_direct_debit_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400CreateDirectDebitManagementWithHttpInfo
+     * Operation createDirectDebitManagementWithHttpInfo
      *
      * Create Direct Debit (management)
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateDirectDebitRequest $obpv400_create_direct_debit_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateDirectDebitManagement'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateDirectDebitRequest $create_direct_debit_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDirectDebitManagement'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400CreateDirectDebit200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\CreateDirectDebit200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400CreateDirectDebitManagementWithHttpInfo($bankid, $accountid, $obpv400_create_direct_debit_request, string $contentType = self::contentTypes['oBPv400CreateDirectDebitManagement'][0])
+    public function createDirectDebitManagementWithHttpInfo($bankid, $accountid, $create_direct_debit_request, string $contentType = self::contentTypes['createDirectDebitManagement'][0])
     {
-        $request = $this->oBPv400CreateDirectDebitManagementRequest($bankid, $accountid, $obpv400_create_direct_debit_request, $contentType);
+        $request = $this->createDirectDebitManagementRequest($bankid, $accountid, $create_direct_debit_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -534,7 +534,7 @@ class DirectDebitApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400CreateDirectDebit200Response',
+                        '\OpenBankProject\Model\CreateDirectDebit200Response',
                         $request,
                         $response,
                     );
@@ -556,7 +556,7 @@ class DirectDebitApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400CreateDirectDebit200Response',
+                '\OpenBankProject\Model\CreateDirectDebit200Response',
                 $request,
                 $response,
             );
@@ -565,7 +565,7 @@ class DirectDebitApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400CreateDirectDebit200Response',
+                        '\OpenBankProject\Model\CreateDirectDebit200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -578,21 +578,21 @@ class DirectDebitApi
     }
 
     /**
-     * Operation oBPv400CreateDirectDebitManagementAsync
+     * Operation createDirectDebitManagementAsync
      *
      * Create Direct Debit (management)
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateDirectDebitRequest $obpv400_create_direct_debit_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateDirectDebitManagement'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateDirectDebitRequest $create_direct_debit_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDirectDebitManagement'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateDirectDebitManagementAsync($bankid, $accountid, $obpv400_create_direct_debit_request, string $contentType = self::contentTypes['oBPv400CreateDirectDebitManagement'][0])
+    public function createDirectDebitManagementAsync($bankid, $accountid, $create_direct_debit_request, string $contentType = self::contentTypes['createDirectDebitManagement'][0])
     {
-        return $this->oBPv400CreateDirectDebitManagementAsyncWithHttpInfo($bankid, $accountid, $obpv400_create_direct_debit_request, $contentType)
+        return $this->createDirectDebitManagementAsyncWithHttpInfo($bankid, $accountid, $create_direct_debit_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -601,22 +601,22 @@ class DirectDebitApi
     }
 
     /**
-     * Operation oBPv400CreateDirectDebitManagementAsyncWithHttpInfo
+     * Operation createDirectDebitManagementAsyncWithHttpInfo
      *
      * Create Direct Debit (management)
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateDirectDebitRequest $obpv400_create_direct_debit_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateDirectDebitManagement'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateDirectDebitRequest $create_direct_debit_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDirectDebitManagement'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateDirectDebitManagementAsyncWithHttpInfo($bankid, $accountid, $obpv400_create_direct_debit_request, string $contentType = self::contentTypes['oBPv400CreateDirectDebitManagement'][0])
+    public function createDirectDebitManagementAsyncWithHttpInfo($bankid, $accountid, $create_direct_debit_request, string $contentType = self::contentTypes['createDirectDebitManagement'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400CreateDirectDebit200Response';
-        $request = $this->oBPv400CreateDirectDebitManagementRequest($bankid, $accountid, $obpv400_create_direct_debit_request, $contentType);
+        $returnType = '\OpenBankProject\Model\CreateDirectDebit200Response';
+        $request = $this->createDirectDebitManagementRequest($bankid, $accountid, $create_direct_debit_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -655,37 +655,37 @@ class DirectDebitApi
     }
 
     /**
-     * Create request for operation 'oBPv400CreateDirectDebitManagement'
+     * Create request for operation 'createDirectDebitManagement'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateDirectDebitRequest $obpv400_create_direct_debit_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateDirectDebitManagement'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateDirectDebitRequest $create_direct_debit_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDirectDebitManagement'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400CreateDirectDebitManagementRequest($bankid, $accountid, $obpv400_create_direct_debit_request, string $contentType = self::contentTypes['oBPv400CreateDirectDebitManagement'][0])
+    public function createDirectDebitManagementRequest($bankid, $accountid, $create_direct_debit_request, string $contentType = self::contentTypes['createDirectDebitManagement'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400CreateDirectDebitManagement'
+                'Missing the required parameter $bankid when calling createDirectDebitManagement'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv400CreateDirectDebitManagement'
+                'Missing the required parameter $accountid when calling createDirectDebitManagement'
             );
         }
 
-        // verify the required parameter 'obpv400_create_direct_debit_request' is set
-        if ($obpv400_create_direct_debit_request === null || (is_array($obpv400_create_direct_debit_request) && count($obpv400_create_direct_debit_request) === 0)) {
+        // verify the required parameter 'create_direct_debit_request' is set
+        if ($create_direct_debit_request === null || (is_array($create_direct_debit_request) && count($create_direct_debit_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_create_direct_debit_request when calling oBPv400CreateDirectDebitManagement'
+                'Missing the required parameter $create_direct_debit_request when calling createDirectDebitManagement'
             );
         }
 
@@ -724,12 +724,12 @@ class DirectDebitApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_create_direct_debit_request)) {
+        if (isset($create_direct_debit_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_create_direct_debit_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_direct_debit_request));
             } else {
-                $httpBody = $obpv400_create_direct_debit_request;
+                $httpBody = $create_direct_debit_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -765,9 +765,9 @@ class DirectDebitApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

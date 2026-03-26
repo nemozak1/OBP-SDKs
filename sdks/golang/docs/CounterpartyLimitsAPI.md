@@ -1,20 +1,20 @@
 # \CounterpartyLimitsAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv510CreateCounterpartyLimit**](CounterpartyLimitsAPI.md#OBPv510CreateCounterpartyLimit) | **Post** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Create Counterparty Limit
-[**OBPv510DeleteCounterpartyLimit**](CounterpartyLimitsAPI.md#OBPv510DeleteCounterpartyLimit) | **Delete** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Delete Counterparty Limit
-[**OBPv510GetCounterpartyLimit**](CounterpartyLimitsAPI.md#OBPv510GetCounterpartyLimit) | **Get** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Get Counterparty Limit
-[**OBPv510GetCounterpartyLimitStatus**](CounterpartyLimitsAPI.md#OBPv510GetCounterpartyLimitStatus) | **Get** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limit-status | Get Counterparty Limit Status
-[**OBPv510UpdateCounterpartyLimit**](CounterpartyLimitsAPI.md#OBPv510UpdateCounterpartyLimit) | **Put** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Update Counterparty Limit
+[**CreateCounterpartyLimit**](CounterpartyLimitsAPI.md#CreateCounterpartyLimit) | **Post** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Create Counterparty Limit
+[**DeleteCounterpartyLimit**](CounterpartyLimitsAPI.md#DeleteCounterpartyLimit) | **Delete** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Delete Counterparty Limit
+[**GetCounterpartyLimit**](CounterpartyLimitsAPI.md#GetCounterpartyLimit) | **Get** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Get Counterparty Limit
+[**GetCounterpartyLimitStatus**](CounterpartyLimitsAPI.md#GetCounterpartyLimitStatus) | **Get** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limit-status | Get Counterparty Limit Status
+[**UpdateCounterpartyLimit**](CounterpartyLimitsAPI.md#UpdateCounterpartyLimit) | **Put** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Update Counterparty Limit
 
 
 
-## OBPv510CreateCounterpartyLimit
+## CreateCounterpartyLimit
 
-> OBPv510GetCounterpartyLimit200Response OBPv510CreateCounterpartyLimit(ctx, bankid, accountid, viewid, counterpartyid).OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit(oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit).Execute()
+> GetCounterpartyLimit200Response CreateCounterpartyLimit(ctx, bankid, accountid, viewid, counterpartyid).CreateVRPConsentRequestRequestToAccountLimit(createVRPConsentRequestRequestToAccountLimit).Execute()
 
 Create Counterparty Limit
 
@@ -37,17 +37,17 @@ func main() {
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
 	viewid := "viewid_example" // string | The VIEWID identifier
 	counterpartyid := "counterpartyid_example" // string | The COUNTERPARTYID identifier
-	oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit := *openapiclient.NewOBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit("Type_example", *openapiclient.NewOBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimitProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit | Request body
+	createVRPConsentRequestRequestToAccountLimit := *openapiclient.NewCreateVRPConsentRequestRequestToAccountLimit() // CreateVRPConsentRequestRequestToAccountLimit | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CounterpartyLimitsAPI.OBPv510CreateCounterpartyLimit(context.Background(), bankid, accountid, viewid, counterpartyid).OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit(oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit).Execute()
+	resp, r, err := apiClient.CounterpartyLimitsAPI.CreateCounterpartyLimit(context.Background(), bankid, accountid, viewid, counterpartyid).CreateVRPConsentRequestRequestToAccountLimit(createVRPConsentRequestRequestToAccountLimit).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CounterpartyLimitsAPI.OBPv510CreateCounterpartyLimit``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CounterpartyLimitsAPI.CreateCounterpartyLimit``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510CreateCounterpartyLimit`: OBPv510GetCounterpartyLimit200Response
-	fmt.Fprintf(os.Stdout, "Response from `CounterpartyLimitsAPI.OBPv510CreateCounterpartyLimit`: %v\n", resp)
+	// response from `CreateCounterpartyLimit`: GetCounterpartyLimit200Response
+	fmt.Fprintf(os.Stdout, "Response from `CounterpartyLimitsAPI.CreateCounterpartyLimit`: %v\n", resp)
 }
 ```
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510CreateCounterpartyLimitRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateCounterpartyLimitRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -73,11 +73,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit** | [**OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit**](OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit.md) | Request body | 
+ **createVRPConsentRequestRequestToAccountLimit** | [**CreateVRPConsentRequestRequestToAccountLimit**](CreateVRPConsentRequestRequestToAccountLimit.md) | Request body | 
 
 ### Return type
 
-[**OBPv510GetCounterpartyLimit200Response**](OBPv510GetCounterpartyLimit200Response.md)
+[**GetCounterpartyLimit200Response**](GetCounterpartyLimit200Response.md)
 
 ### Authorization
 
@@ -93,9 +93,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510DeleteCounterpartyLimit
+## DeleteCounterpartyLimit
 
-> OBPv510DeleteCounterpartyLimit(ctx, bankid, accountid, viewid, counterpartyid).Execute()
+> DeleteCounterpartyLimit(ctx, bankid, accountid, viewid, counterpartyid).Execute()
 
 Delete Counterparty Limit
 
@@ -121,9 +121,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.CounterpartyLimitsAPI.OBPv510DeleteCounterpartyLimit(context.Background(), bankid, accountid, viewid, counterpartyid).Execute()
+	r, err := apiClient.CounterpartyLimitsAPI.DeleteCounterpartyLimit(context.Background(), bankid, accountid, viewid, counterpartyid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CounterpartyLimitsAPI.OBPv510DeleteCounterpartyLimit``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CounterpartyLimitsAPI.DeleteCounterpartyLimit``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510DeleteCounterpartyLimitRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteCounterpartyLimitRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -170,9 +170,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510GetCounterpartyLimit
+## GetCounterpartyLimit
 
-> OBPv510GetCounterpartyLimit200Response OBPv510GetCounterpartyLimit(ctx, bankid, accountid, viewid, counterpartyid).Execute()
+> GetCounterpartyLimit200Response GetCounterpartyLimit(ctx, bankid, accountid, viewid, counterpartyid).Execute()
 
 Get Counterparty Limit
 
@@ -198,13 +198,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CounterpartyLimitsAPI.OBPv510GetCounterpartyLimit(context.Background(), bankid, accountid, viewid, counterpartyid).Execute()
+	resp, r, err := apiClient.CounterpartyLimitsAPI.GetCounterpartyLimit(context.Background(), bankid, accountid, viewid, counterpartyid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CounterpartyLimitsAPI.OBPv510GetCounterpartyLimit``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CounterpartyLimitsAPI.GetCounterpartyLimit``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510GetCounterpartyLimit`: OBPv510GetCounterpartyLimit200Response
-	fmt.Fprintf(os.Stdout, "Response from `CounterpartyLimitsAPI.OBPv510GetCounterpartyLimit`: %v\n", resp)
+	// response from `GetCounterpartyLimit`: GetCounterpartyLimit200Response
+	fmt.Fprintf(os.Stdout, "Response from `CounterpartyLimitsAPI.GetCounterpartyLimit`: %v\n", resp)
 }
 ```
 
@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510GetCounterpartyLimitRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCounterpartyLimitRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -233,7 +233,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetCounterpartyLimit200Response**](OBPv510GetCounterpartyLimit200Response.md)
+[**GetCounterpartyLimit200Response**](GetCounterpartyLimit200Response.md)
 
 ### Authorization
 
@@ -249,9 +249,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510GetCounterpartyLimitStatus
+## GetCounterpartyLimitStatus
 
-> OBPv510GetCounterpartyLimitStatus200Response OBPv510GetCounterpartyLimitStatus(ctx, bankid, accountid, viewid, counterpartyid).Execute()
+> GetCounterpartyLimitStatus200Response GetCounterpartyLimitStatus(ctx, bankid, accountid, viewid, counterpartyid).Execute()
 
 Get Counterparty Limit Status
 
@@ -277,13 +277,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CounterpartyLimitsAPI.OBPv510GetCounterpartyLimitStatus(context.Background(), bankid, accountid, viewid, counterpartyid).Execute()
+	resp, r, err := apiClient.CounterpartyLimitsAPI.GetCounterpartyLimitStatus(context.Background(), bankid, accountid, viewid, counterpartyid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CounterpartyLimitsAPI.OBPv510GetCounterpartyLimitStatus``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CounterpartyLimitsAPI.GetCounterpartyLimitStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510GetCounterpartyLimitStatus`: OBPv510GetCounterpartyLimitStatus200Response
-	fmt.Fprintf(os.Stdout, "Response from `CounterpartyLimitsAPI.OBPv510GetCounterpartyLimitStatus`: %v\n", resp)
+	// response from `GetCounterpartyLimitStatus`: GetCounterpartyLimitStatus200Response
+	fmt.Fprintf(os.Stdout, "Response from `CounterpartyLimitsAPI.GetCounterpartyLimitStatus`: %v\n", resp)
 }
 ```
 
@@ -300,7 +300,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510GetCounterpartyLimitStatusRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCounterpartyLimitStatusRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -312,7 +312,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetCounterpartyLimitStatus200Response**](OBPv510GetCounterpartyLimitStatus200Response.md)
+[**GetCounterpartyLimitStatus200Response**](GetCounterpartyLimitStatus200Response.md)
 
 ### Authorization
 
@@ -328,9 +328,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510UpdateCounterpartyLimit
+## UpdateCounterpartyLimit
 
-> OBPv510GetCounterpartyLimit200Response OBPv510UpdateCounterpartyLimit(ctx, bankid, accountid, viewid, counterpartyid).OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit(oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit).Execute()
+> GetCounterpartyLimit200Response UpdateCounterpartyLimit(ctx, bankid, accountid, viewid, counterpartyid).CreateVRPConsentRequestRequestToAccountLimit(createVRPConsentRequestRequestToAccountLimit).Execute()
 
 Update Counterparty Limit
 
@@ -353,17 +353,17 @@ func main() {
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
 	viewid := "viewid_example" // string | The VIEWID identifier
 	counterpartyid := "counterpartyid_example" // string | The COUNTERPARTYID identifier
-	oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit := *openapiclient.NewOBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit("Type_example", *openapiclient.NewOBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimitProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit | Request body
+	createVRPConsentRequestRequestToAccountLimit := *openapiclient.NewCreateVRPConsentRequestRequestToAccountLimit() // CreateVRPConsentRequestRequestToAccountLimit | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CounterpartyLimitsAPI.OBPv510UpdateCounterpartyLimit(context.Background(), bankid, accountid, viewid, counterpartyid).OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit(oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit).Execute()
+	resp, r, err := apiClient.CounterpartyLimitsAPI.UpdateCounterpartyLimit(context.Background(), bankid, accountid, viewid, counterpartyid).CreateVRPConsentRequestRequestToAccountLimit(createVRPConsentRequestRequestToAccountLimit).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CounterpartyLimitsAPI.OBPv510UpdateCounterpartyLimit``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CounterpartyLimitsAPI.UpdateCounterpartyLimit``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510UpdateCounterpartyLimit`: OBPv510GetCounterpartyLimit200Response
-	fmt.Fprintf(os.Stdout, "Response from `CounterpartyLimitsAPI.OBPv510UpdateCounterpartyLimit`: %v\n", resp)
+	// response from `UpdateCounterpartyLimit`: GetCounterpartyLimit200Response
+	fmt.Fprintf(os.Stdout, "Response from `CounterpartyLimitsAPI.UpdateCounterpartyLimit`: %v\n", resp)
 }
 ```
 
@@ -380,7 +380,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510UpdateCounterpartyLimitRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateCounterpartyLimitRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -389,11 +389,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit** | [**OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit**](OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit.md) | Request body | 
+ **createVRPConsentRequestRequestToAccountLimit** | [**CreateVRPConsentRequestRequestToAccountLimit**](CreateVRPConsentRequestRequestToAccountLimit.md) | Request body | 
 
 ### Return type
 
-[**OBPv510GetCounterpartyLimit200Response**](OBPv510GetCounterpartyLimit200Response.md)
+[**GetCounterpartyLimit200Response**](GetCounterpartyLimit200Response.md)
 
 ### Authorization
 

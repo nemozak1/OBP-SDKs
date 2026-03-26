@@ -2,26 +2,26 @@
 
 
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv510CreateCounterpartyLimit()**](CounterpartyLimitsApi.md#oBPv510CreateCounterpartyLimit) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Create Counterparty Limit |
-| [**oBPv510DeleteCounterpartyLimit()**](CounterpartyLimitsApi.md#oBPv510DeleteCounterpartyLimit) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Delete Counterparty Limit |
-| [**oBPv510GetCounterpartyLimit()**](CounterpartyLimitsApi.md#oBPv510GetCounterpartyLimit) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Get Counterparty Limit |
-| [**oBPv510GetCounterpartyLimitStatus()**](CounterpartyLimitsApi.md#oBPv510GetCounterpartyLimitStatus) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limit-status | Get Counterparty Limit Status |
-| [**oBPv510UpdateCounterpartyLimit()**](CounterpartyLimitsApi.md#oBPv510UpdateCounterpartyLimit) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Update Counterparty Limit |
+| [**createCounterpartyLimit()**](CounterpartyLimitsApi.md#createCounterpartyLimit) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Create Counterparty Limit |
+| [**deleteCounterpartyLimit()**](CounterpartyLimitsApi.md#deleteCounterpartyLimit) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Delete Counterparty Limit |
+| [**getCounterpartyLimit()**](CounterpartyLimitsApi.md#getCounterpartyLimit) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Get Counterparty Limit |
+| [**getCounterpartyLimitStatus()**](CounterpartyLimitsApi.md#getCounterpartyLimitStatus) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limit-status | Get Counterparty Limit Status |
+| [**updateCounterpartyLimit()**](CounterpartyLimitsApi.md#updateCounterpartyLimit) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Update Counterparty Limit |
 
 
-## `oBPv510CreateCounterpartyLimit()`
+## `createCounterpartyLimit()`
 
 ```php
-oBPv510CreateCounterpartyLimit($bankid, $accountid, $viewid, $counterpartyid, $obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit): \OpenBankProject\Model\OBPv510GetCounterpartyLimit200Response
+createCounterpartyLimit($bankid, $accountid, $viewid, $counterpartyid, $create_vrp_consent_request_request_to_account_limit): \OpenBankProject\Model\GetCounterpartyLimit200Response
 ```
 
 Create Counterparty Limit
 
-<p>Create limits (for single or recurring payments) for a counterparty specified by the COUNTERPARTY_ID.</p> <p>Using this endpoint, we can attach a limit record to a Counterparty referenced by its counterparty_id (a UUID).</p> <p>For more information on Counterparty Limits, see <a href=\"/glossary#Counterparty-Limits\">here</a></p> <p>For an introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>You can automate the process of creating counterparty limits and consents for VRP with this <a href=\"https://apiexplorer-ii-sandbox.openbankproject.com//operationid/OBPv5.1.0-createVRPConsentRequest\">endpoint</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#counterparty_limit_id\"><strong>counterparty_limit_id</strong></a>: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p>
+<p>Create limits (for single or recurring payments) for a counterparty specified by the COUNTERPARTY_ID.</p> <p>Using this endpoint, we can attach a limit record to a Counterparty referenced by its counterparty_id (a UUID).</p> <p>For more information on Counterparty Limits, see <a href=\"/glossary#Counterparty-Limits\">here</a></p> <p>For an introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>You can automate the process of creating counterparty limits and consents for VRP with this <a href=\"http://localhost:5174/operationid/OBPv5.1.0-createVRPConsentRequest\">endpoint</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#counterparty_limit_id\"><strong>counterparty_limit_id</strong></a>: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p>
 
 ### Example
 
@@ -39,9 +39,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CounterpartyLimitsApi(
@@ -54,13 +54,13 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $viewid = 'viewid_example'; // string | The VIEWID identifier
 $counterpartyid = 'counterpartyid_example'; // string | The COUNTERPARTYID identifier
-$obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit = {type=object, properties={max_total_amount={type=string}, currency={type=string}, max_number_of_yearly_transactions={type=integer}, max_monthly_amount={type=string}, max_single_amount={type=string}, max_number_of_monthly_transactions={type=integer}, max_yearly_amount={type=string}, max_number_of_transactions={type=integer}}}; // \OpenBankProject\Model\OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit | Request body
+$create_vrp_consent_request_request_to_account_limit = {type=object, properties={max_total_amount={type=string}, currency={type=string}, max_number_of_yearly_transactions={type=integer}, max_monthly_amount={type=string}, max_single_amount={type=string}, max_number_of_monthly_transactions={type=integer}, max_yearly_amount={type=string}, max_number_of_transactions={type=integer}}}; // \OpenBankProject\Model\CreateVRPConsentRequestRequestToAccountLimit | Request body
 
 try {
-    $result = $apiInstance->oBPv510CreateCounterpartyLimit($bankid, $accountid, $viewid, $counterpartyid, $obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit);
+    $result = $apiInstance->createCounterpartyLimit($bankid, $accountid, $viewid, $counterpartyid, $create_vrp_consent_request_request_to_account_limit);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CounterpartyLimitsApi->oBPv510CreateCounterpartyLimit: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CounterpartyLimitsApi->createCounterpartyLimit: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -72,11 +72,11 @@ try {
 | **accountid** | **string**| The ACCOUNTID identifier | |
 | **viewid** | **string**| The VIEWID identifier | |
 | **counterpartyid** | **string**| The COUNTERPARTYID identifier | |
-| **obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit** | [**\OpenBankProject\Model\OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit**](../Model/OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit.md)| Request body | |
+| **create_vrp_consent_request_request_to_account_limit** | [**\OpenBankProject\Model\CreateVRPConsentRequestRequestToAccountLimit**](../Model/CreateVRPConsentRequestRequestToAccountLimit.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv510GetCounterpartyLimit200Response**](../Model/OBPv510GetCounterpartyLimit200Response.md)
+[**\OpenBankProject\Model\GetCounterpartyLimit200Response**](../Model/GetCounterpartyLimit200Response.md)
 
 ### Authorization
 
@@ -91,10 +91,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv510DeleteCounterpartyLimit()`
+## `deleteCounterpartyLimit()`
 
 ```php
-oBPv510DeleteCounterpartyLimit($bankid, $accountid, $viewid, $counterpartyid)
+deleteCounterpartyLimit($bankid, $accountid, $viewid, $counterpartyid)
 ```
 
 Delete Counterparty Limit
@@ -117,9 +117,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CounterpartyLimitsApi(
@@ -134,9 +134,9 @@ $viewid = 'viewid_example'; // string | The VIEWID identifier
 $counterpartyid = 'counterpartyid_example'; // string | The COUNTERPARTYID identifier
 
 try {
-    $apiInstance->oBPv510DeleteCounterpartyLimit($bankid, $accountid, $viewid, $counterpartyid);
+    $apiInstance->deleteCounterpartyLimit($bankid, $accountid, $viewid, $counterpartyid);
 } catch (Exception $e) {
-    echo 'Exception when calling CounterpartyLimitsApi->oBPv510DeleteCounterpartyLimit: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CounterpartyLimitsApi->deleteCounterpartyLimit: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -166,10 +166,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv510GetCounterpartyLimit()`
+## `getCounterpartyLimit()`
 
 ```php
-oBPv510GetCounterpartyLimit($bankid, $accountid, $viewid, $counterpartyid): \OpenBankProject\Model\OBPv510GetCounterpartyLimit200Response
+getCounterpartyLimit($bankid, $accountid, $viewid, $counterpartyid): \OpenBankProject\Model\GetCounterpartyLimit200Response
 ```
 
 Get Counterparty Limit
@@ -192,9 +192,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CounterpartyLimitsApi(
@@ -209,10 +209,10 @@ $viewid = 'viewid_example'; // string | The VIEWID identifier
 $counterpartyid = 'counterpartyid_example'; // string | The COUNTERPARTYID identifier
 
 try {
-    $result = $apiInstance->oBPv510GetCounterpartyLimit($bankid, $accountid, $viewid, $counterpartyid);
+    $result = $apiInstance->getCounterpartyLimit($bankid, $accountid, $viewid, $counterpartyid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CounterpartyLimitsApi->oBPv510GetCounterpartyLimit: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CounterpartyLimitsApi->getCounterpartyLimit: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -227,7 +227,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv510GetCounterpartyLimit200Response**](../Model/OBPv510GetCounterpartyLimit200Response.md)
+[**\OpenBankProject\Model\GetCounterpartyLimit200Response**](../Model/GetCounterpartyLimit200Response.md)
 
 ### Authorization
 
@@ -242,10 +242,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv510GetCounterpartyLimitStatus()`
+## `getCounterpartyLimitStatus()`
 
 ```php
-oBPv510GetCounterpartyLimitStatus($bankid, $accountid, $viewid, $counterpartyid): \OpenBankProject\Model\OBPv510GetCounterpartyLimitStatus200Response
+getCounterpartyLimitStatus($bankid, $accountid, $viewid, $counterpartyid): \OpenBankProject\Model\GetCounterpartyLimitStatus200Response
 ```
 
 Get Counterparty Limit Status
@@ -268,9 +268,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CounterpartyLimitsApi(
@@ -285,10 +285,10 @@ $viewid = 'viewid_example'; // string | The VIEWID identifier
 $counterpartyid = 'counterpartyid_example'; // string | The COUNTERPARTYID identifier
 
 try {
-    $result = $apiInstance->oBPv510GetCounterpartyLimitStatus($bankid, $accountid, $viewid, $counterpartyid);
+    $result = $apiInstance->getCounterpartyLimitStatus($bankid, $accountid, $viewid, $counterpartyid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CounterpartyLimitsApi->oBPv510GetCounterpartyLimitStatus: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CounterpartyLimitsApi->getCounterpartyLimitStatus: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -303,7 +303,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv510GetCounterpartyLimitStatus200Response**](../Model/OBPv510GetCounterpartyLimitStatus200Response.md)
+[**\OpenBankProject\Model\GetCounterpartyLimitStatus200Response**](../Model/GetCounterpartyLimitStatus200Response.md)
 
 ### Authorization
 
@@ -318,10 +318,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv510UpdateCounterpartyLimit()`
+## `updateCounterpartyLimit()`
 
 ```php
-oBPv510UpdateCounterpartyLimit($bankid, $accountid, $viewid, $counterpartyid, $obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit): \OpenBankProject\Model\OBPv510GetCounterpartyLimit200Response
+updateCounterpartyLimit($bankid, $accountid, $viewid, $counterpartyid, $create_vrp_consent_request_request_to_account_limit): \OpenBankProject\Model\GetCounterpartyLimit200Response
 ```
 
 Update Counterparty Limit
@@ -344,9 +344,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CounterpartyLimitsApi(
@@ -359,13 +359,13 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $viewid = 'viewid_example'; // string | The VIEWID identifier
 $counterpartyid = 'counterpartyid_example'; // string | The COUNTERPARTYID identifier
-$obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit = {"type":"object","properties":{"max_total_amount":{"type":"string"},"currency":{"type":"string"},"max_number_of_yearly_transactions":{"type":"integer"},"max_monthly_amount":{"type":"string"},"max_single_amount":{"type":"string"},"max_number_of_monthly_transactions":{"type":"integer"},"max_yearly_amount":{"type":"string"},"max_number_of_transactions":{"type":"integer"}}}; // \OpenBankProject\Model\OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit | Request body
+$create_vrp_consent_request_request_to_account_limit = {"type":"object","properties":{"max_total_amount":{"type":"string"},"currency":{"type":"string"},"max_number_of_yearly_transactions":{"type":"integer"},"max_monthly_amount":{"type":"string"},"max_single_amount":{"type":"string"},"max_number_of_monthly_transactions":{"type":"integer"},"max_yearly_amount":{"type":"string"},"max_number_of_transactions":{"type":"integer"}}}; // \OpenBankProject\Model\CreateVRPConsentRequestRequestToAccountLimit | Request body
 
 try {
-    $result = $apiInstance->oBPv510UpdateCounterpartyLimit($bankid, $accountid, $viewid, $counterpartyid, $obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit);
+    $result = $apiInstance->updateCounterpartyLimit($bankid, $accountid, $viewid, $counterpartyid, $create_vrp_consent_request_request_to_account_limit);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CounterpartyLimitsApi->oBPv510UpdateCounterpartyLimit: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CounterpartyLimitsApi->updateCounterpartyLimit: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -377,11 +377,11 @@ try {
 | **accountid** | **string**| The ACCOUNTID identifier | |
 | **viewid** | **string**| The VIEWID identifier | |
 | **counterpartyid** | **string**| The COUNTERPARTYID identifier | |
-| **obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit** | [**\OpenBankProject\Model\OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit**](../Model/OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit.md)| Request body | |
+| **create_vrp_consent_request_request_to_account_limit** | [**\OpenBankProject\Model\CreateVRPConsentRequestRequestToAccountLimit**](../Model/CreateVRPConsentRequestRequestToAccountLimit.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv510GetCounterpartyLimit200Response**](../Model/OBPv510GetCounterpartyLimit200Response.md)
+[**\OpenBankProject\Model\GetCounterpartyLimit200Response**](../Model/GetCounterpartyLimit200Response.md)
 
 ### Authorization
 

@@ -4,228 +4,12 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv4_0_0_create_user_with_roles**](DAuthApi.md#o_bpv4_0_0_create_user_with_roles) | **POST** /obp/v4.0.0/user-entitlements | Create (DAuth) User with Roles
-[**o_bpv5_1_0_create_user_with_account_access_by_id**](DAuthApi.md#o_bpv5_1_0_create_user_with_account_access_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/user-account-access | Create (DAuth) User with Account Access
+[**create_user_with_account_access_by_id**](DAuthApi.md#create_user_with_account_access_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/user-account-access | Create (DAuth) User with Account Access
+[**create_user_with_roles**](DAuthApi.md#create_user_with_roles) | **POST** /obp/v4.0.0/user-entitlements | Create (DAuth) User with Roles
 
 
-# **o_bpv4_0_0_create_user_with_roles**
-> OBPv400GetEntitlements200Response o_bpv4_0_0_create_user_with_roles(obpv400_create_user_with_roles_request)
-
-Create (DAuth) User with Roles
-
-<p>This endpoint is used as part of the DAuth solution to grant Entitlements for Roles to a smart contract on the blockchain.</p>
-<p>Put the smart contract address in username</p>
-<p>For provider use &quot;dauth&quot;</p>
-<p>This endpoint will create the User with username and provider if the User does not already exist.</p>
-<p>Then it will create Entitlements i.e. grant Roles to the User.</p>
-<p>Entitlements are used to grant System or Bank level roles to Users. (For Account level privileges, see Views)</p>
-<p>i.e. Entitlements are used to create / consume system or bank level resources where as views / account access are used to consume / create customer level resources.</p>
-<p>For a System level Role (.e.g CanGetAnyUser), set bank_id to an empty string i.e. &quot;bank_id&quot;:&quot;&quot;</p>
-<p>For a Bank level Role (e.g. CanCreateAccount), set bank_id to a valid value e.g. &quot;bank_id&quot;:&quot;my-bank-id&quot;</p>
-<p>Note: The Roles actually granted will depend on the Roles that the calling user has.</p>
-<p>If you try to grant Entitlements to a user that already exist (duplicate entitilements) you will get an error.</p>
-<p>For information about DAuth see below:</p>
-<details>
-  <summary style="display:list-item;cursor:s-resize;">DAuth</summary>
-  <h3><a href="#dauth-introduction-setup-and-usage" id="dauth-introduction-setup-and-usage">DAuth Introduction, Setup and Usage</a></h3>
-<p>DAuth is an experimental authentication mechanism that aims to pin an ethereum or other blockchain Smart Contract to an OBP &quot;User&quot;.</p>
-<p>In the future, it might be possible to be more specific and pin specific actors (wallets) that are acting within the smart contract, but so far, one smart contract acts on behalf of one User.</p>
-<p>Thus, if a smart contract &quot;X&quot; calls the OBP API using the DAuth header, OBP will get or create a user called X and the call will proceed in the context of that User &quot;X&quot;.</p>
-<p>DAuth is invoked by the REST client (caller) including a specific header (see step 3 below) in any OBP REST call.</p>
-<p>When OBP receives the DAuth token, it creates or gets a User with a username based on the smart_contract_address and the provider based on the network_name. The combination of username and provider is unique in OBP.</p>
-<p>If you are calling OBP-API via an API3 Airnode, the Airnode will take care of constructing the required header.</p>
-<p>When OBP detects a DAuth header / token it first checks if the Consumer is allowed to make such a call. OBP will validate the Consumer ip address and signature etc.</p>
-<p>Note: The DAuth flow does <em>not</em> require an explicit POST like Direct Login to create the token.</p>
-<p>Permissions may be assigned to an OBP User at any time, via the UserAuthContext, Views, Entitlements to Roles or Consents.</p>
-<p>Note: <em>DAuth is NOT enabled on this instance!</em></p>
-<p>Note: <em>The DAuth client is responsible for creating a token which will be trusted by OBP absolutely</em>!</p>
-<p>To use DAuth:</p>
-<h3><a href="#1-configure-obp-api-to-accept-dauth" id="1-configure-obp-api-to-accept-dauth">1) Configure OBP API to accept DAuth.</a></h3>
-<p>Set up properties in your props file</p>
-<pre><code># -- DAuth --------------------------------------
-# Define secret used to validate JWT token
-# jwt.public_key_rsa=path-to-the-pem-file
-# Enable/Disable DAuth communication at all
-# In case isn't defined default value is false
-# allow_dauth=false
-# Define comma separated list of allowed IP addresses
-# dauth.host=127.0.0.1
-# -------------------------------------- DAuth--
-</code></pre>
-<p>Please keep in mind that property jwt.public_key_rsa is used to validate JWT token to check it is not changed or corrupted during transport.</p>
-<h3><a href="#2-create-have-access-to-a-jwt" id="2-create-have-access-to-a-jwt">2) Create / have access to a JWT</a></h3>
-<p>The following videos are available:<br />
-* <a href="https://vimeo.com/644315074">DAuth in local environment</a></p>
-<p>HEADER:ALGORITHM &amp; TOKEN TYPE</p>
-<pre><code>{
-  &quot;alg&quot;: &quot;RS256&quot;,
-  &quot;typ&quot;: &quot;JWT&quot;
-}
-</code></pre>
-<p>PAYLOAD:DATA</p>
-<pre><code>{
-  &quot;smart_contract_address&quot;: &quot;0xe123425E7734CE288F8367e1Bb143E90bb3F051224&quot;,
-  &quot;network_name&quot;: &quot;AIRNODE.TESTNET.ETHEREUM&quot;,
-  &quot;msg_sender&quot;: &quot;0xe12340927f1725E7734CE288F8367e1Bb143E90fhku767&quot;,
-  &quot;consumer_key&quot;: &quot;0x1234a4ec31e89cea54d1f125db7536e874ab4a96b4d4f6438668b6bb10a6adb&quot;,
-  &quot;timestamp&quot;: &quot;2021-11-04T14:13:40Z&quot;,
-  &quot;request_id&quot;: &quot;0Xe876987694328763492876348928736497869273649&quot;
-}
-</code></pre>
-<p>VERIFY SIGNATURE</p>
-<pre><code>RSASHA256(
-  base64UrlEncode(header) + &quot;.&quot; +
-  base64UrlEncode(payload),
-<p>) your-RSA-key-pair</p>
-</code></pre>
-<p>Here is an example token:</p>
-<pre><code>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzbWFydF9jb250cmFjdF9hZGRyZXNzIjoiMHhlMTIzNDI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGJiM0YwNTEyMjQiLCJuZXR3b3JrX25hbWUiOiJFVEhFUkVVTSIsIm1zZ19zZW5kZXIiOiIweGUxMjM0MDkyN2YxNzI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGZoa3U3NjciLCJjb25zdW1lcl9rZXkiOiIweDEyMzRhNGVjMzFlODljZWE1NGQxZjEyNWRiNzUzNmU4NzRhYjRhOTZiNGQ0ZjY0Mzg2NjhiNmJiMTBhNmFkYiIsInRpbWVzdGFtcCI6IjIwMjEtMTEtMDRUMTQ6MTM6NDBaIiwicmVxdWVzdF9pZCI6IjBYZTg3Njk4NzY5NDMyODc2MzQ5Mjg3NjM0ODkyODczNjQ5Nzg2OTI3MzY0OSJ9.XSiQxjEVyCouf7zT8MubEKsbOBZuReGVhnt9uck6z6k
-</code></pre>
-<h3><a href="#3-try-a-rest-call-using-the-header" id="3-try-a-rest-call-using-the-header">3) Try a REST call using the header</a></h3>
-<p>Using your favorite http client:</p>
-<p>GET <a href="http://127.0.0.1:8080/obp/v3.0.0/users/current">http://127.0.0.1:8080/obp/v3.0.0/users/current</a></p>
-<p>Body</p>
-<p>Leave Empty!</p>
-<p>Headers:</p>
-<pre><code>   DAuth: your-jwt-from-step-above
-</code></pre>
-<p>Here is it all together:</p>
-<p>GET <a href="http://127.0.0.1:8080/obp/v3.0.0/users/current">http://127.0.0.1:8080/obp/v3.0.0/users/current</a> HTTP/1.1<br />
-Host: localhost:8080<br />
-User-Agent: curl/7.47.0<br />
-Accept: <em>/</em><br />
-DAuth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzbWFydF9jb250cmFjdF9hZGRyZXNzIjoiMHhlMTIzNDI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGJiM0YwNTEyMjQiLCJuZXR3b3JrX25hbWUiOiJFVEhFUkVVTSIsIm1zZ19zZW5kZXIiOiIweGUxMjM0MDkyN2YxNzI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGZoa3U3NjciLCJjb25zdW1lcl9rZXkiOiIweDEyMzRhNGVjMzFlODljZWE1NGQxZjEyNWRiNzUzNmU4NzRhYjRhOTZiNGQ0ZjY0Mzg2NjhiNmJiMTBhNmFkYiIsInRpbWVzdGFtcCI6IjIwMjEtMTEtMDRUMTQ6MTM6NDBaIiwicmVxdWVzdF9pZCI6IjBYZTg3Njk4NzY5NDMyODc2MzQ5Mjg3NjM0ODkyODczNjQ5Nzg2OTI3MzY0OSJ9.XSiQxjEVyCouf7zT8MubEKsbOBZuReGVhnt9uck6z6k</p>
-<p>CURL example</p>
-<pre><code>curl -v -H 'DAuth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzbWFydF9jb250cmFjdF9hZGRyZXNzIjoiMHhlMTIzNDI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGJiM0YwNTEyMjQiLCJuZXR3b3JrX25hbWUiOiJFVEhFUkVVTSIsIm1zZ19zZW5kZXIiOiIweGUxMjM0MDkyN2YxNzI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGZoa3U3NjciLCJjb25zdW1lcl9rZXkiOiIweDEyMzRhNGVjMzFlODljZWE1NGQxZjEyNWRiNzUzNmU4NzRhYjRhOTZiNGQ0ZjY0Mzg2NjhiNmJiMTBhNmFkYiIsInRpbWVzdGFtcCI6IjIwMjEtMTEtMDRUMTQ6MTM6NDBaIiwicmVxdWVzdF9pZCI6IjBYZTg3Njk4NzY5NDMyODc2MzQ5Mjg3NjM0ODkyODczNjQ5Nzg2OTI3MzY0OSJ9.XSiQxjEVyCouf7zT8MubEKsbOBZuReGVhnt9uck6z6k' http://127.0.0.1:8080/obp/v3.0.0/users/current
-</code></pre>
-<p>You should receive a response like:</p>
-<pre><code>{
-    &quot;user_id&quot;: &quot;4c4d3175-1e5c-4cfd-9b08-dcdc209d8221&quot;,
-    &quot;email&quot;: &quot;&quot;,
-    &quot;provider_id&quot;: &quot;0xe123425E7734CE288F8367e1Bb143E90bb3F051224&quot;,
-    &quot;provider&quot;: &quot;ETHEREUM&quot;,
-    &quot;username&quot;: &quot;0xe123425E7734CE288F8367e1Bb143E90bb3F051224&quot;,
-    &quot;entitlements&quot;: {
-        &quot;list&quot;: []
-    }
-}
-</code></pre>
-<h3><a href="#under-the-hood" id="under-the-hood">Under the hood</a></h3>
-<p>The file, dauth.scala handles the DAuth,</p>
-<p>We:</p>
-<pre><code>-&gt; Check if Props allow_dauth is true
-  -&gt; Check if DAuth header exists
-    -&gt; Check if getRemoteIpAddress is OK
-      -&gt; Look for &quot;token&quot;
-        -&gt; parse the JWT token and getOrCreate the user
-          -&gt; get the data of the user
-</code></pre>
-<h3><a href="#more-information" id="more-information">More information</a></h3>
-<p>Parameter names and values are case sensitive.<br />
-Each parameter MUST NOT appear more than once per request.</p>
-</details>
-<p><br></br></p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
-<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
-<p><a href="/glossary#roles"><strong>roles</strong></a>: CanCreateMyUser</p>
-<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#entitlement_id"><strong>entitlement_id</strong></a>:</p>
-<p><a href="/glossary#list"><strong>list</strong></a>:</p>
-<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv400_create_user_with_roles_request import OBPv400CreateUserWithRolesRequest
-from obp_python.models.obpv400_get_entitlements200_response import OBPv400GetEntitlements200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.DAuthApi(api_client)
-    obpv400_create_user_with_roles_request = {"type":"object","properties":{"roles":{"type":"array","items":{"type":"object","properties":{"bank_id":{"type":"string"},"role_name":{"type":"string"}}}},"provider":{"type":"string"},"username":{"type":"string"}}} # OBPv400CreateUserWithRolesRequest | Request body
-
-    try:
-        # Create (DAuth) User with Roles
-        api_response = api_instance.o_bpv4_0_0_create_user_with_roles(obpv400_create_user_with_roles_request)
-        print("The response of DAuthApi->o_bpv4_0_0_create_user_with_roles:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling DAuthApi->o_bpv4_0_0_create_user_with_roles: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **obpv400_create_user_with_roles_request** | [**OBPv400CreateUserWithRolesRequest**](OBPv400CreateUserWithRolesRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv400GetEntitlements200Response**](OBPv400GetEntitlements200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv5_1_0_create_user_with_account_access_by_id**
-> OBPv510CreateUserWithAccountAccessById200Response o_bpv5_1_0_create_user_with_account_access_by_id(bankid, accountid, viewid, obpv510_create_user_with_account_access_by_id_request)
+# **create_user_with_account_access_by_id**
+> CreateUserWithAccountAccessById200Response create_user_with_account_access_by_id(bankid, accountid, viewid, create_user_with_account_access_by_id_request)
 
 Create (DAuth) User with Account Access
 
@@ -439,8 +223,8 @@ Each parameter MUST NOT appear more than once per request.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv510_create_user_with_account_access_by_id200_response import OBPv510CreateUserWithAccountAccessById200Response
-from obp_python.models.obpv510_create_user_with_account_access_by_id_request import OBPv510CreateUserWithAccountAccessByIdRequest
+from obp_python.models.create_user_with_account_access_by_id200_response import CreateUserWithAccountAccessById200Response
+from obp_python.models.create_user_with_account_access_by_id_request import CreateUserWithAccountAccessByIdRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -476,15 +260,15 @@ with obp_python.ApiClient(configuration) as api_client:
     bankid = 'bankid_example' # str | The BANKID identifier
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
-    obpv510_create_user_with_account_access_by_id_request = {"type":"object","properties":{"views":{"type":"array","items":{"type":"object","properties":{"is_system":{"type":"boolean"},"view_id":{"type":"string"}}}},"provider":{"type":"string"},"username":{"type":"string"}}} # OBPv510CreateUserWithAccountAccessByIdRequest | Request body
+    create_user_with_account_access_by_id_request = {"type":"object","properties":{"views":{"type":"array","items":{"type":"object","properties":{"is_system":{"type":"boolean"},"view_id":{"type":"string"}}}},"provider":{"type":"string"},"username":{"type":"string"}}} # CreateUserWithAccountAccessByIdRequest | Request body
 
     try:
         # Create (DAuth) User with Account Access
-        api_response = api_instance.o_bpv5_1_0_create_user_with_account_access_by_id(bankid, accountid, viewid, obpv510_create_user_with_account_access_by_id_request)
-        print("The response of DAuthApi->o_bpv5_1_0_create_user_with_account_access_by_id:\n")
+        api_response = api_instance.create_user_with_account_access_by_id(bankid, accountid, viewid, create_user_with_account_access_by_id_request)
+        print("The response of DAuthApi->create_user_with_account_access_by_id:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DAuthApi->o_bpv5_1_0_create_user_with_account_access_by_id: %s\n" % e)
+        print("Exception when calling DAuthApi->create_user_with_account_access_by_id: %s\n" % e)
 ```
 
 
@@ -497,11 +281,11 @@ Name | Type | Description  | Notes
  **bankid** | **str**| The BANKID identifier | 
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
- **obpv510_create_user_with_account_access_by_id_request** | [**OBPv510CreateUserWithAccountAccessByIdRequest**](OBPv510CreateUserWithAccountAccessByIdRequest.md)| Request body | 
+ **create_user_with_account_access_by_id_request** | [**CreateUserWithAccountAccessByIdRequest**](CreateUserWithAccountAccessByIdRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510CreateUserWithAccountAccessById200Response**](OBPv510CreateUserWithAccountAccessById200Response.md)
+[**CreateUserWithAccountAccessById200Response**](CreateUserWithAccountAccessById200Response.md)
 
 ### Authorization
 
@@ -518,6 +302,222 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 **404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_user_with_roles**
+> GetEntitlements200Response create_user_with_roles(create_user_with_roles_request)
+
+Create (DAuth) User with Roles
+
+<p>This endpoint is used as part of the DAuth solution to grant Entitlements for Roles to a smart contract on the blockchain.</p>
+<p>Put the smart contract address in username</p>
+<p>For provider use &quot;dauth&quot;</p>
+<p>This endpoint will create the User with username and provider if the User does not already exist.</p>
+<p>Then it will create Entitlements i.e. grant Roles to the User.</p>
+<p>Entitlements are used to grant System or Bank level roles to Users. (For Account level privileges, see Views)</p>
+<p>i.e. Entitlements are used to create / consume system or bank level resources where as views / account access are used to consume / create customer level resources.</p>
+<p>For a System level Role (.e.g CanGetAnyUser), set bank_id to an empty string i.e. &quot;bank_id&quot;:&quot;&quot;</p>
+<p>For a Bank level Role (e.g. CanCreateAccount), set bank_id to a valid value e.g. &quot;bank_id&quot;:&quot;my-bank-id&quot;</p>
+<p>Note: The Roles actually granted will depend on the Roles that the calling user has.</p>
+<p>If you try to grant Entitlements to a user that already exist (duplicate entitilements) you will get an error.</p>
+<p>For information about DAuth see below:</p>
+<details>
+  <summary style="display:list-item;cursor:s-resize;">DAuth</summary>
+  <h3><a href="#dauth-introduction-setup-and-usage" id="dauth-introduction-setup-and-usage">DAuth Introduction, Setup and Usage</a></h3>
+<p>DAuth is an experimental authentication mechanism that aims to pin an ethereum or other blockchain Smart Contract to an OBP &quot;User&quot;.</p>
+<p>In the future, it might be possible to be more specific and pin specific actors (wallets) that are acting within the smart contract, but so far, one smart contract acts on behalf of one User.</p>
+<p>Thus, if a smart contract &quot;X&quot; calls the OBP API using the DAuth header, OBP will get or create a user called X and the call will proceed in the context of that User &quot;X&quot;.</p>
+<p>DAuth is invoked by the REST client (caller) including a specific header (see step 3 below) in any OBP REST call.</p>
+<p>When OBP receives the DAuth token, it creates or gets a User with a username based on the smart_contract_address and the provider based on the network_name. The combination of username and provider is unique in OBP.</p>
+<p>If you are calling OBP-API via an API3 Airnode, the Airnode will take care of constructing the required header.</p>
+<p>When OBP detects a DAuth header / token it first checks if the Consumer is allowed to make such a call. OBP will validate the Consumer ip address and signature etc.</p>
+<p>Note: The DAuth flow does <em>not</em> require an explicit POST like Direct Login to create the token.</p>
+<p>Permissions may be assigned to an OBP User at any time, via the UserAuthContext, Views, Entitlements to Roles or Consents.</p>
+<p>Note: <em>DAuth is NOT enabled on this instance!</em></p>
+<p>Note: <em>The DAuth client is responsible for creating a token which will be trusted by OBP absolutely</em>!</p>
+<p>To use DAuth:</p>
+<h3><a href="#1-configure-obp-api-to-accept-dauth" id="1-configure-obp-api-to-accept-dauth">1) Configure OBP API to accept DAuth.</a></h3>
+<p>Set up properties in your props file</p>
+<pre><code># -- DAuth --------------------------------------
+# Define secret used to validate JWT token
+# jwt.public_key_rsa=path-to-the-pem-file
+# Enable/Disable DAuth communication at all
+# In case isn't defined default value is false
+# allow_dauth=false
+# Define comma separated list of allowed IP addresses
+# dauth.host=127.0.0.1
+# -------------------------------------- DAuth--
+</code></pre>
+<p>Please keep in mind that property jwt.public_key_rsa is used to validate JWT token to check it is not changed or corrupted during transport.</p>
+<h3><a href="#2-create-have-access-to-a-jwt" id="2-create-have-access-to-a-jwt">2) Create / have access to a JWT</a></h3>
+<p>The following videos are available:<br />
+* <a href="https://vimeo.com/644315074">DAuth in local environment</a></p>
+<p>HEADER:ALGORITHM &amp; TOKEN TYPE</p>
+<pre><code>{
+  &quot;alg&quot;: &quot;RS256&quot;,
+  &quot;typ&quot;: &quot;JWT&quot;
+}
+</code></pre>
+<p>PAYLOAD:DATA</p>
+<pre><code>{
+  &quot;smart_contract_address&quot;: &quot;0xe123425E7734CE288F8367e1Bb143E90bb3F051224&quot;,
+  &quot;network_name&quot;: &quot;AIRNODE.TESTNET.ETHEREUM&quot;,
+  &quot;msg_sender&quot;: &quot;0xe12340927f1725E7734CE288F8367e1Bb143E90fhku767&quot;,
+  &quot;consumer_key&quot;: &quot;0x1234a4ec31e89cea54d1f125db7536e874ab4a96b4d4f6438668b6bb10a6adb&quot;,
+  &quot;timestamp&quot;: &quot;2021-11-04T14:13:40Z&quot;,
+  &quot;request_id&quot;: &quot;0Xe876987694328763492876348928736497869273649&quot;
+}
+</code></pre>
+<p>VERIFY SIGNATURE</p>
+<pre><code>RSASHA256(
+  base64UrlEncode(header) + &quot;.&quot; +
+  base64UrlEncode(payload),
+<p>) your-RSA-key-pair</p>
+</code></pre>
+<p>Here is an example token:</p>
+<pre><code>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzbWFydF9jb250cmFjdF9hZGRyZXNzIjoiMHhlMTIzNDI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGJiM0YwNTEyMjQiLCJuZXR3b3JrX25hbWUiOiJFVEhFUkVVTSIsIm1zZ19zZW5kZXIiOiIweGUxMjM0MDkyN2YxNzI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGZoa3U3NjciLCJjb25zdW1lcl9rZXkiOiIweDEyMzRhNGVjMzFlODljZWE1NGQxZjEyNWRiNzUzNmU4NzRhYjRhOTZiNGQ0ZjY0Mzg2NjhiNmJiMTBhNmFkYiIsInRpbWVzdGFtcCI6IjIwMjEtMTEtMDRUMTQ6MTM6NDBaIiwicmVxdWVzdF9pZCI6IjBYZTg3Njk4NzY5NDMyODc2MzQ5Mjg3NjM0ODkyODczNjQ5Nzg2OTI3MzY0OSJ9.XSiQxjEVyCouf7zT8MubEKsbOBZuReGVhnt9uck6z6k
+</code></pre>
+<h3><a href="#3-try-a-rest-call-using-the-header" id="3-try-a-rest-call-using-the-header">3) Try a REST call using the header</a></h3>
+<p>Using your favorite http client:</p>
+<p>GET <a href="http://127.0.0.1:8080/obp/v3.0.0/users/current">http://127.0.0.1:8080/obp/v3.0.0/users/current</a></p>
+<p>Body</p>
+<p>Leave Empty!</p>
+<p>Headers:</p>
+<pre><code>   DAuth: your-jwt-from-step-above
+</code></pre>
+<p>Here is it all together:</p>
+<p>GET <a href="http://127.0.0.1:8080/obp/v3.0.0/users/current">http://127.0.0.1:8080/obp/v3.0.0/users/current</a> HTTP/1.1<br />
+Host: localhost:8080<br />
+User-Agent: curl/7.47.0<br />
+Accept: <em>/</em><br />
+DAuth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzbWFydF9jb250cmFjdF9hZGRyZXNzIjoiMHhlMTIzNDI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGJiM0YwNTEyMjQiLCJuZXR3b3JrX25hbWUiOiJFVEhFUkVVTSIsIm1zZ19zZW5kZXIiOiIweGUxMjM0MDkyN2YxNzI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGZoa3U3NjciLCJjb25zdW1lcl9rZXkiOiIweDEyMzRhNGVjMzFlODljZWE1NGQxZjEyNWRiNzUzNmU4NzRhYjRhOTZiNGQ0ZjY0Mzg2NjhiNmJiMTBhNmFkYiIsInRpbWVzdGFtcCI6IjIwMjEtMTEtMDRUMTQ6MTM6NDBaIiwicmVxdWVzdF9pZCI6IjBYZTg3Njk4NzY5NDMyODc2MzQ5Mjg3NjM0ODkyODczNjQ5Nzg2OTI3MzY0OSJ9.XSiQxjEVyCouf7zT8MubEKsbOBZuReGVhnt9uck6z6k</p>
+<p>CURL example</p>
+<pre><code>curl -v -H 'DAuth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzbWFydF9jb250cmFjdF9hZGRyZXNzIjoiMHhlMTIzNDI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGJiM0YwNTEyMjQiLCJuZXR3b3JrX25hbWUiOiJFVEhFUkVVTSIsIm1zZ19zZW5kZXIiOiIweGUxMjM0MDkyN2YxNzI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGZoa3U3NjciLCJjb25zdW1lcl9rZXkiOiIweDEyMzRhNGVjMzFlODljZWE1NGQxZjEyNWRiNzUzNmU4NzRhYjRhOTZiNGQ0ZjY0Mzg2NjhiNmJiMTBhNmFkYiIsInRpbWVzdGFtcCI6IjIwMjEtMTEtMDRUMTQ6MTM6NDBaIiwicmVxdWVzdF9pZCI6IjBYZTg3Njk4NzY5NDMyODc2MzQ5Mjg3NjM0ODkyODczNjQ5Nzg2OTI3MzY0OSJ9.XSiQxjEVyCouf7zT8MubEKsbOBZuReGVhnt9uck6z6k' http://127.0.0.1:8080/obp/v3.0.0/users/current
+</code></pre>
+<p>You should receive a response like:</p>
+<pre><code>{
+    &quot;user_id&quot;: &quot;4c4d3175-1e5c-4cfd-9b08-dcdc209d8221&quot;,
+    &quot;email&quot;: &quot;&quot;,
+    &quot;provider_id&quot;: &quot;0xe123425E7734CE288F8367e1Bb143E90bb3F051224&quot;,
+    &quot;provider&quot;: &quot;ETHEREUM&quot;,
+    &quot;username&quot;: &quot;0xe123425E7734CE288F8367e1Bb143E90bb3F051224&quot;,
+    &quot;entitlements&quot;: {
+        &quot;list&quot;: []
+    }
+}
+</code></pre>
+<h3><a href="#under-the-hood" id="under-the-hood">Under the hood</a></h3>
+<p>The file, dauth.scala handles the DAuth,</p>
+<p>We:</p>
+<pre><code>-&gt; Check if Props allow_dauth is true
+  -&gt; Check if DAuth header exists
+    -&gt; Check if getRemoteIpAddress is OK
+      -&gt; Look for &quot;token&quot;
+        -&gt; parse the JWT token and getOrCreate the user
+          -&gt; get the data of the user
+</code></pre>
+<h3><a href="#more-information" id="more-information">More information</a></h3>
+<p>Parameter names and values are case sensitive.<br />
+Each parameter MUST NOT appear more than once per request.</p>
+</details>
+<p><br></br></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
+<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
+<p><a href="/glossary#roles"><strong>roles</strong></a>: CanCreateMyUser</p>
+<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#entitlement_id"><strong>entitlement_id</strong></a>:</p>
+<p><a href="/glossary#list"><strong>list</strong></a>:</p>
+<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.create_user_with_roles_request import CreateUserWithRolesRequest
+from obp_python.models.get_entitlements200_response import GetEntitlements200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.DAuthApi(api_client)
+    create_user_with_roles_request = {"type":"object","properties":{"roles":{"type":"array","items":{"type":"object","properties":{"bank_id":{"type":"string"},"role_name":{"type":"string"}}}},"provider":{"type":"string"},"username":{"type":"string"}}} # CreateUserWithRolesRequest | Request body
+
+    try:
+        # Create (DAuth) User with Roles
+        api_response = api_instance.create_user_with_roles(create_user_with_roles_request)
+        print("The response of DAuthApi->create_user_with_roles:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DAuthApi->create_user_with_roles: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **create_user_with_roles_request** | [**CreateUserWithRolesRequest**](CreateUserWithRolesRequest.md)| Request body | 
+
+### Return type
+
+[**GetEntitlements200Response**](GetEntitlements200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
 **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

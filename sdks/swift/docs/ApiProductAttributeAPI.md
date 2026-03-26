@@ -1,18 +1,18 @@
 # ApiProductAttributeAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv600CreateApiProductAttribute**](ApiProductAttributeAPI.md#obpv600createapiproductattribute) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attribute | Create Api Product Attribute
-[**oBPv600DeleteApiProductAttribute**](ApiProductAttributeAPI.md#obpv600deleteapiproductattribute) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Delete Api Product Attribute
-[**oBPv600GetApiProductAttribute**](ApiProductAttributeAPI.md#obpv600getapiproductattribute) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Get Api Product Attribute
-[**oBPv600UpdateApiProductAttribute**](ApiProductAttributeAPI.md#obpv600updateapiproductattribute) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Update Api Product Attribute
+[**createApiProductAttribute**](ApiProductAttributeAPI.md#createapiproductattribute) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attribute | Create Api Product Attribute
+[**deleteApiProductAttribute**](ApiProductAttributeAPI.md#deleteapiproductattribute) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Delete Api Product Attribute
+[**getApiProductAttribute**](ApiProductAttributeAPI.md#getapiproductattribute) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Get Api Product Attribute
+[**updateApiProductAttribute**](ApiProductAttributeAPI.md#updateapiproductattribute) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Update Api Product Attribute
 
 
-# **oBPv600CreateApiProductAttribute**
+# **createApiProductAttribute**
 ```swift
-    open class func oBPv600CreateApiProductAttribute(bankid: String, apiproductcode: String, oBPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest, completion: @escaping (_ data: OBPv600CreateApiProductAttribute200Response?, _ error: Error?) -> Void)
+    open class func createApiProductAttribute(bankid: String, apiproductcode: String, updateAtmAttributeRequest: UpdateAtmAttributeRequest, completion: @escaping (_ data: CreateApiProductAttribute200Response?, _ error: Error?) -> Void)
 ```
 
 Create Api Product Attribute
@@ -26,10 +26,10 @@ import OBPSwift
 
 let bankid = "bankid_example" // String | The BANKID identifier
 let apiproductcode = "apiproductcode_example" // String | The APIPRODUCTCODE identifier
-let oBPv510UpdateAtmAttributeRequest = OBPv5_1_0_updateAtmAttribute_request(type: "type_example", properties: OBPv5_1_0_updateAtmAttribute_request_properties(name: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), value: nil, isActive: nil, type: nil)) // OBPv510UpdateAtmAttributeRequest | Request body
+let updateAtmAttributeRequest = updateAtmAttribute_request(name: "name_example", value: "value_example", isActive: false, type: "type_example") // UpdateAtmAttributeRequest | Request body
 
 // Create Api Product Attribute
-ApiProductAttributeAPI.oBPv600CreateApiProductAttribute(bankid: bankid, apiproductcode: apiproductcode, oBPv510UpdateAtmAttributeRequest: oBPv510UpdateAtmAttributeRequest) { (response, error) in
+ApiProductAttributeAPI.createApiProductAttribute(bankid: bankid, apiproductcode: apiproductcode, updateAtmAttributeRequest: updateAtmAttributeRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -47,11 +47,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String** | The BANKID identifier | 
  **apiproductcode** | **String** | The APIPRODUCTCODE identifier | 
- **oBPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md) | Request body | 
+ **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600CreateApiProductAttribute200Response**](OBPv600CreateApiProductAttribute200Response.md)
+[**CreateApiProductAttribute200Response**](CreateApiProductAttribute200Response.md)
 
 ### Authorization
 
@@ -64,9 +64,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600DeleteApiProductAttribute**
+# **deleteApiProductAttribute**
 ```swift
-    open class func oBPv600DeleteApiProductAttribute(bankid: String, apiproductcode: String, apiproductattributeid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func deleteApiProductAttribute(bankid: String, apiproductcode: String, apiproductattributeid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete Api Product Attribute
@@ -83,7 +83,7 @@ let apiproductcode = "apiproductcode_example" // String | The APIPRODUCTCODE ide
 let apiproductattributeid = "apiproductattributeid_example" // String | The APIPRODUCTATTRIBUTEID identifier
 
 // Delete Api Product Attribute
-ApiProductAttributeAPI.oBPv600DeleteApiProductAttribute(bankid: bankid, apiproductcode: apiproductcode, apiproductattributeid: apiproductattributeid) { (response, error) in
+ApiProductAttributeAPI.deleteApiProductAttribute(bankid: bankid, apiproductcode: apiproductcode, apiproductattributeid: apiproductattributeid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -118,9 +118,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetApiProductAttribute**
+# **getApiProductAttribute**
 ```swift
-    open class func oBPv600GetApiProductAttribute(bankid: String, apiproductcode: String, apiproductattributeid: String, completion: @escaping (_ data: OBPv600CreateApiProductAttribute200Response?, _ error: Error?) -> Void)
+    open class func getApiProductAttribute(bankid: String, apiproductcode: String, apiproductattributeid: String, completion: @escaping (_ data: CreateApiProductAttribute200Response?, _ error: Error?) -> Void)
 ```
 
 Get Api Product Attribute
@@ -137,7 +137,7 @@ let apiproductcode = "apiproductcode_example" // String | The APIPRODUCTCODE ide
 let apiproductattributeid = "apiproductattributeid_example" // String | The APIPRODUCTATTRIBUTEID identifier
 
 // Get Api Product Attribute
-ApiProductAttributeAPI.oBPv600GetApiProductAttribute(bankid: bankid, apiproductcode: apiproductcode, apiproductattributeid: apiproductattributeid) { (response, error) in
+ApiProductAttributeAPI.getApiProductAttribute(bankid: bankid, apiproductcode: apiproductcode, apiproductattributeid: apiproductattributeid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600CreateApiProductAttribute200Response**](OBPv600CreateApiProductAttribute200Response.md)
+[**CreateApiProductAttribute200Response**](CreateApiProductAttribute200Response.md)
 
 ### Authorization
 
@@ -172,9 +172,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600UpdateApiProductAttribute**
+# **updateApiProductAttribute**
 ```swift
-    open class func oBPv600UpdateApiProductAttribute(bankid: String, apiproductcode: String, apiproductattributeid: String, oBPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest, completion: @escaping (_ data: OBPv600CreateApiProductAttribute200Response?, _ error: Error?) -> Void)
+    open class func updateApiProductAttribute(bankid: String, apiproductcode: String, apiproductattributeid: String, updateAtmAttributeRequest: UpdateAtmAttributeRequest, completion: @escaping (_ data: CreateApiProductAttribute200Response?, _ error: Error?) -> Void)
 ```
 
 Update Api Product Attribute
@@ -189,10 +189,10 @@ import OBPSwift
 let bankid = "bankid_example" // String | The BANKID identifier
 let apiproductcode = "apiproductcode_example" // String | The APIPRODUCTCODE identifier
 let apiproductattributeid = "apiproductattributeid_example" // String | The APIPRODUCTATTRIBUTEID identifier
-let oBPv510UpdateAtmAttributeRequest = OBPv5_1_0_updateAtmAttribute_request(type: "type_example", properties: OBPv5_1_0_updateAtmAttribute_request_properties(name: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), value: nil, isActive: nil, type: nil)) // OBPv510UpdateAtmAttributeRequest | Request body
+let updateAtmAttributeRequest = updateAtmAttribute_request(name: "name_example", value: "value_example", isActive: false, type: "type_example") // UpdateAtmAttributeRequest | Request body
 
 // Update Api Product Attribute
-ApiProductAttributeAPI.oBPv600UpdateApiProductAttribute(bankid: bankid, apiproductcode: apiproductcode, apiproductattributeid: apiproductattributeid, oBPv510UpdateAtmAttributeRequest: oBPv510UpdateAtmAttributeRequest) { (response, error) in
+ApiProductAttributeAPI.updateApiProductAttribute(bankid: bankid, apiproductcode: apiproductcode, apiproductattributeid: apiproductattributeid, updateAtmAttributeRequest: updateAtmAttributeRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -211,11 +211,11 @@ Name | Type | Description  | Notes
  **bankid** | **String** | The BANKID identifier | 
  **apiproductcode** | **String** | The APIPRODUCTCODE identifier | 
  **apiproductattributeid** | **String** | The APIPRODUCTATTRIBUTEID identifier | 
- **oBPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md) | Request body | 
+ **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600CreateApiProductAttribute200Response**](OBPv600CreateApiProductAttribute200Response.md)
+[**CreateApiProductAttribute200Response**](CreateApiProductAttribute200Response.md)
 
 ### Authorization
 

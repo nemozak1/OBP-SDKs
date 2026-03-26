@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,25 +24,25 @@ import (
 // FXAPIService FXAPI service
 type FXAPIService service
 
-type ApiOBPv220CreateFxRequest struct {
+type ApiCreateFxRequest struct {
 	ctx context.Context
 	ApiService *FXAPIService
 	bankid string
-	oBPv220CreateFxRequest *OBPv220CreateFxRequest
+	createFxRequest *CreateFxRequest
 }
 
 // Request body
-func (r ApiOBPv220CreateFxRequest) OBPv220CreateFxRequest(oBPv220CreateFxRequest OBPv220CreateFxRequest) ApiOBPv220CreateFxRequest {
-	r.oBPv220CreateFxRequest = &oBPv220CreateFxRequest
+func (r ApiCreateFxRequest) CreateFxRequest(createFxRequest CreateFxRequest) ApiCreateFxRequest {
+	r.createFxRequest = &createFxRequest
 	return r
 }
 
-func (r ApiOBPv220CreateFxRequest) Execute() (*OBPv220CreateFxRequest, *http.Response, error) {
-	return r.ApiService.OBPv220CreateFxExecute(r)
+func (r ApiCreateFxRequest) Execute() (*CreateFxRequest, *http.Response, error) {
+	return r.ApiService.CreateFxExecute(r)
 }
 
 /*
-OBPv220CreateFx Create Fx
+CreateFx Create Fx
 
 <p>Create or Update Fx for the Bank.</p>
 <p>Example:</p>
@@ -67,10 +67,10 @@ and<br />
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv220CreateFxRequest
+ @return ApiCreateFxRequest
 */
-func (a *FXAPIService) OBPv220CreateFx(ctx context.Context, bankid string) ApiOBPv220CreateFxRequest {
-	return ApiOBPv220CreateFxRequest{
+func (a *FXAPIService) CreateFx(ctx context.Context, bankid string) ApiCreateFxRequest {
+	return ApiCreateFxRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -78,16 +78,16 @@ func (a *FXAPIService) OBPv220CreateFx(ctx context.Context, bankid string) ApiOB
 }
 
 // Execute executes the request
-//  @return OBPv220CreateFxRequest
-func (a *FXAPIService) OBPv220CreateFxExecute(r ApiOBPv220CreateFxRequest) (*OBPv220CreateFxRequest, *http.Response, error) {
+//  @return CreateFxRequest
+func (a *FXAPIService) CreateFxExecute(r ApiCreateFxRequest) (*CreateFxRequest, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv220CreateFxRequest
+		localVarReturnValue  *CreateFxRequest
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FXAPIService.OBPv220CreateFx")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FXAPIService.CreateFx")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -98,8 +98,8 @@ func (a *FXAPIService) OBPv220CreateFxExecute(r ApiOBPv220CreateFxRequest) (*OBP
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv220CreateFxRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv220CreateFxRequest is required and must be specified")
+	if r.createFxRequest == nil {
+		return localVarReturnValue, nil, reportError("createFxRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -120,7 +120,7 @@ func (a *FXAPIService) OBPv220CreateFxExecute(r ApiOBPv220CreateFxRequest) (*OBP
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv220CreateFxRequest
+	localVarPostBody = r.createFxRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -145,7 +145,7 @@ func (a *FXAPIService) OBPv220CreateFxExecute(r ApiOBPv220CreateFxRequest) (*OBP
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -186,7 +186,145 @@ func (a *FXAPIService) OBPv220CreateFxExecute(r ApiOBPv220CreateFxRequest) (*OBP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv220GetCurrentFxRateRequest struct {
+type ApiGetCurrenciesAtBankRequest struct {
+	ctx context.Context
+	ApiService *FXAPIService
+	bankid string
+}
+
+func (r ApiGetCurrenciesAtBankRequest) Execute() (*GetCurrenciesAtBank200Response, *http.Response, error) {
+	return r.ApiService.GetCurrenciesAtBankExecute(r)
+}
+
+/*
+GetCurrenciesAtBank Get Currencies at a Bank
+
+<p>Get Currencies specified by BANK_ID</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>alphanumeric_code</strong></a>: alphanumeric_code</p>
+<p><a href="/glossary#"><strong>currencies</strong></a>: currencies</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @return ApiGetCurrenciesAtBankRequest
+*/
+func (a *FXAPIService) GetCurrenciesAtBank(ctx context.Context, bankid string) ApiGetCurrenciesAtBankRequest {
+	return ApiGetCurrenciesAtBankRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+	}
+}
+
+// Execute executes the request
+//  @return GetCurrenciesAtBank200Response
+func (a *FXAPIService) GetCurrenciesAtBankExecute(r ApiGetCurrenciesAtBankRequest) (*GetCurrenciesAtBank200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetCurrenciesAtBank200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FXAPIService.GetCurrenciesAtBank")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/banks/{bankid}/currencies"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetCurrentFxRateRequest struct {
 	ctx context.Context
 	ApiService *FXAPIService
 	bankid string
@@ -194,12 +332,12 @@ type ApiOBPv220GetCurrentFxRateRequest struct {
 	tocurrencycode string
 }
 
-func (r ApiOBPv220GetCurrentFxRateRequest) Execute() (*OBPv220CreateFxRequest, *http.Response, error) {
-	return r.ApiService.OBPv220GetCurrentFxRateExecute(r)
+func (r ApiGetCurrentFxRateRequest) Execute() (*CreateFxRequest, *http.Response, error) {
+	return r.ApiService.GetCurrentFxRateExecute(r)
 }
 
 /*
-OBPv220GetCurrentFxRate Get Current FxRate
+GetCurrentFxRate Get Current FxRate
 
 <p>Get the latest FX rate specified by BANK_ID, FROM_CURRENCY_CODE and TO_CURRENCY_CODE</p>
 <p>OBP may try different sources of FX rate information depending on the Connector in operation.</p>
@@ -229,10 +367,10 @@ OBPv220GetCurrentFxRate Get Current FxRate
  @param bankid The BANKID identifier
  @param fromcurrencycode The FROMCURRENCYCODE identifier
  @param tocurrencycode The TOCURRENCYCODE identifier
- @return ApiOBPv220GetCurrentFxRateRequest
+ @return ApiGetCurrentFxRateRequest
 */
-func (a *FXAPIService) OBPv220GetCurrentFxRate(ctx context.Context, bankid string, fromcurrencycode string, tocurrencycode string) ApiOBPv220GetCurrentFxRateRequest {
-	return ApiOBPv220GetCurrentFxRateRequest{
+func (a *FXAPIService) GetCurrentFxRate(ctx context.Context, bankid string, fromcurrencycode string, tocurrencycode string) ApiGetCurrentFxRateRequest {
+	return ApiGetCurrentFxRateRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -242,16 +380,16 @@ func (a *FXAPIService) OBPv220GetCurrentFxRate(ctx context.Context, bankid strin
 }
 
 // Execute executes the request
-//  @return OBPv220CreateFxRequest
-func (a *FXAPIService) OBPv220GetCurrentFxRateExecute(r ApiOBPv220GetCurrentFxRateRequest) (*OBPv220CreateFxRequest, *http.Response, error) {
+//  @return CreateFxRequest
+func (a *FXAPIService) GetCurrentFxRateExecute(r ApiGetCurrentFxRateRequest) (*CreateFxRequest, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv220CreateFxRequest
+		localVarReturnValue  *CreateFxRequest
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FXAPIService.OBPv220GetCurrentFxRate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FXAPIService.GetCurrentFxRate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -306,145 +444,7 @@ func (a *FXAPIService) OBPv220GetCurrentFxRateExecute(r ApiOBPv220GetCurrentFxRa
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv510GetCurrenciesAtBankRequest struct {
-	ctx context.Context
-	ApiService *FXAPIService
-	bankid string
-}
-
-func (r ApiOBPv510GetCurrenciesAtBankRequest) Execute() (*OBPv510GetCurrenciesAtBank200Response, *http.Response, error) {
-	return r.ApiService.OBPv510GetCurrenciesAtBankExecute(r)
-}
-
-/*
-OBPv510GetCurrenciesAtBank Get Currencies at a Bank
-
-<p>Get Currencies specified by BANK_ID</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>alphanumeric_code</strong></a>: alphanumeric_code</p>
-<p><a href="/glossary#"><strong>currencies</strong></a>: currencies</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @return ApiOBPv510GetCurrenciesAtBankRequest
-*/
-func (a *FXAPIService) OBPv510GetCurrenciesAtBank(ctx context.Context, bankid string) ApiOBPv510GetCurrenciesAtBankRequest {
-	return ApiOBPv510GetCurrenciesAtBankRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv510GetCurrenciesAtBank200Response
-func (a *FXAPIService) OBPv510GetCurrenciesAtBankExecute(r ApiOBPv510GetCurrenciesAtBankRequest) (*OBPv510GetCurrenciesAtBank200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetCurrenciesAtBank200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FXAPIService.OBPv510GetCurrenciesAtBank")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/banks/{bankid}/currencies"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

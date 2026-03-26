@@ -1,41 +1,41 @@
 # OpenBankProject.Api.CounterpartyMetadataApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OBPv121AddCounterpartyCorporateLocation**](CounterpartyMetadataApi.md#obpv121addcounterpartycorporatelocation) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Add Corporate Location to Counterparty |
-| [**OBPv121AddCounterpartyImageUrl**](CounterpartyMetadataApi.md#obpv121addcounterpartyimageurl) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Add image url to other bank account |
-| [**OBPv121AddCounterpartyMoreInfo**](CounterpartyMetadataApi.md#obpv121addcounterpartymoreinfo) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Add Counterparty More Info |
-| [**OBPv121AddCounterpartyOpenCorporatesUrl**](CounterpartyMetadataApi.md#obpv121addcounterpartyopencorporatesurl) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Add Open Corporates URL to Counterparty |
-| [**OBPv121AddCounterpartyPhysicalLocation**](CounterpartyMetadataApi.md#obpv121addcounterpartyphysicallocation) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Add physical location to other bank account |
-| [**OBPv121AddCounterpartyPublicAlias**](CounterpartyMetadataApi.md#obpv121addcounterpartypublicalias) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Add public alias to other bank account |
-| [**OBPv121AddCounterpartyUrl**](CounterpartyMetadataApi.md#obpv121addcounterpartyurl) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Add url to other bank account |
-| [**OBPv121AddOtherAccountPrivateAlias**](CounterpartyMetadataApi.md#obpv121addotheraccountprivatealias) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Create Other Account Private Alias |
-| [**OBPv121DeleteCounterpartyCorporateLocation**](CounterpartyMetadataApi.md#obpv121deletecounterpartycorporatelocation) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Delete Counterparty Corporate Location |
-| [**OBPv121DeleteCounterpartyImageUrl**](CounterpartyMetadataApi.md#obpv121deletecounterpartyimageurl) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Delete Counterparty Image URL |
-| [**OBPv121DeleteCounterpartyMoreInfo**](CounterpartyMetadataApi.md#obpv121deletecounterpartymoreinfo) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Delete more info of other bank account |
-| [**OBPv121DeleteCounterpartyOpenCorporatesUrl**](CounterpartyMetadataApi.md#obpv121deletecounterpartyopencorporatesurl) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Delete Counterparty Open Corporates URL |
-| [**OBPv121DeleteCounterpartyPhysicalLocation**](CounterpartyMetadataApi.md#obpv121deletecounterpartyphysicallocation) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Delete Counterparty Physical Location |
-| [**OBPv121DeleteCounterpartyPrivateAlias**](CounterpartyMetadataApi.md#obpv121deletecounterpartyprivatealias) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Delete Counterparty Private Alias |
-| [**OBPv121DeleteCounterpartyPublicAlias**](CounterpartyMetadataApi.md#obpv121deletecounterpartypublicalias) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Delete Counterparty Public Alias |
-| [**OBPv121DeleteCounterpartyUrl**](CounterpartyMetadataApi.md#obpv121deletecounterpartyurl) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Delete url of other bank account |
-| [**OBPv121GetCounterpartyPublicAlias**](CounterpartyMetadataApi.md#obpv121getcounterpartypublicalias) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Get public alias of other bank account |
-| [**OBPv121GetOtherAccountMetadata**](CounterpartyMetadataApi.md#obpv121getotheraccountmetadata) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata | Get Other Account Metadata |
-| [**OBPv121GetOtherAccountPrivateAlias**](CounterpartyMetadataApi.md#obpv121getotheraccountprivatealias) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Get Other Account Private Alias |
-| [**OBPv121UpdateCounterpartyCorporateLocation**](CounterpartyMetadataApi.md#obpv121updatecounterpartycorporatelocation) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Update Counterparty Corporate Location |
-| [**OBPv121UpdateCounterpartyImageUrl**](CounterpartyMetadataApi.md#obpv121updatecounterpartyimageurl) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Update Counterparty Image Url |
-| [**OBPv121UpdateCounterpartyMoreInfo**](CounterpartyMetadataApi.md#obpv121updatecounterpartymoreinfo) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Update Counterparty More Info |
-| [**OBPv121UpdateCounterpartyOpenCorporatesUrl**](CounterpartyMetadataApi.md#obpv121updatecounterpartyopencorporatesurl) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Update Open Corporates Url of Counterparty |
-| [**OBPv121UpdateCounterpartyPhysicalLocation**](CounterpartyMetadataApi.md#obpv121updatecounterpartyphysicallocation) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Update Counterparty Physical Location |
-| [**OBPv121UpdateCounterpartyPrivateAlias**](CounterpartyMetadataApi.md#obpv121updatecounterpartyprivatealias) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Update Counterparty Private Alias |
-| [**OBPv121UpdateCounterpartyPublicAlias**](CounterpartyMetadataApi.md#obpv121updatecounterpartypublicalias) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Update public alias of other bank account |
-| [**OBPv121UpdateCounterpartyUrl**](CounterpartyMetadataApi.md#obpv121updatecounterpartyurl) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Update url of other bank account |
-| [**OBPv400GetExplicitCounterpartyById**](CounterpartyMetadataApi.md#obpv400getexplicitcounterpartybyid) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id (Explicit) |
+| [**AddCounterpartyCorporateLocation**](CounterpartyMetadataApi.md#addcounterpartycorporatelocation) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Add Corporate Location to Counterparty |
+| [**AddCounterpartyImageUrl**](CounterpartyMetadataApi.md#addcounterpartyimageurl) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Add image url to other bank account |
+| [**AddCounterpartyMoreInfo**](CounterpartyMetadataApi.md#addcounterpartymoreinfo) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Add Counterparty More Info |
+| [**AddCounterpartyOpenCorporatesUrl**](CounterpartyMetadataApi.md#addcounterpartyopencorporatesurl) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Add Open Corporates URL to Counterparty |
+| [**AddCounterpartyPhysicalLocation**](CounterpartyMetadataApi.md#addcounterpartyphysicallocation) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Add physical location to other bank account |
+| [**AddCounterpartyPublicAlias**](CounterpartyMetadataApi.md#addcounterpartypublicalias) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Add public alias to other bank account |
+| [**AddCounterpartyUrl**](CounterpartyMetadataApi.md#addcounterpartyurl) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Add url to other bank account |
+| [**AddOtherAccountPrivateAlias**](CounterpartyMetadataApi.md#addotheraccountprivatealias) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Create Other Account Private Alias |
+| [**DeleteCounterpartyCorporateLocation**](CounterpartyMetadataApi.md#deletecounterpartycorporatelocation) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Delete Counterparty Corporate Location |
+| [**DeleteCounterpartyImageUrl**](CounterpartyMetadataApi.md#deletecounterpartyimageurl) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Delete Counterparty Image URL |
+| [**DeleteCounterpartyMoreInfo**](CounterpartyMetadataApi.md#deletecounterpartymoreinfo) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Delete more info of other bank account |
+| [**DeleteCounterpartyOpenCorporatesUrl**](CounterpartyMetadataApi.md#deletecounterpartyopencorporatesurl) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Delete Counterparty Open Corporates URL |
+| [**DeleteCounterpartyPhysicalLocation**](CounterpartyMetadataApi.md#deletecounterpartyphysicallocation) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Delete Counterparty Physical Location |
+| [**DeleteCounterpartyPrivateAlias**](CounterpartyMetadataApi.md#deletecounterpartyprivatealias) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Delete Counterparty Private Alias |
+| [**DeleteCounterpartyPublicAlias**](CounterpartyMetadataApi.md#deletecounterpartypublicalias) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Delete Counterparty Public Alias |
+| [**DeleteCounterpartyUrl**](CounterpartyMetadataApi.md#deletecounterpartyurl) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Delete url of other bank account |
+| [**GetCounterpartyPublicAlias**](CounterpartyMetadataApi.md#getcounterpartypublicalias) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Get public alias of other bank account |
+| [**GetExplicitCounterpartyById**](CounterpartyMetadataApi.md#getexplicitcounterpartybyid) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id (Explicit) |
+| [**GetOtherAccountMetadata**](CounterpartyMetadataApi.md#getotheraccountmetadata) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata | Get Other Account Metadata |
+| [**GetOtherAccountPrivateAlias**](CounterpartyMetadataApi.md#getotheraccountprivatealias) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Get Other Account Private Alias |
+| [**UpdateCounterpartyCorporateLocation**](CounterpartyMetadataApi.md#updatecounterpartycorporatelocation) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Update Counterparty Corporate Location |
+| [**UpdateCounterpartyImageUrl**](CounterpartyMetadataApi.md#updatecounterpartyimageurl) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Update Counterparty Image Url |
+| [**UpdateCounterpartyMoreInfo**](CounterpartyMetadataApi.md#updatecounterpartymoreinfo) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Update Counterparty More Info |
+| [**UpdateCounterpartyOpenCorporatesUrl**](CounterpartyMetadataApi.md#updatecounterpartyopencorporatesurl) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Update Open Corporates Url of Counterparty |
+| [**UpdateCounterpartyPhysicalLocation**](CounterpartyMetadataApi.md#updatecounterpartyphysicallocation) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Update Counterparty Physical Location |
+| [**UpdateCounterpartyPrivateAlias**](CounterpartyMetadataApi.md#updatecounterpartyprivatealias) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Update Counterparty Private Alias |
+| [**UpdateCounterpartyPublicAlias**](CounterpartyMetadataApi.md#updatecounterpartypublicalias) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Update public alias of other bank account |
+| [**UpdateCounterpartyUrl**](CounterpartyMetadataApi.md#updatecounterpartyurl) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Update url of other bank account |
 
-<a id="obpv121addcounterpartycorporatelocation"></a>
-# **OBPv121AddCounterpartyCorporateLocation**
-> OBPv121UpdateTransactionNarrative200Response OBPv121AddCounterpartyCorporateLocation (string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyCorporateLocationRequest oBPv121UpdateCounterpartyCorporateLocationRequest)
+<a id="addcounterpartycorporatelocation"></a>
+# **AddCounterpartyCorporateLocation**
+> UpdateTransactionNarrative200Response AddCounterpartyCorporateLocation (string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyCorporateLocationRequest updateCounterpartyCorporateLocationRequest)
 
 Add Corporate Location to Counterparty
 
@@ -50,11 +50,11 @@ Add Corporate Location to Counterparty
 | **accountid** | **string** | The ACCOUNTID identifier |  |
 | **viewid** | **string** | The VIEWID identifier |  |
 | **otheraccountid** | **string** | The OTHERACCOUNTID identifier |  |
-| **oBPv121UpdateCounterpartyCorporateLocationRequest** | [**OBPv121UpdateCounterpartyCorporateLocationRequest**](OBPv121UpdateCounterpartyCorporateLocationRequest.md) | Request body |  |
+| **updateCounterpartyCorporateLocationRequest** | [**UpdateCounterpartyCorporateLocationRequest**](UpdateCounterpartyCorporateLocationRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -75,9 +75,9 @@ Add Corporate Location to Counterparty
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121addcounterpartyimageurl"></a>
-# **OBPv121AddCounterpartyImageUrl**
-> OBPv121UpdateTransactionNarrative200Response OBPv121AddCounterpartyImageUrl (string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyImageUrlRequest oBPv121UpdateCounterpartyImageUrlRequest)
+<a id="addcounterpartyimageurl"></a>
+# **AddCounterpartyImageUrl**
+> UpdateTransactionNarrative200Response AddCounterpartyImageUrl (string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyImageUrlRequest updateCounterpartyImageUrlRequest)
 
 Add image url to other bank account
 
@@ -92,11 +92,11 @@ Add image url to other bank account
 | **accountid** | **string** | The ACCOUNTID identifier |  |
 | **viewid** | **string** | The VIEWID identifier |  |
 | **otheraccountid** | **string** | The OTHERACCOUNTID identifier |  |
-| **oBPv121UpdateCounterpartyImageUrlRequest** | [**OBPv121UpdateCounterpartyImageUrlRequest**](OBPv121UpdateCounterpartyImageUrlRequest.md) | Request body |  |
+| **updateCounterpartyImageUrlRequest** | [**UpdateCounterpartyImageUrlRequest**](UpdateCounterpartyImageUrlRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -117,9 +117,9 @@ Add image url to other bank account
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121addcounterpartymoreinfo"></a>
-# **OBPv121AddCounterpartyMoreInfo**
-> OBPv121UpdateTransactionNarrative200Response OBPv121AddCounterpartyMoreInfo (string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyMoreInfoRequest oBPv121UpdateCounterpartyMoreInfoRequest)
+<a id="addcounterpartymoreinfo"></a>
+# **AddCounterpartyMoreInfo**
+> UpdateTransactionNarrative200Response AddCounterpartyMoreInfo (string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyMoreInfoRequest updateCounterpartyMoreInfoRequest)
 
 Add Counterparty More Info
 
@@ -134,11 +134,11 @@ Add Counterparty More Info
 | **accountid** | **string** | The ACCOUNTID identifier |  |
 | **viewid** | **string** | The VIEWID identifier |  |
 | **otheraccountid** | **string** | The OTHERACCOUNTID identifier |  |
-| **oBPv121UpdateCounterpartyMoreInfoRequest** | [**OBPv121UpdateCounterpartyMoreInfoRequest**](OBPv121UpdateCounterpartyMoreInfoRequest.md) | Request body |  |
+| **updateCounterpartyMoreInfoRequest** | [**UpdateCounterpartyMoreInfoRequest**](UpdateCounterpartyMoreInfoRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -159,9 +159,9 @@ Add Counterparty More Info
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121addcounterpartyopencorporatesurl"></a>
-# **OBPv121AddCounterpartyOpenCorporatesUrl**
-> OBPv121UpdateTransactionNarrative200Response OBPv121AddCounterpartyOpenCorporatesUrl (string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyOpenCorporatesUrlRequest oBPv121UpdateCounterpartyOpenCorporatesUrlRequest)
+<a id="addcounterpartyopencorporatesurl"></a>
+# **AddCounterpartyOpenCorporatesUrl**
+> UpdateTransactionNarrative200Response AddCounterpartyOpenCorporatesUrl (string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyOpenCorporatesUrlRequest updateCounterpartyOpenCorporatesUrlRequest)
 
 Add Open Corporates URL to Counterparty
 
@@ -176,11 +176,11 @@ Add Open Corporates URL to Counterparty
 | **accountid** | **string** | The ACCOUNTID identifier |  |
 | **viewid** | **string** | The VIEWID identifier |  |
 | **otheraccountid** | **string** | The OTHERACCOUNTID identifier |  |
-| **oBPv121UpdateCounterpartyOpenCorporatesUrlRequest** | [**OBPv121UpdateCounterpartyOpenCorporatesUrlRequest**](OBPv121UpdateCounterpartyOpenCorporatesUrlRequest.md) | Request body |  |
+| **updateCounterpartyOpenCorporatesUrlRequest** | [**UpdateCounterpartyOpenCorporatesUrlRequest**](UpdateCounterpartyOpenCorporatesUrlRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -201,9 +201,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121addcounterpartyphysicallocation"></a>
-# **OBPv121AddCounterpartyPhysicalLocation**
-> OBPv121UpdateTransactionNarrative200Response OBPv121AddCounterpartyPhysicalLocation (string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyPhysicalLocationRequest oBPv121UpdateCounterpartyPhysicalLocationRequest)
+<a id="addcounterpartyphysicallocation"></a>
+# **AddCounterpartyPhysicalLocation**
+> UpdateTransactionNarrative200Response AddCounterpartyPhysicalLocation (string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyPhysicalLocationRequest updateCounterpartyPhysicalLocationRequest)
 
 Add physical location to other bank account
 
@@ -218,11 +218,11 @@ Add physical location to other bank account
 | **accountid** | **string** | The ACCOUNTID identifier |  |
 | **viewid** | **string** | The VIEWID identifier |  |
 | **otheraccountid** | **string** | The OTHERACCOUNTID identifier |  |
-| **oBPv121UpdateCounterpartyPhysicalLocationRequest** | [**OBPv121UpdateCounterpartyPhysicalLocationRequest**](OBPv121UpdateCounterpartyPhysicalLocationRequest.md) | Request body |  |
+| **updateCounterpartyPhysicalLocationRequest** | [**UpdateCounterpartyPhysicalLocationRequest**](UpdateCounterpartyPhysicalLocationRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -243,9 +243,9 @@ Add physical location to other bank account
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121addcounterpartypublicalias"></a>
-# **OBPv121AddCounterpartyPublicAlias**
-> OBPv121UpdateTransactionNarrative200Response OBPv121AddCounterpartyPublicAlias (string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response)
+<a id="addcounterpartypublicalias"></a>
+# **AddCounterpartyPublicAlias**
+> UpdateTransactionNarrative200Response AddCounterpartyPublicAlias (string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response)
 
 Add public alias to other bank account
 
@@ -260,11 +260,11 @@ Add public alias to other bank account
 | **accountid** | **string** | The ACCOUNTID identifier |  |
 | **viewid** | **string** | The VIEWID identifier |  |
 | **otheraccountid** | **string** | The OTHERACCOUNTID identifier |  |
-| **oBPv121GetCounterpartyPublicAlias200Response** | [**OBPv121GetCounterpartyPublicAlias200Response**](OBPv121GetCounterpartyPublicAlias200Response.md) | Request body |  |
+| **getCounterpartyPublicAlias200Response** | [**GetCounterpartyPublicAlias200Response**](GetCounterpartyPublicAlias200Response.md) | Request body |  |
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -285,9 +285,9 @@ Add public alias to other bank account
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121addcounterpartyurl"></a>
-# **OBPv121AddCounterpartyUrl**
-> OBPv121UpdateTransactionNarrative200Response OBPv121AddCounterpartyUrl (string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyUrlRequest oBPv121UpdateCounterpartyUrlRequest)
+<a id="addcounterpartyurl"></a>
+# **AddCounterpartyUrl**
+> UpdateTransactionNarrative200Response AddCounterpartyUrl (string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyUrlRequest updateCounterpartyUrlRequest)
 
 Add url to other bank account
 
@@ -302,11 +302,11 @@ Add url to other bank account
 | **accountid** | **string** | The ACCOUNTID identifier |  |
 | **viewid** | **string** | The VIEWID identifier |  |
 | **otheraccountid** | **string** | The OTHERACCOUNTID identifier |  |
-| **oBPv121UpdateCounterpartyUrlRequest** | [**OBPv121UpdateCounterpartyUrlRequest**](OBPv121UpdateCounterpartyUrlRequest.md) | Request body |  |
+| **updateCounterpartyUrlRequest** | [**UpdateCounterpartyUrlRequest**](UpdateCounterpartyUrlRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -327,9 +327,9 @@ Add url to other bank account
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121addotheraccountprivatealias"></a>
-# **OBPv121AddOtherAccountPrivateAlias**
-> OBPv121UpdateTransactionNarrative200Response OBPv121AddOtherAccountPrivateAlias (string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response)
+<a id="addotheraccountprivatealias"></a>
+# **AddOtherAccountPrivateAlias**
+> UpdateTransactionNarrative200Response AddOtherAccountPrivateAlias (string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response)
 
 Create Other Account Private Alias
 
@@ -344,11 +344,11 @@ Create Other Account Private Alias
 | **accountid** | **string** | The ACCOUNTID identifier |  |
 | **viewid** | **string** | The VIEWID identifier |  |
 | **otheraccountid** | **string** | The OTHERACCOUNTID identifier |  |
-| **oBPv121GetCounterpartyPublicAlias200Response** | [**OBPv121GetCounterpartyPublicAlias200Response**](OBPv121GetCounterpartyPublicAlias200Response.md) | Request body |  |
+| **getCounterpartyPublicAlias200Response** | [**GetCounterpartyPublicAlias200Response**](GetCounterpartyPublicAlias200Response.md) | Request body |  |
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -369,9 +369,9 @@ Create Other Account Private Alias
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121deletecounterpartycorporatelocation"></a>
-# **OBPv121DeleteCounterpartyCorporateLocation**
-> void OBPv121DeleteCounterpartyCorporateLocation (string bankid, string accountid, string viewid, string otheraccountid)
+<a id="deletecounterpartycorporatelocation"></a>
+# **DeleteCounterpartyCorporateLocation**
+> void DeleteCounterpartyCorporateLocation (string bankid, string accountid, string viewid, string otheraccountid)
 
 Delete Counterparty Corporate Location
 
@@ -410,9 +410,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121deletecounterpartyimageurl"></a>
-# **OBPv121DeleteCounterpartyImageUrl**
-> void OBPv121DeleteCounterpartyImageUrl (string bankid, string accountid, string viewid, string otheraccountid)
+<a id="deletecounterpartyimageurl"></a>
+# **DeleteCounterpartyImageUrl**
+> void DeleteCounterpartyImageUrl (string bankid, string accountid, string viewid, string otheraccountid)
 
 Delete Counterparty Image URL
 
@@ -450,9 +450,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121deletecounterpartymoreinfo"></a>
-# **OBPv121DeleteCounterpartyMoreInfo**
-> void OBPv121DeleteCounterpartyMoreInfo (string bankid, string accountid, string viewid, string otheraccountid)
+<a id="deletecounterpartymoreinfo"></a>
+# **DeleteCounterpartyMoreInfo**
+> void DeleteCounterpartyMoreInfo (string bankid, string accountid, string viewid, string otheraccountid)
 
 Delete more info of other bank account
 
@@ -491,9 +491,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121deletecounterpartyopencorporatesurl"></a>
-# **OBPv121DeleteCounterpartyOpenCorporatesUrl**
-> void OBPv121DeleteCounterpartyOpenCorporatesUrl (string bankid, string accountid, string viewid, string otheraccountid)
+<a id="deletecounterpartyopencorporatesurl"></a>
+# **DeleteCounterpartyOpenCorporatesUrl**
+> void DeleteCounterpartyOpenCorporatesUrl (string bankid, string accountid, string viewid, string otheraccountid)
 
 Delete Counterparty Open Corporates URL
 
@@ -532,9 +532,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121deletecounterpartyphysicallocation"></a>
-# **OBPv121DeleteCounterpartyPhysicalLocation**
-> void OBPv121DeleteCounterpartyPhysicalLocation (string bankid, string accountid, string viewid, string otheraccountid)
+<a id="deletecounterpartyphysicallocation"></a>
+# **DeleteCounterpartyPhysicalLocation**
+> void DeleteCounterpartyPhysicalLocation (string bankid, string accountid, string viewid, string otheraccountid)
 
 Delete Counterparty Physical Location
 
@@ -573,9 +573,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121deletecounterpartyprivatealias"></a>
-# **OBPv121DeleteCounterpartyPrivateAlias**
-> void OBPv121DeleteCounterpartyPrivateAlias (string bankid, string accountid, string viewid, string otheraccountid)
+<a id="deletecounterpartyprivatealias"></a>
+# **DeleteCounterpartyPrivateAlias**
+> void DeleteCounterpartyPrivateAlias (string bankid, string accountid, string viewid, string otheraccountid)
 
 Delete Counterparty Private Alias
 
@@ -614,9 +614,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121deletecounterpartypublicalias"></a>
-# **OBPv121DeleteCounterpartyPublicAlias**
-> void OBPv121DeleteCounterpartyPublicAlias (string bankid, string accountid, string viewid, string otheraccountid)
+<a id="deletecounterpartypublicalias"></a>
+# **DeleteCounterpartyPublicAlias**
+> void DeleteCounterpartyPublicAlias (string bankid, string accountid, string viewid, string otheraccountid)
 
 Delete Counterparty Public Alias
 
@@ -655,9 +655,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121deletecounterpartyurl"></a>
-# **OBPv121DeleteCounterpartyUrl**
-> void OBPv121DeleteCounterpartyUrl (string bankid, string accountid, string viewid, string otheraccountid)
+<a id="deletecounterpartyurl"></a>
+# **DeleteCounterpartyUrl**
+> void DeleteCounterpartyUrl (string bankid, string accountid, string viewid, string otheraccountid)
 
 Delete url of other bank account
 
@@ -696,9 +696,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121getcounterpartypublicalias"></a>
-# **OBPv121GetCounterpartyPublicAlias**
-> OBPv121GetCounterpartyPublicAlias200Response OBPv121GetCounterpartyPublicAlias (string bankid, string accountid, string viewid, string otheraccountid)
+<a id="getcounterpartypublicalias"></a>
+# **GetCounterpartyPublicAlias**
+> GetCounterpartyPublicAlias200Response GetCounterpartyPublicAlias (string bankid, string accountid, string viewid, string otheraccountid)
 
 Get public alias of other bank account
 
@@ -716,7 +716,7 @@ Get public alias of other bank account
 
 ### Return type
 
-[**OBPv121GetCounterpartyPublicAlias200Response**](OBPv121GetCounterpartyPublicAlias200Response.md)
+[**GetCounterpartyPublicAlias200Response**](GetCounterpartyPublicAlias200Response.md)
 
 ### Authorization
 
@@ -737,9 +737,50 @@ Get public alias of other bank account
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121getotheraccountmetadata"></a>
-# **OBPv121GetOtherAccountMetadata**
-> OBPv121GetOtherAccountMetadata200Response OBPv121GetOtherAccountMetadata (string bankid, string accountid, string viewid, string otheraccountid)
+<a id="getexplicitcounterpartybyid"></a>
+# **GetExplicitCounterpartyById**
+> GetExplicitCounterpartyById200Response GetExplicitCounterpartyById (string bankid, string accountid, string viewid, string counterpartyid)
+
+Get Counterparty by Id (Explicit)
+
+<p>This endpoint returns a single Counterparty on an Account View specified by its COUNTERPARTY_ID:</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
+
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **bankid** | **string** | The BANKID identifier |  |
+| **accountid** | **string** | The ACCOUNTID identifier |  |
+| **viewid** | **string** | The VIEWID identifier |  |
+| **counterpartyid** | **string** | The COUNTERPARTYID identifier |  |
+
+### Return type
+
+[**GetExplicitCounterpartyById200Response**](GetExplicitCounterpartyById200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+<a id="getotheraccountmetadata"></a>
+# **GetOtherAccountMetadata**
+> GetOtherAccountMetadata200Response GetOtherAccountMetadata (string bankid, string accountid, string viewid, string otheraccountid)
 
 Get Other Account Metadata
 
@@ -757,7 +798,7 @@ Get Other Account Metadata
 
 ### Return type
 
-[**OBPv121GetOtherAccountMetadata200Response**](OBPv121GetOtherAccountMetadata200Response.md)
+[**GetOtherAccountMetadata200Response**](GetOtherAccountMetadata200Response.md)
 
 ### Authorization
 
@@ -777,9 +818,9 @@ Get Other Account Metadata
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121getotheraccountprivatealias"></a>
-# **OBPv121GetOtherAccountPrivateAlias**
-> OBPv121GetCounterpartyPublicAlias200Response OBPv121GetOtherAccountPrivateAlias (string bankid, string accountid, string viewid, string otheraccountid)
+<a id="getotheraccountprivatealias"></a>
+# **GetOtherAccountPrivateAlias**
+> GetCounterpartyPublicAlias200Response GetOtherAccountPrivateAlias (string bankid, string accountid, string viewid, string otheraccountid)
 
 Get Other Account Private Alias
 
@@ -797,7 +838,7 @@ Get Other Account Private Alias
 
 ### Return type
 
-[**OBPv121GetCounterpartyPublicAlias200Response**](OBPv121GetCounterpartyPublicAlias200Response.md)
+[**GetCounterpartyPublicAlias200Response**](GetCounterpartyPublicAlias200Response.md)
 
 ### Authorization
 
@@ -818,9 +859,9 @@ Get Other Account Private Alias
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121updatecounterpartycorporatelocation"></a>
-# **OBPv121UpdateCounterpartyCorporateLocation**
-> OBPv121UpdateTransactionNarrative200Response OBPv121UpdateCounterpartyCorporateLocation (string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyCorporateLocationRequest oBPv121UpdateCounterpartyCorporateLocationRequest)
+<a id="updatecounterpartycorporatelocation"></a>
+# **UpdateCounterpartyCorporateLocation**
+> UpdateTransactionNarrative200Response UpdateCounterpartyCorporateLocation (string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyCorporateLocationRequest updateCounterpartyCorporateLocationRequest)
 
 Update Counterparty Corporate Location
 
@@ -835,11 +876,11 @@ Update Counterparty Corporate Location
 | **accountid** | **string** | The ACCOUNTID identifier |  |
 | **viewid** | **string** | The VIEWID identifier |  |
 | **otheraccountid** | **string** | The OTHERACCOUNTID identifier |  |
-| **oBPv121UpdateCounterpartyCorporateLocationRequest** | [**OBPv121UpdateCounterpartyCorporateLocationRequest**](OBPv121UpdateCounterpartyCorporateLocationRequest.md) | Request body |  |
+| **updateCounterpartyCorporateLocationRequest** | [**UpdateCounterpartyCorporateLocationRequest**](UpdateCounterpartyCorporateLocationRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -860,9 +901,9 @@ Update Counterparty Corporate Location
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121updatecounterpartyimageurl"></a>
-# **OBPv121UpdateCounterpartyImageUrl**
-> OBPv121UpdateTransactionNarrative200Response OBPv121UpdateCounterpartyImageUrl (string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyImageUrlRequest oBPv121UpdateCounterpartyImageUrlRequest)
+<a id="updatecounterpartyimageurl"></a>
+# **UpdateCounterpartyImageUrl**
+> UpdateTransactionNarrative200Response UpdateCounterpartyImageUrl (string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyImageUrlRequest updateCounterpartyImageUrlRequest)
 
 Update Counterparty Image Url
 
@@ -877,11 +918,11 @@ Update Counterparty Image Url
 | **accountid** | **string** | The ACCOUNTID identifier |  |
 | **viewid** | **string** | The VIEWID identifier |  |
 | **otheraccountid** | **string** | The OTHERACCOUNTID identifier |  |
-| **oBPv121UpdateCounterpartyImageUrlRequest** | [**OBPv121UpdateCounterpartyImageUrlRequest**](OBPv121UpdateCounterpartyImageUrlRequest.md) | Request body |  |
+| **updateCounterpartyImageUrlRequest** | [**UpdateCounterpartyImageUrlRequest**](UpdateCounterpartyImageUrlRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -902,9 +943,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121updatecounterpartymoreinfo"></a>
-# **OBPv121UpdateCounterpartyMoreInfo**
-> OBPv121UpdateTransactionNarrative200Response OBPv121UpdateCounterpartyMoreInfo (string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyMoreInfoRequest oBPv121UpdateCounterpartyMoreInfoRequest)
+<a id="updatecounterpartymoreinfo"></a>
+# **UpdateCounterpartyMoreInfo**
+> UpdateTransactionNarrative200Response UpdateCounterpartyMoreInfo (string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyMoreInfoRequest updateCounterpartyMoreInfoRequest)
 
 Update Counterparty More Info
 
@@ -919,11 +960,11 @@ Update Counterparty More Info
 | **accountid** | **string** | The ACCOUNTID identifier |  |
 | **viewid** | **string** | The VIEWID identifier |  |
 | **otheraccountid** | **string** | The OTHERACCOUNTID identifier |  |
-| **oBPv121UpdateCounterpartyMoreInfoRequest** | [**OBPv121UpdateCounterpartyMoreInfoRequest**](OBPv121UpdateCounterpartyMoreInfoRequest.md) | Request body |  |
+| **updateCounterpartyMoreInfoRequest** | [**UpdateCounterpartyMoreInfoRequest**](UpdateCounterpartyMoreInfoRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -944,9 +985,9 @@ Update Counterparty More Info
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121updatecounterpartyopencorporatesurl"></a>
-# **OBPv121UpdateCounterpartyOpenCorporatesUrl**
-> OBPv121UpdateTransactionNarrative200Response OBPv121UpdateCounterpartyOpenCorporatesUrl (string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyOpenCorporatesUrlRequest oBPv121UpdateCounterpartyOpenCorporatesUrlRequest)
+<a id="updatecounterpartyopencorporatesurl"></a>
+# **UpdateCounterpartyOpenCorporatesUrl**
+> UpdateTransactionNarrative200Response UpdateCounterpartyOpenCorporatesUrl (string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyOpenCorporatesUrlRequest updateCounterpartyOpenCorporatesUrlRequest)
 
 Update Open Corporates Url of Counterparty
 
@@ -961,11 +1002,11 @@ Update Open Corporates Url of Counterparty
 | **accountid** | **string** | The ACCOUNTID identifier |  |
 | **viewid** | **string** | The VIEWID identifier |  |
 | **otheraccountid** | **string** | The OTHERACCOUNTID identifier |  |
-| **oBPv121UpdateCounterpartyOpenCorporatesUrlRequest** | [**OBPv121UpdateCounterpartyOpenCorporatesUrlRequest**](OBPv121UpdateCounterpartyOpenCorporatesUrlRequest.md) | Request body |  |
+| **updateCounterpartyOpenCorporatesUrlRequest** | [**UpdateCounterpartyOpenCorporatesUrlRequest**](UpdateCounterpartyOpenCorporatesUrlRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -986,9 +1027,9 @@ Update Open Corporates Url of Counterparty
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121updatecounterpartyphysicallocation"></a>
-# **OBPv121UpdateCounterpartyPhysicalLocation**
-> OBPv121UpdateTransactionNarrative200Response OBPv121UpdateCounterpartyPhysicalLocation (string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyPhysicalLocationRequest oBPv121UpdateCounterpartyPhysicalLocationRequest)
+<a id="updatecounterpartyphysicallocation"></a>
+# **UpdateCounterpartyPhysicalLocation**
+> UpdateTransactionNarrative200Response UpdateCounterpartyPhysicalLocation (string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyPhysicalLocationRequest updateCounterpartyPhysicalLocationRequest)
 
 Update Counterparty Physical Location
 
@@ -1003,11 +1044,11 @@ Update Counterparty Physical Location
 | **accountid** | **string** | The ACCOUNTID identifier |  |
 | **viewid** | **string** | The VIEWID identifier |  |
 | **otheraccountid** | **string** | The OTHERACCOUNTID identifier |  |
-| **oBPv121UpdateCounterpartyPhysicalLocationRequest** | [**OBPv121UpdateCounterpartyPhysicalLocationRequest**](OBPv121UpdateCounterpartyPhysicalLocationRequest.md) | Request body |  |
+| **updateCounterpartyPhysicalLocationRequest** | [**UpdateCounterpartyPhysicalLocationRequest**](UpdateCounterpartyPhysicalLocationRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -1028,9 +1069,9 @@ Update Counterparty Physical Location
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121updatecounterpartyprivatealias"></a>
-# **OBPv121UpdateCounterpartyPrivateAlias**
-> OBPv121UpdateTransactionNarrative200Response OBPv121UpdateCounterpartyPrivateAlias (string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response)
+<a id="updatecounterpartyprivatealias"></a>
+# **UpdateCounterpartyPrivateAlias**
+> UpdateTransactionNarrative200Response UpdateCounterpartyPrivateAlias (string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response)
 
 Update Counterparty Private Alias
 
@@ -1045,11 +1086,11 @@ Update Counterparty Private Alias
 | **accountid** | **string** | The ACCOUNTID identifier |  |
 | **viewid** | **string** | The VIEWID identifier |  |
 | **otheraccountid** | **string** | The OTHERACCOUNTID identifier |  |
-| **oBPv121GetCounterpartyPublicAlias200Response** | [**OBPv121GetCounterpartyPublicAlias200Response**](OBPv121GetCounterpartyPublicAlias200Response.md) | Request body |  |
+| **getCounterpartyPublicAlias200Response** | [**GetCounterpartyPublicAlias200Response**](GetCounterpartyPublicAlias200Response.md) | Request body |  |
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -1070,9 +1111,9 @@ Update Counterparty Private Alias
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121updatecounterpartypublicalias"></a>
-# **OBPv121UpdateCounterpartyPublicAlias**
-> OBPv121UpdateTransactionNarrative200Response OBPv121UpdateCounterpartyPublicAlias (string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response)
+<a id="updatecounterpartypublicalias"></a>
+# **UpdateCounterpartyPublicAlias**
+> UpdateTransactionNarrative200Response UpdateCounterpartyPublicAlias (string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response)
 
 Update public alias of other bank account
 
@@ -1087,11 +1128,11 @@ Update public alias of other bank account
 | **accountid** | **string** | The ACCOUNTID identifier |  |
 | **viewid** | **string** | The VIEWID identifier |  |
 | **otheraccountid** | **string** | The OTHERACCOUNTID identifier |  |
-| **oBPv121GetCounterpartyPublicAlias200Response** | [**OBPv121GetCounterpartyPublicAlias200Response**](OBPv121GetCounterpartyPublicAlias200Response.md) | Request body |  |
+| **getCounterpartyPublicAlias200Response** | [**GetCounterpartyPublicAlias200Response**](GetCounterpartyPublicAlias200Response.md) | Request body |  |
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -1112,9 +1153,9 @@ Update public alias of other bank account
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv121updatecounterpartyurl"></a>
-# **OBPv121UpdateCounterpartyUrl**
-> OBPv121UpdateTransactionNarrative200Response OBPv121UpdateCounterpartyUrl (string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyUrlRequest oBPv121UpdateCounterpartyUrlRequest)
+<a id="updatecounterpartyurl"></a>
+# **UpdateCounterpartyUrl**
+> UpdateTransactionNarrative200Response UpdateCounterpartyUrl (string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyUrlRequest updateCounterpartyUrlRequest)
 
 Update url of other bank account
 
@@ -1129,11 +1170,11 @@ Update url of other bank account
 | **accountid** | **string** | The ACCOUNTID identifier |  |
 | **viewid** | **string** | The VIEWID identifier |  |
 | **otheraccountid** | **string** | The OTHERACCOUNTID identifier |  |
-| **oBPv121UpdateCounterpartyUrlRequest** | [**OBPv121UpdateCounterpartyUrlRequest**](OBPv121UpdateCounterpartyUrlRequest.md) | Request body |  |
+| **updateCounterpartyUrlRequest** | [**UpdateCounterpartyUrlRequest**](UpdateCounterpartyUrlRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -1142,47 +1183,6 @@ Update url of other bank account
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **404** | Not Found |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-<a id="obpv400getexplicitcounterpartybyid"></a>
-# **OBPv400GetExplicitCounterpartyById**
-> OBPv400GetExplicitCounterpartyById200Response OBPv400GetExplicitCounterpartyById (string bankid, string accountid, string viewid, string counterpartyid)
-
-Get Counterparty by Id (Explicit)
-
-<p>This endpoint returns a single Counterparty on an Account View specified by its COUNTERPARTY_ID:</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **bankid** | **string** | The BANKID identifier |  |
-| **accountid** | **string** | The ACCOUNTID identifier |  |
-| **viewid** | **string** | The VIEWID identifier |  |
-| **counterpartyid** | **string** | The COUNTERPARTYID identifier |  |
-
-### Return type
-
-[**OBPv400GetExplicitCounterpartyById200Response**](OBPv400GetExplicitCounterpartyById200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: application/json
 
 

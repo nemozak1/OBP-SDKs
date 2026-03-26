@@ -1,33 +1,33 @@
 # GroupApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv600AddUserToGroup**](GroupApi.md#oBPv600AddUserToGroup) | **POST** /obp/v6.0.0/users/{userid}/group-entitlements | Grant User Membership to Group Entitlements |
-| [**oBPv600AddUserToGroupWithHttpInfo**](GroupApi.md#oBPv600AddUserToGroupWithHttpInfo) | **POST** /obp/v6.0.0/users/{userid}/group-entitlements | Grant User Membership to Group Entitlements |
-| [**oBPv600CreateGroup**](GroupApi.md#oBPv600CreateGroup) | **POST** /obp/v6.0.0/management/groups | Create Group |
-| [**oBPv600CreateGroupWithHttpInfo**](GroupApi.md#oBPv600CreateGroupWithHttpInfo) | **POST** /obp/v6.0.0/management/groups | Create Group |
-| [**oBPv600DeleteGroup**](GroupApi.md#oBPv600DeleteGroup) | **DELETE** /obp/v6.0.0/management/groups/{groupid} | Delete Group |
-| [**oBPv600DeleteGroupWithHttpInfo**](GroupApi.md#oBPv600DeleteGroupWithHttpInfo) | **DELETE** /obp/v6.0.0/management/groups/{groupid} | Delete Group |
-| [**oBPv600GetGroup**](GroupApi.md#oBPv600GetGroup) | **GET** /obp/v6.0.0/management/groups/{groupid} | Get Group |
-| [**oBPv600GetGroupWithHttpInfo**](GroupApi.md#oBPv600GetGroupWithHttpInfo) | **GET** /obp/v6.0.0/management/groups/{groupid} | Get Group |
-| [**oBPv600GetGroupEntitlements**](GroupApi.md#oBPv600GetGroupEntitlements) | **GET** /obp/v6.0.0/management/groups/{groupid}/entitlements | Get Group Entitlements |
-| [**oBPv600GetGroupEntitlementsWithHttpInfo**](GroupApi.md#oBPv600GetGroupEntitlementsWithHttpInfo) | **GET** /obp/v6.0.0/management/groups/{groupid}/entitlements | Get Group Entitlements |
-| [**oBPv600GetGroups**](GroupApi.md#oBPv600GetGroups) | **GET** /obp/v6.0.0/management/groups | Get Groups |
-| [**oBPv600GetGroupsWithHttpInfo**](GroupApi.md#oBPv600GetGroupsWithHttpInfo) | **GET** /obp/v6.0.0/management/groups | Get Groups |
-| [**oBPv600GetUserGroupMemberships**](GroupApi.md#oBPv600GetUserGroupMemberships) | **GET** /obp/v6.0.0/users/{userid}/group-entitlements | Get User&#39;s Group Memberships |
-| [**oBPv600GetUserGroupMembershipsWithHttpInfo**](GroupApi.md#oBPv600GetUserGroupMembershipsWithHttpInfo) | **GET** /obp/v6.0.0/users/{userid}/group-entitlements | Get User&#39;s Group Memberships |
-| [**oBPv600RemoveUserFromGroup**](GroupApi.md#oBPv600RemoveUserFromGroup) | **DELETE** /obp/v6.0.0/users/{userid}/group-entitlements/{groupid} | Remove User from Group |
-| [**oBPv600RemoveUserFromGroupWithHttpInfo**](GroupApi.md#oBPv600RemoveUserFromGroupWithHttpInfo) | **DELETE** /obp/v6.0.0/users/{userid}/group-entitlements/{groupid} | Remove User from Group |
-| [**oBPv600UpdateGroup**](GroupApi.md#oBPv600UpdateGroup) | **PUT** /obp/v6.0.0/management/groups/{groupid} | Update Group |
-| [**oBPv600UpdateGroupWithHttpInfo**](GroupApi.md#oBPv600UpdateGroupWithHttpInfo) | **PUT** /obp/v6.0.0/management/groups/{groupid} | Update Group |
+| [**addUserToGroup**](GroupApi.md#addUserToGroup) | **POST** /obp/v6.0.0/users/{userid}/group-entitlements | Grant User Membership to Group Entitlements |
+| [**addUserToGroupWithHttpInfo**](GroupApi.md#addUserToGroupWithHttpInfo) | **POST** /obp/v6.0.0/users/{userid}/group-entitlements | Grant User Membership to Group Entitlements |
+| [**createGroup**](GroupApi.md#createGroup) | **POST** /obp/v6.0.0/management/groups | Create Group |
+| [**createGroupWithHttpInfo**](GroupApi.md#createGroupWithHttpInfo) | **POST** /obp/v6.0.0/management/groups | Create Group |
+| [**deleteGroup**](GroupApi.md#deleteGroup) | **DELETE** /obp/v6.0.0/management/groups/{groupid} | Delete Group |
+| [**deleteGroupWithHttpInfo**](GroupApi.md#deleteGroupWithHttpInfo) | **DELETE** /obp/v6.0.0/management/groups/{groupid} | Delete Group |
+| [**getGroup**](GroupApi.md#getGroup) | **GET** /obp/v6.0.0/management/groups/{groupid} | Get Group |
+| [**getGroupWithHttpInfo**](GroupApi.md#getGroupWithHttpInfo) | **GET** /obp/v6.0.0/management/groups/{groupid} | Get Group |
+| [**getGroupEntitlements**](GroupApi.md#getGroupEntitlements) | **GET** /obp/v6.0.0/management/groups/{groupid}/entitlements | Get Group Entitlements |
+| [**getGroupEntitlementsWithHttpInfo**](GroupApi.md#getGroupEntitlementsWithHttpInfo) | **GET** /obp/v6.0.0/management/groups/{groupid}/entitlements | Get Group Entitlements |
+| [**getGroups**](GroupApi.md#getGroups) | **GET** /obp/v6.0.0/management/groups | Get Groups |
+| [**getGroupsWithHttpInfo**](GroupApi.md#getGroupsWithHttpInfo) | **GET** /obp/v6.0.0/management/groups | Get Groups |
+| [**getUserGroupMemberships**](GroupApi.md#getUserGroupMemberships) | **GET** /obp/v6.0.0/users/{userid}/group-entitlements | Get User&#39;s Group Memberships |
+| [**getUserGroupMembershipsWithHttpInfo**](GroupApi.md#getUserGroupMembershipsWithHttpInfo) | **GET** /obp/v6.0.0/users/{userid}/group-entitlements | Get User&#39;s Group Memberships |
+| [**removeUserFromGroup**](GroupApi.md#removeUserFromGroup) | **DELETE** /obp/v6.0.0/users/{userid}/group-entitlements/{groupid} | Remove User from Group |
+| [**removeUserFromGroupWithHttpInfo**](GroupApi.md#removeUserFromGroupWithHttpInfo) | **DELETE** /obp/v6.0.0/users/{userid}/group-entitlements/{groupid} | Remove User from Group |
+| [**updateGroup**](GroupApi.md#updateGroup) | **PUT** /obp/v6.0.0/management/groups/{groupid} | Update Group |
+| [**updateGroupWithHttpInfo**](GroupApi.md#updateGroupWithHttpInfo) | **PUT** /obp/v6.0.0/management/groups/{groupid} | Update Group |
 
 
 
-## oBPv600AddUserToGroup
+## addUserToGroup
 
-> OBPv600AddUserToGroup200Response oBPv600AddUserToGroup(userid, obPv600AddUserToGroupRequest)
+> AddUserToGroup200Response addUserToGroup(userid, addUserToGroupRequest)
 
 Grant User Membership to Group Entitlements
 
@@ -47,7 +47,7 @@ import com.openbankproject.api.GroupApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -67,12 +67,12 @@ public class Example {
 
         GroupApi apiInstance = new GroupApi(defaultClient);
         String userid = "userid_example"; // String | The USERID identifier
-        OBPv600AddUserToGroupRequest obPv600AddUserToGroupRequest = new OBPv600AddUserToGroupRequest(); // OBPv600AddUserToGroupRequest | Request body
+        AddUserToGroupRequest addUserToGroupRequest = new AddUserToGroupRequest(); // AddUserToGroupRequest | Request body
         try {
-            OBPv600AddUserToGroup200Response result = apiInstance.oBPv600AddUserToGroup(userid, obPv600AddUserToGroupRequest);
+            AddUserToGroup200Response result = apiInstance.addUserToGroup(userid, addUserToGroupRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling GroupApi#oBPv600AddUserToGroup");
+            System.err.println("Exception when calling GroupApi#addUserToGroup");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -88,11 +88,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **userid** | **String**| The USERID identifier | |
-| **obPv600AddUserToGroupRequest** | [**OBPv600AddUserToGroupRequest**](OBPv600AddUserToGroupRequest.md)| Request body | |
+| **addUserToGroupRequest** | [**AddUserToGroupRequest**](AddUserToGroupRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600AddUserToGroup200Response**](OBPv600AddUserToGroup200Response.md)
+[**AddUserToGroup200Response**](AddUserToGroup200Response.md)
 
 
 ### Authorization
@@ -110,9 +110,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600AddUserToGroupWithHttpInfo
+## addUserToGroupWithHttpInfo
 
-> ApiResponse<OBPv600AddUserToGroup200Response> oBPv600AddUserToGroup oBPv600AddUserToGroupWithHttpInfo(userid, obPv600AddUserToGroupRequest)
+> ApiResponse<AddUserToGroup200Response> addUserToGroup addUserToGroupWithHttpInfo(userid, addUserToGroupRequest)
 
 Grant User Membership to Group Entitlements
 
@@ -133,7 +133,7 @@ import com.openbankproject.api.GroupApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -153,14 +153,14 @@ public class Example {
 
         GroupApi apiInstance = new GroupApi(defaultClient);
         String userid = "userid_example"; // String | The USERID identifier
-        OBPv600AddUserToGroupRequest obPv600AddUserToGroupRequest = new OBPv600AddUserToGroupRequest(); // OBPv600AddUserToGroupRequest | Request body
+        AddUserToGroupRequest addUserToGroupRequest = new AddUserToGroupRequest(); // AddUserToGroupRequest | Request body
         try {
-            ApiResponse<OBPv600AddUserToGroup200Response> response = apiInstance.oBPv600AddUserToGroupWithHttpInfo(userid, obPv600AddUserToGroupRequest);
+            ApiResponse<AddUserToGroup200Response> response = apiInstance.addUserToGroupWithHttpInfo(userid, addUserToGroupRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling GroupApi#oBPv600AddUserToGroup");
+            System.err.println("Exception when calling GroupApi#addUserToGroup");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -176,11 +176,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **userid** | **String**| The USERID identifier | |
-| **obPv600AddUserToGroupRequest** | [**OBPv600AddUserToGroupRequest**](OBPv600AddUserToGroupRequest.md)| Request body | |
+| **addUserToGroupRequest** | [**AddUserToGroupRequest**](AddUserToGroupRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv600AddUserToGroup200Response**](OBPv600AddUserToGroup200Response.md)>
+ApiResponse<[**AddUserToGroup200Response**](AddUserToGroup200Response.md)>
 
 
 ### Authorization
@@ -199,9 +199,9 @@ ApiResponse<[**OBPv600AddUserToGroup200Response**](OBPv600AddUserToGroup200Respo
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600CreateGroup
+## createGroup
 
-> OBPv600GetGroups200ResponsePropertiesGroupsItems oBPv600CreateGroup(obPv600CreateGroupRequest)
+> GetGroups200ResponseGroupsInner createGroup(createGroupRequest)
 
 Create Group
 
@@ -221,7 +221,7 @@ import com.openbankproject.api.GroupApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -240,12 +240,12 @@ public class Example {
         //DirectLogin.setApiKeyPrefix("Token");
 
         GroupApi apiInstance = new GroupApi(defaultClient);
-        OBPv600CreateGroupRequest obPv600CreateGroupRequest = new OBPv600CreateGroupRequest(); // OBPv600CreateGroupRequest | Request body
+        CreateGroupRequest createGroupRequest = new CreateGroupRequest(); // CreateGroupRequest | Request body
         try {
-            OBPv600GetGroups200ResponsePropertiesGroupsItems result = apiInstance.oBPv600CreateGroup(obPv600CreateGroupRequest);
+            GetGroups200ResponseGroupsInner result = apiInstance.createGroup(createGroupRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling GroupApi#oBPv600CreateGroup");
+            System.err.println("Exception when calling GroupApi#createGroup");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -260,11 +260,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **obPv600CreateGroupRequest** | [**OBPv600CreateGroupRequest**](OBPv600CreateGroupRequest.md)| Request body | |
+| **createGroupRequest** | [**CreateGroupRequest**](CreateGroupRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600GetGroups200ResponsePropertiesGroupsItems**](OBPv600GetGroups200ResponsePropertiesGroupsItems.md)
+[**GetGroups200ResponseGroupsInner**](GetGroups200ResponseGroupsInner.md)
 
 
 ### Authorization
@@ -282,9 +282,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600CreateGroupWithHttpInfo
+## createGroupWithHttpInfo
 
-> ApiResponse<OBPv600GetGroups200ResponsePropertiesGroupsItems> oBPv600CreateGroup oBPv600CreateGroupWithHttpInfo(obPv600CreateGroupRequest)
+> ApiResponse<GetGroups200ResponseGroupsInner> createGroup createGroupWithHttpInfo(createGroupRequest)
 
 Create Group
 
@@ -305,7 +305,7 @@ import com.openbankproject.api.GroupApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -324,14 +324,14 @@ public class Example {
         //DirectLogin.setApiKeyPrefix("Token");
 
         GroupApi apiInstance = new GroupApi(defaultClient);
-        OBPv600CreateGroupRequest obPv600CreateGroupRequest = new OBPv600CreateGroupRequest(); // OBPv600CreateGroupRequest | Request body
+        CreateGroupRequest createGroupRequest = new CreateGroupRequest(); // CreateGroupRequest | Request body
         try {
-            ApiResponse<OBPv600GetGroups200ResponsePropertiesGroupsItems> response = apiInstance.oBPv600CreateGroupWithHttpInfo(obPv600CreateGroupRequest);
+            ApiResponse<GetGroups200ResponseGroupsInner> response = apiInstance.createGroupWithHttpInfo(createGroupRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling GroupApi#oBPv600CreateGroup");
+            System.err.println("Exception when calling GroupApi#createGroup");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -346,11 +346,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **obPv600CreateGroupRequest** | [**OBPv600CreateGroupRequest**](OBPv600CreateGroupRequest.md)| Request body | |
+| **createGroupRequest** | [**CreateGroupRequest**](CreateGroupRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv600GetGroups200ResponsePropertiesGroupsItems**](OBPv600GetGroups200ResponsePropertiesGroupsItems.md)>
+ApiResponse<[**GetGroups200ResponseGroupsInner**](GetGroups200ResponseGroupsInner.md)>
 
 
 ### Authorization
@@ -369,9 +369,9 @@ ApiResponse<[**OBPv600GetGroups200ResponsePropertiesGroupsItems**](OBPv600GetGro
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600DeleteGroup
+## deleteGroup
 
-> void oBPv600DeleteGroup(groupid)
+> void deleteGroup(groupid)
 
 Delete Group
 
@@ -391,7 +391,7 @@ import com.openbankproject.api.GroupApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -412,9 +412,9 @@ public class Example {
         GroupApi apiInstance = new GroupApi(defaultClient);
         String groupid = "groupid_example"; // String | The GROUPID identifier
         try {
-            apiInstance.oBPv600DeleteGroup(groupid);
+            apiInstance.deleteGroup(groupid);
         } catch (ApiException e) {
-            System.err.println("Exception when calling GroupApi#oBPv600DeleteGroup");
+            System.err.println("Exception when calling GroupApi#deleteGroup");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -451,9 +451,9 @@ null (empty response body)
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600DeleteGroupWithHttpInfo
+## deleteGroupWithHttpInfo
 
-> ApiResponse<Void> oBPv600DeleteGroup oBPv600DeleteGroupWithHttpInfo(groupid)
+> ApiResponse<Void> deleteGroup deleteGroupWithHttpInfo(groupid)
 
 Delete Group
 
@@ -474,7 +474,7 @@ import com.openbankproject.api.GroupApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -495,11 +495,11 @@ public class Example {
         GroupApi apiInstance = new GroupApi(defaultClient);
         String groupid = "groupid_example"; // String | The GROUPID identifier
         try {
-            ApiResponse<Void> response = apiInstance.oBPv600DeleteGroupWithHttpInfo(groupid);
+            ApiResponse<Void> response = apiInstance.deleteGroupWithHttpInfo(groupid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling GroupApi#oBPv600DeleteGroup");
+            System.err.println("Exception when calling GroupApi#deleteGroup");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -537,9 +537,9 @@ ApiResponse<Void>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600GetGroup
+## getGroup
 
-> OBPv600GetGroups200ResponsePropertiesGroupsItems oBPv600GetGroup(groupid)
+> GetGroups200ResponseGroupsInner getGroup(groupid)
 
 Get Group
 
@@ -559,7 +559,7 @@ import com.openbankproject.api.GroupApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -580,10 +580,10 @@ public class Example {
         GroupApi apiInstance = new GroupApi(defaultClient);
         String groupid = "groupid_example"; // String | The GROUPID identifier
         try {
-            OBPv600GetGroups200ResponsePropertiesGroupsItems result = apiInstance.oBPv600GetGroup(groupid);
+            GetGroups200ResponseGroupsInner result = apiInstance.getGroup(groupid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling GroupApi#oBPv600GetGroup");
+            System.err.println("Exception when calling GroupApi#getGroup");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -602,7 +602,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv600GetGroups200ResponsePropertiesGroupsItems**](OBPv600GetGroups200ResponsePropertiesGroupsItems.md)
+[**GetGroups200ResponseGroupsInner**](GetGroups200ResponseGroupsInner.md)
 
 
 ### Authorization
@@ -620,9 +620,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600GetGroupWithHttpInfo
+## getGroupWithHttpInfo
 
-> ApiResponse<OBPv600GetGroups200ResponsePropertiesGroupsItems> oBPv600GetGroup oBPv600GetGroupWithHttpInfo(groupid)
+> ApiResponse<GetGroups200ResponseGroupsInner> getGroup getGroupWithHttpInfo(groupid)
 
 Get Group
 
@@ -643,7 +643,7 @@ import com.openbankproject.api.GroupApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -664,12 +664,12 @@ public class Example {
         GroupApi apiInstance = new GroupApi(defaultClient);
         String groupid = "groupid_example"; // String | The GROUPID identifier
         try {
-            ApiResponse<OBPv600GetGroups200ResponsePropertiesGroupsItems> response = apiInstance.oBPv600GetGroupWithHttpInfo(groupid);
+            ApiResponse<GetGroups200ResponseGroupsInner> response = apiInstance.getGroupWithHttpInfo(groupid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling GroupApi#oBPv600GetGroup");
+            System.err.println("Exception when calling GroupApi#getGroup");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -688,7 +688,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv600GetGroups200ResponsePropertiesGroupsItems**](OBPv600GetGroups200ResponsePropertiesGroupsItems.md)>
+ApiResponse<[**GetGroups200ResponseGroupsInner**](GetGroups200ResponseGroupsInner.md)>
 
 
 ### Authorization
@@ -707,9 +707,9 @@ ApiResponse<[**OBPv600GetGroups200ResponsePropertiesGroupsItems**](OBPv600GetGro
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600GetGroupEntitlements
+## getGroupEntitlements
 
-> OBPv600GetGroupEntitlements200Response oBPv600GetGroupEntitlements(groupid)
+> GetGroupEntitlements200Response getGroupEntitlements(groupid)
 
 Get Group Entitlements
 
@@ -729,7 +729,7 @@ import com.openbankproject.api.GroupApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -750,10 +750,10 @@ public class Example {
         GroupApi apiInstance = new GroupApi(defaultClient);
         String groupid = "groupid_example"; // String | The GROUPID identifier
         try {
-            OBPv600GetGroupEntitlements200Response result = apiInstance.oBPv600GetGroupEntitlements(groupid);
+            GetGroupEntitlements200Response result = apiInstance.getGroupEntitlements(groupid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling GroupApi#oBPv600GetGroupEntitlements");
+            System.err.println("Exception when calling GroupApi#getGroupEntitlements");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -772,7 +772,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv600GetGroupEntitlements200Response**](OBPv600GetGroupEntitlements200Response.md)
+[**GetGroupEntitlements200Response**](GetGroupEntitlements200Response.md)
 
 
 ### Authorization
@@ -790,9 +790,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600GetGroupEntitlementsWithHttpInfo
+## getGroupEntitlementsWithHttpInfo
 
-> ApiResponse<OBPv600GetGroupEntitlements200Response> oBPv600GetGroupEntitlements oBPv600GetGroupEntitlementsWithHttpInfo(groupid)
+> ApiResponse<GetGroupEntitlements200Response> getGroupEntitlements getGroupEntitlementsWithHttpInfo(groupid)
 
 Get Group Entitlements
 
@@ -813,7 +813,7 @@ import com.openbankproject.api.GroupApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -834,12 +834,12 @@ public class Example {
         GroupApi apiInstance = new GroupApi(defaultClient);
         String groupid = "groupid_example"; // String | The GROUPID identifier
         try {
-            ApiResponse<OBPv600GetGroupEntitlements200Response> response = apiInstance.oBPv600GetGroupEntitlementsWithHttpInfo(groupid);
+            ApiResponse<GetGroupEntitlements200Response> response = apiInstance.getGroupEntitlementsWithHttpInfo(groupid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling GroupApi#oBPv600GetGroupEntitlements");
+            System.err.println("Exception when calling GroupApi#getGroupEntitlements");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -858,7 +858,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv600GetGroupEntitlements200Response**](OBPv600GetGroupEntitlements200Response.md)>
+ApiResponse<[**GetGroupEntitlements200Response**](GetGroupEntitlements200Response.md)>
 
 
 ### Authorization
@@ -877,9 +877,9 @@ ApiResponse<[**OBPv600GetGroupEntitlements200Response**](OBPv600GetGroupEntitlem
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600GetGroups
+## getGroups
 
-> OBPv600GetGroups200Response oBPv600GetGroups()
+> GetGroups200Response getGroups()
 
 Get Groups
 
@@ -899,7 +899,7 @@ import com.openbankproject.api.GroupApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -919,10 +919,10 @@ public class Example {
 
         GroupApi apiInstance = new GroupApi(defaultClient);
         try {
-            OBPv600GetGroups200Response result = apiInstance.oBPv600GetGroups();
+            GetGroups200Response result = apiInstance.getGroups();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling GroupApi#oBPv600GetGroups");
+            System.err.println("Exception when calling GroupApi#getGroups");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -938,7 +938,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetGroups200Response**](OBPv600GetGroups200Response.md)
+[**GetGroups200Response**](GetGroups200Response.md)
 
 
 ### Authorization
@@ -956,9 +956,9 @@ This endpoint does not need any parameter.
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600GetGroupsWithHttpInfo
+## getGroupsWithHttpInfo
 
-> ApiResponse<OBPv600GetGroups200Response> oBPv600GetGroups oBPv600GetGroupsWithHttpInfo()
+> ApiResponse<GetGroups200Response> getGroups getGroupsWithHttpInfo()
 
 Get Groups
 
@@ -979,7 +979,7 @@ import com.openbankproject.api.GroupApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -999,12 +999,12 @@ public class Example {
 
         GroupApi apiInstance = new GroupApi(defaultClient);
         try {
-            ApiResponse<OBPv600GetGroups200Response> response = apiInstance.oBPv600GetGroupsWithHttpInfo();
+            ApiResponse<GetGroups200Response> response = apiInstance.getGroupsWithHttpInfo();
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling GroupApi#oBPv600GetGroups");
+            System.err.println("Exception when calling GroupApi#getGroups");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1020,7 +1020,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-ApiResponse<[**OBPv600GetGroups200Response**](OBPv600GetGroups200Response.md)>
+ApiResponse<[**GetGroups200Response**](GetGroups200Response.md)>
 
 
 ### Authorization
@@ -1039,9 +1039,9 @@ ApiResponse<[**OBPv600GetGroups200Response**](OBPv600GetGroups200Response.md)>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600GetUserGroupMemberships
+## getUserGroupMemberships
 
-> OBPv600GetUserGroupMemberships200Response oBPv600GetUserGroupMemberships(userid)
+> GetUserGroupMemberships200Response getUserGroupMemberships(userid)
 
 Get User&#39;s Group Memberships
 
@@ -1061,7 +1061,7 @@ import com.openbankproject.api.GroupApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1082,10 +1082,10 @@ public class Example {
         GroupApi apiInstance = new GroupApi(defaultClient);
         String userid = "userid_example"; // String | The USERID identifier
         try {
-            OBPv600GetUserGroupMemberships200Response result = apiInstance.oBPv600GetUserGroupMemberships(userid);
+            GetUserGroupMemberships200Response result = apiInstance.getUserGroupMemberships(userid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling GroupApi#oBPv600GetUserGroupMemberships");
+            System.err.println("Exception when calling GroupApi#getUserGroupMemberships");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1104,7 +1104,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv600GetUserGroupMemberships200Response**](OBPv600GetUserGroupMemberships200Response.md)
+[**GetUserGroupMemberships200Response**](GetUserGroupMemberships200Response.md)
 
 
 ### Authorization
@@ -1122,9 +1122,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600GetUserGroupMembershipsWithHttpInfo
+## getUserGroupMembershipsWithHttpInfo
 
-> ApiResponse<OBPv600GetUserGroupMemberships200Response> oBPv600GetUserGroupMemberships oBPv600GetUserGroupMembershipsWithHttpInfo(userid)
+> ApiResponse<GetUserGroupMemberships200Response> getUserGroupMemberships getUserGroupMembershipsWithHttpInfo(userid)
 
 Get User&#39;s Group Memberships
 
@@ -1145,7 +1145,7 @@ import com.openbankproject.api.GroupApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1166,12 +1166,12 @@ public class Example {
         GroupApi apiInstance = new GroupApi(defaultClient);
         String userid = "userid_example"; // String | The USERID identifier
         try {
-            ApiResponse<OBPv600GetUserGroupMemberships200Response> response = apiInstance.oBPv600GetUserGroupMembershipsWithHttpInfo(userid);
+            ApiResponse<GetUserGroupMemberships200Response> response = apiInstance.getUserGroupMembershipsWithHttpInfo(userid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling GroupApi#oBPv600GetUserGroupMemberships");
+            System.err.println("Exception when calling GroupApi#getUserGroupMemberships");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1190,7 +1190,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv600GetUserGroupMemberships200Response**](OBPv600GetUserGroupMemberships200Response.md)>
+ApiResponse<[**GetUserGroupMemberships200Response**](GetUserGroupMemberships200Response.md)>
 
 
 ### Authorization
@@ -1209,9 +1209,9 @@ ApiResponse<[**OBPv600GetUserGroupMemberships200Response**](OBPv600GetUserGroupM
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600RemoveUserFromGroup
+## removeUserFromGroup
 
-> void oBPv600RemoveUserFromGroup(userid, groupid)
+> void removeUserFromGroup(userid, groupid)
 
 Remove User from Group
 
@@ -1231,7 +1231,7 @@ import com.openbankproject.api.GroupApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1253,9 +1253,9 @@ public class Example {
         String userid = "userid_example"; // String | The USERID identifier
         String groupid = "groupid_example"; // String | The GROUPID identifier
         try {
-            apiInstance.oBPv600RemoveUserFromGroup(userid, groupid);
+            apiInstance.removeUserFromGroup(userid, groupid);
         } catch (ApiException e) {
-            System.err.println("Exception when calling GroupApi#oBPv600RemoveUserFromGroup");
+            System.err.println("Exception when calling GroupApi#removeUserFromGroup");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1293,9 +1293,9 @@ null (empty response body)
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600RemoveUserFromGroupWithHttpInfo
+## removeUserFromGroupWithHttpInfo
 
-> ApiResponse<Void> oBPv600RemoveUserFromGroup oBPv600RemoveUserFromGroupWithHttpInfo(userid, groupid)
+> ApiResponse<Void> removeUserFromGroup removeUserFromGroupWithHttpInfo(userid, groupid)
 
 Remove User from Group
 
@@ -1316,7 +1316,7 @@ import com.openbankproject.api.GroupApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1338,11 +1338,11 @@ public class Example {
         String userid = "userid_example"; // String | The USERID identifier
         String groupid = "groupid_example"; // String | The GROUPID identifier
         try {
-            ApiResponse<Void> response = apiInstance.oBPv600RemoveUserFromGroupWithHttpInfo(userid, groupid);
+            ApiResponse<Void> response = apiInstance.removeUserFromGroupWithHttpInfo(userid, groupid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling GroupApi#oBPv600RemoveUserFromGroup");
+            System.err.println("Exception when calling GroupApi#removeUserFromGroup");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1381,9 +1381,9 @@ ApiResponse<Void>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600UpdateGroup
+## updateGroup
 
-> OBPv600GetGroups200ResponsePropertiesGroupsItems oBPv600UpdateGroup(groupid, obPv600UpdateGroupRequest)
+> GetGroups200ResponseGroupsInner updateGroup(groupid, updateGroupRequest)
 
 Update Group
 
@@ -1403,7 +1403,7 @@ import com.openbankproject.api.GroupApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1423,12 +1423,12 @@ public class Example {
 
         GroupApi apiInstance = new GroupApi(defaultClient);
         String groupid = "groupid_example"; // String | The GROUPID identifier
-        OBPv600UpdateGroupRequest obPv600UpdateGroupRequest = new OBPv600UpdateGroupRequest(); // OBPv600UpdateGroupRequest | Request body
+        UpdateGroupRequest updateGroupRequest = new UpdateGroupRequest(); // UpdateGroupRequest | Request body
         try {
-            OBPv600GetGroups200ResponsePropertiesGroupsItems result = apiInstance.oBPv600UpdateGroup(groupid, obPv600UpdateGroupRequest);
+            GetGroups200ResponseGroupsInner result = apiInstance.updateGroup(groupid, updateGroupRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling GroupApi#oBPv600UpdateGroup");
+            System.err.println("Exception when calling GroupApi#updateGroup");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1444,11 +1444,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **groupid** | **String**| The GROUPID identifier | |
-| **obPv600UpdateGroupRequest** | [**OBPv600UpdateGroupRequest**](OBPv600UpdateGroupRequest.md)| Request body | |
+| **updateGroupRequest** | [**UpdateGroupRequest**](UpdateGroupRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600GetGroups200ResponsePropertiesGroupsItems**](OBPv600GetGroups200ResponsePropertiesGroupsItems.md)
+[**GetGroups200ResponseGroupsInner**](GetGroups200ResponseGroupsInner.md)
 
 
 ### Authorization
@@ -1466,9 +1466,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600UpdateGroupWithHttpInfo
+## updateGroupWithHttpInfo
 
-> ApiResponse<OBPv600GetGroups200ResponsePropertiesGroupsItems> oBPv600UpdateGroup oBPv600UpdateGroupWithHttpInfo(groupid, obPv600UpdateGroupRequest)
+> ApiResponse<GetGroups200ResponseGroupsInner> updateGroup updateGroupWithHttpInfo(groupid, updateGroupRequest)
 
 Update Group
 
@@ -1489,7 +1489,7 @@ import com.openbankproject.api.GroupApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1509,14 +1509,14 @@ public class Example {
 
         GroupApi apiInstance = new GroupApi(defaultClient);
         String groupid = "groupid_example"; // String | The GROUPID identifier
-        OBPv600UpdateGroupRequest obPv600UpdateGroupRequest = new OBPv600UpdateGroupRequest(); // OBPv600UpdateGroupRequest | Request body
+        UpdateGroupRequest updateGroupRequest = new UpdateGroupRequest(); // UpdateGroupRequest | Request body
         try {
-            ApiResponse<OBPv600GetGroups200ResponsePropertiesGroupsItems> response = apiInstance.oBPv600UpdateGroupWithHttpInfo(groupid, obPv600UpdateGroupRequest);
+            ApiResponse<GetGroups200ResponseGroupsInner> response = apiInstance.updateGroupWithHttpInfo(groupid, updateGroupRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling GroupApi#oBPv600UpdateGroup");
+            System.err.println("Exception when calling GroupApi#updateGroup");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1532,11 +1532,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **groupid** | **String**| The GROUPID identifier | |
-| **obPv600UpdateGroupRequest** | [**OBPv600UpdateGroupRequest**](OBPv600UpdateGroupRequest.md)| Request body | |
+| **updateGroupRequest** | [**UpdateGroupRequest**](UpdateGroupRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv600GetGroups200ResponsePropertiesGroupsItems**](OBPv600GetGroups200ResponsePropertiesGroupsItems.md)>
+ApiResponse<[**GetGroups200ResponseGroupsInner**](GetGroups200ResponseGroupsInner.md)>
 
 
 ### Authorization

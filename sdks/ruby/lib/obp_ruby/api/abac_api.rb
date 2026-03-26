@@ -1,7 +1,7 @@
 =begin
 #Open Bank Project API v6.0.0
 
-#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 The version of the OpenAPI document: 6.0.0
 Contact: contact@tesobe.com
@@ -21,26 +21,26 @@ module OpenBankProject
     end
     # Create ABAC Rule
     # <p>Create a new ABAC (Attribute-Based Access Control) rule.</p> <p>ABAC rules are Scala functions that return a Boolean value indicating whether access should be granted.</p> <p><strong>Documentation:</strong><br /> - <a href=\"/glossary#ABAC_Simple_Guide\">here</a> - Getting started with ABAC rules<br /> - <a href=\"/glossary#ABAC_Parameters_Summary\">here</a> - Complete list of all 18 parameters<br /> - <a href=\"/glossary#ABAC_Object_Properties_Reference\">here</a> - Detailed property reference<br /> - <a href=\"/glossary#ABAC_Testing_Examples\">here</a> - Testing examples and patterns</p> <p>The rule function receives 18 parameters including authenticatedUser, attributes, auth context, and optional objects (bank, account, transaction, etc.).</p> <p>Example rule code:</p> <pre><code class=\"language-scala\">// Allow access only if authenticated user is admin authenticatedUser.emailAddress.contains(&quot;admin&quot;) </code></pre> <pre><code class=\"language-scala\">// Allow access only to accounts with balance &gt; 1000 accountOpt.exists(_.balance.toDouble &gt; 1000.0) </code></pre> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>policy</strong></a>: policy</p> <p><a href=\"/glossary#\"><strong>rule_code</strong></a>: rule_code</p> <p><a href=\"/glossary#\"><strong>rule_name</strong></a>: rule_name</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>abac_rule_id</strong></a>: abac_rule_id</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>policy</strong></a>: policy</p> <p><a href=\"/glossary#\"><strong>rule_code</strong></a>: rule_code</p> <p><a href=\"/glossary#\"><strong>rule_name</strong></a>: rule_name</p> <p><a href=\"/glossary#\"><strong>updated_by_user_id</strong></a>: updated_by_user_id</p> 
-    # @param obpv600_update_abac_rule_request [OBPv600UpdateAbacRuleRequest] Request body
+    # @param update_abac_rule_request [UpdateAbacRuleRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600GetAbacRule200Response]
-    def o_bpv6_0_0_create_abac_rule(obpv600_update_abac_rule_request, opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_create_abac_rule_with_http_info(obpv600_update_abac_rule_request, opts)
+    # @return [GetAbacRule200Response]
+    def create_abac_rule(update_abac_rule_request, opts = {})
+      data, _status_code, _headers = create_abac_rule_with_http_info(update_abac_rule_request, opts)
       data
     end
 
     # Create ABAC Rule
     # &lt;p&gt;Create a new ABAC (Attribute-Based Access Control) rule.&lt;/p&gt; &lt;p&gt;ABAC rules are Scala functions that return a Boolean value indicating whether access should be granted.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Documentation:&lt;/strong&gt;&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Simple_Guide\&quot;&gt;here&lt;/a&gt; - Getting started with ABAC rules&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Parameters_Summary\&quot;&gt;here&lt;/a&gt; - Complete list of all 18 parameters&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Object_Properties_Reference\&quot;&gt;here&lt;/a&gt; - Detailed property reference&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Testing_Examples\&quot;&gt;here&lt;/a&gt; - Testing examples and patterns&lt;/p&gt; &lt;p&gt;The rule function receives 18 parameters including authenticatedUser, attributes, auth context, and optional objects (bank, account, transaction, etc.).&lt;/p&gt; &lt;p&gt;Example rule code:&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-scala\&quot;&gt;// Allow access only if authenticated user is admin authenticatedUser.emailAddress.contains(&amp;quot;admin&amp;quot;) &lt;/code&gt;&lt;/pre&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-scala\&quot;&gt;// Allow access only to accounts with balance &amp;gt; 1000 accountOpt.exists(_.balance.toDouble &amp;gt; 1000.0) &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;policy&lt;/strong&gt;&lt;/a&gt;: policy&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_code&lt;/strong&gt;&lt;/a&gt;: rule_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_name&lt;/strong&gt;&lt;/a&gt;: rule_name&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;abac_rule_id&lt;/strong&gt;&lt;/a&gt;: abac_rule_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;policy&lt;/strong&gt;&lt;/a&gt;: policy&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_code&lt;/strong&gt;&lt;/a&gt;: rule_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_name&lt;/strong&gt;&lt;/a&gt;: rule_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated_by_user_id&lt;/strong&gt;&lt;/a&gt;: updated_by_user_id&lt;/p&gt; 
-    # @param obpv600_update_abac_rule_request [OBPv600UpdateAbacRuleRequest] Request body
+    # @param update_abac_rule_request [UpdateAbacRuleRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600GetAbacRule200Response, Integer, Hash)>] OBPv600GetAbacRule200Response data, response status code and response headers
-    def o_bpv6_0_0_create_abac_rule_with_http_info(obpv600_update_abac_rule_request, opts = {})
+    # @return [Array<(GetAbacRule200Response, Integer, Hash)>] GetAbacRule200Response data, response status code and response headers
+    def create_abac_rule_with_http_info(update_abac_rule_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ABACApi.o_bpv6_0_0_create_abac_rule ...'
+        @api_client.config.logger.debug 'Calling API: ABACApi.create_abac_rule ...'
       end
-      # verify the required parameter 'obpv600_update_abac_rule_request' is set
-      if @api_client.config.client_side_validation && obpv600_update_abac_rule_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv600_update_abac_rule_request' when calling ABACApi.o_bpv6_0_0_create_abac_rule"
+      # verify the required parameter 'update_abac_rule_request' is set
+      if @api_client.config.client_side_validation && update_abac_rule_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_abac_rule_request' when calling ABACApi.create_abac_rule"
       end
       # resource path
       local_var_path = '/obp/v6.0.0/management/abac-rules'
@@ -62,16 +62,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv600_update_abac_rule_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_abac_rule_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600GetAbacRule200Response'
+      return_type = opts[:debug_return_type] || 'GetAbacRule200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"ABACApi.o_bpv6_0_0_create_abac_rule",
+        :operation => :"ABACApi.create_abac_rule",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -82,7 +82,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ABACApi#o_bpv6_0_0_create_abac_rule\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ABACApi#create_abac_rule\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -92,8 +92,8 @@ module OpenBankProject
     # @param abacruleid [String] The ABACRULEID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv6_0_0_delete_abac_rule(abacruleid, opts = {})
-      o_bpv6_0_0_delete_abac_rule_with_http_info(abacruleid, opts)
+    def delete_abac_rule(abacruleid, opts = {})
+      delete_abac_rule_with_http_info(abacruleid, opts)
       nil
     end
 
@@ -102,13 +102,13 @@ module OpenBankProject
     # @param abacruleid [String] The ABACRULEID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv6_0_0_delete_abac_rule_with_http_info(abacruleid, opts = {})
+    def delete_abac_rule_with_http_info(abacruleid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ABACApi.o_bpv6_0_0_delete_abac_rule ...'
+        @api_client.config.logger.debug 'Calling API: ABACApi.delete_abac_rule ...'
       end
       # verify the required parameter 'abacruleid' is set
       if @api_client.config.client_side_validation && abacruleid.nil?
-        fail ArgumentError, "Missing the required parameter 'abacruleid' when calling ABACApi.o_bpv6_0_0_delete_abac_rule"
+        fail ArgumentError, "Missing the required parameter 'abacruleid' when calling ABACApi.delete_abac_rule"
       end
       # resource path
       local_var_path = '/obp/v6.0.0/management/abac-rules/{abacruleid}'.sub('{' + 'abacruleid' + '}', CGI.escape(abacruleid.to_s))
@@ -132,7 +132,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"ABACApi.o_bpv6_0_0_delete_abac_rule",
+        :operation => :"ABACApi.delete_abac_rule",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -143,7 +143,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ABACApi#o_bpv6_0_0_delete_abac_rule\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ABACApi#delete_abac_rule\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -151,31 +151,31 @@ module OpenBankProject
     # Execute ABAC Policy
     # <p>Execute all ABAC rules in a policy to test access control.</p> <p>This endpoint executes all active rules that belong to the specified policy.<br /> The policy uses OR logic - access is granted if at least one rule passes.</p> <p>This allows you to test a complete policy with specific context (authenticated user, bank, account, transaction, customer, etc.).</p> <p><strong>Documentation:</strong><br /> - <a href=\"/glossary#ABAC_Simple_Guide\">here</a> - Getting started with ABAC rules<br /> - <a href=\"/glossary#ABAC_Parameters_Summary\">here</a> - Complete list of all 18 parameters<br /> - <a href=\"/glossary#ABAC_Object_Properties_Reference\">here</a> - Detailed property reference<br /> - <a href=\"/glossary#ABAC_Testing_Examples\">here</a> - Testing examples and patterns</p> <p>You can provide optional IDs in the request body to test the policy with specific context.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">POLICY</a>: POLICY</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\">account_id</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\">authenticated_user_id</a>: authenticated_user_id</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> <p><a href=\"/glossary#\">customer_id</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">on_behalf_of_user_id</a>: on_behalf_of_user_id</p> <p><a href=\"/glossary#\">transaction_id</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#\">transaction_request_id</a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p> <p><a href=\"/glossary#\">user_id</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\">view_id</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#result\"><strong>result</strong></a>:</p> 
     # @param policy [String] The POLICY identifier
-    # @param obpv600_execute_abac_policy_request [OBPv600ExecuteAbacPolicyRequest] Request body
+    # @param execute_abac_policy_request [ExecuteAbacPolicyRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600ExecuteAbacPolicy200Response]
-    def o_bpv6_0_0_execute_abac_policy(policy, obpv600_execute_abac_policy_request, opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_execute_abac_policy_with_http_info(policy, obpv600_execute_abac_policy_request, opts)
+    # @return [ExecuteAbacPolicy200Response]
+    def execute_abac_policy(policy, execute_abac_policy_request, opts = {})
+      data, _status_code, _headers = execute_abac_policy_with_http_info(policy, execute_abac_policy_request, opts)
       data
     end
 
     # Execute ABAC Policy
     # &lt;p&gt;Execute all ABAC rules in a policy to test access control.&lt;/p&gt; &lt;p&gt;This endpoint executes all active rules that belong to the specified policy.&lt;br /&gt; The policy uses OR logic - access is granted if at least one rule passes.&lt;/p&gt; &lt;p&gt;This allows you to test a complete policy with specific context (authenticated user, bank, account, transaction, customer, etc.).&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Documentation:&lt;/strong&gt;&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Simple_Guide\&quot;&gt;here&lt;/a&gt; - Getting started with ABAC rules&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Parameters_Summary\&quot;&gt;here&lt;/a&gt; - Complete list of all 18 parameters&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Object_Properties_Reference\&quot;&gt;here&lt;/a&gt; - Detailed property reference&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Testing_Examples\&quot;&gt;here&lt;/a&gt; - Testing examples and patterns&lt;/p&gt; &lt;p&gt;You can provide optional IDs in the request body to test the policy with specific context.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;POLICY&lt;/a&gt;: POLICY&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;account_id&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;authenticated_user_id&lt;/a&gt;: authenticated_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;customer_id&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;on_behalf_of_user_id&lt;/a&gt;: on_behalf_of_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;transaction_id&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;transaction_request_id&lt;/a&gt;: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;user_id&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;view_id&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#result\&quot;&gt;&lt;strong&gt;result&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
     # @param policy [String] The POLICY identifier
-    # @param obpv600_execute_abac_policy_request [OBPv600ExecuteAbacPolicyRequest] Request body
+    # @param execute_abac_policy_request [ExecuteAbacPolicyRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600ExecuteAbacPolicy200Response, Integer, Hash)>] OBPv600ExecuteAbacPolicy200Response data, response status code and response headers
-    def o_bpv6_0_0_execute_abac_policy_with_http_info(policy, obpv600_execute_abac_policy_request, opts = {})
+    # @return [Array<(ExecuteAbacPolicy200Response, Integer, Hash)>] ExecuteAbacPolicy200Response data, response status code and response headers
+    def execute_abac_policy_with_http_info(policy, execute_abac_policy_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ABACApi.o_bpv6_0_0_execute_abac_policy ...'
+        @api_client.config.logger.debug 'Calling API: ABACApi.execute_abac_policy ...'
       end
       # verify the required parameter 'policy' is set
       if @api_client.config.client_side_validation && policy.nil?
-        fail ArgumentError, "Missing the required parameter 'policy' when calling ABACApi.o_bpv6_0_0_execute_abac_policy"
+        fail ArgumentError, "Missing the required parameter 'policy' when calling ABACApi.execute_abac_policy"
       end
-      # verify the required parameter 'obpv600_execute_abac_policy_request' is set
-      if @api_client.config.client_side_validation && obpv600_execute_abac_policy_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv600_execute_abac_policy_request' when calling ABACApi.o_bpv6_0_0_execute_abac_policy"
+      # verify the required parameter 'execute_abac_policy_request' is set
+      if @api_client.config.client_side_validation && execute_abac_policy_request.nil?
+        fail ArgumentError, "Missing the required parameter 'execute_abac_policy_request' when calling ABACApi.execute_abac_policy"
       end
       # resource path
       local_var_path = '/obp/v6.0.0/management/abac-policies/{policy}/execute'.sub('{' + 'policy' + '}', CGI.escape(policy.to_s))
@@ -197,16 +197,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv600_execute_abac_policy_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(execute_abac_policy_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600ExecuteAbacPolicy200Response'
+      return_type = opts[:debug_return_type] || 'ExecuteAbacPolicy200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"ABACApi.o_bpv6_0_0_execute_abac_policy",
+        :operation => :"ABACApi.execute_abac_policy",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -217,7 +217,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ABACApi#o_bpv6_0_0_execute_abac_policy\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ABACApi#execute_abac_policy\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -225,31 +225,31 @@ module OpenBankProject
     # Execute ABAC Rule
     # <p>Execute an ABAC rule to test access control.</p> <p>This endpoint allows you to test an ABAC rule with specific context (authenticated user, bank, account, transaction, customer, etc.).</p> <p><strong>Documentation:</strong><br /> - <a href=\"/glossary#ABAC_Simple_Guide\">here</a> - Getting started with ABAC rules<br /> - <a href=\"/glossary#ABAC_Parameters_Summary\">here</a> - Complete list of all 18 parameters<br /> - <a href=\"/glossary#ABAC_Object_Properties_Reference\">here</a> - Detailed property reference<br /> - <a href=\"/glossary#ABAC_Testing_Examples\">here</a> - Testing examples and patterns</p> <p>You can provide optional IDs in the request body to test the rule with specific context.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ABAC_RULE_ID</a>: ABAC_RULE_ID</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\">account_id</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\">authenticated_user_id</a>: authenticated_user_id</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> <p><a href=\"/glossary#\">customer_id</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">on_behalf_of_user_id</a>: on_behalf_of_user_id</p> <p><a href=\"/glossary#\">transaction_id</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#\">transaction_request_id</a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p> <p><a href=\"/glossary#\">user_id</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\">view_id</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#result\"><strong>result</strong></a>:</p> 
     # @param abacruleid [String] The ABACRULEID identifier
-    # @param obpv600_execute_abac_policy_request [OBPv600ExecuteAbacPolicyRequest] Request body
+    # @param execute_abac_policy_request [ExecuteAbacPolicyRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600ExecuteAbacPolicy200Response]
-    def o_bpv6_0_0_execute_abac_rule(abacruleid, obpv600_execute_abac_policy_request, opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_execute_abac_rule_with_http_info(abacruleid, obpv600_execute_abac_policy_request, opts)
+    # @return [ExecuteAbacPolicy200Response]
+    def execute_abac_rule(abacruleid, execute_abac_policy_request, opts = {})
+      data, _status_code, _headers = execute_abac_rule_with_http_info(abacruleid, execute_abac_policy_request, opts)
       data
     end
 
     # Execute ABAC Rule
     # &lt;p&gt;Execute an ABAC rule to test access control.&lt;/p&gt; &lt;p&gt;This endpoint allows you to test an ABAC rule with specific context (authenticated user, bank, account, transaction, customer, etc.).&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Documentation:&lt;/strong&gt;&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Simple_Guide\&quot;&gt;here&lt;/a&gt; - Getting started with ABAC rules&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Parameters_Summary\&quot;&gt;here&lt;/a&gt; - Complete list of all 18 parameters&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Object_Properties_Reference\&quot;&gt;here&lt;/a&gt; - Detailed property reference&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Testing_Examples\&quot;&gt;here&lt;/a&gt; - Testing examples and patterns&lt;/p&gt; &lt;p&gt;You can provide optional IDs in the request body to test the rule with specific context.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ABAC_RULE_ID&lt;/a&gt;: ABAC_RULE_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;account_id&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;authenticated_user_id&lt;/a&gt;: authenticated_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;customer_id&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;on_behalf_of_user_id&lt;/a&gt;: on_behalf_of_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;transaction_id&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;transaction_request_id&lt;/a&gt;: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;user_id&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;view_id&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#result\&quot;&gt;&lt;strong&gt;result&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
     # @param abacruleid [String] The ABACRULEID identifier
-    # @param obpv600_execute_abac_policy_request [OBPv600ExecuteAbacPolicyRequest] Request body
+    # @param execute_abac_policy_request [ExecuteAbacPolicyRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600ExecuteAbacPolicy200Response, Integer, Hash)>] OBPv600ExecuteAbacPolicy200Response data, response status code and response headers
-    def o_bpv6_0_0_execute_abac_rule_with_http_info(abacruleid, obpv600_execute_abac_policy_request, opts = {})
+    # @return [Array<(ExecuteAbacPolicy200Response, Integer, Hash)>] ExecuteAbacPolicy200Response data, response status code and response headers
+    def execute_abac_rule_with_http_info(abacruleid, execute_abac_policy_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ABACApi.o_bpv6_0_0_execute_abac_rule ...'
+        @api_client.config.logger.debug 'Calling API: ABACApi.execute_abac_rule ...'
       end
       # verify the required parameter 'abacruleid' is set
       if @api_client.config.client_side_validation && abacruleid.nil?
-        fail ArgumentError, "Missing the required parameter 'abacruleid' when calling ABACApi.o_bpv6_0_0_execute_abac_rule"
+        fail ArgumentError, "Missing the required parameter 'abacruleid' when calling ABACApi.execute_abac_rule"
       end
-      # verify the required parameter 'obpv600_execute_abac_policy_request' is set
-      if @api_client.config.client_side_validation && obpv600_execute_abac_policy_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv600_execute_abac_policy_request' when calling ABACApi.o_bpv6_0_0_execute_abac_rule"
+      # verify the required parameter 'execute_abac_policy_request' is set
+      if @api_client.config.client_side_validation && execute_abac_policy_request.nil?
+        fail ArgumentError, "Missing the required parameter 'execute_abac_policy_request' when calling ABACApi.execute_abac_rule"
       end
       # resource path
       local_var_path = '/obp/v6.0.0/management/abac-rules/{abacruleid}/execute'.sub('{' + 'abacruleid' + '}', CGI.escape(abacruleid.to_s))
@@ -271,16 +271,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv600_execute_abac_policy_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(execute_abac_policy_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600ExecuteAbacPolicy200Response'
+      return_type = opts[:debug_return_type] || 'ExecuteAbacPolicy200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"ABACApi.o_bpv6_0_0_execute_abac_rule",
+        :operation => :"ABACApi.execute_abac_rule",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -291,7 +291,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ABACApi#o_bpv6_0_0_execute_abac_rule\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ABACApi#execute_abac_rule\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -299,19 +299,19 @@ module OpenBankProject
     # Get ABAC Policies
     # <p>Get the list of allowed ABAC policy names.</p> <p>ABAC rules are organized by policies. Each rule must have at least one policy assigned.<br /> Rules can have multiple policies (comma-separated). This endpoint returns the list of<br /> standardized policy names that should be used when creating or updating rules.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>policies</strong></a>: policies</p> <p><a href=\"/glossary#\"><strong>policy</strong></a>: policy</p> 
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600GetAbacPolicies200Response]
-    def o_bpv6_0_0_get_abac_policies(opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_get_abac_policies_with_http_info(opts)
+    # @return [GetAbacPolicies200Response]
+    def get_abac_policies(opts = {})
+      data, _status_code, _headers = get_abac_policies_with_http_info(opts)
       data
     end
 
     # Get ABAC Policies
     # &lt;p&gt;Get the list of allowed ABAC policy names.&lt;/p&gt; &lt;p&gt;ABAC rules are organized by policies. Each rule must have at least one policy assigned.&lt;br /&gt; Rules can have multiple policies (comma-separated). This endpoint returns the list of&lt;br /&gt; standardized policy names that should be used when creating or updating rules.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;policies&lt;/strong&gt;&lt;/a&gt;: policies&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;policy&lt;/strong&gt;&lt;/a&gt;: policy&lt;/p&gt; 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600GetAbacPolicies200Response, Integer, Hash)>] OBPv600GetAbacPolicies200Response data, response status code and response headers
-    def o_bpv6_0_0_get_abac_policies_with_http_info(opts = {})
+    # @return [Array<(GetAbacPolicies200Response, Integer, Hash)>] GetAbacPolicies200Response data, response status code and response headers
+    def get_abac_policies_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ABACApi.o_bpv6_0_0_get_abac_policies ...'
+        @api_client.config.logger.debug 'Calling API: ABACApi.get_abac_policies ...'
       end
       # resource path
       local_var_path = '/obp/v6.0.0/management/abac-policies'
@@ -331,13 +331,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600GetAbacPolicies200Response'
+      return_type = opts[:debug_return_type] || 'GetAbacPolicies200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"ABACApi.o_bpv6_0_0_get_abac_policies",
+        :operation => :"ABACApi.get_abac_policies",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -348,7 +348,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ABACApi#o_bpv6_0_0_get_abac_policies\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ABACApi#get_abac_policies\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -357,9 +357,9 @@ module OpenBankProject
     # <p>Get an ABAC rule by its ID.</p> <p><strong>Documentation:</strong><br /> - <a href=\"/glossary#ABAC_Simple_Guide\">here</a> - Getting started with ABAC rules<br /> - <a href=\"/glossary#ABAC_Parameters_Summary\">here</a> - Complete list of all 18 parameters<br /> - <a href=\"/glossary#ABAC_Object_Properties_Reference\">here</a> - Detailed property reference</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ABAC_RULE_ID</a>: ABAC_RULE_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>abac_rule_id</strong></a>: abac_rule_id</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>policy</strong></a>: policy</p> <p><a href=\"/glossary#\"><strong>rule_code</strong></a>: rule_code</p> <p><a href=\"/glossary#\"><strong>rule_name</strong></a>: rule_name</p> <p><a href=\"/glossary#\"><strong>updated_by_user_id</strong></a>: updated_by_user_id</p> 
     # @param abacruleid [String] The ABACRULEID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600GetAbacRule200Response]
-    def o_bpv6_0_0_get_abac_rule(abacruleid, opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_get_abac_rule_with_http_info(abacruleid, opts)
+    # @return [GetAbacRule200Response]
+    def get_abac_rule(abacruleid, opts = {})
+      data, _status_code, _headers = get_abac_rule_with_http_info(abacruleid, opts)
       data
     end
 
@@ -367,14 +367,14 @@ module OpenBankProject
     # &lt;p&gt;Get an ABAC rule by its ID.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Documentation:&lt;/strong&gt;&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Simple_Guide\&quot;&gt;here&lt;/a&gt; - Getting started with ABAC rules&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Parameters_Summary\&quot;&gt;here&lt;/a&gt; - Complete list of all 18 parameters&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Object_Properties_Reference\&quot;&gt;here&lt;/a&gt; - Detailed property reference&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ABAC_RULE_ID&lt;/a&gt;: ABAC_RULE_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;abac_rule_id&lt;/strong&gt;&lt;/a&gt;: abac_rule_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;policy&lt;/strong&gt;&lt;/a&gt;: policy&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_code&lt;/strong&gt;&lt;/a&gt;: rule_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_name&lt;/strong&gt;&lt;/a&gt;: rule_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated_by_user_id&lt;/strong&gt;&lt;/a&gt;: updated_by_user_id&lt;/p&gt; 
     # @param abacruleid [String] The ABACRULEID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600GetAbacRule200Response, Integer, Hash)>] OBPv600GetAbacRule200Response data, response status code and response headers
-    def o_bpv6_0_0_get_abac_rule_with_http_info(abacruleid, opts = {})
+    # @return [Array<(GetAbacRule200Response, Integer, Hash)>] GetAbacRule200Response data, response status code and response headers
+    def get_abac_rule_with_http_info(abacruleid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ABACApi.o_bpv6_0_0_get_abac_rule ...'
+        @api_client.config.logger.debug 'Calling API: ABACApi.get_abac_rule ...'
       end
       # verify the required parameter 'abacruleid' is set
       if @api_client.config.client_side_validation && abacruleid.nil?
-        fail ArgumentError, "Missing the required parameter 'abacruleid' when calling ABACApi.o_bpv6_0_0_get_abac_rule"
+        fail ArgumentError, "Missing the required parameter 'abacruleid' when calling ABACApi.get_abac_rule"
       end
       # resource path
       local_var_path = '/obp/v6.0.0/management/abac-rules/{abacruleid}'.sub('{' + 'abacruleid' + '}', CGI.escape(abacruleid.to_s))
@@ -394,13 +394,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600GetAbacRule200Response'
+      return_type = opts[:debug_return_type] || 'GetAbacRule200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"ABACApi.o_bpv6_0_0_get_abac_rule",
+        :operation => :"ABACApi.get_abac_rule",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -411,7 +411,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ABACApi#o_bpv6_0_0_get_abac_rule\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ABACApi#get_abac_rule\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -419,19 +419,19 @@ module OpenBankProject
     # Get ABAC Rule Schema
     # <p>Get schema information about ABAC rule structure for building rule code.</p> <p>This endpoint returns schema information including:<br /> - All 18 parameters available in ABAC rules<br /> - Object types (User, Bank, Account, etc.) and their properties<br /> - Available operators and syntax<br /> - Example rules</p> <p>This schema information is useful for:<br /> - Building rule editors with auto-completion<br /> - Validating rule syntax in frontends<br /> - AI agents that help construct rules<br /> - Dynamic form builders</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>available_operators</strong></a>: available_operators</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>examples</strong></a>: examples</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>notes</strong></a>: notes</p> <p><a href=\"/glossary#\"><strong>object_types</strong></a>: object_types</p> <p><a href=\"/glossary#parameters\"><strong>parameters</strong></a>:</p> <p><a href=\"/glossary#\"><strong>policy</strong></a>: policy</p> <p><a href=\"/glossary#\"><strong>properties</strong></a>: properties</p> <p><a href=\"/glossary#\"><strong>required</strong></a>: required</p> <p><a href=\"/glossary#\"><strong>rule_code</strong></a>: rule_code</p> <p><a href=\"/glossary#\"><strong>rule_name</strong></a>: rule_name</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600GetAbacRuleSchema200Response]
-    def o_bpv6_0_0_get_abac_rule_schema(opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_get_abac_rule_schema_with_http_info(opts)
+    # @return [GetAbacRuleSchema200Response]
+    def get_abac_rule_schema(opts = {})
+      data, _status_code, _headers = get_abac_rule_schema_with_http_info(opts)
       data
     end
 
     # Get ABAC Rule Schema
     # &lt;p&gt;Get schema information about ABAC rule structure for building rule code.&lt;/p&gt; &lt;p&gt;This endpoint returns schema information including:&lt;br /&gt; - All 18 parameters available in ABAC rules&lt;br /&gt; - Object types (User, Bank, Account, etc.) and their properties&lt;br /&gt; - Available operators and syntax&lt;br /&gt; - Example rules&lt;/p&gt; &lt;p&gt;This schema information is useful for:&lt;br /&gt; - Building rule editors with auto-completion&lt;br /&gt; - Validating rule syntax in frontends&lt;br /&gt; - AI agents that help construct rules&lt;br /&gt; - Dynamic form builders&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;available_operators&lt;/strong&gt;&lt;/a&gt;: available_operators&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;examples&lt;/strong&gt;&lt;/a&gt;: examples&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;notes&lt;/strong&gt;&lt;/a&gt;: notes&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;object_types&lt;/strong&gt;&lt;/a&gt;: object_types&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parameters\&quot;&gt;&lt;strong&gt;parameters&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;policy&lt;/strong&gt;&lt;/a&gt;: policy&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;properties&lt;/strong&gt;&lt;/a&gt;: properties&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;required&lt;/strong&gt;&lt;/a&gt;: required&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_code&lt;/strong&gt;&lt;/a&gt;: rule_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_name&lt;/strong&gt;&lt;/a&gt;: rule_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600GetAbacRuleSchema200Response, Integer, Hash)>] OBPv600GetAbacRuleSchema200Response data, response status code and response headers
-    def o_bpv6_0_0_get_abac_rule_schema_with_http_info(opts = {})
+    # @return [Array<(GetAbacRuleSchema200Response, Integer, Hash)>] GetAbacRuleSchema200Response data, response status code and response headers
+    def get_abac_rule_schema_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ABACApi.o_bpv6_0_0_get_abac_rule_schema ...'
+        @api_client.config.logger.debug 'Calling API: ABACApi.get_abac_rule_schema ...'
       end
       # resource path
       local_var_path = '/obp/v6.0.0/management/abac-rules-schema'
@@ -451,13 +451,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600GetAbacRuleSchema200Response'
+      return_type = opts[:debug_return_type] || 'GetAbacRuleSchema200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"ABACApi.o_bpv6_0_0_get_abac_rule_schema",
+        :operation => :"ABACApi.get_abac_rule_schema",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -468,7 +468,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ABACApi#o_bpv6_0_0_get_abac_rule_schema\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ABACApi#get_abac_rule_schema\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -476,19 +476,19 @@ module OpenBankProject
     # Get ABAC Rules
     # <p>Get all ABAC rules.</p> <p><strong>Documentation:</strong><br /> - <a href=\"/glossary#ABAC_Simple_Guide\">here</a> - Getting started with ABAC rules<br /> - <a href=\"/glossary#ABAC_Parameters_Summary\">here</a> - Complete list of all 18 parameters<br /> - <a href=\"/glossary#ABAC_Object_Properties_Reference\">here</a> - Detailed property reference</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>abac_rule_id</strong></a>: abac_rule_id</p> <p><a href=\"/glossary#\"><strong>abac_rules</strong></a>: abac_rules</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>policy</strong></a>: policy</p> <p><a href=\"/glossary#\"><strong>rule_code</strong></a>: rule_code</p> <p><a href=\"/glossary#\"><strong>rule_name</strong></a>: rule_name</p> <p><a href=\"/glossary#\"><strong>updated_by_user_id</strong></a>: updated_by_user_id</p> 
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600GetAbacRulesByPolicy200Response]
-    def o_bpv6_0_0_get_abac_rules(opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_get_abac_rules_with_http_info(opts)
+    # @return [GetAbacRulesByPolicy200Response]
+    def get_abac_rules(opts = {})
+      data, _status_code, _headers = get_abac_rules_with_http_info(opts)
       data
     end
 
     # Get ABAC Rules
     # &lt;p&gt;Get all ABAC rules.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Documentation:&lt;/strong&gt;&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Simple_Guide\&quot;&gt;here&lt;/a&gt; - Getting started with ABAC rules&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Parameters_Summary\&quot;&gt;here&lt;/a&gt; - Complete list of all 18 parameters&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Object_Properties_Reference\&quot;&gt;here&lt;/a&gt; - Detailed property reference&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;abac_rule_id&lt;/strong&gt;&lt;/a&gt;: abac_rule_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;abac_rules&lt;/strong&gt;&lt;/a&gt;: abac_rules&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;policy&lt;/strong&gt;&lt;/a&gt;: policy&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_code&lt;/strong&gt;&lt;/a&gt;: rule_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_name&lt;/strong&gt;&lt;/a&gt;: rule_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated_by_user_id&lt;/strong&gt;&lt;/a&gt;: updated_by_user_id&lt;/p&gt; 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600GetAbacRulesByPolicy200Response, Integer, Hash)>] OBPv600GetAbacRulesByPolicy200Response data, response status code and response headers
-    def o_bpv6_0_0_get_abac_rules_with_http_info(opts = {})
+    # @return [Array<(GetAbacRulesByPolicy200Response, Integer, Hash)>] GetAbacRulesByPolicy200Response data, response status code and response headers
+    def get_abac_rules_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ABACApi.o_bpv6_0_0_get_abac_rules ...'
+        @api_client.config.logger.debug 'Calling API: ABACApi.get_abac_rules ...'
       end
       # resource path
       local_var_path = '/obp/v6.0.0/management/abac-rules'
@@ -508,13 +508,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600GetAbacRulesByPolicy200Response'
+      return_type = opts[:debug_return_type] || 'GetAbacRulesByPolicy200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"ABACApi.o_bpv6_0_0_get_abac_rules",
+        :operation => :"ABACApi.get_abac_rules",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -525,7 +525,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ABACApi#o_bpv6_0_0_get_abac_rules\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ABACApi#get_abac_rules\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -534,9 +534,9 @@ module OpenBankProject
     # <p>Get all ABAC rules that belong to a specific policy.</p> <p>Multiple rules can share the same policy. Rules with multiple policies (comma-separated)<br /> will be returned if any of their policies match the requested policy.</p> <p><strong>Documentation:</strong><br /> - <a href=\"/glossary#ABAC_Simple_Guide\">here</a> - Getting started with ABAC rules<br /> - <a href=\"/glossary#ABAC_Parameters_Summary\">here</a> - Complete list of all 18 parameters<br /> - <a href=\"/glossary#ABAC_Object_Properties_Reference\">here</a> - Detailed property reference</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">POLICY</a>: POLICY</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>abac_rule_id</strong></a>: abac_rule_id</p> <p><a href=\"/glossary#\"><strong>abac_rules</strong></a>: abac_rules</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>policy</strong></a>: policy</p> <p><a href=\"/glossary#\"><strong>rule_code</strong></a>: rule_code</p> <p><a href=\"/glossary#\"><strong>rule_name</strong></a>: rule_name</p> <p><a href=\"/glossary#\"><strong>updated_by_user_id</strong></a>: updated_by_user_id</p> 
     # @param policy [String] The POLICY identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600GetAbacRulesByPolicy200Response]
-    def o_bpv6_0_0_get_abac_rules_by_policy(policy, opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_get_abac_rules_by_policy_with_http_info(policy, opts)
+    # @return [GetAbacRulesByPolicy200Response]
+    def get_abac_rules_by_policy(policy, opts = {})
+      data, _status_code, _headers = get_abac_rules_by_policy_with_http_info(policy, opts)
       data
     end
 
@@ -544,14 +544,14 @@ module OpenBankProject
     # &lt;p&gt;Get all ABAC rules that belong to a specific policy.&lt;/p&gt; &lt;p&gt;Multiple rules can share the same policy. Rules with multiple policies (comma-separated)&lt;br /&gt; will be returned if any of their policies match the requested policy.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Documentation:&lt;/strong&gt;&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Simple_Guide\&quot;&gt;here&lt;/a&gt; - Getting started with ABAC rules&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Parameters_Summary\&quot;&gt;here&lt;/a&gt; - Complete list of all 18 parameters&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Object_Properties_Reference\&quot;&gt;here&lt;/a&gt; - Detailed property reference&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;POLICY&lt;/a&gt;: POLICY&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;abac_rule_id&lt;/strong&gt;&lt;/a&gt;: abac_rule_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;abac_rules&lt;/strong&gt;&lt;/a&gt;: abac_rules&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;policy&lt;/strong&gt;&lt;/a&gt;: policy&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_code&lt;/strong&gt;&lt;/a&gt;: rule_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_name&lt;/strong&gt;&lt;/a&gt;: rule_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated_by_user_id&lt;/strong&gt;&lt;/a&gt;: updated_by_user_id&lt;/p&gt; 
     # @param policy [String] The POLICY identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600GetAbacRulesByPolicy200Response, Integer, Hash)>] OBPv600GetAbacRulesByPolicy200Response data, response status code and response headers
-    def o_bpv6_0_0_get_abac_rules_by_policy_with_http_info(policy, opts = {})
+    # @return [Array<(GetAbacRulesByPolicy200Response, Integer, Hash)>] GetAbacRulesByPolicy200Response data, response status code and response headers
+    def get_abac_rules_by_policy_with_http_info(policy, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ABACApi.o_bpv6_0_0_get_abac_rules_by_policy ...'
+        @api_client.config.logger.debug 'Calling API: ABACApi.get_abac_rules_by_policy ...'
       end
       # verify the required parameter 'policy' is set
       if @api_client.config.client_side_validation && policy.nil?
-        fail ArgumentError, "Missing the required parameter 'policy' when calling ABACApi.o_bpv6_0_0_get_abac_rules_by_policy"
+        fail ArgumentError, "Missing the required parameter 'policy' when calling ABACApi.get_abac_rules_by_policy"
       end
       # resource path
       local_var_path = '/obp/v6.0.0/management/abac-rules/policy/{policy}'.sub('{' + 'policy' + '}', CGI.escape(policy.to_s))
@@ -571,13 +571,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600GetAbacRulesByPolicy200Response'
+      return_type = opts[:debug_return_type] || 'GetAbacRulesByPolicy200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"ABACApi.o_bpv6_0_0_get_abac_rules_by_policy",
+        :operation => :"ABACApi.get_abac_rules_by_policy",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -588,7 +588,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ABACApi#o_bpv6_0_0_get_abac_rules_by_policy\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ABACApi#get_abac_rules_by_policy\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -596,31 +596,31 @@ module OpenBankProject
     # Update ABAC Rule
     # <p>Update an existing ABAC rule.</p> <p><strong>Documentation:</strong><br /> - <a href=\"/glossary#ABAC_Simple_Guide\">here</a> - Getting started with ABAC rules<br /> - <a href=\"/glossary#ABAC_Parameters_Summary\">here</a> - Complete list of all 18 parameters<br /> - <a href=\"/glossary#ABAC_Object_Properties_Reference\">here</a> - Detailed property reference</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ABAC_RULE_ID</a>: ABAC_RULE_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>abac_rule_id</strong></a>: abac_rule_id</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>policy</strong></a>: policy</p> <p><a href=\"/glossary#\"><strong>rule_code</strong></a>: rule_code</p> <p><a href=\"/glossary#\"><strong>rule_name</strong></a>: rule_name</p> <p><a href=\"/glossary#\"><strong>updated_by_user_id</strong></a>: updated_by_user_id</p> 
     # @param abacruleid [String] The ABACRULEID identifier
-    # @param obpv600_update_abac_rule_request [OBPv600UpdateAbacRuleRequest] Request body
+    # @param update_abac_rule_request [UpdateAbacRuleRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600GetAbacRule200Response]
-    def o_bpv6_0_0_update_abac_rule(abacruleid, obpv600_update_abac_rule_request, opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_update_abac_rule_with_http_info(abacruleid, obpv600_update_abac_rule_request, opts)
+    # @return [GetAbacRule200Response]
+    def update_abac_rule(abacruleid, update_abac_rule_request, opts = {})
+      data, _status_code, _headers = update_abac_rule_with_http_info(abacruleid, update_abac_rule_request, opts)
       data
     end
 
     # Update ABAC Rule
     # &lt;p&gt;Update an existing ABAC rule.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Documentation:&lt;/strong&gt;&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Simple_Guide\&quot;&gt;here&lt;/a&gt; - Getting started with ABAC rules&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Parameters_Summary\&quot;&gt;here&lt;/a&gt; - Complete list of all 18 parameters&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Object_Properties_Reference\&quot;&gt;here&lt;/a&gt; - Detailed property reference&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ABAC_RULE_ID&lt;/a&gt;: ABAC_RULE_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;abac_rule_id&lt;/strong&gt;&lt;/a&gt;: abac_rule_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;policy&lt;/strong&gt;&lt;/a&gt;: policy&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_code&lt;/strong&gt;&lt;/a&gt;: rule_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_name&lt;/strong&gt;&lt;/a&gt;: rule_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated_by_user_id&lt;/strong&gt;&lt;/a&gt;: updated_by_user_id&lt;/p&gt; 
     # @param abacruleid [String] The ABACRULEID identifier
-    # @param obpv600_update_abac_rule_request [OBPv600UpdateAbacRuleRequest] Request body
+    # @param update_abac_rule_request [UpdateAbacRuleRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600GetAbacRule200Response, Integer, Hash)>] OBPv600GetAbacRule200Response data, response status code and response headers
-    def o_bpv6_0_0_update_abac_rule_with_http_info(abacruleid, obpv600_update_abac_rule_request, opts = {})
+    # @return [Array<(GetAbacRule200Response, Integer, Hash)>] GetAbacRule200Response data, response status code and response headers
+    def update_abac_rule_with_http_info(abacruleid, update_abac_rule_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ABACApi.o_bpv6_0_0_update_abac_rule ...'
+        @api_client.config.logger.debug 'Calling API: ABACApi.update_abac_rule ...'
       end
       # verify the required parameter 'abacruleid' is set
       if @api_client.config.client_side_validation && abacruleid.nil?
-        fail ArgumentError, "Missing the required parameter 'abacruleid' when calling ABACApi.o_bpv6_0_0_update_abac_rule"
+        fail ArgumentError, "Missing the required parameter 'abacruleid' when calling ABACApi.update_abac_rule"
       end
-      # verify the required parameter 'obpv600_update_abac_rule_request' is set
-      if @api_client.config.client_side_validation && obpv600_update_abac_rule_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv600_update_abac_rule_request' when calling ABACApi.o_bpv6_0_0_update_abac_rule"
+      # verify the required parameter 'update_abac_rule_request' is set
+      if @api_client.config.client_side_validation && update_abac_rule_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_abac_rule_request' when calling ABACApi.update_abac_rule"
       end
       # resource path
       local_var_path = '/obp/v6.0.0/management/abac-rules/{abacruleid}'.sub('{' + 'abacruleid' + '}', CGI.escape(abacruleid.to_s))
@@ -642,16 +642,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv600_update_abac_rule_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_abac_rule_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600GetAbacRule200Response'
+      return_type = opts[:debug_return_type] || 'GetAbacRule200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"ABACApi.o_bpv6_0_0_update_abac_rule",
+        :operation => :"ABACApi.update_abac_rule",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -662,33 +662,33 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ABACApi#o_bpv6_0_0_update_abac_rule\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ABACApi#update_abac_rule\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
 
     # Validate ABAC Rule
     # <p>Validate ABAC rule code syntax and structure without creating or executing the rule.</p> <p>This endpoint performs the following validations:<br /> - Parse the rule_code as a Scala expression<br /> - Validate syntax - check for parsing errors<br /> - Validate field references - check if referenced objects/fields exist<br /> - Check type consistency - verify the expression returns a Boolean</p> <p><strong>Available ABAC Context Objects:</strong><br /> - AuthenticatedUser - The user who is logged in<br /> - OnBehalfOfUser - Optional delegation user<br /> - User - Target user being evaluated<br /> - Bank, Account, View, Transaction, TransactionRequest, Customer<br /> - Attributes for each entity (e.g., userAttributes, accountAttributes)</p> <p><strong>Documentation:</strong><br /> - <a href=\"/glossary#ABAC_Simple_Guide\">here</a> - Getting started with ABAC rules<br /> - <a href=\"/glossary#ABAC_Parameters_Summary\">here</a> - Complete list of all 18 parameters<br /> - <a href=\"/glossary#ABAC_Object_Properties_Reference\">here</a> - Detailed property reference</p> <p>This is a &quot;dry-run&quot; validation that does NOT save or execute the rule.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>rule_code</strong></a>: rule_code</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><a href=\"/glossary#\"><strong>valid</strong></a>: valid</p> 
-    # @param obpv600_validate_abac_rule_request [OBPv600ValidateAbacRuleRequest] Request body
+    # @param validate_abac_rule_request [ValidateAbacRuleRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600ValidateAbacRule200Response]
-    def o_bpv6_0_0_validate_abac_rule(obpv600_validate_abac_rule_request, opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_validate_abac_rule_with_http_info(obpv600_validate_abac_rule_request, opts)
+    # @return [ValidateAbacRule200Response]
+    def validate_abac_rule(validate_abac_rule_request, opts = {})
+      data, _status_code, _headers = validate_abac_rule_with_http_info(validate_abac_rule_request, opts)
       data
     end
 
     # Validate ABAC Rule
     # &lt;p&gt;Validate ABAC rule code syntax and structure without creating or executing the rule.&lt;/p&gt; &lt;p&gt;This endpoint performs the following validations:&lt;br /&gt; - Parse the rule_code as a Scala expression&lt;br /&gt; - Validate syntax - check for parsing errors&lt;br /&gt; - Validate field references - check if referenced objects/fields exist&lt;br /&gt; - Check type consistency - verify the expression returns a Boolean&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Available ABAC Context Objects:&lt;/strong&gt;&lt;br /&gt; - AuthenticatedUser - The user who is logged in&lt;br /&gt; - OnBehalfOfUser - Optional delegation user&lt;br /&gt; - User - Target user being evaluated&lt;br /&gt; - Bank, Account, View, Transaction, TransactionRequest, Customer&lt;br /&gt; - Attributes for each entity (e.g., userAttributes, accountAttributes)&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Documentation:&lt;/strong&gt;&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Simple_Guide\&quot;&gt;here&lt;/a&gt; - Getting started with ABAC rules&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Parameters_Summary\&quot;&gt;here&lt;/a&gt; - Complete list of all 18 parameters&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Object_Properties_Reference\&quot;&gt;here&lt;/a&gt; - Detailed property reference&lt;/p&gt; &lt;p&gt;This is a &amp;quot;dry-run&amp;quot; validation that does NOT save or execute the rule.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_code&lt;/strong&gt;&lt;/a&gt;: rule_code&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;valid&lt;/strong&gt;&lt;/a&gt;: valid&lt;/p&gt; 
-    # @param obpv600_validate_abac_rule_request [OBPv600ValidateAbacRuleRequest] Request body
+    # @param validate_abac_rule_request [ValidateAbacRuleRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600ValidateAbacRule200Response, Integer, Hash)>] OBPv600ValidateAbacRule200Response data, response status code and response headers
-    def o_bpv6_0_0_validate_abac_rule_with_http_info(obpv600_validate_abac_rule_request, opts = {})
+    # @return [Array<(ValidateAbacRule200Response, Integer, Hash)>] ValidateAbacRule200Response data, response status code and response headers
+    def validate_abac_rule_with_http_info(validate_abac_rule_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ABACApi.o_bpv6_0_0_validate_abac_rule ...'
+        @api_client.config.logger.debug 'Calling API: ABACApi.validate_abac_rule ...'
       end
-      # verify the required parameter 'obpv600_validate_abac_rule_request' is set
-      if @api_client.config.client_side_validation && obpv600_validate_abac_rule_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv600_validate_abac_rule_request' when calling ABACApi.o_bpv6_0_0_validate_abac_rule"
+      # verify the required parameter 'validate_abac_rule_request' is set
+      if @api_client.config.client_side_validation && validate_abac_rule_request.nil?
+        fail ArgumentError, "Missing the required parameter 'validate_abac_rule_request' when calling ABACApi.validate_abac_rule"
       end
       # resource path
       local_var_path = '/obp/v6.0.0/management/abac-rules/validate'
@@ -710,16 +710,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv600_validate_abac_rule_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(validate_abac_rule_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600ValidateAbacRule200Response'
+      return_type = opts[:debug_return_type] || 'ValidateAbacRule200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"ABACApi.o_bpv6_0_0_validate_abac_rule",
+        :operation => :"ABACApi.validate_abac_rule",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -730,7 +730,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ABACApi#o_bpv6_0_0_validate_abac_rule\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ABACApi#validate_abac_rule\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

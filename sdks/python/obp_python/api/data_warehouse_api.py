@@ -19,7 +19,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import Any, Dict
 from typing_extensions import Annotated
-from obp_python.models.obpv300_data_warehouse_search_request import OBPv300DataWarehouseSearchRequest
+from obp_python.models.data_warehouse_search_request import DataWarehouseSearchRequest
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -40,10 +40,10 @@ class DataWarehouseApi:
 
 
     @validate_call
-    def o_bpv3_0_0_data_warehouse_search(
+    def data_warehouse_search(
         self,
         index: Annotated[StrictStr, Field(description="The INDEX identifier")],
-        obpv300_data_warehouse_search_request: Annotated[OBPv300DataWarehouseSearchRequest, Field(description="Request body")],
+        data_warehouse_search_request: Annotated[DataWarehouseSearchRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -63,8 +63,8 @@ class DataWarehouseApi:
 
         :param index: The INDEX identifier (required)
         :type index: str
-        :param obpv300_data_warehouse_search_request: Request body (required)
-        :type obpv300_data_warehouse_search_request: OBPv300DataWarehouseSearchRequest
+        :param data_warehouse_search_request: Request body (required)
+        :type data_warehouse_search_request: DataWarehouseSearchRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -87,9 +87,9 @@ class DataWarehouseApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv3_0_0_data_warehouse_search_serialize(
+        _param = self._data_warehouse_search_serialize(
             index=index,
-            obpv300_data_warehouse_search_request=obpv300_data_warehouse_search_request,
+            data_warehouse_search_request=data_warehouse_search_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -112,10 +112,10 @@ class DataWarehouseApi:
 
 
     @validate_call
-    def o_bpv3_0_0_data_warehouse_search_with_http_info(
+    def data_warehouse_search_with_http_info(
         self,
         index: Annotated[StrictStr, Field(description="The INDEX identifier")],
-        obpv300_data_warehouse_search_request: Annotated[OBPv300DataWarehouseSearchRequest, Field(description="Request body")],
+        data_warehouse_search_request: Annotated[DataWarehouseSearchRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -135,8 +135,8 @@ class DataWarehouseApi:
 
         :param index: The INDEX identifier (required)
         :type index: str
-        :param obpv300_data_warehouse_search_request: Request body (required)
-        :type obpv300_data_warehouse_search_request: OBPv300DataWarehouseSearchRequest
+        :param data_warehouse_search_request: Request body (required)
+        :type data_warehouse_search_request: DataWarehouseSearchRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -159,9 +159,9 @@ class DataWarehouseApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv3_0_0_data_warehouse_search_serialize(
+        _param = self._data_warehouse_search_serialize(
             index=index,
-            obpv300_data_warehouse_search_request=obpv300_data_warehouse_search_request,
+            data_warehouse_search_request=data_warehouse_search_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -184,10 +184,10 @@ class DataWarehouseApi:
 
 
     @validate_call
-    def o_bpv3_0_0_data_warehouse_search_without_preload_content(
+    def data_warehouse_search_without_preload_content(
         self,
         index: Annotated[StrictStr, Field(description="The INDEX identifier")],
-        obpv300_data_warehouse_search_request: Annotated[OBPv300DataWarehouseSearchRequest, Field(description="Request body")],
+        data_warehouse_search_request: Annotated[DataWarehouseSearchRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -207,8 +207,8 @@ class DataWarehouseApi:
 
         :param index: The INDEX identifier (required)
         :type index: str
-        :param obpv300_data_warehouse_search_request: Request body (required)
-        :type obpv300_data_warehouse_search_request: OBPv300DataWarehouseSearchRequest
+        :param data_warehouse_search_request: Request body (required)
+        :type data_warehouse_search_request: DataWarehouseSearchRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -231,9 +231,9 @@ class DataWarehouseApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv3_0_0_data_warehouse_search_serialize(
+        _param = self._data_warehouse_search_serialize(
             index=index,
-            obpv300_data_warehouse_search_request=obpv300_data_warehouse_search_request,
+            data_warehouse_search_request=data_warehouse_search_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -251,10 +251,10 @@ class DataWarehouseApi:
         return response_data.response
 
 
-    def _o_bpv3_0_0_data_warehouse_search_serialize(
+    def _data_warehouse_search_serialize(
         self,
         index,
-        obpv300_data_warehouse_search_request,
+        data_warehouse_search_request,
         _request_auth,
         _content_type,
         _headers,
@@ -282,8 +282,8 @@ class DataWarehouseApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv300_data_warehouse_search_request is not None:
-            _body_params = obpv300_data_warehouse_search_request
+        if data_warehouse_search_request is not None:
+            _body_params = data_warehouse_search_request
 
 
         # set the HTTP header `Accept`
@@ -334,11 +334,11 @@ class DataWarehouseApi:
 
 
     @validate_call
-    def o_bpv3_0_0_data_warehouse_statistics(
+    def data_warehouse_statistics(
         self,
         index: Annotated[StrictStr, Field(description="The INDEX identifier")],
         var_field: Annotated[StrictStr, Field(description="The FIELD identifier")],
-        obpv300_data_warehouse_search_request: Annotated[OBPv300DataWarehouseSearchRequest, Field(description="Request body")],
+        data_warehouse_search_request: Annotated[DataWarehouseSearchRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -360,8 +360,8 @@ class DataWarehouseApi:
         :type index: str
         :param var_field: The FIELD identifier (required)
         :type var_field: str
-        :param obpv300_data_warehouse_search_request: Request body (required)
-        :type obpv300_data_warehouse_search_request: OBPv300DataWarehouseSearchRequest
+        :param data_warehouse_search_request: Request body (required)
+        :type data_warehouse_search_request: DataWarehouseSearchRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -384,10 +384,10 @@ class DataWarehouseApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv3_0_0_data_warehouse_statistics_serialize(
+        _param = self._data_warehouse_statistics_serialize(
             index=index,
             var_field=var_field,
-            obpv300_data_warehouse_search_request=obpv300_data_warehouse_search_request,
+            data_warehouse_search_request=data_warehouse_search_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -410,11 +410,11 @@ class DataWarehouseApi:
 
 
     @validate_call
-    def o_bpv3_0_0_data_warehouse_statistics_with_http_info(
+    def data_warehouse_statistics_with_http_info(
         self,
         index: Annotated[StrictStr, Field(description="The INDEX identifier")],
         var_field: Annotated[StrictStr, Field(description="The FIELD identifier")],
-        obpv300_data_warehouse_search_request: Annotated[OBPv300DataWarehouseSearchRequest, Field(description="Request body")],
+        data_warehouse_search_request: Annotated[DataWarehouseSearchRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -436,8 +436,8 @@ class DataWarehouseApi:
         :type index: str
         :param var_field: The FIELD identifier (required)
         :type var_field: str
-        :param obpv300_data_warehouse_search_request: Request body (required)
-        :type obpv300_data_warehouse_search_request: OBPv300DataWarehouseSearchRequest
+        :param data_warehouse_search_request: Request body (required)
+        :type data_warehouse_search_request: DataWarehouseSearchRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -460,10 +460,10 @@ class DataWarehouseApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv3_0_0_data_warehouse_statistics_serialize(
+        _param = self._data_warehouse_statistics_serialize(
             index=index,
             var_field=var_field,
-            obpv300_data_warehouse_search_request=obpv300_data_warehouse_search_request,
+            data_warehouse_search_request=data_warehouse_search_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -486,11 +486,11 @@ class DataWarehouseApi:
 
 
     @validate_call
-    def o_bpv3_0_0_data_warehouse_statistics_without_preload_content(
+    def data_warehouse_statistics_without_preload_content(
         self,
         index: Annotated[StrictStr, Field(description="The INDEX identifier")],
         var_field: Annotated[StrictStr, Field(description="The FIELD identifier")],
-        obpv300_data_warehouse_search_request: Annotated[OBPv300DataWarehouseSearchRequest, Field(description="Request body")],
+        data_warehouse_search_request: Annotated[DataWarehouseSearchRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -512,8 +512,8 @@ class DataWarehouseApi:
         :type index: str
         :param var_field: The FIELD identifier (required)
         :type var_field: str
-        :param obpv300_data_warehouse_search_request: Request body (required)
-        :type obpv300_data_warehouse_search_request: OBPv300DataWarehouseSearchRequest
+        :param data_warehouse_search_request: Request body (required)
+        :type data_warehouse_search_request: DataWarehouseSearchRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -536,10 +536,10 @@ class DataWarehouseApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv3_0_0_data_warehouse_statistics_serialize(
+        _param = self._data_warehouse_statistics_serialize(
             index=index,
             var_field=var_field,
-            obpv300_data_warehouse_search_request=obpv300_data_warehouse_search_request,
+            data_warehouse_search_request=data_warehouse_search_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -557,11 +557,11 @@ class DataWarehouseApi:
         return response_data.response
 
 
-    def _o_bpv3_0_0_data_warehouse_statistics_serialize(
+    def _data_warehouse_statistics_serialize(
         self,
         index,
         var_field,
-        obpv300_data_warehouse_search_request,
+        data_warehouse_search_request,
         _request_auth,
         _content_type,
         _headers,
@@ -591,8 +591,8 @@ class DataWarehouseApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv300_data_warehouse_search_request is not None:
-            _body_params = obpv300_data_warehouse_search_request
+        if data_warehouse_search_request is not None:
+            _body_params = data_warehouse_search_request
 
 
         # set the HTTP header `Accept`

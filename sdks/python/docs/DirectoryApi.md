@@ -4,20 +4,20 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv5_1_0_create_consumer_dynamic_registration**](DirectoryApi.md#o_bpv5_1_0_create_consumer_dynamic_registration) | **POST** /obp/v5.1.0/dynamic-registration/consumers | Create a Consumer(Dynamic Registration)
-[**o_bpv5_1_0_create_regulated_entity**](DirectoryApi.md#o_bpv5_1_0_create_regulated_entity) | **POST** /obp/v5.1.0/regulated-entities | Create Regulated Entity
-[**o_bpv5_1_0_create_regulated_entity_attribute**](DirectoryApi.md#o_bpv5_1_0_create_regulated_entity_attribute) | **POST** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes | Create Regulated Entity Attribute
-[**o_bpv5_1_0_delete_regulated_entity**](DirectoryApi.md#o_bpv5_1_0_delete_regulated_entity) | **DELETE** /obp/v5.1.0/regulated-entities/{regulatedentityid} | Delete Regulated Entity
-[**o_bpv5_1_0_delete_regulated_entity_attribute**](DirectoryApi.md#o_bpv5_1_0_delete_regulated_entity_attribute) | **DELETE** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Delete Regulated Entity Attribute
-[**o_bpv5_1_0_get_all_regulated_entity_attributes**](DirectoryApi.md#o_bpv5_1_0_get_all_regulated_entity_attributes) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes | Get All Regulated Entity Attributes
-[**o_bpv5_1_0_get_regulated_entity_attribute_by_id**](DirectoryApi.md#o_bpv5_1_0_get_regulated_entity_attribute_by_id) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Get Regulated Entity Attribute By ID
-[**o_bpv5_1_0_get_regulated_entity_by_id**](DirectoryApi.md#o_bpv5_1_0_get_regulated_entity_by_id) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid} | Get Regulated Entity
-[**o_bpv5_1_0_regulated_entities**](DirectoryApi.md#o_bpv5_1_0_regulated_entities) | **GET** /obp/v5.1.0/regulated-entities | Get Regulated Entities
-[**o_bpv5_1_0_update_regulated_entity_attribute**](DirectoryApi.md#o_bpv5_1_0_update_regulated_entity_attribute) | **PUT** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Update Regulated Entity Attribute
+[**create_consumer_dynamic_registration**](DirectoryApi.md#create_consumer_dynamic_registration) | **POST** /obp/v5.1.0/dynamic-registration/consumers | Create a Consumer(Dynamic Registration)
+[**create_regulated_entity**](DirectoryApi.md#create_regulated_entity) | **POST** /obp/v5.1.0/regulated-entities | Create Regulated Entity
+[**create_regulated_entity_attribute**](DirectoryApi.md#create_regulated_entity_attribute) | **POST** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes | Create Regulated Entity Attribute
+[**delete_regulated_entity**](DirectoryApi.md#delete_regulated_entity) | **DELETE** /obp/v5.1.0/regulated-entities/{regulatedentityid} | Delete Regulated Entity
+[**delete_regulated_entity_attribute**](DirectoryApi.md#delete_regulated_entity_attribute) | **DELETE** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Delete Regulated Entity Attribute
+[**get_all_regulated_entity_attributes**](DirectoryApi.md#get_all_regulated_entity_attributes) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes | Get All Regulated Entity Attributes
+[**get_regulated_entity_attribute_by_id**](DirectoryApi.md#get_regulated_entity_attribute_by_id) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Get Regulated Entity Attribute By ID
+[**get_regulated_entity_by_id**](DirectoryApi.md#get_regulated_entity_by_id) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid} | Get Regulated Entity
+[**regulated_entities**](DirectoryApi.md#regulated_entities) | **GET** /obp/v5.1.0/regulated-entities | Get Regulated Entities
+[**update_regulated_entity_attribute**](DirectoryApi.md#update_regulated_entity_attribute) | **PUT** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Update Regulated Entity Attribute
 
 
-# **o_bpv5_1_0_create_consumer_dynamic_registration**
-> OBPv510UpdateConsumerName200Response o_bpv5_1_0_create_consumer_dynamic_registration(obpv510_create_consumer_dynamic_registration_request)
+# **create_consumer_dynamic_registration**
+> UpdateConsumerName200Response create_consumer_dynamic_registration(create_consumer_dynamic_registration_request)
 
 Create a Consumer(Dynamic Registration)
 
@@ -129,8 +129,8 @@ Create a Consumer(Dynamic Registration)
 
 ```python
 import obp_python
-from obp_python.models.obpv510_create_consumer_dynamic_registration_request import OBPv510CreateConsumerDynamicRegistrationRequest
-from obp_python.models.obpv510_update_consumer_name200_response import OBPv510UpdateConsumerName200Response
+from obp_python.models.create_consumer_dynamic_registration_request import CreateConsumerDynamicRegistrationRequest
+from obp_python.models.update_consumer_name200_response import UpdateConsumerName200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -163,15 +163,15 @@ configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
 with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.DirectoryApi(api_client)
-    obpv510_create_consumer_dynamic_registration_request = {"type":"object","properties":{"jwt":{"type":"string"}}} # OBPv510CreateConsumerDynamicRegistrationRequest | Request body
+    create_consumer_dynamic_registration_request = {"type":"object","properties":{"jwt":{"type":"string"}}} # CreateConsumerDynamicRegistrationRequest | Request body
 
     try:
         # Create a Consumer(Dynamic Registration)
-        api_response = api_instance.o_bpv5_1_0_create_consumer_dynamic_registration(obpv510_create_consumer_dynamic_registration_request)
-        print("The response of DirectoryApi->o_bpv5_1_0_create_consumer_dynamic_registration:\n")
+        api_response = api_instance.create_consumer_dynamic_registration(create_consumer_dynamic_registration_request)
+        print("The response of DirectoryApi->create_consumer_dynamic_registration:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DirectoryApi->o_bpv5_1_0_create_consumer_dynamic_registration: %s\n" % e)
+        print("Exception when calling DirectoryApi->create_consumer_dynamic_registration: %s\n" % e)
 ```
 
 
@@ -181,11 +181,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **obpv510_create_consumer_dynamic_registration_request** | [**OBPv510CreateConsumerDynamicRegistrationRequest**](OBPv510CreateConsumerDynamicRegistrationRequest.md)| Request body | 
+ **create_consumer_dynamic_registration_request** | [**CreateConsumerDynamicRegistrationRequest**](CreateConsumerDynamicRegistrationRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510UpdateConsumerName200Response**](OBPv510UpdateConsumerName200Response.md)
+[**UpdateConsumerName200Response**](UpdateConsumerName200Response.md)
 
 ### Authorization
 
@@ -205,8 +205,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_create_regulated_entity**
-> OBPv510GetRegulatedEntityById200Response o_bpv5_1_0_create_regulated_entity(obpv510_create_regulated_entity_request)
+# **create_regulated_entity**
+> GetRegulatedEntityById200Response create_regulated_entity(create_regulated_entity_request)
 
 Create Regulated Entity
 
@@ -255,8 +255,8 @@ Create Regulated Entity
 
 ```python
 import obp_python
-from obp_python.models.obpv510_create_regulated_entity_request import OBPv510CreateRegulatedEntityRequest
-from obp_python.models.obpv510_get_regulated_entity_by_id200_response import OBPv510GetRegulatedEntityById200Response
+from obp_python.models.create_regulated_entity_request import CreateRegulatedEntityRequest
+from obp_python.models.get_regulated_entity_by_id200_response import GetRegulatedEntityById200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -289,15 +289,15 @@ configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
 with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.DirectoryApi(api_client)
-    obpv510_create_regulated_entity_request = {"type":"object","properties":{"entity_country":{"type":"string"},"entity_certificate_public_key":{"type":"string"},"entity_code":{"type":"string"},"services":{"type":"array","items":{"type":"object","properties":{"CY":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}}},"entity_town_city":{"type":"string"},"entity_name":{"type":"string"},"entity_post_code":{"type":"string"},"entity_web_site":{"type":"string"},"entity_type":{"type":"string"},"certificate_authority_ca_owner_id":{"type":"string"},"attributes":{"type":"array","items":{"type":"object","properties":{"attributeType":{"type":"string"},"name":{"type":"string"},"value":{"type":"string"}}}},"entity_address":{"type":"string"}}} # OBPv510CreateRegulatedEntityRequest | Request body
+    create_regulated_entity_request = {"type":"object","properties":{"entity_country":{"type":"string"},"entity_certificate_public_key":{"type":"string"},"entity_code":{"type":"string"},"services":{"type":"array","items":{"type":"object","properties":{"CY":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}}},"entity_town_city":{"type":"string"},"entity_name":{"type":"string"},"entity_post_code":{"type":"string"},"entity_web_site":{"type":"string"},"entity_type":{"type":"string"},"certificate_authority_ca_owner_id":{"type":"string"},"attributes":{"type":"array","items":{"type":"object","properties":{"attributeType":{"type":"string"},"name":{"type":"string"},"value":{"type":"string"}}}},"entity_address":{"type":"string"}}} # CreateRegulatedEntityRequest | Request body
 
     try:
         # Create Regulated Entity
-        api_response = api_instance.o_bpv5_1_0_create_regulated_entity(obpv510_create_regulated_entity_request)
-        print("The response of DirectoryApi->o_bpv5_1_0_create_regulated_entity:\n")
+        api_response = api_instance.create_regulated_entity(create_regulated_entity_request)
+        print("The response of DirectoryApi->create_regulated_entity:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DirectoryApi->o_bpv5_1_0_create_regulated_entity: %s\n" % e)
+        print("Exception when calling DirectoryApi->create_regulated_entity: %s\n" % e)
 ```
 
 
@@ -307,11 +307,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **obpv510_create_regulated_entity_request** | [**OBPv510CreateRegulatedEntityRequest**](OBPv510CreateRegulatedEntityRequest.md)| Request body | 
+ **create_regulated_entity_request** | [**CreateRegulatedEntityRequest**](CreateRegulatedEntityRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510GetRegulatedEntityById200Response**](OBPv510GetRegulatedEntityById200Response.md)
+[**GetRegulatedEntityById200Response**](GetRegulatedEntityById200Response.md)
 
 ### Authorization
 
@@ -331,8 +331,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_create_regulated_entity_attribute**
-> OBPv510GetRegulatedEntityAttributeById200Response o_bpv5_1_0_create_regulated_entity_attribute(regulatedentityid, obpv600_create_counterparty_attribute_request)
+# **create_regulated_entity_attribute**
+> GetRegulatedEntityAttributeById200Response create_regulated_entity_attribute(regulatedentityid, create_counterparty_attribute_request)
 
 Create Regulated Entity Attribute
 
@@ -363,8 +363,8 @@ User Authentication is Required. The User must be logged in. The Application mus
 
 ```python
 import obp_python
-from obp_python.models.obpv510_get_regulated_entity_attribute_by_id200_response import OBPv510GetRegulatedEntityAttributeById200Response
-from obp_python.models.obpv600_create_counterparty_attribute_request import OBPv600CreateCounterpartyAttributeRequest
+from obp_python.models.create_counterparty_attribute_request import CreateCounterpartyAttributeRequest
+from obp_python.models.get_regulated_entity_attribute_by_id200_response import GetRegulatedEntityAttributeById200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -398,15 +398,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.DirectoryApi(api_client)
     regulatedentityid = 'regulatedentityid_example' # str | The REGULATEDENTITYID identifier
-    obpv600_create_counterparty_attribute_request = {type=object, properties={attribute_type={type=string}, name={type=string}, is_active={type=boolean}, value={type=string}}} # OBPv600CreateCounterpartyAttributeRequest | Request body
+    create_counterparty_attribute_request = {type=object, properties={attribute_type={type=string}, name={type=string}, is_active={type=boolean}, value={type=string}}} # CreateCounterpartyAttributeRequest | Request body
 
     try:
         # Create Regulated Entity Attribute
-        api_response = api_instance.o_bpv5_1_0_create_regulated_entity_attribute(regulatedentityid, obpv600_create_counterparty_attribute_request)
-        print("The response of DirectoryApi->o_bpv5_1_0_create_regulated_entity_attribute:\n")
+        api_response = api_instance.create_regulated_entity_attribute(regulatedentityid, create_counterparty_attribute_request)
+        print("The response of DirectoryApi->create_regulated_entity_attribute:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DirectoryApi->o_bpv5_1_0_create_regulated_entity_attribute: %s\n" % e)
+        print("Exception when calling DirectoryApi->create_regulated_entity_attribute: %s\n" % e)
 ```
 
 
@@ -417,11 +417,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **regulatedentityid** | **str**| The REGULATEDENTITYID identifier | 
- **obpv600_create_counterparty_attribute_request** | [**OBPv600CreateCounterpartyAttributeRequest**](OBPv600CreateCounterpartyAttributeRequest.md)| Request body | 
+ **create_counterparty_attribute_request** | [**CreateCounterpartyAttributeRequest**](CreateCounterpartyAttributeRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510GetRegulatedEntityAttributeById200Response**](OBPv510GetRegulatedEntityAttributeById200Response.md)
+[**GetRegulatedEntityAttributeById200Response**](GetRegulatedEntityAttributeById200Response.md)
 
 ### Authorization
 
@@ -441,8 +441,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_delete_regulated_entity**
-> o_bpv5_1_0_delete_regulated_entity(regulatedentityid)
+# **delete_regulated_entity**
+> delete_regulated_entity(regulatedentityid)
 
 Delete Regulated Entity
 
@@ -497,9 +497,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete Regulated Entity
-        api_instance.o_bpv5_1_0_delete_regulated_entity(regulatedentityid)
+        api_instance.delete_regulated_entity(regulatedentityid)
     except Exception as e:
-        print("Exception when calling DirectoryApi->o_bpv5_1_0_delete_regulated_entity: %s\n" % e)
+        print("Exception when calling DirectoryApi->delete_regulated_entity: %s\n" % e)
 ```
 
 
@@ -533,8 +533,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_delete_regulated_entity_attribute**
-> o_bpv5_1_0_delete_regulated_entity_attribute(regulatedentityid, regulatedentityattributeid)
+# **delete_regulated_entity_attribute**
+> delete_regulated_entity_attribute(regulatedentityid, regulatedentityattributeid)
 
 Delete Regulated Entity Attribute
 
@@ -591,9 +591,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete Regulated Entity Attribute
-        api_instance.o_bpv5_1_0_delete_regulated_entity_attribute(regulatedentityid, regulatedentityattributeid)
+        api_instance.delete_regulated_entity_attribute(regulatedentityid, regulatedentityattributeid)
     except Exception as e:
-        print("Exception when calling DirectoryApi->o_bpv5_1_0_delete_regulated_entity_attribute: %s\n" % e)
+        print("Exception when calling DirectoryApi->delete_regulated_entity_attribute: %s\n" % e)
 ```
 
 
@@ -628,8 +628,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_get_all_regulated_entity_attributes**
-> OBPv510GetAllRegulatedEntityAttributes200Response o_bpv5_1_0_get_all_regulated_entity_attributes(regulatedentityid)
+# **get_all_regulated_entity_attributes**
+> GetAllRegulatedEntityAttributes200Response get_all_regulated_entity_attributes(regulatedentityid)
 
 Get All Regulated Entity Attributes
 
@@ -655,7 +655,7 @@ Get All Regulated Entity Attributes
 
 ```python
 import obp_python
-from obp_python.models.obpv510_get_all_regulated_entity_attributes200_response import OBPv510GetAllRegulatedEntityAttributes200Response
+from obp_python.models.get_all_regulated_entity_attributes200_response import GetAllRegulatedEntityAttributes200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -692,11 +692,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get All Regulated Entity Attributes
-        api_response = api_instance.o_bpv5_1_0_get_all_regulated_entity_attributes(regulatedentityid)
-        print("The response of DirectoryApi->o_bpv5_1_0_get_all_regulated_entity_attributes:\n")
+        api_response = api_instance.get_all_regulated_entity_attributes(regulatedentityid)
+        print("The response of DirectoryApi->get_all_regulated_entity_attributes:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DirectoryApi->o_bpv5_1_0_get_all_regulated_entity_attributes: %s\n" % e)
+        print("Exception when calling DirectoryApi->get_all_regulated_entity_attributes: %s\n" % e)
 ```
 
 
@@ -710,7 +710,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetAllRegulatedEntityAttributes200Response**](OBPv510GetAllRegulatedEntityAttributes200Response.md)
+[**GetAllRegulatedEntityAttributes200Response**](GetAllRegulatedEntityAttributes200Response.md)
 
 ### Authorization
 
@@ -730,8 +730,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_get_regulated_entity_attribute_by_id**
-> OBPv510GetRegulatedEntityAttributeById200Response o_bpv5_1_0_get_regulated_entity_attribute_by_id(regulatedentityid, regulatedentityattributeid)
+# **get_regulated_entity_attribute_by_id**
+> GetRegulatedEntityAttributeById200Response get_regulated_entity_attribute_by_id(regulatedentityid, regulatedentityattributeid)
 
 Get Regulated Entity Attribute By ID
 
@@ -757,7 +757,7 @@ Get Regulated Entity Attribute By ID
 
 ```python
 import obp_python
-from obp_python.models.obpv510_get_regulated_entity_attribute_by_id200_response import OBPv510GetRegulatedEntityAttributeById200Response
+from obp_python.models.get_regulated_entity_attribute_by_id200_response import GetRegulatedEntityAttributeById200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -795,11 +795,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Regulated Entity Attribute By ID
-        api_response = api_instance.o_bpv5_1_0_get_regulated_entity_attribute_by_id(regulatedentityid, regulatedentityattributeid)
-        print("The response of DirectoryApi->o_bpv5_1_0_get_regulated_entity_attribute_by_id:\n")
+        api_response = api_instance.get_regulated_entity_attribute_by_id(regulatedentityid, regulatedentityattributeid)
+        print("The response of DirectoryApi->get_regulated_entity_attribute_by_id:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DirectoryApi->o_bpv5_1_0_get_regulated_entity_attribute_by_id: %s\n" % e)
+        print("Exception when calling DirectoryApi->get_regulated_entity_attribute_by_id: %s\n" % e)
 ```
 
 
@@ -814,7 +814,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetRegulatedEntityAttributeById200Response**](OBPv510GetRegulatedEntityAttributeById200Response.md)
+[**GetRegulatedEntityAttributeById200Response**](GetRegulatedEntityAttributeById200Response.md)
 
 ### Authorization
 
@@ -834,8 +834,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_get_regulated_entity_by_id**
-> OBPv510GetRegulatedEntityById200Response o_bpv5_1_0_get_regulated_entity_by_id(regulatedentityid)
+# **get_regulated_entity_by_id**
+> GetRegulatedEntityById200Response get_regulated_entity_by_id(regulatedentityid)
 
 Get Regulated Entity
 
@@ -867,7 +867,7 @@ Get Regulated Entity
 
 ```python
 import obp_python
-from obp_python.models.obpv510_get_regulated_entity_by_id200_response import OBPv510GetRegulatedEntityById200Response
+from obp_python.models.get_regulated_entity_by_id200_response import GetRegulatedEntityById200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -886,11 +886,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Regulated Entity
-        api_response = api_instance.o_bpv5_1_0_get_regulated_entity_by_id(regulatedentityid)
-        print("The response of DirectoryApi->o_bpv5_1_0_get_regulated_entity_by_id:\n")
+        api_response = api_instance.get_regulated_entity_by_id(regulatedentityid)
+        print("The response of DirectoryApi->get_regulated_entity_by_id:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DirectoryApi->o_bpv5_1_0_get_regulated_entity_by_id: %s\n" % e)
+        print("Exception when calling DirectoryApi->get_regulated_entity_by_id: %s\n" % e)
 ```
 
 
@@ -904,7 +904,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetRegulatedEntityById200Response**](OBPv510GetRegulatedEntityById200Response.md)
+[**GetRegulatedEntityById200Response**](GetRegulatedEntityById200Response.md)
 
 ### Authorization
 
@@ -924,8 +924,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_regulated_entities**
-> OBPv510RegulatedEntities200Response o_bpv5_1_0_regulated_entities()
+# **regulated_entities**
+> RegulatedEntities200Response regulated_entities()
 
 Get Regulated Entities
 
@@ -959,7 +959,7 @@ Get Regulated Entities
 
 ```python
 import obp_python
-from obp_python.models.obpv510_regulated_entities200_response import OBPv510RegulatedEntities200Response
+from obp_python.models.regulated_entities200_response import RegulatedEntities200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -977,11 +977,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Regulated Entities
-        api_response = api_instance.o_bpv5_1_0_regulated_entities()
-        print("The response of DirectoryApi->o_bpv5_1_0_regulated_entities:\n")
+        api_response = api_instance.regulated_entities()
+        print("The response of DirectoryApi->regulated_entities:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DirectoryApi->o_bpv5_1_0_regulated_entities: %s\n" % e)
+        print("Exception when calling DirectoryApi->regulated_entities: %s\n" % e)
 ```
 
 
@@ -992,7 +992,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv510RegulatedEntities200Response**](OBPv510RegulatedEntities200Response.md)
+[**RegulatedEntities200Response**](RegulatedEntities200Response.md)
 
 ### Authorization
 
@@ -1012,8 +1012,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_update_regulated_entity_attribute**
-> OBPv510GetRegulatedEntityAttributeById200Response o_bpv5_1_0_update_regulated_entity_attribute(regulatedentityid, regulatedentityattributeid, obpv600_create_counterparty_attribute_request)
+# **update_regulated_entity_attribute**
+> GetRegulatedEntityAttributeById200Response update_regulated_entity_attribute(regulatedentityid, regulatedentityattributeid, create_counterparty_attribute_request)
 
 Update Regulated Entity Attribute
 
@@ -1039,8 +1039,8 @@ Update Regulated Entity Attribute
 
 ```python
 import obp_python
-from obp_python.models.obpv510_get_regulated_entity_attribute_by_id200_response import OBPv510GetRegulatedEntityAttributeById200Response
-from obp_python.models.obpv600_create_counterparty_attribute_request import OBPv600CreateCounterpartyAttributeRequest
+from obp_python.models.create_counterparty_attribute_request import CreateCounterpartyAttributeRequest
+from obp_python.models.get_regulated_entity_attribute_by_id200_response import GetRegulatedEntityAttributeById200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -1075,15 +1075,15 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.DirectoryApi(api_client)
     regulatedentityid = 'regulatedentityid_example' # str | The REGULATEDENTITYID identifier
     regulatedentityattributeid = 'regulatedentityattributeid_example' # str | The REGULATEDENTITYATTRIBUTEID identifier
-    obpv600_create_counterparty_attribute_request = {type=object, properties={attribute_type={type=string}, name={type=string}, is_active={type=boolean}, value={type=string}}} # OBPv600CreateCounterpartyAttributeRequest | Request body
+    create_counterparty_attribute_request = {type=object, properties={attribute_type={type=string}, name={type=string}, is_active={type=boolean}, value={type=string}}} # CreateCounterpartyAttributeRequest | Request body
 
     try:
         # Update Regulated Entity Attribute
-        api_response = api_instance.o_bpv5_1_0_update_regulated_entity_attribute(regulatedentityid, regulatedentityattributeid, obpv600_create_counterparty_attribute_request)
-        print("The response of DirectoryApi->o_bpv5_1_0_update_regulated_entity_attribute:\n")
+        api_response = api_instance.update_regulated_entity_attribute(regulatedentityid, regulatedentityattributeid, create_counterparty_attribute_request)
+        print("The response of DirectoryApi->update_regulated_entity_attribute:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DirectoryApi->o_bpv5_1_0_update_regulated_entity_attribute: %s\n" % e)
+        print("Exception when calling DirectoryApi->update_regulated_entity_attribute: %s\n" % e)
 ```
 
 
@@ -1095,11 +1095,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **regulatedentityid** | **str**| The REGULATEDENTITYID identifier | 
  **regulatedentityattributeid** | **str**| The REGULATEDENTITYATTRIBUTEID identifier | 
- **obpv600_create_counterparty_attribute_request** | [**OBPv600CreateCounterpartyAttributeRequest**](OBPv600CreateCounterpartyAttributeRequest.md)| Request body | 
+ **create_counterparty_attribute_request** | [**CreateCounterpartyAttributeRequest**](CreateCounterpartyAttributeRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510GetRegulatedEntityAttributeById200Response**](OBPv510GetRegulatedEntityAttributeById200Response.md)
+[**GetRegulatedEntityAttributeById200Response**](GetRegulatedEntityAttributeById200Response.md)
 
 ### Authorization
 

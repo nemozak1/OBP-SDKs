@@ -1,15 +1,15 @@
 # OpenBankProject.Api.PrivateDataApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OBPv300CorePrivateAccountsAllBanks**](PrivateDataApi.md#obpv300coreprivateaccountsallbanks) | **GET** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private) |
-| [**OBPv600GetAccountsAtBank**](PrivateDataApi.md#obpv600getaccountsatbank) | **GET** /obp/v6.0.0/banks/{bankid}/accounts | Get Accounts at Bank |
+| [**CorePrivateAccountsAllBanks**](PrivateDataApi.md#coreprivateaccountsallbanks) | **GET** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private) |
+| [**GetAccountsAtBank**](PrivateDataApi.md#getaccountsatbank) | **GET** /obp/v6.0.0/banks/{bankid}/accounts | Get Accounts at Bank |
 
-<a id="obpv300coreprivateaccountsallbanks"></a>
-# **OBPv300CorePrivateAccountsAllBanks**
-> OBPv300PrivateAccountsAtOneBank200Response OBPv300CorePrivateAccountsAllBanks ()
+<a id="coreprivateaccountsallbanks"></a>
+# **CorePrivateAccountsAllBanks**
+> PrivateAccountsAtOneBank200Response CorePrivateAccountsAllBanks ()
 
 Get Accounts at all Banks (private)
 
@@ -20,7 +20,7 @@ Get Accounts at all Banks (private)
 This endpoint does not need any parameter.
 ### Return type
 
-[**OBPv300PrivateAccountsAtOneBank200Response**](OBPv300PrivateAccountsAtOneBank200Response.md)
+[**PrivateAccountsAtOneBank200Response**](PrivateAccountsAtOneBank200Response.md)
 
 ### Authorization
 
@@ -40,9 +40,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600getaccountsatbank"></a>
-# **OBPv600GetAccountsAtBank**
-> OBPv600GetAccountsAtBank200Response OBPv600GetAccountsAtBank (string bankid)
+<a id="getaccountsatbank"></a>
+# **GetAccountsAtBank**
+> GetAccountsAtBank200Response GetAccountsAtBank (string bankid)
 
 Get Accounts at Bank
 
@@ -57,7 +57,7 @@ Get Accounts at Bank
 
 ### Return type
 
-[**OBPv600GetAccountsAtBank200Response**](OBPv600GetAccountsAtBank200Response.md)
+[**GetAccountsAtBank200Response**](GetAccountsAtBank200Response.md)
 
 ### Authorization
 

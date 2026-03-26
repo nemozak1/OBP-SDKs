@@ -19,9 +19,9 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import com.openbankproject.models.OBPv510CreateBankAccountBalanceRequest
-import com.openbankproject.models.OBPv510GetAllBankAccountBalances200Response
-import com.openbankproject.models.OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems
+import com.openbankproject.models.CreateBankAccountBalanceRequest
+import com.openbankproject.models.GetAllBankAccountBalances200Response
+import com.openbankproject.models.GetAllBankAccountBalances200ResponseBalancesInner
 
 import com.squareup.moshi.Json
 
@@ -43,7 +43,7 @@ open class BalanceApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://apisandbox.openbankproject.com")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "http://127.0.0.1:8080")
         }
     }
 
@@ -53,8 +53,8 @@ open class BalanceApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * &lt;p&gt;Create a new Balance for a Bank Account.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;balance_amount&lt;/strong&gt;&lt;/a&gt;: 50.89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_type\&quot;&gt;&lt;strong&gt;balance_type&lt;/strong&gt;&lt;/a&gt;: openingBooked&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;balance_amount&lt;/strong&gt;&lt;/a&gt;: 50.89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_id\&quot;&gt;&lt;strong&gt;balance_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_type\&quot;&gt;&lt;strong&gt;balance_type&lt;/strong&gt;&lt;/a&gt;: openingBooked&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
-     * @param obPv510CreateBankAccountBalanceRequest Request body
-     * @return OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems
+     * @param createBankAccountBalanceRequest Request body
+     * @return GetAllBankAccountBalances200ResponseBalancesInner
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -63,11 +63,11 @@ open class BalanceApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv510CreateBankAccountBalance(bankid: kotlin.String, accountid: kotlin.String, obPv510CreateBankAccountBalanceRequest: OBPv510CreateBankAccountBalanceRequest) : OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems {
-        val localVarResponse = oBPv510CreateBankAccountBalanceWithHttpInfo(bankid = bankid, accountid = accountid, obPv510CreateBankAccountBalanceRequest = obPv510CreateBankAccountBalanceRequest)
+    fun createBankAccountBalance(bankid: kotlin.String, accountid: kotlin.String, createBankAccountBalanceRequest: CreateBankAccountBalanceRequest) : GetAllBankAccountBalances200ResponseBalancesInner {
+        val localVarResponse = createBankAccountBalanceWithHttpInfo(bankid = bankid, accountid = accountid, createBankAccountBalanceRequest = createBankAccountBalanceRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetAllBankAccountBalances200ResponseBalancesInner
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -87,31 +87,31 @@ open class BalanceApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * &lt;p&gt;Create a new Balance for a Bank Account.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;balance_amount&lt;/strong&gt;&lt;/a&gt;: 50.89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_type\&quot;&gt;&lt;strong&gt;balance_type&lt;/strong&gt;&lt;/a&gt;: openingBooked&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;balance_amount&lt;/strong&gt;&lt;/a&gt;: 50.89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_id\&quot;&gt;&lt;strong&gt;balance_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_type\&quot;&gt;&lt;strong&gt;balance_type&lt;/strong&gt;&lt;/a&gt;: openingBooked&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
-     * @param obPv510CreateBankAccountBalanceRequest Request body
-     * @return ApiResponse<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems?>
+     * @param createBankAccountBalanceRequest Request body
+     * @return ApiResponse<GetAllBankAccountBalances200ResponseBalancesInner?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv510CreateBankAccountBalanceWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, obPv510CreateBankAccountBalanceRequest: OBPv510CreateBankAccountBalanceRequest) : ApiResponse<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems?> {
-        val localVariableConfig = oBPv510CreateBankAccountBalanceRequestConfig(bankid = bankid, accountid = accountid, obPv510CreateBankAccountBalanceRequest = obPv510CreateBankAccountBalanceRequest)
+    fun createBankAccountBalanceWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, createBankAccountBalanceRequest: CreateBankAccountBalanceRequest) : ApiResponse<GetAllBankAccountBalances200ResponseBalancesInner?> {
+        val localVariableConfig = createBankAccountBalanceRequestConfig(bankid = bankid, accountid = accountid, createBankAccountBalanceRequest = createBankAccountBalanceRequest)
 
-        return request<OBPv510CreateBankAccountBalanceRequest, OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems>(
+        return request<CreateBankAccountBalanceRequest, GetAllBankAccountBalances200ResponseBalancesInner>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv510CreateBankAccountBalance
+     * To obtain the request config of the operation createBankAccountBalance
      *
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
-     * @param obPv510CreateBankAccountBalanceRequest Request body
+     * @param createBankAccountBalanceRequest Request body
      * @return RequestConfig
      */
-    fun oBPv510CreateBankAccountBalanceRequestConfig(bankid: kotlin.String, accountid: kotlin.String, obPv510CreateBankAccountBalanceRequest: OBPv510CreateBankAccountBalanceRequest) : RequestConfig<OBPv510CreateBankAccountBalanceRequest> {
-        val localVariableBody = obPv510CreateBankAccountBalanceRequest
+    fun createBankAccountBalanceRequestConfig(bankid: kotlin.String, accountid: kotlin.String, createBankAccountBalanceRequest: CreateBankAccountBalanceRequest) : RequestConfig<CreateBankAccountBalanceRequest> {
+        val localVariableBody = createBankAccountBalanceRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -142,8 +142,8 @@ open class BalanceApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv510DeleteBankAccountBalance(bankid: kotlin.String, accountid: kotlin.String, balanceid: kotlin.String) : Unit {
-        val localVarResponse = oBPv510DeleteBankAccountBalanceWithHttpInfo(bankid = bankid, accountid = accountid, balanceid = balanceid)
+    fun deleteBankAccountBalance(bankid: kotlin.String, accountid: kotlin.String, balanceid: kotlin.String) : Unit {
+        val localVarResponse = deleteBankAccountBalanceWithHttpInfo(bankid = bankid, accountid = accountid, balanceid = balanceid)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -172,8 +172,8 @@ open class BalanceApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv510DeleteBankAccountBalanceWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, balanceid: kotlin.String) : ApiResponse<Unit?> {
-        val localVariableConfig = oBPv510DeleteBankAccountBalanceRequestConfig(bankid = bankid, accountid = accountid, balanceid = balanceid)
+    fun deleteBankAccountBalanceWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, balanceid: kotlin.String) : ApiResponse<Unit?> {
+        val localVariableConfig = deleteBankAccountBalanceRequestConfig(bankid = bankid, accountid = accountid, balanceid = balanceid)
 
         return request<Unit, Unit>(
             localVariableConfig
@@ -181,14 +181,14 @@ open class BalanceApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     }
 
     /**
-     * To obtain the request config of the operation oBPv510DeleteBankAccountBalance
+     * To obtain the request config of the operation deleteBankAccountBalance
      *
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param balanceid The BALANCEID identifier
      * @return RequestConfig
      */
-    fun oBPv510DeleteBankAccountBalanceRequestConfig(bankid: kotlin.String, accountid: kotlin.String, balanceid: kotlin.String) : RequestConfig<Unit> {
+    fun deleteBankAccountBalanceRequestConfig(bankid: kotlin.String, accountid: kotlin.String, balanceid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -209,7 +209,7 @@ open class BalanceApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * &lt;p&gt;Get all Balances for a Bank Account.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;balance_amount&lt;/strong&gt;&lt;/a&gt;: 50.89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_id\&quot;&gt;&lt;strong&gt;balance_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_type\&quot;&gt;&lt;strong&gt;balance_type&lt;/strong&gt;&lt;/a&gt;: openingBooked&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;balances&lt;/strong&gt;&lt;/a&gt;: balances&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
-     * @return OBPv510GetAllBankAccountBalances200Response
+     * @return GetAllBankAccountBalances200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -218,11 +218,11 @@ open class BalanceApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv510GetAllBankAccountBalances(bankid: kotlin.String, accountid: kotlin.String) : OBPv510GetAllBankAccountBalances200Response {
-        val localVarResponse = oBPv510GetAllBankAccountBalancesWithHttpInfo(bankid = bankid, accountid = accountid)
+    fun getAllBankAccountBalances(bankid: kotlin.String, accountid: kotlin.String) : GetAllBankAccountBalances200Response {
+        val localVarResponse = getAllBankAccountBalancesWithHttpInfo(bankid = bankid, accountid = accountid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv510GetAllBankAccountBalances200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetAllBankAccountBalances200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -242,28 +242,28 @@ open class BalanceApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * &lt;p&gt;Get all Balances for a Bank Account.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;balance_amount&lt;/strong&gt;&lt;/a&gt;: 50.89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_id\&quot;&gt;&lt;strong&gt;balance_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_type\&quot;&gt;&lt;strong&gt;balance_type&lt;/strong&gt;&lt;/a&gt;: openingBooked&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;balances&lt;/strong&gt;&lt;/a&gt;: balances&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
-     * @return ApiResponse<OBPv510GetAllBankAccountBalances200Response?>
+     * @return ApiResponse<GetAllBankAccountBalances200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv510GetAllBankAccountBalancesWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String) : ApiResponse<OBPv510GetAllBankAccountBalances200Response?> {
-        val localVariableConfig = oBPv510GetAllBankAccountBalancesRequestConfig(bankid = bankid, accountid = accountid)
+    fun getAllBankAccountBalancesWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String) : ApiResponse<GetAllBankAccountBalances200Response?> {
+        val localVariableConfig = getAllBankAccountBalancesRequestConfig(bankid = bankid, accountid = accountid)
 
-        return request<Unit, OBPv510GetAllBankAccountBalances200Response>(
+        return request<Unit, GetAllBankAccountBalances200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv510GetAllBankAccountBalances
+     * To obtain the request config of the operation getAllBankAccountBalances
      *
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @return RequestConfig
      */
-    fun oBPv510GetAllBankAccountBalancesRequestConfig(bankid: kotlin.String, accountid: kotlin.String) : RequestConfig<Unit> {
+    fun getAllBankAccountBalancesRequestConfig(bankid: kotlin.String, accountid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -286,7 +286,7 @@ open class BalanceApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param balanceid The BALANCEID identifier
-     * @return OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems
+     * @return GetAllBankAccountBalances200ResponseBalancesInner
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -295,11 +295,11 @@ open class BalanceApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv510GetBankAccountBalanceById(bankid: kotlin.String, accountid: kotlin.String, balanceid: kotlin.String) : OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems {
-        val localVarResponse = oBPv510GetBankAccountBalanceByIdWithHttpInfo(bankid = bankid, accountid = accountid, balanceid = balanceid)
+    fun getBankAccountBalanceById(bankid: kotlin.String, accountid: kotlin.String, balanceid: kotlin.String) : GetAllBankAccountBalances200ResponseBalancesInner {
+        val localVarResponse = getBankAccountBalanceByIdWithHttpInfo(bankid = bankid, accountid = accountid, balanceid = balanceid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetAllBankAccountBalances200ResponseBalancesInner
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -320,29 +320,29 @@ open class BalanceApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param balanceid The BALANCEID identifier
-     * @return ApiResponse<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems?>
+     * @return ApiResponse<GetAllBankAccountBalances200ResponseBalancesInner?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv510GetBankAccountBalanceByIdWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, balanceid: kotlin.String) : ApiResponse<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems?> {
-        val localVariableConfig = oBPv510GetBankAccountBalanceByIdRequestConfig(bankid = bankid, accountid = accountid, balanceid = balanceid)
+    fun getBankAccountBalanceByIdWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, balanceid: kotlin.String) : ApiResponse<GetAllBankAccountBalances200ResponseBalancesInner?> {
+        val localVariableConfig = getBankAccountBalanceByIdRequestConfig(bankid = bankid, accountid = accountid, balanceid = balanceid)
 
-        return request<Unit, OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems>(
+        return request<Unit, GetAllBankAccountBalances200ResponseBalancesInner>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv510GetBankAccountBalanceById
+     * To obtain the request config of the operation getBankAccountBalanceById
      *
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param balanceid The BALANCEID identifier
      * @return RequestConfig
      */
-    fun oBPv510GetBankAccountBalanceByIdRequestConfig(bankid: kotlin.String, accountid: kotlin.String, balanceid: kotlin.String) : RequestConfig<Unit> {
+    fun getBankAccountBalanceByIdRequestConfig(bankid: kotlin.String, accountid: kotlin.String, balanceid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -365,8 +365,8 @@ open class BalanceApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param balanceid The BALANCEID identifier
-     * @param obPv510CreateBankAccountBalanceRequest Request body
-     * @return OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems
+     * @param createBankAccountBalanceRequest Request body
+     * @return GetAllBankAccountBalances200ResponseBalancesInner
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -375,11 +375,11 @@ open class BalanceApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv510UpdateBankAccountBalance(bankid: kotlin.String, accountid: kotlin.String, balanceid: kotlin.String, obPv510CreateBankAccountBalanceRequest: OBPv510CreateBankAccountBalanceRequest) : OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems {
-        val localVarResponse = oBPv510UpdateBankAccountBalanceWithHttpInfo(bankid = bankid, accountid = accountid, balanceid = balanceid, obPv510CreateBankAccountBalanceRequest = obPv510CreateBankAccountBalanceRequest)
+    fun updateBankAccountBalance(bankid: kotlin.String, accountid: kotlin.String, balanceid: kotlin.String, createBankAccountBalanceRequest: CreateBankAccountBalanceRequest) : GetAllBankAccountBalances200ResponseBalancesInner {
+        val localVarResponse = updateBankAccountBalanceWithHttpInfo(bankid = bankid, accountid = accountid, balanceid = balanceid, createBankAccountBalanceRequest = createBankAccountBalanceRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetAllBankAccountBalances200ResponseBalancesInner
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -400,32 +400,32 @@ open class BalanceApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param balanceid The BALANCEID identifier
-     * @param obPv510CreateBankAccountBalanceRequest Request body
-     * @return ApiResponse<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems?>
+     * @param createBankAccountBalanceRequest Request body
+     * @return ApiResponse<GetAllBankAccountBalances200ResponseBalancesInner?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv510UpdateBankAccountBalanceWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, balanceid: kotlin.String, obPv510CreateBankAccountBalanceRequest: OBPv510CreateBankAccountBalanceRequest) : ApiResponse<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems?> {
-        val localVariableConfig = oBPv510UpdateBankAccountBalanceRequestConfig(bankid = bankid, accountid = accountid, balanceid = balanceid, obPv510CreateBankAccountBalanceRequest = obPv510CreateBankAccountBalanceRequest)
+    fun updateBankAccountBalanceWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, balanceid: kotlin.String, createBankAccountBalanceRequest: CreateBankAccountBalanceRequest) : ApiResponse<GetAllBankAccountBalances200ResponseBalancesInner?> {
+        val localVariableConfig = updateBankAccountBalanceRequestConfig(bankid = bankid, accountid = accountid, balanceid = balanceid, createBankAccountBalanceRequest = createBankAccountBalanceRequest)
 
-        return request<OBPv510CreateBankAccountBalanceRequest, OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems>(
+        return request<CreateBankAccountBalanceRequest, GetAllBankAccountBalances200ResponseBalancesInner>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv510UpdateBankAccountBalance
+     * To obtain the request config of the operation updateBankAccountBalance
      *
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param balanceid The BALANCEID identifier
-     * @param obPv510CreateBankAccountBalanceRequest Request body
+     * @param createBankAccountBalanceRequest Request body
      * @return RequestConfig
      */
-    fun oBPv510UpdateBankAccountBalanceRequestConfig(bankid: kotlin.String, accountid: kotlin.String, balanceid: kotlin.String, obPv510CreateBankAccountBalanceRequest: OBPv510CreateBankAccountBalanceRequest) : RequestConfig<OBPv510CreateBankAccountBalanceRequest> {
-        val localVariableBody = obPv510CreateBankAccountBalanceRequest
+    fun updateBankAccountBalanceRequestConfig(bankid: kotlin.String, accountid: kotlin.String, balanceid: kotlin.String, createBankAccountBalanceRequest: CreateBankAccountBalanceRequest) : RequestConfig<CreateBankAccountBalanceRequest> {
+        val localVariableBody = createBankAccountBalanceRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"

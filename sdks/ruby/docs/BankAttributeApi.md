@@ -1,20 +1,20 @@
 # OpenBankProject::BankAttributeApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**o_bpv4_0_0_create_bank_attribute**](BankAttributeApi.md#o_bpv4_0_0_create_bank_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/attribute | Create Bank Attribute |
-| [**o_bpv4_0_0_create_or_update_bank_attribute_definition**](BankAttributeApi.md#o_bpv4_0_0_create_or_update_bank_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/bank | Create or Update Bank Attribute Definition |
-| [**o_bpv4_0_0_delete_bank_attribute**](BankAttributeApi.md#o_bpv4_0_0_delete_bank_attribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Delete Bank Attribute |
-| [**o_bpv4_0_0_get_bank_attribute**](BankAttributeApi.md#o_bpv4_0_0_get_bank_attribute) | **GET** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Get Bank Attribute By BANK_ATTRIBUTE_ID |
-| [**o_bpv4_0_0_get_bank_attributes**](BankAttributeApi.md#o_bpv4_0_0_get_bank_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/attributes | Get Bank Attributes |
-| [**o_bpv4_0_0_update_bank_attribute**](BankAttributeApi.md#o_bpv4_0_0_update_bank_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Update Bank Attribute |
+| [**create_bank_attribute**](BankAttributeApi.md#create_bank_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/attribute | Create Bank Attribute |
+| [**create_or_update_bank_attribute_definition**](BankAttributeApi.md#create_or_update_bank_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/bank | Create or Update Bank Attribute Definition |
+| [**delete_bank_attribute**](BankAttributeApi.md#delete_bank_attribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Delete Bank Attribute |
+| [**get_bank_attribute**](BankAttributeApi.md#get_bank_attribute) | **GET** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Get Bank Attribute By BANK_ATTRIBUTE_ID |
+| [**get_bank_attributes**](BankAttributeApi.md#get_bank_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/attributes | Get Bank Attributes |
+| [**update_bank_attribute**](BankAttributeApi.md#update_bank_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Update Bank Attribute |
 
 
-## o_bpv4_0_0_create_bank_attribute
+## create_bank_attribute
 
-> <OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems> o_bpv4_0_0_create_bank_attribute(bankid, obpv510_update_atm_attribute_request)
+> <GetBankAttributes200ResponseBankAttributesInner> create_bank_attribute(bankid, update_atm_attribute_request)
 
 Create Bank Attribute
 
@@ -36,39 +36,39 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::BankAttributeApi.new
 bankid = 'bankid_example' # String | The BANKID identifier
-obpv510_update_atm_attribute_request = OpenBankProject::OBPv510UpdateAtmAttributeRequest.new({type: 'type_example', properties: OpenBankProject::OBPv510UpdateAtmAttributeRequestProperties.new({name: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), value: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), is_active: , type: })}) # OBPv510UpdateAtmAttributeRequest | Request body
+update_atm_attribute_request = OpenBankProject::UpdateAtmAttributeRequest.new # UpdateAtmAttributeRequest | Request body
 
 begin
   # Create Bank Attribute
-  result = api_instance.o_bpv4_0_0_create_bank_attribute(bankid, obpv510_update_atm_attribute_request)
+  result = api_instance.create_bank_attribute(bankid, update_atm_attribute_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling BankAttributeApi->o_bpv4_0_0_create_bank_attribute: #{e}"
+  puts "Error when calling BankAttributeApi->create_bank_attribute: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_create_bank_attribute_with_http_info variant
+#### Using the create_bank_attribute_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems>, Integer, Hash)> o_bpv4_0_0_create_bank_attribute_with_http_info(bankid, obpv510_update_atm_attribute_request)
+> <Array(<GetBankAttributes200ResponseBankAttributesInner>, Integer, Hash)> create_bank_attribute_with_http_info(bankid, update_atm_attribute_request)
 
 ```ruby
 begin
   # Create Bank Attribute
-  data, status_code, headers = api_instance.o_bpv4_0_0_create_bank_attribute_with_http_info(bankid, obpv510_update_atm_attribute_request)
+  data, status_code, headers = api_instance.create_bank_attribute_with_http_info(bankid, update_atm_attribute_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems>
+  p data # => <GetBankAttributes200ResponseBankAttributesInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling BankAttributeApi->o_bpv4_0_0_create_bank_attribute_with_http_info: #{e}"
+  puts "Error when calling BankAttributeApi->create_bank_attribute_with_http_info: #{e}"
 end
 ```
 
@@ -77,11 +77,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **bankid** | **String** | The BANKID identifier |  |
-| **obpv510_update_atm_attribute_request** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md) | Request body |  |
+| **update_atm_attribute_request** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems**](OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems.md)
+[**GetBankAttributes200ResponseBankAttributesInner**](GetBankAttributes200ResponseBankAttributesInner.md)
 
 ### Authorization
 
@@ -93,9 +93,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_create_or_update_bank_attribute_definition
+## create_or_update_bank_attribute_definition
 
-> <OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems> o_bpv4_0_0_create_or_update_bank_attribute_definition(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request)
+> <GetTransactionRequestAttributeDefinition200ResponseAttributesInner> create_or_update_bank_attribute_definition(bankid, create_or_update_transaction_request_attribute_definition_request)
 
 Create or Update Bank Attribute Definition
 
@@ -117,39 +117,39 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::BankAttributeApi.new
 bankid = 'bankid_example' # String | The BANKID identifier
-obpv400_create_or_update_transaction_request_attribute_definition_request = OpenBankProject::OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.new({type: 'type_example', properties: OpenBankProject::OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequestProperties.new({name: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), is_active: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), description: , _alias: , can_be_seen_on_views: OpenBankProject::OBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds.new({type: 'type_example', items: }), category: , type: })}) # OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+create_or_update_transaction_request_attribute_definition_request = OpenBankProject::CreateOrUpdateTransactionRequestAttributeDefinitionRequest.new # CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
 
 begin
   # Create or Update Bank Attribute Definition
-  result = api_instance.o_bpv4_0_0_create_or_update_bank_attribute_definition(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request)
+  result = api_instance.create_or_update_bank_attribute_definition(bankid, create_or_update_transaction_request_attribute_definition_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling BankAttributeApi->o_bpv4_0_0_create_or_update_bank_attribute_definition: #{e}"
+  puts "Error when calling BankAttributeApi->create_or_update_bank_attribute_definition: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_create_or_update_bank_attribute_definition_with_http_info variant
+#### Using the create_or_update_bank_attribute_definition_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems>, Integer, Hash)> o_bpv4_0_0_create_or_update_bank_attribute_definition_with_http_info(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request)
+> <Array(<GetTransactionRequestAttributeDefinition200ResponseAttributesInner>, Integer, Hash)> create_or_update_bank_attribute_definition_with_http_info(bankid, create_or_update_transaction_request_attribute_definition_request)
 
 ```ruby
 begin
   # Create or Update Bank Attribute Definition
-  data, status_code, headers = api_instance.o_bpv4_0_0_create_or_update_bank_attribute_definition_with_http_info(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request)
+  data, status_code, headers = api_instance.create_or_update_bank_attribute_definition_with_http_info(bankid, create_or_update_transaction_request_attribute_definition_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems>
+  p data # => <GetTransactionRequestAttributeDefinition200ResponseAttributesInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling BankAttributeApi->o_bpv4_0_0_create_or_update_bank_attribute_definition_with_http_info: #{e}"
+  puts "Error when calling BankAttributeApi->create_or_update_bank_attribute_definition_with_http_info: #{e}"
 end
 ```
 
@@ -158,11 +158,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **bankid** | **String** | The BANKID identifier |  |
-| **obpv400_create_or_update_transaction_request_attribute_definition_request** | [**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body |  |
+| **create_or_update_transaction_request_attribute_definition_request** | [**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
+[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
 
 ### Authorization
 
@@ -174,9 +174,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_delete_bank_attribute
+## delete_bank_attribute
 
-> o_bpv4_0_0_delete_bank_attribute(bankid, bankattributeid)
+> delete_bank_attribute(bankid, bankattributeid)
 
 Delete Bank Attribute
 
@@ -198,9 +198,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::BankAttributeApi.new
@@ -209,27 +209,27 @@ bankattributeid = 'bankattributeid_example' # String | The BANKATTRIBUTEID ident
 
 begin
   # Delete Bank Attribute
-  api_instance.o_bpv4_0_0_delete_bank_attribute(bankid, bankattributeid)
+  api_instance.delete_bank_attribute(bankid, bankattributeid)
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling BankAttributeApi->o_bpv4_0_0_delete_bank_attribute: #{e}"
+  puts "Error when calling BankAttributeApi->delete_bank_attribute: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_delete_bank_attribute_with_http_info variant
+#### Using the delete_bank_attribute_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> o_bpv4_0_0_delete_bank_attribute_with_http_info(bankid, bankattributeid)
+> <Array(nil, Integer, Hash)> delete_bank_attribute_with_http_info(bankid, bankattributeid)
 
 ```ruby
 begin
   # Delete Bank Attribute
-  data, status_code, headers = api_instance.o_bpv4_0_0_delete_bank_attribute_with_http_info(bankid, bankattributeid)
+  data, status_code, headers = api_instance.delete_bank_attribute_with_http_info(bankid, bankattributeid)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling BankAttributeApi->o_bpv4_0_0_delete_bank_attribute_with_http_info: #{e}"
+  puts "Error when calling BankAttributeApi->delete_bank_attribute_with_http_info: #{e}"
 end
 ```
 
@@ -254,9 +254,9 @@ nil (empty response body)
 - **Accept**: Not defined
 
 
-## o_bpv4_0_0_get_bank_attribute
+## get_bank_attribute
 
-> <OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems> o_bpv4_0_0_get_bank_attribute(bankid, bankattributeid)
+> <GetBankAttributes200ResponseBankAttributesInner> get_bank_attribute(bankid, bankattributeid)
 
 Get Bank Attribute By BANK_ATTRIBUTE_ID
 
@@ -278,9 +278,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::BankAttributeApi.new
@@ -289,28 +289,28 @@ bankattributeid = 'bankattributeid_example' # String | The BANKATTRIBUTEID ident
 
 begin
   # Get Bank Attribute By BANK_ATTRIBUTE_ID
-  result = api_instance.o_bpv4_0_0_get_bank_attribute(bankid, bankattributeid)
+  result = api_instance.get_bank_attribute(bankid, bankattributeid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling BankAttributeApi->o_bpv4_0_0_get_bank_attribute: #{e}"
+  puts "Error when calling BankAttributeApi->get_bank_attribute: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_get_bank_attribute_with_http_info variant
+#### Using the get_bank_attribute_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems>, Integer, Hash)> o_bpv4_0_0_get_bank_attribute_with_http_info(bankid, bankattributeid)
+> <Array(<GetBankAttributes200ResponseBankAttributesInner>, Integer, Hash)> get_bank_attribute_with_http_info(bankid, bankattributeid)
 
 ```ruby
 begin
   # Get Bank Attribute By BANK_ATTRIBUTE_ID
-  data, status_code, headers = api_instance.o_bpv4_0_0_get_bank_attribute_with_http_info(bankid, bankattributeid)
+  data, status_code, headers = api_instance.get_bank_attribute_with_http_info(bankid, bankattributeid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems>
+  p data # => <GetBankAttributes200ResponseBankAttributesInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling BankAttributeApi->o_bpv4_0_0_get_bank_attribute_with_http_info: #{e}"
+  puts "Error when calling BankAttributeApi->get_bank_attribute_with_http_info: #{e}"
 end
 ```
 
@@ -323,7 +323,7 @@ end
 
 ### Return type
 
-[**OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems**](OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems.md)
+[**GetBankAttributes200ResponseBankAttributesInner**](GetBankAttributes200ResponseBankAttributesInner.md)
 
 ### Authorization
 
@@ -335,9 +335,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_get_bank_attributes
+## get_bank_attributes
 
-> <OBPv400GetBankAttributes200Response> o_bpv4_0_0_get_bank_attributes(bankid)
+> <GetBankAttributes200Response> get_bank_attributes(bankid)
 
 Get Bank Attributes
 
@@ -359,9 +359,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::BankAttributeApi.new
@@ -369,28 +369,28 @@ bankid = 'bankid_example' # String | The BANKID identifier
 
 begin
   # Get Bank Attributes
-  result = api_instance.o_bpv4_0_0_get_bank_attributes(bankid)
+  result = api_instance.get_bank_attributes(bankid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling BankAttributeApi->o_bpv4_0_0_get_bank_attributes: #{e}"
+  puts "Error when calling BankAttributeApi->get_bank_attributes: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_get_bank_attributes_with_http_info variant
+#### Using the get_bank_attributes_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetBankAttributes200Response>, Integer, Hash)> o_bpv4_0_0_get_bank_attributes_with_http_info(bankid)
+> <Array(<GetBankAttributes200Response>, Integer, Hash)> get_bank_attributes_with_http_info(bankid)
 
 ```ruby
 begin
   # Get Bank Attributes
-  data, status_code, headers = api_instance.o_bpv4_0_0_get_bank_attributes_with_http_info(bankid)
+  data, status_code, headers = api_instance.get_bank_attributes_with_http_info(bankid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetBankAttributes200Response>
+  p data # => <GetBankAttributes200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling BankAttributeApi->o_bpv4_0_0_get_bank_attributes_with_http_info: #{e}"
+  puts "Error when calling BankAttributeApi->get_bank_attributes_with_http_info: #{e}"
 end
 ```
 
@@ -402,7 +402,7 @@ end
 
 ### Return type
 
-[**OBPv400GetBankAttributes200Response**](OBPv400GetBankAttributes200Response.md)
+[**GetBankAttributes200Response**](GetBankAttributes200Response.md)
 
 ### Authorization
 
@@ -414,9 +414,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_update_bank_attribute
+## update_bank_attribute
 
-> <OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest> o_bpv4_0_0_update_bank_attribute(bankid, bankattributeid, obpv510_update_atm_attribute_request)
+> <CreateOrUpdateTransactionRequestAttributeDefinitionRequest> update_bank_attribute(bankid, bankattributeid, update_atm_attribute_request)
 
 Update Bank Attribute
 
@@ -438,40 +438,40 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::BankAttributeApi.new
 bankid = 'bankid_example' # String | The BANKID identifier
 bankattributeid = 'bankattributeid_example' # String | The BANKATTRIBUTEID identifier
-obpv510_update_atm_attribute_request = OpenBankProject::OBPv510UpdateAtmAttributeRequest.new({type: 'type_example', properties: OpenBankProject::OBPv510UpdateAtmAttributeRequestProperties.new({name: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), value: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), is_active: , type: })}) # OBPv510UpdateAtmAttributeRequest | Request body
+update_atm_attribute_request = OpenBankProject::UpdateAtmAttributeRequest.new # UpdateAtmAttributeRequest | Request body
 
 begin
   # Update Bank Attribute
-  result = api_instance.o_bpv4_0_0_update_bank_attribute(bankid, bankattributeid, obpv510_update_atm_attribute_request)
+  result = api_instance.update_bank_attribute(bankid, bankattributeid, update_atm_attribute_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling BankAttributeApi->o_bpv4_0_0_update_bank_attribute: #{e}"
+  puts "Error when calling BankAttributeApi->update_bank_attribute: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_update_bank_attribute_with_http_info variant
+#### Using the update_bank_attribute_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest>, Integer, Hash)> o_bpv4_0_0_update_bank_attribute_with_http_info(bankid, bankattributeid, obpv510_update_atm_attribute_request)
+> <Array(<CreateOrUpdateTransactionRequestAttributeDefinitionRequest>, Integer, Hash)> update_bank_attribute_with_http_info(bankid, bankattributeid, update_atm_attribute_request)
 
 ```ruby
 begin
   # Update Bank Attribute
-  data, status_code, headers = api_instance.o_bpv4_0_0_update_bank_attribute_with_http_info(bankid, bankattributeid, obpv510_update_atm_attribute_request)
+  data, status_code, headers = api_instance.update_bank_attribute_with_http_info(bankid, bankattributeid, update_atm_attribute_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest>
+  p data # => <CreateOrUpdateTransactionRequestAttributeDefinitionRequest>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling BankAttributeApi->o_bpv4_0_0_update_bank_attribute_with_http_info: #{e}"
+  puts "Error when calling BankAttributeApi->update_bank_attribute_with_http_info: #{e}"
 end
 ```
 
@@ -481,11 +481,11 @@ end
 | ---- | ---- | ----------- | ----- |
 | **bankid** | **String** | The BANKID identifier |  |
 | **bankattributeid** | **String** | The BANKATTRIBUTEID identifier |  |
-| **obpv510_update_atm_attribute_request** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md) | Request body |  |
+| **update_atm_attribute_request** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)
+[**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)
 
 ### Authorization
 

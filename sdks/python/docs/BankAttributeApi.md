@@ -4,16 +4,16 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv4_0_0_create_bank_attribute**](BankAttributeApi.md#o_bpv4_0_0_create_bank_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/attribute | Create Bank Attribute
-[**o_bpv4_0_0_create_or_update_bank_attribute_definition**](BankAttributeApi.md#o_bpv4_0_0_create_or_update_bank_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/bank | Create or Update Bank Attribute Definition
-[**o_bpv4_0_0_delete_bank_attribute**](BankAttributeApi.md#o_bpv4_0_0_delete_bank_attribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Delete Bank Attribute
-[**o_bpv4_0_0_get_bank_attribute**](BankAttributeApi.md#o_bpv4_0_0_get_bank_attribute) | **GET** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Get Bank Attribute By BANK_ATTRIBUTE_ID
-[**o_bpv4_0_0_get_bank_attributes**](BankAttributeApi.md#o_bpv4_0_0_get_bank_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/attributes | Get Bank Attributes
-[**o_bpv4_0_0_update_bank_attribute**](BankAttributeApi.md#o_bpv4_0_0_update_bank_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Update Bank Attribute
+[**create_bank_attribute**](BankAttributeApi.md#create_bank_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/attribute | Create Bank Attribute
+[**create_or_update_bank_attribute_definition**](BankAttributeApi.md#create_or_update_bank_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/bank | Create or Update Bank Attribute Definition
+[**delete_bank_attribute**](BankAttributeApi.md#delete_bank_attribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Delete Bank Attribute
+[**get_bank_attribute**](BankAttributeApi.md#get_bank_attribute) | **GET** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Get Bank Attribute By BANK_ATTRIBUTE_ID
+[**get_bank_attributes**](BankAttributeApi.md#get_bank_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/attributes | Get Bank Attributes
+[**update_bank_attribute**](BankAttributeApi.md#update_bank_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Update Bank Attribute
 
 
-# **o_bpv4_0_0_create_bank_attribute**
-> OBPv400GetBankAttributes200ResponseBankAttributesInner o_bpv4_0_0_create_bank_attribute(bankid, obpv510_update_atm_attribute_request)
+# **create_bank_attribute**
+> GetBankAttributes200ResponseBankAttributesInner create_bank_attribute(bankid, update_atm_attribute_request)
 
 Create Bank Attribute
 
@@ -53,8 +53,8 @@ TRADABLE</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_bank_attributes200_response_bank_attributes_inner import OBPv400GetBankAttributes200ResponseBankAttributesInner
-from obp_python.models.obpv510_update_atm_attribute_request import OBPv510UpdateAtmAttributeRequest
+from obp_python.models.get_bank_attributes200_response_bank_attributes_inner import GetBankAttributes200ResponseBankAttributesInner
+from obp_python.models.update_atm_attribute_request import UpdateAtmAttributeRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -88,15 +88,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.BankAttributeApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
-    obpv510_update_atm_attribute_request = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}} # OBPv510UpdateAtmAttributeRequest | Request body
+    update_atm_attribute_request = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}} # UpdateAtmAttributeRequest | Request body
 
     try:
         # Create Bank Attribute
-        api_response = api_instance.o_bpv4_0_0_create_bank_attribute(bankid, obpv510_update_atm_attribute_request)
-        print("The response of BankAttributeApi->o_bpv4_0_0_create_bank_attribute:\n")
+        api_response = api_instance.create_bank_attribute(bankid, update_atm_attribute_request)
+        print("The response of BankAttributeApi->create_bank_attribute:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BankAttributeApi->o_bpv4_0_0_create_bank_attribute: %s\n" % e)
+        print("Exception when calling BankAttributeApi->create_bank_attribute: %s\n" % e)
 ```
 
 
@@ -107,11 +107,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
- **obpv510_update_atm_attribute_request** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md)| Request body | 
+ **update_atm_attribute_request** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetBankAttributes200ResponseBankAttributesInner**](OBPv400GetBankAttributes200ResponseBankAttributesInner.md)
+[**GetBankAttributes200ResponseBankAttributesInner**](GetBankAttributes200ResponseBankAttributesInner.md)
 
 ### Authorization
 
@@ -131,8 +131,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_create_or_update_bank_attribute_definition**
-> OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner o_bpv4_0_0_create_or_update_bank_attribute_definition(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request)
+# **create_or_update_bank_attribute_definition**
+> GetTransactionRequestAttributeDefinition200ResponseAttributesInner create_or_update_bank_attribute_definition(bankid, create_or_update_transaction_request_attribute_definition_request)
 
 Create or Update Bank Attribute Definition
 
@@ -162,8 +162,8 @@ Create or Update Bank Attribute Definition
 
 ```python
 import obp_python
-from obp_python.models.obpv400_create_or_update_transaction_request_attribute_definition_request import OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
-from obp_python.models.obpv400_get_transaction_request_attribute_definition200_response_attributes_inner import OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner
+from obp_python.models.create_or_update_transaction_request_attribute_definition_request import CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+from obp_python.models.get_transaction_request_attribute_definition200_response_attributes_inner import GetTransactionRequestAttributeDefinition200ResponseAttributesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -197,15 +197,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.BankAttributeApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
-    obpv400_create_or_update_transaction_request_attribute_definition_request = {type=object, properties={can_be_seen_on_views={type=array, items={type=string}}, description={type=string}, is_active={type=boolean}, name={type=string}, type={type=string}, category={type=string}, alias={type=string}}} # OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+    create_or_update_transaction_request_attribute_definition_request = {type=object, properties={can_be_seen_on_views={type=array, items={type=string}}, description={type=string}, is_active={type=boolean}, name={type=string}, type={type=string}, category={type=string}, alias={type=string}}} # CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
 
     try:
         # Create or Update Bank Attribute Definition
-        api_response = api_instance.o_bpv4_0_0_create_or_update_bank_attribute_definition(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request)
-        print("The response of BankAttributeApi->o_bpv4_0_0_create_or_update_bank_attribute_definition:\n")
+        api_response = api_instance.create_or_update_bank_attribute_definition(bankid, create_or_update_transaction_request_attribute_definition_request)
+        print("The response of BankAttributeApi->create_or_update_bank_attribute_definition:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BankAttributeApi->o_bpv4_0_0_create_or_update_bank_attribute_definition: %s\n" % e)
+        print("Exception when calling BankAttributeApi->create_or_update_bank_attribute_definition: %s\n" % e)
 ```
 
 
@@ -216,11 +216,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
- **obpv400_create_or_update_transaction_request_attribute_definition_request** | [**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | 
+ **create_or_update_transaction_request_attribute_definition_request** | [**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
+[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
 
 ### Authorization
 
@@ -241,8 +241,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_delete_bank_attribute**
-> o_bpv4_0_0_delete_bank_attribute(bankid, bankattributeid)
+# **delete_bank_attribute**
+> delete_bank_attribute(bankid, bankattributeid)
 
 Delete Bank Attribute
 
@@ -300,9 +300,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete Bank Attribute
-        api_instance.o_bpv4_0_0_delete_bank_attribute(bankid, bankattributeid)
+        api_instance.delete_bank_attribute(bankid, bankattributeid)
     except Exception as e:
-        print("Exception when calling BankAttributeApi->o_bpv4_0_0_delete_bank_attribute: %s\n" % e)
+        print("Exception when calling BankAttributeApi->delete_bank_attribute: %s\n" % e)
 ```
 
 
@@ -338,8 +338,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_get_bank_attribute**
-> OBPv400GetBankAttributes200ResponseBankAttributesInner o_bpv4_0_0_get_bank_attribute(bankid, bankattributeid)
+# **get_bank_attribute**
+> GetBankAttributes200ResponseBankAttributesInner get_bank_attribute(bankid, bankattributeid)
 
 Get Bank Attribute By BANK_ATTRIBUTE_ID
 
@@ -365,7 +365,7 @@ Get Bank Attribute By BANK_ATTRIBUTE_ID
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_bank_attributes200_response_bank_attributes_inner import OBPv400GetBankAttributes200ResponseBankAttributesInner
+from obp_python.models.get_bank_attributes200_response_bank_attributes_inner import GetBankAttributes200ResponseBankAttributesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -403,11 +403,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Bank Attribute By BANK_ATTRIBUTE_ID
-        api_response = api_instance.o_bpv4_0_0_get_bank_attribute(bankid, bankattributeid)
-        print("The response of BankAttributeApi->o_bpv4_0_0_get_bank_attribute:\n")
+        api_response = api_instance.get_bank_attribute(bankid, bankattributeid)
+        print("The response of BankAttributeApi->get_bank_attribute:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BankAttributeApi->o_bpv4_0_0_get_bank_attribute: %s\n" % e)
+        print("Exception when calling BankAttributeApi->get_bank_attribute: %s\n" % e)
 ```
 
 
@@ -422,7 +422,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetBankAttributes200ResponseBankAttributesInner**](OBPv400GetBankAttributes200ResponseBankAttributesInner.md)
+[**GetBankAttributes200ResponseBankAttributesInner**](GetBankAttributes200ResponseBankAttributesInner.md)
 
 ### Authorization
 
@@ -443,8 +443,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_get_bank_attributes**
-> OBPv400GetBankAttributes200Response o_bpv4_0_0_get_bank_attributes(bankid)
+# **get_bank_attributes**
+> GetBankAttributes200Response get_bank_attributes(bankid)
 
 Get Bank Attributes
 
@@ -470,7 +470,7 @@ Get Bank Attributes
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_bank_attributes200_response import OBPv400GetBankAttributes200Response
+from obp_python.models.get_bank_attributes200_response import GetBankAttributes200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -507,11 +507,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Bank Attributes
-        api_response = api_instance.o_bpv4_0_0_get_bank_attributes(bankid)
-        print("The response of BankAttributeApi->o_bpv4_0_0_get_bank_attributes:\n")
+        api_response = api_instance.get_bank_attributes(bankid)
+        print("The response of BankAttributeApi->get_bank_attributes:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BankAttributeApi->o_bpv4_0_0_get_bank_attributes: %s\n" % e)
+        print("Exception when calling BankAttributeApi->get_bank_attributes: %s\n" % e)
 ```
 
 
@@ -525,7 +525,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetBankAttributes200Response**](OBPv400GetBankAttributes200Response.md)
+[**GetBankAttributes200Response**](GetBankAttributes200Response.md)
 
 ### Authorization
 
@@ -546,8 +546,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_update_bank_attribute**
-> OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest o_bpv4_0_0_update_bank_attribute(bankid, bankattributeid, obpv510_update_atm_attribute_request)
+# **update_bank_attribute**
+> CreateOrUpdateTransactionRequestAttributeDefinitionRequest update_bank_attribute(bankid, bankattributeid, update_atm_attribute_request)
 
 Update Bank Attribute
 
@@ -575,8 +575,8 @@ Update Bank Attribute
 
 ```python
 import obp_python
-from obp_python.models.obpv400_create_or_update_transaction_request_attribute_definition_request import OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
-from obp_python.models.obpv510_update_atm_attribute_request import OBPv510UpdateAtmAttributeRequest
+from obp_python.models.create_or_update_transaction_request_attribute_definition_request import CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+from obp_python.models.update_atm_attribute_request import UpdateAtmAttributeRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -611,15 +611,15 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.BankAttributeApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
     bankattributeid = 'bankattributeid_example' # str | The BANKATTRIBUTEID identifier
-    obpv510_update_atm_attribute_request = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}} # OBPv510UpdateAtmAttributeRequest | Request body
+    update_atm_attribute_request = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}} # UpdateAtmAttributeRequest | Request body
 
     try:
         # Update Bank Attribute
-        api_response = api_instance.o_bpv4_0_0_update_bank_attribute(bankid, bankattributeid, obpv510_update_atm_attribute_request)
-        print("The response of BankAttributeApi->o_bpv4_0_0_update_bank_attribute:\n")
+        api_response = api_instance.update_bank_attribute(bankid, bankattributeid, update_atm_attribute_request)
+        print("The response of BankAttributeApi->update_bank_attribute:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BankAttributeApi->o_bpv4_0_0_update_bank_attribute: %s\n" % e)
+        print("Exception when calling BankAttributeApi->update_bank_attribute: %s\n" % e)
 ```
 
 
@@ -631,11 +631,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
  **bankattributeid** | **str**| The BANKATTRIBUTEID identifier | 
- **obpv510_update_atm_attribute_request** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md)| Request body | 
+ **update_atm_attribute_request** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)
+[**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)
 
 ### Authorization
 

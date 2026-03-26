@@ -2,22 +2,22 @@
 
 
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv510LogCacheAllEndpoint()**](LogCacheApi.md#oBPv510LogCacheAllEndpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache |
-| [**oBPv510LogCacheDebugEndpoint()**](LogCacheApi.md#oBPv510LogCacheDebugEndpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache |
-| [**oBPv510LogCacheErrorEndpoint()**](LogCacheApi.md#oBPv510LogCacheErrorEndpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache |
-| [**oBPv510LogCacheInfoEndpoint()**](LogCacheApi.md#oBPv510LogCacheInfoEndpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache |
-| [**oBPv510LogCacheTraceEndpoint()**](LogCacheApi.md#oBPv510LogCacheTraceEndpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache |
-| [**oBPv510LogCacheWarningEndpoint()**](LogCacheApi.md#oBPv510LogCacheWarningEndpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache |
+| [**logCacheAllEndpoint()**](LogCacheApi.md#logCacheAllEndpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache |
+| [**logCacheDebugEndpoint()**](LogCacheApi.md#logCacheDebugEndpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache |
+| [**logCacheErrorEndpoint()**](LogCacheApi.md#logCacheErrorEndpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache |
+| [**logCacheInfoEndpoint()**](LogCacheApi.md#logCacheInfoEndpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache |
+| [**logCacheTraceEndpoint()**](LogCacheApi.md#logCacheTraceEndpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache |
+| [**logCacheWarningEndpoint()**](LogCacheApi.md#logCacheWarningEndpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache |
 
 
-## `oBPv510LogCacheAllEndpoint()`
+## `logCacheAllEndpoint()`
 
 ```php
-oBPv510LogCacheAllEndpoint()
+logCacheAllEndpoint()
 ```
 
 Get All Level Log Cache
@@ -40,9 +40,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\LogCacheApi(
@@ -53,9 +53,9 @@ $apiInstance = new OpenBankProject\Api\LogCacheApi(
 );
 
 try {
-    $apiInstance->oBPv510LogCacheAllEndpoint();
+    $apiInstance->logCacheAllEndpoint();
 } catch (Exception $e) {
-    echo 'Exception when calling LogCacheApi->oBPv510LogCacheAllEndpoint: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling LogCacheApi->logCacheAllEndpoint: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -80,10 +80,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv510LogCacheDebugEndpoint()`
+## `logCacheDebugEndpoint()`
 
 ```php
-oBPv510LogCacheDebugEndpoint()
+logCacheDebugEndpoint()
 ```
 
 Get Debug Level Log Cache
@@ -106,9 +106,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\LogCacheApi(
@@ -119,9 +119,9 @@ $apiInstance = new OpenBankProject\Api\LogCacheApi(
 );
 
 try {
-    $apiInstance->oBPv510LogCacheDebugEndpoint();
+    $apiInstance->logCacheDebugEndpoint();
 } catch (Exception $e) {
-    echo 'Exception when calling LogCacheApi->oBPv510LogCacheDebugEndpoint: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling LogCacheApi->logCacheDebugEndpoint: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -146,10 +146,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv510LogCacheErrorEndpoint()`
+## `logCacheErrorEndpoint()`
 
 ```php
-oBPv510LogCacheErrorEndpoint()
+logCacheErrorEndpoint()
 ```
 
 Get Error Level Log Cache
@@ -172,9 +172,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\LogCacheApi(
@@ -185,9 +185,9 @@ $apiInstance = new OpenBankProject\Api\LogCacheApi(
 );
 
 try {
-    $apiInstance->oBPv510LogCacheErrorEndpoint();
+    $apiInstance->logCacheErrorEndpoint();
 } catch (Exception $e) {
-    echo 'Exception when calling LogCacheApi->oBPv510LogCacheErrorEndpoint: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling LogCacheApi->logCacheErrorEndpoint: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -212,10 +212,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv510LogCacheInfoEndpoint()`
+## `logCacheInfoEndpoint()`
 
 ```php
-oBPv510LogCacheInfoEndpoint()
+logCacheInfoEndpoint()
 ```
 
 Get Info Level Log Cache
@@ -238,9 +238,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\LogCacheApi(
@@ -251,9 +251,9 @@ $apiInstance = new OpenBankProject\Api\LogCacheApi(
 );
 
 try {
-    $apiInstance->oBPv510LogCacheInfoEndpoint();
+    $apiInstance->logCacheInfoEndpoint();
 } catch (Exception $e) {
-    echo 'Exception when calling LogCacheApi->oBPv510LogCacheInfoEndpoint: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling LogCacheApi->logCacheInfoEndpoint: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -278,10 +278,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv510LogCacheTraceEndpoint()`
+## `logCacheTraceEndpoint()`
 
 ```php
-oBPv510LogCacheTraceEndpoint()
+logCacheTraceEndpoint()
 ```
 
 Get Trace Level Log Cache
@@ -304,9 +304,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\LogCacheApi(
@@ -317,9 +317,9 @@ $apiInstance = new OpenBankProject\Api\LogCacheApi(
 );
 
 try {
-    $apiInstance->oBPv510LogCacheTraceEndpoint();
+    $apiInstance->logCacheTraceEndpoint();
 } catch (Exception $e) {
-    echo 'Exception when calling LogCacheApi->oBPv510LogCacheTraceEndpoint: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling LogCacheApi->logCacheTraceEndpoint: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -344,10 +344,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv510LogCacheWarningEndpoint()`
+## `logCacheWarningEndpoint()`
 
 ```php
-oBPv510LogCacheWarningEndpoint()
+logCacheWarningEndpoint()
 ```
 
 Get Warning Level Log Cache
@@ -370,9 +370,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\LogCacheApi(
@@ -383,9 +383,9 @@ $apiInstance = new OpenBankProject\Api\LogCacheApi(
 );
 
 try {
-    $apiInstance->oBPv510LogCacheWarningEndpoint();
+    $apiInstance->logCacheWarningEndpoint();
 } catch (Exception $e) {
-    echo 'Exception when calling LogCacheApi->oBPv510LogCacheWarningEndpoint: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling LogCacheApi->logCacheWarningEndpoint: ', $e->getMessage(), PHP_EOL;
 }
 ```
 

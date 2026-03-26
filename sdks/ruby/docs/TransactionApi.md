@@ -1,46 +1,46 @@
 # OpenBankProject::TransactionApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**o_bpv1_2_1_add_comment_for_view_on_transaction**](TransactionApi.md#o_bpv1_2_1_add_comment_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Add a Transaction Comment |
-| [**o_bpv1_2_1_add_image_for_view_on_transaction**](TransactionApi.md#o_bpv1_2_1_add_image_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Add a Transaction Image |
-| [**o_bpv1_2_1_add_tag_for_view_on_transaction**](TransactionApi.md#o_bpv1_2_1_add_tag_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Add a Transaction Tag |
-| [**o_bpv1_2_1_add_transaction_narrative**](TransactionApi.md#o_bpv1_2_1_add_transaction_narrative) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Add a Transaction Narrative |
-| [**o_bpv1_2_1_add_where_tag_for_view_on_transaction**](TransactionApi.md#o_bpv1_2_1_add_where_tag_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Add a Transaction where Tag |
-| [**o_bpv1_2_1_delete_comment_for_view_on_transaction**](TransactionApi.md#o_bpv1_2_1_delete_comment_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments/{commentid} | Delete a Transaction Comment |
-| [**o_bpv1_2_1_delete_image_for_view_on_transaction**](TransactionApi.md#o_bpv1_2_1_delete_image_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images/{imageid} | Delete a Transaction Image |
-| [**o_bpv1_2_1_delete_tag_for_view_on_transaction**](TransactionApi.md#o_bpv1_2_1_delete_tag_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags/{tagid} | Delete a Transaction Tag |
-| [**o_bpv1_2_1_delete_transaction_narrative**](TransactionApi.md#o_bpv1_2_1_delete_transaction_narrative) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Delete a Transaction Narrative |
-| [**o_bpv1_2_1_delete_where_tag_for_view_on_transaction**](TransactionApi.md#o_bpv1_2_1_delete_where_tag_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Delete a Transaction Tag |
-| [**o_bpv1_2_1_get_comments_for_view_on_transaction**](TransactionApi.md#o_bpv1_2_1_get_comments_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Get Transaction Comments |
-| [**o_bpv1_2_1_get_images_for_view_on_transaction**](TransactionApi.md#o_bpv1_2_1_get_images_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Get Transaction Images |
-| [**o_bpv1_2_1_get_other_account_for_transaction**](TransactionApi.md#o_bpv1_2_1_get_other_account_for_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/other_account | Get Other Account of Transaction |
-| [**o_bpv1_2_1_get_tags_for_view_on_transaction**](TransactionApi.md#o_bpv1_2_1_get_tags_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Get Transaction Tags |
-| [**o_bpv1_2_1_get_transaction_narrative**](TransactionApi.md#o_bpv1_2_1_get_transaction_narrative) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Get a Transaction Narrative |
-| [**o_bpv1_2_1_get_where_tag_for_view_on_transaction**](TransactionApi.md#o_bpv1_2_1_get_where_tag_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Get a Transaction where Tag |
-| [**o_bpv1_2_1_update_transaction_narrative**](TransactionApi.md#o_bpv1_2_1_update_transaction_narrative) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Update a Transaction Narrative |
-| [**o_bpv1_2_1_update_where_tag_for_view_on_transaction**](TransactionApi.md#o_bpv1_2_1_update_where_tag_for_view_on_transaction) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Update a Transaction where Tag |
-| [**o_bpv3_0_0_get_core_transactions_for_bank_account**](TransactionApi.md#o_bpv3_0_0_get_core_transactions_for_bank_account) | **GET** /obp/v3.0.0/my/banks/{bankid}/accounts/{accountid}/transactions | Get Transactions for Account (Core) |
-| [**o_bpv3_0_0_get_firehose_transactions_for_bank_account**](TransactionApi.md#o_bpv3_0_0_get_firehose_transactions_for_bank_account) | **GET** /obp/v3.0.0/banks/{bankid}/firehose/accounts/{accountid}/views/{viewid}/transactions | Get Firehose Transactions for Account |
-| [**o_bpv3_1_0_get_transaction_by_id_for_bank_account**](TransactionApi.md#o_bpv3_1_0_get_transaction_by_id_for_bank_account) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/transaction | Get Transaction by Id |
-| [**o_bpv4_0_0_create_or_update_transaction_attribute_definition**](TransactionApi.md#o_bpv4_0_0_create_or_update_transaction_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Create or Update Transaction Attribute Definition |
-| [**o_bpv4_0_0_create_transaction_attribute**](TransactionApi.md#o_bpv4_0_0_create_transaction_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attribute | Create Transaction Attribute |
-| [**o_bpv4_0_0_delete_transaction_attribute_definition**](TransactionApi.md#o_bpv4_0_0_delete_transaction_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction | Delete Transaction Attribute Definition |
-| [**o_bpv4_0_0_delete_transaction_cascade**](TransactionApi.md#o_bpv4_0_0_delete_transaction_cascade) | **DELETE** /obp/v4.0.0/management/cascading/banks/{bankid}/accounts/{accountid}/transactions/{transactionid} | Delete Transaction Cascade |
-| [**o_bpv4_0_0_get_balancing_transaction**](TransactionApi.md#o_bpv4_0_0_get_balancing_transaction) | **GET** /obp/v4.0.0/transactions/{transactionid}/balancing-transaction | Get Balancing Transaction |
-| [**o_bpv4_0_0_get_double_entry_transaction**](TransactionApi.md#o_bpv4_0_0_get_double_entry_transaction) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/double-entry-transaction | Get Double Entry Transaction |
-| [**o_bpv4_0_0_get_transaction_attribute_by_id**](TransactionApi.md#o_bpv4_0_0_get_transaction_attribute_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{attributeid} | Get Transaction Attribute By Id |
-| [**o_bpv4_0_0_get_transaction_attribute_definition**](TransactionApi.md#o_bpv4_0_0_get_transaction_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Get Transaction Attribute Definition |
-| [**o_bpv4_0_0_get_transaction_attributes**](TransactionApi.md#o_bpv4_0_0_get_transaction_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes | Get Transaction Attributes |
-| [**o_bpv4_0_0_update_transaction_attribute**](TransactionApi.md#o_bpv4_0_0_update_transaction_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{accountattributeid} | Update Transaction Attribute |
-| [**o_bpv6_0_0_get_transactions_for_bank_account**](TransactionApi.md#o_bpv6_0_0_get_transactions_for_bank_account) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions | Get Transactions for Account (Full) |
+| [**add_comment_for_view_on_transaction**](TransactionApi.md#add_comment_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Add a Transaction Comment |
+| [**add_image_for_view_on_transaction**](TransactionApi.md#add_image_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Add a Transaction Image |
+| [**add_tag_for_view_on_transaction**](TransactionApi.md#add_tag_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Add a Transaction Tag |
+| [**add_transaction_narrative**](TransactionApi.md#add_transaction_narrative) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Add a Transaction Narrative |
+| [**add_where_tag_for_view_on_transaction**](TransactionApi.md#add_where_tag_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Add a Transaction where Tag |
+| [**create_or_update_transaction_attribute_definition**](TransactionApi.md#create_or_update_transaction_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Create or Update Transaction Attribute Definition |
+| [**create_transaction_attribute**](TransactionApi.md#create_transaction_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attribute | Create Transaction Attribute |
+| [**delete_comment_for_view_on_transaction**](TransactionApi.md#delete_comment_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments/{commentid} | Delete a Transaction Comment |
+| [**delete_image_for_view_on_transaction**](TransactionApi.md#delete_image_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images/{imageid} | Delete a Transaction Image |
+| [**delete_tag_for_view_on_transaction**](TransactionApi.md#delete_tag_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags/{tagid} | Delete a Transaction Tag |
+| [**delete_transaction_attribute_definition**](TransactionApi.md#delete_transaction_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction | Delete Transaction Attribute Definition |
+| [**delete_transaction_cascade**](TransactionApi.md#delete_transaction_cascade) | **DELETE** /obp/v4.0.0/management/cascading/banks/{bankid}/accounts/{accountid}/transactions/{transactionid} | Delete Transaction Cascade |
+| [**delete_transaction_narrative**](TransactionApi.md#delete_transaction_narrative) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Delete a Transaction Narrative |
+| [**delete_where_tag_for_view_on_transaction**](TransactionApi.md#delete_where_tag_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Delete a Transaction Tag |
+| [**get_balancing_transaction**](TransactionApi.md#get_balancing_transaction) | **GET** /obp/v4.0.0/transactions/{transactionid}/balancing-transaction | Get Balancing Transaction |
+| [**get_comments_for_view_on_transaction**](TransactionApi.md#get_comments_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Get Transaction Comments |
+| [**get_core_transactions_for_bank_account**](TransactionApi.md#get_core_transactions_for_bank_account) | **GET** /obp/v3.0.0/my/banks/{bankid}/accounts/{accountid}/transactions | Get Transactions for Account (Core) |
+| [**get_double_entry_transaction**](TransactionApi.md#get_double_entry_transaction) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/double-entry-transaction | Get Double Entry Transaction |
+| [**get_firehose_transactions_for_bank_account**](TransactionApi.md#get_firehose_transactions_for_bank_account) | **GET** /obp/v3.0.0/banks/{bankid}/firehose/accounts/{accountid}/views/{viewid}/transactions | Get Firehose Transactions for Account |
+| [**get_images_for_view_on_transaction**](TransactionApi.md#get_images_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Get Transaction Images |
+| [**get_other_account_for_transaction**](TransactionApi.md#get_other_account_for_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/other_account | Get Other Account of Transaction |
+| [**get_tags_for_view_on_transaction**](TransactionApi.md#get_tags_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Get Transaction Tags |
+| [**get_transaction_attribute_by_id**](TransactionApi.md#get_transaction_attribute_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{attributeid} | Get Transaction Attribute By Id |
+| [**get_transaction_attribute_definition**](TransactionApi.md#get_transaction_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Get Transaction Attribute Definition |
+| [**get_transaction_attributes**](TransactionApi.md#get_transaction_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes | Get Transaction Attributes |
+| [**get_transaction_by_id_for_bank_account**](TransactionApi.md#get_transaction_by_id_for_bank_account) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/transaction | Get Transaction by Id |
+| [**get_transaction_narrative**](TransactionApi.md#get_transaction_narrative) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Get a Transaction Narrative |
+| [**get_transactions_for_bank_account**](TransactionApi.md#get_transactions_for_bank_account) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions | Get Transactions for Account (Full) |
+| [**get_where_tag_for_view_on_transaction**](TransactionApi.md#get_where_tag_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Get a Transaction where Tag |
+| [**update_transaction_attribute**](TransactionApi.md#update_transaction_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{accountattributeid} | Update Transaction Attribute |
+| [**update_transaction_narrative**](TransactionApi.md#update_transaction_narrative) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Update a Transaction Narrative |
+| [**update_where_tag_for_view_on_transaction**](TransactionApi.md#update_where_tag_for_view_on_transaction) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Update a Transaction where Tag |
 
 
-## o_bpv1_2_1_add_comment_for_view_on_transaction
+## add_comment_for_view_on_transaction
 
-> <OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems> o_bpv1_2_1_add_comment_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv400_delete_system_level_endpoint_tag200_response)
+> <GetTagsForViewOnAccount200ResponseTagsInner> add_comment_for_view_on_transaction(bankid, accountid, viewid, transactionid, get_transaction_types200_response_transaction_types_inner_id)
 
 Add a Transaction Comment
 
@@ -62,9 +62,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::TransactionApi.new
@@ -72,32 +72,32 @@ bankid = 'bankid_example' # String | The BANKID identifier
 accountid = 'accountid_example' # String | The ACCOUNTID identifier
 viewid = 'viewid_example' # String | The VIEWID identifier
 transactionid = 'transactionid_example' # String | The TRANSACTIONID identifier
-obpv400_delete_system_level_endpoint_tag200_response = OpenBankProject::OBPv400DeleteSystemLevelEndpointTag200Response.new({type: 'type_example', properties: OpenBankProject::OBPv400DeleteSystemLevelEndpointTag200ResponseProperties.new({value: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'})})}) # OBPv400DeleteSystemLevelEndpointTag200Response | Request body
+get_transaction_types200_response_transaction_types_inner_id = OpenBankProject::GetTransactionTypes200ResponseTransactionTypesInnerId.new # GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
 
 begin
   # Add a Transaction Comment
-  result = api_instance.o_bpv1_2_1_add_comment_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv400_delete_system_level_endpoint_tag200_response)
+  result = api_instance.add_comment_for_view_on_transaction(bankid, accountid, viewid, transactionid, get_transaction_types200_response_transaction_types_inner_id)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv1_2_1_add_comment_for_view_on_transaction: #{e}"
+  puts "Error when calling TransactionApi->add_comment_for_view_on_transaction: #{e}"
 end
 ```
 
-#### Using the o_bpv1_2_1_add_comment_for_view_on_transaction_with_http_info variant
+#### Using the add_comment_for_view_on_transaction_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems>, Integer, Hash)> o_bpv1_2_1_add_comment_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, obpv400_delete_system_level_endpoint_tag200_response)
+> <Array(<GetTagsForViewOnAccount200ResponseTagsInner>, Integer, Hash)> add_comment_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, get_transaction_types200_response_transaction_types_inner_id)
 
 ```ruby
 begin
   # Add a Transaction Comment
-  data, status_code, headers = api_instance.o_bpv1_2_1_add_comment_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, obpv400_delete_system_level_endpoint_tag200_response)
+  data, status_code, headers = api_instance.add_comment_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, get_transaction_types200_response_transaction_types_inner_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems>
+  p data # => <GetTagsForViewOnAccount200ResponseTagsInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv1_2_1_add_comment_for_view_on_transaction_with_http_info: #{e}"
+  puts "Error when calling TransactionApi->add_comment_for_view_on_transaction_with_http_info: #{e}"
 end
 ```
 
@@ -109,11 +109,11 @@ end
 | **accountid** | **String** | The ACCOUNTID identifier |  |
 | **viewid** | **String** | The VIEWID identifier |  |
 | **transactionid** | **String** | The TRANSACTIONID identifier |  |
-| **obpv400_delete_system_level_endpoint_tag200_response** | [**OBPv400DeleteSystemLevelEndpointTag200Response**](OBPv400DeleteSystemLevelEndpointTag200Response.md) | Request body |  |
+| **get_transaction_types200_response_transaction_types_inner_id** | [**GetTransactionTypes200ResponseTransactionTypesInnerId**](GetTransactionTypes200ResponseTransactionTypesInnerId.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)
+[**GetTagsForViewOnAccount200ResponseTagsInner**](GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 ### Authorization
 
@@ -125,9 +125,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv1_2_1_add_image_for_view_on_transaction
+## add_image_for_view_on_transaction
 
-> <OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems> o_bpv1_2_1_add_image_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv121_add_image_for_view_on_transaction_request)
+> <GetTransactionByIdForBankAccount200ResponseMetadataImagesInner> add_image_for_view_on_transaction(bankid, accountid, viewid, transactionid, add_image_for_view_on_transaction_request)
 
 Add a Transaction Image
 
@@ -149,9 +149,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::TransactionApi.new
@@ -159,32 +159,32 @@ bankid = 'bankid_example' # String | The BANKID identifier
 accountid = 'accountid_example' # String | The ACCOUNTID identifier
 viewid = 'viewid_example' # String | The VIEWID identifier
 transactionid = 'transactionid_example' # String | The TRANSACTIONID identifier
-obpv121_add_image_for_view_on_transaction_request = OpenBankProject::OBPv121AddImageForViewOnTransactionRequest.new({type: 'type_example', properties: OpenBankProject::OBPv121AddImageForViewOnTransactionRequestProperties.new({url: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), label: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'})})}) # OBPv121AddImageForViewOnTransactionRequest | Request body
+add_image_for_view_on_transaction_request = OpenBankProject::AddImageForViewOnTransactionRequest.new # AddImageForViewOnTransactionRequest | Request body
 
 begin
   # Add a Transaction Image
-  result = api_instance.o_bpv1_2_1_add_image_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv121_add_image_for_view_on_transaction_request)
+  result = api_instance.add_image_for_view_on_transaction(bankid, accountid, viewid, transactionid, add_image_for_view_on_transaction_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv1_2_1_add_image_for_view_on_transaction: #{e}"
+  puts "Error when calling TransactionApi->add_image_for_view_on_transaction: #{e}"
 end
 ```
 
-#### Using the o_bpv1_2_1_add_image_for_view_on_transaction_with_http_info variant
+#### Using the add_image_for_view_on_transaction_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems>, Integer, Hash)> o_bpv1_2_1_add_image_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, obpv121_add_image_for_view_on_transaction_request)
+> <Array(<GetTransactionByIdForBankAccount200ResponseMetadataImagesInner>, Integer, Hash)> add_image_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, add_image_for_view_on_transaction_request)
 
 ```ruby
 begin
   # Add a Transaction Image
-  data, status_code, headers = api_instance.o_bpv1_2_1_add_image_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, obpv121_add_image_for_view_on_transaction_request)
+  data, status_code, headers = api_instance.add_image_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, add_image_for_view_on_transaction_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems>
+  p data # => <GetTransactionByIdForBankAccount200ResponseMetadataImagesInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv1_2_1_add_image_for_view_on_transaction_with_http_info: #{e}"
+  puts "Error when calling TransactionApi->add_image_for_view_on_transaction_with_http_info: #{e}"
 end
 ```
 
@@ -196,11 +196,11 @@ end
 | **accountid** | **String** | The ACCOUNTID identifier |  |
 | **viewid** | **String** | The VIEWID identifier |  |
 | **transactionid** | **String** | The TRANSACTIONID identifier |  |
-| **obpv121_add_image_for_view_on_transaction_request** | [**OBPv121AddImageForViewOnTransactionRequest**](OBPv121AddImageForViewOnTransactionRequest.md) | Request body |  |
+| **add_image_for_view_on_transaction_request** | [**AddImageForViewOnTransactionRequest**](AddImageForViewOnTransactionRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems**](OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems.md)
+[**GetTransactionByIdForBankAccount200ResponseMetadataImagesInner**](GetTransactionByIdForBankAccount200ResponseMetadataImagesInner.md)
 
 ### Authorization
 
@@ -212,9 +212,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv1_2_1_add_tag_for_view_on_transaction
+## add_tag_for_view_on_transaction
 
-> <OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems> o_bpv1_2_1_add_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv400_delete_system_level_endpoint_tag200_response)
+> <GetTagsForViewOnAccount200ResponseTagsInner> add_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, get_transaction_types200_response_transaction_types_inner_id)
 
 Add a Transaction Tag
 
@@ -236,9 +236,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::TransactionApi.new
@@ -246,32 +246,32 @@ bankid = 'bankid_example' # String | The BANKID identifier
 accountid = 'accountid_example' # String | The ACCOUNTID identifier
 viewid = 'viewid_example' # String | The VIEWID identifier
 transactionid = 'transactionid_example' # String | The TRANSACTIONID identifier
-obpv400_delete_system_level_endpoint_tag200_response = OpenBankProject::OBPv400DeleteSystemLevelEndpointTag200Response.new({type: 'type_example', properties: OpenBankProject::OBPv400DeleteSystemLevelEndpointTag200ResponseProperties.new({value: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'})})}) # OBPv400DeleteSystemLevelEndpointTag200Response | Request body
+get_transaction_types200_response_transaction_types_inner_id = OpenBankProject::GetTransactionTypes200ResponseTransactionTypesInnerId.new # GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
 
 begin
   # Add a Transaction Tag
-  result = api_instance.o_bpv1_2_1_add_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv400_delete_system_level_endpoint_tag200_response)
+  result = api_instance.add_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, get_transaction_types200_response_transaction_types_inner_id)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv1_2_1_add_tag_for_view_on_transaction: #{e}"
+  puts "Error when calling TransactionApi->add_tag_for_view_on_transaction: #{e}"
 end
 ```
 
-#### Using the o_bpv1_2_1_add_tag_for_view_on_transaction_with_http_info variant
+#### Using the add_tag_for_view_on_transaction_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems>, Integer, Hash)> o_bpv1_2_1_add_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, obpv400_delete_system_level_endpoint_tag200_response)
+> <Array(<GetTagsForViewOnAccount200ResponseTagsInner>, Integer, Hash)> add_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, get_transaction_types200_response_transaction_types_inner_id)
 
 ```ruby
 begin
   # Add a Transaction Tag
-  data, status_code, headers = api_instance.o_bpv1_2_1_add_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, obpv400_delete_system_level_endpoint_tag200_response)
+  data, status_code, headers = api_instance.add_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, get_transaction_types200_response_transaction_types_inner_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems>
+  p data # => <GetTagsForViewOnAccount200ResponseTagsInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv1_2_1_add_tag_for_view_on_transaction_with_http_info: #{e}"
+  puts "Error when calling TransactionApi->add_tag_for_view_on_transaction_with_http_info: #{e}"
 end
 ```
 
@@ -283,11 +283,11 @@ end
 | **accountid** | **String** | The ACCOUNTID identifier |  |
 | **viewid** | **String** | The VIEWID identifier |  |
 | **transactionid** | **String** | The TRANSACTIONID identifier |  |
-| **obpv400_delete_system_level_endpoint_tag200_response** | [**OBPv400DeleteSystemLevelEndpointTag200Response**](OBPv400DeleteSystemLevelEndpointTag200Response.md) | Request body |  |
+| **get_transaction_types200_response_transaction_types_inner_id** | [**GetTransactionTypes200ResponseTransactionTypesInnerId**](GetTransactionTypes200ResponseTransactionTypesInnerId.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)
+[**GetTagsForViewOnAccount200ResponseTagsInner**](GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 ### Authorization
 
@@ -299,9 +299,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv1_2_1_add_transaction_narrative
+## add_transaction_narrative
 
-> <OBPv121UpdateTransactionNarrative200Response> o_bpv1_2_1_add_transaction_narrative(bankid, accountid, viewid, transactionid, obpv121_get_transaction_narrative200_response)
+> <UpdateTransactionNarrative200Response> add_transaction_narrative(bankid, accountid, viewid, transactionid, get_transaction_narrative200_response)
 
 Add a Transaction Narrative
 
@@ -323,9 +323,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::TransactionApi.new
@@ -333,32 +333,32 @@ bankid = 'bankid_example' # String | The BANKID identifier
 accountid = 'accountid_example' # String | The ACCOUNTID identifier
 viewid = 'viewid_example' # String | The VIEWID identifier
 transactionid = 'transactionid_example' # String | The TRANSACTIONID identifier
-obpv121_get_transaction_narrative200_response = OpenBankProject::OBPv121GetTransactionNarrative200Response.new({type: 'type_example', properties: OpenBankProject::OBPv121GetTransactionNarrative200ResponseProperties.new({narrative: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'})})}) # OBPv121GetTransactionNarrative200Response | Request body
+get_transaction_narrative200_response = OpenBankProject::GetTransactionNarrative200Response.new # GetTransactionNarrative200Response | Request body
 
 begin
   # Add a Transaction Narrative
-  result = api_instance.o_bpv1_2_1_add_transaction_narrative(bankid, accountid, viewid, transactionid, obpv121_get_transaction_narrative200_response)
+  result = api_instance.add_transaction_narrative(bankid, accountid, viewid, transactionid, get_transaction_narrative200_response)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv1_2_1_add_transaction_narrative: #{e}"
+  puts "Error when calling TransactionApi->add_transaction_narrative: #{e}"
 end
 ```
 
-#### Using the o_bpv1_2_1_add_transaction_narrative_with_http_info variant
+#### Using the add_transaction_narrative_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv121UpdateTransactionNarrative200Response>, Integer, Hash)> o_bpv1_2_1_add_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, obpv121_get_transaction_narrative200_response)
+> <Array(<UpdateTransactionNarrative200Response>, Integer, Hash)> add_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, get_transaction_narrative200_response)
 
 ```ruby
 begin
   # Add a Transaction Narrative
-  data, status_code, headers = api_instance.o_bpv1_2_1_add_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, obpv121_get_transaction_narrative200_response)
+  data, status_code, headers = api_instance.add_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, get_transaction_narrative200_response)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv121UpdateTransactionNarrative200Response>
+  p data # => <UpdateTransactionNarrative200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv1_2_1_add_transaction_narrative_with_http_info: #{e}"
+  puts "Error when calling TransactionApi->add_transaction_narrative_with_http_info: #{e}"
 end
 ```
 
@@ -370,11 +370,11 @@ end
 | **accountid** | **String** | The ACCOUNTID identifier |  |
 | **viewid** | **String** | The VIEWID identifier |  |
 | **transactionid** | **String** | The TRANSACTIONID identifier |  |
-| **obpv121_get_transaction_narrative200_response** | [**OBPv121GetTransactionNarrative200Response**](OBPv121GetTransactionNarrative200Response.md) | Request body |  |
+| **get_transaction_narrative200_response** | [**GetTransactionNarrative200Response**](GetTransactionNarrative200Response.md) | Request body |  |
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -386,9 +386,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv1_2_1_add_where_tag_for_view_on_transaction
+## add_where_tag_for_view_on_transaction
 
-> <OBPv121UpdateTransactionNarrative200Response> o_bpv1_2_1_add_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv121_update_where_tag_for_view_on_transaction_request)
+> <UpdateTransactionNarrative200Response> add_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, update_where_tag_for_view_on_transaction_request)
 
 Add a Transaction where Tag
 
@@ -410,9 +410,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::TransactionApi.new
@@ -420,32 +420,32 @@ bankid = 'bankid_example' # String | The BANKID identifier
 accountid = 'accountid_example' # String | The ACCOUNTID identifier
 viewid = 'viewid_example' # String | The VIEWID identifier
 transactionid = 'transactionid_example' # String | The TRANSACTIONID identifier
-obpv121_update_where_tag_for_view_on_transaction_request = OpenBankProject::OBPv121UpdateWhereTagForViewOnTransactionRequest.new({type: 'type_example', properties: OpenBankProject::OBPv121UpdateWhereTagForViewOnTransactionRequestProperties.new({where: OpenBankProject::OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLocation.new({type: 'type_example', properties: OpenBankProject::OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLocationProperties.new({latitude: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), longitude: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'})})})})}) # OBPv121UpdateWhereTagForViewOnTransactionRequest | Request body
+update_where_tag_for_view_on_transaction_request = OpenBankProject::UpdateWhereTagForViewOnTransactionRequest.new # UpdateWhereTagForViewOnTransactionRequest | Request body
 
 begin
   # Add a Transaction where Tag
-  result = api_instance.o_bpv1_2_1_add_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv121_update_where_tag_for_view_on_transaction_request)
+  result = api_instance.add_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, update_where_tag_for_view_on_transaction_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv1_2_1_add_where_tag_for_view_on_transaction: #{e}"
+  puts "Error when calling TransactionApi->add_where_tag_for_view_on_transaction: #{e}"
 end
 ```
 
-#### Using the o_bpv1_2_1_add_where_tag_for_view_on_transaction_with_http_info variant
+#### Using the add_where_tag_for_view_on_transaction_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv121UpdateTransactionNarrative200Response>, Integer, Hash)> o_bpv1_2_1_add_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, obpv121_update_where_tag_for_view_on_transaction_request)
+> <Array(<UpdateTransactionNarrative200Response>, Integer, Hash)> add_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, update_where_tag_for_view_on_transaction_request)
 
 ```ruby
 begin
   # Add a Transaction where Tag
-  data, status_code, headers = api_instance.o_bpv1_2_1_add_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, obpv121_update_where_tag_for_view_on_transaction_request)
+  data, status_code, headers = api_instance.add_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, update_where_tag_for_view_on_transaction_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv121UpdateTransactionNarrative200Response>
+  p data # => <UpdateTransactionNarrative200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv1_2_1_add_where_tag_for_view_on_transaction_with_http_info: #{e}"
+  puts "Error when calling TransactionApi->add_where_tag_for_view_on_transaction_with_http_info: #{e}"
 end
 ```
 
@@ -457,11 +457,11 @@ end
 | **accountid** | **String** | The ACCOUNTID identifier |  |
 | **viewid** | **String** | The VIEWID identifier |  |
 | **transactionid** | **String** | The TRANSACTIONID identifier |  |
-| **obpv121_update_where_tag_for_view_on_transaction_request** | [**OBPv121UpdateWhereTagForViewOnTransactionRequest**](OBPv121UpdateWhereTagForViewOnTransactionRequest.md) | Request body |  |
+| **update_where_tag_for_view_on_transaction_request** | [**UpdateWhereTagForViewOnTransactionRequest**](UpdateWhereTagForViewOnTransactionRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -473,9 +473,175 @@ end
 - **Accept**: application/json
 
 
-## o_bpv1_2_1_delete_comment_for_view_on_transaction
+## create_or_update_transaction_attribute_definition
 
-> o_bpv1_2_1_delete_comment_for_view_on_transaction(bankid, accountid, viewid, transactionid, commentid)
+> <GetTransactionRequestAttributeDefinition200ResponseAttributesInner> create_or_update_transaction_attribute_definition(bankid, create_or_update_transaction_request_attribute_definition_request)
+
+Create or Update Transaction Attribute Definition
+
+<p>Create or Update Transaction Attribute Definition</p> <p>The category field must be Transaction</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
+
+### Examples
+
+```ruby
+require 'time'
+require 'obp_ruby'
+# setup authorization
+OpenBankProject.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure API key authorization: GatewayLogin
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+
+  # Configure API key authorization: DirectLogin
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
+end
+
+api_instance = OpenBankProject::TransactionApi.new
+bankid = 'bankid_example' # String | The BANKID identifier
+create_or_update_transaction_request_attribute_definition_request = OpenBankProject::CreateOrUpdateTransactionRequestAttributeDefinitionRequest.new # CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+
+begin
+  # Create or Update Transaction Attribute Definition
+  result = api_instance.create_or_update_transaction_attribute_definition(bankid, create_or_update_transaction_request_attribute_definition_request)
+  p result
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling TransactionApi->create_or_update_transaction_attribute_definition: #{e}"
+end
+```
+
+#### Using the create_or_update_transaction_attribute_definition_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<GetTransactionRequestAttributeDefinition200ResponseAttributesInner>, Integer, Hash)> create_or_update_transaction_attribute_definition_with_http_info(bankid, create_or_update_transaction_request_attribute_definition_request)
+
+```ruby
+begin
+  # Create or Update Transaction Attribute Definition
+  data, status_code, headers = api_instance.create_or_update_transaction_attribute_definition_with_http_info(bankid, create_or_update_transaction_request_attribute_definition_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <GetTransactionRequestAttributeDefinition200ResponseAttributesInner>
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling TransactionApi->create_or_update_transaction_attribute_definition_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **bankid** | **String** | The BANKID identifier |  |
+| **create_or_update_transaction_request_attribute_definition_request** | [**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body |  |
+
+### Return type
+
+[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## create_transaction_attribute
+
+> <GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner> create_transaction_attribute(bankid, accountid, transactionid, create_personal_data_field_request)
+
+Create Transaction Attribute
+
+<p>Create Transaction Attribute</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
+
+### Examples
+
+```ruby
+require 'time'
+require 'obp_ruby'
+# setup authorization
+OpenBankProject.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure API key authorization: GatewayLogin
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+
+  # Configure API key authorization: DirectLogin
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
+end
+
+api_instance = OpenBankProject::TransactionApi.new
+bankid = 'bankid_example' # String | The BANKID identifier
+accountid = 'accountid_example' # String | The ACCOUNTID identifier
+transactionid = 'transactionid_example' # String | The TRANSACTIONID identifier
+create_personal_data_field_request = OpenBankProject::CreatePersonalDataFieldRequest.new # CreatePersonalDataFieldRequest | Request body
+
+begin
+  # Create Transaction Attribute
+  result = api_instance.create_transaction_attribute(bankid, accountid, transactionid, create_personal_data_field_request)
+  p result
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling TransactionApi->create_transaction_attribute: #{e}"
+end
+```
+
+#### Using the create_transaction_attribute_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner>, Integer, Hash)> create_transaction_attribute_with_http_info(bankid, accountid, transactionid, create_personal_data_field_request)
+
+```ruby
+begin
+  # Create Transaction Attribute
+  data, status_code, headers = api_instance.create_transaction_attribute_with_http_info(bankid, accountid, transactionid, create_personal_data_field_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner>
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling TransactionApi->create_transaction_attribute_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **bankid** | **String** | The BANKID identifier |  |
+| **accountid** | **String** | The ACCOUNTID identifier |  |
+| **transactionid** | **String** | The TRANSACTIONID identifier |  |
+| **create_personal_data_field_request** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md) | Request body |  |
+
+### Return type
+
+[**GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner**](GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## delete_comment_for_view_on_transaction
+
+> delete_comment_for_view_on_transaction(bankid, accountid, viewid, transactionid, commentid)
 
 Delete a Transaction Comment
 
@@ -497,9 +663,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::TransactionApi.new
@@ -511,27 +677,27 @@ commentid = 'commentid_example' # String | The COMMENTID identifier
 
 begin
   # Delete a Transaction Comment
-  api_instance.o_bpv1_2_1_delete_comment_for_view_on_transaction(bankid, accountid, viewid, transactionid, commentid)
+  api_instance.delete_comment_for_view_on_transaction(bankid, accountid, viewid, transactionid, commentid)
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv1_2_1_delete_comment_for_view_on_transaction: #{e}"
+  puts "Error when calling TransactionApi->delete_comment_for_view_on_transaction: #{e}"
 end
 ```
 
-#### Using the o_bpv1_2_1_delete_comment_for_view_on_transaction_with_http_info variant
+#### Using the delete_comment_for_view_on_transaction_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> o_bpv1_2_1_delete_comment_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, commentid)
+> <Array(nil, Integer, Hash)> delete_comment_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, commentid)
 
 ```ruby
 begin
   # Delete a Transaction Comment
-  data, status_code, headers = api_instance.o_bpv1_2_1_delete_comment_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, commentid)
+  data, status_code, headers = api_instance.delete_comment_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, commentid)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv1_2_1_delete_comment_for_view_on_transaction_with_http_info: #{e}"
+  puts "Error when calling TransactionApi->delete_comment_for_view_on_transaction_with_http_info: #{e}"
 end
 ```
 
@@ -559,9 +725,9 @@ nil (empty response body)
 - **Accept**: Not defined
 
 
-## o_bpv1_2_1_delete_image_for_view_on_transaction
+## delete_image_for_view_on_transaction
 
-> o_bpv1_2_1_delete_image_for_view_on_transaction(bankid, accountid, viewid, transactionid, imageid)
+> delete_image_for_view_on_transaction(bankid, accountid, viewid, transactionid, imageid)
 
 Delete a Transaction Image
 
@@ -583,9 +749,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::TransactionApi.new
@@ -597,27 +763,27 @@ imageid = 'imageid_example' # String | The IMAGEID identifier
 
 begin
   # Delete a Transaction Image
-  api_instance.o_bpv1_2_1_delete_image_for_view_on_transaction(bankid, accountid, viewid, transactionid, imageid)
+  api_instance.delete_image_for_view_on_transaction(bankid, accountid, viewid, transactionid, imageid)
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv1_2_1_delete_image_for_view_on_transaction: #{e}"
+  puts "Error when calling TransactionApi->delete_image_for_view_on_transaction: #{e}"
 end
 ```
 
-#### Using the o_bpv1_2_1_delete_image_for_view_on_transaction_with_http_info variant
+#### Using the delete_image_for_view_on_transaction_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> o_bpv1_2_1_delete_image_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, imageid)
+> <Array(nil, Integer, Hash)> delete_image_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, imageid)
 
 ```ruby
 begin
   # Delete a Transaction Image
-  data, status_code, headers = api_instance.o_bpv1_2_1_delete_image_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, imageid)
+  data, status_code, headers = api_instance.delete_image_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, imageid)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv1_2_1_delete_image_for_view_on_transaction_with_http_info: #{e}"
+  puts "Error when calling TransactionApi->delete_image_for_view_on_transaction_with_http_info: #{e}"
 end
 ```
 
@@ -645,9 +811,9 @@ nil (empty response body)
 - **Accept**: Not defined
 
 
-## o_bpv1_2_1_delete_tag_for_view_on_transaction
+## delete_tag_for_view_on_transaction
 
-> o_bpv1_2_1_delete_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, tagid)
+> delete_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, tagid)
 
 Delete a Transaction Tag
 
@@ -668,27 +834,27 @@ tagid = 'tagid_example' # String | The TAGID identifier
 
 begin
   # Delete a Transaction Tag
-  api_instance.o_bpv1_2_1_delete_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, tagid)
+  api_instance.delete_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, tagid)
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv1_2_1_delete_tag_for_view_on_transaction: #{e}"
+  puts "Error when calling TransactionApi->delete_tag_for_view_on_transaction: #{e}"
 end
 ```
 
-#### Using the o_bpv1_2_1_delete_tag_for_view_on_transaction_with_http_info variant
+#### Using the delete_tag_for_view_on_transaction_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> o_bpv1_2_1_delete_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, tagid)
+> <Array(nil, Integer, Hash)> delete_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, tagid)
 
 ```ruby
 begin
   # Delete a Transaction Tag
-  data, status_code, headers = api_instance.o_bpv1_2_1_delete_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, tagid)
+  data, status_code, headers = api_instance.delete_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, tagid)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv1_2_1_delete_tag_for_view_on_transaction_with_http_info: #{e}"
+  puts "Error when calling TransactionApi->delete_tag_for_view_on_transaction_with_http_info: #{e}"
 end
 ```
 
@@ -716,1201 +882,9 @@ No authorization required
 - **Accept**: Not defined
 
 
-## o_bpv1_2_1_delete_transaction_narrative
+## delete_transaction_attribute_definition
 
-> o_bpv1_2_1_delete_transaction_narrative(bankid, accountid, viewid, transactionid)
-
-Delete a Transaction Narrative
-
-<p>Deletes the description of the transaction TRANSACTION_ID.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-
-### Examples
-
-```ruby
-require 'time'
-require 'obp_ruby'
-# setup authorization
-OpenBankProject.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-
-  # Configure API key authorization: GatewayLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-
-  # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-end
-
-api_instance = OpenBankProject::TransactionApi.new
-bankid = 'bankid_example' # String | The BANKID identifier
-accountid = 'accountid_example' # String | The ACCOUNTID identifier
-viewid = 'viewid_example' # String | The VIEWID identifier
-transactionid = 'transactionid_example' # String | The TRANSACTIONID identifier
-
-begin
-  # Delete a Transaction Narrative
-  api_instance.o_bpv1_2_1_delete_transaction_narrative(bankid, accountid, viewid, transactionid)
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv1_2_1_delete_transaction_narrative: #{e}"
-end
-```
-
-#### Using the o_bpv1_2_1_delete_transaction_narrative_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> o_bpv1_2_1_delete_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid)
-
-```ruby
-begin
-  # Delete a Transaction Narrative
-  data, status_code, headers = api_instance.o_bpv1_2_1_delete_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv1_2_1_delete_transaction_narrative_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **bankid** | **String** | The BANKID identifier |  |
-| **accountid** | **String** | The ACCOUNTID identifier |  |
-| **viewid** | **String** | The VIEWID identifier |  |
-| **transactionid** | **String** | The TRANSACTIONID identifier |  |
-
-### Return type
-
-nil (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-
-## o_bpv1_2_1_delete_where_tag_for_view_on_transaction
-
-> o_bpv1_2_1_delete_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid)
-
-Delete a Transaction Tag
-
-<p>Deletes the where tag of the transaction TRANSACTION_ID made on <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>The user must either have owner privileges for this account, or must be the user that posted the geo tag.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-
-### Examples
-
-```ruby
-require 'time'
-require 'obp_ruby'
-# setup authorization
-OpenBankProject.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-
-  # Configure API key authorization: GatewayLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-
-  # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-end
-
-api_instance = OpenBankProject::TransactionApi.new
-bankid = 'bankid_example' # String | The BANKID identifier
-accountid = 'accountid_example' # String | The ACCOUNTID identifier
-viewid = 'viewid_example' # String | The VIEWID identifier
-transactionid = 'transactionid_example' # String | The TRANSACTIONID identifier
-
-begin
-  # Delete a Transaction Tag
-  api_instance.o_bpv1_2_1_delete_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid)
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv1_2_1_delete_where_tag_for_view_on_transaction: #{e}"
-end
-```
-
-#### Using the o_bpv1_2_1_delete_where_tag_for_view_on_transaction_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> o_bpv1_2_1_delete_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid)
-
-```ruby
-begin
-  # Delete a Transaction Tag
-  data, status_code, headers = api_instance.o_bpv1_2_1_delete_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv1_2_1_delete_where_tag_for_view_on_transaction_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **bankid** | **String** | The BANKID identifier |  |
-| **accountid** | **String** | The ACCOUNTID identifier |  |
-| **viewid** | **String** | The VIEWID identifier |  |
-| **transactionid** | **String** | The TRANSACTIONID identifier |  |
-
-### Return type
-
-nil (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-
-## o_bpv1_2_1_get_comments_for_view_on_transaction
-
-> <OBPv121GetCommentsForViewOnTransaction200Response> o_bpv1_2_1_get_comments_for_view_on_transaction(bankid, accountid, viewid, transactionid)
-
-Get Transaction Comments
-
-<p>Returns the transaction TRANSACTION_ID comments made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-
-### Examples
-
-```ruby
-require 'time'
-require 'obp_ruby'
-# setup authorization
-OpenBankProject.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-
-  # Configure API key authorization: GatewayLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-
-  # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-end
-
-api_instance = OpenBankProject::TransactionApi.new
-bankid = 'bankid_example' # String | The BANKID identifier
-accountid = 'accountid_example' # String | The ACCOUNTID identifier
-viewid = 'viewid_example' # String | The VIEWID identifier
-transactionid = 'transactionid_example' # String | The TRANSACTIONID identifier
-
-begin
-  # Get Transaction Comments
-  result = api_instance.o_bpv1_2_1_get_comments_for_view_on_transaction(bankid, accountid, viewid, transactionid)
-  p result
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv1_2_1_get_comments_for_view_on_transaction: #{e}"
-end
-```
-
-#### Using the o_bpv1_2_1_get_comments_for_view_on_transaction_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<OBPv121GetCommentsForViewOnTransaction200Response>, Integer, Hash)> o_bpv1_2_1_get_comments_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid)
-
-```ruby
-begin
-  # Get Transaction Comments
-  data, status_code, headers = api_instance.o_bpv1_2_1_get_comments_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <OBPv121GetCommentsForViewOnTransaction200Response>
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv1_2_1_get_comments_for_view_on_transaction_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **bankid** | **String** | The BANKID identifier |  |
-| **accountid** | **String** | The ACCOUNTID identifier |  |
-| **viewid** | **String** | The VIEWID identifier |  |
-| **transactionid** | **String** | The TRANSACTIONID identifier |  |
-
-### Return type
-
-[**OBPv121GetCommentsForViewOnTransaction200Response**](OBPv121GetCommentsForViewOnTransaction200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## o_bpv1_2_1_get_images_for_view_on_transaction
-
-> <OBPv121GetImagesForViewOnTransaction200Response> o_bpv1_2_1_get_images_for_view_on_transaction(bankid, accountid, viewid, transactionid)
-
-Get Transaction Images
-
-<p>Returns the transaction TRANSACTION_ID images made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#images\"><strong>images</strong></a>:</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
-
-### Examples
-
-```ruby
-require 'time'
-require 'obp_ruby'
-# setup authorization
-OpenBankProject.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-
-  # Configure API key authorization: GatewayLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-
-  # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-end
-
-api_instance = OpenBankProject::TransactionApi.new
-bankid = 'bankid_example' # String | The BANKID identifier
-accountid = 'accountid_example' # String | The ACCOUNTID identifier
-viewid = 'viewid_example' # String | The VIEWID identifier
-transactionid = 'transactionid_example' # String | The TRANSACTIONID identifier
-
-begin
-  # Get Transaction Images
-  result = api_instance.o_bpv1_2_1_get_images_for_view_on_transaction(bankid, accountid, viewid, transactionid)
-  p result
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv1_2_1_get_images_for_view_on_transaction: #{e}"
-end
-```
-
-#### Using the o_bpv1_2_1_get_images_for_view_on_transaction_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<OBPv121GetImagesForViewOnTransaction200Response>, Integer, Hash)> o_bpv1_2_1_get_images_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid)
-
-```ruby
-begin
-  # Get Transaction Images
-  data, status_code, headers = api_instance.o_bpv1_2_1_get_images_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <OBPv121GetImagesForViewOnTransaction200Response>
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv1_2_1_get_images_for_view_on_transaction_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **bankid** | **String** | The BANKID identifier |  |
-| **accountid** | **String** | The ACCOUNTID identifier |  |
-| **viewid** | **String** | The VIEWID identifier |  |
-| **transactionid** | **String** | The TRANSACTIONID identifier |  |
-
-### Return type
-
-[**OBPv121GetImagesForViewOnTransaction200Response**](OBPv121GetImagesForViewOnTransaction200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## o_bpv1_2_1_get_other_account_for_transaction
-
-> <OBPv121GetOtherAccountForTransaction200Response> o_bpv1_2_1_get_other_account_for_transaction(bankid, accountid, viewid, transactionid)
-
-Get Other Account of Transaction
-
-<p>Get other account of a transaction.<br /> Returns details of the other party involved in the transaction, moderated by the <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>IBAN</strong></a>: DE91 1000 0000 0123 4567 89</p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#Bank\"><strong>bank</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#kind\"><strong>kind</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#national_identifier\"><strong>national_identifier</strong></a>:</p> <p><a href=\"/glossary#number\"><strong>number</strong></a>:</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#swift_bic\"><strong>swift_bic</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
-
-### Examples
-
-```ruby
-require 'time'
-require 'obp_ruby'
-
-api_instance = OpenBankProject::TransactionApi.new
-bankid = 'bankid_example' # String | The BANKID identifier
-accountid = 'accountid_example' # String | The ACCOUNTID identifier
-viewid = 'viewid_example' # String | The VIEWID identifier
-transactionid = 'transactionid_example' # String | The TRANSACTIONID identifier
-
-begin
-  # Get Other Account of Transaction
-  result = api_instance.o_bpv1_2_1_get_other_account_for_transaction(bankid, accountid, viewid, transactionid)
-  p result
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv1_2_1_get_other_account_for_transaction: #{e}"
-end
-```
-
-#### Using the o_bpv1_2_1_get_other_account_for_transaction_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<OBPv121GetOtherAccountForTransaction200Response>, Integer, Hash)> o_bpv1_2_1_get_other_account_for_transaction_with_http_info(bankid, accountid, viewid, transactionid)
-
-```ruby
-begin
-  # Get Other Account of Transaction
-  data, status_code, headers = api_instance.o_bpv1_2_1_get_other_account_for_transaction_with_http_info(bankid, accountid, viewid, transactionid)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <OBPv121GetOtherAccountForTransaction200Response>
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv1_2_1_get_other_account_for_transaction_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **bankid** | **String** | The BANKID identifier |  |
-| **accountid** | **String** | The ACCOUNTID identifier |  |
-| **viewid** | **String** | The VIEWID identifier |  |
-| **transactionid** | **String** | The TRANSACTIONID identifier |  |
-
-### Return type
-
-[**OBPv121GetOtherAccountForTransaction200Response**](OBPv121GetOtherAccountForTransaction200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## o_bpv1_2_1_get_tags_for_view_on_transaction
-
-> <OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems> o_bpv1_2_1_get_tags_for_view_on_transaction(bankid, accountid, viewid, transactionid)
-
-Get Transaction Tags
-
-<p>Returns the transaction TRANSACTION_ID tags made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-
-### Examples
-
-```ruby
-require 'time'
-require 'obp_ruby'
-
-api_instance = OpenBankProject::TransactionApi.new
-bankid = 'bankid_example' # String | The BANKID identifier
-accountid = 'accountid_example' # String | The ACCOUNTID identifier
-viewid = 'viewid_example' # String | The VIEWID identifier
-transactionid = 'transactionid_example' # String | The TRANSACTIONID identifier
-
-begin
-  # Get Transaction Tags
-  result = api_instance.o_bpv1_2_1_get_tags_for_view_on_transaction(bankid, accountid, viewid, transactionid)
-  p result
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv1_2_1_get_tags_for_view_on_transaction: #{e}"
-end
-```
-
-#### Using the o_bpv1_2_1_get_tags_for_view_on_transaction_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems>, Integer, Hash)> o_bpv1_2_1_get_tags_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid)
-
-```ruby
-begin
-  # Get Transaction Tags
-  data, status_code, headers = api_instance.o_bpv1_2_1_get_tags_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems>
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv1_2_1_get_tags_for_view_on_transaction_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **bankid** | **String** | The BANKID identifier |  |
-| **accountid** | **String** | The ACCOUNTID identifier |  |
-| **viewid** | **String** | The VIEWID identifier |  |
-| **transactionid** | **String** | The TRANSACTIONID identifier |  |
-
-### Return type
-
-[**OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## o_bpv1_2_1_get_transaction_narrative
-
-> <OBPv121GetTransactionNarrative200Response> o_bpv1_2_1_get_transaction_narrative(bankid, accountid, viewid, transactionid)
-
-Get a Transaction Narrative
-
-<p>Returns the account owner description of the transaction <a href=\"#1_2_1-getViewsForBankAccount\">moderated</a> by the view.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> 
-
-### Examples
-
-```ruby
-require 'time'
-require 'obp_ruby'
-
-api_instance = OpenBankProject::TransactionApi.new
-bankid = 'bankid_example' # String | The BANKID identifier
-accountid = 'accountid_example' # String | The ACCOUNTID identifier
-viewid = 'viewid_example' # String | The VIEWID identifier
-transactionid = 'transactionid_example' # String | The TRANSACTIONID identifier
-
-begin
-  # Get a Transaction Narrative
-  result = api_instance.o_bpv1_2_1_get_transaction_narrative(bankid, accountid, viewid, transactionid)
-  p result
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv1_2_1_get_transaction_narrative: #{e}"
-end
-```
-
-#### Using the o_bpv1_2_1_get_transaction_narrative_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<OBPv121GetTransactionNarrative200Response>, Integer, Hash)> o_bpv1_2_1_get_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid)
-
-```ruby
-begin
-  # Get a Transaction Narrative
-  data, status_code, headers = api_instance.o_bpv1_2_1_get_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <OBPv121GetTransactionNarrative200Response>
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv1_2_1_get_transaction_narrative_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **bankid** | **String** | The BANKID identifier |  |
-| **accountid** | **String** | The ACCOUNTID identifier |  |
-| **viewid** | **String** | The VIEWID identifier |  |
-| **transactionid** | **String** | The TRANSACTIONID identifier |  |
-
-### Return type
-
-[**OBPv121GetTransactionNarrative200Response**](OBPv121GetTransactionNarrative200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## o_bpv1_2_1_get_where_tag_for_view_on_transaction
-
-> <OBPv121GetWhereTagForViewOnTransaction200Response> o_bpv1_2_1_get_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid)
-
-Get a Transaction where Tag
-
-<p>Returns the &quot;where&quot; Geo tag added to the transaction TRANSACTION_ID made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> It represents the location where the transaction has been initiated.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> 
-
-### Examples
-
-```ruby
-require 'time'
-require 'obp_ruby'
-
-api_instance = OpenBankProject::TransactionApi.new
-bankid = 'bankid_example' # String | The BANKID identifier
-accountid = 'accountid_example' # String | The ACCOUNTID identifier
-viewid = 'viewid_example' # String | The VIEWID identifier
-transactionid = 'transactionid_example' # String | The TRANSACTIONID identifier
-
-begin
-  # Get a Transaction where Tag
-  result = api_instance.o_bpv1_2_1_get_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid)
-  p result
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv1_2_1_get_where_tag_for_view_on_transaction: #{e}"
-end
-```
-
-#### Using the o_bpv1_2_1_get_where_tag_for_view_on_transaction_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<OBPv121GetWhereTagForViewOnTransaction200Response>, Integer, Hash)> o_bpv1_2_1_get_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid)
-
-```ruby
-begin
-  # Get a Transaction where Tag
-  data, status_code, headers = api_instance.o_bpv1_2_1_get_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <OBPv121GetWhereTagForViewOnTransaction200Response>
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv1_2_1_get_where_tag_for_view_on_transaction_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **bankid** | **String** | The BANKID identifier |  |
-| **accountid** | **String** | The ACCOUNTID identifier |  |
-| **viewid** | **String** | The VIEWID identifier |  |
-| **transactionid** | **String** | The TRANSACTIONID identifier |  |
-
-### Return type
-
-[**OBPv121GetWhereTagForViewOnTransaction200Response**](OBPv121GetWhereTagForViewOnTransaction200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## o_bpv1_2_1_update_transaction_narrative
-
-> <OBPv121UpdateTransactionNarrative200Response> o_bpv1_2_1_update_transaction_narrative(bankid, accountid, viewid, transactionid, obpv121_get_transaction_narrative200_response)
-
-Update a Transaction Narrative
-
-<p>Updates the description of the transaction TRANSACTION_ID.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-### Examples
-
-```ruby
-require 'time'
-require 'obp_ruby'
-
-api_instance = OpenBankProject::TransactionApi.new
-bankid = 'bankid_example' # String | The BANKID identifier
-accountid = 'accountid_example' # String | The ACCOUNTID identifier
-viewid = 'viewid_example' # String | The VIEWID identifier
-transactionid = 'transactionid_example' # String | The TRANSACTIONID identifier
-obpv121_get_transaction_narrative200_response = OpenBankProject::OBPv121GetTransactionNarrative200Response.new({type: 'type_example', properties: OpenBankProject::OBPv121GetTransactionNarrative200ResponseProperties.new({narrative: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'})})}) # OBPv121GetTransactionNarrative200Response | Request body
-
-begin
-  # Update a Transaction Narrative
-  result = api_instance.o_bpv1_2_1_update_transaction_narrative(bankid, accountid, viewid, transactionid, obpv121_get_transaction_narrative200_response)
-  p result
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv1_2_1_update_transaction_narrative: #{e}"
-end
-```
-
-#### Using the o_bpv1_2_1_update_transaction_narrative_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<OBPv121UpdateTransactionNarrative200Response>, Integer, Hash)> o_bpv1_2_1_update_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, obpv121_get_transaction_narrative200_response)
-
-```ruby
-begin
-  # Update a Transaction Narrative
-  data, status_code, headers = api_instance.o_bpv1_2_1_update_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, obpv121_get_transaction_narrative200_response)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <OBPv121UpdateTransactionNarrative200Response>
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv1_2_1_update_transaction_narrative_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **bankid** | **String** | The BANKID identifier |  |
-| **accountid** | **String** | The ACCOUNTID identifier |  |
-| **viewid** | **String** | The VIEWID identifier |  |
-| **transactionid** | **String** | The TRANSACTIONID identifier |  |
-| **obpv121_get_transaction_narrative200_response** | [**OBPv121GetTransactionNarrative200Response**](OBPv121GetTransactionNarrative200Response.md) | Request body |  |
-
-### Return type
-
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## o_bpv1_2_1_update_where_tag_for_view_on_transaction
-
-> <OBPv121UpdateTransactionNarrative200Response> o_bpv1_2_1_update_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv121_update_where_tag_for_view_on_transaction_request)
-
-Update a Transaction where Tag
-
-<p>Updates the &quot;where&quot; Geo tag on a transaction TRANSACTION_ID in a <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>The geo tag is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-### Examples
-
-```ruby
-require 'time'
-require 'obp_ruby'
-# setup authorization
-OpenBankProject.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-
-  # Configure API key authorization: GatewayLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-
-  # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-end
-
-api_instance = OpenBankProject::TransactionApi.new
-bankid = 'bankid_example' # String | The BANKID identifier
-accountid = 'accountid_example' # String | The ACCOUNTID identifier
-viewid = 'viewid_example' # String | The VIEWID identifier
-transactionid = 'transactionid_example' # String | The TRANSACTIONID identifier
-obpv121_update_where_tag_for_view_on_transaction_request = OpenBankProject::OBPv121UpdateWhereTagForViewOnTransactionRequest.new({type: 'type_example', properties: OpenBankProject::OBPv121UpdateWhereTagForViewOnTransactionRequestProperties.new({where: OpenBankProject::OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLocation.new({type: 'type_example', properties: OpenBankProject::OBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLocationProperties.new({latitude: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), longitude: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'})})})})}) # OBPv121UpdateWhereTagForViewOnTransactionRequest | Request body
-
-begin
-  # Update a Transaction where Tag
-  result = api_instance.o_bpv1_2_1_update_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv121_update_where_tag_for_view_on_transaction_request)
-  p result
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv1_2_1_update_where_tag_for_view_on_transaction: #{e}"
-end
-```
-
-#### Using the o_bpv1_2_1_update_where_tag_for_view_on_transaction_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<OBPv121UpdateTransactionNarrative200Response>, Integer, Hash)> o_bpv1_2_1_update_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, obpv121_update_where_tag_for_view_on_transaction_request)
-
-```ruby
-begin
-  # Update a Transaction where Tag
-  data, status_code, headers = api_instance.o_bpv1_2_1_update_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, obpv121_update_where_tag_for_view_on_transaction_request)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <OBPv121UpdateTransactionNarrative200Response>
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv1_2_1_update_where_tag_for_view_on_transaction_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **bankid** | **String** | The BANKID identifier |  |
-| **accountid** | **String** | The ACCOUNTID identifier |  |
-| **viewid** | **String** | The VIEWID identifier |  |
-| **transactionid** | **String** | The TRANSACTIONID identifier |  |
-| **obpv121_update_where_tag_for_view_on_transaction_request** | [**OBPv121UpdateWhereTagForViewOnTransactionRequest**](OBPv121UpdateWhereTagForViewOnTransactionRequest.md) | Request body |  |
-
-### Return type
-
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## o_bpv3_0_0_get_core_transactions_for_bank_account
-
-> <OBPv300GetCoreTransactionsForBankAccount200Response> o_bpv3_0_0_get_core_transactions_for_bank_account(bankid, accountid)
-
-Get Transactions for Account (Core)
-
-<p>Returns transactions list (Core info) of the account specified by ACCOUNT_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>Possible custom url parameters for pagination:</p> <ul> <li>limit=NUMBER ==&gt; default value: 50</li> <li>offset=NUMBER ==&gt; default value: 0</li> </ul> <p>eg1:?limit=100&amp;offset=0</p> <ul> <li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li> </ul> <p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p> <ul> <li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li> <li>to_date=DATE =&gt; example value: 2026-03-16T19:25:56.865Z. NOTE! The default value is now (2026-03-16T19:25:56.865Z).</li> </ul> <p>Date format parameter: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p> <p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#completed\"><strong>completed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#details\"><strong>details</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#holders\"><strong>holders</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#new_balance\"><strong>new_balance</strong></a>: 20</p> <p><a href=\"/glossary#other_account\"><strong>other_account</strong></a>:</p> <p><a href=\"/glossary#posted\"><strong>posted</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#this_account\"><strong>this_account</strong></a>:</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#transaction_attributes\"><strong>transaction_attributes</strong></a>:</p> <p><a href=\"/glossary#transactions\"><strong>transactions</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-
-### Examples
-
-```ruby
-require 'time'
-require 'obp_ruby'
-# setup authorization
-OpenBankProject.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-
-  # Configure API key authorization: GatewayLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-
-  # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-end
-
-api_instance = OpenBankProject::TransactionApi.new
-bankid = 'bankid_example' # String | The BANKID identifier
-accountid = 'accountid_example' # String | The ACCOUNTID identifier
-
-begin
-  # Get Transactions for Account (Core)
-  result = api_instance.o_bpv3_0_0_get_core_transactions_for_bank_account(bankid, accountid)
-  p result
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv3_0_0_get_core_transactions_for_bank_account: #{e}"
-end
-```
-
-#### Using the o_bpv3_0_0_get_core_transactions_for_bank_account_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<OBPv300GetCoreTransactionsForBankAccount200Response>, Integer, Hash)> o_bpv3_0_0_get_core_transactions_for_bank_account_with_http_info(bankid, accountid)
-
-```ruby
-begin
-  # Get Transactions for Account (Core)
-  data, status_code, headers = api_instance.o_bpv3_0_0_get_core_transactions_for_bank_account_with_http_info(bankid, accountid)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <OBPv300GetCoreTransactionsForBankAccount200Response>
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv3_0_0_get_core_transactions_for_bank_account_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **bankid** | **String** | The BANKID identifier |  |
-| **accountid** | **String** | The ACCOUNTID identifier |  |
-
-### Return type
-
-[**OBPv300GetCoreTransactionsForBankAccount200Response**](OBPv300GetCoreTransactionsForBankAccount200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## o_bpv3_0_0_get_firehose_transactions_for_bank_account
-
-> <OBPv300GetFirehoseTransactionsForBankAccount200Response> o_bpv3_0_0_get_firehose_transactions_for_bank_account(bankid, accountid, viewid)
-
-Get Firehose Transactions for Account
-
-<p>Get Transactions for an Account that has a firehose View.</p> <p>Allows bulk access to an account's transactions.<br /> User must have the CanUseFirehoseAtAnyBank Role</p> <p>To find ACCOUNT_IDs, use the getFirehoseAccountsAtOneBank call.</p> <p>For VIEW_ID try 'owner'</p> <p>Possible custom url parameters for pagination:</p> <ul> <li>limit=NUMBER ==&gt; default value: 50</li> <li>offset=NUMBER ==&gt; default value: 0</li> </ul> <p>eg1:?limit=100&amp;offset=0</p> <ul> <li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li> </ul> <p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p> <ul> <li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li> <li>to_date=DATE =&gt; example value: 2026-03-16T19:25:56.865Z. NOTE! The default value is now (2026-03-16T19:25:56.865Z).</li> </ul> <p>Date format parameter: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p> <p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#completed\"><strong>completed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#details\"><strong>details</strong></a>:</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#holders\"><strong>holders</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#images\"><strong>images</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> <p><a href=\"/glossary#new_balance\"><strong>new_balance</strong></a>: 20</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#other_account\"><strong>other_account</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#posted\"><strong>posted</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><a href=\"/glossary#this_account\"><strong>this_account</strong></a>:</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#transaction_attributes\"><strong>transaction_attributes</strong></a>:</p> <p><a href=\"/glossary#transactions\"><strong>transactions</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> 
-
-### Examples
-
-```ruby
-require 'time'
-require 'obp_ruby'
-# setup authorization
-OpenBankProject.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-
-  # Configure API key authorization: GatewayLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-
-  # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-end
-
-api_instance = OpenBankProject::TransactionApi.new
-bankid = 'bankid_example' # String | The BANKID identifier
-accountid = 'accountid_example' # String | The ACCOUNTID identifier
-viewid = 'viewid_example' # String | The VIEWID identifier
-
-begin
-  # Get Firehose Transactions for Account
-  result = api_instance.o_bpv3_0_0_get_firehose_transactions_for_bank_account(bankid, accountid, viewid)
-  p result
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv3_0_0_get_firehose_transactions_for_bank_account: #{e}"
-end
-```
-
-#### Using the o_bpv3_0_0_get_firehose_transactions_for_bank_account_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<OBPv300GetFirehoseTransactionsForBankAccount200Response>, Integer, Hash)> o_bpv3_0_0_get_firehose_transactions_for_bank_account_with_http_info(bankid, accountid, viewid)
-
-```ruby
-begin
-  # Get Firehose Transactions for Account
-  data, status_code, headers = api_instance.o_bpv3_0_0_get_firehose_transactions_for_bank_account_with_http_info(bankid, accountid, viewid)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <OBPv300GetFirehoseTransactionsForBankAccount200Response>
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv3_0_0_get_firehose_transactions_for_bank_account_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **bankid** | **String** | The BANKID identifier |  |
-| **accountid** | **String** | The ACCOUNTID identifier |  |
-| **viewid** | **String** | The VIEWID identifier |  |
-
-### Return type
-
-[**OBPv300GetFirehoseTransactionsForBankAccount200Response**](OBPv300GetFirehoseTransactionsForBankAccount200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## o_bpv3_1_0_get_transaction_by_id_for_bank_account
-
-> <OBPv310GetTransactionByIdForBankAccount200Response> o_bpv3_1_0_get_transaction_by_id_for_bank_account(bankid, accountid, viewid, transactionid)
-
-Get Transaction by Id
-
-<p>Returns one transaction specified by TRANSACTION_ID of the account ACCOUNT_ID and <a href=\"#1_2_1-getViewsForBankAccount\">moderated</a> by the view (VIEW_ID).</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#completed\"><strong>completed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#details\"><strong>details</strong></a>:</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#holders\"><strong>holders</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#images\"><strong>images</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> <p><a href=\"/glossary#new_balance\"><strong>new_balance</strong></a>: 20</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#other_account\"><strong>other_account</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#posted\"><strong>posted</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><a href=\"/glossary#this_account\"><strong>this_account</strong></a>:</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#transaction_attributes\"><strong>transaction_attributes</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> 
-
-### Examples
-
-```ruby
-require 'time'
-require 'obp_ruby'
-# setup authorization
-OpenBankProject.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-
-  # Configure API key authorization: GatewayLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-
-  # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-end
-
-api_instance = OpenBankProject::TransactionApi.new
-bankid = 'bankid_example' # String | The BANKID identifier
-accountid = 'accountid_example' # String | The ACCOUNTID identifier
-viewid = 'viewid_example' # String | The VIEWID identifier
-transactionid = 'transactionid_example' # String | The TRANSACTIONID identifier
-
-begin
-  # Get Transaction by Id
-  result = api_instance.o_bpv3_1_0_get_transaction_by_id_for_bank_account(bankid, accountid, viewid, transactionid)
-  p result
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv3_1_0_get_transaction_by_id_for_bank_account: #{e}"
-end
-```
-
-#### Using the o_bpv3_1_0_get_transaction_by_id_for_bank_account_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<OBPv310GetTransactionByIdForBankAccount200Response>, Integer, Hash)> o_bpv3_1_0_get_transaction_by_id_for_bank_account_with_http_info(bankid, accountid, viewid, transactionid)
-
-```ruby
-begin
-  # Get Transaction by Id
-  data, status_code, headers = api_instance.o_bpv3_1_0_get_transaction_by_id_for_bank_account_with_http_info(bankid, accountid, viewid, transactionid)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <OBPv310GetTransactionByIdForBankAccount200Response>
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv3_1_0_get_transaction_by_id_for_bank_account_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **bankid** | **String** | The BANKID identifier |  |
-| **accountid** | **String** | The ACCOUNTID identifier |  |
-| **viewid** | **String** | The VIEWID identifier |  |
-| **transactionid** | **String** | The TRANSACTIONID identifier |  |
-
-### Return type
-
-[**OBPv310GetTransactionByIdForBankAccount200Response**](OBPv310GetTransactionByIdForBankAccount200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## o_bpv4_0_0_create_or_update_transaction_attribute_definition
-
-> <OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems> o_bpv4_0_0_create_or_update_transaction_attribute_definition(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request)
-
-Create or Update Transaction Attribute Definition
-
-<p>Create or Update Transaction Attribute Definition</p> <p>The category field must be Transaction</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
-
-### Examples
-
-```ruby
-require 'time'
-require 'obp_ruby'
-# setup authorization
-OpenBankProject.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-
-  # Configure API key authorization: GatewayLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-
-  # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-end
-
-api_instance = OpenBankProject::TransactionApi.new
-bankid = 'bankid_example' # String | The BANKID identifier
-obpv400_create_or_update_transaction_request_attribute_definition_request = OpenBankProject::OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.new({type: 'type_example', properties: OpenBankProject::OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequestProperties.new({name: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), is_active: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), description: , _alias: , can_be_seen_on_views: OpenBankProject::OBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds.new({type: 'type_example', items: }), category: , type: })}) # OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
-
-begin
-  # Create or Update Transaction Attribute Definition
-  result = api_instance.o_bpv4_0_0_create_or_update_transaction_attribute_definition(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request)
-  p result
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv4_0_0_create_or_update_transaction_attribute_definition: #{e}"
-end
-```
-
-#### Using the o_bpv4_0_0_create_or_update_transaction_attribute_definition_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems>, Integer, Hash)> o_bpv4_0_0_create_or_update_transaction_attribute_definition_with_http_info(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request)
-
-```ruby
-begin
-  # Create or Update Transaction Attribute Definition
-  data, status_code, headers = api_instance.o_bpv4_0_0_create_or_update_transaction_attribute_definition_with_http_info(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems>
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv4_0_0_create_or_update_transaction_attribute_definition_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **bankid** | **String** | The BANKID identifier |  |
-| **obpv400_create_or_update_transaction_request_attribute_definition_request** | [**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body |  |
-
-### Return type
-
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## o_bpv4_0_0_create_transaction_attribute
-
-> <OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems> o_bpv4_0_0_create_transaction_attribute(bankid, accountid, transactionid, obpv600_create_personal_data_field_request)
-
-Create Transaction Attribute
-
-<p>Create Transaction Attribute</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-
-### Examples
-
-```ruby
-require 'time'
-require 'obp_ruby'
-# setup authorization
-OpenBankProject.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-
-  # Configure API key authorization: GatewayLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-
-  # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-end
-
-api_instance = OpenBankProject::TransactionApi.new
-bankid = 'bankid_example' # String | The BANKID identifier
-accountid = 'accountid_example' # String | The ACCOUNTID identifier
-transactionid = 'transactionid_example' # String | The TRANSACTIONID identifier
-obpv600_create_personal_data_field_request = OpenBankProject::OBPv600CreatePersonalDataFieldRequest.new({type: 'type_example', properties: OpenBankProject::OBPv600CreatePersonalDataFieldRequestProperties.new({name: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), type: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), value: })}) # OBPv600CreatePersonalDataFieldRequest | Request body
-
-begin
-  # Create Transaction Attribute
-  result = api_instance.o_bpv4_0_0_create_transaction_attribute(bankid, accountid, transactionid, obpv600_create_personal_data_field_request)
-  p result
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv4_0_0_create_transaction_attribute: #{e}"
-end
-```
-
-#### Using the o_bpv4_0_0_create_transaction_attribute_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems>, Integer, Hash)> o_bpv4_0_0_create_transaction_attribute_with_http_info(bankid, accountid, transactionid, obpv600_create_personal_data_field_request)
-
-```ruby
-begin
-  # Create Transaction Attribute
-  data, status_code, headers = api_instance.o_bpv4_0_0_create_transaction_attribute_with_http_info(bankid, accountid, transactionid, obpv600_create_personal_data_field_request)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems>
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv4_0_0_create_transaction_attribute_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **bankid** | **String** | The BANKID identifier |  |
-| **accountid** | **String** | The ACCOUNTID identifier |  |
-| **transactionid** | **String** | The TRANSACTIONID identifier |  |
-| **obpv600_create_personal_data_field_request** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md) | Request body |  |
-
-### Return type
-
-[**OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems**](OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## o_bpv4_0_0_delete_transaction_attribute_definition
-
-> o_bpv4_0_0_delete_transaction_attribute_definition(bankid, attributedefinitionid)
+> delete_transaction_attribute_definition(bankid, attributedefinitionid)
 
 Delete Transaction Attribute Definition
 
@@ -1932,9 +906,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::TransactionApi.new
@@ -1943,27 +917,27 @@ attributedefinitionid = 'attributedefinitionid_example' # String | The ATTRIBUTE
 
 begin
   # Delete Transaction Attribute Definition
-  api_instance.o_bpv4_0_0_delete_transaction_attribute_definition(bankid, attributedefinitionid)
+  api_instance.delete_transaction_attribute_definition(bankid, attributedefinitionid)
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv4_0_0_delete_transaction_attribute_definition: #{e}"
+  puts "Error when calling TransactionApi->delete_transaction_attribute_definition: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_delete_transaction_attribute_definition_with_http_info variant
+#### Using the delete_transaction_attribute_definition_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> o_bpv4_0_0_delete_transaction_attribute_definition_with_http_info(bankid, attributedefinitionid)
+> <Array(nil, Integer, Hash)> delete_transaction_attribute_definition_with_http_info(bankid, attributedefinitionid)
 
 ```ruby
 begin
   # Delete Transaction Attribute Definition
-  data, status_code, headers = api_instance.o_bpv4_0_0_delete_transaction_attribute_definition_with_http_info(bankid, attributedefinitionid)
+  data, status_code, headers = api_instance.delete_transaction_attribute_definition_with_http_info(bankid, attributedefinitionid)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv4_0_0_delete_transaction_attribute_definition_with_http_info: #{e}"
+  puts "Error when calling TransactionApi->delete_transaction_attribute_definition_with_http_info: #{e}"
 end
 ```
 
@@ -1988,9 +962,9 @@ nil (empty response body)
 - **Accept**: Not defined
 
 
-## o_bpv4_0_0_delete_transaction_cascade
+## delete_transaction_cascade
 
-> o_bpv4_0_0_delete_transaction_cascade(bankid, accountid, transactionid)
+> delete_transaction_cascade(bankid, accountid, transactionid)
 
 Delete Transaction Cascade
 
@@ -2012,9 +986,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::TransactionApi.new
@@ -2024,27 +998,27 @@ transactionid = 'transactionid_example' # String | The TRANSACTIONID identifier
 
 begin
   # Delete Transaction Cascade
-  api_instance.o_bpv4_0_0_delete_transaction_cascade(bankid, accountid, transactionid)
+  api_instance.delete_transaction_cascade(bankid, accountid, transactionid)
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv4_0_0_delete_transaction_cascade: #{e}"
+  puts "Error when calling TransactionApi->delete_transaction_cascade: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_delete_transaction_cascade_with_http_info variant
+#### Using the delete_transaction_cascade_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> o_bpv4_0_0_delete_transaction_cascade_with_http_info(bankid, accountid, transactionid)
+> <Array(nil, Integer, Hash)> delete_transaction_cascade_with_http_info(bankid, accountid, transactionid)
 
 ```ruby
 begin
   # Delete Transaction Cascade
-  data, status_code, headers = api_instance.o_bpv4_0_0_delete_transaction_cascade_with_http_info(bankid, accountid, transactionid)
+  data, status_code, headers = api_instance.delete_transaction_cascade_with_http_info(bankid, accountid, transactionid)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv4_0_0_delete_transaction_cascade_with_http_info: #{e}"
+  puts "Error when calling TransactionApi->delete_transaction_cascade_with_http_info: #{e}"
 end
 ```
 
@@ -2070,9 +1044,177 @@ nil (empty response body)
 - **Accept**: Not defined
 
 
-## o_bpv4_0_0_get_balancing_transaction
+## delete_transaction_narrative
 
-> <OBPv400GetDoubleEntryTransaction200Response> o_bpv4_0_0_get_balancing_transaction(transactionid)
+> delete_transaction_narrative(bankid, accountid, viewid, transactionid)
+
+Delete a Transaction Narrative
+
+<p>Deletes the description of the transaction TRANSACTION_ID.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
+
+### Examples
+
+```ruby
+require 'time'
+require 'obp_ruby'
+# setup authorization
+OpenBankProject.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure API key authorization: GatewayLogin
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+
+  # Configure API key authorization: DirectLogin
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
+end
+
+api_instance = OpenBankProject::TransactionApi.new
+bankid = 'bankid_example' # String | The BANKID identifier
+accountid = 'accountid_example' # String | The ACCOUNTID identifier
+viewid = 'viewid_example' # String | The VIEWID identifier
+transactionid = 'transactionid_example' # String | The TRANSACTIONID identifier
+
+begin
+  # Delete a Transaction Narrative
+  api_instance.delete_transaction_narrative(bankid, accountid, viewid, transactionid)
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling TransactionApi->delete_transaction_narrative: #{e}"
+end
+```
+
+#### Using the delete_transaction_narrative_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> delete_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid)
+
+```ruby
+begin
+  # Delete a Transaction Narrative
+  data, status_code, headers = api_instance.delete_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling TransactionApi->delete_transaction_narrative_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **bankid** | **String** | The BANKID identifier |  |
+| **accountid** | **String** | The ACCOUNTID identifier |  |
+| **viewid** | **String** | The VIEWID identifier |  |
+| **transactionid** | **String** | The TRANSACTIONID identifier |  |
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
+## delete_where_tag_for_view_on_transaction
+
+> delete_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid)
+
+Delete a Transaction Tag
+
+<p>Deletes the where tag of the transaction TRANSACTION_ID made on <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>The user must either have owner privileges for this account, or must be the user that posted the geo tag.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
+
+### Examples
+
+```ruby
+require 'time'
+require 'obp_ruby'
+# setup authorization
+OpenBankProject.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure API key authorization: GatewayLogin
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+
+  # Configure API key authorization: DirectLogin
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
+end
+
+api_instance = OpenBankProject::TransactionApi.new
+bankid = 'bankid_example' # String | The BANKID identifier
+accountid = 'accountid_example' # String | The ACCOUNTID identifier
+viewid = 'viewid_example' # String | The VIEWID identifier
+transactionid = 'transactionid_example' # String | The TRANSACTIONID identifier
+
+begin
+  # Delete a Transaction Tag
+  api_instance.delete_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid)
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling TransactionApi->delete_where_tag_for_view_on_transaction: #{e}"
+end
+```
+
+#### Using the delete_where_tag_for_view_on_transaction_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> delete_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid)
+
+```ruby
+begin
+  # Delete a Transaction Tag
+  data, status_code, headers = api_instance.delete_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling TransactionApi->delete_where_tag_for_view_on_transaction_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **bankid** | **String** | The BANKID identifier |  |
+| **accountid** | **String** | The ACCOUNTID identifier |  |
+| **viewid** | **String** | The VIEWID identifier |  |
+| **transactionid** | **String** | The TRANSACTIONID identifier |  |
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
+## get_balancing_transaction
+
+> <GetDoubleEntryTransaction200Response> get_balancing_transaction(transactionid)
 
 Get Balancing Transaction
 
@@ -2094,9 +1236,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::TransactionApi.new
@@ -2104,28 +1246,28 @@ transactionid = 'transactionid_example' # String | The TRANSACTIONID identifier
 
 begin
   # Get Balancing Transaction
-  result = api_instance.o_bpv4_0_0_get_balancing_transaction(transactionid)
+  result = api_instance.get_balancing_transaction(transactionid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv4_0_0_get_balancing_transaction: #{e}"
+  puts "Error when calling TransactionApi->get_balancing_transaction: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_get_balancing_transaction_with_http_info variant
+#### Using the get_balancing_transaction_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetDoubleEntryTransaction200Response>, Integer, Hash)> o_bpv4_0_0_get_balancing_transaction_with_http_info(transactionid)
+> <Array(<GetDoubleEntryTransaction200Response>, Integer, Hash)> get_balancing_transaction_with_http_info(transactionid)
 
 ```ruby
 begin
   # Get Balancing Transaction
-  data, status_code, headers = api_instance.o_bpv4_0_0_get_balancing_transaction_with_http_info(transactionid)
+  data, status_code, headers = api_instance.get_balancing_transaction_with_http_info(transactionid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetDoubleEntryTransaction200Response>
+  p data # => <GetDoubleEntryTransaction200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv4_0_0_get_balancing_transaction_with_http_info: #{e}"
+  puts "Error when calling TransactionApi->get_balancing_transaction_with_http_info: #{e}"
 end
 ```
 
@@ -2137,7 +1279,7 @@ end
 
 ### Return type
 
-[**OBPv400GetDoubleEntryTransaction200Response**](OBPv400GetDoubleEntryTransaction200Response.md)
+[**GetDoubleEntryTransaction200Response**](GetDoubleEntryTransaction200Response.md)
 
 ### Authorization
 
@@ -2149,9 +1291,175 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_get_double_entry_transaction
+## get_comments_for_view_on_transaction
 
-> <OBPv400GetDoubleEntryTransaction200Response> o_bpv4_0_0_get_double_entry_transaction(bankid, accountid, viewid, transactionid)
+> <GetCommentsForViewOnTransaction200Response> get_comments_for_view_on_transaction(bankid, accountid, viewid, transactionid)
+
+Get Transaction Comments
+
+<p>Returns the transaction TRANSACTION_ID comments made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
+
+### Examples
+
+```ruby
+require 'time'
+require 'obp_ruby'
+# setup authorization
+OpenBankProject.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure API key authorization: GatewayLogin
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+
+  # Configure API key authorization: DirectLogin
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
+end
+
+api_instance = OpenBankProject::TransactionApi.new
+bankid = 'bankid_example' # String | The BANKID identifier
+accountid = 'accountid_example' # String | The ACCOUNTID identifier
+viewid = 'viewid_example' # String | The VIEWID identifier
+transactionid = 'transactionid_example' # String | The TRANSACTIONID identifier
+
+begin
+  # Get Transaction Comments
+  result = api_instance.get_comments_for_view_on_transaction(bankid, accountid, viewid, transactionid)
+  p result
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling TransactionApi->get_comments_for_view_on_transaction: #{e}"
+end
+```
+
+#### Using the get_comments_for_view_on_transaction_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<GetCommentsForViewOnTransaction200Response>, Integer, Hash)> get_comments_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid)
+
+```ruby
+begin
+  # Get Transaction Comments
+  data, status_code, headers = api_instance.get_comments_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <GetCommentsForViewOnTransaction200Response>
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling TransactionApi->get_comments_for_view_on_transaction_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **bankid** | **String** | The BANKID identifier |  |
+| **accountid** | **String** | The ACCOUNTID identifier |  |
+| **viewid** | **String** | The VIEWID identifier |  |
+| **transactionid** | **String** | The TRANSACTIONID identifier |  |
+
+### Return type
+
+[**GetCommentsForViewOnTransaction200Response**](GetCommentsForViewOnTransaction200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## get_core_transactions_for_bank_account
+
+> <GetCoreTransactionsForBankAccount200Response> get_core_transactions_for_bank_account(bankid, accountid)
+
+Get Transactions for Account (Core)
+
+<p>Returns transactions list (Core info) of the account specified by ACCOUNT_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>Possible custom url parameters for pagination:</p> <ul> <li>limit=NUMBER ==&gt; default value: 50</li> <li>offset=NUMBER ==&gt; default value: 0</li> </ul> <p>eg1:?limit=100&amp;offset=0</p> <ul> <li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li> </ul> <p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p> <ul> <li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li> <li>to_date=DATE =&gt; example value: 2026-03-25T12:16:24.487Z. NOTE! The default value is now (2026-03-25T12:16:24.487Z).</li> </ul> <p>Date format parameter: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p> <p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#completed\"><strong>completed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#details\"><strong>details</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#holders\"><strong>holders</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#new_balance\"><strong>new_balance</strong></a>: 20</p> <p><a href=\"/glossary#other_account\"><strong>other_account</strong></a>:</p> <p><a href=\"/glossary#posted\"><strong>posted</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#this_account\"><strong>this_account</strong></a>:</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#transaction_attributes\"><strong>transaction_attributes</strong></a>:</p> <p><a href=\"/glossary#transactions\"><strong>transactions</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
+
+### Examples
+
+```ruby
+require 'time'
+require 'obp_ruby'
+# setup authorization
+OpenBankProject.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure API key authorization: GatewayLogin
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+
+  # Configure API key authorization: DirectLogin
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
+end
+
+api_instance = OpenBankProject::TransactionApi.new
+bankid = 'bankid_example' # String | The BANKID identifier
+accountid = 'accountid_example' # String | The ACCOUNTID identifier
+
+begin
+  # Get Transactions for Account (Core)
+  result = api_instance.get_core_transactions_for_bank_account(bankid, accountid)
+  p result
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling TransactionApi->get_core_transactions_for_bank_account: #{e}"
+end
+```
+
+#### Using the get_core_transactions_for_bank_account_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<GetCoreTransactionsForBankAccount200Response>, Integer, Hash)> get_core_transactions_for_bank_account_with_http_info(bankid, accountid)
+
+```ruby
+begin
+  # Get Transactions for Account (Core)
+  data, status_code, headers = api_instance.get_core_transactions_for_bank_account_with_http_info(bankid, accountid)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <GetCoreTransactionsForBankAccount200Response>
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling TransactionApi->get_core_transactions_for_bank_account_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **bankid** | **String** | The BANKID identifier |  |
+| **accountid** | **String** | The ACCOUNTID identifier |  |
+
+### Return type
+
+[**GetCoreTransactionsForBankAccount200Response**](GetCoreTransactionsForBankAccount200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## get_double_entry_transaction
+
+> <GetDoubleEntryTransaction200Response> get_double_entry_transaction(bankid, accountid, viewid, transactionid)
 
 Get Double Entry Transaction
 
@@ -2173,9 +1481,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::TransactionApi.new
@@ -2186,28 +1494,28 @@ transactionid = 'transactionid_example' # String | The TRANSACTIONID identifier
 
 begin
   # Get Double Entry Transaction
-  result = api_instance.o_bpv4_0_0_get_double_entry_transaction(bankid, accountid, viewid, transactionid)
+  result = api_instance.get_double_entry_transaction(bankid, accountid, viewid, transactionid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv4_0_0_get_double_entry_transaction: #{e}"
+  puts "Error when calling TransactionApi->get_double_entry_transaction: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_get_double_entry_transaction_with_http_info variant
+#### Using the get_double_entry_transaction_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetDoubleEntryTransaction200Response>, Integer, Hash)> o_bpv4_0_0_get_double_entry_transaction_with_http_info(bankid, accountid, viewid, transactionid)
+> <Array(<GetDoubleEntryTransaction200Response>, Integer, Hash)> get_double_entry_transaction_with_http_info(bankid, accountid, viewid, transactionid)
 
 ```ruby
 begin
   # Get Double Entry Transaction
-  data, status_code, headers = api_instance.o_bpv4_0_0_get_double_entry_transaction_with_http_info(bankid, accountid, viewid, transactionid)
+  data, status_code, headers = api_instance.get_double_entry_transaction_with_http_info(bankid, accountid, viewid, transactionid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetDoubleEntryTransaction200Response>
+  p data # => <GetDoubleEntryTransaction200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv4_0_0_get_double_entry_transaction_with_http_info: #{e}"
+  puts "Error when calling TransactionApi->get_double_entry_transaction_with_http_info: #{e}"
 end
 ```
 
@@ -2222,7 +1530,7 @@ end
 
 ### Return type
 
-[**OBPv400GetDoubleEntryTransaction200Response**](OBPv400GetDoubleEntryTransaction200Response.md)
+[**GetDoubleEntryTransaction200Response**](GetDoubleEntryTransaction200Response.md)
 
 ### Authorization
 
@@ -2234,9 +1542,317 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_get_transaction_attribute_by_id
+## get_firehose_transactions_for_bank_account
 
-> <OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems> o_bpv4_0_0_get_transaction_attribute_by_id(bankid, accountid, transactionid, attributeid)
+> <GetFirehoseTransactionsForBankAccount200Response> get_firehose_transactions_for_bank_account(bankid, accountid, viewid)
+
+Get Firehose Transactions for Account
+
+<p>Get Transactions for an Account that has a firehose View.</p> <p>Allows bulk access to an account's transactions.<br /> User must have the CanUseFirehoseAtAnyBank Role</p> <p>To find ACCOUNT_IDs, use the getFirehoseAccountsAtOneBank call.</p> <p>For VIEW_ID try 'owner'</p> <p>Possible custom url parameters for pagination:</p> <ul> <li>limit=NUMBER ==&gt; default value: 50</li> <li>offset=NUMBER ==&gt; default value: 0</li> </ul> <p>eg1:?limit=100&amp;offset=0</p> <ul> <li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li> </ul> <p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p> <ul> <li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li> <li>to_date=DATE =&gt; example value: 2026-03-25T12:16:24.487Z. NOTE! The default value is now (2026-03-25T12:16:24.487Z).</li> </ul> <p>Date format parameter: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p> <p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#completed\"><strong>completed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#details\"><strong>details</strong></a>:</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#holders\"><strong>holders</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#images\"><strong>images</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> <p><a href=\"/glossary#new_balance\"><strong>new_balance</strong></a>: 20</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#other_account\"><strong>other_account</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#posted\"><strong>posted</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><a href=\"/glossary#this_account\"><strong>this_account</strong></a>:</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#transaction_attributes\"><strong>transaction_attributes</strong></a>:</p> <p><a href=\"/glossary#transactions\"><strong>transactions</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> 
+
+### Examples
+
+```ruby
+require 'time'
+require 'obp_ruby'
+# setup authorization
+OpenBankProject.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure API key authorization: GatewayLogin
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+
+  # Configure API key authorization: DirectLogin
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
+end
+
+api_instance = OpenBankProject::TransactionApi.new
+bankid = 'bankid_example' # String | The BANKID identifier
+accountid = 'accountid_example' # String | The ACCOUNTID identifier
+viewid = 'viewid_example' # String | The VIEWID identifier
+
+begin
+  # Get Firehose Transactions for Account
+  result = api_instance.get_firehose_transactions_for_bank_account(bankid, accountid, viewid)
+  p result
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling TransactionApi->get_firehose_transactions_for_bank_account: #{e}"
+end
+```
+
+#### Using the get_firehose_transactions_for_bank_account_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<GetFirehoseTransactionsForBankAccount200Response>, Integer, Hash)> get_firehose_transactions_for_bank_account_with_http_info(bankid, accountid, viewid)
+
+```ruby
+begin
+  # Get Firehose Transactions for Account
+  data, status_code, headers = api_instance.get_firehose_transactions_for_bank_account_with_http_info(bankid, accountid, viewid)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <GetFirehoseTransactionsForBankAccount200Response>
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling TransactionApi->get_firehose_transactions_for_bank_account_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **bankid** | **String** | The BANKID identifier |  |
+| **accountid** | **String** | The ACCOUNTID identifier |  |
+| **viewid** | **String** | The VIEWID identifier |  |
+
+### Return type
+
+[**GetFirehoseTransactionsForBankAccount200Response**](GetFirehoseTransactionsForBankAccount200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## get_images_for_view_on_transaction
+
+> <GetImagesForViewOnTransaction200Response> get_images_for_view_on_transaction(bankid, accountid, viewid, transactionid)
+
+Get Transaction Images
+
+<p>Returns the transaction TRANSACTION_ID images made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#images\"><strong>images</strong></a>:</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
+
+### Examples
+
+```ruby
+require 'time'
+require 'obp_ruby'
+# setup authorization
+OpenBankProject.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure API key authorization: GatewayLogin
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+
+  # Configure API key authorization: DirectLogin
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
+end
+
+api_instance = OpenBankProject::TransactionApi.new
+bankid = 'bankid_example' # String | The BANKID identifier
+accountid = 'accountid_example' # String | The ACCOUNTID identifier
+viewid = 'viewid_example' # String | The VIEWID identifier
+transactionid = 'transactionid_example' # String | The TRANSACTIONID identifier
+
+begin
+  # Get Transaction Images
+  result = api_instance.get_images_for_view_on_transaction(bankid, accountid, viewid, transactionid)
+  p result
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling TransactionApi->get_images_for_view_on_transaction: #{e}"
+end
+```
+
+#### Using the get_images_for_view_on_transaction_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<GetImagesForViewOnTransaction200Response>, Integer, Hash)> get_images_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid)
+
+```ruby
+begin
+  # Get Transaction Images
+  data, status_code, headers = api_instance.get_images_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <GetImagesForViewOnTransaction200Response>
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling TransactionApi->get_images_for_view_on_transaction_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **bankid** | **String** | The BANKID identifier |  |
+| **accountid** | **String** | The ACCOUNTID identifier |  |
+| **viewid** | **String** | The VIEWID identifier |  |
+| **transactionid** | **String** | The TRANSACTIONID identifier |  |
+
+### Return type
+
+[**GetImagesForViewOnTransaction200Response**](GetImagesForViewOnTransaction200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## get_other_account_for_transaction
+
+> <GetOtherAccountForTransaction200Response> get_other_account_for_transaction(bankid, accountid, viewid, transactionid)
+
+Get Other Account of Transaction
+
+<p>Get other account of a transaction.<br /> Returns details of the other party involved in the transaction, moderated by the <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>IBAN</strong></a>: DE91 1000 0000 0123 4567 89</p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#Bank\"><strong>bank</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#kind\"><strong>kind</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#national_identifier\"><strong>national_identifier</strong></a>:</p> <p><a href=\"/glossary#number\"><strong>number</strong></a>:</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#swift_bic\"><strong>swift_bic</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
+
+### Examples
+
+```ruby
+require 'time'
+require 'obp_ruby'
+
+api_instance = OpenBankProject::TransactionApi.new
+bankid = 'bankid_example' # String | The BANKID identifier
+accountid = 'accountid_example' # String | The ACCOUNTID identifier
+viewid = 'viewid_example' # String | The VIEWID identifier
+transactionid = 'transactionid_example' # String | The TRANSACTIONID identifier
+
+begin
+  # Get Other Account of Transaction
+  result = api_instance.get_other_account_for_transaction(bankid, accountid, viewid, transactionid)
+  p result
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling TransactionApi->get_other_account_for_transaction: #{e}"
+end
+```
+
+#### Using the get_other_account_for_transaction_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<GetOtherAccountForTransaction200Response>, Integer, Hash)> get_other_account_for_transaction_with_http_info(bankid, accountid, viewid, transactionid)
+
+```ruby
+begin
+  # Get Other Account of Transaction
+  data, status_code, headers = api_instance.get_other_account_for_transaction_with_http_info(bankid, accountid, viewid, transactionid)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <GetOtherAccountForTransaction200Response>
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling TransactionApi->get_other_account_for_transaction_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **bankid** | **String** | The BANKID identifier |  |
+| **accountid** | **String** | The ACCOUNTID identifier |  |
+| **viewid** | **String** | The VIEWID identifier |  |
+| **transactionid** | **String** | The TRANSACTIONID identifier |  |
+
+### Return type
+
+[**GetOtherAccountForTransaction200Response**](GetOtherAccountForTransaction200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## get_tags_for_view_on_transaction
+
+> <GetTagsForViewOnAccount200ResponseTagsInner> get_tags_for_view_on_transaction(bankid, accountid, viewid, transactionid)
+
+Get Transaction Tags
+
+<p>Returns the transaction TRANSACTION_ID tags made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
+
+### Examples
+
+```ruby
+require 'time'
+require 'obp_ruby'
+
+api_instance = OpenBankProject::TransactionApi.new
+bankid = 'bankid_example' # String | The BANKID identifier
+accountid = 'accountid_example' # String | The ACCOUNTID identifier
+viewid = 'viewid_example' # String | The VIEWID identifier
+transactionid = 'transactionid_example' # String | The TRANSACTIONID identifier
+
+begin
+  # Get Transaction Tags
+  result = api_instance.get_tags_for_view_on_transaction(bankid, accountid, viewid, transactionid)
+  p result
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling TransactionApi->get_tags_for_view_on_transaction: #{e}"
+end
+```
+
+#### Using the get_tags_for_view_on_transaction_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<GetTagsForViewOnAccount200ResponseTagsInner>, Integer, Hash)> get_tags_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid)
+
+```ruby
+begin
+  # Get Transaction Tags
+  data, status_code, headers = api_instance.get_tags_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <GetTagsForViewOnAccount200ResponseTagsInner>
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling TransactionApi->get_tags_for_view_on_transaction_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **bankid** | **String** | The BANKID identifier |  |
+| **accountid** | **String** | The ACCOUNTID identifier |  |
+| **viewid** | **String** | The VIEWID identifier |  |
+| **transactionid** | **String** | The TRANSACTIONID identifier |  |
+
+### Return type
+
+[**GetTagsForViewOnAccount200ResponseTagsInner**](GetTagsForViewOnAccount200ResponseTagsInner.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## get_transaction_attribute_by_id
+
+> <GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner> get_transaction_attribute_by_id(bankid, accountid, transactionid, attributeid)
 
 Get Transaction Attribute By Id
 
@@ -2258,9 +1874,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::TransactionApi.new
@@ -2271,28 +1887,28 @@ attributeid = 'attributeid_example' # String | The ATTRIBUTEID identifier
 
 begin
   # Get Transaction Attribute By Id
-  result = api_instance.o_bpv4_0_0_get_transaction_attribute_by_id(bankid, accountid, transactionid, attributeid)
+  result = api_instance.get_transaction_attribute_by_id(bankid, accountid, transactionid, attributeid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv4_0_0_get_transaction_attribute_by_id: #{e}"
+  puts "Error when calling TransactionApi->get_transaction_attribute_by_id: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_get_transaction_attribute_by_id_with_http_info variant
+#### Using the get_transaction_attribute_by_id_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems>, Integer, Hash)> o_bpv4_0_0_get_transaction_attribute_by_id_with_http_info(bankid, accountid, transactionid, attributeid)
+> <Array(<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner>, Integer, Hash)> get_transaction_attribute_by_id_with_http_info(bankid, accountid, transactionid, attributeid)
 
 ```ruby
 begin
   # Get Transaction Attribute By Id
-  data, status_code, headers = api_instance.o_bpv4_0_0_get_transaction_attribute_by_id_with_http_info(bankid, accountid, transactionid, attributeid)
+  data, status_code, headers = api_instance.get_transaction_attribute_by_id_with_http_info(bankid, accountid, transactionid, attributeid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems>
+  p data # => <GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv4_0_0_get_transaction_attribute_by_id_with_http_info: #{e}"
+  puts "Error when calling TransactionApi->get_transaction_attribute_by_id_with_http_info: #{e}"
 end
 ```
 
@@ -2307,7 +1923,7 @@ end
 
 ### Return type
 
-[**OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems**](OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems.md)
+[**GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner**](GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner.md)
 
 ### Authorization
 
@@ -2319,9 +1935,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_get_transaction_attribute_definition
+## get_transaction_attribute_definition
 
-> <OBPv400GetTransactionRequestAttributeDefinition200Response> o_bpv4_0_0_get_transaction_attribute_definition(bankid)
+> <GetTransactionRequestAttributeDefinition200Response> get_transaction_attribute_definition(bankid)
 
 Get Transaction Attribute Definition
 
@@ -2343,9 +1959,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::TransactionApi.new
@@ -2353,28 +1969,28 @@ bankid = 'bankid_example' # String | The BANKID identifier
 
 begin
   # Get Transaction Attribute Definition
-  result = api_instance.o_bpv4_0_0_get_transaction_attribute_definition(bankid)
+  result = api_instance.get_transaction_attribute_definition(bankid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv4_0_0_get_transaction_attribute_definition: #{e}"
+  puts "Error when calling TransactionApi->get_transaction_attribute_definition: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_get_transaction_attribute_definition_with_http_info variant
+#### Using the get_transaction_attribute_definition_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetTransactionRequestAttributeDefinition200Response>, Integer, Hash)> o_bpv4_0_0_get_transaction_attribute_definition_with_http_info(bankid)
+> <Array(<GetTransactionRequestAttributeDefinition200Response>, Integer, Hash)> get_transaction_attribute_definition_with_http_info(bankid)
 
 ```ruby
 begin
   # Get Transaction Attribute Definition
-  data, status_code, headers = api_instance.o_bpv4_0_0_get_transaction_attribute_definition_with_http_info(bankid)
+  data, status_code, headers = api_instance.get_transaction_attribute_definition_with_http_info(bankid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetTransactionRequestAttributeDefinition200Response>
+  p data # => <GetTransactionRequestAttributeDefinition200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv4_0_0_get_transaction_attribute_definition_with_http_info: #{e}"
+  puts "Error when calling TransactionApi->get_transaction_attribute_definition_with_http_info: #{e}"
 end
 ```
 
@@ -2386,7 +2002,7 @@ end
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200Response**](OBPv400GetTransactionRequestAttributeDefinition200Response.md)
+[**GetTransactionRequestAttributeDefinition200Response**](GetTransactionRequestAttributeDefinition200Response.md)
 
 ### Authorization
 
@@ -2398,9 +2014,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_get_transaction_attributes
+## get_transaction_attributes
 
-> <OBPv400GetTransactionAttributes200Response> o_bpv4_0_0_get_transaction_attributes(bankid, accountid, transactionid)
+> <GetTransactionAttributes200Response> get_transaction_attributes(bankid, accountid, transactionid)
 
 Get Transaction Attributes
 
@@ -2422,9 +2038,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::TransactionApi.new
@@ -2434,28 +2050,28 @@ transactionid = 'transactionid_example' # String | The TRANSACTIONID identifier
 
 begin
   # Get Transaction Attributes
-  result = api_instance.o_bpv4_0_0_get_transaction_attributes(bankid, accountid, transactionid)
+  result = api_instance.get_transaction_attributes(bankid, accountid, transactionid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv4_0_0_get_transaction_attributes: #{e}"
+  puts "Error when calling TransactionApi->get_transaction_attributes: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_get_transaction_attributes_with_http_info variant
+#### Using the get_transaction_attributes_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetTransactionAttributes200Response>, Integer, Hash)> o_bpv4_0_0_get_transaction_attributes_with_http_info(bankid, accountid, transactionid)
+> <Array(<GetTransactionAttributes200Response>, Integer, Hash)> get_transaction_attributes_with_http_info(bankid, accountid, transactionid)
 
 ```ruby
 begin
   # Get Transaction Attributes
-  data, status_code, headers = api_instance.o_bpv4_0_0_get_transaction_attributes_with_http_info(bankid, accountid, transactionid)
+  data, status_code, headers = api_instance.get_transaction_attributes_with_http_info(bankid, accountid, transactionid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetTransactionAttributes200Response>
+  p data # => <GetTransactionAttributes200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv4_0_0_get_transaction_attributes_with_http_info: #{e}"
+  puts "Error when calling TransactionApi->get_transaction_attributes_with_http_info: #{e}"
 end
 ```
 
@@ -2469,7 +2085,7 @@ end
 
 ### Return type
 
-[**OBPv400GetTransactionAttributes200Response**](OBPv400GetTransactionAttributes200Response.md)
+[**GetTransactionAttributes200Response**](GetTransactionAttributes200Response.md)
 
 ### Authorization
 
@@ -2481,9 +2097,317 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_update_transaction_attribute
+## get_transaction_by_id_for_bank_account
 
-> <OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems> o_bpv4_0_0_update_transaction_attribute(bankid, accountid, transactionid, accountattributeid, obpv600_create_personal_data_field_request)
+> <GetTransactionByIdForBankAccount200Response> get_transaction_by_id_for_bank_account(bankid, accountid, viewid, transactionid)
+
+Get Transaction by Id
+
+<p>Returns one transaction specified by TRANSACTION_ID of the account ACCOUNT_ID and <a href=\"#1_2_1-getViewsForBankAccount\">moderated</a> by the view (VIEW_ID).</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#completed\"><strong>completed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#details\"><strong>details</strong></a>:</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#holders\"><strong>holders</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#images\"><strong>images</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> <p><a href=\"/glossary#new_balance\"><strong>new_balance</strong></a>: 20</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#other_account\"><strong>other_account</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#posted\"><strong>posted</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><a href=\"/glossary#this_account\"><strong>this_account</strong></a>:</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#transaction_attributes\"><strong>transaction_attributes</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> 
+
+### Examples
+
+```ruby
+require 'time'
+require 'obp_ruby'
+# setup authorization
+OpenBankProject.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure API key authorization: GatewayLogin
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+
+  # Configure API key authorization: DirectLogin
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
+end
+
+api_instance = OpenBankProject::TransactionApi.new
+bankid = 'bankid_example' # String | The BANKID identifier
+accountid = 'accountid_example' # String | The ACCOUNTID identifier
+viewid = 'viewid_example' # String | The VIEWID identifier
+transactionid = 'transactionid_example' # String | The TRANSACTIONID identifier
+
+begin
+  # Get Transaction by Id
+  result = api_instance.get_transaction_by_id_for_bank_account(bankid, accountid, viewid, transactionid)
+  p result
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling TransactionApi->get_transaction_by_id_for_bank_account: #{e}"
+end
+```
+
+#### Using the get_transaction_by_id_for_bank_account_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<GetTransactionByIdForBankAccount200Response>, Integer, Hash)> get_transaction_by_id_for_bank_account_with_http_info(bankid, accountid, viewid, transactionid)
+
+```ruby
+begin
+  # Get Transaction by Id
+  data, status_code, headers = api_instance.get_transaction_by_id_for_bank_account_with_http_info(bankid, accountid, viewid, transactionid)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <GetTransactionByIdForBankAccount200Response>
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling TransactionApi->get_transaction_by_id_for_bank_account_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **bankid** | **String** | The BANKID identifier |  |
+| **accountid** | **String** | The ACCOUNTID identifier |  |
+| **viewid** | **String** | The VIEWID identifier |  |
+| **transactionid** | **String** | The TRANSACTIONID identifier |  |
+
+### Return type
+
+[**GetTransactionByIdForBankAccount200Response**](GetTransactionByIdForBankAccount200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## get_transaction_narrative
+
+> <GetTransactionNarrative200Response> get_transaction_narrative(bankid, accountid, viewid, transactionid)
+
+Get a Transaction Narrative
+
+<p>Returns the account owner description of the transaction <a href=\"#1_2_1-getViewsForBankAccount\">moderated</a> by the view.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> 
+
+### Examples
+
+```ruby
+require 'time'
+require 'obp_ruby'
+
+api_instance = OpenBankProject::TransactionApi.new
+bankid = 'bankid_example' # String | The BANKID identifier
+accountid = 'accountid_example' # String | The ACCOUNTID identifier
+viewid = 'viewid_example' # String | The VIEWID identifier
+transactionid = 'transactionid_example' # String | The TRANSACTIONID identifier
+
+begin
+  # Get a Transaction Narrative
+  result = api_instance.get_transaction_narrative(bankid, accountid, viewid, transactionid)
+  p result
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling TransactionApi->get_transaction_narrative: #{e}"
+end
+```
+
+#### Using the get_transaction_narrative_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<GetTransactionNarrative200Response>, Integer, Hash)> get_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid)
+
+```ruby
+begin
+  # Get a Transaction Narrative
+  data, status_code, headers = api_instance.get_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <GetTransactionNarrative200Response>
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling TransactionApi->get_transaction_narrative_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **bankid** | **String** | The BANKID identifier |  |
+| **accountid** | **String** | The ACCOUNTID identifier |  |
+| **viewid** | **String** | The VIEWID identifier |  |
+| **transactionid** | **String** | The TRANSACTIONID identifier |  |
+
+### Return type
+
+[**GetTransactionNarrative200Response**](GetTransactionNarrative200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## get_transactions_for_bank_account
+
+> <GetTransactionsForBankAccount200Response> get_transactions_for_bank_account(bankid, accountid, viewid)
+
+Get Transactions for Account (Full)
+
+<p>Returns transactions list of the account specified by ACCOUNT_ID and <a href=\"#1_2_1-getViewsForBankAccount\">moderated</a> by the view (VIEW_ID).</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p>Authentication is required if the view is not public.</p> <p>Possible custom url parameters for pagination:</p> <ul> <li>limit=NUMBER ==&gt; default value: 50</li> <li>offset=NUMBER ==&gt; default value: 0</li> </ul> <p>eg1:?limit=100&amp;offset=0</p> <ul> <li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li> </ul> <p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p> <ul> <li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li> <li>to_date=DATE =&gt; example value: 2026-03-25T12:16:25.480Z. NOTE! The default value is now (2026-03-25T12:16:25.480Z).</li> </ul> <p>Date format parameter: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p> <p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p> <p><strong>Note:</strong> This v6.0.0 endpoint returns <code>bank_id</code> directly in both <code>this_account</code> and <code>other_account</code> objects,<br /> making it easier to identify which bank each account belongs to without parsing the <code>bank_routing</code> object.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#completed\"><strong>completed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#details\"><strong>details</strong></a>:</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#holders\"><strong>holders</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#images\"><strong>images</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> <p><a href=\"/glossary#new_balance\"><strong>new_balance</strong></a>: 20</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#other_account\"><strong>other_account</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#posted\"><strong>posted</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><a href=\"/glossary#this_account\"><strong>this_account</strong></a>:</p> <p><a href=\"/glossary#transaction_attributes\"><strong>transaction_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>transaction_id</strong></a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#transactions\"><strong>transactions</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> 
+
+### Examples
+
+```ruby
+require 'time'
+require 'obp_ruby'
+# setup authorization
+OpenBankProject.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure API key authorization: GatewayLogin
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+
+  # Configure API key authorization: DirectLogin
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
+end
+
+api_instance = OpenBankProject::TransactionApi.new
+bankid = 'bankid_example' # String | The BANKID identifier
+accountid = 'accountid_example' # String | The ACCOUNTID identifier
+viewid = 'viewid_example' # String | The VIEWID identifier
+
+begin
+  # Get Transactions for Account (Full)
+  result = api_instance.get_transactions_for_bank_account(bankid, accountid, viewid)
+  p result
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling TransactionApi->get_transactions_for_bank_account: #{e}"
+end
+```
+
+#### Using the get_transactions_for_bank_account_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<GetTransactionsForBankAccount200Response>, Integer, Hash)> get_transactions_for_bank_account_with_http_info(bankid, accountid, viewid)
+
+```ruby
+begin
+  # Get Transactions for Account (Full)
+  data, status_code, headers = api_instance.get_transactions_for_bank_account_with_http_info(bankid, accountid, viewid)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <GetTransactionsForBankAccount200Response>
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling TransactionApi->get_transactions_for_bank_account_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **bankid** | **String** | The BANKID identifier |  |
+| **accountid** | **String** | The ACCOUNTID identifier |  |
+| **viewid** | **String** | The VIEWID identifier |  |
+
+### Return type
+
+[**GetTransactionsForBankAccount200Response**](GetTransactionsForBankAccount200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## get_where_tag_for_view_on_transaction
+
+> <GetWhereTagForViewOnTransaction200Response> get_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid)
+
+Get a Transaction where Tag
+
+<p>Returns the &quot;where&quot; Geo tag added to the transaction TRANSACTION_ID made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> It represents the location where the transaction has been initiated.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> 
+
+### Examples
+
+```ruby
+require 'time'
+require 'obp_ruby'
+
+api_instance = OpenBankProject::TransactionApi.new
+bankid = 'bankid_example' # String | The BANKID identifier
+accountid = 'accountid_example' # String | The ACCOUNTID identifier
+viewid = 'viewid_example' # String | The VIEWID identifier
+transactionid = 'transactionid_example' # String | The TRANSACTIONID identifier
+
+begin
+  # Get a Transaction where Tag
+  result = api_instance.get_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid)
+  p result
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling TransactionApi->get_where_tag_for_view_on_transaction: #{e}"
+end
+```
+
+#### Using the get_where_tag_for_view_on_transaction_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<GetWhereTagForViewOnTransaction200Response>, Integer, Hash)> get_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid)
+
+```ruby
+begin
+  # Get a Transaction where Tag
+  data, status_code, headers = api_instance.get_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <GetWhereTagForViewOnTransaction200Response>
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling TransactionApi->get_where_tag_for_view_on_transaction_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **bankid** | **String** | The BANKID identifier |  |
+| **accountid** | **String** | The ACCOUNTID identifier |  |
+| **viewid** | **String** | The VIEWID identifier |  |
+| **transactionid** | **String** | The TRANSACTIONID identifier |  |
+
+### Return type
+
+[**GetWhereTagForViewOnTransaction200Response**](GetWhereTagForViewOnTransaction200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## update_transaction_attribute
+
+> <GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner> update_transaction_attribute(bankid, accountid, transactionid, accountattributeid, create_personal_data_field_request)
 
 Update Transaction Attribute
 
@@ -2505,9 +2429,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::TransactionApi.new
@@ -2515,32 +2439,32 @@ bankid = 'bankid_example' # String | The BANKID identifier
 accountid = 'accountid_example' # String | The ACCOUNTID identifier
 transactionid = 'transactionid_example' # String | The TRANSACTIONID identifier
 accountattributeid = 'accountattributeid_example' # String | The ACCOUNTATTRIBUTEID identifier
-obpv600_create_personal_data_field_request = OpenBankProject::OBPv600CreatePersonalDataFieldRequest.new({type: 'type_example', properties: OpenBankProject::OBPv600CreatePersonalDataFieldRequestProperties.new({name: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), type: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), value: })}) # OBPv600CreatePersonalDataFieldRequest | Request body
+create_personal_data_field_request = OpenBankProject::CreatePersonalDataFieldRequest.new # CreatePersonalDataFieldRequest | Request body
 
 begin
   # Update Transaction Attribute
-  result = api_instance.o_bpv4_0_0_update_transaction_attribute(bankid, accountid, transactionid, accountattributeid, obpv600_create_personal_data_field_request)
+  result = api_instance.update_transaction_attribute(bankid, accountid, transactionid, accountattributeid, create_personal_data_field_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv4_0_0_update_transaction_attribute: #{e}"
+  puts "Error when calling TransactionApi->update_transaction_attribute: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_update_transaction_attribute_with_http_info variant
+#### Using the update_transaction_attribute_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems>, Integer, Hash)> o_bpv4_0_0_update_transaction_attribute_with_http_info(bankid, accountid, transactionid, accountattributeid, obpv600_create_personal_data_field_request)
+> <Array(<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner>, Integer, Hash)> update_transaction_attribute_with_http_info(bankid, accountid, transactionid, accountattributeid, create_personal_data_field_request)
 
 ```ruby
 begin
   # Update Transaction Attribute
-  data, status_code, headers = api_instance.o_bpv4_0_0_update_transaction_attribute_with_http_info(bankid, accountid, transactionid, accountattributeid, obpv600_create_personal_data_field_request)
+  data, status_code, headers = api_instance.update_transaction_attribute_with_http_info(bankid, accountid, transactionid, accountattributeid, create_personal_data_field_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems>
+  p data # => <GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv4_0_0_update_transaction_attribute_with_http_info: #{e}"
+  puts "Error when calling TransactionApi->update_transaction_attribute_with_http_info: #{e}"
 end
 ```
 
@@ -2552,11 +2476,11 @@ end
 | **accountid** | **String** | The ACCOUNTID identifier |  |
 | **transactionid** | **String** | The TRANSACTIONID identifier |  |
 | **accountattributeid** | **String** | The ACCOUNTATTRIBUTEID identifier |  |
-| **obpv600_create_personal_data_field_request** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md) | Request body |  |
+| **create_personal_data_field_request** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems**](OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems.md)
+[**GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner**](GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner.md)
 
 ### Authorization
 
@@ -2568,13 +2492,85 @@ end
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_get_transactions_for_bank_account
+## update_transaction_narrative
 
-> <OBPv600GetTransactionsForBankAccount200Response> o_bpv6_0_0_get_transactions_for_bank_account(bankid, accountid, viewid)
+> <UpdateTransactionNarrative200Response> update_transaction_narrative(bankid, accountid, viewid, transactionid, get_transaction_narrative200_response)
 
-Get Transactions for Account (Full)
+Update a Transaction Narrative
 
-<p>Returns transactions list of the account specified by ACCOUNT_ID and <a href=\"#1_2_1-getViewsForBankAccount\">moderated</a> by the view (VIEW_ID).</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p>Authentication is required if the view is not public.</p> <p>Possible custom url parameters for pagination:</p> <ul> <li>limit=NUMBER ==&gt; default value: 50</li> <li>offset=NUMBER ==&gt; default value: 0</li> </ul> <p>eg1:?limit=100&amp;offset=0</p> <ul> <li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li> </ul> <p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p> <ul> <li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li> <li>to_date=DATE =&gt; example value: 2026-03-16T19:25:59.748Z. NOTE! The default value is now (2026-03-16T19:25:59.748Z).</li> </ul> <p>Date format parameter: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p> <p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p> <p><strong>Note:</strong> This v6.0.0 endpoint returns <code>bank_id</code> directly in both <code>this_account</code> and <code>other_account</code> objects,<br /> making it easier to identify which bank each account belongs to without parsing the <code>bank_routing</code> object.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#completed\"><strong>completed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#details\"><strong>details</strong></a>:</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#holders\"><strong>holders</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#images\"><strong>images</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> <p><a href=\"/glossary#new_balance\"><strong>new_balance</strong></a>: 20</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#other_account\"><strong>other_account</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#posted\"><strong>posted</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><a href=\"/glossary#this_account\"><strong>this_account</strong></a>:</p> <p><a href=\"/glossary#transaction_attributes\"><strong>transaction_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>transaction_id</strong></a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#transactions\"><strong>transactions</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> 
+<p>Updates the description of the transaction TRANSACTION_ID.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+### Examples
+
+```ruby
+require 'time'
+require 'obp_ruby'
+
+api_instance = OpenBankProject::TransactionApi.new
+bankid = 'bankid_example' # String | The BANKID identifier
+accountid = 'accountid_example' # String | The ACCOUNTID identifier
+viewid = 'viewid_example' # String | The VIEWID identifier
+transactionid = 'transactionid_example' # String | The TRANSACTIONID identifier
+get_transaction_narrative200_response = OpenBankProject::GetTransactionNarrative200Response.new # GetTransactionNarrative200Response | Request body
+
+begin
+  # Update a Transaction Narrative
+  result = api_instance.update_transaction_narrative(bankid, accountid, viewid, transactionid, get_transaction_narrative200_response)
+  p result
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling TransactionApi->update_transaction_narrative: #{e}"
+end
+```
+
+#### Using the update_transaction_narrative_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<UpdateTransactionNarrative200Response>, Integer, Hash)> update_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, get_transaction_narrative200_response)
+
+```ruby
+begin
+  # Update a Transaction Narrative
+  data, status_code, headers = api_instance.update_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, get_transaction_narrative200_response)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <UpdateTransactionNarrative200Response>
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling TransactionApi->update_transaction_narrative_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **bankid** | **String** | The BANKID identifier |  |
+| **accountid** | **String** | The ACCOUNTID identifier |  |
+| **viewid** | **String** | The VIEWID identifier |  |
+| **transactionid** | **String** | The TRANSACTIONID identifier |  |
+| **get_transaction_narrative200_response** | [**GetTransactionNarrative200Response**](GetTransactionNarrative200Response.md) | Request body |  |
+
+### Return type
+
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## update_where_tag_for_view_on_transaction
+
+> <UpdateTransactionNarrative200Response> update_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, update_where_tag_for_view_on_transaction_request)
+
+Update a Transaction where Tag
+
+<p>Updates the &quot;where&quot; Geo tag on a transaction TRANSACTION_ID in a <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>The geo tag is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
 
 ### Examples
 
@@ -2592,40 +2588,42 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::TransactionApi.new
 bankid = 'bankid_example' # String | The BANKID identifier
 accountid = 'accountid_example' # String | The ACCOUNTID identifier
 viewid = 'viewid_example' # String | The VIEWID identifier
+transactionid = 'transactionid_example' # String | The TRANSACTIONID identifier
+update_where_tag_for_view_on_transaction_request = OpenBankProject::UpdateWhereTagForViewOnTransactionRequest.new # UpdateWhereTagForViewOnTransactionRequest | Request body
 
 begin
-  # Get Transactions for Account (Full)
-  result = api_instance.o_bpv6_0_0_get_transactions_for_bank_account(bankid, accountid, viewid)
+  # Update a Transaction where Tag
+  result = api_instance.update_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, update_where_tag_for_view_on_transaction_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv6_0_0_get_transactions_for_bank_account: #{e}"
+  puts "Error when calling TransactionApi->update_where_tag_for_view_on_transaction: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_transactions_for_bank_account_with_http_info variant
+#### Using the update_where_tag_for_view_on_transaction_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetTransactionsForBankAccount200Response>, Integer, Hash)> o_bpv6_0_0_get_transactions_for_bank_account_with_http_info(bankid, accountid, viewid)
+> <Array(<UpdateTransactionNarrative200Response>, Integer, Hash)> update_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, update_where_tag_for_view_on_transaction_request)
 
 ```ruby
 begin
-  # Get Transactions for Account (Full)
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_transactions_for_bank_account_with_http_info(bankid, accountid, viewid)
+  # Update a Transaction where Tag
+  data, status_code, headers = api_instance.update_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, update_where_tag_for_view_on_transaction_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetTransactionsForBankAccount200Response>
+  p data # => <UpdateTransactionNarrative200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling TransactionApi->o_bpv6_0_0_get_transactions_for_bank_account_with_http_info: #{e}"
+  puts "Error when calling TransactionApi->update_where_tag_for_view_on_transaction_with_http_info: #{e}"
 end
 ```
 
@@ -2636,10 +2634,12 @@ end
 | **bankid** | **String** | The BANKID identifier |  |
 | **accountid** | **String** | The ACCOUNTID identifier |  |
 | **viewid** | **String** | The VIEWID identifier |  |
+| **transactionid** | **String** | The TRANSACTIONID identifier |  |
+| **update_where_tag_for_view_on_transaction_request** | [**UpdateWhereTagForViewOnTransactionRequest**](UpdateWhereTagForViewOnTransactionRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600GetTransactionsForBankAccount200Response**](OBPv600GetTransactionsForBankAccount200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -2647,6 +2647,6 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 

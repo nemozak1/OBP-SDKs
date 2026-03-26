@@ -1,18 +1,18 @@
 # \ExperimentalAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv310CreateMeeting**](ExperimentalAPI.md#OBPv310CreateMeeting) | **Post** /obp/v3.1.0/banks/{bankid}/meetings | Create Meeting (video conference/call)
-[**OBPv310GetMeeting**](ExperimentalAPI.md#OBPv310GetMeeting) | **Get** /obp/v3.1.0/banks/{bankid}/meetings/{meetingid} | Get Meeting
-[**OBPv310GetMeetings**](ExperimentalAPI.md#OBPv310GetMeetings) | **Get** /obp/v3.1.0/banks/{bankid}/meetings | Get Meetings
+[**CreateMeeting**](ExperimentalAPI.md#CreateMeeting) | **Post** /obp/v3.1.0/banks/{bankid}/meetings | Create Meeting (video conference/call)
+[**GetMeeting**](ExperimentalAPI.md#GetMeeting) | **Get** /obp/v3.1.0/banks/{bankid}/meetings/{meetingid} | Get Meeting
+[**GetMeetings**](ExperimentalAPI.md#GetMeetings) | **Get** /obp/v3.1.0/banks/{bankid}/meetings | Get Meetings
 
 
 
-## OBPv310CreateMeeting
+## CreateMeeting
 
-> OBPv310GetMeeting200Response OBPv310CreateMeeting(ctx, bankid).OBPv310CreateMeetingRequest(oBPv310CreateMeetingRequest).Execute()
+> GetMeeting200Response CreateMeeting(ctx, bankid).CreateMeetingRequest(createMeetingRequest).Execute()
 
 Create Meeting (video conference/call)
 
@@ -32,17 +32,17 @@ import (
 
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
-	oBPv310CreateMeetingRequest := *openapiclient.NewOBPv310CreateMeetingRequest("Type_example", *openapiclient.NewOBPv310CreateMeetingRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv310GetMeeting200ResponsePropertiesCreator("Type_example", *openapiclient.NewOBPv310GetMeeting200ResponsePropertiesCreatorProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), , )), *openapiclient.NewOBPv310GetMeeting200ResponsePropertiesInvitees("Type_example", *openapiclient.NewOBPv310GetMeeting200ResponsePropertiesInviteesItems("Type_example", *openapiclient.NewOBPv310GetMeeting200ResponsePropertiesInviteesItemsProperties(, *openapiclient.NewOBPv310GetMeeting200ResponsePropertiesCreator("Type_example", *openapiclient.NewOBPv310GetMeeting200ResponsePropertiesCreatorProperties(, , ))))), *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), )) // OBPv310CreateMeetingRequest | Request body
+	createMeetingRequest := *openapiclient.NewCreateMeetingRequest() // CreateMeetingRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ExperimentalAPI.OBPv310CreateMeeting(context.Background(), bankid).OBPv310CreateMeetingRequest(oBPv310CreateMeetingRequest).Execute()
+	resp, r, err := apiClient.ExperimentalAPI.CreateMeeting(context.Background(), bankid).CreateMeetingRequest(createMeetingRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ExperimentalAPI.OBPv310CreateMeeting``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ExperimentalAPI.CreateMeeting``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv310CreateMeeting`: OBPv310GetMeeting200Response
-	fmt.Fprintf(os.Stdout, "Response from `ExperimentalAPI.OBPv310CreateMeeting`: %v\n", resp)
+	// response from `CreateMeeting`: GetMeeting200Response
+	fmt.Fprintf(os.Stdout, "Response from `ExperimentalAPI.CreateMeeting`: %v\n", resp)
 }
 ```
 
@@ -56,17 +56,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv310CreateMeetingRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateMeetingRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv310CreateMeetingRequest** | [**OBPv310CreateMeetingRequest**](OBPv310CreateMeetingRequest.md) | Request body | 
+ **createMeetingRequest** | [**CreateMeetingRequest**](CreateMeetingRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv310GetMeeting200Response**](OBPv310GetMeeting200Response.md)
+[**GetMeeting200Response**](GetMeeting200Response.md)
 
 ### Authorization
 
@@ -82,9 +82,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv310GetMeeting
+## GetMeeting
 
-> OBPv310GetMeeting200Response OBPv310GetMeeting(ctx, bankid, meetingid).Execute()
+> GetMeeting200Response GetMeeting(ctx, bankid, meetingid).Execute()
 
 Get Meeting
 
@@ -108,13 +108,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ExperimentalAPI.OBPv310GetMeeting(context.Background(), bankid, meetingid).Execute()
+	resp, r, err := apiClient.ExperimentalAPI.GetMeeting(context.Background(), bankid, meetingid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ExperimentalAPI.OBPv310GetMeeting``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ExperimentalAPI.GetMeeting``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv310GetMeeting`: OBPv310GetMeeting200Response
-	fmt.Fprintf(os.Stdout, "Response from `ExperimentalAPI.OBPv310GetMeeting`: %v\n", resp)
+	// response from `GetMeeting`: GetMeeting200Response
+	fmt.Fprintf(os.Stdout, "Response from `ExperimentalAPI.GetMeeting`: %v\n", resp)
 }
 ```
 
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv310GetMeetingRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetMeetingRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv310GetMeeting200Response**](OBPv310GetMeeting200Response.md)
+[**GetMeeting200Response**](GetMeeting200Response.md)
 
 ### Authorization
 
@@ -155,9 +155,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv310GetMeetings
+## GetMeetings
 
-> OBPv310GetMeetings200Response OBPv310GetMeetings(ctx, bankid).Execute()
+> GetMeetings200Response GetMeetings(ctx, bankid).Execute()
 
 Get Meetings
 
@@ -180,13 +180,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ExperimentalAPI.OBPv310GetMeetings(context.Background(), bankid).Execute()
+	resp, r, err := apiClient.ExperimentalAPI.GetMeetings(context.Background(), bankid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ExperimentalAPI.OBPv310GetMeetings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ExperimentalAPI.GetMeetings``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv310GetMeetings`: OBPv310GetMeetings200Response
-	fmt.Fprintf(os.Stdout, "Response from `ExperimentalAPI.OBPv310GetMeetings`: %v\n", resp)
+	// response from `GetMeetings`: GetMeetings200Response
+	fmt.Fprintf(os.Stdout, "Response from `ExperimentalAPI.GetMeetings`: %v\n", resp)
 }
 ```
 
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv310GetMeetingsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetMeetingsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv310GetMeetings200Response**](OBPv310GetMeetings200Response.md)
+[**GetMeetings200Response**](GetMeetings200Response.md)
 
 ### Authorization
 

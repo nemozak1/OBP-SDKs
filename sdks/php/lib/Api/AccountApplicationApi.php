@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,16 +75,16 @@ class AccountApplicationApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv310CreateAccountApplication' => [
+        'createAccountApplication' => [
             'application/json',
         ],
-        'oBPv310GetAccountApplication' => [
+        'getAccountApplication' => [
             'application/json',
         ],
-        'oBPv310GetAccountApplications' => [
+        'getAccountApplications' => [
             'application/json',
         ],
-        'oBPv310UpdateAccountApplicationStatus' => [
+        'updateAccountApplicationStatus' => [
             'application/json',
         ],
     ];
@@ -136,40 +136,40 @@ class AccountApplicationApi
     }
 
     /**
-     * Operation oBPv310CreateAccountApplication
+     * Operation createAccountApplication
      *
      * Create Account Application
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv310CreateAccountApplicationRequest $obpv310_create_account_application_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CreateAccountApplication'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateAccountApplicationRequest $create_account_application_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAccountApplication'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems
+     * @return \OpenBankProject\Model\GetAccountApplications200ResponseAccountApplicationsInner
      */
-    public function oBPv310CreateAccountApplication($bankid, $obpv310_create_account_application_request, string $contentType = self::contentTypes['oBPv310CreateAccountApplication'][0])
+    public function createAccountApplication($bankid, $create_account_application_request, string $contentType = self::contentTypes['createAccountApplication'][0])
     {
-        list($response) = $this->oBPv310CreateAccountApplicationWithHttpInfo($bankid, $obpv310_create_account_application_request, $contentType);
+        list($response) = $this->createAccountApplicationWithHttpInfo($bankid, $create_account_application_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv310CreateAccountApplicationWithHttpInfo
+     * Operation createAccountApplicationWithHttpInfo
      *
      * Create Account Application
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv310CreateAccountApplicationRequest $obpv310_create_account_application_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CreateAccountApplication'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateAccountApplicationRequest $create_account_application_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAccountApplication'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAccountApplications200ResponseAccountApplicationsInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv310CreateAccountApplicationWithHttpInfo($bankid, $obpv310_create_account_application_request, string $contentType = self::contentTypes['oBPv310CreateAccountApplication'][0])
+    public function createAccountApplicationWithHttpInfo($bankid, $create_account_application_request, string $contentType = self::contentTypes['createAccountApplication'][0])
     {
-        $request = $this->oBPv310CreateAccountApplicationRequest($bankid, $obpv310_create_account_application_request, $contentType);
+        $request = $this->createAccountApplicationRequest($bankid, $create_account_application_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -197,7 +197,7 @@ class AccountApplicationApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems',
+                        '\OpenBankProject\Model\GetAccountApplications200ResponseAccountApplicationsInner',
                         $request,
                         $response,
                     );
@@ -219,7 +219,7 @@ class AccountApplicationApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems',
+                '\OpenBankProject\Model\GetAccountApplications200ResponseAccountApplicationsInner',
                 $request,
                 $response,
             );
@@ -228,7 +228,7 @@ class AccountApplicationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems',
+                        '\OpenBankProject\Model\GetAccountApplications200ResponseAccountApplicationsInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -241,20 +241,20 @@ class AccountApplicationApi
     }
 
     /**
-     * Operation oBPv310CreateAccountApplicationAsync
+     * Operation createAccountApplicationAsync
      *
      * Create Account Application
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv310CreateAccountApplicationRequest $obpv310_create_account_application_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CreateAccountApplication'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateAccountApplicationRequest $create_account_application_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAccountApplication'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310CreateAccountApplicationAsync($bankid, $obpv310_create_account_application_request, string $contentType = self::contentTypes['oBPv310CreateAccountApplication'][0])
+    public function createAccountApplicationAsync($bankid, $create_account_application_request, string $contentType = self::contentTypes['createAccountApplication'][0])
     {
-        return $this->oBPv310CreateAccountApplicationAsyncWithHttpInfo($bankid, $obpv310_create_account_application_request, $contentType)
+        return $this->createAccountApplicationAsyncWithHttpInfo($bankid, $create_account_application_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -263,21 +263,21 @@ class AccountApplicationApi
     }
 
     /**
-     * Operation oBPv310CreateAccountApplicationAsyncWithHttpInfo
+     * Operation createAccountApplicationAsyncWithHttpInfo
      *
      * Create Account Application
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv310CreateAccountApplicationRequest $obpv310_create_account_application_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CreateAccountApplication'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateAccountApplicationRequest $create_account_application_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAccountApplication'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310CreateAccountApplicationAsyncWithHttpInfo($bankid, $obpv310_create_account_application_request, string $contentType = self::contentTypes['oBPv310CreateAccountApplication'][0])
+    public function createAccountApplicationAsyncWithHttpInfo($bankid, $create_account_application_request, string $contentType = self::contentTypes['createAccountApplication'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems';
-        $request = $this->oBPv310CreateAccountApplicationRequest($bankid, $obpv310_create_account_application_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAccountApplications200ResponseAccountApplicationsInner';
+        $request = $this->createAccountApplicationRequest($bankid, $create_account_application_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -316,29 +316,29 @@ class AccountApplicationApi
     }
 
     /**
-     * Create request for operation 'oBPv310CreateAccountApplication'
+     * Create request for operation 'createAccountApplication'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv310CreateAccountApplicationRequest $obpv310_create_account_application_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CreateAccountApplication'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateAccountApplicationRequest $create_account_application_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAccountApplication'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv310CreateAccountApplicationRequest($bankid, $obpv310_create_account_application_request, string $contentType = self::contentTypes['oBPv310CreateAccountApplication'][0])
+    public function createAccountApplicationRequest($bankid, $create_account_application_request, string $contentType = self::contentTypes['createAccountApplication'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv310CreateAccountApplication'
+                'Missing the required parameter $bankid when calling createAccountApplication'
             );
         }
 
-        // verify the required parameter 'obpv310_create_account_application_request' is set
-        if ($obpv310_create_account_application_request === null || (is_array($obpv310_create_account_application_request) && count($obpv310_create_account_application_request) === 0)) {
+        // verify the required parameter 'create_account_application_request' is set
+        if ($create_account_application_request === null || (is_array($create_account_application_request) && count($create_account_application_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv310_create_account_application_request when calling oBPv310CreateAccountApplication'
+                'Missing the required parameter $create_account_application_request when calling createAccountApplication'
             );
         }
 
@@ -369,12 +369,12 @@ class AccountApplicationApi
         );
 
         // for model (json/xml)
-        if (isset($obpv310_create_account_application_request)) {
+        if (isset($create_account_application_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv310_create_account_application_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_account_application_request));
             } else {
-                $httpBody = $obpv310_create_account_application_request;
+                $httpBody = $create_account_application_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -410,9 +410,9 @@ class AccountApplicationApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -437,40 +437,40 @@ class AccountApplicationApi
     }
 
     /**
-     * Operation oBPv310GetAccountApplication
+     * Operation getAccountApplication
      *
      * Get Account Application by Id
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountapplicationid The ACCOUNTAPPLICATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetAccountApplication'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountApplication'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems
+     * @return \OpenBankProject\Model\GetAccountApplications200ResponseAccountApplicationsInner
      */
-    public function oBPv310GetAccountApplication($bankid, $accountapplicationid, string $contentType = self::contentTypes['oBPv310GetAccountApplication'][0])
+    public function getAccountApplication($bankid, $accountapplicationid, string $contentType = self::contentTypes['getAccountApplication'][0])
     {
-        list($response) = $this->oBPv310GetAccountApplicationWithHttpInfo($bankid, $accountapplicationid, $contentType);
+        list($response) = $this->getAccountApplicationWithHttpInfo($bankid, $accountapplicationid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv310GetAccountApplicationWithHttpInfo
+     * Operation getAccountApplicationWithHttpInfo
      *
      * Get Account Application by Id
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountapplicationid The ACCOUNTAPPLICATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetAccountApplication'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountApplication'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAccountApplications200ResponseAccountApplicationsInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv310GetAccountApplicationWithHttpInfo($bankid, $accountapplicationid, string $contentType = self::contentTypes['oBPv310GetAccountApplication'][0])
+    public function getAccountApplicationWithHttpInfo($bankid, $accountapplicationid, string $contentType = self::contentTypes['getAccountApplication'][0])
     {
-        $request = $this->oBPv310GetAccountApplicationRequest($bankid, $accountapplicationid, $contentType);
+        $request = $this->getAccountApplicationRequest($bankid, $accountapplicationid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -498,7 +498,7 @@ class AccountApplicationApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems',
+                        '\OpenBankProject\Model\GetAccountApplications200ResponseAccountApplicationsInner',
                         $request,
                         $response,
                     );
@@ -520,7 +520,7 @@ class AccountApplicationApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems',
+                '\OpenBankProject\Model\GetAccountApplications200ResponseAccountApplicationsInner',
                 $request,
                 $response,
             );
@@ -529,7 +529,7 @@ class AccountApplicationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems',
+                        '\OpenBankProject\Model\GetAccountApplications200ResponseAccountApplicationsInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -542,20 +542,20 @@ class AccountApplicationApi
     }
 
     /**
-     * Operation oBPv310GetAccountApplicationAsync
+     * Operation getAccountApplicationAsync
      *
      * Get Account Application by Id
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountapplicationid The ACCOUNTAPPLICATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetAccountApplication'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountApplication'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310GetAccountApplicationAsync($bankid, $accountapplicationid, string $contentType = self::contentTypes['oBPv310GetAccountApplication'][0])
+    public function getAccountApplicationAsync($bankid, $accountapplicationid, string $contentType = self::contentTypes['getAccountApplication'][0])
     {
-        return $this->oBPv310GetAccountApplicationAsyncWithHttpInfo($bankid, $accountapplicationid, $contentType)
+        return $this->getAccountApplicationAsyncWithHttpInfo($bankid, $accountapplicationid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -564,21 +564,21 @@ class AccountApplicationApi
     }
 
     /**
-     * Operation oBPv310GetAccountApplicationAsyncWithHttpInfo
+     * Operation getAccountApplicationAsyncWithHttpInfo
      *
      * Get Account Application by Id
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountapplicationid The ACCOUNTAPPLICATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetAccountApplication'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountApplication'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310GetAccountApplicationAsyncWithHttpInfo($bankid, $accountapplicationid, string $contentType = self::contentTypes['oBPv310GetAccountApplication'][0])
+    public function getAccountApplicationAsyncWithHttpInfo($bankid, $accountapplicationid, string $contentType = self::contentTypes['getAccountApplication'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems';
-        $request = $this->oBPv310GetAccountApplicationRequest($bankid, $accountapplicationid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAccountApplications200ResponseAccountApplicationsInner';
+        $request = $this->getAccountApplicationRequest($bankid, $accountapplicationid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -617,29 +617,29 @@ class AccountApplicationApi
     }
 
     /**
-     * Create request for operation 'oBPv310GetAccountApplication'
+     * Create request for operation 'getAccountApplication'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountapplicationid The ACCOUNTAPPLICATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetAccountApplication'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountApplication'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv310GetAccountApplicationRequest($bankid, $accountapplicationid, string $contentType = self::contentTypes['oBPv310GetAccountApplication'][0])
+    public function getAccountApplicationRequest($bankid, $accountapplicationid, string $contentType = self::contentTypes['getAccountApplication'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv310GetAccountApplication'
+                'Missing the required parameter $bankid when calling getAccountApplication'
             );
         }
 
         // verify the required parameter 'accountapplicationid' is set
         if ($accountapplicationid === null || (is_array($accountapplicationid) && count($accountapplicationid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountapplicationid when calling oBPv310GetAccountApplication'
+                'Missing the required parameter $accountapplicationid when calling getAccountApplication'
             );
         }
 
@@ -712,9 +712,9 @@ class AccountApplicationApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -739,38 +739,38 @@ class AccountApplicationApi
     }
 
     /**
-     * Operation oBPv310GetAccountApplications
+     * Operation getAccountApplications
      *
      * Get Account Applications
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetAccountApplications'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountApplications'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv310GetAccountApplications200Response
+     * @return \OpenBankProject\Model\GetAccountApplications200Response
      */
-    public function oBPv310GetAccountApplications($bankid, string $contentType = self::contentTypes['oBPv310GetAccountApplications'][0])
+    public function getAccountApplications($bankid, string $contentType = self::contentTypes['getAccountApplications'][0])
     {
-        list($response) = $this->oBPv310GetAccountApplicationsWithHttpInfo($bankid, $contentType);
+        list($response) = $this->getAccountApplicationsWithHttpInfo($bankid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv310GetAccountApplicationsWithHttpInfo
+     * Operation getAccountApplicationsWithHttpInfo
      *
      * Get Account Applications
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetAccountApplications'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountApplications'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv310GetAccountApplications200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAccountApplications200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv310GetAccountApplicationsWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv310GetAccountApplications'][0])
+    public function getAccountApplicationsWithHttpInfo($bankid, string $contentType = self::contentTypes['getAccountApplications'][0])
     {
-        $request = $this->oBPv310GetAccountApplicationsRequest($bankid, $contentType);
+        $request = $this->getAccountApplicationsRequest($bankid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -798,7 +798,7 @@ class AccountApplicationApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv310GetAccountApplications200Response',
+                        '\OpenBankProject\Model\GetAccountApplications200Response',
                         $request,
                         $response,
                     );
@@ -820,7 +820,7 @@ class AccountApplicationApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv310GetAccountApplications200Response',
+                '\OpenBankProject\Model\GetAccountApplications200Response',
                 $request,
                 $response,
             );
@@ -829,7 +829,7 @@ class AccountApplicationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv310GetAccountApplications200Response',
+                        '\OpenBankProject\Model\GetAccountApplications200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -842,19 +842,19 @@ class AccountApplicationApi
     }
 
     /**
-     * Operation oBPv310GetAccountApplicationsAsync
+     * Operation getAccountApplicationsAsync
      *
      * Get Account Applications
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetAccountApplications'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountApplications'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310GetAccountApplicationsAsync($bankid, string $contentType = self::contentTypes['oBPv310GetAccountApplications'][0])
+    public function getAccountApplicationsAsync($bankid, string $contentType = self::contentTypes['getAccountApplications'][0])
     {
-        return $this->oBPv310GetAccountApplicationsAsyncWithHttpInfo($bankid, $contentType)
+        return $this->getAccountApplicationsAsyncWithHttpInfo($bankid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -863,20 +863,20 @@ class AccountApplicationApi
     }
 
     /**
-     * Operation oBPv310GetAccountApplicationsAsyncWithHttpInfo
+     * Operation getAccountApplicationsAsyncWithHttpInfo
      *
      * Get Account Applications
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetAccountApplications'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountApplications'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310GetAccountApplicationsAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv310GetAccountApplications'][0])
+    public function getAccountApplicationsAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['getAccountApplications'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv310GetAccountApplications200Response';
-        $request = $this->oBPv310GetAccountApplicationsRequest($bankid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAccountApplications200Response';
+        $request = $this->getAccountApplicationsRequest($bankid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -915,21 +915,21 @@ class AccountApplicationApi
     }
 
     /**
-     * Create request for operation 'oBPv310GetAccountApplications'
+     * Create request for operation 'getAccountApplications'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetAccountApplications'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountApplications'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv310GetAccountApplicationsRequest($bankid, string $contentType = self::contentTypes['oBPv310GetAccountApplications'][0])
+    public function getAccountApplicationsRequest($bankid, string $contentType = self::contentTypes['getAccountApplications'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv310GetAccountApplications'
+                'Missing the required parameter $bankid when calling getAccountApplications'
             );
         }
 
@@ -994,9 +994,9 @@ class AccountApplicationApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1021,42 +1021,42 @@ class AccountApplicationApi
     }
 
     /**
-     * Operation oBPv310UpdateAccountApplicationStatus
+     * Operation updateAccountApplicationStatus
      *
      * Update Account Application Status
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountapplicationid The ACCOUNTAPPLICATIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateTransactionRequestStatusRequest $obpv510_update_transaction_request_status_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310UpdateAccountApplicationStatus'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateTransactionRequestStatusRequest $update_transaction_request_status_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAccountApplicationStatus'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems
+     * @return \OpenBankProject\Model\GetAccountApplications200ResponseAccountApplicationsInner
      */
-    public function oBPv310UpdateAccountApplicationStatus($bankid, $accountapplicationid, $obpv510_update_transaction_request_status_request, string $contentType = self::contentTypes['oBPv310UpdateAccountApplicationStatus'][0])
+    public function updateAccountApplicationStatus($bankid, $accountapplicationid, $update_transaction_request_status_request, string $contentType = self::contentTypes['updateAccountApplicationStatus'][0])
     {
-        list($response) = $this->oBPv310UpdateAccountApplicationStatusWithHttpInfo($bankid, $accountapplicationid, $obpv510_update_transaction_request_status_request, $contentType);
+        list($response) = $this->updateAccountApplicationStatusWithHttpInfo($bankid, $accountapplicationid, $update_transaction_request_status_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv310UpdateAccountApplicationStatusWithHttpInfo
+     * Operation updateAccountApplicationStatusWithHttpInfo
      *
      * Update Account Application Status
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountapplicationid The ACCOUNTAPPLICATIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateTransactionRequestStatusRequest $obpv510_update_transaction_request_status_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310UpdateAccountApplicationStatus'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateTransactionRequestStatusRequest $update_transaction_request_status_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAccountApplicationStatus'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAccountApplications200ResponseAccountApplicationsInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv310UpdateAccountApplicationStatusWithHttpInfo($bankid, $accountapplicationid, $obpv510_update_transaction_request_status_request, string $contentType = self::contentTypes['oBPv310UpdateAccountApplicationStatus'][0])
+    public function updateAccountApplicationStatusWithHttpInfo($bankid, $accountapplicationid, $update_transaction_request_status_request, string $contentType = self::contentTypes['updateAccountApplicationStatus'][0])
     {
-        $request = $this->oBPv310UpdateAccountApplicationStatusRequest($bankid, $accountapplicationid, $obpv510_update_transaction_request_status_request, $contentType);
+        $request = $this->updateAccountApplicationStatusRequest($bankid, $accountapplicationid, $update_transaction_request_status_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1084,7 +1084,7 @@ class AccountApplicationApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems',
+                        '\OpenBankProject\Model\GetAccountApplications200ResponseAccountApplicationsInner',
                         $request,
                         $response,
                     );
@@ -1106,7 +1106,7 @@ class AccountApplicationApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems',
+                '\OpenBankProject\Model\GetAccountApplications200ResponseAccountApplicationsInner',
                 $request,
                 $response,
             );
@@ -1115,7 +1115,7 @@ class AccountApplicationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems',
+                        '\OpenBankProject\Model\GetAccountApplications200ResponseAccountApplicationsInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1128,21 +1128,21 @@ class AccountApplicationApi
     }
 
     /**
-     * Operation oBPv310UpdateAccountApplicationStatusAsync
+     * Operation updateAccountApplicationStatusAsync
      *
      * Update Account Application Status
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountapplicationid The ACCOUNTAPPLICATIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateTransactionRequestStatusRequest $obpv510_update_transaction_request_status_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310UpdateAccountApplicationStatus'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateTransactionRequestStatusRequest $update_transaction_request_status_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAccountApplicationStatus'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310UpdateAccountApplicationStatusAsync($bankid, $accountapplicationid, $obpv510_update_transaction_request_status_request, string $contentType = self::contentTypes['oBPv310UpdateAccountApplicationStatus'][0])
+    public function updateAccountApplicationStatusAsync($bankid, $accountapplicationid, $update_transaction_request_status_request, string $contentType = self::contentTypes['updateAccountApplicationStatus'][0])
     {
-        return $this->oBPv310UpdateAccountApplicationStatusAsyncWithHttpInfo($bankid, $accountapplicationid, $obpv510_update_transaction_request_status_request, $contentType)
+        return $this->updateAccountApplicationStatusAsyncWithHttpInfo($bankid, $accountapplicationid, $update_transaction_request_status_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1151,22 +1151,22 @@ class AccountApplicationApi
     }
 
     /**
-     * Operation oBPv310UpdateAccountApplicationStatusAsyncWithHttpInfo
+     * Operation updateAccountApplicationStatusAsyncWithHttpInfo
      *
      * Update Account Application Status
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountapplicationid The ACCOUNTAPPLICATIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateTransactionRequestStatusRequest $obpv510_update_transaction_request_status_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310UpdateAccountApplicationStatus'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateTransactionRequestStatusRequest $update_transaction_request_status_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAccountApplicationStatus'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310UpdateAccountApplicationStatusAsyncWithHttpInfo($bankid, $accountapplicationid, $obpv510_update_transaction_request_status_request, string $contentType = self::contentTypes['oBPv310UpdateAccountApplicationStatus'][0])
+    public function updateAccountApplicationStatusAsyncWithHttpInfo($bankid, $accountapplicationid, $update_transaction_request_status_request, string $contentType = self::contentTypes['updateAccountApplicationStatus'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv310GetAccountApplications200ResponsePropertiesAccountApplicationsItems';
-        $request = $this->oBPv310UpdateAccountApplicationStatusRequest($bankid, $accountapplicationid, $obpv510_update_transaction_request_status_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAccountApplications200ResponseAccountApplicationsInner';
+        $request = $this->updateAccountApplicationStatusRequest($bankid, $accountapplicationid, $update_transaction_request_status_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1205,37 +1205,37 @@ class AccountApplicationApi
     }
 
     /**
-     * Create request for operation 'oBPv310UpdateAccountApplicationStatus'
+     * Create request for operation 'updateAccountApplicationStatus'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountapplicationid The ACCOUNTAPPLICATIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateTransactionRequestStatusRequest $obpv510_update_transaction_request_status_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310UpdateAccountApplicationStatus'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateTransactionRequestStatusRequest $update_transaction_request_status_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAccountApplicationStatus'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv310UpdateAccountApplicationStatusRequest($bankid, $accountapplicationid, $obpv510_update_transaction_request_status_request, string $contentType = self::contentTypes['oBPv310UpdateAccountApplicationStatus'][0])
+    public function updateAccountApplicationStatusRequest($bankid, $accountapplicationid, $update_transaction_request_status_request, string $contentType = self::contentTypes['updateAccountApplicationStatus'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv310UpdateAccountApplicationStatus'
+                'Missing the required parameter $bankid when calling updateAccountApplicationStatus'
             );
         }
 
         // verify the required parameter 'accountapplicationid' is set
         if ($accountapplicationid === null || (is_array($accountapplicationid) && count($accountapplicationid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountapplicationid when calling oBPv310UpdateAccountApplicationStatus'
+                'Missing the required parameter $accountapplicationid when calling updateAccountApplicationStatus'
             );
         }
 
-        // verify the required parameter 'obpv510_update_transaction_request_status_request' is set
-        if ($obpv510_update_transaction_request_status_request === null || (is_array($obpv510_update_transaction_request_status_request) && count($obpv510_update_transaction_request_status_request) === 0)) {
+        // verify the required parameter 'update_transaction_request_status_request' is set
+        if ($update_transaction_request_status_request === null || (is_array($update_transaction_request_status_request) && count($update_transaction_request_status_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv510_update_transaction_request_status_request when calling oBPv310UpdateAccountApplicationStatus'
+                'Missing the required parameter $update_transaction_request_status_request when calling updateAccountApplicationStatus'
             );
         }
 
@@ -1274,12 +1274,12 @@ class AccountApplicationApi
         );
 
         // for model (json/xml)
-        if (isset($obpv510_update_transaction_request_status_request)) {
+        if (isset($update_transaction_request_status_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv510_update_transaction_request_status_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_transaction_request_status_request));
             } else {
-                $httpBody = $obpv510_update_transaction_request_status_request;
+                $httpBody = $update_transaction_request_status_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1315,9 +1315,9 @@ class AccountApplicationApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

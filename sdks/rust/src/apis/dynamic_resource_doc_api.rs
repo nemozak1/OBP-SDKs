@@ -1,7 +1,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,104 +15,104 @@ use crate::{apis::ResponseContent, models};
 use super::{Error, configuration, ContentType};
 
 
-/// struct for typed errors of method [`o_bpv4_0_0_build_dynamic_endpoint_template`]
+/// struct for typed errors of method [`build_dynamic_endpoint_template`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400BuildDynamicEndpointTemplateError {
+pub enum BuildDynamicEndpointTemplateError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_create_bank_level_dynamic_resource_doc`]
+/// struct for typed errors of method [`create_bank_level_dynamic_resource_doc`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400CreateBankLevelDynamicResourceDocError {
+pub enum CreateBankLevelDynamicResourceDocError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_create_dynamic_resource_doc`]
+/// struct for typed errors of method [`create_dynamic_resource_doc`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400CreateDynamicResourceDocError {
+pub enum CreateDynamicResourceDocError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_delete_bank_level_dynamic_resource_doc`]
+/// struct for typed errors of method [`delete_bank_level_dynamic_resource_doc`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400DeleteBankLevelDynamicResourceDocError {
+pub enum DeleteBankLevelDynamicResourceDocError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_delete_dynamic_resource_doc`]
+/// struct for typed errors of method [`delete_dynamic_resource_doc`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400DeleteDynamicResourceDocError {
+pub enum DeleteDynamicResourceDocError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_get_all_bank_level_dynamic_resource_docs`]
+/// struct for typed errors of method [`get_all_bank_level_dynamic_resource_docs`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400GetAllBankLevelDynamicResourceDocsError {
+pub enum GetAllBankLevelDynamicResourceDocsError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_get_all_dynamic_resource_docs`]
+/// struct for typed errors of method [`get_all_dynamic_resource_docs`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400GetAllDynamicResourceDocsError {
+pub enum GetAllDynamicResourceDocsError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_get_bank_level_dynamic_resource_doc`]
+/// struct for typed errors of method [`get_bank_level_dynamic_resource_doc`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400GetBankLevelDynamicResourceDocError {
+pub enum GetBankLevelDynamicResourceDocError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_get_dynamic_resource_doc`]
+/// struct for typed errors of method [`get_dynamic_resource_doc`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400GetDynamicResourceDocError {
+pub enum GetDynamicResourceDocError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_update_bank_level_dynamic_resource_doc`]
+/// struct for typed errors of method [`update_bank_level_dynamic_resource_doc`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400UpdateBankLevelDynamicResourceDocError {
+pub enum UpdateBankLevelDynamicResourceDocError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_update_dynamic_resource_doc`]
+/// struct for typed errors of method [`update_dynamic_resource_doc`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400UpdateDynamicResourceDocError {
+pub enum UpdateDynamicResourceDocError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
 
 /// <p>Create a Dynamic Resource Doc endpoint code.</p> <p>copy the response and past to PractiseEndpoint, So you can have the benefits of<br /> auto compilation and debug</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#code\"><strong>code</strong></a>: 125</p> 
-pub async fn o_bpv4_0_0_build_dynamic_endpoint_template(configuration: &configuration::Configuration, obpv400_build_dynamic_endpoint_template_request: models::Obpv400BuildDynamicEndpointTemplateRequest) -> Result<models::Obpv400BuildDynamicEndpointTemplate200Response, Error<OBpv400BuildDynamicEndpointTemplateError>> {
+pub async fn build_dynamic_endpoint_template(configuration: &configuration::Configuration, build_dynamic_endpoint_template_request: models::BuildDynamicEndpointTemplateRequest) -> Result<models::BuildDynamicEndpointTemplate200Response, Error<BuildDynamicEndpointTemplateError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_body_obpv400_build_dynamic_endpoint_template_request = obpv400_build_dynamic_endpoint_template_request;
+    let p_body_build_dynamic_endpoint_template_request = build_dynamic_endpoint_template_request;
 
     let uri_str = format!("{}/obp/v4.0.0/management/dynamic-resource-docs/endpoint-code", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
@@ -137,9 +137,9 @@ pub async fn o_bpv4_0_0_build_dynamic_endpoint_template(configuration: &configur
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv400_build_dynamic_endpoint_template_request);
+    req_builder = req_builder.json(&p_body_build_dynamic_endpoint_template_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -156,21 +156,21 @@ pub async fn o_bpv4_0_0_build_dynamic_endpoint_template(configuration: &configur
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400BuildDynamicEndpointTemplate200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400BuildDynamicEndpointTemplate200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::BuildDynamicEndpointTemplate200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::BuildDynamicEndpointTemplate200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400BuildDynamicEndpointTemplateError> = serde_json::from_str(&content).ok();
+        let entity: Option<BuildDynamicEndpointTemplateError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Create a Bank Level Dynamic Resource Doc.</p> <p>The connector_method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
-pub async fn o_bpv4_0_0_create_bank_level_dynamic_resource_doc(configuration: &configuration::Configuration, bankid: &str, obpv400_update_bank_level_dynamic_resource_doc_request: models::Obpv400UpdateBankLevelDynamicResourceDocRequest) -> Result<models::Obpv400GetBankLevelDynamicResourceDoc200Response, Error<OBpv400CreateBankLevelDynamicResourceDocError>> {
+pub async fn create_bank_level_dynamic_resource_doc(configuration: &configuration::Configuration, bankid: &str, update_bank_level_dynamic_resource_doc_request: models::UpdateBankLevelDynamicResourceDocRequest) -> Result<models::GetBankLevelDynamicResourceDoc200Response, Error<CreateBankLevelDynamicResourceDocError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
-    let p_body_obpv400_update_bank_level_dynamic_resource_doc_request = obpv400_update_bank_level_dynamic_resource_doc_request;
+    let p_body_update_bank_level_dynamic_resource_doc_request = update_bank_level_dynamic_resource_doc_request;
 
     let uri_str = format!("{}/obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs", configuration.base_path, bankid=crate::apis::urlencode(p_path_bankid));
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
@@ -195,9 +195,9 @@ pub async fn o_bpv4_0_0_create_bank_level_dynamic_resource_doc(configuration: &c
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv400_update_bank_level_dynamic_resource_doc_request);
+    req_builder = req_builder.json(&p_body_update_bank_level_dynamic_resource_doc_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -214,20 +214,20 @@ pub async fn o_bpv4_0_0_create_bank_level_dynamic_resource_doc(configuration: &c
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetBankLevelDynamicResourceDoc200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetBankLevelDynamicResourceDoc200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetBankLevelDynamicResourceDoc200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetBankLevelDynamicResourceDoc200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400CreateBankLevelDynamicResourceDocError> = serde_json::from_str(&content).ok();
+        let entity: Option<CreateBankLevelDynamicResourceDocError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Create a Dynamic Resource Doc.</p> <p>The connector_method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
-pub async fn o_bpv4_0_0_create_dynamic_resource_doc(configuration: &configuration::Configuration, obpv400_update_bank_level_dynamic_resource_doc_request: models::Obpv400UpdateBankLevelDynamicResourceDocRequest) -> Result<models::Obpv400GetBankLevelDynamicResourceDoc200Response, Error<OBpv400CreateDynamicResourceDocError>> {
+pub async fn create_dynamic_resource_doc(configuration: &configuration::Configuration, update_bank_level_dynamic_resource_doc_request: models::UpdateBankLevelDynamicResourceDocRequest) -> Result<models::GetBankLevelDynamicResourceDoc200Response, Error<CreateDynamicResourceDocError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_body_obpv400_update_bank_level_dynamic_resource_doc_request = obpv400_update_bank_level_dynamic_resource_doc_request;
+    let p_body_update_bank_level_dynamic_resource_doc_request = update_bank_level_dynamic_resource_doc_request;
 
     let uri_str = format!("{}/obp/v4.0.0/management/dynamic-resource-docs", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
@@ -252,9 +252,9 @@ pub async fn o_bpv4_0_0_create_dynamic_resource_doc(configuration: &configuratio
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv400_update_bank_level_dynamic_resource_doc_request);
+    req_builder = req_builder.json(&p_body_update_bank_level_dynamic_resource_doc_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -271,18 +271,18 @@ pub async fn o_bpv4_0_0_create_dynamic_resource_doc(configuration: &configuratio
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetBankLevelDynamicResourceDoc200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetBankLevelDynamicResourceDoc200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetBankLevelDynamicResourceDoc200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetBankLevelDynamicResourceDoc200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400CreateDynamicResourceDocError> = serde_json::from_str(&content).ok();
+        let entity: Option<CreateDynamicResourceDocError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Delete a Bank Level Dynamic Resource Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv4_0_0_delete_bank_level_dynamic_resource_doc(configuration: &configuration::Configuration, bankid: &str) -> Result<(), Error<OBpv400DeleteBankLevelDynamicResourceDocError>> {
+pub async fn delete_bank_level_dynamic_resource_doc(configuration: &configuration::Configuration, bankid: &str) -> Result<(), Error<DeleteBankLevelDynamicResourceDocError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
 
@@ -309,7 +309,7 @@ pub async fn o_bpv4_0_0_delete_bank_level_dynamic_resource_doc(configuration: &c
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -321,13 +321,13 @@ pub async fn o_bpv4_0_0_delete_bank_level_dynamic_resource_doc(configuration: &c
         Ok(())
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400DeleteBankLevelDynamicResourceDocError> = serde_json::from_str(&content).ok();
+        let entity: Option<DeleteBankLevelDynamicResourceDocError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Delete a Dynamic Resource Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv4_0_0_delete_dynamic_resource_doc(configuration: &configuration::Configuration, ) -> Result<(), Error<OBpv400DeleteDynamicResourceDocError>> {
+pub async fn delete_dynamic_resource_doc(configuration: &configuration::Configuration, ) -> Result<(), Error<DeleteDynamicResourceDocError>> {
 
     let uri_str = format!("{}/obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::DELETE, &uri_str);
@@ -352,7 +352,7 @@ pub async fn o_bpv4_0_0_delete_dynamic_resource_doc(configuration: &configuratio
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -364,13 +364,13 @@ pub async fn o_bpv4_0_0_delete_dynamic_resource_doc(configuration: &configuratio
         Ok(())
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400DeleteDynamicResourceDocError> = serde_json::from_str(&content).ok();
+        let entity: Option<DeleteDynamicResourceDocError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get all Bank Level Dynamic Resource Docs.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
-pub async fn o_bpv4_0_0_get_all_bank_level_dynamic_resource_docs(configuration: &configuration::Configuration, bankid: &str) -> Result<models::Obpv400GetAllDynamicResourceDocs200Response, Error<OBpv400GetAllBankLevelDynamicResourceDocsError>> {
+pub async fn get_all_bank_level_dynamic_resource_docs(configuration: &configuration::Configuration, bankid: &str) -> Result<models::GetAllDynamicResourceDocs200Response, Error<GetAllBankLevelDynamicResourceDocsError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
 
@@ -397,7 +397,7 @@ pub async fn o_bpv4_0_0_get_all_bank_level_dynamic_resource_docs(configuration: 
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -415,18 +415,18 @@ pub async fn o_bpv4_0_0_get_all_bank_level_dynamic_resource_docs(configuration: 
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetAllDynamicResourceDocs200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetAllDynamicResourceDocs200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetAllDynamicResourceDocs200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetAllDynamicResourceDocs200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetAllBankLevelDynamicResourceDocsError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetAllBankLevelDynamicResourceDocsError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get all Dynamic Resource Docs.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
-pub async fn o_bpv4_0_0_get_all_dynamic_resource_docs(configuration: &configuration::Configuration, ) -> Result<models::Obpv400GetAllDynamicResourceDocs200Response, Error<OBpv400GetAllDynamicResourceDocsError>> {
+pub async fn get_all_dynamic_resource_docs(configuration: &configuration::Configuration, ) -> Result<models::GetAllDynamicResourceDocs200Response, Error<GetAllDynamicResourceDocsError>> {
 
     let uri_str = format!("{}/obp/v4.0.0/management/dynamic-resource-docs", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
@@ -451,7 +451,7 @@ pub async fn o_bpv4_0_0_get_all_dynamic_resource_docs(configuration: &configurat
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -469,18 +469,18 @@ pub async fn o_bpv4_0_0_get_all_dynamic_resource_docs(configuration: &configurat
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetAllDynamicResourceDocs200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetAllDynamicResourceDocs200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetAllDynamicResourceDocs200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetAllDynamicResourceDocs200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetAllDynamicResourceDocsError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetAllDynamicResourceDocsError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get a Bank Level Dynamic Resource Doc by DYNAMIC-RESOURCE-DOC-ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
-pub async fn o_bpv4_0_0_get_bank_level_dynamic_resource_doc(configuration: &configuration::Configuration, bankid: &str) -> Result<models::Obpv400GetBankLevelDynamicResourceDoc200Response, Error<OBpv400GetBankLevelDynamicResourceDocError>> {
+pub async fn get_bank_level_dynamic_resource_doc(configuration: &configuration::Configuration, bankid: &str) -> Result<models::GetBankLevelDynamicResourceDoc200Response, Error<GetBankLevelDynamicResourceDocError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
 
@@ -507,7 +507,7 @@ pub async fn o_bpv4_0_0_get_bank_level_dynamic_resource_doc(configuration: &conf
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -525,18 +525,18 @@ pub async fn o_bpv4_0_0_get_bank_level_dynamic_resource_doc(configuration: &conf
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetBankLevelDynamicResourceDoc200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetBankLevelDynamicResourceDoc200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetBankLevelDynamicResourceDoc200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetBankLevelDynamicResourceDoc200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetBankLevelDynamicResourceDocError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetBankLevelDynamicResourceDocError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get a Dynamic Resource Doc by DYNAMIC-RESOURCE-DOC-ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
-pub async fn o_bpv4_0_0_get_dynamic_resource_doc(configuration: &configuration::Configuration, ) -> Result<models::Obpv400GetBankLevelDynamicResourceDoc200Response, Error<OBpv400GetDynamicResourceDocError>> {
+pub async fn get_dynamic_resource_doc(configuration: &configuration::Configuration, ) -> Result<models::GetBankLevelDynamicResourceDoc200Response, Error<GetDynamicResourceDocError>> {
 
     let uri_str = format!("{}/obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
@@ -561,7 +561,7 @@ pub async fn o_bpv4_0_0_get_dynamic_resource_doc(configuration: &configuration::
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -579,21 +579,21 @@ pub async fn o_bpv4_0_0_get_dynamic_resource_doc(configuration: &configuration::
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetBankLevelDynamicResourceDoc200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetBankLevelDynamicResourceDoc200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetBankLevelDynamicResourceDoc200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetBankLevelDynamicResourceDoc200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetDynamicResourceDocError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetDynamicResourceDocError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Update a Bank Level Dynamic Resource Doc.</p> <p>The connector_method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
-pub async fn o_bpv4_0_0_update_bank_level_dynamic_resource_doc(configuration: &configuration::Configuration, bankid: &str, obpv400_update_bank_level_dynamic_resource_doc_request: models::Obpv400UpdateBankLevelDynamicResourceDocRequest) -> Result<models::Obpv400GetBankLevelDynamicResourceDoc200Response, Error<OBpv400UpdateBankLevelDynamicResourceDocError>> {
+pub async fn update_bank_level_dynamic_resource_doc(configuration: &configuration::Configuration, bankid: &str, update_bank_level_dynamic_resource_doc_request: models::UpdateBankLevelDynamicResourceDocRequest) -> Result<models::GetBankLevelDynamicResourceDoc200Response, Error<UpdateBankLevelDynamicResourceDocError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
-    let p_body_obpv400_update_bank_level_dynamic_resource_doc_request = obpv400_update_bank_level_dynamic_resource_doc_request;
+    let p_body_update_bank_level_dynamic_resource_doc_request = update_bank_level_dynamic_resource_doc_request;
 
     let uri_str = format!("{}/obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID", configuration.base_path, bankid=crate::apis::urlencode(p_path_bankid));
     let mut req_builder = configuration.client.request(reqwest::Method::PUT, &uri_str);
@@ -618,9 +618,9 @@ pub async fn o_bpv4_0_0_update_bank_level_dynamic_resource_doc(configuration: &c
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv400_update_bank_level_dynamic_resource_doc_request);
+    req_builder = req_builder.json(&p_body_update_bank_level_dynamic_resource_doc_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -637,20 +637,20 @@ pub async fn o_bpv4_0_0_update_bank_level_dynamic_resource_doc(configuration: &c
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetBankLevelDynamicResourceDoc200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetBankLevelDynamicResourceDoc200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetBankLevelDynamicResourceDoc200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetBankLevelDynamicResourceDoc200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400UpdateBankLevelDynamicResourceDocError> = serde_json::from_str(&content).ok();
+        let entity: Option<UpdateBankLevelDynamicResourceDocError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Update a Dynamic Resource Doc.</p> <p>The connector_method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
-pub async fn o_bpv4_0_0_update_dynamic_resource_doc(configuration: &configuration::Configuration, obpv400_update_bank_level_dynamic_resource_doc_request: models::Obpv400UpdateBankLevelDynamicResourceDocRequest) -> Result<models::Obpv400GetBankLevelDynamicResourceDoc200Response, Error<OBpv400UpdateDynamicResourceDocError>> {
+pub async fn update_dynamic_resource_doc(configuration: &configuration::Configuration, update_bank_level_dynamic_resource_doc_request: models::UpdateBankLevelDynamicResourceDocRequest) -> Result<models::GetBankLevelDynamicResourceDoc200Response, Error<UpdateDynamicResourceDocError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_body_obpv400_update_bank_level_dynamic_resource_doc_request = obpv400_update_bank_level_dynamic_resource_doc_request;
+    let p_body_update_bank_level_dynamic_resource_doc_request = update_bank_level_dynamic_resource_doc_request;
 
     let uri_str = format!("{}/obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::PUT, &uri_str);
@@ -675,9 +675,9 @@ pub async fn o_bpv4_0_0_update_dynamic_resource_doc(configuration: &configuratio
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv400_update_bank_level_dynamic_resource_doc_request);
+    req_builder = req_builder.json(&p_body_update_bank_level_dynamic_resource_doc_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -694,12 +694,12 @@ pub async fn o_bpv4_0_0_update_dynamic_resource_doc(configuration: &configuratio
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetBankLevelDynamicResourceDoc200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetBankLevelDynamicResourceDoc200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetBankLevelDynamicResourceDoc200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetBankLevelDynamicResourceDoc200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400UpdateDynamicResourceDocError> = serde_json::from_str(&content).ok();
+        let entity: Option<UpdateDynamicResourceDocError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }

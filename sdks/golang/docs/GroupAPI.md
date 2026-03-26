@@ -1,24 +1,24 @@
 # \GroupAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv600AddUserToGroup**](GroupAPI.md#OBPv600AddUserToGroup) | **Post** /obp/v6.0.0/users/{userid}/group-entitlements | Grant User Membership to Group Entitlements
-[**OBPv600CreateGroup**](GroupAPI.md#OBPv600CreateGroup) | **Post** /obp/v6.0.0/management/groups | Create Group
-[**OBPv600DeleteGroup**](GroupAPI.md#OBPv600DeleteGroup) | **Delete** /obp/v6.0.0/management/groups/{groupid} | Delete Group
-[**OBPv600GetGroup**](GroupAPI.md#OBPv600GetGroup) | **Get** /obp/v6.0.0/management/groups/{groupid} | Get Group
-[**OBPv600GetGroupEntitlements**](GroupAPI.md#OBPv600GetGroupEntitlements) | **Get** /obp/v6.0.0/management/groups/{groupid}/entitlements | Get Group Entitlements
-[**OBPv600GetGroups**](GroupAPI.md#OBPv600GetGroups) | **Get** /obp/v6.0.0/management/groups | Get Groups
-[**OBPv600GetUserGroupMemberships**](GroupAPI.md#OBPv600GetUserGroupMemberships) | **Get** /obp/v6.0.0/users/{userid}/group-entitlements | Get User&#39;s Group Memberships
-[**OBPv600RemoveUserFromGroup**](GroupAPI.md#OBPv600RemoveUserFromGroup) | **Delete** /obp/v6.0.0/users/{userid}/group-entitlements/{groupid} | Remove User from Group
-[**OBPv600UpdateGroup**](GroupAPI.md#OBPv600UpdateGroup) | **Put** /obp/v6.0.0/management/groups/{groupid} | Update Group
+[**AddUserToGroup**](GroupAPI.md#AddUserToGroup) | **Post** /obp/v6.0.0/users/{userid}/group-entitlements | Grant User Membership to Group Entitlements
+[**CreateGroup**](GroupAPI.md#CreateGroup) | **Post** /obp/v6.0.0/management/groups | Create Group
+[**DeleteGroup**](GroupAPI.md#DeleteGroup) | **Delete** /obp/v6.0.0/management/groups/{groupid} | Delete Group
+[**GetGroup**](GroupAPI.md#GetGroup) | **Get** /obp/v6.0.0/management/groups/{groupid} | Get Group
+[**GetGroupEntitlements**](GroupAPI.md#GetGroupEntitlements) | **Get** /obp/v6.0.0/management/groups/{groupid}/entitlements | Get Group Entitlements
+[**GetGroups**](GroupAPI.md#GetGroups) | **Get** /obp/v6.0.0/management/groups | Get Groups
+[**GetUserGroupMemberships**](GroupAPI.md#GetUserGroupMemberships) | **Get** /obp/v6.0.0/users/{userid}/group-entitlements | Get User&#39;s Group Memberships
+[**RemoveUserFromGroup**](GroupAPI.md#RemoveUserFromGroup) | **Delete** /obp/v6.0.0/users/{userid}/group-entitlements/{groupid} | Remove User from Group
+[**UpdateGroup**](GroupAPI.md#UpdateGroup) | **Put** /obp/v6.0.0/management/groups/{groupid} | Update Group
 
 
 
-## OBPv600AddUserToGroup
+## AddUserToGroup
 
-> OBPv600AddUserToGroup200Response OBPv600AddUserToGroup(ctx, userid).OBPv600AddUserToGroupRequest(oBPv600AddUserToGroupRequest).Execute()
+> AddUserToGroup200Response AddUserToGroup(ctx, userid).AddUserToGroupRequest(addUserToGroupRequest).Execute()
 
 Grant User Membership to Group Entitlements
 
@@ -38,17 +38,17 @@ import (
 
 func main() {
 	userid := "userid_example" // string | The USERID identifier
-	oBPv600AddUserToGroupRequest := *openapiclient.NewOBPv600AddUserToGroupRequest("Type_example", *openapiclient.NewOBPv600AddUserToGroupRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv600AddUserToGroupRequest | Request body
+	addUserToGroupRequest := *openapiclient.NewAddUserToGroupRequest() // AddUserToGroupRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.GroupAPI.OBPv600AddUserToGroup(context.Background(), userid).OBPv600AddUserToGroupRequest(oBPv600AddUserToGroupRequest).Execute()
+	resp, r, err := apiClient.GroupAPI.AddUserToGroup(context.Background(), userid).AddUserToGroupRequest(addUserToGroupRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `GroupAPI.OBPv600AddUserToGroup``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `GroupAPI.AddUserToGroup``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600AddUserToGroup`: OBPv600AddUserToGroup200Response
-	fmt.Fprintf(os.Stdout, "Response from `GroupAPI.OBPv600AddUserToGroup`: %v\n", resp)
+	// response from `AddUserToGroup`: AddUserToGroup200Response
+	fmt.Fprintf(os.Stdout, "Response from `GroupAPI.AddUserToGroup`: %v\n", resp)
 }
 ```
 
@@ -62,17 +62,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600AddUserToGroupRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAddUserToGroupRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv600AddUserToGroupRequest** | [**OBPv600AddUserToGroupRequest**](OBPv600AddUserToGroupRequest.md) | Request body | 
+ **addUserToGroupRequest** | [**AddUserToGroupRequest**](AddUserToGroupRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600AddUserToGroup200Response**](OBPv600AddUserToGroup200Response.md)
+[**AddUserToGroup200Response**](AddUserToGroup200Response.md)
 
 ### Authorization
 
@@ -88,9 +88,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600CreateGroup
+## CreateGroup
 
-> OBPv600GetGroups200ResponsePropertiesGroupsItems OBPv600CreateGroup(ctx).OBPv600CreateGroupRequest(oBPv600CreateGroupRequest).Execute()
+> GetGroups200ResponseGroupsInner CreateGroup(ctx).CreateGroupRequest(createGroupRequest).Execute()
 
 Create Group
 
@@ -109,17 +109,17 @@ import (
 )
 
 func main() {
-	oBPv600CreateGroupRequest := *openapiclient.NewOBPv600CreateGroupRequest("Type_example", *openapiclient.NewOBPv600CreateGroupRequestProperties(*openapiclient.NewOBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds("Type_example", *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example")), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), , , )) // OBPv600CreateGroupRequest | Request body
+	createGroupRequest := *openapiclient.NewCreateGroupRequest() // CreateGroupRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.GroupAPI.OBPv600CreateGroup(context.Background()).OBPv600CreateGroupRequest(oBPv600CreateGroupRequest).Execute()
+	resp, r, err := apiClient.GroupAPI.CreateGroup(context.Background()).CreateGroupRequest(createGroupRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `GroupAPI.OBPv600CreateGroup``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `GroupAPI.CreateGroup``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600CreateGroup`: OBPv600GetGroups200ResponsePropertiesGroupsItems
-	fmt.Fprintf(os.Stdout, "Response from `GroupAPI.OBPv600CreateGroup`: %v\n", resp)
+	// response from `CreateGroup`: GetGroups200ResponseGroupsInner
+	fmt.Fprintf(os.Stdout, "Response from `GroupAPI.CreateGroup`: %v\n", resp)
 }
 ```
 
@@ -129,16 +129,16 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600CreateGroupRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateGroupRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv600CreateGroupRequest** | [**OBPv600CreateGroupRequest**](OBPv600CreateGroupRequest.md) | Request body | 
+ **createGroupRequest** | [**CreateGroupRequest**](CreateGroupRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600GetGroups200ResponsePropertiesGroupsItems**](OBPv600GetGroups200ResponsePropertiesGroupsItems.md)
+[**GetGroups200ResponseGroupsInner**](GetGroups200ResponseGroupsInner.md)
 
 ### Authorization
 
@@ -154,9 +154,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600DeleteGroup
+## DeleteGroup
 
-> OBPv600DeleteGroup(ctx, groupid).Execute()
+> DeleteGroup(ctx, groupid).Execute()
 
 Delete Group
 
@@ -179,9 +179,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.GroupAPI.OBPv600DeleteGroup(context.Background(), groupid).Execute()
+	r, err := apiClient.GroupAPI.DeleteGroup(context.Background(), groupid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `GroupAPI.OBPv600DeleteGroup``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `GroupAPI.DeleteGroup``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600DeleteGroupRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteGroupRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -222,9 +222,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600GetGroup
+## GetGroup
 
-> OBPv600GetGroups200ResponsePropertiesGroupsItems OBPv600GetGroup(ctx, groupid).Execute()
+> GetGroups200ResponseGroupsInner GetGroup(ctx, groupid).Execute()
 
 Get Group
 
@@ -247,13 +247,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.GroupAPI.OBPv600GetGroup(context.Background(), groupid).Execute()
+	resp, r, err := apiClient.GroupAPI.GetGroup(context.Background(), groupid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `GroupAPI.OBPv600GetGroup``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `GroupAPI.GetGroup``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetGroup`: OBPv600GetGroups200ResponsePropertiesGroupsItems
-	fmt.Fprintf(os.Stdout, "Response from `GroupAPI.OBPv600GetGroup`: %v\n", resp)
+	// response from `GetGroup`: GetGroups200ResponseGroupsInner
+	fmt.Fprintf(os.Stdout, "Response from `GroupAPI.GetGroup`: %v\n", resp)
 }
 ```
 
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetGroupRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetGroupRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -276,7 +276,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetGroups200ResponsePropertiesGroupsItems**](OBPv600GetGroups200ResponsePropertiesGroupsItems.md)
+[**GetGroups200ResponseGroupsInner**](GetGroups200ResponseGroupsInner.md)
 
 ### Authorization
 
@@ -292,9 +292,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600GetGroupEntitlements
+## GetGroupEntitlements
 
-> OBPv600GetGroupEntitlements200Response OBPv600GetGroupEntitlements(ctx, groupid).Execute()
+> GetGroupEntitlements200Response GetGroupEntitlements(ctx, groupid).Execute()
 
 Get Group Entitlements
 
@@ -317,13 +317,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.GroupAPI.OBPv600GetGroupEntitlements(context.Background(), groupid).Execute()
+	resp, r, err := apiClient.GroupAPI.GetGroupEntitlements(context.Background(), groupid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `GroupAPI.OBPv600GetGroupEntitlements``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `GroupAPI.GetGroupEntitlements``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetGroupEntitlements`: OBPv600GetGroupEntitlements200Response
-	fmt.Fprintf(os.Stdout, "Response from `GroupAPI.OBPv600GetGroupEntitlements`: %v\n", resp)
+	// response from `GetGroupEntitlements`: GetGroupEntitlements200Response
+	fmt.Fprintf(os.Stdout, "Response from `GroupAPI.GetGroupEntitlements`: %v\n", resp)
 }
 ```
 
@@ -337,7 +337,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetGroupEntitlementsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetGroupEntitlementsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -346,7 +346,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetGroupEntitlements200Response**](OBPv600GetGroupEntitlements200Response.md)
+[**GetGroupEntitlements200Response**](GetGroupEntitlements200Response.md)
 
 ### Authorization
 
@@ -362,9 +362,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600GetGroups
+## GetGroups
 
-> OBPv600GetGroups200Response OBPv600GetGroups(ctx).Execute()
+> GetGroups200Response GetGroups(ctx).Execute()
 
 Get Groups
 
@@ -386,13 +386,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.GroupAPI.OBPv600GetGroups(context.Background()).Execute()
+	resp, r, err := apiClient.GroupAPI.GetGroups(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `GroupAPI.OBPv600GetGroups``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `GroupAPI.GetGroups``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetGroups`: OBPv600GetGroups200Response
-	fmt.Fprintf(os.Stdout, "Response from `GroupAPI.OBPv600GetGroups`: %v\n", resp)
+	// response from `GetGroups`: GetGroups200Response
+	fmt.Fprintf(os.Stdout, "Response from `GroupAPI.GetGroups`: %v\n", resp)
 }
 ```
 
@@ -402,12 +402,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetGroupsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetGroupsRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetGroups200Response**](OBPv600GetGroups200Response.md)
+[**GetGroups200Response**](GetGroups200Response.md)
 
 ### Authorization
 
@@ -423,9 +423,9 @@ Other parameters are passed through a pointer to a apiOBPv600GetGroupsRequest st
 [[Back to README]](../README.md)
 
 
-## OBPv600GetUserGroupMemberships
+## GetUserGroupMemberships
 
-> OBPv600GetUserGroupMemberships200Response OBPv600GetUserGroupMemberships(ctx, userid).Execute()
+> GetUserGroupMemberships200Response GetUserGroupMemberships(ctx, userid).Execute()
 
 Get User's Group Memberships
 
@@ -448,13 +448,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.GroupAPI.OBPv600GetUserGroupMemberships(context.Background(), userid).Execute()
+	resp, r, err := apiClient.GroupAPI.GetUserGroupMemberships(context.Background(), userid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `GroupAPI.OBPv600GetUserGroupMemberships``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `GroupAPI.GetUserGroupMemberships``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetUserGroupMemberships`: OBPv600GetUserGroupMemberships200Response
-	fmt.Fprintf(os.Stdout, "Response from `GroupAPI.OBPv600GetUserGroupMemberships`: %v\n", resp)
+	// response from `GetUserGroupMemberships`: GetUserGroupMemberships200Response
+	fmt.Fprintf(os.Stdout, "Response from `GroupAPI.GetUserGroupMemberships`: %v\n", resp)
 }
 ```
 
@@ -468,7 +468,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetUserGroupMembershipsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetUserGroupMembershipsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -477,7 +477,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetUserGroupMemberships200Response**](OBPv600GetUserGroupMemberships200Response.md)
+[**GetUserGroupMemberships200Response**](GetUserGroupMemberships200Response.md)
 
 ### Authorization
 
@@ -493,9 +493,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600RemoveUserFromGroup
+## RemoveUserFromGroup
 
-> OBPv600RemoveUserFromGroup(ctx, userid, groupid).Execute()
+> RemoveUserFromGroup(ctx, userid, groupid).Execute()
 
 Remove User from Group
 
@@ -519,9 +519,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.GroupAPI.OBPv600RemoveUserFromGroup(context.Background(), userid, groupid).Execute()
+	r, err := apiClient.GroupAPI.RemoveUserFromGroup(context.Background(), userid, groupid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `GroupAPI.OBPv600RemoveUserFromGroup``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `GroupAPI.RemoveUserFromGroup``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -538,7 +538,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600RemoveUserFromGroupRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiRemoveUserFromGroupRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -564,9 +564,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600UpdateGroup
+## UpdateGroup
 
-> OBPv600GetGroups200ResponsePropertiesGroupsItems OBPv600UpdateGroup(ctx, groupid).OBPv600UpdateGroupRequest(oBPv600UpdateGroupRequest).Execute()
+> GetGroups200ResponseGroupsInner UpdateGroup(ctx, groupid).UpdateGroupRequest(updateGroupRequest).Execute()
 
 Update Group
 
@@ -586,17 +586,17 @@ import (
 
 func main() {
 	groupid := "groupid_example" // string | The GROUPID identifier
-	oBPv600UpdateGroupRequest := *openapiclient.NewOBPv600UpdateGroupRequest("Type_example", *openapiclient.NewOBPv600UpdateGroupRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds("Type_example", *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example")), )) // OBPv600UpdateGroupRequest | Request body
+	updateGroupRequest := *openapiclient.NewUpdateGroupRequest() // UpdateGroupRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.GroupAPI.OBPv600UpdateGroup(context.Background(), groupid).OBPv600UpdateGroupRequest(oBPv600UpdateGroupRequest).Execute()
+	resp, r, err := apiClient.GroupAPI.UpdateGroup(context.Background(), groupid).UpdateGroupRequest(updateGroupRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `GroupAPI.OBPv600UpdateGroup``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `GroupAPI.UpdateGroup``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600UpdateGroup`: OBPv600GetGroups200ResponsePropertiesGroupsItems
-	fmt.Fprintf(os.Stdout, "Response from `GroupAPI.OBPv600UpdateGroup`: %v\n", resp)
+	// response from `UpdateGroup`: GetGroups200ResponseGroupsInner
+	fmt.Fprintf(os.Stdout, "Response from `GroupAPI.UpdateGroup`: %v\n", resp)
 }
 ```
 
@@ -610,17 +610,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600UpdateGroupRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateGroupRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv600UpdateGroupRequest** | [**OBPv600UpdateGroupRequest**](OBPv600UpdateGroupRequest.md) | Request body | 
+ **updateGroupRequest** | [**UpdateGroupRequest**](UpdateGroupRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600GetGroups200ResponsePropertiesGroupsItems**](OBPv600GetGroups200ResponsePropertiesGroupsItems.md)
+[**GetGroups200ResponseGroupsInner**](GetGroups200ResponseGroupsInner.md)
 
 ### Authorization
 

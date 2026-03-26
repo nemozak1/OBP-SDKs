@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,19 +24,19 @@ import (
 // VRPAPIService VRPAPI service
 type VRPAPIService service
 
-type ApiOBPv500CreateConsentByConsentRequestIdEmailRequest struct {
+type ApiCreateConsentByConsentRequestIdEmailRequest struct {
 	ctx context.Context
 	ApiService *VRPAPIService
 	consentrequestid string
 	email string
 }
 
-func (r ApiOBPv500CreateConsentByConsentRequestIdEmailRequest) Execute() (*OBPv500GetConsentByConsentRequestId200Response, *http.Response, error) {
-	return r.ApiService.OBPv500CreateConsentByConsentRequestIdEmailExecute(r)
+func (r ApiCreateConsentByConsentRequestIdEmailRequest) Execute() (*GetConsentByConsentRequestId200Response, *http.Response, error) {
+	return r.ApiService.CreateConsentByConsentRequestIdEmailExecute(r)
 }
 
 /*
-OBPv500CreateConsentByConsentRequestIdEmail Create Consent By CONSENT_REQUEST_ID (EMAIL)
+CreateConsentByConsentRequestIdEmail Create Consent By CONSENT_REQUEST_ID (EMAIL)
 
 <p>This endpoint continues the process of creating a Consent.</p>
 <p>It starts the SCA flow which changes the status of the consent from INITIATED to ACCEPTED or REJECTED.</p>
@@ -44,7 +44,7 @@ OBPv500CreateConsentByConsentRequestIdEmail Create Consent By CONSENT_REQUEST_ID
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#consent_request_id">CONSENT_REQUEST_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#">EMAIL</a>: <a href="m&#97;&#x69;&#108;&#116;&#111;&#58;&#102;&#101;&#108;ix&#x73;&#109;i&#x74;h&#64;e&#x78;&#x61;&#x6d;&#x70;&#108;&#x65;&#46;&#99;&#111;&#x6d;">&#102;&#101;&#x6c;i&#x78;&#115;&#109;&#x69;&#x74;&#104;@&#x65;&#120;&#97;mp&#x6c;&#101;.&#99;&#111;&#109;</a></p>
+<p><a href="/glossary#">EMAIL</a>: <a href="ma&#105;&#108;&#x74;&#x6f;&#58;&#102;e&#x6c;&#105;&#120;&#115;&#x6d;&#105;&#x74;&#x68;@&#x65;x&#x61;&#x6d;&#x70;l&#x65;&#46;com">fe&#108;&#x69;&#x78;&#x73;&#109;&#x69;&#x74;&#104;@&#x65;xa&#109;&#112;&#x6c;&#x65;&#46;&#99;&#x6f;&#x6d;</a></p>
 <p><strong>JSON request body fields:</strong></p>
 <p><strong>JSON response body fields:</strong></p>
 <p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
@@ -62,10 +62,10 @@ OBPv500CreateConsentByConsentRequestIdEmail Create Consent By CONSENT_REQUEST_ID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param consentrequestid The CONSENTREQUESTID identifier
  @param email The EMAIL identifier
- @return ApiOBPv500CreateConsentByConsentRequestIdEmailRequest
+ @return ApiCreateConsentByConsentRequestIdEmailRequest
 */
-func (a *VRPAPIService) OBPv500CreateConsentByConsentRequestIdEmail(ctx context.Context, consentrequestid string, email string) ApiOBPv500CreateConsentByConsentRequestIdEmailRequest {
-	return ApiOBPv500CreateConsentByConsentRequestIdEmailRequest{
+func (a *VRPAPIService) CreateConsentByConsentRequestIdEmail(ctx context.Context, consentrequestid string, email string) ApiCreateConsentByConsentRequestIdEmailRequest {
+	return ApiCreateConsentByConsentRequestIdEmailRequest{
 		ApiService: a,
 		ctx: ctx,
 		consentrequestid: consentrequestid,
@@ -74,16 +74,16 @@ func (a *VRPAPIService) OBPv500CreateConsentByConsentRequestIdEmail(ctx context.
 }
 
 // Execute executes the request
-//  @return OBPv500GetConsentByConsentRequestId200Response
-func (a *VRPAPIService) OBPv500CreateConsentByConsentRequestIdEmailExecute(r ApiOBPv500CreateConsentByConsentRequestIdEmailRequest) (*OBPv500GetConsentByConsentRequestId200Response, *http.Response, error) {
+//  @return GetConsentByConsentRequestId200Response
+func (a *VRPAPIService) CreateConsentByConsentRequestIdEmailExecute(r ApiCreateConsentByConsentRequestIdEmailRequest) (*GetConsentByConsentRequestId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv500GetConsentByConsentRequestId200Response
+		localVarReturnValue  *GetConsentByConsentRequestId200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VRPAPIService.OBPv500CreateConsentByConsentRequestIdEmail")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VRPAPIService.CreateConsentByConsentRequestIdEmail")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -137,7 +137,7 @@ func (a *VRPAPIService) OBPv500CreateConsentByConsentRequestIdEmailExecute(r Api
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -178,24 +178,24 @@ func (a *VRPAPIService) OBPv500CreateConsentByConsentRequestIdEmailExecute(r Api
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510CreateVRPConsentRequestRequest struct {
+type ApiCreateVRPConsentRequestRequest struct {
 	ctx context.Context
 	ApiService *VRPAPIService
-	oBPv510CreateVRPConsentRequestRequest *OBPv510CreateVRPConsentRequestRequest
+	createVRPConsentRequestRequest *CreateVRPConsentRequestRequest
 }
 
 // Request body
-func (r ApiOBPv510CreateVRPConsentRequestRequest) OBPv510CreateVRPConsentRequestRequest(oBPv510CreateVRPConsentRequestRequest OBPv510CreateVRPConsentRequestRequest) ApiOBPv510CreateVRPConsentRequestRequest {
-	r.oBPv510CreateVRPConsentRequestRequest = &oBPv510CreateVRPConsentRequestRequest
+func (r ApiCreateVRPConsentRequestRequest) CreateVRPConsentRequestRequest(createVRPConsentRequestRequest CreateVRPConsentRequestRequest) ApiCreateVRPConsentRequestRequest {
+	r.createVRPConsentRequestRequest = &createVRPConsentRequestRequest
 	return r
 }
 
-func (r ApiOBPv510CreateVRPConsentRequestRequest) Execute() (*OBPv510CreateVRPConsentRequest200Response, *http.Response, error) {
-	return r.ApiService.OBPv510CreateVRPConsentRequestExecute(r)
+func (r ApiCreateVRPConsentRequestRequest) Execute() (*CreateVRPConsentRequest200Response, *http.Response, error) {
+	return r.ApiService.CreateVRPConsentRequestExecute(r)
 }
 
 /*
-OBPv510CreateVRPConsentRequest Create Consent Request VRP
+CreateVRPConsentRequest Create Consent Request VRP
 
 <p>This endpoint is used to begin the process of creating a consent that may be used for Variable Recurring Payments (VRPs).</p>
 <p>VRPs are useful in situations when a beneficiary needs to be paid different amounts on a regular basis.</p>
@@ -233,7 +233,7 @@ Authorization: Bearer eXtneO-THbQtn3zvK_kQtXXfvOZyZFdBCItlPDbR2Bk.dOWqtXCtFX-tqG
 <p><a href="/glossary#max_yearly_amount"><strong>max_yearly_amount</strong></a>: 12000.11</p>
 <p><a href="/glossary#scheme"><strong>scheme</strong></a>: OBP</p>
 <p><a href="/glossary#"><strong>to_account</strong></a>: to_account</p>
-<p><a href="/glossary#">email</a>: <a href="m&#97;&#x69;l&#x74;o&#x3a;f&#101;&#x6c;i&#120;&#115;&#109;&#x69;&#116;&#x68;&#x40;&#x65;&#120;a&#x6d;&#112;&#x6c;&#101;&#x2e;&#x63;&#x6f;&#109;">&#102;&#101;&#x6c;i&#120;&#115;&#109;&#x69;&#x74;&#104;&#x40;&#x65;x&#x61;&#109;&#x70;&#108;&#x65;&#46;&#x63;&#x6f;&#109;</a></p>
+<p><a href="/glossary#">email</a>: <a href="&#109;&#x61;i&#x6c;&#116;&#111;:&#102;&#x65;l&#x69;&#x78;sm&#x69;t&#104;@&#x65;&#120;&#x61;&#x6d;ple&#x2e;&#99;&#111;m">&#102;&#x65;&#x6c;&#x69;&#120;&#x73;m&#105;t&#x68;&#64;&#101;&#x78;&#x61;m&#112;&#x6c;e&#x2e;&#x63;&#111;&#x6d;</a></p>
 <p><a href="/glossary#phone_number">phone_number</a>:</p>
 <p><a href="/glossary#time_to_live">time_to_live</a>:</p>
 <p><a href="/glossary#valid_from">valid_from</a>: 2020-01-27</p>
@@ -244,26 +244,26 @@ Authorization: Bearer eXtneO-THbQtn3zvK_kQtXXfvOZyZFdBCItlPDbR2Bk.dOWqtXCtFX-tqG
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv510CreateVRPConsentRequestRequest
+ @return ApiCreateVRPConsentRequestRequest
 */
-func (a *VRPAPIService) OBPv510CreateVRPConsentRequest(ctx context.Context) ApiOBPv510CreateVRPConsentRequestRequest {
-	return ApiOBPv510CreateVRPConsentRequestRequest{
+func (a *VRPAPIService) CreateVRPConsentRequest(ctx context.Context) ApiCreateVRPConsentRequestRequest {
+	return ApiCreateVRPConsentRequestRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv510CreateVRPConsentRequest200Response
-func (a *VRPAPIService) OBPv510CreateVRPConsentRequestExecute(r ApiOBPv510CreateVRPConsentRequestRequest) (*OBPv510CreateVRPConsentRequest200Response, *http.Response, error) {
+//  @return CreateVRPConsentRequest200Response
+func (a *VRPAPIService) CreateVRPConsentRequestExecute(r ApiCreateVRPConsentRequestRequest) (*CreateVRPConsentRequest200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510CreateVRPConsentRequest200Response
+		localVarReturnValue  *CreateVRPConsentRequest200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VRPAPIService.OBPv510CreateVRPConsentRequest")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VRPAPIService.CreateVRPConsentRequest")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -273,8 +273,8 @@ func (a *VRPAPIService) OBPv510CreateVRPConsentRequestExecute(r ApiOBPv510Create
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv510CreateVRPConsentRequestRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510CreateVRPConsentRequestRequest is required and must be specified")
+	if r.createVRPConsentRequestRequest == nil {
+		return localVarReturnValue, nil, reportError("createVRPConsentRequestRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -295,7 +295,35 @@ func (a *VRPAPIService) OBPv510CreateVRPConsentRequestExecute(r ApiOBPv510Create
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv510CreateVRPConsentRequestRequest
+	localVarPostBody = r.createVRPConsentRequestRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

@@ -1,15 +1,15 @@
 # OpenBankProject.Api.ProductCollectionApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OBPv310CreateProductCollection**](ProductCollectionApi.md#obpv310createproductcollection) | **PUT** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Create Product Collection |
-| [**OBPv310GetProductCollection**](ProductCollectionApi.md#obpv310getproductcollection) | **GET** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Get Product Collection |
+| [**CreateProductCollection**](ProductCollectionApi.md#createproductcollection) | **PUT** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Create Product Collection |
+| [**GetProductCollection**](ProductCollectionApi.md#getproductcollection) | **GET** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Get Product Collection |
 
-<a id="obpv310createproductcollection"></a>
-# **OBPv310CreateProductCollection**
-> OBPv310CreateProductCollection200Response OBPv310CreateProductCollection (string bankid, string collectioncode, OBPv310CreateProductCollectionRequest oBPv310CreateProductCollectionRequest)
+<a id="createproductcollection"></a>
+# **CreateProductCollection**
+> CreateProductCollection200Response CreateProductCollection (string bankid, string collectioncode, CreateProductCollectionRequest createProductCollectionRequest)
 
 Create Product Collection
 
@@ -22,11 +22,11 @@ Create Product Collection
 |------|------|-------------|-------|
 | **bankid** | **string** | The BANKID identifier |  |
 | **collectioncode** | **string** | The COLLECTIONCODE identifier |  |
-| **oBPv310CreateProductCollectionRequest** | [**OBPv310CreateProductCollectionRequest**](OBPv310CreateProductCollectionRequest.md) | Request body |  |
+| **createProductCollectionRequest** | [**CreateProductCollectionRequest**](CreateProductCollectionRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv310CreateProductCollection200Response**](OBPv310CreateProductCollection200Response.md)
+[**CreateProductCollection200Response**](CreateProductCollection200Response.md)
 
 ### Authorization
 
@@ -47,9 +47,9 @@ Create Product Collection
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv310getproductcollection"></a>
-# **OBPv310GetProductCollection**
-> OBPv310GetProductCollection200Response OBPv310GetProductCollection (string bankid, string collectioncode)
+<a id="getproductcollection"></a>
+# **GetProductCollection**
+> GetProductCollection200Response GetProductCollection (string bankid, string collectioncode)
 
 Get Product Collection
 
@@ -65,7 +65,7 @@ Get Product Collection
 
 ### Return type
 
-[**OBPv310GetProductCollection200Response**](OBPv310GetProductCollection200Response.md)
+[**GetProductCollection200Response**](GetProductCollection200Response.md)
 
 ### Authorization
 

@@ -4,20 +4,20 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv4_0_0_create_bank_level_dynamic_message_doc**](DynamicMessageDocApi.md#o_bpv4_0_0_create_bank_level_dynamic_message_doc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Create Bank Level Dynamic Message Doc
-[**o_bpv4_0_0_create_dynamic_message_doc**](DynamicMessageDocApi.md#o_bpv4_0_0_create_dynamic_message_doc) | **POST** /obp/v4.0.0/management/dynamic-message-docs | Create Dynamic Message Doc
-[**o_bpv4_0_0_delete_bank_level_dynamic_message_doc**](DynamicMessageDocApi.md#o_bpv4_0_0_delete_bank_level_dynamic_message_doc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Delete Bank Level Dynamic Message Doc
-[**o_bpv4_0_0_delete_dynamic_message_doc**](DynamicMessageDocApi.md#o_bpv4_0_0_delete_dynamic_message_doc) | **DELETE** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Delete Dynamic Message Doc
-[**o_bpv4_0_0_get_all_bank_level_dynamic_message_docs**](DynamicMessageDocApi.md#o_bpv4_0_0_get_all_bank_level_dynamic_message_docs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Get all Bank Level Dynamic Message Docs
-[**o_bpv4_0_0_get_all_dynamic_message_docs**](DynamicMessageDocApi.md#o_bpv4_0_0_get_all_dynamic_message_docs) | **GET** /obp/v4.0.0/management/dynamic-message-docs | Get all Dynamic Message Docs
-[**o_bpv4_0_0_get_bank_level_dynamic_message_doc**](DynamicMessageDocApi.md#o_bpv4_0_0_get_bank_level_dynamic_message_doc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Get Bank Level Dynamic Message Doc
-[**o_bpv4_0_0_get_dynamic_message_doc**](DynamicMessageDocApi.md#o_bpv4_0_0_get_dynamic_message_doc) | **GET** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Get Dynamic Message Doc
-[**o_bpv4_0_0_update_bank_level_dynamic_message_doc**](DynamicMessageDocApi.md#o_bpv4_0_0_update_bank_level_dynamic_message_doc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Update Bank Level Dynamic Message Doc
-[**o_bpv4_0_0_update_dynamic_message_doc**](DynamicMessageDocApi.md#o_bpv4_0_0_update_dynamic_message_doc) | **PUT** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Update Dynamic Message Doc
+[**create_bank_level_dynamic_message_doc**](DynamicMessageDocApi.md#create_bank_level_dynamic_message_doc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Create Bank Level Dynamic Message Doc
+[**create_dynamic_message_doc**](DynamicMessageDocApi.md#create_dynamic_message_doc) | **POST** /obp/v4.0.0/management/dynamic-message-docs | Create Dynamic Message Doc
+[**delete_bank_level_dynamic_message_doc**](DynamicMessageDocApi.md#delete_bank_level_dynamic_message_doc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Delete Bank Level Dynamic Message Doc
+[**delete_dynamic_message_doc**](DynamicMessageDocApi.md#delete_dynamic_message_doc) | **DELETE** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Delete Dynamic Message Doc
+[**get_all_bank_level_dynamic_message_docs**](DynamicMessageDocApi.md#get_all_bank_level_dynamic_message_docs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Get all Bank Level Dynamic Message Docs
+[**get_all_dynamic_message_docs**](DynamicMessageDocApi.md#get_all_dynamic_message_docs) | **GET** /obp/v4.0.0/management/dynamic-message-docs | Get all Dynamic Message Docs
+[**get_bank_level_dynamic_message_doc**](DynamicMessageDocApi.md#get_bank_level_dynamic_message_doc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Get Bank Level Dynamic Message Doc
+[**get_dynamic_message_doc**](DynamicMessageDocApi.md#get_dynamic_message_doc) | **GET** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Get Dynamic Message Doc
+[**update_bank_level_dynamic_message_doc**](DynamicMessageDocApi.md#update_bank_level_dynamic_message_doc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Update Bank Level Dynamic Message Doc
+[**update_dynamic_message_doc**](DynamicMessageDocApi.md#update_dynamic_message_doc) | **PUT** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Update Dynamic Message Doc
 
 
-# **o_bpv4_0_0_create_bank_level_dynamic_message_doc**
-> OBPv400GetDynamicMessageDoc200Response o_bpv4_0_0_create_bank_level_dynamic_message_doc(bankid, obpv400_update_dynamic_message_doc_request)
+# **create_bank_level_dynamic_message_doc**
+> GetDynamicMessageDoc200Response create_bank_level_dynamic_message_doc(bankid, update_dynamic_message_doc_request)
 
 Create Bank Level Dynamic Message Doc
 
@@ -41,8 +41,8 @@ Create Bank Level Dynamic Message Doc
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_dynamic_message_doc200_response import OBPv400GetDynamicMessageDoc200Response
-from obp_python.models.obpv400_update_dynamic_message_doc_request import OBPv400UpdateDynamicMessageDocRequest
+from obp_python.models.get_dynamic_message_doc200_response import GetDynamicMessageDoc200Response
+from obp_python.models.update_dynamic_message_doc_request import UpdateDynamicMessageDocRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -76,15 +76,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.DynamicMessageDocApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
-    obpv400_update_dynamic_message_doc_request = {type=object, properties={example_outbound_message={type=object, properties={}}, outbound_topic={type=string}, example_inbound_message={type=object, properties={}}, bank_id={type=string}, inbound_topic={type=string}, programming_lang={type=string}, process={type=string}, outbound_avro_schema={type=string}, method_body={type=string}, description={type=string}, message_format={type=string}, adapter_implementation={type=string}, inbound_avro_schema={type=string}}} # OBPv400UpdateDynamicMessageDocRequest | Request body
+    update_dynamic_message_doc_request = {type=object, properties={example_outbound_message={type=object, properties={}}, outbound_topic={type=string}, example_inbound_message={type=object, properties={}}, bank_id={type=string}, inbound_topic={type=string}, programming_lang={type=string}, process={type=string}, outbound_avro_schema={type=string}, method_body={type=string}, description={type=string}, message_format={type=string}, adapter_implementation={type=string}, inbound_avro_schema={type=string}}} # UpdateDynamicMessageDocRequest | Request body
 
     try:
         # Create Bank Level Dynamic Message Doc
-        api_response = api_instance.o_bpv4_0_0_create_bank_level_dynamic_message_doc(bankid, obpv400_update_dynamic_message_doc_request)
-        print("The response of DynamicMessageDocApi->o_bpv4_0_0_create_bank_level_dynamic_message_doc:\n")
+        api_response = api_instance.create_bank_level_dynamic_message_doc(bankid, update_dynamic_message_doc_request)
+        print("The response of DynamicMessageDocApi->create_bank_level_dynamic_message_doc:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DynamicMessageDocApi->o_bpv4_0_0_create_bank_level_dynamic_message_doc: %s\n" % e)
+        print("Exception when calling DynamicMessageDocApi->create_bank_level_dynamic_message_doc: %s\n" % e)
 ```
 
 
@@ -95,11 +95,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
- **obpv400_update_dynamic_message_doc_request** | [**OBPv400UpdateDynamicMessageDocRequest**](OBPv400UpdateDynamicMessageDocRequest.md)| Request body | 
+ **update_dynamic_message_doc_request** | [**UpdateDynamicMessageDocRequest**](UpdateDynamicMessageDocRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -120,8 +120,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_create_dynamic_message_doc**
-> OBPv400GetDynamicMessageDoc200Response o_bpv4_0_0_create_dynamic_message_doc(obpv400_update_dynamic_message_doc_request)
+# **create_dynamic_message_doc**
+> GetDynamicMessageDoc200Response create_dynamic_message_doc(update_dynamic_message_doc_request)
 
 Create Dynamic Message Doc
 
@@ -143,8 +143,8 @@ Create Dynamic Message Doc
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_dynamic_message_doc200_response import OBPv400GetDynamicMessageDoc200Response
-from obp_python.models.obpv400_update_dynamic_message_doc_request import OBPv400UpdateDynamicMessageDocRequest
+from obp_python.models.get_dynamic_message_doc200_response import GetDynamicMessageDoc200Response
+from obp_python.models.update_dynamic_message_doc_request import UpdateDynamicMessageDocRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -177,15 +177,15 @@ configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
 with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.DynamicMessageDocApi(api_client)
-    obpv400_update_dynamic_message_doc_request = {type=object, properties={example_outbound_message={type=object, properties={}}, outbound_topic={type=string}, example_inbound_message={type=object, properties={}}, bank_id={type=string}, inbound_topic={type=string}, programming_lang={type=string}, process={type=string}, outbound_avro_schema={type=string}, method_body={type=string}, description={type=string}, message_format={type=string}, adapter_implementation={type=string}, inbound_avro_schema={type=string}}} # OBPv400UpdateDynamicMessageDocRequest | Request body
+    update_dynamic_message_doc_request = {type=object, properties={example_outbound_message={type=object, properties={}}, outbound_topic={type=string}, example_inbound_message={type=object, properties={}}, bank_id={type=string}, inbound_topic={type=string}, programming_lang={type=string}, process={type=string}, outbound_avro_schema={type=string}, method_body={type=string}, description={type=string}, message_format={type=string}, adapter_implementation={type=string}, inbound_avro_schema={type=string}}} # UpdateDynamicMessageDocRequest | Request body
 
     try:
         # Create Dynamic Message Doc
-        api_response = api_instance.o_bpv4_0_0_create_dynamic_message_doc(obpv400_update_dynamic_message_doc_request)
-        print("The response of DynamicMessageDocApi->o_bpv4_0_0_create_dynamic_message_doc:\n")
+        api_response = api_instance.create_dynamic_message_doc(update_dynamic_message_doc_request)
+        print("The response of DynamicMessageDocApi->create_dynamic_message_doc:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DynamicMessageDocApi->o_bpv4_0_0_create_dynamic_message_doc: %s\n" % e)
+        print("Exception when calling DynamicMessageDocApi->create_dynamic_message_doc: %s\n" % e)
 ```
 
 
@@ -195,11 +195,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **obpv400_update_dynamic_message_doc_request** | [**OBPv400UpdateDynamicMessageDocRequest**](OBPv400UpdateDynamicMessageDocRequest.md)| Request body | 
+ **update_dynamic_message_doc_request** | [**UpdateDynamicMessageDocRequest**](UpdateDynamicMessageDocRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -219,8 +219,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_delete_bank_level_dynamic_message_doc**
-> o_bpv4_0_0_delete_bank_level_dynamic_message_doc(bankid, dynamicmessagedocid)
+# **delete_bank_level_dynamic_message_doc**
+> delete_bank_level_dynamic_message_doc(bankid, dynamicmessagedocid)
 
 Delete Bank Level Dynamic Message Doc
 
@@ -277,9 +277,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete Bank Level Dynamic Message Doc
-        api_instance.o_bpv4_0_0_delete_bank_level_dynamic_message_doc(bankid, dynamicmessagedocid)
+        api_instance.delete_bank_level_dynamic_message_doc(bankid, dynamicmessagedocid)
     except Exception as e:
-        print("Exception when calling DynamicMessageDocApi->o_bpv4_0_0_delete_bank_level_dynamic_message_doc: %s\n" % e)
+        print("Exception when calling DynamicMessageDocApi->delete_bank_level_dynamic_message_doc: %s\n" % e)
 ```
 
 
@@ -315,8 +315,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_delete_dynamic_message_doc**
-> o_bpv4_0_0_delete_dynamic_message_doc(dynamicmessagedocid)
+# **delete_dynamic_message_doc**
+> delete_dynamic_message_doc(dynamicmessagedocid)
 
 Delete Dynamic Message Doc
 
@@ -371,9 +371,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete Dynamic Message Doc
-        api_instance.o_bpv4_0_0_delete_dynamic_message_doc(dynamicmessagedocid)
+        api_instance.delete_dynamic_message_doc(dynamicmessagedocid)
     except Exception as e:
-        print("Exception when calling DynamicMessageDocApi->o_bpv4_0_0_delete_dynamic_message_doc: %s\n" % e)
+        print("Exception when calling DynamicMessageDocApi->delete_dynamic_message_doc: %s\n" % e)
 ```
 
 
@@ -407,8 +407,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_get_all_bank_level_dynamic_message_docs**
-> OBPv400GetAllBankLevelDynamicMessageDocs200Response o_bpv4_0_0_get_all_bank_level_dynamic_message_docs(bankid)
+# **get_all_bank_level_dynamic_message_docs**
+> GetAllBankLevelDynamicMessageDocs200Response get_all_bank_level_dynamic_message_docs(bankid)
 
 Get all Bank Level Dynamic Message Docs
 
@@ -429,7 +429,7 @@ Get all Bank Level Dynamic Message Docs
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_all_bank_level_dynamic_message_docs200_response import OBPv400GetAllBankLevelDynamicMessageDocs200Response
+from obp_python.models.get_all_bank_level_dynamic_message_docs200_response import GetAllBankLevelDynamicMessageDocs200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -466,11 +466,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get all Bank Level Dynamic Message Docs
-        api_response = api_instance.o_bpv4_0_0_get_all_bank_level_dynamic_message_docs(bankid)
-        print("The response of DynamicMessageDocApi->o_bpv4_0_0_get_all_bank_level_dynamic_message_docs:\n")
+        api_response = api_instance.get_all_bank_level_dynamic_message_docs(bankid)
+        print("The response of DynamicMessageDocApi->get_all_bank_level_dynamic_message_docs:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DynamicMessageDocApi->o_bpv4_0_0_get_all_bank_level_dynamic_message_docs: %s\n" % e)
+        print("Exception when calling DynamicMessageDocApi->get_all_bank_level_dynamic_message_docs: %s\n" % e)
 ```
 
 
@@ -484,7 +484,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetAllBankLevelDynamicMessageDocs200Response**](OBPv400GetAllBankLevelDynamicMessageDocs200Response.md)
+[**GetAllBankLevelDynamicMessageDocs200Response**](GetAllBankLevelDynamicMessageDocs200Response.md)
 
 ### Authorization
 
@@ -505,8 +505,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_get_all_dynamic_message_docs**
-> OBPv400GetAllBankLevelDynamicMessageDocs200Response o_bpv4_0_0_get_all_dynamic_message_docs()
+# **get_all_dynamic_message_docs**
+> GetAllBankLevelDynamicMessageDocs200Response get_all_dynamic_message_docs()
 
 Get all Dynamic Message Docs
 
@@ -525,7 +525,7 @@ Get all Dynamic Message Docs
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_all_bank_level_dynamic_message_docs200_response import OBPv400GetAllBankLevelDynamicMessageDocs200Response
+from obp_python.models.get_all_bank_level_dynamic_message_docs200_response import GetAllBankLevelDynamicMessageDocs200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -561,11 +561,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get all Dynamic Message Docs
-        api_response = api_instance.o_bpv4_0_0_get_all_dynamic_message_docs()
-        print("The response of DynamicMessageDocApi->o_bpv4_0_0_get_all_dynamic_message_docs:\n")
+        api_response = api_instance.get_all_dynamic_message_docs()
+        print("The response of DynamicMessageDocApi->get_all_dynamic_message_docs:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DynamicMessageDocApi->o_bpv4_0_0_get_all_dynamic_message_docs: %s\n" % e)
+        print("Exception when calling DynamicMessageDocApi->get_all_dynamic_message_docs: %s\n" % e)
 ```
 
 
@@ -576,7 +576,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllBankLevelDynamicMessageDocs200Response**](OBPv400GetAllBankLevelDynamicMessageDocs200Response.md)
+[**GetAllBankLevelDynamicMessageDocs200Response**](GetAllBankLevelDynamicMessageDocs200Response.md)
 
 ### Authorization
 
@@ -596,8 +596,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_get_bank_level_dynamic_message_doc**
-> OBPv400GetDynamicMessageDoc200Response o_bpv4_0_0_get_bank_level_dynamic_message_doc(bankid, dynamicmessagedocid)
+# **get_bank_level_dynamic_message_doc**
+> GetDynamicMessageDoc200Response get_bank_level_dynamic_message_doc(bankid, dynamicmessagedocid)
 
 Get Bank Level Dynamic Message Doc
 
@@ -619,7 +619,7 @@ Get Bank Level Dynamic Message Doc
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_dynamic_message_doc200_response import OBPv400GetDynamicMessageDoc200Response
+from obp_python.models.get_dynamic_message_doc200_response import GetDynamicMessageDoc200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -657,11 +657,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Bank Level Dynamic Message Doc
-        api_response = api_instance.o_bpv4_0_0_get_bank_level_dynamic_message_doc(bankid, dynamicmessagedocid)
-        print("The response of DynamicMessageDocApi->o_bpv4_0_0_get_bank_level_dynamic_message_doc:\n")
+        api_response = api_instance.get_bank_level_dynamic_message_doc(bankid, dynamicmessagedocid)
+        print("The response of DynamicMessageDocApi->get_bank_level_dynamic_message_doc:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DynamicMessageDocApi->o_bpv4_0_0_get_bank_level_dynamic_message_doc: %s\n" % e)
+        print("Exception when calling DynamicMessageDocApi->get_bank_level_dynamic_message_doc: %s\n" % e)
 ```
 
 
@@ -676,7 +676,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -697,8 +697,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_get_dynamic_message_doc**
-> OBPv400GetDynamicMessageDoc200Response o_bpv4_0_0_get_dynamic_message_doc(dynamicmessagedocid)
+# **get_dynamic_message_doc**
+> GetDynamicMessageDoc200Response get_dynamic_message_doc(dynamicmessagedocid)
 
 Get Dynamic Message Doc
 
@@ -719,7 +719,7 @@ Get Dynamic Message Doc
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_dynamic_message_doc200_response import OBPv400GetDynamicMessageDoc200Response
+from obp_python.models.get_dynamic_message_doc200_response import GetDynamicMessageDoc200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -756,11 +756,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Dynamic Message Doc
-        api_response = api_instance.o_bpv4_0_0_get_dynamic_message_doc(dynamicmessagedocid)
-        print("The response of DynamicMessageDocApi->o_bpv4_0_0_get_dynamic_message_doc:\n")
+        api_response = api_instance.get_dynamic_message_doc(dynamicmessagedocid)
+        print("The response of DynamicMessageDocApi->get_dynamic_message_doc:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DynamicMessageDocApi->o_bpv4_0_0_get_dynamic_message_doc: %s\n" % e)
+        print("Exception when calling DynamicMessageDocApi->get_dynamic_message_doc: %s\n" % e)
 ```
 
 
@@ -774,7 +774,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -794,8 +794,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_update_bank_level_dynamic_message_doc**
-> OBPv400GetDynamicMessageDoc200Response o_bpv4_0_0_update_bank_level_dynamic_message_doc(bankid, dynamicmessagedocid, obpv400_update_dynamic_message_doc_request)
+# **update_bank_level_dynamic_message_doc**
+> GetDynamicMessageDoc200Response update_bank_level_dynamic_message_doc(bankid, dynamicmessagedocid, update_dynamic_message_doc_request)
 
 Update Bank Level Dynamic Message Doc
 
@@ -817,8 +817,8 @@ Update Bank Level Dynamic Message Doc
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_dynamic_message_doc200_response import OBPv400GetDynamicMessageDoc200Response
-from obp_python.models.obpv400_update_dynamic_message_doc_request import OBPv400UpdateDynamicMessageDocRequest
+from obp_python.models.get_dynamic_message_doc200_response import GetDynamicMessageDoc200Response
+from obp_python.models.update_dynamic_message_doc_request import UpdateDynamicMessageDocRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -853,15 +853,15 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.DynamicMessageDocApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
     dynamicmessagedocid = 'dynamicmessagedocid_example' # str | The DYNAMICMESSAGEDOCID identifier
-    obpv400_update_dynamic_message_doc_request = {type=object, properties={example_outbound_message={type=object, properties={}}, outbound_topic={type=string}, example_inbound_message={type=object, properties={}}, bank_id={type=string}, inbound_topic={type=string}, programming_lang={type=string}, process={type=string}, outbound_avro_schema={type=string}, method_body={type=string}, description={type=string}, message_format={type=string}, adapter_implementation={type=string}, inbound_avro_schema={type=string}}} # OBPv400UpdateDynamicMessageDocRequest | Request body
+    update_dynamic_message_doc_request = {type=object, properties={example_outbound_message={type=object, properties={}}, outbound_topic={type=string}, example_inbound_message={type=object, properties={}}, bank_id={type=string}, inbound_topic={type=string}, programming_lang={type=string}, process={type=string}, outbound_avro_schema={type=string}, method_body={type=string}, description={type=string}, message_format={type=string}, adapter_implementation={type=string}, inbound_avro_schema={type=string}}} # UpdateDynamicMessageDocRequest | Request body
 
     try:
         # Update Bank Level Dynamic Message Doc
-        api_response = api_instance.o_bpv4_0_0_update_bank_level_dynamic_message_doc(bankid, dynamicmessagedocid, obpv400_update_dynamic_message_doc_request)
-        print("The response of DynamicMessageDocApi->o_bpv4_0_0_update_bank_level_dynamic_message_doc:\n")
+        api_response = api_instance.update_bank_level_dynamic_message_doc(bankid, dynamicmessagedocid, update_dynamic_message_doc_request)
+        print("The response of DynamicMessageDocApi->update_bank_level_dynamic_message_doc:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DynamicMessageDocApi->o_bpv4_0_0_update_bank_level_dynamic_message_doc: %s\n" % e)
+        print("Exception when calling DynamicMessageDocApi->update_bank_level_dynamic_message_doc: %s\n" % e)
 ```
 
 
@@ -873,11 +873,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
  **dynamicmessagedocid** | **str**| The DYNAMICMESSAGEDOCID identifier | 
- **obpv400_update_dynamic_message_doc_request** | [**OBPv400UpdateDynamicMessageDocRequest**](OBPv400UpdateDynamicMessageDocRequest.md)| Request body | 
+ **update_dynamic_message_doc_request** | [**UpdateDynamicMessageDocRequest**](UpdateDynamicMessageDocRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -898,8 +898,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_update_dynamic_message_doc**
-> OBPv400GetDynamicMessageDoc200Response o_bpv4_0_0_update_dynamic_message_doc(dynamicmessagedocid, obpv400_update_dynamic_message_doc_request)
+# **update_dynamic_message_doc**
+> GetDynamicMessageDoc200Response update_dynamic_message_doc(dynamicmessagedocid, update_dynamic_message_doc_request)
 
 Update Dynamic Message Doc
 
@@ -920,8 +920,8 @@ Update Dynamic Message Doc
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_dynamic_message_doc200_response import OBPv400GetDynamicMessageDoc200Response
-from obp_python.models.obpv400_update_dynamic_message_doc_request import OBPv400UpdateDynamicMessageDocRequest
+from obp_python.models.get_dynamic_message_doc200_response import GetDynamicMessageDoc200Response
+from obp_python.models.update_dynamic_message_doc_request import UpdateDynamicMessageDocRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -955,15 +955,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.DynamicMessageDocApi(api_client)
     dynamicmessagedocid = 'dynamicmessagedocid_example' # str | The DYNAMICMESSAGEDOCID identifier
-    obpv400_update_dynamic_message_doc_request = {"type":"object","properties":{"example_outbound_message":{"type":"object","properties":{}},"outbound_topic":{"type":"string"},"example_inbound_message":{"type":"object","properties":{}},"bank_id":{"type":"string"},"inbound_topic":{"type":"string"},"programming_lang":{"type":"string"},"process":{"type":"string"},"outbound_avro_schema":{"type":"string"},"method_body":{"type":"string"},"description":{"type":"string"},"message_format":{"type":"string"},"adapter_implementation":{"type":"string"},"inbound_avro_schema":{"type":"string"}}} # OBPv400UpdateDynamicMessageDocRequest | Request body
+    update_dynamic_message_doc_request = {"type":"object","properties":{"example_outbound_message":{"type":"object","properties":{}},"outbound_topic":{"type":"string"},"example_inbound_message":{"type":"object","properties":{}},"bank_id":{"type":"string"},"inbound_topic":{"type":"string"},"programming_lang":{"type":"string"},"process":{"type":"string"},"outbound_avro_schema":{"type":"string"},"method_body":{"type":"string"},"description":{"type":"string"},"message_format":{"type":"string"},"adapter_implementation":{"type":"string"},"inbound_avro_schema":{"type":"string"}}} # UpdateDynamicMessageDocRequest | Request body
 
     try:
         # Update Dynamic Message Doc
-        api_response = api_instance.o_bpv4_0_0_update_dynamic_message_doc(dynamicmessagedocid, obpv400_update_dynamic_message_doc_request)
-        print("The response of DynamicMessageDocApi->o_bpv4_0_0_update_dynamic_message_doc:\n")
+        api_response = api_instance.update_dynamic_message_doc(dynamicmessagedocid, update_dynamic_message_doc_request)
+        print("The response of DynamicMessageDocApi->update_dynamic_message_doc:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DynamicMessageDocApi->o_bpv4_0_0_update_dynamic_message_doc: %s\n" % e)
+        print("Exception when calling DynamicMessageDocApi->update_dynamic_message_doc: %s\n" % e)
 ```
 
 
@@ -974,11 +974,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **dynamicmessagedocid** | **str**| The DYNAMICMESSAGEDOCID identifier | 
- **obpv400_update_dynamic_message_doc_request** | [**OBPv400UpdateDynamicMessageDocRequest**](OBPv400UpdateDynamicMessageDocRequest.md)| Request body | 
+ **update_dynamic_message_doc_request** | [**UpdateDynamicMessageDocRequest**](UpdateDynamicMessageDocRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 

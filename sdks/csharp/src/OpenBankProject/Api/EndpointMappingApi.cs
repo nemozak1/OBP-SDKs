@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -46,10 +46,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400CreateEndpointMappingRequest">Request body</param>
+        /// <param name="createEndpointMappingRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateBankLevelEndpointMappingApiResponse"/>&gt;</returns>
-        Task<IOBPv400CreateBankLevelEndpointMappingApiResponse> OBPv400CreateBankLevelEndpointMappingAsync(string bankid, OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateBankLevelEndpointMappingApiResponse"/>&gt;</returns>
+        Task<ICreateBankLevelEndpointMappingApiResponse> CreateBankLevelEndpointMappingAsync(string bankid, CreateEndpointMappingRequest createEndpointMappingRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Bank Level Endpoint Mapping
@@ -58,10 +58,10 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Create an Bank Level Endpoint Mapping.&lt;/p&gt; &lt;p&gt;Note: at moment only support the dynamic endpoints&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400CreateEndpointMappingRequest">Request body</param>
+        /// <param name="createEndpointMappingRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateBankLevelEndpointMappingApiResponse"/>?&gt;</returns>
-        Task<IOBPv400CreateBankLevelEndpointMappingApiResponse?> OBPv400CreateBankLevelEndpointMappingOrDefaultAsync(string bankid, OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateBankLevelEndpointMappingApiResponse"/>?&gt;</returns>
+        Task<ICreateBankLevelEndpointMappingApiResponse?> CreateBankLevelEndpointMappingOrDefaultAsync(string bankid, CreateEndpointMappingRequest createEndpointMappingRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Endpoint Mapping
@@ -70,10 +70,10 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Create an Endpoint Mapping.&lt;/p&gt; &lt;p&gt;Note: at moment only support the dynamic endpoints&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oBPv400CreateEndpointMappingRequest">Request body</param>
+        /// <param name="createEndpointMappingRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateEndpointMappingApiResponse"/>&gt;</returns>
-        Task<IOBPv400CreateEndpointMappingApiResponse> OBPv400CreateEndpointMappingAsync(OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateEndpointMappingApiResponse"/>&gt;</returns>
+        Task<ICreateEndpointMappingApiResponse> CreateEndpointMappingAsync(CreateEndpointMappingRequest createEndpointMappingRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Endpoint Mapping
@@ -81,10 +81,10 @@ namespace OpenBankProject.Api
         /// <remarks>
         /// &lt;p&gt;Create an Endpoint Mapping.&lt;/p&gt; &lt;p&gt;Note: at moment only support the dynamic endpoints&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
         /// </remarks>
-        /// <param name="oBPv400CreateEndpointMappingRequest">Request body</param>
+        /// <param name="createEndpointMappingRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateEndpointMappingApiResponse"/>?&gt;</returns>
-        Task<IOBPv400CreateEndpointMappingApiResponse?> OBPv400CreateEndpointMappingOrDefaultAsync(OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateEndpointMappingApiResponse"/>?&gt;</returns>
+        Task<ICreateEndpointMappingApiResponse?> CreateEndpointMappingOrDefaultAsync(CreateEndpointMappingRequest createEndpointMappingRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Bank Level Endpoint Mapping
@@ -96,8 +96,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="endpointmappingid">The ENDPOINTMAPPINGID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteBankLevelEndpointMappingApiResponse"/>&gt;</returns>
-        Task<IOBPv400DeleteBankLevelEndpointMappingApiResponse> OBPv400DeleteBankLevelEndpointMappingAsync(string bankid, string endpointmappingid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteBankLevelEndpointMappingApiResponse"/>&gt;</returns>
+        Task<IDeleteBankLevelEndpointMappingApiResponse> DeleteBankLevelEndpointMappingAsync(string bankid, string endpointmappingid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Bank Level Endpoint Mapping
@@ -108,8 +108,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="endpointmappingid">The ENDPOINTMAPPINGID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteBankLevelEndpointMappingApiResponse"/>?&gt;</returns>
-        Task<IOBPv400DeleteBankLevelEndpointMappingApiResponse?> OBPv400DeleteBankLevelEndpointMappingOrDefaultAsync(string bankid, string endpointmappingid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteBankLevelEndpointMappingApiResponse"/>?&gt;</returns>
+        Task<IDeleteBankLevelEndpointMappingApiResponse?> DeleteBankLevelEndpointMappingOrDefaultAsync(string bankid, string endpointmappingid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Endpoint Mapping
@@ -120,8 +120,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="endpointmappingid">The ENDPOINTMAPPINGID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteEndpointMappingApiResponse"/>&gt;</returns>
-        Task<IOBPv400DeleteEndpointMappingApiResponse> OBPv400DeleteEndpointMappingAsync(string endpointmappingid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteEndpointMappingApiResponse"/>&gt;</returns>
+        Task<IDeleteEndpointMappingApiResponse> DeleteEndpointMappingAsync(string endpointmappingid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Endpoint Mapping
@@ -131,8 +131,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="endpointmappingid">The ENDPOINTMAPPINGID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteEndpointMappingApiResponse"/>?&gt;</returns>
-        Task<IOBPv400DeleteEndpointMappingApiResponse?> OBPv400DeleteEndpointMappingOrDefaultAsync(string endpointmappingid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteEndpointMappingApiResponse"/>?&gt;</returns>
+        Task<IDeleteEndpointMappingApiResponse?> DeleteEndpointMappingOrDefaultAsync(string endpointmappingid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get all Bank Level Endpoint Mappings
@@ -143,8 +143,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAllBankLevelEndpointMappingsApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetAllBankLevelEndpointMappingsApiResponse> OBPv400GetAllBankLevelEndpointMappingsAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllBankLevelEndpointMappingsApiResponse"/>&gt;</returns>
+        Task<IGetAllBankLevelEndpointMappingsApiResponse> GetAllBankLevelEndpointMappingsAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get all Bank Level Endpoint Mappings
@@ -154,8 +154,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAllBankLevelEndpointMappingsApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetAllBankLevelEndpointMappingsApiResponse?> OBPv400GetAllBankLevelEndpointMappingsOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllBankLevelEndpointMappingsApiResponse"/>?&gt;</returns>
+        Task<IGetAllBankLevelEndpointMappingsApiResponse?> GetAllBankLevelEndpointMappingsOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get all Endpoint Mappings
@@ -165,8 +165,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAllEndpointMappingsApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetAllEndpointMappingsApiResponse> OBPv400GetAllEndpointMappingsAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllEndpointMappingsApiResponse"/>&gt;</returns>
+        Task<IGetAllEndpointMappingsApiResponse> GetAllEndpointMappingsAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get all Endpoint Mappings
@@ -175,8 +175,8 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Get all Endpoint Mappings.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAllEndpointMappingsApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetAllEndpointMappingsApiResponse?> OBPv400GetAllEndpointMappingsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllEndpointMappingsApiResponse"/>?&gt;</returns>
+        Task<IGetAllEndpointMappingsApiResponse?> GetAllEndpointMappingsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Bank Level Endpoint Mapping
@@ -188,8 +188,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="endpointmappingid">The ENDPOINTMAPPINGID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetBankLevelEndpointMappingApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetBankLevelEndpointMappingApiResponse> OBPv400GetBankLevelEndpointMappingAsync(string bankid, string endpointmappingid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBankLevelEndpointMappingApiResponse"/>&gt;</returns>
+        Task<IGetBankLevelEndpointMappingApiResponse> GetBankLevelEndpointMappingAsync(string bankid, string endpointmappingid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Bank Level Endpoint Mapping
@@ -200,8 +200,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="endpointmappingid">The ENDPOINTMAPPINGID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetBankLevelEndpointMappingApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetBankLevelEndpointMappingApiResponse?> OBPv400GetBankLevelEndpointMappingOrDefaultAsync(string bankid, string endpointmappingid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBankLevelEndpointMappingApiResponse"/>?&gt;</returns>
+        Task<IGetBankLevelEndpointMappingApiResponse?> GetBankLevelEndpointMappingOrDefaultAsync(string bankid, string endpointmappingid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Endpoint Mapping by Id
@@ -212,8 +212,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="endpointmappingid">The ENDPOINTMAPPINGID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetEndpointMappingApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetEndpointMappingApiResponse> OBPv400GetEndpointMappingAsync(string endpointmappingid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetEndpointMappingApiResponse"/>&gt;</returns>
+        Task<IGetEndpointMappingApiResponse> GetEndpointMappingAsync(string endpointmappingid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Endpoint Mapping by Id
@@ -223,8 +223,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="endpointmappingid">The ENDPOINTMAPPINGID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetEndpointMappingApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetEndpointMappingApiResponse?> OBPv400GetEndpointMappingOrDefaultAsync(string endpointmappingid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetEndpointMappingApiResponse"/>?&gt;</returns>
+        Task<IGetEndpointMappingApiResponse?> GetEndpointMappingOrDefaultAsync(string endpointmappingid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update Bank Level Endpoint Mapping
@@ -235,10 +235,10 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="endpointmappingid">The ENDPOINTMAPPINGID identifier</param>
-        /// <param name="oBPv400CreateEndpointMappingRequest">Request body</param>
+        /// <param name="createEndpointMappingRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateBankLevelEndpointMappingApiResponse"/>&gt;</returns>
-        Task<IOBPv400UpdateBankLevelEndpointMappingApiResponse> OBPv400UpdateBankLevelEndpointMappingAsync(string bankid, string endpointmappingid, OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateBankLevelEndpointMappingApiResponse"/>&gt;</returns>
+        Task<IUpdateBankLevelEndpointMappingApiResponse> UpdateBankLevelEndpointMappingAsync(string bankid, string endpointmappingid, CreateEndpointMappingRequest createEndpointMappingRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update Bank Level Endpoint Mapping
@@ -248,10 +248,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="endpointmappingid">The ENDPOINTMAPPINGID identifier</param>
-        /// <param name="oBPv400CreateEndpointMappingRequest">Request body</param>
+        /// <param name="createEndpointMappingRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateBankLevelEndpointMappingApiResponse"/>?&gt;</returns>
-        Task<IOBPv400UpdateBankLevelEndpointMappingApiResponse?> OBPv400UpdateBankLevelEndpointMappingOrDefaultAsync(string bankid, string endpointmappingid, OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateBankLevelEndpointMappingApiResponse"/>?&gt;</returns>
+        Task<IUpdateBankLevelEndpointMappingApiResponse?> UpdateBankLevelEndpointMappingOrDefaultAsync(string bankid, string endpointmappingid, CreateEndpointMappingRequest createEndpointMappingRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update Endpoint Mapping
@@ -261,10 +261,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="endpointmappingid">The ENDPOINTMAPPINGID identifier</param>
-        /// <param name="oBPv400CreateEndpointMappingRequest">Request body</param>
+        /// <param name="createEndpointMappingRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateEndpointMappingApiResponse"/>&gt;</returns>
-        Task<IOBPv400UpdateEndpointMappingApiResponse> OBPv400UpdateEndpointMappingAsync(string endpointmappingid, OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateEndpointMappingApiResponse"/>&gt;</returns>
+        Task<IUpdateEndpointMappingApiResponse> UpdateEndpointMappingAsync(string endpointmappingid, CreateEndpointMappingRequest createEndpointMappingRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update Endpoint Mapping
@@ -273,16 +273,16 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Update an Endpoint Mapping.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ENDPOINT_MAPPING_ID&lt;/a&gt;: ENDPOINT_MAPPING_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
         /// </remarks>
         /// <param name="endpointmappingid">The ENDPOINTMAPPINGID identifier</param>
-        /// <param name="oBPv400CreateEndpointMappingRequest">Request body</param>
+        /// <param name="createEndpointMappingRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateEndpointMappingApiResponse"/>?&gt;</returns>
-        Task<IOBPv400UpdateEndpointMappingApiResponse?> OBPv400UpdateEndpointMappingOrDefaultAsync(string endpointmappingid, OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateEndpointMappingApiResponse"/>?&gt;</returns>
+        Task<IUpdateEndpointMappingApiResponse?> UpdateEndpointMappingOrDefaultAsync(string endpointmappingid, CreateEndpointMappingRequest createEndpointMappingRequest, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400CreateBankLevelEndpointMappingApiResponse"/>
+    /// The <see cref="ICreateBankLevelEndpointMappingApiResponse"/>
     /// </summary>
-    public interface IOBPv400CreateBankLevelEndpointMappingApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems?>
+    public interface ICreateBankLevelEndpointMappingApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetAllEndpointMappings200ResponseEndpointMappingsInner?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -304,9 +304,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400CreateEndpointMappingApiResponse"/>
+    /// The <see cref="ICreateEndpointMappingApiResponse"/>
     /// </summary>
-    public interface IOBPv400CreateEndpointMappingApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems?>
+    public interface ICreateEndpointMappingApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetAllEndpointMappings200ResponseEndpointMappingsInner?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -322,51 +322,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400DeleteBankLevelEndpointMappingApiResponse"/>
+    /// The <see cref="IDeleteBankLevelEndpointMappingApiResponse"/>
     /// </summary>
-    public interface IOBPv400DeleteBankLevelEndpointMappingApiResponse : OpenBankProject.Client.IApiResponse
-    {
-        /// <summary>
-        /// Returns true if the response is 200 Ok
-        /// </summary>
-        /// <returns></returns>
-        bool IsOk { get; }
-
-        /// <summary>
-        /// Returns true if the response is 404 NotFound
-        /// </summary>
-        /// <returns></returns>
-        bool IsNotFound { get; }
-
-        /// <summary>
-        /// Returns true if the response is 500 InternalServerError
-        /// </summary>
-        /// <returns></returns>
-        bool IsInternalServerError { get; }
-    }
-
-    /// <summary>
-    /// The <see cref="IOBPv400DeleteEndpointMappingApiResponse"/>
-    /// </summary>
-    public interface IOBPv400DeleteEndpointMappingApiResponse : OpenBankProject.Client.IApiResponse
-    {
-        /// <summary>
-        /// Returns true if the response is 200 Ok
-        /// </summary>
-        /// <returns></returns>
-        bool IsOk { get; }
-
-        /// <summary>
-        /// Returns true if the response is 500 InternalServerError
-        /// </summary>
-        /// <returns></returns>
-        bool IsInternalServerError { get; }
-    }
-
-    /// <summary>
-    /// The <see cref="IOBPv400GetAllBankLevelEndpointMappingsApiResponse"/>
-    /// </summary>
-    public interface IOBPv400GetAllBankLevelEndpointMappingsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetAllEndpointMappings200Response?>
+    public interface IDeleteBankLevelEndpointMappingApiResponse : OpenBankProject.Client.IApiResponse
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -388,9 +346,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400GetAllEndpointMappingsApiResponse"/>
+    /// The <see cref="IDeleteEndpointMappingApiResponse"/>
     /// </summary>
-    public interface IOBPv400GetAllEndpointMappingsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetAllEndpointMappings200Response?>
+    public interface IDeleteEndpointMappingApiResponse : OpenBankProject.Client.IApiResponse
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -406,51 +364,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400GetBankLevelEndpointMappingApiResponse"/>
+    /// The <see cref="IGetAllBankLevelEndpointMappingsApiResponse"/>
     /// </summary>
-    public interface IOBPv400GetBankLevelEndpointMappingApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems?>
-    {
-        /// <summary>
-        /// Returns true if the response is 200 Ok
-        /// </summary>
-        /// <returns></returns>
-        bool IsOk { get; }
-
-        /// <summary>
-        /// Returns true if the response is 404 NotFound
-        /// </summary>
-        /// <returns></returns>
-        bool IsNotFound { get; }
-
-        /// <summary>
-        /// Returns true if the response is 500 InternalServerError
-        /// </summary>
-        /// <returns></returns>
-        bool IsInternalServerError { get; }
-    }
-
-    /// <summary>
-    /// The <see cref="IOBPv400GetEndpointMappingApiResponse"/>
-    /// </summary>
-    public interface IOBPv400GetEndpointMappingApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems?>
-    {
-        /// <summary>
-        /// Returns true if the response is 200 Ok
-        /// </summary>
-        /// <returns></returns>
-        bool IsOk { get; }
-
-        /// <summary>
-        /// Returns true if the response is 500 InternalServerError
-        /// </summary>
-        /// <returns></returns>
-        bool IsInternalServerError { get; }
-    }
-
-    /// <summary>
-    /// The <see cref="IOBPv400UpdateBankLevelEndpointMappingApiResponse"/>
-    /// </summary>
-    public interface IOBPv400UpdateBankLevelEndpointMappingApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems?>
+    public interface IGetAllBankLevelEndpointMappingsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetAllEndpointMappings200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -472,9 +388,93 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400UpdateEndpointMappingApiResponse"/>
+    /// The <see cref="IGetAllEndpointMappingsApiResponse"/>
     /// </summary>
-    public interface IOBPv400UpdateEndpointMappingApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems?>
+    public interface IGetAllEndpointMappingsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetAllEndpointMappings200Response?>
+    {
+        /// <summary>
+        /// Returns true if the response is 200 Ok
+        /// </summary>
+        /// <returns></returns>
+        bool IsOk { get; }
+
+        /// <summary>
+        /// Returns true if the response is 500 InternalServerError
+        /// </summary>
+        /// <returns></returns>
+        bool IsInternalServerError { get; }
+    }
+
+    /// <summary>
+    /// The <see cref="IGetBankLevelEndpointMappingApiResponse"/>
+    /// </summary>
+    public interface IGetBankLevelEndpointMappingApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetAllEndpointMappings200ResponseEndpointMappingsInner?>
+    {
+        /// <summary>
+        /// Returns true if the response is 200 Ok
+        /// </summary>
+        /// <returns></returns>
+        bool IsOk { get; }
+
+        /// <summary>
+        /// Returns true if the response is 404 NotFound
+        /// </summary>
+        /// <returns></returns>
+        bool IsNotFound { get; }
+
+        /// <summary>
+        /// Returns true if the response is 500 InternalServerError
+        /// </summary>
+        /// <returns></returns>
+        bool IsInternalServerError { get; }
+    }
+
+    /// <summary>
+    /// The <see cref="IGetEndpointMappingApiResponse"/>
+    /// </summary>
+    public interface IGetEndpointMappingApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetAllEndpointMappings200ResponseEndpointMappingsInner?>
+    {
+        /// <summary>
+        /// Returns true if the response is 200 Ok
+        /// </summary>
+        /// <returns></returns>
+        bool IsOk { get; }
+
+        /// <summary>
+        /// Returns true if the response is 500 InternalServerError
+        /// </summary>
+        /// <returns></returns>
+        bool IsInternalServerError { get; }
+    }
+
+    /// <summary>
+    /// The <see cref="IUpdateBankLevelEndpointMappingApiResponse"/>
+    /// </summary>
+    public interface IUpdateBankLevelEndpointMappingApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetAllEndpointMappings200ResponseEndpointMappingsInner?>
+    {
+        /// <summary>
+        /// Returns true if the response is 200 Ok
+        /// </summary>
+        /// <returns></returns>
+        bool IsOk { get; }
+
+        /// <summary>
+        /// Returns true if the response is 404 NotFound
+        /// </summary>
+        /// <returns></returns>
+        bool IsNotFound { get; }
+
+        /// <summary>
+        /// Returns true if the response is 500 InternalServerError
+        /// </summary>
+        /// <returns></returns>
+        bool IsInternalServerError { get; }
+    }
+
+    /// <summary>
+    /// The <see cref="IUpdateEndpointMappingApiResponse"/>
+    /// </summary>
+    public interface IUpdateEndpointMappingApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetAllEndpointMappings200ResponseEndpointMappingsInner?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -497,201 +497,201 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400CreateBankLevelEndpointMapping;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateBankLevelEndpointMapping;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400CreateBankLevelEndpointMapping;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateBankLevelEndpointMapping;
 
-        internal void ExecuteOnOBPv400CreateBankLevelEndpointMapping(EndpointMappingApi.OBPv400CreateBankLevelEndpointMappingApiResponse apiResponse)
+        internal void ExecuteOnCreateBankLevelEndpointMapping(EndpointMappingApi.CreateBankLevelEndpointMappingApiResponse apiResponse)
         {
-            OnOBPv400CreateBankLevelEndpointMapping?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateBankLevelEndpointMapping?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400CreateBankLevelEndpointMapping(Exception exception)
+        internal void ExecuteOnErrorCreateBankLevelEndpointMapping(Exception exception)
         {
-            OnErrorOBPv400CreateBankLevelEndpointMapping?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateBankLevelEndpointMapping?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400CreateEndpointMapping;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateEndpointMapping;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400CreateEndpointMapping;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateEndpointMapping;
 
-        internal void ExecuteOnOBPv400CreateEndpointMapping(EndpointMappingApi.OBPv400CreateEndpointMappingApiResponse apiResponse)
+        internal void ExecuteOnCreateEndpointMapping(EndpointMappingApi.CreateEndpointMappingApiResponse apiResponse)
         {
-            OnOBPv400CreateEndpointMapping?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateEndpointMapping?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400CreateEndpointMapping(Exception exception)
+        internal void ExecuteOnErrorCreateEndpointMapping(Exception exception)
         {
-            OnErrorOBPv400CreateEndpointMapping?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateEndpointMapping?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400DeleteBankLevelEndpointMapping;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteBankLevelEndpointMapping;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400DeleteBankLevelEndpointMapping;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteBankLevelEndpointMapping;
 
-        internal void ExecuteOnOBPv400DeleteBankLevelEndpointMapping(EndpointMappingApi.OBPv400DeleteBankLevelEndpointMappingApiResponse apiResponse)
+        internal void ExecuteOnDeleteBankLevelEndpointMapping(EndpointMappingApi.DeleteBankLevelEndpointMappingApiResponse apiResponse)
         {
-            OnOBPv400DeleteBankLevelEndpointMapping?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteBankLevelEndpointMapping?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400DeleteBankLevelEndpointMapping(Exception exception)
+        internal void ExecuteOnErrorDeleteBankLevelEndpointMapping(Exception exception)
         {
-            OnErrorOBPv400DeleteBankLevelEndpointMapping?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteBankLevelEndpointMapping?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400DeleteEndpointMapping;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteEndpointMapping;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400DeleteEndpointMapping;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteEndpointMapping;
 
-        internal void ExecuteOnOBPv400DeleteEndpointMapping(EndpointMappingApi.OBPv400DeleteEndpointMappingApiResponse apiResponse)
+        internal void ExecuteOnDeleteEndpointMapping(EndpointMappingApi.DeleteEndpointMappingApiResponse apiResponse)
         {
-            OnOBPv400DeleteEndpointMapping?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteEndpointMapping?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400DeleteEndpointMapping(Exception exception)
+        internal void ExecuteOnErrorDeleteEndpointMapping(Exception exception)
         {
-            OnErrorOBPv400DeleteEndpointMapping?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteEndpointMapping?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetAllBankLevelEndpointMappings;
+        public event EventHandler<ApiResponseEventArgs>? OnGetAllBankLevelEndpointMappings;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetAllBankLevelEndpointMappings;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetAllBankLevelEndpointMappings;
 
-        internal void ExecuteOnOBPv400GetAllBankLevelEndpointMappings(EndpointMappingApi.OBPv400GetAllBankLevelEndpointMappingsApiResponse apiResponse)
+        internal void ExecuteOnGetAllBankLevelEndpointMappings(EndpointMappingApi.GetAllBankLevelEndpointMappingsApiResponse apiResponse)
         {
-            OnOBPv400GetAllBankLevelEndpointMappings?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetAllBankLevelEndpointMappings?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetAllBankLevelEndpointMappings(Exception exception)
+        internal void ExecuteOnErrorGetAllBankLevelEndpointMappings(Exception exception)
         {
-            OnErrorOBPv400GetAllBankLevelEndpointMappings?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetAllBankLevelEndpointMappings?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetAllEndpointMappings;
+        public event EventHandler<ApiResponseEventArgs>? OnGetAllEndpointMappings;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetAllEndpointMappings;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetAllEndpointMappings;
 
-        internal void ExecuteOnOBPv400GetAllEndpointMappings(EndpointMappingApi.OBPv400GetAllEndpointMappingsApiResponse apiResponse)
+        internal void ExecuteOnGetAllEndpointMappings(EndpointMappingApi.GetAllEndpointMappingsApiResponse apiResponse)
         {
-            OnOBPv400GetAllEndpointMappings?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetAllEndpointMappings?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetAllEndpointMappings(Exception exception)
+        internal void ExecuteOnErrorGetAllEndpointMappings(Exception exception)
         {
-            OnErrorOBPv400GetAllEndpointMappings?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetAllEndpointMappings?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetBankLevelEndpointMapping;
+        public event EventHandler<ApiResponseEventArgs>? OnGetBankLevelEndpointMapping;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetBankLevelEndpointMapping;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetBankLevelEndpointMapping;
 
-        internal void ExecuteOnOBPv400GetBankLevelEndpointMapping(EndpointMappingApi.OBPv400GetBankLevelEndpointMappingApiResponse apiResponse)
+        internal void ExecuteOnGetBankLevelEndpointMapping(EndpointMappingApi.GetBankLevelEndpointMappingApiResponse apiResponse)
         {
-            OnOBPv400GetBankLevelEndpointMapping?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetBankLevelEndpointMapping?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetBankLevelEndpointMapping(Exception exception)
+        internal void ExecuteOnErrorGetBankLevelEndpointMapping(Exception exception)
         {
-            OnErrorOBPv400GetBankLevelEndpointMapping?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetBankLevelEndpointMapping?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetEndpointMapping;
+        public event EventHandler<ApiResponseEventArgs>? OnGetEndpointMapping;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetEndpointMapping;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetEndpointMapping;
 
-        internal void ExecuteOnOBPv400GetEndpointMapping(EndpointMappingApi.OBPv400GetEndpointMappingApiResponse apiResponse)
+        internal void ExecuteOnGetEndpointMapping(EndpointMappingApi.GetEndpointMappingApiResponse apiResponse)
         {
-            OnOBPv400GetEndpointMapping?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetEndpointMapping?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetEndpointMapping(Exception exception)
+        internal void ExecuteOnErrorGetEndpointMapping(Exception exception)
         {
-            OnErrorOBPv400GetEndpointMapping?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetEndpointMapping?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400UpdateBankLevelEndpointMapping;
+        public event EventHandler<ApiResponseEventArgs>? OnUpdateBankLevelEndpointMapping;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400UpdateBankLevelEndpointMapping;
+        public event EventHandler<ExceptionEventArgs>? OnErrorUpdateBankLevelEndpointMapping;
 
-        internal void ExecuteOnOBPv400UpdateBankLevelEndpointMapping(EndpointMappingApi.OBPv400UpdateBankLevelEndpointMappingApiResponse apiResponse)
+        internal void ExecuteOnUpdateBankLevelEndpointMapping(EndpointMappingApi.UpdateBankLevelEndpointMappingApiResponse apiResponse)
         {
-            OnOBPv400UpdateBankLevelEndpointMapping?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnUpdateBankLevelEndpointMapping?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400UpdateBankLevelEndpointMapping(Exception exception)
+        internal void ExecuteOnErrorUpdateBankLevelEndpointMapping(Exception exception)
         {
-            OnErrorOBPv400UpdateBankLevelEndpointMapping?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorUpdateBankLevelEndpointMapping?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400UpdateEndpointMapping;
+        public event EventHandler<ApiResponseEventArgs>? OnUpdateEndpointMapping;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400UpdateEndpointMapping;
+        public event EventHandler<ExceptionEventArgs>? OnErrorUpdateEndpointMapping;
 
-        internal void ExecuteOnOBPv400UpdateEndpointMapping(EndpointMappingApi.OBPv400UpdateEndpointMappingApiResponse apiResponse)
+        internal void ExecuteOnUpdateEndpointMapping(EndpointMappingApi.UpdateEndpointMappingApiResponse apiResponse)
         {
-            OnOBPv400UpdateEndpointMapping?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnUpdateEndpointMapping?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400UpdateEndpointMapping(Exception exception)
+        internal void ExecuteOnErrorUpdateEndpointMapping(Exception exception)
         {
-            OnErrorOBPv400UpdateEndpointMapping?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorUpdateEndpointMapping?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -749,21 +749,21 @@ namespace OpenBankProject.Api
             OauthTokenProvider = oauthTokenProvider;
         }
 
-        partial void FormatOBPv400CreateBankLevelEndpointMapping(ref string bankid, OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest);
+        partial void FormatCreateBankLevelEndpointMapping(ref string bankid, CreateEndpointMappingRequest createEndpointMappingRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateEndpointMappingRequest"></param>
+        /// <param name="createEndpointMappingRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv400CreateBankLevelEndpointMapping(string bankid, OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest)
+        private void ValidateCreateBankLevelEndpointMapping(string bankid, CreateEndpointMappingRequest createEndpointMappingRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
 
-            if (oBPv400CreateEndpointMappingRequest == null)
-                throw new ArgumentNullException(nameof(oBPv400CreateEndpointMappingRequest));
+            if (createEndpointMappingRequest == null)
+                throw new ArgumentNullException(nameof(createEndpointMappingRequest));
         }
 
         /// <summary>
@@ -771,11 +771,11 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateEndpointMappingRequest"></param>
-        private void AfterOBPv400CreateBankLevelEndpointMappingDefaultImplementation(IOBPv400CreateBankLevelEndpointMappingApiResponse apiResponseLocalVar, string bankid, OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest)
+        /// <param name="createEndpointMappingRequest"></param>
+        private void AfterCreateBankLevelEndpointMappingDefaultImplementation(ICreateBankLevelEndpointMappingApiResponse apiResponseLocalVar, string bankid, CreateEndpointMappingRequest createEndpointMappingRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400CreateBankLevelEndpointMapping(ref suppressDefaultLog, apiResponseLocalVar, bankid, oBPv400CreateEndpointMappingRequest);
+            AfterCreateBankLevelEndpointMapping(ref suppressDefaultLog, apiResponseLocalVar, bankid, createEndpointMappingRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -786,8 +786,8 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateEndpointMappingRequest"></param>
-        partial void AfterOBPv400CreateBankLevelEndpointMapping(ref bool suppressDefaultLog, IOBPv400CreateBankLevelEndpointMappingApiResponse apiResponseLocalVar, string bankid, OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest);
+        /// <param name="createEndpointMappingRequest"></param>
+        partial void AfterCreateBankLevelEndpointMapping(ref bool suppressDefaultLog, ICreateBankLevelEndpointMappingApiResponse apiResponseLocalVar, string bankid, CreateEndpointMappingRequest createEndpointMappingRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -796,11 +796,11 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateEndpointMappingRequest"></param>
-        private void OnErrorOBPv400CreateBankLevelEndpointMappingDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest)
+        /// <param name="createEndpointMappingRequest"></param>
+        private void OnErrorCreateBankLevelEndpointMappingDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, CreateEndpointMappingRequest createEndpointMappingRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400CreateBankLevelEndpointMapping(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, oBPv400CreateEndpointMappingRequest);
+            OnErrorCreateBankLevelEndpointMapping(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, createEndpointMappingRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -813,21 +813,21 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateEndpointMappingRequest"></param>
-        partial void OnErrorOBPv400CreateBankLevelEndpointMapping(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest);
+        /// <param name="createEndpointMappingRequest"></param>
+        partial void OnErrorCreateBankLevelEndpointMapping(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, CreateEndpointMappingRequest createEndpointMappingRequest);
 
         /// <summary>
         /// Create Bank Level Endpoint Mapping &lt;p&gt;Create an Bank Level Endpoint Mapping.&lt;/p&gt; &lt;p&gt;Note: at moment only support the dynamic endpoints&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400CreateEndpointMappingRequest">Request body</param>
+        /// <param name="createEndpointMappingRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateBankLevelEndpointMappingApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateBankLevelEndpointMappingApiResponse?> OBPv400CreateBankLevelEndpointMappingOrDefaultAsync(string bankid, OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateBankLevelEndpointMappingApiResponse"/>&gt;</returns>
+        public async Task<ICreateBankLevelEndpointMappingApiResponse?> CreateBankLevelEndpointMappingOrDefaultAsync(string bankid, CreateEndpointMappingRequest createEndpointMappingRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400CreateBankLevelEndpointMappingAsync(bankid, oBPv400CreateEndpointMappingRequest, cancellationToken).ConfigureAwait(false);
+                return await CreateBankLevelEndpointMappingAsync(bankid, createEndpointMappingRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -840,18 +840,18 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400CreateEndpointMappingRequest">Request body</param>
+        /// <param name="createEndpointMappingRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateBankLevelEndpointMappingApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateBankLevelEndpointMappingApiResponse> OBPv400CreateBankLevelEndpointMappingAsync(string bankid, OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateBankLevelEndpointMappingApiResponse"/>&gt;</returns>
+        public async Task<ICreateBankLevelEndpointMappingApiResponse> CreateBankLevelEndpointMappingAsync(string bankid, CreateEndpointMappingRequest createEndpointMappingRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400CreateBankLevelEndpointMapping(bankid, oBPv400CreateEndpointMappingRequest);
+                ValidateCreateBankLevelEndpointMapping(bankid, createEndpointMappingRequest);
 
-                FormatOBPv400CreateBankLevelEndpointMapping(ref bankid, oBPv400CreateEndpointMappingRequest);
+                FormatCreateBankLevelEndpointMapping(ref bankid, createEndpointMappingRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -863,16 +863,16 @@ namespace OpenBankProject.Api
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/management/banks/{bankid}/endpoint-mappings");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv400CreateEndpointMappingRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (createEndpointMappingRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400CreateEndpointMappingRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createEndpointMappingRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -908,8 +908,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400CreateBankLevelEndpointMappingApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400CreateBankLevelEndpointMappingApiResponse>();
-                        OBPv400CreateBankLevelEndpointMappingApiResponse apiResponseLocalVar;
+                        ILogger<CreateBankLevelEndpointMappingApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CreateBankLevelEndpointMappingApiResponse>();
+                        CreateBankLevelEndpointMappingApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -920,9 +920,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400CreateBankLevelEndpointMappingDefaultImplementation(apiResponseLocalVar, bankid, oBPv400CreateEndpointMappingRequest);
+                        AfterCreateBankLevelEndpointMappingDefaultImplementation(apiResponseLocalVar, bankid, createEndpointMappingRequest);
 
-                        Events.ExecuteOnOBPv400CreateBankLevelEndpointMapping(apiResponseLocalVar);
+                        Events.ExecuteOnCreateBankLevelEndpointMapping(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -934,24 +934,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400CreateBankLevelEndpointMappingDefaultImplementation(e, "/obp/v4.0.0/management/banks/{bankid}/endpoint-mappings", uriBuilderLocalVar.Path, bankid, oBPv400CreateEndpointMappingRequest);
-                Events.ExecuteOnErrorOBPv400CreateBankLevelEndpointMapping(e);
+                OnErrorCreateBankLevelEndpointMappingDefaultImplementation(e, "/obp/v4.0.0/management/banks/{bankid}/endpoint-mappings", uriBuilderLocalVar.Path, bankid, createEndpointMappingRequest);
+                Events.ExecuteOnErrorCreateBankLevelEndpointMapping(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400CreateBankLevelEndpointMappingApiResponse"/>
+        /// The <see cref="CreateBankLevelEndpointMappingApiResponse"/>
         /// </summary>
-        public partial class OBPv400CreateBankLevelEndpointMappingApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400CreateBankLevelEndpointMappingApiResponse
+        public partial class CreateBankLevelEndpointMappingApiResponse : OpenBankProject.Client.ApiResponse, ICreateBankLevelEndpointMappingApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400CreateBankLevelEndpointMappingApiResponse> Logger { get; }
+            public ILogger<CreateBankLevelEndpointMappingApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400CreateBankLevelEndpointMappingApiResponse"/>
+            /// The <see cref="CreateBankLevelEndpointMappingApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -960,14 +960,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400CreateBankLevelEndpointMappingApiResponse(ILogger<OBPv400CreateBankLevelEndpointMappingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public CreateBankLevelEndpointMappingApiResponse(ILogger<CreateBankLevelEndpointMappingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400CreateBankLevelEndpointMappingApiResponse"/>
+            /// The <see cref="CreateBankLevelEndpointMappingApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -976,7 +976,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400CreateBankLevelEndpointMappingApiResponse(ILogger<OBPv400CreateBankLevelEndpointMappingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public CreateBankLevelEndpointMappingApiResponse(ILogger<CreateBankLevelEndpointMappingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -994,11 +994,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems? Ok()
+            public OpenBankProject.Model.GetAllEndpointMappings200ResponseEndpointMappingsInner? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetAllEndpointMappings200ResponseEndpointMappingsInner>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1007,7 +1007,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetAllEndpointMappings200ResponseEndpointMappingsInner? result)
             {
                 result = null;
 
@@ -1045,28 +1045,28 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400CreateEndpointMapping(OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest);
+        partial void FormatCreateEndpointMapping(CreateEndpointMappingRequest createEndpointMappingRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
-        /// <param name="oBPv400CreateEndpointMappingRequest"></param>
+        /// <param name="createEndpointMappingRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv400CreateEndpointMapping(OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest)
+        private void ValidateCreateEndpointMapping(CreateEndpointMappingRequest createEndpointMappingRequest)
         {
-            if (oBPv400CreateEndpointMappingRequest == null)
-                throw new ArgumentNullException(nameof(oBPv400CreateEndpointMappingRequest));
+            if (createEndpointMappingRequest == null)
+                throw new ArgumentNullException(nameof(createEndpointMappingRequest));
         }
 
         /// <summary>
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        /// <param name="oBPv400CreateEndpointMappingRequest"></param>
-        private void AfterOBPv400CreateEndpointMappingDefaultImplementation(IOBPv400CreateEndpointMappingApiResponse apiResponseLocalVar, OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest)
+        /// <param name="createEndpointMappingRequest"></param>
+        private void AfterCreateEndpointMappingDefaultImplementation(ICreateEndpointMappingApiResponse apiResponseLocalVar, CreateEndpointMappingRequest createEndpointMappingRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400CreateEndpointMapping(ref suppressDefaultLog, apiResponseLocalVar, oBPv400CreateEndpointMappingRequest);
+            AfterCreateEndpointMapping(ref suppressDefaultLog, apiResponseLocalVar, createEndpointMappingRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1076,8 +1076,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        /// <param name="oBPv400CreateEndpointMappingRequest"></param>
-        partial void AfterOBPv400CreateEndpointMapping(ref bool suppressDefaultLog, IOBPv400CreateEndpointMappingApiResponse apiResponseLocalVar, OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest);
+        /// <param name="createEndpointMappingRequest"></param>
+        partial void AfterCreateEndpointMapping(ref bool suppressDefaultLog, ICreateEndpointMappingApiResponse apiResponseLocalVar, CreateEndpointMappingRequest createEndpointMappingRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1085,11 +1085,11 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        /// <param name="oBPv400CreateEndpointMappingRequest"></param>
-        private void OnErrorOBPv400CreateEndpointMappingDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest)
+        /// <param name="createEndpointMappingRequest"></param>
+        private void OnErrorCreateEndpointMappingDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, CreateEndpointMappingRequest createEndpointMappingRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400CreateEndpointMapping(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, oBPv400CreateEndpointMappingRequest);
+            OnErrorCreateEndpointMapping(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, createEndpointMappingRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1101,20 +1101,20 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        /// <param name="oBPv400CreateEndpointMappingRequest"></param>
-        partial void OnErrorOBPv400CreateEndpointMapping(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest);
+        /// <param name="createEndpointMappingRequest"></param>
+        partial void OnErrorCreateEndpointMapping(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, CreateEndpointMappingRequest createEndpointMappingRequest);
 
         /// <summary>
         /// Create Endpoint Mapping &lt;p&gt;Create an Endpoint Mapping.&lt;/p&gt; &lt;p&gt;Note: at moment only support the dynamic endpoints&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
         /// </summary>
-        /// <param name="oBPv400CreateEndpointMappingRequest">Request body</param>
+        /// <param name="createEndpointMappingRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateEndpointMappingApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateEndpointMappingApiResponse?> OBPv400CreateEndpointMappingOrDefaultAsync(OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateEndpointMappingApiResponse"/>&gt;</returns>
+        public async Task<ICreateEndpointMappingApiResponse?> CreateEndpointMappingOrDefaultAsync(CreateEndpointMappingRequest createEndpointMappingRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400CreateEndpointMappingAsync(oBPv400CreateEndpointMappingRequest, cancellationToken).ConfigureAwait(false);
+                return await CreateEndpointMappingAsync(createEndpointMappingRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1126,18 +1126,18 @@ namespace OpenBankProject.Api
         /// Create Endpoint Mapping &lt;p&gt;Create an Endpoint Mapping.&lt;/p&gt; &lt;p&gt;Note: at moment only support the dynamic endpoints&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oBPv400CreateEndpointMappingRequest">Request body</param>
+        /// <param name="createEndpointMappingRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateEndpointMappingApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateEndpointMappingApiResponse> OBPv400CreateEndpointMappingAsync(OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateEndpointMappingApiResponse"/>&gt;</returns>
+        public async Task<ICreateEndpointMappingApiResponse> CreateEndpointMappingAsync(CreateEndpointMappingRequest createEndpointMappingRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400CreateEndpointMapping(oBPv400CreateEndpointMappingRequest);
+                ValidateCreateEndpointMapping(createEndpointMappingRequest);
 
-                FormatOBPv400CreateEndpointMapping(oBPv400CreateEndpointMappingRequest);
+                FormatCreateEndpointMapping(createEndpointMappingRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1148,16 +1148,16 @@ namespace OpenBankProject.Api
                         ? "/obp/v4.0.0/management/endpoint-mappings"
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/management/endpoint-mappings");
 
-                    httpRequestMessageLocalVar.Content = (oBPv400CreateEndpointMappingRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (createEndpointMappingRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400CreateEndpointMappingRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createEndpointMappingRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1193,8 +1193,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400CreateEndpointMappingApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400CreateEndpointMappingApiResponse>();
-                        OBPv400CreateEndpointMappingApiResponse apiResponseLocalVar;
+                        ILogger<CreateEndpointMappingApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CreateEndpointMappingApiResponse>();
+                        CreateEndpointMappingApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1205,9 +1205,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400CreateEndpointMappingDefaultImplementation(apiResponseLocalVar, oBPv400CreateEndpointMappingRequest);
+                        AfterCreateEndpointMappingDefaultImplementation(apiResponseLocalVar, createEndpointMappingRequest);
 
-                        Events.ExecuteOnOBPv400CreateEndpointMapping(apiResponseLocalVar);
+                        Events.ExecuteOnCreateEndpointMapping(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1219,24 +1219,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400CreateEndpointMappingDefaultImplementation(e, "/obp/v4.0.0/management/endpoint-mappings", uriBuilderLocalVar.Path, oBPv400CreateEndpointMappingRequest);
-                Events.ExecuteOnErrorOBPv400CreateEndpointMapping(e);
+                OnErrorCreateEndpointMappingDefaultImplementation(e, "/obp/v4.0.0/management/endpoint-mappings", uriBuilderLocalVar.Path, createEndpointMappingRequest);
+                Events.ExecuteOnErrorCreateEndpointMapping(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400CreateEndpointMappingApiResponse"/>
+        /// The <see cref="CreateEndpointMappingApiResponse"/>
         /// </summary>
-        public partial class OBPv400CreateEndpointMappingApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400CreateEndpointMappingApiResponse
+        public partial class CreateEndpointMappingApiResponse : OpenBankProject.Client.ApiResponse, ICreateEndpointMappingApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400CreateEndpointMappingApiResponse> Logger { get; }
+            public ILogger<CreateEndpointMappingApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400CreateEndpointMappingApiResponse"/>
+            /// The <see cref="CreateEndpointMappingApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1245,14 +1245,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400CreateEndpointMappingApiResponse(ILogger<OBPv400CreateEndpointMappingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public CreateEndpointMappingApiResponse(ILogger<CreateEndpointMappingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400CreateEndpointMappingApiResponse"/>
+            /// The <see cref="CreateEndpointMappingApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1261,7 +1261,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400CreateEndpointMappingApiResponse(ILogger<OBPv400CreateEndpointMappingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public CreateEndpointMappingApiResponse(ILogger<CreateEndpointMappingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1279,11 +1279,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems? Ok()
+            public OpenBankProject.Model.GetAllEndpointMappings200ResponseEndpointMappingsInner? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetAllEndpointMappings200ResponseEndpointMappingsInner>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1292,7 +1292,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetAllEndpointMappings200ResponseEndpointMappingsInner? result)
             {
                 result = null;
 
@@ -1324,7 +1324,7 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400DeleteBankLevelEndpointMapping(ref string bankid, ref string endpointmappingid);
+        partial void FormatDeleteBankLevelEndpointMapping(ref string bankid, ref string endpointmappingid);
 
         /// <summary>
         /// Validates the request parameters
@@ -1332,7 +1332,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="endpointmappingid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400DeleteBankLevelEndpointMapping(string bankid, string endpointmappingid)
+        private void ValidateDeleteBankLevelEndpointMapping(string bankid, string endpointmappingid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -1347,10 +1347,10 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="endpointmappingid"></param>
-        private void AfterOBPv400DeleteBankLevelEndpointMappingDefaultImplementation(IOBPv400DeleteBankLevelEndpointMappingApiResponse apiResponseLocalVar, string bankid, string endpointmappingid)
+        private void AfterDeleteBankLevelEndpointMappingDefaultImplementation(IDeleteBankLevelEndpointMappingApiResponse apiResponseLocalVar, string bankid, string endpointmappingid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400DeleteBankLevelEndpointMapping(ref suppressDefaultLog, apiResponseLocalVar, bankid, endpointmappingid);
+            AfterDeleteBankLevelEndpointMapping(ref suppressDefaultLog, apiResponseLocalVar, bankid, endpointmappingid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1362,7 +1362,7 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="endpointmappingid"></param>
-        partial void AfterOBPv400DeleteBankLevelEndpointMapping(ref bool suppressDefaultLog, IOBPv400DeleteBankLevelEndpointMappingApiResponse apiResponseLocalVar, string bankid, string endpointmappingid);
+        partial void AfterDeleteBankLevelEndpointMapping(ref bool suppressDefaultLog, IDeleteBankLevelEndpointMappingApiResponse apiResponseLocalVar, string bankid, string endpointmappingid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1372,10 +1372,10 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="endpointmappingid"></param>
-        private void OnErrorOBPv400DeleteBankLevelEndpointMappingDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string endpointmappingid)
+        private void OnErrorDeleteBankLevelEndpointMappingDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string endpointmappingid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400DeleteBankLevelEndpointMapping(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, endpointmappingid);
+            OnErrorDeleteBankLevelEndpointMapping(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, endpointmappingid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1389,7 +1389,7 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="endpointmappingid"></param>
-        partial void OnErrorOBPv400DeleteBankLevelEndpointMapping(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string endpointmappingid);
+        partial void OnErrorDeleteBankLevelEndpointMapping(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string endpointmappingid);
 
         /// <summary>
         /// Delete Bank Level Endpoint Mapping &lt;p&gt;Delete a Bank Level Endpoint Mapping.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ENDPOINT_MAPPING_ID&lt;/a&gt;: ENDPOINT_MAPPING_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
@@ -1397,12 +1397,12 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="endpointmappingid">The ENDPOINTMAPPINGID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteBankLevelEndpointMappingApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteBankLevelEndpointMappingApiResponse?> OBPv400DeleteBankLevelEndpointMappingOrDefaultAsync(string bankid, string endpointmappingid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteBankLevelEndpointMappingApiResponse"/>&gt;</returns>
+        public async Task<IDeleteBankLevelEndpointMappingApiResponse?> DeleteBankLevelEndpointMappingOrDefaultAsync(string bankid, string endpointmappingid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400DeleteBankLevelEndpointMappingAsync(bankid, endpointmappingid, cancellationToken).ConfigureAwait(false);
+                return await DeleteBankLevelEndpointMappingAsync(bankid, endpointmappingid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1417,16 +1417,16 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="endpointmappingid">The ENDPOINTMAPPINGID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteBankLevelEndpointMappingApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteBankLevelEndpointMappingApiResponse> OBPv400DeleteBankLevelEndpointMappingAsync(string bankid, string endpointmappingid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteBankLevelEndpointMappingApiResponse"/>&gt;</returns>
+        public async Task<IDeleteBankLevelEndpointMappingApiResponse> DeleteBankLevelEndpointMappingAsync(string bankid, string endpointmappingid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400DeleteBankLevelEndpointMapping(bankid, endpointmappingid);
+                ValidateDeleteBankLevelEndpointMapping(bankid, endpointmappingid);
 
-                FormatOBPv400DeleteBankLevelEndpointMapping(ref bankid, ref endpointmappingid);
+                FormatDeleteBankLevelEndpointMapping(ref bankid, ref endpointmappingid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1444,7 +1444,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1462,8 +1462,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400DeleteBankLevelEndpointMappingApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400DeleteBankLevelEndpointMappingApiResponse>();
-                        OBPv400DeleteBankLevelEndpointMappingApiResponse apiResponseLocalVar;
+                        ILogger<DeleteBankLevelEndpointMappingApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<DeleteBankLevelEndpointMappingApiResponse>();
+                        DeleteBankLevelEndpointMappingApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1474,9 +1474,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400DeleteBankLevelEndpointMappingDefaultImplementation(apiResponseLocalVar, bankid, endpointmappingid);
+                        AfterDeleteBankLevelEndpointMappingDefaultImplementation(apiResponseLocalVar, bankid, endpointmappingid);
 
-                        Events.ExecuteOnOBPv400DeleteBankLevelEndpointMapping(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteBankLevelEndpointMapping(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1488,24 +1488,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400DeleteBankLevelEndpointMappingDefaultImplementation(e, "/obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid}", uriBuilderLocalVar.Path, bankid, endpointmappingid);
-                Events.ExecuteOnErrorOBPv400DeleteBankLevelEndpointMapping(e);
+                OnErrorDeleteBankLevelEndpointMappingDefaultImplementation(e, "/obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid}", uriBuilderLocalVar.Path, bankid, endpointmappingid);
+                Events.ExecuteOnErrorDeleteBankLevelEndpointMapping(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400DeleteBankLevelEndpointMappingApiResponse"/>
+        /// The <see cref="DeleteBankLevelEndpointMappingApiResponse"/>
         /// </summary>
-        public partial class OBPv400DeleteBankLevelEndpointMappingApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400DeleteBankLevelEndpointMappingApiResponse
+        public partial class DeleteBankLevelEndpointMappingApiResponse : OpenBankProject.Client.ApiResponse, IDeleteBankLevelEndpointMappingApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400DeleteBankLevelEndpointMappingApiResponse> Logger { get; }
+            public ILogger<DeleteBankLevelEndpointMappingApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400DeleteBankLevelEndpointMappingApiResponse"/>
+            /// The <see cref="DeleteBankLevelEndpointMappingApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1514,14 +1514,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400DeleteBankLevelEndpointMappingApiResponse(ILogger<OBPv400DeleteBankLevelEndpointMappingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public DeleteBankLevelEndpointMappingApiResponse(ILogger<DeleteBankLevelEndpointMappingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400DeleteBankLevelEndpointMappingApiResponse"/>
+            /// The <see cref="DeleteBankLevelEndpointMappingApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1530,7 +1530,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400DeleteBankLevelEndpointMappingApiResponse(ILogger<OBPv400DeleteBankLevelEndpointMappingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public DeleteBankLevelEndpointMappingApiResponse(ILogger<DeleteBankLevelEndpointMappingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1567,14 +1567,14 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400DeleteEndpointMapping(ref string endpointmappingid);
+        partial void FormatDeleteEndpointMapping(ref string endpointmappingid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="endpointmappingid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400DeleteEndpointMapping(string endpointmappingid)
+        private void ValidateDeleteEndpointMapping(string endpointmappingid)
         {
             if (endpointmappingid == null)
                 throw new ArgumentNullException(nameof(endpointmappingid));
@@ -1585,10 +1585,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="endpointmappingid"></param>
-        private void AfterOBPv400DeleteEndpointMappingDefaultImplementation(IOBPv400DeleteEndpointMappingApiResponse apiResponseLocalVar, string endpointmappingid)
+        private void AfterDeleteEndpointMappingDefaultImplementation(IDeleteEndpointMappingApiResponse apiResponseLocalVar, string endpointmappingid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400DeleteEndpointMapping(ref suppressDefaultLog, apiResponseLocalVar, endpointmappingid);
+            AfterDeleteEndpointMapping(ref suppressDefaultLog, apiResponseLocalVar, endpointmappingid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1599,7 +1599,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="endpointmappingid"></param>
-        partial void AfterOBPv400DeleteEndpointMapping(ref bool suppressDefaultLog, IOBPv400DeleteEndpointMappingApiResponse apiResponseLocalVar, string endpointmappingid);
+        partial void AfterDeleteEndpointMapping(ref bool suppressDefaultLog, IDeleteEndpointMappingApiResponse apiResponseLocalVar, string endpointmappingid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1608,10 +1608,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="endpointmappingid"></param>
-        private void OnErrorOBPv400DeleteEndpointMappingDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string endpointmappingid)
+        private void OnErrorDeleteEndpointMappingDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string endpointmappingid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400DeleteEndpointMapping(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, endpointmappingid);
+            OnErrorDeleteEndpointMapping(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, endpointmappingid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1624,19 +1624,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="endpointmappingid"></param>
-        partial void OnErrorOBPv400DeleteEndpointMapping(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string endpointmappingid);
+        partial void OnErrorDeleteEndpointMapping(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string endpointmappingid);
 
         /// <summary>
         /// Delete Endpoint Mapping &lt;p&gt;Delete a Endpoint Mapping.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ENDPOINT_MAPPING_ID&lt;/a&gt;: ENDPOINT_MAPPING_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </summary>
         /// <param name="endpointmappingid">The ENDPOINTMAPPINGID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteEndpointMappingApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteEndpointMappingApiResponse?> OBPv400DeleteEndpointMappingOrDefaultAsync(string endpointmappingid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteEndpointMappingApiResponse"/>&gt;</returns>
+        public async Task<IDeleteEndpointMappingApiResponse?> DeleteEndpointMappingOrDefaultAsync(string endpointmappingid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400DeleteEndpointMappingAsync(endpointmappingid, cancellationToken).ConfigureAwait(false);
+                return await DeleteEndpointMappingAsync(endpointmappingid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1650,16 +1650,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="endpointmappingid">The ENDPOINTMAPPINGID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteEndpointMappingApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteEndpointMappingApiResponse> OBPv400DeleteEndpointMappingAsync(string endpointmappingid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteEndpointMappingApiResponse"/>&gt;</returns>
+        public async Task<IDeleteEndpointMappingApiResponse> DeleteEndpointMappingAsync(string endpointmappingid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400DeleteEndpointMapping(endpointmappingid);
+                ValidateDeleteEndpointMapping(endpointmappingid);
 
-                FormatOBPv400DeleteEndpointMapping(ref endpointmappingid);
+                FormatDeleteEndpointMapping(ref endpointmappingid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1676,7 +1676,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1694,8 +1694,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400DeleteEndpointMappingApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400DeleteEndpointMappingApiResponse>();
-                        OBPv400DeleteEndpointMappingApiResponse apiResponseLocalVar;
+                        ILogger<DeleteEndpointMappingApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<DeleteEndpointMappingApiResponse>();
+                        DeleteEndpointMappingApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1706,9 +1706,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400DeleteEndpointMappingDefaultImplementation(apiResponseLocalVar, endpointmappingid);
+                        AfterDeleteEndpointMappingDefaultImplementation(apiResponseLocalVar, endpointmappingid);
 
-                        Events.ExecuteOnOBPv400DeleteEndpointMapping(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteEndpointMapping(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1720,24 +1720,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400DeleteEndpointMappingDefaultImplementation(e, "/obp/v4.0.0/management/endpoint-mappings/{endpointmappingid}", uriBuilderLocalVar.Path, endpointmappingid);
-                Events.ExecuteOnErrorOBPv400DeleteEndpointMapping(e);
+                OnErrorDeleteEndpointMappingDefaultImplementation(e, "/obp/v4.0.0/management/endpoint-mappings/{endpointmappingid}", uriBuilderLocalVar.Path, endpointmappingid);
+                Events.ExecuteOnErrorDeleteEndpointMapping(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400DeleteEndpointMappingApiResponse"/>
+        /// The <see cref="DeleteEndpointMappingApiResponse"/>
         /// </summary>
-        public partial class OBPv400DeleteEndpointMappingApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400DeleteEndpointMappingApiResponse
+        public partial class DeleteEndpointMappingApiResponse : OpenBankProject.Client.ApiResponse, IDeleteEndpointMappingApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400DeleteEndpointMappingApiResponse> Logger { get; }
+            public ILogger<DeleteEndpointMappingApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400DeleteEndpointMappingApiResponse"/>
+            /// The <see cref="DeleteEndpointMappingApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1746,14 +1746,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400DeleteEndpointMappingApiResponse(ILogger<OBPv400DeleteEndpointMappingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public DeleteEndpointMappingApiResponse(ILogger<DeleteEndpointMappingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400DeleteEndpointMappingApiResponse"/>
+            /// The <see cref="DeleteEndpointMappingApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1762,7 +1762,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400DeleteEndpointMappingApiResponse(ILogger<OBPv400DeleteEndpointMappingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public DeleteEndpointMappingApiResponse(ILogger<DeleteEndpointMappingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1793,14 +1793,14 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400GetAllBankLevelEndpointMappings(ref string bankid);
+        partial void FormatGetAllBankLevelEndpointMappings(ref string bankid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400GetAllBankLevelEndpointMappings(string bankid)
+        private void ValidateGetAllBankLevelEndpointMappings(string bankid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -1811,10 +1811,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        private void AfterOBPv400GetAllBankLevelEndpointMappingsDefaultImplementation(IOBPv400GetAllBankLevelEndpointMappingsApiResponse apiResponseLocalVar, string bankid)
+        private void AfterGetAllBankLevelEndpointMappingsDefaultImplementation(IGetAllBankLevelEndpointMappingsApiResponse apiResponseLocalVar, string bankid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetAllBankLevelEndpointMappings(ref suppressDefaultLog, apiResponseLocalVar, bankid);
+            AfterGetAllBankLevelEndpointMappings(ref suppressDefaultLog, apiResponseLocalVar, bankid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1825,7 +1825,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void AfterOBPv400GetAllBankLevelEndpointMappings(ref bool suppressDefaultLog, IOBPv400GetAllBankLevelEndpointMappingsApiResponse apiResponseLocalVar, string bankid);
+        partial void AfterGetAllBankLevelEndpointMappings(ref bool suppressDefaultLog, IGetAllBankLevelEndpointMappingsApiResponse apiResponseLocalVar, string bankid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1834,10 +1834,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        private void OnErrorOBPv400GetAllBankLevelEndpointMappingsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
+        private void OnErrorGetAllBankLevelEndpointMappingsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetAllBankLevelEndpointMappings(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
+            OnErrorGetAllBankLevelEndpointMappings(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1850,19 +1850,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void OnErrorOBPv400GetAllBankLevelEndpointMappings(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
+        partial void OnErrorGetAllBankLevelEndpointMappings(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
 
         /// <summary>
         /// Get all Bank Level Endpoint Mappings &lt;p&gt;Get all Bank Level Endpoint Mappings.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAllBankLevelEndpointMappingsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetAllBankLevelEndpointMappingsApiResponse?> OBPv400GetAllBankLevelEndpointMappingsOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllBankLevelEndpointMappingsApiResponse"/>&gt;</returns>
+        public async Task<IGetAllBankLevelEndpointMappingsApiResponse?> GetAllBankLevelEndpointMappingsOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetAllBankLevelEndpointMappingsAsync(bankid, cancellationToken).ConfigureAwait(false);
+                return await GetAllBankLevelEndpointMappingsAsync(bankid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1876,16 +1876,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAllBankLevelEndpointMappingsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetAllBankLevelEndpointMappingsApiResponse> OBPv400GetAllBankLevelEndpointMappingsAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllBankLevelEndpointMappingsApiResponse"/>&gt;</returns>
+        public async Task<IGetAllBankLevelEndpointMappingsApiResponse> GetAllBankLevelEndpointMappingsAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400GetAllBankLevelEndpointMappings(bankid);
+                ValidateGetAllBankLevelEndpointMappings(bankid);
 
-                FormatOBPv400GetAllBankLevelEndpointMappings(ref bankid);
+                FormatGetAllBankLevelEndpointMappings(ref bankid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1902,7 +1902,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1929,8 +1929,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400GetAllBankLevelEndpointMappingsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400GetAllBankLevelEndpointMappingsApiResponse>();
-                        OBPv400GetAllBankLevelEndpointMappingsApiResponse apiResponseLocalVar;
+                        ILogger<GetAllBankLevelEndpointMappingsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetAllBankLevelEndpointMappingsApiResponse>();
+                        GetAllBankLevelEndpointMappingsApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1941,9 +1941,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetAllBankLevelEndpointMappingsDefaultImplementation(apiResponseLocalVar, bankid);
+                        AfterGetAllBankLevelEndpointMappingsDefaultImplementation(apiResponseLocalVar, bankid);
 
-                        Events.ExecuteOnOBPv400GetAllBankLevelEndpointMappings(apiResponseLocalVar);
+                        Events.ExecuteOnGetAllBankLevelEndpointMappings(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1955,24 +1955,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetAllBankLevelEndpointMappingsDefaultImplementation(e, "/obp/v4.0.0/management/banks/{bankid}/endpoint-mappings", uriBuilderLocalVar.Path, bankid);
-                Events.ExecuteOnErrorOBPv400GetAllBankLevelEndpointMappings(e);
+                OnErrorGetAllBankLevelEndpointMappingsDefaultImplementation(e, "/obp/v4.0.0/management/banks/{bankid}/endpoint-mappings", uriBuilderLocalVar.Path, bankid);
+                Events.ExecuteOnErrorGetAllBankLevelEndpointMappings(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400GetAllBankLevelEndpointMappingsApiResponse"/>
+        /// The <see cref="GetAllBankLevelEndpointMappingsApiResponse"/>
         /// </summary>
-        public partial class OBPv400GetAllBankLevelEndpointMappingsApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400GetAllBankLevelEndpointMappingsApiResponse
+        public partial class GetAllBankLevelEndpointMappingsApiResponse : OpenBankProject.Client.ApiResponse, IGetAllBankLevelEndpointMappingsApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400GetAllBankLevelEndpointMappingsApiResponse> Logger { get; }
+            public ILogger<GetAllBankLevelEndpointMappingsApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400GetAllBankLevelEndpointMappingsApiResponse"/>
+            /// The <see cref="GetAllBankLevelEndpointMappingsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1981,14 +1981,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetAllBankLevelEndpointMappingsApiResponse(ILogger<OBPv400GetAllBankLevelEndpointMappingsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetAllBankLevelEndpointMappingsApiResponse(ILogger<GetAllBankLevelEndpointMappingsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400GetAllBankLevelEndpointMappingsApiResponse"/>
+            /// The <see cref="GetAllBankLevelEndpointMappingsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1997,7 +1997,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetAllBankLevelEndpointMappingsApiResponse(ILogger<OBPv400GetAllBankLevelEndpointMappingsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetAllBankLevelEndpointMappingsApiResponse(ILogger<GetAllBankLevelEndpointMappingsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -2015,11 +2015,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetAllEndpointMappings200Response? Ok()
+            public OpenBankProject.Model.GetAllEndpointMappings200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetAllEndpointMappings200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetAllEndpointMappings200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -2028,7 +2028,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetAllEndpointMappings200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetAllEndpointMappings200Response? result)
             {
                 result = null;
 
@@ -2070,10 +2070,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv400GetAllEndpointMappingsDefaultImplementation(IOBPv400GetAllEndpointMappingsApiResponse apiResponseLocalVar)
+        private void AfterGetAllEndpointMappingsDefaultImplementation(IGetAllEndpointMappingsApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetAllEndpointMappings(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterGetAllEndpointMappings(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2083,7 +2083,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv400GetAllEndpointMappings(ref bool suppressDefaultLog, IOBPv400GetAllEndpointMappingsApiResponse apiResponseLocalVar);
+        partial void AfterGetAllEndpointMappings(ref bool suppressDefaultLog, IGetAllEndpointMappingsApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2091,10 +2091,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv400GetAllEndpointMappingsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorGetAllEndpointMappingsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetAllEndpointMappings(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorGetAllEndpointMappings(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2106,18 +2106,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv400GetAllEndpointMappings(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorGetAllEndpointMappings(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// Get all Endpoint Mappings &lt;p&gt;Get all Endpoint Mappings.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAllEndpointMappingsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetAllEndpointMappingsApiResponse?> OBPv400GetAllEndpointMappingsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllEndpointMappingsApiResponse"/>&gt;</returns>
+        public async Task<IGetAllEndpointMappingsApiResponse?> GetAllEndpointMappingsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetAllEndpointMappingsAsync(cancellationToken).ConfigureAwait(false);
+                return await GetAllEndpointMappingsAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2130,8 +2130,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAllEndpointMappingsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetAllEndpointMappingsApiResponse> OBPv400GetAllEndpointMappingsAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllEndpointMappingsApiResponse"/>&gt;</returns>
+        public async Task<IGetAllEndpointMappingsApiResponse> GetAllEndpointMappingsAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -2151,7 +2151,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -2178,8 +2178,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400GetAllEndpointMappingsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400GetAllEndpointMappingsApiResponse>();
-                        OBPv400GetAllEndpointMappingsApiResponse apiResponseLocalVar;
+                        ILogger<GetAllEndpointMappingsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetAllEndpointMappingsApiResponse>();
+                        GetAllEndpointMappingsApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -2190,9 +2190,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetAllEndpointMappingsDefaultImplementation(apiResponseLocalVar);
+                        AfterGetAllEndpointMappingsDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv400GetAllEndpointMappings(apiResponseLocalVar);
+                        Events.ExecuteOnGetAllEndpointMappings(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -2204,24 +2204,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetAllEndpointMappingsDefaultImplementation(e, "/obp/v4.0.0/management/endpoint-mappings", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv400GetAllEndpointMappings(e);
+                OnErrorGetAllEndpointMappingsDefaultImplementation(e, "/obp/v4.0.0/management/endpoint-mappings", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorGetAllEndpointMappings(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400GetAllEndpointMappingsApiResponse"/>
+        /// The <see cref="GetAllEndpointMappingsApiResponse"/>
         /// </summary>
-        public partial class OBPv400GetAllEndpointMappingsApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400GetAllEndpointMappingsApiResponse
+        public partial class GetAllEndpointMappingsApiResponse : OpenBankProject.Client.ApiResponse, IGetAllEndpointMappingsApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400GetAllEndpointMappingsApiResponse> Logger { get; }
+            public ILogger<GetAllEndpointMappingsApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400GetAllEndpointMappingsApiResponse"/>
+            /// The <see cref="GetAllEndpointMappingsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2230,14 +2230,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetAllEndpointMappingsApiResponse(ILogger<OBPv400GetAllEndpointMappingsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetAllEndpointMappingsApiResponse(ILogger<GetAllEndpointMappingsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400GetAllEndpointMappingsApiResponse"/>
+            /// The <see cref="GetAllEndpointMappingsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2246,7 +2246,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetAllEndpointMappingsApiResponse(ILogger<OBPv400GetAllEndpointMappingsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetAllEndpointMappingsApiResponse(ILogger<GetAllEndpointMappingsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -2264,11 +2264,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetAllEndpointMappings200Response? Ok()
+            public OpenBankProject.Model.GetAllEndpointMappings200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetAllEndpointMappings200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetAllEndpointMappings200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -2277,7 +2277,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetAllEndpointMappings200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetAllEndpointMappings200Response? result)
             {
                 result = null;
 
@@ -2309,7 +2309,7 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400GetBankLevelEndpointMapping(ref string bankid, ref string endpointmappingid);
+        partial void FormatGetBankLevelEndpointMapping(ref string bankid, ref string endpointmappingid);
 
         /// <summary>
         /// Validates the request parameters
@@ -2317,7 +2317,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="endpointmappingid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400GetBankLevelEndpointMapping(string bankid, string endpointmappingid)
+        private void ValidateGetBankLevelEndpointMapping(string bankid, string endpointmappingid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -2332,10 +2332,10 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="endpointmappingid"></param>
-        private void AfterOBPv400GetBankLevelEndpointMappingDefaultImplementation(IOBPv400GetBankLevelEndpointMappingApiResponse apiResponseLocalVar, string bankid, string endpointmappingid)
+        private void AfterGetBankLevelEndpointMappingDefaultImplementation(IGetBankLevelEndpointMappingApiResponse apiResponseLocalVar, string bankid, string endpointmappingid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetBankLevelEndpointMapping(ref suppressDefaultLog, apiResponseLocalVar, bankid, endpointmappingid);
+            AfterGetBankLevelEndpointMapping(ref suppressDefaultLog, apiResponseLocalVar, bankid, endpointmappingid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2347,7 +2347,7 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="endpointmappingid"></param>
-        partial void AfterOBPv400GetBankLevelEndpointMapping(ref bool suppressDefaultLog, IOBPv400GetBankLevelEndpointMappingApiResponse apiResponseLocalVar, string bankid, string endpointmappingid);
+        partial void AfterGetBankLevelEndpointMapping(ref bool suppressDefaultLog, IGetBankLevelEndpointMappingApiResponse apiResponseLocalVar, string bankid, string endpointmappingid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2357,10 +2357,10 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="endpointmappingid"></param>
-        private void OnErrorOBPv400GetBankLevelEndpointMappingDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string endpointmappingid)
+        private void OnErrorGetBankLevelEndpointMappingDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string endpointmappingid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetBankLevelEndpointMapping(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, endpointmappingid);
+            OnErrorGetBankLevelEndpointMapping(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, endpointmappingid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2374,7 +2374,7 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="endpointmappingid"></param>
-        partial void OnErrorOBPv400GetBankLevelEndpointMapping(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string endpointmappingid);
+        partial void OnErrorGetBankLevelEndpointMapping(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string endpointmappingid);
 
         /// <summary>
         /// Get Bank Level Endpoint Mapping &lt;p&gt;Get an Bank Level Endpoint Mapping by ENDPOINT_MAPPING_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ENDPOINT_MAPPING_ID&lt;/a&gt;: ENDPOINT_MAPPING_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
@@ -2382,12 +2382,12 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="endpointmappingid">The ENDPOINTMAPPINGID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetBankLevelEndpointMappingApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetBankLevelEndpointMappingApiResponse?> OBPv400GetBankLevelEndpointMappingOrDefaultAsync(string bankid, string endpointmappingid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBankLevelEndpointMappingApiResponse"/>&gt;</returns>
+        public async Task<IGetBankLevelEndpointMappingApiResponse?> GetBankLevelEndpointMappingOrDefaultAsync(string bankid, string endpointmappingid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetBankLevelEndpointMappingAsync(bankid, endpointmappingid, cancellationToken).ConfigureAwait(false);
+                return await GetBankLevelEndpointMappingAsync(bankid, endpointmappingid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2402,16 +2402,16 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="endpointmappingid">The ENDPOINTMAPPINGID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetBankLevelEndpointMappingApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetBankLevelEndpointMappingApiResponse> OBPv400GetBankLevelEndpointMappingAsync(string bankid, string endpointmappingid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBankLevelEndpointMappingApiResponse"/>&gt;</returns>
+        public async Task<IGetBankLevelEndpointMappingApiResponse> GetBankLevelEndpointMappingAsync(string bankid, string endpointmappingid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400GetBankLevelEndpointMapping(bankid, endpointmappingid);
+                ValidateGetBankLevelEndpointMapping(bankid, endpointmappingid);
 
-                FormatOBPv400GetBankLevelEndpointMapping(ref bankid, ref endpointmappingid);
+                FormatGetBankLevelEndpointMapping(ref bankid, ref endpointmappingid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -2429,7 +2429,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -2456,8 +2456,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400GetBankLevelEndpointMappingApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400GetBankLevelEndpointMappingApiResponse>();
-                        OBPv400GetBankLevelEndpointMappingApiResponse apiResponseLocalVar;
+                        ILogger<GetBankLevelEndpointMappingApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetBankLevelEndpointMappingApiResponse>();
+                        GetBankLevelEndpointMappingApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -2468,9 +2468,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetBankLevelEndpointMappingDefaultImplementation(apiResponseLocalVar, bankid, endpointmappingid);
+                        AfterGetBankLevelEndpointMappingDefaultImplementation(apiResponseLocalVar, bankid, endpointmappingid);
 
-                        Events.ExecuteOnOBPv400GetBankLevelEndpointMapping(apiResponseLocalVar);
+                        Events.ExecuteOnGetBankLevelEndpointMapping(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -2482,24 +2482,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetBankLevelEndpointMappingDefaultImplementation(e, "/obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid}", uriBuilderLocalVar.Path, bankid, endpointmappingid);
-                Events.ExecuteOnErrorOBPv400GetBankLevelEndpointMapping(e);
+                OnErrorGetBankLevelEndpointMappingDefaultImplementation(e, "/obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid}", uriBuilderLocalVar.Path, bankid, endpointmappingid);
+                Events.ExecuteOnErrorGetBankLevelEndpointMapping(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400GetBankLevelEndpointMappingApiResponse"/>
+        /// The <see cref="GetBankLevelEndpointMappingApiResponse"/>
         /// </summary>
-        public partial class OBPv400GetBankLevelEndpointMappingApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400GetBankLevelEndpointMappingApiResponse
+        public partial class GetBankLevelEndpointMappingApiResponse : OpenBankProject.Client.ApiResponse, IGetBankLevelEndpointMappingApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400GetBankLevelEndpointMappingApiResponse> Logger { get; }
+            public ILogger<GetBankLevelEndpointMappingApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400GetBankLevelEndpointMappingApiResponse"/>
+            /// The <see cref="GetBankLevelEndpointMappingApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2508,14 +2508,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetBankLevelEndpointMappingApiResponse(ILogger<OBPv400GetBankLevelEndpointMappingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetBankLevelEndpointMappingApiResponse(ILogger<GetBankLevelEndpointMappingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400GetBankLevelEndpointMappingApiResponse"/>
+            /// The <see cref="GetBankLevelEndpointMappingApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2524,7 +2524,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetBankLevelEndpointMappingApiResponse(ILogger<OBPv400GetBankLevelEndpointMappingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetBankLevelEndpointMappingApiResponse(ILogger<GetBankLevelEndpointMappingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -2542,11 +2542,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems? Ok()
+            public OpenBankProject.Model.GetAllEndpointMappings200ResponseEndpointMappingsInner? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetAllEndpointMappings200ResponseEndpointMappingsInner>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -2555,7 +2555,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetAllEndpointMappings200ResponseEndpointMappingsInner? result)
             {
                 result = null;
 
@@ -2593,14 +2593,14 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400GetEndpointMapping(ref string endpointmappingid);
+        partial void FormatGetEndpointMapping(ref string endpointmappingid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="endpointmappingid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400GetEndpointMapping(string endpointmappingid)
+        private void ValidateGetEndpointMapping(string endpointmappingid)
         {
             if (endpointmappingid == null)
                 throw new ArgumentNullException(nameof(endpointmappingid));
@@ -2611,10 +2611,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="endpointmappingid"></param>
-        private void AfterOBPv400GetEndpointMappingDefaultImplementation(IOBPv400GetEndpointMappingApiResponse apiResponseLocalVar, string endpointmappingid)
+        private void AfterGetEndpointMappingDefaultImplementation(IGetEndpointMappingApiResponse apiResponseLocalVar, string endpointmappingid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetEndpointMapping(ref suppressDefaultLog, apiResponseLocalVar, endpointmappingid);
+            AfterGetEndpointMapping(ref suppressDefaultLog, apiResponseLocalVar, endpointmappingid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2625,7 +2625,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="endpointmappingid"></param>
-        partial void AfterOBPv400GetEndpointMapping(ref bool suppressDefaultLog, IOBPv400GetEndpointMappingApiResponse apiResponseLocalVar, string endpointmappingid);
+        partial void AfterGetEndpointMapping(ref bool suppressDefaultLog, IGetEndpointMappingApiResponse apiResponseLocalVar, string endpointmappingid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2634,10 +2634,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="endpointmappingid"></param>
-        private void OnErrorOBPv400GetEndpointMappingDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string endpointmappingid)
+        private void OnErrorGetEndpointMappingDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string endpointmappingid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetEndpointMapping(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, endpointmappingid);
+            OnErrorGetEndpointMapping(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, endpointmappingid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2650,19 +2650,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="endpointmappingid"></param>
-        partial void OnErrorOBPv400GetEndpointMapping(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string endpointmappingid);
+        partial void OnErrorGetEndpointMapping(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string endpointmappingid);
 
         /// <summary>
         /// Get Endpoint Mapping by Id &lt;p&gt;Get an Endpoint Mapping by ENDPOINT_MAPPING_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ENDPOINT_MAPPING_ID&lt;/a&gt;: ENDPOINT_MAPPING_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
         /// </summary>
         /// <param name="endpointmappingid">The ENDPOINTMAPPINGID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetEndpointMappingApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetEndpointMappingApiResponse?> OBPv400GetEndpointMappingOrDefaultAsync(string endpointmappingid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetEndpointMappingApiResponse"/>&gt;</returns>
+        public async Task<IGetEndpointMappingApiResponse?> GetEndpointMappingOrDefaultAsync(string endpointmappingid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetEndpointMappingAsync(endpointmappingid, cancellationToken).ConfigureAwait(false);
+                return await GetEndpointMappingAsync(endpointmappingid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2676,16 +2676,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="endpointmappingid">The ENDPOINTMAPPINGID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetEndpointMappingApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetEndpointMappingApiResponse> OBPv400GetEndpointMappingAsync(string endpointmappingid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetEndpointMappingApiResponse"/>&gt;</returns>
+        public async Task<IGetEndpointMappingApiResponse> GetEndpointMappingAsync(string endpointmappingid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400GetEndpointMapping(endpointmappingid);
+                ValidateGetEndpointMapping(endpointmappingid);
 
-                FormatOBPv400GetEndpointMapping(ref endpointmappingid);
+                FormatGetEndpointMapping(ref endpointmappingid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -2702,7 +2702,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -2729,8 +2729,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400GetEndpointMappingApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400GetEndpointMappingApiResponse>();
-                        OBPv400GetEndpointMappingApiResponse apiResponseLocalVar;
+                        ILogger<GetEndpointMappingApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetEndpointMappingApiResponse>();
+                        GetEndpointMappingApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -2741,9 +2741,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetEndpointMappingDefaultImplementation(apiResponseLocalVar, endpointmappingid);
+                        AfterGetEndpointMappingDefaultImplementation(apiResponseLocalVar, endpointmappingid);
 
-                        Events.ExecuteOnOBPv400GetEndpointMapping(apiResponseLocalVar);
+                        Events.ExecuteOnGetEndpointMapping(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -2755,24 +2755,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetEndpointMappingDefaultImplementation(e, "/obp/v4.0.0/management/endpoint-mappings/{endpointmappingid}", uriBuilderLocalVar.Path, endpointmappingid);
-                Events.ExecuteOnErrorOBPv400GetEndpointMapping(e);
+                OnErrorGetEndpointMappingDefaultImplementation(e, "/obp/v4.0.0/management/endpoint-mappings/{endpointmappingid}", uriBuilderLocalVar.Path, endpointmappingid);
+                Events.ExecuteOnErrorGetEndpointMapping(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400GetEndpointMappingApiResponse"/>
+        /// The <see cref="GetEndpointMappingApiResponse"/>
         /// </summary>
-        public partial class OBPv400GetEndpointMappingApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400GetEndpointMappingApiResponse
+        public partial class GetEndpointMappingApiResponse : OpenBankProject.Client.ApiResponse, IGetEndpointMappingApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400GetEndpointMappingApiResponse> Logger { get; }
+            public ILogger<GetEndpointMappingApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400GetEndpointMappingApiResponse"/>
+            /// The <see cref="GetEndpointMappingApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2781,14 +2781,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetEndpointMappingApiResponse(ILogger<OBPv400GetEndpointMappingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetEndpointMappingApiResponse(ILogger<GetEndpointMappingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400GetEndpointMappingApiResponse"/>
+            /// The <see cref="GetEndpointMappingApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2797,7 +2797,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetEndpointMappingApiResponse(ILogger<OBPv400GetEndpointMappingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetEndpointMappingApiResponse(ILogger<GetEndpointMappingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -2815,11 +2815,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems? Ok()
+            public OpenBankProject.Model.GetAllEndpointMappings200ResponseEndpointMappingsInner? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetAllEndpointMappings200ResponseEndpointMappingsInner>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -2828,7 +2828,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetAllEndpointMappings200ResponseEndpointMappingsInner? result)
             {
                 result = null;
 
@@ -2860,16 +2860,16 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400UpdateBankLevelEndpointMapping(ref string bankid, ref string endpointmappingid, OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest);
+        partial void FormatUpdateBankLevelEndpointMapping(ref string bankid, ref string endpointmappingid, CreateEndpointMappingRequest createEndpointMappingRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
         /// <param name="endpointmappingid"></param>
-        /// <param name="oBPv400CreateEndpointMappingRequest"></param>
+        /// <param name="createEndpointMappingRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv400UpdateBankLevelEndpointMapping(string bankid, string endpointmappingid, OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest)
+        private void ValidateUpdateBankLevelEndpointMapping(string bankid, string endpointmappingid, CreateEndpointMappingRequest createEndpointMappingRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -2877,8 +2877,8 @@ namespace OpenBankProject.Api
             if (endpointmappingid == null)
                 throw new ArgumentNullException(nameof(endpointmappingid));
 
-            if (oBPv400CreateEndpointMappingRequest == null)
-                throw new ArgumentNullException(nameof(oBPv400CreateEndpointMappingRequest));
+            if (createEndpointMappingRequest == null)
+                throw new ArgumentNullException(nameof(createEndpointMappingRequest));
         }
 
         /// <summary>
@@ -2887,11 +2887,11 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="endpointmappingid"></param>
-        /// <param name="oBPv400CreateEndpointMappingRequest"></param>
-        private void AfterOBPv400UpdateBankLevelEndpointMappingDefaultImplementation(IOBPv400UpdateBankLevelEndpointMappingApiResponse apiResponseLocalVar, string bankid, string endpointmappingid, OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest)
+        /// <param name="createEndpointMappingRequest"></param>
+        private void AfterUpdateBankLevelEndpointMappingDefaultImplementation(IUpdateBankLevelEndpointMappingApiResponse apiResponseLocalVar, string bankid, string endpointmappingid, CreateEndpointMappingRequest createEndpointMappingRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400UpdateBankLevelEndpointMapping(ref suppressDefaultLog, apiResponseLocalVar, bankid, endpointmappingid, oBPv400CreateEndpointMappingRequest);
+            AfterUpdateBankLevelEndpointMapping(ref suppressDefaultLog, apiResponseLocalVar, bankid, endpointmappingid, createEndpointMappingRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2903,8 +2903,8 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="endpointmappingid"></param>
-        /// <param name="oBPv400CreateEndpointMappingRequest"></param>
-        partial void AfterOBPv400UpdateBankLevelEndpointMapping(ref bool suppressDefaultLog, IOBPv400UpdateBankLevelEndpointMappingApiResponse apiResponseLocalVar, string bankid, string endpointmappingid, OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest);
+        /// <param name="createEndpointMappingRequest"></param>
+        partial void AfterUpdateBankLevelEndpointMapping(ref bool suppressDefaultLog, IUpdateBankLevelEndpointMappingApiResponse apiResponseLocalVar, string bankid, string endpointmappingid, CreateEndpointMappingRequest createEndpointMappingRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2914,11 +2914,11 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="endpointmappingid"></param>
-        /// <param name="oBPv400CreateEndpointMappingRequest"></param>
-        private void OnErrorOBPv400UpdateBankLevelEndpointMappingDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string endpointmappingid, OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest)
+        /// <param name="createEndpointMappingRequest"></param>
+        private void OnErrorUpdateBankLevelEndpointMappingDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string endpointmappingid, CreateEndpointMappingRequest createEndpointMappingRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400UpdateBankLevelEndpointMapping(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, endpointmappingid, oBPv400CreateEndpointMappingRequest);
+            OnErrorUpdateBankLevelEndpointMapping(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, endpointmappingid, createEndpointMappingRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2932,22 +2932,22 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="endpointmappingid"></param>
-        /// <param name="oBPv400CreateEndpointMappingRequest"></param>
-        partial void OnErrorOBPv400UpdateBankLevelEndpointMapping(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string endpointmappingid, OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest);
+        /// <param name="createEndpointMappingRequest"></param>
+        partial void OnErrorUpdateBankLevelEndpointMapping(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string endpointmappingid, CreateEndpointMappingRequest createEndpointMappingRequest);
 
         /// <summary>
         /// Update Bank Level Endpoint Mapping &lt;p&gt;Update an Bank Level Endpoint Mapping.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ENDPOINT_MAPPING_ID&lt;/a&gt;: ENDPOINT_MAPPING_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="endpointmappingid">The ENDPOINTMAPPINGID identifier</param>
-        /// <param name="oBPv400CreateEndpointMappingRequest">Request body</param>
+        /// <param name="createEndpointMappingRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateBankLevelEndpointMappingApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400UpdateBankLevelEndpointMappingApiResponse?> OBPv400UpdateBankLevelEndpointMappingOrDefaultAsync(string bankid, string endpointmappingid, OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateBankLevelEndpointMappingApiResponse"/>&gt;</returns>
+        public async Task<IUpdateBankLevelEndpointMappingApiResponse?> UpdateBankLevelEndpointMappingOrDefaultAsync(string bankid, string endpointmappingid, CreateEndpointMappingRequest createEndpointMappingRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400UpdateBankLevelEndpointMappingAsync(bankid, endpointmappingid, oBPv400CreateEndpointMappingRequest, cancellationToken).ConfigureAwait(false);
+                return await UpdateBankLevelEndpointMappingAsync(bankid, endpointmappingid, createEndpointMappingRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2961,18 +2961,18 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="endpointmappingid">The ENDPOINTMAPPINGID identifier</param>
-        /// <param name="oBPv400CreateEndpointMappingRequest">Request body</param>
+        /// <param name="createEndpointMappingRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateBankLevelEndpointMappingApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400UpdateBankLevelEndpointMappingApiResponse> OBPv400UpdateBankLevelEndpointMappingAsync(string bankid, string endpointmappingid, OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateBankLevelEndpointMappingApiResponse"/>&gt;</returns>
+        public async Task<IUpdateBankLevelEndpointMappingApiResponse> UpdateBankLevelEndpointMappingAsync(string bankid, string endpointmappingid, CreateEndpointMappingRequest createEndpointMappingRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400UpdateBankLevelEndpointMapping(bankid, endpointmappingid, oBPv400CreateEndpointMappingRequest);
+                ValidateUpdateBankLevelEndpointMapping(bankid, endpointmappingid, createEndpointMappingRequest);
 
-                FormatOBPv400UpdateBankLevelEndpointMapping(ref bankid, ref endpointmappingid, oBPv400CreateEndpointMappingRequest);
+                FormatUpdateBankLevelEndpointMapping(ref bankid, ref endpointmappingid, createEndpointMappingRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -2985,16 +2985,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bendpointmappingid%7D", Uri.EscapeDataString(endpointmappingid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv400CreateEndpointMappingRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (createEndpointMappingRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400CreateEndpointMappingRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createEndpointMappingRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -3030,8 +3030,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400UpdateBankLevelEndpointMappingApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400UpdateBankLevelEndpointMappingApiResponse>();
-                        OBPv400UpdateBankLevelEndpointMappingApiResponse apiResponseLocalVar;
+                        ILogger<UpdateBankLevelEndpointMappingApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<UpdateBankLevelEndpointMappingApiResponse>();
+                        UpdateBankLevelEndpointMappingApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -3042,9 +3042,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400UpdateBankLevelEndpointMappingDefaultImplementation(apiResponseLocalVar, bankid, endpointmappingid, oBPv400CreateEndpointMappingRequest);
+                        AfterUpdateBankLevelEndpointMappingDefaultImplementation(apiResponseLocalVar, bankid, endpointmappingid, createEndpointMappingRequest);
 
-                        Events.ExecuteOnOBPv400UpdateBankLevelEndpointMapping(apiResponseLocalVar);
+                        Events.ExecuteOnUpdateBankLevelEndpointMapping(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -3056,24 +3056,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400UpdateBankLevelEndpointMappingDefaultImplementation(e, "/obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid}", uriBuilderLocalVar.Path, bankid, endpointmappingid, oBPv400CreateEndpointMappingRequest);
-                Events.ExecuteOnErrorOBPv400UpdateBankLevelEndpointMapping(e);
+                OnErrorUpdateBankLevelEndpointMappingDefaultImplementation(e, "/obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid}", uriBuilderLocalVar.Path, bankid, endpointmappingid, createEndpointMappingRequest);
+                Events.ExecuteOnErrorUpdateBankLevelEndpointMapping(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400UpdateBankLevelEndpointMappingApiResponse"/>
+        /// The <see cref="UpdateBankLevelEndpointMappingApiResponse"/>
         /// </summary>
-        public partial class OBPv400UpdateBankLevelEndpointMappingApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400UpdateBankLevelEndpointMappingApiResponse
+        public partial class UpdateBankLevelEndpointMappingApiResponse : OpenBankProject.Client.ApiResponse, IUpdateBankLevelEndpointMappingApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400UpdateBankLevelEndpointMappingApiResponse> Logger { get; }
+            public ILogger<UpdateBankLevelEndpointMappingApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400UpdateBankLevelEndpointMappingApiResponse"/>
+            /// The <see cref="UpdateBankLevelEndpointMappingApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -3082,14 +3082,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400UpdateBankLevelEndpointMappingApiResponse(ILogger<OBPv400UpdateBankLevelEndpointMappingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public UpdateBankLevelEndpointMappingApiResponse(ILogger<UpdateBankLevelEndpointMappingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400UpdateBankLevelEndpointMappingApiResponse"/>
+            /// The <see cref="UpdateBankLevelEndpointMappingApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -3098,7 +3098,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400UpdateBankLevelEndpointMappingApiResponse(ILogger<OBPv400UpdateBankLevelEndpointMappingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public UpdateBankLevelEndpointMappingApiResponse(ILogger<UpdateBankLevelEndpointMappingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -3116,11 +3116,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems? Ok()
+            public OpenBankProject.Model.GetAllEndpointMappings200ResponseEndpointMappingsInner? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetAllEndpointMappings200ResponseEndpointMappingsInner>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -3129,7 +3129,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetAllEndpointMappings200ResponseEndpointMappingsInner? result)
             {
                 result = null;
 
@@ -3167,21 +3167,21 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400UpdateEndpointMapping(ref string endpointmappingid, OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest);
+        partial void FormatUpdateEndpointMapping(ref string endpointmappingid, CreateEndpointMappingRequest createEndpointMappingRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="endpointmappingid"></param>
-        /// <param name="oBPv400CreateEndpointMappingRequest"></param>
+        /// <param name="createEndpointMappingRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv400UpdateEndpointMapping(string endpointmappingid, OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest)
+        private void ValidateUpdateEndpointMapping(string endpointmappingid, CreateEndpointMappingRequest createEndpointMappingRequest)
         {
             if (endpointmappingid == null)
                 throw new ArgumentNullException(nameof(endpointmappingid));
 
-            if (oBPv400CreateEndpointMappingRequest == null)
-                throw new ArgumentNullException(nameof(oBPv400CreateEndpointMappingRequest));
+            if (createEndpointMappingRequest == null)
+                throw new ArgumentNullException(nameof(createEndpointMappingRequest));
         }
 
         /// <summary>
@@ -3189,11 +3189,11 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="endpointmappingid"></param>
-        /// <param name="oBPv400CreateEndpointMappingRequest"></param>
-        private void AfterOBPv400UpdateEndpointMappingDefaultImplementation(IOBPv400UpdateEndpointMappingApiResponse apiResponseLocalVar, string endpointmappingid, OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest)
+        /// <param name="createEndpointMappingRequest"></param>
+        private void AfterUpdateEndpointMappingDefaultImplementation(IUpdateEndpointMappingApiResponse apiResponseLocalVar, string endpointmappingid, CreateEndpointMappingRequest createEndpointMappingRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400UpdateEndpointMapping(ref suppressDefaultLog, apiResponseLocalVar, endpointmappingid, oBPv400CreateEndpointMappingRequest);
+            AfterUpdateEndpointMapping(ref suppressDefaultLog, apiResponseLocalVar, endpointmappingid, createEndpointMappingRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -3204,8 +3204,8 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="endpointmappingid"></param>
-        /// <param name="oBPv400CreateEndpointMappingRequest"></param>
-        partial void AfterOBPv400UpdateEndpointMapping(ref bool suppressDefaultLog, IOBPv400UpdateEndpointMappingApiResponse apiResponseLocalVar, string endpointmappingid, OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest);
+        /// <param name="createEndpointMappingRequest"></param>
+        partial void AfterUpdateEndpointMapping(ref bool suppressDefaultLog, IUpdateEndpointMappingApiResponse apiResponseLocalVar, string endpointmappingid, CreateEndpointMappingRequest createEndpointMappingRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -3214,11 +3214,11 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="endpointmappingid"></param>
-        /// <param name="oBPv400CreateEndpointMappingRequest"></param>
-        private void OnErrorOBPv400UpdateEndpointMappingDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string endpointmappingid, OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest)
+        /// <param name="createEndpointMappingRequest"></param>
+        private void OnErrorUpdateEndpointMappingDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string endpointmappingid, CreateEndpointMappingRequest createEndpointMappingRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400UpdateEndpointMapping(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, endpointmappingid, oBPv400CreateEndpointMappingRequest);
+            OnErrorUpdateEndpointMapping(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, endpointmappingid, createEndpointMappingRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -3231,21 +3231,21 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="endpointmappingid"></param>
-        /// <param name="oBPv400CreateEndpointMappingRequest"></param>
-        partial void OnErrorOBPv400UpdateEndpointMapping(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string endpointmappingid, OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest);
+        /// <param name="createEndpointMappingRequest"></param>
+        partial void OnErrorUpdateEndpointMapping(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string endpointmappingid, CreateEndpointMappingRequest createEndpointMappingRequest);
 
         /// <summary>
         /// Update Endpoint Mapping &lt;p&gt;Update an Endpoint Mapping.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ENDPOINT_MAPPING_ID&lt;/a&gt;: ENDPOINT_MAPPING_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
         /// </summary>
         /// <param name="endpointmappingid">The ENDPOINTMAPPINGID identifier</param>
-        /// <param name="oBPv400CreateEndpointMappingRequest">Request body</param>
+        /// <param name="createEndpointMappingRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateEndpointMappingApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400UpdateEndpointMappingApiResponse?> OBPv400UpdateEndpointMappingOrDefaultAsync(string endpointmappingid, OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateEndpointMappingApiResponse"/>&gt;</returns>
+        public async Task<IUpdateEndpointMappingApiResponse?> UpdateEndpointMappingOrDefaultAsync(string endpointmappingid, CreateEndpointMappingRequest createEndpointMappingRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400UpdateEndpointMappingAsync(endpointmappingid, oBPv400CreateEndpointMappingRequest, cancellationToken).ConfigureAwait(false);
+                return await UpdateEndpointMappingAsync(endpointmappingid, createEndpointMappingRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -3258,18 +3258,18 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="endpointmappingid">The ENDPOINTMAPPINGID identifier</param>
-        /// <param name="oBPv400CreateEndpointMappingRequest">Request body</param>
+        /// <param name="createEndpointMappingRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateEndpointMappingApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400UpdateEndpointMappingApiResponse> OBPv400UpdateEndpointMappingAsync(string endpointmappingid, OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateEndpointMappingApiResponse"/>&gt;</returns>
+        public async Task<IUpdateEndpointMappingApiResponse> UpdateEndpointMappingAsync(string endpointmappingid, CreateEndpointMappingRequest createEndpointMappingRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400UpdateEndpointMapping(endpointmappingid, oBPv400CreateEndpointMappingRequest);
+                ValidateUpdateEndpointMapping(endpointmappingid, createEndpointMappingRequest);
 
-                FormatOBPv400UpdateEndpointMapping(ref endpointmappingid, oBPv400CreateEndpointMappingRequest);
+                FormatUpdateEndpointMapping(ref endpointmappingid, createEndpointMappingRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -3281,16 +3281,16 @@ namespace OpenBankProject.Api
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/management/endpoint-mappings/{endpointmappingid}");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bendpointmappingid%7D", Uri.EscapeDataString(endpointmappingid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv400CreateEndpointMappingRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (createEndpointMappingRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400CreateEndpointMappingRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createEndpointMappingRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -3326,8 +3326,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400UpdateEndpointMappingApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400UpdateEndpointMappingApiResponse>();
-                        OBPv400UpdateEndpointMappingApiResponse apiResponseLocalVar;
+                        ILogger<UpdateEndpointMappingApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<UpdateEndpointMappingApiResponse>();
+                        UpdateEndpointMappingApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -3338,9 +3338,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400UpdateEndpointMappingDefaultImplementation(apiResponseLocalVar, endpointmappingid, oBPv400CreateEndpointMappingRequest);
+                        AfterUpdateEndpointMappingDefaultImplementation(apiResponseLocalVar, endpointmappingid, createEndpointMappingRequest);
 
-                        Events.ExecuteOnOBPv400UpdateEndpointMapping(apiResponseLocalVar);
+                        Events.ExecuteOnUpdateEndpointMapping(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -3352,24 +3352,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400UpdateEndpointMappingDefaultImplementation(e, "/obp/v4.0.0/management/endpoint-mappings/{endpointmappingid}", uriBuilderLocalVar.Path, endpointmappingid, oBPv400CreateEndpointMappingRequest);
-                Events.ExecuteOnErrorOBPv400UpdateEndpointMapping(e);
+                OnErrorUpdateEndpointMappingDefaultImplementation(e, "/obp/v4.0.0/management/endpoint-mappings/{endpointmappingid}", uriBuilderLocalVar.Path, endpointmappingid, createEndpointMappingRequest);
+                Events.ExecuteOnErrorUpdateEndpointMapping(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400UpdateEndpointMappingApiResponse"/>
+        /// The <see cref="UpdateEndpointMappingApiResponse"/>
         /// </summary>
-        public partial class OBPv400UpdateEndpointMappingApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400UpdateEndpointMappingApiResponse
+        public partial class UpdateEndpointMappingApiResponse : OpenBankProject.Client.ApiResponse, IUpdateEndpointMappingApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400UpdateEndpointMappingApiResponse> Logger { get; }
+            public ILogger<UpdateEndpointMappingApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400UpdateEndpointMappingApiResponse"/>
+            /// The <see cref="UpdateEndpointMappingApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -3378,14 +3378,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400UpdateEndpointMappingApiResponse(ILogger<OBPv400UpdateEndpointMappingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public UpdateEndpointMappingApiResponse(ILogger<UpdateEndpointMappingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400UpdateEndpointMappingApiResponse"/>
+            /// The <see cref="UpdateEndpointMappingApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -3394,7 +3394,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400UpdateEndpointMappingApiResponse(ILogger<OBPv400UpdateEndpointMappingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public UpdateEndpointMappingApiResponse(ILogger<UpdateEndpointMappingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -3412,11 +3412,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems? Ok()
+            public OpenBankProject.Model.GetAllEndpointMappings200ResponseEndpointMappingsInner? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetAllEndpointMappings200ResponseEndpointMappingsInner>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -3425,7 +3425,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetAllEndpointMappings200ResponseEndpointMappingsInner? result)
             {
                 result = null;
 

@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,25 +15,25 @@
 
 import * as runtime from '../runtime';
 import type {
-  OBPv310GetRateLimitingInfo200Response,
-  OBPv600UpdateRateLimitsRequest,
+  GetRateLimitingInfo200Response,
+  UpdateRateLimitsRequest,
 } from '../models/index';
 import {
-    OBPv310GetRateLimitingInfo200ResponseFromJSON,
-    OBPv310GetRateLimitingInfo200ResponseToJSON,
-    OBPv600UpdateRateLimitsRequestFromJSON,
-    OBPv600UpdateRateLimitsRequestToJSON,
+    GetRateLimitingInfo200ResponseFromJSON,
+    GetRateLimitingInfo200ResponseToJSON,
+    UpdateRateLimitsRequestFromJSON,
+    UpdateRateLimitsRequestToJSON,
 } from '../models/index';
 
-export interface OBPv400CallsLimitRequest {
+export interface CallsLimitRequest {
     consumerid: string;
-    oBPv600UpdateRateLimitsRequest: OBPv600UpdateRateLimitsRequest;
+    updateRateLimitsRequest: UpdateRateLimitsRequest;
 }
 
-export interface OBPv600UpdateRateLimitsOperationRequest {
+export interface UpdateRateLimitsOperationRequest {
     consumerid: string;
     ratelimitingid: string;
-    oBPv600UpdateRateLimitsRequest: OBPv600UpdateRateLimitsRequest;
+    updateRateLimitsRequest: UpdateRateLimitsRequest;
 }
 
 /**
@@ -42,9 +42,79 @@ export interface OBPv600UpdateRateLimitsOperationRequest {
 export class RateLimitsApi extends runtime.BaseAPI {
 
     /**
-     * Creates request options for oBPv310GetRateLimitingInfo without sending the request
+     * Creates request options for callsLimit without sending the request
      */
-    async oBPv310GetRateLimitingInfoRequestOpts(): Promise<runtime.RequestOpts> {
+    async callsLimitRequestOpts(requestParameters: CallsLimitRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['consumerid'] == null) {
+            throw new runtime.RequiredError(
+                'consumerid',
+                'Required parameter "consumerid" was null or undefined when calling callsLimit().'
+            );
+        }
+
+        if (requestParameters['updateRateLimitsRequest'] == null) {
+            throw new runtime.RequiredError(
+                'updateRateLimitsRequest',
+                'Required parameter "updateRateLimitsRequest" was null or undefined when calling callsLimit().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.accessToken) {
+            // oauth required
+            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
+        }
+
+
+        let urlPath = `/obp/v4.0.0/management/consumers/{consumerid}/consumer/call-limits`;
+        urlPath = urlPath.replace(`{${"consumerid"}}`, encodeURIComponent(String(requestParameters['consumerid'])));
+
+        return {
+            path: urlPath,
+            method: 'PUT',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdateRateLimitsRequestToJSON(requestParameters['updateRateLimitsRequest']),
+        };
+    }
+
+    /**
+     * <p>Set the API rate limits / call limits for a Consumer:</p> <p>Rate limiting can be set:</p> <p>Per Second<br /> Per Minute<br /> Per Hour<br /> Per Week<br /> Per Month</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#from_date\"><strong>from_date</strong></a>: 1100-01-01T01:01:01.000Z</p> <p><a href=\"/glossary#per_day_call_limit\"><strong>per_day_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_hour_call_limit\"><strong>per_hour_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_minute_call_limit\"><strong>per_minute_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_month_call_limit\"><strong>per_month_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_second_call_limit\"><strong>per_second_call_limit</strong></a>: 10</p> <p><a href=\"/glossary#per_week_call_limit\"><strong>per_week_call_limit</strong></a>:</p> <p><a href=\"/glossary#to_date\"><strong>to_date</strong></a>: 1100-01-01T01:01:01.000Z</p> <p><a href=\"/glossary#\">api_name</a>: api_name</p> <p><a href=\"/glossary#api_version\">api_version</a>:</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
+     * Set Rate Limits / Call Limits per Consumer
+     */
+    async callsLimitRaw(requestParameters: CallsLimitRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateRateLimitsRequest>> {
+        const requestOptions = await this.callsLimitRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateRateLimitsRequestFromJSON(jsonValue));
+    }
+
+    /**
+     * <p>Set the API rate limits / call limits for a Consumer:</p> <p>Rate limiting can be set:</p> <p>Per Second<br /> Per Minute<br /> Per Hour<br /> Per Week<br /> Per Month</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#from_date\"><strong>from_date</strong></a>: 1100-01-01T01:01:01.000Z</p> <p><a href=\"/glossary#per_day_call_limit\"><strong>per_day_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_hour_call_limit\"><strong>per_hour_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_minute_call_limit\"><strong>per_minute_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_month_call_limit\"><strong>per_month_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_second_call_limit\"><strong>per_second_call_limit</strong></a>: 10</p> <p><a href=\"/glossary#per_week_call_limit\"><strong>per_week_call_limit</strong></a>:</p> <p><a href=\"/glossary#to_date\"><strong>to_date</strong></a>: 1100-01-01T01:01:01.000Z</p> <p><a href=\"/glossary#\">api_name</a>: api_name</p> <p><a href=\"/glossary#api_version\">api_version</a>:</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
+     * Set Rate Limits / Call Limits per Consumer
+     */
+    async callsLimit(requestParameters: CallsLimitRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateRateLimitsRequest> {
+        const response = await this.callsLimitRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for getRateLimitingInfo without sending the request
+     */
+    async getRateLimitingInfoRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -59,7 +129,7 @@ export class RateLimitsApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -77,114 +147,44 @@ export class RateLimitsApi extends runtime.BaseAPI {
      * <p>Get information about the Rate Limiting setup on this OBP Instance such as:</p> <p>Is rate limiting enabled and active?<br /> What backend is used to keep track of the API calls (e.g. REDIS).</p> <p>Note: Rate limiting can be set at the Consumer level and also for anonymous calls.</p> <p>See the consumer rate limits / call limits endpoints.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#enabled\"><strong>enabled</strong></a>: false</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#service_available\"><strong>service_available</strong></a>:</p> <p><a href=\"/glossary#technology\"><strong>technology</strong></a>: technology1</p> 
      * Get Rate Limiting Info
      */
-    async oBPv310GetRateLimitingInfoRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv310GetRateLimitingInfo200Response>> {
-        const requestOptions = await this.oBPv310GetRateLimitingInfoRequestOpts();
+    async getRateLimitingInfoRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetRateLimitingInfo200Response>> {
+        const requestOptions = await this.getRateLimitingInfoRequestOpts();
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv310GetRateLimitingInfo200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetRateLimitingInfo200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get information about the Rate Limiting setup on this OBP Instance such as:</p> <p>Is rate limiting enabled and active?<br /> What backend is used to keep track of the API calls (e.g. REDIS).</p> <p>Note: Rate limiting can be set at the Consumer level and also for anonymous calls.</p> <p>See the consumer rate limits / call limits endpoints.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#enabled\"><strong>enabled</strong></a>: false</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#service_available\"><strong>service_available</strong></a>:</p> <p><a href=\"/glossary#technology\"><strong>technology</strong></a>: technology1</p> 
      * Get Rate Limiting Info
      */
-    async oBPv310GetRateLimitingInfo(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv310GetRateLimitingInfo200Response> {
-        const response = await this.oBPv310GetRateLimitingInfoRaw(initOverrides);
+    async getRateLimitingInfo(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetRateLimitingInfo200Response> {
+        const response = await this.getRateLimitingInfoRaw(initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400CallsLimit without sending the request
+     * Creates request options for updateRateLimits without sending the request
      */
-    async oBPv400CallsLimitRequestOpts(requestParameters: OBPv400CallsLimitRequest): Promise<runtime.RequestOpts> {
+    async updateRateLimitsRequestOpts(requestParameters: UpdateRateLimitsOperationRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['consumerid'] == null) {
             throw new runtime.RequiredError(
                 'consumerid',
-                'Required parameter "consumerid" was null or undefined when calling oBPv400CallsLimit().'
-            );
-        }
-
-        if (requestParameters['oBPv600UpdateRateLimitsRequest'] == null) {
-            throw new runtime.RequiredError(
-                'oBPv600UpdateRateLimitsRequest',
-                'Required parameter "oBPv600UpdateRateLimitsRequest" was null or undefined when calling oBPv400CallsLimit().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.accessToken) {
-            // oauth required
-            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
-        }
-
-
-        let urlPath = `/obp/v4.0.0/management/consumers/{consumerid}/consumer/call-limits`;
-        urlPath = urlPath.replace(`{${"consumerid"}}`, encodeURIComponent(String(requestParameters['consumerid'])));
-
-        return {
-            path: urlPath,
-            method: 'PUT',
-            headers: headerParameters,
-            query: queryParameters,
-            body: OBPv600UpdateRateLimitsRequestToJSON(requestParameters['oBPv600UpdateRateLimitsRequest']),
-        };
-    }
-
-    /**
-     * <p>Set the API rate limits / call limits for a Consumer:</p> <p>Rate limiting can be set:</p> <p>Per Second<br /> Per Minute<br /> Per Hour<br /> Per Week<br /> Per Month</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#from_date\"><strong>from_date</strong></a>: 1100-01-01T01:01:01.000Z</p> <p><a href=\"/glossary#per_day_call_limit\"><strong>per_day_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_hour_call_limit\"><strong>per_hour_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_minute_call_limit\"><strong>per_minute_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_month_call_limit\"><strong>per_month_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_second_call_limit\"><strong>per_second_call_limit</strong></a>: 10</p> <p><a href=\"/glossary#per_week_call_limit\"><strong>per_week_call_limit</strong></a>:</p> <p><a href=\"/glossary#to_date\"><strong>to_date</strong></a>: 1100-01-01T01:01:01.000Z</p> <p><a href=\"/glossary#\">api_name</a>: api_name</p> <p><a href=\"/glossary#api_version\">api_version</a>:</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
-     * Set Rate Limits / Call Limits per Consumer
-     */
-    async oBPv400CallsLimitRaw(requestParameters: OBPv400CallsLimitRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600UpdateRateLimitsRequest>> {
-        const requestOptions = await this.oBPv400CallsLimitRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600UpdateRateLimitsRequestFromJSON(jsonValue));
-    }
-
-    /**
-     * <p>Set the API rate limits / call limits for a Consumer:</p> <p>Rate limiting can be set:</p> <p>Per Second<br /> Per Minute<br /> Per Hour<br /> Per Week<br /> Per Month</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#from_date\"><strong>from_date</strong></a>: 1100-01-01T01:01:01.000Z</p> <p><a href=\"/glossary#per_day_call_limit\"><strong>per_day_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_hour_call_limit\"><strong>per_hour_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_minute_call_limit\"><strong>per_minute_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_month_call_limit\"><strong>per_month_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_second_call_limit\"><strong>per_second_call_limit</strong></a>: 10</p> <p><a href=\"/glossary#per_week_call_limit\"><strong>per_week_call_limit</strong></a>:</p> <p><a href=\"/glossary#to_date\"><strong>to_date</strong></a>: 1100-01-01T01:01:01.000Z</p> <p><a href=\"/glossary#\">api_name</a>: api_name</p> <p><a href=\"/glossary#api_version\">api_version</a>:</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
-     * Set Rate Limits / Call Limits per Consumer
-     */
-    async oBPv400CallsLimit(requestParameters: OBPv400CallsLimitRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600UpdateRateLimitsRequest> {
-        const response = await this.oBPv400CallsLimitRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for oBPv600UpdateRateLimits without sending the request
-     */
-    async oBPv600UpdateRateLimitsRequestOpts(requestParameters: OBPv600UpdateRateLimitsOperationRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['consumerid'] == null) {
-            throw new runtime.RequiredError(
-                'consumerid',
-                'Required parameter "consumerid" was null or undefined when calling oBPv600UpdateRateLimits().'
+                'Required parameter "consumerid" was null or undefined when calling updateRateLimits().'
             );
         }
 
         if (requestParameters['ratelimitingid'] == null) {
             throw new runtime.RequiredError(
                 'ratelimitingid',
-                'Required parameter "ratelimitingid" was null or undefined when calling oBPv600UpdateRateLimits().'
+                'Required parameter "ratelimitingid" was null or undefined when calling updateRateLimits().'
             );
         }
 
-        if (requestParameters['oBPv600UpdateRateLimitsRequest'] == null) {
+        if (requestParameters['updateRateLimitsRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv600UpdateRateLimitsRequest',
-                'Required parameter "oBPv600UpdateRateLimitsRequest" was null or undefined when calling oBPv600UpdateRateLimits().'
+                'updateRateLimitsRequest',
+                'Required parameter "updateRateLimitsRequest" was null or undefined when calling updateRateLimits().'
             );
         }
 
@@ -204,7 +204,7 @@ export class RateLimitsApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -217,7 +217,7 @@ export class RateLimitsApi extends runtime.BaseAPI {
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv600UpdateRateLimitsRequestToJSON(requestParameters['oBPv600UpdateRateLimitsRequest']),
+            body: UpdateRateLimitsRequestToJSON(requestParameters['updateRateLimitsRequest']),
         };
     }
 
@@ -225,19 +225,19 @@ export class RateLimitsApi extends runtime.BaseAPI {
      * <p>Set the API rate limits / call limits for a Consumer:</p> <p>Rate limiting can be set:</p> <p>Per Second<br /> Per Minute<br /> Per Hour<br /> Per Week<br /> Per Month</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">RATE_LIMITING_ID</a>: RATE_LIMITING_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#from_date\"><strong>from_date</strong></a>: 1100-01-01T01:01:01.000Z</p> <p><a href=\"/glossary#per_day_call_limit\"><strong>per_day_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_hour_call_limit\"><strong>per_hour_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_minute_call_limit\"><strong>per_minute_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_month_call_limit\"><strong>per_month_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_second_call_limit\"><strong>per_second_call_limit</strong></a>: 10</p> <p><a href=\"/glossary#per_week_call_limit\"><strong>per_week_call_limit</strong></a>:</p> <p><a href=\"/glossary#to_date\"><strong>to_date</strong></a>: 1100-01-01T01:01:01.000Z</p> <p><a href=\"/glossary#\">api_name</a>: api_name</p> <p><a href=\"/glossary#api_version\">api_version</a>:</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
      * Set Rate Limits / Call Limits per Consumer
      */
-    async oBPv600UpdateRateLimitsRaw(requestParameters: OBPv600UpdateRateLimitsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600UpdateRateLimitsRequest>> {
-        const requestOptions = await this.oBPv600UpdateRateLimitsRequestOpts(requestParameters);
+    async updateRateLimitsRaw(requestParameters: UpdateRateLimitsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateRateLimitsRequest>> {
+        const requestOptions = await this.updateRateLimitsRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600UpdateRateLimitsRequestFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateRateLimitsRequestFromJSON(jsonValue));
     }
 
     /**
      * <p>Set the API rate limits / call limits for a Consumer:</p> <p>Rate limiting can be set:</p> <p>Per Second<br /> Per Minute<br /> Per Hour<br /> Per Week<br /> Per Month</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">RATE_LIMITING_ID</a>: RATE_LIMITING_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#from_date\"><strong>from_date</strong></a>: 1100-01-01T01:01:01.000Z</p> <p><a href=\"/glossary#per_day_call_limit\"><strong>per_day_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_hour_call_limit\"><strong>per_hour_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_minute_call_limit\"><strong>per_minute_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_month_call_limit\"><strong>per_month_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_second_call_limit\"><strong>per_second_call_limit</strong></a>: 10</p> <p><a href=\"/glossary#per_week_call_limit\"><strong>per_week_call_limit</strong></a>:</p> <p><a href=\"/glossary#to_date\"><strong>to_date</strong></a>: 1100-01-01T01:01:01.000Z</p> <p><a href=\"/glossary#\">api_name</a>: api_name</p> <p><a href=\"/glossary#api_version\">api_version</a>:</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
      * Set Rate Limits / Call Limits per Consumer
      */
-    async oBPv600UpdateRateLimits(requestParameters: OBPv600UpdateRateLimitsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600UpdateRateLimitsRequest> {
-        const response = await this.oBPv600UpdateRateLimitsRaw(requestParameters, initOverrides);
+    async updateRateLimits(requestParameters: UpdateRateLimitsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateRateLimitsRequest> {
+        const response = await this.updateRateLimitsRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

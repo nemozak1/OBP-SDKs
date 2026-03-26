@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -46,8 +46,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CleanupOrphanedDynamicEntityRecordsApiResponse"/>&gt;</returns>
-        Task<IOBPv600CleanupOrphanedDynamicEntityRecordsApiResponse> OBPv600CleanupOrphanedDynamicEntityRecordsAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICleanupOrphanedDynamicEntityRecordsApiResponse"/>&gt;</returns>
+        Task<ICleanupOrphanedDynamicEntityRecordsApiResponse> CleanupOrphanedDynamicEntityRecordsAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Cleanup Orphaned Dynamic Entity Records
@@ -56,8 +56,8 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Delete orphaned dynamic entity data records.&lt;/p&gt; &lt;p&gt;Orphaned records are rows in the DynamicData table whose entityName/bankId combination&lt;br /&gt; has no matching Dynamic Entity definition. These can accumulate when entity definitions&lt;br /&gt; are deleted but their data records are not cleaned up.&lt;/p&gt; &lt;p&gt;This endpoint first identifies all orphaned records (using the same detection logic as&lt;br /&gt; GET /management/diagnostics/dynamic-entities), then deletes them.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Response Format:&lt;/strong&gt;&lt;br /&gt; * &lt;code&gt;deleted_orphaned_entities&lt;/code&gt; - List of orphaned entity groups that were deleted, each with:&lt;br /&gt; * &lt;code&gt;entity_name&lt;/code&gt; - Name of the orphaned entity&lt;br /&gt; * &lt;code&gt;bank_id&lt;/code&gt; - Bank ID (or empty string for system-level)&lt;br /&gt; * &lt;code&gt;record_count&lt;/code&gt; - Number of records that were deleted for this entity group&lt;br /&gt; * &lt;code&gt;total_records_deleted&lt;/code&gt; - Total count of all deleted records&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Required Role:&lt;/strong&gt; &lt;code&gt;CanCleanupOrphanedDynamicEntityRecords&lt;/code&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CleanupOrphanedDynamicEntityRecordsApiResponse"/>?&gt;</returns>
-        Task<IOBPv600CleanupOrphanedDynamicEntityRecordsApiResponse?> OBPv600CleanupOrphanedDynamicEntityRecordsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICleanupOrphanedDynamicEntityRecordsApiResponse"/>?&gt;</returns>
+        Task<ICleanupOrphanedDynamicEntityRecordsApiResponse?> CleanupOrphanedDynamicEntityRecordsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Available Personal Dynamic Entities
@@ -67,8 +67,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetAvailablePersonalDynamicEntitiesApiResponse"/>&gt;</returns>
-        Task<IOBPv600GetAvailablePersonalDynamicEntitiesApiResponse> OBPv600GetAvailablePersonalDynamicEntitiesAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAvailablePersonalDynamicEntitiesApiResponse"/>&gt;</returns>
+        Task<IGetAvailablePersonalDynamicEntitiesApiResponse> GetAvailablePersonalDynamicEntitiesAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Available Personal Dynamic Entities
@@ -77,8 +77,8 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Get all Dynamic Entities that support personal data storage (hasPersonalEntity &#x3D;&#x3D; true).&lt;/p&gt; &lt;p&gt;This endpoint allows regular users (without admin roles) to discover which dynamic entities&lt;br /&gt; they can interact with for storing personal data via the /my/ENTITY_NAME endpoints.&lt;/p&gt; &lt;p&gt;Authentication: User must be logged in (no special roles required).&lt;/p&gt; &lt;p&gt;Use case: Portals and apps can show users what personal data types are available&lt;br /&gt; without needing admin access to view all dynamic entity definitions.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#My-Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetAvailablePersonalDynamicEntitiesApiResponse"/>?&gt;</returns>
-        Task<IOBPv600GetAvailablePersonalDynamicEntitiesApiResponse?> OBPv600GetAvailablePersonalDynamicEntitiesOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAvailablePersonalDynamicEntitiesApiResponse"/>?&gt;</returns>
+        Task<IGetAvailablePersonalDynamicEntitiesApiResponse?> GetAvailablePersonalDynamicEntitiesOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Dynamic Entity Diagnostics
@@ -88,8 +88,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetDynamicEntityDiagnosticsApiResponse"/>&gt;</returns>
-        Task<IOBPv600GetDynamicEntityDiagnosticsApiResponse> OBPv600GetDynamicEntityDiagnosticsAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetDynamicEntityDiagnosticsApiResponse"/>&gt;</returns>
+        Task<IGetDynamicEntityDiagnosticsApiResponse> GetDynamicEntityDiagnosticsAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Dynamic Entity Diagnostics
@@ -98,8 +98,8 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Get diagnostic information about Dynamic Entities to help troubleshoot Swagger generation issues.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Use Case:&lt;/strong&gt;&lt;br /&gt; This endpoint is particularly useful when:&lt;br /&gt; * The Swagger endpoint (&lt;code&gt;/obp/v6.0.0/resource-docs/OBPv6.0.0/swagger?content&#x3D;dynamic&lt;/code&gt;) fails with errors like &amp;quot;expected boolean&amp;quot;&lt;br /&gt; * The OBP endpoint (&lt;code&gt;/obp/v6.0.0/resource-docs/OBPv6.0.0/obp?content&#x3D;dynamic&lt;/code&gt;) works fine&lt;br /&gt; * You need to identify which dynamic entity has malformed field definitions&lt;/p&gt; &lt;p&gt;&lt;strong&gt;What It Checks:&lt;/strong&gt;&lt;br /&gt; This endpoint analyzes all dynamic entities (both system and bank level) for:&lt;br /&gt; * Boolean fields with invalid example values (e.g., actual JSON booleans or invalid strings instead of &lt;code&gt;&amp;quot;true&amp;quot;&lt;/code&gt; or &lt;code&gt;&amp;quot;false&amp;quot;&lt;/code&gt;)&lt;br /&gt; * Malformed JSON in field definitions&lt;br /&gt; * Fields that cannot be converted to their declared types&lt;br /&gt; * Other validation issues that cause Swagger generation to fail&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Response Format:&lt;/strong&gt;&lt;br /&gt; The response contains:&lt;br /&gt; * &lt;code&gt;issues&lt;/code&gt; - List of issues found, each with:&lt;br /&gt; * &lt;code&gt;entity_name&lt;/code&gt; - Name of the problematic entity&lt;br /&gt; * &lt;code&gt;bank_id&lt;/code&gt; - Bank ID (or &amp;quot;SYSTEM_LEVEL&amp;quot; for system entities)&lt;br /&gt; * &lt;code&gt;field_name&lt;/code&gt; - Name of the problematic field&lt;br /&gt; * &lt;code&gt;example_value&lt;/code&gt; - The current (invalid) example value&lt;br /&gt; * &lt;code&gt;error_message&lt;/code&gt; - Description of what&#39;s wrong and how to fix it&lt;br /&gt; * &lt;code&gt;total_issues&lt;/code&gt; - Count of total issues found&lt;br /&gt; * &lt;code&gt;scanned_entities&lt;/code&gt; - List of all dynamic entities that were scanned (format: &amp;quot;EntityName (BANK_ID)&amp;quot; or &amp;quot;EntityName (SYSTEM)&amp;quot;)&lt;/p&gt; &lt;p&gt;&lt;strong&gt;How to Fix Issues:&lt;/strong&gt;&lt;br /&gt; 1. Identify the problematic entity from the diagnostic output&lt;br /&gt; 2. Update the entity definition using PUT &lt;code&gt;/management/system-dynamic-entities/DYNAMIC_ENTITY_ID&lt;/code&gt; or PUT &lt;code&gt;/management/banks/BANK_ID/dynamic-entities/DYNAMIC_ENTITY_ID&lt;/code&gt;&lt;br /&gt; 3. For boolean fields, ensure the example value is either &lt;code&gt;&amp;quot;true&amp;quot;&lt;/code&gt; or &lt;code&gt;&amp;quot;false&amp;quot;&lt;/code&gt; (as strings)&lt;br /&gt; 4. Re-run this diagnostic to verify the fix&lt;br /&gt; 5. Check that the Swagger endpoint now works&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Example Issue:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;Customer&amp;quot;,   &amp;quot;bank_id&amp;quot;: &amp;quot;gh.29.uk&amp;quot;,   &amp;quot;field_name&amp;quot;: &amp;quot;is_active&amp;quot;,   &amp;quot;example_value&amp;quot;: &amp;quot;malformed_value&amp;quot;,   &amp;quot;error_message&amp;quot;: &amp;quot;Boolean field has invalid example value. Expected &#39;true&#39; or &#39;false&#39;, got: &#39;malformed_value&#39;&amp;quot; } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Required Role:&lt;/strong&gt; &lt;code&gt;CanGetDynamicEntityDiagnostics&lt;/code&gt;&lt;/p&gt; &lt;p&gt;If no issues are found, the response will contain an empty issues list with &lt;code&gt;total_issues: 0&lt;/code&gt;, but &lt;code&gt;scanned_entities&lt;/code&gt; will show which entities were checked.&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetDynamicEntityDiagnosticsApiResponse"/>?&gt;</returns>
-        Task<IOBPv600GetDynamicEntityDiagnosticsApiResponse?> OBPv600GetDynamicEntityDiagnosticsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetDynamicEntityDiagnosticsApiResponse"/>?&gt;</returns>
+        Task<IGetDynamicEntityDiagnosticsApiResponse?> GetDynamicEntityDiagnosticsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Reference Types for Dynamic Entities
@@ -109,8 +109,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetReferenceTypesApiResponse"/>&gt;</returns>
-        Task<IOBPv600GetReferenceTypesApiResponse> OBPv600GetReferenceTypesAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetReferenceTypesApiResponse"/>&gt;</returns>
+        Task<IGetReferenceTypesApiResponse> GetReferenceTypesAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Reference Types for Dynamic Entities
@@ -119,8 +119,8 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Get a list of all available reference types that can be used in Dynamic Entity field definitions.&lt;/p&gt; &lt;p&gt;Reference types allow Dynamic Entity fields to reference other entities (similar to foreign keys).&lt;br /&gt; This endpoint returns both:&lt;br /&gt; * &lt;strong&gt;Static reference types&lt;/strong&gt; - Built-in reference types for core OBP entities (e.g., Customer, Account, Transaction)&lt;br /&gt; * &lt;strong&gt;Dynamic reference types&lt;/strong&gt; - Reference types for Dynamic Entities that have been created&lt;/p&gt; &lt;p&gt;Each reference type includes:&lt;br /&gt; * &lt;code&gt;type_name&lt;/code&gt; - The full reference type string to use in entity definitions (e.g., &amp;quot;reference:Customer&amp;quot;)&lt;br /&gt; * &lt;code&gt;example_value&lt;/code&gt; - An example value showing the correct format&lt;br /&gt; * &lt;code&gt;description&lt;/code&gt; - Description of what the reference type represents&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Use Case:&lt;/strong&gt;&lt;br /&gt; When creating a Dynamic Entity with a field that references another entity, you need to know:&lt;br /&gt; 1. What reference types are available&lt;br /&gt; 2. The correct format for the type name&lt;br /&gt; 3. The correct format for example values&lt;/p&gt; &lt;p&gt;This endpoint provides all that information.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Example Usage:&lt;/strong&gt;&lt;br /&gt; If you want to create a Dynamic Entity with a field that references a Customer, you would:&lt;br /&gt; 1. Call this endpoint to see that &amp;quot;reference:Customer&amp;quot; is available&lt;br /&gt; 2. Use it in your entity definition like:&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;customer_id&amp;quot;: {     &amp;quot;type&amp;quot;: &amp;quot;reference:Customer&amp;quot;,     &amp;quot;example&amp;quot;: &amp;quot;a8770fca-3d1d-47af-b6d0-7a6c3f124388&amp;quot;   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Required Role:&lt;/strong&gt; &lt;code&gt;CanGetDynamicEntityReferenceTypes&lt;/code&gt;&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetReferenceTypesApiResponse"/>?&gt;</returns>
-        Task<IOBPv600GetReferenceTypesApiResponse?> OBPv600GetReferenceTypesOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetReferenceTypesApiResponse"/>?&gt;</returns>
+        Task<IGetReferenceTypesApiResponse?> GetReferenceTypesOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -131,81 +131,81 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600CleanupOrphanedDynamicEntityRecords;
+        public event EventHandler<ApiResponseEventArgs>? OnCleanupOrphanedDynamicEntityRecords;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600CleanupOrphanedDynamicEntityRecords;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCleanupOrphanedDynamicEntityRecords;
 
-        internal void ExecuteOnOBPv600CleanupOrphanedDynamicEntityRecords(APIApi.OBPv600CleanupOrphanedDynamicEntityRecordsApiResponse apiResponse)
+        internal void ExecuteOnCleanupOrphanedDynamicEntityRecords(APIApi.CleanupOrphanedDynamicEntityRecordsApiResponse apiResponse)
         {
-            OnOBPv600CleanupOrphanedDynamicEntityRecords?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCleanupOrphanedDynamicEntityRecords?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600CleanupOrphanedDynamicEntityRecords(Exception exception)
+        internal void ExecuteOnErrorCleanupOrphanedDynamicEntityRecords(Exception exception)
         {
-            OnErrorOBPv600CleanupOrphanedDynamicEntityRecords?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCleanupOrphanedDynamicEntityRecords?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600GetAvailablePersonalDynamicEntities;
+        public event EventHandler<ApiResponseEventArgs>? OnGetAvailablePersonalDynamicEntities;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600GetAvailablePersonalDynamicEntities;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetAvailablePersonalDynamicEntities;
 
-        internal void ExecuteOnOBPv600GetAvailablePersonalDynamicEntities(APIApi.OBPv600GetAvailablePersonalDynamicEntitiesApiResponse apiResponse)
+        internal void ExecuteOnGetAvailablePersonalDynamicEntities(APIApi.GetAvailablePersonalDynamicEntitiesApiResponse apiResponse)
         {
-            OnOBPv600GetAvailablePersonalDynamicEntities?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetAvailablePersonalDynamicEntities?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600GetAvailablePersonalDynamicEntities(Exception exception)
+        internal void ExecuteOnErrorGetAvailablePersonalDynamicEntities(Exception exception)
         {
-            OnErrorOBPv600GetAvailablePersonalDynamicEntities?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetAvailablePersonalDynamicEntities?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600GetDynamicEntityDiagnostics;
+        public event EventHandler<ApiResponseEventArgs>? OnGetDynamicEntityDiagnostics;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600GetDynamicEntityDiagnostics;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetDynamicEntityDiagnostics;
 
-        internal void ExecuteOnOBPv600GetDynamicEntityDiagnostics(APIApi.OBPv600GetDynamicEntityDiagnosticsApiResponse apiResponse)
+        internal void ExecuteOnGetDynamicEntityDiagnostics(APIApi.GetDynamicEntityDiagnosticsApiResponse apiResponse)
         {
-            OnOBPv600GetDynamicEntityDiagnostics?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetDynamicEntityDiagnostics?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600GetDynamicEntityDiagnostics(Exception exception)
+        internal void ExecuteOnErrorGetDynamicEntityDiagnostics(Exception exception)
         {
-            OnErrorOBPv600GetDynamicEntityDiagnostics?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetDynamicEntityDiagnostics?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600GetReferenceTypes;
+        public event EventHandler<ApiResponseEventArgs>? OnGetReferenceTypes;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600GetReferenceTypes;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetReferenceTypes;
 
-        internal void ExecuteOnOBPv600GetReferenceTypes(APIApi.OBPv600GetReferenceTypesApiResponse apiResponse)
+        internal void ExecuteOnGetReferenceTypes(APIApi.GetReferenceTypesApiResponse apiResponse)
         {
-            OnOBPv600GetReferenceTypes?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetReferenceTypes?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600GetReferenceTypes(Exception exception)
+        internal void ExecuteOnErrorGetReferenceTypes(Exception exception)
         {
-            OnErrorOBPv600GetReferenceTypes?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetReferenceTypes?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -267,10 +267,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv600CleanupOrphanedDynamicEntityRecordsDefaultImplementation(IOBPv600CleanupOrphanedDynamicEntityRecordsApiResponse apiResponseLocalVar)
+        private void AfterCleanupOrphanedDynamicEntityRecordsDefaultImplementation(ICleanupOrphanedDynamicEntityRecordsApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600CleanupOrphanedDynamicEntityRecords(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterCleanupOrphanedDynamicEntityRecords(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -280,7 +280,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv600CleanupOrphanedDynamicEntityRecords(ref bool suppressDefaultLog, IOBPv600CleanupOrphanedDynamicEntityRecordsApiResponse apiResponseLocalVar);
+        partial void AfterCleanupOrphanedDynamicEntityRecords(ref bool suppressDefaultLog, ICleanupOrphanedDynamicEntityRecordsApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -288,10 +288,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv600CleanupOrphanedDynamicEntityRecordsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorCleanupOrphanedDynamicEntityRecordsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600CleanupOrphanedDynamicEntityRecords(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorCleanupOrphanedDynamicEntityRecords(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -303,18 +303,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv600CleanupOrphanedDynamicEntityRecords(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorCleanupOrphanedDynamicEntityRecords(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// Cleanup Orphaned Dynamic Entity Records &lt;p&gt;Delete orphaned dynamic entity data records.&lt;/p&gt; &lt;p&gt;Orphaned records are rows in the DynamicData table whose entityName/bankId combination&lt;br /&gt; has no matching Dynamic Entity definition. These can accumulate when entity definitions&lt;br /&gt; are deleted but their data records are not cleaned up.&lt;/p&gt; &lt;p&gt;This endpoint first identifies all orphaned records (using the same detection logic as&lt;br /&gt; GET /management/diagnostics/dynamic-entities), then deletes them.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Response Format:&lt;/strong&gt;&lt;br /&gt; * &lt;code&gt;deleted_orphaned_entities&lt;/code&gt; - List of orphaned entity groups that were deleted, each with:&lt;br /&gt; * &lt;code&gt;entity_name&lt;/code&gt; - Name of the orphaned entity&lt;br /&gt; * &lt;code&gt;bank_id&lt;/code&gt; - Bank ID (or empty string for system-level)&lt;br /&gt; * &lt;code&gt;record_count&lt;/code&gt; - Number of records that were deleted for this entity group&lt;br /&gt; * &lt;code&gt;total_records_deleted&lt;/code&gt; - Total count of all deleted records&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Required Role:&lt;/strong&gt; &lt;code&gt;CanCleanupOrphanedDynamicEntityRecords&lt;/code&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CleanupOrphanedDynamicEntityRecordsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600CleanupOrphanedDynamicEntityRecordsApiResponse?> OBPv600CleanupOrphanedDynamicEntityRecordsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICleanupOrphanedDynamicEntityRecordsApiResponse"/>&gt;</returns>
+        public async Task<ICleanupOrphanedDynamicEntityRecordsApiResponse?> CleanupOrphanedDynamicEntityRecordsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600CleanupOrphanedDynamicEntityRecordsAsync(cancellationToken).ConfigureAwait(false);
+                return await CleanupOrphanedDynamicEntityRecordsAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -327,8 +327,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CleanupOrphanedDynamicEntityRecordsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600CleanupOrphanedDynamicEntityRecordsApiResponse> OBPv600CleanupOrphanedDynamicEntityRecordsAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICleanupOrphanedDynamicEntityRecordsApiResponse"/>&gt;</returns>
+        public async Task<ICleanupOrphanedDynamicEntityRecordsApiResponse> CleanupOrphanedDynamicEntityRecordsAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -348,7 +348,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -375,8 +375,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<APIApi.OBPv600CleanupOrphanedDynamicEntityRecordsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv600CleanupOrphanedDynamicEntityRecordsApiResponse>();
-                        APIApi.OBPv600CleanupOrphanedDynamicEntityRecordsApiResponse apiResponseLocalVar;
+                        ILogger<APIApi.CleanupOrphanedDynamicEntityRecordsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.CleanupOrphanedDynamicEntityRecordsApiResponse>();
+                        APIApi.CleanupOrphanedDynamicEntityRecordsApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -387,9 +387,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600CleanupOrphanedDynamicEntityRecordsDefaultImplementation(apiResponseLocalVar);
+                        AfterCleanupOrphanedDynamicEntityRecordsDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv600CleanupOrphanedDynamicEntityRecords(apiResponseLocalVar);
+                        Events.ExecuteOnCleanupOrphanedDynamicEntityRecords(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -401,8 +401,8 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600CleanupOrphanedDynamicEntityRecordsDefaultImplementation(e, "/obp/v6.0.0/management/diagnostics/dynamic-entities/orphaned-records", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv600CleanupOrphanedDynamicEntityRecords(e);
+                OnErrorCleanupOrphanedDynamicEntityRecordsDefaultImplementation(e, "/obp/v6.0.0/management/diagnostics/dynamic-entities/orphaned-records", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorCleanupOrphanedDynamicEntityRecords(e);
                 throw;
             }
         }
@@ -411,10 +411,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv600GetAvailablePersonalDynamicEntitiesDefaultImplementation(IOBPv600GetAvailablePersonalDynamicEntitiesApiResponse apiResponseLocalVar)
+        private void AfterGetAvailablePersonalDynamicEntitiesDefaultImplementation(IGetAvailablePersonalDynamicEntitiesApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600GetAvailablePersonalDynamicEntities(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterGetAvailablePersonalDynamicEntities(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -424,7 +424,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv600GetAvailablePersonalDynamicEntities(ref bool suppressDefaultLog, IOBPv600GetAvailablePersonalDynamicEntitiesApiResponse apiResponseLocalVar);
+        partial void AfterGetAvailablePersonalDynamicEntities(ref bool suppressDefaultLog, IGetAvailablePersonalDynamicEntitiesApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -432,10 +432,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv600GetAvailablePersonalDynamicEntitiesDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorGetAvailablePersonalDynamicEntitiesDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600GetAvailablePersonalDynamicEntities(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorGetAvailablePersonalDynamicEntities(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -447,18 +447,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv600GetAvailablePersonalDynamicEntities(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorGetAvailablePersonalDynamicEntities(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// Get Available Personal Dynamic Entities &lt;p&gt;Get all Dynamic Entities that support personal data storage (hasPersonalEntity &#x3D;&#x3D; true).&lt;/p&gt; &lt;p&gt;This endpoint allows regular users (without admin roles) to discover which dynamic entities&lt;br /&gt; they can interact with for storing personal data via the /my/ENTITY_NAME endpoints.&lt;/p&gt; &lt;p&gt;Authentication: User must be logged in (no special roles required).&lt;/p&gt; &lt;p&gt;Use case: Portals and apps can show users what personal data types are available&lt;br /&gt; without needing admin access to view all dynamic entity definitions.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#My-Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetAvailablePersonalDynamicEntitiesApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetAvailablePersonalDynamicEntitiesApiResponse?> OBPv600GetAvailablePersonalDynamicEntitiesOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAvailablePersonalDynamicEntitiesApiResponse"/>&gt;</returns>
+        public async Task<IGetAvailablePersonalDynamicEntitiesApiResponse?> GetAvailablePersonalDynamicEntitiesOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600GetAvailablePersonalDynamicEntitiesAsync(cancellationToken).ConfigureAwait(false);
+                return await GetAvailablePersonalDynamicEntitiesAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -471,8 +471,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetAvailablePersonalDynamicEntitiesApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetAvailablePersonalDynamicEntitiesApiResponse> OBPv600GetAvailablePersonalDynamicEntitiesAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAvailablePersonalDynamicEntitiesApiResponse"/>&gt;</returns>
+        public async Task<IGetAvailablePersonalDynamicEntitiesApiResponse> GetAvailablePersonalDynamicEntitiesAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -492,7 +492,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -519,8 +519,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<APIApi.OBPv600GetAvailablePersonalDynamicEntitiesApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv600GetAvailablePersonalDynamicEntitiesApiResponse>();
-                        APIApi.OBPv600GetAvailablePersonalDynamicEntitiesApiResponse apiResponseLocalVar;
+                        ILogger<APIApi.GetAvailablePersonalDynamicEntitiesApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.GetAvailablePersonalDynamicEntitiesApiResponse>();
+                        APIApi.GetAvailablePersonalDynamicEntitiesApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -531,9 +531,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600GetAvailablePersonalDynamicEntitiesDefaultImplementation(apiResponseLocalVar);
+                        AfterGetAvailablePersonalDynamicEntitiesDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv600GetAvailablePersonalDynamicEntities(apiResponseLocalVar);
+                        Events.ExecuteOnGetAvailablePersonalDynamicEntities(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -545,8 +545,8 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600GetAvailablePersonalDynamicEntitiesDefaultImplementation(e, "/obp/v6.0.0/personal-dynamic-entities/available", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv600GetAvailablePersonalDynamicEntities(e);
+                OnErrorGetAvailablePersonalDynamicEntitiesDefaultImplementation(e, "/obp/v6.0.0/personal-dynamic-entities/available", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorGetAvailablePersonalDynamicEntities(e);
                 throw;
             }
         }
@@ -555,10 +555,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv600GetDynamicEntityDiagnosticsDefaultImplementation(IOBPv600GetDynamicEntityDiagnosticsApiResponse apiResponseLocalVar)
+        private void AfterGetDynamicEntityDiagnosticsDefaultImplementation(IGetDynamicEntityDiagnosticsApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600GetDynamicEntityDiagnostics(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterGetDynamicEntityDiagnostics(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -568,7 +568,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv600GetDynamicEntityDiagnostics(ref bool suppressDefaultLog, IOBPv600GetDynamicEntityDiagnosticsApiResponse apiResponseLocalVar);
+        partial void AfterGetDynamicEntityDiagnostics(ref bool suppressDefaultLog, IGetDynamicEntityDiagnosticsApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -576,10 +576,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv600GetDynamicEntityDiagnosticsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorGetDynamicEntityDiagnosticsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600GetDynamicEntityDiagnostics(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorGetDynamicEntityDiagnostics(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -591,18 +591,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv600GetDynamicEntityDiagnostics(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorGetDynamicEntityDiagnostics(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// Get Dynamic Entity Diagnostics &lt;p&gt;Get diagnostic information about Dynamic Entities to help troubleshoot Swagger generation issues.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Use Case:&lt;/strong&gt;&lt;br /&gt; This endpoint is particularly useful when:&lt;br /&gt; * The Swagger endpoint (&lt;code&gt;/obp/v6.0.0/resource-docs/OBPv6.0.0/swagger?content&#x3D;dynamic&lt;/code&gt;) fails with errors like &amp;quot;expected boolean&amp;quot;&lt;br /&gt; * The OBP endpoint (&lt;code&gt;/obp/v6.0.0/resource-docs/OBPv6.0.0/obp?content&#x3D;dynamic&lt;/code&gt;) works fine&lt;br /&gt; * You need to identify which dynamic entity has malformed field definitions&lt;/p&gt; &lt;p&gt;&lt;strong&gt;What It Checks:&lt;/strong&gt;&lt;br /&gt; This endpoint analyzes all dynamic entities (both system and bank level) for:&lt;br /&gt; * Boolean fields with invalid example values (e.g., actual JSON booleans or invalid strings instead of &lt;code&gt;&amp;quot;true&amp;quot;&lt;/code&gt; or &lt;code&gt;&amp;quot;false&amp;quot;&lt;/code&gt;)&lt;br /&gt; * Malformed JSON in field definitions&lt;br /&gt; * Fields that cannot be converted to their declared types&lt;br /&gt; * Other validation issues that cause Swagger generation to fail&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Response Format:&lt;/strong&gt;&lt;br /&gt; The response contains:&lt;br /&gt; * &lt;code&gt;issues&lt;/code&gt; - List of issues found, each with:&lt;br /&gt; * &lt;code&gt;entity_name&lt;/code&gt; - Name of the problematic entity&lt;br /&gt; * &lt;code&gt;bank_id&lt;/code&gt; - Bank ID (or &amp;quot;SYSTEM_LEVEL&amp;quot; for system entities)&lt;br /&gt; * &lt;code&gt;field_name&lt;/code&gt; - Name of the problematic field&lt;br /&gt; * &lt;code&gt;example_value&lt;/code&gt; - The current (invalid) example value&lt;br /&gt; * &lt;code&gt;error_message&lt;/code&gt; - Description of what&#39;s wrong and how to fix it&lt;br /&gt; * &lt;code&gt;total_issues&lt;/code&gt; - Count of total issues found&lt;br /&gt; * &lt;code&gt;scanned_entities&lt;/code&gt; - List of all dynamic entities that were scanned (format: &amp;quot;EntityName (BANK_ID)&amp;quot; or &amp;quot;EntityName (SYSTEM)&amp;quot;)&lt;/p&gt; &lt;p&gt;&lt;strong&gt;How to Fix Issues:&lt;/strong&gt;&lt;br /&gt; 1. Identify the problematic entity from the diagnostic output&lt;br /&gt; 2. Update the entity definition using PUT &lt;code&gt;/management/system-dynamic-entities/DYNAMIC_ENTITY_ID&lt;/code&gt; or PUT &lt;code&gt;/management/banks/BANK_ID/dynamic-entities/DYNAMIC_ENTITY_ID&lt;/code&gt;&lt;br /&gt; 3. For boolean fields, ensure the example value is either &lt;code&gt;&amp;quot;true&amp;quot;&lt;/code&gt; or &lt;code&gt;&amp;quot;false&amp;quot;&lt;/code&gt; (as strings)&lt;br /&gt; 4. Re-run this diagnostic to verify the fix&lt;br /&gt; 5. Check that the Swagger endpoint now works&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Example Issue:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;Customer&amp;quot;,   &amp;quot;bank_id&amp;quot;: &amp;quot;gh.29.uk&amp;quot;,   &amp;quot;field_name&amp;quot;: &amp;quot;is_active&amp;quot;,   &amp;quot;example_value&amp;quot;: &amp;quot;malformed_value&amp;quot;,   &amp;quot;error_message&amp;quot;: &amp;quot;Boolean field has invalid example value. Expected &#39;true&#39; or &#39;false&#39;, got: &#39;malformed_value&#39;&amp;quot; } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Required Role:&lt;/strong&gt; &lt;code&gt;CanGetDynamicEntityDiagnostics&lt;/code&gt;&lt;/p&gt; &lt;p&gt;If no issues are found, the response will contain an empty issues list with &lt;code&gt;total_issues: 0&lt;/code&gt;, but &lt;code&gt;scanned_entities&lt;/code&gt; will show which entities were checked.&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetDynamicEntityDiagnosticsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetDynamicEntityDiagnosticsApiResponse?> OBPv600GetDynamicEntityDiagnosticsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetDynamicEntityDiagnosticsApiResponse"/>&gt;</returns>
+        public async Task<IGetDynamicEntityDiagnosticsApiResponse?> GetDynamicEntityDiagnosticsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600GetDynamicEntityDiagnosticsAsync(cancellationToken).ConfigureAwait(false);
+                return await GetDynamicEntityDiagnosticsAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -615,8 +615,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetDynamicEntityDiagnosticsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetDynamicEntityDiagnosticsApiResponse> OBPv600GetDynamicEntityDiagnosticsAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetDynamicEntityDiagnosticsApiResponse"/>&gt;</returns>
+        public async Task<IGetDynamicEntityDiagnosticsApiResponse> GetDynamicEntityDiagnosticsAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -636,7 +636,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -663,8 +663,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<APIApi.OBPv600GetDynamicEntityDiagnosticsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv600GetDynamicEntityDiagnosticsApiResponse>();
-                        APIApi.OBPv600GetDynamicEntityDiagnosticsApiResponse apiResponseLocalVar;
+                        ILogger<APIApi.GetDynamicEntityDiagnosticsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.GetDynamicEntityDiagnosticsApiResponse>();
+                        APIApi.GetDynamicEntityDiagnosticsApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -675,9 +675,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600GetDynamicEntityDiagnosticsDefaultImplementation(apiResponseLocalVar);
+                        AfterGetDynamicEntityDiagnosticsDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv600GetDynamicEntityDiagnostics(apiResponseLocalVar);
+                        Events.ExecuteOnGetDynamicEntityDiagnostics(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -689,8 +689,8 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600GetDynamicEntityDiagnosticsDefaultImplementation(e, "/obp/v6.0.0/management/diagnostics/dynamic-entities", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv600GetDynamicEntityDiagnostics(e);
+                OnErrorGetDynamicEntityDiagnosticsDefaultImplementation(e, "/obp/v6.0.0/management/diagnostics/dynamic-entities", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorGetDynamicEntityDiagnostics(e);
                 throw;
             }
         }
@@ -699,10 +699,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv600GetReferenceTypesDefaultImplementation(IOBPv600GetReferenceTypesApiResponse apiResponseLocalVar)
+        private void AfterGetReferenceTypesDefaultImplementation(IGetReferenceTypesApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600GetReferenceTypes(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterGetReferenceTypes(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -712,7 +712,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv600GetReferenceTypes(ref bool suppressDefaultLog, IOBPv600GetReferenceTypesApiResponse apiResponseLocalVar);
+        partial void AfterGetReferenceTypes(ref bool suppressDefaultLog, IGetReferenceTypesApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -720,10 +720,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv600GetReferenceTypesDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorGetReferenceTypesDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600GetReferenceTypes(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorGetReferenceTypes(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -735,18 +735,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv600GetReferenceTypes(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorGetReferenceTypes(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// Get Reference Types for Dynamic Entities &lt;p&gt;Get a list of all available reference types that can be used in Dynamic Entity field definitions.&lt;/p&gt; &lt;p&gt;Reference types allow Dynamic Entity fields to reference other entities (similar to foreign keys).&lt;br /&gt; This endpoint returns both:&lt;br /&gt; * &lt;strong&gt;Static reference types&lt;/strong&gt; - Built-in reference types for core OBP entities (e.g., Customer, Account, Transaction)&lt;br /&gt; * &lt;strong&gt;Dynamic reference types&lt;/strong&gt; - Reference types for Dynamic Entities that have been created&lt;/p&gt; &lt;p&gt;Each reference type includes:&lt;br /&gt; * &lt;code&gt;type_name&lt;/code&gt; - The full reference type string to use in entity definitions (e.g., &amp;quot;reference:Customer&amp;quot;)&lt;br /&gt; * &lt;code&gt;example_value&lt;/code&gt; - An example value showing the correct format&lt;br /&gt; * &lt;code&gt;description&lt;/code&gt; - Description of what the reference type represents&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Use Case:&lt;/strong&gt;&lt;br /&gt; When creating a Dynamic Entity with a field that references another entity, you need to know:&lt;br /&gt; 1. What reference types are available&lt;br /&gt; 2. The correct format for the type name&lt;br /&gt; 3. The correct format for example values&lt;/p&gt; &lt;p&gt;This endpoint provides all that information.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Example Usage:&lt;/strong&gt;&lt;br /&gt; If you want to create a Dynamic Entity with a field that references a Customer, you would:&lt;br /&gt; 1. Call this endpoint to see that &amp;quot;reference:Customer&amp;quot; is available&lt;br /&gt; 2. Use it in your entity definition like:&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;customer_id&amp;quot;: {     &amp;quot;type&amp;quot;: &amp;quot;reference:Customer&amp;quot;,     &amp;quot;example&amp;quot;: &amp;quot;a8770fca-3d1d-47af-b6d0-7a6c3f124388&amp;quot;   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Required Role:&lt;/strong&gt; &lt;code&gt;CanGetDynamicEntityReferenceTypes&lt;/code&gt;&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetReferenceTypesApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetReferenceTypesApiResponse?> OBPv600GetReferenceTypesOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetReferenceTypesApiResponse"/>&gt;</returns>
+        public async Task<IGetReferenceTypesApiResponse?> GetReferenceTypesOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600GetReferenceTypesAsync(cancellationToken).ConfigureAwait(false);
+                return await GetReferenceTypesAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -759,8 +759,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetReferenceTypesApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetReferenceTypesApiResponse> OBPv600GetReferenceTypesAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetReferenceTypesApiResponse"/>&gt;</returns>
+        public async Task<IGetReferenceTypesApiResponse> GetReferenceTypesAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -780,7 +780,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -807,8 +807,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<APIApi.OBPv600GetReferenceTypesApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv600GetReferenceTypesApiResponse>();
-                        APIApi.OBPv600GetReferenceTypesApiResponse apiResponseLocalVar;
+                        ILogger<APIApi.GetReferenceTypesApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.GetReferenceTypesApiResponse>();
+                        APIApi.GetReferenceTypesApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -819,9 +819,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600GetReferenceTypesDefaultImplementation(apiResponseLocalVar);
+                        AfterGetReferenceTypesDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv600GetReferenceTypes(apiResponseLocalVar);
+                        Events.ExecuteOnGetReferenceTypes(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -833,8 +833,8 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600GetReferenceTypesDefaultImplementation(e, "/obp/v6.0.0/management/dynamic-entities/reference-types", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv600GetReferenceTypes(e);
+                OnErrorGetReferenceTypesDefaultImplementation(e, "/obp/v6.0.0/management/dynamic-entities/reference-types", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorGetReferenceTypes(e);
                 throw;
             }
         }

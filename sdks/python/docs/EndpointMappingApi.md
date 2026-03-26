@@ -4,20 +4,20 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv4_0_0_create_bank_level_endpoint_mapping**](EndpointMappingApi.md#o_bpv4_0_0_create_bank_level_endpoint_mapping) | **POST** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Create Bank Level Endpoint Mapping
-[**o_bpv4_0_0_create_endpoint_mapping**](EndpointMappingApi.md#o_bpv4_0_0_create_endpoint_mapping) | **POST** /obp/v4.0.0/management/endpoint-mappings | Create Endpoint Mapping
-[**o_bpv4_0_0_delete_bank_level_endpoint_mapping**](EndpointMappingApi.md#o_bpv4_0_0_delete_bank_level_endpoint_mapping) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Delete Bank Level Endpoint Mapping
-[**o_bpv4_0_0_delete_endpoint_mapping**](EndpointMappingApi.md#o_bpv4_0_0_delete_endpoint_mapping) | **DELETE** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Delete Endpoint Mapping
-[**o_bpv4_0_0_get_all_bank_level_endpoint_mappings**](EndpointMappingApi.md#o_bpv4_0_0_get_all_bank_level_endpoint_mappings) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Get all Bank Level Endpoint Mappings
-[**o_bpv4_0_0_get_all_endpoint_mappings**](EndpointMappingApi.md#o_bpv4_0_0_get_all_endpoint_mappings) | **GET** /obp/v4.0.0/management/endpoint-mappings | Get all Endpoint Mappings
-[**o_bpv4_0_0_get_bank_level_endpoint_mapping**](EndpointMappingApi.md#o_bpv4_0_0_get_bank_level_endpoint_mapping) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Get Bank Level Endpoint Mapping
-[**o_bpv4_0_0_get_endpoint_mapping**](EndpointMappingApi.md#o_bpv4_0_0_get_endpoint_mapping) | **GET** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Get Endpoint Mapping by Id
-[**o_bpv4_0_0_update_bank_level_endpoint_mapping**](EndpointMappingApi.md#o_bpv4_0_0_update_bank_level_endpoint_mapping) | **PUT** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Update Bank Level Endpoint Mapping
-[**o_bpv4_0_0_update_endpoint_mapping**](EndpointMappingApi.md#o_bpv4_0_0_update_endpoint_mapping) | **PUT** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Update Endpoint Mapping
+[**create_bank_level_endpoint_mapping**](EndpointMappingApi.md#create_bank_level_endpoint_mapping) | **POST** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Create Bank Level Endpoint Mapping
+[**create_endpoint_mapping**](EndpointMappingApi.md#create_endpoint_mapping) | **POST** /obp/v4.0.0/management/endpoint-mappings | Create Endpoint Mapping
+[**delete_bank_level_endpoint_mapping**](EndpointMappingApi.md#delete_bank_level_endpoint_mapping) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Delete Bank Level Endpoint Mapping
+[**delete_endpoint_mapping**](EndpointMappingApi.md#delete_endpoint_mapping) | **DELETE** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Delete Endpoint Mapping
+[**get_all_bank_level_endpoint_mappings**](EndpointMappingApi.md#get_all_bank_level_endpoint_mappings) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Get all Bank Level Endpoint Mappings
+[**get_all_endpoint_mappings**](EndpointMappingApi.md#get_all_endpoint_mappings) | **GET** /obp/v4.0.0/management/endpoint-mappings | Get all Endpoint Mappings
+[**get_bank_level_endpoint_mapping**](EndpointMappingApi.md#get_bank_level_endpoint_mapping) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Get Bank Level Endpoint Mapping
+[**get_endpoint_mapping**](EndpointMappingApi.md#get_endpoint_mapping) | **GET** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Get Endpoint Mapping by Id
+[**update_bank_level_endpoint_mapping**](EndpointMappingApi.md#update_bank_level_endpoint_mapping) | **PUT** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Update Bank Level Endpoint Mapping
+[**update_endpoint_mapping**](EndpointMappingApi.md#update_endpoint_mapping) | **PUT** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Update Endpoint Mapping
 
 
-# **o_bpv4_0_0_create_bank_level_endpoint_mapping**
-> OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner o_bpv4_0_0_create_bank_level_endpoint_mapping(bankid, obpv400_create_endpoint_mapping_request)
+# **create_bank_level_endpoint_mapping**
+> GetAllEndpointMappings200ResponseEndpointMappingsInner create_bank_level_endpoint_mapping(bankid, create_endpoint_mapping_request)
 
 Create Bank Level Endpoint Mapping
 
@@ -40,8 +40,8 @@ Create Bank Level Endpoint Mapping
 
 ```python
 import obp_python
-from obp_python.models.obpv400_create_endpoint_mapping_request import OBPv400CreateEndpointMappingRequest
-from obp_python.models.obpv400_get_all_endpoint_mappings200_response_endpoint_mappings_inner import OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner
+from obp_python.models.create_endpoint_mapping_request import CreateEndpointMappingRequest
+from obp_python.models.get_all_endpoint_mappings200_response_endpoint_mappings_inner import GetAllEndpointMappings200ResponseEndpointMappingsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -75,15 +75,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.EndpointMappingApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
-    obpv400_create_endpoint_mapping_request = {type=object, properties={operation_id={type=string}, request_mapping={type=object, properties={}}, response_mapping={type=object, properties={name={type=object, properties={entity={type=string}, field={type=string}, query={type=string}}}, balance={type=object, properties={entity={type=string}, field={type=string}, query={type=string}}}}}}} # OBPv400CreateEndpointMappingRequest | Request body
+    create_endpoint_mapping_request = {type=object, properties={operation_id={type=string}, request_mapping={type=object, properties={}}, response_mapping={type=object, properties={name={type=object, properties={entity={type=string}, field={type=string}, query={type=string}}}, balance={type=object, properties={entity={type=string}, field={type=string}, query={type=string}}}}}}} # CreateEndpointMappingRequest | Request body
 
     try:
         # Create Bank Level Endpoint Mapping
-        api_response = api_instance.o_bpv4_0_0_create_bank_level_endpoint_mapping(bankid, obpv400_create_endpoint_mapping_request)
-        print("The response of EndpointMappingApi->o_bpv4_0_0_create_bank_level_endpoint_mapping:\n")
+        api_response = api_instance.create_bank_level_endpoint_mapping(bankid, create_endpoint_mapping_request)
+        print("The response of EndpointMappingApi->create_bank_level_endpoint_mapping:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling EndpointMappingApi->o_bpv4_0_0_create_bank_level_endpoint_mapping: %s\n" % e)
+        print("Exception when calling EndpointMappingApi->create_bank_level_endpoint_mapping: %s\n" % e)
 ```
 
 
@@ -94,11 +94,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
- **obpv400_create_endpoint_mapping_request** | [**OBPv400CreateEndpointMappingRequest**](OBPv400CreateEndpointMappingRequest.md)| Request body | 
+ **create_endpoint_mapping_request** | [**CreateEndpointMappingRequest**](CreateEndpointMappingRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner**](OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 
@@ -119,8 +119,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_create_endpoint_mapping**
-> OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner o_bpv4_0_0_create_endpoint_mapping(obpv400_create_endpoint_mapping_request)
+# **create_endpoint_mapping**
+> GetAllEndpointMappings200ResponseEndpointMappingsInner create_endpoint_mapping(create_endpoint_mapping_request)
 
 Create Endpoint Mapping
 
@@ -141,8 +141,8 @@ Create Endpoint Mapping
 
 ```python
 import obp_python
-from obp_python.models.obpv400_create_endpoint_mapping_request import OBPv400CreateEndpointMappingRequest
-from obp_python.models.obpv400_get_all_endpoint_mappings200_response_endpoint_mappings_inner import OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner
+from obp_python.models.create_endpoint_mapping_request import CreateEndpointMappingRequest
+from obp_python.models.get_all_endpoint_mappings200_response_endpoint_mappings_inner import GetAllEndpointMappings200ResponseEndpointMappingsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -175,15 +175,15 @@ configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
 with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.EndpointMappingApi(api_client)
-    obpv400_create_endpoint_mapping_request = {"type":"object","properties":{"operation_id":{"type":"string"},"request_mapping":{"type":"object","properties":{}},"response_mapping":{"type":"object","properties":{"name":{"type":"object","properties":{"entity":{"type":"string"},"field":{"type":"string"},"query":{"type":"string"}}},"balance":{"type":"object","properties":{"entity":{"type":"string"},"field":{"type":"string"},"query":{"type":"string"}}}}}}} # OBPv400CreateEndpointMappingRequest | Request body
+    create_endpoint_mapping_request = {"type":"object","properties":{"operation_id":{"type":"string"},"request_mapping":{"type":"object","properties":{}},"response_mapping":{"type":"object","properties":{"name":{"type":"object","properties":{"entity":{"type":"string"},"field":{"type":"string"},"query":{"type":"string"}}},"balance":{"type":"object","properties":{"entity":{"type":"string"},"field":{"type":"string"},"query":{"type":"string"}}}}}}} # CreateEndpointMappingRequest | Request body
 
     try:
         # Create Endpoint Mapping
-        api_response = api_instance.o_bpv4_0_0_create_endpoint_mapping(obpv400_create_endpoint_mapping_request)
-        print("The response of EndpointMappingApi->o_bpv4_0_0_create_endpoint_mapping:\n")
+        api_response = api_instance.create_endpoint_mapping(create_endpoint_mapping_request)
+        print("The response of EndpointMappingApi->create_endpoint_mapping:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling EndpointMappingApi->o_bpv4_0_0_create_endpoint_mapping: %s\n" % e)
+        print("Exception when calling EndpointMappingApi->create_endpoint_mapping: %s\n" % e)
 ```
 
 
@@ -193,11 +193,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **obpv400_create_endpoint_mapping_request** | [**OBPv400CreateEndpointMappingRequest**](OBPv400CreateEndpointMappingRequest.md)| Request body | 
+ **create_endpoint_mapping_request** | [**CreateEndpointMappingRequest**](CreateEndpointMappingRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner**](OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 
@@ -217,8 +217,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_delete_bank_level_endpoint_mapping**
-> o_bpv4_0_0_delete_bank_level_endpoint_mapping(bankid, endpointmappingid)
+# **delete_bank_level_endpoint_mapping**
+> delete_bank_level_endpoint_mapping(bankid, endpointmappingid)
 
 Delete Bank Level Endpoint Mapping
 
@@ -275,9 +275,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete Bank Level Endpoint Mapping
-        api_instance.o_bpv4_0_0_delete_bank_level_endpoint_mapping(bankid, endpointmappingid)
+        api_instance.delete_bank_level_endpoint_mapping(bankid, endpointmappingid)
     except Exception as e:
-        print("Exception when calling EndpointMappingApi->o_bpv4_0_0_delete_bank_level_endpoint_mapping: %s\n" % e)
+        print("Exception when calling EndpointMappingApi->delete_bank_level_endpoint_mapping: %s\n" % e)
 ```
 
 
@@ -313,8 +313,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_delete_endpoint_mapping**
-> o_bpv4_0_0_delete_endpoint_mapping(endpointmappingid)
+# **delete_endpoint_mapping**
+> delete_endpoint_mapping(endpointmappingid)
 
 Delete Endpoint Mapping
 
@@ -369,9 +369,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete Endpoint Mapping
-        api_instance.o_bpv4_0_0_delete_endpoint_mapping(endpointmappingid)
+        api_instance.delete_endpoint_mapping(endpointmappingid)
     except Exception as e:
-        print("Exception when calling EndpointMappingApi->o_bpv4_0_0_delete_endpoint_mapping: %s\n" % e)
+        print("Exception when calling EndpointMappingApi->delete_endpoint_mapping: %s\n" % e)
 ```
 
 
@@ -405,8 +405,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_get_all_bank_level_endpoint_mappings**
-> OBPv400GetAllEndpointMappings200Response o_bpv4_0_0_get_all_bank_level_endpoint_mappings(bankid)
+# **get_all_bank_level_endpoint_mappings**
+> GetAllEndpointMappings200Response get_all_bank_level_endpoint_mappings(bankid)
 
 Get all Bank Level Endpoint Mappings
 
@@ -426,7 +426,7 @@ Get all Bank Level Endpoint Mappings
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_all_endpoint_mappings200_response import OBPv400GetAllEndpointMappings200Response
+from obp_python.models.get_all_endpoint_mappings200_response import GetAllEndpointMappings200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -463,11 +463,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get all Bank Level Endpoint Mappings
-        api_response = api_instance.o_bpv4_0_0_get_all_bank_level_endpoint_mappings(bankid)
-        print("The response of EndpointMappingApi->o_bpv4_0_0_get_all_bank_level_endpoint_mappings:\n")
+        api_response = api_instance.get_all_bank_level_endpoint_mappings(bankid)
+        print("The response of EndpointMappingApi->get_all_bank_level_endpoint_mappings:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling EndpointMappingApi->o_bpv4_0_0_get_all_bank_level_endpoint_mappings: %s\n" % e)
+        print("Exception when calling EndpointMappingApi->get_all_bank_level_endpoint_mappings: %s\n" % e)
 ```
 
 
@@ -481,7 +481,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200Response**](OBPv400GetAllEndpointMappings200Response.md)
+[**GetAllEndpointMappings200Response**](GetAllEndpointMappings200Response.md)
 
 ### Authorization
 
@@ -502,8 +502,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_get_all_endpoint_mappings**
-> OBPv400GetAllEndpointMappings200Response o_bpv4_0_0_get_all_endpoint_mappings()
+# **get_all_endpoint_mappings**
+> GetAllEndpointMappings200Response get_all_endpoint_mappings()
 
 Get all Endpoint Mappings
 
@@ -521,7 +521,7 @@ Get all Endpoint Mappings
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_all_endpoint_mappings200_response import OBPv400GetAllEndpointMappings200Response
+from obp_python.models.get_all_endpoint_mappings200_response import GetAllEndpointMappings200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -557,11 +557,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get all Endpoint Mappings
-        api_response = api_instance.o_bpv4_0_0_get_all_endpoint_mappings()
-        print("The response of EndpointMappingApi->o_bpv4_0_0_get_all_endpoint_mappings:\n")
+        api_response = api_instance.get_all_endpoint_mappings()
+        print("The response of EndpointMappingApi->get_all_endpoint_mappings:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling EndpointMappingApi->o_bpv4_0_0_get_all_endpoint_mappings: %s\n" % e)
+        print("Exception when calling EndpointMappingApi->get_all_endpoint_mappings: %s\n" % e)
 ```
 
 
@@ -572,7 +572,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200Response**](OBPv400GetAllEndpointMappings200Response.md)
+[**GetAllEndpointMappings200Response**](GetAllEndpointMappings200Response.md)
 
 ### Authorization
 
@@ -592,8 +592,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_get_bank_level_endpoint_mapping**
-> OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner o_bpv4_0_0_get_bank_level_endpoint_mapping(bankid, endpointmappingid)
+# **get_bank_level_endpoint_mapping**
+> GetAllEndpointMappings200ResponseEndpointMappingsInner get_bank_level_endpoint_mapping(bankid, endpointmappingid)
 
 Get Bank Level Endpoint Mapping
 
@@ -614,7 +614,7 @@ Get Bank Level Endpoint Mapping
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_all_endpoint_mappings200_response_endpoint_mappings_inner import OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner
+from obp_python.models.get_all_endpoint_mappings200_response_endpoint_mappings_inner import GetAllEndpointMappings200ResponseEndpointMappingsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -652,11 +652,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Bank Level Endpoint Mapping
-        api_response = api_instance.o_bpv4_0_0_get_bank_level_endpoint_mapping(bankid, endpointmappingid)
-        print("The response of EndpointMappingApi->o_bpv4_0_0_get_bank_level_endpoint_mapping:\n")
+        api_response = api_instance.get_bank_level_endpoint_mapping(bankid, endpointmappingid)
+        print("The response of EndpointMappingApi->get_bank_level_endpoint_mapping:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling EndpointMappingApi->o_bpv4_0_0_get_bank_level_endpoint_mapping: %s\n" % e)
+        print("Exception when calling EndpointMappingApi->get_bank_level_endpoint_mapping: %s\n" % e)
 ```
 
 
@@ -671,7 +671,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner**](OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 
@@ -692,8 +692,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_get_endpoint_mapping**
-> OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner o_bpv4_0_0_get_endpoint_mapping(endpointmappingid)
+# **get_endpoint_mapping**
+> GetAllEndpointMappings200ResponseEndpointMappingsInner get_endpoint_mapping(endpointmappingid)
 
 Get Endpoint Mapping by Id
 
@@ -713,7 +713,7 @@ Get Endpoint Mapping by Id
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_all_endpoint_mappings200_response_endpoint_mappings_inner import OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner
+from obp_python.models.get_all_endpoint_mappings200_response_endpoint_mappings_inner import GetAllEndpointMappings200ResponseEndpointMappingsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -750,11 +750,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Endpoint Mapping by Id
-        api_response = api_instance.o_bpv4_0_0_get_endpoint_mapping(endpointmappingid)
-        print("The response of EndpointMappingApi->o_bpv4_0_0_get_endpoint_mapping:\n")
+        api_response = api_instance.get_endpoint_mapping(endpointmappingid)
+        print("The response of EndpointMappingApi->get_endpoint_mapping:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling EndpointMappingApi->o_bpv4_0_0_get_endpoint_mapping: %s\n" % e)
+        print("Exception when calling EndpointMappingApi->get_endpoint_mapping: %s\n" % e)
 ```
 
 
@@ -768,7 +768,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner**](OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 
@@ -788,8 +788,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_update_bank_level_endpoint_mapping**
-> OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner o_bpv4_0_0_update_bank_level_endpoint_mapping(bankid, endpointmappingid, obpv400_create_endpoint_mapping_request)
+# **update_bank_level_endpoint_mapping**
+> GetAllEndpointMappings200ResponseEndpointMappingsInner update_bank_level_endpoint_mapping(bankid, endpointmappingid, create_endpoint_mapping_request)
 
 Update Bank Level Endpoint Mapping
 
@@ -810,8 +810,8 @@ Update Bank Level Endpoint Mapping
 
 ```python
 import obp_python
-from obp_python.models.obpv400_create_endpoint_mapping_request import OBPv400CreateEndpointMappingRequest
-from obp_python.models.obpv400_get_all_endpoint_mappings200_response_endpoint_mappings_inner import OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner
+from obp_python.models.create_endpoint_mapping_request import CreateEndpointMappingRequest
+from obp_python.models.get_all_endpoint_mappings200_response_endpoint_mappings_inner import GetAllEndpointMappings200ResponseEndpointMappingsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -846,15 +846,15 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.EndpointMappingApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
     endpointmappingid = 'endpointmappingid_example' # str | The ENDPOINTMAPPINGID identifier
-    obpv400_create_endpoint_mapping_request = {type=object, properties={operation_id={type=string}, request_mapping={type=object, properties={}}, response_mapping={type=object, properties={name={type=object, properties={entity={type=string}, field={type=string}, query={type=string}}}, balance={type=object, properties={entity={type=string}, field={type=string}, query={type=string}}}}}}} # OBPv400CreateEndpointMappingRequest | Request body
+    create_endpoint_mapping_request = {type=object, properties={operation_id={type=string}, request_mapping={type=object, properties={}}, response_mapping={type=object, properties={name={type=object, properties={entity={type=string}, field={type=string}, query={type=string}}}, balance={type=object, properties={entity={type=string}, field={type=string}, query={type=string}}}}}}} # CreateEndpointMappingRequest | Request body
 
     try:
         # Update Bank Level Endpoint Mapping
-        api_response = api_instance.o_bpv4_0_0_update_bank_level_endpoint_mapping(bankid, endpointmappingid, obpv400_create_endpoint_mapping_request)
-        print("The response of EndpointMappingApi->o_bpv4_0_0_update_bank_level_endpoint_mapping:\n")
+        api_response = api_instance.update_bank_level_endpoint_mapping(bankid, endpointmappingid, create_endpoint_mapping_request)
+        print("The response of EndpointMappingApi->update_bank_level_endpoint_mapping:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling EndpointMappingApi->o_bpv4_0_0_update_bank_level_endpoint_mapping: %s\n" % e)
+        print("Exception when calling EndpointMappingApi->update_bank_level_endpoint_mapping: %s\n" % e)
 ```
 
 
@@ -866,11 +866,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
  **endpointmappingid** | **str**| The ENDPOINTMAPPINGID identifier | 
- **obpv400_create_endpoint_mapping_request** | [**OBPv400CreateEndpointMappingRequest**](OBPv400CreateEndpointMappingRequest.md)| Request body | 
+ **create_endpoint_mapping_request** | [**CreateEndpointMappingRequest**](CreateEndpointMappingRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner**](OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 
@@ -891,8 +891,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_update_endpoint_mapping**
-> OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner o_bpv4_0_0_update_endpoint_mapping(endpointmappingid, obpv400_create_endpoint_mapping_request)
+# **update_endpoint_mapping**
+> GetAllEndpointMappings200ResponseEndpointMappingsInner update_endpoint_mapping(endpointmappingid, create_endpoint_mapping_request)
 
 Update Endpoint Mapping
 
@@ -912,8 +912,8 @@ Update Endpoint Mapping
 
 ```python
 import obp_python
-from obp_python.models.obpv400_create_endpoint_mapping_request import OBPv400CreateEndpointMappingRequest
-from obp_python.models.obpv400_get_all_endpoint_mappings200_response_endpoint_mappings_inner import OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner
+from obp_python.models.create_endpoint_mapping_request import CreateEndpointMappingRequest
+from obp_python.models.get_all_endpoint_mappings200_response_endpoint_mappings_inner import GetAllEndpointMappings200ResponseEndpointMappingsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -947,15 +947,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.EndpointMappingApi(api_client)
     endpointmappingid = 'endpointmappingid_example' # str | The ENDPOINTMAPPINGID identifier
-    obpv400_create_endpoint_mapping_request = {type=object, properties={operation_id={type=string}, request_mapping={type=object, properties={}}, response_mapping={type=object, properties={name={type=object, properties={entity={type=string}, field={type=string}, query={type=string}}}, balance={type=object, properties={entity={type=string}, field={type=string}, query={type=string}}}}}}} # OBPv400CreateEndpointMappingRequest | Request body
+    create_endpoint_mapping_request = {type=object, properties={operation_id={type=string}, request_mapping={type=object, properties={}}, response_mapping={type=object, properties={name={type=object, properties={entity={type=string}, field={type=string}, query={type=string}}}, balance={type=object, properties={entity={type=string}, field={type=string}, query={type=string}}}}}}} # CreateEndpointMappingRequest | Request body
 
     try:
         # Update Endpoint Mapping
-        api_response = api_instance.o_bpv4_0_0_update_endpoint_mapping(endpointmappingid, obpv400_create_endpoint_mapping_request)
-        print("The response of EndpointMappingApi->o_bpv4_0_0_update_endpoint_mapping:\n")
+        api_response = api_instance.update_endpoint_mapping(endpointmappingid, create_endpoint_mapping_request)
+        print("The response of EndpointMappingApi->update_endpoint_mapping:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling EndpointMappingApi->o_bpv4_0_0_update_endpoint_mapping: %s\n" % e)
+        print("Exception when calling EndpointMappingApi->update_endpoint_mapping: %s\n" % e)
 ```
 
 
@@ -966,11 +966,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **endpointmappingid** | **str**| The ENDPOINTMAPPINGID identifier | 
- **obpv400_create_endpoint_mapping_request** | [**OBPv400CreateEndpointMappingRequest**](OBPv400CreateEndpointMappingRequest.md)| Request body | 
+ **create_endpoint_mapping_request** | [**CreateEndpointMappingRequest**](CreateEndpointMappingRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner**](OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 

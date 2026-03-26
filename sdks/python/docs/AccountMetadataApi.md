@@ -4,13 +4,13 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv4_0_0_add_tag_for_view_on_account**](AccountMetadataApi.md#o_bpv4_0_0_add_tag_for_view_on_account) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Create a tag on account
-[**o_bpv4_0_0_delete_tag_for_view_on_account**](AccountMetadataApi.md#o_bpv4_0_0_delete_tag_for_view_on_account) | **DELETE** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags/{tagid} | Delete a tag on account
-[**o_bpv4_0_0_get_tags_for_view_on_account**](AccountMetadataApi.md#o_bpv4_0_0_get_tags_for_view_on_account) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Get tags on account
+[**add_tag_for_view_on_account**](AccountMetadataApi.md#add_tag_for_view_on_account) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Create a tag on account
+[**delete_tag_for_view_on_account**](AccountMetadataApi.md#delete_tag_for_view_on_account) | **DELETE** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags/{tagid} | Delete a tag on account
+[**get_tags_for_view_on_account**](AccountMetadataApi.md#get_tags_for_view_on_account) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Get tags on account
 
 
-# **o_bpv4_0_0_add_tag_for_view_on_account**
-> OBPv400GetTagsForViewOnAccount200ResponseTagsInner o_bpv4_0_0_add_tag_for_view_on_account(bankid, accountid, viewid, obpv200_get_transaction_types200_response_transaction_types_inner_id)
+# **add_tag_for_view_on_account**
+> GetTagsForViewOnAccount200ResponseTagsInner add_tag_for_view_on_account(bankid, accountid, viewid, get_transaction_types200_response_transaction_types_inner_id)
 
 Create a tag on account
 
@@ -40,8 +40,8 @@ Create a tag on account
 
 ```python
 import obp_python
-from obp_python.models.obpv200_get_transaction_types200_response_transaction_types_inner_id import OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId
-from obp_python.models.obpv400_get_tags_for_view_on_account200_response_tags_inner import OBPv400GetTagsForViewOnAccount200ResponseTagsInner
+from obp_python.models.get_tags_for_view_on_account200_response_tags_inner import GetTagsForViewOnAccount200ResponseTagsInner
+from obp_python.models.get_transaction_types200_response_transaction_types_inner_id import GetTransactionTypes200ResponseTransactionTypesInnerId
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -77,15 +77,15 @@ with obp_python.ApiClient(configuration) as api_client:
     bankid = 'bankid_example' # str | The BANKID identifier
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
-    obpv200_get_transaction_types200_response_transaction_types_inner_id = {"type":"object","properties":{"value":{"type":"string"}}} # OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
+    get_transaction_types200_response_transaction_types_inner_id = {"type":"object","properties":{"value":{"type":"string"}}} # GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
 
     try:
         # Create a tag on account
-        api_response = api_instance.o_bpv4_0_0_add_tag_for_view_on_account(bankid, accountid, viewid, obpv200_get_transaction_types200_response_transaction_types_inner_id)
-        print("The response of AccountMetadataApi->o_bpv4_0_0_add_tag_for_view_on_account:\n")
+        api_response = api_instance.add_tag_for_view_on_account(bankid, accountid, viewid, get_transaction_types200_response_transaction_types_inner_id)
+        print("The response of AccountMetadataApi->add_tag_for_view_on_account:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AccountMetadataApi->o_bpv4_0_0_add_tag_for_view_on_account: %s\n" % e)
+        print("Exception when calling AccountMetadataApi->add_tag_for_view_on_account: %s\n" % e)
 ```
 
 
@@ -98,11 +98,11 @@ Name | Type | Description  | Notes
  **bankid** | **str**| The BANKID identifier | 
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
- **obpv200_get_transaction_types200_response_transaction_types_inner_id** | [**OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId**](OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId.md)| Request body | 
+ **get_transaction_types200_response_transaction_types_inner_id** | [**GetTransactionTypes200ResponseTransactionTypesInnerId**](GetTransactionTypes200ResponseTransactionTypesInnerId.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200ResponseTagsInner**](OBPv400GetTagsForViewOnAccount200ResponseTagsInner.md)
+[**GetTagsForViewOnAccount200ResponseTagsInner**](GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 ### Authorization
 
@@ -123,8 +123,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_delete_tag_for_view_on_account**
-> o_bpv4_0_0_delete_tag_for_view_on_account(bankid, accountid, viewid, tagid)
+# **delete_tag_for_view_on_account**
+> delete_tag_for_view_on_account(bankid, accountid, viewid, tagid)
 
 Delete a tag on account
 
@@ -186,9 +186,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete a tag on account
-        api_instance.o_bpv4_0_0_delete_tag_for_view_on_account(bankid, accountid, viewid, tagid)
+        api_instance.delete_tag_for_view_on_account(bankid, accountid, viewid, tagid)
     except Exception as e:
-        print("Exception when calling AccountMetadataApi->o_bpv4_0_0_delete_tag_for_view_on_account: %s\n" % e)
+        print("Exception when calling AccountMetadataApi->delete_tag_for_view_on_account: %s\n" % e)
 ```
 
 
@@ -226,8 +226,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_get_tags_for_view_on_account**
-> OBPv400GetTagsForViewOnAccount200Response o_bpv4_0_0_get_tags_for_view_on_account(bankid, accountid, viewid)
+# **get_tags_for_view_on_account**
+> GetTagsForViewOnAccount200Response get_tags_for_view_on_account(bankid, accountid, viewid)
 
 Get tags on account
 
@@ -256,7 +256,7 @@ User Authentication is Required. The User must be logged in. The Application mus
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_tags_for_view_on_account200_response import OBPv400GetTagsForViewOnAccount200Response
+from obp_python.models.get_tags_for_view_on_account200_response import GetTagsForViewOnAccount200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -295,11 +295,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get tags on account
-        api_response = api_instance.o_bpv4_0_0_get_tags_for_view_on_account(bankid, accountid, viewid)
-        print("The response of AccountMetadataApi->o_bpv4_0_0_get_tags_for_view_on_account:\n")
+        api_response = api_instance.get_tags_for_view_on_account(bankid, accountid, viewid)
+        print("The response of AccountMetadataApi->get_tags_for_view_on_account:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AccountMetadataApi->o_bpv4_0_0_get_tags_for_view_on_account: %s\n" % e)
+        print("Exception when calling AccountMetadataApi->get_tags_for_view_on_account: %s\n" % e)
 ```
 
 
@@ -315,7 +315,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200Response**](OBPv400GetTagsForViewOnAccount200Response.md)
+[**GetTagsForViewOnAccount200Response**](GetTagsForViewOnAccount200Response.md)
 
 ### Authorization
 

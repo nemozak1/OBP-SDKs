@@ -1,19 +1,19 @@
 # AccountAttributeAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv310CreateAccountAttribute**](AccountAttributeAPI.md#obpv310createaccountattribute) | **POST** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attribute | Create Account Attribute
-[**oBPv310UpdateAccountAttribute**](AccountAttributeAPI.md#obpv310updateaccountattribute) | **PUT** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attributes/{accountattributeid} | Update Account Attribute
-[**oBPv400CreateOrUpdateAccountAttributeDefinition**](AccountAttributeAPI.md#obpv400createorupdateaccountattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Create or Update Account Attribute Definition
-[**oBPv400DeleteAccountAttributeDefinition**](AccountAttributeAPI.md#obpv400deleteaccountattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/account | Delete Account Attribute Definition
-[**oBPv400GetAccountAttributeDefinition**](AccountAttributeAPI.md#obpv400getaccountattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Get Account Attribute Definition
+[**createAccountAttribute**](AccountAttributeAPI.md#createaccountattribute) | **POST** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attribute | Create Account Attribute
+[**createOrUpdateAccountAttributeDefinition**](AccountAttributeAPI.md#createorupdateaccountattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Create or Update Account Attribute Definition
+[**deleteAccountAttributeDefinition**](AccountAttributeAPI.md#deleteaccountattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/account | Delete Account Attribute Definition
+[**getAccountAttributeDefinition**](AccountAttributeAPI.md#getaccountattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/account | Get Account Attribute Definition
+[**updateAccountAttribute**](AccountAttributeAPI.md#updateaccountattribute) | **PUT** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attributes/{accountattributeid} | Update Account Attribute
 
 
-# **oBPv310CreateAccountAttribute**
+# **createAccountAttribute**
 ```swift
-    open class func oBPv310CreateAccountAttribute(bankid: String, accountid: String, productcode: String, oBPv310UpdateAccountAttributeRequest: OBPv310UpdateAccountAttributeRequest, completion: @escaping (_ data: OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems?, _ error: Error?) -> Void)
+    open class func createAccountAttribute(bankid: String, accountid: String, productcode: String, updateAccountAttributeRequest: UpdateAccountAttributeRequest, completion: @escaping (_ data: GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner?, _ error: Error?) -> Void)
 ```
 
 Create Account Attribute
@@ -28,10 +28,10 @@ import OBPSwift
 let bankid = "bankid_example" // String | The BANKID identifier
 let accountid = "accountid_example" // String | The ACCOUNTID identifier
 let productcode = "productcode_example" // String | The PRODUCTCODE identifier
-let oBPv310UpdateAccountAttributeRequest = OBPv3_1_0_updateAccountAttribute_request(type: "type_example", properties: OBPv3_1_0_updateAccountAttribute_request_properties(value: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), productInstanceCode: nil, type: nil, name: nil)) // OBPv310UpdateAccountAttributeRequest | Request body
+let updateAccountAttributeRequest = updateAccountAttribute_request(value: "value_example", productInstanceCode: "productInstanceCode_example", type: "type_example", name: "name_example") // UpdateAccountAttributeRequest | Request body
 
 // Create Account Attribute
-AccountAttributeAPI.oBPv310CreateAccountAttribute(bankid: bankid, accountid: accountid, productcode: productcode, oBPv310UpdateAccountAttributeRequest: oBPv310UpdateAccountAttributeRequest) { (response, error) in
+AccountAttributeAPI.createAccountAttribute(bankid: bankid, accountid: accountid, productcode: productcode, updateAccountAttributeRequest: updateAccountAttributeRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -50,11 +50,11 @@ Name | Type | Description  | Notes
  **bankid** | **String** | The BANKID identifier | 
  **accountid** | **String** | The ACCOUNTID identifier | 
  **productcode** | **String** | The PRODUCTCODE identifier | 
- **oBPv310UpdateAccountAttributeRequest** | [**OBPv310UpdateAccountAttributeRequest**](OBPv310UpdateAccountAttributeRequest.md) | Request body | 
+ **updateAccountAttributeRequest** | [**UpdateAccountAttributeRequest**](UpdateAccountAttributeRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems**](OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems.md)
+[**GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner**](GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner.md)
 
 ### Authorization
 
@@ -67,67 +67,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv310UpdateAccountAttribute**
+# **createOrUpdateAccountAttributeDefinition**
 ```swift
-    open class func oBPv310UpdateAccountAttribute(bankid: String, accountid: String, productcode: String, accountattributeid: String, oBPv310UpdateAccountAttributeRequest: OBPv310UpdateAccountAttributeRequest, completion: @escaping (_ data: OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems?, _ error: Error?) -> Void)
-```
-
-Update Account Attribute
-
-<p>Update Account Attribute</p> <p>Account Attributes are used to describe a financial Product with a list of typed key value pairs.</p> <p>Each Account Attribute is linked to its Account by ACCOUNT_ID</p> <p>Typical account attributes might be:</p> <p>ISIN (for International bonds)<br /> VKN (for German bonds)<br /> REDCODE (markit short code for credit derivative)<br /> LOAN_ID (e.g. used for Anacredit reporting)</p> <p>ISSUE_DATE (When the bond was issued in the market)<br /> MATURITY_DATE (End of life time of a product)<br /> TRADABLE</p> <p>See <a href=\"http://www.fpml.org/\">FPML</a> for more examples.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#account_attribute_id\">ACCOUNT_ATTRIBUTE_ID</a>:</p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#product_code\">PRODUCT_CODE</a>: 1234BW</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#account_attribute_id\"><strong>account_attribute_id</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#\">product_instance_code</a>: product_instance_code</p> 
-
-### Example
-```swift
-// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OBPSwift
-
-let bankid = "bankid_example" // String | The BANKID identifier
-let accountid = "accountid_example" // String | The ACCOUNTID identifier
-let productcode = "productcode_example" // String | The PRODUCTCODE identifier
-let accountattributeid = "accountattributeid_example" // String | The ACCOUNTATTRIBUTEID identifier
-let oBPv310UpdateAccountAttributeRequest = OBPv3_1_0_updateAccountAttribute_request(type: "type_example", properties: OBPv3_1_0_updateAccountAttribute_request_properties(value: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), productInstanceCode: nil, type: nil, name: nil)) // OBPv310UpdateAccountAttributeRequest | Request body
-
-// Update Account Attribute
-AccountAttributeAPI.oBPv310UpdateAccountAttribute(bankid: bankid, accountid: accountid, productcode: productcode, accountattributeid: accountattributeid, oBPv310UpdateAccountAttributeRequest: oBPv310UpdateAccountAttributeRequest) { (response, error) in
-    guard error == nil else {
-        print(error)
-        return
-    }
-
-    if (response) {
-        dump(response)
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String** | The BANKID identifier | 
- **accountid** | **String** | The ACCOUNTID identifier | 
- **productcode** | **String** | The PRODUCTCODE identifier | 
- **accountattributeid** | **String** | The ACCOUNTATTRIBUTEID identifier | 
- **oBPv310UpdateAccountAttributeRequest** | [**OBPv310UpdateAccountAttributeRequest**](OBPv310UpdateAccountAttributeRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems**](OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv400CreateOrUpdateAccountAttributeDefinition**
-```swift
-    open class func oBPv400CreateOrUpdateAccountAttributeDefinition(bankid: String, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, completion: @escaping (_ data: OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems?, _ error: Error?) -> Void)
+    open class func createOrUpdateAccountAttributeDefinition(bankid: String, createOrUpdateTransactionRequestAttributeDefinitionRequest: CreateOrUpdateTransactionRequestAttributeDefinitionRequest, completion: @escaping (_ data: GetTransactionRequestAttributeDefinition200ResponseAttributesInner?, _ error: Error?) -> Void)
 ```
 
 Create or Update Account Attribute Definition
@@ -140,10 +82,10 @@ Create or Update Account Attribute Definition
 import OBPSwift
 
 let bankid = "bankid_example" // String | The BANKID identifier
-let oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest = OBPv4_0_0_createOrUpdateTransactionRequestAttributeDefinition_request(type: "type_example", properties: OBPv4_0_0_createOrUpdateTransactionRequestAttributeDefinition_request_properties(name: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), isActive: nil, description: nil, alias: nil, canBeSeenOnViews: OBPv6_0_0_getActiveRateLimitsAtDate_200_response_properties_considered_rate_limit_ids(type: "type_example", items: nil), category: nil, type: nil)) // OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+let createOrUpdateTransactionRequestAttributeDefinitionRequest = createOrUpdateTransactionRequestAttributeDefinition_request(name: "name_example", isActive: false, description: "description_example", alias: "alias_example", canBeSeenOnViews: ["canBeSeenOnViews_example"], category: "category_example", type: "type_example") // CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
 
 // Create or Update Account Attribute Definition
-AccountAttributeAPI.oBPv400CreateOrUpdateAccountAttributeDefinition(bankid: bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest) { (response, error) in
+AccountAttributeAPI.createOrUpdateAccountAttributeDefinition(bankid: bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest: createOrUpdateTransactionRequestAttributeDefinitionRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -160,11 +102,11 @@ AccountAttributeAPI.oBPv400CreateOrUpdateAccountAttributeDefinition(bankid: bank
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String** | The BANKID identifier | 
- **oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest** | [**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body | 
+ **createOrUpdateTransactionRequestAttributeDefinitionRequest** | [**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
+[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
 
 ### Authorization
 
@@ -177,9 +119,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400DeleteAccountAttributeDefinition**
+# **deleteAccountAttributeDefinition**
 ```swift
-    open class func oBPv400DeleteAccountAttributeDefinition(bankid: String, attributedefinitionid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func deleteAccountAttributeDefinition(bankid: String, attributedefinitionid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete Account Attribute Definition
@@ -195,7 +137,7 @@ let bankid = "bankid_example" // String | The BANKID identifier
 let attributedefinitionid = "attributedefinitionid_example" // String | The ATTRIBUTEDEFINITIONID identifier
 
 // Delete Account Attribute Definition
-AccountAttributeAPI.oBPv400DeleteAccountAttributeDefinition(bankid: bankid, attributedefinitionid: attributedefinitionid) { (response, error) in
+AccountAttributeAPI.deleteAccountAttributeDefinition(bankid: bankid, attributedefinitionid: attributedefinitionid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -229,9 +171,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetAccountAttributeDefinition**
+# **getAccountAttributeDefinition**
 ```swift
-    open class func oBPv400GetAccountAttributeDefinition(bankid: String, completion: @escaping (_ data: OBPv400GetTransactionRequestAttributeDefinition200Response?, _ error: Error?) -> Void)
+    open class func getAccountAttributeDefinition(bankid: String, completion: @escaping (_ data: GetTransactionRequestAttributeDefinition200Response?, _ error: Error?) -> Void)
 ```
 
 Get Account Attribute Definition
@@ -246,7 +188,7 @@ import OBPSwift
 let bankid = "bankid_example" // String | The BANKID identifier
 
 // Get Account Attribute Definition
-AccountAttributeAPI.oBPv400GetAccountAttributeDefinition(bankid: bankid) { (response, error) in
+AccountAttributeAPI.getAccountAttributeDefinition(bankid: bankid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -266,7 +208,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200Response**](OBPv400GetTransactionRequestAttributeDefinition200Response.md)
+[**GetTransactionRequestAttributeDefinition200Response**](GetTransactionRequestAttributeDefinition200Response.md)
 
 ### Authorization
 
@@ -275,6 +217,64 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateAccountAttribute**
+```swift
+    open class func updateAccountAttribute(bankid: String, accountid: String, productcode: String, accountattributeid: String, updateAccountAttributeRequest: UpdateAccountAttributeRequest, completion: @escaping (_ data: GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner?, _ error: Error?) -> Void)
+```
+
+Update Account Attribute
+
+<p>Update Account Attribute</p> <p>Account Attributes are used to describe a financial Product with a list of typed key value pairs.</p> <p>Each Account Attribute is linked to its Account by ACCOUNT_ID</p> <p>Typical account attributes might be:</p> <p>ISIN (for International bonds)<br /> VKN (for German bonds)<br /> REDCODE (markit short code for credit derivative)<br /> LOAN_ID (e.g. used for Anacredit reporting)</p> <p>ISSUE_DATE (When the bond was issued in the market)<br /> MATURITY_DATE (End of life time of a product)<br /> TRADABLE</p> <p>See <a href=\"http://www.fpml.org/\">FPML</a> for more examples.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#account_attribute_id\">ACCOUNT_ATTRIBUTE_ID</a>:</p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#product_code\">PRODUCT_CODE</a>: 1234BW</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#account_attribute_id\"><strong>account_attribute_id</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#\">product_instance_code</a>: product_instance_code</p> 
+
+### Example
+```swift
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+import OBPSwift
+
+let bankid = "bankid_example" // String | The BANKID identifier
+let accountid = "accountid_example" // String | The ACCOUNTID identifier
+let productcode = "productcode_example" // String | The PRODUCTCODE identifier
+let accountattributeid = "accountattributeid_example" // String | The ACCOUNTATTRIBUTEID identifier
+let updateAccountAttributeRequest = updateAccountAttribute_request(value: "value_example", productInstanceCode: "productInstanceCode_example", type: "type_example", name: "name_example") // UpdateAccountAttributeRequest | Request body
+
+// Update Account Attribute
+AccountAttributeAPI.updateAccountAttribute(bankid: bankid, accountid: accountid, productcode: productcode, accountattributeid: accountattributeid, updateAccountAttributeRequest: updateAccountAttributeRequest) { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String** | The BANKID identifier | 
+ **accountid** | **String** | The ACCOUNTID identifier | 
+ **productcode** | **String** | The PRODUCTCODE identifier | 
+ **accountattributeid** | **String** | The ACCOUNTATTRIBUTEID identifier | 
+ **updateAccountAttributeRequest** | [**UpdateAccountAttributeRequest**](UpdateAccountAttributeRequest.md) | Request body | 
+
+### Return type
+
+[**GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner**](GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

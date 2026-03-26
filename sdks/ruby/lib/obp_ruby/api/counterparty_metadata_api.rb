@@ -1,7 +1,7 @@
 =begin
 #Open Bank Project API v6.0.0
 
-#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 The version of the OpenAPI document: 6.0.0
 Contact: contact@tesobe.com
@@ -25,11 +25,11 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param otheraccountid [String] The OTHERACCOUNTID identifier
-    # @param obpv121_update_counterparty_corporate_location_request [OBPv121UpdateCounterpartyCorporateLocationRequest] Request body
+    # @param update_counterparty_corporate_location_request [UpdateCounterpartyCorporateLocationRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv121UpdateTransactionNarrative200Response]
-    def o_bpv1_2_1_add_counterparty_corporate_location(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_corporate_location_request, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_add_counterparty_corporate_location_with_http_info(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_corporate_location_request, opts)
+    # @return [UpdateTransactionNarrative200Response]
+    def add_counterparty_corporate_location(bankid, accountid, viewid, otheraccountid, update_counterparty_corporate_location_request, opts = {})
+      data, _status_code, _headers = add_counterparty_corporate_location_with_http_info(bankid, accountid, viewid, otheraccountid, update_counterparty_corporate_location_request, opts)
       data
     end
 
@@ -39,32 +39,32 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param otheraccountid [String] The OTHERACCOUNTID identifier
-    # @param obpv121_update_counterparty_corporate_location_request [OBPv121UpdateCounterpartyCorporateLocationRequest] Request body
+    # @param update_counterparty_corporate_location_request [UpdateCounterpartyCorporateLocationRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121UpdateTransactionNarrative200Response, Integer, Hash)>] OBPv121UpdateTransactionNarrative200Response data, response status code and response headers
-    def o_bpv1_2_1_add_counterparty_corporate_location_with_http_info(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_corporate_location_request, opts = {})
+    # @return [Array<(UpdateTransactionNarrative200Response, Integer, Hash)>] UpdateTransactionNarrative200Response data, response status code and response headers
+    def add_counterparty_corporate_location_with_http_info(bankid, accountid, viewid, otheraccountid, update_counterparty_corporate_location_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_corporate_location ...'
+        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.add_counterparty_corporate_location ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_corporate_location"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.add_counterparty_corporate_location"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_corporate_location"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.add_counterparty_corporate_location"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_corporate_location"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.add_counterparty_corporate_location"
       end
       # verify the required parameter 'otheraccountid' is set
       if @api_client.config.client_side_validation && otheraccountid.nil?
-        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_corporate_location"
+        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.add_counterparty_corporate_location"
       end
-      # verify the required parameter 'obpv121_update_counterparty_corporate_location_request' is set
-      if @api_client.config.client_side_validation && obpv121_update_counterparty_corporate_location_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv121_update_counterparty_corporate_location_request' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_corporate_location"
+      # verify the required parameter 'update_counterparty_corporate_location_request' is set
+      if @api_client.config.client_side_validation && update_counterparty_corporate_location_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_counterparty_corporate_location_request' when calling CounterpartyMetadataApi.add_counterparty_corporate_location"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'otheraccountid' + '}', CGI.escape(otheraccountid.to_s))
@@ -86,16 +86,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv121_update_counterparty_corporate_location_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_counterparty_corporate_location_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121UpdateTransactionNarrative200Response'
+      return_type = opts[:debug_return_type] || 'UpdateTransactionNarrative200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_corporate_location",
+        :operation => :"CounterpartyMetadataApi.add_counterparty_corporate_location",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -106,7 +106,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#o_bpv1_2_1_add_counterparty_corporate_location\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#add_counterparty_corporate_location\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -117,11 +117,11 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param otheraccountid [String] The OTHERACCOUNTID identifier
-    # @param obpv121_update_counterparty_image_url_request [OBPv121UpdateCounterpartyImageUrlRequest] Request body
+    # @param update_counterparty_image_url_request [UpdateCounterpartyImageUrlRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv121UpdateTransactionNarrative200Response]
-    def o_bpv1_2_1_add_counterparty_image_url(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_image_url_request, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_add_counterparty_image_url_with_http_info(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_image_url_request, opts)
+    # @return [UpdateTransactionNarrative200Response]
+    def add_counterparty_image_url(bankid, accountid, viewid, otheraccountid, update_counterparty_image_url_request, opts = {})
+      data, _status_code, _headers = add_counterparty_image_url_with_http_info(bankid, accountid, viewid, otheraccountid, update_counterparty_image_url_request, opts)
       data
     end
 
@@ -131,32 +131,32 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param otheraccountid [String] The OTHERACCOUNTID identifier
-    # @param obpv121_update_counterparty_image_url_request [OBPv121UpdateCounterpartyImageUrlRequest] Request body
+    # @param update_counterparty_image_url_request [UpdateCounterpartyImageUrlRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121UpdateTransactionNarrative200Response, Integer, Hash)>] OBPv121UpdateTransactionNarrative200Response data, response status code and response headers
-    def o_bpv1_2_1_add_counterparty_image_url_with_http_info(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_image_url_request, opts = {})
+    # @return [Array<(UpdateTransactionNarrative200Response, Integer, Hash)>] UpdateTransactionNarrative200Response data, response status code and response headers
+    def add_counterparty_image_url_with_http_info(bankid, accountid, viewid, otheraccountid, update_counterparty_image_url_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_image_url ...'
+        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.add_counterparty_image_url ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_image_url"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.add_counterparty_image_url"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_image_url"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.add_counterparty_image_url"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_image_url"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.add_counterparty_image_url"
       end
       # verify the required parameter 'otheraccountid' is set
       if @api_client.config.client_side_validation && otheraccountid.nil?
-        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_image_url"
+        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.add_counterparty_image_url"
       end
-      # verify the required parameter 'obpv121_update_counterparty_image_url_request' is set
-      if @api_client.config.client_side_validation && obpv121_update_counterparty_image_url_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv121_update_counterparty_image_url_request' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_image_url"
+      # verify the required parameter 'update_counterparty_image_url_request' is set
+      if @api_client.config.client_side_validation && update_counterparty_image_url_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_counterparty_image_url_request' when calling CounterpartyMetadataApi.add_counterparty_image_url"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'otheraccountid' + '}', CGI.escape(otheraccountid.to_s))
@@ -178,16 +178,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv121_update_counterparty_image_url_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_counterparty_image_url_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121UpdateTransactionNarrative200Response'
+      return_type = opts[:debug_return_type] || 'UpdateTransactionNarrative200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_image_url",
+        :operation => :"CounterpartyMetadataApi.add_counterparty_image_url",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -198,7 +198,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#o_bpv1_2_1_add_counterparty_image_url\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#add_counterparty_image_url\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -209,11 +209,11 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param otheraccountid [String] The OTHERACCOUNTID identifier
-    # @param obpv121_update_counterparty_more_info_request [OBPv121UpdateCounterpartyMoreInfoRequest] Request body
+    # @param update_counterparty_more_info_request [UpdateCounterpartyMoreInfoRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv121UpdateTransactionNarrative200Response]
-    def o_bpv1_2_1_add_counterparty_more_info(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_more_info_request, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_add_counterparty_more_info_with_http_info(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_more_info_request, opts)
+    # @return [UpdateTransactionNarrative200Response]
+    def add_counterparty_more_info(bankid, accountid, viewid, otheraccountid, update_counterparty_more_info_request, opts = {})
+      data, _status_code, _headers = add_counterparty_more_info_with_http_info(bankid, accountid, viewid, otheraccountid, update_counterparty_more_info_request, opts)
       data
     end
 
@@ -223,32 +223,32 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param otheraccountid [String] The OTHERACCOUNTID identifier
-    # @param obpv121_update_counterparty_more_info_request [OBPv121UpdateCounterpartyMoreInfoRequest] Request body
+    # @param update_counterparty_more_info_request [UpdateCounterpartyMoreInfoRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121UpdateTransactionNarrative200Response, Integer, Hash)>] OBPv121UpdateTransactionNarrative200Response data, response status code and response headers
-    def o_bpv1_2_1_add_counterparty_more_info_with_http_info(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_more_info_request, opts = {})
+    # @return [Array<(UpdateTransactionNarrative200Response, Integer, Hash)>] UpdateTransactionNarrative200Response data, response status code and response headers
+    def add_counterparty_more_info_with_http_info(bankid, accountid, viewid, otheraccountid, update_counterparty_more_info_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_more_info ...'
+        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.add_counterparty_more_info ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_more_info"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.add_counterparty_more_info"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_more_info"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.add_counterparty_more_info"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_more_info"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.add_counterparty_more_info"
       end
       # verify the required parameter 'otheraccountid' is set
       if @api_client.config.client_side_validation && otheraccountid.nil?
-        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_more_info"
+        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.add_counterparty_more_info"
       end
-      # verify the required parameter 'obpv121_update_counterparty_more_info_request' is set
-      if @api_client.config.client_side_validation && obpv121_update_counterparty_more_info_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv121_update_counterparty_more_info_request' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_more_info"
+      # verify the required parameter 'update_counterparty_more_info_request' is set
+      if @api_client.config.client_side_validation && update_counterparty_more_info_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_counterparty_more_info_request' when calling CounterpartyMetadataApi.add_counterparty_more_info"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'otheraccountid' + '}', CGI.escape(otheraccountid.to_s))
@@ -270,16 +270,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv121_update_counterparty_more_info_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_counterparty_more_info_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121UpdateTransactionNarrative200Response'
+      return_type = opts[:debug_return_type] || 'UpdateTransactionNarrative200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_more_info",
+        :operation => :"CounterpartyMetadataApi.add_counterparty_more_info",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -290,7 +290,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#o_bpv1_2_1_add_counterparty_more_info\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#add_counterparty_more_info\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -301,11 +301,11 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param otheraccountid [String] The OTHERACCOUNTID identifier
-    # @param obpv121_update_counterparty_open_corporates_url_request [OBPv121UpdateCounterpartyOpenCorporatesUrlRequest] Request body
+    # @param update_counterparty_open_corporates_url_request [UpdateCounterpartyOpenCorporatesUrlRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv121UpdateTransactionNarrative200Response]
-    def o_bpv1_2_1_add_counterparty_open_corporates_url(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_open_corporates_url_request, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_add_counterparty_open_corporates_url_with_http_info(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_open_corporates_url_request, opts)
+    # @return [UpdateTransactionNarrative200Response]
+    def add_counterparty_open_corporates_url(bankid, accountid, viewid, otheraccountid, update_counterparty_open_corporates_url_request, opts = {})
+      data, _status_code, _headers = add_counterparty_open_corporates_url_with_http_info(bankid, accountid, viewid, otheraccountid, update_counterparty_open_corporates_url_request, opts)
       data
     end
 
@@ -315,32 +315,32 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param otheraccountid [String] The OTHERACCOUNTID identifier
-    # @param obpv121_update_counterparty_open_corporates_url_request [OBPv121UpdateCounterpartyOpenCorporatesUrlRequest] Request body
+    # @param update_counterparty_open_corporates_url_request [UpdateCounterpartyOpenCorporatesUrlRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121UpdateTransactionNarrative200Response, Integer, Hash)>] OBPv121UpdateTransactionNarrative200Response data, response status code and response headers
-    def o_bpv1_2_1_add_counterparty_open_corporates_url_with_http_info(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_open_corporates_url_request, opts = {})
+    # @return [Array<(UpdateTransactionNarrative200Response, Integer, Hash)>] UpdateTransactionNarrative200Response data, response status code and response headers
+    def add_counterparty_open_corporates_url_with_http_info(bankid, accountid, viewid, otheraccountid, update_counterparty_open_corporates_url_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_open_corporates_url ...'
+        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.add_counterparty_open_corporates_url ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_open_corporates_url"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.add_counterparty_open_corporates_url"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_open_corporates_url"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.add_counterparty_open_corporates_url"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_open_corporates_url"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.add_counterparty_open_corporates_url"
       end
       # verify the required parameter 'otheraccountid' is set
       if @api_client.config.client_side_validation && otheraccountid.nil?
-        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_open_corporates_url"
+        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.add_counterparty_open_corporates_url"
       end
-      # verify the required parameter 'obpv121_update_counterparty_open_corporates_url_request' is set
-      if @api_client.config.client_side_validation && obpv121_update_counterparty_open_corporates_url_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv121_update_counterparty_open_corporates_url_request' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_open_corporates_url"
+      # verify the required parameter 'update_counterparty_open_corporates_url_request' is set
+      if @api_client.config.client_side_validation && update_counterparty_open_corporates_url_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_counterparty_open_corporates_url_request' when calling CounterpartyMetadataApi.add_counterparty_open_corporates_url"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'otheraccountid' + '}', CGI.escape(otheraccountid.to_s))
@@ -362,16 +362,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv121_update_counterparty_open_corporates_url_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_counterparty_open_corporates_url_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121UpdateTransactionNarrative200Response'
+      return_type = opts[:debug_return_type] || 'UpdateTransactionNarrative200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
 
       new_options = opts.merge(
-        :operation => :"CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_open_corporates_url",
+        :operation => :"CounterpartyMetadataApi.add_counterparty_open_corporates_url",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -382,7 +382,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#o_bpv1_2_1_add_counterparty_open_corporates_url\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#add_counterparty_open_corporates_url\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -393,11 +393,11 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param otheraccountid [String] The OTHERACCOUNTID identifier
-    # @param obpv121_update_counterparty_physical_location_request [OBPv121UpdateCounterpartyPhysicalLocationRequest] Request body
+    # @param update_counterparty_physical_location_request [UpdateCounterpartyPhysicalLocationRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv121UpdateTransactionNarrative200Response]
-    def o_bpv1_2_1_add_counterparty_physical_location(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_physical_location_request, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_add_counterparty_physical_location_with_http_info(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_physical_location_request, opts)
+    # @return [UpdateTransactionNarrative200Response]
+    def add_counterparty_physical_location(bankid, accountid, viewid, otheraccountid, update_counterparty_physical_location_request, opts = {})
+      data, _status_code, _headers = add_counterparty_physical_location_with_http_info(bankid, accountid, viewid, otheraccountid, update_counterparty_physical_location_request, opts)
       data
     end
 
@@ -407,32 +407,32 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param otheraccountid [String] The OTHERACCOUNTID identifier
-    # @param obpv121_update_counterparty_physical_location_request [OBPv121UpdateCounterpartyPhysicalLocationRequest] Request body
+    # @param update_counterparty_physical_location_request [UpdateCounterpartyPhysicalLocationRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121UpdateTransactionNarrative200Response, Integer, Hash)>] OBPv121UpdateTransactionNarrative200Response data, response status code and response headers
-    def o_bpv1_2_1_add_counterparty_physical_location_with_http_info(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_physical_location_request, opts = {})
+    # @return [Array<(UpdateTransactionNarrative200Response, Integer, Hash)>] UpdateTransactionNarrative200Response data, response status code and response headers
+    def add_counterparty_physical_location_with_http_info(bankid, accountid, viewid, otheraccountid, update_counterparty_physical_location_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_physical_location ...'
+        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.add_counterparty_physical_location ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_physical_location"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.add_counterparty_physical_location"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_physical_location"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.add_counterparty_physical_location"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_physical_location"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.add_counterparty_physical_location"
       end
       # verify the required parameter 'otheraccountid' is set
       if @api_client.config.client_side_validation && otheraccountid.nil?
-        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_physical_location"
+        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.add_counterparty_physical_location"
       end
-      # verify the required parameter 'obpv121_update_counterparty_physical_location_request' is set
-      if @api_client.config.client_side_validation && obpv121_update_counterparty_physical_location_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv121_update_counterparty_physical_location_request' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_physical_location"
+      # verify the required parameter 'update_counterparty_physical_location_request' is set
+      if @api_client.config.client_side_validation && update_counterparty_physical_location_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_counterparty_physical_location_request' when calling CounterpartyMetadataApi.add_counterparty_physical_location"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'otheraccountid' + '}', CGI.escape(otheraccountid.to_s))
@@ -454,16 +454,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv121_update_counterparty_physical_location_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_counterparty_physical_location_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121UpdateTransactionNarrative200Response'
+      return_type = opts[:debug_return_type] || 'UpdateTransactionNarrative200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_physical_location",
+        :operation => :"CounterpartyMetadataApi.add_counterparty_physical_location",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -474,7 +474,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#o_bpv1_2_1_add_counterparty_physical_location\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#add_counterparty_physical_location\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -485,11 +485,11 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param otheraccountid [String] The OTHERACCOUNTID identifier
-    # @param obpv121_get_counterparty_public_alias200_response [OBPv121GetCounterpartyPublicAlias200Response] Request body
+    # @param get_counterparty_public_alias200_response [GetCounterpartyPublicAlias200Response] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv121UpdateTransactionNarrative200Response]
-    def o_bpv1_2_1_add_counterparty_public_alias(bankid, accountid, viewid, otheraccountid, obpv121_get_counterparty_public_alias200_response, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_add_counterparty_public_alias_with_http_info(bankid, accountid, viewid, otheraccountid, obpv121_get_counterparty_public_alias200_response, opts)
+    # @return [UpdateTransactionNarrative200Response]
+    def add_counterparty_public_alias(bankid, accountid, viewid, otheraccountid, get_counterparty_public_alias200_response, opts = {})
+      data, _status_code, _headers = add_counterparty_public_alias_with_http_info(bankid, accountid, viewid, otheraccountid, get_counterparty_public_alias200_response, opts)
       data
     end
 
@@ -499,32 +499,32 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param otheraccountid [String] The OTHERACCOUNTID identifier
-    # @param obpv121_get_counterparty_public_alias200_response [OBPv121GetCounterpartyPublicAlias200Response] Request body
+    # @param get_counterparty_public_alias200_response [GetCounterpartyPublicAlias200Response] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121UpdateTransactionNarrative200Response, Integer, Hash)>] OBPv121UpdateTransactionNarrative200Response data, response status code and response headers
-    def o_bpv1_2_1_add_counterparty_public_alias_with_http_info(bankid, accountid, viewid, otheraccountid, obpv121_get_counterparty_public_alias200_response, opts = {})
+    # @return [Array<(UpdateTransactionNarrative200Response, Integer, Hash)>] UpdateTransactionNarrative200Response data, response status code and response headers
+    def add_counterparty_public_alias_with_http_info(bankid, accountid, viewid, otheraccountid, get_counterparty_public_alias200_response, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_public_alias ...'
+        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.add_counterparty_public_alias ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_public_alias"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.add_counterparty_public_alias"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_public_alias"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.add_counterparty_public_alias"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_public_alias"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.add_counterparty_public_alias"
       end
       # verify the required parameter 'otheraccountid' is set
       if @api_client.config.client_side_validation && otheraccountid.nil?
-        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_public_alias"
+        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.add_counterparty_public_alias"
       end
-      # verify the required parameter 'obpv121_get_counterparty_public_alias200_response' is set
-      if @api_client.config.client_side_validation && obpv121_get_counterparty_public_alias200_response.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv121_get_counterparty_public_alias200_response' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_public_alias"
+      # verify the required parameter 'get_counterparty_public_alias200_response' is set
+      if @api_client.config.client_side_validation && get_counterparty_public_alias200_response.nil?
+        fail ArgumentError, "Missing the required parameter 'get_counterparty_public_alias200_response' when calling CounterpartyMetadataApi.add_counterparty_public_alias"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'otheraccountid' + '}', CGI.escape(otheraccountid.to_s))
@@ -546,16 +546,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv121_get_counterparty_public_alias200_response)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(get_counterparty_public_alias200_response)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121UpdateTransactionNarrative200Response'
+      return_type = opts[:debug_return_type] || 'UpdateTransactionNarrative200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_public_alias",
+        :operation => :"CounterpartyMetadataApi.add_counterparty_public_alias",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -566,7 +566,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#o_bpv1_2_1_add_counterparty_public_alias\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#add_counterparty_public_alias\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -577,11 +577,11 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param otheraccountid [String] The OTHERACCOUNTID identifier
-    # @param obpv121_update_counterparty_url_request [OBPv121UpdateCounterpartyUrlRequest] Request body
+    # @param update_counterparty_url_request [UpdateCounterpartyUrlRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv121UpdateTransactionNarrative200Response]
-    def o_bpv1_2_1_add_counterparty_url(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_url_request, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_add_counterparty_url_with_http_info(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_url_request, opts)
+    # @return [UpdateTransactionNarrative200Response]
+    def add_counterparty_url(bankid, accountid, viewid, otheraccountid, update_counterparty_url_request, opts = {})
+      data, _status_code, _headers = add_counterparty_url_with_http_info(bankid, accountid, viewid, otheraccountid, update_counterparty_url_request, opts)
       data
     end
 
@@ -591,32 +591,32 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param otheraccountid [String] The OTHERACCOUNTID identifier
-    # @param obpv121_update_counterparty_url_request [OBPv121UpdateCounterpartyUrlRequest] Request body
+    # @param update_counterparty_url_request [UpdateCounterpartyUrlRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121UpdateTransactionNarrative200Response, Integer, Hash)>] OBPv121UpdateTransactionNarrative200Response data, response status code and response headers
-    def o_bpv1_2_1_add_counterparty_url_with_http_info(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_url_request, opts = {})
+    # @return [Array<(UpdateTransactionNarrative200Response, Integer, Hash)>] UpdateTransactionNarrative200Response data, response status code and response headers
+    def add_counterparty_url_with_http_info(bankid, accountid, viewid, otheraccountid, update_counterparty_url_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_url ...'
+        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.add_counterparty_url ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_url"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.add_counterparty_url"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_url"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.add_counterparty_url"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_url"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.add_counterparty_url"
       end
       # verify the required parameter 'otheraccountid' is set
       if @api_client.config.client_side_validation && otheraccountid.nil?
-        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_url"
+        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.add_counterparty_url"
       end
-      # verify the required parameter 'obpv121_update_counterparty_url_request' is set
-      if @api_client.config.client_side_validation && obpv121_update_counterparty_url_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv121_update_counterparty_url_request' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_url"
+      # verify the required parameter 'update_counterparty_url_request' is set
+      if @api_client.config.client_side_validation && update_counterparty_url_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_counterparty_url_request' when calling CounterpartyMetadataApi.add_counterparty_url"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'otheraccountid' + '}', CGI.escape(otheraccountid.to_s))
@@ -638,16 +638,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv121_update_counterparty_url_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_counterparty_url_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121UpdateTransactionNarrative200Response'
+      return_type = opts[:debug_return_type] || 'UpdateTransactionNarrative200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"CounterpartyMetadataApi.o_bpv1_2_1_add_counterparty_url",
+        :operation => :"CounterpartyMetadataApi.add_counterparty_url",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -658,7 +658,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#o_bpv1_2_1_add_counterparty_url\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#add_counterparty_url\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -669,11 +669,11 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param otheraccountid [String] The OTHERACCOUNTID identifier
-    # @param obpv121_get_counterparty_public_alias200_response [OBPv121GetCounterpartyPublicAlias200Response] Request body
+    # @param get_counterparty_public_alias200_response [GetCounterpartyPublicAlias200Response] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv121UpdateTransactionNarrative200Response]
-    def o_bpv1_2_1_add_other_account_private_alias(bankid, accountid, viewid, otheraccountid, obpv121_get_counterparty_public_alias200_response, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_add_other_account_private_alias_with_http_info(bankid, accountid, viewid, otheraccountid, obpv121_get_counterparty_public_alias200_response, opts)
+    # @return [UpdateTransactionNarrative200Response]
+    def add_other_account_private_alias(bankid, accountid, viewid, otheraccountid, get_counterparty_public_alias200_response, opts = {})
+      data, _status_code, _headers = add_other_account_private_alias_with_http_info(bankid, accountid, viewid, otheraccountid, get_counterparty_public_alias200_response, opts)
       data
     end
 
@@ -683,32 +683,32 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param otheraccountid [String] The OTHERACCOUNTID identifier
-    # @param obpv121_get_counterparty_public_alias200_response [OBPv121GetCounterpartyPublicAlias200Response] Request body
+    # @param get_counterparty_public_alias200_response [GetCounterpartyPublicAlias200Response] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121UpdateTransactionNarrative200Response, Integer, Hash)>] OBPv121UpdateTransactionNarrative200Response data, response status code and response headers
-    def o_bpv1_2_1_add_other_account_private_alias_with_http_info(bankid, accountid, viewid, otheraccountid, obpv121_get_counterparty_public_alias200_response, opts = {})
+    # @return [Array<(UpdateTransactionNarrative200Response, Integer, Hash)>] UpdateTransactionNarrative200Response data, response status code and response headers
+    def add_other_account_private_alias_with_http_info(bankid, accountid, viewid, otheraccountid, get_counterparty_public_alias200_response, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.o_bpv1_2_1_add_other_account_private_alias ...'
+        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.add_other_account_private_alias ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_other_account_private_alias"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.add_other_account_private_alias"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_other_account_private_alias"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.add_other_account_private_alias"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_other_account_private_alias"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.add_other_account_private_alias"
       end
       # verify the required parameter 'otheraccountid' is set
       if @api_client.config.client_side_validation && otheraccountid.nil?
-        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_other_account_private_alias"
+        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.add_other_account_private_alias"
       end
-      # verify the required parameter 'obpv121_get_counterparty_public_alias200_response' is set
-      if @api_client.config.client_side_validation && obpv121_get_counterparty_public_alias200_response.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv121_get_counterparty_public_alias200_response' when calling CounterpartyMetadataApi.o_bpv1_2_1_add_other_account_private_alias"
+      # verify the required parameter 'get_counterparty_public_alias200_response' is set
+      if @api_client.config.client_side_validation && get_counterparty_public_alias200_response.nil?
+        fail ArgumentError, "Missing the required parameter 'get_counterparty_public_alias200_response' when calling CounterpartyMetadataApi.add_other_account_private_alias"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'otheraccountid' + '}', CGI.escape(otheraccountid.to_s))
@@ -730,16 +730,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv121_get_counterparty_public_alias200_response)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(get_counterparty_public_alias200_response)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121UpdateTransactionNarrative200Response'
+      return_type = opts[:debug_return_type] || 'UpdateTransactionNarrative200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"CounterpartyMetadataApi.o_bpv1_2_1_add_other_account_private_alias",
+        :operation => :"CounterpartyMetadataApi.add_other_account_private_alias",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -750,7 +750,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#o_bpv1_2_1_add_other_account_private_alias\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#add_other_account_private_alias\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -763,8 +763,8 @@ module OpenBankProject
     # @param otheraccountid [String] The OTHERACCOUNTID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv1_2_1_delete_counterparty_corporate_location(bankid, accountid, viewid, otheraccountid, opts = {})
-      o_bpv1_2_1_delete_counterparty_corporate_location_with_http_info(bankid, accountid, viewid, otheraccountid, opts)
+    def delete_counterparty_corporate_location(bankid, accountid, viewid, otheraccountid, opts = {})
+      delete_counterparty_corporate_location_with_http_info(bankid, accountid, viewid, otheraccountid, opts)
       nil
     end
 
@@ -776,25 +776,25 @@ module OpenBankProject
     # @param otheraccountid [String] The OTHERACCOUNTID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv1_2_1_delete_counterparty_corporate_location_with_http_info(bankid, accountid, viewid, otheraccountid, opts = {})
+    def delete_counterparty_corporate_location_with_http_info(bankid, accountid, viewid, otheraccountid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_corporate_location ...'
+        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.delete_counterparty_corporate_location ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_corporate_location"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.delete_counterparty_corporate_location"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_corporate_location"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.delete_counterparty_corporate_location"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_corporate_location"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.delete_counterparty_corporate_location"
       end
       # verify the required parameter 'otheraccountid' is set
       if @api_client.config.client_side_validation && otheraccountid.nil?
-        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_corporate_location"
+        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.delete_counterparty_corporate_location"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'otheraccountid' + '}', CGI.escape(otheraccountid.to_s))
@@ -818,7 +818,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_corporate_location",
+        :operation => :"CounterpartyMetadataApi.delete_counterparty_corporate_location",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -829,7 +829,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#o_bpv1_2_1_delete_counterparty_corporate_location\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#delete_counterparty_corporate_location\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -842,8 +842,8 @@ module OpenBankProject
     # @param otheraccountid [String] The OTHERACCOUNTID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv1_2_1_delete_counterparty_image_url(bankid, accountid, viewid, otheraccountid, opts = {})
-      o_bpv1_2_1_delete_counterparty_image_url_with_http_info(bankid, accountid, viewid, otheraccountid, opts)
+    def delete_counterparty_image_url(bankid, accountid, viewid, otheraccountid, opts = {})
+      delete_counterparty_image_url_with_http_info(bankid, accountid, viewid, otheraccountid, opts)
       nil
     end
 
@@ -855,25 +855,25 @@ module OpenBankProject
     # @param otheraccountid [String] The OTHERACCOUNTID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv1_2_1_delete_counterparty_image_url_with_http_info(bankid, accountid, viewid, otheraccountid, opts = {})
+    def delete_counterparty_image_url_with_http_info(bankid, accountid, viewid, otheraccountid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_image_url ...'
+        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.delete_counterparty_image_url ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_image_url"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.delete_counterparty_image_url"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_image_url"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.delete_counterparty_image_url"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_image_url"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.delete_counterparty_image_url"
       end
       # verify the required parameter 'otheraccountid' is set
       if @api_client.config.client_side_validation && otheraccountid.nil?
-        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_image_url"
+        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.delete_counterparty_image_url"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'otheraccountid' + '}', CGI.escape(otheraccountid.to_s))
@@ -897,7 +897,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || []
 
       new_options = opts.merge(
-        :operation => :"CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_image_url",
+        :operation => :"CounterpartyMetadataApi.delete_counterparty_image_url",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -908,7 +908,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#o_bpv1_2_1_delete_counterparty_image_url\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#delete_counterparty_image_url\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -921,8 +921,8 @@ module OpenBankProject
     # @param otheraccountid [String] The OTHERACCOUNTID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv1_2_1_delete_counterparty_more_info(bankid, accountid, viewid, otheraccountid, opts = {})
-      o_bpv1_2_1_delete_counterparty_more_info_with_http_info(bankid, accountid, viewid, otheraccountid, opts)
+    def delete_counterparty_more_info(bankid, accountid, viewid, otheraccountid, opts = {})
+      delete_counterparty_more_info_with_http_info(bankid, accountid, viewid, otheraccountid, opts)
       nil
     end
 
@@ -934,25 +934,25 @@ module OpenBankProject
     # @param otheraccountid [String] The OTHERACCOUNTID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv1_2_1_delete_counterparty_more_info_with_http_info(bankid, accountid, viewid, otheraccountid, opts = {})
+    def delete_counterparty_more_info_with_http_info(bankid, accountid, viewid, otheraccountid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_more_info ...'
+        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.delete_counterparty_more_info ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_more_info"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.delete_counterparty_more_info"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_more_info"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.delete_counterparty_more_info"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_more_info"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.delete_counterparty_more_info"
       end
       # verify the required parameter 'otheraccountid' is set
       if @api_client.config.client_side_validation && otheraccountid.nil?
-        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_more_info"
+        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.delete_counterparty_more_info"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'otheraccountid' + '}', CGI.escape(otheraccountid.to_s))
@@ -976,7 +976,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_more_info",
+        :operation => :"CounterpartyMetadataApi.delete_counterparty_more_info",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -987,7 +987,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#o_bpv1_2_1_delete_counterparty_more_info\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#delete_counterparty_more_info\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1000,8 +1000,8 @@ module OpenBankProject
     # @param otheraccountid [String] The OTHERACCOUNTID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv1_2_1_delete_counterparty_open_corporates_url(bankid, accountid, viewid, otheraccountid, opts = {})
-      o_bpv1_2_1_delete_counterparty_open_corporates_url_with_http_info(bankid, accountid, viewid, otheraccountid, opts)
+    def delete_counterparty_open_corporates_url(bankid, accountid, viewid, otheraccountid, opts = {})
+      delete_counterparty_open_corporates_url_with_http_info(bankid, accountid, viewid, otheraccountid, opts)
       nil
     end
 
@@ -1013,25 +1013,25 @@ module OpenBankProject
     # @param otheraccountid [String] The OTHERACCOUNTID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv1_2_1_delete_counterparty_open_corporates_url_with_http_info(bankid, accountid, viewid, otheraccountid, opts = {})
+    def delete_counterparty_open_corporates_url_with_http_info(bankid, accountid, viewid, otheraccountid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_open_corporates_url ...'
+        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.delete_counterparty_open_corporates_url ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_open_corporates_url"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.delete_counterparty_open_corporates_url"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_open_corporates_url"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.delete_counterparty_open_corporates_url"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_open_corporates_url"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.delete_counterparty_open_corporates_url"
       end
       # verify the required parameter 'otheraccountid' is set
       if @api_client.config.client_side_validation && otheraccountid.nil?
-        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_open_corporates_url"
+        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.delete_counterparty_open_corporates_url"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'otheraccountid' + '}', CGI.escape(otheraccountid.to_s))
@@ -1055,7 +1055,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_open_corporates_url",
+        :operation => :"CounterpartyMetadataApi.delete_counterparty_open_corporates_url",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -1066,7 +1066,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#o_bpv1_2_1_delete_counterparty_open_corporates_url\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#delete_counterparty_open_corporates_url\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1079,8 +1079,8 @@ module OpenBankProject
     # @param otheraccountid [String] The OTHERACCOUNTID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv1_2_1_delete_counterparty_physical_location(bankid, accountid, viewid, otheraccountid, opts = {})
-      o_bpv1_2_1_delete_counterparty_physical_location_with_http_info(bankid, accountid, viewid, otheraccountid, opts)
+    def delete_counterparty_physical_location(bankid, accountid, viewid, otheraccountid, opts = {})
+      delete_counterparty_physical_location_with_http_info(bankid, accountid, viewid, otheraccountid, opts)
       nil
     end
 
@@ -1092,25 +1092,25 @@ module OpenBankProject
     # @param otheraccountid [String] The OTHERACCOUNTID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv1_2_1_delete_counterparty_physical_location_with_http_info(bankid, accountid, viewid, otheraccountid, opts = {})
+    def delete_counterparty_physical_location_with_http_info(bankid, accountid, viewid, otheraccountid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_physical_location ...'
+        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.delete_counterparty_physical_location ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_physical_location"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.delete_counterparty_physical_location"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_physical_location"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.delete_counterparty_physical_location"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_physical_location"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.delete_counterparty_physical_location"
       end
       # verify the required parameter 'otheraccountid' is set
       if @api_client.config.client_side_validation && otheraccountid.nil?
-        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_physical_location"
+        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.delete_counterparty_physical_location"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'otheraccountid' + '}', CGI.escape(otheraccountid.to_s))
@@ -1134,7 +1134,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_physical_location",
+        :operation => :"CounterpartyMetadataApi.delete_counterparty_physical_location",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -1145,7 +1145,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#o_bpv1_2_1_delete_counterparty_physical_location\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#delete_counterparty_physical_location\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1158,8 +1158,8 @@ module OpenBankProject
     # @param otheraccountid [String] The OTHERACCOUNTID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv1_2_1_delete_counterparty_private_alias(bankid, accountid, viewid, otheraccountid, opts = {})
-      o_bpv1_2_1_delete_counterparty_private_alias_with_http_info(bankid, accountid, viewid, otheraccountid, opts)
+    def delete_counterparty_private_alias(bankid, accountid, viewid, otheraccountid, opts = {})
+      delete_counterparty_private_alias_with_http_info(bankid, accountid, viewid, otheraccountid, opts)
       nil
     end
 
@@ -1171,25 +1171,25 @@ module OpenBankProject
     # @param otheraccountid [String] The OTHERACCOUNTID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv1_2_1_delete_counterparty_private_alias_with_http_info(bankid, accountid, viewid, otheraccountid, opts = {})
+    def delete_counterparty_private_alias_with_http_info(bankid, accountid, viewid, otheraccountid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_private_alias ...'
+        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.delete_counterparty_private_alias ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_private_alias"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.delete_counterparty_private_alias"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_private_alias"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.delete_counterparty_private_alias"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_private_alias"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.delete_counterparty_private_alias"
       end
       # verify the required parameter 'otheraccountid' is set
       if @api_client.config.client_side_validation && otheraccountid.nil?
-        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_private_alias"
+        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.delete_counterparty_private_alias"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'otheraccountid' + '}', CGI.escape(otheraccountid.to_s))
@@ -1213,7 +1213,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_private_alias",
+        :operation => :"CounterpartyMetadataApi.delete_counterparty_private_alias",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -1224,7 +1224,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#o_bpv1_2_1_delete_counterparty_private_alias\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#delete_counterparty_private_alias\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1237,8 +1237,8 @@ module OpenBankProject
     # @param otheraccountid [String] The OTHERACCOUNTID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv1_2_1_delete_counterparty_public_alias(bankid, accountid, viewid, otheraccountid, opts = {})
-      o_bpv1_2_1_delete_counterparty_public_alias_with_http_info(bankid, accountid, viewid, otheraccountid, opts)
+    def delete_counterparty_public_alias(bankid, accountid, viewid, otheraccountid, opts = {})
+      delete_counterparty_public_alias_with_http_info(bankid, accountid, viewid, otheraccountid, opts)
       nil
     end
 
@@ -1250,25 +1250,25 @@ module OpenBankProject
     # @param otheraccountid [String] The OTHERACCOUNTID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv1_2_1_delete_counterparty_public_alias_with_http_info(bankid, accountid, viewid, otheraccountid, opts = {})
+    def delete_counterparty_public_alias_with_http_info(bankid, accountid, viewid, otheraccountid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_public_alias ...'
+        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.delete_counterparty_public_alias ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_public_alias"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.delete_counterparty_public_alias"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_public_alias"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.delete_counterparty_public_alias"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_public_alias"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.delete_counterparty_public_alias"
       end
       # verify the required parameter 'otheraccountid' is set
       if @api_client.config.client_side_validation && otheraccountid.nil?
-        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_public_alias"
+        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.delete_counterparty_public_alias"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'otheraccountid' + '}', CGI.escape(otheraccountid.to_s))
@@ -1292,7 +1292,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_public_alias",
+        :operation => :"CounterpartyMetadataApi.delete_counterparty_public_alias",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -1303,7 +1303,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#o_bpv1_2_1_delete_counterparty_public_alias\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#delete_counterparty_public_alias\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1316,8 +1316,8 @@ module OpenBankProject
     # @param otheraccountid [String] The OTHERACCOUNTID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv1_2_1_delete_counterparty_url(bankid, accountid, viewid, otheraccountid, opts = {})
-      o_bpv1_2_1_delete_counterparty_url_with_http_info(bankid, accountid, viewid, otheraccountid, opts)
+    def delete_counterparty_url(bankid, accountid, viewid, otheraccountid, opts = {})
+      delete_counterparty_url_with_http_info(bankid, accountid, viewid, otheraccountid, opts)
       nil
     end
 
@@ -1329,25 +1329,25 @@ module OpenBankProject
     # @param otheraccountid [String] The OTHERACCOUNTID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv1_2_1_delete_counterparty_url_with_http_info(bankid, accountid, viewid, otheraccountid, opts = {})
+    def delete_counterparty_url_with_http_info(bankid, accountid, viewid, otheraccountid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_url ...'
+        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.delete_counterparty_url ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_url"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.delete_counterparty_url"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_url"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.delete_counterparty_url"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_url"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.delete_counterparty_url"
       end
       # verify the required parameter 'otheraccountid' is set
       if @api_client.config.client_side_validation && otheraccountid.nil?
-        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_url"
+        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.delete_counterparty_url"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'otheraccountid' + '}', CGI.escape(otheraccountid.to_s))
@@ -1371,7 +1371,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"CounterpartyMetadataApi.o_bpv1_2_1_delete_counterparty_url",
+        :operation => :"CounterpartyMetadataApi.delete_counterparty_url",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -1382,7 +1382,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#o_bpv1_2_1_delete_counterparty_url\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#delete_counterparty_url\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1394,9 +1394,9 @@ module OpenBankProject
     # @param viewid [String] The VIEWID identifier
     # @param otheraccountid [String] The OTHERACCOUNTID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv121GetCounterpartyPublicAlias200Response]
-    def o_bpv1_2_1_get_counterparty_public_alias(bankid, accountid, viewid, otheraccountid, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_get_counterparty_public_alias_with_http_info(bankid, accountid, viewid, otheraccountid, opts)
+    # @return [GetCounterpartyPublicAlias200Response]
+    def get_counterparty_public_alias(bankid, accountid, viewid, otheraccountid, opts = {})
+      data, _status_code, _headers = get_counterparty_public_alias_with_http_info(bankid, accountid, viewid, otheraccountid, opts)
       data
     end
 
@@ -1407,26 +1407,26 @@ module OpenBankProject
     # @param viewid [String] The VIEWID identifier
     # @param otheraccountid [String] The OTHERACCOUNTID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121GetCounterpartyPublicAlias200Response, Integer, Hash)>] OBPv121GetCounterpartyPublicAlias200Response data, response status code and response headers
-    def o_bpv1_2_1_get_counterparty_public_alias_with_http_info(bankid, accountid, viewid, otheraccountid, opts = {})
+    # @return [Array<(GetCounterpartyPublicAlias200Response, Integer, Hash)>] GetCounterpartyPublicAlias200Response data, response status code and response headers
+    def get_counterparty_public_alias_with_http_info(bankid, accountid, viewid, otheraccountid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.o_bpv1_2_1_get_counterparty_public_alias ...'
+        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.get_counterparty_public_alias ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.o_bpv1_2_1_get_counterparty_public_alias"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.get_counterparty_public_alias"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_get_counterparty_public_alias"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.get_counterparty_public_alias"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.o_bpv1_2_1_get_counterparty_public_alias"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.get_counterparty_public_alias"
       end
       # verify the required parameter 'otheraccountid' is set
       if @api_client.config.client_side_validation && otheraccountid.nil?
-        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_get_counterparty_public_alias"
+        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.get_counterparty_public_alias"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'otheraccountid' + '}', CGI.escape(otheraccountid.to_s))
@@ -1446,13 +1446,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121GetCounterpartyPublicAlias200Response'
+      return_type = opts[:debug_return_type] || 'GetCounterpartyPublicAlias200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"CounterpartyMetadataApi.o_bpv1_2_1_get_counterparty_public_alias",
+        :operation => :"CounterpartyMetadataApi.get_counterparty_public_alias",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -1463,905 +1463,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#o_bpv1_2_1_get_counterparty_public_alias\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Get Other Account Metadata
-    # <p>Get metadata of one other account.<br /> Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param otheraccountid [String] The OTHERACCOUNTID identifier
-    # @param [Hash] opts the optional parameters
-    # @return [OBPv121GetOtherAccountMetadata200Response]
-    def o_bpv1_2_1_get_other_account_metadata(bankid, accountid, viewid, otheraccountid, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_get_other_account_metadata_with_http_info(bankid, accountid, viewid, otheraccountid, opts)
-      data
-    end
-
-    # Get Other Account Metadata
-    # &lt;p&gt;Get metadata of one other account.&lt;br /&gt; Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;URL&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#corporate_location\&quot;&gt;&lt;strong&gt;corporate_location&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#image_url\&quot;&gt;&lt;strong&gt;image_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#open_corporates_url\&quot;&gt;&lt;strong&gt;open_corporates_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#physical_location\&quot;&gt;&lt;strong&gt;physical_location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#private_alias\&quot;&gt;&lt;strong&gt;private_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#public_alias\&quot;&gt;&lt;strong&gt;public_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param otheraccountid [String] The OTHERACCOUNTID identifier
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121GetOtherAccountMetadata200Response, Integer, Hash)>] OBPv121GetOtherAccountMetadata200Response data, response status code and response headers
-    def o_bpv1_2_1_get_other_account_metadata_with_http_info(bankid, accountid, viewid, otheraccountid, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.o_bpv1_2_1_get_other_account_metadata ...'
-      end
-      # verify the required parameter 'bankid' is set
-      if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.o_bpv1_2_1_get_other_account_metadata"
-      end
-      # verify the required parameter 'accountid' is set
-      if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_get_other_account_metadata"
-      end
-      # verify the required parameter 'viewid' is set
-      if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.o_bpv1_2_1_get_other_account_metadata"
-      end
-      # verify the required parameter 'otheraccountid' is set
-      if @api_client.config.client_side_validation && otheraccountid.nil?
-        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_get_other_account_metadata"
-      end
-      # resource path
-      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'otheraccountid' + '}', CGI.escape(otheraccountid.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121GetOtherAccountMetadata200Response'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
-
-      new_options = opts.merge(
-        :operation => :"CounterpartyMetadataApi.o_bpv1_2_1_get_other_account_metadata",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#o_bpv1_2_1_get_other_account_metadata\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Get Other Account Private Alias
-    # <p>Returns the private alias of the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param otheraccountid [String] The OTHERACCOUNTID identifier
-    # @param [Hash] opts the optional parameters
-    # @return [OBPv121GetCounterpartyPublicAlias200Response]
-    def o_bpv1_2_1_get_other_account_private_alias(bankid, accountid, viewid, otheraccountid, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_get_other_account_private_alias_with_http_info(bankid, accountid, viewid, otheraccountid, opts)
-      data
-    end
-
-    # Get Other Account Private Alias
-    # &lt;p&gt;Returns the private alias of the other account OTHER_ACCOUNT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;br /&gt; Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param otheraccountid [String] The OTHERACCOUNTID identifier
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121GetCounterpartyPublicAlias200Response, Integer, Hash)>] OBPv121GetCounterpartyPublicAlias200Response data, response status code and response headers
-    def o_bpv1_2_1_get_other_account_private_alias_with_http_info(bankid, accountid, viewid, otheraccountid, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.o_bpv1_2_1_get_other_account_private_alias ...'
-      end
-      # verify the required parameter 'bankid' is set
-      if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.o_bpv1_2_1_get_other_account_private_alias"
-      end
-      # verify the required parameter 'accountid' is set
-      if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_get_other_account_private_alias"
-      end
-      # verify the required parameter 'viewid' is set
-      if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.o_bpv1_2_1_get_other_account_private_alias"
-      end
-      # verify the required parameter 'otheraccountid' is set
-      if @api_client.config.client_side_validation && otheraccountid.nil?
-        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_get_other_account_private_alias"
-      end
-      # resource path
-      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'otheraccountid' + '}', CGI.escape(otheraccountid.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121GetCounterpartyPublicAlias200Response'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
-
-      new_options = opts.merge(
-        :operation => :"CounterpartyMetadataApi.o_bpv1_2_1_get_other_account_private_alias",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#o_bpv1_2_1_get_other_account_private_alias\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Update Counterparty Corporate Location
-    # <p>Update the geolocation of the counterparty's registered address</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param otheraccountid [String] The OTHERACCOUNTID identifier
-    # @param obpv121_update_counterparty_corporate_location_request [OBPv121UpdateCounterpartyCorporateLocationRequest] Request body
-    # @param [Hash] opts the optional parameters
-    # @return [OBPv121UpdateTransactionNarrative200Response]
-    def o_bpv1_2_1_update_counterparty_corporate_location(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_corporate_location_request, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_update_counterparty_corporate_location_with_http_info(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_corporate_location_request, opts)
-      data
-    end
-
-    # Update Counterparty Corporate Location
-    # &lt;p&gt;Update the geolocation of the counterparty&#39;s registered address&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param otheraccountid [String] The OTHERACCOUNTID identifier
-    # @param obpv121_update_counterparty_corporate_location_request [OBPv121UpdateCounterpartyCorporateLocationRequest] Request body
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121UpdateTransactionNarrative200Response, Integer, Hash)>] OBPv121UpdateTransactionNarrative200Response data, response status code and response headers
-    def o_bpv1_2_1_update_counterparty_corporate_location_with_http_info(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_corporate_location_request, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_corporate_location ...'
-      end
-      # verify the required parameter 'bankid' is set
-      if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_corporate_location"
-      end
-      # verify the required parameter 'accountid' is set
-      if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_corporate_location"
-      end
-      # verify the required parameter 'viewid' is set
-      if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_corporate_location"
-      end
-      # verify the required parameter 'otheraccountid' is set
-      if @api_client.config.client_side_validation && otheraccountid.nil?
-        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_corporate_location"
-      end
-      # verify the required parameter 'obpv121_update_counterparty_corporate_location_request' is set
-      if @api_client.config.client_side_validation && obpv121_update_counterparty_corporate_location_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv121_update_counterparty_corporate_location_request' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_corporate_location"
-      end
-      # resource path
-      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'otheraccountid' + '}', CGI.escape(otheraccountid.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-      # HTTP header 'Content-Type'
-      content_type = @api_client.select_header_content_type(['application/json'])
-      if !content_type.nil?
-          header_params['Content-Type'] = content_type
-      end
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv121_update_counterparty_corporate_location_request)
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121UpdateTransactionNarrative200Response'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
-
-      new_options = opts.merge(
-        :operation => :"CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_corporate_location",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#o_bpv1_2_1_update_counterparty_corporate_location\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Update Counterparty Image Url
-    # <p>Update the url that points to the logo of the counterparty</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param otheraccountid [String] The OTHERACCOUNTID identifier
-    # @param obpv121_update_counterparty_image_url_request [OBPv121UpdateCounterpartyImageUrlRequest] Request body
-    # @param [Hash] opts the optional parameters
-    # @return [OBPv121UpdateTransactionNarrative200Response]
-    def o_bpv1_2_1_update_counterparty_image_url(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_image_url_request, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_update_counterparty_image_url_with_http_info(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_image_url_request, opts)
-      data
-    end
-
-    # Update Counterparty Image Url
-    # &lt;p&gt;Update the url that points to the logo of the counterparty&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param otheraccountid [String] The OTHERACCOUNTID identifier
-    # @param obpv121_update_counterparty_image_url_request [OBPv121UpdateCounterpartyImageUrlRequest] Request body
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121UpdateTransactionNarrative200Response, Integer, Hash)>] OBPv121UpdateTransactionNarrative200Response data, response status code and response headers
-    def o_bpv1_2_1_update_counterparty_image_url_with_http_info(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_image_url_request, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_image_url ...'
-      end
-      # verify the required parameter 'bankid' is set
-      if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_image_url"
-      end
-      # verify the required parameter 'accountid' is set
-      if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_image_url"
-      end
-      # verify the required parameter 'viewid' is set
-      if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_image_url"
-      end
-      # verify the required parameter 'otheraccountid' is set
-      if @api_client.config.client_side_validation && otheraccountid.nil?
-        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_image_url"
-      end
-      # verify the required parameter 'obpv121_update_counterparty_image_url_request' is set
-      if @api_client.config.client_side_validation && obpv121_update_counterparty_image_url_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv121_update_counterparty_image_url_request' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_image_url"
-      end
-      # resource path
-      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'otheraccountid' + '}', CGI.escape(otheraccountid.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-      # HTTP header 'Content-Type'
-      content_type = @api_client.select_header_content_type(['application/json'])
-      if !content_type.nil?
-          header_params['Content-Type'] = content_type
-      end
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv121_update_counterparty_image_url_request)
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121UpdateTransactionNarrative200Response'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || []
-
-      new_options = opts.merge(
-        :operation => :"CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_image_url",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#o_bpv1_2_1_update_counterparty_image_url\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Update Counterparty More Info
-    # <p>Update the more info description of the counter party from the perpestive of the account e.g. My dentist</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param otheraccountid [String] The OTHERACCOUNTID identifier
-    # @param obpv121_update_counterparty_more_info_request [OBPv121UpdateCounterpartyMoreInfoRequest] Request body
-    # @param [Hash] opts the optional parameters
-    # @return [OBPv121UpdateTransactionNarrative200Response]
-    def o_bpv1_2_1_update_counterparty_more_info(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_more_info_request, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_update_counterparty_more_info_with_http_info(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_more_info_request, opts)
-      data
-    end
-
-    # Update Counterparty More Info
-    # &lt;p&gt;Update the more info description of the counter party from the perpestive of the account e.g. My dentist&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param otheraccountid [String] The OTHERACCOUNTID identifier
-    # @param obpv121_update_counterparty_more_info_request [OBPv121UpdateCounterpartyMoreInfoRequest] Request body
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121UpdateTransactionNarrative200Response, Integer, Hash)>] OBPv121UpdateTransactionNarrative200Response data, response status code and response headers
-    def o_bpv1_2_1_update_counterparty_more_info_with_http_info(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_more_info_request, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_more_info ...'
-      end
-      # verify the required parameter 'bankid' is set
-      if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_more_info"
-      end
-      # verify the required parameter 'accountid' is set
-      if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_more_info"
-      end
-      # verify the required parameter 'viewid' is set
-      if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_more_info"
-      end
-      # verify the required parameter 'otheraccountid' is set
-      if @api_client.config.client_side_validation && otheraccountid.nil?
-        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_more_info"
-      end
-      # verify the required parameter 'obpv121_update_counterparty_more_info_request' is set
-      if @api_client.config.client_side_validation && obpv121_update_counterparty_more_info_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv121_update_counterparty_more_info_request' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_more_info"
-      end
-      # resource path
-      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'otheraccountid' + '}', CGI.escape(otheraccountid.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-      # HTTP header 'Content-Type'
-      content_type = @api_client.select_header_content_type(['application/json'])
-      if !content_type.nil?
-          header_params['Content-Type'] = content_type
-      end
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv121_update_counterparty_more_info_request)
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121UpdateTransactionNarrative200Response'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
-
-      new_options = opts.merge(
-        :operation => :"CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_more_info",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#o_bpv1_2_1_update_counterparty_more_info\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Update Open Corporates Url of Counterparty
-    # <p>Update open corporate url of other bank account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param otheraccountid [String] The OTHERACCOUNTID identifier
-    # @param obpv121_update_counterparty_open_corporates_url_request [OBPv121UpdateCounterpartyOpenCorporatesUrlRequest] Request body
-    # @param [Hash] opts the optional parameters
-    # @return [OBPv121UpdateTransactionNarrative200Response]
-    def o_bpv1_2_1_update_counterparty_open_corporates_url(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_open_corporates_url_request, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_update_counterparty_open_corporates_url_with_http_info(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_open_corporates_url_request, opts)
-      data
-    end
-
-    # Update Open Corporates Url of Counterparty
-    # &lt;p&gt;Update open corporate url of other bank account&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param otheraccountid [String] The OTHERACCOUNTID identifier
-    # @param obpv121_update_counterparty_open_corporates_url_request [OBPv121UpdateCounterpartyOpenCorporatesUrlRequest] Request body
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121UpdateTransactionNarrative200Response, Integer, Hash)>] OBPv121UpdateTransactionNarrative200Response data, response status code and response headers
-    def o_bpv1_2_1_update_counterparty_open_corporates_url_with_http_info(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_open_corporates_url_request, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_open_corporates_url ...'
-      end
-      # verify the required parameter 'bankid' is set
-      if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_open_corporates_url"
-      end
-      # verify the required parameter 'accountid' is set
-      if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_open_corporates_url"
-      end
-      # verify the required parameter 'viewid' is set
-      if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_open_corporates_url"
-      end
-      # verify the required parameter 'otheraccountid' is set
-      if @api_client.config.client_side_validation && otheraccountid.nil?
-        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_open_corporates_url"
-      end
-      # verify the required parameter 'obpv121_update_counterparty_open_corporates_url_request' is set
-      if @api_client.config.client_side_validation && obpv121_update_counterparty_open_corporates_url_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv121_update_counterparty_open_corporates_url_request' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_open_corporates_url"
-      end
-      # resource path
-      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'otheraccountid' + '}', CGI.escape(otheraccountid.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-      # HTTP header 'Content-Type'
-      content_type = @api_client.select_header_content_type(['application/json'])
-      if !content_type.nil?
-          header_params['Content-Type'] = content_type
-      end
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv121_update_counterparty_open_corporates_url_request)
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121UpdateTransactionNarrative200Response'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
-
-      new_options = opts.merge(
-        :operation => :"CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_open_corporates_url",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#o_bpv1_2_1_update_counterparty_open_corporates_url\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Update Counterparty Physical Location
-    # <p>Update geocoordinates of the counterparty's main location</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param otheraccountid [String] The OTHERACCOUNTID identifier
-    # @param obpv121_update_counterparty_physical_location_request [OBPv121UpdateCounterpartyPhysicalLocationRequest] Request body
-    # @param [Hash] opts the optional parameters
-    # @return [OBPv121UpdateTransactionNarrative200Response]
-    def o_bpv1_2_1_update_counterparty_physical_location(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_physical_location_request, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_update_counterparty_physical_location_with_http_info(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_physical_location_request, opts)
-      data
-    end
-
-    # Update Counterparty Physical Location
-    # &lt;p&gt;Update geocoordinates of the counterparty&#39;s main location&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param otheraccountid [String] The OTHERACCOUNTID identifier
-    # @param obpv121_update_counterparty_physical_location_request [OBPv121UpdateCounterpartyPhysicalLocationRequest] Request body
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121UpdateTransactionNarrative200Response, Integer, Hash)>] OBPv121UpdateTransactionNarrative200Response data, response status code and response headers
-    def o_bpv1_2_1_update_counterparty_physical_location_with_http_info(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_physical_location_request, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_physical_location ...'
-      end
-      # verify the required parameter 'bankid' is set
-      if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_physical_location"
-      end
-      # verify the required parameter 'accountid' is set
-      if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_physical_location"
-      end
-      # verify the required parameter 'viewid' is set
-      if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_physical_location"
-      end
-      # verify the required parameter 'otheraccountid' is set
-      if @api_client.config.client_side_validation && otheraccountid.nil?
-        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_physical_location"
-      end
-      # verify the required parameter 'obpv121_update_counterparty_physical_location_request' is set
-      if @api_client.config.client_side_validation && obpv121_update_counterparty_physical_location_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv121_update_counterparty_physical_location_request' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_physical_location"
-      end
-      # resource path
-      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'otheraccountid' + '}', CGI.escape(otheraccountid.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-      # HTTP header 'Content-Type'
-      content_type = @api_client.select_header_content_type(['application/json'])
-      if !content_type.nil?
-          header_params['Content-Type'] = content_type
-      end
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv121_update_counterparty_physical_location_request)
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121UpdateTransactionNarrative200Response'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
-
-      new_options = opts.merge(
-        :operation => :"CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_physical_location",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#o_bpv1_2_1_update_counterparty_physical_location\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Update Counterparty Private Alias
-    # <p>Updates the private alias of the counterparty (AKA other account) OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param otheraccountid [String] The OTHERACCOUNTID identifier
-    # @param obpv121_get_counterparty_public_alias200_response [OBPv121GetCounterpartyPublicAlias200Response] Request body
-    # @param [Hash] opts the optional parameters
-    # @return [OBPv121UpdateTransactionNarrative200Response]
-    def o_bpv1_2_1_update_counterparty_private_alias(bankid, accountid, viewid, otheraccountid, obpv121_get_counterparty_public_alias200_response, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_update_counterparty_private_alias_with_http_info(bankid, accountid, viewid, otheraccountid, obpv121_get_counterparty_public_alias200_response, opts)
-      data
-    end
-
-    # Update Counterparty Private Alias
-    # &lt;p&gt;Updates the private alias of the counterparty (AKA other account) OTHER_ACCOUNT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;br /&gt; Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param otheraccountid [String] The OTHERACCOUNTID identifier
-    # @param obpv121_get_counterparty_public_alias200_response [OBPv121GetCounterpartyPublicAlias200Response] Request body
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121UpdateTransactionNarrative200Response, Integer, Hash)>] OBPv121UpdateTransactionNarrative200Response data, response status code and response headers
-    def o_bpv1_2_1_update_counterparty_private_alias_with_http_info(bankid, accountid, viewid, otheraccountid, obpv121_get_counterparty_public_alias200_response, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_private_alias ...'
-      end
-      # verify the required parameter 'bankid' is set
-      if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_private_alias"
-      end
-      # verify the required parameter 'accountid' is set
-      if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_private_alias"
-      end
-      # verify the required parameter 'viewid' is set
-      if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_private_alias"
-      end
-      # verify the required parameter 'otheraccountid' is set
-      if @api_client.config.client_side_validation && otheraccountid.nil?
-        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_private_alias"
-      end
-      # verify the required parameter 'obpv121_get_counterparty_public_alias200_response' is set
-      if @api_client.config.client_side_validation && obpv121_get_counterparty_public_alias200_response.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv121_get_counterparty_public_alias200_response' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_private_alias"
-      end
-      # resource path
-      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'otheraccountid' + '}', CGI.escape(otheraccountid.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-      # HTTP header 'Content-Type'
-      content_type = @api_client.select_header_content_type(['application/json'])
-      if !content_type.nil?
-          header_params['Content-Type'] = content_type
-      end
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv121_get_counterparty_public_alias200_response)
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121UpdateTransactionNarrative200Response'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
-
-      new_options = opts.merge(
-        :operation => :"CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_private_alias",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#o_bpv1_2_1_update_counterparty_private_alias\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Update public alias of other bank account
-    # <p>Updates the public alias of the other account / counterparty OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param otheraccountid [String] The OTHERACCOUNTID identifier
-    # @param obpv121_get_counterparty_public_alias200_response [OBPv121GetCounterpartyPublicAlias200Response] Request body
-    # @param [Hash] opts the optional parameters
-    # @return [OBPv121UpdateTransactionNarrative200Response]
-    def o_bpv1_2_1_update_counterparty_public_alias(bankid, accountid, viewid, otheraccountid, obpv121_get_counterparty_public_alias200_response, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_update_counterparty_public_alias_with_http_info(bankid, accountid, viewid, otheraccountid, obpv121_get_counterparty_public_alias200_response, opts)
-      data
-    end
-
-    # Update public alias of other bank account
-    # &lt;p&gt;Updates the public alias of the other account / counterparty OTHER_ACCOUNT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;br /&gt; Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param otheraccountid [String] The OTHERACCOUNTID identifier
-    # @param obpv121_get_counterparty_public_alias200_response [OBPv121GetCounterpartyPublicAlias200Response] Request body
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121UpdateTransactionNarrative200Response, Integer, Hash)>] OBPv121UpdateTransactionNarrative200Response data, response status code and response headers
-    def o_bpv1_2_1_update_counterparty_public_alias_with_http_info(bankid, accountid, viewid, otheraccountid, obpv121_get_counterparty_public_alias200_response, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_public_alias ...'
-      end
-      # verify the required parameter 'bankid' is set
-      if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_public_alias"
-      end
-      # verify the required parameter 'accountid' is set
-      if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_public_alias"
-      end
-      # verify the required parameter 'viewid' is set
-      if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_public_alias"
-      end
-      # verify the required parameter 'otheraccountid' is set
-      if @api_client.config.client_side_validation && otheraccountid.nil?
-        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_public_alias"
-      end
-      # verify the required parameter 'obpv121_get_counterparty_public_alias200_response' is set
-      if @api_client.config.client_side_validation && obpv121_get_counterparty_public_alias200_response.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv121_get_counterparty_public_alias200_response' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_public_alias"
-      end
-      # resource path
-      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'otheraccountid' + '}', CGI.escape(otheraccountid.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-      # HTTP header 'Content-Type'
-      content_type = @api_client.select_header_content_type(['application/json'])
-      if !content_type.nil?
-          header_params['Content-Type'] = content_type
-      end
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv121_get_counterparty_public_alias200_response)
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121UpdateTransactionNarrative200Response'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
-
-      new_options = opts.merge(
-        :operation => :"CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_public_alias",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#o_bpv1_2_1_update_counterparty_public_alias\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Update url of other bank account
-    # <p>A url which represents the counterparty (home page url etc.)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param otheraccountid [String] The OTHERACCOUNTID identifier
-    # @param obpv121_update_counterparty_url_request [OBPv121UpdateCounterpartyUrlRequest] Request body
-    # @param [Hash] opts the optional parameters
-    # @return [OBPv121UpdateTransactionNarrative200Response]
-    def o_bpv1_2_1_update_counterparty_url(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_url_request, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_update_counterparty_url_with_http_info(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_url_request, opts)
-      data
-    end
-
-    # Update url of other bank account
-    # &lt;p&gt;A url which represents the counterparty (home page url etc.)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param otheraccountid [String] The OTHERACCOUNTID identifier
-    # @param obpv121_update_counterparty_url_request [OBPv121UpdateCounterpartyUrlRequest] Request body
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121UpdateTransactionNarrative200Response, Integer, Hash)>] OBPv121UpdateTransactionNarrative200Response data, response status code and response headers
-    def o_bpv1_2_1_update_counterparty_url_with_http_info(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_url_request, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_url ...'
-      end
-      # verify the required parameter 'bankid' is set
-      if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_url"
-      end
-      # verify the required parameter 'accountid' is set
-      if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_url"
-      end
-      # verify the required parameter 'viewid' is set
-      if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_url"
-      end
-      # verify the required parameter 'otheraccountid' is set
-      if @api_client.config.client_side_validation && otheraccountid.nil?
-        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_url"
-      end
-      # verify the required parameter 'obpv121_update_counterparty_url_request' is set
-      if @api_client.config.client_side_validation && obpv121_update_counterparty_url_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv121_update_counterparty_url_request' when calling CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_url"
-      end
-      # resource path
-      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'otheraccountid' + '}', CGI.escape(otheraccountid.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-      # HTTP header 'Content-Type'
-      content_type = @api_client.select_header_content_type(['application/json'])
-      if !content_type.nil?
-          header_params['Content-Type'] = content_type
-      end
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv121_update_counterparty_url_request)
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121UpdateTransactionNarrative200Response'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
-
-      new_options = opts.merge(
-        :operation => :"CounterpartyMetadataApi.o_bpv1_2_1_update_counterparty_url",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#o_bpv1_2_1_update_counterparty_url\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#get_counterparty_public_alias\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -2373,9 +1475,9 @@ module OpenBankProject
     # @param viewid [String] The VIEWID identifier
     # @param counterpartyid [String] The COUNTERPARTYID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetExplicitCounterpartyById200Response]
-    def o_bpv4_0_0_get_explicit_counterparty_by_id(bankid, accountid, viewid, counterpartyid, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_explicit_counterparty_by_id_with_http_info(bankid, accountid, viewid, counterpartyid, opts)
+    # @return [GetExplicitCounterpartyById200Response]
+    def get_explicit_counterparty_by_id(bankid, accountid, viewid, counterpartyid, opts = {})
+      data, _status_code, _headers = get_explicit_counterparty_by_id_with_http_info(bankid, accountid, viewid, counterpartyid, opts)
       data
     end
 
@@ -2386,26 +1488,26 @@ module OpenBankProject
     # @param viewid [String] The VIEWID identifier
     # @param counterpartyid [String] The COUNTERPARTYID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetExplicitCounterpartyById200Response, Integer, Hash)>] OBPv400GetExplicitCounterpartyById200Response data, response status code and response headers
-    def o_bpv4_0_0_get_explicit_counterparty_by_id_with_http_info(bankid, accountid, viewid, counterpartyid, opts = {})
+    # @return [Array<(GetExplicitCounterpartyById200Response, Integer, Hash)>] GetExplicitCounterpartyById200Response data, response status code and response headers
+    def get_explicit_counterparty_by_id_with_http_info(bankid, accountid, viewid, counterpartyid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.o_bpv4_0_0_get_explicit_counterparty_by_id ...'
+        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.get_explicit_counterparty_by_id ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.o_bpv4_0_0_get_explicit_counterparty_by_id"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.get_explicit_counterparty_by_id"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.o_bpv4_0_0_get_explicit_counterparty_by_id"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.get_explicit_counterparty_by_id"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.o_bpv4_0_0_get_explicit_counterparty_by_id"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.get_explicit_counterparty_by_id"
       end
       # verify the required parameter 'counterpartyid' is set
       if @api_client.config.client_side_validation && counterpartyid.nil?
-        fail ArgumentError, "Missing the required parameter 'counterpartyid' when calling CounterpartyMetadataApi.o_bpv4_0_0_get_explicit_counterparty_by_id"
+        fail ArgumentError, "Missing the required parameter 'counterpartyid' when calling CounterpartyMetadataApi.get_explicit_counterparty_by_id"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'counterpartyid' + '}', CGI.escape(counterpartyid.to_s))
@@ -2425,13 +1527,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetExplicitCounterpartyById200Response'
+      return_type = opts[:debug_return_type] || 'GetExplicitCounterpartyById200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"CounterpartyMetadataApi.o_bpv4_0_0_get_explicit_counterparty_by_id",
+        :operation => :"CounterpartyMetadataApi.get_explicit_counterparty_by_id",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -2442,7 +1544,905 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#o_bpv4_0_0_get_explicit_counterparty_by_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#get_explicit_counterparty_by_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get Other Account Metadata
+    # <p>Get metadata of one other account.<br /> Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param otheraccountid [String] The OTHERACCOUNTID identifier
+    # @param [Hash] opts the optional parameters
+    # @return [GetOtherAccountMetadata200Response]
+    def get_other_account_metadata(bankid, accountid, viewid, otheraccountid, opts = {})
+      data, _status_code, _headers = get_other_account_metadata_with_http_info(bankid, accountid, viewid, otheraccountid, opts)
+      data
+    end
+
+    # Get Other Account Metadata
+    # &lt;p&gt;Get metadata of one other account.&lt;br /&gt; Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;URL&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#corporate_location\&quot;&gt;&lt;strong&gt;corporate_location&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#image_url\&quot;&gt;&lt;strong&gt;image_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#open_corporates_url\&quot;&gt;&lt;strong&gt;open_corporates_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#physical_location\&quot;&gt;&lt;strong&gt;physical_location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#private_alias\&quot;&gt;&lt;strong&gt;private_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#public_alias\&quot;&gt;&lt;strong&gt;public_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param otheraccountid [String] The OTHERACCOUNTID identifier
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(GetOtherAccountMetadata200Response, Integer, Hash)>] GetOtherAccountMetadata200Response data, response status code and response headers
+    def get_other_account_metadata_with_http_info(bankid, accountid, viewid, otheraccountid, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.get_other_account_metadata ...'
+      end
+      # verify the required parameter 'bankid' is set
+      if @api_client.config.client_side_validation && bankid.nil?
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.get_other_account_metadata"
+      end
+      # verify the required parameter 'accountid' is set
+      if @api_client.config.client_side_validation && accountid.nil?
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.get_other_account_metadata"
+      end
+      # verify the required parameter 'viewid' is set
+      if @api_client.config.client_side_validation && viewid.nil?
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.get_other_account_metadata"
+      end
+      # verify the required parameter 'otheraccountid' is set
+      if @api_client.config.client_side_validation && otheraccountid.nil?
+        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.get_other_account_metadata"
+      end
+      # resource path
+      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'otheraccountid' + '}', CGI.escape(otheraccountid.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetOtherAccountMetadata200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
+
+      new_options = opts.merge(
+        :operation => :"CounterpartyMetadataApi.get_other_account_metadata",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#get_other_account_metadata\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get Other Account Private Alias
+    # <p>Returns the private alias of the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param otheraccountid [String] The OTHERACCOUNTID identifier
+    # @param [Hash] opts the optional parameters
+    # @return [GetCounterpartyPublicAlias200Response]
+    def get_other_account_private_alias(bankid, accountid, viewid, otheraccountid, opts = {})
+      data, _status_code, _headers = get_other_account_private_alias_with_http_info(bankid, accountid, viewid, otheraccountid, opts)
+      data
+    end
+
+    # Get Other Account Private Alias
+    # &lt;p&gt;Returns the private alias of the other account OTHER_ACCOUNT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;br /&gt; Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param otheraccountid [String] The OTHERACCOUNTID identifier
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(GetCounterpartyPublicAlias200Response, Integer, Hash)>] GetCounterpartyPublicAlias200Response data, response status code and response headers
+    def get_other_account_private_alias_with_http_info(bankid, accountid, viewid, otheraccountid, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.get_other_account_private_alias ...'
+      end
+      # verify the required parameter 'bankid' is set
+      if @api_client.config.client_side_validation && bankid.nil?
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.get_other_account_private_alias"
+      end
+      # verify the required parameter 'accountid' is set
+      if @api_client.config.client_side_validation && accountid.nil?
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.get_other_account_private_alias"
+      end
+      # verify the required parameter 'viewid' is set
+      if @api_client.config.client_side_validation && viewid.nil?
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.get_other_account_private_alias"
+      end
+      # verify the required parameter 'otheraccountid' is set
+      if @api_client.config.client_side_validation && otheraccountid.nil?
+        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.get_other_account_private_alias"
+      end
+      # resource path
+      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'otheraccountid' + '}', CGI.escape(otheraccountid.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetCounterpartyPublicAlias200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
+
+      new_options = opts.merge(
+        :operation => :"CounterpartyMetadataApi.get_other_account_private_alias",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#get_other_account_private_alias\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Update Counterparty Corporate Location
+    # <p>Update the geolocation of the counterparty's registered address</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param otheraccountid [String] The OTHERACCOUNTID identifier
+    # @param update_counterparty_corporate_location_request [UpdateCounterpartyCorporateLocationRequest] Request body
+    # @param [Hash] opts the optional parameters
+    # @return [UpdateTransactionNarrative200Response]
+    def update_counterparty_corporate_location(bankid, accountid, viewid, otheraccountid, update_counterparty_corporate_location_request, opts = {})
+      data, _status_code, _headers = update_counterparty_corporate_location_with_http_info(bankid, accountid, viewid, otheraccountid, update_counterparty_corporate_location_request, opts)
+      data
+    end
+
+    # Update Counterparty Corporate Location
+    # &lt;p&gt;Update the geolocation of the counterparty&#39;s registered address&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param otheraccountid [String] The OTHERACCOUNTID identifier
+    # @param update_counterparty_corporate_location_request [UpdateCounterpartyCorporateLocationRequest] Request body
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(UpdateTransactionNarrative200Response, Integer, Hash)>] UpdateTransactionNarrative200Response data, response status code and response headers
+    def update_counterparty_corporate_location_with_http_info(bankid, accountid, viewid, otheraccountid, update_counterparty_corporate_location_request, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.update_counterparty_corporate_location ...'
+      end
+      # verify the required parameter 'bankid' is set
+      if @api_client.config.client_side_validation && bankid.nil?
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.update_counterparty_corporate_location"
+      end
+      # verify the required parameter 'accountid' is set
+      if @api_client.config.client_side_validation && accountid.nil?
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.update_counterparty_corporate_location"
+      end
+      # verify the required parameter 'viewid' is set
+      if @api_client.config.client_side_validation && viewid.nil?
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.update_counterparty_corporate_location"
+      end
+      # verify the required parameter 'otheraccountid' is set
+      if @api_client.config.client_side_validation && otheraccountid.nil?
+        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.update_counterparty_corporate_location"
+      end
+      # verify the required parameter 'update_counterparty_corporate_location_request' is set
+      if @api_client.config.client_side_validation && update_counterparty_corporate_location_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_counterparty_corporate_location_request' when calling CounterpartyMetadataApi.update_counterparty_corporate_location"
+      end
+      # resource path
+      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'otheraccountid' + '}', CGI.escape(otheraccountid.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_counterparty_corporate_location_request)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'UpdateTransactionNarrative200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
+
+      new_options = opts.merge(
+        :operation => :"CounterpartyMetadataApi.update_counterparty_corporate_location",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#update_counterparty_corporate_location\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Update Counterparty Image Url
+    # <p>Update the url that points to the logo of the counterparty</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param otheraccountid [String] The OTHERACCOUNTID identifier
+    # @param update_counterparty_image_url_request [UpdateCounterpartyImageUrlRequest] Request body
+    # @param [Hash] opts the optional parameters
+    # @return [UpdateTransactionNarrative200Response]
+    def update_counterparty_image_url(bankid, accountid, viewid, otheraccountid, update_counterparty_image_url_request, opts = {})
+      data, _status_code, _headers = update_counterparty_image_url_with_http_info(bankid, accountid, viewid, otheraccountid, update_counterparty_image_url_request, opts)
+      data
+    end
+
+    # Update Counterparty Image Url
+    # &lt;p&gt;Update the url that points to the logo of the counterparty&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param otheraccountid [String] The OTHERACCOUNTID identifier
+    # @param update_counterparty_image_url_request [UpdateCounterpartyImageUrlRequest] Request body
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(UpdateTransactionNarrative200Response, Integer, Hash)>] UpdateTransactionNarrative200Response data, response status code and response headers
+    def update_counterparty_image_url_with_http_info(bankid, accountid, viewid, otheraccountid, update_counterparty_image_url_request, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.update_counterparty_image_url ...'
+      end
+      # verify the required parameter 'bankid' is set
+      if @api_client.config.client_side_validation && bankid.nil?
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.update_counterparty_image_url"
+      end
+      # verify the required parameter 'accountid' is set
+      if @api_client.config.client_side_validation && accountid.nil?
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.update_counterparty_image_url"
+      end
+      # verify the required parameter 'viewid' is set
+      if @api_client.config.client_side_validation && viewid.nil?
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.update_counterparty_image_url"
+      end
+      # verify the required parameter 'otheraccountid' is set
+      if @api_client.config.client_side_validation && otheraccountid.nil?
+        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.update_counterparty_image_url"
+      end
+      # verify the required parameter 'update_counterparty_image_url_request' is set
+      if @api_client.config.client_side_validation && update_counterparty_image_url_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_counterparty_image_url_request' when calling CounterpartyMetadataApi.update_counterparty_image_url"
+      end
+      # resource path
+      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'otheraccountid' + '}', CGI.escape(otheraccountid.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_counterparty_image_url_request)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'UpdateTransactionNarrative200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"CounterpartyMetadataApi.update_counterparty_image_url",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#update_counterparty_image_url\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Update Counterparty More Info
+    # <p>Update the more info description of the counter party from the perpestive of the account e.g. My dentist</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param otheraccountid [String] The OTHERACCOUNTID identifier
+    # @param update_counterparty_more_info_request [UpdateCounterpartyMoreInfoRequest] Request body
+    # @param [Hash] opts the optional parameters
+    # @return [UpdateTransactionNarrative200Response]
+    def update_counterparty_more_info(bankid, accountid, viewid, otheraccountid, update_counterparty_more_info_request, opts = {})
+      data, _status_code, _headers = update_counterparty_more_info_with_http_info(bankid, accountid, viewid, otheraccountid, update_counterparty_more_info_request, opts)
+      data
+    end
+
+    # Update Counterparty More Info
+    # &lt;p&gt;Update the more info description of the counter party from the perpestive of the account e.g. My dentist&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param otheraccountid [String] The OTHERACCOUNTID identifier
+    # @param update_counterparty_more_info_request [UpdateCounterpartyMoreInfoRequest] Request body
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(UpdateTransactionNarrative200Response, Integer, Hash)>] UpdateTransactionNarrative200Response data, response status code and response headers
+    def update_counterparty_more_info_with_http_info(bankid, accountid, viewid, otheraccountid, update_counterparty_more_info_request, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.update_counterparty_more_info ...'
+      end
+      # verify the required parameter 'bankid' is set
+      if @api_client.config.client_side_validation && bankid.nil?
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.update_counterparty_more_info"
+      end
+      # verify the required parameter 'accountid' is set
+      if @api_client.config.client_side_validation && accountid.nil?
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.update_counterparty_more_info"
+      end
+      # verify the required parameter 'viewid' is set
+      if @api_client.config.client_side_validation && viewid.nil?
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.update_counterparty_more_info"
+      end
+      # verify the required parameter 'otheraccountid' is set
+      if @api_client.config.client_side_validation && otheraccountid.nil?
+        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.update_counterparty_more_info"
+      end
+      # verify the required parameter 'update_counterparty_more_info_request' is set
+      if @api_client.config.client_side_validation && update_counterparty_more_info_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_counterparty_more_info_request' when calling CounterpartyMetadataApi.update_counterparty_more_info"
+      end
+      # resource path
+      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'otheraccountid' + '}', CGI.escape(otheraccountid.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_counterparty_more_info_request)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'UpdateTransactionNarrative200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
+
+      new_options = opts.merge(
+        :operation => :"CounterpartyMetadataApi.update_counterparty_more_info",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#update_counterparty_more_info\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Update Open Corporates Url of Counterparty
+    # <p>Update open corporate url of other bank account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param otheraccountid [String] The OTHERACCOUNTID identifier
+    # @param update_counterparty_open_corporates_url_request [UpdateCounterpartyOpenCorporatesUrlRequest] Request body
+    # @param [Hash] opts the optional parameters
+    # @return [UpdateTransactionNarrative200Response]
+    def update_counterparty_open_corporates_url(bankid, accountid, viewid, otheraccountid, update_counterparty_open_corporates_url_request, opts = {})
+      data, _status_code, _headers = update_counterparty_open_corporates_url_with_http_info(bankid, accountid, viewid, otheraccountid, update_counterparty_open_corporates_url_request, opts)
+      data
+    end
+
+    # Update Open Corporates Url of Counterparty
+    # &lt;p&gt;Update open corporate url of other bank account&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param otheraccountid [String] The OTHERACCOUNTID identifier
+    # @param update_counterparty_open_corporates_url_request [UpdateCounterpartyOpenCorporatesUrlRequest] Request body
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(UpdateTransactionNarrative200Response, Integer, Hash)>] UpdateTransactionNarrative200Response data, response status code and response headers
+    def update_counterparty_open_corporates_url_with_http_info(bankid, accountid, viewid, otheraccountid, update_counterparty_open_corporates_url_request, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.update_counterparty_open_corporates_url ...'
+      end
+      # verify the required parameter 'bankid' is set
+      if @api_client.config.client_side_validation && bankid.nil?
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.update_counterparty_open_corporates_url"
+      end
+      # verify the required parameter 'accountid' is set
+      if @api_client.config.client_side_validation && accountid.nil?
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.update_counterparty_open_corporates_url"
+      end
+      # verify the required parameter 'viewid' is set
+      if @api_client.config.client_side_validation && viewid.nil?
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.update_counterparty_open_corporates_url"
+      end
+      # verify the required parameter 'otheraccountid' is set
+      if @api_client.config.client_side_validation && otheraccountid.nil?
+        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.update_counterparty_open_corporates_url"
+      end
+      # verify the required parameter 'update_counterparty_open_corporates_url_request' is set
+      if @api_client.config.client_side_validation && update_counterparty_open_corporates_url_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_counterparty_open_corporates_url_request' when calling CounterpartyMetadataApi.update_counterparty_open_corporates_url"
+      end
+      # resource path
+      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'otheraccountid' + '}', CGI.escape(otheraccountid.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_counterparty_open_corporates_url_request)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'UpdateTransactionNarrative200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
+
+      new_options = opts.merge(
+        :operation => :"CounterpartyMetadataApi.update_counterparty_open_corporates_url",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#update_counterparty_open_corporates_url\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Update Counterparty Physical Location
+    # <p>Update geocoordinates of the counterparty's main location</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param otheraccountid [String] The OTHERACCOUNTID identifier
+    # @param update_counterparty_physical_location_request [UpdateCounterpartyPhysicalLocationRequest] Request body
+    # @param [Hash] opts the optional parameters
+    # @return [UpdateTransactionNarrative200Response]
+    def update_counterparty_physical_location(bankid, accountid, viewid, otheraccountid, update_counterparty_physical_location_request, opts = {})
+      data, _status_code, _headers = update_counterparty_physical_location_with_http_info(bankid, accountid, viewid, otheraccountid, update_counterparty_physical_location_request, opts)
+      data
+    end
+
+    # Update Counterparty Physical Location
+    # &lt;p&gt;Update geocoordinates of the counterparty&#39;s main location&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param otheraccountid [String] The OTHERACCOUNTID identifier
+    # @param update_counterparty_physical_location_request [UpdateCounterpartyPhysicalLocationRequest] Request body
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(UpdateTransactionNarrative200Response, Integer, Hash)>] UpdateTransactionNarrative200Response data, response status code and response headers
+    def update_counterparty_physical_location_with_http_info(bankid, accountid, viewid, otheraccountid, update_counterparty_physical_location_request, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.update_counterparty_physical_location ...'
+      end
+      # verify the required parameter 'bankid' is set
+      if @api_client.config.client_side_validation && bankid.nil?
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.update_counterparty_physical_location"
+      end
+      # verify the required parameter 'accountid' is set
+      if @api_client.config.client_side_validation && accountid.nil?
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.update_counterparty_physical_location"
+      end
+      # verify the required parameter 'viewid' is set
+      if @api_client.config.client_side_validation && viewid.nil?
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.update_counterparty_physical_location"
+      end
+      # verify the required parameter 'otheraccountid' is set
+      if @api_client.config.client_side_validation && otheraccountid.nil?
+        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.update_counterparty_physical_location"
+      end
+      # verify the required parameter 'update_counterparty_physical_location_request' is set
+      if @api_client.config.client_side_validation && update_counterparty_physical_location_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_counterparty_physical_location_request' when calling CounterpartyMetadataApi.update_counterparty_physical_location"
+      end
+      # resource path
+      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'otheraccountid' + '}', CGI.escape(otheraccountid.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_counterparty_physical_location_request)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'UpdateTransactionNarrative200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
+
+      new_options = opts.merge(
+        :operation => :"CounterpartyMetadataApi.update_counterparty_physical_location",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#update_counterparty_physical_location\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Update Counterparty Private Alias
+    # <p>Updates the private alias of the counterparty (AKA other account) OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param otheraccountid [String] The OTHERACCOUNTID identifier
+    # @param get_counterparty_public_alias200_response [GetCounterpartyPublicAlias200Response] Request body
+    # @param [Hash] opts the optional parameters
+    # @return [UpdateTransactionNarrative200Response]
+    def update_counterparty_private_alias(bankid, accountid, viewid, otheraccountid, get_counterparty_public_alias200_response, opts = {})
+      data, _status_code, _headers = update_counterparty_private_alias_with_http_info(bankid, accountid, viewid, otheraccountid, get_counterparty_public_alias200_response, opts)
+      data
+    end
+
+    # Update Counterparty Private Alias
+    # &lt;p&gt;Updates the private alias of the counterparty (AKA other account) OTHER_ACCOUNT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;br /&gt; Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param otheraccountid [String] The OTHERACCOUNTID identifier
+    # @param get_counterparty_public_alias200_response [GetCounterpartyPublicAlias200Response] Request body
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(UpdateTransactionNarrative200Response, Integer, Hash)>] UpdateTransactionNarrative200Response data, response status code and response headers
+    def update_counterparty_private_alias_with_http_info(bankid, accountid, viewid, otheraccountid, get_counterparty_public_alias200_response, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.update_counterparty_private_alias ...'
+      end
+      # verify the required parameter 'bankid' is set
+      if @api_client.config.client_side_validation && bankid.nil?
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.update_counterparty_private_alias"
+      end
+      # verify the required parameter 'accountid' is set
+      if @api_client.config.client_side_validation && accountid.nil?
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.update_counterparty_private_alias"
+      end
+      # verify the required parameter 'viewid' is set
+      if @api_client.config.client_side_validation && viewid.nil?
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.update_counterparty_private_alias"
+      end
+      # verify the required parameter 'otheraccountid' is set
+      if @api_client.config.client_side_validation && otheraccountid.nil?
+        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.update_counterparty_private_alias"
+      end
+      # verify the required parameter 'get_counterparty_public_alias200_response' is set
+      if @api_client.config.client_side_validation && get_counterparty_public_alias200_response.nil?
+        fail ArgumentError, "Missing the required parameter 'get_counterparty_public_alias200_response' when calling CounterpartyMetadataApi.update_counterparty_private_alias"
+      end
+      # resource path
+      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'otheraccountid' + '}', CGI.escape(otheraccountid.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(get_counterparty_public_alias200_response)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'UpdateTransactionNarrative200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
+
+      new_options = opts.merge(
+        :operation => :"CounterpartyMetadataApi.update_counterparty_private_alias",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#update_counterparty_private_alias\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Update public alias of other bank account
+    # <p>Updates the public alias of the other account / counterparty OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param otheraccountid [String] The OTHERACCOUNTID identifier
+    # @param get_counterparty_public_alias200_response [GetCounterpartyPublicAlias200Response] Request body
+    # @param [Hash] opts the optional parameters
+    # @return [UpdateTransactionNarrative200Response]
+    def update_counterparty_public_alias(bankid, accountid, viewid, otheraccountid, get_counterparty_public_alias200_response, opts = {})
+      data, _status_code, _headers = update_counterparty_public_alias_with_http_info(bankid, accountid, viewid, otheraccountid, get_counterparty_public_alias200_response, opts)
+      data
+    end
+
+    # Update public alias of other bank account
+    # &lt;p&gt;Updates the public alias of the other account / counterparty OTHER_ACCOUNT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;br /&gt; Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param otheraccountid [String] The OTHERACCOUNTID identifier
+    # @param get_counterparty_public_alias200_response [GetCounterpartyPublicAlias200Response] Request body
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(UpdateTransactionNarrative200Response, Integer, Hash)>] UpdateTransactionNarrative200Response data, response status code and response headers
+    def update_counterparty_public_alias_with_http_info(bankid, accountid, viewid, otheraccountid, get_counterparty_public_alias200_response, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.update_counterparty_public_alias ...'
+      end
+      # verify the required parameter 'bankid' is set
+      if @api_client.config.client_side_validation && bankid.nil?
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.update_counterparty_public_alias"
+      end
+      # verify the required parameter 'accountid' is set
+      if @api_client.config.client_side_validation && accountid.nil?
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.update_counterparty_public_alias"
+      end
+      # verify the required parameter 'viewid' is set
+      if @api_client.config.client_side_validation && viewid.nil?
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.update_counterparty_public_alias"
+      end
+      # verify the required parameter 'otheraccountid' is set
+      if @api_client.config.client_side_validation && otheraccountid.nil?
+        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.update_counterparty_public_alias"
+      end
+      # verify the required parameter 'get_counterparty_public_alias200_response' is set
+      if @api_client.config.client_side_validation && get_counterparty_public_alias200_response.nil?
+        fail ArgumentError, "Missing the required parameter 'get_counterparty_public_alias200_response' when calling CounterpartyMetadataApi.update_counterparty_public_alias"
+      end
+      # resource path
+      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'otheraccountid' + '}', CGI.escape(otheraccountid.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(get_counterparty_public_alias200_response)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'UpdateTransactionNarrative200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
+
+      new_options = opts.merge(
+        :operation => :"CounterpartyMetadataApi.update_counterparty_public_alias",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#update_counterparty_public_alias\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Update url of other bank account
+    # <p>A url which represents the counterparty (home page url etc.)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param otheraccountid [String] The OTHERACCOUNTID identifier
+    # @param update_counterparty_url_request [UpdateCounterpartyUrlRequest] Request body
+    # @param [Hash] opts the optional parameters
+    # @return [UpdateTransactionNarrative200Response]
+    def update_counterparty_url(bankid, accountid, viewid, otheraccountid, update_counterparty_url_request, opts = {})
+      data, _status_code, _headers = update_counterparty_url_with_http_info(bankid, accountid, viewid, otheraccountid, update_counterparty_url_request, opts)
+      data
+    end
+
+    # Update url of other bank account
+    # &lt;p&gt;A url which represents the counterparty (home page url etc.)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param otheraccountid [String] The OTHERACCOUNTID identifier
+    # @param update_counterparty_url_request [UpdateCounterpartyUrlRequest] Request body
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(UpdateTransactionNarrative200Response, Integer, Hash)>] UpdateTransactionNarrative200Response data, response status code and response headers
+    def update_counterparty_url_with_http_info(bankid, accountid, viewid, otheraccountid, update_counterparty_url_request, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: CounterpartyMetadataApi.update_counterparty_url ...'
+      end
+      # verify the required parameter 'bankid' is set
+      if @api_client.config.client_side_validation && bankid.nil?
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyMetadataApi.update_counterparty_url"
+      end
+      # verify the required parameter 'accountid' is set
+      if @api_client.config.client_side_validation && accountid.nil?
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyMetadataApi.update_counterparty_url"
+      end
+      # verify the required parameter 'viewid' is set
+      if @api_client.config.client_side_validation && viewid.nil?
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyMetadataApi.update_counterparty_url"
+      end
+      # verify the required parameter 'otheraccountid' is set
+      if @api_client.config.client_side_validation && otheraccountid.nil?
+        fail ArgumentError, "Missing the required parameter 'otheraccountid' when calling CounterpartyMetadataApi.update_counterparty_url"
+      end
+      # verify the required parameter 'update_counterparty_url_request' is set
+      if @api_client.config.client_side_validation && update_counterparty_url_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_counterparty_url_request' when calling CounterpartyMetadataApi.update_counterparty_url"
+      end
+      # resource path
+      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'otheraccountid' + '}', CGI.escape(otheraccountid.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_counterparty_url_request)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'UpdateTransactionNarrative200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
+
+      new_options = opts.merge(
+        :operation => :"CounterpartyMetadataApi.update_counterparty_url",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: CounterpartyMetadataApi#update_counterparty_url\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

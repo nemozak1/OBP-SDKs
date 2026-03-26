@@ -1,0 +1,34 @@
+# OpenBankProject::AddKycDocument200Response
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **number** | **String** |  | [optional] |
+| **customer_id** | **String** |  | [optional] |
+| **customer_number** | **String** |  | [optional] |
+| **issue_date** | **Time** |  | [optional] |
+| **bank_id** | **String** |  | [optional] |
+| **id** | **String** |  | [optional] |
+| **type** | **String** |  | [optional] |
+| **issue_place** | **String** |  | [optional] |
+| **expiry_date** | **Time** |  | [optional] |
+
+## Example
+
+```ruby
+require 'obp_ruby'
+
+instance = OpenBankProject::AddKycDocument200Response.new(
+  number: null,
+  customer_id: null,
+  customer_number: null,
+  issue_date: null,
+  bank_id: null,
+  id: null,
+  type: null,
+  issue_place: null,
+  expiry_date: null
+)
+```
+

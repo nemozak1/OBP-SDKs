@@ -1,26 +1,26 @@
 # \ABACAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv600CreateAbacRule**](ABACAPI.md#OBPv600CreateAbacRule) | **Post** /obp/v6.0.0/management/abac-rules | Create ABAC Rule
-[**OBPv600DeleteAbacRule**](ABACAPI.md#OBPv600DeleteAbacRule) | **Delete** /obp/v6.0.0/management/abac-rules/{abacruleid} | Delete ABAC Rule
-[**OBPv600ExecuteAbacPolicy**](ABACAPI.md#OBPv600ExecuteAbacPolicy) | **Post** /obp/v6.0.0/management/abac-policies/{policy}/execute | Execute ABAC Policy
-[**OBPv600ExecuteAbacRule**](ABACAPI.md#OBPv600ExecuteAbacRule) | **Post** /obp/v6.0.0/management/abac-rules/{abacruleid}/execute | Execute ABAC Rule
-[**OBPv600GetAbacPolicies**](ABACAPI.md#OBPv600GetAbacPolicies) | **Get** /obp/v6.0.0/management/abac-policies | Get ABAC Policies
-[**OBPv600GetAbacRule**](ABACAPI.md#OBPv600GetAbacRule) | **Get** /obp/v6.0.0/management/abac-rules/{abacruleid} | Get ABAC Rule
-[**OBPv600GetAbacRuleSchema**](ABACAPI.md#OBPv600GetAbacRuleSchema) | **Get** /obp/v6.0.0/management/abac-rules-schema | Get ABAC Rule Schema
-[**OBPv600GetAbacRules**](ABACAPI.md#OBPv600GetAbacRules) | **Get** /obp/v6.0.0/management/abac-rules | Get ABAC Rules
-[**OBPv600GetAbacRulesByPolicy**](ABACAPI.md#OBPv600GetAbacRulesByPolicy) | **Get** /obp/v6.0.0/management/abac-rules/policy/{policy} | Get ABAC Rules by Policy
-[**OBPv600UpdateAbacRule**](ABACAPI.md#OBPv600UpdateAbacRule) | **Put** /obp/v6.0.0/management/abac-rules/{abacruleid} | Update ABAC Rule
-[**OBPv600ValidateAbacRule**](ABACAPI.md#OBPv600ValidateAbacRule) | **Post** /obp/v6.0.0/management/abac-rules/validate | Validate ABAC Rule
+[**CreateAbacRule**](ABACAPI.md#CreateAbacRule) | **Post** /obp/v6.0.0/management/abac-rules | Create ABAC Rule
+[**DeleteAbacRule**](ABACAPI.md#DeleteAbacRule) | **Delete** /obp/v6.0.0/management/abac-rules/{abacruleid} | Delete ABAC Rule
+[**ExecuteAbacPolicy**](ABACAPI.md#ExecuteAbacPolicy) | **Post** /obp/v6.0.0/management/abac-policies/{policy}/execute | Execute ABAC Policy
+[**ExecuteAbacRule**](ABACAPI.md#ExecuteAbacRule) | **Post** /obp/v6.0.0/management/abac-rules/{abacruleid}/execute | Execute ABAC Rule
+[**GetAbacPolicies**](ABACAPI.md#GetAbacPolicies) | **Get** /obp/v6.0.0/management/abac-policies | Get ABAC Policies
+[**GetAbacRule**](ABACAPI.md#GetAbacRule) | **Get** /obp/v6.0.0/management/abac-rules/{abacruleid} | Get ABAC Rule
+[**GetAbacRuleSchema**](ABACAPI.md#GetAbacRuleSchema) | **Get** /obp/v6.0.0/management/abac-rules-schema | Get ABAC Rule Schema
+[**GetAbacRules**](ABACAPI.md#GetAbacRules) | **Get** /obp/v6.0.0/management/abac-rules | Get ABAC Rules
+[**GetAbacRulesByPolicy**](ABACAPI.md#GetAbacRulesByPolicy) | **Get** /obp/v6.0.0/management/abac-rules/policy/{policy} | Get ABAC Rules by Policy
+[**UpdateAbacRule**](ABACAPI.md#UpdateAbacRule) | **Put** /obp/v6.0.0/management/abac-rules/{abacruleid} | Update ABAC Rule
+[**ValidateAbacRule**](ABACAPI.md#ValidateAbacRule) | **Post** /obp/v6.0.0/management/abac-rules/validate | Validate ABAC Rule
 
 
 
-## OBPv600CreateAbacRule
+## CreateAbacRule
 
-> OBPv600GetAbacRule200Response OBPv600CreateAbacRule(ctx).OBPv600UpdateAbacRuleRequest(oBPv600UpdateAbacRuleRequest).Execute()
+> GetAbacRule200Response CreateAbacRule(ctx).UpdateAbacRuleRequest(updateAbacRuleRequest).Execute()
 
 Create ABAC Rule
 
@@ -39,17 +39,17 @@ import (
 )
 
 func main() {
-	oBPv600UpdateAbacRuleRequest := *openapiclient.NewOBPv600UpdateAbacRuleRequest("Type_example", *openapiclient.NewOBPv600UpdateAbacRuleRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv600UpdateAbacRuleRequest | Request body
+	updateAbacRuleRequest := *openapiclient.NewUpdateAbacRuleRequest() // UpdateAbacRuleRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ABACAPI.OBPv600CreateAbacRule(context.Background()).OBPv600UpdateAbacRuleRequest(oBPv600UpdateAbacRuleRequest).Execute()
+	resp, r, err := apiClient.ABACAPI.CreateAbacRule(context.Background()).UpdateAbacRuleRequest(updateAbacRuleRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ABACAPI.OBPv600CreateAbacRule``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ABACAPI.CreateAbacRule``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600CreateAbacRule`: OBPv600GetAbacRule200Response
-	fmt.Fprintf(os.Stdout, "Response from `ABACAPI.OBPv600CreateAbacRule`: %v\n", resp)
+	// response from `CreateAbacRule`: GetAbacRule200Response
+	fmt.Fprintf(os.Stdout, "Response from `ABACAPI.CreateAbacRule`: %v\n", resp)
 }
 ```
 
@@ -59,16 +59,16 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600CreateAbacRuleRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateAbacRuleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv600UpdateAbacRuleRequest** | [**OBPv600UpdateAbacRuleRequest**](OBPv600UpdateAbacRuleRequest.md) | Request body | 
+ **updateAbacRuleRequest** | [**UpdateAbacRuleRequest**](UpdateAbacRuleRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600GetAbacRule200Response**](OBPv600GetAbacRule200Response.md)
+[**GetAbacRule200Response**](GetAbacRule200Response.md)
 
 ### Authorization
 
@@ -84,9 +84,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600DeleteAbacRule
+## DeleteAbacRule
 
-> OBPv600DeleteAbacRule(ctx, abacruleid).Execute()
+> DeleteAbacRule(ctx, abacruleid).Execute()
 
 Delete ABAC Rule
 
@@ -109,9 +109,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.ABACAPI.OBPv600DeleteAbacRule(context.Background(), abacruleid).Execute()
+	r, err := apiClient.ABACAPI.DeleteAbacRule(context.Background(), abacruleid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ABACAPI.OBPv600DeleteAbacRule``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ABACAPI.DeleteAbacRule``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600DeleteAbacRuleRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteAbacRuleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -152,9 +152,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600ExecuteAbacPolicy
+## ExecuteAbacPolicy
 
-> OBPv600ExecuteAbacPolicy200Response OBPv600ExecuteAbacPolicy(ctx, policy).OBPv600ExecuteAbacPolicyRequest(oBPv600ExecuteAbacPolicyRequest).Execute()
+> ExecuteAbacPolicy200Response ExecuteAbacPolicy(ctx, policy).ExecuteAbacPolicyRequest(executeAbacPolicyRequest).Execute()
 
 Execute ABAC Policy
 
@@ -174,17 +174,17 @@ import (
 
 func main() {
 	policy := "policy_example" // string | The POLICY identifier
-	oBPv600ExecuteAbacPolicyRequest := *openapiclient.NewOBPv600ExecuteAbacPolicyRequest("Type_example", *openapiclient.NewOBPv600ExecuteAbacPolicyRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv600ExecuteAbacPolicyRequest | Request body
+	executeAbacPolicyRequest := *openapiclient.NewExecuteAbacPolicyRequest() // ExecuteAbacPolicyRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ABACAPI.OBPv600ExecuteAbacPolicy(context.Background(), policy).OBPv600ExecuteAbacPolicyRequest(oBPv600ExecuteAbacPolicyRequest).Execute()
+	resp, r, err := apiClient.ABACAPI.ExecuteAbacPolicy(context.Background(), policy).ExecuteAbacPolicyRequest(executeAbacPolicyRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ABACAPI.OBPv600ExecuteAbacPolicy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ABACAPI.ExecuteAbacPolicy``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600ExecuteAbacPolicy`: OBPv600ExecuteAbacPolicy200Response
-	fmt.Fprintf(os.Stdout, "Response from `ABACAPI.OBPv600ExecuteAbacPolicy`: %v\n", resp)
+	// response from `ExecuteAbacPolicy`: ExecuteAbacPolicy200Response
+	fmt.Fprintf(os.Stdout, "Response from `ABACAPI.ExecuteAbacPolicy`: %v\n", resp)
 }
 ```
 
@@ -198,17 +198,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600ExecuteAbacPolicyRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiExecuteAbacPolicyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv600ExecuteAbacPolicyRequest** | [**OBPv600ExecuteAbacPolicyRequest**](OBPv600ExecuteAbacPolicyRequest.md) | Request body | 
+ **executeAbacPolicyRequest** | [**ExecuteAbacPolicyRequest**](ExecuteAbacPolicyRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600ExecuteAbacPolicy200Response**](OBPv600ExecuteAbacPolicy200Response.md)
+[**ExecuteAbacPolicy200Response**](ExecuteAbacPolicy200Response.md)
 
 ### Authorization
 
@@ -224,9 +224,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600ExecuteAbacRule
+## ExecuteAbacRule
 
-> OBPv600ExecuteAbacPolicy200Response OBPv600ExecuteAbacRule(ctx, abacruleid).OBPv600ExecuteAbacPolicyRequest(oBPv600ExecuteAbacPolicyRequest).Execute()
+> ExecuteAbacPolicy200Response ExecuteAbacRule(ctx, abacruleid).ExecuteAbacPolicyRequest(executeAbacPolicyRequest).Execute()
 
 Execute ABAC Rule
 
@@ -246,17 +246,17 @@ import (
 
 func main() {
 	abacruleid := "abacruleid_example" // string | The ABACRULEID identifier
-	oBPv600ExecuteAbacPolicyRequest := *openapiclient.NewOBPv600ExecuteAbacPolicyRequest("Type_example", *openapiclient.NewOBPv600ExecuteAbacPolicyRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv600ExecuteAbacPolicyRequest | Request body
+	executeAbacPolicyRequest := *openapiclient.NewExecuteAbacPolicyRequest() // ExecuteAbacPolicyRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ABACAPI.OBPv600ExecuteAbacRule(context.Background(), abacruleid).OBPv600ExecuteAbacPolicyRequest(oBPv600ExecuteAbacPolicyRequest).Execute()
+	resp, r, err := apiClient.ABACAPI.ExecuteAbacRule(context.Background(), abacruleid).ExecuteAbacPolicyRequest(executeAbacPolicyRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ABACAPI.OBPv600ExecuteAbacRule``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ABACAPI.ExecuteAbacRule``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600ExecuteAbacRule`: OBPv600ExecuteAbacPolicy200Response
-	fmt.Fprintf(os.Stdout, "Response from `ABACAPI.OBPv600ExecuteAbacRule`: %v\n", resp)
+	// response from `ExecuteAbacRule`: ExecuteAbacPolicy200Response
+	fmt.Fprintf(os.Stdout, "Response from `ABACAPI.ExecuteAbacRule`: %v\n", resp)
 }
 ```
 
@@ -270,17 +270,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600ExecuteAbacRuleRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiExecuteAbacRuleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv600ExecuteAbacPolicyRequest** | [**OBPv600ExecuteAbacPolicyRequest**](OBPv600ExecuteAbacPolicyRequest.md) | Request body | 
+ **executeAbacPolicyRequest** | [**ExecuteAbacPolicyRequest**](ExecuteAbacPolicyRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600ExecuteAbacPolicy200Response**](OBPv600ExecuteAbacPolicy200Response.md)
+[**ExecuteAbacPolicy200Response**](ExecuteAbacPolicy200Response.md)
 
 ### Authorization
 
@@ -296,9 +296,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600GetAbacPolicies
+## GetAbacPolicies
 
-> OBPv600GetAbacPolicies200Response OBPv600GetAbacPolicies(ctx).Execute()
+> GetAbacPolicies200Response GetAbacPolicies(ctx).Execute()
 
 Get ABAC Policies
 
@@ -320,13 +320,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ABACAPI.OBPv600GetAbacPolicies(context.Background()).Execute()
+	resp, r, err := apiClient.ABACAPI.GetAbacPolicies(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ABACAPI.OBPv600GetAbacPolicies``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ABACAPI.GetAbacPolicies``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetAbacPolicies`: OBPv600GetAbacPolicies200Response
-	fmt.Fprintf(os.Stdout, "Response from `ABACAPI.OBPv600GetAbacPolicies`: %v\n", resp)
+	// response from `GetAbacPolicies`: GetAbacPolicies200Response
+	fmt.Fprintf(os.Stdout, "Response from `ABACAPI.GetAbacPolicies`: %v\n", resp)
 }
 ```
 
@@ -336,12 +336,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetAbacPoliciesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAbacPoliciesRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetAbacPolicies200Response**](OBPv600GetAbacPolicies200Response.md)
+[**GetAbacPolicies200Response**](GetAbacPolicies200Response.md)
 
 ### Authorization
 
@@ -357,9 +357,9 @@ Other parameters are passed through a pointer to a apiOBPv600GetAbacPoliciesRequ
 [[Back to README]](../README.md)
 
 
-## OBPv600GetAbacRule
+## GetAbacRule
 
-> OBPv600GetAbacRule200Response OBPv600GetAbacRule(ctx, abacruleid).Execute()
+> GetAbacRule200Response GetAbacRule(ctx, abacruleid).Execute()
 
 Get ABAC Rule
 
@@ -382,13 +382,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ABACAPI.OBPv600GetAbacRule(context.Background(), abacruleid).Execute()
+	resp, r, err := apiClient.ABACAPI.GetAbacRule(context.Background(), abacruleid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ABACAPI.OBPv600GetAbacRule``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ABACAPI.GetAbacRule``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetAbacRule`: OBPv600GetAbacRule200Response
-	fmt.Fprintf(os.Stdout, "Response from `ABACAPI.OBPv600GetAbacRule`: %v\n", resp)
+	// response from `GetAbacRule`: GetAbacRule200Response
+	fmt.Fprintf(os.Stdout, "Response from `ABACAPI.GetAbacRule`: %v\n", resp)
 }
 ```
 
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetAbacRuleRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAbacRuleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -411,7 +411,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetAbacRule200Response**](OBPv600GetAbacRule200Response.md)
+[**GetAbacRule200Response**](GetAbacRule200Response.md)
 
 ### Authorization
 
@@ -427,9 +427,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600GetAbacRuleSchema
+## GetAbacRuleSchema
 
-> OBPv600GetAbacRuleSchema200Response OBPv600GetAbacRuleSchema(ctx).Execute()
+> GetAbacRuleSchema200Response GetAbacRuleSchema(ctx).Execute()
 
 Get ABAC Rule Schema
 
@@ -451,13 +451,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ABACAPI.OBPv600GetAbacRuleSchema(context.Background()).Execute()
+	resp, r, err := apiClient.ABACAPI.GetAbacRuleSchema(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ABACAPI.OBPv600GetAbacRuleSchema``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ABACAPI.GetAbacRuleSchema``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetAbacRuleSchema`: OBPv600GetAbacRuleSchema200Response
-	fmt.Fprintf(os.Stdout, "Response from `ABACAPI.OBPv600GetAbacRuleSchema`: %v\n", resp)
+	// response from `GetAbacRuleSchema`: GetAbacRuleSchema200Response
+	fmt.Fprintf(os.Stdout, "Response from `ABACAPI.GetAbacRuleSchema`: %v\n", resp)
 }
 ```
 
@@ -467,12 +467,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetAbacRuleSchemaRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAbacRuleSchemaRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetAbacRuleSchema200Response**](OBPv600GetAbacRuleSchema200Response.md)
+[**GetAbacRuleSchema200Response**](GetAbacRuleSchema200Response.md)
 
 ### Authorization
 
@@ -488,9 +488,9 @@ Other parameters are passed through a pointer to a apiOBPv600GetAbacRuleSchemaRe
 [[Back to README]](../README.md)
 
 
-## OBPv600GetAbacRules
+## GetAbacRules
 
-> OBPv600GetAbacRulesByPolicy200Response OBPv600GetAbacRules(ctx).Execute()
+> GetAbacRulesByPolicy200Response GetAbacRules(ctx).Execute()
 
 Get ABAC Rules
 
@@ -512,13 +512,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ABACAPI.OBPv600GetAbacRules(context.Background()).Execute()
+	resp, r, err := apiClient.ABACAPI.GetAbacRules(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ABACAPI.OBPv600GetAbacRules``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ABACAPI.GetAbacRules``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetAbacRules`: OBPv600GetAbacRulesByPolicy200Response
-	fmt.Fprintf(os.Stdout, "Response from `ABACAPI.OBPv600GetAbacRules`: %v\n", resp)
+	// response from `GetAbacRules`: GetAbacRulesByPolicy200Response
+	fmt.Fprintf(os.Stdout, "Response from `ABACAPI.GetAbacRules`: %v\n", resp)
 }
 ```
 
@@ -528,12 +528,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetAbacRulesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAbacRulesRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetAbacRulesByPolicy200Response**](OBPv600GetAbacRulesByPolicy200Response.md)
+[**GetAbacRulesByPolicy200Response**](GetAbacRulesByPolicy200Response.md)
 
 ### Authorization
 
@@ -549,9 +549,9 @@ Other parameters are passed through a pointer to a apiOBPv600GetAbacRulesRequest
 [[Back to README]](../README.md)
 
 
-## OBPv600GetAbacRulesByPolicy
+## GetAbacRulesByPolicy
 
-> OBPv600GetAbacRulesByPolicy200Response OBPv600GetAbacRulesByPolicy(ctx, policy).Execute()
+> GetAbacRulesByPolicy200Response GetAbacRulesByPolicy(ctx, policy).Execute()
 
 Get ABAC Rules by Policy
 
@@ -574,13 +574,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ABACAPI.OBPv600GetAbacRulesByPolicy(context.Background(), policy).Execute()
+	resp, r, err := apiClient.ABACAPI.GetAbacRulesByPolicy(context.Background(), policy).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ABACAPI.OBPv600GetAbacRulesByPolicy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ABACAPI.GetAbacRulesByPolicy``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetAbacRulesByPolicy`: OBPv600GetAbacRulesByPolicy200Response
-	fmt.Fprintf(os.Stdout, "Response from `ABACAPI.OBPv600GetAbacRulesByPolicy`: %v\n", resp)
+	// response from `GetAbacRulesByPolicy`: GetAbacRulesByPolicy200Response
+	fmt.Fprintf(os.Stdout, "Response from `ABACAPI.GetAbacRulesByPolicy`: %v\n", resp)
 }
 ```
 
@@ -594,7 +594,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetAbacRulesByPolicyRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAbacRulesByPolicyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -603,7 +603,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetAbacRulesByPolicy200Response**](OBPv600GetAbacRulesByPolicy200Response.md)
+[**GetAbacRulesByPolicy200Response**](GetAbacRulesByPolicy200Response.md)
 
 ### Authorization
 
@@ -619,9 +619,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600UpdateAbacRule
+## UpdateAbacRule
 
-> OBPv600GetAbacRule200Response OBPv600UpdateAbacRule(ctx, abacruleid).OBPv600UpdateAbacRuleRequest(oBPv600UpdateAbacRuleRequest).Execute()
+> GetAbacRule200Response UpdateAbacRule(ctx, abacruleid).UpdateAbacRuleRequest(updateAbacRuleRequest).Execute()
 
 Update ABAC Rule
 
@@ -641,17 +641,17 @@ import (
 
 func main() {
 	abacruleid := "abacruleid_example" // string | The ABACRULEID identifier
-	oBPv600UpdateAbacRuleRequest := *openapiclient.NewOBPv600UpdateAbacRuleRequest("Type_example", *openapiclient.NewOBPv600UpdateAbacRuleRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv600UpdateAbacRuleRequest | Request body
+	updateAbacRuleRequest := *openapiclient.NewUpdateAbacRuleRequest() // UpdateAbacRuleRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ABACAPI.OBPv600UpdateAbacRule(context.Background(), abacruleid).OBPv600UpdateAbacRuleRequest(oBPv600UpdateAbacRuleRequest).Execute()
+	resp, r, err := apiClient.ABACAPI.UpdateAbacRule(context.Background(), abacruleid).UpdateAbacRuleRequest(updateAbacRuleRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ABACAPI.OBPv600UpdateAbacRule``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ABACAPI.UpdateAbacRule``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600UpdateAbacRule`: OBPv600GetAbacRule200Response
-	fmt.Fprintf(os.Stdout, "Response from `ABACAPI.OBPv600UpdateAbacRule`: %v\n", resp)
+	// response from `UpdateAbacRule`: GetAbacRule200Response
+	fmt.Fprintf(os.Stdout, "Response from `ABACAPI.UpdateAbacRule`: %v\n", resp)
 }
 ```
 
@@ -665,17 +665,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600UpdateAbacRuleRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateAbacRuleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv600UpdateAbacRuleRequest** | [**OBPv600UpdateAbacRuleRequest**](OBPv600UpdateAbacRuleRequest.md) | Request body | 
+ **updateAbacRuleRequest** | [**UpdateAbacRuleRequest**](UpdateAbacRuleRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600GetAbacRule200Response**](OBPv600GetAbacRule200Response.md)
+[**GetAbacRule200Response**](GetAbacRule200Response.md)
 
 ### Authorization
 
@@ -691,9 +691,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600ValidateAbacRule
+## ValidateAbacRule
 
-> OBPv600ValidateAbacRule200Response OBPv600ValidateAbacRule(ctx).OBPv600ValidateAbacRuleRequest(oBPv600ValidateAbacRuleRequest).Execute()
+> ValidateAbacRule200Response ValidateAbacRule(ctx).ValidateAbacRuleRequest(validateAbacRuleRequest).Execute()
 
 Validate ABAC Rule
 
@@ -712,17 +712,17 @@ import (
 )
 
 func main() {
-	oBPv600ValidateAbacRuleRequest := *openapiclient.NewOBPv600ValidateAbacRuleRequest("Type_example", *openapiclient.NewOBPv600ValidateAbacRuleRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv600ValidateAbacRuleRequest | Request body
+	validateAbacRuleRequest := *openapiclient.NewValidateAbacRuleRequest() // ValidateAbacRuleRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ABACAPI.OBPv600ValidateAbacRule(context.Background()).OBPv600ValidateAbacRuleRequest(oBPv600ValidateAbacRuleRequest).Execute()
+	resp, r, err := apiClient.ABACAPI.ValidateAbacRule(context.Background()).ValidateAbacRuleRequest(validateAbacRuleRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ABACAPI.OBPv600ValidateAbacRule``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ABACAPI.ValidateAbacRule``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600ValidateAbacRule`: OBPv600ValidateAbacRule200Response
-	fmt.Fprintf(os.Stdout, "Response from `ABACAPI.OBPv600ValidateAbacRule`: %v\n", resp)
+	// response from `ValidateAbacRule`: ValidateAbacRule200Response
+	fmt.Fprintf(os.Stdout, "Response from `ABACAPI.ValidateAbacRule`: %v\n", resp)
 }
 ```
 
@@ -732,16 +732,16 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600ValidateAbacRuleRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiValidateAbacRuleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv600ValidateAbacRuleRequest** | [**OBPv600ValidateAbacRuleRequest**](OBPv600ValidateAbacRuleRequest.md) | Request body | 
+ **validateAbacRuleRequest** | [**ValidateAbacRuleRequest**](ValidateAbacRuleRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600ValidateAbacRule200Response**](OBPv600ValidateAbacRule200Response.md)
+[**ValidateAbacRule200Response**](ValidateAbacRule200Response.md)
 
 ### Authorization
 

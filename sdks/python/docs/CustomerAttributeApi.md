@@ -4,18 +4,18 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv4_0_0_create_customer_attribute**](CustomerAttributeApi.md#o_bpv4_0_0_create_customer_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attribute | Create Customer Attribute
-[**o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition**](CustomerAttributeApi.md#o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Create or Update Customer Attribute Definition
-[**o_bpv4_0_0_delete_customer_attribute**](CustomerAttributeApi.md#o_bpv4_0_0_delete_customer_attribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/{customerid}/attributes/{customerattributeid} | Delete Customer Attribute
-[**o_bpv4_0_0_delete_customer_attribute_definition**](CustomerAttributeApi.md#o_bpv4_0_0_delete_customer_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/customer | Delete Customer Attribute Definition
-[**o_bpv4_0_0_get_customer_attribute_by_id**](CustomerAttributeApi.md#o_bpv4_0_0_get_customer_attribute_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{attributeid} | Get Customer Attribute By Id
-[**o_bpv4_0_0_get_customer_attribute_definition**](CustomerAttributeApi.md#o_bpv4_0_0_get_customer_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Get Customer Attribute Definition
-[**o_bpv4_0_0_get_customer_attributes**](CustomerAttributeApi.md#o_bpv4_0_0_get_customer_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes | Get Customer Attributes
-[**o_bpv4_0_0_update_customer_attribute**](CustomerAttributeApi.md#o_bpv4_0_0_update_customer_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{customerattributeid} | Update Customer Attribute
+[**create_customer_attribute**](CustomerAttributeApi.md#create_customer_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attribute | Create Customer Attribute
+[**create_or_update_customer_attribute_attribute_definition**](CustomerAttributeApi.md#create_or_update_customer_attribute_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Create or Update Customer Attribute Definition
+[**delete_customer_attribute**](CustomerAttributeApi.md#delete_customer_attribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/{customerid}/attributes/{customerattributeid} | Delete Customer Attribute
+[**delete_customer_attribute_definition**](CustomerAttributeApi.md#delete_customer_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/customer | Delete Customer Attribute Definition
+[**get_customer_attribute_by_id**](CustomerAttributeApi.md#get_customer_attribute_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{attributeid} | Get Customer Attribute By Id
+[**get_customer_attribute_definition**](CustomerAttributeApi.md#get_customer_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Get Customer Attribute Definition
+[**get_customer_attributes**](CustomerAttributeApi.md#get_customer_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes | Get Customer Attributes
+[**update_customer_attribute**](CustomerAttributeApi.md#update_customer_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{customerattributeid} | Update Customer Attribute
 
 
-# **o_bpv4_0_0_create_customer_attribute**
-> OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner o_bpv4_0_0_create_customer_attribute(bankid, customerid, obpv600_create_personal_data_field_request)
+# **create_customer_attribute**
+> GetCustomerAttributes200ResponseCustomerAttributesInner create_customer_attribute(bankid, customerid, create_personal_data_field_request)
 
 Create Customer Attribute
 
@@ -44,8 +44,8 @@ Create Customer Attribute
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_customer_attributes200_response_customer_attributes_inner import OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner
-from obp_python.models.obpv600_create_personal_data_field_request import OBPv600CreatePersonalDataFieldRequest
+from obp_python.models.create_personal_data_field_request import CreatePersonalDataFieldRequest
+from obp_python.models.get_customer_attributes200_response_customer_attributes_inner import GetCustomerAttributes200ResponseCustomerAttributesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -80,15 +80,15 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.CustomerAttributeApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
     customerid = 'customerid_example' # str | The CUSTOMERID identifier
-    obpv600_create_personal_data_field_request = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}} # OBPv600CreatePersonalDataFieldRequest | Request body
+    create_personal_data_field_request = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}} # CreatePersonalDataFieldRequest | Request body
 
     try:
         # Create Customer Attribute
-        api_response = api_instance.o_bpv4_0_0_create_customer_attribute(bankid, customerid, obpv600_create_personal_data_field_request)
-        print("The response of CustomerAttributeApi->o_bpv4_0_0_create_customer_attribute:\n")
+        api_response = api_instance.create_customer_attribute(bankid, customerid, create_personal_data_field_request)
+        print("The response of CustomerAttributeApi->create_customer_attribute:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CustomerAttributeApi->o_bpv4_0_0_create_customer_attribute: %s\n" % e)
+        print("Exception when calling CustomerAttributeApi->create_customer_attribute: %s\n" % e)
 ```
 
 
@@ -100,11 +100,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
  **customerid** | **str**| The CUSTOMERID identifier | 
- **obpv600_create_personal_data_field_request** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md)| Request body | 
+ **create_personal_data_field_request** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner**](OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner.md)
+[**GetCustomerAttributes200ResponseCustomerAttributesInner**](GetCustomerAttributes200ResponseCustomerAttributesInner.md)
 
 ### Authorization
 
@@ -125,8 +125,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition**
-> OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request)
+# **create_or_update_customer_attribute_attribute_definition**
+> GetTransactionRequestAttributeDefinition200ResponseAttributesInner create_or_update_customer_attribute_attribute_definition(bankid, create_or_update_transaction_request_attribute_definition_request)
 
 Create or Update Customer Attribute Definition
 
@@ -156,8 +156,8 @@ Create or Update Customer Attribute Definition
 
 ```python
 import obp_python
-from obp_python.models.obpv400_create_or_update_transaction_request_attribute_definition_request import OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
-from obp_python.models.obpv400_get_transaction_request_attribute_definition200_response_attributes_inner import OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner
+from obp_python.models.create_or_update_transaction_request_attribute_definition_request import CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+from obp_python.models.get_transaction_request_attribute_definition200_response_attributes_inner import GetTransactionRequestAttributeDefinition200ResponseAttributesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -191,15 +191,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.CustomerAttributeApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
-    obpv400_create_or_update_transaction_request_attribute_definition_request = {type=object, properties={can_be_seen_on_views={type=array, items={type=string}}, description={type=string}, is_active={type=boolean}, name={type=string}, type={type=string}, category={type=string}, alias={type=string}}} # OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+    create_or_update_transaction_request_attribute_definition_request = {type=object, properties={can_be_seen_on_views={type=array, items={type=string}}, description={type=string}, is_active={type=boolean}, name={type=string}, type={type=string}, category={type=string}, alias={type=string}}} # CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
 
     try:
         # Create or Update Customer Attribute Definition
-        api_response = api_instance.o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request)
-        print("The response of CustomerAttributeApi->o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition:\n")
+        api_response = api_instance.create_or_update_customer_attribute_attribute_definition(bankid, create_or_update_transaction_request_attribute_definition_request)
+        print("The response of CustomerAttributeApi->create_or_update_customer_attribute_attribute_definition:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CustomerAttributeApi->o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition: %s\n" % e)
+        print("Exception when calling CustomerAttributeApi->create_or_update_customer_attribute_attribute_definition: %s\n" % e)
 ```
 
 
@@ -210,11 +210,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
- **obpv400_create_or_update_transaction_request_attribute_definition_request** | [**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | 
+ **create_or_update_transaction_request_attribute_definition_request** | [**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
+[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
 
 ### Authorization
 
@@ -235,8 +235,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_delete_customer_attribute**
-> o_bpv4_0_0_delete_customer_attribute(bankid, customerid, customerattributeid)
+# **delete_customer_attribute**
+> delete_customer_attribute(bankid, customerid, customerattributeid)
 
 Delete Customer Attribute
 
@@ -297,9 +297,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete Customer Attribute
-        api_instance.o_bpv4_0_0_delete_customer_attribute(bankid, customerid, customerattributeid)
+        api_instance.delete_customer_attribute(bankid, customerid, customerattributeid)
     except Exception as e:
-        print("Exception when calling CustomerAttributeApi->o_bpv4_0_0_delete_customer_attribute: %s\n" % e)
+        print("Exception when calling CustomerAttributeApi->delete_customer_attribute: %s\n" % e)
 ```
 
 
@@ -336,8 +336,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_delete_customer_attribute_definition**
-> o_bpv4_0_0_delete_customer_attribute_definition(bankid, attributedefinitionid)
+# **delete_customer_attribute_definition**
+> delete_customer_attribute_definition(bankid, attributedefinitionid)
 
 Delete Customer Attribute Definition
 
@@ -394,9 +394,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete Customer Attribute Definition
-        api_instance.o_bpv4_0_0_delete_customer_attribute_definition(bankid, attributedefinitionid)
+        api_instance.delete_customer_attribute_definition(bankid, attributedefinitionid)
     except Exception as e:
-        print("Exception when calling CustomerAttributeApi->o_bpv4_0_0_delete_customer_attribute_definition: %s\n" % e)
+        print("Exception when calling CustomerAttributeApi->delete_customer_attribute_definition: %s\n" % e)
 ```
 
 
@@ -432,8 +432,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_get_customer_attribute_by_id**
-> OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner o_bpv4_0_0_get_customer_attribute_by_id(bankid, customerid, attributeid)
+# **get_customer_attribute_by_id**
+> GetCustomerAttributes200ResponseCustomerAttributesInner get_customer_attribute_by_id(bankid, customerid, attributeid)
 
 Get Customer Attribute By Id
 
@@ -458,7 +458,7 @@ Get Customer Attribute By Id
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_customer_attributes200_response_customer_attributes_inner import OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner
+from obp_python.models.get_customer_attributes200_response_customer_attributes_inner import GetCustomerAttributes200ResponseCustomerAttributesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -497,11 +497,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Customer Attribute By Id
-        api_response = api_instance.o_bpv4_0_0_get_customer_attribute_by_id(bankid, customerid, attributeid)
-        print("The response of CustomerAttributeApi->o_bpv4_0_0_get_customer_attribute_by_id:\n")
+        api_response = api_instance.get_customer_attribute_by_id(bankid, customerid, attributeid)
+        print("The response of CustomerAttributeApi->get_customer_attribute_by_id:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CustomerAttributeApi->o_bpv4_0_0_get_customer_attribute_by_id: %s\n" % e)
+        print("Exception when calling CustomerAttributeApi->get_customer_attribute_by_id: %s\n" % e)
 ```
 
 
@@ -517,7 +517,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner**](OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner.md)
+[**GetCustomerAttributes200ResponseCustomerAttributesInner**](GetCustomerAttributes200ResponseCustomerAttributesInner.md)
 
 ### Authorization
 
@@ -538,8 +538,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_get_customer_attribute_definition**
-> OBPv400GetTransactionRequestAttributeDefinition200Response o_bpv4_0_0_get_customer_attribute_definition(bankid)
+# **get_customer_attribute_definition**
+> GetTransactionRequestAttributeDefinition200Response get_customer_attribute_definition(bankid)
 
 Get Customer Attribute Definition
 
@@ -568,7 +568,7 @@ Get Customer Attribute Definition
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_transaction_request_attribute_definition200_response import OBPv400GetTransactionRequestAttributeDefinition200Response
+from obp_python.models.get_transaction_request_attribute_definition200_response import GetTransactionRequestAttributeDefinition200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -605,11 +605,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Customer Attribute Definition
-        api_response = api_instance.o_bpv4_0_0_get_customer_attribute_definition(bankid)
-        print("The response of CustomerAttributeApi->o_bpv4_0_0_get_customer_attribute_definition:\n")
+        api_response = api_instance.get_customer_attribute_definition(bankid)
+        print("The response of CustomerAttributeApi->get_customer_attribute_definition:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CustomerAttributeApi->o_bpv4_0_0_get_customer_attribute_definition: %s\n" % e)
+        print("Exception when calling CustomerAttributeApi->get_customer_attribute_definition: %s\n" % e)
 ```
 
 
@@ -623,7 +623,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200Response**](OBPv400GetTransactionRequestAttributeDefinition200Response.md)
+[**GetTransactionRequestAttributeDefinition200Response**](GetTransactionRequestAttributeDefinition200Response.md)
 
 ### Authorization
 
@@ -644,8 +644,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_get_customer_attributes**
-> OBPv400GetCustomerAttributes200Response o_bpv4_0_0_get_customer_attributes(bankid, customerid)
+# **get_customer_attributes**
+> GetCustomerAttributes200Response get_customer_attributes(bankid, customerid)
 
 Get Customer Attributes
 
@@ -670,7 +670,7 @@ Get Customer Attributes
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_customer_attributes200_response import OBPv400GetCustomerAttributes200Response
+from obp_python.models.get_customer_attributes200_response import GetCustomerAttributes200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -708,11 +708,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Customer Attributes
-        api_response = api_instance.o_bpv4_0_0_get_customer_attributes(bankid, customerid)
-        print("The response of CustomerAttributeApi->o_bpv4_0_0_get_customer_attributes:\n")
+        api_response = api_instance.get_customer_attributes(bankid, customerid)
+        print("The response of CustomerAttributeApi->get_customer_attributes:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CustomerAttributeApi->o_bpv4_0_0_get_customer_attributes: %s\n" % e)
+        print("Exception when calling CustomerAttributeApi->get_customer_attributes: %s\n" % e)
 ```
 
 
@@ -727,7 +727,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetCustomerAttributes200Response**](OBPv400GetCustomerAttributes200Response.md)
+[**GetCustomerAttributes200Response**](GetCustomerAttributes200Response.md)
 
 ### Authorization
 
@@ -748,8 +748,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_update_customer_attribute**
-> OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner o_bpv4_0_0_update_customer_attribute(bankid, customerid, customerattributeid, obpv600_create_personal_data_field_request)
+# **update_customer_attribute**
+> GetCustomerAttributes200ResponseCustomerAttributesInner update_customer_attribute(bankid, customerid, customerattributeid, create_personal_data_field_request)
 
 Update Customer Attribute
 
@@ -774,8 +774,8 @@ Update Customer Attribute
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_customer_attributes200_response_customer_attributes_inner import OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner
-from obp_python.models.obpv600_create_personal_data_field_request import OBPv600CreatePersonalDataFieldRequest
+from obp_python.models.create_personal_data_field_request import CreatePersonalDataFieldRequest
+from obp_python.models.get_customer_attributes200_response_customer_attributes_inner import GetCustomerAttributes200ResponseCustomerAttributesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -811,15 +811,15 @@ with obp_python.ApiClient(configuration) as api_client:
     bankid = 'bankid_example' # str | The BANKID identifier
     customerid = 'customerid_example' # str | The CUSTOMERID identifier
     customerattributeid = 'customerattributeid_example' # str | The CUSTOMERATTRIBUTEID identifier
-    obpv600_create_personal_data_field_request = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}} # OBPv600CreatePersonalDataFieldRequest | Request body
+    create_personal_data_field_request = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}} # CreatePersonalDataFieldRequest | Request body
 
     try:
         # Update Customer Attribute
-        api_response = api_instance.o_bpv4_0_0_update_customer_attribute(bankid, customerid, customerattributeid, obpv600_create_personal_data_field_request)
-        print("The response of CustomerAttributeApi->o_bpv4_0_0_update_customer_attribute:\n")
+        api_response = api_instance.update_customer_attribute(bankid, customerid, customerattributeid, create_personal_data_field_request)
+        print("The response of CustomerAttributeApi->update_customer_attribute:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CustomerAttributeApi->o_bpv4_0_0_update_customer_attribute: %s\n" % e)
+        print("Exception when calling CustomerAttributeApi->update_customer_attribute: %s\n" % e)
 ```
 
 
@@ -832,11 +832,11 @@ Name | Type | Description  | Notes
  **bankid** | **str**| The BANKID identifier | 
  **customerid** | **str**| The CUSTOMERID identifier | 
  **customerattributeid** | **str**| The CUSTOMERATTRIBUTEID identifier | 
- **obpv600_create_personal_data_field_request** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md)| Request body | 
+ **create_personal_data_field_request** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner**](OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner.md)
+[**GetCustomerAttributes200ResponseCustomerAttributesInner**](GetCustomerAttributes200ResponseCustomerAttributesInner.md)
 
 ### Authorization
 

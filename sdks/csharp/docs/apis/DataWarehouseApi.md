@@ -1,15 +1,15 @@
 # OpenBankProject.Api.DataWarehouseApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OBPv300DataWarehouseSearch**](DataWarehouseApi.md#obpv300datawarehousesearch) | **POST** /obp/v3.0.0/search/warehouse/{index} | Data Warehouse Search |
-| [**OBPv300DataWarehouseStatistics**](DataWarehouseApi.md#obpv300datawarehousestatistics) | **POST** /obp/v3.0.0/search/warehouse/statistics/{index}/{field} | Data Warehouse Statistics |
+| [**DataWarehouseSearch**](DataWarehouseApi.md#datawarehousesearch) | **POST** /obp/v3.0.0/search/warehouse/{index} | Data Warehouse Search |
+| [**DataWarehouseStatistics**](DataWarehouseApi.md#datawarehousestatistics) | **POST** /obp/v3.0.0/search/warehouse/statistics/{index}/{field} | Data Warehouse Statistics |
 
-<a id="obpv300datawarehousesearch"></a>
-# **OBPv300DataWarehouseSearch**
-> OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage OBPv300DataWarehouseSearch (string index, OBPv300DataWarehouseSearchRequest oBPv300DataWarehouseSearchRequest)
+<a id="datawarehousesearch"></a>
+# **DataWarehouseSearch**
+> Object DataWarehouseSearch (string index, DataWarehouseSearchRequest dataWarehouseSearchRequest)
 
 Data Warehouse Search
 
@@ -21,11 +21,11 @@ Data Warehouse Search
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **index** | **string** | The INDEX identifier |  |
-| **oBPv300DataWarehouseSearchRequest** | [**OBPv300DataWarehouseSearchRequest**](OBPv300DataWarehouseSearchRequest.md) | Request body |  |
+| **dataWarehouseSearchRequest** | [**DataWarehouseSearchRequest**](DataWarehouseSearchRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage**](OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.md)
+**Object**
 
 ### Authorization
 
@@ -45,9 +45,9 @@ Data Warehouse Search
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv300datawarehousestatistics"></a>
-# **OBPv300DataWarehouseStatistics**
-> OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage OBPv300DataWarehouseStatistics (string index, string field, OBPv300DataWarehouseSearchRequest oBPv300DataWarehouseSearchRequest)
+<a id="datawarehousestatistics"></a>
+# **DataWarehouseStatistics**
+> Object DataWarehouseStatistics (string index, string field, DataWarehouseSearchRequest dataWarehouseSearchRequest)
 
 Data Warehouse Statistics
 
@@ -60,11 +60,11 @@ Data Warehouse Statistics
 |------|------|-------------|-------|
 | **index** | **string** | The INDEX identifier |  |
 | **field** | **string** | The FIELD identifier |  |
-| **oBPv300DataWarehouseSearchRequest** | [**OBPv300DataWarehouseSearchRequest**](OBPv300DataWarehouseSearchRequest.md) | Request body |  |
+| **dataWarehouseSearchRequest** | [**DataWarehouseSearchRequest**](DataWarehouseSearchRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage**](OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.md)
+**Object**
 
 ### Authorization
 

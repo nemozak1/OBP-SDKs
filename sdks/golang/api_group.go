@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,25 +24,25 @@ import (
 // GroupAPIService GroupAPI service
 type GroupAPIService service
 
-type ApiOBPv600AddUserToGroupRequest struct {
+type ApiAddUserToGroupRequest struct {
 	ctx context.Context
 	ApiService *GroupAPIService
 	userid string
-	oBPv600AddUserToGroupRequest *OBPv600AddUserToGroupRequest
+	addUserToGroupRequest *AddUserToGroupRequest
 }
 
 // Request body
-func (r ApiOBPv600AddUserToGroupRequest) OBPv600AddUserToGroupRequest(oBPv600AddUserToGroupRequest OBPv600AddUserToGroupRequest) ApiOBPv600AddUserToGroupRequest {
-	r.oBPv600AddUserToGroupRequest = &oBPv600AddUserToGroupRequest
+func (r ApiAddUserToGroupRequest) AddUserToGroupRequest(addUserToGroupRequest AddUserToGroupRequest) ApiAddUserToGroupRequest {
+	r.addUserToGroupRequest = &addUserToGroupRequest
 	return r
 }
 
-func (r ApiOBPv600AddUserToGroupRequest) Execute() (*OBPv600AddUserToGroup200Response, *http.Response, error) {
-	return r.ApiService.OBPv600AddUserToGroupExecute(r)
+func (r ApiAddUserToGroupRequest) Execute() (*AddUserToGroup200Response, *http.Response, error) {
+	return r.ApiService.AddUserToGroupExecute(r)
 }
 
 /*
-OBPv600AddUserToGroup Grant User Membership to Group Entitlements
+AddUserToGroup Grant User Membership to Group Entitlements
 
 <p>Grant the User Group Entitlements.</p>
 <p>This endpoint creates entitlements for every Role in the Group. If the user<br />
@@ -75,10 +75,10 @@ already has a particular role at the same bank, that entitlement is skipped (not
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param userid The USERID identifier
- @return ApiOBPv600AddUserToGroupRequest
+ @return ApiAddUserToGroupRequest
 */
-func (a *GroupAPIService) OBPv600AddUserToGroup(ctx context.Context, userid string) ApiOBPv600AddUserToGroupRequest {
-	return ApiOBPv600AddUserToGroupRequest{
+func (a *GroupAPIService) AddUserToGroup(ctx context.Context, userid string) ApiAddUserToGroupRequest {
+	return ApiAddUserToGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		userid: userid,
@@ -86,16 +86,16 @@ func (a *GroupAPIService) OBPv600AddUserToGroup(ctx context.Context, userid stri
 }
 
 // Execute executes the request
-//  @return OBPv600AddUserToGroup200Response
-func (a *GroupAPIService) OBPv600AddUserToGroupExecute(r ApiOBPv600AddUserToGroupRequest) (*OBPv600AddUserToGroup200Response, *http.Response, error) {
+//  @return AddUserToGroup200Response
+func (a *GroupAPIService) AddUserToGroupExecute(r ApiAddUserToGroupRequest) (*AddUserToGroup200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600AddUserToGroup200Response
+		localVarReturnValue  *AddUserToGroup200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupAPIService.OBPv600AddUserToGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupAPIService.AddUserToGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -106,8 +106,8 @@ func (a *GroupAPIService) OBPv600AddUserToGroupExecute(r ApiOBPv600AddUserToGrou
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600AddUserToGroupRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600AddUserToGroupRequest is required and must be specified")
+	if r.addUserToGroupRequest == nil {
+		return localVarReturnValue, nil, reportError("addUserToGroupRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -128,7 +128,7 @@ func (a *GroupAPIService) OBPv600AddUserToGroupExecute(r ApiOBPv600AddUserToGrou
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600AddUserToGroupRequest
+	localVarPostBody = r.addUserToGroupRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -153,7 +153,7 @@ func (a *GroupAPIService) OBPv600AddUserToGroupExecute(r ApiOBPv600AddUserToGrou
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -194,24 +194,24 @@ func (a *GroupAPIService) OBPv600AddUserToGroupExecute(r ApiOBPv600AddUserToGrou
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600CreateGroupRequest struct {
+type ApiCreateGroupRequest struct {
 	ctx context.Context
 	ApiService *GroupAPIService
-	oBPv600CreateGroupRequest *OBPv600CreateGroupRequest
+	createGroupRequest *CreateGroupRequest
 }
 
 // Request body
-func (r ApiOBPv600CreateGroupRequest) OBPv600CreateGroupRequest(oBPv600CreateGroupRequest OBPv600CreateGroupRequest) ApiOBPv600CreateGroupRequest {
-	r.oBPv600CreateGroupRequest = &oBPv600CreateGroupRequest
+func (r ApiCreateGroupRequest) CreateGroupRequest(createGroupRequest CreateGroupRequest) ApiCreateGroupRequest {
+	r.createGroupRequest = &createGroupRequest
 	return r
 }
 
-func (r ApiOBPv600CreateGroupRequest) Execute() (*OBPv600GetGroups200ResponsePropertiesGroupsItems, *http.Response, error) {
-	return r.ApiService.OBPv600CreateGroupExecute(r)
+func (r ApiCreateGroupRequest) Execute() (*GetGroups200ResponseGroupsInner, *http.Response, error) {
+	return r.ApiService.CreateGroupExecute(r)
 }
 
 /*
-OBPv600CreateGroup Create Group
+CreateGroup Create Group
 
 <p>Create a new group of roles.</p>
 <p>Groups can be either:<br />
@@ -235,26 +235,26 @@ OBPv600CreateGroup Create Group
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600CreateGroupRequest
+ @return ApiCreateGroupRequest
 */
-func (a *GroupAPIService) OBPv600CreateGroup(ctx context.Context) ApiOBPv600CreateGroupRequest {
-	return ApiOBPv600CreateGroupRequest{
+func (a *GroupAPIService) CreateGroup(ctx context.Context) ApiCreateGroupRequest {
+	return ApiCreateGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetGroups200ResponsePropertiesGroupsItems
-func (a *GroupAPIService) OBPv600CreateGroupExecute(r ApiOBPv600CreateGroupRequest) (*OBPv600GetGroups200ResponsePropertiesGroupsItems, *http.Response, error) {
+//  @return GetGroups200ResponseGroupsInner
+func (a *GroupAPIService) CreateGroupExecute(r ApiCreateGroupRequest) (*GetGroups200ResponseGroupsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetGroups200ResponsePropertiesGroupsItems
+		localVarReturnValue  *GetGroups200ResponseGroupsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupAPIService.OBPv600CreateGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupAPIService.CreateGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -264,8 +264,8 @@ func (a *GroupAPIService) OBPv600CreateGroupExecute(r ApiOBPv600CreateGroupReque
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600CreateGroupRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600CreateGroupRequest is required and must be specified")
+	if r.createGroupRequest == nil {
+		return localVarReturnValue, nil, reportError("createGroupRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -286,7 +286,7 @@ func (a *GroupAPIService) OBPv600CreateGroupExecute(r ApiOBPv600CreateGroupReque
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600CreateGroupRequest
+	localVarPostBody = r.createGroupRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -311,7 +311,7 @@ func (a *GroupAPIService) OBPv600CreateGroupExecute(r ApiOBPv600CreateGroupReque
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -352,18 +352,18 @@ func (a *GroupAPIService) OBPv600CreateGroupExecute(r ApiOBPv600CreateGroupReque
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600DeleteGroupRequest struct {
+type ApiDeleteGroupRequest struct {
 	ctx context.Context
 	ApiService *GroupAPIService
 	groupid string
 }
 
-func (r ApiOBPv600DeleteGroupRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv600DeleteGroupExecute(r)
+func (r ApiDeleteGroupRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteGroupExecute(r)
 }
 
 /*
-OBPv600DeleteGroup Delete Group
+DeleteGroup Delete Group
 
 <p>Delete a Group.</p>
 <p>Requires either:<br />
@@ -377,10 +377,10 @@ OBPv600DeleteGroup Delete Group
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param groupid The GROUPID identifier
- @return ApiOBPv600DeleteGroupRequest
+ @return ApiDeleteGroupRequest
 */
-func (a *GroupAPIService) OBPv600DeleteGroup(ctx context.Context, groupid string) ApiOBPv600DeleteGroupRequest {
-	return ApiOBPv600DeleteGroupRequest{
+func (a *GroupAPIService) DeleteGroup(ctx context.Context, groupid string) ApiDeleteGroupRequest {
+	return ApiDeleteGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		groupid: groupid,
@@ -388,14 +388,14 @@ func (a *GroupAPIService) OBPv600DeleteGroup(ctx context.Context, groupid string
 }
 
 // Execute executes the request
-func (a *GroupAPIService) OBPv600DeleteGroupExecute(r ApiOBPv600DeleteGroupRequest) (*http.Response, error) {
+func (a *GroupAPIService) DeleteGroupExecute(r ApiDeleteGroupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupAPIService.OBPv600DeleteGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupAPIService.DeleteGroup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -448,7 +448,7 @@ func (a *GroupAPIService) OBPv600DeleteGroupExecute(r ApiOBPv600DeleteGroupReque
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -480,18 +480,18 @@ func (a *GroupAPIService) OBPv600DeleteGroupExecute(r ApiOBPv600DeleteGroupReque
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetGroupRequest struct {
+type ApiGetGroupRequest struct {
 	ctx context.Context
 	ApiService *GroupAPIService
 	groupid string
 }
 
-func (r ApiOBPv600GetGroupRequest) Execute() (*OBPv600GetGroups200ResponsePropertiesGroupsItems, *http.Response, error) {
-	return r.ApiService.OBPv600GetGroupExecute(r)
+func (r ApiGetGroupRequest) Execute() (*GetGroups200ResponseGroupsInner, *http.Response, error) {
+	return r.ApiService.GetGroupExecute(r)
 }
 
 /*
-OBPv600GetGroup Get Group
+GetGroup Get Group
 
 <p>Get a group by its ID.</p>
 <p>Requires either:<br />
@@ -511,10 +511,10 @@ OBPv600GetGroup Get Group
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param groupid The GROUPID identifier
- @return ApiOBPv600GetGroupRequest
+ @return ApiGetGroupRequest
 */
-func (a *GroupAPIService) OBPv600GetGroup(ctx context.Context, groupid string) ApiOBPv600GetGroupRequest {
-	return ApiOBPv600GetGroupRequest{
+func (a *GroupAPIService) GetGroup(ctx context.Context, groupid string) ApiGetGroupRequest {
+	return ApiGetGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		groupid: groupid,
@@ -522,16 +522,16 @@ func (a *GroupAPIService) OBPv600GetGroup(ctx context.Context, groupid string) A
 }
 
 // Execute executes the request
-//  @return OBPv600GetGroups200ResponsePropertiesGroupsItems
-func (a *GroupAPIService) OBPv600GetGroupExecute(r ApiOBPv600GetGroupRequest) (*OBPv600GetGroups200ResponsePropertiesGroupsItems, *http.Response, error) {
+//  @return GetGroups200ResponseGroupsInner
+func (a *GroupAPIService) GetGroupExecute(r ApiGetGroupRequest) (*GetGroups200ResponseGroupsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetGroups200ResponsePropertiesGroupsItems
+		localVarReturnValue  *GetGroups200ResponseGroupsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupAPIService.OBPv600GetGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupAPIService.GetGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -584,7 +584,7 @@ func (a *GroupAPIService) OBPv600GetGroupExecute(r ApiOBPv600GetGroupRequest) (*
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -625,18 +625,18 @@ func (a *GroupAPIService) OBPv600GetGroupExecute(r ApiOBPv600GetGroupRequest) (*
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetGroupEntitlementsRequest struct {
+type ApiGetGroupEntitlementsRequest struct {
 	ctx context.Context
 	ApiService *GroupAPIService
 	groupid string
 }
 
-func (r ApiOBPv600GetGroupEntitlementsRequest) Execute() (*OBPv600GetGroupEntitlements200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetGroupEntitlementsExecute(r)
+func (r ApiGetGroupEntitlementsRequest) Execute() (*GetGroupEntitlements200Response, *http.Response, error) {
+	return r.ApiService.GetGroupEntitlementsExecute(r)
 }
 
 /*
-OBPv600GetGroupEntitlements Get Group Entitlements
+GetGroupEntitlements Get Group Entitlements
 
 <p>Get all entitlements that have been granted from a specific group.</p>
 <p>This returns all entitlements where the group_id matches the specified GROUP_ID.</p>
@@ -658,10 +658,10 @@ OBPv600GetGroupEntitlements Get Group Entitlements
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param groupid The GROUPID identifier
- @return ApiOBPv600GetGroupEntitlementsRequest
+ @return ApiGetGroupEntitlementsRequest
 */
-func (a *GroupAPIService) OBPv600GetGroupEntitlements(ctx context.Context, groupid string) ApiOBPv600GetGroupEntitlementsRequest {
-	return ApiOBPv600GetGroupEntitlementsRequest{
+func (a *GroupAPIService) GetGroupEntitlements(ctx context.Context, groupid string) ApiGetGroupEntitlementsRequest {
+	return ApiGetGroupEntitlementsRequest{
 		ApiService: a,
 		ctx: ctx,
 		groupid: groupid,
@@ -669,16 +669,16 @@ func (a *GroupAPIService) OBPv600GetGroupEntitlements(ctx context.Context, group
 }
 
 // Execute executes the request
-//  @return OBPv600GetGroupEntitlements200Response
-func (a *GroupAPIService) OBPv600GetGroupEntitlementsExecute(r ApiOBPv600GetGroupEntitlementsRequest) (*OBPv600GetGroupEntitlements200Response, *http.Response, error) {
+//  @return GetGroupEntitlements200Response
+func (a *GroupAPIService) GetGroupEntitlementsExecute(r ApiGetGroupEntitlementsRequest) (*GetGroupEntitlements200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetGroupEntitlements200Response
+		localVarReturnValue  *GetGroupEntitlements200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupAPIService.OBPv600GetGroupEntitlements")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupAPIService.GetGroupEntitlements")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -731,7 +731,7 @@ func (a *GroupAPIService) OBPv600GetGroupEntitlementsExecute(r ApiOBPv600GetGrou
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -772,17 +772,17 @@ func (a *GroupAPIService) OBPv600GetGroupEntitlementsExecute(r ApiOBPv600GetGrou
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetGroupsRequest struct {
+type ApiGetGroupsRequest struct {
 	ctx context.Context
 	ApiService *GroupAPIService
 }
 
-func (r ApiOBPv600GetGroupsRequest) Execute() (*OBPv600GetGroups200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetGroupsExecute(r)
+func (r ApiGetGroupsRequest) Execute() (*GetGroups200Response, *http.Response, error) {
+	return r.ApiService.GetGroupsExecute(r)
 }
 
 /*
-OBPv600GetGroups Get Groups
+GetGroups Get Groups
 
 <p>Get all groups. Optionally filter by bank_id.</p>
 <p>Query parameters:<br />
@@ -802,26 +802,26 @@ OBPv600GetGroups Get Groups
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetGroupsRequest
+ @return ApiGetGroupsRequest
 */
-func (a *GroupAPIService) OBPv600GetGroups(ctx context.Context) ApiOBPv600GetGroupsRequest {
-	return ApiOBPv600GetGroupsRequest{
+func (a *GroupAPIService) GetGroups(ctx context.Context) ApiGetGroupsRequest {
+	return ApiGetGroupsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetGroups200Response
-func (a *GroupAPIService) OBPv600GetGroupsExecute(r ApiOBPv600GetGroupsRequest) (*OBPv600GetGroups200Response, *http.Response, error) {
+//  @return GetGroups200Response
+func (a *GroupAPIService) GetGroupsExecute(r ApiGetGroupsRequest) (*GetGroups200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetGroups200Response
+		localVarReturnValue  *GetGroups200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupAPIService.OBPv600GetGroups")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupAPIService.GetGroups")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -873,7 +873,7 @@ func (a *GroupAPIService) OBPv600GetGroupsExecute(r ApiOBPv600GetGroupsRequest) 
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -914,18 +914,18 @@ func (a *GroupAPIService) OBPv600GetGroupsExecute(r ApiOBPv600GetGroupsRequest) 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetUserGroupMembershipsRequest struct {
+type ApiGetUserGroupMembershipsRequest struct {
 	ctx context.Context
 	ApiService *GroupAPIService
 	userid string
 }
 
-func (r ApiOBPv600GetUserGroupMembershipsRequest) Execute() (*OBPv600GetUserGroupMemberships200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetUserGroupMembershipsExecute(r)
+func (r ApiGetUserGroupMembershipsRequest) Execute() (*GetUserGroupMemberships200Response, *http.Response, error) {
+	return r.ApiService.GetUserGroupMembershipsExecute(r)
 }
 
 /*
-OBPv600GetUserGroupMemberships Get User's Group Memberships
+GetUserGroupMemberships Get User's Group Memberships
 
 <p>Get all groups a user is a member of.</p>
 <p>Returns groups where the user has entitlements with process = &quot;GROUP_MEMBERSHIP&quot;.</p>
@@ -948,10 +948,10 @@ OBPv600GetUserGroupMemberships Get User's Group Memberships
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param userid The USERID identifier
- @return ApiOBPv600GetUserGroupMembershipsRequest
+ @return ApiGetUserGroupMembershipsRequest
 */
-func (a *GroupAPIService) OBPv600GetUserGroupMemberships(ctx context.Context, userid string) ApiOBPv600GetUserGroupMembershipsRequest {
-	return ApiOBPv600GetUserGroupMembershipsRequest{
+func (a *GroupAPIService) GetUserGroupMemberships(ctx context.Context, userid string) ApiGetUserGroupMembershipsRequest {
+	return ApiGetUserGroupMembershipsRequest{
 		ApiService: a,
 		ctx: ctx,
 		userid: userid,
@@ -959,16 +959,16 @@ func (a *GroupAPIService) OBPv600GetUserGroupMemberships(ctx context.Context, us
 }
 
 // Execute executes the request
-//  @return OBPv600GetUserGroupMemberships200Response
-func (a *GroupAPIService) OBPv600GetUserGroupMembershipsExecute(r ApiOBPv600GetUserGroupMembershipsRequest) (*OBPv600GetUserGroupMemberships200Response, *http.Response, error) {
+//  @return GetUserGroupMemberships200Response
+func (a *GroupAPIService) GetUserGroupMembershipsExecute(r ApiGetUserGroupMembershipsRequest) (*GetUserGroupMemberships200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetUserGroupMemberships200Response
+		localVarReturnValue  *GetUserGroupMemberships200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupAPIService.OBPv600GetUserGroupMemberships")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupAPIService.GetUserGroupMemberships")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1021,7 +1021,7 @@ func (a *GroupAPIService) OBPv600GetUserGroupMembershipsExecute(r ApiOBPv600GetU
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1062,19 +1062,19 @@ func (a *GroupAPIService) OBPv600GetUserGroupMembershipsExecute(r ApiOBPv600GetU
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600RemoveUserFromGroupRequest struct {
+type ApiRemoveUserFromGroupRequest struct {
 	ctx context.Context
 	ApiService *GroupAPIService
 	userid string
 	groupid string
 }
 
-func (r ApiOBPv600RemoveUserFromGroupRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv600RemoveUserFromGroupExecute(r)
+func (r ApiRemoveUserFromGroupRequest) Execute() (*http.Response, error) {
+	return r.ApiService.RemoveUserFromGroupExecute(r)
 }
 
 /*
-OBPv600RemoveUserFromGroup Remove User from Group
+RemoveUserFromGroup Remove User from Group
 
 <p>Remove a user from a group. This will delete all entitlements that were created by this group membership.</p>
 <p>Only removes entitlements with:<br />
@@ -1093,10 +1093,10 @@ OBPv600RemoveUserFromGroup Remove User from Group
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param userid The USERID identifier
  @param groupid The GROUPID identifier
- @return ApiOBPv600RemoveUserFromGroupRequest
+ @return ApiRemoveUserFromGroupRequest
 */
-func (a *GroupAPIService) OBPv600RemoveUserFromGroup(ctx context.Context, userid string, groupid string) ApiOBPv600RemoveUserFromGroupRequest {
-	return ApiOBPv600RemoveUserFromGroupRequest{
+func (a *GroupAPIService) RemoveUserFromGroup(ctx context.Context, userid string, groupid string) ApiRemoveUserFromGroupRequest {
+	return ApiRemoveUserFromGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		userid: userid,
@@ -1105,14 +1105,14 @@ func (a *GroupAPIService) OBPv600RemoveUserFromGroup(ctx context.Context, userid
 }
 
 // Execute executes the request
-func (a *GroupAPIService) OBPv600RemoveUserFromGroupExecute(r ApiOBPv600RemoveUserFromGroupRequest) (*http.Response, error) {
+func (a *GroupAPIService) RemoveUserFromGroupExecute(r ApiRemoveUserFromGroupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupAPIService.OBPv600RemoveUserFromGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupAPIService.RemoveUserFromGroup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1166,7 +1166,7 @@ func (a *GroupAPIService) OBPv600RemoveUserFromGroupExecute(r ApiOBPv600RemoveUs
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1198,25 +1198,25 @@ func (a *GroupAPIService) OBPv600RemoveUserFromGroupExecute(r ApiOBPv600RemoveUs
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv600UpdateGroupRequest struct {
+type ApiUpdateGroupRequest struct {
 	ctx context.Context
 	ApiService *GroupAPIService
 	groupid string
-	oBPv600UpdateGroupRequest *OBPv600UpdateGroupRequest
+	updateGroupRequest *UpdateGroupRequest
 }
 
 // Request body
-func (r ApiOBPv600UpdateGroupRequest) OBPv600UpdateGroupRequest(oBPv600UpdateGroupRequest OBPv600UpdateGroupRequest) ApiOBPv600UpdateGroupRequest {
-	r.oBPv600UpdateGroupRequest = &oBPv600UpdateGroupRequest
+func (r ApiUpdateGroupRequest) UpdateGroupRequest(updateGroupRequest UpdateGroupRequest) ApiUpdateGroupRequest {
+	r.updateGroupRequest = &updateGroupRequest
 	return r
 }
 
-func (r ApiOBPv600UpdateGroupRequest) Execute() (*OBPv600GetGroups200ResponsePropertiesGroupsItems, *http.Response, error) {
-	return r.ApiService.OBPv600UpdateGroupExecute(r)
+func (r ApiUpdateGroupRequest) Execute() (*GetGroups200ResponseGroupsInner, *http.Response, error) {
+	return r.ApiService.UpdateGroupExecute(r)
 }
 
 /*
-OBPv600UpdateGroup Update Group
+UpdateGroup Update Group
 
 <p>Update a group. All fields are optional.</p>
 <p>Requires either:<br />
@@ -1236,10 +1236,10 @@ OBPv600UpdateGroup Update Group
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param groupid The GROUPID identifier
- @return ApiOBPv600UpdateGroupRequest
+ @return ApiUpdateGroupRequest
 */
-func (a *GroupAPIService) OBPv600UpdateGroup(ctx context.Context, groupid string) ApiOBPv600UpdateGroupRequest {
-	return ApiOBPv600UpdateGroupRequest{
+func (a *GroupAPIService) UpdateGroup(ctx context.Context, groupid string) ApiUpdateGroupRequest {
+	return ApiUpdateGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		groupid: groupid,
@@ -1247,16 +1247,16 @@ func (a *GroupAPIService) OBPv600UpdateGroup(ctx context.Context, groupid string
 }
 
 // Execute executes the request
-//  @return OBPv600GetGroups200ResponsePropertiesGroupsItems
-func (a *GroupAPIService) OBPv600UpdateGroupExecute(r ApiOBPv600UpdateGroupRequest) (*OBPv600GetGroups200ResponsePropertiesGroupsItems, *http.Response, error) {
+//  @return GetGroups200ResponseGroupsInner
+func (a *GroupAPIService) UpdateGroupExecute(r ApiUpdateGroupRequest) (*GetGroups200ResponseGroupsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetGroups200ResponsePropertiesGroupsItems
+		localVarReturnValue  *GetGroups200ResponseGroupsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupAPIService.OBPv600UpdateGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupAPIService.UpdateGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1267,8 +1267,8 @@ func (a *GroupAPIService) OBPv600UpdateGroupExecute(r ApiOBPv600UpdateGroupReque
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600UpdateGroupRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600UpdateGroupRequest is required and must be specified")
+	if r.updateGroupRequest == nil {
+		return localVarReturnValue, nil, reportError("updateGroupRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1289,7 +1289,7 @@ func (a *GroupAPIService) OBPv600UpdateGroupExecute(r ApiOBPv600UpdateGroupReque
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600UpdateGroupRequest
+	localVarPostBody = r.updateGroupRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1314,7 +1314,7 @@ func (a *GroupAPIService) OBPv600UpdateGroupExecute(r ApiOBPv600UpdateGroupReque
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

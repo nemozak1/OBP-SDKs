@@ -1,7 +1,7 @@
 =begin
 #Open Bank Project API v6.0.0
 
-#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 The version of the OpenAPI document: 6.0.0
 Contact: contact@tesobe.com
@@ -25,11 +25,11 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
-    # @param obpv400_delete_system_level_endpoint_tag200_response [OBPv400DeleteSystemLevelEndpointTag200Response] Request body
+    # @param get_transaction_types200_response_transaction_types_inner_id [GetTransactionTypes200ResponseTransactionTypesInnerId] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems]
-    def o_bpv1_2_1_add_comment_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv400_delete_system_level_endpoint_tag200_response, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_add_comment_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, obpv400_delete_system_level_endpoint_tag200_response, opts)
+    # @return [GetTagsForViewOnAccount200ResponseTagsInner]
+    def add_comment_for_view_on_transaction(bankid, accountid, viewid, transactionid, get_transaction_types200_response_transaction_types_inner_id, opts = {})
+      data, _status_code, _headers = add_comment_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, get_transaction_types200_response_transaction_types_inner_id, opts)
       data
     end
 
@@ -39,32 +39,32 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
-    # @param obpv400_delete_system_level_endpoint_tag200_response [OBPv400DeleteSystemLevelEndpointTag200Response] Request body
+    # @param get_transaction_types200_response_transaction_types_inner_id [GetTransactionTypes200ResponseTransactionTypesInnerId] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems, Integer, Hash)>] OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems data, response status code and response headers
-    def o_bpv1_2_1_add_comment_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, obpv400_delete_system_level_endpoint_tag200_response, opts = {})
+    # @return [Array<(GetTagsForViewOnAccount200ResponseTagsInner, Integer, Hash)>] GetTagsForViewOnAccount200ResponseTagsInner data, response status code and response headers
+    def add_comment_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, get_transaction_types200_response_transaction_types_inner_id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionMetadataApi.o_bpv1_2_1_add_comment_for_view_on_transaction ...'
+        @api_client.config.logger.debug 'Calling API: TransactionMetadataApi.add_comment_for_view_on_transaction ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionMetadataApi.o_bpv1_2_1_add_comment_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionMetadataApi.add_comment_for_view_on_transaction"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionMetadataApi.o_bpv1_2_1_add_comment_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionMetadataApi.add_comment_for_view_on_transaction"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionMetadataApi.o_bpv1_2_1_add_comment_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionMetadataApi.add_comment_for_view_on_transaction"
       end
       # verify the required parameter 'transactionid' is set
       if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionMetadataApi.o_bpv1_2_1_add_comment_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionMetadataApi.add_comment_for_view_on_transaction"
       end
-      # verify the required parameter 'obpv400_delete_system_level_endpoint_tag200_response' is set
-      if @api_client.config.client_side_validation && obpv400_delete_system_level_endpoint_tag200_response.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv400_delete_system_level_endpoint_tag200_response' when calling TransactionMetadataApi.o_bpv1_2_1_add_comment_for_view_on_transaction"
+      # verify the required parameter 'get_transaction_types200_response_transaction_types_inner_id' is set
+      if @api_client.config.client_side_validation && get_transaction_types200_response_transaction_types_inner_id.nil?
+        fail ArgumentError, "Missing the required parameter 'get_transaction_types200_response_transaction_types_inner_id' when calling TransactionMetadataApi.add_comment_for_view_on_transaction"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
@@ -86,16 +86,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv400_delete_system_level_endpoint_tag200_response)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(get_transaction_types200_response_transaction_types_inner_id)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems'
+      return_type = opts[:debug_return_type] || 'GetTagsForViewOnAccount200ResponseTagsInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"TransactionMetadataApi.o_bpv1_2_1_add_comment_for_view_on_transaction",
+        :operation => :"TransactionMetadataApi.add_comment_for_view_on_transaction",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -106,7 +106,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionMetadataApi#o_bpv1_2_1_add_comment_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionMetadataApi#add_comment_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -117,11 +117,11 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
-    # @param obpv121_add_image_for_view_on_transaction_request [OBPv121AddImageForViewOnTransactionRequest] Request body
+    # @param add_image_for_view_on_transaction_request [AddImageForViewOnTransactionRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems]
-    def o_bpv1_2_1_add_image_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv121_add_image_for_view_on_transaction_request, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_add_image_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, obpv121_add_image_for_view_on_transaction_request, opts)
+    # @return [GetTransactionByIdForBankAccount200ResponseMetadataImagesInner]
+    def add_image_for_view_on_transaction(bankid, accountid, viewid, transactionid, add_image_for_view_on_transaction_request, opts = {})
+      data, _status_code, _headers = add_image_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, add_image_for_view_on_transaction_request, opts)
       data
     end
 
@@ -131,32 +131,32 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
-    # @param obpv121_add_image_for_view_on_transaction_request [OBPv121AddImageForViewOnTransactionRequest] Request body
+    # @param add_image_for_view_on_transaction_request [AddImageForViewOnTransactionRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems, Integer, Hash)>] OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems data, response status code and response headers
-    def o_bpv1_2_1_add_image_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, obpv121_add_image_for_view_on_transaction_request, opts = {})
+    # @return [Array<(GetTransactionByIdForBankAccount200ResponseMetadataImagesInner, Integer, Hash)>] GetTransactionByIdForBankAccount200ResponseMetadataImagesInner data, response status code and response headers
+    def add_image_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, add_image_for_view_on_transaction_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionMetadataApi.o_bpv1_2_1_add_image_for_view_on_transaction ...'
+        @api_client.config.logger.debug 'Calling API: TransactionMetadataApi.add_image_for_view_on_transaction ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionMetadataApi.o_bpv1_2_1_add_image_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionMetadataApi.add_image_for_view_on_transaction"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionMetadataApi.o_bpv1_2_1_add_image_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionMetadataApi.add_image_for_view_on_transaction"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionMetadataApi.o_bpv1_2_1_add_image_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionMetadataApi.add_image_for_view_on_transaction"
       end
       # verify the required parameter 'transactionid' is set
       if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionMetadataApi.o_bpv1_2_1_add_image_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionMetadataApi.add_image_for_view_on_transaction"
       end
-      # verify the required parameter 'obpv121_add_image_for_view_on_transaction_request' is set
-      if @api_client.config.client_side_validation && obpv121_add_image_for_view_on_transaction_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv121_add_image_for_view_on_transaction_request' when calling TransactionMetadataApi.o_bpv1_2_1_add_image_for_view_on_transaction"
+      # verify the required parameter 'add_image_for_view_on_transaction_request' is set
+      if @api_client.config.client_side_validation && add_image_for_view_on_transaction_request.nil?
+        fail ArgumentError, "Missing the required parameter 'add_image_for_view_on_transaction_request' when calling TransactionMetadataApi.add_image_for_view_on_transaction"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
@@ -178,16 +178,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv121_add_image_for_view_on_transaction_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(add_image_for_view_on_transaction_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems'
+      return_type = opts[:debug_return_type] || 'GetTransactionByIdForBankAccount200ResponseMetadataImagesInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"TransactionMetadataApi.o_bpv1_2_1_add_image_for_view_on_transaction",
+        :operation => :"TransactionMetadataApi.add_image_for_view_on_transaction",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -198,7 +198,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionMetadataApi#o_bpv1_2_1_add_image_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionMetadataApi#add_image_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -209,11 +209,11 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
-    # @param obpv400_delete_system_level_endpoint_tag200_response [OBPv400DeleteSystemLevelEndpointTag200Response] Request body
+    # @param get_transaction_types200_response_transaction_types_inner_id [GetTransactionTypes200ResponseTransactionTypesInnerId] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems]
-    def o_bpv1_2_1_add_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv400_delete_system_level_endpoint_tag200_response, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_add_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, obpv400_delete_system_level_endpoint_tag200_response, opts)
+    # @return [GetTagsForViewOnAccount200ResponseTagsInner]
+    def add_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, get_transaction_types200_response_transaction_types_inner_id, opts = {})
+      data, _status_code, _headers = add_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, get_transaction_types200_response_transaction_types_inner_id, opts)
       data
     end
 
@@ -223,32 +223,32 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
-    # @param obpv400_delete_system_level_endpoint_tag200_response [OBPv400DeleteSystemLevelEndpointTag200Response] Request body
+    # @param get_transaction_types200_response_transaction_types_inner_id [GetTransactionTypes200ResponseTransactionTypesInnerId] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems, Integer, Hash)>] OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems data, response status code and response headers
-    def o_bpv1_2_1_add_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, obpv400_delete_system_level_endpoint_tag200_response, opts = {})
+    # @return [Array<(GetTagsForViewOnAccount200ResponseTagsInner, Integer, Hash)>] GetTagsForViewOnAccount200ResponseTagsInner data, response status code and response headers
+    def add_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, get_transaction_types200_response_transaction_types_inner_id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionMetadataApi.o_bpv1_2_1_add_tag_for_view_on_transaction ...'
+        @api_client.config.logger.debug 'Calling API: TransactionMetadataApi.add_tag_for_view_on_transaction ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionMetadataApi.o_bpv1_2_1_add_tag_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionMetadataApi.add_tag_for_view_on_transaction"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionMetadataApi.o_bpv1_2_1_add_tag_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionMetadataApi.add_tag_for_view_on_transaction"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionMetadataApi.o_bpv1_2_1_add_tag_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionMetadataApi.add_tag_for_view_on_transaction"
       end
       # verify the required parameter 'transactionid' is set
       if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionMetadataApi.o_bpv1_2_1_add_tag_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionMetadataApi.add_tag_for_view_on_transaction"
       end
-      # verify the required parameter 'obpv400_delete_system_level_endpoint_tag200_response' is set
-      if @api_client.config.client_side_validation && obpv400_delete_system_level_endpoint_tag200_response.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv400_delete_system_level_endpoint_tag200_response' when calling TransactionMetadataApi.o_bpv1_2_1_add_tag_for_view_on_transaction"
+      # verify the required parameter 'get_transaction_types200_response_transaction_types_inner_id' is set
+      if @api_client.config.client_side_validation && get_transaction_types200_response_transaction_types_inner_id.nil?
+        fail ArgumentError, "Missing the required parameter 'get_transaction_types200_response_transaction_types_inner_id' when calling TransactionMetadataApi.add_tag_for_view_on_transaction"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
@@ -270,16 +270,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv400_delete_system_level_endpoint_tag200_response)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(get_transaction_types200_response_transaction_types_inner_id)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems'
+      return_type = opts[:debug_return_type] || 'GetTagsForViewOnAccount200ResponseTagsInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"TransactionMetadataApi.o_bpv1_2_1_add_tag_for_view_on_transaction",
+        :operation => :"TransactionMetadataApi.add_tag_for_view_on_transaction",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -290,7 +290,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionMetadataApi#o_bpv1_2_1_add_tag_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionMetadataApi#add_tag_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -301,11 +301,11 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
-    # @param obpv121_get_transaction_narrative200_response [OBPv121GetTransactionNarrative200Response] Request body
+    # @param get_transaction_narrative200_response [GetTransactionNarrative200Response] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv121UpdateTransactionNarrative200Response]
-    def o_bpv1_2_1_add_transaction_narrative(bankid, accountid, viewid, transactionid, obpv121_get_transaction_narrative200_response, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_add_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, obpv121_get_transaction_narrative200_response, opts)
+    # @return [UpdateTransactionNarrative200Response]
+    def add_transaction_narrative(bankid, accountid, viewid, transactionid, get_transaction_narrative200_response, opts = {})
+      data, _status_code, _headers = add_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, get_transaction_narrative200_response, opts)
       data
     end
 
@@ -315,32 +315,32 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
-    # @param obpv121_get_transaction_narrative200_response [OBPv121GetTransactionNarrative200Response] Request body
+    # @param get_transaction_narrative200_response [GetTransactionNarrative200Response] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121UpdateTransactionNarrative200Response, Integer, Hash)>] OBPv121UpdateTransactionNarrative200Response data, response status code and response headers
-    def o_bpv1_2_1_add_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, obpv121_get_transaction_narrative200_response, opts = {})
+    # @return [Array<(UpdateTransactionNarrative200Response, Integer, Hash)>] UpdateTransactionNarrative200Response data, response status code and response headers
+    def add_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, get_transaction_narrative200_response, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionMetadataApi.o_bpv1_2_1_add_transaction_narrative ...'
+        @api_client.config.logger.debug 'Calling API: TransactionMetadataApi.add_transaction_narrative ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionMetadataApi.o_bpv1_2_1_add_transaction_narrative"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionMetadataApi.add_transaction_narrative"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionMetadataApi.o_bpv1_2_1_add_transaction_narrative"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionMetadataApi.add_transaction_narrative"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionMetadataApi.o_bpv1_2_1_add_transaction_narrative"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionMetadataApi.add_transaction_narrative"
       end
       # verify the required parameter 'transactionid' is set
       if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionMetadataApi.o_bpv1_2_1_add_transaction_narrative"
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionMetadataApi.add_transaction_narrative"
       end
-      # verify the required parameter 'obpv121_get_transaction_narrative200_response' is set
-      if @api_client.config.client_side_validation && obpv121_get_transaction_narrative200_response.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv121_get_transaction_narrative200_response' when calling TransactionMetadataApi.o_bpv1_2_1_add_transaction_narrative"
+      # verify the required parameter 'get_transaction_narrative200_response' is set
+      if @api_client.config.client_side_validation && get_transaction_narrative200_response.nil?
+        fail ArgumentError, "Missing the required parameter 'get_transaction_narrative200_response' when calling TransactionMetadataApi.add_transaction_narrative"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
@@ -362,16 +362,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv121_get_transaction_narrative200_response)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(get_transaction_narrative200_response)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121UpdateTransactionNarrative200Response'
+      return_type = opts[:debug_return_type] || 'UpdateTransactionNarrative200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"TransactionMetadataApi.o_bpv1_2_1_add_transaction_narrative",
+        :operation => :"TransactionMetadataApi.add_transaction_narrative",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -382,7 +382,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionMetadataApi#o_bpv1_2_1_add_transaction_narrative\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionMetadataApi#add_transaction_narrative\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -393,11 +393,11 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
-    # @param obpv121_update_where_tag_for_view_on_transaction_request [OBPv121UpdateWhereTagForViewOnTransactionRequest] Request body
+    # @param update_where_tag_for_view_on_transaction_request [UpdateWhereTagForViewOnTransactionRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv121UpdateTransactionNarrative200Response]
-    def o_bpv1_2_1_add_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv121_update_where_tag_for_view_on_transaction_request, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_add_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, obpv121_update_where_tag_for_view_on_transaction_request, opts)
+    # @return [UpdateTransactionNarrative200Response]
+    def add_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, update_where_tag_for_view_on_transaction_request, opts = {})
+      data, _status_code, _headers = add_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, update_where_tag_for_view_on_transaction_request, opts)
       data
     end
 
@@ -407,32 +407,32 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
-    # @param obpv121_update_where_tag_for_view_on_transaction_request [OBPv121UpdateWhereTagForViewOnTransactionRequest] Request body
+    # @param update_where_tag_for_view_on_transaction_request [UpdateWhereTagForViewOnTransactionRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121UpdateTransactionNarrative200Response, Integer, Hash)>] OBPv121UpdateTransactionNarrative200Response data, response status code and response headers
-    def o_bpv1_2_1_add_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, obpv121_update_where_tag_for_view_on_transaction_request, opts = {})
+    # @return [Array<(UpdateTransactionNarrative200Response, Integer, Hash)>] UpdateTransactionNarrative200Response data, response status code and response headers
+    def add_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, update_where_tag_for_view_on_transaction_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionMetadataApi.o_bpv1_2_1_add_where_tag_for_view_on_transaction ...'
+        @api_client.config.logger.debug 'Calling API: TransactionMetadataApi.add_where_tag_for_view_on_transaction ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionMetadataApi.o_bpv1_2_1_add_where_tag_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionMetadataApi.add_where_tag_for_view_on_transaction"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionMetadataApi.o_bpv1_2_1_add_where_tag_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionMetadataApi.add_where_tag_for_view_on_transaction"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionMetadataApi.o_bpv1_2_1_add_where_tag_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionMetadataApi.add_where_tag_for_view_on_transaction"
       end
       # verify the required parameter 'transactionid' is set
       if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionMetadataApi.o_bpv1_2_1_add_where_tag_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionMetadataApi.add_where_tag_for_view_on_transaction"
       end
-      # verify the required parameter 'obpv121_update_where_tag_for_view_on_transaction_request' is set
-      if @api_client.config.client_side_validation && obpv121_update_where_tag_for_view_on_transaction_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv121_update_where_tag_for_view_on_transaction_request' when calling TransactionMetadataApi.o_bpv1_2_1_add_where_tag_for_view_on_transaction"
+      # verify the required parameter 'update_where_tag_for_view_on_transaction_request' is set
+      if @api_client.config.client_side_validation && update_where_tag_for_view_on_transaction_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_where_tag_for_view_on_transaction_request' when calling TransactionMetadataApi.add_where_tag_for_view_on_transaction"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
@@ -454,16 +454,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv121_update_where_tag_for_view_on_transaction_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_where_tag_for_view_on_transaction_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121UpdateTransactionNarrative200Response'
+      return_type = opts[:debug_return_type] || 'UpdateTransactionNarrative200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"TransactionMetadataApi.o_bpv1_2_1_add_where_tag_for_view_on_transaction",
+        :operation => :"TransactionMetadataApi.add_where_tag_for_view_on_transaction",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -474,7 +474,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionMetadataApi#o_bpv1_2_1_add_where_tag_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionMetadataApi#add_where_tag_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -488,8 +488,8 @@ module OpenBankProject
     # @param commentid [String] The COMMENTID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv1_2_1_delete_comment_for_view_on_transaction(bankid, accountid, viewid, transactionid, commentid, opts = {})
-      o_bpv1_2_1_delete_comment_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, commentid, opts)
+    def delete_comment_for_view_on_transaction(bankid, accountid, viewid, transactionid, commentid, opts = {})
+      delete_comment_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, commentid, opts)
       nil
     end
 
@@ -502,29 +502,29 @@ module OpenBankProject
     # @param commentid [String] The COMMENTID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv1_2_1_delete_comment_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, commentid, opts = {})
+    def delete_comment_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, commentid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionMetadataApi.o_bpv1_2_1_delete_comment_for_view_on_transaction ...'
+        @api_client.config.logger.debug 'Calling API: TransactionMetadataApi.delete_comment_for_view_on_transaction ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionMetadataApi.o_bpv1_2_1_delete_comment_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionMetadataApi.delete_comment_for_view_on_transaction"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionMetadataApi.o_bpv1_2_1_delete_comment_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionMetadataApi.delete_comment_for_view_on_transaction"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionMetadataApi.o_bpv1_2_1_delete_comment_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionMetadataApi.delete_comment_for_view_on_transaction"
       end
       # verify the required parameter 'transactionid' is set
       if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionMetadataApi.o_bpv1_2_1_delete_comment_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionMetadataApi.delete_comment_for_view_on_transaction"
       end
       # verify the required parameter 'commentid' is set
       if @api_client.config.client_side_validation && commentid.nil?
-        fail ArgumentError, "Missing the required parameter 'commentid' when calling TransactionMetadataApi.o_bpv1_2_1_delete_comment_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'commentid' when calling TransactionMetadataApi.delete_comment_for_view_on_transaction"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments/{commentid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s)).sub('{' + 'commentid' + '}', CGI.escape(commentid.to_s))
@@ -548,7 +548,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"TransactionMetadataApi.o_bpv1_2_1_delete_comment_for_view_on_transaction",
+        :operation => :"TransactionMetadataApi.delete_comment_for_view_on_transaction",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -559,7 +559,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionMetadataApi#o_bpv1_2_1_delete_comment_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionMetadataApi#delete_comment_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -573,8 +573,8 @@ module OpenBankProject
     # @param imageid [String] The IMAGEID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv1_2_1_delete_image_for_view_on_transaction(bankid, accountid, viewid, transactionid, imageid, opts = {})
-      o_bpv1_2_1_delete_image_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, imageid, opts)
+    def delete_image_for_view_on_transaction(bankid, accountid, viewid, transactionid, imageid, opts = {})
+      delete_image_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, imageid, opts)
       nil
     end
 
@@ -587,29 +587,29 @@ module OpenBankProject
     # @param imageid [String] The IMAGEID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv1_2_1_delete_image_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, imageid, opts = {})
+    def delete_image_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, imageid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionMetadataApi.o_bpv1_2_1_delete_image_for_view_on_transaction ...'
+        @api_client.config.logger.debug 'Calling API: TransactionMetadataApi.delete_image_for_view_on_transaction ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionMetadataApi.o_bpv1_2_1_delete_image_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionMetadataApi.delete_image_for_view_on_transaction"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionMetadataApi.o_bpv1_2_1_delete_image_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionMetadataApi.delete_image_for_view_on_transaction"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionMetadataApi.o_bpv1_2_1_delete_image_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionMetadataApi.delete_image_for_view_on_transaction"
       end
       # verify the required parameter 'transactionid' is set
       if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionMetadataApi.o_bpv1_2_1_delete_image_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionMetadataApi.delete_image_for_view_on_transaction"
       end
       # verify the required parameter 'imageid' is set
       if @api_client.config.client_side_validation && imageid.nil?
-        fail ArgumentError, "Missing the required parameter 'imageid' when calling TransactionMetadataApi.o_bpv1_2_1_delete_image_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'imageid' when calling TransactionMetadataApi.delete_image_for_view_on_transaction"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images/{imageid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s)).sub('{' + 'imageid' + '}', CGI.escape(imageid.to_s))
@@ -633,7 +633,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"TransactionMetadataApi.o_bpv1_2_1_delete_image_for_view_on_transaction",
+        :operation => :"TransactionMetadataApi.delete_image_for_view_on_transaction",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -644,7 +644,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionMetadataApi#o_bpv1_2_1_delete_image_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionMetadataApi#delete_image_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -658,8 +658,8 @@ module OpenBankProject
     # @param tagid [String] The TAGID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv1_2_1_delete_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, tagid, opts = {})
-      o_bpv1_2_1_delete_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, tagid, opts)
+    def delete_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, tagid, opts = {})
+      delete_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, tagid, opts)
       nil
     end
 
@@ -672,29 +672,29 @@ module OpenBankProject
     # @param tagid [String] The TAGID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv1_2_1_delete_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, tagid, opts = {})
+    def delete_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, tagid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionMetadataApi.o_bpv1_2_1_delete_tag_for_view_on_transaction ...'
+        @api_client.config.logger.debug 'Calling API: TransactionMetadataApi.delete_tag_for_view_on_transaction ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionMetadataApi.o_bpv1_2_1_delete_tag_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionMetadataApi.delete_tag_for_view_on_transaction"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionMetadataApi.o_bpv1_2_1_delete_tag_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionMetadataApi.delete_tag_for_view_on_transaction"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionMetadataApi.o_bpv1_2_1_delete_tag_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionMetadataApi.delete_tag_for_view_on_transaction"
       end
       # verify the required parameter 'transactionid' is set
       if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionMetadataApi.o_bpv1_2_1_delete_tag_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionMetadataApi.delete_tag_for_view_on_transaction"
       end
       # verify the required parameter 'tagid' is set
       if @api_client.config.client_side_validation && tagid.nil?
-        fail ArgumentError, "Missing the required parameter 'tagid' when calling TransactionMetadataApi.o_bpv1_2_1_delete_tag_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'tagid' when calling TransactionMetadataApi.delete_tag_for_view_on_transaction"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags/{tagid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s)).sub('{' + 'tagid' + '}', CGI.escape(tagid.to_s))
@@ -718,7 +718,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || []
 
       new_options = opts.merge(
-        :operation => :"TransactionMetadataApi.o_bpv1_2_1_delete_tag_for_view_on_transaction",
+        :operation => :"TransactionMetadataApi.delete_tag_for_view_on_transaction",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -729,7 +729,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionMetadataApi#o_bpv1_2_1_delete_tag_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionMetadataApi#delete_tag_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -742,8 +742,8 @@ module OpenBankProject
     # @param transactionid [String] The TRANSACTIONID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv1_2_1_delete_transaction_narrative(bankid, accountid, viewid, transactionid, opts = {})
-      o_bpv1_2_1_delete_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, opts)
+    def delete_transaction_narrative(bankid, accountid, viewid, transactionid, opts = {})
+      delete_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, opts)
       nil
     end
 
@@ -755,25 +755,25 @@ module OpenBankProject
     # @param transactionid [String] The TRANSACTIONID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv1_2_1_delete_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, opts = {})
+    def delete_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionMetadataApi.o_bpv1_2_1_delete_transaction_narrative ...'
+        @api_client.config.logger.debug 'Calling API: TransactionMetadataApi.delete_transaction_narrative ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionMetadataApi.o_bpv1_2_1_delete_transaction_narrative"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionMetadataApi.delete_transaction_narrative"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionMetadataApi.o_bpv1_2_1_delete_transaction_narrative"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionMetadataApi.delete_transaction_narrative"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionMetadataApi.o_bpv1_2_1_delete_transaction_narrative"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionMetadataApi.delete_transaction_narrative"
       end
       # verify the required parameter 'transactionid' is set
       if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionMetadataApi.o_bpv1_2_1_delete_transaction_narrative"
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionMetadataApi.delete_transaction_narrative"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
@@ -797,7 +797,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"TransactionMetadataApi.o_bpv1_2_1_delete_transaction_narrative",
+        :operation => :"TransactionMetadataApi.delete_transaction_narrative",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -808,7 +808,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionMetadataApi#o_bpv1_2_1_delete_transaction_narrative\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionMetadataApi#delete_transaction_narrative\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -821,8 +821,8 @@ module OpenBankProject
     # @param transactionid [String] The TRANSACTIONID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv1_2_1_delete_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, opts = {})
-      o_bpv1_2_1_delete_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts)
+    def delete_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, opts = {})
+      delete_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts)
       nil
     end
 
@@ -834,25 +834,25 @@ module OpenBankProject
     # @param transactionid [String] The TRANSACTIONID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv1_2_1_delete_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts = {})
+    def delete_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionMetadataApi.o_bpv1_2_1_delete_where_tag_for_view_on_transaction ...'
+        @api_client.config.logger.debug 'Calling API: TransactionMetadataApi.delete_where_tag_for_view_on_transaction ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionMetadataApi.o_bpv1_2_1_delete_where_tag_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionMetadataApi.delete_where_tag_for_view_on_transaction"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionMetadataApi.o_bpv1_2_1_delete_where_tag_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionMetadataApi.delete_where_tag_for_view_on_transaction"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionMetadataApi.o_bpv1_2_1_delete_where_tag_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionMetadataApi.delete_where_tag_for_view_on_transaction"
       end
       # verify the required parameter 'transactionid' is set
       if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionMetadataApi.o_bpv1_2_1_delete_where_tag_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionMetadataApi.delete_where_tag_for_view_on_transaction"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
@@ -876,7 +876,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"TransactionMetadataApi.o_bpv1_2_1_delete_where_tag_for_view_on_transaction",
+        :operation => :"TransactionMetadataApi.delete_where_tag_for_view_on_transaction",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -887,7 +887,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionMetadataApi#o_bpv1_2_1_delete_where_tag_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionMetadataApi#delete_where_tag_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -899,9 +899,9 @@ module OpenBankProject
     # @param viewid [String] The VIEWID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv121GetCommentsForViewOnTransaction200Response]
-    def o_bpv1_2_1_get_comments_for_view_on_transaction(bankid, accountid, viewid, transactionid, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_get_comments_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts)
+    # @return [GetCommentsForViewOnTransaction200Response]
+    def get_comments_for_view_on_transaction(bankid, accountid, viewid, transactionid, opts = {})
+      data, _status_code, _headers = get_comments_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts)
       data
     end
 
@@ -912,26 +912,26 @@ module OpenBankProject
     # @param viewid [String] The VIEWID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121GetCommentsForViewOnTransaction200Response, Integer, Hash)>] OBPv121GetCommentsForViewOnTransaction200Response data, response status code and response headers
-    def o_bpv1_2_1_get_comments_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts = {})
+    # @return [Array<(GetCommentsForViewOnTransaction200Response, Integer, Hash)>] GetCommentsForViewOnTransaction200Response data, response status code and response headers
+    def get_comments_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionMetadataApi.o_bpv1_2_1_get_comments_for_view_on_transaction ...'
+        @api_client.config.logger.debug 'Calling API: TransactionMetadataApi.get_comments_for_view_on_transaction ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionMetadataApi.o_bpv1_2_1_get_comments_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionMetadataApi.get_comments_for_view_on_transaction"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionMetadataApi.o_bpv1_2_1_get_comments_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionMetadataApi.get_comments_for_view_on_transaction"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionMetadataApi.o_bpv1_2_1_get_comments_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionMetadataApi.get_comments_for_view_on_transaction"
       end
       # verify the required parameter 'transactionid' is set
       if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionMetadataApi.o_bpv1_2_1_get_comments_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionMetadataApi.get_comments_for_view_on_transaction"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
@@ -951,13 +951,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121GetCommentsForViewOnTransaction200Response'
+      return_type = opts[:debug_return_type] || 'GetCommentsForViewOnTransaction200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"TransactionMetadataApi.o_bpv1_2_1_get_comments_for_view_on_transaction",
+        :operation => :"TransactionMetadataApi.get_comments_for_view_on_transaction",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -968,7 +968,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionMetadataApi#o_bpv1_2_1_get_comments_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionMetadataApi#get_comments_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -980,9 +980,9 @@ module OpenBankProject
     # @param viewid [String] The VIEWID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv121GetImagesForViewOnTransaction200Response]
-    def o_bpv1_2_1_get_images_for_view_on_transaction(bankid, accountid, viewid, transactionid, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_get_images_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts)
+    # @return [GetImagesForViewOnTransaction200Response]
+    def get_images_for_view_on_transaction(bankid, accountid, viewid, transactionid, opts = {})
+      data, _status_code, _headers = get_images_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts)
       data
     end
 
@@ -993,26 +993,26 @@ module OpenBankProject
     # @param viewid [String] The VIEWID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121GetImagesForViewOnTransaction200Response, Integer, Hash)>] OBPv121GetImagesForViewOnTransaction200Response data, response status code and response headers
-    def o_bpv1_2_1_get_images_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts = {})
+    # @return [Array<(GetImagesForViewOnTransaction200Response, Integer, Hash)>] GetImagesForViewOnTransaction200Response data, response status code and response headers
+    def get_images_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionMetadataApi.o_bpv1_2_1_get_images_for_view_on_transaction ...'
+        @api_client.config.logger.debug 'Calling API: TransactionMetadataApi.get_images_for_view_on_transaction ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionMetadataApi.o_bpv1_2_1_get_images_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionMetadataApi.get_images_for_view_on_transaction"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionMetadataApi.o_bpv1_2_1_get_images_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionMetadataApi.get_images_for_view_on_transaction"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionMetadataApi.o_bpv1_2_1_get_images_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionMetadataApi.get_images_for_view_on_transaction"
       end
       # verify the required parameter 'transactionid' is set
       if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionMetadataApi.o_bpv1_2_1_get_images_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionMetadataApi.get_images_for_view_on_transaction"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
@@ -1032,13 +1032,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121GetImagesForViewOnTransaction200Response'
+      return_type = opts[:debug_return_type] || 'GetImagesForViewOnTransaction200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"TransactionMetadataApi.o_bpv1_2_1_get_images_for_view_on_transaction",
+        :operation => :"TransactionMetadataApi.get_images_for_view_on_transaction",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -1049,7 +1049,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionMetadataApi#o_bpv1_2_1_get_images_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionMetadataApi#get_images_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1061,9 +1061,9 @@ module OpenBankProject
     # @param viewid [String] The VIEWID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems]
-    def o_bpv1_2_1_get_tags_for_view_on_transaction(bankid, accountid, viewid, transactionid, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_get_tags_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts)
+    # @return [GetTagsForViewOnAccount200ResponseTagsInner]
+    def get_tags_for_view_on_transaction(bankid, accountid, viewid, transactionid, opts = {})
+      data, _status_code, _headers = get_tags_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts)
       data
     end
 
@@ -1074,26 +1074,26 @@ module OpenBankProject
     # @param viewid [String] The VIEWID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems, Integer, Hash)>] OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems data, response status code and response headers
-    def o_bpv1_2_1_get_tags_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts = {})
+    # @return [Array<(GetTagsForViewOnAccount200ResponseTagsInner, Integer, Hash)>] GetTagsForViewOnAccount200ResponseTagsInner data, response status code and response headers
+    def get_tags_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionMetadataApi.o_bpv1_2_1_get_tags_for_view_on_transaction ...'
+        @api_client.config.logger.debug 'Calling API: TransactionMetadataApi.get_tags_for_view_on_transaction ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionMetadataApi.o_bpv1_2_1_get_tags_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionMetadataApi.get_tags_for_view_on_transaction"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionMetadataApi.o_bpv1_2_1_get_tags_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionMetadataApi.get_tags_for_view_on_transaction"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionMetadataApi.o_bpv1_2_1_get_tags_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionMetadataApi.get_tags_for_view_on_transaction"
       end
       # verify the required parameter 'transactionid' is set
       if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionMetadataApi.o_bpv1_2_1_get_tags_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionMetadataApi.get_tags_for_view_on_transaction"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
@@ -1113,13 +1113,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems'
+      return_type = opts[:debug_return_type] || 'GetTagsForViewOnAccount200ResponseTagsInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
 
       new_options = opts.merge(
-        :operation => :"TransactionMetadataApi.o_bpv1_2_1_get_tags_for_view_on_transaction",
+        :operation => :"TransactionMetadataApi.get_tags_for_view_on_transaction",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -1130,7 +1130,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionMetadataApi#o_bpv1_2_1_get_tags_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionMetadataApi#get_tags_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1142,9 +1142,9 @@ module OpenBankProject
     # @param viewid [String] The VIEWID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv121GetTransactionNarrative200Response]
-    def o_bpv1_2_1_get_transaction_narrative(bankid, accountid, viewid, transactionid, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_get_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, opts)
+    # @return [GetTransactionNarrative200Response]
+    def get_transaction_narrative(bankid, accountid, viewid, transactionid, opts = {})
+      data, _status_code, _headers = get_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, opts)
       data
     end
 
@@ -1155,26 +1155,26 @@ module OpenBankProject
     # @param viewid [String] The VIEWID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121GetTransactionNarrative200Response, Integer, Hash)>] OBPv121GetTransactionNarrative200Response data, response status code and response headers
-    def o_bpv1_2_1_get_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, opts = {})
+    # @return [Array<(GetTransactionNarrative200Response, Integer, Hash)>] GetTransactionNarrative200Response data, response status code and response headers
+    def get_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionMetadataApi.o_bpv1_2_1_get_transaction_narrative ...'
+        @api_client.config.logger.debug 'Calling API: TransactionMetadataApi.get_transaction_narrative ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionMetadataApi.o_bpv1_2_1_get_transaction_narrative"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionMetadataApi.get_transaction_narrative"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionMetadataApi.o_bpv1_2_1_get_transaction_narrative"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionMetadataApi.get_transaction_narrative"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionMetadataApi.o_bpv1_2_1_get_transaction_narrative"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionMetadataApi.get_transaction_narrative"
       end
       # verify the required parameter 'transactionid' is set
       if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionMetadataApi.o_bpv1_2_1_get_transaction_narrative"
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionMetadataApi.get_transaction_narrative"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
@@ -1194,13 +1194,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121GetTransactionNarrative200Response'
+      return_type = opts[:debug_return_type] || 'GetTransactionNarrative200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
 
       new_options = opts.merge(
-        :operation => :"TransactionMetadataApi.o_bpv1_2_1_get_transaction_narrative",
+        :operation => :"TransactionMetadataApi.get_transaction_narrative",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -1211,7 +1211,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionMetadataApi#o_bpv1_2_1_get_transaction_narrative\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionMetadataApi#get_transaction_narrative\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1223,9 +1223,9 @@ module OpenBankProject
     # @param viewid [String] The VIEWID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv121GetWhereTagForViewOnTransaction200Response]
-    def o_bpv1_2_1_get_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_get_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts)
+    # @return [GetWhereTagForViewOnTransaction200Response]
+    def get_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, opts = {})
+      data, _status_code, _headers = get_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts)
       data
     end
 
@@ -1236,26 +1236,26 @@ module OpenBankProject
     # @param viewid [String] The VIEWID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121GetWhereTagForViewOnTransaction200Response, Integer, Hash)>] OBPv121GetWhereTagForViewOnTransaction200Response data, response status code and response headers
-    def o_bpv1_2_1_get_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts = {})
+    # @return [Array<(GetWhereTagForViewOnTransaction200Response, Integer, Hash)>] GetWhereTagForViewOnTransaction200Response data, response status code and response headers
+    def get_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionMetadataApi.o_bpv1_2_1_get_where_tag_for_view_on_transaction ...'
+        @api_client.config.logger.debug 'Calling API: TransactionMetadataApi.get_where_tag_for_view_on_transaction ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionMetadataApi.o_bpv1_2_1_get_where_tag_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionMetadataApi.get_where_tag_for_view_on_transaction"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionMetadataApi.o_bpv1_2_1_get_where_tag_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionMetadataApi.get_where_tag_for_view_on_transaction"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionMetadataApi.o_bpv1_2_1_get_where_tag_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionMetadataApi.get_where_tag_for_view_on_transaction"
       end
       # verify the required parameter 'transactionid' is set
       if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionMetadataApi.o_bpv1_2_1_get_where_tag_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionMetadataApi.get_where_tag_for_view_on_transaction"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
@@ -1275,13 +1275,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121GetWhereTagForViewOnTransaction200Response'
+      return_type = opts[:debug_return_type] || 'GetWhereTagForViewOnTransaction200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
 
       new_options = opts.merge(
-        :operation => :"TransactionMetadataApi.o_bpv1_2_1_get_where_tag_for_view_on_transaction",
+        :operation => :"TransactionMetadataApi.get_where_tag_for_view_on_transaction",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -1292,7 +1292,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionMetadataApi#o_bpv1_2_1_get_where_tag_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionMetadataApi#get_where_tag_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1303,11 +1303,11 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
-    # @param obpv121_get_transaction_narrative200_response [OBPv121GetTransactionNarrative200Response] Request body
+    # @param get_transaction_narrative200_response [GetTransactionNarrative200Response] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv121UpdateTransactionNarrative200Response]
-    def o_bpv1_2_1_update_transaction_narrative(bankid, accountid, viewid, transactionid, obpv121_get_transaction_narrative200_response, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_update_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, obpv121_get_transaction_narrative200_response, opts)
+    # @return [UpdateTransactionNarrative200Response]
+    def update_transaction_narrative(bankid, accountid, viewid, transactionid, get_transaction_narrative200_response, opts = {})
+      data, _status_code, _headers = update_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, get_transaction_narrative200_response, opts)
       data
     end
 
@@ -1317,32 +1317,32 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
-    # @param obpv121_get_transaction_narrative200_response [OBPv121GetTransactionNarrative200Response] Request body
+    # @param get_transaction_narrative200_response [GetTransactionNarrative200Response] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121UpdateTransactionNarrative200Response, Integer, Hash)>] OBPv121UpdateTransactionNarrative200Response data, response status code and response headers
-    def o_bpv1_2_1_update_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, obpv121_get_transaction_narrative200_response, opts = {})
+    # @return [Array<(UpdateTransactionNarrative200Response, Integer, Hash)>] UpdateTransactionNarrative200Response data, response status code and response headers
+    def update_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, get_transaction_narrative200_response, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionMetadataApi.o_bpv1_2_1_update_transaction_narrative ...'
+        @api_client.config.logger.debug 'Calling API: TransactionMetadataApi.update_transaction_narrative ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionMetadataApi.o_bpv1_2_1_update_transaction_narrative"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionMetadataApi.update_transaction_narrative"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionMetadataApi.o_bpv1_2_1_update_transaction_narrative"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionMetadataApi.update_transaction_narrative"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionMetadataApi.o_bpv1_2_1_update_transaction_narrative"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionMetadataApi.update_transaction_narrative"
       end
       # verify the required parameter 'transactionid' is set
       if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionMetadataApi.o_bpv1_2_1_update_transaction_narrative"
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionMetadataApi.update_transaction_narrative"
       end
-      # verify the required parameter 'obpv121_get_transaction_narrative200_response' is set
-      if @api_client.config.client_side_validation && obpv121_get_transaction_narrative200_response.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv121_get_transaction_narrative200_response' when calling TransactionMetadataApi.o_bpv1_2_1_update_transaction_narrative"
+      # verify the required parameter 'get_transaction_narrative200_response' is set
+      if @api_client.config.client_side_validation && get_transaction_narrative200_response.nil?
+        fail ArgumentError, "Missing the required parameter 'get_transaction_narrative200_response' when calling TransactionMetadataApi.update_transaction_narrative"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
@@ -1364,16 +1364,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv121_get_transaction_narrative200_response)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(get_transaction_narrative200_response)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121UpdateTransactionNarrative200Response'
+      return_type = opts[:debug_return_type] || 'UpdateTransactionNarrative200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
 
       new_options = opts.merge(
-        :operation => :"TransactionMetadataApi.o_bpv1_2_1_update_transaction_narrative",
+        :operation => :"TransactionMetadataApi.update_transaction_narrative",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -1384,7 +1384,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionMetadataApi#o_bpv1_2_1_update_transaction_narrative\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionMetadataApi#update_transaction_narrative\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1395,11 +1395,11 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
-    # @param obpv121_update_where_tag_for_view_on_transaction_request [OBPv121UpdateWhereTagForViewOnTransactionRequest] Request body
+    # @param update_where_tag_for_view_on_transaction_request [UpdateWhereTagForViewOnTransactionRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv121UpdateTransactionNarrative200Response]
-    def o_bpv1_2_1_update_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv121_update_where_tag_for_view_on_transaction_request, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_update_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, obpv121_update_where_tag_for_view_on_transaction_request, opts)
+    # @return [UpdateTransactionNarrative200Response]
+    def update_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, update_where_tag_for_view_on_transaction_request, opts = {})
+      data, _status_code, _headers = update_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, update_where_tag_for_view_on_transaction_request, opts)
       data
     end
 
@@ -1409,32 +1409,32 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
-    # @param obpv121_update_where_tag_for_view_on_transaction_request [OBPv121UpdateWhereTagForViewOnTransactionRequest] Request body
+    # @param update_where_tag_for_view_on_transaction_request [UpdateWhereTagForViewOnTransactionRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121UpdateTransactionNarrative200Response, Integer, Hash)>] OBPv121UpdateTransactionNarrative200Response data, response status code and response headers
-    def o_bpv1_2_1_update_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, obpv121_update_where_tag_for_view_on_transaction_request, opts = {})
+    # @return [Array<(UpdateTransactionNarrative200Response, Integer, Hash)>] UpdateTransactionNarrative200Response data, response status code and response headers
+    def update_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, update_where_tag_for_view_on_transaction_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionMetadataApi.o_bpv1_2_1_update_where_tag_for_view_on_transaction ...'
+        @api_client.config.logger.debug 'Calling API: TransactionMetadataApi.update_where_tag_for_view_on_transaction ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionMetadataApi.o_bpv1_2_1_update_where_tag_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionMetadataApi.update_where_tag_for_view_on_transaction"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionMetadataApi.o_bpv1_2_1_update_where_tag_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionMetadataApi.update_where_tag_for_view_on_transaction"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionMetadataApi.o_bpv1_2_1_update_where_tag_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionMetadataApi.update_where_tag_for_view_on_transaction"
       end
       # verify the required parameter 'transactionid' is set
       if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionMetadataApi.o_bpv1_2_1_update_where_tag_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionMetadataApi.update_where_tag_for_view_on_transaction"
       end
-      # verify the required parameter 'obpv121_update_where_tag_for_view_on_transaction_request' is set
-      if @api_client.config.client_side_validation && obpv121_update_where_tag_for_view_on_transaction_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv121_update_where_tag_for_view_on_transaction_request' when calling TransactionMetadataApi.o_bpv1_2_1_update_where_tag_for_view_on_transaction"
+      # verify the required parameter 'update_where_tag_for_view_on_transaction_request' is set
+      if @api_client.config.client_side_validation && update_where_tag_for_view_on_transaction_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_where_tag_for_view_on_transaction_request' when calling TransactionMetadataApi.update_where_tag_for_view_on_transaction"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
@@ -1456,16 +1456,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv121_update_where_tag_for_view_on_transaction_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_where_tag_for_view_on_transaction_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121UpdateTransactionNarrative200Response'
+      return_type = opts[:debug_return_type] || 'UpdateTransactionNarrative200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"TransactionMetadataApi.o_bpv1_2_1_update_where_tag_for_view_on_transaction",
+        :operation => :"TransactionMetadataApi.update_where_tag_for_view_on_transaction",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -1476,7 +1476,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionMetadataApi#o_bpv1_2_1_update_where_tag_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionMetadataApi#update_where_tag_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

@@ -1,6 +1,6 @@
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -11,15 +11,15 @@
  */
 package com.openbankproject.api
 
-import com.openbankproject.model.OBPv600CreatePersonalDataFieldRequest
-import com.openbankproject.model.OBPv600GetPersonalDataFields200Response
-import com.openbankproject.model.OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+import com.openbankproject.model.CreatePersonalDataFieldRequest
+import com.openbankproject.model.GetPersonalDataFields200Response
+import com.openbankproject.model.GetPersonalDataFields200ResponseUserAttributesInner
 import org.openapitools.client.core.JsonSupport._
 import sttp.client4._
 import sttp.model.Method
 
 object UserAttributeApi {
-  def apply(baseUrl: String = "https://apisandbox.openbankproject.com") = new UserAttributeApi(baseUrl)
+  def apply(baseUrl: String = "http://127.0.0.1:8080") = new UserAttributeApi(baseUrl)
 }
 
 class UserAttributeApi(baseUrl: String) {
@@ -28,29 +28,29 @@ class UserAttributeApi(baseUrl: String) {
    * <p>Create a Personal Data Field for the currently authenticated user.</p> <p>Personal Data Fields (IsPersonal=true) are managed by the user themselves and do not require special roles.<br /> This data is not available in ABAC rules for privacy reasons.</p> <p>For non-personal attributes that can be used in ABAC rules, see the /users/USER_ID/attributes endpoints.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or &quot;DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems (Successful operation)
+   *   code 200 : GetPersonalDataFields200ResponseUserAttributesInner (Successful operation)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
    *   GatewayLogin (apiKey)
    *   DirectLogin (apiKey)
    * 
-   * @param oBPv600CreatePersonalDataFieldRequest Request body
+   * @param createPersonalDataFieldRequest Request body
    */
-  def oBPv600CreatePersonalDataField(apiKeyHeader: String, apiKeyHeader: String)(oBPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest): Request[Either[ResponseException[String, Exception], OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems]] =
+  def createPersonalDataField(apiKeyHeader: String, apiKeyHeader: String)(createPersonalDataFieldRequest: CreatePersonalDataFieldRequest): Request[Either[ResponseException[String, Exception], GetPersonalDataFields200ResponseUserAttributesInner]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v6.0.0/my/personal-data-fields")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv600CreatePersonalDataFieldRequest)
-      .response(asJson[OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems])
+      .header("DirectLogin", apiKeyHeader)
+      .body(createPersonalDataFieldRequest)
+      .response(asJson[GetPersonalDataFields200ResponseUserAttributesInner])
 
   /**
    * <p>Create a User Attribute for the user specified by USER_ID.</p> <p>User Attributes are non-personal attributes (IsPersonal=false) that can be used in ABAC rules.<br /> They require a role to set, similar to Customer Attributes, Account Attributes, etc.</p> <p>For personal attributes that users manage themselves, see the /my/personal-data-fields endpoints.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or &quot;DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems (Successful operation)
+   *   code 200 : GetPersonalDataFields200ResponseUserAttributesInner (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -59,16 +59,16 @@ class UserAttributeApi(baseUrl: String) {
    *   DirectLogin (apiKey)
    * 
    * @param userid The USERID identifier
-   * @param oBPv600CreatePersonalDataFieldRequest Request body
+   * @param createPersonalDataFieldRequest Request body
    */
-  def oBPv600CreateUserAttribute(apiKeyHeader: String, apiKeyHeader: String)(userid: String, oBPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest): Request[Either[ResponseException[String, Exception], OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems]] =
+  def createUserAttribute(apiKeyHeader: String, apiKeyHeader: String)(userid: String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest): Request[Either[ResponseException[String, Exception], GetPersonalDataFields200ResponseUserAttributesInner]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v6.0.0/users/${userid}/attributes")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv600CreatePersonalDataFieldRequest)
-      .response(asJson[OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems])
+      .header("DirectLogin", apiKeyHeader)
+      .body(createPersonalDataFieldRequest)
+      .response(asJson[GetPersonalDataFields200ResponseUserAttributesInner])
 
   /**
    * <p>Delete a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
@@ -84,12 +84,12 @@ class UserAttributeApi(baseUrl: String) {
    * 
    * @param userattributeid The USERATTRIBUTEID identifier
    */
-  def oBPv600DeletePersonalDataField(apiKeyHeader: String, apiKeyHeader: String)(userattributeid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+  def deletePersonalDataField(apiKeyHeader: String, apiKeyHeader: String)(userattributeid: String): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.DELETE, uri"$baseUrl/obp/v6.0.0/my/personal-data-fields/${userattributeid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
@@ -107,19 +107,19 @@ class UserAttributeApi(baseUrl: String) {
    * @param userid The USERID identifier
    * @param userattributeid The USERATTRIBUTEID identifier
    */
-  def oBPv600DeleteUserAttribute(apiKeyHeader: String, apiKeyHeader: String)(userid: String, userattributeid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+  def deleteUserAttribute(apiKeyHeader: String, apiKeyHeader: String)(userid: String, userattributeid: String): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.DELETE, uri"$baseUrl/obp/v6.0.0/users/${userid}/attributes/${userattributeid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
    * <p>Get a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems (Successful operation)
+   *   code 200 : GetPersonalDataFields200ResponseUserAttributesInner (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -129,38 +129,38 @@ class UserAttributeApi(baseUrl: String) {
    * 
    * @param userattributeid The USERATTRIBUTEID identifier
    */
-  def oBPv600GetPersonalDataFieldById(apiKeyHeader: String, apiKeyHeader: String)(userattributeid: String): Request[Either[ResponseException[String, Exception], OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems]] =
+  def getPersonalDataFieldById(apiKeyHeader: String, apiKeyHeader: String)(userattributeid: String): Request[Either[ResponseException[String, Exception], GetPersonalDataFields200ResponseUserAttributesInner]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v6.0.0/my/personal-data-fields/${userattributeid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetPersonalDataFields200ResponseUserAttributesInner])
 
   /**
    * <p>Get Personal Data Fields for the currently authenticated user.</p> <p>Returns Personal Data Fields (IsPersonal=true) that are managed by the user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>user_attributes</strong></a>: user_attributes</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv600GetPersonalDataFields200Response (Successful operation)
+   *   code 200 : GetPersonalDataFields200Response (Successful operation)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
    *   GatewayLogin (apiKey)
    *   DirectLogin (apiKey)
    */
-  def oBPv600GetPersonalDataFields(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], OBPv600GetPersonalDataFields200Response]] =
+  def getPersonalDataFields(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], GetPersonalDataFields200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v6.0.0/my/personal-data-fields")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv600GetPersonalDataFields200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetPersonalDataFields200Response])
 
   /**
    * <p>Get a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems (Successful operation)
+   *   code 200 : GetPersonalDataFields200ResponseUserAttributesInner (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -171,19 +171,19 @@ class UserAttributeApi(baseUrl: String) {
    * @param userid The USERID identifier
    * @param userattributeid The USERATTRIBUTEID identifier
    */
-  def oBPv600GetUserAttributeById(apiKeyHeader: String, apiKeyHeader: String)(userid: String, userattributeid: String): Request[Either[ResponseException[String, Exception], OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems]] =
+  def getUserAttributeById(apiKeyHeader: String, apiKeyHeader: String)(userid: String, userattributeid: String): Request[Either[ResponseException[String, Exception], GetPersonalDataFields200ResponseUserAttributesInner]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v6.0.0/users/${userid}/attributes/${userattributeid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetPersonalDataFields200ResponseUserAttributesInner])
 
   /**
    * <p>Get User Attributes for the user specified by USER_ID.</p> <p>Returns non-personal user attributes (IsPersonal=false) that can be used in ABAC rules.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>user_attributes</strong></a>: user_attributes</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv600GetPersonalDataFields200Response (Successful operation)
+   *   code 200 : GetPersonalDataFields200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -193,19 +193,19 @@ class UserAttributeApi(baseUrl: String) {
    * 
    * @param userid The USERID identifier
    */
-  def oBPv600GetUserAttributes(apiKeyHeader: String, apiKeyHeader: String)(userid: String): Request[Either[ResponseException[String, Exception], OBPv600GetPersonalDataFields200Response]] =
+  def getUserAttributes(apiKeyHeader: String, apiKeyHeader: String)(userid: String): Request[Either[ResponseException[String, Exception], GetPersonalDataFields200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v6.0.0/users/${userid}/attributes")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv600GetPersonalDataFields200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetPersonalDataFields200Response])
 
   /**
    * <p>Update a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems (Successful operation)
+   *   code 200 : GetPersonalDataFields200ResponseUserAttributesInner (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -214,22 +214,22 @@ class UserAttributeApi(baseUrl: String) {
    *   DirectLogin (apiKey)
    * 
    * @param userattributeid The USERATTRIBUTEID identifier
-   * @param oBPv600CreatePersonalDataFieldRequest Request body
+   * @param createPersonalDataFieldRequest Request body
    */
-  def oBPv600UpdatePersonalDataField(apiKeyHeader: String, apiKeyHeader: String)(userattributeid: String, oBPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest): Request[Either[ResponseException[String, Exception], OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems]] =
+  def updatePersonalDataField(apiKeyHeader: String, apiKeyHeader: String)(userattributeid: String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest): Request[Either[ResponseException[String, Exception], GetPersonalDataFields200ResponseUserAttributesInner]] =
     basicRequest
       .method(Method.PUT, uri"$baseUrl/obp/v6.0.0/my/personal-data-fields/${userattributeid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv600CreatePersonalDataFieldRequest)
-      .response(asJson[OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems])
+      .header("DirectLogin", apiKeyHeader)
+      .body(createPersonalDataFieldRequest)
+      .response(asJson[GetPersonalDataFields200ResponseUserAttributesInner])
 
   /**
    * <p>Update a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems (Successful operation)
+   *   code 200 : GetPersonalDataFields200ResponseUserAttributesInner (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -239,15 +239,15 @@ class UserAttributeApi(baseUrl: String) {
    * 
    * @param userid The USERID identifier
    * @param userattributeid The USERATTRIBUTEID identifier
-   * @param oBPv600CreatePersonalDataFieldRequest Request body
+   * @param createPersonalDataFieldRequest Request body
    */
-  def oBPv600UpdateUserAttribute(apiKeyHeader: String, apiKeyHeader: String)(userid: String, userattributeid: String, oBPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest): Request[Either[ResponseException[String, Exception], OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems]] =
+  def updateUserAttribute(apiKeyHeader: String, apiKeyHeader: String)(userid: String, userattributeid: String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest): Request[Either[ResponseException[String, Exception], GetPersonalDataFields200ResponseUserAttributesInner]] =
     basicRequest
       .method(Method.PUT, uri"$baseUrl/obp/v6.0.0/users/${userid}/attributes/${userattributeid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv600CreatePersonalDataFieldRequest)
-      .response(asJson[OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems])
+      .header("DirectLogin", apiKeyHeader)
+      .body(createPersonalDataFieldRequest)
+      .response(asJson[GetPersonalDataFields200ResponseUserAttributesInner])
 
 }

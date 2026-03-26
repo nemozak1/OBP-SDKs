@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -45,10 +45,10 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Create a new ABAC (Attribute-Based Access Control) rule.&lt;/p&gt; &lt;p&gt;ABAC rules are Scala functions that return a Boolean value indicating whether access should be granted.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Documentation:&lt;/strong&gt;&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Simple_Guide\&quot;&gt;here&lt;/a&gt; - Getting started with ABAC rules&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Parameters_Summary\&quot;&gt;here&lt;/a&gt; - Complete list of all 18 parameters&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Object_Properties_Reference\&quot;&gt;here&lt;/a&gt; - Detailed property reference&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Testing_Examples\&quot;&gt;here&lt;/a&gt; - Testing examples and patterns&lt;/p&gt; &lt;p&gt;The rule function receives 18 parameters including authenticatedUser, attributes, auth context, and optional objects (bank, account, transaction, etc.).&lt;/p&gt; &lt;p&gt;Example rule code:&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-scala\&quot;&gt;// Allow access only if authenticated user is admin authenticatedUser.emailAddress.contains(&amp;quot;admin&amp;quot;) &lt;/code&gt;&lt;/pre&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-scala\&quot;&gt;// Allow access only to accounts with balance &amp;gt; 1000 accountOpt.exists(_.balance.toDouble &amp;gt; 1000.0) &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;policy&lt;/strong&gt;&lt;/a&gt;: policy&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_code&lt;/strong&gt;&lt;/a&gt;: rule_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_name&lt;/strong&gt;&lt;/a&gt;: rule_name&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;abac_rule_id&lt;/strong&gt;&lt;/a&gt;: abac_rule_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;policy&lt;/strong&gt;&lt;/a&gt;: policy&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_code&lt;/strong&gt;&lt;/a&gt;: rule_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_name&lt;/strong&gt;&lt;/a&gt;: rule_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated_by_user_id&lt;/strong&gt;&lt;/a&gt;: updated_by_user_id&lt;/p&gt; 
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oBPv600UpdateAbacRuleRequest">Request body</param>
+        /// <param name="updateAbacRuleRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreateAbacRuleApiResponse"/>&gt;</returns>
-        Task<IOBPv600CreateAbacRuleApiResponse> OBPv600CreateAbacRuleAsync(OBPv600UpdateAbacRuleRequest oBPv600UpdateAbacRuleRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateAbacRuleApiResponse"/>&gt;</returns>
+        Task<ICreateAbacRuleApiResponse> CreateAbacRuleAsync(UpdateAbacRuleRequest updateAbacRuleRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create ABAC Rule
@@ -56,10 +56,10 @@ namespace OpenBankProject.Api
         /// <remarks>
         /// &lt;p&gt;Create a new ABAC (Attribute-Based Access Control) rule.&lt;/p&gt; &lt;p&gt;ABAC rules are Scala functions that return a Boolean value indicating whether access should be granted.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Documentation:&lt;/strong&gt;&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Simple_Guide\&quot;&gt;here&lt;/a&gt; - Getting started with ABAC rules&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Parameters_Summary\&quot;&gt;here&lt;/a&gt; - Complete list of all 18 parameters&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Object_Properties_Reference\&quot;&gt;here&lt;/a&gt; - Detailed property reference&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Testing_Examples\&quot;&gt;here&lt;/a&gt; - Testing examples and patterns&lt;/p&gt; &lt;p&gt;The rule function receives 18 parameters including authenticatedUser, attributes, auth context, and optional objects (bank, account, transaction, etc.).&lt;/p&gt; &lt;p&gt;Example rule code:&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-scala\&quot;&gt;// Allow access only if authenticated user is admin authenticatedUser.emailAddress.contains(&amp;quot;admin&amp;quot;) &lt;/code&gt;&lt;/pre&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-scala\&quot;&gt;// Allow access only to accounts with balance &amp;gt; 1000 accountOpt.exists(_.balance.toDouble &amp;gt; 1000.0) &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;policy&lt;/strong&gt;&lt;/a&gt;: policy&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_code&lt;/strong&gt;&lt;/a&gt;: rule_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_name&lt;/strong&gt;&lt;/a&gt;: rule_name&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;abac_rule_id&lt;/strong&gt;&lt;/a&gt;: abac_rule_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;policy&lt;/strong&gt;&lt;/a&gt;: policy&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_code&lt;/strong&gt;&lt;/a&gt;: rule_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_name&lt;/strong&gt;&lt;/a&gt;: rule_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated_by_user_id&lt;/strong&gt;&lt;/a&gt;: updated_by_user_id&lt;/p&gt; 
         /// </remarks>
-        /// <param name="oBPv600UpdateAbacRuleRequest">Request body</param>
+        /// <param name="updateAbacRuleRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreateAbacRuleApiResponse"/>?&gt;</returns>
-        Task<IOBPv600CreateAbacRuleApiResponse?> OBPv600CreateAbacRuleOrDefaultAsync(OBPv600UpdateAbacRuleRequest oBPv600UpdateAbacRuleRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateAbacRuleApiResponse"/>?&gt;</returns>
+        Task<ICreateAbacRuleApiResponse?> CreateAbacRuleOrDefaultAsync(UpdateAbacRuleRequest updateAbacRuleRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete ABAC Rule
@@ -70,8 +70,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="abacruleid">The ABACRULEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600DeleteAbacRuleApiResponse"/>&gt;</returns>
-        Task<IOBPv600DeleteAbacRuleApiResponse> OBPv600DeleteAbacRuleAsync(string abacruleid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteAbacRuleApiResponse"/>&gt;</returns>
+        Task<IDeleteAbacRuleApiResponse> DeleteAbacRuleAsync(string abacruleid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete ABAC Rule
@@ -81,8 +81,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="abacruleid">The ABACRULEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600DeleteAbacRuleApiResponse"/>?&gt;</returns>
-        Task<IOBPv600DeleteAbacRuleApiResponse?> OBPv600DeleteAbacRuleOrDefaultAsync(string abacruleid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteAbacRuleApiResponse"/>?&gt;</returns>
+        Task<IDeleteAbacRuleApiResponse?> DeleteAbacRuleOrDefaultAsync(string abacruleid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Execute ABAC Policy
@@ -92,10 +92,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="policy">The POLICY identifier</param>
-        /// <param name="oBPv600ExecuteAbacPolicyRequest">Request body</param>
+        /// <param name="executeAbacPolicyRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600ExecuteAbacPolicyApiResponse"/>&gt;</returns>
-        Task<IOBPv600ExecuteAbacPolicyApiResponse> OBPv600ExecuteAbacPolicyAsync(string policy, OBPv600ExecuteAbacPolicyRequest oBPv600ExecuteAbacPolicyRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IExecuteAbacPolicyApiResponse"/>&gt;</returns>
+        Task<IExecuteAbacPolicyApiResponse> ExecuteAbacPolicyAsync(string policy, ExecuteAbacPolicyRequest executeAbacPolicyRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Execute ABAC Policy
@@ -104,10 +104,10 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Execute all ABAC rules in a policy to test access control.&lt;/p&gt; &lt;p&gt;This endpoint executes all active rules that belong to the specified policy.&lt;br /&gt; The policy uses OR logic - access is granted if at least one rule passes.&lt;/p&gt; &lt;p&gt;This allows you to test a complete policy with specific context (authenticated user, bank, account, transaction, customer, etc.).&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Documentation:&lt;/strong&gt;&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Simple_Guide\&quot;&gt;here&lt;/a&gt; - Getting started with ABAC rules&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Parameters_Summary\&quot;&gt;here&lt;/a&gt; - Complete list of all 18 parameters&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Object_Properties_Reference\&quot;&gt;here&lt;/a&gt; - Detailed property reference&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Testing_Examples\&quot;&gt;here&lt;/a&gt; - Testing examples and patterns&lt;/p&gt; &lt;p&gt;You can provide optional IDs in the request body to test the policy with specific context.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;POLICY&lt;/a&gt;: POLICY&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;account_id&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;authenticated_user_id&lt;/a&gt;: authenticated_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;customer_id&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;on_behalf_of_user_id&lt;/a&gt;: on_behalf_of_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;transaction_id&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;transaction_request_id&lt;/a&gt;: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;user_id&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;view_id&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#result\&quot;&gt;&lt;strong&gt;result&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
         /// </remarks>
         /// <param name="policy">The POLICY identifier</param>
-        /// <param name="oBPv600ExecuteAbacPolicyRequest">Request body</param>
+        /// <param name="executeAbacPolicyRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600ExecuteAbacPolicyApiResponse"/>?&gt;</returns>
-        Task<IOBPv600ExecuteAbacPolicyApiResponse?> OBPv600ExecuteAbacPolicyOrDefaultAsync(string policy, OBPv600ExecuteAbacPolicyRequest oBPv600ExecuteAbacPolicyRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IExecuteAbacPolicyApiResponse"/>?&gt;</returns>
+        Task<IExecuteAbacPolicyApiResponse?> ExecuteAbacPolicyOrDefaultAsync(string policy, ExecuteAbacPolicyRequest executeAbacPolicyRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Execute ABAC Rule
@@ -117,10 +117,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="abacruleid">The ABACRULEID identifier</param>
-        /// <param name="oBPv600ExecuteAbacPolicyRequest">Request body</param>
+        /// <param name="executeAbacPolicyRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600ExecuteAbacRuleApiResponse"/>&gt;</returns>
-        Task<IOBPv600ExecuteAbacRuleApiResponse> OBPv600ExecuteAbacRuleAsync(string abacruleid, OBPv600ExecuteAbacPolicyRequest oBPv600ExecuteAbacPolicyRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IExecuteAbacRuleApiResponse"/>&gt;</returns>
+        Task<IExecuteAbacRuleApiResponse> ExecuteAbacRuleAsync(string abacruleid, ExecuteAbacPolicyRequest executeAbacPolicyRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Execute ABAC Rule
@@ -129,10 +129,10 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Execute an ABAC rule to test access control.&lt;/p&gt; &lt;p&gt;This endpoint allows you to test an ABAC rule with specific context (authenticated user, bank, account, transaction, customer, etc.).&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Documentation:&lt;/strong&gt;&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Simple_Guide\&quot;&gt;here&lt;/a&gt; - Getting started with ABAC rules&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Parameters_Summary\&quot;&gt;here&lt;/a&gt; - Complete list of all 18 parameters&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Object_Properties_Reference\&quot;&gt;here&lt;/a&gt; - Detailed property reference&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Testing_Examples\&quot;&gt;here&lt;/a&gt; - Testing examples and patterns&lt;/p&gt; &lt;p&gt;You can provide optional IDs in the request body to test the rule with specific context.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ABAC_RULE_ID&lt;/a&gt;: ABAC_RULE_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;account_id&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;authenticated_user_id&lt;/a&gt;: authenticated_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;customer_id&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;on_behalf_of_user_id&lt;/a&gt;: on_behalf_of_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;transaction_id&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;transaction_request_id&lt;/a&gt;: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;user_id&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;view_id&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#result\&quot;&gt;&lt;strong&gt;result&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
         /// </remarks>
         /// <param name="abacruleid">The ABACRULEID identifier</param>
-        /// <param name="oBPv600ExecuteAbacPolicyRequest">Request body</param>
+        /// <param name="executeAbacPolicyRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600ExecuteAbacRuleApiResponse"/>?&gt;</returns>
-        Task<IOBPv600ExecuteAbacRuleApiResponse?> OBPv600ExecuteAbacRuleOrDefaultAsync(string abacruleid, OBPv600ExecuteAbacPolicyRequest oBPv600ExecuteAbacPolicyRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IExecuteAbacRuleApiResponse"/>?&gt;</returns>
+        Task<IExecuteAbacRuleApiResponse?> ExecuteAbacRuleOrDefaultAsync(string abacruleid, ExecuteAbacPolicyRequest executeAbacPolicyRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get ABAC Policies
@@ -142,8 +142,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetAbacPoliciesApiResponse"/>&gt;</returns>
-        Task<IOBPv600GetAbacPoliciesApiResponse> OBPv600GetAbacPoliciesAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAbacPoliciesApiResponse"/>&gt;</returns>
+        Task<IGetAbacPoliciesApiResponse> GetAbacPoliciesAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get ABAC Policies
@@ -152,8 +152,8 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Get the list of allowed ABAC policy names.&lt;/p&gt; &lt;p&gt;ABAC rules are organized by policies. Each rule must have at least one policy assigned.&lt;br /&gt; Rules can have multiple policies (comma-separated). This endpoint returns the list of&lt;br /&gt; standardized policy names that should be used when creating or updating rules.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;policies&lt;/strong&gt;&lt;/a&gt;: policies&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;policy&lt;/strong&gt;&lt;/a&gt;: policy&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetAbacPoliciesApiResponse"/>?&gt;</returns>
-        Task<IOBPv600GetAbacPoliciesApiResponse?> OBPv600GetAbacPoliciesOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAbacPoliciesApiResponse"/>?&gt;</returns>
+        Task<IGetAbacPoliciesApiResponse?> GetAbacPoliciesOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get ABAC Rule
@@ -164,8 +164,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="abacruleid">The ABACRULEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetAbacRuleApiResponse"/>&gt;</returns>
-        Task<IOBPv600GetAbacRuleApiResponse> OBPv600GetAbacRuleAsync(string abacruleid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAbacRuleApiResponse"/>&gt;</returns>
+        Task<IGetAbacRuleApiResponse> GetAbacRuleAsync(string abacruleid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get ABAC Rule
@@ -175,8 +175,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="abacruleid">The ABACRULEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetAbacRuleApiResponse"/>?&gt;</returns>
-        Task<IOBPv600GetAbacRuleApiResponse?> OBPv600GetAbacRuleOrDefaultAsync(string abacruleid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAbacRuleApiResponse"/>?&gt;</returns>
+        Task<IGetAbacRuleApiResponse?> GetAbacRuleOrDefaultAsync(string abacruleid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get ABAC Rule Schema
@@ -186,8 +186,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetAbacRuleSchemaApiResponse"/>&gt;</returns>
-        Task<IOBPv600GetAbacRuleSchemaApiResponse> OBPv600GetAbacRuleSchemaAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAbacRuleSchemaApiResponse"/>&gt;</returns>
+        Task<IGetAbacRuleSchemaApiResponse> GetAbacRuleSchemaAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get ABAC Rule Schema
@@ -196,8 +196,8 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Get schema information about ABAC rule structure for building rule code.&lt;/p&gt; &lt;p&gt;This endpoint returns schema information including:&lt;br /&gt; - All 18 parameters available in ABAC rules&lt;br /&gt; - Object types (User, Bank, Account, etc.) and their properties&lt;br /&gt; - Available operators and syntax&lt;br /&gt; - Example rules&lt;/p&gt; &lt;p&gt;This schema information is useful for:&lt;br /&gt; - Building rule editors with auto-completion&lt;br /&gt; - Validating rule syntax in frontends&lt;br /&gt; - AI agents that help construct rules&lt;br /&gt; - Dynamic form builders&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;available_operators&lt;/strong&gt;&lt;/a&gt;: available_operators&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;examples&lt;/strong&gt;&lt;/a&gt;: examples&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;notes&lt;/strong&gt;&lt;/a&gt;: notes&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;object_types&lt;/strong&gt;&lt;/a&gt;: object_types&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parameters\&quot;&gt;&lt;strong&gt;parameters&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;policy&lt;/strong&gt;&lt;/a&gt;: policy&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;properties&lt;/strong&gt;&lt;/a&gt;: properties&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;required&lt;/strong&gt;&lt;/a&gt;: required&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_code&lt;/strong&gt;&lt;/a&gt;: rule_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_name&lt;/strong&gt;&lt;/a&gt;: rule_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetAbacRuleSchemaApiResponse"/>?&gt;</returns>
-        Task<IOBPv600GetAbacRuleSchemaApiResponse?> OBPv600GetAbacRuleSchemaOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAbacRuleSchemaApiResponse"/>?&gt;</returns>
+        Task<IGetAbacRuleSchemaApiResponse?> GetAbacRuleSchemaOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get ABAC Rules
@@ -207,8 +207,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetAbacRulesApiResponse"/>&gt;</returns>
-        Task<IOBPv600GetAbacRulesApiResponse> OBPv600GetAbacRulesAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAbacRulesApiResponse"/>&gt;</returns>
+        Task<IGetAbacRulesApiResponse> GetAbacRulesAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get ABAC Rules
@@ -217,8 +217,8 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Get all ABAC rules.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Documentation:&lt;/strong&gt;&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Simple_Guide\&quot;&gt;here&lt;/a&gt; - Getting started with ABAC rules&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Parameters_Summary\&quot;&gt;here&lt;/a&gt; - Complete list of all 18 parameters&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Object_Properties_Reference\&quot;&gt;here&lt;/a&gt; - Detailed property reference&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;abac_rule_id&lt;/strong&gt;&lt;/a&gt;: abac_rule_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;abac_rules&lt;/strong&gt;&lt;/a&gt;: abac_rules&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;policy&lt;/strong&gt;&lt;/a&gt;: policy&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_code&lt;/strong&gt;&lt;/a&gt;: rule_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_name&lt;/strong&gt;&lt;/a&gt;: rule_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated_by_user_id&lt;/strong&gt;&lt;/a&gt;: updated_by_user_id&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetAbacRulesApiResponse"/>?&gt;</returns>
-        Task<IOBPv600GetAbacRulesApiResponse?> OBPv600GetAbacRulesOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAbacRulesApiResponse"/>?&gt;</returns>
+        Task<IGetAbacRulesApiResponse?> GetAbacRulesOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get ABAC Rules by Policy
@@ -229,8 +229,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="policy">The POLICY identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetAbacRulesByPolicyApiResponse"/>&gt;</returns>
-        Task<IOBPv600GetAbacRulesByPolicyApiResponse> OBPv600GetAbacRulesByPolicyAsync(string policy, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAbacRulesByPolicyApiResponse"/>&gt;</returns>
+        Task<IGetAbacRulesByPolicyApiResponse> GetAbacRulesByPolicyAsync(string policy, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get ABAC Rules by Policy
@@ -240,8 +240,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="policy">The POLICY identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetAbacRulesByPolicyApiResponse"/>?&gt;</returns>
-        Task<IOBPv600GetAbacRulesByPolicyApiResponse?> OBPv600GetAbacRulesByPolicyOrDefaultAsync(string policy, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAbacRulesByPolicyApiResponse"/>?&gt;</returns>
+        Task<IGetAbacRulesByPolicyApiResponse?> GetAbacRulesByPolicyOrDefaultAsync(string policy, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update ABAC Rule
@@ -251,10 +251,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="abacruleid">The ABACRULEID identifier</param>
-        /// <param name="oBPv600UpdateAbacRuleRequest">Request body</param>
+        /// <param name="updateAbacRuleRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600UpdateAbacRuleApiResponse"/>&gt;</returns>
-        Task<IOBPv600UpdateAbacRuleApiResponse> OBPv600UpdateAbacRuleAsync(string abacruleid, OBPv600UpdateAbacRuleRequest oBPv600UpdateAbacRuleRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateAbacRuleApiResponse"/>&gt;</returns>
+        Task<IUpdateAbacRuleApiResponse> UpdateAbacRuleAsync(string abacruleid, UpdateAbacRuleRequest updateAbacRuleRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update ABAC Rule
@@ -263,10 +263,10 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Update an existing ABAC rule.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Documentation:&lt;/strong&gt;&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Simple_Guide\&quot;&gt;here&lt;/a&gt; - Getting started with ABAC rules&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Parameters_Summary\&quot;&gt;here&lt;/a&gt; - Complete list of all 18 parameters&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Object_Properties_Reference\&quot;&gt;here&lt;/a&gt; - Detailed property reference&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ABAC_RULE_ID&lt;/a&gt;: ABAC_RULE_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;abac_rule_id&lt;/strong&gt;&lt;/a&gt;: abac_rule_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;policy&lt;/strong&gt;&lt;/a&gt;: policy&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_code&lt;/strong&gt;&lt;/a&gt;: rule_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_name&lt;/strong&gt;&lt;/a&gt;: rule_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated_by_user_id&lt;/strong&gt;&lt;/a&gt;: updated_by_user_id&lt;/p&gt; 
         /// </remarks>
         /// <param name="abacruleid">The ABACRULEID identifier</param>
-        /// <param name="oBPv600UpdateAbacRuleRequest">Request body</param>
+        /// <param name="updateAbacRuleRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600UpdateAbacRuleApiResponse"/>?&gt;</returns>
-        Task<IOBPv600UpdateAbacRuleApiResponse?> OBPv600UpdateAbacRuleOrDefaultAsync(string abacruleid, OBPv600UpdateAbacRuleRequest oBPv600UpdateAbacRuleRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateAbacRuleApiResponse"/>?&gt;</returns>
+        Task<IUpdateAbacRuleApiResponse?> UpdateAbacRuleOrDefaultAsync(string abacruleid, UpdateAbacRuleRequest updateAbacRuleRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Validate ABAC Rule
@@ -275,10 +275,10 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Validate ABAC rule code syntax and structure without creating or executing the rule.&lt;/p&gt; &lt;p&gt;This endpoint performs the following validations:&lt;br /&gt; - Parse the rule_code as a Scala expression&lt;br /&gt; - Validate syntax - check for parsing errors&lt;br /&gt; - Validate field references - check if referenced objects/fields exist&lt;br /&gt; - Check type consistency - verify the expression returns a Boolean&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Available ABAC Context Objects:&lt;/strong&gt;&lt;br /&gt; - AuthenticatedUser - The user who is logged in&lt;br /&gt; - OnBehalfOfUser - Optional delegation user&lt;br /&gt; - User - Target user being evaluated&lt;br /&gt; - Bank, Account, View, Transaction, TransactionRequest, Customer&lt;br /&gt; - Attributes for each entity (e.g., userAttributes, accountAttributes)&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Documentation:&lt;/strong&gt;&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Simple_Guide\&quot;&gt;here&lt;/a&gt; - Getting started with ABAC rules&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Parameters_Summary\&quot;&gt;here&lt;/a&gt; - Complete list of all 18 parameters&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Object_Properties_Reference\&quot;&gt;here&lt;/a&gt; - Detailed property reference&lt;/p&gt; &lt;p&gt;This is a &amp;quot;dry-run&amp;quot; validation that does NOT save or execute the rule.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_code&lt;/strong&gt;&lt;/a&gt;: rule_code&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;valid&lt;/strong&gt;&lt;/a&gt;: valid&lt;/p&gt; 
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oBPv600ValidateAbacRuleRequest">Request body</param>
+        /// <param name="validateAbacRuleRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600ValidateAbacRuleApiResponse"/>&gt;</returns>
-        Task<IOBPv600ValidateAbacRuleApiResponse> OBPv600ValidateAbacRuleAsync(OBPv600ValidateAbacRuleRequest oBPv600ValidateAbacRuleRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IValidateAbacRuleApiResponse"/>&gt;</returns>
+        Task<IValidateAbacRuleApiResponse> ValidateAbacRuleAsync(ValidateAbacRuleRequest validateAbacRuleRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Validate ABAC Rule
@@ -286,16 +286,16 @@ namespace OpenBankProject.Api
         /// <remarks>
         /// &lt;p&gt;Validate ABAC rule code syntax and structure without creating or executing the rule.&lt;/p&gt; &lt;p&gt;This endpoint performs the following validations:&lt;br /&gt; - Parse the rule_code as a Scala expression&lt;br /&gt; - Validate syntax - check for parsing errors&lt;br /&gt; - Validate field references - check if referenced objects/fields exist&lt;br /&gt; - Check type consistency - verify the expression returns a Boolean&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Available ABAC Context Objects:&lt;/strong&gt;&lt;br /&gt; - AuthenticatedUser - The user who is logged in&lt;br /&gt; - OnBehalfOfUser - Optional delegation user&lt;br /&gt; - User - Target user being evaluated&lt;br /&gt; - Bank, Account, View, Transaction, TransactionRequest, Customer&lt;br /&gt; - Attributes for each entity (e.g., userAttributes, accountAttributes)&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Documentation:&lt;/strong&gt;&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Simple_Guide\&quot;&gt;here&lt;/a&gt; - Getting started with ABAC rules&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Parameters_Summary\&quot;&gt;here&lt;/a&gt; - Complete list of all 18 parameters&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Object_Properties_Reference\&quot;&gt;here&lt;/a&gt; - Detailed property reference&lt;/p&gt; &lt;p&gt;This is a &amp;quot;dry-run&amp;quot; validation that does NOT save or execute the rule.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_code&lt;/strong&gt;&lt;/a&gt;: rule_code&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;valid&lt;/strong&gt;&lt;/a&gt;: valid&lt;/p&gt; 
         /// </remarks>
-        /// <param name="oBPv600ValidateAbacRuleRequest">Request body</param>
+        /// <param name="validateAbacRuleRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600ValidateAbacRuleApiResponse"/>?&gt;</returns>
-        Task<IOBPv600ValidateAbacRuleApiResponse?> OBPv600ValidateAbacRuleOrDefaultAsync(OBPv600ValidateAbacRuleRequest oBPv600ValidateAbacRuleRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IValidateAbacRuleApiResponse"/>?&gt;</returns>
+        Task<IValidateAbacRuleApiResponse?> ValidateAbacRuleOrDefaultAsync(ValidateAbacRuleRequest validateAbacRuleRequest, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
-    /// The <see cref="IOBPv600CreateAbacRuleApiResponse"/>
+    /// The <see cref="ICreateAbacRuleApiResponse"/>
     /// </summary>
-    public interface IOBPv600CreateAbacRuleApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv600GetAbacRule200Response?>
+    public interface ICreateAbacRuleApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetAbacRule200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -311,9 +311,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv600DeleteAbacRuleApiResponse"/>
+    /// The <see cref="IDeleteAbacRuleApiResponse"/>
     /// </summary>
-    public interface IOBPv600DeleteAbacRuleApiResponse : OpenBankProject.Client.IApiResponse
+    public interface IDeleteAbacRuleApiResponse : OpenBankProject.Client.IApiResponse
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -329,9 +329,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv600ExecuteAbacPolicyApiResponse"/>
+    /// The <see cref="IExecuteAbacPolicyApiResponse"/>
     /// </summary>
-    public interface IOBPv600ExecuteAbacPolicyApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv600ExecuteAbacPolicy200Response?>
+    public interface IExecuteAbacPolicyApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.ExecuteAbacPolicy200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -347,9 +347,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv600ExecuteAbacRuleApiResponse"/>
+    /// The <see cref="IExecuteAbacRuleApiResponse"/>
     /// </summary>
-    public interface IOBPv600ExecuteAbacRuleApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv600ExecuteAbacPolicy200Response?>
+    public interface IExecuteAbacRuleApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.ExecuteAbacPolicy200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -365,9 +365,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv600GetAbacPoliciesApiResponse"/>
+    /// The <see cref="IGetAbacPoliciesApiResponse"/>
     /// </summary>
-    public interface IOBPv600GetAbacPoliciesApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv600GetAbacPolicies200Response?>
+    public interface IGetAbacPoliciesApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetAbacPolicies200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -383,9 +383,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv600GetAbacRuleApiResponse"/>
+    /// The <see cref="IGetAbacRuleApiResponse"/>
     /// </summary>
-    public interface IOBPv600GetAbacRuleApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv600GetAbacRule200Response?>
+    public interface IGetAbacRuleApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetAbacRule200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -401,9 +401,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv600GetAbacRuleSchemaApiResponse"/>
+    /// The <see cref="IGetAbacRuleSchemaApiResponse"/>
     /// </summary>
-    public interface IOBPv600GetAbacRuleSchemaApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv600GetAbacRuleSchema200Response?>
+    public interface IGetAbacRuleSchemaApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetAbacRuleSchema200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -419,9 +419,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv600GetAbacRulesApiResponse"/>
+    /// The <see cref="IGetAbacRulesApiResponse"/>
     /// </summary>
-    public interface IOBPv600GetAbacRulesApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv600GetAbacRulesByPolicy200Response?>
+    public interface IGetAbacRulesApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetAbacRulesByPolicy200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -437,9 +437,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv600GetAbacRulesByPolicyApiResponse"/>
+    /// The <see cref="IGetAbacRulesByPolicyApiResponse"/>
     /// </summary>
-    public interface IOBPv600GetAbacRulesByPolicyApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv600GetAbacRulesByPolicy200Response?>
+    public interface IGetAbacRulesByPolicyApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetAbacRulesByPolicy200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -455,9 +455,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv600UpdateAbacRuleApiResponse"/>
+    /// The <see cref="IUpdateAbacRuleApiResponse"/>
     /// </summary>
-    public interface IOBPv600UpdateAbacRuleApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv600GetAbacRule200Response?>
+    public interface IUpdateAbacRuleApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetAbacRule200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -473,9 +473,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv600ValidateAbacRuleApiResponse"/>
+    /// The <see cref="IValidateAbacRuleApiResponse"/>
     /// </summary>
-    public interface IOBPv600ValidateAbacRuleApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv600ValidateAbacRule200Response?>
+    public interface IValidateAbacRuleApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.ValidateAbacRule200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -498,221 +498,221 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600CreateAbacRule;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateAbacRule;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600CreateAbacRule;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateAbacRule;
 
-        internal void ExecuteOnOBPv600CreateAbacRule(ABACApi.OBPv600CreateAbacRuleApiResponse apiResponse)
+        internal void ExecuteOnCreateAbacRule(ABACApi.CreateAbacRuleApiResponse apiResponse)
         {
-            OnOBPv600CreateAbacRule?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateAbacRule?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600CreateAbacRule(Exception exception)
+        internal void ExecuteOnErrorCreateAbacRule(Exception exception)
         {
-            OnErrorOBPv600CreateAbacRule?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateAbacRule?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600DeleteAbacRule;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteAbacRule;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600DeleteAbacRule;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteAbacRule;
 
-        internal void ExecuteOnOBPv600DeleteAbacRule(ABACApi.OBPv600DeleteAbacRuleApiResponse apiResponse)
+        internal void ExecuteOnDeleteAbacRule(ABACApi.DeleteAbacRuleApiResponse apiResponse)
         {
-            OnOBPv600DeleteAbacRule?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteAbacRule?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600DeleteAbacRule(Exception exception)
+        internal void ExecuteOnErrorDeleteAbacRule(Exception exception)
         {
-            OnErrorOBPv600DeleteAbacRule?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteAbacRule?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600ExecuteAbacPolicy;
+        public event EventHandler<ApiResponseEventArgs>? OnExecuteAbacPolicy;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600ExecuteAbacPolicy;
+        public event EventHandler<ExceptionEventArgs>? OnErrorExecuteAbacPolicy;
 
-        internal void ExecuteOnOBPv600ExecuteAbacPolicy(ABACApi.OBPv600ExecuteAbacPolicyApiResponse apiResponse)
+        internal void ExecuteOnExecuteAbacPolicy(ABACApi.ExecuteAbacPolicyApiResponse apiResponse)
         {
-            OnOBPv600ExecuteAbacPolicy?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnExecuteAbacPolicy?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600ExecuteAbacPolicy(Exception exception)
+        internal void ExecuteOnErrorExecuteAbacPolicy(Exception exception)
         {
-            OnErrorOBPv600ExecuteAbacPolicy?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorExecuteAbacPolicy?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600ExecuteAbacRule;
+        public event EventHandler<ApiResponseEventArgs>? OnExecuteAbacRule;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600ExecuteAbacRule;
+        public event EventHandler<ExceptionEventArgs>? OnErrorExecuteAbacRule;
 
-        internal void ExecuteOnOBPv600ExecuteAbacRule(ABACApi.OBPv600ExecuteAbacRuleApiResponse apiResponse)
+        internal void ExecuteOnExecuteAbacRule(ABACApi.ExecuteAbacRuleApiResponse apiResponse)
         {
-            OnOBPv600ExecuteAbacRule?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnExecuteAbacRule?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600ExecuteAbacRule(Exception exception)
+        internal void ExecuteOnErrorExecuteAbacRule(Exception exception)
         {
-            OnErrorOBPv600ExecuteAbacRule?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorExecuteAbacRule?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600GetAbacPolicies;
+        public event EventHandler<ApiResponseEventArgs>? OnGetAbacPolicies;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600GetAbacPolicies;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetAbacPolicies;
 
-        internal void ExecuteOnOBPv600GetAbacPolicies(ABACApi.OBPv600GetAbacPoliciesApiResponse apiResponse)
+        internal void ExecuteOnGetAbacPolicies(ABACApi.GetAbacPoliciesApiResponse apiResponse)
         {
-            OnOBPv600GetAbacPolicies?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetAbacPolicies?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600GetAbacPolicies(Exception exception)
+        internal void ExecuteOnErrorGetAbacPolicies(Exception exception)
         {
-            OnErrorOBPv600GetAbacPolicies?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetAbacPolicies?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600GetAbacRule;
+        public event EventHandler<ApiResponseEventArgs>? OnGetAbacRule;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600GetAbacRule;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetAbacRule;
 
-        internal void ExecuteOnOBPv600GetAbacRule(ABACApi.OBPv600GetAbacRuleApiResponse apiResponse)
+        internal void ExecuteOnGetAbacRule(ABACApi.GetAbacRuleApiResponse apiResponse)
         {
-            OnOBPv600GetAbacRule?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetAbacRule?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600GetAbacRule(Exception exception)
+        internal void ExecuteOnErrorGetAbacRule(Exception exception)
         {
-            OnErrorOBPv600GetAbacRule?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetAbacRule?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600GetAbacRuleSchema;
+        public event EventHandler<ApiResponseEventArgs>? OnGetAbacRuleSchema;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600GetAbacRuleSchema;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetAbacRuleSchema;
 
-        internal void ExecuteOnOBPv600GetAbacRuleSchema(ABACApi.OBPv600GetAbacRuleSchemaApiResponse apiResponse)
+        internal void ExecuteOnGetAbacRuleSchema(ABACApi.GetAbacRuleSchemaApiResponse apiResponse)
         {
-            OnOBPv600GetAbacRuleSchema?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetAbacRuleSchema?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600GetAbacRuleSchema(Exception exception)
+        internal void ExecuteOnErrorGetAbacRuleSchema(Exception exception)
         {
-            OnErrorOBPv600GetAbacRuleSchema?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetAbacRuleSchema?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600GetAbacRules;
+        public event EventHandler<ApiResponseEventArgs>? OnGetAbacRules;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600GetAbacRules;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetAbacRules;
 
-        internal void ExecuteOnOBPv600GetAbacRules(ABACApi.OBPv600GetAbacRulesApiResponse apiResponse)
+        internal void ExecuteOnGetAbacRules(ABACApi.GetAbacRulesApiResponse apiResponse)
         {
-            OnOBPv600GetAbacRules?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetAbacRules?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600GetAbacRules(Exception exception)
+        internal void ExecuteOnErrorGetAbacRules(Exception exception)
         {
-            OnErrorOBPv600GetAbacRules?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetAbacRules?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600GetAbacRulesByPolicy;
+        public event EventHandler<ApiResponseEventArgs>? OnGetAbacRulesByPolicy;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600GetAbacRulesByPolicy;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetAbacRulesByPolicy;
 
-        internal void ExecuteOnOBPv600GetAbacRulesByPolicy(ABACApi.OBPv600GetAbacRulesByPolicyApiResponse apiResponse)
+        internal void ExecuteOnGetAbacRulesByPolicy(ABACApi.GetAbacRulesByPolicyApiResponse apiResponse)
         {
-            OnOBPv600GetAbacRulesByPolicy?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetAbacRulesByPolicy?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600GetAbacRulesByPolicy(Exception exception)
+        internal void ExecuteOnErrorGetAbacRulesByPolicy(Exception exception)
         {
-            OnErrorOBPv600GetAbacRulesByPolicy?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetAbacRulesByPolicy?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600UpdateAbacRule;
+        public event EventHandler<ApiResponseEventArgs>? OnUpdateAbacRule;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600UpdateAbacRule;
+        public event EventHandler<ExceptionEventArgs>? OnErrorUpdateAbacRule;
 
-        internal void ExecuteOnOBPv600UpdateAbacRule(ABACApi.OBPv600UpdateAbacRuleApiResponse apiResponse)
+        internal void ExecuteOnUpdateAbacRule(ABACApi.UpdateAbacRuleApiResponse apiResponse)
         {
-            OnOBPv600UpdateAbacRule?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnUpdateAbacRule?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600UpdateAbacRule(Exception exception)
+        internal void ExecuteOnErrorUpdateAbacRule(Exception exception)
         {
-            OnErrorOBPv600UpdateAbacRule?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorUpdateAbacRule?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600ValidateAbacRule;
+        public event EventHandler<ApiResponseEventArgs>? OnValidateAbacRule;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600ValidateAbacRule;
+        public event EventHandler<ExceptionEventArgs>? OnErrorValidateAbacRule;
 
-        internal void ExecuteOnOBPv600ValidateAbacRule(ABACApi.OBPv600ValidateAbacRuleApiResponse apiResponse)
+        internal void ExecuteOnValidateAbacRule(ABACApi.ValidateAbacRuleApiResponse apiResponse)
         {
-            OnOBPv600ValidateAbacRule?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnValidateAbacRule?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600ValidateAbacRule(Exception exception)
+        internal void ExecuteOnErrorValidateAbacRule(Exception exception)
         {
-            OnErrorOBPv600ValidateAbacRule?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorValidateAbacRule?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -770,28 +770,28 @@ namespace OpenBankProject.Api
             OauthTokenProvider = oauthTokenProvider;
         }
 
-        partial void FormatOBPv600CreateAbacRule(OBPv600UpdateAbacRuleRequest oBPv600UpdateAbacRuleRequest);
+        partial void FormatCreateAbacRule(UpdateAbacRuleRequest updateAbacRuleRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
-        /// <param name="oBPv600UpdateAbacRuleRequest"></param>
+        /// <param name="updateAbacRuleRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv600CreateAbacRule(OBPv600UpdateAbacRuleRequest oBPv600UpdateAbacRuleRequest)
+        private void ValidateCreateAbacRule(UpdateAbacRuleRequest updateAbacRuleRequest)
         {
-            if (oBPv600UpdateAbacRuleRequest == null)
-                throw new ArgumentNullException(nameof(oBPv600UpdateAbacRuleRequest));
+            if (updateAbacRuleRequest == null)
+                throw new ArgumentNullException(nameof(updateAbacRuleRequest));
         }
 
         /// <summary>
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        /// <param name="oBPv600UpdateAbacRuleRequest"></param>
-        private void AfterOBPv600CreateAbacRuleDefaultImplementation(IOBPv600CreateAbacRuleApiResponse apiResponseLocalVar, OBPv600UpdateAbacRuleRequest oBPv600UpdateAbacRuleRequest)
+        /// <param name="updateAbacRuleRequest"></param>
+        private void AfterCreateAbacRuleDefaultImplementation(ICreateAbacRuleApiResponse apiResponseLocalVar, UpdateAbacRuleRequest updateAbacRuleRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600CreateAbacRule(ref suppressDefaultLog, apiResponseLocalVar, oBPv600UpdateAbacRuleRequest);
+            AfterCreateAbacRule(ref suppressDefaultLog, apiResponseLocalVar, updateAbacRuleRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -801,8 +801,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        /// <param name="oBPv600UpdateAbacRuleRequest"></param>
-        partial void AfterOBPv600CreateAbacRule(ref bool suppressDefaultLog, IOBPv600CreateAbacRuleApiResponse apiResponseLocalVar, OBPv600UpdateAbacRuleRequest oBPv600UpdateAbacRuleRequest);
+        /// <param name="updateAbacRuleRequest"></param>
+        partial void AfterCreateAbacRule(ref bool suppressDefaultLog, ICreateAbacRuleApiResponse apiResponseLocalVar, UpdateAbacRuleRequest updateAbacRuleRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -810,11 +810,11 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        /// <param name="oBPv600UpdateAbacRuleRequest"></param>
-        private void OnErrorOBPv600CreateAbacRuleDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, OBPv600UpdateAbacRuleRequest oBPv600UpdateAbacRuleRequest)
+        /// <param name="updateAbacRuleRequest"></param>
+        private void OnErrorCreateAbacRuleDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, UpdateAbacRuleRequest updateAbacRuleRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600CreateAbacRule(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, oBPv600UpdateAbacRuleRequest);
+            OnErrorCreateAbacRule(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, updateAbacRuleRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -826,20 +826,20 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        /// <param name="oBPv600UpdateAbacRuleRequest"></param>
-        partial void OnErrorOBPv600CreateAbacRule(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, OBPv600UpdateAbacRuleRequest oBPv600UpdateAbacRuleRequest);
+        /// <param name="updateAbacRuleRequest"></param>
+        partial void OnErrorCreateAbacRule(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, UpdateAbacRuleRequest updateAbacRuleRequest);
 
         /// <summary>
         /// Create ABAC Rule &lt;p&gt;Create a new ABAC (Attribute-Based Access Control) rule.&lt;/p&gt; &lt;p&gt;ABAC rules are Scala functions that return a Boolean value indicating whether access should be granted.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Documentation:&lt;/strong&gt;&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Simple_Guide\&quot;&gt;here&lt;/a&gt; - Getting started with ABAC rules&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Parameters_Summary\&quot;&gt;here&lt;/a&gt; - Complete list of all 18 parameters&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Object_Properties_Reference\&quot;&gt;here&lt;/a&gt; - Detailed property reference&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Testing_Examples\&quot;&gt;here&lt;/a&gt; - Testing examples and patterns&lt;/p&gt; &lt;p&gt;The rule function receives 18 parameters including authenticatedUser, attributes, auth context, and optional objects (bank, account, transaction, etc.).&lt;/p&gt; &lt;p&gt;Example rule code:&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-scala\&quot;&gt;// Allow access only if authenticated user is admin authenticatedUser.emailAddress.contains(&amp;quot;admin&amp;quot;) &lt;/code&gt;&lt;/pre&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-scala\&quot;&gt;// Allow access only to accounts with balance &amp;gt; 1000 accountOpt.exists(_.balance.toDouble &amp;gt; 1000.0) &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;policy&lt;/strong&gt;&lt;/a&gt;: policy&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_code&lt;/strong&gt;&lt;/a&gt;: rule_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_name&lt;/strong&gt;&lt;/a&gt;: rule_name&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;abac_rule_id&lt;/strong&gt;&lt;/a&gt;: abac_rule_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;policy&lt;/strong&gt;&lt;/a&gt;: policy&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_code&lt;/strong&gt;&lt;/a&gt;: rule_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_name&lt;/strong&gt;&lt;/a&gt;: rule_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated_by_user_id&lt;/strong&gt;&lt;/a&gt;: updated_by_user_id&lt;/p&gt; 
         /// </summary>
-        /// <param name="oBPv600UpdateAbacRuleRequest">Request body</param>
+        /// <param name="updateAbacRuleRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreateAbacRuleApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600CreateAbacRuleApiResponse?> OBPv600CreateAbacRuleOrDefaultAsync(OBPv600UpdateAbacRuleRequest oBPv600UpdateAbacRuleRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateAbacRuleApiResponse"/>&gt;</returns>
+        public async Task<ICreateAbacRuleApiResponse?> CreateAbacRuleOrDefaultAsync(UpdateAbacRuleRequest updateAbacRuleRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600CreateAbacRuleAsync(oBPv600UpdateAbacRuleRequest, cancellationToken).ConfigureAwait(false);
+                return await CreateAbacRuleAsync(updateAbacRuleRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -851,18 +851,18 @@ namespace OpenBankProject.Api
         /// Create ABAC Rule &lt;p&gt;Create a new ABAC (Attribute-Based Access Control) rule.&lt;/p&gt; &lt;p&gt;ABAC rules are Scala functions that return a Boolean value indicating whether access should be granted.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Documentation:&lt;/strong&gt;&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Simple_Guide\&quot;&gt;here&lt;/a&gt; - Getting started with ABAC rules&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Parameters_Summary\&quot;&gt;here&lt;/a&gt; - Complete list of all 18 parameters&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Object_Properties_Reference\&quot;&gt;here&lt;/a&gt; - Detailed property reference&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Testing_Examples\&quot;&gt;here&lt;/a&gt; - Testing examples and patterns&lt;/p&gt; &lt;p&gt;The rule function receives 18 parameters including authenticatedUser, attributes, auth context, and optional objects (bank, account, transaction, etc.).&lt;/p&gt; &lt;p&gt;Example rule code:&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-scala\&quot;&gt;// Allow access only if authenticated user is admin authenticatedUser.emailAddress.contains(&amp;quot;admin&amp;quot;) &lt;/code&gt;&lt;/pre&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-scala\&quot;&gt;// Allow access only to accounts with balance &amp;gt; 1000 accountOpt.exists(_.balance.toDouble &amp;gt; 1000.0) &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;policy&lt;/strong&gt;&lt;/a&gt;: policy&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_code&lt;/strong&gt;&lt;/a&gt;: rule_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_name&lt;/strong&gt;&lt;/a&gt;: rule_name&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;abac_rule_id&lt;/strong&gt;&lt;/a&gt;: abac_rule_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;policy&lt;/strong&gt;&lt;/a&gt;: policy&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_code&lt;/strong&gt;&lt;/a&gt;: rule_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_name&lt;/strong&gt;&lt;/a&gt;: rule_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated_by_user_id&lt;/strong&gt;&lt;/a&gt;: updated_by_user_id&lt;/p&gt; 
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oBPv600UpdateAbacRuleRequest">Request body</param>
+        /// <param name="updateAbacRuleRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreateAbacRuleApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600CreateAbacRuleApiResponse> OBPv600CreateAbacRuleAsync(OBPv600UpdateAbacRuleRequest oBPv600UpdateAbacRuleRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateAbacRuleApiResponse"/>&gt;</returns>
+        public async Task<ICreateAbacRuleApiResponse> CreateAbacRuleAsync(UpdateAbacRuleRequest updateAbacRuleRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600CreateAbacRule(oBPv600UpdateAbacRuleRequest);
+                ValidateCreateAbacRule(updateAbacRuleRequest);
 
-                FormatOBPv600CreateAbacRule(oBPv600UpdateAbacRuleRequest);
+                FormatCreateAbacRule(updateAbacRuleRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -873,16 +873,16 @@ namespace OpenBankProject.Api
                         ? "/obp/v6.0.0/management/abac-rules"
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v6.0.0/management/abac-rules");
 
-                    httpRequestMessageLocalVar.Content = (oBPv600UpdateAbacRuleRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (updateAbacRuleRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv600UpdateAbacRuleRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateAbacRuleRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -918,8 +918,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv600CreateAbacRuleApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv600CreateAbacRuleApiResponse>();
-                        OBPv600CreateAbacRuleApiResponse apiResponseLocalVar;
+                        ILogger<CreateAbacRuleApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CreateAbacRuleApiResponse>();
+                        CreateAbacRuleApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -930,9 +930,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600CreateAbacRuleDefaultImplementation(apiResponseLocalVar, oBPv600UpdateAbacRuleRequest);
+                        AfterCreateAbacRuleDefaultImplementation(apiResponseLocalVar, updateAbacRuleRequest);
 
-                        Events.ExecuteOnOBPv600CreateAbacRule(apiResponseLocalVar);
+                        Events.ExecuteOnCreateAbacRule(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -944,24 +944,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600CreateAbacRuleDefaultImplementation(e, "/obp/v6.0.0/management/abac-rules", uriBuilderLocalVar.Path, oBPv600UpdateAbacRuleRequest);
-                Events.ExecuteOnErrorOBPv600CreateAbacRule(e);
+                OnErrorCreateAbacRuleDefaultImplementation(e, "/obp/v6.0.0/management/abac-rules", uriBuilderLocalVar.Path, updateAbacRuleRequest);
+                Events.ExecuteOnErrorCreateAbacRule(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv600CreateAbacRuleApiResponse"/>
+        /// The <see cref="CreateAbacRuleApiResponse"/>
         /// </summary>
-        public partial class OBPv600CreateAbacRuleApiResponse : OpenBankProject.Client.ApiResponse, IOBPv600CreateAbacRuleApiResponse
+        public partial class CreateAbacRuleApiResponse : OpenBankProject.Client.ApiResponse, ICreateAbacRuleApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv600CreateAbacRuleApiResponse> Logger { get; }
+            public ILogger<CreateAbacRuleApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv600CreateAbacRuleApiResponse"/>
+            /// The <see cref="CreateAbacRuleApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -970,14 +970,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600CreateAbacRuleApiResponse(ILogger<OBPv600CreateAbacRuleApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public CreateAbacRuleApiResponse(ILogger<CreateAbacRuleApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv600CreateAbacRuleApiResponse"/>
+            /// The <see cref="CreateAbacRuleApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -986,7 +986,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600CreateAbacRuleApiResponse(ILogger<OBPv600CreateAbacRuleApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public CreateAbacRuleApiResponse(ILogger<CreateAbacRuleApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1004,11 +1004,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv600GetAbacRule200Response? Ok()
+            public OpenBankProject.Model.GetAbacRule200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv600GetAbacRule200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetAbacRule200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1017,7 +1017,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv600GetAbacRule200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetAbacRule200Response? result)
             {
                 result = null;
 
@@ -1049,14 +1049,14 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv600DeleteAbacRule(ref string abacruleid);
+        partial void FormatDeleteAbacRule(ref string abacruleid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="abacruleid"></param>
         /// <returns></returns>
-        private void ValidateOBPv600DeleteAbacRule(string abacruleid)
+        private void ValidateDeleteAbacRule(string abacruleid)
         {
             if (abacruleid == null)
                 throw new ArgumentNullException(nameof(abacruleid));
@@ -1067,10 +1067,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="abacruleid"></param>
-        private void AfterOBPv600DeleteAbacRuleDefaultImplementation(IOBPv600DeleteAbacRuleApiResponse apiResponseLocalVar, string abacruleid)
+        private void AfterDeleteAbacRuleDefaultImplementation(IDeleteAbacRuleApiResponse apiResponseLocalVar, string abacruleid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600DeleteAbacRule(ref suppressDefaultLog, apiResponseLocalVar, abacruleid);
+            AfterDeleteAbacRule(ref suppressDefaultLog, apiResponseLocalVar, abacruleid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1081,7 +1081,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="abacruleid"></param>
-        partial void AfterOBPv600DeleteAbacRule(ref bool suppressDefaultLog, IOBPv600DeleteAbacRuleApiResponse apiResponseLocalVar, string abacruleid);
+        partial void AfterDeleteAbacRule(ref bool suppressDefaultLog, IDeleteAbacRuleApiResponse apiResponseLocalVar, string abacruleid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1090,10 +1090,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="abacruleid"></param>
-        private void OnErrorOBPv600DeleteAbacRuleDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string abacruleid)
+        private void OnErrorDeleteAbacRuleDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string abacruleid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600DeleteAbacRule(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, abacruleid);
+            OnErrorDeleteAbacRule(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, abacruleid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1106,19 +1106,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="abacruleid"></param>
-        partial void OnErrorOBPv600DeleteAbacRule(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string abacruleid);
+        partial void OnErrorDeleteAbacRule(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string abacruleid);
 
         /// <summary>
         /// Delete ABAC Rule &lt;p&gt;Delete an ABAC rule by its ID.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Documentation:&lt;/strong&gt;&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Simple_Guide\&quot;&gt;here&lt;/a&gt; - Getting started with ABAC rules&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Parameters_Summary\&quot;&gt;here&lt;/a&gt; - Complete list of all 18 parameters&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ABAC_RULE_ID&lt;/a&gt;: ABAC_RULE_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </summary>
         /// <param name="abacruleid">The ABACRULEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600DeleteAbacRuleApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600DeleteAbacRuleApiResponse?> OBPv600DeleteAbacRuleOrDefaultAsync(string abacruleid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteAbacRuleApiResponse"/>&gt;</returns>
+        public async Task<IDeleteAbacRuleApiResponse?> DeleteAbacRuleOrDefaultAsync(string abacruleid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600DeleteAbacRuleAsync(abacruleid, cancellationToken).ConfigureAwait(false);
+                return await DeleteAbacRuleAsync(abacruleid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1132,16 +1132,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="abacruleid">The ABACRULEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600DeleteAbacRuleApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600DeleteAbacRuleApiResponse> OBPv600DeleteAbacRuleAsync(string abacruleid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteAbacRuleApiResponse"/>&gt;</returns>
+        public async Task<IDeleteAbacRuleApiResponse> DeleteAbacRuleAsync(string abacruleid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600DeleteAbacRule(abacruleid);
+                ValidateDeleteAbacRule(abacruleid);
 
-                FormatOBPv600DeleteAbacRule(ref abacruleid);
+                FormatDeleteAbacRule(ref abacruleid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1158,7 +1158,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1176,8 +1176,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv600DeleteAbacRuleApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv600DeleteAbacRuleApiResponse>();
-                        OBPv600DeleteAbacRuleApiResponse apiResponseLocalVar;
+                        ILogger<DeleteAbacRuleApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<DeleteAbacRuleApiResponse>();
+                        DeleteAbacRuleApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1188,9 +1188,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600DeleteAbacRuleDefaultImplementation(apiResponseLocalVar, abacruleid);
+                        AfterDeleteAbacRuleDefaultImplementation(apiResponseLocalVar, abacruleid);
 
-                        Events.ExecuteOnOBPv600DeleteAbacRule(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteAbacRule(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1202,24 +1202,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600DeleteAbacRuleDefaultImplementation(e, "/obp/v6.0.0/management/abac-rules/{abacruleid}", uriBuilderLocalVar.Path, abacruleid);
-                Events.ExecuteOnErrorOBPv600DeleteAbacRule(e);
+                OnErrorDeleteAbacRuleDefaultImplementation(e, "/obp/v6.0.0/management/abac-rules/{abacruleid}", uriBuilderLocalVar.Path, abacruleid);
+                Events.ExecuteOnErrorDeleteAbacRule(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv600DeleteAbacRuleApiResponse"/>
+        /// The <see cref="DeleteAbacRuleApiResponse"/>
         /// </summary>
-        public partial class OBPv600DeleteAbacRuleApiResponse : OpenBankProject.Client.ApiResponse, IOBPv600DeleteAbacRuleApiResponse
+        public partial class DeleteAbacRuleApiResponse : OpenBankProject.Client.ApiResponse, IDeleteAbacRuleApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv600DeleteAbacRuleApiResponse> Logger { get; }
+            public ILogger<DeleteAbacRuleApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv600DeleteAbacRuleApiResponse"/>
+            /// The <see cref="DeleteAbacRuleApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1228,14 +1228,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600DeleteAbacRuleApiResponse(ILogger<OBPv600DeleteAbacRuleApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public DeleteAbacRuleApiResponse(ILogger<DeleteAbacRuleApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv600DeleteAbacRuleApiResponse"/>
+            /// The <see cref="DeleteAbacRuleApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1244,7 +1244,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600DeleteAbacRuleApiResponse(ILogger<OBPv600DeleteAbacRuleApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public DeleteAbacRuleApiResponse(ILogger<DeleteAbacRuleApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1275,21 +1275,21 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv600ExecuteAbacPolicy(ref string policy, OBPv600ExecuteAbacPolicyRequest oBPv600ExecuteAbacPolicyRequest);
+        partial void FormatExecuteAbacPolicy(ref string policy, ExecuteAbacPolicyRequest executeAbacPolicyRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="policy"></param>
-        /// <param name="oBPv600ExecuteAbacPolicyRequest"></param>
+        /// <param name="executeAbacPolicyRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv600ExecuteAbacPolicy(string policy, OBPv600ExecuteAbacPolicyRequest oBPv600ExecuteAbacPolicyRequest)
+        private void ValidateExecuteAbacPolicy(string policy, ExecuteAbacPolicyRequest executeAbacPolicyRequest)
         {
             if (policy == null)
                 throw new ArgumentNullException(nameof(policy));
 
-            if (oBPv600ExecuteAbacPolicyRequest == null)
-                throw new ArgumentNullException(nameof(oBPv600ExecuteAbacPolicyRequest));
+            if (executeAbacPolicyRequest == null)
+                throw new ArgumentNullException(nameof(executeAbacPolicyRequest));
         }
 
         /// <summary>
@@ -1297,11 +1297,11 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="policy"></param>
-        /// <param name="oBPv600ExecuteAbacPolicyRequest"></param>
-        private void AfterOBPv600ExecuteAbacPolicyDefaultImplementation(IOBPv600ExecuteAbacPolicyApiResponse apiResponseLocalVar, string policy, OBPv600ExecuteAbacPolicyRequest oBPv600ExecuteAbacPolicyRequest)
+        /// <param name="executeAbacPolicyRequest"></param>
+        private void AfterExecuteAbacPolicyDefaultImplementation(IExecuteAbacPolicyApiResponse apiResponseLocalVar, string policy, ExecuteAbacPolicyRequest executeAbacPolicyRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600ExecuteAbacPolicy(ref suppressDefaultLog, apiResponseLocalVar, policy, oBPv600ExecuteAbacPolicyRequest);
+            AfterExecuteAbacPolicy(ref suppressDefaultLog, apiResponseLocalVar, policy, executeAbacPolicyRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1312,8 +1312,8 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="policy"></param>
-        /// <param name="oBPv600ExecuteAbacPolicyRequest"></param>
-        partial void AfterOBPv600ExecuteAbacPolicy(ref bool suppressDefaultLog, IOBPv600ExecuteAbacPolicyApiResponse apiResponseLocalVar, string policy, OBPv600ExecuteAbacPolicyRequest oBPv600ExecuteAbacPolicyRequest);
+        /// <param name="executeAbacPolicyRequest"></param>
+        partial void AfterExecuteAbacPolicy(ref bool suppressDefaultLog, IExecuteAbacPolicyApiResponse apiResponseLocalVar, string policy, ExecuteAbacPolicyRequest executeAbacPolicyRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1322,11 +1322,11 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="policy"></param>
-        /// <param name="oBPv600ExecuteAbacPolicyRequest"></param>
-        private void OnErrorOBPv600ExecuteAbacPolicyDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string policy, OBPv600ExecuteAbacPolicyRequest oBPv600ExecuteAbacPolicyRequest)
+        /// <param name="executeAbacPolicyRequest"></param>
+        private void OnErrorExecuteAbacPolicyDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string policy, ExecuteAbacPolicyRequest executeAbacPolicyRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600ExecuteAbacPolicy(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, policy, oBPv600ExecuteAbacPolicyRequest);
+            OnErrorExecuteAbacPolicy(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, policy, executeAbacPolicyRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1339,21 +1339,21 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="policy"></param>
-        /// <param name="oBPv600ExecuteAbacPolicyRequest"></param>
-        partial void OnErrorOBPv600ExecuteAbacPolicy(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string policy, OBPv600ExecuteAbacPolicyRequest oBPv600ExecuteAbacPolicyRequest);
+        /// <param name="executeAbacPolicyRequest"></param>
+        partial void OnErrorExecuteAbacPolicy(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string policy, ExecuteAbacPolicyRequest executeAbacPolicyRequest);
 
         /// <summary>
         /// Execute ABAC Policy &lt;p&gt;Execute all ABAC rules in a policy to test access control.&lt;/p&gt; &lt;p&gt;This endpoint executes all active rules that belong to the specified policy.&lt;br /&gt; The policy uses OR logic - access is granted if at least one rule passes.&lt;/p&gt; &lt;p&gt;This allows you to test a complete policy with specific context (authenticated user, bank, account, transaction, customer, etc.).&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Documentation:&lt;/strong&gt;&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Simple_Guide\&quot;&gt;here&lt;/a&gt; - Getting started with ABAC rules&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Parameters_Summary\&quot;&gt;here&lt;/a&gt; - Complete list of all 18 parameters&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Object_Properties_Reference\&quot;&gt;here&lt;/a&gt; - Detailed property reference&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Testing_Examples\&quot;&gt;here&lt;/a&gt; - Testing examples and patterns&lt;/p&gt; &lt;p&gt;You can provide optional IDs in the request body to test the policy with specific context.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;POLICY&lt;/a&gt;: POLICY&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;account_id&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;authenticated_user_id&lt;/a&gt;: authenticated_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;customer_id&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;on_behalf_of_user_id&lt;/a&gt;: on_behalf_of_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;transaction_id&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;transaction_request_id&lt;/a&gt;: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;user_id&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;view_id&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#result\&quot;&gt;&lt;strong&gt;result&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
         /// </summary>
         /// <param name="policy">The POLICY identifier</param>
-        /// <param name="oBPv600ExecuteAbacPolicyRequest">Request body</param>
+        /// <param name="executeAbacPolicyRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600ExecuteAbacPolicyApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600ExecuteAbacPolicyApiResponse?> OBPv600ExecuteAbacPolicyOrDefaultAsync(string policy, OBPv600ExecuteAbacPolicyRequest oBPv600ExecuteAbacPolicyRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IExecuteAbacPolicyApiResponse"/>&gt;</returns>
+        public async Task<IExecuteAbacPolicyApiResponse?> ExecuteAbacPolicyOrDefaultAsync(string policy, ExecuteAbacPolicyRequest executeAbacPolicyRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600ExecuteAbacPolicyAsync(policy, oBPv600ExecuteAbacPolicyRequest, cancellationToken).ConfigureAwait(false);
+                return await ExecuteAbacPolicyAsync(policy, executeAbacPolicyRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1366,18 +1366,18 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="policy">The POLICY identifier</param>
-        /// <param name="oBPv600ExecuteAbacPolicyRequest">Request body</param>
+        /// <param name="executeAbacPolicyRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600ExecuteAbacPolicyApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600ExecuteAbacPolicyApiResponse> OBPv600ExecuteAbacPolicyAsync(string policy, OBPv600ExecuteAbacPolicyRequest oBPv600ExecuteAbacPolicyRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IExecuteAbacPolicyApiResponse"/>&gt;</returns>
+        public async Task<IExecuteAbacPolicyApiResponse> ExecuteAbacPolicyAsync(string policy, ExecuteAbacPolicyRequest executeAbacPolicyRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600ExecuteAbacPolicy(policy, oBPv600ExecuteAbacPolicyRequest);
+                ValidateExecuteAbacPolicy(policy, executeAbacPolicyRequest);
 
-                FormatOBPv600ExecuteAbacPolicy(ref policy, oBPv600ExecuteAbacPolicyRequest);
+                FormatExecuteAbacPolicy(ref policy, executeAbacPolicyRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1389,16 +1389,16 @@ namespace OpenBankProject.Api
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v6.0.0/management/abac-policies/{policy}/execute");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bpolicy%7D", Uri.EscapeDataString(policy.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv600ExecuteAbacPolicyRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (executeAbacPolicyRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv600ExecuteAbacPolicyRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(executeAbacPolicyRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1434,8 +1434,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv600ExecuteAbacPolicyApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv600ExecuteAbacPolicyApiResponse>();
-                        OBPv600ExecuteAbacPolicyApiResponse apiResponseLocalVar;
+                        ILogger<ExecuteAbacPolicyApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<ExecuteAbacPolicyApiResponse>();
+                        ExecuteAbacPolicyApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1446,9 +1446,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600ExecuteAbacPolicyDefaultImplementation(apiResponseLocalVar, policy, oBPv600ExecuteAbacPolicyRequest);
+                        AfterExecuteAbacPolicyDefaultImplementation(apiResponseLocalVar, policy, executeAbacPolicyRequest);
 
-                        Events.ExecuteOnOBPv600ExecuteAbacPolicy(apiResponseLocalVar);
+                        Events.ExecuteOnExecuteAbacPolicy(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1460,24 +1460,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600ExecuteAbacPolicyDefaultImplementation(e, "/obp/v6.0.0/management/abac-policies/{policy}/execute", uriBuilderLocalVar.Path, policy, oBPv600ExecuteAbacPolicyRequest);
-                Events.ExecuteOnErrorOBPv600ExecuteAbacPolicy(e);
+                OnErrorExecuteAbacPolicyDefaultImplementation(e, "/obp/v6.0.0/management/abac-policies/{policy}/execute", uriBuilderLocalVar.Path, policy, executeAbacPolicyRequest);
+                Events.ExecuteOnErrorExecuteAbacPolicy(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv600ExecuteAbacPolicyApiResponse"/>
+        /// The <see cref="ExecuteAbacPolicyApiResponse"/>
         /// </summary>
-        public partial class OBPv600ExecuteAbacPolicyApiResponse : OpenBankProject.Client.ApiResponse, IOBPv600ExecuteAbacPolicyApiResponse
+        public partial class ExecuteAbacPolicyApiResponse : OpenBankProject.Client.ApiResponse, IExecuteAbacPolicyApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv600ExecuteAbacPolicyApiResponse> Logger { get; }
+            public ILogger<ExecuteAbacPolicyApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv600ExecuteAbacPolicyApiResponse"/>
+            /// The <see cref="ExecuteAbacPolicyApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1486,14 +1486,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600ExecuteAbacPolicyApiResponse(ILogger<OBPv600ExecuteAbacPolicyApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public ExecuteAbacPolicyApiResponse(ILogger<ExecuteAbacPolicyApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv600ExecuteAbacPolicyApiResponse"/>
+            /// The <see cref="ExecuteAbacPolicyApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1502,7 +1502,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600ExecuteAbacPolicyApiResponse(ILogger<OBPv600ExecuteAbacPolicyApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public ExecuteAbacPolicyApiResponse(ILogger<ExecuteAbacPolicyApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1520,11 +1520,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv600ExecuteAbacPolicy200Response? Ok()
+            public OpenBankProject.Model.ExecuteAbacPolicy200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv600ExecuteAbacPolicy200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.ExecuteAbacPolicy200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1533,7 +1533,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv600ExecuteAbacPolicy200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.ExecuteAbacPolicy200Response? result)
             {
                 result = null;
 
@@ -1565,21 +1565,21 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv600ExecuteAbacRule(ref string abacruleid, OBPv600ExecuteAbacPolicyRequest oBPv600ExecuteAbacPolicyRequest);
+        partial void FormatExecuteAbacRule(ref string abacruleid, ExecuteAbacPolicyRequest executeAbacPolicyRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="abacruleid"></param>
-        /// <param name="oBPv600ExecuteAbacPolicyRequest"></param>
+        /// <param name="executeAbacPolicyRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv600ExecuteAbacRule(string abacruleid, OBPv600ExecuteAbacPolicyRequest oBPv600ExecuteAbacPolicyRequest)
+        private void ValidateExecuteAbacRule(string abacruleid, ExecuteAbacPolicyRequest executeAbacPolicyRequest)
         {
             if (abacruleid == null)
                 throw new ArgumentNullException(nameof(abacruleid));
 
-            if (oBPv600ExecuteAbacPolicyRequest == null)
-                throw new ArgumentNullException(nameof(oBPv600ExecuteAbacPolicyRequest));
+            if (executeAbacPolicyRequest == null)
+                throw new ArgumentNullException(nameof(executeAbacPolicyRequest));
         }
 
         /// <summary>
@@ -1587,11 +1587,11 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="abacruleid"></param>
-        /// <param name="oBPv600ExecuteAbacPolicyRequest"></param>
-        private void AfterOBPv600ExecuteAbacRuleDefaultImplementation(IOBPv600ExecuteAbacRuleApiResponse apiResponseLocalVar, string abacruleid, OBPv600ExecuteAbacPolicyRequest oBPv600ExecuteAbacPolicyRequest)
+        /// <param name="executeAbacPolicyRequest"></param>
+        private void AfterExecuteAbacRuleDefaultImplementation(IExecuteAbacRuleApiResponse apiResponseLocalVar, string abacruleid, ExecuteAbacPolicyRequest executeAbacPolicyRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600ExecuteAbacRule(ref suppressDefaultLog, apiResponseLocalVar, abacruleid, oBPv600ExecuteAbacPolicyRequest);
+            AfterExecuteAbacRule(ref suppressDefaultLog, apiResponseLocalVar, abacruleid, executeAbacPolicyRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1602,8 +1602,8 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="abacruleid"></param>
-        /// <param name="oBPv600ExecuteAbacPolicyRequest"></param>
-        partial void AfterOBPv600ExecuteAbacRule(ref bool suppressDefaultLog, IOBPv600ExecuteAbacRuleApiResponse apiResponseLocalVar, string abacruleid, OBPv600ExecuteAbacPolicyRequest oBPv600ExecuteAbacPolicyRequest);
+        /// <param name="executeAbacPolicyRequest"></param>
+        partial void AfterExecuteAbacRule(ref bool suppressDefaultLog, IExecuteAbacRuleApiResponse apiResponseLocalVar, string abacruleid, ExecuteAbacPolicyRequest executeAbacPolicyRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1612,11 +1612,11 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="abacruleid"></param>
-        /// <param name="oBPv600ExecuteAbacPolicyRequest"></param>
-        private void OnErrorOBPv600ExecuteAbacRuleDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string abacruleid, OBPv600ExecuteAbacPolicyRequest oBPv600ExecuteAbacPolicyRequest)
+        /// <param name="executeAbacPolicyRequest"></param>
+        private void OnErrorExecuteAbacRuleDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string abacruleid, ExecuteAbacPolicyRequest executeAbacPolicyRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600ExecuteAbacRule(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, abacruleid, oBPv600ExecuteAbacPolicyRequest);
+            OnErrorExecuteAbacRule(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, abacruleid, executeAbacPolicyRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1629,21 +1629,21 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="abacruleid"></param>
-        /// <param name="oBPv600ExecuteAbacPolicyRequest"></param>
-        partial void OnErrorOBPv600ExecuteAbacRule(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string abacruleid, OBPv600ExecuteAbacPolicyRequest oBPv600ExecuteAbacPolicyRequest);
+        /// <param name="executeAbacPolicyRequest"></param>
+        partial void OnErrorExecuteAbacRule(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string abacruleid, ExecuteAbacPolicyRequest executeAbacPolicyRequest);
 
         /// <summary>
         /// Execute ABAC Rule &lt;p&gt;Execute an ABAC rule to test access control.&lt;/p&gt; &lt;p&gt;This endpoint allows you to test an ABAC rule with specific context (authenticated user, bank, account, transaction, customer, etc.).&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Documentation:&lt;/strong&gt;&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Simple_Guide\&quot;&gt;here&lt;/a&gt; - Getting started with ABAC rules&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Parameters_Summary\&quot;&gt;here&lt;/a&gt; - Complete list of all 18 parameters&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Object_Properties_Reference\&quot;&gt;here&lt;/a&gt; - Detailed property reference&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Testing_Examples\&quot;&gt;here&lt;/a&gt; - Testing examples and patterns&lt;/p&gt; &lt;p&gt;You can provide optional IDs in the request body to test the rule with specific context.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ABAC_RULE_ID&lt;/a&gt;: ABAC_RULE_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;account_id&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;authenticated_user_id&lt;/a&gt;: authenticated_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;customer_id&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;on_behalf_of_user_id&lt;/a&gt;: on_behalf_of_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;transaction_id&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;transaction_request_id&lt;/a&gt;: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;user_id&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;view_id&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#result\&quot;&gt;&lt;strong&gt;result&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
         /// </summary>
         /// <param name="abacruleid">The ABACRULEID identifier</param>
-        /// <param name="oBPv600ExecuteAbacPolicyRequest">Request body</param>
+        /// <param name="executeAbacPolicyRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600ExecuteAbacRuleApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600ExecuteAbacRuleApiResponse?> OBPv600ExecuteAbacRuleOrDefaultAsync(string abacruleid, OBPv600ExecuteAbacPolicyRequest oBPv600ExecuteAbacPolicyRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IExecuteAbacRuleApiResponse"/>&gt;</returns>
+        public async Task<IExecuteAbacRuleApiResponse?> ExecuteAbacRuleOrDefaultAsync(string abacruleid, ExecuteAbacPolicyRequest executeAbacPolicyRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600ExecuteAbacRuleAsync(abacruleid, oBPv600ExecuteAbacPolicyRequest, cancellationToken).ConfigureAwait(false);
+                return await ExecuteAbacRuleAsync(abacruleid, executeAbacPolicyRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1656,18 +1656,18 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="abacruleid">The ABACRULEID identifier</param>
-        /// <param name="oBPv600ExecuteAbacPolicyRequest">Request body</param>
+        /// <param name="executeAbacPolicyRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600ExecuteAbacRuleApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600ExecuteAbacRuleApiResponse> OBPv600ExecuteAbacRuleAsync(string abacruleid, OBPv600ExecuteAbacPolicyRequest oBPv600ExecuteAbacPolicyRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IExecuteAbacRuleApiResponse"/>&gt;</returns>
+        public async Task<IExecuteAbacRuleApiResponse> ExecuteAbacRuleAsync(string abacruleid, ExecuteAbacPolicyRequest executeAbacPolicyRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600ExecuteAbacRule(abacruleid, oBPv600ExecuteAbacPolicyRequest);
+                ValidateExecuteAbacRule(abacruleid, executeAbacPolicyRequest);
 
-                FormatOBPv600ExecuteAbacRule(ref abacruleid, oBPv600ExecuteAbacPolicyRequest);
+                FormatExecuteAbacRule(ref abacruleid, executeAbacPolicyRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1679,16 +1679,16 @@ namespace OpenBankProject.Api
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v6.0.0/management/abac-rules/{abacruleid}/execute");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Babacruleid%7D", Uri.EscapeDataString(abacruleid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv600ExecuteAbacPolicyRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (executeAbacPolicyRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv600ExecuteAbacPolicyRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(executeAbacPolicyRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1724,8 +1724,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv600ExecuteAbacRuleApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv600ExecuteAbacRuleApiResponse>();
-                        OBPv600ExecuteAbacRuleApiResponse apiResponseLocalVar;
+                        ILogger<ExecuteAbacRuleApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<ExecuteAbacRuleApiResponse>();
+                        ExecuteAbacRuleApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1736,9 +1736,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600ExecuteAbacRuleDefaultImplementation(apiResponseLocalVar, abacruleid, oBPv600ExecuteAbacPolicyRequest);
+                        AfterExecuteAbacRuleDefaultImplementation(apiResponseLocalVar, abacruleid, executeAbacPolicyRequest);
 
-                        Events.ExecuteOnOBPv600ExecuteAbacRule(apiResponseLocalVar);
+                        Events.ExecuteOnExecuteAbacRule(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1750,24 +1750,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600ExecuteAbacRuleDefaultImplementation(e, "/obp/v6.0.0/management/abac-rules/{abacruleid}/execute", uriBuilderLocalVar.Path, abacruleid, oBPv600ExecuteAbacPolicyRequest);
-                Events.ExecuteOnErrorOBPv600ExecuteAbacRule(e);
+                OnErrorExecuteAbacRuleDefaultImplementation(e, "/obp/v6.0.0/management/abac-rules/{abacruleid}/execute", uriBuilderLocalVar.Path, abacruleid, executeAbacPolicyRequest);
+                Events.ExecuteOnErrorExecuteAbacRule(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv600ExecuteAbacRuleApiResponse"/>
+        /// The <see cref="ExecuteAbacRuleApiResponse"/>
         /// </summary>
-        public partial class OBPv600ExecuteAbacRuleApiResponse : OpenBankProject.Client.ApiResponse, IOBPv600ExecuteAbacRuleApiResponse
+        public partial class ExecuteAbacRuleApiResponse : OpenBankProject.Client.ApiResponse, IExecuteAbacRuleApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv600ExecuteAbacRuleApiResponse> Logger { get; }
+            public ILogger<ExecuteAbacRuleApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv600ExecuteAbacRuleApiResponse"/>
+            /// The <see cref="ExecuteAbacRuleApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1776,14 +1776,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600ExecuteAbacRuleApiResponse(ILogger<OBPv600ExecuteAbacRuleApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public ExecuteAbacRuleApiResponse(ILogger<ExecuteAbacRuleApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv600ExecuteAbacRuleApiResponse"/>
+            /// The <see cref="ExecuteAbacRuleApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1792,7 +1792,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600ExecuteAbacRuleApiResponse(ILogger<OBPv600ExecuteAbacRuleApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public ExecuteAbacRuleApiResponse(ILogger<ExecuteAbacRuleApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1810,11 +1810,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv600ExecuteAbacPolicy200Response? Ok()
+            public OpenBankProject.Model.ExecuteAbacPolicy200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv600ExecuteAbacPolicy200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.ExecuteAbacPolicy200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1823,7 +1823,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv600ExecuteAbacPolicy200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.ExecuteAbacPolicy200Response? result)
             {
                 result = null;
 
@@ -1859,10 +1859,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv600GetAbacPoliciesDefaultImplementation(IOBPv600GetAbacPoliciesApiResponse apiResponseLocalVar)
+        private void AfterGetAbacPoliciesDefaultImplementation(IGetAbacPoliciesApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600GetAbacPolicies(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterGetAbacPolicies(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1872,7 +1872,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv600GetAbacPolicies(ref bool suppressDefaultLog, IOBPv600GetAbacPoliciesApiResponse apiResponseLocalVar);
+        partial void AfterGetAbacPolicies(ref bool suppressDefaultLog, IGetAbacPoliciesApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1880,10 +1880,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv600GetAbacPoliciesDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorGetAbacPoliciesDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600GetAbacPolicies(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorGetAbacPolicies(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1895,18 +1895,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv600GetAbacPolicies(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorGetAbacPolicies(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// Get ABAC Policies &lt;p&gt;Get the list of allowed ABAC policy names.&lt;/p&gt; &lt;p&gt;ABAC rules are organized by policies. Each rule must have at least one policy assigned.&lt;br /&gt; Rules can have multiple policies (comma-separated). This endpoint returns the list of&lt;br /&gt; standardized policy names that should be used when creating or updating rules.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;policies&lt;/strong&gt;&lt;/a&gt;: policies&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;policy&lt;/strong&gt;&lt;/a&gt;: policy&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetAbacPoliciesApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetAbacPoliciesApiResponse?> OBPv600GetAbacPoliciesOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAbacPoliciesApiResponse"/>&gt;</returns>
+        public async Task<IGetAbacPoliciesApiResponse?> GetAbacPoliciesOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600GetAbacPoliciesAsync(cancellationToken).ConfigureAwait(false);
+                return await GetAbacPoliciesAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1919,8 +1919,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetAbacPoliciesApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetAbacPoliciesApiResponse> OBPv600GetAbacPoliciesAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAbacPoliciesApiResponse"/>&gt;</returns>
+        public async Task<IGetAbacPoliciesApiResponse> GetAbacPoliciesAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -1940,7 +1940,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1967,8 +1967,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv600GetAbacPoliciesApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv600GetAbacPoliciesApiResponse>();
-                        OBPv600GetAbacPoliciesApiResponse apiResponseLocalVar;
+                        ILogger<GetAbacPoliciesApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetAbacPoliciesApiResponse>();
+                        GetAbacPoliciesApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1979,9 +1979,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600GetAbacPoliciesDefaultImplementation(apiResponseLocalVar);
+                        AfterGetAbacPoliciesDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv600GetAbacPolicies(apiResponseLocalVar);
+                        Events.ExecuteOnGetAbacPolicies(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1993,24 +1993,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600GetAbacPoliciesDefaultImplementation(e, "/obp/v6.0.0/management/abac-policies", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv600GetAbacPolicies(e);
+                OnErrorGetAbacPoliciesDefaultImplementation(e, "/obp/v6.0.0/management/abac-policies", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorGetAbacPolicies(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv600GetAbacPoliciesApiResponse"/>
+        /// The <see cref="GetAbacPoliciesApiResponse"/>
         /// </summary>
-        public partial class OBPv600GetAbacPoliciesApiResponse : OpenBankProject.Client.ApiResponse, IOBPv600GetAbacPoliciesApiResponse
+        public partial class GetAbacPoliciesApiResponse : OpenBankProject.Client.ApiResponse, IGetAbacPoliciesApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv600GetAbacPoliciesApiResponse> Logger { get; }
+            public ILogger<GetAbacPoliciesApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv600GetAbacPoliciesApiResponse"/>
+            /// The <see cref="GetAbacPoliciesApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2019,14 +2019,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600GetAbacPoliciesApiResponse(ILogger<OBPv600GetAbacPoliciesApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetAbacPoliciesApiResponse(ILogger<GetAbacPoliciesApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv600GetAbacPoliciesApiResponse"/>
+            /// The <see cref="GetAbacPoliciesApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2035,7 +2035,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600GetAbacPoliciesApiResponse(ILogger<OBPv600GetAbacPoliciesApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetAbacPoliciesApiResponse(ILogger<GetAbacPoliciesApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -2053,11 +2053,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv600GetAbacPolicies200Response? Ok()
+            public OpenBankProject.Model.GetAbacPolicies200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv600GetAbacPolicies200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetAbacPolicies200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -2066,7 +2066,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv600GetAbacPolicies200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetAbacPolicies200Response? result)
             {
                 result = null;
 
@@ -2098,14 +2098,14 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv600GetAbacRule(ref string abacruleid);
+        partial void FormatGetAbacRule(ref string abacruleid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="abacruleid"></param>
         /// <returns></returns>
-        private void ValidateOBPv600GetAbacRule(string abacruleid)
+        private void ValidateGetAbacRule(string abacruleid)
         {
             if (abacruleid == null)
                 throw new ArgumentNullException(nameof(abacruleid));
@@ -2116,10 +2116,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="abacruleid"></param>
-        private void AfterOBPv600GetAbacRuleDefaultImplementation(IOBPv600GetAbacRuleApiResponse apiResponseLocalVar, string abacruleid)
+        private void AfterGetAbacRuleDefaultImplementation(IGetAbacRuleApiResponse apiResponseLocalVar, string abacruleid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600GetAbacRule(ref suppressDefaultLog, apiResponseLocalVar, abacruleid);
+            AfterGetAbacRule(ref suppressDefaultLog, apiResponseLocalVar, abacruleid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2130,7 +2130,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="abacruleid"></param>
-        partial void AfterOBPv600GetAbacRule(ref bool suppressDefaultLog, IOBPv600GetAbacRuleApiResponse apiResponseLocalVar, string abacruleid);
+        partial void AfterGetAbacRule(ref bool suppressDefaultLog, IGetAbacRuleApiResponse apiResponseLocalVar, string abacruleid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2139,10 +2139,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="abacruleid"></param>
-        private void OnErrorOBPv600GetAbacRuleDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string abacruleid)
+        private void OnErrorGetAbacRuleDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string abacruleid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600GetAbacRule(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, abacruleid);
+            OnErrorGetAbacRule(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, abacruleid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2155,19 +2155,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="abacruleid"></param>
-        partial void OnErrorOBPv600GetAbacRule(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string abacruleid);
+        partial void OnErrorGetAbacRule(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string abacruleid);
 
         /// <summary>
         /// Get ABAC Rule &lt;p&gt;Get an ABAC rule by its ID.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Documentation:&lt;/strong&gt;&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Simple_Guide\&quot;&gt;here&lt;/a&gt; - Getting started with ABAC rules&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Parameters_Summary\&quot;&gt;here&lt;/a&gt; - Complete list of all 18 parameters&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Object_Properties_Reference\&quot;&gt;here&lt;/a&gt; - Detailed property reference&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ABAC_RULE_ID&lt;/a&gt;: ABAC_RULE_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;abac_rule_id&lt;/strong&gt;&lt;/a&gt;: abac_rule_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;policy&lt;/strong&gt;&lt;/a&gt;: policy&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_code&lt;/strong&gt;&lt;/a&gt;: rule_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_name&lt;/strong&gt;&lt;/a&gt;: rule_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated_by_user_id&lt;/strong&gt;&lt;/a&gt;: updated_by_user_id&lt;/p&gt; 
         /// </summary>
         /// <param name="abacruleid">The ABACRULEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetAbacRuleApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetAbacRuleApiResponse?> OBPv600GetAbacRuleOrDefaultAsync(string abacruleid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAbacRuleApiResponse"/>&gt;</returns>
+        public async Task<IGetAbacRuleApiResponse?> GetAbacRuleOrDefaultAsync(string abacruleid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600GetAbacRuleAsync(abacruleid, cancellationToken).ConfigureAwait(false);
+                return await GetAbacRuleAsync(abacruleid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2181,16 +2181,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="abacruleid">The ABACRULEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetAbacRuleApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetAbacRuleApiResponse> OBPv600GetAbacRuleAsync(string abacruleid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAbacRuleApiResponse"/>&gt;</returns>
+        public async Task<IGetAbacRuleApiResponse> GetAbacRuleAsync(string abacruleid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600GetAbacRule(abacruleid);
+                ValidateGetAbacRule(abacruleid);
 
-                FormatOBPv600GetAbacRule(ref abacruleid);
+                FormatGetAbacRule(ref abacruleid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -2207,7 +2207,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -2234,8 +2234,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv600GetAbacRuleApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv600GetAbacRuleApiResponse>();
-                        OBPv600GetAbacRuleApiResponse apiResponseLocalVar;
+                        ILogger<GetAbacRuleApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetAbacRuleApiResponse>();
+                        GetAbacRuleApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -2246,9 +2246,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600GetAbacRuleDefaultImplementation(apiResponseLocalVar, abacruleid);
+                        AfterGetAbacRuleDefaultImplementation(apiResponseLocalVar, abacruleid);
 
-                        Events.ExecuteOnOBPv600GetAbacRule(apiResponseLocalVar);
+                        Events.ExecuteOnGetAbacRule(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -2260,24 +2260,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600GetAbacRuleDefaultImplementation(e, "/obp/v6.0.0/management/abac-rules/{abacruleid}", uriBuilderLocalVar.Path, abacruleid);
-                Events.ExecuteOnErrorOBPv600GetAbacRule(e);
+                OnErrorGetAbacRuleDefaultImplementation(e, "/obp/v6.0.0/management/abac-rules/{abacruleid}", uriBuilderLocalVar.Path, abacruleid);
+                Events.ExecuteOnErrorGetAbacRule(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv600GetAbacRuleApiResponse"/>
+        /// The <see cref="GetAbacRuleApiResponse"/>
         /// </summary>
-        public partial class OBPv600GetAbacRuleApiResponse : OpenBankProject.Client.ApiResponse, IOBPv600GetAbacRuleApiResponse
+        public partial class GetAbacRuleApiResponse : OpenBankProject.Client.ApiResponse, IGetAbacRuleApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv600GetAbacRuleApiResponse> Logger { get; }
+            public ILogger<GetAbacRuleApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv600GetAbacRuleApiResponse"/>
+            /// The <see cref="GetAbacRuleApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2286,14 +2286,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600GetAbacRuleApiResponse(ILogger<OBPv600GetAbacRuleApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetAbacRuleApiResponse(ILogger<GetAbacRuleApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv600GetAbacRuleApiResponse"/>
+            /// The <see cref="GetAbacRuleApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2302,7 +2302,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600GetAbacRuleApiResponse(ILogger<OBPv600GetAbacRuleApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetAbacRuleApiResponse(ILogger<GetAbacRuleApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -2320,11 +2320,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv600GetAbacRule200Response? Ok()
+            public OpenBankProject.Model.GetAbacRule200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv600GetAbacRule200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetAbacRule200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -2333,7 +2333,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv600GetAbacRule200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetAbacRule200Response? result)
             {
                 result = null;
 
@@ -2369,10 +2369,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv600GetAbacRuleSchemaDefaultImplementation(IOBPv600GetAbacRuleSchemaApiResponse apiResponseLocalVar)
+        private void AfterGetAbacRuleSchemaDefaultImplementation(IGetAbacRuleSchemaApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600GetAbacRuleSchema(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterGetAbacRuleSchema(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2382,7 +2382,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv600GetAbacRuleSchema(ref bool suppressDefaultLog, IOBPv600GetAbacRuleSchemaApiResponse apiResponseLocalVar);
+        partial void AfterGetAbacRuleSchema(ref bool suppressDefaultLog, IGetAbacRuleSchemaApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2390,10 +2390,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv600GetAbacRuleSchemaDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorGetAbacRuleSchemaDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600GetAbacRuleSchema(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorGetAbacRuleSchema(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2405,18 +2405,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv600GetAbacRuleSchema(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorGetAbacRuleSchema(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// Get ABAC Rule Schema &lt;p&gt;Get schema information about ABAC rule structure for building rule code.&lt;/p&gt; &lt;p&gt;This endpoint returns schema information including:&lt;br /&gt; - All 18 parameters available in ABAC rules&lt;br /&gt; - Object types (User, Bank, Account, etc.) and their properties&lt;br /&gt; - Available operators and syntax&lt;br /&gt; - Example rules&lt;/p&gt; &lt;p&gt;This schema information is useful for:&lt;br /&gt; - Building rule editors with auto-completion&lt;br /&gt; - Validating rule syntax in frontends&lt;br /&gt; - AI agents that help construct rules&lt;br /&gt; - Dynamic form builders&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;available_operators&lt;/strong&gt;&lt;/a&gt;: available_operators&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;examples&lt;/strong&gt;&lt;/a&gt;: examples&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;notes&lt;/strong&gt;&lt;/a&gt;: notes&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;object_types&lt;/strong&gt;&lt;/a&gt;: object_types&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parameters\&quot;&gt;&lt;strong&gt;parameters&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;policy&lt;/strong&gt;&lt;/a&gt;: policy&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;properties&lt;/strong&gt;&lt;/a&gt;: properties&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;required&lt;/strong&gt;&lt;/a&gt;: required&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_code&lt;/strong&gt;&lt;/a&gt;: rule_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_name&lt;/strong&gt;&lt;/a&gt;: rule_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetAbacRuleSchemaApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetAbacRuleSchemaApiResponse?> OBPv600GetAbacRuleSchemaOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAbacRuleSchemaApiResponse"/>&gt;</returns>
+        public async Task<IGetAbacRuleSchemaApiResponse?> GetAbacRuleSchemaOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600GetAbacRuleSchemaAsync(cancellationToken).ConfigureAwait(false);
+                return await GetAbacRuleSchemaAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2429,8 +2429,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetAbacRuleSchemaApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetAbacRuleSchemaApiResponse> OBPv600GetAbacRuleSchemaAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAbacRuleSchemaApiResponse"/>&gt;</returns>
+        public async Task<IGetAbacRuleSchemaApiResponse> GetAbacRuleSchemaAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -2450,7 +2450,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -2477,8 +2477,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv600GetAbacRuleSchemaApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv600GetAbacRuleSchemaApiResponse>();
-                        OBPv600GetAbacRuleSchemaApiResponse apiResponseLocalVar;
+                        ILogger<GetAbacRuleSchemaApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetAbacRuleSchemaApiResponse>();
+                        GetAbacRuleSchemaApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -2489,9 +2489,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600GetAbacRuleSchemaDefaultImplementation(apiResponseLocalVar);
+                        AfterGetAbacRuleSchemaDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv600GetAbacRuleSchema(apiResponseLocalVar);
+                        Events.ExecuteOnGetAbacRuleSchema(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -2503,24 +2503,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600GetAbacRuleSchemaDefaultImplementation(e, "/obp/v6.0.0/management/abac-rules-schema", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv600GetAbacRuleSchema(e);
+                OnErrorGetAbacRuleSchemaDefaultImplementation(e, "/obp/v6.0.0/management/abac-rules-schema", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorGetAbacRuleSchema(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv600GetAbacRuleSchemaApiResponse"/>
+        /// The <see cref="GetAbacRuleSchemaApiResponse"/>
         /// </summary>
-        public partial class OBPv600GetAbacRuleSchemaApiResponse : OpenBankProject.Client.ApiResponse, IOBPv600GetAbacRuleSchemaApiResponse
+        public partial class GetAbacRuleSchemaApiResponse : OpenBankProject.Client.ApiResponse, IGetAbacRuleSchemaApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv600GetAbacRuleSchemaApiResponse> Logger { get; }
+            public ILogger<GetAbacRuleSchemaApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv600GetAbacRuleSchemaApiResponse"/>
+            /// The <see cref="GetAbacRuleSchemaApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2529,14 +2529,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600GetAbacRuleSchemaApiResponse(ILogger<OBPv600GetAbacRuleSchemaApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetAbacRuleSchemaApiResponse(ILogger<GetAbacRuleSchemaApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv600GetAbacRuleSchemaApiResponse"/>
+            /// The <see cref="GetAbacRuleSchemaApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2545,7 +2545,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600GetAbacRuleSchemaApiResponse(ILogger<OBPv600GetAbacRuleSchemaApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetAbacRuleSchemaApiResponse(ILogger<GetAbacRuleSchemaApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -2563,11 +2563,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv600GetAbacRuleSchema200Response? Ok()
+            public OpenBankProject.Model.GetAbacRuleSchema200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv600GetAbacRuleSchema200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetAbacRuleSchema200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -2576,7 +2576,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv600GetAbacRuleSchema200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetAbacRuleSchema200Response? result)
             {
                 result = null;
 
@@ -2612,10 +2612,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv600GetAbacRulesDefaultImplementation(IOBPv600GetAbacRulesApiResponse apiResponseLocalVar)
+        private void AfterGetAbacRulesDefaultImplementation(IGetAbacRulesApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600GetAbacRules(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterGetAbacRules(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2625,7 +2625,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv600GetAbacRules(ref bool suppressDefaultLog, IOBPv600GetAbacRulesApiResponse apiResponseLocalVar);
+        partial void AfterGetAbacRules(ref bool suppressDefaultLog, IGetAbacRulesApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2633,10 +2633,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv600GetAbacRulesDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorGetAbacRulesDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600GetAbacRules(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorGetAbacRules(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2648,18 +2648,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv600GetAbacRules(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorGetAbacRules(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// Get ABAC Rules &lt;p&gt;Get all ABAC rules.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Documentation:&lt;/strong&gt;&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Simple_Guide\&quot;&gt;here&lt;/a&gt; - Getting started with ABAC rules&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Parameters_Summary\&quot;&gt;here&lt;/a&gt; - Complete list of all 18 parameters&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Object_Properties_Reference\&quot;&gt;here&lt;/a&gt; - Detailed property reference&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;abac_rule_id&lt;/strong&gt;&lt;/a&gt;: abac_rule_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;abac_rules&lt;/strong&gt;&lt;/a&gt;: abac_rules&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;policy&lt;/strong&gt;&lt;/a&gt;: policy&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_code&lt;/strong&gt;&lt;/a&gt;: rule_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_name&lt;/strong&gt;&lt;/a&gt;: rule_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated_by_user_id&lt;/strong&gt;&lt;/a&gt;: updated_by_user_id&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetAbacRulesApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetAbacRulesApiResponse?> OBPv600GetAbacRulesOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAbacRulesApiResponse"/>&gt;</returns>
+        public async Task<IGetAbacRulesApiResponse?> GetAbacRulesOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600GetAbacRulesAsync(cancellationToken).ConfigureAwait(false);
+                return await GetAbacRulesAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2672,8 +2672,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetAbacRulesApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetAbacRulesApiResponse> OBPv600GetAbacRulesAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAbacRulesApiResponse"/>&gt;</returns>
+        public async Task<IGetAbacRulesApiResponse> GetAbacRulesAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -2693,7 +2693,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -2720,8 +2720,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv600GetAbacRulesApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv600GetAbacRulesApiResponse>();
-                        OBPv600GetAbacRulesApiResponse apiResponseLocalVar;
+                        ILogger<GetAbacRulesApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetAbacRulesApiResponse>();
+                        GetAbacRulesApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -2732,9 +2732,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600GetAbacRulesDefaultImplementation(apiResponseLocalVar);
+                        AfterGetAbacRulesDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv600GetAbacRules(apiResponseLocalVar);
+                        Events.ExecuteOnGetAbacRules(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -2746,24 +2746,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600GetAbacRulesDefaultImplementation(e, "/obp/v6.0.0/management/abac-rules", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv600GetAbacRules(e);
+                OnErrorGetAbacRulesDefaultImplementation(e, "/obp/v6.0.0/management/abac-rules", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorGetAbacRules(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv600GetAbacRulesApiResponse"/>
+        /// The <see cref="GetAbacRulesApiResponse"/>
         /// </summary>
-        public partial class OBPv600GetAbacRulesApiResponse : OpenBankProject.Client.ApiResponse, IOBPv600GetAbacRulesApiResponse
+        public partial class GetAbacRulesApiResponse : OpenBankProject.Client.ApiResponse, IGetAbacRulesApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv600GetAbacRulesApiResponse> Logger { get; }
+            public ILogger<GetAbacRulesApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv600GetAbacRulesApiResponse"/>
+            /// The <see cref="GetAbacRulesApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2772,14 +2772,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600GetAbacRulesApiResponse(ILogger<OBPv600GetAbacRulesApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetAbacRulesApiResponse(ILogger<GetAbacRulesApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv600GetAbacRulesApiResponse"/>
+            /// The <see cref="GetAbacRulesApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2788,7 +2788,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600GetAbacRulesApiResponse(ILogger<OBPv600GetAbacRulesApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetAbacRulesApiResponse(ILogger<GetAbacRulesApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -2806,11 +2806,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv600GetAbacRulesByPolicy200Response? Ok()
+            public OpenBankProject.Model.GetAbacRulesByPolicy200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv600GetAbacRulesByPolicy200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetAbacRulesByPolicy200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -2819,7 +2819,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv600GetAbacRulesByPolicy200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetAbacRulesByPolicy200Response? result)
             {
                 result = null;
 
@@ -2851,14 +2851,14 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv600GetAbacRulesByPolicy(ref string policy);
+        partial void FormatGetAbacRulesByPolicy(ref string policy);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="policy"></param>
         /// <returns></returns>
-        private void ValidateOBPv600GetAbacRulesByPolicy(string policy)
+        private void ValidateGetAbacRulesByPolicy(string policy)
         {
             if (policy == null)
                 throw new ArgumentNullException(nameof(policy));
@@ -2869,10 +2869,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="policy"></param>
-        private void AfterOBPv600GetAbacRulesByPolicyDefaultImplementation(IOBPv600GetAbacRulesByPolicyApiResponse apiResponseLocalVar, string policy)
+        private void AfterGetAbacRulesByPolicyDefaultImplementation(IGetAbacRulesByPolicyApiResponse apiResponseLocalVar, string policy)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600GetAbacRulesByPolicy(ref suppressDefaultLog, apiResponseLocalVar, policy);
+            AfterGetAbacRulesByPolicy(ref suppressDefaultLog, apiResponseLocalVar, policy);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2883,7 +2883,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="policy"></param>
-        partial void AfterOBPv600GetAbacRulesByPolicy(ref bool suppressDefaultLog, IOBPv600GetAbacRulesByPolicyApiResponse apiResponseLocalVar, string policy);
+        partial void AfterGetAbacRulesByPolicy(ref bool suppressDefaultLog, IGetAbacRulesByPolicyApiResponse apiResponseLocalVar, string policy);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2892,10 +2892,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="policy"></param>
-        private void OnErrorOBPv600GetAbacRulesByPolicyDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string policy)
+        private void OnErrorGetAbacRulesByPolicyDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string policy)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600GetAbacRulesByPolicy(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, policy);
+            OnErrorGetAbacRulesByPolicy(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, policy);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2908,19 +2908,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="policy"></param>
-        partial void OnErrorOBPv600GetAbacRulesByPolicy(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string policy);
+        partial void OnErrorGetAbacRulesByPolicy(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string policy);
 
         /// <summary>
         /// Get ABAC Rules by Policy &lt;p&gt;Get all ABAC rules that belong to a specific policy.&lt;/p&gt; &lt;p&gt;Multiple rules can share the same policy. Rules with multiple policies (comma-separated)&lt;br /&gt; will be returned if any of their policies match the requested policy.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Documentation:&lt;/strong&gt;&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Simple_Guide\&quot;&gt;here&lt;/a&gt; - Getting started with ABAC rules&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Parameters_Summary\&quot;&gt;here&lt;/a&gt; - Complete list of all 18 parameters&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Object_Properties_Reference\&quot;&gt;here&lt;/a&gt; - Detailed property reference&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;POLICY&lt;/a&gt;: POLICY&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;abac_rule_id&lt;/strong&gt;&lt;/a&gt;: abac_rule_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;abac_rules&lt;/strong&gt;&lt;/a&gt;: abac_rules&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;policy&lt;/strong&gt;&lt;/a&gt;: policy&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_code&lt;/strong&gt;&lt;/a&gt;: rule_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_name&lt;/strong&gt;&lt;/a&gt;: rule_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated_by_user_id&lt;/strong&gt;&lt;/a&gt;: updated_by_user_id&lt;/p&gt; 
         /// </summary>
         /// <param name="policy">The POLICY identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetAbacRulesByPolicyApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetAbacRulesByPolicyApiResponse?> OBPv600GetAbacRulesByPolicyOrDefaultAsync(string policy, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAbacRulesByPolicyApiResponse"/>&gt;</returns>
+        public async Task<IGetAbacRulesByPolicyApiResponse?> GetAbacRulesByPolicyOrDefaultAsync(string policy, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600GetAbacRulesByPolicyAsync(policy, cancellationToken).ConfigureAwait(false);
+                return await GetAbacRulesByPolicyAsync(policy, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2934,16 +2934,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="policy">The POLICY identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetAbacRulesByPolicyApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetAbacRulesByPolicyApiResponse> OBPv600GetAbacRulesByPolicyAsync(string policy, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAbacRulesByPolicyApiResponse"/>&gt;</returns>
+        public async Task<IGetAbacRulesByPolicyApiResponse> GetAbacRulesByPolicyAsync(string policy, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600GetAbacRulesByPolicy(policy);
+                ValidateGetAbacRulesByPolicy(policy);
 
-                FormatOBPv600GetAbacRulesByPolicy(ref policy);
+                FormatGetAbacRulesByPolicy(ref policy);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -2960,7 +2960,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -2987,8 +2987,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv600GetAbacRulesByPolicyApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv600GetAbacRulesByPolicyApiResponse>();
-                        OBPv600GetAbacRulesByPolicyApiResponse apiResponseLocalVar;
+                        ILogger<GetAbacRulesByPolicyApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetAbacRulesByPolicyApiResponse>();
+                        GetAbacRulesByPolicyApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -2999,9 +2999,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600GetAbacRulesByPolicyDefaultImplementation(apiResponseLocalVar, policy);
+                        AfterGetAbacRulesByPolicyDefaultImplementation(apiResponseLocalVar, policy);
 
-                        Events.ExecuteOnOBPv600GetAbacRulesByPolicy(apiResponseLocalVar);
+                        Events.ExecuteOnGetAbacRulesByPolicy(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -3013,24 +3013,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600GetAbacRulesByPolicyDefaultImplementation(e, "/obp/v6.0.0/management/abac-rules/policy/{policy}", uriBuilderLocalVar.Path, policy);
-                Events.ExecuteOnErrorOBPv600GetAbacRulesByPolicy(e);
+                OnErrorGetAbacRulesByPolicyDefaultImplementation(e, "/obp/v6.0.0/management/abac-rules/policy/{policy}", uriBuilderLocalVar.Path, policy);
+                Events.ExecuteOnErrorGetAbacRulesByPolicy(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv600GetAbacRulesByPolicyApiResponse"/>
+        /// The <see cref="GetAbacRulesByPolicyApiResponse"/>
         /// </summary>
-        public partial class OBPv600GetAbacRulesByPolicyApiResponse : OpenBankProject.Client.ApiResponse, IOBPv600GetAbacRulesByPolicyApiResponse
+        public partial class GetAbacRulesByPolicyApiResponse : OpenBankProject.Client.ApiResponse, IGetAbacRulesByPolicyApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv600GetAbacRulesByPolicyApiResponse> Logger { get; }
+            public ILogger<GetAbacRulesByPolicyApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv600GetAbacRulesByPolicyApiResponse"/>
+            /// The <see cref="GetAbacRulesByPolicyApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -3039,14 +3039,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600GetAbacRulesByPolicyApiResponse(ILogger<OBPv600GetAbacRulesByPolicyApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetAbacRulesByPolicyApiResponse(ILogger<GetAbacRulesByPolicyApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv600GetAbacRulesByPolicyApiResponse"/>
+            /// The <see cref="GetAbacRulesByPolicyApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -3055,7 +3055,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600GetAbacRulesByPolicyApiResponse(ILogger<OBPv600GetAbacRulesByPolicyApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetAbacRulesByPolicyApiResponse(ILogger<GetAbacRulesByPolicyApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -3073,11 +3073,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv600GetAbacRulesByPolicy200Response? Ok()
+            public OpenBankProject.Model.GetAbacRulesByPolicy200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv600GetAbacRulesByPolicy200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetAbacRulesByPolicy200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -3086,7 +3086,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv600GetAbacRulesByPolicy200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetAbacRulesByPolicy200Response? result)
             {
                 result = null;
 
@@ -3118,21 +3118,21 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv600UpdateAbacRule(ref string abacruleid, OBPv600UpdateAbacRuleRequest oBPv600UpdateAbacRuleRequest);
+        partial void FormatUpdateAbacRule(ref string abacruleid, UpdateAbacRuleRequest updateAbacRuleRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="abacruleid"></param>
-        /// <param name="oBPv600UpdateAbacRuleRequest"></param>
+        /// <param name="updateAbacRuleRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv600UpdateAbacRule(string abacruleid, OBPv600UpdateAbacRuleRequest oBPv600UpdateAbacRuleRequest)
+        private void ValidateUpdateAbacRule(string abacruleid, UpdateAbacRuleRequest updateAbacRuleRequest)
         {
             if (abacruleid == null)
                 throw new ArgumentNullException(nameof(abacruleid));
 
-            if (oBPv600UpdateAbacRuleRequest == null)
-                throw new ArgumentNullException(nameof(oBPv600UpdateAbacRuleRequest));
+            if (updateAbacRuleRequest == null)
+                throw new ArgumentNullException(nameof(updateAbacRuleRequest));
         }
 
         /// <summary>
@@ -3140,11 +3140,11 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="abacruleid"></param>
-        /// <param name="oBPv600UpdateAbacRuleRequest"></param>
-        private void AfterOBPv600UpdateAbacRuleDefaultImplementation(IOBPv600UpdateAbacRuleApiResponse apiResponseLocalVar, string abacruleid, OBPv600UpdateAbacRuleRequest oBPv600UpdateAbacRuleRequest)
+        /// <param name="updateAbacRuleRequest"></param>
+        private void AfterUpdateAbacRuleDefaultImplementation(IUpdateAbacRuleApiResponse apiResponseLocalVar, string abacruleid, UpdateAbacRuleRequest updateAbacRuleRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600UpdateAbacRule(ref suppressDefaultLog, apiResponseLocalVar, abacruleid, oBPv600UpdateAbacRuleRequest);
+            AfterUpdateAbacRule(ref suppressDefaultLog, apiResponseLocalVar, abacruleid, updateAbacRuleRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -3155,8 +3155,8 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="abacruleid"></param>
-        /// <param name="oBPv600UpdateAbacRuleRequest"></param>
-        partial void AfterOBPv600UpdateAbacRule(ref bool suppressDefaultLog, IOBPv600UpdateAbacRuleApiResponse apiResponseLocalVar, string abacruleid, OBPv600UpdateAbacRuleRequest oBPv600UpdateAbacRuleRequest);
+        /// <param name="updateAbacRuleRequest"></param>
+        partial void AfterUpdateAbacRule(ref bool suppressDefaultLog, IUpdateAbacRuleApiResponse apiResponseLocalVar, string abacruleid, UpdateAbacRuleRequest updateAbacRuleRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -3165,11 +3165,11 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="abacruleid"></param>
-        /// <param name="oBPv600UpdateAbacRuleRequest"></param>
-        private void OnErrorOBPv600UpdateAbacRuleDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string abacruleid, OBPv600UpdateAbacRuleRequest oBPv600UpdateAbacRuleRequest)
+        /// <param name="updateAbacRuleRequest"></param>
+        private void OnErrorUpdateAbacRuleDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string abacruleid, UpdateAbacRuleRequest updateAbacRuleRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600UpdateAbacRule(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, abacruleid, oBPv600UpdateAbacRuleRequest);
+            OnErrorUpdateAbacRule(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, abacruleid, updateAbacRuleRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -3182,21 +3182,21 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="abacruleid"></param>
-        /// <param name="oBPv600UpdateAbacRuleRequest"></param>
-        partial void OnErrorOBPv600UpdateAbacRule(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string abacruleid, OBPv600UpdateAbacRuleRequest oBPv600UpdateAbacRuleRequest);
+        /// <param name="updateAbacRuleRequest"></param>
+        partial void OnErrorUpdateAbacRule(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string abacruleid, UpdateAbacRuleRequest updateAbacRuleRequest);
 
         /// <summary>
         /// Update ABAC Rule &lt;p&gt;Update an existing ABAC rule.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Documentation:&lt;/strong&gt;&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Simple_Guide\&quot;&gt;here&lt;/a&gt; - Getting started with ABAC rules&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Parameters_Summary\&quot;&gt;here&lt;/a&gt; - Complete list of all 18 parameters&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Object_Properties_Reference\&quot;&gt;here&lt;/a&gt; - Detailed property reference&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ABAC_RULE_ID&lt;/a&gt;: ABAC_RULE_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;abac_rule_id&lt;/strong&gt;&lt;/a&gt;: abac_rule_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;policy&lt;/strong&gt;&lt;/a&gt;: policy&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_code&lt;/strong&gt;&lt;/a&gt;: rule_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_name&lt;/strong&gt;&lt;/a&gt;: rule_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated_by_user_id&lt;/strong&gt;&lt;/a&gt;: updated_by_user_id&lt;/p&gt; 
         /// </summary>
         /// <param name="abacruleid">The ABACRULEID identifier</param>
-        /// <param name="oBPv600UpdateAbacRuleRequest">Request body</param>
+        /// <param name="updateAbacRuleRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600UpdateAbacRuleApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600UpdateAbacRuleApiResponse?> OBPv600UpdateAbacRuleOrDefaultAsync(string abacruleid, OBPv600UpdateAbacRuleRequest oBPv600UpdateAbacRuleRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateAbacRuleApiResponse"/>&gt;</returns>
+        public async Task<IUpdateAbacRuleApiResponse?> UpdateAbacRuleOrDefaultAsync(string abacruleid, UpdateAbacRuleRequest updateAbacRuleRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600UpdateAbacRuleAsync(abacruleid, oBPv600UpdateAbacRuleRequest, cancellationToken).ConfigureAwait(false);
+                return await UpdateAbacRuleAsync(abacruleid, updateAbacRuleRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -3209,18 +3209,18 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="abacruleid">The ABACRULEID identifier</param>
-        /// <param name="oBPv600UpdateAbacRuleRequest">Request body</param>
+        /// <param name="updateAbacRuleRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600UpdateAbacRuleApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600UpdateAbacRuleApiResponse> OBPv600UpdateAbacRuleAsync(string abacruleid, OBPv600UpdateAbacRuleRequest oBPv600UpdateAbacRuleRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateAbacRuleApiResponse"/>&gt;</returns>
+        public async Task<IUpdateAbacRuleApiResponse> UpdateAbacRuleAsync(string abacruleid, UpdateAbacRuleRequest updateAbacRuleRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600UpdateAbacRule(abacruleid, oBPv600UpdateAbacRuleRequest);
+                ValidateUpdateAbacRule(abacruleid, updateAbacRuleRequest);
 
-                FormatOBPv600UpdateAbacRule(ref abacruleid, oBPv600UpdateAbacRuleRequest);
+                FormatUpdateAbacRule(ref abacruleid, updateAbacRuleRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -3232,16 +3232,16 @@ namespace OpenBankProject.Api
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v6.0.0/management/abac-rules/{abacruleid}");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Babacruleid%7D", Uri.EscapeDataString(abacruleid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv600UpdateAbacRuleRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (updateAbacRuleRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv600UpdateAbacRuleRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateAbacRuleRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -3277,8 +3277,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv600UpdateAbacRuleApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv600UpdateAbacRuleApiResponse>();
-                        OBPv600UpdateAbacRuleApiResponse apiResponseLocalVar;
+                        ILogger<UpdateAbacRuleApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<UpdateAbacRuleApiResponse>();
+                        UpdateAbacRuleApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -3289,9 +3289,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600UpdateAbacRuleDefaultImplementation(apiResponseLocalVar, abacruleid, oBPv600UpdateAbacRuleRequest);
+                        AfterUpdateAbacRuleDefaultImplementation(apiResponseLocalVar, abacruleid, updateAbacRuleRequest);
 
-                        Events.ExecuteOnOBPv600UpdateAbacRule(apiResponseLocalVar);
+                        Events.ExecuteOnUpdateAbacRule(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -3303,24 +3303,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600UpdateAbacRuleDefaultImplementation(e, "/obp/v6.0.0/management/abac-rules/{abacruleid}", uriBuilderLocalVar.Path, abacruleid, oBPv600UpdateAbacRuleRequest);
-                Events.ExecuteOnErrorOBPv600UpdateAbacRule(e);
+                OnErrorUpdateAbacRuleDefaultImplementation(e, "/obp/v6.0.0/management/abac-rules/{abacruleid}", uriBuilderLocalVar.Path, abacruleid, updateAbacRuleRequest);
+                Events.ExecuteOnErrorUpdateAbacRule(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv600UpdateAbacRuleApiResponse"/>
+        /// The <see cref="UpdateAbacRuleApiResponse"/>
         /// </summary>
-        public partial class OBPv600UpdateAbacRuleApiResponse : OpenBankProject.Client.ApiResponse, IOBPv600UpdateAbacRuleApiResponse
+        public partial class UpdateAbacRuleApiResponse : OpenBankProject.Client.ApiResponse, IUpdateAbacRuleApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv600UpdateAbacRuleApiResponse> Logger { get; }
+            public ILogger<UpdateAbacRuleApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv600UpdateAbacRuleApiResponse"/>
+            /// The <see cref="UpdateAbacRuleApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -3329,14 +3329,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600UpdateAbacRuleApiResponse(ILogger<OBPv600UpdateAbacRuleApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public UpdateAbacRuleApiResponse(ILogger<UpdateAbacRuleApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv600UpdateAbacRuleApiResponse"/>
+            /// The <see cref="UpdateAbacRuleApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -3345,7 +3345,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600UpdateAbacRuleApiResponse(ILogger<OBPv600UpdateAbacRuleApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public UpdateAbacRuleApiResponse(ILogger<UpdateAbacRuleApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -3363,11 +3363,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv600GetAbacRule200Response? Ok()
+            public OpenBankProject.Model.GetAbacRule200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv600GetAbacRule200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetAbacRule200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -3376,7 +3376,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv600GetAbacRule200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetAbacRule200Response? result)
             {
                 result = null;
 
@@ -3408,28 +3408,28 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv600ValidateAbacRule(OBPv600ValidateAbacRuleRequest oBPv600ValidateAbacRuleRequest);
+        partial void FormatValidateAbacRule(ValidateAbacRuleRequest validateAbacRuleRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
-        /// <param name="oBPv600ValidateAbacRuleRequest"></param>
+        /// <param name="validateAbacRuleRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv600ValidateAbacRule(OBPv600ValidateAbacRuleRequest oBPv600ValidateAbacRuleRequest)
+        private void ValidateValidateAbacRule(ValidateAbacRuleRequest validateAbacRuleRequest)
         {
-            if (oBPv600ValidateAbacRuleRequest == null)
-                throw new ArgumentNullException(nameof(oBPv600ValidateAbacRuleRequest));
+            if (validateAbacRuleRequest == null)
+                throw new ArgumentNullException(nameof(validateAbacRuleRequest));
         }
 
         /// <summary>
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        /// <param name="oBPv600ValidateAbacRuleRequest"></param>
-        private void AfterOBPv600ValidateAbacRuleDefaultImplementation(IOBPv600ValidateAbacRuleApiResponse apiResponseLocalVar, OBPv600ValidateAbacRuleRequest oBPv600ValidateAbacRuleRequest)
+        /// <param name="validateAbacRuleRequest"></param>
+        private void AfterValidateAbacRuleDefaultImplementation(IValidateAbacRuleApiResponse apiResponseLocalVar, ValidateAbacRuleRequest validateAbacRuleRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600ValidateAbacRule(ref suppressDefaultLog, apiResponseLocalVar, oBPv600ValidateAbacRuleRequest);
+            AfterValidateAbacRule(ref suppressDefaultLog, apiResponseLocalVar, validateAbacRuleRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -3439,8 +3439,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        /// <param name="oBPv600ValidateAbacRuleRequest"></param>
-        partial void AfterOBPv600ValidateAbacRule(ref bool suppressDefaultLog, IOBPv600ValidateAbacRuleApiResponse apiResponseLocalVar, OBPv600ValidateAbacRuleRequest oBPv600ValidateAbacRuleRequest);
+        /// <param name="validateAbacRuleRequest"></param>
+        partial void AfterValidateAbacRule(ref bool suppressDefaultLog, IValidateAbacRuleApiResponse apiResponseLocalVar, ValidateAbacRuleRequest validateAbacRuleRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -3448,11 +3448,11 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        /// <param name="oBPv600ValidateAbacRuleRequest"></param>
-        private void OnErrorOBPv600ValidateAbacRuleDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, OBPv600ValidateAbacRuleRequest oBPv600ValidateAbacRuleRequest)
+        /// <param name="validateAbacRuleRequest"></param>
+        private void OnErrorValidateAbacRuleDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, ValidateAbacRuleRequest validateAbacRuleRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600ValidateAbacRule(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, oBPv600ValidateAbacRuleRequest);
+            OnErrorValidateAbacRule(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, validateAbacRuleRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -3464,20 +3464,20 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        /// <param name="oBPv600ValidateAbacRuleRequest"></param>
-        partial void OnErrorOBPv600ValidateAbacRule(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, OBPv600ValidateAbacRuleRequest oBPv600ValidateAbacRuleRequest);
+        /// <param name="validateAbacRuleRequest"></param>
+        partial void OnErrorValidateAbacRule(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, ValidateAbacRuleRequest validateAbacRuleRequest);
 
         /// <summary>
         /// Validate ABAC Rule &lt;p&gt;Validate ABAC rule code syntax and structure without creating or executing the rule.&lt;/p&gt; &lt;p&gt;This endpoint performs the following validations:&lt;br /&gt; - Parse the rule_code as a Scala expression&lt;br /&gt; - Validate syntax - check for parsing errors&lt;br /&gt; - Validate field references - check if referenced objects/fields exist&lt;br /&gt; - Check type consistency - verify the expression returns a Boolean&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Available ABAC Context Objects:&lt;/strong&gt;&lt;br /&gt; - AuthenticatedUser - The user who is logged in&lt;br /&gt; - OnBehalfOfUser - Optional delegation user&lt;br /&gt; - User - Target user being evaluated&lt;br /&gt; - Bank, Account, View, Transaction, TransactionRequest, Customer&lt;br /&gt; - Attributes for each entity (e.g., userAttributes, accountAttributes)&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Documentation:&lt;/strong&gt;&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Simple_Guide\&quot;&gt;here&lt;/a&gt; - Getting started with ABAC rules&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Parameters_Summary\&quot;&gt;here&lt;/a&gt; - Complete list of all 18 parameters&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Object_Properties_Reference\&quot;&gt;here&lt;/a&gt; - Detailed property reference&lt;/p&gt; &lt;p&gt;This is a &amp;quot;dry-run&amp;quot; validation that does NOT save or execute the rule.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_code&lt;/strong&gt;&lt;/a&gt;: rule_code&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;valid&lt;/strong&gt;&lt;/a&gt;: valid&lt;/p&gt; 
         /// </summary>
-        /// <param name="oBPv600ValidateAbacRuleRequest">Request body</param>
+        /// <param name="validateAbacRuleRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600ValidateAbacRuleApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600ValidateAbacRuleApiResponse?> OBPv600ValidateAbacRuleOrDefaultAsync(OBPv600ValidateAbacRuleRequest oBPv600ValidateAbacRuleRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IValidateAbacRuleApiResponse"/>&gt;</returns>
+        public async Task<IValidateAbacRuleApiResponse?> ValidateAbacRuleOrDefaultAsync(ValidateAbacRuleRequest validateAbacRuleRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600ValidateAbacRuleAsync(oBPv600ValidateAbacRuleRequest, cancellationToken).ConfigureAwait(false);
+                return await ValidateAbacRuleAsync(validateAbacRuleRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -3489,18 +3489,18 @@ namespace OpenBankProject.Api
         /// Validate ABAC Rule &lt;p&gt;Validate ABAC rule code syntax and structure without creating or executing the rule.&lt;/p&gt; &lt;p&gt;This endpoint performs the following validations:&lt;br /&gt; - Parse the rule_code as a Scala expression&lt;br /&gt; - Validate syntax - check for parsing errors&lt;br /&gt; - Validate field references - check if referenced objects/fields exist&lt;br /&gt; - Check type consistency - verify the expression returns a Boolean&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Available ABAC Context Objects:&lt;/strong&gt;&lt;br /&gt; - AuthenticatedUser - The user who is logged in&lt;br /&gt; - OnBehalfOfUser - Optional delegation user&lt;br /&gt; - User - Target user being evaluated&lt;br /&gt; - Bank, Account, View, Transaction, TransactionRequest, Customer&lt;br /&gt; - Attributes for each entity (e.g., userAttributes, accountAttributes)&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Documentation:&lt;/strong&gt;&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Simple_Guide\&quot;&gt;here&lt;/a&gt; - Getting started with ABAC rules&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Parameters_Summary\&quot;&gt;here&lt;/a&gt; - Complete list of all 18 parameters&lt;br /&gt; - &lt;a href&#x3D;\&quot;/glossary#ABAC_Object_Properties_Reference\&quot;&gt;here&lt;/a&gt; - Detailed property reference&lt;/p&gt; &lt;p&gt;This is a &amp;quot;dry-run&amp;quot; validation that does NOT save or execute the rule.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;rule_code&lt;/strong&gt;&lt;/a&gt;: rule_code&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;valid&lt;/strong&gt;&lt;/a&gt;: valid&lt;/p&gt; 
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oBPv600ValidateAbacRuleRequest">Request body</param>
+        /// <param name="validateAbacRuleRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600ValidateAbacRuleApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600ValidateAbacRuleApiResponse> OBPv600ValidateAbacRuleAsync(OBPv600ValidateAbacRuleRequest oBPv600ValidateAbacRuleRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IValidateAbacRuleApiResponse"/>&gt;</returns>
+        public async Task<IValidateAbacRuleApiResponse> ValidateAbacRuleAsync(ValidateAbacRuleRequest validateAbacRuleRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600ValidateAbacRule(oBPv600ValidateAbacRuleRequest);
+                ValidateValidateAbacRule(validateAbacRuleRequest);
 
-                FormatOBPv600ValidateAbacRule(oBPv600ValidateAbacRuleRequest);
+                FormatValidateAbacRule(validateAbacRuleRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -3511,16 +3511,16 @@ namespace OpenBankProject.Api
                         ? "/obp/v6.0.0/management/abac-rules/validate"
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v6.0.0/management/abac-rules/validate");
 
-                    httpRequestMessageLocalVar.Content = (oBPv600ValidateAbacRuleRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (validateAbacRuleRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv600ValidateAbacRuleRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(validateAbacRuleRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -3556,8 +3556,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv600ValidateAbacRuleApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv600ValidateAbacRuleApiResponse>();
-                        OBPv600ValidateAbacRuleApiResponse apiResponseLocalVar;
+                        ILogger<ValidateAbacRuleApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<ValidateAbacRuleApiResponse>();
+                        ValidateAbacRuleApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -3568,9 +3568,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600ValidateAbacRuleDefaultImplementation(apiResponseLocalVar, oBPv600ValidateAbacRuleRequest);
+                        AfterValidateAbacRuleDefaultImplementation(apiResponseLocalVar, validateAbacRuleRequest);
 
-                        Events.ExecuteOnOBPv600ValidateAbacRule(apiResponseLocalVar);
+                        Events.ExecuteOnValidateAbacRule(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -3582,24 +3582,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600ValidateAbacRuleDefaultImplementation(e, "/obp/v6.0.0/management/abac-rules/validate", uriBuilderLocalVar.Path, oBPv600ValidateAbacRuleRequest);
-                Events.ExecuteOnErrorOBPv600ValidateAbacRule(e);
+                OnErrorValidateAbacRuleDefaultImplementation(e, "/obp/v6.0.0/management/abac-rules/validate", uriBuilderLocalVar.Path, validateAbacRuleRequest);
+                Events.ExecuteOnErrorValidateAbacRule(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv600ValidateAbacRuleApiResponse"/>
+        /// The <see cref="ValidateAbacRuleApiResponse"/>
         /// </summary>
-        public partial class OBPv600ValidateAbacRuleApiResponse : OpenBankProject.Client.ApiResponse, IOBPv600ValidateAbacRuleApiResponse
+        public partial class ValidateAbacRuleApiResponse : OpenBankProject.Client.ApiResponse, IValidateAbacRuleApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv600ValidateAbacRuleApiResponse> Logger { get; }
+            public ILogger<ValidateAbacRuleApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv600ValidateAbacRuleApiResponse"/>
+            /// The <see cref="ValidateAbacRuleApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -3608,14 +3608,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600ValidateAbacRuleApiResponse(ILogger<OBPv600ValidateAbacRuleApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public ValidateAbacRuleApiResponse(ILogger<ValidateAbacRuleApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv600ValidateAbacRuleApiResponse"/>
+            /// The <see cref="ValidateAbacRuleApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -3624,7 +3624,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600ValidateAbacRuleApiResponse(ILogger<OBPv600ValidateAbacRuleApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public ValidateAbacRuleApiResponse(ILogger<ValidateAbacRuleApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -3642,11 +3642,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv600ValidateAbacRule200Response? Ok()
+            public OpenBankProject.Model.ValidateAbacRule200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv600ValidateAbacRule200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.ValidateAbacRule200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -3655,7 +3655,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv600ValidateAbacRule200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.ValidateAbacRule200Response? result)
             {
                 result = null;
 

@@ -1,25 +1,25 @@
 # OpenBankProject::DynamicResourceDocApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**o_bpv4_0_0_build_dynamic_endpoint_template**](DynamicResourceDocApi.md#o_bpv4_0_0_build_dynamic_endpoint_template) | **POST** /obp/v4.0.0/management/dynamic-resource-docs/endpoint-code | Create Dynamic Resource Doc endpoint code |
-| [**o_bpv4_0_0_create_bank_level_dynamic_resource_doc**](DynamicResourceDocApi.md#o_bpv4_0_0_create_bank_level_dynamic_resource_doc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Create Bank Level Dynamic Resource Doc |
-| [**o_bpv4_0_0_create_dynamic_resource_doc**](DynamicResourceDocApi.md#o_bpv4_0_0_create_dynamic_resource_doc) | **POST** /obp/v4.0.0/management/dynamic-resource-docs | Create Dynamic Resource Doc |
-| [**o_bpv4_0_0_delete_bank_level_dynamic_resource_doc**](DynamicResourceDocApi.md#o_bpv4_0_0_delete_bank_level_dynamic_resource_doc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Bank Level Dynamic Resource Doc |
-| [**o_bpv4_0_0_delete_dynamic_resource_doc**](DynamicResourceDocApi.md#o_bpv4_0_0_delete_dynamic_resource_doc) | **DELETE** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Dynamic Resource Doc |
-| [**o_bpv4_0_0_get_all_bank_level_dynamic_resource_docs**](DynamicResourceDocApi.md#o_bpv4_0_0_get_all_bank_level_dynamic_resource_docs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Get all Bank Level Dynamic Resource Docs |
-| [**o_bpv4_0_0_get_all_dynamic_resource_docs**](DynamicResourceDocApi.md#o_bpv4_0_0_get_all_dynamic_resource_docs) | **GET** /obp/v4.0.0/management/dynamic-resource-docs | Get all Dynamic Resource Docs |
-| [**o_bpv4_0_0_get_bank_level_dynamic_resource_doc**](DynamicResourceDocApi.md#o_bpv4_0_0_get_bank_level_dynamic_resource_doc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Bank Level Dynamic Resource Doc by Id |
-| [**o_bpv4_0_0_get_dynamic_resource_doc**](DynamicResourceDocApi.md#o_bpv4_0_0_get_dynamic_resource_doc) | **GET** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Dynamic Resource Doc by Id |
-| [**o_bpv4_0_0_update_bank_level_dynamic_resource_doc**](DynamicResourceDocApi.md#o_bpv4_0_0_update_bank_level_dynamic_resource_doc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Bank Level Dynamic Resource Doc |
-| [**o_bpv4_0_0_update_dynamic_resource_doc**](DynamicResourceDocApi.md#o_bpv4_0_0_update_dynamic_resource_doc) | **PUT** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Dynamic Resource Doc |
+| [**build_dynamic_endpoint_template**](DynamicResourceDocApi.md#build_dynamic_endpoint_template) | **POST** /obp/v4.0.0/management/dynamic-resource-docs/endpoint-code | Create Dynamic Resource Doc endpoint code |
+| [**create_bank_level_dynamic_resource_doc**](DynamicResourceDocApi.md#create_bank_level_dynamic_resource_doc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Create Bank Level Dynamic Resource Doc |
+| [**create_dynamic_resource_doc**](DynamicResourceDocApi.md#create_dynamic_resource_doc) | **POST** /obp/v4.0.0/management/dynamic-resource-docs | Create Dynamic Resource Doc |
+| [**delete_bank_level_dynamic_resource_doc**](DynamicResourceDocApi.md#delete_bank_level_dynamic_resource_doc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Bank Level Dynamic Resource Doc |
+| [**delete_dynamic_resource_doc**](DynamicResourceDocApi.md#delete_dynamic_resource_doc) | **DELETE** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Dynamic Resource Doc |
+| [**get_all_bank_level_dynamic_resource_docs**](DynamicResourceDocApi.md#get_all_bank_level_dynamic_resource_docs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Get all Bank Level Dynamic Resource Docs |
+| [**get_all_dynamic_resource_docs**](DynamicResourceDocApi.md#get_all_dynamic_resource_docs) | **GET** /obp/v4.0.0/management/dynamic-resource-docs | Get all Dynamic Resource Docs |
+| [**get_bank_level_dynamic_resource_doc**](DynamicResourceDocApi.md#get_bank_level_dynamic_resource_doc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Bank Level Dynamic Resource Doc by Id |
+| [**get_dynamic_resource_doc**](DynamicResourceDocApi.md#get_dynamic_resource_doc) | **GET** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Dynamic Resource Doc by Id |
+| [**update_bank_level_dynamic_resource_doc**](DynamicResourceDocApi.md#update_bank_level_dynamic_resource_doc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Bank Level Dynamic Resource Doc |
+| [**update_dynamic_resource_doc**](DynamicResourceDocApi.md#update_dynamic_resource_doc) | **PUT** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Dynamic Resource Doc |
 
 
-## o_bpv4_0_0_build_dynamic_endpoint_template
+## build_dynamic_endpoint_template
 
-> <OBPv400BuildDynamicEndpointTemplate200Response> o_bpv4_0_0_build_dynamic_endpoint_template(obpv400_build_dynamic_endpoint_template_request)
+> <BuildDynamicEndpointTemplate200Response> build_dynamic_endpoint_template(build_dynamic_endpoint_template_request)
 
 Create Dynamic Resource Doc endpoint code
 
@@ -41,38 +41,38 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::DynamicResourceDocApi.new
-obpv400_build_dynamic_endpoint_template_request = OpenBankProject::OBPv400BuildDynamicEndpointTemplateRequest.new({type: 'type_example', properties: OpenBankProject::OBPv400BuildDynamicEndpointTemplateRequestProperties.new({request_verb: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), example_request_body: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesExampleRequestBody.new({type: 'type_example', properties: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesExampleRequestBodyProperties.new({name: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), age: , hobby: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields.new({type: 'type_example', items: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems.new({type: 'type_example', properties: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties.new({s: })})}), _optional_fields_: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields.new({type: 'type_example', items: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems.new({type: 'type_example', properties: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties.new({s: })})})})}), success_response_body: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBody.new({type: 'type_example', properties: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyProperties.new({name: , _optional_fields_: , age: , hobby: , my_user_id: })}), request_url: })}) # OBPv400BuildDynamicEndpointTemplateRequest | Request body
+build_dynamic_endpoint_template_request = OpenBankProject::BuildDynamicEndpointTemplateRequest.new # BuildDynamicEndpointTemplateRequest | Request body
 
 begin
   # Create Dynamic Resource Doc endpoint code
-  result = api_instance.o_bpv4_0_0_build_dynamic_endpoint_template(obpv400_build_dynamic_endpoint_template_request)
+  result = api_instance.build_dynamic_endpoint_template(build_dynamic_endpoint_template_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicResourceDocApi->o_bpv4_0_0_build_dynamic_endpoint_template: #{e}"
+  puts "Error when calling DynamicResourceDocApi->build_dynamic_endpoint_template: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_build_dynamic_endpoint_template_with_http_info variant
+#### Using the build_dynamic_endpoint_template_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400BuildDynamicEndpointTemplate200Response>, Integer, Hash)> o_bpv4_0_0_build_dynamic_endpoint_template_with_http_info(obpv400_build_dynamic_endpoint_template_request)
+> <Array(<BuildDynamicEndpointTemplate200Response>, Integer, Hash)> build_dynamic_endpoint_template_with_http_info(build_dynamic_endpoint_template_request)
 
 ```ruby
 begin
   # Create Dynamic Resource Doc endpoint code
-  data, status_code, headers = api_instance.o_bpv4_0_0_build_dynamic_endpoint_template_with_http_info(obpv400_build_dynamic_endpoint_template_request)
+  data, status_code, headers = api_instance.build_dynamic_endpoint_template_with_http_info(build_dynamic_endpoint_template_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400BuildDynamicEndpointTemplate200Response>
+  p data # => <BuildDynamicEndpointTemplate200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicResourceDocApi->o_bpv4_0_0_build_dynamic_endpoint_template_with_http_info: #{e}"
+  puts "Error when calling DynamicResourceDocApi->build_dynamic_endpoint_template_with_http_info: #{e}"
 end
 ```
 
@@ -80,11 +80,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **obpv400_build_dynamic_endpoint_template_request** | [**OBPv400BuildDynamicEndpointTemplateRequest**](OBPv400BuildDynamicEndpointTemplateRequest.md) | Request body |  |
+| **build_dynamic_endpoint_template_request** | [**BuildDynamicEndpointTemplateRequest**](BuildDynamicEndpointTemplateRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400BuildDynamicEndpointTemplate200Response**](OBPv400BuildDynamicEndpointTemplate200Response.md)
+[**BuildDynamicEndpointTemplate200Response**](BuildDynamicEndpointTemplate200Response.md)
 
 ### Authorization
 
@@ -96,9 +96,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_create_bank_level_dynamic_resource_doc
+## create_bank_level_dynamic_resource_doc
 
-> <OBPv400GetBankLevelDynamicResourceDoc200Response> o_bpv4_0_0_create_bank_level_dynamic_resource_doc(bankid, obpv400_update_bank_level_dynamic_resource_doc_request)
+> <GetBankLevelDynamicResourceDoc200Response> create_bank_level_dynamic_resource_doc(bankid, update_bank_level_dynamic_resource_doc_request)
 
 Create Bank Level Dynamic Resource Doc
 
@@ -120,39 +120,39 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::DynamicResourceDocApi.new
 bankid = 'bankid_example' # String | The BANKID identifier
-obpv400_update_bank_level_dynamic_resource_doc_request = OpenBankProject::OBPv400UpdateBankLevelDynamicResourceDocRequest.new({type: 'type_example', properties: OpenBankProject::OBPv400UpdateBankLevelDynamicResourceDocRequestProperties.new({error_response_bodies: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), request_verb: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), request_url: , description: , tags: , success_response_body: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBody.new({type: 'type_example', properties: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyProperties.new({name: , _optional_fields_: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields.new({type: 'type_example', items: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems.new({type: 'type_example', properties: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties.new({s: })})}), age: , hobby: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields.new({type: 'type_example', items: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems.new({type: 'type_example', properties: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties.new({s: })})}), my_user_id: })}), example_request_body: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesExampleRequestBody.new({type: 'type_example', properties: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesExampleRequestBodyProperties.new({name: , age: , hobby: , _optional_fields_: })}), bank_id: , roles: , partial_function_name: , method_body: , summary: })}) # OBPv400UpdateBankLevelDynamicResourceDocRequest | Request body
+update_bank_level_dynamic_resource_doc_request = OpenBankProject::UpdateBankLevelDynamicResourceDocRequest.new # UpdateBankLevelDynamicResourceDocRequest | Request body
 
 begin
   # Create Bank Level Dynamic Resource Doc
-  result = api_instance.o_bpv4_0_0_create_bank_level_dynamic_resource_doc(bankid, obpv400_update_bank_level_dynamic_resource_doc_request)
+  result = api_instance.create_bank_level_dynamic_resource_doc(bankid, update_bank_level_dynamic_resource_doc_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicResourceDocApi->o_bpv4_0_0_create_bank_level_dynamic_resource_doc: #{e}"
+  puts "Error when calling DynamicResourceDocApi->create_bank_level_dynamic_resource_doc: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_create_bank_level_dynamic_resource_doc_with_http_info variant
+#### Using the create_bank_level_dynamic_resource_doc_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetBankLevelDynamicResourceDoc200Response>, Integer, Hash)> o_bpv4_0_0_create_bank_level_dynamic_resource_doc_with_http_info(bankid, obpv400_update_bank_level_dynamic_resource_doc_request)
+> <Array(<GetBankLevelDynamicResourceDoc200Response>, Integer, Hash)> create_bank_level_dynamic_resource_doc_with_http_info(bankid, update_bank_level_dynamic_resource_doc_request)
 
 ```ruby
 begin
   # Create Bank Level Dynamic Resource Doc
-  data, status_code, headers = api_instance.o_bpv4_0_0_create_bank_level_dynamic_resource_doc_with_http_info(bankid, obpv400_update_bank_level_dynamic_resource_doc_request)
+  data, status_code, headers = api_instance.create_bank_level_dynamic_resource_doc_with_http_info(bankid, update_bank_level_dynamic_resource_doc_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetBankLevelDynamicResourceDoc200Response>
+  p data # => <GetBankLevelDynamicResourceDoc200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicResourceDocApi->o_bpv4_0_0_create_bank_level_dynamic_resource_doc_with_http_info: #{e}"
+  puts "Error when calling DynamicResourceDocApi->create_bank_level_dynamic_resource_doc_with_http_info: #{e}"
 end
 ```
 
@@ -161,11 +161,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **bankid** | **String** | The BANKID identifier |  |
-| **obpv400_update_bank_level_dynamic_resource_doc_request** | [**OBPv400UpdateBankLevelDynamicResourceDocRequest**](OBPv400UpdateBankLevelDynamicResourceDocRequest.md) | Request body |  |
+| **update_bank_level_dynamic_resource_doc_request** | [**UpdateBankLevelDynamicResourceDocRequest**](UpdateBankLevelDynamicResourceDocRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -177,9 +177,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_create_dynamic_resource_doc
+## create_dynamic_resource_doc
 
-> <OBPv400GetBankLevelDynamicResourceDoc200Response> o_bpv4_0_0_create_dynamic_resource_doc(obpv400_update_bank_level_dynamic_resource_doc_request)
+> <GetBankLevelDynamicResourceDoc200Response> create_dynamic_resource_doc(update_bank_level_dynamic_resource_doc_request)
 
 Create Dynamic Resource Doc
 
@@ -201,38 +201,38 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::DynamicResourceDocApi.new
-obpv400_update_bank_level_dynamic_resource_doc_request = OpenBankProject::OBPv400UpdateBankLevelDynamicResourceDocRequest.new({type: 'type_example', properties: OpenBankProject::OBPv400UpdateBankLevelDynamicResourceDocRequestProperties.new({error_response_bodies: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), request_verb: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), request_url: , description: , tags: , success_response_body: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBody.new({type: 'type_example', properties: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyProperties.new({name: , _optional_fields_: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields.new({type: 'type_example', items: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems.new({type: 'type_example', properties: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties.new({s: })})}), age: , hobby: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields.new({type: 'type_example', items: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems.new({type: 'type_example', properties: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties.new({s: })})}), my_user_id: })}), example_request_body: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesExampleRequestBody.new({type: 'type_example', properties: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesExampleRequestBodyProperties.new({name: , age: , hobby: , _optional_fields_: })}), bank_id: , roles: , partial_function_name: , method_body: , summary: })}) # OBPv400UpdateBankLevelDynamicResourceDocRequest | Request body
+update_bank_level_dynamic_resource_doc_request = OpenBankProject::UpdateBankLevelDynamicResourceDocRequest.new # UpdateBankLevelDynamicResourceDocRequest | Request body
 
 begin
   # Create Dynamic Resource Doc
-  result = api_instance.o_bpv4_0_0_create_dynamic_resource_doc(obpv400_update_bank_level_dynamic_resource_doc_request)
+  result = api_instance.create_dynamic_resource_doc(update_bank_level_dynamic_resource_doc_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicResourceDocApi->o_bpv4_0_0_create_dynamic_resource_doc: #{e}"
+  puts "Error when calling DynamicResourceDocApi->create_dynamic_resource_doc: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_create_dynamic_resource_doc_with_http_info variant
+#### Using the create_dynamic_resource_doc_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetBankLevelDynamicResourceDoc200Response>, Integer, Hash)> o_bpv4_0_0_create_dynamic_resource_doc_with_http_info(obpv400_update_bank_level_dynamic_resource_doc_request)
+> <Array(<GetBankLevelDynamicResourceDoc200Response>, Integer, Hash)> create_dynamic_resource_doc_with_http_info(update_bank_level_dynamic_resource_doc_request)
 
 ```ruby
 begin
   # Create Dynamic Resource Doc
-  data, status_code, headers = api_instance.o_bpv4_0_0_create_dynamic_resource_doc_with_http_info(obpv400_update_bank_level_dynamic_resource_doc_request)
+  data, status_code, headers = api_instance.create_dynamic_resource_doc_with_http_info(update_bank_level_dynamic_resource_doc_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetBankLevelDynamicResourceDoc200Response>
+  p data # => <GetBankLevelDynamicResourceDoc200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicResourceDocApi->o_bpv4_0_0_create_dynamic_resource_doc_with_http_info: #{e}"
+  puts "Error when calling DynamicResourceDocApi->create_dynamic_resource_doc_with_http_info: #{e}"
 end
 ```
 
@@ -240,11 +240,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **obpv400_update_bank_level_dynamic_resource_doc_request** | [**OBPv400UpdateBankLevelDynamicResourceDocRequest**](OBPv400UpdateBankLevelDynamicResourceDocRequest.md) | Request body |  |
+| **update_bank_level_dynamic_resource_doc_request** | [**UpdateBankLevelDynamicResourceDocRequest**](UpdateBankLevelDynamicResourceDocRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -256,9 +256,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_delete_bank_level_dynamic_resource_doc
+## delete_bank_level_dynamic_resource_doc
 
-> o_bpv4_0_0_delete_bank_level_dynamic_resource_doc(bankid)
+> delete_bank_level_dynamic_resource_doc(bankid)
 
 Delete Bank Level Dynamic Resource Doc
 
@@ -280,9 +280,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::DynamicResourceDocApi.new
@@ -290,27 +290,27 @@ bankid = 'bankid_example' # String | The BANKID identifier
 
 begin
   # Delete Bank Level Dynamic Resource Doc
-  api_instance.o_bpv4_0_0_delete_bank_level_dynamic_resource_doc(bankid)
+  api_instance.delete_bank_level_dynamic_resource_doc(bankid)
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicResourceDocApi->o_bpv4_0_0_delete_bank_level_dynamic_resource_doc: #{e}"
+  puts "Error when calling DynamicResourceDocApi->delete_bank_level_dynamic_resource_doc: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_delete_bank_level_dynamic_resource_doc_with_http_info variant
+#### Using the delete_bank_level_dynamic_resource_doc_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> o_bpv4_0_0_delete_bank_level_dynamic_resource_doc_with_http_info(bankid)
+> <Array(nil, Integer, Hash)> delete_bank_level_dynamic_resource_doc_with_http_info(bankid)
 
 ```ruby
 begin
   # Delete Bank Level Dynamic Resource Doc
-  data, status_code, headers = api_instance.o_bpv4_0_0_delete_bank_level_dynamic_resource_doc_with_http_info(bankid)
+  data, status_code, headers = api_instance.delete_bank_level_dynamic_resource_doc_with_http_info(bankid)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicResourceDocApi->o_bpv4_0_0_delete_bank_level_dynamic_resource_doc_with_http_info: #{e}"
+  puts "Error when calling DynamicResourceDocApi->delete_bank_level_dynamic_resource_doc_with_http_info: #{e}"
 end
 ```
 
@@ -334,9 +334,9 @@ nil (empty response body)
 - **Accept**: Not defined
 
 
-## o_bpv4_0_0_delete_dynamic_resource_doc
+## delete_dynamic_resource_doc
 
-> o_bpv4_0_0_delete_dynamic_resource_doc
+> delete_dynamic_resource_doc
 
 Delete Dynamic Resource Doc
 
@@ -358,36 +358,36 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::DynamicResourceDocApi.new
 
 begin
   # Delete Dynamic Resource Doc
-  api_instance.o_bpv4_0_0_delete_dynamic_resource_doc
+  api_instance.delete_dynamic_resource_doc
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicResourceDocApi->o_bpv4_0_0_delete_dynamic_resource_doc: #{e}"
+  puts "Error when calling DynamicResourceDocApi->delete_dynamic_resource_doc: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_delete_dynamic_resource_doc_with_http_info variant
+#### Using the delete_dynamic_resource_doc_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> o_bpv4_0_0_delete_dynamic_resource_doc_with_http_info
+> <Array(nil, Integer, Hash)> delete_dynamic_resource_doc_with_http_info
 
 ```ruby
 begin
   # Delete Dynamic Resource Doc
-  data, status_code, headers = api_instance.o_bpv4_0_0_delete_dynamic_resource_doc_with_http_info
+  data, status_code, headers = api_instance.delete_dynamic_resource_doc_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicResourceDocApi->o_bpv4_0_0_delete_dynamic_resource_doc_with_http_info: #{e}"
+  puts "Error when calling DynamicResourceDocApi->delete_dynamic_resource_doc_with_http_info: #{e}"
 end
 ```
 
@@ -409,9 +409,9 @@ nil (empty response body)
 - **Accept**: Not defined
 
 
-## o_bpv4_0_0_get_all_bank_level_dynamic_resource_docs
+## get_all_bank_level_dynamic_resource_docs
 
-> <OBPv400GetAllDynamicResourceDocs200Response> o_bpv4_0_0_get_all_bank_level_dynamic_resource_docs(bankid)
+> <GetAllDynamicResourceDocs200Response> get_all_bank_level_dynamic_resource_docs(bankid)
 
 Get all Bank Level Dynamic Resource Docs
 
@@ -433,9 +433,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::DynamicResourceDocApi.new
@@ -443,28 +443,28 @@ bankid = 'bankid_example' # String | The BANKID identifier
 
 begin
   # Get all Bank Level Dynamic Resource Docs
-  result = api_instance.o_bpv4_0_0_get_all_bank_level_dynamic_resource_docs(bankid)
+  result = api_instance.get_all_bank_level_dynamic_resource_docs(bankid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicResourceDocApi->o_bpv4_0_0_get_all_bank_level_dynamic_resource_docs: #{e}"
+  puts "Error when calling DynamicResourceDocApi->get_all_bank_level_dynamic_resource_docs: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_get_all_bank_level_dynamic_resource_docs_with_http_info variant
+#### Using the get_all_bank_level_dynamic_resource_docs_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetAllDynamicResourceDocs200Response>, Integer, Hash)> o_bpv4_0_0_get_all_bank_level_dynamic_resource_docs_with_http_info(bankid)
+> <Array(<GetAllDynamicResourceDocs200Response>, Integer, Hash)> get_all_bank_level_dynamic_resource_docs_with_http_info(bankid)
 
 ```ruby
 begin
   # Get all Bank Level Dynamic Resource Docs
-  data, status_code, headers = api_instance.o_bpv4_0_0_get_all_bank_level_dynamic_resource_docs_with_http_info(bankid)
+  data, status_code, headers = api_instance.get_all_bank_level_dynamic_resource_docs_with_http_info(bankid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetAllDynamicResourceDocs200Response>
+  p data # => <GetAllDynamicResourceDocs200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicResourceDocApi->o_bpv4_0_0_get_all_bank_level_dynamic_resource_docs_with_http_info: #{e}"
+  puts "Error when calling DynamicResourceDocApi->get_all_bank_level_dynamic_resource_docs_with_http_info: #{e}"
 end
 ```
 
@@ -476,7 +476,7 @@ end
 
 ### Return type
 
-[**OBPv400GetAllDynamicResourceDocs200Response**](OBPv400GetAllDynamicResourceDocs200Response.md)
+[**GetAllDynamicResourceDocs200Response**](GetAllDynamicResourceDocs200Response.md)
 
 ### Authorization
 
@@ -488,9 +488,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_get_all_dynamic_resource_docs
+## get_all_dynamic_resource_docs
 
-> <OBPv400GetAllDynamicResourceDocs200Response> o_bpv4_0_0_get_all_dynamic_resource_docs
+> <GetAllDynamicResourceDocs200Response> get_all_dynamic_resource_docs
 
 Get all Dynamic Resource Docs
 
@@ -512,37 +512,37 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::DynamicResourceDocApi.new
 
 begin
   # Get all Dynamic Resource Docs
-  result = api_instance.o_bpv4_0_0_get_all_dynamic_resource_docs
+  result = api_instance.get_all_dynamic_resource_docs
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicResourceDocApi->o_bpv4_0_0_get_all_dynamic_resource_docs: #{e}"
+  puts "Error when calling DynamicResourceDocApi->get_all_dynamic_resource_docs: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_get_all_dynamic_resource_docs_with_http_info variant
+#### Using the get_all_dynamic_resource_docs_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetAllDynamicResourceDocs200Response>, Integer, Hash)> o_bpv4_0_0_get_all_dynamic_resource_docs_with_http_info
+> <Array(<GetAllDynamicResourceDocs200Response>, Integer, Hash)> get_all_dynamic_resource_docs_with_http_info
 
 ```ruby
 begin
   # Get all Dynamic Resource Docs
-  data, status_code, headers = api_instance.o_bpv4_0_0_get_all_dynamic_resource_docs_with_http_info
+  data, status_code, headers = api_instance.get_all_dynamic_resource_docs_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetAllDynamicResourceDocs200Response>
+  p data # => <GetAllDynamicResourceDocs200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicResourceDocApi->o_bpv4_0_0_get_all_dynamic_resource_docs_with_http_info: #{e}"
+  puts "Error when calling DynamicResourceDocApi->get_all_dynamic_resource_docs_with_http_info: #{e}"
 end
 ```
 
@@ -552,7 +552,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllDynamicResourceDocs200Response**](OBPv400GetAllDynamicResourceDocs200Response.md)
+[**GetAllDynamicResourceDocs200Response**](GetAllDynamicResourceDocs200Response.md)
 
 ### Authorization
 
@@ -564,9 +564,9 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_get_bank_level_dynamic_resource_doc
+## get_bank_level_dynamic_resource_doc
 
-> <OBPv400GetBankLevelDynamicResourceDoc200Response> o_bpv4_0_0_get_bank_level_dynamic_resource_doc(bankid)
+> <GetBankLevelDynamicResourceDoc200Response> get_bank_level_dynamic_resource_doc(bankid)
 
 Get Bank Level Dynamic Resource Doc by Id
 
@@ -588,9 +588,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::DynamicResourceDocApi.new
@@ -598,28 +598,28 @@ bankid = 'bankid_example' # String | The BANKID identifier
 
 begin
   # Get Bank Level Dynamic Resource Doc by Id
-  result = api_instance.o_bpv4_0_0_get_bank_level_dynamic_resource_doc(bankid)
+  result = api_instance.get_bank_level_dynamic_resource_doc(bankid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicResourceDocApi->o_bpv4_0_0_get_bank_level_dynamic_resource_doc: #{e}"
+  puts "Error when calling DynamicResourceDocApi->get_bank_level_dynamic_resource_doc: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_get_bank_level_dynamic_resource_doc_with_http_info variant
+#### Using the get_bank_level_dynamic_resource_doc_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetBankLevelDynamicResourceDoc200Response>, Integer, Hash)> o_bpv4_0_0_get_bank_level_dynamic_resource_doc_with_http_info(bankid)
+> <Array(<GetBankLevelDynamicResourceDoc200Response>, Integer, Hash)> get_bank_level_dynamic_resource_doc_with_http_info(bankid)
 
 ```ruby
 begin
   # Get Bank Level Dynamic Resource Doc by Id
-  data, status_code, headers = api_instance.o_bpv4_0_0_get_bank_level_dynamic_resource_doc_with_http_info(bankid)
+  data, status_code, headers = api_instance.get_bank_level_dynamic_resource_doc_with_http_info(bankid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetBankLevelDynamicResourceDoc200Response>
+  p data # => <GetBankLevelDynamicResourceDoc200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicResourceDocApi->o_bpv4_0_0_get_bank_level_dynamic_resource_doc_with_http_info: #{e}"
+  puts "Error when calling DynamicResourceDocApi->get_bank_level_dynamic_resource_doc_with_http_info: #{e}"
 end
 ```
 
@@ -631,7 +631,7 @@ end
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -643,9 +643,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_get_dynamic_resource_doc
+## get_dynamic_resource_doc
 
-> <OBPv400GetBankLevelDynamicResourceDoc200Response> o_bpv4_0_0_get_dynamic_resource_doc
+> <GetBankLevelDynamicResourceDoc200Response> get_dynamic_resource_doc
 
 Get Dynamic Resource Doc by Id
 
@@ -667,37 +667,37 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::DynamicResourceDocApi.new
 
 begin
   # Get Dynamic Resource Doc by Id
-  result = api_instance.o_bpv4_0_0_get_dynamic_resource_doc
+  result = api_instance.get_dynamic_resource_doc
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicResourceDocApi->o_bpv4_0_0_get_dynamic_resource_doc: #{e}"
+  puts "Error when calling DynamicResourceDocApi->get_dynamic_resource_doc: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_get_dynamic_resource_doc_with_http_info variant
+#### Using the get_dynamic_resource_doc_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetBankLevelDynamicResourceDoc200Response>, Integer, Hash)> o_bpv4_0_0_get_dynamic_resource_doc_with_http_info
+> <Array(<GetBankLevelDynamicResourceDoc200Response>, Integer, Hash)> get_dynamic_resource_doc_with_http_info
 
 ```ruby
 begin
   # Get Dynamic Resource Doc by Id
-  data, status_code, headers = api_instance.o_bpv4_0_0_get_dynamic_resource_doc_with_http_info
+  data, status_code, headers = api_instance.get_dynamic_resource_doc_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetBankLevelDynamicResourceDoc200Response>
+  p data # => <GetBankLevelDynamicResourceDoc200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicResourceDocApi->o_bpv4_0_0_get_dynamic_resource_doc_with_http_info: #{e}"
+  puts "Error when calling DynamicResourceDocApi->get_dynamic_resource_doc_with_http_info: #{e}"
 end
 ```
 
@@ -707,7 +707,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -719,9 +719,9 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_update_bank_level_dynamic_resource_doc
+## update_bank_level_dynamic_resource_doc
 
-> <OBPv400GetBankLevelDynamicResourceDoc200Response> o_bpv4_0_0_update_bank_level_dynamic_resource_doc(bankid, obpv400_update_bank_level_dynamic_resource_doc_request)
+> <GetBankLevelDynamicResourceDoc200Response> update_bank_level_dynamic_resource_doc(bankid, update_bank_level_dynamic_resource_doc_request)
 
 Update Bank Level Dynamic Resource Doc
 
@@ -743,39 +743,39 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::DynamicResourceDocApi.new
 bankid = 'bankid_example' # String | The BANKID identifier
-obpv400_update_bank_level_dynamic_resource_doc_request = OpenBankProject::OBPv400UpdateBankLevelDynamicResourceDocRequest.new({type: 'type_example', properties: OpenBankProject::OBPv400UpdateBankLevelDynamicResourceDocRequestProperties.new({error_response_bodies: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), request_verb: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), request_url: , description: , tags: , success_response_body: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBody.new({type: 'type_example', properties: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyProperties.new({name: , _optional_fields_: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields.new({type: 'type_example', items: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems.new({type: 'type_example', properties: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties.new({s: })})}), age: , hobby: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields.new({type: 'type_example', items: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems.new({type: 'type_example', properties: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties.new({s: })})}), my_user_id: })}), example_request_body: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesExampleRequestBody.new({type: 'type_example', properties: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesExampleRequestBodyProperties.new({name: , age: , hobby: , _optional_fields_: })}), bank_id: , roles: , partial_function_name: , method_body: , summary: })}) # OBPv400UpdateBankLevelDynamicResourceDocRequest | Request body
+update_bank_level_dynamic_resource_doc_request = OpenBankProject::UpdateBankLevelDynamicResourceDocRequest.new # UpdateBankLevelDynamicResourceDocRequest | Request body
 
 begin
   # Update Bank Level Dynamic Resource Doc
-  result = api_instance.o_bpv4_0_0_update_bank_level_dynamic_resource_doc(bankid, obpv400_update_bank_level_dynamic_resource_doc_request)
+  result = api_instance.update_bank_level_dynamic_resource_doc(bankid, update_bank_level_dynamic_resource_doc_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicResourceDocApi->o_bpv4_0_0_update_bank_level_dynamic_resource_doc: #{e}"
+  puts "Error when calling DynamicResourceDocApi->update_bank_level_dynamic_resource_doc: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_update_bank_level_dynamic_resource_doc_with_http_info variant
+#### Using the update_bank_level_dynamic_resource_doc_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetBankLevelDynamicResourceDoc200Response>, Integer, Hash)> o_bpv4_0_0_update_bank_level_dynamic_resource_doc_with_http_info(bankid, obpv400_update_bank_level_dynamic_resource_doc_request)
+> <Array(<GetBankLevelDynamicResourceDoc200Response>, Integer, Hash)> update_bank_level_dynamic_resource_doc_with_http_info(bankid, update_bank_level_dynamic_resource_doc_request)
 
 ```ruby
 begin
   # Update Bank Level Dynamic Resource Doc
-  data, status_code, headers = api_instance.o_bpv4_0_0_update_bank_level_dynamic_resource_doc_with_http_info(bankid, obpv400_update_bank_level_dynamic_resource_doc_request)
+  data, status_code, headers = api_instance.update_bank_level_dynamic_resource_doc_with_http_info(bankid, update_bank_level_dynamic_resource_doc_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetBankLevelDynamicResourceDoc200Response>
+  p data # => <GetBankLevelDynamicResourceDoc200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicResourceDocApi->o_bpv4_0_0_update_bank_level_dynamic_resource_doc_with_http_info: #{e}"
+  puts "Error when calling DynamicResourceDocApi->update_bank_level_dynamic_resource_doc_with_http_info: #{e}"
 end
 ```
 
@@ -784,11 +784,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **bankid** | **String** | The BANKID identifier |  |
-| **obpv400_update_bank_level_dynamic_resource_doc_request** | [**OBPv400UpdateBankLevelDynamicResourceDocRequest**](OBPv400UpdateBankLevelDynamicResourceDocRequest.md) | Request body |  |
+| **update_bank_level_dynamic_resource_doc_request** | [**UpdateBankLevelDynamicResourceDocRequest**](UpdateBankLevelDynamicResourceDocRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -800,9 +800,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_update_dynamic_resource_doc
+## update_dynamic_resource_doc
 
-> <OBPv400GetBankLevelDynamicResourceDoc200Response> o_bpv4_0_0_update_dynamic_resource_doc(obpv400_update_bank_level_dynamic_resource_doc_request)
+> <GetBankLevelDynamicResourceDoc200Response> update_dynamic_resource_doc(update_bank_level_dynamic_resource_doc_request)
 
 Update Dynamic Resource Doc
 
@@ -824,38 +824,38 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::DynamicResourceDocApi.new
-obpv400_update_bank_level_dynamic_resource_doc_request = OpenBankProject::OBPv400UpdateBankLevelDynamicResourceDocRequest.new({type: 'type_example', properties: OpenBankProject::OBPv400UpdateBankLevelDynamicResourceDocRequestProperties.new({error_response_bodies: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), request_verb: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), request_url: , description: , tags: , success_response_body: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBody.new({type: 'type_example', properties: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyProperties.new({name: , _optional_fields_: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields.new({type: 'type_example', items: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems.new({type: 'type_example', properties: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties.new({s: })})}), age: , hobby: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields.new({type: 'type_example', items: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems.new({type: 'type_example', properties: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties.new({s: })})}), my_user_id: })}), example_request_body: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesExampleRequestBody.new({type: 'type_example', properties: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesExampleRequestBodyProperties.new({name: , age: , hobby: , _optional_fields_: })}), bank_id: , roles: , partial_function_name: , method_body: , summary: })}) # OBPv400UpdateBankLevelDynamicResourceDocRequest | Request body
+update_bank_level_dynamic_resource_doc_request = OpenBankProject::UpdateBankLevelDynamicResourceDocRequest.new # UpdateBankLevelDynamicResourceDocRequest | Request body
 
 begin
   # Update Dynamic Resource Doc
-  result = api_instance.o_bpv4_0_0_update_dynamic_resource_doc(obpv400_update_bank_level_dynamic_resource_doc_request)
+  result = api_instance.update_dynamic_resource_doc(update_bank_level_dynamic_resource_doc_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicResourceDocApi->o_bpv4_0_0_update_dynamic_resource_doc: #{e}"
+  puts "Error when calling DynamicResourceDocApi->update_dynamic_resource_doc: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_update_dynamic_resource_doc_with_http_info variant
+#### Using the update_dynamic_resource_doc_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetBankLevelDynamicResourceDoc200Response>, Integer, Hash)> o_bpv4_0_0_update_dynamic_resource_doc_with_http_info(obpv400_update_bank_level_dynamic_resource_doc_request)
+> <Array(<GetBankLevelDynamicResourceDoc200Response>, Integer, Hash)> update_dynamic_resource_doc_with_http_info(update_bank_level_dynamic_resource_doc_request)
 
 ```ruby
 begin
   # Update Dynamic Resource Doc
-  data, status_code, headers = api_instance.o_bpv4_0_0_update_dynamic_resource_doc_with_http_info(obpv400_update_bank_level_dynamic_resource_doc_request)
+  data, status_code, headers = api_instance.update_dynamic_resource_doc_with_http_info(update_bank_level_dynamic_resource_doc_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetBankLevelDynamicResourceDoc200Response>
+  p data # => <GetBankLevelDynamicResourceDoc200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DynamicResourceDocApi->o_bpv4_0_0_update_dynamic_resource_doc_with_http_info: #{e}"
+  puts "Error when calling DynamicResourceDocApi->update_dynamic_resource_doc_with_http_info: #{e}"
 end
 ```
 
@@ -863,11 +863,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **obpv400_update_bank_level_dynamic_resource_doc_request** | [**OBPv400UpdateBankLevelDynamicResourceDocRequest**](OBPv400UpdateBankLevelDynamicResourceDocRequest.md) | Request body |  |
+| **update_bank_level_dynamic_resource_doc_request** | [**UpdateBankLevelDynamicResourceDocRequest**](UpdateBankLevelDynamicResourceDocRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 

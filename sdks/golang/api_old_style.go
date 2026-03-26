@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -23,17 +23,17 @@ import (
 // OldStyleAPIService OldStyleAPI service
 type OldStyleAPIService service
 
-type ApiOBPv200ElasticSearchMetricsRequest struct {
+type ApiElasticSearchMetricsRequest struct {
 	ctx context.Context
 	ApiService *OldStyleAPIService
 }
 
-func (r ApiOBPv200ElasticSearchMetricsRequest) Execute() (*OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage, *http.Response, error) {
-	return r.ApiService.OBPv200ElasticSearchMetricsExecute(r)
+func (r ApiElasticSearchMetricsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.ElasticSearchMetricsExecute(r)
 }
 
 /*
-OBPv200ElasticSearchMetrics Search API Metrics via Elasticsearch
+ElasticSearchMetrics Search API Metrics via Elasticsearch
 
 <p>Search the API calls made to this API instance via Elastic Search.</p>
 <p>Login is required.</p>
@@ -70,26 +70,26 @@ OBPv200ElasticSearchMetrics Search API Metrics via Elasticsearch
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv200ElasticSearchMetricsRequest
+ @return ApiElasticSearchMetricsRequest
 */
-func (a *OldStyleAPIService) OBPv200ElasticSearchMetrics(ctx context.Context) ApiOBPv200ElasticSearchMetricsRequest {
-	return ApiOBPv200ElasticSearchMetricsRequest{
+func (a *OldStyleAPIService) ElasticSearchMetrics(ctx context.Context) ApiElasticSearchMetricsRequest {
+	return ApiElasticSearchMetricsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage
-func (a *OldStyleAPIService) OBPv200ElasticSearchMetricsExecute(r ApiOBPv200ElasticSearchMetricsRequest) (*OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage, *http.Response, error) {
+//  @return map[string]interface{}
+func (a *OldStyleAPIService) ElasticSearchMetricsExecute(r ApiElasticSearchMetricsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage
+		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OldStyleAPIService.OBPv200ElasticSearchMetrics")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OldStyleAPIService.ElasticSearchMetrics")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -141,7 +141,7 @@ func (a *OldStyleAPIService) OBPv200ElasticSearchMetricsExecute(r ApiOBPv200Elas
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

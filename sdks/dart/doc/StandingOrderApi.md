@@ -5,16 +5,16 @@
 import 'package:obp_dart/api.dart';
 ```
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv400CreateStandingOrder**](StandingOrderApi.md#obpv400createstandingorder) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/standing-order | Create Standing Order
-[**oBPv400CreateStandingOrderManagement**](StandingOrderApi.md#obpv400createstandingordermanagement) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/standing-order | Create Standing Order (management)
+[**createStandingOrder**](StandingOrderApi.md#createstandingorder) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/standing-order | Create Standing Order
+[**createStandingOrderManagement**](StandingOrderApi.md#createstandingordermanagement) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/standing-order | Create Standing Order (management)
 
 
-# **oBPv400CreateStandingOrder**
-> OBPv400CreateStandingOrder200Response oBPv400CreateStandingOrder(bankid, accountid, viewid, oBPv400CreateStandingOrderRequest)
+# **createStandingOrder**
+> CreateStandingOrder200Response createStandingOrder(bankid, accountid, viewid, createStandingOrderRequest)
 
 Create Standing Order
 
@@ -38,13 +38,13 @@ final api = ObpDart().getStandingOrderApi();
 final String bankid = bankid_example; // String | The BANKID identifier
 final String accountid = accountid_example; // String | The ACCOUNTID identifier
 final String viewid = viewid_example; // String | The VIEWID identifier
-final OBPv400CreateStandingOrderRequest oBPv400CreateStandingOrderRequest = {"type":"object","properties":{"date_expires":{"type":"string","format":"date-time"},"date_starts":{"type":"string","format":"date-time"},"customer_id":{"type":"string"},"counterparty_id":{"type":"string"},"when":{"type":"object","properties":{"frequency":{"type":"string"},"detail":{"type":"string"}}},"date_signed":{"type":"string","format":"date-time"},"amount":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"user_id":{"type":"string"}}}; // OBPv400CreateStandingOrderRequest | Request body
+final CreateStandingOrderRequest createStandingOrderRequest = {"type":"object","properties":{"customer_id":{"type":"string"},"date_signed":{"type":"string","format":"date-time"},"counterparty_id":{"type":"string"},"date_expires":{"type":"string","format":"date-time"},"when":{"type":"object","properties":{"frequency":{"type":"string"},"detail":{"type":"string"}}},"date_starts":{"type":"string","format":"date-time"},"amount":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"user_id":{"type":"string"}}}; // CreateStandingOrderRequest | Request body
 
 try {
-    final response = api.oBPv400CreateStandingOrder(bankid, accountid, viewid, oBPv400CreateStandingOrderRequest);
+    final response = api.createStandingOrder(bankid, accountid, viewid, createStandingOrderRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling StandingOrderApi->oBPv400CreateStandingOrder: $e\n');
+    print('Exception when calling StandingOrderApi->createStandingOrder: $e\n');
 }
 ```
 
@@ -55,11 +55,11 @@ Name | Type | Description  | Notes
  **bankid** | **String**| The BANKID identifier | 
  **accountid** | **String**| The ACCOUNTID identifier | 
  **viewid** | **String**| The VIEWID identifier | 
- **oBPv400CreateStandingOrderRequest** | [**OBPv400CreateStandingOrderRequest**](OBPv400CreateStandingOrderRequest.md)| Request body | 
+ **createStandingOrderRequest** | [**CreateStandingOrderRequest**](CreateStandingOrderRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400CreateStandingOrder200Response**](OBPv400CreateStandingOrder200Response.md)
+[**CreateStandingOrder200Response**](CreateStandingOrder200Response.md)
 
 ### Authorization
 
@@ -72,8 +72,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400CreateStandingOrderManagement**
-> OBPv400CreateStandingOrder200Response oBPv400CreateStandingOrderManagement(bankid, accountid, oBPv400CreateStandingOrderRequest)
+# **createStandingOrderManagement**
+> CreateStandingOrder200Response createStandingOrderManagement(bankid, accountid, createStandingOrderRequest)
 
 Create Standing Order (management)
 
@@ -96,13 +96,13 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getStandingOrderApi();
 final String bankid = bankid_example; // String | The BANKID identifier
 final String accountid = accountid_example; // String | The ACCOUNTID identifier
-final OBPv400CreateStandingOrderRequest oBPv400CreateStandingOrderRequest = {type=object, properties={date_expires={type=string, format=date-time}, date_starts={type=string, format=date-time}, customer_id={type=string}, counterparty_id={type=string}, when={type=object, properties={frequency={type=string}, detail={type=string}}}, date_signed={type=string, format=date-time}, amount={type=object, properties={currency={type=string}, amount={type=string}}}, user_id={type=string}}}; // OBPv400CreateStandingOrderRequest | Request body
+final CreateStandingOrderRequest createStandingOrderRequest = {type=object, properties={customer_id={type=string}, date_signed={type=string, format=date-time}, counterparty_id={type=string}, date_expires={type=string, format=date-time}, when={type=object, properties={frequency={type=string}, detail={type=string}}}, date_starts={type=string, format=date-time}, amount={type=object, properties={currency={type=string}, amount={type=string}}}, user_id={type=string}}}; // CreateStandingOrderRequest | Request body
 
 try {
-    final response = api.oBPv400CreateStandingOrderManagement(bankid, accountid, oBPv400CreateStandingOrderRequest);
+    final response = api.createStandingOrderManagement(bankid, accountid, createStandingOrderRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling StandingOrderApi->oBPv400CreateStandingOrderManagement: $e\n');
+    print('Exception when calling StandingOrderApi->createStandingOrderManagement: $e\n');
 }
 ```
 
@@ -112,11 +112,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String**| The BANKID identifier | 
  **accountid** | **String**| The ACCOUNTID identifier | 
- **oBPv400CreateStandingOrderRequest** | [**OBPv400CreateStandingOrderRequest**](OBPv400CreateStandingOrderRequest.md)| Request body | 
+ **createStandingOrderRequest** | [**CreateStandingOrderRequest**](CreateStandingOrderRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400CreateStandingOrder200Response**](OBPv400CreateStandingOrder200Response.md)
+[**CreateStandingOrder200Response**](CreateStandingOrder200Response.md)
 
 ### Authorization
 

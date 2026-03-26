@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,13 +75,13 @@ class ExperimentalApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv310CreateMeeting' => [
+        'createMeeting' => [
             'application/json',
         ],
-        'oBPv310GetMeeting' => [
+        'getMeeting' => [
             'application/json',
         ],
-        'oBPv310GetMeetings' => [
+        'getMeetings' => [
             'application/json',
         ],
     ];
@@ -133,40 +133,40 @@ class ExperimentalApi
     }
 
     /**
-     * Operation oBPv310CreateMeeting
+     * Operation createMeeting
      *
      * Create Meeting (video conference/call)
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv310CreateMeetingRequest $obpv310_create_meeting_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CreateMeeting'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateMeetingRequest $create_meeting_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMeeting'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv310GetMeeting200Response
+     * @return \OpenBankProject\Model\GetMeeting200Response
      */
-    public function oBPv310CreateMeeting($bankid, $obpv310_create_meeting_request, string $contentType = self::contentTypes['oBPv310CreateMeeting'][0])
+    public function createMeeting($bankid, $create_meeting_request, string $contentType = self::contentTypes['createMeeting'][0])
     {
-        list($response) = $this->oBPv310CreateMeetingWithHttpInfo($bankid, $obpv310_create_meeting_request, $contentType);
+        list($response) = $this->createMeetingWithHttpInfo($bankid, $create_meeting_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv310CreateMeetingWithHttpInfo
+     * Operation createMeetingWithHttpInfo
      *
      * Create Meeting (video conference/call)
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv310CreateMeetingRequest $obpv310_create_meeting_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CreateMeeting'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateMeetingRequest $create_meeting_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMeeting'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv310GetMeeting200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetMeeting200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv310CreateMeetingWithHttpInfo($bankid, $obpv310_create_meeting_request, string $contentType = self::contentTypes['oBPv310CreateMeeting'][0])
+    public function createMeetingWithHttpInfo($bankid, $create_meeting_request, string $contentType = self::contentTypes['createMeeting'][0])
     {
-        $request = $this->oBPv310CreateMeetingRequest($bankid, $obpv310_create_meeting_request, $contentType);
+        $request = $this->createMeetingRequest($bankid, $create_meeting_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -194,7 +194,7 @@ class ExperimentalApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv310GetMeeting200Response',
+                        '\OpenBankProject\Model\GetMeeting200Response',
                         $request,
                         $response,
                     );
@@ -216,7 +216,7 @@ class ExperimentalApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv310GetMeeting200Response',
+                '\OpenBankProject\Model\GetMeeting200Response',
                 $request,
                 $response,
             );
@@ -225,7 +225,7 @@ class ExperimentalApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv310GetMeeting200Response',
+                        '\OpenBankProject\Model\GetMeeting200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -238,20 +238,20 @@ class ExperimentalApi
     }
 
     /**
-     * Operation oBPv310CreateMeetingAsync
+     * Operation createMeetingAsync
      *
      * Create Meeting (video conference/call)
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv310CreateMeetingRequest $obpv310_create_meeting_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CreateMeeting'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateMeetingRequest $create_meeting_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMeeting'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310CreateMeetingAsync($bankid, $obpv310_create_meeting_request, string $contentType = self::contentTypes['oBPv310CreateMeeting'][0])
+    public function createMeetingAsync($bankid, $create_meeting_request, string $contentType = self::contentTypes['createMeeting'][0])
     {
-        return $this->oBPv310CreateMeetingAsyncWithHttpInfo($bankid, $obpv310_create_meeting_request, $contentType)
+        return $this->createMeetingAsyncWithHttpInfo($bankid, $create_meeting_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -260,21 +260,21 @@ class ExperimentalApi
     }
 
     /**
-     * Operation oBPv310CreateMeetingAsyncWithHttpInfo
+     * Operation createMeetingAsyncWithHttpInfo
      *
      * Create Meeting (video conference/call)
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv310CreateMeetingRequest $obpv310_create_meeting_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CreateMeeting'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateMeetingRequest $create_meeting_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMeeting'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310CreateMeetingAsyncWithHttpInfo($bankid, $obpv310_create_meeting_request, string $contentType = self::contentTypes['oBPv310CreateMeeting'][0])
+    public function createMeetingAsyncWithHttpInfo($bankid, $create_meeting_request, string $contentType = self::contentTypes['createMeeting'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv310GetMeeting200Response';
-        $request = $this->oBPv310CreateMeetingRequest($bankid, $obpv310_create_meeting_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetMeeting200Response';
+        $request = $this->createMeetingRequest($bankid, $create_meeting_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -313,29 +313,29 @@ class ExperimentalApi
     }
 
     /**
-     * Create request for operation 'oBPv310CreateMeeting'
+     * Create request for operation 'createMeeting'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv310CreateMeetingRequest $obpv310_create_meeting_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CreateMeeting'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateMeetingRequest $create_meeting_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMeeting'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv310CreateMeetingRequest($bankid, $obpv310_create_meeting_request, string $contentType = self::contentTypes['oBPv310CreateMeeting'][0])
+    public function createMeetingRequest($bankid, $create_meeting_request, string $contentType = self::contentTypes['createMeeting'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv310CreateMeeting'
+                'Missing the required parameter $bankid when calling createMeeting'
             );
         }
 
-        // verify the required parameter 'obpv310_create_meeting_request' is set
-        if ($obpv310_create_meeting_request === null || (is_array($obpv310_create_meeting_request) && count($obpv310_create_meeting_request) === 0)) {
+        // verify the required parameter 'create_meeting_request' is set
+        if ($create_meeting_request === null || (is_array($create_meeting_request) && count($create_meeting_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv310_create_meeting_request when calling oBPv310CreateMeeting'
+                'Missing the required parameter $create_meeting_request when calling createMeeting'
             );
         }
 
@@ -366,12 +366,12 @@ class ExperimentalApi
         );
 
         // for model (json/xml)
-        if (isset($obpv310_create_meeting_request)) {
+        if (isset($create_meeting_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv310_create_meeting_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_meeting_request));
             } else {
-                $httpBody = $obpv310_create_meeting_request;
+                $httpBody = $create_meeting_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -407,9 +407,9 @@ class ExperimentalApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -434,40 +434,40 @@ class ExperimentalApi
     }
 
     /**
-     * Operation oBPv310GetMeeting
+     * Operation getMeeting
      *
      * Get Meeting
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $meetingid The MEETINGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetMeeting'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMeeting'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv310GetMeeting200Response
+     * @return \OpenBankProject\Model\GetMeeting200Response
      */
-    public function oBPv310GetMeeting($bankid, $meetingid, string $contentType = self::contentTypes['oBPv310GetMeeting'][0])
+    public function getMeeting($bankid, $meetingid, string $contentType = self::contentTypes['getMeeting'][0])
     {
-        list($response) = $this->oBPv310GetMeetingWithHttpInfo($bankid, $meetingid, $contentType);
+        list($response) = $this->getMeetingWithHttpInfo($bankid, $meetingid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv310GetMeetingWithHttpInfo
+     * Operation getMeetingWithHttpInfo
      *
      * Get Meeting
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $meetingid The MEETINGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetMeeting'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMeeting'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv310GetMeeting200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetMeeting200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv310GetMeetingWithHttpInfo($bankid, $meetingid, string $contentType = self::contentTypes['oBPv310GetMeeting'][0])
+    public function getMeetingWithHttpInfo($bankid, $meetingid, string $contentType = self::contentTypes['getMeeting'][0])
     {
-        $request = $this->oBPv310GetMeetingRequest($bankid, $meetingid, $contentType);
+        $request = $this->getMeetingRequest($bankid, $meetingid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -495,7 +495,7 @@ class ExperimentalApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv310GetMeeting200Response',
+                        '\OpenBankProject\Model\GetMeeting200Response',
                         $request,
                         $response,
                     );
@@ -517,7 +517,7 @@ class ExperimentalApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv310GetMeeting200Response',
+                '\OpenBankProject\Model\GetMeeting200Response',
                 $request,
                 $response,
             );
@@ -526,7 +526,7 @@ class ExperimentalApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv310GetMeeting200Response',
+                        '\OpenBankProject\Model\GetMeeting200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -539,20 +539,20 @@ class ExperimentalApi
     }
 
     /**
-     * Operation oBPv310GetMeetingAsync
+     * Operation getMeetingAsync
      *
      * Get Meeting
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $meetingid The MEETINGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetMeeting'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMeeting'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310GetMeetingAsync($bankid, $meetingid, string $contentType = self::contentTypes['oBPv310GetMeeting'][0])
+    public function getMeetingAsync($bankid, $meetingid, string $contentType = self::contentTypes['getMeeting'][0])
     {
-        return $this->oBPv310GetMeetingAsyncWithHttpInfo($bankid, $meetingid, $contentType)
+        return $this->getMeetingAsyncWithHttpInfo($bankid, $meetingid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -561,21 +561,21 @@ class ExperimentalApi
     }
 
     /**
-     * Operation oBPv310GetMeetingAsyncWithHttpInfo
+     * Operation getMeetingAsyncWithHttpInfo
      *
      * Get Meeting
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $meetingid The MEETINGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetMeeting'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMeeting'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310GetMeetingAsyncWithHttpInfo($bankid, $meetingid, string $contentType = self::contentTypes['oBPv310GetMeeting'][0])
+    public function getMeetingAsyncWithHttpInfo($bankid, $meetingid, string $contentType = self::contentTypes['getMeeting'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv310GetMeeting200Response';
-        $request = $this->oBPv310GetMeetingRequest($bankid, $meetingid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetMeeting200Response';
+        $request = $this->getMeetingRequest($bankid, $meetingid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -614,29 +614,29 @@ class ExperimentalApi
     }
 
     /**
-     * Create request for operation 'oBPv310GetMeeting'
+     * Create request for operation 'getMeeting'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $meetingid The MEETINGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetMeeting'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMeeting'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv310GetMeetingRequest($bankid, $meetingid, string $contentType = self::contentTypes['oBPv310GetMeeting'][0])
+    public function getMeetingRequest($bankid, $meetingid, string $contentType = self::contentTypes['getMeeting'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv310GetMeeting'
+                'Missing the required parameter $bankid when calling getMeeting'
             );
         }
 
         // verify the required parameter 'meetingid' is set
         if ($meetingid === null || (is_array($meetingid) && count($meetingid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $meetingid when calling oBPv310GetMeeting'
+                'Missing the required parameter $meetingid when calling getMeeting'
             );
         }
 
@@ -709,9 +709,9 @@ class ExperimentalApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -736,38 +736,38 @@ class ExperimentalApi
     }
 
     /**
-     * Operation oBPv310GetMeetings
+     * Operation getMeetings
      *
      * Get Meetings
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetMeetings'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMeetings'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv310GetMeetings200Response
+     * @return \OpenBankProject\Model\GetMeetings200Response
      */
-    public function oBPv310GetMeetings($bankid, string $contentType = self::contentTypes['oBPv310GetMeetings'][0])
+    public function getMeetings($bankid, string $contentType = self::contentTypes['getMeetings'][0])
     {
-        list($response) = $this->oBPv310GetMeetingsWithHttpInfo($bankid, $contentType);
+        list($response) = $this->getMeetingsWithHttpInfo($bankid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv310GetMeetingsWithHttpInfo
+     * Operation getMeetingsWithHttpInfo
      *
      * Get Meetings
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetMeetings'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMeetings'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv310GetMeetings200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetMeetings200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv310GetMeetingsWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv310GetMeetings'][0])
+    public function getMeetingsWithHttpInfo($bankid, string $contentType = self::contentTypes['getMeetings'][0])
     {
-        $request = $this->oBPv310GetMeetingsRequest($bankid, $contentType);
+        $request = $this->getMeetingsRequest($bankid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -795,7 +795,7 @@ class ExperimentalApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv310GetMeetings200Response',
+                        '\OpenBankProject\Model\GetMeetings200Response',
                         $request,
                         $response,
                     );
@@ -817,7 +817,7 @@ class ExperimentalApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv310GetMeetings200Response',
+                '\OpenBankProject\Model\GetMeetings200Response',
                 $request,
                 $response,
             );
@@ -826,7 +826,7 @@ class ExperimentalApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv310GetMeetings200Response',
+                        '\OpenBankProject\Model\GetMeetings200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -839,19 +839,19 @@ class ExperimentalApi
     }
 
     /**
-     * Operation oBPv310GetMeetingsAsync
+     * Operation getMeetingsAsync
      *
      * Get Meetings
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetMeetings'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMeetings'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310GetMeetingsAsync($bankid, string $contentType = self::contentTypes['oBPv310GetMeetings'][0])
+    public function getMeetingsAsync($bankid, string $contentType = self::contentTypes['getMeetings'][0])
     {
-        return $this->oBPv310GetMeetingsAsyncWithHttpInfo($bankid, $contentType)
+        return $this->getMeetingsAsyncWithHttpInfo($bankid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -860,20 +860,20 @@ class ExperimentalApi
     }
 
     /**
-     * Operation oBPv310GetMeetingsAsyncWithHttpInfo
+     * Operation getMeetingsAsyncWithHttpInfo
      *
      * Get Meetings
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetMeetings'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMeetings'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310GetMeetingsAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv310GetMeetings'][0])
+    public function getMeetingsAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['getMeetings'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv310GetMeetings200Response';
-        $request = $this->oBPv310GetMeetingsRequest($bankid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetMeetings200Response';
+        $request = $this->getMeetingsRequest($bankid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -912,21 +912,21 @@ class ExperimentalApi
     }
 
     /**
-     * Create request for operation 'oBPv310GetMeetings'
+     * Create request for operation 'getMeetings'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetMeetings'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMeetings'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv310GetMeetingsRequest($bankid, string $contentType = self::contentTypes['oBPv310GetMeetings'][0])
+    public function getMeetingsRequest($bankid, string $contentType = self::contentTypes['getMeetings'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv310GetMeetings'
+                'Missing the required parameter $bankid when calling getMeetings'
             );
         }
 
@@ -991,9 +991,9 @@ class ExperimentalApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

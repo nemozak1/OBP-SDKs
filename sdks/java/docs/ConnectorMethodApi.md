@@ -1,25 +1,25 @@
 # ConnectorMethodApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv400CreateConnectorMethod**](ConnectorMethodApi.md#oBPv400CreateConnectorMethod) | **POST** /obp/v4.0.0/management/connector-methods | Create Connector Method |
-| [**oBPv400CreateConnectorMethodWithHttpInfo**](ConnectorMethodApi.md#oBPv400CreateConnectorMethodWithHttpInfo) | **POST** /obp/v4.0.0/management/connector-methods | Create Connector Method |
-| [**oBPv400GetAllConnectorMethods**](ConnectorMethodApi.md#oBPv400GetAllConnectorMethods) | **GET** /obp/v4.0.0/management/connector-methods | Get all Connector Methods |
-| [**oBPv400GetAllConnectorMethodsWithHttpInfo**](ConnectorMethodApi.md#oBPv400GetAllConnectorMethodsWithHttpInfo) | **GET** /obp/v4.0.0/management/connector-methods | Get all Connector Methods |
-| [**oBPv400GetConnectorMethod**](ConnectorMethodApi.md#oBPv400GetConnectorMethod) | **GET** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Get Connector Method by Id |
-| [**oBPv400GetConnectorMethodWithHttpInfo**](ConnectorMethodApi.md#oBPv400GetConnectorMethodWithHttpInfo) | **GET** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Get Connector Method by Id |
-| [**oBPv400UpdateConnectorMethod**](ConnectorMethodApi.md#oBPv400UpdateConnectorMethod) | **PUT** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Update Connector Method |
-| [**oBPv400UpdateConnectorMethodWithHttpInfo**](ConnectorMethodApi.md#oBPv400UpdateConnectorMethodWithHttpInfo) | **PUT** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Update Connector Method |
-| [**oBPv600GetConnectorMethodNames**](ConnectorMethodApi.md#oBPv600GetConnectorMethodNames) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names |
-| [**oBPv600GetConnectorMethodNamesWithHttpInfo**](ConnectorMethodApi.md#oBPv600GetConnectorMethodNamesWithHttpInfo) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names |
+| [**createConnectorMethod**](ConnectorMethodApi.md#createConnectorMethod) | **POST** /obp/v4.0.0/management/connector-methods | Create Connector Method |
+| [**createConnectorMethodWithHttpInfo**](ConnectorMethodApi.md#createConnectorMethodWithHttpInfo) | **POST** /obp/v4.0.0/management/connector-methods | Create Connector Method |
+| [**getAllConnectorMethods**](ConnectorMethodApi.md#getAllConnectorMethods) | **GET** /obp/v4.0.0/management/connector-methods | Get all Connector Methods |
+| [**getAllConnectorMethodsWithHttpInfo**](ConnectorMethodApi.md#getAllConnectorMethodsWithHttpInfo) | **GET** /obp/v4.0.0/management/connector-methods | Get all Connector Methods |
+| [**getConnectorMethod**](ConnectorMethodApi.md#getConnectorMethod) | **GET** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Get Connector Method by Id |
+| [**getConnectorMethodWithHttpInfo**](ConnectorMethodApi.md#getConnectorMethodWithHttpInfo) | **GET** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Get Connector Method by Id |
+| [**getConnectorMethodNames**](ConnectorMethodApi.md#getConnectorMethodNames) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names |
+| [**getConnectorMethodNamesWithHttpInfo**](ConnectorMethodApi.md#getConnectorMethodNamesWithHttpInfo) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names |
+| [**updateConnectorMethod**](ConnectorMethodApi.md#updateConnectorMethod) | **PUT** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Update Connector Method |
+| [**updateConnectorMethodWithHttpInfo**](ConnectorMethodApi.md#updateConnectorMethodWithHttpInfo) | **PUT** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Update Connector Method |
 
 
 
-## oBPv400CreateConnectorMethod
+## createConnectorMethod
 
-> OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems oBPv400CreateConnectorMethod(obPv400CreateConnectorMethodRequest)
+> GetAllConnectorMethods200ResponseConnectorsMethodsInner createConnectorMethod(createConnectorMethodRequest)
 
 Create Connector Method
 
@@ -39,7 +39,7 @@ import com.openbankproject.api.ConnectorMethodApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -58,12 +58,12 @@ public class Example {
         //DirectLogin.setApiKeyPrefix("Token");
 
         ConnectorMethodApi apiInstance = new ConnectorMethodApi(defaultClient);
-        OBPv400CreateConnectorMethodRequest obPv400CreateConnectorMethodRequest = new OBPv400CreateConnectorMethodRequest(); // OBPv400CreateConnectorMethodRequest | Request body
+        CreateConnectorMethodRequest createConnectorMethodRequest = new CreateConnectorMethodRequest(); // CreateConnectorMethodRequest | Request body
         try {
-            OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems result = apiInstance.oBPv400CreateConnectorMethod(obPv400CreateConnectorMethodRequest);
+            GetAllConnectorMethods200ResponseConnectorsMethodsInner result = apiInstance.createConnectorMethod(createConnectorMethodRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ConnectorMethodApi#oBPv400CreateConnectorMethod");
+            System.err.println("Exception when calling ConnectorMethodApi#createConnectorMethod");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -78,11 +78,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **obPv400CreateConnectorMethodRequest** | [**OBPv400CreateConnectorMethodRequest**](OBPv400CreateConnectorMethodRequest.md)| Request body | |
+| **createConnectorMethodRequest** | [**CreateConnectorMethodRequest**](CreateConnectorMethodRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems**](OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems.md)
+[**GetAllConnectorMethods200ResponseConnectorsMethodsInner**](GetAllConnectorMethods200ResponseConnectorsMethodsInner.md)
 
 
 ### Authorization
@@ -100,9 +100,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400CreateConnectorMethodWithHttpInfo
+## createConnectorMethodWithHttpInfo
 
-> ApiResponse<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems> oBPv400CreateConnectorMethod oBPv400CreateConnectorMethodWithHttpInfo(obPv400CreateConnectorMethodRequest)
+> ApiResponse<GetAllConnectorMethods200ResponseConnectorsMethodsInner> createConnectorMethod createConnectorMethodWithHttpInfo(createConnectorMethodRequest)
 
 Create Connector Method
 
@@ -123,7 +123,7 @@ import com.openbankproject.api.ConnectorMethodApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -142,14 +142,14 @@ public class Example {
         //DirectLogin.setApiKeyPrefix("Token");
 
         ConnectorMethodApi apiInstance = new ConnectorMethodApi(defaultClient);
-        OBPv400CreateConnectorMethodRequest obPv400CreateConnectorMethodRequest = new OBPv400CreateConnectorMethodRequest(); // OBPv400CreateConnectorMethodRequest | Request body
+        CreateConnectorMethodRequest createConnectorMethodRequest = new CreateConnectorMethodRequest(); // CreateConnectorMethodRequest | Request body
         try {
-            ApiResponse<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems> response = apiInstance.oBPv400CreateConnectorMethodWithHttpInfo(obPv400CreateConnectorMethodRequest);
+            ApiResponse<GetAllConnectorMethods200ResponseConnectorsMethodsInner> response = apiInstance.createConnectorMethodWithHttpInfo(createConnectorMethodRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling ConnectorMethodApi#oBPv400CreateConnectorMethod");
+            System.err.println("Exception when calling ConnectorMethodApi#createConnectorMethod");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -164,11 +164,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **obPv400CreateConnectorMethodRequest** | [**OBPv400CreateConnectorMethodRequest**](OBPv400CreateConnectorMethodRequest.md)| Request body | |
+| **createConnectorMethodRequest** | [**CreateConnectorMethodRequest**](CreateConnectorMethodRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems**](OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems.md)>
+ApiResponse<[**GetAllConnectorMethods200ResponseConnectorsMethodsInner**](GetAllConnectorMethods200ResponseConnectorsMethodsInner.md)>
 
 
 ### Authorization
@@ -187,9 +187,9 @@ ApiResponse<[**OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMetho
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetAllConnectorMethods
+## getAllConnectorMethods
 
-> OBPv400GetAllConnectorMethods200Response oBPv400GetAllConnectorMethods()
+> GetAllConnectorMethods200Response getAllConnectorMethods()
 
 Get all Connector Methods
 
@@ -209,7 +209,7 @@ import com.openbankproject.api.ConnectorMethodApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -229,10 +229,10 @@ public class Example {
 
         ConnectorMethodApi apiInstance = new ConnectorMethodApi(defaultClient);
         try {
-            OBPv400GetAllConnectorMethods200Response result = apiInstance.oBPv400GetAllConnectorMethods();
+            GetAllConnectorMethods200Response result = apiInstance.getAllConnectorMethods();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ConnectorMethodApi#oBPv400GetAllConnectorMethods");
+            System.err.println("Exception when calling ConnectorMethodApi#getAllConnectorMethods");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -248,7 +248,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllConnectorMethods200Response**](OBPv400GetAllConnectorMethods200Response.md)
+[**GetAllConnectorMethods200Response**](GetAllConnectorMethods200Response.md)
 
 
 ### Authorization
@@ -266,9 +266,9 @@ This endpoint does not need any parameter.
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetAllConnectorMethodsWithHttpInfo
+## getAllConnectorMethodsWithHttpInfo
 
-> ApiResponse<OBPv400GetAllConnectorMethods200Response> oBPv400GetAllConnectorMethods oBPv400GetAllConnectorMethodsWithHttpInfo()
+> ApiResponse<GetAllConnectorMethods200Response> getAllConnectorMethods getAllConnectorMethodsWithHttpInfo()
 
 Get all Connector Methods
 
@@ -289,7 +289,7 @@ import com.openbankproject.api.ConnectorMethodApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -309,12 +309,12 @@ public class Example {
 
         ConnectorMethodApi apiInstance = new ConnectorMethodApi(defaultClient);
         try {
-            ApiResponse<OBPv400GetAllConnectorMethods200Response> response = apiInstance.oBPv400GetAllConnectorMethodsWithHttpInfo();
+            ApiResponse<GetAllConnectorMethods200Response> response = apiInstance.getAllConnectorMethodsWithHttpInfo();
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling ConnectorMethodApi#oBPv400GetAllConnectorMethods");
+            System.err.println("Exception when calling ConnectorMethodApi#getAllConnectorMethods");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -330,7 +330,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-ApiResponse<[**OBPv400GetAllConnectorMethods200Response**](OBPv400GetAllConnectorMethods200Response.md)>
+ApiResponse<[**GetAllConnectorMethods200Response**](GetAllConnectorMethods200Response.md)>
 
 
 ### Authorization
@@ -349,9 +349,9 @@ ApiResponse<[**OBPv400GetAllConnectorMethods200Response**](OBPv400GetAllConnecto
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetConnectorMethod
+## getConnectorMethod
 
-> OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems oBPv400GetConnectorMethod(connectormethodid)
+> GetAllConnectorMethods200ResponseConnectorsMethodsInner getConnectorMethod(connectormethodid)
 
 Get Connector Method by Id
 
@@ -371,7 +371,7 @@ import com.openbankproject.api.ConnectorMethodApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -392,10 +392,10 @@ public class Example {
         ConnectorMethodApi apiInstance = new ConnectorMethodApi(defaultClient);
         String connectormethodid = "connectormethodid_example"; // String | The CONNECTORMETHODID identifier
         try {
-            OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems result = apiInstance.oBPv400GetConnectorMethod(connectormethodid);
+            GetAllConnectorMethods200ResponseConnectorsMethodsInner result = apiInstance.getConnectorMethod(connectormethodid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ConnectorMethodApi#oBPv400GetConnectorMethod");
+            System.err.println("Exception when calling ConnectorMethodApi#getConnectorMethod");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -414,7 +414,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems**](OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems.md)
+[**GetAllConnectorMethods200ResponseConnectorsMethodsInner**](GetAllConnectorMethods200ResponseConnectorsMethodsInner.md)
 
 
 ### Authorization
@@ -432,9 +432,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetConnectorMethodWithHttpInfo
+## getConnectorMethodWithHttpInfo
 
-> ApiResponse<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems> oBPv400GetConnectorMethod oBPv400GetConnectorMethodWithHttpInfo(connectormethodid)
+> ApiResponse<GetAllConnectorMethods200ResponseConnectorsMethodsInner> getConnectorMethod getConnectorMethodWithHttpInfo(connectormethodid)
 
 Get Connector Method by Id
 
@@ -455,7 +455,7 @@ import com.openbankproject.api.ConnectorMethodApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -476,12 +476,12 @@ public class Example {
         ConnectorMethodApi apiInstance = new ConnectorMethodApi(defaultClient);
         String connectormethodid = "connectormethodid_example"; // String | The CONNECTORMETHODID identifier
         try {
-            ApiResponse<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems> response = apiInstance.oBPv400GetConnectorMethodWithHttpInfo(connectormethodid);
+            ApiResponse<GetAllConnectorMethods200ResponseConnectorsMethodsInner> response = apiInstance.getConnectorMethodWithHttpInfo(connectormethodid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling ConnectorMethodApi#oBPv400GetConnectorMethod");
+            System.err.println("Exception when calling ConnectorMethodApi#getConnectorMethod");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -500,7 +500,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems**](OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems.md)>
+ApiResponse<[**GetAllConnectorMethods200ResponseConnectorsMethodsInner**](GetAllConnectorMethods200ResponseConnectorsMethodsInner.md)>
 
 
 ### Authorization
@@ -519,183 +519,9 @@ ApiResponse<[**OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMetho
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400UpdateConnectorMethod
+## getConnectorMethodNames
 
-> OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems oBPv400UpdateConnectorMethod(connectormethodid, obPv400UpdateConnectorMethodRequest)
-
-Update Connector Method
-
-&lt;p&gt;Update an internal connector.&lt;/p&gt; &lt;p&gt;The method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONNECTOR_METHOD_ID&lt;/a&gt;: ace0352a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-
-### Example
-
-```java
-// Import classes:
-import com.openbankproject.ApiClient;
-import com.openbankproject.ApiException;
-import com.openbankproject.Configuration;
-import com.openbankproject.auth.*;
-import com.openbankproject.models.*;
-import com.openbankproject.api.ConnectorMethodApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
-        
-        // Configure OAuth2 access token for authorization: OAuth2
-        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
-
-        // Configure API key authorization: GatewayLogin
-        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
-        GatewayLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //GatewayLogin.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: DirectLogin
-        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
-        DirectLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //DirectLogin.setApiKeyPrefix("Token");
-
-        ConnectorMethodApi apiInstance = new ConnectorMethodApi(defaultClient);
-        String connectormethodid = "connectormethodid_example"; // String | The CONNECTORMETHODID identifier
-        OBPv400UpdateConnectorMethodRequest obPv400UpdateConnectorMethodRequest = new OBPv400UpdateConnectorMethodRequest(); // OBPv400UpdateConnectorMethodRequest | Request body
-        try {
-            OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems result = apiInstance.oBPv400UpdateConnectorMethod(connectormethodid, obPv400UpdateConnectorMethodRequest);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ConnectorMethodApi#oBPv400UpdateConnectorMethod");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **connectormethodid** | **String**| The CONNECTORMETHODID identifier | |
-| **obPv400UpdateConnectorMethodRequest** | [**OBPv400UpdateConnectorMethodRequest**](OBPv400UpdateConnectorMethodRequest.md)| Request body | |
-
-### Return type
-
-[**OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems**](OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems.md)
-
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **500** | Internal Server Error |  -  |
-
-## oBPv400UpdateConnectorMethodWithHttpInfo
-
-> ApiResponse<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems> oBPv400UpdateConnectorMethod oBPv400UpdateConnectorMethodWithHttpInfo(connectormethodid, obPv400UpdateConnectorMethodRequest)
-
-Update Connector Method
-
-&lt;p&gt;Update an internal connector.&lt;/p&gt; &lt;p&gt;The method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONNECTOR_METHOD_ID&lt;/a&gt;: ace0352a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-
-### Example
-
-```java
-// Import classes:
-import com.openbankproject.ApiClient;
-import com.openbankproject.ApiException;
-import com.openbankproject.ApiResponse;
-import com.openbankproject.Configuration;
-import com.openbankproject.auth.*;
-import com.openbankproject.models.*;
-import com.openbankproject.api.ConnectorMethodApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
-        
-        // Configure OAuth2 access token for authorization: OAuth2
-        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
-
-        // Configure API key authorization: GatewayLogin
-        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
-        GatewayLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //GatewayLogin.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: DirectLogin
-        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
-        DirectLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //DirectLogin.setApiKeyPrefix("Token");
-
-        ConnectorMethodApi apiInstance = new ConnectorMethodApi(defaultClient);
-        String connectormethodid = "connectormethodid_example"; // String | The CONNECTORMETHODID identifier
-        OBPv400UpdateConnectorMethodRequest obPv400UpdateConnectorMethodRequest = new OBPv400UpdateConnectorMethodRequest(); // OBPv400UpdateConnectorMethodRequest | Request body
-        try {
-            ApiResponse<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems> response = apiInstance.oBPv400UpdateConnectorMethodWithHttpInfo(connectormethodid, obPv400UpdateConnectorMethodRequest);
-            System.out.println("Status code: " + response.getStatusCode());
-            System.out.println("Response headers: " + response.getHeaders());
-            System.out.println("Response body: " + response.getData());
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ConnectorMethodApi#oBPv400UpdateConnectorMethod");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            System.err.println("Reason: " + e.getResponseBody());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **connectormethodid** | **String**| The CONNECTORMETHODID identifier | |
-| **obPv400UpdateConnectorMethodRequest** | [**OBPv400UpdateConnectorMethodRequest**](OBPv400UpdateConnectorMethodRequest.md)| Request body | |
-
-### Return type
-
-ApiResponse<[**OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems**](OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems.md)>
-
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **500** | Internal Server Error |  -  |
-
-
-## oBPv600GetConnectorMethodNames
-
-> OBPv600GetConnectorMethodNames200Response oBPv600GetConnectorMethodNames()
+> GetConnectorMethodNames200Response getConnectorMethodNames()
 
 Get Connector Method Names
 
@@ -715,7 +541,7 @@ import com.openbankproject.api.ConnectorMethodApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -735,10 +561,10 @@ public class Example {
 
         ConnectorMethodApi apiInstance = new ConnectorMethodApi(defaultClient);
         try {
-            OBPv600GetConnectorMethodNames200Response result = apiInstance.oBPv600GetConnectorMethodNames();
+            GetConnectorMethodNames200Response result = apiInstance.getConnectorMethodNames();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ConnectorMethodApi#oBPv600GetConnectorMethodNames");
+            System.err.println("Exception when calling ConnectorMethodApi#getConnectorMethodNames");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -754,7 +580,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetConnectorMethodNames200Response**](OBPv600GetConnectorMethodNames200Response.md)
+[**GetConnectorMethodNames200Response**](GetConnectorMethodNames200Response.md)
 
 
 ### Authorization
@@ -772,9 +598,9 @@ This endpoint does not need any parameter.
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600GetConnectorMethodNamesWithHttpInfo
+## getConnectorMethodNamesWithHttpInfo
 
-> ApiResponse<OBPv600GetConnectorMethodNames200Response> oBPv600GetConnectorMethodNames oBPv600GetConnectorMethodNamesWithHttpInfo()
+> ApiResponse<GetConnectorMethodNames200Response> getConnectorMethodNames getConnectorMethodNamesWithHttpInfo()
 
 Get Connector Method Names
 
@@ -795,7 +621,7 @@ import com.openbankproject.api.ConnectorMethodApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -815,12 +641,12 @@ public class Example {
 
         ConnectorMethodApi apiInstance = new ConnectorMethodApi(defaultClient);
         try {
-            ApiResponse<OBPv600GetConnectorMethodNames200Response> response = apiInstance.oBPv600GetConnectorMethodNamesWithHttpInfo();
+            ApiResponse<GetConnectorMethodNames200Response> response = apiInstance.getConnectorMethodNamesWithHttpInfo();
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling ConnectorMethodApi#oBPv600GetConnectorMethodNames");
+            System.err.println("Exception when calling ConnectorMethodApi#getConnectorMethodNames");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -836,7 +662,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-ApiResponse<[**OBPv600GetConnectorMethodNames200Response**](OBPv600GetConnectorMethodNames200Response.md)>
+ApiResponse<[**GetConnectorMethodNames200Response**](GetConnectorMethodNames200Response.md)>
 
 
 ### Authorization
@@ -846,6 +672,180 @@ ApiResponse<[**OBPv600GetConnectorMethodNames200Response**](OBPv600GetConnectorM
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **500** | Internal Server Error |  -  |
+
+
+## updateConnectorMethod
+
+> GetAllConnectorMethods200ResponseConnectorsMethodsInner updateConnectorMethod(connectormethodid, updateConnectorMethodRequest)
+
+Update Connector Method
+
+&lt;p&gt;Update an internal connector.&lt;/p&gt; &lt;p&gt;The method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONNECTOR_METHOD_ID&lt;/a&gt;: ace0352a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+
+### Example
+
+```java
+// Import classes:
+import com.openbankproject.ApiClient;
+import com.openbankproject.ApiException;
+import com.openbankproject.Configuration;
+import com.openbankproject.auth.*;
+import com.openbankproject.models.*;
+import com.openbankproject.api.ConnectorMethodApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://127.0.0.1:8080");
+        
+        // Configure OAuth2 access token for authorization: OAuth2
+        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
+        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+
+        // Configure API key authorization: GatewayLogin
+        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
+        GatewayLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //GatewayLogin.setApiKeyPrefix("Token");
+
+        // Configure API key authorization: DirectLogin
+        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
+        DirectLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //DirectLogin.setApiKeyPrefix("Token");
+
+        ConnectorMethodApi apiInstance = new ConnectorMethodApi(defaultClient);
+        String connectormethodid = "connectormethodid_example"; // String | The CONNECTORMETHODID identifier
+        UpdateConnectorMethodRequest updateConnectorMethodRequest = new UpdateConnectorMethodRequest(); // UpdateConnectorMethodRequest | Request body
+        try {
+            GetAllConnectorMethods200ResponseConnectorsMethodsInner result = apiInstance.updateConnectorMethod(connectormethodid, updateConnectorMethodRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ConnectorMethodApi#updateConnectorMethod");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **connectormethodid** | **String**| The CONNECTORMETHODID identifier | |
+| **updateConnectorMethodRequest** | [**UpdateConnectorMethodRequest**](UpdateConnectorMethodRequest.md)| Request body | |
+
+### Return type
+
+[**GetAllConnectorMethods200ResponseConnectorsMethodsInner**](GetAllConnectorMethods200ResponseConnectorsMethodsInner.md)
+
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **500** | Internal Server Error |  -  |
+
+## updateConnectorMethodWithHttpInfo
+
+> ApiResponse<GetAllConnectorMethods200ResponseConnectorsMethodsInner> updateConnectorMethod updateConnectorMethodWithHttpInfo(connectormethodid, updateConnectorMethodRequest)
+
+Update Connector Method
+
+&lt;p&gt;Update an internal connector.&lt;/p&gt; &lt;p&gt;The method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONNECTOR_METHOD_ID&lt;/a&gt;: ace0352a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+
+### Example
+
+```java
+// Import classes:
+import com.openbankproject.ApiClient;
+import com.openbankproject.ApiException;
+import com.openbankproject.ApiResponse;
+import com.openbankproject.Configuration;
+import com.openbankproject.auth.*;
+import com.openbankproject.models.*;
+import com.openbankproject.api.ConnectorMethodApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://127.0.0.1:8080");
+        
+        // Configure OAuth2 access token for authorization: OAuth2
+        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
+        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+
+        // Configure API key authorization: GatewayLogin
+        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
+        GatewayLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //GatewayLogin.setApiKeyPrefix("Token");
+
+        // Configure API key authorization: DirectLogin
+        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
+        DirectLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //DirectLogin.setApiKeyPrefix("Token");
+
+        ConnectorMethodApi apiInstance = new ConnectorMethodApi(defaultClient);
+        String connectormethodid = "connectormethodid_example"; // String | The CONNECTORMETHODID identifier
+        UpdateConnectorMethodRequest updateConnectorMethodRequest = new UpdateConnectorMethodRequest(); // UpdateConnectorMethodRequest | Request body
+        try {
+            ApiResponse<GetAllConnectorMethods200ResponseConnectorsMethodsInner> response = apiInstance.updateConnectorMethodWithHttpInfo(connectormethodid, updateConnectorMethodRequest);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ConnectorMethodApi#updateConnectorMethod");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **connectormethodid** | **String**| The CONNECTORMETHODID identifier | |
+| **updateConnectorMethodRequest** | [**UpdateConnectorMethodRequest**](UpdateConnectorMethodRequest.md)| Request body | |
+
+### Return type
+
+ApiResponse<[**GetAllConnectorMethods200ResponseConnectorsMethodsInner**](GetAllConnectorMethods200ResponseConnectorsMethodsInner.md)>
+
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 ### HTTP response details

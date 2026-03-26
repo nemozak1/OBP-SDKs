@@ -1,6 +1,6 @@
 /*
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -18,9 +18,9 @@ import com.openbankproject.ApiResponse;
 import com.openbankproject.Configuration;
 import com.openbankproject.Pair;
 
-import com.openbankproject.model.OBPv310CreateProductCollection200Response;
-import com.openbankproject.model.OBPv310CreateProductCollectionRequest;
-import com.openbankproject.model.OBPv310GetProductCollection200Response;
+import com.openbankproject.model.CreateProductCollection200Response;
+import com.openbankproject.model.CreateProductCollectionRequest;
+import com.openbankproject.model.GetProductCollection200Response;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -47,7 +47,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-22T11:10:23.425327611+01:00[Europe/Berlin]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class ProductCollectionApi {
   /**
    * Utility class for extending HttpRequest.Builder functionality.
@@ -169,12 +169,12 @@ public class ProductCollectionApi {
    * &lt;p&gt;Create or Update a Product Collection at the Bank.&lt;/p&gt; &lt;p&gt;Use Product Collections to create Product &amp;quot;Baskets&amp;quot;, &amp;quot;Portfolios&amp;quot;, &amp;quot;Indices&amp;quot;, &amp;quot;Collections&amp;quot;, &amp;quot;Underlyings-lists&amp;quot;, &amp;quot;Buckets&amp;quot; etc. etc.&lt;/p&gt; &lt;p&gt;There is a many to many relationship between Products and Product Collections:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;A Product can exist in many Collections&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;A Collection can contain many Products.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;A collection has collection code, one parent Product and one or more child Products.&lt;/p&gt; &lt;p&gt;Product hiearchy vs Product Collections:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You can define a hierarchy of products - so that a child Product inherits attributes of its parent Product -  using the parent_product_code in Product.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You can define a collection (also known as baskets or buckets) of products using Product Collections.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;COLLECTION_CODE&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;&lt;strong&gt;collection_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#items\&quot;&gt;&lt;strong&gt;items&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#member_product_code\&quot;&gt;&lt;strong&gt;member_product_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_collection\&quot;&gt;&lt;strong&gt;product_collection&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param collectioncode The COLLECTIONCODE identifier (required)
-   * @param obPv310CreateProductCollectionRequest Request body (required)
-   * @return OBPv310CreateProductCollection200Response
+   * @param createProductCollectionRequest Request body (required)
+   * @return CreateProductCollection200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv310CreateProductCollection200Response oBPv310CreateProductCollection(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String collectioncode, @javax.annotation.Nonnull OBPv310CreateProductCollectionRequest obPv310CreateProductCollectionRequest) throws ApiException {
-    return oBPv310CreateProductCollection(bankid, collectioncode, obPv310CreateProductCollectionRequest, null);
+  public CreateProductCollection200Response createProductCollection(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String collectioncode, @javax.annotation.Nonnull CreateProductCollectionRequest createProductCollectionRequest) throws ApiException {
+    return createProductCollection(bankid, collectioncode, createProductCollectionRequest, null);
   }
 
   /**
@@ -182,13 +182,13 @@ public class ProductCollectionApi {
    * &lt;p&gt;Create or Update a Product Collection at the Bank.&lt;/p&gt; &lt;p&gt;Use Product Collections to create Product &amp;quot;Baskets&amp;quot;, &amp;quot;Portfolios&amp;quot;, &amp;quot;Indices&amp;quot;, &amp;quot;Collections&amp;quot;, &amp;quot;Underlyings-lists&amp;quot;, &amp;quot;Buckets&amp;quot; etc. etc.&lt;/p&gt; &lt;p&gt;There is a many to many relationship between Products and Product Collections:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;A Product can exist in many Collections&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;A Collection can contain many Products.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;A collection has collection code, one parent Product and one or more child Products.&lt;/p&gt; &lt;p&gt;Product hiearchy vs Product Collections:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You can define a hierarchy of products - so that a child Product inherits attributes of its parent Product -  using the parent_product_code in Product.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You can define a collection (also known as baskets or buckets) of products using Product Collections.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;COLLECTION_CODE&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;&lt;strong&gt;collection_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#items\&quot;&gt;&lt;strong&gt;items&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#member_product_code\&quot;&gt;&lt;strong&gt;member_product_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_collection\&quot;&gt;&lt;strong&gt;product_collection&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param collectioncode The COLLECTIONCODE identifier (required)
-   * @param obPv310CreateProductCollectionRequest Request body (required)
+   * @param createProductCollectionRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv310CreateProductCollection200Response
+   * @return CreateProductCollection200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv310CreateProductCollection200Response oBPv310CreateProductCollection(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String collectioncode, @javax.annotation.Nonnull OBPv310CreateProductCollectionRequest obPv310CreateProductCollectionRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv310CreateProductCollection200Response> localVarResponse = oBPv310CreateProductCollectionWithHttpInfo(bankid, collectioncode, obPv310CreateProductCollectionRequest, headers);
+  public CreateProductCollection200Response createProductCollection(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String collectioncode, @javax.annotation.Nonnull CreateProductCollectionRequest createProductCollectionRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<CreateProductCollection200Response> localVarResponse = createProductCollectionWithHttpInfo(bankid, collectioncode, createProductCollectionRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -197,12 +197,12 @@ public class ProductCollectionApi {
    * &lt;p&gt;Create or Update a Product Collection at the Bank.&lt;/p&gt; &lt;p&gt;Use Product Collections to create Product &amp;quot;Baskets&amp;quot;, &amp;quot;Portfolios&amp;quot;, &amp;quot;Indices&amp;quot;, &amp;quot;Collections&amp;quot;, &amp;quot;Underlyings-lists&amp;quot;, &amp;quot;Buckets&amp;quot; etc. etc.&lt;/p&gt; &lt;p&gt;There is a many to many relationship between Products and Product Collections:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;A Product can exist in many Collections&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;A Collection can contain many Products.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;A collection has collection code, one parent Product and one or more child Products.&lt;/p&gt; &lt;p&gt;Product hiearchy vs Product Collections:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You can define a hierarchy of products - so that a child Product inherits attributes of its parent Product -  using the parent_product_code in Product.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You can define a collection (also known as baskets or buckets) of products using Product Collections.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;COLLECTION_CODE&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;&lt;strong&gt;collection_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#items\&quot;&gt;&lt;strong&gt;items&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#member_product_code\&quot;&gt;&lt;strong&gt;member_product_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_collection\&quot;&gt;&lt;strong&gt;product_collection&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param collectioncode The COLLECTIONCODE identifier (required)
-   * @param obPv310CreateProductCollectionRequest Request body (required)
-   * @return ApiResponse&lt;OBPv310CreateProductCollection200Response&gt;
+   * @param createProductCollectionRequest Request body (required)
+   * @return ApiResponse&lt;CreateProductCollection200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv310CreateProductCollection200Response> oBPv310CreateProductCollectionWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String collectioncode, @javax.annotation.Nonnull OBPv310CreateProductCollectionRequest obPv310CreateProductCollectionRequest) throws ApiException {
-    return oBPv310CreateProductCollectionWithHttpInfo(bankid, collectioncode, obPv310CreateProductCollectionRequest, null);
+  public ApiResponse<CreateProductCollection200Response> createProductCollectionWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String collectioncode, @javax.annotation.Nonnull CreateProductCollectionRequest createProductCollectionRequest) throws ApiException {
+    return createProductCollectionWithHttpInfo(bankid, collectioncode, createProductCollectionRequest, null);
   }
 
   /**
@@ -210,13 +210,13 @@ public class ProductCollectionApi {
    * &lt;p&gt;Create or Update a Product Collection at the Bank.&lt;/p&gt; &lt;p&gt;Use Product Collections to create Product &amp;quot;Baskets&amp;quot;, &amp;quot;Portfolios&amp;quot;, &amp;quot;Indices&amp;quot;, &amp;quot;Collections&amp;quot;, &amp;quot;Underlyings-lists&amp;quot;, &amp;quot;Buckets&amp;quot; etc. etc.&lt;/p&gt; &lt;p&gt;There is a many to many relationship between Products and Product Collections:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;A Product can exist in many Collections&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;A Collection can contain many Products.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;A collection has collection code, one parent Product and one or more child Products.&lt;/p&gt; &lt;p&gt;Product hiearchy vs Product Collections:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You can define a hierarchy of products - so that a child Product inherits attributes of its parent Product -  using the parent_product_code in Product.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You can define a collection (also known as baskets or buckets) of products using Product Collections.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;COLLECTION_CODE&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;&lt;strong&gt;collection_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#items\&quot;&gt;&lt;strong&gt;items&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#member_product_code\&quot;&gt;&lt;strong&gt;member_product_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_collection\&quot;&gt;&lt;strong&gt;product_collection&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param collectioncode The COLLECTIONCODE identifier (required)
-   * @param obPv310CreateProductCollectionRequest Request body (required)
+   * @param createProductCollectionRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv310CreateProductCollection200Response&gt;
+   * @return ApiResponse&lt;CreateProductCollection200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv310CreateProductCollection200Response> oBPv310CreateProductCollectionWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String collectioncode, @javax.annotation.Nonnull OBPv310CreateProductCollectionRequest obPv310CreateProductCollectionRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv310CreateProductCollectionRequestBuilder(bankid, collectioncode, obPv310CreateProductCollectionRequest, headers);
+  public ApiResponse<CreateProductCollection200Response> createProductCollectionWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String collectioncode, @javax.annotation.Nonnull CreateProductCollectionRequest createProductCollectionRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createProductCollectionRequestBuilder(bankid, collectioncode, createProductCollectionRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -227,11 +227,11 @@ public class ProductCollectionApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv310CreateProductCollection", localVarResponse);
+          throw getApiException("createProductCollection", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv310CreateProductCollection200Response>(
+          return new ApiResponse<CreateProductCollection200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -241,10 +241,10 @@ public class ProductCollectionApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv310CreateProductCollection200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv310CreateProductCollection200Response>() {});
+        CreateProductCollection200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<CreateProductCollection200Response>() {});
         
 
-        return new ApiResponse<OBPv310CreateProductCollection200Response>(
+        return new ApiResponse<CreateProductCollection200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -263,18 +263,18 @@ public class ProductCollectionApi {
     }
   }
 
-  private HttpRequest.Builder oBPv310CreateProductCollectionRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String collectioncode, @javax.annotation.Nonnull OBPv310CreateProductCollectionRequest obPv310CreateProductCollectionRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder createProductCollectionRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String collectioncode, @javax.annotation.Nonnull CreateProductCollectionRequest createProductCollectionRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv310CreateProductCollection");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling createProductCollection");
     }
     // verify the required parameter 'collectioncode' is set
     if (collectioncode == null) {
-      throw new ApiException(400, "Missing the required parameter 'collectioncode' when calling oBPv310CreateProductCollection");
+      throw new ApiException(400, "Missing the required parameter 'collectioncode' when calling createProductCollection");
     }
-    // verify the required parameter 'obPv310CreateProductCollectionRequest' is set
-    if (obPv310CreateProductCollectionRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv310CreateProductCollectionRequest' when calling oBPv310CreateProductCollection");
+    // verify the required parameter 'createProductCollectionRequest' is set
+    if (createProductCollectionRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'createProductCollectionRequest' when calling createProductCollection");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -289,7 +289,7 @@ public class ProductCollectionApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv310CreateProductCollectionRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createProductCollectionRequest);
       localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -310,11 +310,11 @@ public class ProductCollectionApi {
    * &lt;p&gt;Returns information about the financial Product Collection specified by BANK_ID and COLLECTION_CODE:&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;COLLECTION_CODE&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;&lt;strong&gt;collection_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#family\&quot;&gt;&lt;strong&gt;family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product_code\&quot;&gt;&lt;strong&gt;parent_product_code&lt;/strong&gt;&lt;/a&gt;: 787LOW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#products\&quot;&gt;&lt;strong&gt;products&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#super_family\&quot;&gt;&lt;strong&gt;super_family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attributes\&quot;&gt;product_attributes&lt;/a&gt;:&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param collectioncode The COLLECTIONCODE identifier (required)
-   * @return OBPv310GetProductCollection200Response
+   * @return GetProductCollection200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv310GetProductCollection200Response oBPv310GetProductCollection(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String collectioncode) throws ApiException {
-    return oBPv310GetProductCollection(bankid, collectioncode, null);
+  public GetProductCollection200Response getProductCollection(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String collectioncode) throws ApiException {
+    return getProductCollection(bankid, collectioncode, null);
   }
 
   /**
@@ -323,11 +323,11 @@ public class ProductCollectionApi {
    * @param bankid The BANKID identifier (required)
    * @param collectioncode The COLLECTIONCODE identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv310GetProductCollection200Response
+   * @return GetProductCollection200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv310GetProductCollection200Response oBPv310GetProductCollection(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String collectioncode, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv310GetProductCollection200Response> localVarResponse = oBPv310GetProductCollectionWithHttpInfo(bankid, collectioncode, headers);
+  public GetProductCollection200Response getProductCollection(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String collectioncode, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetProductCollection200Response> localVarResponse = getProductCollectionWithHttpInfo(bankid, collectioncode, headers);
     return localVarResponse.getData();
   }
 
@@ -336,11 +336,11 @@ public class ProductCollectionApi {
    * &lt;p&gt;Returns information about the financial Product Collection specified by BANK_ID and COLLECTION_CODE:&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;COLLECTION_CODE&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;&lt;strong&gt;collection_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#family\&quot;&gt;&lt;strong&gt;family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product_code\&quot;&gt;&lt;strong&gt;parent_product_code&lt;/strong&gt;&lt;/a&gt;: 787LOW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#products\&quot;&gt;&lt;strong&gt;products&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#super_family\&quot;&gt;&lt;strong&gt;super_family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attributes\&quot;&gt;product_attributes&lt;/a&gt;:&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param collectioncode The COLLECTIONCODE identifier (required)
-   * @return ApiResponse&lt;OBPv310GetProductCollection200Response&gt;
+   * @return ApiResponse&lt;GetProductCollection200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv310GetProductCollection200Response> oBPv310GetProductCollectionWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String collectioncode) throws ApiException {
-    return oBPv310GetProductCollectionWithHttpInfo(bankid, collectioncode, null);
+  public ApiResponse<GetProductCollection200Response> getProductCollectionWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String collectioncode) throws ApiException {
+    return getProductCollectionWithHttpInfo(bankid, collectioncode, null);
   }
 
   /**
@@ -349,11 +349,11 @@ public class ProductCollectionApi {
    * @param bankid The BANKID identifier (required)
    * @param collectioncode The COLLECTIONCODE identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv310GetProductCollection200Response&gt;
+   * @return ApiResponse&lt;GetProductCollection200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv310GetProductCollection200Response> oBPv310GetProductCollectionWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String collectioncode, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv310GetProductCollectionRequestBuilder(bankid, collectioncode, headers);
+  public ApiResponse<GetProductCollection200Response> getProductCollectionWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String collectioncode, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getProductCollectionRequestBuilder(bankid, collectioncode, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -364,11 +364,11 @@ public class ProductCollectionApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv310GetProductCollection", localVarResponse);
+          throw getApiException("getProductCollection", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv310GetProductCollection200Response>(
+          return new ApiResponse<GetProductCollection200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -378,10 +378,10 @@ public class ProductCollectionApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv310GetProductCollection200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv310GetProductCollection200Response>() {});
+        GetProductCollection200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetProductCollection200Response>() {});
         
 
-        return new ApiResponse<OBPv310GetProductCollection200Response>(
+        return new ApiResponse<GetProductCollection200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -400,14 +400,14 @@ public class ProductCollectionApi {
     }
   }
 
-  private HttpRequest.Builder oBPv310GetProductCollectionRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String collectioncode, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getProductCollectionRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String collectioncode, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv310GetProductCollection");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling getProductCollection");
     }
     // verify the required parameter 'collectioncode' is set
     if (collectioncode == null) {
-      throw new ApiException(400, "Missing the required parameter 'collectioncode' when calling oBPv310GetProductCollection");
+      throw new ApiException(400, "Missing the required parameter 'collectioncode' when calling getProductCollection");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();

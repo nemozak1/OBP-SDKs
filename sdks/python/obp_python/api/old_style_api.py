@@ -37,7 +37,7 @@ class OldStyleApi:
 
 
     @validate_call
-    def o_bpv2_0_0_elastic_search_metrics(
+    def elastic_search_metrics(
         self,
         _request_timeout: Union[
             None,
@@ -78,7 +78,7 @@ class OldStyleApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv2_0_0_elastic_search_metrics_serialize(
+        _param = self._elastic_search_metrics_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -101,7 +101,7 @@ class OldStyleApi:
 
 
     @validate_call
-    def o_bpv2_0_0_elastic_search_metrics_with_http_info(
+    def elastic_search_metrics_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -142,7 +142,7 @@ class OldStyleApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv2_0_0_elastic_search_metrics_serialize(
+        _param = self._elastic_search_metrics_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -165,7 +165,7 @@ class OldStyleApi:
 
 
     @validate_call
-    def o_bpv2_0_0_elastic_search_metrics_without_preload_content(
+    def elastic_search_metrics_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -206,7 +206,7 @@ class OldStyleApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv2_0_0_elastic_search_metrics_serialize(
+        _param = self._elastic_search_metrics_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -224,7 +224,7 @@ class OldStyleApi:
         return response_data.response
 
 
-    def _o_bpv2_0_0_elastic_search_metrics_serialize(
+    def _elastic_search_metrics_serialize(
         self,
         _request_auth,
         _content_type,

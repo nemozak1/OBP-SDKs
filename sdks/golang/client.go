@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -121,6 +121,8 @@ type APIClient struct {
 
 	CounterpartyAPI *CounterpartyAPIService
 
+	CounterpartyAttributeAPI *CounterpartyAttributeAPIService
+
 	CounterpartyLimitsAPI *CounterpartyLimitsAPIService
 
 	CounterpartyMetadataAPI *CounterpartyMetadataAPIService
@@ -170,6 +172,8 @@ type APIClient struct {
 	KYCAPI *KYCAPIService
 
 	LogCacheAPI *LogCacheAPIService
+
+	MandateAPI *MandateAPIService
 
 	MessageDocAPI *MessageDocAPIService
 
@@ -305,6 +309,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.ConsumerAPI = (*ConsumerAPIService)(&c.common)
 	c.CorporateCustomerAPI = (*CorporateCustomerAPIService)(&c.common)
 	c.CounterpartyAPI = (*CounterpartyAPIService)(&c.common)
+	c.CounterpartyAttributeAPI = (*CounterpartyAttributeAPIService)(&c.common)
 	c.CounterpartyLimitsAPI = (*CounterpartyLimitsAPIService)(&c.common)
 	c.CounterpartyMetadataAPI = (*CounterpartyMetadataAPIService)(&c.common)
 	c.CustomerAPI = (*CustomerAPIService)(&c.common)
@@ -330,6 +335,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.JSONSchemaValidationAPI = (*JSONSchemaValidationAPIService)(&c.common)
 	c.KYCAPI = (*KYCAPIService)(&c.common)
 	c.LogCacheAPI = (*LogCacheAPIService)(&c.common)
+	c.MandateAPI = (*MandateAPIService)(&c.common)
 	c.MessageDocAPI = (*MessageDocAPIService)(&c.common)
 	c.MethodRoutingAPI = (*MethodRoutingAPIService)(&c.common)
 	c.MetricAPI = (*MetricAPIService)(&c.common)

@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -47,10 +47,10 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="customerid">The CUSTOMERID identifier</param>
-        /// <param name="oBPv140AddCustomerMessageRequest">Request body</param>
+        /// <param name="addCustomerMessageRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv140AddCustomerMessageApiResponse"/>&gt;</returns>
-        Task<IOBPv140AddCustomerMessageApiResponse> OBPv140AddCustomerMessageAsync(string bankid, string customerid, OBPv140AddCustomerMessageRequest oBPv140AddCustomerMessageRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddCustomerMessageApiResponse"/>&gt;</returns>
+        Task<IAddCustomerMessageApiResponse> AddCustomerMessageAsync(string bankid, string customerid, AddCustomerMessageRequest addCustomerMessageRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Customer Message
@@ -60,33 +60,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="customerid">The CUSTOMERID identifier</param>
-        /// <param name="oBPv140AddCustomerMessageRequest">Request body</param>
+        /// <param name="addCustomerMessageRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv140AddCustomerMessageApiResponse"/>?&gt;</returns>
-        Task<IOBPv140AddCustomerMessageApiResponse?> OBPv140AddCustomerMessageOrDefaultAsync(string bankid, string customerid, OBPv140AddCustomerMessageRequest oBPv140AddCustomerMessageRequest, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get Customer Messages for all Customers
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Get messages for the logged in customer&lt;br /&gt; Messages sent to the currently authenticated user.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_department\&quot;&gt;&lt;strong&gt;from_department&lt;/strong&gt;&lt;/a&gt;: Open Bank&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_person\&quot;&gt;&lt;strong&gt;from_person&lt;/strong&gt;&lt;/a&gt;: Tom&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#messages\&quot;&gt;&lt;strong&gt;messages&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv140GetCustomersMessagesApiResponse"/>&gt;</returns>
-        Task<IOBPv140GetCustomersMessagesApiResponse> OBPv140GetCustomersMessagesAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get Customer Messages for all Customers
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Get messages for the logged in customer&lt;br /&gt; Messages sent to the currently authenticated user.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_department\&quot;&gt;&lt;strong&gt;from_department&lt;/strong&gt;&lt;/a&gt;: Open Bank&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_person\&quot;&gt;&lt;strong&gt;from_person&lt;/strong&gt;&lt;/a&gt;: Tom&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#messages\&quot;&gt;&lt;strong&gt;messages&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv140GetCustomersMessagesApiResponse"/>?&gt;</returns>
-        Task<IOBPv140GetCustomersMessagesApiResponse?> OBPv140GetCustomersMessagesOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddCustomerMessageApiResponse"/>?&gt;</returns>
+        Task<IAddCustomerMessageApiResponse?> AddCustomerMessageOrDefaultAsync(string bankid, string customerid, AddCustomerMessageRequest addCustomerMessageRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Customer Message
@@ -97,10 +74,10 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="customerid">The CUSTOMERID identifier</param>
-        /// <param name="oBPv400CreateCustomerMessageRequest">Request body</param>
+        /// <param name="createCustomerMessageRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateCustomerMessageApiResponse"/>&gt;</returns>
-        Task<IOBPv400CreateCustomerMessageApiResponse> OBPv400CreateCustomerMessageAsync(string bankid, string customerid, OBPv400CreateCustomerMessageRequest oBPv400CreateCustomerMessageRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateCustomerMessageApiResponse"/>&gt;</returns>
+        Task<ICreateCustomerMessageApiResponse> CreateCustomerMessageAsync(string bankid, string customerid, CreateCustomerMessageRequest createCustomerMessageRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Customer Message
@@ -110,10 +87,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="customerid">The CUSTOMERID identifier</param>
-        /// <param name="oBPv400CreateCustomerMessageRequest">Request body</param>
+        /// <param name="createCustomerMessageRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateCustomerMessageApiResponse"/>?&gt;</returns>
-        Task<IOBPv400CreateCustomerMessageApiResponse?> OBPv400CreateCustomerMessageOrDefaultAsync(string bankid, string customerid, OBPv400CreateCustomerMessageRequest oBPv400CreateCustomerMessageRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateCustomerMessageApiResponse"/>?&gt;</returns>
+        Task<ICreateCustomerMessageApiResponse?> CreateCustomerMessageOrDefaultAsync(string bankid, string customerid, CreateCustomerMessageRequest createCustomerMessageRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Customer Messages for a Customer
@@ -125,8 +102,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="customerid">The CUSTOMERID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetCustomerMessagesApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetCustomerMessagesApiResponse> OBPv400GetCustomerMessagesAsync(string bankid, string customerid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCustomerMessagesApiResponse"/>&gt;</returns>
+        Task<IGetCustomerMessagesApiResponse> GetCustomerMessagesAsync(string bankid, string customerid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Customer Messages for a Customer
@@ -137,8 +114,31 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="customerid">The CUSTOMERID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetCustomerMessagesApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetCustomerMessagesApiResponse?> OBPv400GetCustomerMessagesOrDefaultAsync(string bankid, string customerid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCustomerMessagesApiResponse"/>?&gt;</returns>
+        Task<IGetCustomerMessagesApiResponse?> GetCustomerMessagesOrDefaultAsync(string bankid, string customerid, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get Customer Messages for all Customers
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Get messages for the logged in customer&lt;br /&gt; Messages sent to the currently authenticated user.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_department\&quot;&gt;&lt;strong&gt;from_department&lt;/strong&gt;&lt;/a&gt;: Open Bank&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_person\&quot;&gt;&lt;strong&gt;from_person&lt;/strong&gt;&lt;/a&gt;: Tom&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#messages\&quot;&gt;&lt;strong&gt;messages&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCustomersMessagesApiResponse"/>&gt;</returns>
+        Task<IGetCustomersMessagesApiResponse> GetCustomersMessagesAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get Customer Messages for all Customers
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Get messages for the logged in customer&lt;br /&gt; Messages sent to the currently authenticated user.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_department\&quot;&gt;&lt;strong&gt;from_department&lt;/strong&gt;&lt;/a&gt;: Open Bank&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_person\&quot;&gt;&lt;strong&gt;from_person&lt;/strong&gt;&lt;/a&gt;: Tom&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#messages\&quot;&gt;&lt;strong&gt;messages&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCustomersMessagesApiResponse"/>?&gt;</returns>
+        Task<IGetCustomersMessagesApiResponse?> GetCustomersMessagesOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -149,81 +149,81 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv140AddCustomerMessage;
+        public event EventHandler<ApiResponseEventArgs>? OnAddCustomerMessage;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv140AddCustomerMessage;
+        public event EventHandler<ExceptionEventArgs>? OnErrorAddCustomerMessage;
 
-        internal void ExecuteOnOBPv140AddCustomerMessage(CustomerApi.OBPv140AddCustomerMessageApiResponse apiResponse)
+        internal void ExecuteOnAddCustomerMessage(CustomerApi.AddCustomerMessageApiResponse apiResponse)
         {
-            OnOBPv140AddCustomerMessage?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnAddCustomerMessage?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv140AddCustomerMessage(Exception exception)
+        internal void ExecuteOnErrorAddCustomerMessage(Exception exception)
         {
-            OnErrorOBPv140AddCustomerMessage?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorAddCustomerMessage?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv140GetCustomersMessages;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateCustomerMessage;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv140GetCustomersMessages;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateCustomerMessage;
 
-        internal void ExecuteOnOBPv140GetCustomersMessages(CustomerApi.OBPv140GetCustomersMessagesApiResponse apiResponse)
+        internal void ExecuteOnCreateCustomerMessage(CustomerApi.CreateCustomerMessageApiResponse apiResponse)
         {
-            OnOBPv140GetCustomersMessages?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateCustomerMessage?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv140GetCustomersMessages(Exception exception)
+        internal void ExecuteOnErrorCreateCustomerMessage(Exception exception)
         {
-            OnErrorOBPv140GetCustomersMessages?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateCustomerMessage?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400CreateCustomerMessage;
+        public event EventHandler<ApiResponseEventArgs>? OnGetCustomerMessages;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400CreateCustomerMessage;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetCustomerMessages;
 
-        internal void ExecuteOnOBPv400CreateCustomerMessage(CustomerApi.OBPv400CreateCustomerMessageApiResponse apiResponse)
+        internal void ExecuteOnGetCustomerMessages(CustomerApi.GetCustomerMessagesApiResponse apiResponse)
         {
-            OnOBPv400CreateCustomerMessage?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetCustomerMessages?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400CreateCustomerMessage(Exception exception)
+        internal void ExecuteOnErrorGetCustomerMessages(Exception exception)
         {
-            OnErrorOBPv400CreateCustomerMessage?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetCustomerMessages?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetCustomerMessages;
+        public event EventHandler<ApiResponseEventArgs>? OnGetCustomersMessages;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetCustomerMessages;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetCustomersMessages;
 
-        internal void ExecuteOnOBPv400GetCustomerMessages(CustomerApi.OBPv400GetCustomerMessagesApiResponse apiResponse)
+        internal void ExecuteOnGetCustomersMessages(CustomerApi.GetCustomersMessagesApiResponse apiResponse)
         {
-            OnOBPv400GetCustomerMessages?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetCustomersMessages?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetCustomerMessages(Exception exception)
+        internal void ExecuteOnErrorGetCustomersMessages(Exception exception)
         {
-            OnErrorOBPv400GetCustomerMessages?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetCustomersMessages?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -281,16 +281,16 @@ namespace OpenBankProject.Api
             OauthTokenProvider = oauthTokenProvider;
         }
 
-        partial void FormatOBPv140AddCustomerMessage(ref string bankid, ref string customerid, OBPv140AddCustomerMessageRequest oBPv140AddCustomerMessageRequest);
+        partial void FormatAddCustomerMessage(ref string bankid, ref string customerid, AddCustomerMessageRequest addCustomerMessageRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
         /// <param name="customerid"></param>
-        /// <param name="oBPv140AddCustomerMessageRequest"></param>
+        /// <param name="addCustomerMessageRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv140AddCustomerMessage(string bankid, string customerid, OBPv140AddCustomerMessageRequest oBPv140AddCustomerMessageRequest)
+        private void ValidateAddCustomerMessage(string bankid, string customerid, AddCustomerMessageRequest addCustomerMessageRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -298,8 +298,8 @@ namespace OpenBankProject.Api
             if (customerid == null)
                 throw new ArgumentNullException(nameof(customerid));
 
-            if (oBPv140AddCustomerMessageRequest == null)
-                throw new ArgumentNullException(nameof(oBPv140AddCustomerMessageRequest));
+            if (addCustomerMessageRequest == null)
+                throw new ArgumentNullException(nameof(addCustomerMessageRequest));
         }
 
         /// <summary>
@@ -308,11 +308,11 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="customerid"></param>
-        /// <param name="oBPv140AddCustomerMessageRequest"></param>
-        private void AfterOBPv140AddCustomerMessageDefaultImplementation(IOBPv140AddCustomerMessageApiResponse apiResponseLocalVar, string bankid, string customerid, OBPv140AddCustomerMessageRequest oBPv140AddCustomerMessageRequest)
+        /// <param name="addCustomerMessageRequest"></param>
+        private void AfterAddCustomerMessageDefaultImplementation(IAddCustomerMessageApiResponse apiResponseLocalVar, string bankid, string customerid, AddCustomerMessageRequest addCustomerMessageRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv140AddCustomerMessage(ref suppressDefaultLog, apiResponseLocalVar, bankid, customerid, oBPv140AddCustomerMessageRequest);
+            AfterAddCustomerMessage(ref suppressDefaultLog, apiResponseLocalVar, bankid, customerid, addCustomerMessageRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -324,8 +324,8 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="customerid"></param>
-        /// <param name="oBPv140AddCustomerMessageRequest"></param>
-        partial void AfterOBPv140AddCustomerMessage(ref bool suppressDefaultLog, IOBPv140AddCustomerMessageApiResponse apiResponseLocalVar, string bankid, string customerid, OBPv140AddCustomerMessageRequest oBPv140AddCustomerMessageRequest);
+        /// <param name="addCustomerMessageRequest"></param>
+        partial void AfterAddCustomerMessage(ref bool suppressDefaultLog, IAddCustomerMessageApiResponse apiResponseLocalVar, string bankid, string customerid, AddCustomerMessageRequest addCustomerMessageRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -335,11 +335,11 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="customerid"></param>
-        /// <param name="oBPv140AddCustomerMessageRequest"></param>
-        private void OnErrorOBPv140AddCustomerMessageDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string customerid, OBPv140AddCustomerMessageRequest oBPv140AddCustomerMessageRequest)
+        /// <param name="addCustomerMessageRequest"></param>
+        private void OnErrorAddCustomerMessageDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string customerid, AddCustomerMessageRequest addCustomerMessageRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv140AddCustomerMessage(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, customerid, oBPv140AddCustomerMessageRequest);
+            OnErrorAddCustomerMessage(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, customerid, addCustomerMessageRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -353,22 +353,22 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="customerid"></param>
-        /// <param name="oBPv140AddCustomerMessageRequest"></param>
-        partial void OnErrorOBPv140AddCustomerMessage(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string customerid, OBPv140AddCustomerMessageRequest oBPv140AddCustomerMessageRequest);
+        /// <param name="addCustomerMessageRequest"></param>
+        partial void OnErrorAddCustomerMessage(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string customerid, AddCustomerMessageRequest addCustomerMessageRequest);
 
         /// <summary>
         /// Create Customer Message &lt;p&gt;Create a message for the customer specified by CUSTOMER_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Customer.customer_id\&quot;&gt;CUSTOMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_department\&quot;&gt;&lt;strong&gt;from_department&lt;/strong&gt;&lt;/a&gt;: Open Bank&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_person\&quot;&gt;&lt;strong&gt;from_person&lt;/strong&gt;&lt;/a&gt;: Tom&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="customerid">The CUSTOMERID identifier</param>
-        /// <param name="oBPv140AddCustomerMessageRequest">Request body</param>
+        /// <param name="addCustomerMessageRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv140AddCustomerMessageApiResponse"/>&gt;</returns>
-        public async Task<IOBPv140AddCustomerMessageApiResponse?> OBPv140AddCustomerMessageOrDefaultAsync(string bankid, string customerid, OBPv140AddCustomerMessageRequest oBPv140AddCustomerMessageRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddCustomerMessageApiResponse"/>&gt;</returns>
+        public async Task<IAddCustomerMessageApiResponse?> AddCustomerMessageOrDefaultAsync(string bankid, string customerid, AddCustomerMessageRequest addCustomerMessageRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv140AddCustomerMessageAsync(bankid, customerid, oBPv140AddCustomerMessageRequest, cancellationToken).ConfigureAwait(false);
+                return await AddCustomerMessageAsync(bankid, customerid, addCustomerMessageRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -382,18 +382,18 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="customerid">The CUSTOMERID identifier</param>
-        /// <param name="oBPv140AddCustomerMessageRequest">Request body</param>
+        /// <param name="addCustomerMessageRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv140AddCustomerMessageApiResponse"/>&gt;</returns>
-        public async Task<IOBPv140AddCustomerMessageApiResponse> OBPv140AddCustomerMessageAsync(string bankid, string customerid, OBPv140AddCustomerMessageRequest oBPv140AddCustomerMessageRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddCustomerMessageApiResponse"/>&gt;</returns>
+        public async Task<IAddCustomerMessageApiResponse> AddCustomerMessageAsync(string bankid, string customerid, AddCustomerMessageRequest addCustomerMessageRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv140AddCustomerMessage(bankid, customerid, oBPv140AddCustomerMessageRequest);
+                ValidateAddCustomerMessage(bankid, customerid, addCustomerMessageRequest);
 
-                FormatOBPv140AddCustomerMessage(ref bankid, ref customerid, oBPv140AddCustomerMessageRequest);
+                FormatAddCustomerMessage(ref bankid, ref customerid, addCustomerMessageRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -406,16 +406,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bcustomerid%7D", Uri.EscapeDataString(customerid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv140AddCustomerMessageRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (addCustomerMessageRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv140AddCustomerMessageRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(addCustomerMessageRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -451,8 +451,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<CustomerApi.OBPv140AddCustomerMessageApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CustomerApi.OBPv140AddCustomerMessageApiResponse>();
-                        CustomerApi.OBPv140AddCustomerMessageApiResponse apiResponseLocalVar;
+                        ILogger<CustomerApi.AddCustomerMessageApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CustomerApi.AddCustomerMessageApiResponse>();
+                        CustomerApi.AddCustomerMessageApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -463,9 +463,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv140AddCustomerMessageDefaultImplementation(apiResponseLocalVar, bankid, customerid, oBPv140AddCustomerMessageRequest);
+                        AfterAddCustomerMessageDefaultImplementation(apiResponseLocalVar, bankid, customerid, addCustomerMessageRequest);
 
-                        Events.ExecuteOnOBPv140AddCustomerMessage(apiResponseLocalVar);
+                        Events.ExecuteOnAddCustomerMessage(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -477,23 +477,31 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv140AddCustomerMessageDefaultImplementation(e, "/obp/v1.4.0/banks/{bankid}/customer/{customerid}/messages", uriBuilderLocalVar.Path, bankid, customerid, oBPv140AddCustomerMessageRequest);
-                Events.ExecuteOnErrorOBPv140AddCustomerMessage(e);
+                OnErrorAddCustomerMessageDefaultImplementation(e, "/obp/v1.4.0/banks/{bankid}/customer/{customerid}/messages", uriBuilderLocalVar.Path, bankid, customerid, addCustomerMessageRequest);
+                Events.ExecuteOnErrorAddCustomerMessage(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv140GetCustomersMessages(ref string bankid);
+        partial void FormatCreateCustomerMessage(ref string bankid, ref string customerid, CreateCustomerMessageRequest createCustomerMessageRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
+        /// <param name="customerid"></param>
+        /// <param name="createCustomerMessageRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv140GetCustomersMessages(string bankid)
+        private void ValidateCreateCustomerMessage(string bankid, string customerid, CreateCustomerMessageRequest createCustomerMessageRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
+
+            if (customerid == null)
+                throw new ArgumentNullException(nameof(customerid));
+
+            if (createCustomerMessageRequest == null)
+                throw new ArgumentNullException(nameof(createCustomerMessageRequest));
         }
 
         /// <summary>
@@ -501,10 +509,12 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        private void AfterOBPv140GetCustomersMessagesDefaultImplementation(IOBPv140GetCustomersMessagesApiResponse apiResponseLocalVar, string bankid)
+        /// <param name="customerid"></param>
+        /// <param name="createCustomerMessageRequest"></param>
+        private void AfterCreateCustomerMessageDefaultImplementation(ICreateCustomerMessageApiResponse apiResponseLocalVar, string bankid, string customerid, CreateCustomerMessageRequest createCustomerMessageRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv140GetCustomersMessages(ref suppressDefaultLog, apiResponseLocalVar, bankid);
+            AfterCreateCustomerMessage(ref suppressDefaultLog, apiResponseLocalVar, bankid, customerid, createCustomerMessageRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -515,7 +525,9 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void AfterOBPv140GetCustomersMessages(ref bool suppressDefaultLog, IOBPv140GetCustomersMessagesApiResponse apiResponseLocalVar, string bankid);
+        /// <param name="customerid"></param>
+        /// <param name="createCustomerMessageRequest"></param>
+        partial void AfterCreateCustomerMessage(ref bool suppressDefaultLog, ICreateCustomerMessageApiResponse apiResponseLocalVar, string bankid, string customerid, CreateCustomerMessageRequest createCustomerMessageRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -524,10 +536,12 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        private void OnErrorOBPv140GetCustomersMessagesDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
+        /// <param name="customerid"></param>
+        /// <param name="createCustomerMessageRequest"></param>
+        private void OnErrorCreateCustomerMessageDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string customerid, CreateCustomerMessageRequest createCustomerMessageRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv140GetCustomersMessages(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
+            OnErrorCreateCustomerMessage(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, customerid, createCustomerMessageRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -540,19 +554,386 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void OnErrorOBPv140GetCustomersMessages(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
+        /// <param name="customerid"></param>
+        /// <param name="createCustomerMessageRequest"></param>
+        partial void OnErrorCreateCustomerMessage(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string customerid, CreateCustomerMessageRequest createCustomerMessageRequest);
+
+        /// <summary>
+        /// Create Customer Message &lt;p&gt;Create a message for the customer specified by CUSTOMER_ID&lt;br /&gt; User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Customer.customer_id\&quot;&gt;CUSTOMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_department\&quot;&gt;&lt;strong&gt;from_department&lt;/strong&gt;&lt;/a&gt;: Open Bank&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_person\&quot;&gt;&lt;strong&gt;from_person&lt;/strong&gt;&lt;/a&gt;: Tom&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transport\&quot;&gt;&lt;strong&gt;transport&lt;/strong&gt;&lt;/a&gt;: SMS&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </summary>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="customerid">The CUSTOMERID identifier</param>
+        /// <param name="createCustomerMessageRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateCustomerMessageApiResponse"/>&gt;</returns>
+        public async Task<ICreateCustomerMessageApiResponse?> CreateCustomerMessageOrDefaultAsync(string bankid, string customerid, CreateCustomerMessageRequest createCustomerMessageRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await CreateCustomerMessageAsync(bankid, customerid, createCustomerMessageRequest, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Create Customer Message &lt;p&gt;Create a message for the customer specified by CUSTOMER_ID&lt;br /&gt; User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Customer.customer_id\&quot;&gt;CUSTOMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_department\&quot;&gt;&lt;strong&gt;from_department&lt;/strong&gt;&lt;/a&gt;: Open Bank&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_person\&quot;&gt;&lt;strong&gt;from_person&lt;/strong&gt;&lt;/a&gt;: Tom&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transport\&quot;&gt;&lt;strong&gt;transport&lt;/strong&gt;&lt;/a&gt;: SMS&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="customerid">The CUSTOMERID identifier</param>
+        /// <param name="createCustomerMessageRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateCustomerMessageApiResponse"/>&gt;</returns>
+        public async Task<ICreateCustomerMessageApiResponse> CreateCustomerMessageAsync(string bankid, string customerid, CreateCustomerMessageRequest createCustomerMessageRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateCreateCustomerMessage(bankid, customerid, createCustomerMessageRequest);
+
+                FormatCreateCustomerMessage(ref bankid, ref customerid, createCustomerMessageRequest);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages");
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bcustomerid%7D", Uri.EscapeDataString(customerid.ToString()));
+
+                    httpRequestMessageLocalVar.Content = (createCustomerMessageRequest as object) is System.IO.Stream stream
+                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createCustomerMessageRequest, _jsonSerializerOptions));
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    string[] contentTypes = new string[] {
+                        "application/json"
+                    };
+
+                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
+
+                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
+                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
+
+                    string[] acceptLocalVars = new string[] {
+                        "application/json"
+                    };
+
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
+
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Post;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<CustomerApi.CreateCustomerMessageApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CustomerApi.CreateCustomerMessageApiResponse>();
+                        CustomerApi.CreateCustomerMessageApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterCreateCustomerMessageDefaultImplementation(apiResponseLocalVar, bankid, customerid, createCustomerMessageRequest);
+
+                        Events.ExecuteOnCreateCustomerMessage(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorCreateCustomerMessageDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages", uriBuilderLocalVar.Path, bankid, customerid, createCustomerMessageRequest);
+                Events.ExecuteOnErrorCreateCustomerMessage(e);
+                throw;
+            }
+        }
+
+        partial void FormatGetCustomerMessages(ref string bankid, ref string customerid);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="bankid"></param>
+        /// <param name="customerid"></param>
+        /// <returns></returns>
+        private void ValidateGetCustomerMessages(string bankid, string customerid)
+        {
+            if (bankid == null)
+                throw new ArgumentNullException(nameof(bankid));
+
+            if (customerid == null)
+                throw new ArgumentNullException(nameof(customerid));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="customerid"></param>
+        private void AfterGetCustomerMessagesDefaultImplementation(IGetCustomerMessagesApiResponse apiResponseLocalVar, string bankid, string customerid)
+        {
+            bool suppressDefaultLog = false;
+            AfterGetCustomerMessages(ref suppressDefaultLog, apiResponseLocalVar, bankid, customerid);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="customerid"></param>
+        partial void AfterGetCustomerMessages(ref bool suppressDefaultLog, IGetCustomerMessagesApiResponse apiResponseLocalVar, string bankid, string customerid);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="customerid"></param>
+        private void OnErrorGetCustomerMessagesDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string customerid)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorGetCustomerMessages(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, customerid);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="customerid"></param>
+        partial void OnErrorGetCustomerMessages(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string customerid);
+
+        /// <summary>
+        /// Get Customer Messages for a Customer &lt;p&gt;Get messages for the customer specified by CUSTOMER_ID&lt;br /&gt; User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Customer.customer_id\&quot;&gt;CUSTOMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_department\&quot;&gt;&lt;strong&gt;from_department&lt;/strong&gt;&lt;/a&gt;: Open Bank&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_person\&quot;&gt;&lt;strong&gt;from_person&lt;/strong&gt;&lt;/a&gt;: Tom&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#messages\&quot;&gt;&lt;strong&gt;messages&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transport\&quot;&gt;&lt;strong&gt;transport&lt;/strong&gt;&lt;/a&gt;: SMS&lt;/p&gt; 
+        /// </summary>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="customerid">The CUSTOMERID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCustomerMessagesApiResponse"/>&gt;</returns>
+        public async Task<IGetCustomerMessagesApiResponse?> GetCustomerMessagesOrDefaultAsync(string bankid, string customerid, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await GetCustomerMessagesAsync(bankid, customerid, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Get Customer Messages for a Customer &lt;p&gt;Get messages for the customer specified by CUSTOMER_ID&lt;br /&gt; User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Customer.customer_id\&quot;&gt;CUSTOMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_department\&quot;&gt;&lt;strong&gt;from_department&lt;/strong&gt;&lt;/a&gt;: Open Bank&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_person\&quot;&gt;&lt;strong&gt;from_person&lt;/strong&gt;&lt;/a&gt;: Tom&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#messages\&quot;&gt;&lt;strong&gt;messages&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transport\&quot;&gt;&lt;strong&gt;transport&lt;/strong&gt;&lt;/a&gt;: SMS&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="customerid">The CUSTOMERID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCustomerMessagesApiResponse"/>&gt;</returns>
+        public async Task<IGetCustomerMessagesApiResponse> GetCustomerMessagesAsync(string bankid, string customerid, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateGetCustomerMessages(bankid, customerid);
+
+                FormatGetCustomerMessages(ref bankid, ref customerid);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages");
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bcustomerid%7D", Uri.EscapeDataString(customerid.ToString()));
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    string[] acceptLocalVars = new string[] {
+                        "application/json"
+                    };
+
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
+
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Get;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<CustomerApi.GetCustomerMessagesApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CustomerApi.GetCustomerMessagesApiResponse>();
+                        CustomerApi.GetCustomerMessagesApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterGetCustomerMessagesDefaultImplementation(apiResponseLocalVar, bankid, customerid);
+
+                        Events.ExecuteOnGetCustomerMessages(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorGetCustomerMessagesDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages", uriBuilderLocalVar.Path, bankid, customerid);
+                Events.ExecuteOnErrorGetCustomerMessages(e);
+                throw;
+            }
+        }
+
+        partial void FormatGetCustomersMessages(ref string bankid);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="bankid"></param>
+        /// <returns></returns>
+        private void ValidateGetCustomersMessages(string bankid)
+        {
+            if (bankid == null)
+                throw new ArgumentNullException(nameof(bankid));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        private void AfterGetCustomersMessagesDefaultImplementation(IGetCustomersMessagesApiResponse apiResponseLocalVar, string bankid)
+        {
+            bool suppressDefaultLog = false;
+            AfterGetCustomersMessages(ref suppressDefaultLog, apiResponseLocalVar, bankid);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        partial void AfterGetCustomersMessages(ref bool suppressDefaultLog, IGetCustomersMessagesApiResponse apiResponseLocalVar, string bankid);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        private void OnErrorGetCustomersMessagesDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorGetCustomersMessages(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        partial void OnErrorGetCustomersMessages(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
 
         /// <summary>
         /// Get Customer Messages for all Customers &lt;p&gt;Get messages for the logged in customer&lt;br /&gt; Messages sent to the currently authenticated user.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_department\&quot;&gt;&lt;strong&gt;from_department&lt;/strong&gt;&lt;/a&gt;: Open Bank&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_person\&quot;&gt;&lt;strong&gt;from_person&lt;/strong&gt;&lt;/a&gt;: Tom&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#messages\&quot;&gt;&lt;strong&gt;messages&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv140GetCustomersMessagesApiResponse"/>&gt;</returns>
-        public async Task<IOBPv140GetCustomersMessagesApiResponse?> OBPv140GetCustomersMessagesOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCustomersMessagesApiResponse"/>&gt;</returns>
+        public async Task<IGetCustomersMessagesApiResponse?> GetCustomersMessagesOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv140GetCustomersMessagesAsync(bankid, cancellationToken).ConfigureAwait(false);
+                return await GetCustomersMessagesAsync(bankid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -566,16 +947,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv140GetCustomersMessagesApiResponse"/>&gt;</returns>
-        public async Task<IOBPv140GetCustomersMessagesApiResponse> OBPv140GetCustomersMessagesAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCustomersMessagesApiResponse"/>&gt;</returns>
+        public async Task<IGetCustomersMessagesApiResponse> GetCustomersMessagesAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv140GetCustomersMessages(bankid);
+                ValidateGetCustomersMessages(bankid);
 
-                FormatOBPv140GetCustomersMessages(ref bankid);
+                FormatGetCustomersMessages(ref bankid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -592,7 +973,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -619,8 +1000,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<CustomerApi.OBPv140GetCustomersMessagesApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CustomerApi.OBPv140GetCustomersMessagesApiResponse>();
-                        CustomerApi.OBPv140GetCustomersMessagesApiResponse apiResponseLocalVar;
+                        ILogger<CustomerApi.GetCustomersMessagesApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CustomerApi.GetCustomersMessagesApiResponse>();
+                        CustomerApi.GetCustomersMessagesApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -631,211 +1012,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv140GetCustomersMessagesDefaultImplementation(apiResponseLocalVar, bankid);
+                        AfterGetCustomersMessagesDefaultImplementation(apiResponseLocalVar, bankid);
 
-                        Events.ExecuteOnOBPv140GetCustomersMessages(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv140GetCustomersMessagesDefaultImplementation(e, "/obp/v1.4.0/banks/{bankid}/customer/messages", uriBuilderLocalVar.Path, bankid);
-                Events.ExecuteOnErrorOBPv140GetCustomersMessages(e);
-                throw;
-            }
-        }
-
-        partial void FormatOBPv400CreateCustomerMessage(ref string bankid, ref string customerid, OBPv400CreateCustomerMessageRequest oBPv400CreateCustomerMessageRequest);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="bankid"></param>
-        /// <param name="customerid"></param>
-        /// <param name="oBPv400CreateCustomerMessageRequest"></param>
-        /// <returns></returns>
-        private void ValidateOBPv400CreateCustomerMessage(string bankid, string customerid, OBPv400CreateCustomerMessageRequest oBPv400CreateCustomerMessageRequest)
-        {
-            if (bankid == null)
-                throw new ArgumentNullException(nameof(bankid));
-
-            if (customerid == null)
-                throw new ArgumentNullException(nameof(customerid));
-
-            if (oBPv400CreateCustomerMessageRequest == null)
-                throw new ArgumentNullException(nameof(oBPv400CreateCustomerMessageRequest));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="customerid"></param>
-        /// <param name="oBPv400CreateCustomerMessageRequest"></param>
-        private void AfterOBPv400CreateCustomerMessageDefaultImplementation(IOBPv400CreateCustomerMessageApiResponse apiResponseLocalVar, string bankid, string customerid, OBPv400CreateCustomerMessageRequest oBPv400CreateCustomerMessageRequest)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv400CreateCustomerMessage(ref suppressDefaultLog, apiResponseLocalVar, bankid, customerid, oBPv400CreateCustomerMessageRequest);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="customerid"></param>
-        /// <param name="oBPv400CreateCustomerMessageRequest"></param>
-        partial void AfterOBPv400CreateCustomerMessage(ref bool suppressDefaultLog, IOBPv400CreateCustomerMessageApiResponse apiResponseLocalVar, string bankid, string customerid, OBPv400CreateCustomerMessageRequest oBPv400CreateCustomerMessageRequest);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="customerid"></param>
-        /// <param name="oBPv400CreateCustomerMessageRequest"></param>
-        private void OnErrorOBPv400CreateCustomerMessageDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string customerid, OBPv400CreateCustomerMessageRequest oBPv400CreateCustomerMessageRequest)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400CreateCustomerMessage(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, customerid, oBPv400CreateCustomerMessageRequest);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="customerid"></param>
-        /// <param name="oBPv400CreateCustomerMessageRequest"></param>
-        partial void OnErrorOBPv400CreateCustomerMessage(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string customerid, OBPv400CreateCustomerMessageRequest oBPv400CreateCustomerMessageRequest);
-
-        /// <summary>
-        /// Create Customer Message &lt;p&gt;Create a message for the customer specified by CUSTOMER_ID&lt;br /&gt; User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Customer.customer_id\&quot;&gt;CUSTOMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_department\&quot;&gt;&lt;strong&gt;from_department&lt;/strong&gt;&lt;/a&gt;: Open Bank&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_person\&quot;&gt;&lt;strong&gt;from_person&lt;/strong&gt;&lt;/a&gt;: Tom&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transport\&quot;&gt;&lt;strong&gt;transport&lt;/strong&gt;&lt;/a&gt;: SMS&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </summary>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="customerid">The CUSTOMERID identifier</param>
-        /// <param name="oBPv400CreateCustomerMessageRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateCustomerMessageApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateCustomerMessageApiResponse?> OBPv400CreateCustomerMessageOrDefaultAsync(string bankid, string customerid, OBPv400CreateCustomerMessageRequest oBPv400CreateCustomerMessageRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv400CreateCustomerMessageAsync(bankid, customerid, oBPv400CreateCustomerMessageRequest, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Create Customer Message &lt;p&gt;Create a message for the customer specified by CUSTOMER_ID&lt;br /&gt; User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Customer.customer_id\&quot;&gt;CUSTOMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_department\&quot;&gt;&lt;strong&gt;from_department&lt;/strong&gt;&lt;/a&gt;: Open Bank&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_person\&quot;&gt;&lt;strong&gt;from_person&lt;/strong&gt;&lt;/a&gt;: Tom&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transport\&quot;&gt;&lt;strong&gt;transport&lt;/strong&gt;&lt;/a&gt;: SMS&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="customerid">The CUSTOMERID identifier</param>
-        /// <param name="oBPv400CreateCustomerMessageRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateCustomerMessageApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateCustomerMessageApiResponse> OBPv400CreateCustomerMessageAsync(string bankid, string customerid, OBPv400CreateCustomerMessageRequest oBPv400CreateCustomerMessageRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv400CreateCustomerMessage(bankid, customerid, oBPv400CreateCustomerMessageRequest);
-
-                FormatOBPv400CreateCustomerMessage(ref bankid, ref customerid, oBPv400CreateCustomerMessageRequest);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bcustomerid%7D", Uri.EscapeDataString(customerid.ToString()));
-
-                    httpRequestMessageLocalVar.Content = (oBPv400CreateCustomerMessageRequest as object) is System.IO.Stream stream
-                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400CreateCustomerMessageRequest, _jsonSerializerOptions));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] contentTypes = new string[] {
-                        "application/json"
-                    };
-
-                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
-
-                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
-                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Post;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<CustomerApi.OBPv400CreateCustomerMessageApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CustomerApi.OBPv400CreateCustomerMessageApiResponse>();
-                        CustomerApi.OBPv400CreateCustomerMessageApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv400CreateCustomerMessageDefaultImplementation(apiResponseLocalVar, bankid, customerid, oBPv400CreateCustomerMessageRequest);
-
-                        Events.ExecuteOnOBPv400CreateCustomerMessage(apiResponseLocalVar);
+                        Events.ExecuteOnGetCustomersMessages(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -847,187 +1026,8 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400CreateCustomerMessageDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages", uriBuilderLocalVar.Path, bankid, customerid, oBPv400CreateCustomerMessageRequest);
-                Events.ExecuteOnErrorOBPv400CreateCustomerMessage(e);
-                throw;
-            }
-        }
-
-        partial void FormatOBPv400GetCustomerMessages(ref string bankid, ref string customerid);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="bankid"></param>
-        /// <param name="customerid"></param>
-        /// <returns></returns>
-        private void ValidateOBPv400GetCustomerMessages(string bankid, string customerid)
-        {
-            if (bankid == null)
-                throw new ArgumentNullException(nameof(bankid));
-
-            if (customerid == null)
-                throw new ArgumentNullException(nameof(customerid));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="customerid"></param>
-        private void AfterOBPv400GetCustomerMessagesDefaultImplementation(IOBPv400GetCustomerMessagesApiResponse apiResponseLocalVar, string bankid, string customerid)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv400GetCustomerMessages(ref suppressDefaultLog, apiResponseLocalVar, bankid, customerid);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="customerid"></param>
-        partial void AfterOBPv400GetCustomerMessages(ref bool suppressDefaultLog, IOBPv400GetCustomerMessagesApiResponse apiResponseLocalVar, string bankid, string customerid);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="customerid"></param>
-        private void OnErrorOBPv400GetCustomerMessagesDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string customerid)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetCustomerMessages(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, customerid);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="customerid"></param>
-        partial void OnErrorOBPv400GetCustomerMessages(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string customerid);
-
-        /// <summary>
-        /// Get Customer Messages for a Customer &lt;p&gt;Get messages for the customer specified by CUSTOMER_ID&lt;br /&gt; User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Customer.customer_id\&quot;&gt;CUSTOMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_department\&quot;&gt;&lt;strong&gt;from_department&lt;/strong&gt;&lt;/a&gt;: Open Bank&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_person\&quot;&gt;&lt;strong&gt;from_person&lt;/strong&gt;&lt;/a&gt;: Tom&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#messages\&quot;&gt;&lt;strong&gt;messages&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transport\&quot;&gt;&lt;strong&gt;transport&lt;/strong&gt;&lt;/a&gt;: SMS&lt;/p&gt; 
-        /// </summary>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="customerid">The CUSTOMERID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetCustomerMessagesApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetCustomerMessagesApiResponse?> OBPv400GetCustomerMessagesOrDefaultAsync(string bankid, string customerid, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv400GetCustomerMessagesAsync(bankid, customerid, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Get Customer Messages for a Customer &lt;p&gt;Get messages for the customer specified by CUSTOMER_ID&lt;br /&gt; User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Customer.customer_id\&quot;&gt;CUSTOMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_department\&quot;&gt;&lt;strong&gt;from_department&lt;/strong&gt;&lt;/a&gt;: Open Bank&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_person\&quot;&gt;&lt;strong&gt;from_person&lt;/strong&gt;&lt;/a&gt;: Tom&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#messages\&quot;&gt;&lt;strong&gt;messages&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transport\&quot;&gt;&lt;strong&gt;transport&lt;/strong&gt;&lt;/a&gt;: SMS&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="customerid">The CUSTOMERID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetCustomerMessagesApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetCustomerMessagesApiResponse> OBPv400GetCustomerMessagesAsync(string bankid, string customerid, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv400GetCustomerMessages(bankid, customerid);
-
-                FormatOBPv400GetCustomerMessages(ref bankid, ref customerid);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bcustomerid%7D", Uri.EscapeDataString(customerid.ToString()));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Get;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<CustomerApi.OBPv400GetCustomerMessagesApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CustomerApi.OBPv400GetCustomerMessagesApiResponse>();
-                        CustomerApi.OBPv400GetCustomerMessagesApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv400GetCustomerMessagesDefaultImplementation(apiResponseLocalVar, bankid, customerid);
-
-                        Events.ExecuteOnOBPv400GetCustomerMessages(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv400GetCustomerMessagesDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages", uriBuilderLocalVar.Path, bankid, customerid);
-                Events.ExecuteOnErrorOBPv400GetCustomerMessages(e);
+                OnErrorGetCustomersMessagesDefaultImplementation(e, "/obp/v1.4.0/banks/{bankid}/customer/messages", uriBuilderLocalVar.Path, bankid);
+                Events.ExecuteOnErrorGetCustomersMessages(e);
                 throw;
             }
         }

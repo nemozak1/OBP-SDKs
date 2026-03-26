@@ -2,22 +2,22 @@
 
 
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv400CreateJsonSchemaValidation()**](JSONSchemaValidationApi.md#oBPv400CreateJsonSchemaValidation) | **POST** /obp/v4.0.0/management/json-schema-validations/{operationid} | Create a JSON Schema Validation |
-| [**oBPv400DeleteJsonSchemaValidation()**](JSONSchemaValidationApi.md#oBPv400DeleteJsonSchemaValidation) | **DELETE** /obp/v4.0.0/management/json-schema-validations/{operationid} | Delete a JSON Schema Validation |
-| [**oBPv400GetAllJsonSchemaValidations()**](JSONSchemaValidationApi.md#oBPv400GetAllJsonSchemaValidations) | **GET** /obp/v4.0.0/management/json-schema-validations | Get all JSON Schema Validations |
-| [**oBPv400GetAllJsonSchemaValidationsPublic()**](JSONSchemaValidationApi.md#oBPv400GetAllJsonSchemaValidationsPublic) | **GET** /obp/v4.0.0/endpoints/json-schema-validations | Get all JSON Schema Validations - public |
-| [**oBPv400GetJsonSchemaValidation()**](JSONSchemaValidationApi.md#oBPv400GetJsonSchemaValidation) | **GET** /obp/v4.0.0/management/json-schema-validations/{operationid} | Get a JSON Schema Validation |
-| [**oBPv400UpdateJsonSchemaValidation()**](JSONSchemaValidationApi.md#oBPv400UpdateJsonSchemaValidation) | **PUT** /obp/v4.0.0/management/json-schema-validations/{operationid} | Update a JSON Schema Validation |
+| [**createJsonSchemaValidation()**](JSONSchemaValidationApi.md#createJsonSchemaValidation) | **POST** /obp/v4.0.0/management/json-schema-validations/{operationid} | Create a JSON Schema Validation |
+| [**deleteJsonSchemaValidation()**](JSONSchemaValidationApi.md#deleteJsonSchemaValidation) | **DELETE** /obp/v4.0.0/management/json-schema-validations/{operationid} | Delete a JSON Schema Validation |
+| [**getAllJsonSchemaValidations()**](JSONSchemaValidationApi.md#getAllJsonSchemaValidations) | **GET** /obp/v4.0.0/management/json-schema-validations | Get all JSON Schema Validations |
+| [**getAllJsonSchemaValidationsPublic()**](JSONSchemaValidationApi.md#getAllJsonSchemaValidationsPublic) | **GET** /obp/v4.0.0/endpoints/json-schema-validations | Get all JSON Schema Validations - public |
+| [**getJsonSchemaValidation()**](JSONSchemaValidationApi.md#getJsonSchemaValidation) | **GET** /obp/v4.0.0/management/json-schema-validations/{operationid} | Get a JSON Schema Validation |
+| [**updateJsonSchemaValidation()**](JSONSchemaValidationApi.md#updateJsonSchemaValidation) | **PUT** /obp/v4.0.0/management/json-schema-validations/{operationid} | Update a JSON Schema Validation |
 
 
-## `oBPv400CreateJsonSchemaValidation()`
+## `createJsonSchemaValidation()`
 
 ```php
-oBPv400CreateJsonSchemaValidation($operationid, $obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema): \OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems
+createJsonSchemaValidation($operationid, $get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema): \OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner
 ```
 
 Create a JSON Schema Validation
@@ -40,9 +40,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\JSONSchemaValidationApi(
@@ -52,13 +52,13 @@ $apiInstance = new OpenBankProject\Api\JSONSchemaValidationApi(
     $config
 );
 $operationid = 'operationid_example'; // string | The OPERATIONID identifier
-$obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema = {type=object, properties={title={type=string}, required={type=array, items={type=string}}, $schema={type=string}, description={type=string}, type={type=string}, properties={type=object, properties={xxx_id={type=object, properties={minLength={type=integer}, maxLength={type=integer}, type={type=string}, examples={type=array, items={type=string}}}}}}, additionalProperties={type=boolean}}}; // \OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema | Request body
+$get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema = {type=object, properties={title={type=string}, required={type=array, items={type=string}}, $schema={type=string}, description={type=string}, type={type=string}, properties={type=object, properties={xxx_id={type=object, properties={minLength={type=integer}, maxLength={type=integer}, type={type=string}, examples={type=array, items={type=string}}}}}}, additionalProperties={type=boolean}}}; // \OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema | Request body
 
 try {
-    $result = $apiInstance->oBPv400CreateJsonSchemaValidation($operationid, $obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema);
+    $result = $apiInstance->createJsonSchemaValidation($operationid, $get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling JSONSchemaValidationApi->oBPv400CreateJsonSchemaValidation: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling JSONSchemaValidationApi->createJsonSchemaValidation: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -67,11 +67,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **operationid** | **string**| The OPERATIONID identifier | |
-| **obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema** | [**\OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema**](../Model/OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema.md)| Request body | |
+| **get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema** | [**\OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema**](../Model/GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems**](../Model/OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems.md)
+[**\OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner**](../Model/GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md)
 
 ### Authorization
 
@@ -86,10 +86,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400DeleteJsonSchemaValidation()`
+## `deleteJsonSchemaValidation()`
 
 ```php
-oBPv400DeleteJsonSchemaValidation($operationid)
+deleteJsonSchemaValidation($operationid)
 ```
 
 Delete a JSON Schema Validation
@@ -112,9 +112,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\JSONSchemaValidationApi(
@@ -126,9 +126,9 @@ $apiInstance = new OpenBankProject\Api\JSONSchemaValidationApi(
 $operationid = 'operationid_example'; // string | The OPERATIONID identifier
 
 try {
-    $apiInstance->oBPv400DeleteJsonSchemaValidation($operationid);
+    $apiInstance->deleteJsonSchemaValidation($operationid);
 } catch (Exception $e) {
-    echo 'Exception when calling JSONSchemaValidationApi->oBPv400DeleteJsonSchemaValidation: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling JSONSchemaValidationApi->deleteJsonSchemaValidation: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -155,10 +155,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400GetAllJsonSchemaValidations()`
+## `getAllJsonSchemaValidations()`
 
 ```php
-oBPv400GetAllJsonSchemaValidations(): \OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200Response
+getAllJsonSchemaValidations(): \OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200Response
 ```
 
 Get all JSON Schema Validations
@@ -181,9 +181,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\JSONSchemaValidationApi(
@@ -194,10 +194,10 @@ $apiInstance = new OpenBankProject\Api\JSONSchemaValidationApi(
 );
 
 try {
-    $result = $apiInstance->oBPv400GetAllJsonSchemaValidations();
+    $result = $apiInstance->getAllJsonSchemaValidations();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling JSONSchemaValidationApi->oBPv400GetAllJsonSchemaValidations: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling JSONSchemaValidationApi->getAllJsonSchemaValidations: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -207,7 +207,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200Response**](../Model/OBPv400GetAllJsonSchemaValidationsPublic200Response.md)
+[**\OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200Response**](../Model/GetAllJsonSchemaValidationsPublic200Response.md)
 
 ### Authorization
 
@@ -222,10 +222,10 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400GetAllJsonSchemaValidationsPublic()`
+## `getAllJsonSchemaValidationsPublic()`
 
 ```php
-oBPv400GetAllJsonSchemaValidationsPublic(): \OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200Response
+getAllJsonSchemaValidationsPublic(): \OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200Response
 ```
 
 Get all JSON Schema Validations - public
@@ -247,10 +247,10 @@ $apiInstance = new OpenBankProject\Api\JSONSchemaValidationApi(
 );
 
 try {
-    $result = $apiInstance->oBPv400GetAllJsonSchemaValidationsPublic();
+    $result = $apiInstance->getAllJsonSchemaValidationsPublic();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling JSONSchemaValidationApi->oBPv400GetAllJsonSchemaValidationsPublic: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling JSONSchemaValidationApi->getAllJsonSchemaValidationsPublic: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -260,7 +260,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200Response**](../Model/OBPv400GetAllJsonSchemaValidationsPublic200Response.md)
+[**\OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200Response**](../Model/GetAllJsonSchemaValidationsPublic200Response.md)
 
 ### Authorization
 
@@ -275,10 +275,10 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400GetJsonSchemaValidation()`
+## `getJsonSchemaValidation()`
 
 ```php
-oBPv400GetJsonSchemaValidation($operationid): \OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems
+getJsonSchemaValidation($operationid): \OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner
 ```
 
 Get a JSON Schema Validation
@@ -301,9 +301,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\JSONSchemaValidationApi(
@@ -315,10 +315,10 @@ $apiInstance = new OpenBankProject\Api\JSONSchemaValidationApi(
 $operationid = 'operationid_example'; // string | The OPERATIONID identifier
 
 try {
-    $result = $apiInstance->oBPv400GetJsonSchemaValidation($operationid);
+    $result = $apiInstance->getJsonSchemaValidation($operationid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling JSONSchemaValidationApi->oBPv400GetJsonSchemaValidation: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling JSONSchemaValidationApi->getJsonSchemaValidation: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -330,7 +330,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems**](../Model/OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems.md)
+[**\OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner**](../Model/GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md)
 
 ### Authorization
 
@@ -345,10 +345,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400UpdateJsonSchemaValidation()`
+## `updateJsonSchemaValidation()`
 
 ```php
-oBPv400UpdateJsonSchemaValidation($operationid, $obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema): \OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems
+updateJsonSchemaValidation($operationid, $get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema): \OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner
 ```
 
 Update a JSON Schema Validation
@@ -371,9 +371,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\JSONSchemaValidationApi(
@@ -383,13 +383,13 @@ $apiInstance = new OpenBankProject\Api\JSONSchemaValidationApi(
     $config
 );
 $operationid = 'operationid_example'; // string | The OPERATIONID identifier
-$obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema = {"type":"object","properties":{"title":{"type":"string"},"required":{"type":"array","items":{"type":"string"}},"$schema":{"type":"string"},"description":{"type":"string"},"type":{"type":"string"},"properties":{"type":"object","properties":{"xxx_id":{"type":"object","properties":{"minLength":{"type":"integer"},"maxLength":{"type":"integer"},"type":{"type":"string"},"examples":{"type":"array","items":{"type":"string"}}}}}},"additionalProperties":{"type":"boolean"}}}; // \OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema | Request body
+$get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema = {"type":"object","properties":{"title":{"type":"string"},"required":{"type":"array","items":{"type":"string"}},"$schema":{"type":"string"},"description":{"type":"string"},"type":{"type":"string"},"properties":{"type":"object","properties":{"xxx_id":{"type":"object","properties":{"minLength":{"type":"integer"},"maxLength":{"type":"integer"},"type":{"type":"string"},"examples":{"type":"array","items":{"type":"string"}}}}}},"additionalProperties":{"type":"boolean"}}}; // \OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema | Request body
 
 try {
-    $result = $apiInstance->oBPv400UpdateJsonSchemaValidation($operationid, $obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema);
+    $result = $apiInstance->updateJsonSchemaValidation($operationid, $get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling JSONSchemaValidationApi->oBPv400UpdateJsonSchemaValidation: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling JSONSchemaValidationApi->updateJsonSchemaValidation: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -398,11 +398,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **operationid** | **string**| The OPERATIONID identifier | |
-| **obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema** | [**\OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema**](../Model/OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema.md)| Request body | |
+| **get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema** | [**\OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema**](../Model/GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems**](../Model/OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems.md)
+[**\OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner**](../Model/GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md)
 
 ### Authorization
 

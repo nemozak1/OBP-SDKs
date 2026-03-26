@@ -1,0 +1,126 @@
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+
+// ignore_for_file: unused_element
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
+
+part 'get_branches200_response_branches_inner_location.g.dart';
+
+/// GetBranches200ResponseBranchesInnerLocation
+///
+/// Properties:
+/// * [latitude] 
+/// * [longitude] 
+@BuiltValue()
+abstract class GetBranches200ResponseBranchesInnerLocation implements Built<GetBranches200ResponseBranchesInnerLocation, GetBranches200ResponseBranchesInnerLocationBuilder> {
+  @BuiltValueField(wireName: r'latitude')
+  num? get latitude;
+
+  @BuiltValueField(wireName: r'longitude')
+  num? get longitude;
+
+  GetBranches200ResponseBranchesInnerLocation._();
+
+  factory GetBranches200ResponseBranchesInnerLocation([void updates(GetBranches200ResponseBranchesInnerLocationBuilder b)]) = _$GetBranches200ResponseBranchesInnerLocation;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(GetBranches200ResponseBranchesInnerLocationBuilder b) => b;
+
+  @BuiltValueSerializer(custom: true)
+  static Serializer<GetBranches200ResponseBranchesInnerLocation> get serializer => _$GetBranches200ResponseBranchesInnerLocationSerializer();
+}
+
+class _$GetBranches200ResponseBranchesInnerLocationSerializer implements PrimitiveSerializer<GetBranches200ResponseBranchesInnerLocation> {
+  @override
+  final Iterable<Type> types = const [GetBranches200ResponseBranchesInnerLocation, _$GetBranches200ResponseBranchesInnerLocation];
+
+  @override
+  final String wireName = r'GetBranches200ResponseBranchesInnerLocation';
+
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    GetBranches200ResponseBranchesInnerLocation object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.latitude != null) {
+      yield r'latitude';
+      yield serializers.serialize(
+        object.latitude,
+        specifiedType: const FullType(num),
+      );
+    }
+    if (object.longitude != null) {
+      yield r'longitude';
+      yield serializers.serialize(
+        object.longitude,
+        specifiedType: const FullType(num),
+      );
+    }
+  }
+
+  @override
+  Object serialize(
+    Serializers serializers,
+    GetBranches200ResponseBranchesInnerLocation object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required GetBranches200ResponseBranchesInnerLocationBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'latitude':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.latitude = valueDes;
+          break;
+        case r'longitude':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.longitude = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  GetBranches200ResponseBranchesInnerLocation deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = GetBranches200ResponseBranchesInnerLocationBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
+}
+

@@ -2,20 +2,20 @@
 
 Operations related to Cache
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv600GetCacheConfig()**](CacheApi.md#oBPv600GetCacheConfig) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration |
-| [**oBPv600GetCacheInfo()**](CacheApi.md#oBPv600GetCacheInfo) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information |
-| [**oBPv600GetCacheNamespaces()**](CacheApi.md#oBPv600GetCacheNamespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces |
-| [**oBPv600InvalidateCacheNamespace()**](CacheApi.md#oBPv600InvalidateCacheNamespace) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace |
+| [**getCacheConfig()**](CacheApi.md#getCacheConfig) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration |
+| [**getCacheInfo()**](CacheApi.md#getCacheInfo) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information |
+| [**getCacheNamespaces()**](CacheApi.md#getCacheNamespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces |
+| [**invalidateCacheNamespace()**](CacheApi.md#invalidateCacheNamespace) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace |
 
 
-## `oBPv600GetCacheConfig()`
+## `getCacheConfig()`
 
 ```php
-oBPv600GetCacheConfig(): \OpenBankProject\Model\OBPv600GetCacheConfig200Response
+getCacheConfig(): \OpenBankProject\Model\GetCacheConfig200Response
 ```
 
 Get Cache Configuration
@@ -38,9 +38,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CacheApi(
@@ -51,10 +51,10 @@ $apiInstance = new OpenBankProject\Api\CacheApi(
 );
 
 try {
-    $result = $apiInstance->oBPv600GetCacheConfig();
+    $result = $apiInstance->getCacheConfig();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CacheApi->oBPv600GetCacheConfig: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CacheApi->getCacheConfig: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -64,7 +64,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetCacheConfig200Response**](../Model/OBPv600GetCacheConfig200Response.md)
+[**\OpenBankProject\Model\GetCacheConfig200Response**](../Model/GetCacheConfig200Response.md)
 
 ### Authorization
 
@@ -79,10 +79,10 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600GetCacheInfo()`
+## `getCacheInfo()`
 
 ```php
-oBPv600GetCacheInfo(): \OpenBankProject\Model\OBPv600GetCacheInfo200Response
+getCacheInfo(): \OpenBankProject\Model\GetCacheInfo200Response
 ```
 
 Get Cache Information
@@ -105,9 +105,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CacheApi(
@@ -118,10 +118,10 @@ $apiInstance = new OpenBankProject\Api\CacheApi(
 );
 
 try {
-    $result = $apiInstance->oBPv600GetCacheInfo();
+    $result = $apiInstance->getCacheInfo();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CacheApi->oBPv600GetCacheInfo: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CacheApi->getCacheInfo: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -131,7 +131,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetCacheInfo200Response**](../Model/OBPv600GetCacheInfo200Response.md)
+[**\OpenBankProject\Model\GetCacheInfo200Response**](../Model/GetCacheInfo200Response.md)
 
 ### Authorization
 
@@ -146,10 +146,10 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600GetCacheNamespaces()`
+## `getCacheNamespaces()`
 
 ```php
-oBPv600GetCacheNamespaces(): \OpenBankProject\Model\OBPv600GetCacheNamespaces200Response
+getCacheNamespaces(): \OpenBankProject\Model\GetCacheNamespaces200Response
 ```
 
 Get Cache Namespaces
@@ -172,9 +172,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CacheApi(
@@ -185,10 +185,10 @@ $apiInstance = new OpenBankProject\Api\CacheApi(
 );
 
 try {
-    $result = $apiInstance->oBPv600GetCacheNamespaces();
+    $result = $apiInstance->getCacheNamespaces();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CacheApi->oBPv600GetCacheNamespaces: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CacheApi->getCacheNamespaces: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -198,7 +198,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetCacheNamespaces200Response**](../Model/OBPv600GetCacheNamespaces200Response.md)
+[**\OpenBankProject\Model\GetCacheNamespaces200Response**](../Model/GetCacheNamespaces200Response.md)
 
 ### Authorization
 
@@ -213,10 +213,10 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600InvalidateCacheNamespace()`
+## `invalidateCacheNamespace()`
 
 ```php
-oBPv600InvalidateCacheNamespace($obpv600_invalidate_cache_namespace_request): \OpenBankProject\Model\OBPv600InvalidateCacheNamespace200Response
+invalidateCacheNamespace($invalidate_cache_namespace_request): \OpenBankProject\Model\InvalidateCacheNamespace200Response
 ```
 
 Invalidate Cache Namespace
@@ -239,9 +239,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CacheApi(
@@ -250,13 +250,13 @@ $apiInstance = new OpenBankProject\Api\CacheApi(
     new GuzzleHttp\Client(),
     $config
 );
-$obpv600_invalidate_cache_namespace_request = {"type":"object","properties":{"namespace_id":{"type":"string"}}}; // \OpenBankProject\Model\OBPv600InvalidateCacheNamespaceRequest | Request body
+$invalidate_cache_namespace_request = {"type":"object","properties":{"namespace_id":{"type":"string"}}}; // \OpenBankProject\Model\InvalidateCacheNamespaceRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv600InvalidateCacheNamespace($obpv600_invalidate_cache_namespace_request);
+    $result = $apiInstance->invalidateCacheNamespace($invalidate_cache_namespace_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CacheApi->oBPv600InvalidateCacheNamespace: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CacheApi->invalidateCacheNamespace: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -264,11 +264,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obpv600_invalidate_cache_namespace_request** | [**\OpenBankProject\Model\OBPv600InvalidateCacheNamespaceRequest**](../Model/OBPv600InvalidateCacheNamespaceRequest.md)| Request body | |
+| **invalidate_cache_namespace_request** | [**\OpenBankProject\Model\InvalidateCacheNamespaceRequest**](../Model/InvalidateCacheNamespaceRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600InvalidateCacheNamespace200Response**](../Model/OBPv600InvalidateCacheNamespace200Response.md)
+[**\OpenBankProject\Model\InvalidateCacheNamespace200Response**](../Model/InvalidateCacheNamespace200Response.md)
 
 ### Authorization
 

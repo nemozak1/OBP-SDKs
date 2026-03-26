@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,10 +75,10 @@ class DAuthApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv400CreateUserWithRoles' => [
+        'createUserWithAccountAccessById' => [
             'application/json',
         ],
-        'oBPv510CreateUserWithAccountAccessById' => [
+        'createUserWithRoles' => [
             'application/json',
         ],
     ];
@@ -130,38 +130,44 @@ class DAuthApi
     }
 
     /**
-     * Operation oBPv400CreateUserWithRoles
+     * Operation createUserWithAccountAccessById
      *
-     * Create (DAuth) User with Roles
+     * Create (DAuth) User with Account Access
      *
-     * @param  \OpenBankProject\Model\OBPv400CreateUserWithRolesRequest $obpv400_create_user_with_roles_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateUserWithRoles'] to see the possible values for this operation
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  \OpenBankProject\Model\CreateUserWithAccountAccessByIdRequest $create_user_with_account_access_by_id_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUserWithAccountAccessById'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetEntitlements200Response
+     * @return \OpenBankProject\Model\CreateUserWithAccountAccessById200Response
      */
-    public function oBPv400CreateUserWithRoles($obpv400_create_user_with_roles_request, string $contentType = self::contentTypes['oBPv400CreateUserWithRoles'][0])
+    public function createUserWithAccountAccessById($bankid, $accountid, $viewid, $create_user_with_account_access_by_id_request, string $contentType = self::contentTypes['createUserWithAccountAccessById'][0])
     {
-        list($response) = $this->oBPv400CreateUserWithRolesWithHttpInfo($obpv400_create_user_with_roles_request, $contentType);
+        list($response) = $this->createUserWithAccountAccessByIdWithHttpInfo($bankid, $accountid, $viewid, $create_user_with_account_access_by_id_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400CreateUserWithRolesWithHttpInfo
+     * Operation createUserWithAccountAccessByIdWithHttpInfo
      *
-     * Create (DAuth) User with Roles
+     * Create (DAuth) User with Account Access
      *
-     * @param  \OpenBankProject\Model\OBPv400CreateUserWithRolesRequest $obpv400_create_user_with_roles_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateUserWithRoles'] to see the possible values for this operation
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  \OpenBankProject\Model\CreateUserWithAccountAccessByIdRequest $create_user_with_account_access_by_id_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUserWithAccountAccessById'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetEntitlements200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\CreateUserWithAccountAccessById200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400CreateUserWithRolesWithHttpInfo($obpv400_create_user_with_roles_request, string $contentType = self::contentTypes['oBPv400CreateUserWithRoles'][0])
+    public function createUserWithAccountAccessByIdWithHttpInfo($bankid, $accountid, $viewid, $create_user_with_account_access_by_id_request, string $contentType = self::contentTypes['createUserWithAccountAccessById'][0])
     {
-        $request = $this->oBPv400CreateUserWithRolesRequest($obpv400_create_user_with_roles_request, $contentType);
+        $request = $this->createUserWithAccountAccessByIdRequest($bankid, $accountid, $viewid, $create_user_with_account_access_by_id_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -189,7 +195,7 @@ class DAuthApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetEntitlements200Response',
+                        '\OpenBankProject\Model\CreateUserWithAccountAccessById200Response',
                         $request,
                         $response,
                     );
@@ -211,7 +217,7 @@ class DAuthApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetEntitlements200Response',
+                '\OpenBankProject\Model\CreateUserWithAccountAccessById200Response',
                 $request,
                 $response,
             );
@@ -220,7 +226,7 @@ class DAuthApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetEntitlements200Response',
+                        '\OpenBankProject\Model\CreateUserWithAccountAccessById200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -233,19 +239,22 @@ class DAuthApi
     }
 
     /**
-     * Operation oBPv400CreateUserWithRolesAsync
+     * Operation createUserWithAccountAccessByIdAsync
      *
-     * Create (DAuth) User with Roles
+     * Create (DAuth) User with Account Access
      *
-     * @param  \OpenBankProject\Model\OBPv400CreateUserWithRolesRequest $obpv400_create_user_with_roles_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateUserWithRoles'] to see the possible values for this operation
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  \OpenBankProject\Model\CreateUserWithAccountAccessByIdRequest $create_user_with_account_access_by_id_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUserWithAccountAccessById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateUserWithRolesAsync($obpv400_create_user_with_roles_request, string $contentType = self::contentTypes['oBPv400CreateUserWithRoles'][0])
+    public function createUserWithAccountAccessByIdAsync($bankid, $accountid, $viewid, $create_user_with_account_access_by_id_request, string $contentType = self::contentTypes['createUserWithAccountAccessById'][0])
     {
-        return $this->oBPv400CreateUserWithRolesAsyncWithHttpInfo($obpv400_create_user_with_roles_request, $contentType)
+        return $this->createUserWithAccountAccessByIdAsyncWithHttpInfo($bankid, $accountid, $viewid, $create_user_with_account_access_by_id_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -254,20 +263,23 @@ class DAuthApi
     }
 
     /**
-     * Operation oBPv400CreateUserWithRolesAsyncWithHttpInfo
+     * Operation createUserWithAccountAccessByIdAsyncWithHttpInfo
      *
-     * Create (DAuth) User with Roles
+     * Create (DAuth) User with Account Access
      *
-     * @param  \OpenBankProject\Model\OBPv400CreateUserWithRolesRequest $obpv400_create_user_with_roles_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateUserWithRoles'] to see the possible values for this operation
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  \OpenBankProject\Model\CreateUserWithAccountAccessByIdRequest $create_user_with_account_access_by_id_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUserWithAccountAccessById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateUserWithRolesAsyncWithHttpInfo($obpv400_create_user_with_roles_request, string $contentType = self::contentTypes['oBPv400CreateUserWithRoles'][0])
+    public function createUserWithAccountAccessByIdAsyncWithHttpInfo($bankid, $accountid, $viewid, $create_user_with_account_access_by_id_request, string $contentType = self::contentTypes['createUserWithAccountAccessById'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetEntitlements200Response';
-        $request = $this->oBPv400CreateUserWithRolesRequest($obpv400_create_user_with_roles_request, $contentType);
+        $returnType = '\OpenBankProject\Model\CreateUserWithAccountAccessById200Response';
+        $request = $this->createUserWithAccountAccessByIdRequest($bankid, $accountid, $viewid, $create_user_with_account_access_by_id_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -306,338 +318,45 @@ class DAuthApi
     }
 
     /**
-     * Create request for operation 'oBPv400CreateUserWithRoles'
+     * Create request for operation 'createUserWithAccountAccessById'
      *
-     * @param  \OpenBankProject\Model\OBPv400CreateUserWithRolesRequest $obpv400_create_user_with_roles_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateUserWithRoles'] to see the possible values for this operation
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  \OpenBankProject\Model\CreateUserWithAccountAccessByIdRequest $create_user_with_account_access_by_id_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUserWithAccountAccessById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400CreateUserWithRolesRequest($obpv400_create_user_with_roles_request, string $contentType = self::contentTypes['oBPv400CreateUserWithRoles'][0])
-    {
-
-        // verify the required parameter 'obpv400_create_user_with_roles_request' is set
-        if ($obpv400_create_user_with_roles_request === null || (is_array($obpv400_create_user_with_roles_request) && count($obpv400_create_user_with_roles_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_create_user_with_roles_request when calling oBPv400CreateUserWithRoles'
-            );
-        }
-
-
-        $resourcePath = '/obp/v4.0.0/user-entitlements';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($obpv400_create_user_with_roles_request)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_create_user_with_roles_request));
-            } else {
-                $httpBody = $obpv400_create_user_with_roles_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv510CreateUserWithAccountAccessById
-     *
-     * Create (DAuth) User with Account Access
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateUserWithAccountAccessByIdRequest $obpv510_create_user_with_account_access_by_id_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateUserWithAccountAccessById'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510CreateUserWithAccountAccessById200Response
-     */
-    public function oBPv510CreateUserWithAccountAccessById($bankid, $accountid, $viewid, $obpv510_create_user_with_account_access_by_id_request, string $contentType = self::contentTypes['oBPv510CreateUserWithAccountAccessById'][0])
-    {
-        list($response) = $this->oBPv510CreateUserWithAccountAccessByIdWithHttpInfo($bankid, $accountid, $viewid, $obpv510_create_user_with_account_access_by_id_request, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv510CreateUserWithAccountAccessByIdWithHttpInfo
-     *
-     * Create (DAuth) User with Account Access
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateUserWithAccountAccessByIdRequest $obpv510_create_user_with_account_access_by_id_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateUserWithAccountAccessById'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510CreateUserWithAccountAccessById200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv510CreateUserWithAccountAccessByIdWithHttpInfo($bankid, $accountid, $viewid, $obpv510_create_user_with_account_access_by_id_request, string $contentType = self::contentTypes['oBPv510CreateUserWithAccountAccessById'][0])
-    {
-        $request = $this->oBPv510CreateUserWithAccountAccessByIdRequest($bankid, $accountid, $viewid, $obpv510_create_user_with_account_access_by_id_request, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510CreateUserWithAccountAccessById200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510CreateUserWithAccountAccessById200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510CreateUserWithAccountAccessById200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv510CreateUserWithAccountAccessByIdAsync
-     *
-     * Create (DAuth) User with Account Access
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateUserWithAccountAccessByIdRequest $obpv510_create_user_with_account_access_by_id_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateUserWithAccountAccessById'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510CreateUserWithAccountAccessByIdAsync($bankid, $accountid, $viewid, $obpv510_create_user_with_account_access_by_id_request, string $contentType = self::contentTypes['oBPv510CreateUserWithAccountAccessById'][0])
-    {
-        return $this->oBPv510CreateUserWithAccountAccessByIdAsyncWithHttpInfo($bankid, $accountid, $viewid, $obpv510_create_user_with_account_access_by_id_request, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv510CreateUserWithAccountAccessByIdAsyncWithHttpInfo
-     *
-     * Create (DAuth) User with Account Access
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateUserWithAccountAccessByIdRequest $obpv510_create_user_with_account_access_by_id_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateUserWithAccountAccessById'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510CreateUserWithAccountAccessByIdAsyncWithHttpInfo($bankid, $accountid, $viewid, $obpv510_create_user_with_account_access_by_id_request, string $contentType = self::contentTypes['oBPv510CreateUserWithAccountAccessById'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv510CreateUserWithAccountAccessById200Response';
-        $request = $this->oBPv510CreateUserWithAccountAccessByIdRequest($bankid, $accountid, $viewid, $obpv510_create_user_with_account_access_by_id_request, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv510CreateUserWithAccountAccessById'
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateUserWithAccountAccessByIdRequest $obpv510_create_user_with_account_access_by_id_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateUserWithAccountAccessById'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv510CreateUserWithAccountAccessByIdRequest($bankid, $accountid, $viewid, $obpv510_create_user_with_account_access_by_id_request, string $contentType = self::contentTypes['oBPv510CreateUserWithAccountAccessById'][0])
+    public function createUserWithAccountAccessByIdRequest($bankid, $accountid, $viewid, $create_user_with_account_access_by_id_request, string $contentType = self::contentTypes['createUserWithAccountAccessById'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv510CreateUserWithAccountAccessById'
+                'Missing the required parameter $bankid when calling createUserWithAccountAccessById'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv510CreateUserWithAccountAccessById'
+                'Missing the required parameter $accountid when calling createUserWithAccountAccessById'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv510CreateUserWithAccountAccessById'
+                'Missing the required parameter $viewid when calling createUserWithAccountAccessById'
             );
         }
 
-        // verify the required parameter 'obpv510_create_user_with_account_access_by_id_request' is set
-        if ($obpv510_create_user_with_account_access_by_id_request === null || (is_array($obpv510_create_user_with_account_access_by_id_request) && count($obpv510_create_user_with_account_access_by_id_request) === 0)) {
+        // verify the required parameter 'create_user_with_account_access_by_id_request' is set
+        if ($create_user_with_account_access_by_id_request === null || (is_array($create_user_with_account_access_by_id_request) && count($create_user_with_account_access_by_id_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv510_create_user_with_account_access_by_id_request when calling oBPv510CreateUserWithAccountAccessById'
+                'Missing the required parameter $create_user_with_account_access_by_id_request when calling createUserWithAccountAccessById'
             );
         }
 
@@ -684,12 +403,12 @@ class DAuthApi
         );
 
         // for model (json/xml)
-        if (isset($obpv510_create_user_with_account_access_by_id_request)) {
+        if (isset($create_user_with_account_access_by_id_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv510_create_user_with_account_access_by_id_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_user_with_account_access_by_id_request));
             } else {
-                $httpBody = $obpv510_create_user_with_account_access_by_id_request;
+                $httpBody = $create_user_with_account_access_by_id_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -725,9 +444,290 @@ class DAuthApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation createUserWithRoles
+     *
+     * Create (DAuth) User with Roles
+     *
+     * @param  \OpenBankProject\Model\CreateUserWithRolesRequest $create_user_with_roles_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUserWithRoles'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetEntitlements200Response
+     */
+    public function createUserWithRoles($create_user_with_roles_request, string $contentType = self::contentTypes['createUserWithRoles'][0])
+    {
+        list($response) = $this->createUserWithRolesWithHttpInfo($create_user_with_roles_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation createUserWithRolesWithHttpInfo
+     *
+     * Create (DAuth) User with Roles
+     *
+     * @param  \OpenBankProject\Model\CreateUserWithRolesRequest $create_user_with_roles_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUserWithRoles'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetEntitlements200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createUserWithRolesWithHttpInfo($create_user_with_roles_request, string $contentType = self::contentTypes['createUserWithRoles'][0])
+    {
+        $request = $this->createUserWithRolesRequest($create_user_with_roles_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetEntitlements200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetEntitlements200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetEntitlements200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createUserWithRolesAsync
+     *
+     * Create (DAuth) User with Roles
+     *
+     * @param  \OpenBankProject\Model\CreateUserWithRolesRequest $create_user_with_roles_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUserWithRoles'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createUserWithRolesAsync($create_user_with_roles_request, string $contentType = self::contentTypes['createUserWithRoles'][0])
+    {
+        return $this->createUserWithRolesAsyncWithHttpInfo($create_user_with_roles_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation createUserWithRolesAsyncWithHttpInfo
+     *
+     * Create (DAuth) User with Roles
+     *
+     * @param  \OpenBankProject\Model\CreateUserWithRolesRequest $create_user_with_roles_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUserWithRoles'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createUserWithRolesAsyncWithHttpInfo($create_user_with_roles_request, string $contentType = self::contentTypes['createUserWithRoles'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetEntitlements200Response';
+        $request = $this->createUserWithRolesRequest($create_user_with_roles_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'createUserWithRoles'
+     *
+     * @param  \OpenBankProject\Model\CreateUserWithRolesRequest $create_user_with_roles_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUserWithRoles'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createUserWithRolesRequest($create_user_with_roles_request, string $contentType = self::contentTypes['createUserWithRoles'][0])
+    {
+
+        // verify the required parameter 'create_user_with_roles_request' is set
+        if ($create_user_with_roles_request === null || (is_array($create_user_with_roles_request) && count($create_user_with_roles_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $create_user_with_roles_request when calling createUserWithRoles'
+            );
+        }
+
+
+        $resourcePath = '/obp/v4.0.0/user-entitlements';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($create_user_with_roles_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_user_with_roles_request));
+            } else {
+                $httpBody = $create_user_with_roles_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
         if ($apiKey !== null) {
             $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

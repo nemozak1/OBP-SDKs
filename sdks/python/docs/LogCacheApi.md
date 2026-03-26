@@ -4,16 +4,16 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv5_1_0_log_cache_all_endpoint**](LogCacheApi.md#o_bpv5_1_0_log_cache_all_endpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache
-[**o_bpv5_1_0_log_cache_debug_endpoint**](LogCacheApi.md#o_bpv5_1_0_log_cache_debug_endpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache
-[**o_bpv5_1_0_log_cache_error_endpoint**](LogCacheApi.md#o_bpv5_1_0_log_cache_error_endpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache
-[**o_bpv5_1_0_log_cache_info_endpoint**](LogCacheApi.md#o_bpv5_1_0_log_cache_info_endpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache
-[**o_bpv5_1_0_log_cache_trace_endpoint**](LogCacheApi.md#o_bpv5_1_0_log_cache_trace_endpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache
-[**o_bpv5_1_0_log_cache_warning_endpoint**](LogCacheApi.md#o_bpv5_1_0_log_cache_warning_endpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache
+[**log_cache_all_endpoint**](LogCacheApi.md#log_cache_all_endpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache
+[**log_cache_debug_endpoint**](LogCacheApi.md#log_cache_debug_endpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache
+[**log_cache_error_endpoint**](LogCacheApi.md#log_cache_error_endpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache
+[**log_cache_info_endpoint**](LogCacheApi.md#log_cache_info_endpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache
+[**log_cache_trace_endpoint**](LogCacheApi.md#log_cache_trace_endpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache
+[**log_cache_warning_endpoint**](LogCacheApi.md#log_cache_warning_endpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache
 
 
-# **o_bpv5_1_0_log_cache_all_endpoint**
-> o_bpv5_1_0_log_cache_all_endpoint()
+# **log_cache_all_endpoint**
+> log_cache_all_endpoint()
 
 Get All Level Log Cache
 
@@ -69,9 +69,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get All Level Log Cache
-        api_instance.o_bpv5_1_0_log_cache_all_endpoint()
+        api_instance.log_cache_all_endpoint()
     except Exception as e:
-        print("Exception when calling LogCacheApi->o_bpv5_1_0_log_cache_all_endpoint: %s\n" % e)
+        print("Exception when calling LogCacheApi->log_cache_all_endpoint: %s\n" % e)
 ```
 
 
@@ -102,8 +102,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_log_cache_debug_endpoint**
-> o_bpv5_1_0_log_cache_debug_endpoint()
+# **log_cache_debug_endpoint**
+> log_cache_debug_endpoint()
 
 Get Debug Level Log Cache
 
@@ -159,9 +159,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Debug Level Log Cache
-        api_instance.o_bpv5_1_0_log_cache_debug_endpoint()
+        api_instance.log_cache_debug_endpoint()
     except Exception as e:
-        print("Exception when calling LogCacheApi->o_bpv5_1_0_log_cache_debug_endpoint: %s\n" % e)
+        print("Exception when calling LogCacheApi->log_cache_debug_endpoint: %s\n" % e)
 ```
 
 
@@ -192,8 +192,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_log_cache_error_endpoint**
-> o_bpv5_1_0_log_cache_error_endpoint()
+# **log_cache_error_endpoint**
+> log_cache_error_endpoint()
 
 Get Error Level Log Cache
 
@@ -249,9 +249,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Error Level Log Cache
-        api_instance.o_bpv5_1_0_log_cache_error_endpoint()
+        api_instance.log_cache_error_endpoint()
     except Exception as e:
-        print("Exception when calling LogCacheApi->o_bpv5_1_0_log_cache_error_endpoint: %s\n" % e)
+        print("Exception when calling LogCacheApi->log_cache_error_endpoint: %s\n" % e)
 ```
 
 
@@ -282,8 +282,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_log_cache_info_endpoint**
-> o_bpv5_1_0_log_cache_info_endpoint()
+# **log_cache_info_endpoint**
+> log_cache_info_endpoint()
 
 Get Info Level Log Cache
 
@@ -339,9 +339,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Info Level Log Cache
-        api_instance.o_bpv5_1_0_log_cache_info_endpoint()
+        api_instance.log_cache_info_endpoint()
     except Exception as e:
-        print("Exception when calling LogCacheApi->o_bpv5_1_0_log_cache_info_endpoint: %s\n" % e)
+        print("Exception when calling LogCacheApi->log_cache_info_endpoint: %s\n" % e)
 ```
 
 
@@ -372,8 +372,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_log_cache_trace_endpoint**
-> o_bpv5_1_0_log_cache_trace_endpoint()
+# **log_cache_trace_endpoint**
+> log_cache_trace_endpoint()
 
 Get Trace Level Log Cache
 
@@ -429,9 +429,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Trace Level Log Cache
-        api_instance.o_bpv5_1_0_log_cache_trace_endpoint()
+        api_instance.log_cache_trace_endpoint()
     except Exception as e:
-        print("Exception when calling LogCacheApi->o_bpv5_1_0_log_cache_trace_endpoint: %s\n" % e)
+        print("Exception when calling LogCacheApi->log_cache_trace_endpoint: %s\n" % e)
 ```
 
 
@@ -462,8 +462,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_log_cache_warning_endpoint**
-> o_bpv5_1_0_log_cache_warning_endpoint()
+# **log_cache_warning_endpoint**
+> log_cache_warning_endpoint()
 
 Get Warning Level Log Cache
 
@@ -519,9 +519,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Warning Level Log Cache
-        api_instance.o_bpv5_1_0_log_cache_warning_endpoint()
+        api_instance.log_cache_warning_endpoint()
     except Exception as e:
-        print("Exception when calling LogCacheApi->o_bpv5_1_0_log_cache_warning_endpoint: %s\n" % e)
+        print("Exception when calling LogCacheApi->log_cache_warning_endpoint: %s\n" % e)
 ```
 
 

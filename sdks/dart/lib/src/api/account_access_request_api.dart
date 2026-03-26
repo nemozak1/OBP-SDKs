@@ -9,10 +9,10 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:obp_dart/src/api_util.dart';
-import 'package:obp_dart/src/model/obpv600_create_account_access_request_request.dart';
-import 'package:obp_dart/src/model/obpv600_get_account_access_requests_for_account200_response.dart';
-import 'package:obp_dart/src/model/obpv600_reject_account_access_request200_response.dart';
-import 'package:obp_dart/src/model/obpv600_reject_account_access_request_request.dart';
+import 'package:obp_dart/src/model/create_account_access_request_request.dart';
+import 'package:obp_dart/src/model/get_account_access_requests_for_account200_response.dart';
+import 'package:obp_dart/src/model/reject_account_access_request200_response.dart';
+import 'package:obp_dart/src/model/reject_account_access_request_request.dart';
 
 class AccountAccessRequestApi {
 
@@ -29,7 +29,7 @@ class AccountAccessRequestApi {
   /// * [bankid] - The BANKID identifier
   /// * [accountid] - The ACCOUNTID identifier
   /// * [accountaccessrequestid] - The ACCOUNTACCESSREQUESTID identifier
-  /// * [oBPv600RejectAccountAccessRequestRequest] - Request body
+  /// * [rejectAccountAccessRequestRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -37,13 +37,13 @@ class AccountAccessRequestApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv600RejectAccountAccessRequest200Response] as data
+  /// Returns a [Future] containing a [Response] with a [RejectAccountAccessRequest200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv600RejectAccountAccessRequest200Response>> oBPv600ApproveAccountAccessRequest({ 
+  Future<Response<RejectAccountAccessRequest200Response>> approveAccountAccessRequest({ 
     required String bankid,
     required String accountid,
     required String accountaccessrequestid,
-    required OBPv600RejectAccountAccessRequestRequest oBPv600RejectAccountAccessRequestRequest,
+    required RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -70,7 +70,7 @@ class AccountAccessRequestApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -83,8 +83,8 @@ class AccountAccessRequestApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv600RejectAccountAccessRequestRequest);
-      _bodyData = _serializers.serialize(oBPv600RejectAccountAccessRequestRequest, specifiedType: _type);
+      const _type = FullType(RejectAccountAccessRequestRequest);
+      _bodyData = _serializers.serialize(rejectAccountAccessRequestRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -107,14 +107,14 @@ class AccountAccessRequestApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv600RejectAccountAccessRequest200Response? _responseData;
+    RejectAccountAccessRequest200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv600RejectAccountAccessRequest200Response),
-      ) as OBPv600RejectAccountAccessRequest200Response;
+        specifiedType: const FullType(RejectAccountAccessRequest200Response),
+      ) as RejectAccountAccessRequest200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -126,7 +126,7 @@ class AccountAccessRequestApi {
       );
     }
 
-    return Response<OBPv600RejectAccountAccessRequest200Response>(
+    return Response<RejectAccountAccessRequest200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -144,7 +144,7 @@ class AccountAccessRequestApi {
   /// Parameters:
   /// * [bankid] - The BANKID identifier
   /// * [accountid] - The ACCOUNTID identifier
-  /// * [oBPv600CreateAccountAccessRequestRequest] - Request body
+  /// * [createAccountAccessRequestRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -152,12 +152,12 @@ class AccountAccessRequestApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv600RejectAccountAccessRequest200Response] as data
+  /// Returns a [Future] containing a [Response] with a [RejectAccountAccessRequest200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv600RejectAccountAccessRequest200Response>> oBPv600CreateAccountAccessRequest({ 
+  Future<Response<RejectAccountAccessRequest200Response>> createAccountAccessRequest({ 
     required String bankid,
     required String accountid,
-    required OBPv600CreateAccountAccessRequestRequest oBPv600CreateAccountAccessRequestRequest,
+    required CreateAccountAccessRequestRequest createAccountAccessRequestRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -184,7 +184,7 @@ class AccountAccessRequestApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -197,8 +197,8 @@ class AccountAccessRequestApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv600CreateAccountAccessRequestRequest);
-      _bodyData = _serializers.serialize(oBPv600CreateAccountAccessRequestRequest, specifiedType: _type);
+      const _type = FullType(CreateAccountAccessRequestRequest);
+      _bodyData = _serializers.serialize(createAccountAccessRequestRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -221,14 +221,14 @@ class AccountAccessRequestApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv600RejectAccountAccessRequest200Response? _responseData;
+    RejectAccountAccessRequest200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv600RejectAccountAccessRequest200Response),
-      ) as OBPv600RejectAccountAccessRequest200Response;
+        specifiedType: const FullType(RejectAccountAccessRequest200Response),
+      ) as RejectAccountAccessRequest200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -240,7 +240,7 @@ class AccountAccessRequestApi {
       );
     }
 
-    return Response<OBPv600RejectAccountAccessRequest200Response>(
+    return Response<RejectAccountAccessRequest200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -266,9 +266,9 @@ class AccountAccessRequestApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv600RejectAccountAccessRequest200Response] as data
+  /// Returns a [Future] containing a [Response] with a [RejectAccountAccessRequest200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv600RejectAccountAccessRequest200Response>> oBPv600GetAccountAccessRequestById({ 
+  Future<Response<RejectAccountAccessRequest200Response>> getAccountAccessRequestById({ 
     required String bankid,
     required String accountid,
     required String accountaccessrequestid,
@@ -298,7 +298,7 @@ class AccountAccessRequestApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -315,14 +315,14 @@ class AccountAccessRequestApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv600RejectAccountAccessRequest200Response? _responseData;
+    RejectAccountAccessRequest200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv600RejectAccountAccessRequest200Response),
-      ) as OBPv600RejectAccountAccessRequest200Response;
+        specifiedType: const FullType(RejectAccountAccessRequest200Response),
+      ) as RejectAccountAccessRequest200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -334,7 +334,7 @@ class AccountAccessRequestApi {
       );
     }
 
-    return Response<OBPv600RejectAccountAccessRequest200Response>(
+    return Response<RejectAccountAccessRequest200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -359,9 +359,9 @@ class AccountAccessRequestApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv600GetAccountAccessRequestsForAccount200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetAccountAccessRequestsForAccount200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv600GetAccountAccessRequestsForAccount200Response>> oBPv600GetAccountAccessRequestsForAccount({ 
+  Future<Response<GetAccountAccessRequestsForAccount200Response>> getAccountAccessRequestsForAccount({ 
     required String bankid,
     required String accountid,
     CancelToken? cancelToken,
@@ -390,7 +390,7 @@ class AccountAccessRequestApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -407,14 +407,14 @@ class AccountAccessRequestApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv600GetAccountAccessRequestsForAccount200Response? _responseData;
+    GetAccountAccessRequestsForAccount200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv600GetAccountAccessRequestsForAccount200Response),
-      ) as OBPv600GetAccountAccessRequestsForAccount200Response;
+        specifiedType: const FullType(GetAccountAccessRequestsForAccount200Response),
+      ) as GetAccountAccessRequestsForAccount200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -426,7 +426,7 @@ class AccountAccessRequestApi {
       );
     }
 
-    return Response<OBPv600GetAccountAccessRequestsForAccount200Response>(
+    return Response<GetAccountAccessRequestsForAccount200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -449,9 +449,9 @@ class AccountAccessRequestApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv600GetAccountAccessRequestsForAccount200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetAccountAccessRequestsForAccount200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv600GetAccountAccessRequestsForAccount200Response>> oBPv600GetMyAccountAccessRequests({ 
+  Future<Response<GetAccountAccessRequestsForAccount200Response>> getMyAccountAccessRequests({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -478,7 +478,7 @@ class AccountAccessRequestApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -495,14 +495,14 @@ class AccountAccessRequestApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv600GetAccountAccessRequestsForAccount200Response? _responseData;
+    GetAccountAccessRequestsForAccount200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv600GetAccountAccessRequestsForAccount200Response),
-      ) as OBPv600GetAccountAccessRequestsForAccount200Response;
+        specifiedType: const FullType(GetAccountAccessRequestsForAccount200Response),
+      ) as GetAccountAccessRequestsForAccount200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -514,7 +514,7 @@ class AccountAccessRequestApi {
       );
     }
 
-    return Response<OBPv600GetAccountAccessRequestsForAccount200Response>(
+    return Response<GetAccountAccessRequestsForAccount200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -533,7 +533,7 @@ class AccountAccessRequestApi {
   /// * [bankid] - The BANKID identifier
   /// * [accountid] - The ACCOUNTID identifier
   /// * [accountaccessrequestid] - The ACCOUNTACCESSREQUESTID identifier
-  /// * [oBPv600RejectAccountAccessRequestRequest] - Request body
+  /// * [rejectAccountAccessRequestRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -541,13 +541,13 @@ class AccountAccessRequestApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv600RejectAccountAccessRequest200Response] as data
+  /// Returns a [Future] containing a [Response] with a [RejectAccountAccessRequest200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv600RejectAccountAccessRequest200Response>> oBPv600RejectAccountAccessRequest({ 
+  Future<Response<RejectAccountAccessRequest200Response>> rejectAccountAccessRequest({ 
     required String bankid,
     required String accountid,
     required String accountaccessrequestid,
-    required OBPv600RejectAccountAccessRequestRequest oBPv600RejectAccountAccessRequestRequest,
+    required RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -574,7 +574,7 @@ class AccountAccessRequestApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -587,8 +587,8 @@ class AccountAccessRequestApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv600RejectAccountAccessRequestRequest);
-      _bodyData = _serializers.serialize(oBPv600RejectAccountAccessRequestRequest, specifiedType: _type);
+      const _type = FullType(RejectAccountAccessRequestRequest);
+      _bodyData = _serializers.serialize(rejectAccountAccessRequestRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -611,14 +611,14 @@ class AccountAccessRequestApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv600RejectAccountAccessRequest200Response? _responseData;
+    RejectAccountAccessRequest200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv600RejectAccountAccessRequest200Response),
-      ) as OBPv600RejectAccountAccessRequest200Response;
+        specifiedType: const FullType(RejectAccountAccessRequest200Response),
+      ) as RejectAccountAccessRequest200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -630,7 +630,7 @@ class AccountAccessRequestApi {
       );
     }
 
-    return Response<OBPv600RejectAccountAccessRequest200Response>(
+    return Response<RejectAccountAccessRequest200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

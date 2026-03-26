@@ -9,12 +9,12 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:obp_dart/src/api_util.dart';
-import 'package:obp_dart/src/model/obpv400_create_or_update_transaction_request_attribute_definition_request.dart';
-import 'package:obp_dart/src/model/obpv400_get_customer_attributes200_response.dart';
-import 'package:obp_dart/src/model/obpv400_get_customer_attributes200_response_properties_customer_attributes_items.dart';
-import 'package:obp_dart/src/model/obpv400_get_transaction_request_attribute_definition200_response.dart';
-import 'package:obp_dart/src/model/obpv400_get_transaction_request_attribute_definition200_response_properties_attributes_items.dart';
-import 'package:obp_dart/src/model/obpv600_create_personal_data_field_request.dart';
+import 'package:obp_dart/src/model/create_or_update_transaction_request_attribute_definition_request.dart';
+import 'package:obp_dart/src/model/create_personal_data_field_request.dart';
+import 'package:obp_dart/src/model/get_customer_attributes200_response.dart';
+import 'package:obp_dart/src/model/get_customer_attributes200_response_customer_attributes_inner.dart';
+import 'package:obp_dart/src/model/get_transaction_request_attribute_definition200_response.dart';
+import 'package:obp_dart/src/model/get_transaction_request_attribute_definition200_response_attributes_inner.dart';
 
 class CustomerAttributeApi {
 
@@ -30,7 +30,7 @@ class CustomerAttributeApi {
   /// Parameters:
   /// * [bankid] - The BANKID identifier
   /// * [customerid] - The CUSTOMERID identifier
-  /// * [oBPv600CreatePersonalDataFieldRequest] - Request body
+  /// * [createPersonalDataFieldRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -38,12 +38,12 @@ class CustomerAttributeApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetCustomerAttributes200ResponseCustomerAttributesInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems>> oBPv400CreateCustomerAttribute({ 
+  Future<Response<GetCustomerAttributes200ResponseCustomerAttributesInner>> createCustomerAttribute({ 
     required String bankid,
     required String customerid,
-    required OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest,
+    required CreatePersonalDataFieldRequest createPersonalDataFieldRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -70,7 +70,7 @@ class CustomerAttributeApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -83,8 +83,8 @@ class CustomerAttributeApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv600CreatePersonalDataFieldRequest);
-      _bodyData = _serializers.serialize(oBPv600CreatePersonalDataFieldRequest, specifiedType: _type);
+      const _type = FullType(CreatePersonalDataFieldRequest);
+      _bodyData = _serializers.serialize(createPersonalDataFieldRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -107,14 +107,14 @@ class CustomerAttributeApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems? _responseData;
+    GetCustomerAttributes200ResponseCustomerAttributesInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems),
-      ) as OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems;
+        specifiedType: const FullType(GetCustomerAttributes200ResponseCustomerAttributesInner),
+      ) as GetCustomerAttributes200ResponseCustomerAttributesInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -126,7 +126,7 @@ class CustomerAttributeApi {
       );
     }
 
-    return Response<OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems>(
+    return Response<GetCustomerAttributes200ResponseCustomerAttributesInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -143,7 +143,7 @@ class CustomerAttributeApi {
   ///
   /// Parameters:
   /// * [bankid] - The BANKID identifier
-  /// * [oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest] - Request body
+  /// * [createOrUpdateTransactionRequestAttributeDefinitionRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -151,11 +151,11 @@ class CustomerAttributeApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetTransactionRequestAttributeDefinition200ResponseAttributesInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems>> oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition({ 
+  Future<Response<GetTransactionRequestAttributeDefinition200ResponseAttributesInner>> createOrUpdateCustomerAttributeAttributeDefinition({ 
     required String bankid,
-    required OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest,
+    required CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -182,7 +182,7 @@ class CustomerAttributeApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -195,8 +195,8 @@ class CustomerAttributeApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
-      _bodyData = _serializers.serialize(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, specifiedType: _type);
+      const _type = FullType(CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+      _bodyData = _serializers.serialize(createOrUpdateTransactionRequestAttributeDefinitionRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -219,14 +219,14 @@ class CustomerAttributeApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems? _responseData;
+    GetTransactionRequestAttributeDefinition200ResponseAttributesInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems),
-      ) as OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems;
+        specifiedType: const FullType(GetTransactionRequestAttributeDefinition200ResponseAttributesInner),
+      ) as GetTransactionRequestAttributeDefinition200ResponseAttributesInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -238,7 +238,7 @@ class CustomerAttributeApi {
       );
     }
 
-    return Response<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems>(
+    return Response<GetTransactionRequestAttributeDefinition200ResponseAttributesInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -266,7 +266,7 @@ class CustomerAttributeApi {
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> oBPv400DeleteCustomerAttribute({ 
+  Future<Response<void>> deleteCustomerAttribute({ 
     required String bankid,
     required String customerid,
     required String customerattributeid,
@@ -296,7 +296,7 @@ class CustomerAttributeApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -331,7 +331,7 @@ class CustomerAttributeApi {
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> oBPv400DeleteCustomerAttributeDefinition({ 
+  Future<Response<void>> deleteCustomerAttributeDefinition({ 
     required String bankid,
     required String attributedefinitionid,
     CancelToken? cancelToken,
@@ -360,7 +360,7 @@ class CustomerAttributeApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -394,9 +394,9 @@ class CustomerAttributeApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetCustomerAttributes200ResponseCustomerAttributesInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems>> oBPv400GetCustomerAttributeById({ 
+  Future<Response<GetCustomerAttributes200ResponseCustomerAttributesInner>> getCustomerAttributeById({ 
     required String bankid,
     required String customerid,
     required String attributeid,
@@ -426,7 +426,7 @@ class CustomerAttributeApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -443,14 +443,14 @@ class CustomerAttributeApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems? _responseData;
+    GetCustomerAttributes200ResponseCustomerAttributesInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems),
-      ) as OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems;
+        specifiedType: const FullType(GetCustomerAttributes200ResponseCustomerAttributesInner),
+      ) as GetCustomerAttributes200ResponseCustomerAttributesInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -462,7 +462,7 @@ class CustomerAttributeApi {
       );
     }
 
-    return Response<OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems>(
+    return Response<GetCustomerAttributes200ResponseCustomerAttributesInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -486,9 +486,9 @@ class CustomerAttributeApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetTransactionRequestAttributeDefinition200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetTransactionRequestAttributeDefinition200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetTransactionRequestAttributeDefinition200Response>> oBPv400GetCustomerAttributeDefinition({ 
+  Future<Response<GetTransactionRequestAttributeDefinition200Response>> getCustomerAttributeDefinition({ 
     required String bankid,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -516,7 +516,7 @@ class CustomerAttributeApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -533,14 +533,14 @@ class CustomerAttributeApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetTransactionRequestAttributeDefinition200Response? _responseData;
+    GetTransactionRequestAttributeDefinition200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetTransactionRequestAttributeDefinition200Response),
-      ) as OBPv400GetTransactionRequestAttributeDefinition200Response;
+        specifiedType: const FullType(GetTransactionRequestAttributeDefinition200Response),
+      ) as GetTransactionRequestAttributeDefinition200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -552,7 +552,7 @@ class CustomerAttributeApi {
       );
     }
 
-    return Response<OBPv400GetTransactionRequestAttributeDefinition200Response>(
+    return Response<GetTransactionRequestAttributeDefinition200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -577,9 +577,9 @@ class CustomerAttributeApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetCustomerAttributes200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetCustomerAttributes200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetCustomerAttributes200Response>> oBPv400GetCustomerAttributes({ 
+  Future<Response<GetCustomerAttributes200Response>> getCustomerAttributes({ 
     required String bankid,
     required String customerid,
     CancelToken? cancelToken,
@@ -608,7 +608,7 @@ class CustomerAttributeApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -625,14 +625,14 @@ class CustomerAttributeApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetCustomerAttributes200Response? _responseData;
+    GetCustomerAttributes200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetCustomerAttributes200Response),
-      ) as OBPv400GetCustomerAttributes200Response;
+        specifiedType: const FullType(GetCustomerAttributes200Response),
+      ) as GetCustomerAttributes200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -644,7 +644,7 @@ class CustomerAttributeApi {
       );
     }
 
-    return Response<OBPv400GetCustomerAttributes200Response>(
+    return Response<GetCustomerAttributes200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -663,7 +663,7 @@ class CustomerAttributeApi {
   /// * [bankid] - The BANKID identifier
   /// * [customerid] - The CUSTOMERID identifier
   /// * [customerattributeid] - The CUSTOMERATTRIBUTEID identifier
-  /// * [oBPv600CreatePersonalDataFieldRequest] - Request body
+  /// * [createPersonalDataFieldRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -671,13 +671,13 @@ class CustomerAttributeApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetCustomerAttributes200ResponseCustomerAttributesInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems>> oBPv400UpdateCustomerAttribute({ 
+  Future<Response<GetCustomerAttributes200ResponseCustomerAttributesInner>> updateCustomerAttribute({ 
     required String bankid,
     required String customerid,
     required String customerattributeid,
-    required OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest,
+    required CreatePersonalDataFieldRequest createPersonalDataFieldRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -704,7 +704,7 @@ class CustomerAttributeApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -717,8 +717,8 @@ class CustomerAttributeApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv600CreatePersonalDataFieldRequest);
-      _bodyData = _serializers.serialize(oBPv600CreatePersonalDataFieldRequest, specifiedType: _type);
+      const _type = FullType(CreatePersonalDataFieldRequest);
+      _bodyData = _serializers.serialize(createPersonalDataFieldRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -741,14 +741,14 @@ class CustomerAttributeApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems? _responseData;
+    GetCustomerAttributes200ResponseCustomerAttributesInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems),
-      ) as OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems;
+        specifiedType: const FullType(GetCustomerAttributes200ResponseCustomerAttributesInner),
+      ) as GetCustomerAttributes200ResponseCustomerAttributesInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -760,7 +760,7 @@ class CustomerAttributeApi {
       );
     }
 
-    return Response<OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems>(
+    return Response<GetCustomerAttributes200ResponseCustomerAttributesInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

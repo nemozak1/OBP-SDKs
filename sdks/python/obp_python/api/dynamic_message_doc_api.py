@@ -18,9 +18,9 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
-from obp_python.models.obpv400_get_all_bank_level_dynamic_message_docs200_response import OBPv400GetAllBankLevelDynamicMessageDocs200Response
-from obp_python.models.obpv400_get_dynamic_message_doc200_response import OBPv400GetDynamicMessageDoc200Response
-from obp_python.models.obpv400_update_dynamic_message_doc_request import OBPv400UpdateDynamicMessageDocRequest
+from obp_python.models.get_all_bank_level_dynamic_message_docs200_response import GetAllBankLevelDynamicMessageDocs200Response
+from obp_python.models.get_dynamic_message_doc200_response import GetDynamicMessageDoc200Response
+from obp_python.models.update_dynamic_message_doc_request import UpdateDynamicMessageDocRequest
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -41,10 +41,10 @@ class DynamicMessageDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_bank_level_dynamic_message_doc(
+    def create_bank_level_dynamic_message_doc(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv400_update_dynamic_message_doc_request: Annotated[OBPv400UpdateDynamicMessageDocRequest, Field(description="Request body")],
+        update_dynamic_message_doc_request: Annotated[UpdateDynamicMessageDocRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -57,15 +57,15 @@ class DynamicMessageDocApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetDynamicMessageDoc200Response:
+    ) -> GetDynamicMessageDoc200Response:
         """Create Bank Level Dynamic Message Doc
 
         <p>Create a Bank Level Dynamic Message Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv400_update_dynamic_message_doc_request: Request body (required)
-        :type obpv400_update_dynamic_message_doc_request: OBPv400UpdateDynamicMessageDocRequest
+        :param update_dynamic_message_doc_request: Request body (required)
+        :type update_dynamic_message_doc_request: UpdateDynamicMessageDocRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -88,9 +88,9 @@ class DynamicMessageDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_bank_level_dynamic_message_doc_serialize(
+        _param = self._create_bank_level_dynamic_message_doc_serialize(
             bankid=bankid,
-            obpv400_update_dynamic_message_doc_request=obpv400_update_dynamic_message_doc_request,
+            update_dynamic_message_doc_request=update_dynamic_message_doc_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -98,7 +98,7 @@ class DynamicMessageDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetDynamicMessageDoc200Response",
+            '200': "GetDynamicMessageDoc200Response",
             '404': None,
             '500': None,
         }
@@ -114,10 +114,10 @@ class DynamicMessageDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_bank_level_dynamic_message_doc_with_http_info(
+    def create_bank_level_dynamic_message_doc_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv400_update_dynamic_message_doc_request: Annotated[OBPv400UpdateDynamicMessageDocRequest, Field(description="Request body")],
+        update_dynamic_message_doc_request: Annotated[UpdateDynamicMessageDocRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -130,15 +130,15 @@ class DynamicMessageDocApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetDynamicMessageDoc200Response]:
+    ) -> ApiResponse[GetDynamicMessageDoc200Response]:
         """Create Bank Level Dynamic Message Doc
 
         <p>Create a Bank Level Dynamic Message Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv400_update_dynamic_message_doc_request: Request body (required)
-        :type obpv400_update_dynamic_message_doc_request: OBPv400UpdateDynamicMessageDocRequest
+        :param update_dynamic_message_doc_request: Request body (required)
+        :type update_dynamic_message_doc_request: UpdateDynamicMessageDocRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -161,9 +161,9 @@ class DynamicMessageDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_bank_level_dynamic_message_doc_serialize(
+        _param = self._create_bank_level_dynamic_message_doc_serialize(
             bankid=bankid,
-            obpv400_update_dynamic_message_doc_request=obpv400_update_dynamic_message_doc_request,
+            update_dynamic_message_doc_request=update_dynamic_message_doc_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -171,7 +171,7 @@ class DynamicMessageDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetDynamicMessageDoc200Response",
+            '200': "GetDynamicMessageDoc200Response",
             '404': None,
             '500': None,
         }
@@ -187,10 +187,10 @@ class DynamicMessageDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_bank_level_dynamic_message_doc_without_preload_content(
+    def create_bank_level_dynamic_message_doc_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv400_update_dynamic_message_doc_request: Annotated[OBPv400UpdateDynamicMessageDocRequest, Field(description="Request body")],
+        update_dynamic_message_doc_request: Annotated[UpdateDynamicMessageDocRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -210,8 +210,8 @@ class DynamicMessageDocApi:
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv400_update_dynamic_message_doc_request: Request body (required)
-        :type obpv400_update_dynamic_message_doc_request: OBPv400UpdateDynamicMessageDocRequest
+        :param update_dynamic_message_doc_request: Request body (required)
+        :type update_dynamic_message_doc_request: UpdateDynamicMessageDocRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -234,9 +234,9 @@ class DynamicMessageDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_bank_level_dynamic_message_doc_serialize(
+        _param = self._create_bank_level_dynamic_message_doc_serialize(
             bankid=bankid,
-            obpv400_update_dynamic_message_doc_request=obpv400_update_dynamic_message_doc_request,
+            update_dynamic_message_doc_request=update_dynamic_message_doc_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -244,7 +244,7 @@ class DynamicMessageDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetDynamicMessageDoc200Response",
+            '200': "GetDynamicMessageDoc200Response",
             '404': None,
             '500': None,
         }
@@ -255,10 +255,10 @@ class DynamicMessageDocApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_create_bank_level_dynamic_message_doc_serialize(
+    def _create_bank_level_dynamic_message_doc_serialize(
         self,
         bankid,
-        obpv400_update_dynamic_message_doc_request,
+        update_dynamic_message_doc_request,
         _request_auth,
         _content_type,
         _headers,
@@ -286,8 +286,8 @@ class DynamicMessageDocApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_update_dynamic_message_doc_request is not None:
-            _body_params = obpv400_update_dynamic_message_doc_request
+        if update_dynamic_message_doc_request is not None:
+            _body_params = update_dynamic_message_doc_request
 
 
         # set the HTTP header `Accept`
@@ -338,9 +338,9 @@ class DynamicMessageDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_dynamic_message_doc(
+    def create_dynamic_message_doc(
         self,
-        obpv400_update_dynamic_message_doc_request: Annotated[OBPv400UpdateDynamicMessageDocRequest, Field(description="Request body")],
+        update_dynamic_message_doc_request: Annotated[UpdateDynamicMessageDocRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -353,13 +353,13 @@ class DynamicMessageDocApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetDynamicMessageDoc200Response:
+    ) -> GetDynamicMessageDoc200Response:
         """Create Dynamic Message Doc
 
         <p>Create a Dynamic Message Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
 
-        :param obpv400_update_dynamic_message_doc_request: Request body (required)
-        :type obpv400_update_dynamic_message_doc_request: OBPv400UpdateDynamicMessageDocRequest
+        :param update_dynamic_message_doc_request: Request body (required)
+        :type update_dynamic_message_doc_request: UpdateDynamicMessageDocRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -382,8 +382,8 @@ class DynamicMessageDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_dynamic_message_doc_serialize(
-            obpv400_update_dynamic_message_doc_request=obpv400_update_dynamic_message_doc_request,
+        _param = self._create_dynamic_message_doc_serialize(
+            update_dynamic_message_doc_request=update_dynamic_message_doc_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -391,7 +391,7 @@ class DynamicMessageDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetDynamicMessageDoc200Response",
+            '200': "GetDynamicMessageDoc200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -406,9 +406,9 @@ class DynamicMessageDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_dynamic_message_doc_with_http_info(
+    def create_dynamic_message_doc_with_http_info(
         self,
-        obpv400_update_dynamic_message_doc_request: Annotated[OBPv400UpdateDynamicMessageDocRequest, Field(description="Request body")],
+        update_dynamic_message_doc_request: Annotated[UpdateDynamicMessageDocRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -421,13 +421,13 @@ class DynamicMessageDocApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetDynamicMessageDoc200Response]:
+    ) -> ApiResponse[GetDynamicMessageDoc200Response]:
         """Create Dynamic Message Doc
 
         <p>Create a Dynamic Message Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
 
-        :param obpv400_update_dynamic_message_doc_request: Request body (required)
-        :type obpv400_update_dynamic_message_doc_request: OBPv400UpdateDynamicMessageDocRequest
+        :param update_dynamic_message_doc_request: Request body (required)
+        :type update_dynamic_message_doc_request: UpdateDynamicMessageDocRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -450,8 +450,8 @@ class DynamicMessageDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_dynamic_message_doc_serialize(
-            obpv400_update_dynamic_message_doc_request=obpv400_update_dynamic_message_doc_request,
+        _param = self._create_dynamic_message_doc_serialize(
+            update_dynamic_message_doc_request=update_dynamic_message_doc_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -459,7 +459,7 @@ class DynamicMessageDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetDynamicMessageDoc200Response",
+            '200': "GetDynamicMessageDoc200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -474,9 +474,9 @@ class DynamicMessageDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_dynamic_message_doc_without_preload_content(
+    def create_dynamic_message_doc_without_preload_content(
         self,
-        obpv400_update_dynamic_message_doc_request: Annotated[OBPv400UpdateDynamicMessageDocRequest, Field(description="Request body")],
+        update_dynamic_message_doc_request: Annotated[UpdateDynamicMessageDocRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -494,8 +494,8 @@ class DynamicMessageDocApi:
 
         <p>Create a Dynamic Message Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
 
-        :param obpv400_update_dynamic_message_doc_request: Request body (required)
-        :type obpv400_update_dynamic_message_doc_request: OBPv400UpdateDynamicMessageDocRequest
+        :param update_dynamic_message_doc_request: Request body (required)
+        :type update_dynamic_message_doc_request: UpdateDynamicMessageDocRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -518,8 +518,8 @@ class DynamicMessageDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_dynamic_message_doc_serialize(
-            obpv400_update_dynamic_message_doc_request=obpv400_update_dynamic_message_doc_request,
+        _param = self._create_dynamic_message_doc_serialize(
+            update_dynamic_message_doc_request=update_dynamic_message_doc_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -527,7 +527,7 @@ class DynamicMessageDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetDynamicMessageDoc200Response",
+            '200': "GetDynamicMessageDoc200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -537,9 +537,9 @@ class DynamicMessageDocApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_create_dynamic_message_doc_serialize(
+    def _create_dynamic_message_doc_serialize(
         self,
-        obpv400_update_dynamic_message_doc_request,
+        update_dynamic_message_doc_request,
         _request_auth,
         _content_type,
         _headers,
@@ -565,8 +565,8 @@ class DynamicMessageDocApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_update_dynamic_message_doc_request is not None:
-            _body_params = obpv400_update_dynamic_message_doc_request
+        if update_dynamic_message_doc_request is not None:
+            _body_params = update_dynamic_message_doc_request
 
 
         # set the HTTP header `Accept`
@@ -617,7 +617,7 @@ class DynamicMessageDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_bank_level_dynamic_message_doc(
+    def delete_bank_level_dynamic_message_doc(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         dynamicmessagedocid: Annotated[StrictStr, Field(description="The DYNAMICMESSAGEDOCID identifier")],
@@ -664,7 +664,7 @@ class DynamicMessageDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_bank_level_dynamic_message_doc_serialize(
+        _param = self._delete_bank_level_dynamic_message_doc_serialize(
             bankid=bankid,
             dynamicmessagedocid=dynamicmessagedocid,
             _request_auth=_request_auth,
@@ -690,7 +690,7 @@ class DynamicMessageDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_bank_level_dynamic_message_doc_with_http_info(
+    def delete_bank_level_dynamic_message_doc_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         dynamicmessagedocid: Annotated[StrictStr, Field(description="The DYNAMICMESSAGEDOCID identifier")],
@@ -737,7 +737,7 @@ class DynamicMessageDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_bank_level_dynamic_message_doc_serialize(
+        _param = self._delete_bank_level_dynamic_message_doc_serialize(
             bankid=bankid,
             dynamicmessagedocid=dynamicmessagedocid,
             _request_auth=_request_auth,
@@ -763,7 +763,7 @@ class DynamicMessageDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_bank_level_dynamic_message_doc_without_preload_content(
+    def delete_bank_level_dynamic_message_doc_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         dynamicmessagedocid: Annotated[StrictStr, Field(description="The DYNAMICMESSAGEDOCID identifier")],
@@ -810,7 +810,7 @@ class DynamicMessageDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_bank_level_dynamic_message_doc_serialize(
+        _param = self._delete_bank_level_dynamic_message_doc_serialize(
             bankid=bankid,
             dynamicmessagedocid=dynamicmessagedocid,
             _request_auth=_request_auth,
@@ -831,7 +831,7 @@ class DynamicMessageDocApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_delete_bank_level_dynamic_message_doc_serialize(
+    def _delete_bank_level_dynamic_message_doc_serialize(
         self,
         bankid,
         dynamicmessagedocid,
@@ -894,7 +894,7 @@ class DynamicMessageDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_dynamic_message_doc(
+    def delete_dynamic_message_doc(
         self,
         dynamicmessagedocid: Annotated[StrictStr, Field(description="The DYNAMICMESSAGEDOCID identifier")],
         _request_timeout: Union[
@@ -938,7 +938,7 @@ class DynamicMessageDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_dynamic_message_doc_serialize(
+        _param = self._delete_dynamic_message_doc_serialize(
             dynamicmessagedocid=dynamicmessagedocid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -962,7 +962,7 @@ class DynamicMessageDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_dynamic_message_doc_with_http_info(
+    def delete_dynamic_message_doc_with_http_info(
         self,
         dynamicmessagedocid: Annotated[StrictStr, Field(description="The DYNAMICMESSAGEDOCID identifier")],
         _request_timeout: Union[
@@ -1006,7 +1006,7 @@ class DynamicMessageDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_dynamic_message_doc_serialize(
+        _param = self._delete_dynamic_message_doc_serialize(
             dynamicmessagedocid=dynamicmessagedocid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1030,7 +1030,7 @@ class DynamicMessageDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_dynamic_message_doc_without_preload_content(
+    def delete_dynamic_message_doc_without_preload_content(
         self,
         dynamicmessagedocid: Annotated[StrictStr, Field(description="The DYNAMICMESSAGEDOCID identifier")],
         _request_timeout: Union[
@@ -1074,7 +1074,7 @@ class DynamicMessageDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_dynamic_message_doc_serialize(
+        _param = self._delete_dynamic_message_doc_serialize(
             dynamicmessagedocid=dynamicmessagedocid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1093,7 +1093,7 @@ class DynamicMessageDocApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_delete_dynamic_message_doc_serialize(
+    def _delete_dynamic_message_doc_serialize(
         self,
         dynamicmessagedocid,
         _request_auth,
@@ -1153,7 +1153,7 @@ class DynamicMessageDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_all_bank_level_dynamic_message_docs(
+    def get_all_bank_level_dynamic_message_docs(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -1168,7 +1168,7 @@ class DynamicMessageDocApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetAllBankLevelDynamicMessageDocs200Response:
+    ) -> GetAllBankLevelDynamicMessageDocs200Response:
         """Get all Bank Level Dynamic Message Docs
 
         <p>Get all Bank Level Dynamic Message Docs.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
@@ -1197,7 +1197,7 @@ class DynamicMessageDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_all_bank_level_dynamic_message_docs_serialize(
+        _param = self._get_all_bank_level_dynamic_message_docs_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1206,7 +1206,7 @@ class DynamicMessageDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllBankLevelDynamicMessageDocs200Response",
+            '200': "GetAllBankLevelDynamicMessageDocs200Response",
             '404': None,
             '500': None,
         }
@@ -1222,7 +1222,7 @@ class DynamicMessageDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_all_bank_level_dynamic_message_docs_with_http_info(
+    def get_all_bank_level_dynamic_message_docs_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -1237,7 +1237,7 @@ class DynamicMessageDocApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetAllBankLevelDynamicMessageDocs200Response]:
+    ) -> ApiResponse[GetAllBankLevelDynamicMessageDocs200Response]:
         """Get all Bank Level Dynamic Message Docs
 
         <p>Get all Bank Level Dynamic Message Docs.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
@@ -1266,7 +1266,7 @@ class DynamicMessageDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_all_bank_level_dynamic_message_docs_serialize(
+        _param = self._get_all_bank_level_dynamic_message_docs_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1275,7 +1275,7 @@ class DynamicMessageDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllBankLevelDynamicMessageDocs200Response",
+            '200': "GetAllBankLevelDynamicMessageDocs200Response",
             '404': None,
             '500': None,
         }
@@ -1291,7 +1291,7 @@ class DynamicMessageDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_all_bank_level_dynamic_message_docs_without_preload_content(
+    def get_all_bank_level_dynamic_message_docs_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -1335,7 +1335,7 @@ class DynamicMessageDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_all_bank_level_dynamic_message_docs_serialize(
+        _param = self._get_all_bank_level_dynamic_message_docs_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1344,7 +1344,7 @@ class DynamicMessageDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllBankLevelDynamicMessageDocs200Response",
+            '200': "GetAllBankLevelDynamicMessageDocs200Response",
             '404': None,
             '500': None,
         }
@@ -1355,7 +1355,7 @@ class DynamicMessageDocApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_all_bank_level_dynamic_message_docs_serialize(
+    def _get_all_bank_level_dynamic_message_docs_serialize(
         self,
         bankid,
         _request_auth,
@@ -1422,7 +1422,7 @@ class DynamicMessageDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_all_dynamic_message_docs(
+    def get_all_dynamic_message_docs(
         self,
         _request_timeout: Union[
             None,
@@ -1436,7 +1436,7 @@ class DynamicMessageDocApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetAllBankLevelDynamicMessageDocs200Response:
+    ) -> GetAllBankLevelDynamicMessageDocs200Response:
         """Get all Dynamic Message Docs
 
         <p>Get all Dynamic Message Docs.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
@@ -1463,7 +1463,7 @@ class DynamicMessageDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_all_dynamic_message_docs_serialize(
+        _param = self._get_all_dynamic_message_docs_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1471,7 +1471,7 @@ class DynamicMessageDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllBankLevelDynamicMessageDocs200Response",
+            '200': "GetAllBankLevelDynamicMessageDocs200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1486,7 +1486,7 @@ class DynamicMessageDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_all_dynamic_message_docs_with_http_info(
+    def get_all_dynamic_message_docs_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -1500,7 +1500,7 @@ class DynamicMessageDocApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetAllBankLevelDynamicMessageDocs200Response]:
+    ) -> ApiResponse[GetAllBankLevelDynamicMessageDocs200Response]:
         """Get all Dynamic Message Docs
 
         <p>Get all Dynamic Message Docs.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
@@ -1527,7 +1527,7 @@ class DynamicMessageDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_all_dynamic_message_docs_serialize(
+        _param = self._get_all_dynamic_message_docs_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1535,7 +1535,7 @@ class DynamicMessageDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllBankLevelDynamicMessageDocs200Response",
+            '200': "GetAllBankLevelDynamicMessageDocs200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1550,7 +1550,7 @@ class DynamicMessageDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_all_dynamic_message_docs_without_preload_content(
+    def get_all_dynamic_message_docs_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -1591,7 +1591,7 @@ class DynamicMessageDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_all_dynamic_message_docs_serialize(
+        _param = self._get_all_dynamic_message_docs_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1599,7 +1599,7 @@ class DynamicMessageDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllBankLevelDynamicMessageDocs200Response",
+            '200': "GetAllBankLevelDynamicMessageDocs200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1609,7 +1609,7 @@ class DynamicMessageDocApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_all_dynamic_message_docs_serialize(
+    def _get_all_dynamic_message_docs_serialize(
         self,
         _request_auth,
         _content_type,
@@ -1673,7 +1673,7 @@ class DynamicMessageDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_bank_level_dynamic_message_doc(
+    def get_bank_level_dynamic_message_doc(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         dynamicmessagedocid: Annotated[StrictStr, Field(description="The DYNAMICMESSAGEDOCID identifier")],
@@ -1689,7 +1689,7 @@ class DynamicMessageDocApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetDynamicMessageDoc200Response:
+    ) -> GetDynamicMessageDoc200Response:
         """Get Bank Level Dynamic Message Doc
 
         <p>Get a Bank Level Dynamic Message Doc by DYNAMIC_MESSAGE_DOC_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">DYNAMIC_MESSAGE_DOC_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
@@ -1720,7 +1720,7 @@ class DynamicMessageDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_bank_level_dynamic_message_doc_serialize(
+        _param = self._get_bank_level_dynamic_message_doc_serialize(
             bankid=bankid,
             dynamicmessagedocid=dynamicmessagedocid,
             _request_auth=_request_auth,
@@ -1730,7 +1730,7 @@ class DynamicMessageDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetDynamicMessageDoc200Response",
+            '200': "GetDynamicMessageDoc200Response",
             '404': None,
             '500': None,
         }
@@ -1746,7 +1746,7 @@ class DynamicMessageDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_bank_level_dynamic_message_doc_with_http_info(
+    def get_bank_level_dynamic_message_doc_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         dynamicmessagedocid: Annotated[StrictStr, Field(description="The DYNAMICMESSAGEDOCID identifier")],
@@ -1762,7 +1762,7 @@ class DynamicMessageDocApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetDynamicMessageDoc200Response]:
+    ) -> ApiResponse[GetDynamicMessageDoc200Response]:
         """Get Bank Level Dynamic Message Doc
 
         <p>Get a Bank Level Dynamic Message Doc by DYNAMIC_MESSAGE_DOC_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">DYNAMIC_MESSAGE_DOC_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
@@ -1793,7 +1793,7 @@ class DynamicMessageDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_bank_level_dynamic_message_doc_serialize(
+        _param = self._get_bank_level_dynamic_message_doc_serialize(
             bankid=bankid,
             dynamicmessagedocid=dynamicmessagedocid,
             _request_auth=_request_auth,
@@ -1803,7 +1803,7 @@ class DynamicMessageDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetDynamicMessageDoc200Response",
+            '200': "GetDynamicMessageDoc200Response",
             '404': None,
             '500': None,
         }
@@ -1819,7 +1819,7 @@ class DynamicMessageDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_bank_level_dynamic_message_doc_without_preload_content(
+    def get_bank_level_dynamic_message_doc_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         dynamicmessagedocid: Annotated[StrictStr, Field(description="The DYNAMICMESSAGEDOCID identifier")],
@@ -1866,7 +1866,7 @@ class DynamicMessageDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_bank_level_dynamic_message_doc_serialize(
+        _param = self._get_bank_level_dynamic_message_doc_serialize(
             bankid=bankid,
             dynamicmessagedocid=dynamicmessagedocid,
             _request_auth=_request_auth,
@@ -1876,7 +1876,7 @@ class DynamicMessageDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetDynamicMessageDoc200Response",
+            '200': "GetDynamicMessageDoc200Response",
             '404': None,
             '500': None,
         }
@@ -1887,7 +1887,7 @@ class DynamicMessageDocApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_bank_level_dynamic_message_doc_serialize(
+    def _get_bank_level_dynamic_message_doc_serialize(
         self,
         bankid,
         dynamicmessagedocid,
@@ -1957,7 +1957,7 @@ class DynamicMessageDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_dynamic_message_doc(
+    def get_dynamic_message_doc(
         self,
         dynamicmessagedocid: Annotated[StrictStr, Field(description="The DYNAMICMESSAGEDOCID identifier")],
         _request_timeout: Union[
@@ -1972,7 +1972,7 @@ class DynamicMessageDocApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetDynamicMessageDoc200Response:
+    ) -> GetDynamicMessageDoc200Response:
         """Get Dynamic Message Doc
 
         <p>Get a Dynamic Message Doc by DYNAMIC_MESSAGE_DOC_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">DYNAMIC_MESSAGE_DOC_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
@@ -2001,7 +2001,7 @@ class DynamicMessageDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_dynamic_message_doc_serialize(
+        _param = self._get_dynamic_message_doc_serialize(
             dynamicmessagedocid=dynamicmessagedocid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2010,7 +2010,7 @@ class DynamicMessageDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetDynamicMessageDoc200Response",
+            '200': "GetDynamicMessageDoc200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2025,7 +2025,7 @@ class DynamicMessageDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_dynamic_message_doc_with_http_info(
+    def get_dynamic_message_doc_with_http_info(
         self,
         dynamicmessagedocid: Annotated[StrictStr, Field(description="The DYNAMICMESSAGEDOCID identifier")],
         _request_timeout: Union[
@@ -2040,7 +2040,7 @@ class DynamicMessageDocApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetDynamicMessageDoc200Response]:
+    ) -> ApiResponse[GetDynamicMessageDoc200Response]:
         """Get Dynamic Message Doc
 
         <p>Get a Dynamic Message Doc by DYNAMIC_MESSAGE_DOC_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">DYNAMIC_MESSAGE_DOC_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
@@ -2069,7 +2069,7 @@ class DynamicMessageDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_dynamic_message_doc_serialize(
+        _param = self._get_dynamic_message_doc_serialize(
             dynamicmessagedocid=dynamicmessagedocid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2078,7 +2078,7 @@ class DynamicMessageDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetDynamicMessageDoc200Response",
+            '200': "GetDynamicMessageDoc200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2093,7 +2093,7 @@ class DynamicMessageDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_dynamic_message_doc_without_preload_content(
+    def get_dynamic_message_doc_without_preload_content(
         self,
         dynamicmessagedocid: Annotated[StrictStr, Field(description="The DYNAMICMESSAGEDOCID identifier")],
         _request_timeout: Union[
@@ -2137,7 +2137,7 @@ class DynamicMessageDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_dynamic_message_doc_serialize(
+        _param = self._get_dynamic_message_doc_serialize(
             dynamicmessagedocid=dynamicmessagedocid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2146,7 +2146,7 @@ class DynamicMessageDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetDynamicMessageDoc200Response",
+            '200': "GetDynamicMessageDoc200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2156,7 +2156,7 @@ class DynamicMessageDocApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_dynamic_message_doc_serialize(
+    def _get_dynamic_message_doc_serialize(
         self,
         dynamicmessagedocid,
         _request_auth,
@@ -2223,11 +2223,11 @@ class DynamicMessageDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_update_bank_level_dynamic_message_doc(
+    def update_bank_level_dynamic_message_doc(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         dynamicmessagedocid: Annotated[StrictStr, Field(description="The DYNAMICMESSAGEDOCID identifier")],
-        obpv400_update_dynamic_message_doc_request: Annotated[OBPv400UpdateDynamicMessageDocRequest, Field(description="Request body")],
+        update_dynamic_message_doc_request: Annotated[UpdateDynamicMessageDocRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2240,7 +2240,7 @@ class DynamicMessageDocApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetDynamicMessageDoc200Response:
+    ) -> GetDynamicMessageDoc200Response:
         """Update Bank Level Dynamic Message Doc
 
         <p>Update a Bank Level Dynamic Message Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">DYNAMIC_MESSAGE_DOC_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
@@ -2249,8 +2249,8 @@ class DynamicMessageDocApi:
         :type bankid: str
         :param dynamicmessagedocid: The DYNAMICMESSAGEDOCID identifier (required)
         :type dynamicmessagedocid: str
-        :param obpv400_update_dynamic_message_doc_request: Request body (required)
-        :type obpv400_update_dynamic_message_doc_request: OBPv400UpdateDynamicMessageDocRequest
+        :param update_dynamic_message_doc_request: Request body (required)
+        :type update_dynamic_message_doc_request: UpdateDynamicMessageDocRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2273,10 +2273,10 @@ class DynamicMessageDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_update_bank_level_dynamic_message_doc_serialize(
+        _param = self._update_bank_level_dynamic_message_doc_serialize(
             bankid=bankid,
             dynamicmessagedocid=dynamicmessagedocid,
-            obpv400_update_dynamic_message_doc_request=obpv400_update_dynamic_message_doc_request,
+            update_dynamic_message_doc_request=update_dynamic_message_doc_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2284,7 +2284,7 @@ class DynamicMessageDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetDynamicMessageDoc200Response",
+            '200': "GetDynamicMessageDoc200Response",
             '404': None,
             '500': None,
         }
@@ -2300,11 +2300,11 @@ class DynamicMessageDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_update_bank_level_dynamic_message_doc_with_http_info(
+    def update_bank_level_dynamic_message_doc_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         dynamicmessagedocid: Annotated[StrictStr, Field(description="The DYNAMICMESSAGEDOCID identifier")],
-        obpv400_update_dynamic_message_doc_request: Annotated[OBPv400UpdateDynamicMessageDocRequest, Field(description="Request body")],
+        update_dynamic_message_doc_request: Annotated[UpdateDynamicMessageDocRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2317,7 +2317,7 @@ class DynamicMessageDocApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetDynamicMessageDoc200Response]:
+    ) -> ApiResponse[GetDynamicMessageDoc200Response]:
         """Update Bank Level Dynamic Message Doc
 
         <p>Update a Bank Level Dynamic Message Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">DYNAMIC_MESSAGE_DOC_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
@@ -2326,8 +2326,8 @@ class DynamicMessageDocApi:
         :type bankid: str
         :param dynamicmessagedocid: The DYNAMICMESSAGEDOCID identifier (required)
         :type dynamicmessagedocid: str
-        :param obpv400_update_dynamic_message_doc_request: Request body (required)
-        :type obpv400_update_dynamic_message_doc_request: OBPv400UpdateDynamicMessageDocRequest
+        :param update_dynamic_message_doc_request: Request body (required)
+        :type update_dynamic_message_doc_request: UpdateDynamicMessageDocRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2350,10 +2350,10 @@ class DynamicMessageDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_update_bank_level_dynamic_message_doc_serialize(
+        _param = self._update_bank_level_dynamic_message_doc_serialize(
             bankid=bankid,
             dynamicmessagedocid=dynamicmessagedocid,
-            obpv400_update_dynamic_message_doc_request=obpv400_update_dynamic_message_doc_request,
+            update_dynamic_message_doc_request=update_dynamic_message_doc_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2361,7 +2361,7 @@ class DynamicMessageDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetDynamicMessageDoc200Response",
+            '200': "GetDynamicMessageDoc200Response",
             '404': None,
             '500': None,
         }
@@ -2377,11 +2377,11 @@ class DynamicMessageDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_update_bank_level_dynamic_message_doc_without_preload_content(
+    def update_bank_level_dynamic_message_doc_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         dynamicmessagedocid: Annotated[StrictStr, Field(description="The DYNAMICMESSAGEDOCID identifier")],
-        obpv400_update_dynamic_message_doc_request: Annotated[OBPv400UpdateDynamicMessageDocRequest, Field(description="Request body")],
+        update_dynamic_message_doc_request: Annotated[UpdateDynamicMessageDocRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2403,8 +2403,8 @@ class DynamicMessageDocApi:
         :type bankid: str
         :param dynamicmessagedocid: The DYNAMICMESSAGEDOCID identifier (required)
         :type dynamicmessagedocid: str
-        :param obpv400_update_dynamic_message_doc_request: Request body (required)
-        :type obpv400_update_dynamic_message_doc_request: OBPv400UpdateDynamicMessageDocRequest
+        :param update_dynamic_message_doc_request: Request body (required)
+        :type update_dynamic_message_doc_request: UpdateDynamicMessageDocRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2427,10 +2427,10 @@ class DynamicMessageDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_update_bank_level_dynamic_message_doc_serialize(
+        _param = self._update_bank_level_dynamic_message_doc_serialize(
             bankid=bankid,
             dynamicmessagedocid=dynamicmessagedocid,
-            obpv400_update_dynamic_message_doc_request=obpv400_update_dynamic_message_doc_request,
+            update_dynamic_message_doc_request=update_dynamic_message_doc_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2438,7 +2438,7 @@ class DynamicMessageDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetDynamicMessageDoc200Response",
+            '200': "GetDynamicMessageDoc200Response",
             '404': None,
             '500': None,
         }
@@ -2449,11 +2449,11 @@ class DynamicMessageDocApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_update_bank_level_dynamic_message_doc_serialize(
+    def _update_bank_level_dynamic_message_doc_serialize(
         self,
         bankid,
         dynamicmessagedocid,
-        obpv400_update_dynamic_message_doc_request,
+        update_dynamic_message_doc_request,
         _request_auth,
         _content_type,
         _headers,
@@ -2483,8 +2483,8 @@ class DynamicMessageDocApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_update_dynamic_message_doc_request is not None:
-            _body_params = obpv400_update_dynamic_message_doc_request
+        if update_dynamic_message_doc_request is not None:
+            _body_params = update_dynamic_message_doc_request
 
 
         # set the HTTP header `Accept`
@@ -2535,10 +2535,10 @@ class DynamicMessageDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_update_dynamic_message_doc(
+    def update_dynamic_message_doc(
         self,
         dynamicmessagedocid: Annotated[StrictStr, Field(description="The DYNAMICMESSAGEDOCID identifier")],
-        obpv400_update_dynamic_message_doc_request: Annotated[OBPv400UpdateDynamicMessageDocRequest, Field(description="Request body")],
+        update_dynamic_message_doc_request: Annotated[UpdateDynamicMessageDocRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2551,15 +2551,15 @@ class DynamicMessageDocApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetDynamicMessageDoc200Response:
+    ) -> GetDynamicMessageDoc200Response:
         """Update Dynamic Message Doc
 
         <p>Update a Dynamic Message Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">DYNAMIC_MESSAGE_DOC_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
 
         :param dynamicmessagedocid: The DYNAMICMESSAGEDOCID identifier (required)
         :type dynamicmessagedocid: str
-        :param obpv400_update_dynamic_message_doc_request: Request body (required)
-        :type obpv400_update_dynamic_message_doc_request: OBPv400UpdateDynamicMessageDocRequest
+        :param update_dynamic_message_doc_request: Request body (required)
+        :type update_dynamic_message_doc_request: UpdateDynamicMessageDocRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2582,9 +2582,9 @@ class DynamicMessageDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_update_dynamic_message_doc_serialize(
+        _param = self._update_dynamic_message_doc_serialize(
             dynamicmessagedocid=dynamicmessagedocid,
-            obpv400_update_dynamic_message_doc_request=obpv400_update_dynamic_message_doc_request,
+            update_dynamic_message_doc_request=update_dynamic_message_doc_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2592,7 +2592,7 @@ class DynamicMessageDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetDynamicMessageDoc200Response",
+            '200': "GetDynamicMessageDoc200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2607,10 +2607,10 @@ class DynamicMessageDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_update_dynamic_message_doc_with_http_info(
+    def update_dynamic_message_doc_with_http_info(
         self,
         dynamicmessagedocid: Annotated[StrictStr, Field(description="The DYNAMICMESSAGEDOCID identifier")],
-        obpv400_update_dynamic_message_doc_request: Annotated[OBPv400UpdateDynamicMessageDocRequest, Field(description="Request body")],
+        update_dynamic_message_doc_request: Annotated[UpdateDynamicMessageDocRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2623,15 +2623,15 @@ class DynamicMessageDocApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetDynamicMessageDoc200Response]:
+    ) -> ApiResponse[GetDynamicMessageDoc200Response]:
         """Update Dynamic Message Doc
 
         <p>Update a Dynamic Message Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">DYNAMIC_MESSAGE_DOC_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
 
         :param dynamicmessagedocid: The DYNAMICMESSAGEDOCID identifier (required)
         :type dynamicmessagedocid: str
-        :param obpv400_update_dynamic_message_doc_request: Request body (required)
-        :type obpv400_update_dynamic_message_doc_request: OBPv400UpdateDynamicMessageDocRequest
+        :param update_dynamic_message_doc_request: Request body (required)
+        :type update_dynamic_message_doc_request: UpdateDynamicMessageDocRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2654,9 +2654,9 @@ class DynamicMessageDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_update_dynamic_message_doc_serialize(
+        _param = self._update_dynamic_message_doc_serialize(
             dynamicmessagedocid=dynamicmessagedocid,
-            obpv400_update_dynamic_message_doc_request=obpv400_update_dynamic_message_doc_request,
+            update_dynamic_message_doc_request=update_dynamic_message_doc_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2664,7 +2664,7 @@ class DynamicMessageDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetDynamicMessageDoc200Response",
+            '200': "GetDynamicMessageDoc200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2679,10 +2679,10 @@ class DynamicMessageDocApi:
 
 
     @validate_call
-    def o_bpv4_0_0_update_dynamic_message_doc_without_preload_content(
+    def update_dynamic_message_doc_without_preload_content(
         self,
         dynamicmessagedocid: Annotated[StrictStr, Field(description="The DYNAMICMESSAGEDOCID identifier")],
-        obpv400_update_dynamic_message_doc_request: Annotated[OBPv400UpdateDynamicMessageDocRequest, Field(description="Request body")],
+        update_dynamic_message_doc_request: Annotated[UpdateDynamicMessageDocRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2702,8 +2702,8 @@ class DynamicMessageDocApi:
 
         :param dynamicmessagedocid: The DYNAMICMESSAGEDOCID identifier (required)
         :type dynamicmessagedocid: str
-        :param obpv400_update_dynamic_message_doc_request: Request body (required)
-        :type obpv400_update_dynamic_message_doc_request: OBPv400UpdateDynamicMessageDocRequest
+        :param update_dynamic_message_doc_request: Request body (required)
+        :type update_dynamic_message_doc_request: UpdateDynamicMessageDocRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2726,9 +2726,9 @@ class DynamicMessageDocApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_update_dynamic_message_doc_serialize(
+        _param = self._update_dynamic_message_doc_serialize(
             dynamicmessagedocid=dynamicmessagedocid,
-            obpv400_update_dynamic_message_doc_request=obpv400_update_dynamic_message_doc_request,
+            update_dynamic_message_doc_request=update_dynamic_message_doc_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2736,7 +2736,7 @@ class DynamicMessageDocApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetDynamicMessageDoc200Response",
+            '200': "GetDynamicMessageDoc200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2746,10 +2746,10 @@ class DynamicMessageDocApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_update_dynamic_message_doc_serialize(
+    def _update_dynamic_message_doc_serialize(
         self,
         dynamicmessagedocid,
-        obpv400_update_dynamic_message_doc_request,
+        update_dynamic_message_doc_request,
         _request_auth,
         _content_type,
         _headers,
@@ -2777,8 +2777,8 @@ class DynamicMessageDocApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_update_dynamic_message_doc_request is not None:
-            _body_params = obpv400_update_dynamic_message_doc_request
+        if update_dynamic_message_doc_request is not None:
+            _body_params = update_dynamic_message_doc_request
 
 
         # set the HTTP header `Accept`

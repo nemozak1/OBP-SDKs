@@ -36,7 +36,7 @@ class LogCacheApi:
 
 
     @validate_call
-    def o_bpv5_1_0_log_cache_all_endpoint(
+    def log_cache_all_endpoint(
         self,
         _request_timeout: Union[
             None,
@@ -77,7 +77,7 @@ class LogCacheApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_log_cache_all_endpoint_serialize(
+        _param = self._log_cache_all_endpoint_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -100,7 +100,7 @@ class LogCacheApi:
 
 
     @validate_call
-    def o_bpv5_1_0_log_cache_all_endpoint_with_http_info(
+    def log_cache_all_endpoint_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -141,7 +141,7 @@ class LogCacheApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_log_cache_all_endpoint_serialize(
+        _param = self._log_cache_all_endpoint_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -164,7 +164,7 @@ class LogCacheApi:
 
 
     @validate_call
-    def o_bpv5_1_0_log_cache_all_endpoint_without_preload_content(
+    def log_cache_all_endpoint_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -205,7 +205,7 @@ class LogCacheApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_log_cache_all_endpoint_serialize(
+        _param = self._log_cache_all_endpoint_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -223,7 +223,7 @@ class LogCacheApi:
         return response_data.response
 
 
-    def _o_bpv5_1_0_log_cache_all_endpoint_serialize(
+    def _log_cache_all_endpoint_serialize(
         self,
         _request_auth,
         _content_type,
@@ -280,7 +280,7 @@ class LogCacheApi:
 
 
     @validate_call
-    def o_bpv5_1_0_log_cache_debug_endpoint(
+    def log_cache_debug_endpoint(
         self,
         _request_timeout: Union[
             None,
@@ -321,7 +321,7 @@ class LogCacheApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_log_cache_debug_endpoint_serialize(
+        _param = self._log_cache_debug_endpoint_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -344,7 +344,7 @@ class LogCacheApi:
 
 
     @validate_call
-    def o_bpv5_1_0_log_cache_debug_endpoint_with_http_info(
+    def log_cache_debug_endpoint_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -385,7 +385,7 @@ class LogCacheApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_log_cache_debug_endpoint_serialize(
+        _param = self._log_cache_debug_endpoint_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -408,7 +408,7 @@ class LogCacheApi:
 
 
     @validate_call
-    def o_bpv5_1_0_log_cache_debug_endpoint_without_preload_content(
+    def log_cache_debug_endpoint_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -449,7 +449,7 @@ class LogCacheApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_log_cache_debug_endpoint_serialize(
+        _param = self._log_cache_debug_endpoint_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -467,7 +467,7 @@ class LogCacheApi:
         return response_data.response
 
 
-    def _o_bpv5_1_0_log_cache_debug_endpoint_serialize(
+    def _log_cache_debug_endpoint_serialize(
         self,
         _request_auth,
         _content_type,
@@ -524,7 +524,7 @@ class LogCacheApi:
 
 
     @validate_call
-    def o_bpv5_1_0_log_cache_error_endpoint(
+    def log_cache_error_endpoint(
         self,
         _request_timeout: Union[
             None,
@@ -565,7 +565,7 @@ class LogCacheApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_log_cache_error_endpoint_serialize(
+        _param = self._log_cache_error_endpoint_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -588,7 +588,7 @@ class LogCacheApi:
 
 
     @validate_call
-    def o_bpv5_1_0_log_cache_error_endpoint_with_http_info(
+    def log_cache_error_endpoint_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -629,7 +629,7 @@ class LogCacheApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_log_cache_error_endpoint_serialize(
+        _param = self._log_cache_error_endpoint_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -652,7 +652,7 @@ class LogCacheApi:
 
 
     @validate_call
-    def o_bpv5_1_0_log_cache_error_endpoint_without_preload_content(
+    def log_cache_error_endpoint_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -693,7 +693,7 @@ class LogCacheApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_log_cache_error_endpoint_serialize(
+        _param = self._log_cache_error_endpoint_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -711,7 +711,7 @@ class LogCacheApi:
         return response_data.response
 
 
-    def _o_bpv5_1_0_log_cache_error_endpoint_serialize(
+    def _log_cache_error_endpoint_serialize(
         self,
         _request_auth,
         _content_type,
@@ -768,7 +768,7 @@ class LogCacheApi:
 
 
     @validate_call
-    def o_bpv5_1_0_log_cache_info_endpoint(
+    def log_cache_info_endpoint(
         self,
         _request_timeout: Union[
             None,
@@ -809,7 +809,7 @@ class LogCacheApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_log_cache_info_endpoint_serialize(
+        _param = self._log_cache_info_endpoint_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -832,7 +832,7 @@ class LogCacheApi:
 
 
     @validate_call
-    def o_bpv5_1_0_log_cache_info_endpoint_with_http_info(
+    def log_cache_info_endpoint_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -873,7 +873,7 @@ class LogCacheApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_log_cache_info_endpoint_serialize(
+        _param = self._log_cache_info_endpoint_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -896,7 +896,7 @@ class LogCacheApi:
 
 
     @validate_call
-    def o_bpv5_1_0_log_cache_info_endpoint_without_preload_content(
+    def log_cache_info_endpoint_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -937,7 +937,7 @@ class LogCacheApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_log_cache_info_endpoint_serialize(
+        _param = self._log_cache_info_endpoint_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -955,7 +955,7 @@ class LogCacheApi:
         return response_data.response
 
 
-    def _o_bpv5_1_0_log_cache_info_endpoint_serialize(
+    def _log_cache_info_endpoint_serialize(
         self,
         _request_auth,
         _content_type,
@@ -1012,7 +1012,7 @@ class LogCacheApi:
 
 
     @validate_call
-    def o_bpv5_1_0_log_cache_trace_endpoint(
+    def log_cache_trace_endpoint(
         self,
         _request_timeout: Union[
             None,
@@ -1053,7 +1053,7 @@ class LogCacheApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_log_cache_trace_endpoint_serialize(
+        _param = self._log_cache_trace_endpoint_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1076,7 +1076,7 @@ class LogCacheApi:
 
 
     @validate_call
-    def o_bpv5_1_0_log_cache_trace_endpoint_with_http_info(
+    def log_cache_trace_endpoint_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -1117,7 +1117,7 @@ class LogCacheApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_log_cache_trace_endpoint_serialize(
+        _param = self._log_cache_trace_endpoint_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1140,7 +1140,7 @@ class LogCacheApi:
 
 
     @validate_call
-    def o_bpv5_1_0_log_cache_trace_endpoint_without_preload_content(
+    def log_cache_trace_endpoint_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -1181,7 +1181,7 @@ class LogCacheApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_log_cache_trace_endpoint_serialize(
+        _param = self._log_cache_trace_endpoint_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1199,7 +1199,7 @@ class LogCacheApi:
         return response_data.response
 
 
-    def _o_bpv5_1_0_log_cache_trace_endpoint_serialize(
+    def _log_cache_trace_endpoint_serialize(
         self,
         _request_auth,
         _content_type,
@@ -1256,7 +1256,7 @@ class LogCacheApi:
 
 
     @validate_call
-    def o_bpv5_1_0_log_cache_warning_endpoint(
+    def log_cache_warning_endpoint(
         self,
         _request_timeout: Union[
             None,
@@ -1297,7 +1297,7 @@ class LogCacheApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_log_cache_warning_endpoint_serialize(
+        _param = self._log_cache_warning_endpoint_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1320,7 +1320,7 @@ class LogCacheApi:
 
 
     @validate_call
-    def o_bpv5_1_0_log_cache_warning_endpoint_with_http_info(
+    def log_cache_warning_endpoint_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -1361,7 +1361,7 @@ class LogCacheApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_log_cache_warning_endpoint_serialize(
+        _param = self._log_cache_warning_endpoint_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1384,7 +1384,7 @@ class LogCacheApi:
 
 
     @validate_call
-    def o_bpv5_1_0_log_cache_warning_endpoint_without_preload_content(
+    def log_cache_warning_endpoint_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -1425,7 +1425,7 @@ class LogCacheApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_log_cache_warning_endpoint_serialize(
+        _param = self._log_cache_warning_endpoint_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1443,7 +1443,7 @@ class LogCacheApi:
         return response_data.response
 
 
-    def _o_bpv5_1_0_log_cache_warning_endpoint_serialize(
+    def _log_cache_warning_endpoint_serialize(
         self,
         _request_auth,
         _content_type,

@@ -14,12 +14,12 @@ open class BalanceAPI {
      
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
-     - parameter oBPv510CreateBankAccountBalanceRequest: (body) Request body 
+     - parameter createBankAccountBalanceRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems
+     - returns: GetAllBankAccountBalances200ResponseBalancesInner
      */
-    open class func oBPv510CreateBankAccountBalance(bankid: String, accountid: String, oBPv510CreateBankAccountBalanceRequest: OBPv510CreateBankAccountBalanceRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems {
-        return try await oBPv510CreateBankAccountBalanceWithRequestBuilder(bankid: bankid, accountid: accountid, oBPv510CreateBankAccountBalanceRequest: oBPv510CreateBankAccountBalanceRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func createBankAccountBalance(bankid: String, accountid: String, createBankAccountBalanceRequest: CreateBankAccountBalanceRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAllBankAccountBalances200ResponseBalancesInner {
+        return try await createBankAccountBalanceWithRequestBuilder(bankid: bankid, accountid: accountid, createBankAccountBalanceRequest: createBankAccountBalanceRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -33,15 +33,15 @@ open class BalanceAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
-     - parameter oBPv510CreateBankAccountBalanceRequest: (body) Request body 
+     - parameter createBankAccountBalanceRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems> 
+     - returns: RequestBuilder<GetAllBankAccountBalances200ResponseBalancesInner> 
      */
-    open class func oBPv510CreateBankAccountBalanceWithRequestBuilder(bankid: String, accountid: String, oBPv510CreateBankAccountBalanceRequest: OBPv510CreateBankAccountBalanceRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems> {
+    open class func createBankAccountBalanceWithRequestBuilder(bankid: String, accountid: String, createBankAccountBalanceRequest: CreateBankAccountBalanceRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAllBankAccountBalances200ResponseBalancesInner> {
         var localVariablePath = "/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -50,7 +50,7 @@ open class BalanceAPI {
         let accountidPostEscape = accountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{accountid}", with: accountidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv510CreateBankAccountBalanceRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createBankAccountBalanceRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -60,7 +60,7 @@ open class BalanceAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAllBankAccountBalances200ResponseBalancesInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -74,8 +74,8 @@ open class BalanceAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv510DeleteBankAccountBalance(bankid: String, accountid: String, balanceid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv510DeleteBankAccountBalanceWithRequestBuilder(bankid: bankid, accountid: accountid, balanceid: balanceid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteBankAccountBalance(bankid: String, accountid: String, balanceid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteBankAccountBalanceWithRequestBuilder(bankid: bankid, accountid: accountid, balanceid: balanceid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -89,7 +89,7 @@ open class BalanceAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
@@ -97,7 +97,7 @@ open class BalanceAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv510DeleteBankAccountBalanceWithRequestBuilder(bankid: String, accountid: String, balanceid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteBankAccountBalanceWithRequestBuilder(bankid: String, accountid: String, balanceid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -130,10 +130,10 @@ open class BalanceAPI {
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv510GetAllBankAccountBalances200Response
+     - returns: GetAllBankAccountBalances200Response
      */
-    open class func oBPv510GetAllBankAccountBalances(bankid: String, accountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv510GetAllBankAccountBalances200Response {
-        return try await oBPv510GetAllBankAccountBalancesWithRequestBuilder(bankid: bankid, accountid: accountid, apiConfiguration: apiConfiguration).execute().body
+    open class func getAllBankAccountBalances(bankid: String, accountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAllBankAccountBalances200Response {
+        return try await getAllBankAccountBalancesWithRequestBuilder(bankid: bankid, accountid: accountid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -147,14 +147,14 @@ open class BalanceAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv510GetAllBankAccountBalances200Response> 
+     - returns: RequestBuilder<GetAllBankAccountBalances200Response> 
      */
-    open class func oBPv510GetAllBankAccountBalancesWithRequestBuilder(bankid: String, accountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv510GetAllBankAccountBalances200Response> {
+    open class func getAllBankAccountBalancesWithRequestBuilder(bankid: String, accountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAllBankAccountBalances200Response> {
         var localVariablePath = "/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -173,7 +173,7 @@ open class BalanceAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv510GetAllBankAccountBalances200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAllBankAccountBalances200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -185,10 +185,10 @@ open class BalanceAPI {
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter balanceid: (path) The BALANCEID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems
+     - returns: GetAllBankAccountBalances200ResponseBalancesInner
      */
-    open class func oBPv510GetBankAccountBalanceById(bankid: String, accountid: String, balanceid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems {
-        return try await oBPv510GetBankAccountBalanceByIdWithRequestBuilder(bankid: bankid, accountid: accountid, balanceid: balanceid, apiConfiguration: apiConfiguration).execute().body
+    open class func getBankAccountBalanceById(bankid: String, accountid: String, balanceid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAllBankAccountBalances200ResponseBalancesInner {
+        return try await getBankAccountBalanceByIdWithRequestBuilder(bankid: bankid, accountid: accountid, balanceid: balanceid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -202,15 +202,15 @@ open class BalanceAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter balanceid: (path) The BALANCEID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems> 
+     - returns: RequestBuilder<GetAllBankAccountBalances200ResponseBalancesInner> 
      */
-    open class func oBPv510GetBankAccountBalanceByIdWithRequestBuilder(bankid: String, accountid: String, balanceid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems> {
+    open class func getBankAccountBalanceByIdWithRequestBuilder(bankid: String, accountid: String, balanceid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAllBankAccountBalances200ResponseBalancesInner> {
         var localVariablePath = "/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -232,7 +232,7 @@ open class BalanceAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAllBankAccountBalances200ResponseBalancesInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -243,12 +243,12 @@ open class BalanceAPI {
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter balanceid: (path) The BALANCEID identifier 
-     - parameter oBPv510CreateBankAccountBalanceRequest: (body) Request body 
+     - parameter createBankAccountBalanceRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems
+     - returns: GetAllBankAccountBalances200ResponseBalancesInner
      */
-    open class func oBPv510UpdateBankAccountBalance(bankid: String, accountid: String, balanceid: String, oBPv510CreateBankAccountBalanceRequest: OBPv510CreateBankAccountBalanceRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems {
-        return try await oBPv510UpdateBankAccountBalanceWithRequestBuilder(bankid: bankid, accountid: accountid, balanceid: balanceid, oBPv510CreateBankAccountBalanceRequest: oBPv510CreateBankAccountBalanceRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func updateBankAccountBalance(bankid: String, accountid: String, balanceid: String, createBankAccountBalanceRequest: CreateBankAccountBalanceRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAllBankAccountBalances200ResponseBalancesInner {
+        return try await updateBankAccountBalanceWithRequestBuilder(bankid: bankid, accountid: accountid, balanceid: balanceid, createBankAccountBalanceRequest: createBankAccountBalanceRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -262,16 +262,16 @@ open class BalanceAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter balanceid: (path) The BALANCEID identifier 
-     - parameter oBPv510CreateBankAccountBalanceRequest: (body) Request body 
+     - parameter createBankAccountBalanceRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems> 
+     - returns: RequestBuilder<GetAllBankAccountBalances200ResponseBalancesInner> 
      */
-    open class func oBPv510UpdateBankAccountBalanceWithRequestBuilder(bankid: String, accountid: String, balanceid: String, oBPv510CreateBankAccountBalanceRequest: OBPv510CreateBankAccountBalanceRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems> {
+    open class func updateBankAccountBalanceWithRequestBuilder(bankid: String, accountid: String, balanceid: String, createBankAccountBalanceRequest: CreateBankAccountBalanceRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAllBankAccountBalances200ResponseBalancesInner> {
         var localVariablePath = "/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -283,7 +283,7 @@ open class BalanceAPI {
         let balanceidPostEscape = balanceidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{balanceid}", with: balanceidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv510CreateBankAccountBalanceRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createBankAccountBalanceRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -293,7 +293,7 @@ open class BalanceAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAllBankAccountBalances200ResponseBalancesInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }

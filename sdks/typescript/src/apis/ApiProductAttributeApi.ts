@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,39 +15,39 @@
 
 import * as runtime from '../runtime';
 import type {
-  OBPv510UpdateAtmAttributeRequest,
-  OBPv600CreateApiProductAttribute200Response,
+  CreateApiProductAttribute200Response,
+  UpdateAtmAttributeRequest,
 } from '../models/index';
 import {
-    OBPv510UpdateAtmAttributeRequestFromJSON,
-    OBPv510UpdateAtmAttributeRequestToJSON,
-    OBPv600CreateApiProductAttribute200ResponseFromJSON,
-    OBPv600CreateApiProductAttribute200ResponseToJSON,
+    CreateApiProductAttribute200ResponseFromJSON,
+    CreateApiProductAttribute200ResponseToJSON,
+    UpdateAtmAttributeRequestFromJSON,
+    UpdateAtmAttributeRequestToJSON,
 } from '../models/index';
 
-export interface OBPv600CreateApiProductAttributeRequest {
+export interface CreateApiProductAttributeRequest {
     bankid: string;
     apiproductcode: string;
-    oBPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest;
+    updateAtmAttributeRequest: UpdateAtmAttributeRequest;
 }
 
-export interface OBPv600DeleteApiProductAttributeRequest {
+export interface DeleteApiProductAttributeRequest {
     bankid: string;
     apiproductcode: string;
     apiproductattributeid: string;
 }
 
-export interface OBPv600GetApiProductAttributeRequest {
+export interface GetApiProductAttributeRequest {
     bankid: string;
     apiproductcode: string;
     apiproductattributeid: string;
 }
 
-export interface OBPv600UpdateApiProductAttributeRequest {
+export interface UpdateApiProductAttributeRequest {
     bankid: string;
     apiproductcode: string;
     apiproductattributeid: string;
-    oBPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest;
+    updateAtmAttributeRequest: UpdateAtmAttributeRequest;
 }
 
 /**
@@ -56,27 +56,27 @@ export interface OBPv600UpdateApiProductAttributeRequest {
 export class ApiProductAttributeApi extends runtime.BaseAPI {
 
     /**
-     * Creates request options for oBPv600CreateApiProductAttribute without sending the request
+     * Creates request options for createApiProductAttribute without sending the request
      */
-    async oBPv600CreateApiProductAttributeRequestOpts(requestParameters: OBPv600CreateApiProductAttributeRequest): Promise<runtime.RequestOpts> {
+    async createApiProductAttributeRequestOpts(requestParameters: CreateApiProductAttributeRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv600CreateApiProductAttribute().'
+                'Required parameter "bankid" was null or undefined when calling createApiProductAttribute().'
             );
         }
 
         if (requestParameters['apiproductcode'] == null) {
             throw new runtime.RequiredError(
                 'apiproductcode',
-                'Required parameter "apiproductcode" was null or undefined when calling oBPv600CreateApiProductAttribute().'
+                'Required parameter "apiproductcode" was null or undefined when calling createApiProductAttribute().'
             );
         }
 
-        if (requestParameters['oBPv510UpdateAtmAttributeRequest'] == null) {
+        if (requestParameters['updateAtmAttributeRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv510UpdateAtmAttributeRequest',
-                'Required parameter "oBPv510UpdateAtmAttributeRequest" was null or undefined when calling oBPv600CreateApiProductAttribute().'
+                'updateAtmAttributeRequest',
+                'Required parameter "updateAtmAttributeRequest" was null or undefined when calling createApiProductAttribute().'
             );
         }
 
@@ -96,7 +96,7 @@ export class ApiProductAttributeApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -109,7 +109,7 @@ export class ApiProductAttributeApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv510UpdateAtmAttributeRequestToJSON(requestParameters['oBPv510UpdateAtmAttributeRequest']),
+            body: UpdateAtmAttributeRequestToJSON(requestParameters['updateAtmAttributeRequest']),
         };
     }
 
@@ -117,44 +117,44 @@ export class ApiProductAttributeApi extends runtime.BaseAPI {
      * <p>Create an Api Product Attribute.</p> <p>Authentication is Required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_PRODUCT_CODE</a>: API_PRODUCT_CODE</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_product_attribute_id</strong></a>: api_product_attribute_id</p> <p><a href=\"/glossary#\"><strong>api_product_code</strong></a>: api_product_code</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
      * Create Api Product Attribute
      */
-    async oBPv600CreateApiProductAttributeRaw(requestParameters: OBPv600CreateApiProductAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600CreateApiProductAttribute200Response>> {
-        const requestOptions = await this.oBPv600CreateApiProductAttributeRequestOpts(requestParameters);
+    async createApiProductAttributeRaw(requestParameters: CreateApiProductAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CreateApiProductAttribute200Response>> {
+        const requestOptions = await this.createApiProductAttributeRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600CreateApiProductAttribute200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateApiProductAttribute200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Create an Api Product Attribute.</p> <p>Authentication is Required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_PRODUCT_CODE</a>: API_PRODUCT_CODE</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_product_attribute_id</strong></a>: api_product_attribute_id</p> <p><a href=\"/glossary#\"><strong>api_product_code</strong></a>: api_product_code</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
      * Create Api Product Attribute
      */
-    async oBPv600CreateApiProductAttribute(requestParameters: OBPv600CreateApiProductAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600CreateApiProductAttribute200Response> {
-        const response = await this.oBPv600CreateApiProductAttributeRaw(requestParameters, initOverrides);
+    async createApiProductAttribute(requestParameters: CreateApiProductAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CreateApiProductAttribute200Response> {
+        const response = await this.createApiProductAttributeRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600DeleteApiProductAttribute without sending the request
+     * Creates request options for deleteApiProductAttribute without sending the request
      */
-    async oBPv600DeleteApiProductAttributeRequestOpts(requestParameters: OBPv600DeleteApiProductAttributeRequest): Promise<runtime.RequestOpts> {
+    async deleteApiProductAttributeRequestOpts(requestParameters: DeleteApiProductAttributeRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv600DeleteApiProductAttribute().'
+                'Required parameter "bankid" was null or undefined when calling deleteApiProductAttribute().'
             );
         }
 
         if (requestParameters['apiproductcode'] == null) {
             throw new runtime.RequiredError(
                 'apiproductcode',
-                'Required parameter "apiproductcode" was null or undefined when calling oBPv600DeleteApiProductAttribute().'
+                'Required parameter "apiproductcode" was null or undefined when calling deleteApiProductAttribute().'
             );
         }
 
         if (requestParameters['apiproductattributeid'] == null) {
             throw new runtime.RequiredError(
                 'apiproductattributeid',
-                'Required parameter "apiproductattributeid" was null or undefined when calling oBPv600DeleteApiProductAttribute().'
+                'Required parameter "apiproductattributeid" was null or undefined when calling deleteApiProductAttribute().'
             );
         }
 
@@ -172,7 +172,7 @@ export class ApiProductAttributeApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -193,8 +193,8 @@ export class ApiProductAttributeApi extends runtime.BaseAPI {
      * <p>Delete an Api Product Attribute by API_PRODUCT_ATTRIBUTE_ID.</p> <p>Authentication is Required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_PRODUCT_ATTRIBUTE_ID</a>: API_PRODUCT_ATTRIBUTE_ID</p> <p><a href=\"/glossary#\">API_PRODUCT_CODE</a>: API_PRODUCT_CODE</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete Api Product Attribute
      */
-    async oBPv600DeleteApiProductAttributeRaw(requestParameters: OBPv600DeleteApiProductAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv600DeleteApiProductAttributeRequestOpts(requestParameters);
+    async deleteApiProductAttributeRaw(requestParameters: DeleteApiProductAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteApiProductAttributeRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -204,32 +204,32 @@ export class ApiProductAttributeApi extends runtime.BaseAPI {
      * <p>Delete an Api Product Attribute by API_PRODUCT_ATTRIBUTE_ID.</p> <p>Authentication is Required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_PRODUCT_ATTRIBUTE_ID</a>: API_PRODUCT_ATTRIBUTE_ID</p> <p><a href=\"/glossary#\">API_PRODUCT_CODE</a>: API_PRODUCT_CODE</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete Api Product Attribute
      */
-    async oBPv600DeleteApiProductAttribute(requestParameters: OBPv600DeleteApiProductAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv600DeleteApiProductAttributeRaw(requestParameters, initOverrides);
+    async deleteApiProductAttribute(requestParameters: DeleteApiProductAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteApiProductAttributeRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Creates request options for oBPv600GetApiProductAttribute without sending the request
+     * Creates request options for getApiProductAttribute without sending the request
      */
-    async oBPv600GetApiProductAttributeRequestOpts(requestParameters: OBPv600GetApiProductAttributeRequest): Promise<runtime.RequestOpts> {
+    async getApiProductAttributeRequestOpts(requestParameters: GetApiProductAttributeRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv600GetApiProductAttribute().'
+                'Required parameter "bankid" was null or undefined when calling getApiProductAttribute().'
             );
         }
 
         if (requestParameters['apiproductcode'] == null) {
             throw new runtime.RequiredError(
                 'apiproductcode',
-                'Required parameter "apiproductcode" was null or undefined when calling oBPv600GetApiProductAttribute().'
+                'Required parameter "apiproductcode" was null or undefined when calling getApiProductAttribute().'
             );
         }
 
         if (requestParameters['apiproductattributeid'] == null) {
             throw new runtime.RequiredError(
                 'apiproductattributeid',
-                'Required parameter "apiproductattributeid" was null or undefined when calling oBPv600GetApiProductAttribute().'
+                'Required parameter "apiproductattributeid" was null or undefined when calling getApiProductAttribute().'
             );
         }
 
@@ -255,51 +255,51 @@ export class ApiProductAttributeApi extends runtime.BaseAPI {
      * <p>Get an Api Product Attribute by API_PRODUCT_ATTRIBUTE_ID.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_PRODUCT_ATTRIBUTE_ID</a>: API_PRODUCT_ATTRIBUTE_ID</p> <p><a href=\"/glossary#\">API_PRODUCT_CODE</a>: API_PRODUCT_CODE</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_product_attribute_id</strong></a>: api_product_attribute_id</p> <p><a href=\"/glossary#\"><strong>api_product_code</strong></a>: api_product_code</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
      * Get Api Product Attribute
      */
-    async oBPv600GetApiProductAttributeRaw(requestParameters: OBPv600GetApiProductAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600CreateApiProductAttribute200Response>> {
-        const requestOptions = await this.oBPv600GetApiProductAttributeRequestOpts(requestParameters);
+    async getApiProductAttributeRaw(requestParameters: GetApiProductAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CreateApiProductAttribute200Response>> {
+        const requestOptions = await this.getApiProductAttributeRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600CreateApiProductAttribute200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateApiProductAttribute200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get an Api Product Attribute by API_PRODUCT_ATTRIBUTE_ID.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_PRODUCT_ATTRIBUTE_ID</a>: API_PRODUCT_ATTRIBUTE_ID</p> <p><a href=\"/glossary#\">API_PRODUCT_CODE</a>: API_PRODUCT_CODE</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_product_attribute_id</strong></a>: api_product_attribute_id</p> <p><a href=\"/glossary#\"><strong>api_product_code</strong></a>: api_product_code</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
      * Get Api Product Attribute
      */
-    async oBPv600GetApiProductAttribute(requestParameters: OBPv600GetApiProductAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600CreateApiProductAttribute200Response> {
-        const response = await this.oBPv600GetApiProductAttributeRaw(requestParameters, initOverrides);
+    async getApiProductAttribute(requestParameters: GetApiProductAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CreateApiProductAttribute200Response> {
+        const response = await this.getApiProductAttributeRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600UpdateApiProductAttribute without sending the request
+     * Creates request options for updateApiProductAttribute without sending the request
      */
-    async oBPv600UpdateApiProductAttributeRequestOpts(requestParameters: OBPv600UpdateApiProductAttributeRequest): Promise<runtime.RequestOpts> {
+    async updateApiProductAttributeRequestOpts(requestParameters: UpdateApiProductAttributeRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv600UpdateApiProductAttribute().'
+                'Required parameter "bankid" was null or undefined when calling updateApiProductAttribute().'
             );
         }
 
         if (requestParameters['apiproductcode'] == null) {
             throw new runtime.RequiredError(
                 'apiproductcode',
-                'Required parameter "apiproductcode" was null or undefined when calling oBPv600UpdateApiProductAttribute().'
+                'Required parameter "apiproductcode" was null or undefined when calling updateApiProductAttribute().'
             );
         }
 
         if (requestParameters['apiproductattributeid'] == null) {
             throw new runtime.RequiredError(
                 'apiproductattributeid',
-                'Required parameter "apiproductattributeid" was null or undefined when calling oBPv600UpdateApiProductAttribute().'
+                'Required parameter "apiproductattributeid" was null or undefined when calling updateApiProductAttribute().'
             );
         }
 
-        if (requestParameters['oBPv510UpdateAtmAttributeRequest'] == null) {
+        if (requestParameters['updateAtmAttributeRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv510UpdateAtmAttributeRequest',
-                'Required parameter "oBPv510UpdateAtmAttributeRequest" was null or undefined when calling oBPv600UpdateApiProductAttribute().'
+                'updateAtmAttributeRequest',
+                'Required parameter "updateAtmAttributeRequest" was null or undefined when calling updateApiProductAttribute().'
             );
         }
 
@@ -319,7 +319,7 @@ export class ApiProductAttributeApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -333,7 +333,7 @@ export class ApiProductAttributeApi extends runtime.BaseAPI {
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv510UpdateAtmAttributeRequestToJSON(requestParameters['oBPv510UpdateAtmAttributeRequest']),
+            body: UpdateAtmAttributeRequestToJSON(requestParameters['updateAtmAttributeRequest']),
         };
     }
 
@@ -341,19 +341,19 @@ export class ApiProductAttributeApi extends runtime.BaseAPI {
      * <p>Update an Api Product Attribute.</p> <p>Authentication is Required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_PRODUCT_ATTRIBUTE_ID</a>: API_PRODUCT_ATTRIBUTE_ID</p> <p><a href=\"/glossary#\">API_PRODUCT_CODE</a>: API_PRODUCT_CODE</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_product_attribute_id</strong></a>: api_product_attribute_id</p> <p><a href=\"/glossary#\"><strong>api_product_code</strong></a>: api_product_code</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
      * Update Api Product Attribute
      */
-    async oBPv600UpdateApiProductAttributeRaw(requestParameters: OBPv600UpdateApiProductAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600CreateApiProductAttribute200Response>> {
-        const requestOptions = await this.oBPv600UpdateApiProductAttributeRequestOpts(requestParameters);
+    async updateApiProductAttributeRaw(requestParameters: UpdateApiProductAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CreateApiProductAttribute200Response>> {
+        const requestOptions = await this.updateApiProductAttributeRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600CreateApiProductAttribute200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateApiProductAttribute200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Update an Api Product Attribute.</p> <p>Authentication is Required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_PRODUCT_ATTRIBUTE_ID</a>: API_PRODUCT_ATTRIBUTE_ID</p> <p><a href=\"/glossary#\">API_PRODUCT_CODE</a>: API_PRODUCT_CODE</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_product_attribute_id</strong></a>: api_product_attribute_id</p> <p><a href=\"/glossary#\"><strong>api_product_code</strong></a>: api_product_code</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
      * Update Api Product Attribute
      */
-    async oBPv600UpdateApiProductAttribute(requestParameters: OBPv600UpdateApiProductAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600CreateApiProductAttribute200Response> {
-        const response = await this.oBPv600UpdateApiProductAttributeRaw(requestParameters, initOverrides);
+    async updateApiProductAttribute(requestParameters: UpdateApiProductAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CreateApiProductAttribute200Response> {
+        const response = await this.updateApiProductAttributeRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

@@ -13,10 +13,10 @@ open class AggregateMetricsAPI {
      Get Aggregate Metrics
      
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetAggregateMetrics200Response
+     - returns: GetAggregateMetrics200Response
      */
-    open class func oBPv600GetAggregateMetrics(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetAggregateMetrics200Response {
-        return try await oBPv600GetAggregateMetricsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    open class func getAggregateMetrics(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAggregateMetrics200Response {
+        return try await getAggregateMetricsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -30,12 +30,12 @@ open class AggregateMetricsAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetAggregateMetrics200Response> 
+     - returns: RequestBuilder<GetAggregateMetrics200Response> 
      */
-    open class func oBPv600GetAggregateMetricsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetAggregateMetrics200Response> {
+    open class func getAggregateMetricsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAggregateMetrics200Response> {
         let localVariablePath = "/obp/v6.0.0/management/aggregate-metrics"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -48,7 +48,7 @@ open class AggregateMetricsAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetAggregateMetrics200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAggregateMetrics200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }

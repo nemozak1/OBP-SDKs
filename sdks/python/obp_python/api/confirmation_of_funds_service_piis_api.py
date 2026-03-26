@@ -18,7 +18,7 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
-from obp_python.models.obpv310_check_funds_available200_response import OBPv310CheckFundsAvailable200Response
+from obp_python.models.check_funds_available200_response import CheckFundsAvailable200Response
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -39,7 +39,7 @@ class ConfirmationOfFundsServicePIISApi:
 
 
     @validate_call
-    def o_bpv3_1_0_check_funds_available(
+    def check_funds_available(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -56,7 +56,7 @@ class ConfirmationOfFundsServicePIISApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv310CheckFundsAvailable200Response:
+    ) -> CheckFundsAvailable200Response:
         """Check Available Funds
 
         <p>Check Available Funds<br /> Mandatory URL parameters:</p> <ul> <li>amount=NUMBER</li> <li>currency=STRING</li> </ul> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#answer\"><strong>answer</strong></a>:</p> <p><a href=\"/glossary#available_funds_request_id\"><strong>available_funds_request_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> 
@@ -89,7 +89,7 @@ class ConfirmationOfFundsServicePIISApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv3_1_0_check_funds_available_serialize(
+        _param = self._check_funds_available_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -100,7 +100,7 @@ class ConfirmationOfFundsServicePIISApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv310CheckFundsAvailable200Response",
+            '200': "CheckFundsAvailable200Response",
             '404': None,
             '500': None,
         }
@@ -116,7 +116,7 @@ class ConfirmationOfFundsServicePIISApi:
 
 
     @validate_call
-    def o_bpv3_1_0_check_funds_available_with_http_info(
+    def check_funds_available_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -133,7 +133,7 @@ class ConfirmationOfFundsServicePIISApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv310CheckFundsAvailable200Response]:
+    ) -> ApiResponse[CheckFundsAvailable200Response]:
         """Check Available Funds
 
         <p>Check Available Funds<br /> Mandatory URL parameters:</p> <ul> <li>amount=NUMBER</li> <li>currency=STRING</li> </ul> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#answer\"><strong>answer</strong></a>:</p> <p><a href=\"/glossary#available_funds_request_id\"><strong>available_funds_request_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> 
@@ -166,7 +166,7 @@ class ConfirmationOfFundsServicePIISApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv3_1_0_check_funds_available_serialize(
+        _param = self._check_funds_available_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -177,7 +177,7 @@ class ConfirmationOfFundsServicePIISApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv310CheckFundsAvailable200Response",
+            '200': "CheckFundsAvailable200Response",
             '404': None,
             '500': None,
         }
@@ -193,7 +193,7 @@ class ConfirmationOfFundsServicePIISApi:
 
 
     @validate_call
-    def o_bpv3_1_0_check_funds_available_without_preload_content(
+    def check_funds_available_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -243,7 +243,7 @@ class ConfirmationOfFundsServicePIISApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv3_1_0_check_funds_available_serialize(
+        _param = self._check_funds_available_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -254,7 +254,7 @@ class ConfirmationOfFundsServicePIISApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv310CheckFundsAvailable200Response",
+            '200': "CheckFundsAvailable200Response",
             '404': None,
             '500': None,
         }
@@ -265,7 +265,7 @@ class ConfirmationOfFundsServicePIISApi:
         return response_data.response
 
 
-    def _o_bpv3_1_0_check_funds_available_serialize(
+    def _check_funds_available_serialize(
         self,
         bankid,
         accountid,

@@ -1,22 +1,22 @@
 # OpenBankProject::CustomerAttributeApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**o_bpv4_0_0_create_customer_attribute**](CustomerAttributeApi.md#o_bpv4_0_0_create_customer_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attribute | Create Customer Attribute |
-| [**o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition**](CustomerAttributeApi.md#o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Create or Update Customer Attribute Definition |
-| [**o_bpv4_0_0_delete_customer_attribute**](CustomerAttributeApi.md#o_bpv4_0_0_delete_customer_attribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/{customerid}/attributes/{customerattributeid} | Delete Customer Attribute |
-| [**o_bpv4_0_0_delete_customer_attribute_definition**](CustomerAttributeApi.md#o_bpv4_0_0_delete_customer_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/customer | Delete Customer Attribute Definition |
-| [**o_bpv4_0_0_get_customer_attribute_by_id**](CustomerAttributeApi.md#o_bpv4_0_0_get_customer_attribute_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{attributeid} | Get Customer Attribute By Id |
-| [**o_bpv4_0_0_get_customer_attribute_definition**](CustomerAttributeApi.md#o_bpv4_0_0_get_customer_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Get Customer Attribute Definition |
-| [**o_bpv4_0_0_get_customer_attributes**](CustomerAttributeApi.md#o_bpv4_0_0_get_customer_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes | Get Customer Attributes |
-| [**o_bpv4_0_0_update_customer_attribute**](CustomerAttributeApi.md#o_bpv4_0_0_update_customer_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{customerattributeid} | Update Customer Attribute |
+| [**create_customer_attribute**](CustomerAttributeApi.md#create_customer_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attribute | Create Customer Attribute |
+| [**create_or_update_customer_attribute_attribute_definition**](CustomerAttributeApi.md#create_or_update_customer_attribute_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Create or Update Customer Attribute Definition |
+| [**delete_customer_attribute**](CustomerAttributeApi.md#delete_customer_attribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/{customerid}/attributes/{customerattributeid} | Delete Customer Attribute |
+| [**delete_customer_attribute_definition**](CustomerAttributeApi.md#delete_customer_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/customer | Delete Customer Attribute Definition |
+| [**get_customer_attribute_by_id**](CustomerAttributeApi.md#get_customer_attribute_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{attributeid} | Get Customer Attribute By Id |
+| [**get_customer_attribute_definition**](CustomerAttributeApi.md#get_customer_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Get Customer Attribute Definition |
+| [**get_customer_attributes**](CustomerAttributeApi.md#get_customer_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes | Get Customer Attributes |
+| [**update_customer_attribute**](CustomerAttributeApi.md#update_customer_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{customerattributeid} | Update Customer Attribute |
 
 
-## o_bpv4_0_0_create_customer_attribute
+## create_customer_attribute
 
-> <OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems> o_bpv4_0_0_create_customer_attribute(bankid, customerid, obpv600_create_personal_data_field_request)
+> <GetCustomerAttributes200ResponseCustomerAttributesInner> create_customer_attribute(bankid, customerid, create_personal_data_field_request)
 
 Create Customer Attribute
 
@@ -38,40 +38,40 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::CustomerAttributeApi.new
 bankid = 'bankid_example' # String | The BANKID identifier
 customerid = 'customerid_example' # String | The CUSTOMERID identifier
-obpv600_create_personal_data_field_request = OpenBankProject::OBPv600CreatePersonalDataFieldRequest.new({type: 'type_example', properties: OpenBankProject::OBPv600CreatePersonalDataFieldRequestProperties.new({name: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), type: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), value: })}) # OBPv600CreatePersonalDataFieldRequest | Request body
+create_personal_data_field_request = OpenBankProject::CreatePersonalDataFieldRequest.new # CreatePersonalDataFieldRequest | Request body
 
 begin
   # Create Customer Attribute
-  result = api_instance.o_bpv4_0_0_create_customer_attribute(bankid, customerid, obpv600_create_personal_data_field_request)
+  result = api_instance.create_customer_attribute(bankid, customerid, create_personal_data_field_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling CustomerAttributeApi->o_bpv4_0_0_create_customer_attribute: #{e}"
+  puts "Error when calling CustomerAttributeApi->create_customer_attribute: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_create_customer_attribute_with_http_info variant
+#### Using the create_customer_attribute_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems>, Integer, Hash)> o_bpv4_0_0_create_customer_attribute_with_http_info(bankid, customerid, obpv600_create_personal_data_field_request)
+> <Array(<GetCustomerAttributes200ResponseCustomerAttributesInner>, Integer, Hash)> create_customer_attribute_with_http_info(bankid, customerid, create_personal_data_field_request)
 
 ```ruby
 begin
   # Create Customer Attribute
-  data, status_code, headers = api_instance.o_bpv4_0_0_create_customer_attribute_with_http_info(bankid, customerid, obpv600_create_personal_data_field_request)
+  data, status_code, headers = api_instance.create_customer_attribute_with_http_info(bankid, customerid, create_personal_data_field_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems>
+  p data # => <GetCustomerAttributes200ResponseCustomerAttributesInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling CustomerAttributeApi->o_bpv4_0_0_create_customer_attribute_with_http_info: #{e}"
+  puts "Error when calling CustomerAttributeApi->create_customer_attribute_with_http_info: #{e}"
 end
 ```
 
@@ -81,11 +81,11 @@ end
 | ---- | ---- | ----------- | ----- |
 | **bankid** | **String** | The BANKID identifier |  |
 | **customerid** | **String** | The CUSTOMERID identifier |  |
-| **obpv600_create_personal_data_field_request** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md) | Request body |  |
+| **create_personal_data_field_request** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems**](OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems.md)
+[**GetCustomerAttributes200ResponseCustomerAttributesInner**](GetCustomerAttributes200ResponseCustomerAttributesInner.md)
 
 ### Authorization
 
@@ -97,9 +97,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition
+## create_or_update_customer_attribute_attribute_definition
 
-> <OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems> o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request)
+> <GetTransactionRequestAttributeDefinition200ResponseAttributesInner> create_or_update_customer_attribute_attribute_definition(bankid, create_or_update_transaction_request_attribute_definition_request)
 
 Create or Update Customer Attribute Definition
 
@@ -121,39 +121,39 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::CustomerAttributeApi.new
 bankid = 'bankid_example' # String | The BANKID identifier
-obpv400_create_or_update_transaction_request_attribute_definition_request = OpenBankProject::OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.new({type: 'type_example', properties: OpenBankProject::OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequestProperties.new({name: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), is_active: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), description: , _alias: , can_be_seen_on_views: OpenBankProject::OBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds.new({type: 'type_example', items: }), category: , type: })}) # OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+create_or_update_transaction_request_attribute_definition_request = OpenBankProject::CreateOrUpdateTransactionRequestAttributeDefinitionRequest.new # CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
 
 begin
   # Create or Update Customer Attribute Definition
-  result = api_instance.o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request)
+  result = api_instance.create_or_update_customer_attribute_attribute_definition(bankid, create_or_update_transaction_request_attribute_definition_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling CustomerAttributeApi->o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition: #{e}"
+  puts "Error when calling CustomerAttributeApi->create_or_update_customer_attribute_attribute_definition: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition_with_http_info variant
+#### Using the create_or_update_customer_attribute_attribute_definition_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems>, Integer, Hash)> o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition_with_http_info(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request)
+> <Array(<GetTransactionRequestAttributeDefinition200ResponseAttributesInner>, Integer, Hash)> create_or_update_customer_attribute_attribute_definition_with_http_info(bankid, create_or_update_transaction_request_attribute_definition_request)
 
 ```ruby
 begin
   # Create or Update Customer Attribute Definition
-  data, status_code, headers = api_instance.o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition_with_http_info(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request)
+  data, status_code, headers = api_instance.create_or_update_customer_attribute_attribute_definition_with_http_info(bankid, create_or_update_transaction_request_attribute_definition_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems>
+  p data # => <GetTransactionRequestAttributeDefinition200ResponseAttributesInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling CustomerAttributeApi->o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition_with_http_info: #{e}"
+  puts "Error when calling CustomerAttributeApi->create_or_update_customer_attribute_attribute_definition_with_http_info: #{e}"
 end
 ```
 
@@ -162,11 +162,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **bankid** | **String** | The BANKID identifier |  |
-| **obpv400_create_or_update_transaction_request_attribute_definition_request** | [**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body |  |
+| **create_or_update_transaction_request_attribute_definition_request** | [**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
+[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
 
 ### Authorization
 
@@ -178,9 +178,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_delete_customer_attribute
+## delete_customer_attribute
 
-> o_bpv4_0_0_delete_customer_attribute(bankid, customerid, customerattributeid)
+> delete_customer_attribute(bankid, customerid, customerattributeid)
 
 Delete Customer Attribute
 
@@ -202,9 +202,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::CustomerAttributeApi.new
@@ -214,27 +214,27 @@ customerattributeid = 'customerattributeid_example' # String | The CUSTOMERATTRI
 
 begin
   # Delete Customer Attribute
-  api_instance.o_bpv4_0_0_delete_customer_attribute(bankid, customerid, customerattributeid)
+  api_instance.delete_customer_attribute(bankid, customerid, customerattributeid)
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling CustomerAttributeApi->o_bpv4_0_0_delete_customer_attribute: #{e}"
+  puts "Error when calling CustomerAttributeApi->delete_customer_attribute: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_delete_customer_attribute_with_http_info variant
+#### Using the delete_customer_attribute_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> o_bpv4_0_0_delete_customer_attribute_with_http_info(bankid, customerid, customerattributeid)
+> <Array(nil, Integer, Hash)> delete_customer_attribute_with_http_info(bankid, customerid, customerattributeid)
 
 ```ruby
 begin
   # Delete Customer Attribute
-  data, status_code, headers = api_instance.o_bpv4_0_0_delete_customer_attribute_with_http_info(bankid, customerid, customerattributeid)
+  data, status_code, headers = api_instance.delete_customer_attribute_with_http_info(bankid, customerid, customerattributeid)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling CustomerAttributeApi->o_bpv4_0_0_delete_customer_attribute_with_http_info: #{e}"
+  puts "Error when calling CustomerAttributeApi->delete_customer_attribute_with_http_info: #{e}"
 end
 ```
 
@@ -260,9 +260,9 @@ nil (empty response body)
 - **Accept**: Not defined
 
 
-## o_bpv4_0_0_delete_customer_attribute_definition
+## delete_customer_attribute_definition
 
-> o_bpv4_0_0_delete_customer_attribute_definition(bankid, attributedefinitionid)
+> delete_customer_attribute_definition(bankid, attributedefinitionid)
 
 Delete Customer Attribute Definition
 
@@ -284,9 +284,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::CustomerAttributeApi.new
@@ -295,27 +295,27 @@ attributedefinitionid = 'attributedefinitionid_example' # String | The ATTRIBUTE
 
 begin
   # Delete Customer Attribute Definition
-  api_instance.o_bpv4_0_0_delete_customer_attribute_definition(bankid, attributedefinitionid)
+  api_instance.delete_customer_attribute_definition(bankid, attributedefinitionid)
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling CustomerAttributeApi->o_bpv4_0_0_delete_customer_attribute_definition: #{e}"
+  puts "Error when calling CustomerAttributeApi->delete_customer_attribute_definition: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_delete_customer_attribute_definition_with_http_info variant
+#### Using the delete_customer_attribute_definition_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> o_bpv4_0_0_delete_customer_attribute_definition_with_http_info(bankid, attributedefinitionid)
+> <Array(nil, Integer, Hash)> delete_customer_attribute_definition_with_http_info(bankid, attributedefinitionid)
 
 ```ruby
 begin
   # Delete Customer Attribute Definition
-  data, status_code, headers = api_instance.o_bpv4_0_0_delete_customer_attribute_definition_with_http_info(bankid, attributedefinitionid)
+  data, status_code, headers = api_instance.delete_customer_attribute_definition_with_http_info(bankid, attributedefinitionid)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling CustomerAttributeApi->o_bpv4_0_0_delete_customer_attribute_definition_with_http_info: #{e}"
+  puts "Error when calling CustomerAttributeApi->delete_customer_attribute_definition_with_http_info: #{e}"
 end
 ```
 
@@ -340,9 +340,9 @@ nil (empty response body)
 - **Accept**: Not defined
 
 
-## o_bpv4_0_0_get_customer_attribute_by_id
+## get_customer_attribute_by_id
 
-> <OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems> o_bpv4_0_0_get_customer_attribute_by_id(bankid, customerid, attributeid)
+> <GetCustomerAttributes200ResponseCustomerAttributesInner> get_customer_attribute_by_id(bankid, customerid, attributeid)
 
 Get Customer Attribute By Id
 
@@ -364,9 +364,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::CustomerAttributeApi.new
@@ -376,28 +376,28 @@ attributeid = 'attributeid_example' # String | The ATTRIBUTEID identifier
 
 begin
   # Get Customer Attribute By Id
-  result = api_instance.o_bpv4_0_0_get_customer_attribute_by_id(bankid, customerid, attributeid)
+  result = api_instance.get_customer_attribute_by_id(bankid, customerid, attributeid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling CustomerAttributeApi->o_bpv4_0_0_get_customer_attribute_by_id: #{e}"
+  puts "Error when calling CustomerAttributeApi->get_customer_attribute_by_id: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_get_customer_attribute_by_id_with_http_info variant
+#### Using the get_customer_attribute_by_id_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems>, Integer, Hash)> o_bpv4_0_0_get_customer_attribute_by_id_with_http_info(bankid, customerid, attributeid)
+> <Array(<GetCustomerAttributes200ResponseCustomerAttributesInner>, Integer, Hash)> get_customer_attribute_by_id_with_http_info(bankid, customerid, attributeid)
 
 ```ruby
 begin
   # Get Customer Attribute By Id
-  data, status_code, headers = api_instance.o_bpv4_0_0_get_customer_attribute_by_id_with_http_info(bankid, customerid, attributeid)
+  data, status_code, headers = api_instance.get_customer_attribute_by_id_with_http_info(bankid, customerid, attributeid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems>
+  p data # => <GetCustomerAttributes200ResponseCustomerAttributesInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling CustomerAttributeApi->o_bpv4_0_0_get_customer_attribute_by_id_with_http_info: #{e}"
+  puts "Error when calling CustomerAttributeApi->get_customer_attribute_by_id_with_http_info: #{e}"
 end
 ```
 
@@ -411,7 +411,7 @@ end
 
 ### Return type
 
-[**OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems**](OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems.md)
+[**GetCustomerAttributes200ResponseCustomerAttributesInner**](GetCustomerAttributes200ResponseCustomerAttributesInner.md)
 
 ### Authorization
 
@@ -423,9 +423,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_get_customer_attribute_definition
+## get_customer_attribute_definition
 
-> <OBPv400GetTransactionRequestAttributeDefinition200Response> o_bpv4_0_0_get_customer_attribute_definition(bankid)
+> <GetTransactionRequestAttributeDefinition200Response> get_customer_attribute_definition(bankid)
 
 Get Customer Attribute Definition
 
@@ -447,9 +447,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::CustomerAttributeApi.new
@@ -457,28 +457,28 @@ bankid = 'bankid_example' # String | The BANKID identifier
 
 begin
   # Get Customer Attribute Definition
-  result = api_instance.o_bpv4_0_0_get_customer_attribute_definition(bankid)
+  result = api_instance.get_customer_attribute_definition(bankid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling CustomerAttributeApi->o_bpv4_0_0_get_customer_attribute_definition: #{e}"
+  puts "Error when calling CustomerAttributeApi->get_customer_attribute_definition: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_get_customer_attribute_definition_with_http_info variant
+#### Using the get_customer_attribute_definition_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetTransactionRequestAttributeDefinition200Response>, Integer, Hash)> o_bpv4_0_0_get_customer_attribute_definition_with_http_info(bankid)
+> <Array(<GetTransactionRequestAttributeDefinition200Response>, Integer, Hash)> get_customer_attribute_definition_with_http_info(bankid)
 
 ```ruby
 begin
   # Get Customer Attribute Definition
-  data, status_code, headers = api_instance.o_bpv4_0_0_get_customer_attribute_definition_with_http_info(bankid)
+  data, status_code, headers = api_instance.get_customer_attribute_definition_with_http_info(bankid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetTransactionRequestAttributeDefinition200Response>
+  p data # => <GetTransactionRequestAttributeDefinition200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling CustomerAttributeApi->o_bpv4_0_0_get_customer_attribute_definition_with_http_info: #{e}"
+  puts "Error when calling CustomerAttributeApi->get_customer_attribute_definition_with_http_info: #{e}"
 end
 ```
 
@@ -490,7 +490,7 @@ end
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200Response**](OBPv400GetTransactionRequestAttributeDefinition200Response.md)
+[**GetTransactionRequestAttributeDefinition200Response**](GetTransactionRequestAttributeDefinition200Response.md)
 
 ### Authorization
 
@@ -502,9 +502,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_get_customer_attributes
+## get_customer_attributes
 
-> <OBPv400GetCustomerAttributes200Response> o_bpv4_0_0_get_customer_attributes(bankid, customerid)
+> <GetCustomerAttributes200Response> get_customer_attributes(bankid, customerid)
 
 Get Customer Attributes
 
@@ -526,9 +526,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::CustomerAttributeApi.new
@@ -537,28 +537,28 @@ customerid = 'customerid_example' # String | The CUSTOMERID identifier
 
 begin
   # Get Customer Attributes
-  result = api_instance.o_bpv4_0_0_get_customer_attributes(bankid, customerid)
+  result = api_instance.get_customer_attributes(bankid, customerid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling CustomerAttributeApi->o_bpv4_0_0_get_customer_attributes: #{e}"
+  puts "Error when calling CustomerAttributeApi->get_customer_attributes: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_get_customer_attributes_with_http_info variant
+#### Using the get_customer_attributes_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetCustomerAttributes200Response>, Integer, Hash)> o_bpv4_0_0_get_customer_attributes_with_http_info(bankid, customerid)
+> <Array(<GetCustomerAttributes200Response>, Integer, Hash)> get_customer_attributes_with_http_info(bankid, customerid)
 
 ```ruby
 begin
   # Get Customer Attributes
-  data, status_code, headers = api_instance.o_bpv4_0_0_get_customer_attributes_with_http_info(bankid, customerid)
+  data, status_code, headers = api_instance.get_customer_attributes_with_http_info(bankid, customerid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetCustomerAttributes200Response>
+  p data # => <GetCustomerAttributes200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling CustomerAttributeApi->o_bpv4_0_0_get_customer_attributes_with_http_info: #{e}"
+  puts "Error when calling CustomerAttributeApi->get_customer_attributes_with_http_info: #{e}"
 end
 ```
 
@@ -571,7 +571,7 @@ end
 
 ### Return type
 
-[**OBPv400GetCustomerAttributes200Response**](OBPv400GetCustomerAttributes200Response.md)
+[**GetCustomerAttributes200Response**](GetCustomerAttributes200Response.md)
 
 ### Authorization
 
@@ -583,9 +583,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_update_customer_attribute
+## update_customer_attribute
 
-> <OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems> o_bpv4_0_0_update_customer_attribute(bankid, customerid, customerattributeid, obpv600_create_personal_data_field_request)
+> <GetCustomerAttributes200ResponseCustomerAttributesInner> update_customer_attribute(bankid, customerid, customerattributeid, create_personal_data_field_request)
 
 Update Customer Attribute
 
@@ -607,41 +607,41 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::CustomerAttributeApi.new
 bankid = 'bankid_example' # String | The BANKID identifier
 customerid = 'customerid_example' # String | The CUSTOMERID identifier
 customerattributeid = 'customerattributeid_example' # String | The CUSTOMERATTRIBUTEID identifier
-obpv600_create_personal_data_field_request = OpenBankProject::OBPv600CreatePersonalDataFieldRequest.new({type: 'type_example', properties: OpenBankProject::OBPv600CreatePersonalDataFieldRequestProperties.new({name: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), type: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), value: })}) # OBPv600CreatePersonalDataFieldRequest | Request body
+create_personal_data_field_request = OpenBankProject::CreatePersonalDataFieldRequest.new # CreatePersonalDataFieldRequest | Request body
 
 begin
   # Update Customer Attribute
-  result = api_instance.o_bpv4_0_0_update_customer_attribute(bankid, customerid, customerattributeid, obpv600_create_personal_data_field_request)
+  result = api_instance.update_customer_attribute(bankid, customerid, customerattributeid, create_personal_data_field_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling CustomerAttributeApi->o_bpv4_0_0_update_customer_attribute: #{e}"
+  puts "Error when calling CustomerAttributeApi->update_customer_attribute: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_update_customer_attribute_with_http_info variant
+#### Using the update_customer_attribute_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems>, Integer, Hash)> o_bpv4_0_0_update_customer_attribute_with_http_info(bankid, customerid, customerattributeid, obpv600_create_personal_data_field_request)
+> <Array(<GetCustomerAttributes200ResponseCustomerAttributesInner>, Integer, Hash)> update_customer_attribute_with_http_info(bankid, customerid, customerattributeid, create_personal_data_field_request)
 
 ```ruby
 begin
   # Update Customer Attribute
-  data, status_code, headers = api_instance.o_bpv4_0_0_update_customer_attribute_with_http_info(bankid, customerid, customerattributeid, obpv600_create_personal_data_field_request)
+  data, status_code, headers = api_instance.update_customer_attribute_with_http_info(bankid, customerid, customerattributeid, create_personal_data_field_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems>
+  p data # => <GetCustomerAttributes200ResponseCustomerAttributesInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling CustomerAttributeApi->o_bpv4_0_0_update_customer_attribute_with_http_info: #{e}"
+  puts "Error when calling CustomerAttributeApi->update_customer_attribute_with_http_info: #{e}"
 end
 ```
 
@@ -652,11 +652,11 @@ end
 | **bankid** | **String** | The BANKID identifier |  |
 | **customerid** | **String** | The CUSTOMERID identifier |  |
 | **customerattributeid** | **String** | The CUSTOMERATTRIBUTEID identifier |  |
-| **obpv600_create_personal_data_field_request** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md) | Request body |  |
+| **create_personal_data_field_request** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems**](OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems.md)
+[**GetCustomerAttributes200ResponseCustomerAttributesInner**](GetCustomerAttributes200ResponseCustomerAttributesInner.md)
 
 ### Authorization
 

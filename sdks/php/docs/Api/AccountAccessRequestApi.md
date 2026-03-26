@@ -2,22 +2,22 @@
 
 
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv600ApproveAccountAccessRequest()**](AccountAccessRequestApi.md#oBPv600ApproveAccountAccessRequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/approval | Approve Account Access Request |
-| [**oBPv600CreateAccountAccessRequest()**](AccountAccessRequestApi.md#oBPv600CreateAccountAccessRequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Create Account Access Request |
-| [**oBPv600GetAccountAccessRequestById()**](AccountAccessRequestApi.md#oBPv600GetAccountAccessRequestById) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid} | Get Account Access Request by Id |
-| [**oBPv600GetAccountAccessRequestsForAccount()**](AccountAccessRequestApi.md#oBPv600GetAccountAccessRequestsForAccount) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Get Account Access Requests for Account |
-| [**oBPv600GetMyAccountAccessRequests()**](AccountAccessRequestApi.md#oBPv600GetMyAccountAccessRequests) | **GET** /obp/v6.0.0/my/account-access-requests | Get My Account Access Requests |
-| [**oBPv600RejectAccountAccessRequest()**](AccountAccessRequestApi.md#oBPv600RejectAccountAccessRequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/rejection | Reject Account Access Request |
+| [**approveAccountAccessRequest()**](AccountAccessRequestApi.md#approveAccountAccessRequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/approval | Approve Account Access Request |
+| [**createAccountAccessRequest()**](AccountAccessRequestApi.md#createAccountAccessRequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Create Account Access Request |
+| [**getAccountAccessRequestById()**](AccountAccessRequestApi.md#getAccountAccessRequestById) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid} | Get Account Access Request by Id |
+| [**getAccountAccessRequestsForAccount()**](AccountAccessRequestApi.md#getAccountAccessRequestsForAccount) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Get Account Access Requests for Account |
+| [**getMyAccountAccessRequests()**](AccountAccessRequestApi.md#getMyAccountAccessRequests) | **GET** /obp/v6.0.0/my/account-access-requests | Get My Account Access Requests |
+| [**rejectAccountAccessRequest()**](AccountAccessRequestApi.md#rejectAccountAccessRequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/rejection | Reject Account Access Request |
 
 
-## `oBPv600ApproveAccountAccessRequest()`
+## `approveAccountAccessRequest()`
 
 ```php
-oBPv600ApproveAccountAccessRequest($bankid, $accountid, $accountaccessrequestid, $obpv600_reject_account_access_request_request): \OpenBankProject\Model\OBPv600RejectAccountAccessRequest200Response
+approveAccountAccessRequest($bankid, $accountid, $accountaccessrequestid, $reject_account_access_request_request): \OpenBankProject\Model\RejectAccountAccessRequest200Response
 ```
 
 Approve Account Access Request
@@ -40,9 +40,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\AccountAccessRequestApi(
@@ -54,13 +54,13 @@ $apiInstance = new OpenBankProject\Api\AccountAccessRequestApi(
 $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $accountaccessrequestid = 'accountaccessrequestid_example'; // string | The ACCOUNTACCESSREQUESTID identifier
-$obpv600_reject_account_access_request_request = {type=object, properties={comment={type=string}}}; // \OpenBankProject\Model\OBPv600RejectAccountAccessRequestRequest | Request body
+$reject_account_access_request_request = {type=object, properties={comment={type=string}}}; // \OpenBankProject\Model\RejectAccountAccessRequestRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv600ApproveAccountAccessRequest($bankid, $accountid, $accountaccessrequestid, $obpv600_reject_account_access_request_request);
+    $result = $apiInstance->approveAccountAccessRequest($bankid, $accountid, $accountaccessrequestid, $reject_account_access_request_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AccountAccessRequestApi->oBPv600ApproveAccountAccessRequest: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AccountAccessRequestApi->approveAccountAccessRequest: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -71,11 +71,11 @@ try {
 | **bankid** | **string**| The BANKID identifier | |
 | **accountid** | **string**| The ACCOUNTID identifier | |
 | **accountaccessrequestid** | **string**| The ACCOUNTACCESSREQUESTID identifier | |
-| **obpv600_reject_account_access_request_request** | [**\OpenBankProject\Model\OBPv600RejectAccountAccessRequestRequest**](../Model/OBPv600RejectAccountAccessRequestRequest.md)| Request body | |
+| **reject_account_access_request_request** | [**\OpenBankProject\Model\RejectAccountAccessRequestRequest**](../Model/RejectAccountAccessRequestRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600RejectAccountAccessRequest200Response**](../Model/OBPv600RejectAccountAccessRequest200Response.md)
+[**\OpenBankProject\Model\RejectAccountAccessRequest200Response**](../Model/RejectAccountAccessRequest200Response.md)
 
 ### Authorization
 
@@ -90,10 +90,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600CreateAccountAccessRequest()`
+## `createAccountAccessRequest()`
 
 ```php
-oBPv600CreateAccountAccessRequest($bankid, $accountid, $obpv600_create_account_access_request_request): \OpenBankProject\Model\OBPv600RejectAccountAccessRequest200Response
+createAccountAccessRequest($bankid, $accountid, $create_account_access_request_request): \OpenBankProject\Model\RejectAccountAccessRequest200Response
 ```
 
 Create Account Access Request
@@ -116,9 +116,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\AccountAccessRequestApi(
@@ -129,13 +129,13 @@ $apiInstance = new OpenBankProject\Api\AccountAccessRequestApi(
 );
 $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
-$obpv600_create_account_access_request_request = {"type":"object","properties":{"is_system_view":{"type":"boolean"},"business_justification":{"type":"string"},"view_id":{"type":"string"},"target_user_id":{"type":"string"}}}; // \OpenBankProject\Model\OBPv600CreateAccountAccessRequestRequest | Request body
+$create_account_access_request_request = {"type":"object","properties":{"is_system_view":{"type":"boolean"},"business_justification":{"type":"string"},"view_id":{"type":"string"},"target_user_id":{"type":"string"}}}; // \OpenBankProject\Model\CreateAccountAccessRequestRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv600CreateAccountAccessRequest($bankid, $accountid, $obpv600_create_account_access_request_request);
+    $result = $apiInstance->createAccountAccessRequest($bankid, $accountid, $create_account_access_request_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AccountAccessRequestApi->oBPv600CreateAccountAccessRequest: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AccountAccessRequestApi->createAccountAccessRequest: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -145,11 +145,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **bankid** | **string**| The BANKID identifier | |
 | **accountid** | **string**| The ACCOUNTID identifier | |
-| **obpv600_create_account_access_request_request** | [**\OpenBankProject\Model\OBPv600CreateAccountAccessRequestRequest**](../Model/OBPv600CreateAccountAccessRequestRequest.md)| Request body | |
+| **create_account_access_request_request** | [**\OpenBankProject\Model\CreateAccountAccessRequestRequest**](../Model/CreateAccountAccessRequestRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600RejectAccountAccessRequest200Response**](../Model/OBPv600RejectAccountAccessRequest200Response.md)
+[**\OpenBankProject\Model\RejectAccountAccessRequest200Response**](../Model/RejectAccountAccessRequest200Response.md)
 
 ### Authorization
 
@@ -164,10 +164,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600GetAccountAccessRequestById()`
+## `getAccountAccessRequestById()`
 
 ```php
-oBPv600GetAccountAccessRequestById($bankid, $accountid, $accountaccessrequestid): \OpenBankProject\Model\OBPv600RejectAccountAccessRequest200Response
+getAccountAccessRequestById($bankid, $accountid, $accountaccessrequestid): \OpenBankProject\Model\RejectAccountAccessRequest200Response
 ```
 
 Get Account Access Request by Id
@@ -190,9 +190,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\AccountAccessRequestApi(
@@ -206,10 +206,10 @@ $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $accountaccessrequestid = 'accountaccessrequestid_example'; // string | The ACCOUNTACCESSREQUESTID identifier
 
 try {
-    $result = $apiInstance->oBPv600GetAccountAccessRequestById($bankid, $accountid, $accountaccessrequestid);
+    $result = $apiInstance->getAccountAccessRequestById($bankid, $accountid, $accountaccessrequestid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AccountAccessRequestApi->oBPv600GetAccountAccessRequestById: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AccountAccessRequestApi->getAccountAccessRequestById: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -223,7 +223,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600RejectAccountAccessRequest200Response**](../Model/OBPv600RejectAccountAccessRequest200Response.md)
+[**\OpenBankProject\Model\RejectAccountAccessRequest200Response**](../Model/RejectAccountAccessRequest200Response.md)
 
 ### Authorization
 
@@ -238,10 +238,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600GetAccountAccessRequestsForAccount()`
+## `getAccountAccessRequestsForAccount()`
 
 ```php
-oBPv600GetAccountAccessRequestsForAccount($bankid, $accountid): \OpenBankProject\Model\OBPv600GetAccountAccessRequestsForAccount200Response
+getAccountAccessRequestsForAccount($bankid, $accountid): \OpenBankProject\Model\GetAccountAccessRequestsForAccount200Response
 ```
 
 Get Account Access Requests for Account
@@ -264,9 +264,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\AccountAccessRequestApi(
@@ -279,10 +279,10 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 
 try {
-    $result = $apiInstance->oBPv600GetAccountAccessRequestsForAccount($bankid, $accountid);
+    $result = $apiInstance->getAccountAccessRequestsForAccount($bankid, $accountid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AccountAccessRequestApi->oBPv600GetAccountAccessRequestsForAccount: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AccountAccessRequestApi->getAccountAccessRequestsForAccount: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -295,7 +295,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetAccountAccessRequestsForAccount200Response**](../Model/OBPv600GetAccountAccessRequestsForAccount200Response.md)
+[**\OpenBankProject\Model\GetAccountAccessRequestsForAccount200Response**](../Model/GetAccountAccessRequestsForAccount200Response.md)
 
 ### Authorization
 
@@ -310,10 +310,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600GetMyAccountAccessRequests()`
+## `getMyAccountAccessRequests()`
 
 ```php
-oBPv600GetMyAccountAccessRequests(): \OpenBankProject\Model\OBPv600GetAccountAccessRequestsForAccount200Response
+getMyAccountAccessRequests(): \OpenBankProject\Model\GetAccountAccessRequestsForAccount200Response
 ```
 
 Get My Account Access Requests
@@ -336,9 +336,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\AccountAccessRequestApi(
@@ -349,10 +349,10 @@ $apiInstance = new OpenBankProject\Api\AccountAccessRequestApi(
 );
 
 try {
-    $result = $apiInstance->oBPv600GetMyAccountAccessRequests();
+    $result = $apiInstance->getMyAccountAccessRequests();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AccountAccessRequestApi->oBPv600GetMyAccountAccessRequests: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AccountAccessRequestApi->getMyAccountAccessRequests: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -362,7 +362,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetAccountAccessRequestsForAccount200Response**](../Model/OBPv600GetAccountAccessRequestsForAccount200Response.md)
+[**\OpenBankProject\Model\GetAccountAccessRequestsForAccount200Response**](../Model/GetAccountAccessRequestsForAccount200Response.md)
 
 ### Authorization
 
@@ -377,10 +377,10 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600RejectAccountAccessRequest()`
+## `rejectAccountAccessRequest()`
 
 ```php
-oBPv600RejectAccountAccessRequest($bankid, $accountid, $accountaccessrequestid, $obpv600_reject_account_access_request_request): \OpenBankProject\Model\OBPv600RejectAccountAccessRequest200Response
+rejectAccountAccessRequest($bankid, $accountid, $accountaccessrequestid, $reject_account_access_request_request): \OpenBankProject\Model\RejectAccountAccessRequest200Response
 ```
 
 Reject Account Access Request
@@ -403,9 +403,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\AccountAccessRequestApi(
@@ -417,13 +417,13 @@ $apiInstance = new OpenBankProject\Api\AccountAccessRequestApi(
 $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $accountaccessrequestid = 'accountaccessrequestid_example'; // string | The ACCOUNTACCESSREQUESTID identifier
-$obpv600_reject_account_access_request_request = {"type":"object","properties":{"comment":{"type":"string"}}}; // \OpenBankProject\Model\OBPv600RejectAccountAccessRequestRequest | Request body
+$reject_account_access_request_request = {"type":"object","properties":{"comment":{"type":"string"}}}; // \OpenBankProject\Model\RejectAccountAccessRequestRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv600RejectAccountAccessRequest($bankid, $accountid, $accountaccessrequestid, $obpv600_reject_account_access_request_request);
+    $result = $apiInstance->rejectAccountAccessRequest($bankid, $accountid, $accountaccessrequestid, $reject_account_access_request_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AccountAccessRequestApi->oBPv600RejectAccountAccessRequest: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AccountAccessRequestApi->rejectAccountAccessRequest: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -434,11 +434,11 @@ try {
 | **bankid** | **string**| The BANKID identifier | |
 | **accountid** | **string**| The ACCOUNTID identifier | |
 | **accountaccessrequestid** | **string**| The ACCOUNTACCESSREQUESTID identifier | |
-| **obpv600_reject_account_access_request_request** | [**\OpenBankProject\Model\OBPv600RejectAccountAccessRequestRequest**](../Model/OBPv600RejectAccountAccessRequestRequest.md)| Request body | |
+| **reject_account_access_request_request** | [**\OpenBankProject\Model\RejectAccountAccessRequestRequest**](../Model/RejectAccountAccessRequestRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600RejectAccountAccessRequest200Response**](../Model/OBPv600RejectAccountAccessRequest200Response.md)
+[**\OpenBankProject\Model\RejectAccountAccessRequest200Response**](../Model/RejectAccountAccessRequest200Response.md)
 
 ### Authorization
 

@@ -4,25 +4,25 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv6_0_0_create_mandate**](MandateApi.md#o_bpv6_0_0_create_mandate) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/mandates | Create Mandate
-[**o_bpv6_0_0_create_mandate_provision**](MandateApi.md#o_bpv6_0_0_create_mandate_provision) | **POST** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/provisions | Create Mandate Provision
-[**o_bpv6_0_0_create_signatory_panel**](MandateApi.md#o_bpv6_0_0_create_signatory_panel) | **POST** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/signatory-panels | Create Signatory Panel
-[**o_bpv6_0_0_delete_mandate**](MandateApi.md#o_bpv6_0_0_delete_mandate) | **DELETE** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/mandates/{mandateid} | Delete Mandate
-[**o_bpv6_0_0_delete_mandate_provision**](MandateApi.md#o_bpv6_0_0_delete_mandate_provision) | **DELETE** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/provisions/{provisionid} | Delete Mandate Provision
-[**o_bpv6_0_0_delete_signatory_panel**](MandateApi.md#o_bpv6_0_0_delete_signatory_panel) | **DELETE** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/signatory-panels/{panelid} | Delete Signatory Panel
-[**o_bpv6_0_0_get_mandate**](MandateApi.md#o_bpv6_0_0_get_mandate) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/mandates/{mandateid} | Get Mandate
-[**o_bpv6_0_0_get_mandate_provision**](MandateApi.md#o_bpv6_0_0_get_mandate_provision) | **GET** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/provisions/{provisionid} | Get Mandate Provision
-[**o_bpv6_0_0_get_mandate_provisions**](MandateApi.md#o_bpv6_0_0_get_mandate_provisions) | **GET** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/provisions | Get Mandate Provisions
-[**o_bpv6_0_0_get_mandates**](MandateApi.md#o_bpv6_0_0_get_mandates) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/mandates | Get Mandates for Account
-[**o_bpv6_0_0_get_signatory_panel**](MandateApi.md#o_bpv6_0_0_get_signatory_panel) | **GET** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/signatory-panels/{panelid} | Get Signatory Panel
-[**o_bpv6_0_0_get_signatory_panels**](MandateApi.md#o_bpv6_0_0_get_signatory_panels) | **GET** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/signatory-panels | Get Signatory Panels
-[**o_bpv6_0_0_update_mandate**](MandateApi.md#o_bpv6_0_0_update_mandate) | **PUT** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/mandates/{mandateid} | Update Mandate
-[**o_bpv6_0_0_update_mandate_provision**](MandateApi.md#o_bpv6_0_0_update_mandate_provision) | **PUT** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/provisions/{provisionid} | Update Mandate Provision
-[**o_bpv6_0_0_update_signatory_panel**](MandateApi.md#o_bpv6_0_0_update_signatory_panel) | **PUT** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/signatory-panels/{panelid} | Update Signatory Panel
+[**create_mandate**](MandateApi.md#create_mandate) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/mandates | Create Mandate
+[**create_mandate_provision**](MandateApi.md#create_mandate_provision) | **POST** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/provisions | Create Mandate Provision
+[**create_signatory_panel**](MandateApi.md#create_signatory_panel) | **POST** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/signatory-panels | Create Signatory Panel
+[**delete_mandate**](MandateApi.md#delete_mandate) | **DELETE** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/mandates/{mandateid} | Delete Mandate
+[**delete_mandate_provision**](MandateApi.md#delete_mandate_provision) | **DELETE** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/provisions/{provisionid} | Delete Mandate Provision
+[**delete_signatory_panel**](MandateApi.md#delete_signatory_panel) | **DELETE** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/signatory-panels/{panelid} | Delete Signatory Panel
+[**get_mandate**](MandateApi.md#get_mandate) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/mandates/{mandateid} | Get Mandate
+[**get_mandate_provision**](MandateApi.md#get_mandate_provision) | **GET** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/provisions/{provisionid} | Get Mandate Provision
+[**get_mandate_provisions**](MandateApi.md#get_mandate_provisions) | **GET** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/provisions | Get Mandate Provisions
+[**get_mandates**](MandateApi.md#get_mandates) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/mandates | Get Mandates for Account
+[**get_signatory_panel**](MandateApi.md#get_signatory_panel) | **GET** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/signatory-panels/{panelid} | Get Signatory Panel
+[**get_signatory_panels**](MandateApi.md#get_signatory_panels) | **GET** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/signatory-panels | Get Signatory Panels
+[**update_mandate**](MandateApi.md#update_mandate) | **PUT** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/mandates/{mandateid} | Update Mandate
+[**update_mandate_provision**](MandateApi.md#update_mandate_provision) | **PUT** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/provisions/{provisionid} | Update Mandate Provision
+[**update_signatory_panel**](MandateApi.md#update_signatory_panel) | **PUT** /obp/v6.0.0/banks/{bankid}/mandates/{mandateid}/signatory-panels/{panelid} | Update Signatory Panel
 
 
-# **o_bpv6_0_0_create_mandate**
-> OBPv600GetMandate200Response o_bpv6_0_0_create_mandate(bankid, accountid, obpv600_create_mandate_request)
+# **create_mandate**
+> GetMandate200Response create_mandate(bankid, accountid, create_mandate_request)
 
 Create Mandate
 
@@ -71,8 +71,8 @@ and Challenges into a coherent authorization policy.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv600_create_mandate_request import OBPv600CreateMandateRequest
-from obp_python.models.obpv600_get_mandate200_response import OBPv600GetMandate200Response
+from obp_python.models.create_mandate_request import CreateMandateRequest
+from obp_python.models.get_mandate200_response import GetMandate200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -107,15 +107,15 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.MandateApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    obpv600_create_mandate_request = {"type":"object","properties":{"valid_to":{"type":"string"},"customer_id":{"type":"string"},"valid_from":{"type":"string"},"mandate_reference":{"type":"string","format":"date-time"},"description":{"type":"string"},"legal_text":{"type":"string"},"status":{"type":"string"},"mandate_name":{"type":"string","format":"date-time"}}} # OBPv600CreateMandateRequest | Request body
+    create_mandate_request = {"type":"object","properties":{"valid_to":{"type":"string"},"customer_id":{"type":"string"},"valid_from":{"type":"string"},"mandate_reference":{"type":"string","format":"date-time"},"description":{"type":"string"},"legal_text":{"type":"string"},"status":{"type":"string"},"mandate_name":{"type":"string","format":"date-time"}}} # CreateMandateRequest | Request body
 
     try:
         # Create Mandate
-        api_response = api_instance.o_bpv6_0_0_create_mandate(bankid, accountid, obpv600_create_mandate_request)
-        print("The response of MandateApi->o_bpv6_0_0_create_mandate:\n")
+        api_response = api_instance.create_mandate(bankid, accountid, create_mandate_request)
+        print("The response of MandateApi->create_mandate:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MandateApi->o_bpv6_0_0_create_mandate: %s\n" % e)
+        print("Exception when calling MandateApi->create_mandate: %s\n" % e)
 ```
 
 
@@ -127,11 +127,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
  **accountid** | **str**| The ACCOUNTID identifier | 
- **obpv600_create_mandate_request** | [**OBPv600CreateMandateRequest**](OBPv600CreateMandateRequest.md)| Request body | 
+ **create_mandate_request** | [**CreateMandateRequest**](CreateMandateRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600GetMandate200Response**](OBPv600GetMandate200Response.md)
+[**GetMandate200Response**](GetMandate200Response.md)
 
 ### Authorization
 
@@ -152,8 +152,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_create_mandate_provision**
-> OBPv600GetMandateProvision200Response o_bpv6_0_0_create_mandate_provision(bankid, mandateid, obpv600_update_mandate_provision_request)
+# **create_mandate_provision**
+> GetMandateProvision200Response create_mandate_provision(bankid, mandateid, update_mandate_provision_request)
 
 Create Mandate Provision
 
@@ -211,8 +211,8 @@ Create Mandate Provision
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_mandate_provision200_response import OBPv600GetMandateProvision200Response
-from obp_python.models.obpv600_update_mandate_provision_request import OBPv600UpdateMandateProvisionRequest
+from obp_python.models.get_mandate_provision200_response import GetMandateProvision200Response
+from obp_python.models.update_mandate_provision_request import UpdateMandateProvisionRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -247,15 +247,15 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.MandateApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
     mandateid = 'mandateid_example' # str | The MANDATEID identifier
-    obpv600_update_mandate_provision_request = {type=object, properties={signatory_requirements={type=array, items={type=object, properties={required_count={type=integer}, panel_id={type=string}}}}, is_active={type=boolean}, sort_order={type=integer}, conditions={type=string}, provision_description={type=string}, provision_name={type=string}, linked_view_id={type=string}, linked_challenge_type={type=string}, legal_reference={type=string}, provision_type={type=string}}} # OBPv600UpdateMandateProvisionRequest | Request body
+    update_mandate_provision_request = {type=object, properties={signatory_requirements={type=array, items={type=object, properties={required_count={type=integer}, panel_id={type=string}}}}, is_active={type=boolean}, sort_order={type=integer}, conditions={type=string}, provision_description={type=string}, provision_name={type=string}, linked_view_id={type=string}, linked_challenge_type={type=string}, legal_reference={type=string}, provision_type={type=string}}} # UpdateMandateProvisionRequest | Request body
 
     try:
         # Create Mandate Provision
-        api_response = api_instance.o_bpv6_0_0_create_mandate_provision(bankid, mandateid, obpv600_update_mandate_provision_request)
-        print("The response of MandateApi->o_bpv6_0_0_create_mandate_provision:\n")
+        api_response = api_instance.create_mandate_provision(bankid, mandateid, update_mandate_provision_request)
+        print("The response of MandateApi->create_mandate_provision:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MandateApi->o_bpv6_0_0_create_mandate_provision: %s\n" % e)
+        print("Exception when calling MandateApi->create_mandate_provision: %s\n" % e)
 ```
 
 
@@ -267,11 +267,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
  **mandateid** | **str**| The MANDATEID identifier | 
- **obpv600_update_mandate_provision_request** | [**OBPv600UpdateMandateProvisionRequest**](OBPv600UpdateMandateProvisionRequest.md)| Request body | 
+ **update_mandate_provision_request** | [**UpdateMandateProvisionRequest**](UpdateMandateProvisionRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600GetMandateProvision200Response**](OBPv600GetMandateProvision200Response.md)
+[**GetMandateProvision200Response**](GetMandateProvision200Response.md)
 
 ### Authorization
 
@@ -292,8 +292,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_create_signatory_panel**
-> OBPv600GetSignatoryPanel200Response o_bpv6_0_0_create_signatory_panel(bankid, mandateid, obpv600_update_signatory_panel_request)
+# **create_signatory_panel**
+> GetSignatoryPanel200Response create_signatory_panel(bankid, mandateid, update_signatory_panel_request)
 
 Create Signatory Panel
 
@@ -326,8 +326,8 @@ referenced by mandate provisions. For example, &quot;Panel A - Directors&quot; a
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_signatory_panel200_response import OBPv600GetSignatoryPanel200Response
-from obp_python.models.obpv600_update_signatory_panel_request import OBPv600UpdateSignatoryPanelRequest
+from obp_python.models.get_signatory_panel200_response import GetSignatoryPanel200Response
+from obp_python.models.update_signatory_panel_request import UpdateSignatoryPanelRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -362,15 +362,15 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.MandateApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
     mandateid = 'mandateid_example' # str | The MANDATEID identifier
-    obpv600_update_signatory_panel_request = {type=object, properties={panel_name={type=string}, user_ids={type=array, items={type=string}}, description={type=string}}} # OBPv600UpdateSignatoryPanelRequest | Request body
+    update_signatory_panel_request = {type=object, properties={panel_name={type=string}, user_ids={type=array, items={type=string}}, description={type=string}}} # UpdateSignatoryPanelRequest | Request body
 
     try:
         # Create Signatory Panel
-        api_response = api_instance.o_bpv6_0_0_create_signatory_panel(bankid, mandateid, obpv600_update_signatory_panel_request)
-        print("The response of MandateApi->o_bpv6_0_0_create_signatory_panel:\n")
+        api_response = api_instance.create_signatory_panel(bankid, mandateid, update_signatory_panel_request)
+        print("The response of MandateApi->create_signatory_panel:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MandateApi->o_bpv6_0_0_create_signatory_panel: %s\n" % e)
+        print("Exception when calling MandateApi->create_signatory_panel: %s\n" % e)
 ```
 
 
@@ -382,11 +382,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
  **mandateid** | **str**| The MANDATEID identifier | 
- **obpv600_update_signatory_panel_request** | [**OBPv600UpdateSignatoryPanelRequest**](OBPv600UpdateSignatoryPanelRequest.md)| Request body | 
+ **update_signatory_panel_request** | [**UpdateSignatoryPanelRequest**](UpdateSignatoryPanelRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600GetSignatoryPanel200Response**](OBPv600GetSignatoryPanel200Response.md)
+[**GetSignatoryPanel200Response**](GetSignatoryPanel200Response.md)
 
 ### Authorization
 
@@ -407,8 +407,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_delete_mandate**
-> o_bpv6_0_0_delete_mandate(bankid, accountid, mandateid)
+# **delete_mandate**
+> delete_mandate(bankid, accountid, mandateid)
 
 Delete Mandate
 
@@ -468,9 +468,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete Mandate
-        api_instance.o_bpv6_0_0_delete_mandate(bankid, accountid, mandateid)
+        api_instance.delete_mandate(bankid, accountid, mandateid)
     except Exception as e:
-        print("Exception when calling MandateApi->o_bpv6_0_0_delete_mandate: %s\n" % e)
+        print("Exception when calling MandateApi->delete_mandate: %s\n" % e)
 ```
 
 
@@ -507,8 +507,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_delete_mandate_provision**
-> o_bpv6_0_0_delete_mandate_provision(bankid, mandateid, provisionid)
+# **delete_mandate_provision**
+> delete_mandate_provision(bankid, mandateid, provisionid)
 
 Delete Mandate Provision
 
@@ -568,9 +568,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete Mandate Provision
-        api_instance.o_bpv6_0_0_delete_mandate_provision(bankid, mandateid, provisionid)
+        api_instance.delete_mandate_provision(bankid, mandateid, provisionid)
     except Exception as e:
-        print("Exception when calling MandateApi->o_bpv6_0_0_delete_mandate_provision: %s\n" % e)
+        print("Exception when calling MandateApi->delete_mandate_provision: %s\n" % e)
 ```
 
 
@@ -607,8 +607,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_delete_signatory_panel**
-> o_bpv6_0_0_delete_signatory_panel(bankid, mandateid, panelid)
+# **delete_signatory_panel**
+> delete_signatory_panel(bankid, mandateid, panelid)
 
 Delete Signatory Panel
 
@@ -668,9 +668,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete Signatory Panel
-        api_instance.o_bpv6_0_0_delete_signatory_panel(bankid, mandateid, panelid)
+        api_instance.delete_signatory_panel(bankid, mandateid, panelid)
     except Exception as e:
-        print("Exception when calling MandateApi->o_bpv6_0_0_delete_signatory_panel: %s\n" % e)
+        print("Exception when calling MandateApi->delete_signatory_panel: %s\n" % e)
 ```
 
 
@@ -707,8 +707,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_mandate**
-> OBPv600GetMandate200Response o_bpv6_0_0_get_mandate(bankid, accountid, mandateid)
+# **get_mandate**
+> GetMandate200Response get_mandate(bankid, accountid, mandateid)
 
 Get Mandate
 
@@ -743,7 +743,7 @@ Get Mandate
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_mandate200_response import OBPv600GetMandate200Response
+from obp_python.models.get_mandate200_response import GetMandate200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -782,11 +782,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Mandate
-        api_response = api_instance.o_bpv6_0_0_get_mandate(bankid, accountid, mandateid)
-        print("The response of MandateApi->o_bpv6_0_0_get_mandate:\n")
+        api_response = api_instance.get_mandate(bankid, accountid, mandateid)
+        print("The response of MandateApi->get_mandate:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MandateApi->o_bpv6_0_0_get_mandate: %s\n" % e)
+        print("Exception when calling MandateApi->get_mandate: %s\n" % e)
 ```
 
 
@@ -802,7 +802,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetMandate200Response**](OBPv600GetMandate200Response.md)
+[**GetMandate200Response**](GetMandate200Response.md)
 
 ### Authorization
 
@@ -823,8 +823,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_mandate_provision**
-> OBPv600GetMandateProvision200Response o_bpv6_0_0_get_mandate_provision(bankid, mandateid, provisionid)
+# **get_mandate_provision**
+> GetMandateProvision200Response get_mandate_provision(bankid, mandateid, provisionid)
 
 Get Mandate Provision
 
@@ -861,7 +861,7 @@ Get Mandate Provision
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_mandate_provision200_response import OBPv600GetMandateProvision200Response
+from obp_python.models.get_mandate_provision200_response import GetMandateProvision200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -900,11 +900,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Mandate Provision
-        api_response = api_instance.o_bpv6_0_0_get_mandate_provision(bankid, mandateid, provisionid)
-        print("The response of MandateApi->o_bpv6_0_0_get_mandate_provision:\n")
+        api_response = api_instance.get_mandate_provision(bankid, mandateid, provisionid)
+        print("The response of MandateApi->get_mandate_provision:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MandateApi->o_bpv6_0_0_get_mandate_provision: %s\n" % e)
+        print("Exception when calling MandateApi->get_mandate_provision: %s\n" % e)
 ```
 
 
@@ -920,7 +920,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetMandateProvision200Response**](OBPv600GetMandateProvision200Response.md)
+[**GetMandateProvision200Response**](GetMandateProvision200Response.md)
 
 ### Authorization
 
@@ -941,8 +941,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_mandate_provisions**
-> OBPv600GetMandateProvisions200Response o_bpv6_0_0_get_mandate_provisions(bankid, mandateid)
+# **get_mandate_provisions**
+> GetMandateProvisions200Response get_mandate_provisions(bankid, mandateid)
 
 Get Mandate Provisions
 
@@ -979,7 +979,7 @@ Get Mandate Provisions
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_mandate_provisions200_response import OBPv600GetMandateProvisions200Response
+from obp_python.models.get_mandate_provisions200_response import GetMandateProvisions200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -1017,11 +1017,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Mandate Provisions
-        api_response = api_instance.o_bpv6_0_0_get_mandate_provisions(bankid, mandateid)
-        print("The response of MandateApi->o_bpv6_0_0_get_mandate_provisions:\n")
+        api_response = api_instance.get_mandate_provisions(bankid, mandateid)
+        print("The response of MandateApi->get_mandate_provisions:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MandateApi->o_bpv6_0_0_get_mandate_provisions: %s\n" % e)
+        print("Exception when calling MandateApi->get_mandate_provisions: %s\n" % e)
 ```
 
 
@@ -1036,7 +1036,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetMandateProvisions200Response**](OBPv600GetMandateProvisions200Response.md)
+[**GetMandateProvisions200Response**](GetMandateProvisions200Response.md)
 
 ### Authorization
 
@@ -1057,8 +1057,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_mandates**
-> OBPv600GetMandates200Response o_bpv6_0_0_get_mandates(bankid, accountid)
+# **get_mandates**
+> GetMandates200Response get_mandates(bankid, accountid)
 
 Get Mandates for Account
 
@@ -1093,7 +1093,7 @@ Get Mandates for Account
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_mandates200_response import OBPv600GetMandates200Response
+from obp_python.models.get_mandates200_response import GetMandates200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -1131,11 +1131,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Mandates for Account
-        api_response = api_instance.o_bpv6_0_0_get_mandates(bankid, accountid)
-        print("The response of MandateApi->o_bpv6_0_0_get_mandates:\n")
+        api_response = api_instance.get_mandates(bankid, accountid)
+        print("The response of MandateApi->get_mandates:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MandateApi->o_bpv6_0_0_get_mandates: %s\n" % e)
+        print("Exception when calling MandateApi->get_mandates: %s\n" % e)
 ```
 
 
@@ -1150,7 +1150,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetMandates200Response**](OBPv600GetMandates200Response.md)
+[**GetMandates200Response**](GetMandates200Response.md)
 
 ### Authorization
 
@@ -1171,8 +1171,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_signatory_panel**
-> OBPv600GetSignatoryPanel200Response o_bpv6_0_0_get_signatory_panel(bankid, mandateid, panelid)
+# **get_signatory_panel**
+> GetSignatoryPanel200Response get_signatory_panel(bankid, mandateid, panelid)
 
 Get Signatory Panel
 
@@ -1199,7 +1199,7 @@ Get Signatory Panel
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_signatory_panel200_response import OBPv600GetSignatoryPanel200Response
+from obp_python.models.get_signatory_panel200_response import GetSignatoryPanel200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -1238,11 +1238,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Signatory Panel
-        api_response = api_instance.o_bpv6_0_0_get_signatory_panel(bankid, mandateid, panelid)
-        print("The response of MandateApi->o_bpv6_0_0_get_signatory_panel:\n")
+        api_response = api_instance.get_signatory_panel(bankid, mandateid, panelid)
+        print("The response of MandateApi->get_signatory_panel:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MandateApi->o_bpv6_0_0_get_signatory_panel: %s\n" % e)
+        print("Exception when calling MandateApi->get_signatory_panel: %s\n" % e)
 ```
 
 
@@ -1258,7 +1258,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetSignatoryPanel200Response**](OBPv600GetSignatoryPanel200Response.md)
+[**GetSignatoryPanel200Response**](GetSignatoryPanel200Response.md)
 
 ### Authorization
 
@@ -1279,8 +1279,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_signatory_panels**
-> OBPv600GetSignatoryPanels200Response o_bpv6_0_0_get_signatory_panels(bankid, mandateid)
+# **get_signatory_panels**
+> GetSignatoryPanels200Response get_signatory_panels(bankid, mandateid)
 
 Get Signatory Panels
 
@@ -1307,7 +1307,7 @@ Get Signatory Panels
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_signatory_panels200_response import OBPv600GetSignatoryPanels200Response
+from obp_python.models.get_signatory_panels200_response import GetSignatoryPanels200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -1345,11 +1345,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Signatory Panels
-        api_response = api_instance.o_bpv6_0_0_get_signatory_panels(bankid, mandateid)
-        print("The response of MandateApi->o_bpv6_0_0_get_signatory_panels:\n")
+        api_response = api_instance.get_signatory_panels(bankid, mandateid)
+        print("The response of MandateApi->get_signatory_panels:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MandateApi->o_bpv6_0_0_get_signatory_panels: %s\n" % e)
+        print("Exception when calling MandateApi->get_signatory_panels: %s\n" % e)
 ```
 
 
@@ -1364,7 +1364,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetSignatoryPanels200Response**](OBPv600GetSignatoryPanels200Response.md)
+[**GetSignatoryPanels200Response**](GetSignatoryPanels200Response.md)
 
 ### Authorization
 
@@ -1385,8 +1385,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_update_mandate**
-> OBPv600GetMandate200Response o_bpv6_0_0_update_mandate(bankid, accountid, mandateid, obpv600_update_mandate_request)
+# **update_mandate**
+> GetMandate200Response update_mandate(bankid, accountid, mandateid, update_mandate_request)
 
 Update Mandate
 
@@ -1421,8 +1421,8 @@ Update Mandate
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_mandate200_response import OBPv600GetMandate200Response
-from obp_python.models.obpv600_update_mandate_request import OBPv600UpdateMandateRequest
+from obp_python.models.get_mandate200_response import GetMandate200Response
+from obp_python.models.update_mandate_request import UpdateMandateRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -1458,15 +1458,15 @@ with obp_python.ApiClient(configuration) as api_client:
     bankid = 'bankid_example' # str | The BANKID identifier
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     mandateid = 'mandateid_example' # str | The MANDATEID identifier
-    obpv600_update_mandate_request = {"type":"object","properties":{"valid_to":{"type":"string"},"valid_from":{"type":"string"},"mandate_name":{"type":"string","format":"date-time"},"mandate_reference":{"type":"string","format":"date-time"},"status":{"type":"string"},"legal_text":{"type":"string"},"description":{"type":"string"}}} # OBPv600UpdateMandateRequest | Request body
+    update_mandate_request = {"type":"object","properties":{"valid_to":{"type":"string"},"valid_from":{"type":"string"},"mandate_name":{"type":"string","format":"date-time"},"mandate_reference":{"type":"string","format":"date-time"},"status":{"type":"string"},"legal_text":{"type":"string"},"description":{"type":"string"}}} # UpdateMandateRequest | Request body
 
     try:
         # Update Mandate
-        api_response = api_instance.o_bpv6_0_0_update_mandate(bankid, accountid, mandateid, obpv600_update_mandate_request)
-        print("The response of MandateApi->o_bpv6_0_0_update_mandate:\n")
+        api_response = api_instance.update_mandate(bankid, accountid, mandateid, update_mandate_request)
+        print("The response of MandateApi->update_mandate:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MandateApi->o_bpv6_0_0_update_mandate: %s\n" % e)
+        print("Exception when calling MandateApi->update_mandate: %s\n" % e)
 ```
 
 
@@ -1479,11 +1479,11 @@ Name | Type | Description  | Notes
  **bankid** | **str**| The BANKID identifier | 
  **accountid** | **str**| The ACCOUNTID identifier | 
  **mandateid** | **str**| The MANDATEID identifier | 
- **obpv600_update_mandate_request** | [**OBPv600UpdateMandateRequest**](OBPv600UpdateMandateRequest.md)| Request body | 
+ **update_mandate_request** | [**UpdateMandateRequest**](UpdateMandateRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600GetMandate200Response**](OBPv600GetMandate200Response.md)
+[**GetMandate200Response**](GetMandate200Response.md)
 
 ### Authorization
 
@@ -1504,8 +1504,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_update_mandate_provision**
-> OBPv600GetMandateProvision200Response o_bpv6_0_0_update_mandate_provision(bankid, mandateid, provisionid, obpv600_update_mandate_provision_request)
+# **update_mandate_provision**
+> GetMandateProvision200Response update_mandate_provision(bankid, mandateid, provisionid, update_mandate_provision_request)
 
 Update Mandate Provision
 
@@ -1542,8 +1542,8 @@ Update Mandate Provision
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_mandate_provision200_response import OBPv600GetMandateProvision200Response
-from obp_python.models.obpv600_update_mandate_provision_request import OBPv600UpdateMandateProvisionRequest
+from obp_python.models.get_mandate_provision200_response import GetMandateProvision200Response
+from obp_python.models.update_mandate_provision_request import UpdateMandateProvisionRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -1579,15 +1579,15 @@ with obp_python.ApiClient(configuration) as api_client:
     bankid = 'bankid_example' # str | The BANKID identifier
     mandateid = 'mandateid_example' # str | The MANDATEID identifier
     provisionid = 'provisionid_example' # str | The PROVISIONID identifier
-    obpv600_update_mandate_provision_request = {"type":"object","properties":{"signatory_requirements":{"type":"array","items":{"type":"object","properties":{"required_count":{"type":"integer"},"panel_id":{"type":"string"}}}},"is_active":{"type":"boolean"},"sort_order":{"type":"integer"},"conditions":{"type":"string"},"provision_description":{"type":"string"},"provision_name":{"type":"string"},"linked_view_id":{"type":"string"},"linked_challenge_type":{"type":"string"},"legal_reference":{"type":"string"},"provision_type":{"type":"string"}}} # OBPv600UpdateMandateProvisionRequest | Request body
+    update_mandate_provision_request = {"type":"object","properties":{"signatory_requirements":{"type":"array","items":{"type":"object","properties":{"required_count":{"type":"integer"},"panel_id":{"type":"string"}}}},"is_active":{"type":"boolean"},"sort_order":{"type":"integer"},"conditions":{"type":"string"},"provision_description":{"type":"string"},"provision_name":{"type":"string"},"linked_view_id":{"type":"string"},"linked_challenge_type":{"type":"string"},"legal_reference":{"type":"string"},"provision_type":{"type":"string"}}} # UpdateMandateProvisionRequest | Request body
 
     try:
         # Update Mandate Provision
-        api_response = api_instance.o_bpv6_0_0_update_mandate_provision(bankid, mandateid, provisionid, obpv600_update_mandate_provision_request)
-        print("The response of MandateApi->o_bpv6_0_0_update_mandate_provision:\n")
+        api_response = api_instance.update_mandate_provision(bankid, mandateid, provisionid, update_mandate_provision_request)
+        print("The response of MandateApi->update_mandate_provision:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MandateApi->o_bpv6_0_0_update_mandate_provision: %s\n" % e)
+        print("Exception when calling MandateApi->update_mandate_provision: %s\n" % e)
 ```
 
 
@@ -1600,11 +1600,11 @@ Name | Type | Description  | Notes
  **bankid** | **str**| The BANKID identifier | 
  **mandateid** | **str**| The MANDATEID identifier | 
  **provisionid** | **str**| The PROVISIONID identifier | 
- **obpv600_update_mandate_provision_request** | [**OBPv600UpdateMandateProvisionRequest**](OBPv600UpdateMandateProvisionRequest.md)| Request body | 
+ **update_mandate_provision_request** | [**UpdateMandateProvisionRequest**](UpdateMandateProvisionRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600GetMandateProvision200Response**](OBPv600GetMandateProvision200Response.md)
+[**GetMandateProvision200Response**](GetMandateProvision200Response.md)
 
 ### Authorization
 
@@ -1625,8 +1625,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_update_signatory_panel**
-> OBPv600GetSignatoryPanel200Response o_bpv6_0_0_update_signatory_panel(bankid, mandateid, panelid, obpv600_update_signatory_panel_request)
+# **update_signatory_panel**
+> GetSignatoryPanel200Response update_signatory_panel(bankid, mandateid, panelid, update_signatory_panel_request)
 
 Update Signatory Panel
 
@@ -1653,8 +1653,8 @@ Update Signatory Panel
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_signatory_panel200_response import OBPv600GetSignatoryPanel200Response
-from obp_python.models.obpv600_update_signatory_panel_request import OBPv600UpdateSignatoryPanelRequest
+from obp_python.models.get_signatory_panel200_response import GetSignatoryPanel200Response
+from obp_python.models.update_signatory_panel_request import UpdateSignatoryPanelRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -1690,15 +1690,15 @@ with obp_python.ApiClient(configuration) as api_client:
     bankid = 'bankid_example' # str | The BANKID identifier
     mandateid = 'mandateid_example' # str | The MANDATEID identifier
     panelid = 'panelid_example' # str | The PANELID identifier
-    obpv600_update_signatory_panel_request = {"type":"object","properties":{"panel_name":{"type":"string"},"user_ids":{"type":"array","items":{"type":"string"}},"description":{"type":"string"}}} # OBPv600UpdateSignatoryPanelRequest | Request body
+    update_signatory_panel_request = {"type":"object","properties":{"panel_name":{"type":"string"},"user_ids":{"type":"array","items":{"type":"string"}},"description":{"type":"string"}}} # UpdateSignatoryPanelRequest | Request body
 
     try:
         # Update Signatory Panel
-        api_response = api_instance.o_bpv6_0_0_update_signatory_panel(bankid, mandateid, panelid, obpv600_update_signatory_panel_request)
-        print("The response of MandateApi->o_bpv6_0_0_update_signatory_panel:\n")
+        api_response = api_instance.update_signatory_panel(bankid, mandateid, panelid, update_signatory_panel_request)
+        print("The response of MandateApi->update_signatory_panel:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MandateApi->o_bpv6_0_0_update_signatory_panel: %s\n" % e)
+        print("Exception when calling MandateApi->update_signatory_panel: %s\n" % e)
 ```
 
 
@@ -1711,11 +1711,11 @@ Name | Type | Description  | Notes
  **bankid** | **str**| The BANKID identifier | 
  **mandateid** | **str**| The MANDATEID identifier | 
  **panelid** | **str**| The PANELID identifier | 
- **obpv600_update_signatory_panel_request** | [**OBPv600UpdateSignatoryPanelRequest**](OBPv600UpdateSignatoryPanelRequest.md)| Request body | 
+ **update_signatory_panel_request** | [**UpdateSignatoryPanelRequest**](UpdateSignatoryPanelRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600GetSignatoryPanel200Response**](OBPv600GetSignatoryPanel200Response.md)
+[**GetSignatoryPanel200Response**](GetSignatoryPanel200Response.md)
 
 ### Authorization
 

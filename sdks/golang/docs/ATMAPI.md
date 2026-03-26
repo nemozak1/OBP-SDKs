@@ -1,552 +1,32 @@
 # \ATMAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv400UpdateAtmAccessibilityFeatures**](ATMAPI.md#OBPv400UpdateAtmAccessibilityFeatures) | **Put** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/accessibility-features | Update ATM Accessibility Features
-[**OBPv400UpdateAtmLocationCategories**](ATMAPI.md#OBPv400UpdateAtmLocationCategories) | **Put** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/location-categories | Update ATM Location Categories
-[**OBPv400UpdateAtmNotes**](ATMAPI.md#OBPv400UpdateAtmNotes) | **Put** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/notes | Update ATM Notes
-[**OBPv400UpdateAtmServices**](ATMAPI.md#OBPv400UpdateAtmServices) | **Put** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/services | Update ATM Services
-[**OBPv400UpdateAtmSupportedCurrencies**](ATMAPI.md#OBPv400UpdateAtmSupportedCurrencies) | **Put** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/supported-currencies | Update ATM Supported Currencies
-[**OBPv400UpdateAtmSupportedLanguages**](ATMAPI.md#OBPv400UpdateAtmSupportedLanguages) | **Put** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/supported-languages | Update ATM Supported Languages
-[**OBPv500HeadAtms**](ATMAPI.md#OBPv500HeadAtms) | **Head** /obp/v5.0.0/banks/{bankid}/atms | Head Bank ATMS
-[**OBPv510CreateAtm**](ATMAPI.md#OBPv510CreateAtm) | **Post** /obp/v5.1.0/banks/{bankid}/atms | Create ATM
-[**OBPv510CreateAtmAttribute**](ATMAPI.md#OBPv510CreateAtmAttribute) | **Post** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Create ATM Attribute
-[**OBPv510DeleteAtm**](ATMAPI.md#OBPv510DeleteAtm) | **Delete** /obp/v5.1.0/banks/{bankid}/atms/{atmid} | Delete ATM
-[**OBPv510DeleteAtmAttribute**](ATMAPI.md#OBPv510DeleteAtmAttribute) | **Delete** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Delete ATM Attribute
-[**OBPv510GetAtm**](ATMAPI.md#OBPv510GetAtm) | **Get** /obp/v5.1.0/banks/{bankid}/atms/{atmid} | Get Bank ATM
-[**OBPv510GetAtmAttribute**](ATMAPI.md#OBPv510GetAtmAttribute) | **Get** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Get ATM Attribute By ATM_ATTRIBUTE_ID
-[**OBPv510GetAtmAttributes**](ATMAPI.md#OBPv510GetAtmAttributes) | **Get** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Get ATM Attributes
-[**OBPv510GetAtms**](ATMAPI.md#OBPv510GetAtms) | **Get** /obp/v5.1.0/banks/{bankid}/atms | Get Bank ATMS
-[**OBPv510UpdateAtm**](ATMAPI.md#OBPv510UpdateAtm) | **Put** /obp/v5.1.0/banks/{bankid}/atms/{atmid} | UPDATE ATM
-[**OBPv510UpdateAtmAttribute**](ATMAPI.md#OBPv510UpdateAtmAttribute) | **Put** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Update ATM Attribute
-
-
-
-## OBPv400UpdateAtmAccessibilityFeatures
-
-> OBPv400UpdateAtmAccessibilityFeatures200Response OBPv400UpdateAtmAccessibilityFeatures(ctx, bankid, atmid).OBPv400UpdateAtmAccessibilityFeaturesRequest(oBPv400UpdateAtmAccessibilityFeaturesRequest).Execute()
-
-Update ATM Accessibility Features
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	atmid := "atmid_example" // string | The ATMID identifier
-	oBPv400UpdateAtmAccessibilityFeaturesRequest := *openapiclient.NewOBPv400UpdateAtmAccessibilityFeaturesRequest("Type_example", *openapiclient.NewOBPv400UpdateAtmAccessibilityFeaturesRequestProperties(*openapiclient.NewOBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds("Type_example", *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example")))) // OBPv400UpdateAtmAccessibilityFeaturesRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ATMAPI.OBPv400UpdateAtmAccessibilityFeatures(context.Background(), bankid, atmid).OBPv400UpdateAtmAccessibilityFeaturesRequest(oBPv400UpdateAtmAccessibilityFeaturesRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ATMAPI.OBPv400UpdateAtmAccessibilityFeatures``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400UpdateAtmAccessibilityFeatures`: OBPv400UpdateAtmAccessibilityFeatures200Response
-	fmt.Fprintf(os.Stdout, "Response from `ATMAPI.OBPv400UpdateAtmAccessibilityFeatures`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**atmid** | **string** | The ATMID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400UpdateAtmAccessibilityFeaturesRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **oBPv400UpdateAtmAccessibilityFeaturesRequest** | [**OBPv400UpdateAtmAccessibilityFeaturesRequest**](OBPv400UpdateAtmAccessibilityFeaturesRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv400UpdateAtmAccessibilityFeatures200Response**](OBPv400UpdateAtmAccessibilityFeatures200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400UpdateAtmLocationCategories
-
-> OBPv400UpdateAtmLocationCategories200Response OBPv400UpdateAtmLocationCategories(ctx, bankid, atmid).OBPv400UpdateAtmLocationCategoriesRequest(oBPv400UpdateAtmLocationCategoriesRequest).Execute()
-
-Update ATM Location Categories
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	atmid := "atmid_example" // string | The ATMID identifier
-	oBPv400UpdateAtmLocationCategoriesRequest := *openapiclient.NewOBPv400UpdateAtmLocationCategoriesRequest("Type_example", *openapiclient.NewOBPv400UpdateAtmLocationCategoriesRequestProperties(*openapiclient.NewOBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds("Type_example", *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example")))) // OBPv400UpdateAtmLocationCategoriesRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ATMAPI.OBPv400UpdateAtmLocationCategories(context.Background(), bankid, atmid).OBPv400UpdateAtmLocationCategoriesRequest(oBPv400UpdateAtmLocationCategoriesRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ATMAPI.OBPv400UpdateAtmLocationCategories``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400UpdateAtmLocationCategories`: OBPv400UpdateAtmLocationCategories200Response
-	fmt.Fprintf(os.Stdout, "Response from `ATMAPI.OBPv400UpdateAtmLocationCategories`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**atmid** | **string** | The ATMID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400UpdateAtmLocationCategoriesRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **oBPv400UpdateAtmLocationCategoriesRequest** | [**OBPv400UpdateAtmLocationCategoriesRequest**](OBPv400UpdateAtmLocationCategoriesRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv400UpdateAtmLocationCategories200Response**](OBPv400UpdateAtmLocationCategories200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400UpdateAtmNotes
-
-> OBPv400UpdateAtmNotes200Response OBPv400UpdateAtmNotes(ctx, bankid, atmid).OBPv400UpdateAtmNotesRequest(oBPv400UpdateAtmNotesRequest).Execute()
-
-Update ATM Notes
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	atmid := "atmid_example" // string | The ATMID identifier
-	oBPv400UpdateAtmNotesRequest := *openapiclient.NewOBPv400UpdateAtmNotesRequest("Type_example", *openapiclient.NewOBPv400UpdateAtmNotesRequestProperties(*openapiclient.NewOBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds("Type_example", *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example")))) // OBPv400UpdateAtmNotesRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ATMAPI.OBPv400UpdateAtmNotes(context.Background(), bankid, atmid).OBPv400UpdateAtmNotesRequest(oBPv400UpdateAtmNotesRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ATMAPI.OBPv400UpdateAtmNotes``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400UpdateAtmNotes`: OBPv400UpdateAtmNotes200Response
-	fmt.Fprintf(os.Stdout, "Response from `ATMAPI.OBPv400UpdateAtmNotes`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**atmid** | **string** | The ATMID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400UpdateAtmNotesRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **oBPv400UpdateAtmNotesRequest** | [**OBPv400UpdateAtmNotesRequest**](OBPv400UpdateAtmNotesRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv400UpdateAtmNotes200Response**](OBPv400UpdateAtmNotes200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400UpdateAtmServices
-
-> OBPv400UpdateAtmServices200Response OBPv400UpdateAtmServices(ctx, bankid, atmid).OBPv400UpdateAtmServicesRequest(oBPv400UpdateAtmServicesRequest).Execute()
-
-Update ATM Services
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	atmid := "atmid_example" // string | The ATMID identifier
-	oBPv400UpdateAtmServicesRequest := *openapiclient.NewOBPv400UpdateAtmServicesRequest("Type_example", *openapiclient.NewOBPv400UpdateAtmServicesRequestProperties(*openapiclient.NewOBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds("Type_example", *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example")))) // OBPv400UpdateAtmServicesRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ATMAPI.OBPv400UpdateAtmServices(context.Background(), bankid, atmid).OBPv400UpdateAtmServicesRequest(oBPv400UpdateAtmServicesRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ATMAPI.OBPv400UpdateAtmServices``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400UpdateAtmServices`: OBPv400UpdateAtmServices200Response
-	fmt.Fprintf(os.Stdout, "Response from `ATMAPI.OBPv400UpdateAtmServices`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**atmid** | **string** | The ATMID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400UpdateAtmServicesRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **oBPv400UpdateAtmServicesRequest** | [**OBPv400UpdateAtmServicesRequest**](OBPv400UpdateAtmServicesRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv400UpdateAtmServices200Response**](OBPv400UpdateAtmServices200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400UpdateAtmSupportedCurrencies
-
-> OBPv400UpdateAtmSupportedCurrencies200Response OBPv400UpdateAtmSupportedCurrencies(ctx, bankid, atmid).OBPv400UpdateAtmSupportedCurrenciesRequest(oBPv400UpdateAtmSupportedCurrenciesRequest).Execute()
-
-Update ATM Supported Currencies
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	atmid := "atmid_example" // string | The ATMID identifier
-	oBPv400UpdateAtmSupportedCurrenciesRequest := *openapiclient.NewOBPv400UpdateAtmSupportedCurrenciesRequest("Type_example", *openapiclient.NewOBPv400UpdateAtmSupportedCurrenciesRequestProperties(*openapiclient.NewOBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds("Type_example", *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example")))) // OBPv400UpdateAtmSupportedCurrenciesRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ATMAPI.OBPv400UpdateAtmSupportedCurrencies(context.Background(), bankid, atmid).OBPv400UpdateAtmSupportedCurrenciesRequest(oBPv400UpdateAtmSupportedCurrenciesRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ATMAPI.OBPv400UpdateAtmSupportedCurrencies``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400UpdateAtmSupportedCurrencies`: OBPv400UpdateAtmSupportedCurrencies200Response
-	fmt.Fprintf(os.Stdout, "Response from `ATMAPI.OBPv400UpdateAtmSupportedCurrencies`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**atmid** | **string** | The ATMID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400UpdateAtmSupportedCurrenciesRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **oBPv400UpdateAtmSupportedCurrenciesRequest** | [**OBPv400UpdateAtmSupportedCurrenciesRequest**](OBPv400UpdateAtmSupportedCurrenciesRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv400UpdateAtmSupportedCurrencies200Response**](OBPv400UpdateAtmSupportedCurrencies200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400UpdateAtmSupportedLanguages
-
-> OBPv400UpdateAtmSupportedLanguages200Response OBPv400UpdateAtmSupportedLanguages(ctx, bankid, atmid).OBPv400UpdateAtmSupportedLanguagesRequest(oBPv400UpdateAtmSupportedLanguagesRequest).Execute()
-
-Update ATM Supported Languages
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	atmid := "atmid_example" // string | The ATMID identifier
-	oBPv400UpdateAtmSupportedLanguagesRequest := *openapiclient.NewOBPv400UpdateAtmSupportedLanguagesRequest("Type_example", *openapiclient.NewOBPv400UpdateAtmSupportedLanguagesRequestProperties(*openapiclient.NewOBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds("Type_example", *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example")))) // OBPv400UpdateAtmSupportedLanguagesRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ATMAPI.OBPv400UpdateAtmSupportedLanguages(context.Background(), bankid, atmid).OBPv400UpdateAtmSupportedLanguagesRequest(oBPv400UpdateAtmSupportedLanguagesRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ATMAPI.OBPv400UpdateAtmSupportedLanguages``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400UpdateAtmSupportedLanguages`: OBPv400UpdateAtmSupportedLanguages200Response
-	fmt.Fprintf(os.Stdout, "Response from `ATMAPI.OBPv400UpdateAtmSupportedLanguages`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**atmid** | **string** | The ATMID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400UpdateAtmSupportedLanguagesRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **oBPv400UpdateAtmSupportedLanguagesRequest** | [**OBPv400UpdateAtmSupportedLanguagesRequest**](OBPv400UpdateAtmSupportedLanguagesRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv400UpdateAtmSupportedLanguages200Response**](OBPv400UpdateAtmSupportedLanguages200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv500HeadAtms
-
-> OBPv500HeadAtms200Response OBPv500HeadAtms(ctx, bankid).Execute()
-
-Head Bank ATMS
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ATMAPI.OBPv500HeadAtms(context.Background(), bankid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ATMAPI.OBPv500HeadAtms``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv500HeadAtms`: OBPv500HeadAtms200Response
-	fmt.Fprintf(os.Stdout, "Response from `ATMAPI.OBPv500HeadAtms`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv500HeadAtmsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**OBPv500HeadAtms200Response**](OBPv500HeadAtms200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510CreateAtm
-
-> OBPv510GetAtm200Response OBPv510CreateAtm(ctx, bankid).OBPv510CreateAtmRequest(oBPv510CreateAtmRequest).Execute()
+[**CreateAtm**](ATMAPI.md#CreateAtm) | **Post** /obp/v5.1.0/banks/{bankid}/atms | Create ATM
+[**CreateAtmAttribute**](ATMAPI.md#CreateAtmAttribute) | **Post** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Create ATM Attribute
+[**DeleteAtm**](ATMAPI.md#DeleteAtm) | **Delete** /obp/v5.1.0/banks/{bankid}/atms/{atmid} | Delete ATM
+[**DeleteAtmAttribute**](ATMAPI.md#DeleteAtmAttribute) | **Delete** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Delete ATM Attribute
+[**GetAtm**](ATMAPI.md#GetAtm) | **Get** /obp/v5.1.0/banks/{bankid}/atms/{atmid} | Get Bank ATM
+[**GetAtmAttribute**](ATMAPI.md#GetAtmAttribute) | **Get** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Get ATM Attribute By ATM_ATTRIBUTE_ID
+[**GetAtmAttributes**](ATMAPI.md#GetAtmAttributes) | **Get** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Get ATM Attributes
+[**GetAtms**](ATMAPI.md#GetAtms) | **Get** /obp/v5.1.0/banks/{bankid}/atms | Get Bank ATMS
+[**HeadAtms**](ATMAPI.md#HeadAtms) | **Head** /obp/v5.0.0/banks/{bankid}/atms | Head Bank ATMS
+[**UpdateAtm**](ATMAPI.md#UpdateAtm) | **Put** /obp/v5.1.0/banks/{bankid}/atms/{atmid} | UPDATE ATM
+[**UpdateAtmAccessibilityFeatures**](ATMAPI.md#UpdateAtmAccessibilityFeatures) | **Put** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/accessibility-features | Update ATM Accessibility Features
+[**UpdateAtmAttribute**](ATMAPI.md#UpdateAtmAttribute) | **Put** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Update ATM Attribute
+[**UpdateAtmLocationCategories**](ATMAPI.md#UpdateAtmLocationCategories) | **Put** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/location-categories | Update ATM Location Categories
+[**UpdateAtmNotes**](ATMAPI.md#UpdateAtmNotes) | **Put** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/notes | Update ATM Notes
+[**UpdateAtmServices**](ATMAPI.md#UpdateAtmServices) | **Put** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/services | Update ATM Services
+[**UpdateAtmSupportedCurrencies**](ATMAPI.md#UpdateAtmSupportedCurrencies) | **Put** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/supported-currencies | Update ATM Supported Currencies
+[**UpdateAtmSupportedLanguages**](ATMAPI.md#UpdateAtmSupportedLanguages) | **Put** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/supported-languages | Update ATM Supported Languages
+
+
+
+## CreateAtm
+
+> GetAtm200Response CreateAtm(ctx, bankid).CreateAtmRequest(createAtmRequest).Execute()
 
 Create ATM
 
@@ -566,17 +46,17 @@ import (
 
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
-	oBPv510CreateAtmRequest := *openapiclient.NewOBPv510CreateAtmRequest("Type_example", *openapiclient.NewOBPv510CreateAtmRequestProperties(*openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSunday("Type_example", *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSundayProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))), *openapiclient.NewOBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds("Type_example", *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example")), , *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLocation("Type_example", *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLocationProperties(, )), *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSunday("Type_example", *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSundayProperties(, )), , *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSunday("Type_example", *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSundayProperties(, )), , *openapiclient.NewOBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds("Type_example", ), , *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSunday("Type_example", *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSundayProperties(, )), , , , , , , *openapiclient.NewOBPv310GetProductTree200ResponsePropertiesParentProductPropertiesParentProductPropertiesMeta("Type_example", *openapiclient.NewOBPv310GetProductTree200ResponsePropertiesParentProductPropertiesParentProductPropertiesMetaProperties(*openapiclient.NewOBPv310GetProductTree200ResponsePropertiesParentProductPropertiesParentProductPropertiesMetaPropertiesLicense("Type_example", *openapiclient.NewOBPv310GetProductTree200ResponsePropertiesParentProductPropertiesParentProductPropertiesMetaPropertiesLicenseProperties(, )))), *openapiclient.NewOBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds("Type_example", ), *openapiclient.NewOBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds("Type_example", ), *openapiclient.NewOBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds("Type_example", ), *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesAddress("Type_example", *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesAddressProperties(, , , , , , , )), , *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSunday("Type_example", *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSundayProperties(, )), *openapiclient.NewOBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds("Type_example", ), , , *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSunday("Type_example", *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSundayProperties(, )), *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSunday("Type_example", *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSundayProperties(, )), , , )) // OBPv510CreateAtmRequest | Request body
+	createAtmRequest := *openapiclient.NewCreateAtmRequest() // CreateAtmRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ATMAPI.OBPv510CreateAtm(context.Background(), bankid).OBPv510CreateAtmRequest(oBPv510CreateAtmRequest).Execute()
+	resp, r, err := apiClient.ATMAPI.CreateAtm(context.Background(), bankid).CreateAtmRequest(createAtmRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ATMAPI.OBPv510CreateAtm``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ATMAPI.CreateAtm``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510CreateAtm`: OBPv510GetAtm200Response
-	fmt.Fprintf(os.Stdout, "Response from `ATMAPI.OBPv510CreateAtm`: %v\n", resp)
+	// response from `CreateAtm`: GetAtm200Response
+	fmt.Fprintf(os.Stdout, "Response from `ATMAPI.CreateAtm`: %v\n", resp)
 }
 ```
 
@@ -590,17 +70,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510CreateAtmRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateAtmRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv510CreateAtmRequest** | [**OBPv510CreateAtmRequest**](OBPv510CreateAtmRequest.md) | Request body | 
+ **createAtmRequest** | [**CreateAtmRequest**](CreateAtmRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv510GetAtm200Response**](OBPv510GetAtm200Response.md)
+[**GetAtm200Response**](GetAtm200Response.md)
 
 ### Authorization
 
@@ -616,9 +96,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510CreateAtmAttribute
+## CreateAtmAttribute
 
-> OBPv510GetAtmAttribute200Response OBPv510CreateAtmAttribute(ctx, bankid, atmid).OBPv510UpdateAtmAttributeRequest(oBPv510UpdateAtmAttributeRequest).Execute()
+> GetAtmAttribute200Response CreateAtmAttribute(ctx, bankid, atmid).UpdateAtmAttributeRequest(updateAtmAttributeRequest).Execute()
 
 Create ATM Attribute
 
@@ -639,17 +119,17 @@ import (
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	atmid := "atmid_example" // string | The ATMID identifier
-	oBPv510UpdateAtmAttributeRequest := *openapiclient.NewOBPv510UpdateAtmAttributeRequest("Type_example", *openapiclient.NewOBPv510UpdateAtmAttributeRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv510UpdateAtmAttributeRequest | Request body
+	updateAtmAttributeRequest := *openapiclient.NewUpdateAtmAttributeRequest() // UpdateAtmAttributeRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ATMAPI.OBPv510CreateAtmAttribute(context.Background(), bankid, atmid).OBPv510UpdateAtmAttributeRequest(oBPv510UpdateAtmAttributeRequest).Execute()
+	resp, r, err := apiClient.ATMAPI.CreateAtmAttribute(context.Background(), bankid, atmid).UpdateAtmAttributeRequest(updateAtmAttributeRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ATMAPI.OBPv510CreateAtmAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ATMAPI.CreateAtmAttribute``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510CreateAtmAttribute`: OBPv510GetAtmAttribute200Response
-	fmt.Fprintf(os.Stdout, "Response from `ATMAPI.OBPv510CreateAtmAttribute`: %v\n", resp)
+	// response from `CreateAtmAttribute`: GetAtmAttribute200Response
+	fmt.Fprintf(os.Stdout, "Response from `ATMAPI.CreateAtmAttribute`: %v\n", resp)
 }
 ```
 
@@ -664,18 +144,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510CreateAtmAttributeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateAtmAttributeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **oBPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md) | Request body | 
+ **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv510GetAtmAttribute200Response**](OBPv510GetAtmAttribute200Response.md)
+[**GetAtmAttribute200Response**](GetAtmAttribute200Response.md)
 
 ### Authorization
 
@@ -691,9 +171,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510DeleteAtm
+## DeleteAtm
 
-> OBPv510DeleteAtm(ctx, bankid, atmid).Execute()
+> DeleteAtm(ctx, bankid, atmid).Execute()
 
 Delete ATM
 
@@ -717,9 +197,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.ATMAPI.OBPv510DeleteAtm(context.Background(), bankid, atmid).Execute()
+	r, err := apiClient.ATMAPI.DeleteAtm(context.Background(), bankid, atmid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ATMAPI.OBPv510DeleteAtm``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ATMAPI.DeleteAtm``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -736,7 +216,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510DeleteAtmRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteAtmRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -762,9 +242,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510DeleteAtmAttribute
+## DeleteAtmAttribute
 
-> OBPv510DeleteAtmAttribute(ctx, bankid, atmid, atmattributeid).Execute()
+> DeleteAtmAttribute(ctx, bankid, atmid, atmattributeid).Execute()
 
 Delete ATM Attribute
 
@@ -789,9 +269,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.ATMAPI.OBPv510DeleteAtmAttribute(context.Background(), bankid, atmid, atmattributeid).Execute()
+	r, err := apiClient.ATMAPI.DeleteAtmAttribute(context.Background(), bankid, atmid, atmattributeid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ATMAPI.OBPv510DeleteAtmAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ATMAPI.DeleteAtmAttribute``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -809,7 +289,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510DeleteAtmAttributeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteAtmAttributeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -836,9 +316,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510GetAtm
+## GetAtm
 
-> OBPv510GetAtm200Response OBPv510GetAtm(ctx, bankid, atmid).Execute()
+> GetAtm200Response GetAtm(ctx, bankid, atmid).Execute()
 
 Get Bank ATM
 
@@ -862,13 +342,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ATMAPI.OBPv510GetAtm(context.Background(), bankid, atmid).Execute()
+	resp, r, err := apiClient.ATMAPI.GetAtm(context.Background(), bankid, atmid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ATMAPI.OBPv510GetAtm``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ATMAPI.GetAtm``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510GetAtm`: OBPv510GetAtm200Response
-	fmt.Fprintf(os.Stdout, "Response from `ATMAPI.OBPv510GetAtm`: %v\n", resp)
+	// response from `GetAtm`: GetAtm200Response
+	fmt.Fprintf(os.Stdout, "Response from `ATMAPI.GetAtm`: %v\n", resp)
 }
 ```
 
@@ -883,7 +363,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510GetAtmRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAtmRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -893,7 +373,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetAtm200Response**](OBPv510GetAtm200Response.md)
+[**GetAtm200Response**](GetAtm200Response.md)
 
 ### Authorization
 
@@ -909,9 +389,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## OBPv510GetAtmAttribute
+## GetAtmAttribute
 
-> OBPv510GetAtmAttribute200Response OBPv510GetAtmAttribute(ctx, bankid, atmid, atmattributeid).Execute()
+> GetAtmAttribute200Response GetAtmAttribute(ctx, bankid, atmid, atmattributeid).Execute()
 
 Get ATM Attribute By ATM_ATTRIBUTE_ID
 
@@ -936,13 +416,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ATMAPI.OBPv510GetAtmAttribute(context.Background(), bankid, atmid, atmattributeid).Execute()
+	resp, r, err := apiClient.ATMAPI.GetAtmAttribute(context.Background(), bankid, atmid, atmattributeid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ATMAPI.OBPv510GetAtmAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ATMAPI.GetAtmAttribute``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510GetAtmAttribute`: OBPv510GetAtmAttribute200Response
-	fmt.Fprintf(os.Stdout, "Response from `ATMAPI.OBPv510GetAtmAttribute`: %v\n", resp)
+	// response from `GetAtmAttribute`: GetAtmAttribute200Response
+	fmt.Fprintf(os.Stdout, "Response from `ATMAPI.GetAtmAttribute`: %v\n", resp)
 }
 ```
 
@@ -958,7 +438,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510GetAtmAttributeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAtmAttributeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -969,7 +449,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetAtmAttribute200Response**](OBPv510GetAtmAttribute200Response.md)
+[**GetAtmAttribute200Response**](GetAtmAttribute200Response.md)
 
 ### Authorization
 
@@ -985,9 +465,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510GetAtmAttributes
+## GetAtmAttributes
 
-> OBPv510GetAtmAttributes200Response OBPv510GetAtmAttributes(ctx, bankid, atmid).Execute()
+> GetAtmAttributes200Response GetAtmAttributes(ctx, bankid, atmid).Execute()
 
 Get ATM Attributes
 
@@ -1011,13 +491,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ATMAPI.OBPv510GetAtmAttributes(context.Background(), bankid, atmid).Execute()
+	resp, r, err := apiClient.ATMAPI.GetAtmAttributes(context.Background(), bankid, atmid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ATMAPI.OBPv510GetAtmAttributes``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ATMAPI.GetAtmAttributes``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510GetAtmAttributes`: OBPv510GetAtmAttributes200Response
-	fmt.Fprintf(os.Stdout, "Response from `ATMAPI.OBPv510GetAtmAttributes`: %v\n", resp)
+	// response from `GetAtmAttributes`: GetAtmAttributes200Response
+	fmt.Fprintf(os.Stdout, "Response from `ATMAPI.GetAtmAttributes`: %v\n", resp)
 }
 ```
 
@@ -1032,7 +512,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510GetAtmAttributesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAtmAttributesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1042,7 +522,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetAtmAttributes200Response**](OBPv510GetAtmAttributes200Response.md)
+[**GetAtmAttributes200Response**](GetAtmAttributes200Response.md)
 
 ### Authorization
 
@@ -1058,9 +538,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510GetAtms
+## GetAtms
 
-> OBPv510GetAtms200Response OBPv510GetAtms(ctx, bankid).Execute()
+> GetAtms200Response GetAtms(ctx, bankid).Execute()
 
 Get Bank ATMS
 
@@ -1083,13 +563,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ATMAPI.OBPv510GetAtms(context.Background(), bankid).Execute()
+	resp, r, err := apiClient.ATMAPI.GetAtms(context.Background(), bankid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ATMAPI.OBPv510GetAtms``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ATMAPI.GetAtms``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510GetAtms`: OBPv510GetAtms200Response
-	fmt.Fprintf(os.Stdout, "Response from `ATMAPI.OBPv510GetAtms`: %v\n", resp)
+	// response from `GetAtms`: GetAtms200Response
+	fmt.Fprintf(os.Stdout, "Response from `ATMAPI.GetAtms`: %v\n", resp)
 }
 ```
 
@@ -1103,7 +583,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510GetAtmsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAtmsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1112,7 +592,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetAtms200Response**](OBPv510GetAtms200Response.md)
+[**GetAtms200Response**](GetAtms200Response.md)
 
 ### Authorization
 
@@ -1128,9 +608,79 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## OBPv510UpdateAtm
+## HeadAtms
 
-> OBPv510GetAtm200Response OBPv510UpdateAtm(ctx, bankid, atmid).OBPv510UpdateAtmRequest(oBPv510UpdateAtmRequest).Execute()
+> HeadAtms200Response HeadAtms(ctx, bankid).Execute()
+
+Head Bank ATMS
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ATMAPI.HeadAtms(context.Background(), bankid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ATMAPI.HeadAtms``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `HeadAtms`: HeadAtms200Response
+	fmt.Fprintf(os.Stdout, "Response from `ATMAPI.HeadAtms`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiHeadAtmsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**HeadAtms200Response**](HeadAtms200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateAtm
+
+> GetAtm200Response UpdateAtm(ctx, bankid, atmid).UpdateAtmRequest(updateAtmRequest).Execute()
 
 UPDATE ATM
 
@@ -1151,17 +701,17 @@ import (
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	atmid := "atmid_example" // string | The ATMID identifier
-	oBPv510UpdateAtmRequest := *openapiclient.NewOBPv510UpdateAtmRequest("Type_example", *openapiclient.NewOBPv510UpdateAtmRequestProperties(*openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSunday("Type_example", *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSundayProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))), *openapiclient.NewOBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds("Type_example", *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example")), , *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLocation("Type_example", *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLocationProperties(, )), *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSunday("Type_example", *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSundayProperties(, )), , *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSunday("Type_example", *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSundayProperties(, )), , *openapiclient.NewOBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds("Type_example", ), , *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSunday("Type_example", *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSundayProperties(, )), , , , , , *openapiclient.NewOBPv310GetProductTree200ResponsePropertiesParentProductPropertiesParentProductPropertiesMeta("Type_example", *openapiclient.NewOBPv310GetProductTree200ResponsePropertiesParentProductPropertiesParentProductPropertiesMetaProperties(*openapiclient.NewOBPv310GetProductTree200ResponsePropertiesParentProductPropertiesParentProductPropertiesMetaPropertiesLicense("Type_example", *openapiclient.NewOBPv310GetProductTree200ResponsePropertiesParentProductPropertiesParentProductPropertiesMetaPropertiesLicenseProperties(, )))), *openapiclient.NewOBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds("Type_example", ), *openapiclient.NewOBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds("Type_example", ), *openapiclient.NewOBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds("Type_example", ), *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesAddress("Type_example", *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesAddressProperties(, , , , , , , )), , *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSunday("Type_example", *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSundayProperties(, )), *openapiclient.NewOBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds("Type_example", ), , , *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSunday("Type_example", *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSundayProperties(, )), *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSunday("Type_example", *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSundayProperties(, )), , , )) // OBPv510UpdateAtmRequest | Request body
+	updateAtmRequest := *openapiclient.NewUpdateAtmRequest() // UpdateAtmRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ATMAPI.OBPv510UpdateAtm(context.Background(), bankid, atmid).OBPv510UpdateAtmRequest(oBPv510UpdateAtmRequest).Execute()
+	resp, r, err := apiClient.ATMAPI.UpdateAtm(context.Background(), bankid, atmid).UpdateAtmRequest(updateAtmRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ATMAPI.OBPv510UpdateAtm``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ATMAPI.UpdateAtm``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510UpdateAtm`: OBPv510GetAtm200Response
-	fmt.Fprintf(os.Stdout, "Response from `ATMAPI.OBPv510UpdateAtm`: %v\n", resp)
+	// response from `UpdateAtm`: GetAtm200Response
+	fmt.Fprintf(os.Stdout, "Response from `ATMAPI.UpdateAtm`: %v\n", resp)
 }
 ```
 
@@ -1176,18 +726,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510UpdateAtmRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateAtmRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **oBPv510UpdateAtmRequest** | [**OBPv510UpdateAtmRequest**](OBPv510UpdateAtmRequest.md) | Request body | 
+ **updateAtmRequest** | [**UpdateAtmRequest**](UpdateAtmRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv510GetAtm200Response**](OBPv510GetAtm200Response.md)
+[**GetAtm200Response**](GetAtm200Response.md)
 
 ### Authorization
 
@@ -1203,9 +753,84 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510UpdateAtmAttribute
+## UpdateAtmAccessibilityFeatures
 
-> OBPv510GetAtmAttribute200Response OBPv510UpdateAtmAttribute(ctx, bankid, atmid, atmattributeid).OBPv510UpdateAtmAttributeRequest(oBPv510UpdateAtmAttributeRequest).Execute()
+> UpdateAtmAccessibilityFeatures200Response UpdateAtmAccessibilityFeatures(ctx, bankid, atmid).UpdateAtmAccessibilityFeaturesRequest(updateAtmAccessibilityFeaturesRequest).Execute()
+
+Update ATM Accessibility Features
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	atmid := "atmid_example" // string | The ATMID identifier
+	updateAtmAccessibilityFeaturesRequest := *openapiclient.NewUpdateAtmAccessibilityFeaturesRequest() // UpdateAtmAccessibilityFeaturesRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ATMAPI.UpdateAtmAccessibilityFeatures(context.Background(), bankid, atmid).UpdateAtmAccessibilityFeaturesRequest(updateAtmAccessibilityFeaturesRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ATMAPI.UpdateAtmAccessibilityFeatures``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateAtmAccessibilityFeatures`: UpdateAtmAccessibilityFeatures200Response
+	fmt.Fprintf(os.Stdout, "Response from `ATMAPI.UpdateAtmAccessibilityFeatures`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**atmid** | **string** | The ATMID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateAtmAccessibilityFeaturesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **updateAtmAccessibilityFeaturesRequest** | [**UpdateAtmAccessibilityFeaturesRequest**](UpdateAtmAccessibilityFeaturesRequest.md) | Request body | 
+
+### Return type
+
+[**UpdateAtmAccessibilityFeatures200Response**](UpdateAtmAccessibilityFeatures200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateAtmAttribute
+
+> GetAtmAttribute200Response UpdateAtmAttribute(ctx, bankid, atmid, atmattributeid).UpdateAtmAttributeRequest(updateAtmAttributeRequest).Execute()
 
 Update ATM Attribute
 
@@ -1227,17 +852,17 @@ func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	atmid := "atmid_example" // string | The ATMID identifier
 	atmattributeid := "atmattributeid_example" // string | The ATMATTRIBUTEID identifier
-	oBPv510UpdateAtmAttributeRequest := *openapiclient.NewOBPv510UpdateAtmAttributeRequest("Type_example", *openapiclient.NewOBPv510UpdateAtmAttributeRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv510UpdateAtmAttributeRequest | Request body
+	updateAtmAttributeRequest := *openapiclient.NewUpdateAtmAttributeRequest() // UpdateAtmAttributeRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ATMAPI.OBPv510UpdateAtmAttribute(context.Background(), bankid, atmid, atmattributeid).OBPv510UpdateAtmAttributeRequest(oBPv510UpdateAtmAttributeRequest).Execute()
+	resp, r, err := apiClient.ATMAPI.UpdateAtmAttribute(context.Background(), bankid, atmid, atmattributeid).UpdateAtmAttributeRequest(updateAtmAttributeRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ATMAPI.OBPv510UpdateAtmAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ATMAPI.UpdateAtmAttribute``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510UpdateAtmAttribute`: OBPv510GetAtmAttribute200Response
-	fmt.Fprintf(os.Stdout, "Response from `ATMAPI.OBPv510UpdateAtmAttribute`: %v\n", resp)
+	// response from `UpdateAtmAttribute`: GetAtmAttribute200Response
+	fmt.Fprintf(os.Stdout, "Response from `ATMAPI.UpdateAtmAttribute`: %v\n", resp)
 }
 ```
 
@@ -1253,7 +878,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510UpdateAtmAttributeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateAtmAttributeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1261,11 +886,386 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md) | Request body | 
+ **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv510GetAtmAttribute200Response**](OBPv510GetAtmAttribute200Response.md)
+[**GetAtmAttribute200Response**](GetAtmAttribute200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateAtmLocationCategories
+
+> UpdateAtmLocationCategories200Response UpdateAtmLocationCategories(ctx, bankid, atmid).UpdateAtmLocationCategoriesRequest(updateAtmLocationCategoriesRequest).Execute()
+
+Update ATM Location Categories
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	atmid := "atmid_example" // string | The ATMID identifier
+	updateAtmLocationCategoriesRequest := *openapiclient.NewUpdateAtmLocationCategoriesRequest() // UpdateAtmLocationCategoriesRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ATMAPI.UpdateAtmLocationCategories(context.Background(), bankid, atmid).UpdateAtmLocationCategoriesRequest(updateAtmLocationCategoriesRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ATMAPI.UpdateAtmLocationCategories``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateAtmLocationCategories`: UpdateAtmLocationCategories200Response
+	fmt.Fprintf(os.Stdout, "Response from `ATMAPI.UpdateAtmLocationCategories`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**atmid** | **string** | The ATMID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateAtmLocationCategoriesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **updateAtmLocationCategoriesRequest** | [**UpdateAtmLocationCategoriesRequest**](UpdateAtmLocationCategoriesRequest.md) | Request body | 
+
+### Return type
+
+[**UpdateAtmLocationCategories200Response**](UpdateAtmLocationCategories200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateAtmNotes
+
+> UpdateAtmNotes200Response UpdateAtmNotes(ctx, bankid, atmid).UpdateAtmNotesRequest(updateAtmNotesRequest).Execute()
+
+Update ATM Notes
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	atmid := "atmid_example" // string | The ATMID identifier
+	updateAtmNotesRequest := *openapiclient.NewUpdateAtmNotesRequest() // UpdateAtmNotesRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ATMAPI.UpdateAtmNotes(context.Background(), bankid, atmid).UpdateAtmNotesRequest(updateAtmNotesRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ATMAPI.UpdateAtmNotes``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateAtmNotes`: UpdateAtmNotes200Response
+	fmt.Fprintf(os.Stdout, "Response from `ATMAPI.UpdateAtmNotes`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**atmid** | **string** | The ATMID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateAtmNotesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **updateAtmNotesRequest** | [**UpdateAtmNotesRequest**](UpdateAtmNotesRequest.md) | Request body | 
+
+### Return type
+
+[**UpdateAtmNotes200Response**](UpdateAtmNotes200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateAtmServices
+
+> UpdateAtmServices200Response UpdateAtmServices(ctx, bankid, atmid).UpdateAtmServicesRequest(updateAtmServicesRequest).Execute()
+
+Update ATM Services
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	atmid := "atmid_example" // string | The ATMID identifier
+	updateAtmServicesRequest := *openapiclient.NewUpdateAtmServicesRequest() // UpdateAtmServicesRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ATMAPI.UpdateAtmServices(context.Background(), bankid, atmid).UpdateAtmServicesRequest(updateAtmServicesRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ATMAPI.UpdateAtmServices``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateAtmServices`: UpdateAtmServices200Response
+	fmt.Fprintf(os.Stdout, "Response from `ATMAPI.UpdateAtmServices`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**atmid** | **string** | The ATMID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateAtmServicesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **updateAtmServicesRequest** | [**UpdateAtmServicesRequest**](UpdateAtmServicesRequest.md) | Request body | 
+
+### Return type
+
+[**UpdateAtmServices200Response**](UpdateAtmServices200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateAtmSupportedCurrencies
+
+> UpdateAtmSupportedCurrencies200Response UpdateAtmSupportedCurrencies(ctx, bankid, atmid).UpdateAtmSupportedCurrenciesRequest(updateAtmSupportedCurrenciesRequest).Execute()
+
+Update ATM Supported Currencies
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	atmid := "atmid_example" // string | The ATMID identifier
+	updateAtmSupportedCurrenciesRequest := *openapiclient.NewUpdateAtmSupportedCurrenciesRequest() // UpdateAtmSupportedCurrenciesRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ATMAPI.UpdateAtmSupportedCurrencies(context.Background(), bankid, atmid).UpdateAtmSupportedCurrenciesRequest(updateAtmSupportedCurrenciesRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ATMAPI.UpdateAtmSupportedCurrencies``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateAtmSupportedCurrencies`: UpdateAtmSupportedCurrencies200Response
+	fmt.Fprintf(os.Stdout, "Response from `ATMAPI.UpdateAtmSupportedCurrencies`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**atmid** | **string** | The ATMID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateAtmSupportedCurrenciesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **updateAtmSupportedCurrenciesRequest** | [**UpdateAtmSupportedCurrenciesRequest**](UpdateAtmSupportedCurrenciesRequest.md) | Request body | 
+
+### Return type
+
+[**UpdateAtmSupportedCurrencies200Response**](UpdateAtmSupportedCurrencies200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateAtmSupportedLanguages
+
+> UpdateAtmSupportedLanguages200Response UpdateAtmSupportedLanguages(ctx, bankid, atmid).UpdateAtmSupportedLanguagesRequest(updateAtmSupportedLanguagesRequest).Execute()
+
+Update ATM Supported Languages
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	atmid := "atmid_example" // string | The ATMID identifier
+	updateAtmSupportedLanguagesRequest := *openapiclient.NewUpdateAtmSupportedLanguagesRequest() // UpdateAtmSupportedLanguagesRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ATMAPI.UpdateAtmSupportedLanguages(context.Background(), bankid, atmid).UpdateAtmSupportedLanguagesRequest(updateAtmSupportedLanguagesRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ATMAPI.UpdateAtmSupportedLanguages``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateAtmSupportedLanguages`: UpdateAtmSupportedLanguages200Response
+	fmt.Fprintf(os.Stdout, "Response from `ATMAPI.UpdateAtmSupportedLanguages`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**atmid** | **string** | The ATMID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateAtmSupportedLanguagesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **updateAtmSupportedLanguagesRequest** | [**UpdateAtmSupportedLanguagesRequest**](UpdateAtmSupportedLanguagesRequest.md) | Request body | 
+
+### Return type
+
+[**UpdateAtmSupportedLanguages200Response**](UpdateAtmSupportedLanguages200Response.md)
 
 ### Authorization
 

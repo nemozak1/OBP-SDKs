@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,67 +75,64 @@ class EntitlementApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv200AddEntitlement' => [
+        'addEntitlement' => [
             'application/json',
         ],
-        'oBPv200DeleteEntitlement' => [
+        'addEntitlementRequest' => [
             'application/json',
         ],
-        'oBPv200GetPermissionsForBankAccount' => [
+        'addUserToGroup' => [
             'application/json',
         ],
-        'oBPv210GetEntitlementsByBankAndUser' => [
+        'createUserWithRoles' => [
             'application/json',
         ],
-        'oBPv300AddEntitlementRequest' => [
+        'deleteEntitlement' => [
             'application/json',
         ],
-        'oBPv300DeleteEntitlementRequest' => [
+        'deleteEntitlementRequest' => [
             'application/json',
         ],
-        'oBPv300GetAllEntitlementRequests' => [
+        'getAllEntitlementRequests' => [
             'application/json',
         ],
-        'oBPv300GetEntitlementRequests' => [
+        'getAllEntitlements' => [
             'application/json',
         ],
-        'oBPv300GetEntitlementRequestsForCurrentUser' => [
+        'getEntitlementRequests' => [
             'application/json',
         ],
-        'oBPv300GetEntitlementsForCurrentUser' => [
+        'getEntitlementRequestsForCurrentUser' => [
             'application/json',
         ],
-        'oBPv310GetAllEntitlements' => [
+        'getEntitlements' => [
             'application/json',
         ],
-        'oBPv400CreateUserWithRoles' => [
+        'getEntitlementsAndPermissions' => [
             'application/json',
         ],
-        'oBPv400GetEntitlements' => [
+        'getEntitlementsByBankAndUser' => [
             'application/json',
         ],
-        'oBPv400GetEntitlementsForBank' => [
+        'getEntitlementsForBank' => [
             'application/json',
         ],
-        'oBPv510GetEntitlementsAndPermissions' => [
+        'getEntitlementsForCurrentUser' => [
             'application/json',
         ],
-        'oBPv600AddUserToGroup' => [
+        'getGroupEntitlements' => [
             'application/json',
         ],
-        'oBPv600DeleteEntitlement' => [
+        'getPermissionsForBankAccount' => [
             'application/json',
         ],
-        'oBPv600GetGroupEntitlements' => [
+        'getRolesWithEntitlementCountsAtAllBanks' => [
             'application/json',
         ],
-        'oBPv600GetRolesWithEntitlementCountsAtAllBanks' => [
+        'getUserGroupMemberships' => [
             'application/json',
         ],
-        'oBPv600GetUserGroupMemberships' => [
-            'application/json',
-        ],
-        'oBPv600RemoveUserFromGroup' => [
+        'removeUserFromGroup' => [
             'application/json',
         ],
     ];
@@ -187,40 +184,40 @@ class EntitlementApi
     }
 
     /**
-     * Operation oBPv200AddEntitlement
+     * Operation addEntitlement
      *
      * Add Entitlement for a User
      *
      * @param  string $userid The USERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv200AddEntitlement'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateConsentImplicitRequestEntitlementsInner $create_consent_implicit_request_entitlements_inner Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addEntitlement'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510AddSystemViewPermission200Response
+     * @return \OpenBankProject\Model\AddSystemViewPermission200Response
      */
-    public function oBPv200AddEntitlement($userid, $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items, string $contentType = self::contentTypes['oBPv200AddEntitlement'][0])
+    public function addEntitlement($userid, $create_consent_implicit_request_entitlements_inner, string $contentType = self::contentTypes['addEntitlement'][0])
     {
-        list($response) = $this->oBPv200AddEntitlementWithHttpInfo($userid, $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items, $contentType);
+        list($response) = $this->addEntitlementWithHttpInfo($userid, $create_consent_implicit_request_entitlements_inner, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv200AddEntitlementWithHttpInfo
+     * Operation addEntitlementWithHttpInfo
      *
      * Add Entitlement for a User
      *
      * @param  string $userid The USERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv200AddEntitlement'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateConsentImplicitRequestEntitlementsInner $create_consent_implicit_request_entitlements_inner Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addEntitlement'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510AddSystemViewPermission200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\AddSystemViewPermission200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv200AddEntitlementWithHttpInfo($userid, $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items, string $contentType = self::contentTypes['oBPv200AddEntitlement'][0])
+    public function addEntitlementWithHttpInfo($userid, $create_consent_implicit_request_entitlements_inner, string $contentType = self::contentTypes['addEntitlement'][0])
     {
-        $request = $this->oBPv200AddEntitlementRequest($userid, $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items, $contentType);
+        $request = $this->addEntitlementRequest($userid, $create_consent_implicit_request_entitlements_inner, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -248,7 +245,7 @@ class EntitlementApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510AddSystemViewPermission200Response',
+                        '\OpenBankProject\Model\AddSystemViewPermission200Response',
                         $request,
                         $response,
                     );
@@ -270,7 +267,7 @@ class EntitlementApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510AddSystemViewPermission200Response',
+                '\OpenBankProject\Model\AddSystemViewPermission200Response',
                 $request,
                 $response,
             );
@@ -279,7 +276,7 @@ class EntitlementApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510AddSystemViewPermission200Response',
+                        '\OpenBankProject\Model\AddSystemViewPermission200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -292,20 +289,20 @@ class EntitlementApi
     }
 
     /**
-     * Operation oBPv200AddEntitlementAsync
+     * Operation addEntitlementAsync
      *
      * Add Entitlement for a User
      *
      * @param  string $userid The USERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv200AddEntitlement'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateConsentImplicitRequestEntitlementsInner $create_consent_implicit_request_entitlements_inner Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addEntitlement'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv200AddEntitlementAsync($userid, $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items, string $contentType = self::contentTypes['oBPv200AddEntitlement'][0])
+    public function addEntitlementAsync($userid, $create_consent_implicit_request_entitlements_inner, string $contentType = self::contentTypes['addEntitlement'][0])
     {
-        return $this->oBPv200AddEntitlementAsyncWithHttpInfo($userid, $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items, $contentType)
+        return $this->addEntitlementAsyncWithHttpInfo($userid, $create_consent_implicit_request_entitlements_inner, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -314,21 +311,21 @@ class EntitlementApi
     }
 
     /**
-     * Operation oBPv200AddEntitlementAsyncWithHttpInfo
+     * Operation addEntitlementAsyncWithHttpInfo
      *
      * Add Entitlement for a User
      *
      * @param  string $userid The USERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv200AddEntitlement'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateConsentImplicitRequestEntitlementsInner $create_consent_implicit_request_entitlements_inner Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addEntitlement'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv200AddEntitlementAsyncWithHttpInfo($userid, $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items, string $contentType = self::contentTypes['oBPv200AddEntitlement'][0])
+    public function addEntitlementAsyncWithHttpInfo($userid, $create_consent_implicit_request_entitlements_inner, string $contentType = self::contentTypes['addEntitlement'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv510AddSystemViewPermission200Response';
-        $request = $this->oBPv200AddEntitlementRequest($userid, $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items, $contentType);
+        $returnType = '\OpenBankProject\Model\AddSystemViewPermission200Response';
+        $request = $this->addEntitlementRequest($userid, $create_consent_implicit_request_entitlements_inner, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -367,29 +364,29 @@ class EntitlementApi
     }
 
     /**
-     * Create request for operation 'oBPv200AddEntitlement'
+     * Create request for operation 'addEntitlement'
      *
      * @param  string $userid The USERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv200AddEntitlement'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateConsentImplicitRequestEntitlementsInner $create_consent_implicit_request_entitlements_inner Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addEntitlement'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv200AddEntitlementRequest($userid, $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items, string $contentType = self::contentTypes['oBPv200AddEntitlement'][0])
+    public function addEntitlementRequest($userid, $create_consent_implicit_request_entitlements_inner, string $contentType = self::contentTypes['addEntitlement'][0])
     {
 
         // verify the required parameter 'userid' is set
         if ($userid === null || (is_array($userid) && count($userid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $userid when calling oBPv200AddEntitlement'
+                'Missing the required parameter $userid when calling addEntitlement'
             );
         }
 
-        // verify the required parameter 'obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items' is set
-        if ($obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items === null || (is_array($obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items) && count($obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items) === 0)) {
+        // verify the required parameter 'create_consent_implicit_request_entitlements_inner' is set
+        if ($create_consent_implicit_request_entitlements_inner === null || (is_array($create_consent_implicit_request_entitlements_inner) && count($create_consent_implicit_request_entitlements_inner) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items when calling oBPv200AddEntitlement'
+                'Missing the required parameter $create_consent_implicit_request_entitlements_inner when calling addEntitlement'
             );
         }
 
@@ -420,12 +417,12 @@ class EntitlementApi
         );
 
         // for model (json/xml)
-        if (isset($obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items)) {
+        if (isset($create_consent_implicit_request_entitlements_inner)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_consent_implicit_request_entitlements_inner));
             } else {
-                $httpBody = $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items;
+                $httpBody = $create_consent_implicit_request_entitlements_inner;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -461,9 +458,9 @@ class EntitlementApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -488,39 +485,900 @@ class EntitlementApi
     }
 
     /**
-     * Operation oBPv200DeleteEntitlement
+     * Operation addEntitlementRequest
+     *
+     * Create Entitlement Request for current User
+     *
+     * @param  \OpenBankProject\Model\CreateConsentImplicitRequestEntitlementsInner $create_consent_implicit_request_entitlements_inner Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addEntitlementRequest'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetAllEntitlementRequests200ResponseEntitlementRequestsInner
+     */
+    public function addEntitlementRequest($create_consent_implicit_request_entitlements_inner, string $contentType = self::contentTypes['addEntitlementRequest'][0])
+    {
+        list($response) = $this->addEntitlementRequestWithHttpInfo($create_consent_implicit_request_entitlements_inner, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation addEntitlementRequestWithHttpInfo
+     *
+     * Create Entitlement Request for current User
+     *
+     * @param  \OpenBankProject\Model\CreateConsentImplicitRequestEntitlementsInner $create_consent_implicit_request_entitlements_inner Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addEntitlementRequest'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetAllEntitlementRequests200ResponseEntitlementRequestsInner, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function addEntitlementRequestWithHttpInfo($create_consent_implicit_request_entitlements_inner, string $contentType = self::contentTypes['addEntitlementRequest'][0])
+    {
+        $request = $this->addEntitlementRequestRequest($create_consent_implicit_request_entitlements_inner, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetAllEntitlementRequests200ResponseEntitlementRequestsInner',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetAllEntitlementRequests200ResponseEntitlementRequestsInner',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetAllEntitlementRequests200ResponseEntitlementRequestsInner',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation addEntitlementRequestAsync
+     *
+     * Create Entitlement Request for current User
+     *
+     * @param  \OpenBankProject\Model\CreateConsentImplicitRequestEntitlementsInner $create_consent_implicit_request_entitlements_inner Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addEntitlementRequest'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function addEntitlementRequestAsync($create_consent_implicit_request_entitlements_inner, string $contentType = self::contentTypes['addEntitlementRequest'][0])
+    {
+        return $this->addEntitlementRequestAsyncWithHttpInfo($create_consent_implicit_request_entitlements_inner, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation addEntitlementRequestAsyncWithHttpInfo
+     *
+     * Create Entitlement Request for current User
+     *
+     * @param  \OpenBankProject\Model\CreateConsentImplicitRequestEntitlementsInner $create_consent_implicit_request_entitlements_inner Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addEntitlementRequest'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function addEntitlementRequestAsyncWithHttpInfo($create_consent_implicit_request_entitlements_inner, string $contentType = self::contentTypes['addEntitlementRequest'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetAllEntitlementRequests200ResponseEntitlementRequestsInner';
+        $request = $this->addEntitlementRequestRequest($create_consent_implicit_request_entitlements_inner, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'addEntitlementRequest'
+     *
+     * @param  \OpenBankProject\Model\CreateConsentImplicitRequestEntitlementsInner $create_consent_implicit_request_entitlements_inner Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addEntitlementRequest'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function addEntitlementRequestRequest($create_consent_implicit_request_entitlements_inner, string $contentType = self::contentTypes['addEntitlementRequest'][0])
+    {
+
+        // verify the required parameter 'create_consent_implicit_request_entitlements_inner' is set
+        if ($create_consent_implicit_request_entitlements_inner === null || (is_array($create_consent_implicit_request_entitlements_inner) && count($create_consent_implicit_request_entitlements_inner) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $create_consent_implicit_request_entitlements_inner when calling addEntitlementRequest'
+            );
+        }
+
+
+        $resourcePath = '/obp/v3.0.0/entitlement-requests';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($create_consent_implicit_request_entitlements_inner)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_consent_implicit_request_entitlements_inner));
+            } else {
+                $httpBody = $create_consent_implicit_request_entitlements_inner;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation addUserToGroup
+     *
+     * Grant User Membership to Group Entitlements
+     *
+     * @param  string $userid The USERID identifier (required)
+     * @param  \OpenBankProject\Model\AddUserToGroupRequest $add_user_to_group_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addUserToGroup'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\AddUserToGroup200Response
+     */
+    public function addUserToGroup($userid, $add_user_to_group_request, string $contentType = self::contentTypes['addUserToGroup'][0])
+    {
+        list($response) = $this->addUserToGroupWithHttpInfo($userid, $add_user_to_group_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation addUserToGroupWithHttpInfo
+     *
+     * Grant User Membership to Group Entitlements
+     *
+     * @param  string $userid The USERID identifier (required)
+     * @param  \OpenBankProject\Model\AddUserToGroupRequest $add_user_to_group_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addUserToGroup'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\AddUserToGroup200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function addUserToGroupWithHttpInfo($userid, $add_user_to_group_request, string $contentType = self::contentTypes['addUserToGroup'][0])
+    {
+        $request = $this->addUserToGroupRequest($userid, $add_user_to_group_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\AddUserToGroup200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\AddUserToGroup200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\AddUserToGroup200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation addUserToGroupAsync
+     *
+     * Grant User Membership to Group Entitlements
+     *
+     * @param  string $userid The USERID identifier (required)
+     * @param  \OpenBankProject\Model\AddUserToGroupRequest $add_user_to_group_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addUserToGroup'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function addUserToGroupAsync($userid, $add_user_to_group_request, string $contentType = self::contentTypes['addUserToGroup'][0])
+    {
+        return $this->addUserToGroupAsyncWithHttpInfo($userid, $add_user_to_group_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation addUserToGroupAsyncWithHttpInfo
+     *
+     * Grant User Membership to Group Entitlements
+     *
+     * @param  string $userid The USERID identifier (required)
+     * @param  \OpenBankProject\Model\AddUserToGroupRequest $add_user_to_group_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addUserToGroup'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function addUserToGroupAsyncWithHttpInfo($userid, $add_user_to_group_request, string $contentType = self::contentTypes['addUserToGroup'][0])
+    {
+        $returnType = '\OpenBankProject\Model\AddUserToGroup200Response';
+        $request = $this->addUserToGroupRequest($userid, $add_user_to_group_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'addUserToGroup'
+     *
+     * @param  string $userid The USERID identifier (required)
+     * @param  \OpenBankProject\Model\AddUserToGroupRequest $add_user_to_group_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addUserToGroup'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function addUserToGroupRequest($userid, $add_user_to_group_request, string $contentType = self::contentTypes['addUserToGroup'][0])
+    {
+
+        // verify the required parameter 'userid' is set
+        if ($userid === null || (is_array($userid) && count($userid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $userid when calling addUserToGroup'
+            );
+        }
+
+        // verify the required parameter 'add_user_to_group_request' is set
+        if ($add_user_to_group_request === null || (is_array($add_user_to_group_request) && count($add_user_to_group_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $add_user_to_group_request when calling addUserToGroup'
+            );
+        }
+
+
+        $resourcePath = '/obp/v6.0.0/users/{userid}/group-entitlements';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($userid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'userid' . '}',
+                ObjectSerializer::toPathValue($userid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($add_user_to_group_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($add_user_to_group_request));
+            } else {
+                $httpBody = $add_user_to_group_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation createUserWithRoles
+     *
+     * Create (DAuth) User with Roles
+     *
+     * @param  \OpenBankProject\Model\CreateUserWithRolesRequest $create_user_with_roles_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUserWithRoles'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetEntitlements200Response
+     */
+    public function createUserWithRoles($create_user_with_roles_request, string $contentType = self::contentTypes['createUserWithRoles'][0])
+    {
+        list($response) = $this->createUserWithRolesWithHttpInfo($create_user_with_roles_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation createUserWithRolesWithHttpInfo
+     *
+     * Create (DAuth) User with Roles
+     *
+     * @param  \OpenBankProject\Model\CreateUserWithRolesRequest $create_user_with_roles_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUserWithRoles'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetEntitlements200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createUserWithRolesWithHttpInfo($create_user_with_roles_request, string $contentType = self::contentTypes['createUserWithRoles'][0])
+    {
+        $request = $this->createUserWithRolesRequest($create_user_with_roles_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetEntitlements200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetEntitlements200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetEntitlements200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createUserWithRolesAsync
+     *
+     * Create (DAuth) User with Roles
+     *
+     * @param  \OpenBankProject\Model\CreateUserWithRolesRequest $create_user_with_roles_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUserWithRoles'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createUserWithRolesAsync($create_user_with_roles_request, string $contentType = self::contentTypes['createUserWithRoles'][0])
+    {
+        return $this->createUserWithRolesAsyncWithHttpInfo($create_user_with_roles_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation createUserWithRolesAsyncWithHttpInfo
+     *
+     * Create (DAuth) User with Roles
+     *
+     * @param  \OpenBankProject\Model\CreateUserWithRolesRequest $create_user_with_roles_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUserWithRoles'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createUserWithRolesAsyncWithHttpInfo($create_user_with_roles_request, string $contentType = self::contentTypes['createUserWithRoles'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetEntitlements200Response';
+        $request = $this->createUserWithRolesRequest($create_user_with_roles_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'createUserWithRoles'
+     *
+     * @param  \OpenBankProject\Model\CreateUserWithRolesRequest $create_user_with_roles_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUserWithRoles'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createUserWithRolesRequest($create_user_with_roles_request, string $contentType = self::contentTypes['createUserWithRoles'][0])
+    {
+
+        // verify the required parameter 'create_user_with_roles_request' is set
+        if ($create_user_with_roles_request === null || (is_array($create_user_with_roles_request) && count($create_user_with_roles_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $create_user_with_roles_request when calling createUserWithRoles'
+            );
+        }
+
+
+        $resourcePath = '/obp/v4.0.0/user-entitlements';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($create_user_with_roles_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_user_with_roles_request));
+            } else {
+                $httpBody = $create_user_with_roles_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation deleteEntitlement
      *
      * Delete Entitlement
      *
-     * @param  string $userid The USERID identifier (required)
      * @param  string $entitlementid The ENTITLEMENTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv200DeleteEntitlement'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteEntitlement'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv200DeleteEntitlement($userid, $entitlementid, string $contentType = self::contentTypes['oBPv200DeleteEntitlement'][0])
+    public function deleteEntitlement($entitlementid, string $contentType = self::contentTypes['deleteEntitlement'][0])
     {
-        $this->oBPv200DeleteEntitlementWithHttpInfo($userid, $entitlementid, $contentType);
+        $this->deleteEntitlementWithHttpInfo($entitlementid, $contentType);
     }
 
     /**
-     * Operation oBPv200DeleteEntitlementWithHttpInfo
+     * Operation deleteEntitlementWithHttpInfo
      *
      * Delete Entitlement
      *
-     * @param  string $userid The USERID identifier (required)
      * @param  string $entitlementid The ENTITLEMENTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv200DeleteEntitlement'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteEntitlement'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv200DeleteEntitlementWithHttpInfo($userid, $entitlementid, string $contentType = self::contentTypes['oBPv200DeleteEntitlement'][0])
+    public function deleteEntitlementWithHttpInfo($entitlementid, string $contentType = self::contentTypes['deleteEntitlement'][0])
     {
-        $request = $this->oBPv200DeleteEntitlementRequest($userid, $entitlementid, $contentType);
+        $request = $this->deleteEntitlementRequest($entitlementid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -556,20 +1414,19 @@ class EntitlementApi
     }
 
     /**
-     * Operation oBPv200DeleteEntitlementAsync
+     * Operation deleteEntitlementAsync
      *
      * Delete Entitlement
      *
-     * @param  string $userid The USERID identifier (required)
      * @param  string $entitlementid The ENTITLEMENTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv200DeleteEntitlement'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteEntitlement'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv200DeleteEntitlementAsync($userid, $entitlementid, string $contentType = self::contentTypes['oBPv200DeleteEntitlement'][0])
+    public function deleteEntitlementAsync($entitlementid, string $contentType = self::contentTypes['deleteEntitlement'][0])
     {
-        return $this->oBPv200DeleteEntitlementAsyncWithHttpInfo($userid, $entitlementid, $contentType)
+        return $this->deleteEntitlementAsyncWithHttpInfo($entitlementid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -578,21 +1435,20 @@ class EntitlementApi
     }
 
     /**
-     * Operation oBPv200DeleteEntitlementAsyncWithHttpInfo
+     * Operation deleteEntitlementAsyncWithHttpInfo
      *
      * Delete Entitlement
      *
-     * @param  string $userid The USERID identifier (required)
      * @param  string $entitlementid The ENTITLEMENTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv200DeleteEntitlement'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteEntitlement'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv200DeleteEntitlementAsyncWithHttpInfo($userid, $entitlementid, string $contentType = self::contentTypes['oBPv200DeleteEntitlement'][0])
+    public function deleteEntitlementAsyncWithHttpInfo($entitlementid, string $contentType = self::contentTypes['deleteEntitlement'][0])
     {
         $returnType = '';
-        $request = $this->oBPv200DeleteEntitlementRequest($userid, $entitlementid, $contentType);
+        $request = $this->deleteEntitlementRequest($entitlementid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -618,34 +1474,26 @@ class EntitlementApi
     }
 
     /**
-     * Create request for operation 'oBPv200DeleteEntitlement'
+     * Create request for operation 'deleteEntitlement'
      *
-     * @param  string $userid The USERID identifier (required)
      * @param  string $entitlementid The ENTITLEMENTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv200DeleteEntitlement'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteEntitlement'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv200DeleteEntitlementRequest($userid, $entitlementid, string $contentType = self::contentTypes['oBPv200DeleteEntitlement'][0])
+    public function deleteEntitlementRequest($entitlementid, string $contentType = self::contentTypes['deleteEntitlement'][0])
     {
-
-        // verify the required parameter 'userid' is set
-        if ($userid === null || (is_array($userid) && count($userid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $userid when calling oBPv200DeleteEntitlement'
-            );
-        }
 
         // verify the required parameter 'entitlementid' is set
         if ($entitlementid === null || (is_array($entitlementid) && count($entitlementid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $entitlementid when calling oBPv200DeleteEntitlement'
+                'Missing the required parameter $entitlementid when calling deleteEntitlement'
             );
         }
 
 
-        $resourcePath = '/obp/v2.0.0/users/{userid}/entitlement/{entitlementid}';
+        $resourcePath = '/obp/v6.0.0/entitlements/{entitlementid}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -654,14 +1502,6 @@ class EntitlementApi
 
 
 
-        // path params
-        if ($userid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'userid' . '}',
-                ObjectSerializer::toPathValue($userid),
-                $resourcePath
-            );
-        }
         // path params
         if ($entitlementid !== null) {
             $resourcePath = str_replace(
@@ -713,9 +1553,9 @@ class EntitlementApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -740,40 +1580,268 @@ class EntitlementApi
     }
 
     /**
-     * Operation oBPv200GetPermissionsForBankAccount
+     * Operation deleteEntitlementRequest
      *
-     * Get access
+     * Delete Entitlement Request
      *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv200GetPermissionsForBankAccount'] to see the possible values for this operation
+     * @param  string $entitlementrequestid The ENTITLEMENTREQUESTID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteEntitlementRequest'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv200GetPermissionsForBankAccount200Response
+     * @return void
      */
-    public function oBPv200GetPermissionsForBankAccount($bankid, $accountid, string $contentType = self::contentTypes['oBPv200GetPermissionsForBankAccount'][0])
+    public function deleteEntitlementRequest($entitlementrequestid, string $contentType = self::contentTypes['deleteEntitlementRequest'][0])
     {
-        list($response) = $this->oBPv200GetPermissionsForBankAccountWithHttpInfo($bankid, $accountid, $contentType);
+        $this->deleteEntitlementRequestWithHttpInfo($entitlementrequestid, $contentType);
+    }
+
+    /**
+     * Operation deleteEntitlementRequestWithHttpInfo
+     *
+     * Delete Entitlement Request
+     *
+     * @param  string $entitlementrequestid The ENTITLEMENTREQUESTID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteEntitlementRequest'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function deleteEntitlementRequestWithHttpInfo($entitlementrequestid, string $contentType = self::contentTypes['deleteEntitlementRequest'][0])
+    {
+        $request = $this->deleteEntitlementRequestRequest($entitlementrequestid, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            return [null, $statusCode, $response->getHeaders()];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation deleteEntitlementRequestAsync
+     *
+     * Delete Entitlement Request
+     *
+     * @param  string $entitlementrequestid The ENTITLEMENTREQUESTID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteEntitlementRequest'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteEntitlementRequestAsync($entitlementrequestid, string $contentType = self::contentTypes['deleteEntitlementRequest'][0])
+    {
+        return $this->deleteEntitlementRequestAsyncWithHttpInfo($entitlementrequestid, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation deleteEntitlementRequestAsyncWithHttpInfo
+     *
+     * Delete Entitlement Request
+     *
+     * @param  string $entitlementrequestid The ENTITLEMENTREQUESTID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteEntitlementRequest'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteEntitlementRequestAsyncWithHttpInfo($entitlementrequestid, string $contentType = self::contentTypes['deleteEntitlementRequest'][0])
+    {
+        $returnType = '';
+        $request = $this->deleteEntitlementRequestRequest($entitlementrequestid, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'deleteEntitlementRequest'
+     *
+     * @param  string $entitlementrequestid The ENTITLEMENTREQUESTID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteEntitlementRequest'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function deleteEntitlementRequestRequest($entitlementrequestid, string $contentType = self::contentTypes['deleteEntitlementRequest'][0])
+    {
+
+        // verify the required parameter 'entitlementrequestid' is set
+        if ($entitlementrequestid === null || (is_array($entitlementrequestid) && count($entitlementrequestid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $entitlementrequestid when calling deleteEntitlementRequest'
+            );
+        }
+
+
+        $resourcePath = '/obp/v3.0.0/entitlement-requests/{entitlementrequestid}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($entitlementrequestid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'entitlementrequestid' . '}',
+                ObjectSerializer::toPathValue($entitlementrequestid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            [],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'DELETE',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getAllEntitlementRequests
+     *
+     * Get all Entitlement Requests
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllEntitlementRequests'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetAllEntitlementRequests200Response
+     */
+    public function getAllEntitlementRequests(string $contentType = self::contentTypes['getAllEntitlementRequests'][0])
+    {
+        list($response) = $this->getAllEntitlementRequestsWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv200GetPermissionsForBankAccountWithHttpInfo
+     * Operation getAllEntitlementRequestsWithHttpInfo
      *
-     * Get access
+     * Get all Entitlement Requests
      *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv200GetPermissionsForBankAccount'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllEntitlementRequests'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv200GetPermissionsForBankAccount200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAllEntitlementRequests200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv200GetPermissionsForBankAccountWithHttpInfo($bankid, $accountid, string $contentType = self::contentTypes['oBPv200GetPermissionsForBankAccount'][0])
+    public function getAllEntitlementRequestsWithHttpInfo(string $contentType = self::contentTypes['getAllEntitlementRequests'][0])
     {
-        $request = $this->oBPv200GetPermissionsForBankAccountRequest($bankid, $accountid, $contentType);
+        $request = $this->getAllEntitlementRequestsRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -801,7 +1869,7 @@ class EntitlementApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv200GetPermissionsForBankAccount200Response',
+                        '\OpenBankProject\Model\GetAllEntitlementRequests200Response',
                         $request,
                         $response,
                     );
@@ -823,7 +1891,7 @@ class EntitlementApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv200GetPermissionsForBankAccount200Response',
+                '\OpenBankProject\Model\GetAllEntitlementRequests200Response',
                 $request,
                 $response,
             );
@@ -832,7 +1900,7 @@ class EntitlementApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv200GetPermissionsForBankAccount200Response',
+                        '\OpenBankProject\Model\GetAllEntitlementRequests200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -845,20 +1913,18 @@ class EntitlementApi
     }
 
     /**
-     * Operation oBPv200GetPermissionsForBankAccountAsync
+     * Operation getAllEntitlementRequestsAsync
      *
-     * Get access
+     * Get all Entitlement Requests
      *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv200GetPermissionsForBankAccount'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllEntitlementRequests'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv200GetPermissionsForBankAccountAsync($bankid, $accountid, string $contentType = self::contentTypes['oBPv200GetPermissionsForBankAccount'][0])
+    public function getAllEntitlementRequestsAsync(string $contentType = self::contentTypes['getAllEntitlementRequests'][0])
     {
-        return $this->oBPv200GetPermissionsForBankAccountAsyncWithHttpInfo($bankid, $accountid, $contentType)
+        return $this->getAllEntitlementRequestsAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -867,21 +1933,19 @@ class EntitlementApi
     }
 
     /**
-     * Operation oBPv200GetPermissionsForBankAccountAsyncWithHttpInfo
+     * Operation getAllEntitlementRequestsAsyncWithHttpInfo
      *
-     * Get access
+     * Get all Entitlement Requests
      *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv200GetPermissionsForBankAccount'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllEntitlementRequests'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv200GetPermissionsForBankAccountAsyncWithHttpInfo($bankid, $accountid, string $contentType = self::contentTypes['oBPv200GetPermissionsForBankAccount'][0])
+    public function getAllEntitlementRequestsAsyncWithHttpInfo(string $contentType = self::contentTypes['getAllEntitlementRequests'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv200GetPermissionsForBankAccount200Response';
-        $request = $this->oBPv200GetPermissionsForBankAccountRequest($bankid, $accountid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAllEntitlementRequests200Response';
+        $request = $this->getAllEntitlementRequestsRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -920,34 +1984,554 @@ class EntitlementApi
     }
 
     /**
-     * Create request for operation 'oBPv200GetPermissionsForBankAccount'
+     * Create request for operation 'getAllEntitlementRequests'
      *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv200GetPermissionsForBankAccount'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllEntitlementRequests'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv200GetPermissionsForBankAccountRequest($bankid, $accountid, string $contentType = self::contentTypes['oBPv200GetPermissionsForBankAccount'][0])
+    public function getAllEntitlementRequestsRequest(string $contentType = self::contentTypes['getAllEntitlementRequests'][0])
     {
 
-        // verify the required parameter 'bankid' is set
-        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
+
+        $resourcePath = '/obp/v3.0.0/entitlement-requests';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getAllEntitlements
+     *
+     * Get all Entitlements
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllEntitlements'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetAllEntitlements200Response
+     */
+    public function getAllEntitlements(string $contentType = self::contentTypes['getAllEntitlements'][0])
+    {
+        list($response) = $this->getAllEntitlementsWithHttpInfo($contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getAllEntitlementsWithHttpInfo
+     *
+     * Get all Entitlements
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllEntitlements'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetAllEntitlements200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getAllEntitlementsWithHttpInfo(string $contentType = self::contentTypes['getAllEntitlements'][0])
+    {
+        $request = $this->getAllEntitlementsRequest($contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetAllEntitlements200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetAllEntitlements200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetAllEntitlements200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getAllEntitlementsAsync
+     *
+     * Get all Entitlements
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllEntitlements'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAllEntitlementsAsync(string $contentType = self::contentTypes['getAllEntitlements'][0])
+    {
+        return $this->getAllEntitlementsAsyncWithHttpInfo($contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getAllEntitlementsAsyncWithHttpInfo
+     *
+     * Get all Entitlements
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllEntitlements'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAllEntitlementsAsyncWithHttpInfo(string $contentType = self::contentTypes['getAllEntitlements'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetAllEntitlements200Response';
+        $request = $this->getAllEntitlementsRequest($contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getAllEntitlements'
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllEntitlements'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getAllEntitlementsRequest(string $contentType = self::contentTypes['getAllEntitlements'][0])
+    {
+
+
+        $resourcePath = '/obp/v3.1.0/entitlements';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getEntitlementRequests
+     *
+     * Get Entitlement Requests for a User
+     *
+     * @param  string $userid The USERID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEntitlementRequests'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetAllEntitlementRequests200Response
+     */
+    public function getEntitlementRequests($userid, string $contentType = self::contentTypes['getEntitlementRequests'][0])
+    {
+        list($response) = $this->getEntitlementRequestsWithHttpInfo($userid, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getEntitlementRequestsWithHttpInfo
+     *
+     * Get Entitlement Requests for a User
+     *
+     * @param  string $userid The USERID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEntitlementRequests'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetAllEntitlementRequests200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getEntitlementRequestsWithHttpInfo($userid, string $contentType = self::contentTypes['getEntitlementRequests'][0])
+    {
+        $request = $this->getEntitlementRequestsRequest($userid, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetAllEntitlementRequests200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetAllEntitlementRequests200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetAllEntitlementRequests200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getEntitlementRequestsAsync
+     *
+     * Get Entitlement Requests for a User
+     *
+     * @param  string $userid The USERID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEntitlementRequests'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getEntitlementRequestsAsync($userid, string $contentType = self::contentTypes['getEntitlementRequests'][0])
+    {
+        return $this->getEntitlementRequestsAsyncWithHttpInfo($userid, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getEntitlementRequestsAsyncWithHttpInfo
+     *
+     * Get Entitlement Requests for a User
+     *
+     * @param  string $userid The USERID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEntitlementRequests'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getEntitlementRequestsAsyncWithHttpInfo($userid, string $contentType = self::contentTypes['getEntitlementRequests'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetAllEntitlementRequests200Response';
+        $request = $this->getEntitlementRequestsRequest($userid, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getEntitlementRequests'
+     *
+     * @param  string $userid The USERID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEntitlementRequests'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getEntitlementRequestsRequest($userid, string $contentType = self::contentTypes['getEntitlementRequests'][0])
+    {
+
+        // verify the required parameter 'userid' is set
+        if ($userid === null || (is_array($userid) && count($userid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv200GetPermissionsForBankAccount'
+                'Missing the required parameter $userid when calling getEntitlementRequests'
             );
         }
 
-        // verify the required parameter 'accountid' is set
-        if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv200GetPermissionsForBankAccount'
-            );
-        }
 
-
-        $resourcePath = '/obp/v2.0.0/banks/{bankid}/accounts/{accountid}/permissions';
+        $resourcePath = '/obp/v3.0.0/users/{userid}/entitlement-requests';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -957,18 +2541,10 @@ class EntitlementApi
 
 
         // path params
-        if ($bankid !== null) {
+        if ($userid !== null) {
             $resourcePath = str_replace(
-                '{' . 'bankid' . '}',
-                ObjectSerializer::toPathValue($bankid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($accountid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'accountid' . '}',
-                ObjectSerializer::toPathValue($accountid),
+                '{' . 'userid' . '}',
+                ObjectSerializer::toPathValue($userid),
                 $resourcePath
             );
         }
@@ -1015,9 +2591,9 @@ class EntitlementApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1042,40 +2618,36 @@ class EntitlementApi
     }
 
     /**
-     * Operation oBPv210GetEntitlementsByBankAndUser
+     * Operation getEntitlementRequestsForCurrentUser
      *
-     * Get Entitlements for User at Bank
+     * Get Entitlement Requests for the current User
      *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv210GetEntitlementsByBankAndUser'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEntitlementRequestsForCurrentUser'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510GetUserByProviderAndUsername200ResponsePropertiesEntitlements
+     * @return \OpenBankProject\Model\GetAllEntitlementRequests200Response
      */
-    public function oBPv210GetEntitlementsByBankAndUser($bankid, $userid, string $contentType = self::contentTypes['oBPv210GetEntitlementsByBankAndUser'][0])
+    public function getEntitlementRequestsForCurrentUser(string $contentType = self::contentTypes['getEntitlementRequestsForCurrentUser'][0])
     {
-        list($response) = $this->oBPv210GetEntitlementsByBankAndUserWithHttpInfo($bankid, $userid, $contentType);
+        list($response) = $this->getEntitlementRequestsForCurrentUserWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv210GetEntitlementsByBankAndUserWithHttpInfo
+     * Operation getEntitlementRequestsForCurrentUserWithHttpInfo
      *
-     * Get Entitlements for User at Bank
+     * Get Entitlement Requests for the current User
      *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv210GetEntitlementsByBankAndUser'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEntitlementRequestsForCurrentUser'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510GetUserByProviderAndUsername200ResponsePropertiesEntitlements, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAllEntitlementRequests200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv210GetEntitlementsByBankAndUserWithHttpInfo($bankid, $userid, string $contentType = self::contentTypes['oBPv210GetEntitlementsByBankAndUser'][0])
+    public function getEntitlementRequestsForCurrentUserWithHttpInfo(string $contentType = self::contentTypes['getEntitlementRequestsForCurrentUser'][0])
     {
-        $request = $this->oBPv210GetEntitlementsByBankAndUserRequest($bankid, $userid, $contentType);
+        $request = $this->getEntitlementRequestsForCurrentUserRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1103,7 +2675,7 @@ class EntitlementApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510GetUserByProviderAndUsername200ResponsePropertiesEntitlements',
+                        '\OpenBankProject\Model\GetAllEntitlementRequests200Response',
                         $request,
                         $response,
                     );
@@ -1125,7 +2697,7 @@ class EntitlementApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510GetUserByProviderAndUsername200ResponsePropertiesEntitlements',
+                '\OpenBankProject\Model\GetAllEntitlementRequests200Response',
                 $request,
                 $response,
             );
@@ -1134,7 +2706,7 @@ class EntitlementApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510GetUserByProviderAndUsername200ResponsePropertiesEntitlements',
+                        '\OpenBankProject\Model\GetAllEntitlementRequests200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1147,20 +2719,18 @@ class EntitlementApi
     }
 
     /**
-     * Operation oBPv210GetEntitlementsByBankAndUserAsync
+     * Operation getEntitlementRequestsForCurrentUserAsync
      *
-     * Get Entitlements for User at Bank
+     * Get Entitlement Requests for the current User
      *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv210GetEntitlementsByBankAndUser'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEntitlementRequestsForCurrentUser'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv210GetEntitlementsByBankAndUserAsync($bankid, $userid, string $contentType = self::contentTypes['oBPv210GetEntitlementsByBankAndUser'][0])
+    public function getEntitlementRequestsForCurrentUserAsync(string $contentType = self::contentTypes['getEntitlementRequestsForCurrentUser'][0])
     {
-        return $this->oBPv210GetEntitlementsByBankAndUserAsyncWithHttpInfo($bankid, $userid, $contentType)
+        return $this->getEntitlementRequestsForCurrentUserAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1169,21 +2739,19 @@ class EntitlementApi
     }
 
     /**
-     * Operation oBPv210GetEntitlementsByBankAndUserAsyncWithHttpInfo
+     * Operation getEntitlementRequestsForCurrentUserAsyncWithHttpInfo
      *
-     * Get Entitlements for User at Bank
+     * Get Entitlement Requests for the current User
      *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv210GetEntitlementsByBankAndUser'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEntitlementRequestsForCurrentUser'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv210GetEntitlementsByBankAndUserAsyncWithHttpInfo($bankid, $userid, string $contentType = self::contentTypes['oBPv210GetEntitlementsByBankAndUser'][0])
+    public function getEntitlementRequestsForCurrentUserAsyncWithHttpInfo(string $contentType = self::contentTypes['getEntitlementRequestsForCurrentUser'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv510GetUserByProviderAndUsername200ResponsePropertiesEntitlements';
-        $request = $this->oBPv210GetEntitlementsByBankAndUserRequest($bankid, $userid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAllEntitlementRequests200Response';
+        $request = $this->getEntitlementRequestsForCurrentUserRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1222,29 +2790,863 @@ class EntitlementApi
     }
 
     /**
-     * Create request for operation 'oBPv210GetEntitlementsByBankAndUser'
+     * Create request for operation 'getEntitlementRequestsForCurrentUser'
      *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv210GetEntitlementsByBankAndUser'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEntitlementRequestsForCurrentUser'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv210GetEntitlementsByBankAndUserRequest($bankid, $userid, string $contentType = self::contentTypes['oBPv210GetEntitlementsByBankAndUser'][0])
+    public function getEntitlementRequestsForCurrentUserRequest(string $contentType = self::contentTypes['getEntitlementRequestsForCurrentUser'][0])
+    {
+
+
+        $resourcePath = '/obp/v3.0.0/my/entitlement-requests';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getEntitlements
+     *
+     * Get Entitlements for User
+     *
+     * @param  string $userid The USERID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEntitlements'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetEntitlements200Response
+     */
+    public function getEntitlements($userid, string $contentType = self::contentTypes['getEntitlements'][0])
+    {
+        list($response) = $this->getEntitlementsWithHttpInfo($userid, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getEntitlementsWithHttpInfo
+     *
+     * Get Entitlements for User
+     *
+     * @param  string $userid The USERID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEntitlements'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetEntitlements200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getEntitlementsWithHttpInfo($userid, string $contentType = self::contentTypes['getEntitlements'][0])
+    {
+        $request = $this->getEntitlementsRequest($userid, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetEntitlements200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetEntitlements200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetEntitlements200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getEntitlementsAsync
+     *
+     * Get Entitlements for User
+     *
+     * @param  string $userid The USERID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEntitlements'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getEntitlementsAsync($userid, string $contentType = self::contentTypes['getEntitlements'][0])
+    {
+        return $this->getEntitlementsAsyncWithHttpInfo($userid, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getEntitlementsAsyncWithHttpInfo
+     *
+     * Get Entitlements for User
+     *
+     * @param  string $userid The USERID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEntitlements'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getEntitlementsAsyncWithHttpInfo($userid, string $contentType = self::contentTypes['getEntitlements'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetEntitlements200Response';
+        $request = $this->getEntitlementsRequest($userid, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getEntitlements'
+     *
+     * @param  string $userid The USERID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEntitlements'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getEntitlementsRequest($userid, string $contentType = self::contentTypes['getEntitlements'][0])
+    {
+
+        // verify the required parameter 'userid' is set
+        if ($userid === null || (is_array($userid) && count($userid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $userid when calling getEntitlements'
+            );
+        }
+
+
+        $resourcePath = '/obp/v4.0.0/users/{userid}/entitlements';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($userid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'userid' . '}',
+                ObjectSerializer::toPathValue($userid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getEntitlementsAndPermissions
+     *
+     * Get Entitlements and Permissions for a User
+     *
+     * @param  string $userid The USERID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEntitlementsAndPermissions'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetEntitlementsAndPermissions200Response
+     */
+    public function getEntitlementsAndPermissions($userid, string $contentType = self::contentTypes['getEntitlementsAndPermissions'][0])
+    {
+        list($response) = $this->getEntitlementsAndPermissionsWithHttpInfo($userid, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getEntitlementsAndPermissionsWithHttpInfo
+     *
+     * Get Entitlements and Permissions for a User
+     *
+     * @param  string $userid The USERID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEntitlementsAndPermissions'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetEntitlementsAndPermissions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getEntitlementsAndPermissionsWithHttpInfo($userid, string $contentType = self::contentTypes['getEntitlementsAndPermissions'][0])
+    {
+        $request = $this->getEntitlementsAndPermissionsRequest($userid, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetEntitlementsAndPermissions200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetEntitlementsAndPermissions200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetEntitlementsAndPermissions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getEntitlementsAndPermissionsAsync
+     *
+     * Get Entitlements and Permissions for a User
+     *
+     * @param  string $userid The USERID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEntitlementsAndPermissions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getEntitlementsAndPermissionsAsync($userid, string $contentType = self::contentTypes['getEntitlementsAndPermissions'][0])
+    {
+        return $this->getEntitlementsAndPermissionsAsyncWithHttpInfo($userid, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getEntitlementsAndPermissionsAsyncWithHttpInfo
+     *
+     * Get Entitlements and Permissions for a User
+     *
+     * @param  string $userid The USERID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEntitlementsAndPermissions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getEntitlementsAndPermissionsAsyncWithHttpInfo($userid, string $contentType = self::contentTypes['getEntitlementsAndPermissions'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetEntitlementsAndPermissions200Response';
+        $request = $this->getEntitlementsAndPermissionsRequest($userid, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getEntitlementsAndPermissions'
+     *
+     * @param  string $userid The USERID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEntitlementsAndPermissions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getEntitlementsAndPermissionsRequest($userid, string $contentType = self::contentTypes['getEntitlementsAndPermissions'][0])
+    {
+
+        // verify the required parameter 'userid' is set
+        if ($userid === null || (is_array($userid) && count($userid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $userid when calling getEntitlementsAndPermissions'
+            );
+        }
+
+
+        $resourcePath = '/obp/v5.1.0/users/{userid}/entitlements-and-permissions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($userid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'userid' . '}',
+                ObjectSerializer::toPathValue($userid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getEntitlementsByBankAndUser
+     *
+     * Get Entitlements for User at Bank
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $userid The USERID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEntitlementsByBankAndUser'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetUserByProviderAndUsername200ResponseEntitlements
+     */
+    public function getEntitlementsByBankAndUser($bankid, $userid, string $contentType = self::contentTypes['getEntitlementsByBankAndUser'][0])
+    {
+        list($response) = $this->getEntitlementsByBankAndUserWithHttpInfo($bankid, $userid, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getEntitlementsByBankAndUserWithHttpInfo
+     *
+     * Get Entitlements for User at Bank
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $userid The USERID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEntitlementsByBankAndUser'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetUserByProviderAndUsername200ResponseEntitlements, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getEntitlementsByBankAndUserWithHttpInfo($bankid, $userid, string $contentType = self::contentTypes['getEntitlementsByBankAndUser'][0])
+    {
+        $request = $this->getEntitlementsByBankAndUserRequest($bankid, $userid, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetUserByProviderAndUsername200ResponseEntitlements',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetUserByProviderAndUsername200ResponseEntitlements',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetUserByProviderAndUsername200ResponseEntitlements',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getEntitlementsByBankAndUserAsync
+     *
+     * Get Entitlements for User at Bank
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $userid The USERID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEntitlementsByBankAndUser'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getEntitlementsByBankAndUserAsync($bankid, $userid, string $contentType = self::contentTypes['getEntitlementsByBankAndUser'][0])
+    {
+        return $this->getEntitlementsByBankAndUserAsyncWithHttpInfo($bankid, $userid, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getEntitlementsByBankAndUserAsyncWithHttpInfo
+     *
+     * Get Entitlements for User at Bank
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $userid The USERID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEntitlementsByBankAndUser'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getEntitlementsByBankAndUserAsyncWithHttpInfo($bankid, $userid, string $contentType = self::contentTypes['getEntitlementsByBankAndUser'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetUserByProviderAndUsername200ResponseEntitlements';
+        $request = $this->getEntitlementsByBankAndUserRequest($bankid, $userid, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getEntitlementsByBankAndUser'
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $userid The USERID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEntitlementsByBankAndUser'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getEntitlementsByBankAndUserRequest($bankid, $userid, string $contentType = self::contentTypes['getEntitlementsByBankAndUser'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv210GetEntitlementsByBankAndUser'
+                'Missing the required parameter $bankid when calling getEntitlementsByBankAndUser'
             );
         }
 
         // verify the required parameter 'userid' is set
         if ($userid === null || (is_array($userid) && count($userid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $userid when calling oBPv210GetEntitlementsByBankAndUser'
+                'Missing the required parameter $userid when calling getEntitlementsByBankAndUser'
             );
         }
 
@@ -1317,9 +3719,9 @@ class EntitlementApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1344,2444 +3746,38 @@ class EntitlementApi
     }
 
     /**
-     * Operation oBPv300AddEntitlementRequest
-     *
-     * Create Entitlement Request for current User
-     *
-     * @param  \OpenBankProject\Model\OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300AddEntitlementRequest'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv300GetAllEntitlementRequests200ResponsePropertiesEntitlementRequestsItems
-     */
-    public function oBPv300AddEntitlementRequest($obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items, string $contentType = self::contentTypes['oBPv300AddEntitlementRequest'][0])
-    {
-        list($response) = $this->oBPv300AddEntitlementRequestWithHttpInfo($obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv300AddEntitlementRequestWithHttpInfo
-     *
-     * Create Entitlement Request for current User
-     *
-     * @param  \OpenBankProject\Model\OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300AddEntitlementRequest'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv300GetAllEntitlementRequests200ResponsePropertiesEntitlementRequestsItems, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv300AddEntitlementRequestWithHttpInfo($obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items, string $contentType = self::contentTypes['oBPv300AddEntitlementRequest'][0])
-    {
-        $request = $this->oBPv300AddEntitlementRequestRequest($obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv300GetAllEntitlementRequests200ResponsePropertiesEntitlementRequestsItems',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv300GetAllEntitlementRequests200ResponsePropertiesEntitlementRequestsItems',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv300GetAllEntitlementRequests200ResponsePropertiesEntitlementRequestsItems',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv300AddEntitlementRequestAsync
-     *
-     * Create Entitlement Request for current User
-     *
-     * @param  \OpenBankProject\Model\OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300AddEntitlementRequest'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv300AddEntitlementRequestAsync($obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items, string $contentType = self::contentTypes['oBPv300AddEntitlementRequest'][0])
-    {
-        return $this->oBPv300AddEntitlementRequestAsyncWithHttpInfo($obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv300AddEntitlementRequestAsyncWithHttpInfo
-     *
-     * Create Entitlement Request for current User
-     *
-     * @param  \OpenBankProject\Model\OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300AddEntitlementRequest'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv300AddEntitlementRequestAsyncWithHttpInfo($obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items, string $contentType = self::contentTypes['oBPv300AddEntitlementRequest'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv300GetAllEntitlementRequests200ResponsePropertiesEntitlementRequestsItems';
-        $request = $this->oBPv300AddEntitlementRequestRequest($obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv300AddEntitlementRequest'
-     *
-     * @param  \OpenBankProject\Model\OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300AddEntitlementRequest'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv300AddEntitlementRequestRequest($obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items, string $contentType = self::contentTypes['oBPv300AddEntitlementRequest'][0])
-    {
-
-        // verify the required parameter 'obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items' is set
-        if ($obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items === null || (is_array($obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items) && count($obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items when calling oBPv300AddEntitlementRequest'
-            );
-        }
-
-
-        $resourcePath = '/obp/v3.0.0/entitlement-requests';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items));
-            } else {
-                $httpBody = $obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv300DeleteEntitlementRequest
-     *
-     * Delete Entitlement Request
-     *
-     * @param  string $entitlementrequestid The ENTITLEMENTREQUESTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300DeleteEntitlementRequest'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return void
-     */
-    public function oBPv300DeleteEntitlementRequest($entitlementrequestid, string $contentType = self::contentTypes['oBPv300DeleteEntitlementRequest'][0])
-    {
-        $this->oBPv300DeleteEntitlementRequestWithHttpInfo($entitlementrequestid, $contentType);
-    }
-
-    /**
-     * Operation oBPv300DeleteEntitlementRequestWithHttpInfo
-     *
-     * Delete Entitlement Request
-     *
-     * @param  string $entitlementrequestid The ENTITLEMENTREQUESTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300DeleteEntitlementRequest'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv300DeleteEntitlementRequestWithHttpInfo($entitlementrequestid, string $contentType = self::contentTypes['oBPv300DeleteEntitlementRequest'][0])
-    {
-        $request = $this->oBPv300DeleteEntitlementRequestRequest($entitlementrequestid, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            return [null, $statusCode, $response->getHeaders()];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv300DeleteEntitlementRequestAsync
-     *
-     * Delete Entitlement Request
-     *
-     * @param  string $entitlementrequestid The ENTITLEMENTREQUESTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300DeleteEntitlementRequest'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv300DeleteEntitlementRequestAsync($entitlementrequestid, string $contentType = self::contentTypes['oBPv300DeleteEntitlementRequest'][0])
-    {
-        return $this->oBPv300DeleteEntitlementRequestAsyncWithHttpInfo($entitlementrequestid, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv300DeleteEntitlementRequestAsyncWithHttpInfo
-     *
-     * Delete Entitlement Request
-     *
-     * @param  string $entitlementrequestid The ENTITLEMENTREQUESTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300DeleteEntitlementRequest'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv300DeleteEntitlementRequestAsyncWithHttpInfo($entitlementrequestid, string $contentType = self::contentTypes['oBPv300DeleteEntitlementRequest'][0])
-    {
-        $returnType = '';
-        $request = $this->oBPv300DeleteEntitlementRequestRequest($entitlementrequestid, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv300DeleteEntitlementRequest'
-     *
-     * @param  string $entitlementrequestid The ENTITLEMENTREQUESTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300DeleteEntitlementRequest'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv300DeleteEntitlementRequestRequest($entitlementrequestid, string $contentType = self::contentTypes['oBPv300DeleteEntitlementRequest'][0])
-    {
-
-        // verify the required parameter 'entitlementrequestid' is set
-        if ($entitlementrequestid === null || (is_array($entitlementrequestid) && count($entitlementrequestid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $entitlementrequestid when calling oBPv300DeleteEntitlementRequest'
-            );
-        }
-
-
-        $resourcePath = '/obp/v3.0.0/entitlement-requests/{entitlementrequestid}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($entitlementrequestid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'entitlementrequestid' . '}',
-                ObjectSerializer::toPathValue($entitlementrequestid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            [],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv300GetAllEntitlementRequests
-     *
-     * Get all Entitlement Requests
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetAllEntitlementRequests'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv300GetAllEntitlementRequests200Response
-     */
-    public function oBPv300GetAllEntitlementRequests(string $contentType = self::contentTypes['oBPv300GetAllEntitlementRequests'][0])
-    {
-        list($response) = $this->oBPv300GetAllEntitlementRequestsWithHttpInfo($contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv300GetAllEntitlementRequestsWithHttpInfo
-     *
-     * Get all Entitlement Requests
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetAllEntitlementRequests'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv300GetAllEntitlementRequests200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv300GetAllEntitlementRequestsWithHttpInfo(string $contentType = self::contentTypes['oBPv300GetAllEntitlementRequests'][0])
-    {
-        $request = $this->oBPv300GetAllEntitlementRequestsRequest($contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv300GetAllEntitlementRequests200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv300GetAllEntitlementRequests200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv300GetAllEntitlementRequests200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv300GetAllEntitlementRequestsAsync
-     *
-     * Get all Entitlement Requests
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetAllEntitlementRequests'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv300GetAllEntitlementRequestsAsync(string $contentType = self::contentTypes['oBPv300GetAllEntitlementRequests'][0])
-    {
-        return $this->oBPv300GetAllEntitlementRequestsAsyncWithHttpInfo($contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv300GetAllEntitlementRequestsAsyncWithHttpInfo
-     *
-     * Get all Entitlement Requests
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetAllEntitlementRequests'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv300GetAllEntitlementRequestsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv300GetAllEntitlementRequests'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv300GetAllEntitlementRequests200Response';
-        $request = $this->oBPv300GetAllEntitlementRequestsRequest($contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv300GetAllEntitlementRequests'
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetAllEntitlementRequests'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv300GetAllEntitlementRequestsRequest(string $contentType = self::contentTypes['oBPv300GetAllEntitlementRequests'][0])
-    {
-
-
-        $resourcePath = '/obp/v3.0.0/entitlement-requests';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv300GetEntitlementRequests
-     *
-     * Get Entitlement Requests for a User
-     *
-     * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetEntitlementRequests'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv300GetAllEntitlementRequests200Response
-     */
-    public function oBPv300GetEntitlementRequests($userid, string $contentType = self::contentTypes['oBPv300GetEntitlementRequests'][0])
-    {
-        list($response) = $this->oBPv300GetEntitlementRequestsWithHttpInfo($userid, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv300GetEntitlementRequestsWithHttpInfo
-     *
-     * Get Entitlement Requests for a User
-     *
-     * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetEntitlementRequests'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv300GetAllEntitlementRequests200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv300GetEntitlementRequestsWithHttpInfo($userid, string $contentType = self::contentTypes['oBPv300GetEntitlementRequests'][0])
-    {
-        $request = $this->oBPv300GetEntitlementRequestsRequest($userid, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv300GetAllEntitlementRequests200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv300GetAllEntitlementRequests200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv300GetAllEntitlementRequests200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv300GetEntitlementRequestsAsync
-     *
-     * Get Entitlement Requests for a User
-     *
-     * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetEntitlementRequests'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv300GetEntitlementRequestsAsync($userid, string $contentType = self::contentTypes['oBPv300GetEntitlementRequests'][0])
-    {
-        return $this->oBPv300GetEntitlementRequestsAsyncWithHttpInfo($userid, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv300GetEntitlementRequestsAsyncWithHttpInfo
-     *
-     * Get Entitlement Requests for a User
-     *
-     * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetEntitlementRequests'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv300GetEntitlementRequestsAsyncWithHttpInfo($userid, string $contentType = self::contentTypes['oBPv300GetEntitlementRequests'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv300GetAllEntitlementRequests200Response';
-        $request = $this->oBPv300GetEntitlementRequestsRequest($userid, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv300GetEntitlementRequests'
-     *
-     * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetEntitlementRequests'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv300GetEntitlementRequestsRequest($userid, string $contentType = self::contentTypes['oBPv300GetEntitlementRequests'][0])
-    {
-
-        // verify the required parameter 'userid' is set
-        if ($userid === null || (is_array($userid) && count($userid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $userid when calling oBPv300GetEntitlementRequests'
-            );
-        }
-
-
-        $resourcePath = '/obp/v3.0.0/users/{userid}/entitlement-requests';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($userid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'userid' . '}',
-                ObjectSerializer::toPathValue($userid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv300GetEntitlementRequestsForCurrentUser
-     *
-     * Get Entitlement Requests for the current User
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetEntitlementRequestsForCurrentUser'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv300GetAllEntitlementRequests200Response
-     */
-    public function oBPv300GetEntitlementRequestsForCurrentUser(string $contentType = self::contentTypes['oBPv300GetEntitlementRequestsForCurrentUser'][0])
-    {
-        list($response) = $this->oBPv300GetEntitlementRequestsForCurrentUserWithHttpInfo($contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv300GetEntitlementRequestsForCurrentUserWithHttpInfo
-     *
-     * Get Entitlement Requests for the current User
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetEntitlementRequestsForCurrentUser'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv300GetAllEntitlementRequests200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv300GetEntitlementRequestsForCurrentUserWithHttpInfo(string $contentType = self::contentTypes['oBPv300GetEntitlementRequestsForCurrentUser'][0])
-    {
-        $request = $this->oBPv300GetEntitlementRequestsForCurrentUserRequest($contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv300GetAllEntitlementRequests200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv300GetAllEntitlementRequests200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv300GetAllEntitlementRequests200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv300GetEntitlementRequestsForCurrentUserAsync
-     *
-     * Get Entitlement Requests for the current User
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetEntitlementRequestsForCurrentUser'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv300GetEntitlementRequestsForCurrentUserAsync(string $contentType = self::contentTypes['oBPv300GetEntitlementRequestsForCurrentUser'][0])
-    {
-        return $this->oBPv300GetEntitlementRequestsForCurrentUserAsyncWithHttpInfo($contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv300GetEntitlementRequestsForCurrentUserAsyncWithHttpInfo
-     *
-     * Get Entitlement Requests for the current User
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetEntitlementRequestsForCurrentUser'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv300GetEntitlementRequestsForCurrentUserAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv300GetEntitlementRequestsForCurrentUser'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv300GetAllEntitlementRequests200Response';
-        $request = $this->oBPv300GetEntitlementRequestsForCurrentUserRequest($contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv300GetEntitlementRequestsForCurrentUser'
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetEntitlementRequestsForCurrentUser'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv300GetEntitlementRequestsForCurrentUserRequest(string $contentType = self::contentTypes['oBPv300GetEntitlementRequestsForCurrentUser'][0])
-    {
-
-
-        $resourcePath = '/obp/v3.0.0/my/entitlement-requests';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv300GetEntitlementsForCurrentUser
-     *
-     * Get Entitlements for the current User
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetEntitlementsForCurrentUser'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510GetUserByProviderAndUsername200ResponsePropertiesEntitlements
-     */
-    public function oBPv300GetEntitlementsForCurrentUser(string $contentType = self::contentTypes['oBPv300GetEntitlementsForCurrentUser'][0])
-    {
-        list($response) = $this->oBPv300GetEntitlementsForCurrentUserWithHttpInfo($contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv300GetEntitlementsForCurrentUserWithHttpInfo
-     *
-     * Get Entitlements for the current User
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetEntitlementsForCurrentUser'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510GetUserByProviderAndUsername200ResponsePropertiesEntitlements, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv300GetEntitlementsForCurrentUserWithHttpInfo(string $contentType = self::contentTypes['oBPv300GetEntitlementsForCurrentUser'][0])
-    {
-        $request = $this->oBPv300GetEntitlementsForCurrentUserRequest($contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510GetUserByProviderAndUsername200ResponsePropertiesEntitlements',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510GetUserByProviderAndUsername200ResponsePropertiesEntitlements',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510GetUserByProviderAndUsername200ResponsePropertiesEntitlements',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv300GetEntitlementsForCurrentUserAsync
-     *
-     * Get Entitlements for the current User
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetEntitlementsForCurrentUser'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv300GetEntitlementsForCurrentUserAsync(string $contentType = self::contentTypes['oBPv300GetEntitlementsForCurrentUser'][0])
-    {
-        return $this->oBPv300GetEntitlementsForCurrentUserAsyncWithHttpInfo($contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv300GetEntitlementsForCurrentUserAsyncWithHttpInfo
-     *
-     * Get Entitlements for the current User
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetEntitlementsForCurrentUser'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv300GetEntitlementsForCurrentUserAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv300GetEntitlementsForCurrentUser'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv510GetUserByProviderAndUsername200ResponsePropertiesEntitlements';
-        $request = $this->oBPv300GetEntitlementsForCurrentUserRequest($contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv300GetEntitlementsForCurrentUser'
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetEntitlementsForCurrentUser'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv300GetEntitlementsForCurrentUserRequest(string $contentType = self::contentTypes['oBPv300GetEntitlementsForCurrentUser'][0])
-    {
-
-
-        $resourcePath = '/obp/v3.0.0/my/entitlements';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv310GetAllEntitlements
-     *
-     * Get all Entitlements
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetAllEntitlements'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv310GetAllEntitlements200Response
-     */
-    public function oBPv310GetAllEntitlements(string $contentType = self::contentTypes['oBPv310GetAllEntitlements'][0])
-    {
-        list($response) = $this->oBPv310GetAllEntitlementsWithHttpInfo($contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv310GetAllEntitlementsWithHttpInfo
-     *
-     * Get all Entitlements
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetAllEntitlements'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv310GetAllEntitlements200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv310GetAllEntitlementsWithHttpInfo(string $contentType = self::contentTypes['oBPv310GetAllEntitlements'][0])
-    {
-        $request = $this->oBPv310GetAllEntitlementsRequest($contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv310GetAllEntitlements200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv310GetAllEntitlements200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv310GetAllEntitlements200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv310GetAllEntitlementsAsync
-     *
-     * Get all Entitlements
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetAllEntitlements'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv310GetAllEntitlementsAsync(string $contentType = self::contentTypes['oBPv310GetAllEntitlements'][0])
-    {
-        return $this->oBPv310GetAllEntitlementsAsyncWithHttpInfo($contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv310GetAllEntitlementsAsyncWithHttpInfo
-     *
-     * Get all Entitlements
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetAllEntitlements'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv310GetAllEntitlementsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv310GetAllEntitlements'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv310GetAllEntitlements200Response';
-        $request = $this->oBPv310GetAllEntitlementsRequest($contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv310GetAllEntitlements'
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetAllEntitlements'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv310GetAllEntitlementsRequest(string $contentType = self::contentTypes['oBPv310GetAllEntitlements'][0])
-    {
-
-
-        $resourcePath = '/obp/v3.1.0/entitlements';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv400CreateUserWithRoles
-     *
-     * Create (DAuth) User with Roles
-     *
-     * @param  \OpenBankProject\Model\OBPv400CreateUserWithRolesRequest $obpv400_create_user_with_roles_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateUserWithRoles'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetEntitlements200Response
-     */
-    public function oBPv400CreateUserWithRoles($obpv400_create_user_with_roles_request, string $contentType = self::contentTypes['oBPv400CreateUserWithRoles'][0])
-    {
-        list($response) = $this->oBPv400CreateUserWithRolesWithHttpInfo($obpv400_create_user_with_roles_request, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv400CreateUserWithRolesWithHttpInfo
-     *
-     * Create (DAuth) User with Roles
-     *
-     * @param  \OpenBankProject\Model\OBPv400CreateUserWithRolesRequest $obpv400_create_user_with_roles_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateUserWithRoles'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetEntitlements200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv400CreateUserWithRolesWithHttpInfo($obpv400_create_user_with_roles_request, string $contentType = self::contentTypes['oBPv400CreateUserWithRoles'][0])
-    {
-        $request = $this->oBPv400CreateUserWithRolesRequest($obpv400_create_user_with_roles_request, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetEntitlements200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetEntitlements200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetEntitlements200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv400CreateUserWithRolesAsync
-     *
-     * Create (DAuth) User with Roles
-     *
-     * @param  \OpenBankProject\Model\OBPv400CreateUserWithRolesRequest $obpv400_create_user_with_roles_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateUserWithRoles'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv400CreateUserWithRolesAsync($obpv400_create_user_with_roles_request, string $contentType = self::contentTypes['oBPv400CreateUserWithRoles'][0])
-    {
-        return $this->oBPv400CreateUserWithRolesAsyncWithHttpInfo($obpv400_create_user_with_roles_request, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv400CreateUserWithRolesAsyncWithHttpInfo
-     *
-     * Create (DAuth) User with Roles
-     *
-     * @param  \OpenBankProject\Model\OBPv400CreateUserWithRolesRequest $obpv400_create_user_with_roles_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateUserWithRoles'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv400CreateUserWithRolesAsyncWithHttpInfo($obpv400_create_user_with_roles_request, string $contentType = self::contentTypes['oBPv400CreateUserWithRoles'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv400GetEntitlements200Response';
-        $request = $this->oBPv400CreateUserWithRolesRequest($obpv400_create_user_with_roles_request, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv400CreateUserWithRoles'
-     *
-     * @param  \OpenBankProject\Model\OBPv400CreateUserWithRolesRequest $obpv400_create_user_with_roles_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateUserWithRoles'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv400CreateUserWithRolesRequest($obpv400_create_user_with_roles_request, string $contentType = self::contentTypes['oBPv400CreateUserWithRoles'][0])
-    {
-
-        // verify the required parameter 'obpv400_create_user_with_roles_request' is set
-        if ($obpv400_create_user_with_roles_request === null || (is_array($obpv400_create_user_with_roles_request) && count($obpv400_create_user_with_roles_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_create_user_with_roles_request when calling oBPv400CreateUserWithRoles'
-            );
-        }
-
-
-        $resourcePath = '/obp/v4.0.0/user-entitlements';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($obpv400_create_user_with_roles_request)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_create_user_with_roles_request));
-            } else {
-                $httpBody = $obpv400_create_user_with_roles_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv400GetEntitlements
-     *
-     * Get Entitlements for User
-     *
-     * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetEntitlements'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetEntitlements200Response
-     */
-    public function oBPv400GetEntitlements($userid, string $contentType = self::contentTypes['oBPv400GetEntitlements'][0])
-    {
-        list($response) = $this->oBPv400GetEntitlementsWithHttpInfo($userid, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv400GetEntitlementsWithHttpInfo
-     *
-     * Get Entitlements for User
-     *
-     * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetEntitlements'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetEntitlements200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv400GetEntitlementsWithHttpInfo($userid, string $contentType = self::contentTypes['oBPv400GetEntitlements'][0])
-    {
-        $request = $this->oBPv400GetEntitlementsRequest($userid, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetEntitlements200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetEntitlements200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetEntitlements200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv400GetEntitlementsAsync
-     *
-     * Get Entitlements for User
-     *
-     * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetEntitlements'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv400GetEntitlementsAsync($userid, string $contentType = self::contentTypes['oBPv400GetEntitlements'][0])
-    {
-        return $this->oBPv400GetEntitlementsAsyncWithHttpInfo($userid, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv400GetEntitlementsAsyncWithHttpInfo
-     *
-     * Get Entitlements for User
-     *
-     * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetEntitlements'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv400GetEntitlementsAsyncWithHttpInfo($userid, string $contentType = self::contentTypes['oBPv400GetEntitlements'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv400GetEntitlements200Response';
-        $request = $this->oBPv400GetEntitlementsRequest($userid, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv400GetEntitlements'
-     *
-     * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetEntitlements'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv400GetEntitlementsRequest($userid, string $contentType = self::contentTypes['oBPv400GetEntitlements'][0])
-    {
-
-        // verify the required parameter 'userid' is set
-        if ($userid === null || (is_array($userid) && count($userid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $userid when calling oBPv400GetEntitlements'
-            );
-        }
-
-
-        $resourcePath = '/obp/v4.0.0/users/{userid}/entitlements';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($userid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'userid' . '}',
-                ObjectSerializer::toPathValue($userid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv400GetEntitlementsForBank
+     * Operation getEntitlementsForBank
      *
      * Get Entitlements for One Bank
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetEntitlementsForBank'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEntitlementsForBank'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetEntitlements200Response
+     * @return \OpenBankProject\Model\GetEntitlements200Response
      */
-    public function oBPv400GetEntitlementsForBank($bankid, string $contentType = self::contentTypes['oBPv400GetEntitlementsForBank'][0])
+    public function getEntitlementsForBank($bankid, string $contentType = self::contentTypes['getEntitlementsForBank'][0])
     {
-        list($response) = $this->oBPv400GetEntitlementsForBankWithHttpInfo($bankid, $contentType);
+        list($response) = $this->getEntitlementsForBankWithHttpInfo($bankid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetEntitlementsForBankWithHttpInfo
+     * Operation getEntitlementsForBankWithHttpInfo
      *
      * Get Entitlements for One Bank
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetEntitlementsForBank'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEntitlementsForBank'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetEntitlements200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetEntitlements200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetEntitlementsForBankWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv400GetEntitlementsForBank'][0])
+    public function getEntitlementsForBankWithHttpInfo($bankid, string $contentType = self::contentTypes['getEntitlementsForBank'][0])
     {
-        $request = $this->oBPv400GetEntitlementsForBankRequest($bankid, $contentType);
+        $request = $this->getEntitlementsForBankRequest($bankid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3809,7 +3805,7 @@ class EntitlementApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetEntitlements200Response',
+                        '\OpenBankProject\Model\GetEntitlements200Response',
                         $request,
                         $response,
                     );
@@ -3831,7 +3827,7 @@ class EntitlementApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetEntitlements200Response',
+                '\OpenBankProject\Model\GetEntitlements200Response',
                 $request,
                 $response,
             );
@@ -3840,7 +3836,7 @@ class EntitlementApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetEntitlements200Response',
+                        '\OpenBankProject\Model\GetEntitlements200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3853,19 +3849,19 @@ class EntitlementApi
     }
 
     /**
-     * Operation oBPv400GetEntitlementsForBankAsync
+     * Operation getEntitlementsForBankAsync
      *
      * Get Entitlements for One Bank
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetEntitlementsForBank'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEntitlementsForBank'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetEntitlementsForBankAsync($bankid, string $contentType = self::contentTypes['oBPv400GetEntitlementsForBank'][0])
+    public function getEntitlementsForBankAsync($bankid, string $contentType = self::contentTypes['getEntitlementsForBank'][0])
     {
-        return $this->oBPv400GetEntitlementsForBankAsyncWithHttpInfo($bankid, $contentType)
+        return $this->getEntitlementsForBankAsyncWithHttpInfo($bankid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3874,20 +3870,20 @@ class EntitlementApi
     }
 
     /**
-     * Operation oBPv400GetEntitlementsForBankAsyncWithHttpInfo
+     * Operation getEntitlementsForBankAsyncWithHttpInfo
      *
      * Get Entitlements for One Bank
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetEntitlementsForBank'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEntitlementsForBank'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetEntitlementsForBankAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv400GetEntitlementsForBank'][0])
+    public function getEntitlementsForBankAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['getEntitlementsForBank'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetEntitlements200Response';
-        $request = $this->oBPv400GetEntitlementsForBankRequest($bankid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetEntitlements200Response';
+        $request = $this->getEntitlementsForBankRequest($bankid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3926,21 +3922,21 @@ class EntitlementApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetEntitlementsForBank'
+     * Create request for operation 'getEntitlementsForBank'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetEntitlementsForBank'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEntitlementsForBank'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetEntitlementsForBankRequest($bankid, string $contentType = self::contentTypes['oBPv400GetEntitlementsForBank'][0])
+    public function getEntitlementsForBankRequest($bankid, string $contentType = self::contentTypes['getEntitlementsForBank'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400GetEntitlementsForBank'
+                'Missing the required parameter $bankid when calling getEntitlementsForBank'
             );
         }
 
@@ -4005,9 +4001,9 @@ class EntitlementApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -4032,38 +4028,36 @@ class EntitlementApi
     }
 
     /**
-     * Operation oBPv510GetEntitlementsAndPermissions
+     * Operation getEntitlementsForCurrentUser
      *
-     * Get Entitlements and Permissions for a User
+     * Get Entitlements for the current User
      *
-     * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetEntitlementsAndPermissions'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEntitlementsForCurrentUser'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510GetEntitlementsAndPermissions200Response
+     * @return \OpenBankProject\Model\GetUserByProviderAndUsername200ResponseEntitlements
      */
-    public function oBPv510GetEntitlementsAndPermissions($userid, string $contentType = self::contentTypes['oBPv510GetEntitlementsAndPermissions'][0])
+    public function getEntitlementsForCurrentUser(string $contentType = self::contentTypes['getEntitlementsForCurrentUser'][0])
     {
-        list($response) = $this->oBPv510GetEntitlementsAndPermissionsWithHttpInfo($userid, $contentType);
+        list($response) = $this->getEntitlementsForCurrentUserWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv510GetEntitlementsAndPermissionsWithHttpInfo
+     * Operation getEntitlementsForCurrentUserWithHttpInfo
      *
-     * Get Entitlements and Permissions for a User
+     * Get Entitlements for the current User
      *
-     * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetEntitlementsAndPermissions'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEntitlementsForCurrentUser'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510GetEntitlementsAndPermissions200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetUserByProviderAndUsername200ResponseEntitlements, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510GetEntitlementsAndPermissionsWithHttpInfo($userid, string $contentType = self::contentTypes['oBPv510GetEntitlementsAndPermissions'][0])
+    public function getEntitlementsForCurrentUserWithHttpInfo(string $contentType = self::contentTypes['getEntitlementsForCurrentUser'][0])
     {
-        $request = $this->oBPv510GetEntitlementsAndPermissionsRequest($userid, $contentType);
+        $request = $this->getEntitlementsForCurrentUserRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4091,7 +4085,7 @@ class EntitlementApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510GetEntitlementsAndPermissions200Response',
+                        '\OpenBankProject\Model\GetUserByProviderAndUsername200ResponseEntitlements',
                         $request,
                         $response,
                     );
@@ -4113,7 +4107,7 @@ class EntitlementApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510GetEntitlementsAndPermissions200Response',
+                '\OpenBankProject\Model\GetUserByProviderAndUsername200ResponseEntitlements',
                 $request,
                 $response,
             );
@@ -4122,7 +4116,7 @@ class EntitlementApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510GetEntitlementsAndPermissions200Response',
+                        '\OpenBankProject\Model\GetUserByProviderAndUsername200ResponseEntitlements',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4135,19 +4129,18 @@ class EntitlementApi
     }
 
     /**
-     * Operation oBPv510GetEntitlementsAndPermissionsAsync
+     * Operation getEntitlementsForCurrentUserAsync
      *
-     * Get Entitlements and Permissions for a User
+     * Get Entitlements for the current User
      *
-     * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetEntitlementsAndPermissions'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEntitlementsForCurrentUser'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510GetEntitlementsAndPermissionsAsync($userid, string $contentType = self::contentTypes['oBPv510GetEntitlementsAndPermissions'][0])
+    public function getEntitlementsForCurrentUserAsync(string $contentType = self::contentTypes['getEntitlementsForCurrentUser'][0])
     {
-        return $this->oBPv510GetEntitlementsAndPermissionsAsyncWithHttpInfo($userid, $contentType)
+        return $this->getEntitlementsForCurrentUserAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4156,20 +4149,19 @@ class EntitlementApi
     }
 
     /**
-     * Operation oBPv510GetEntitlementsAndPermissionsAsyncWithHttpInfo
+     * Operation getEntitlementsForCurrentUserAsyncWithHttpInfo
      *
-     * Get Entitlements and Permissions for a User
+     * Get Entitlements for the current User
      *
-     * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetEntitlementsAndPermissions'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEntitlementsForCurrentUser'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510GetEntitlementsAndPermissionsAsyncWithHttpInfo($userid, string $contentType = self::contentTypes['oBPv510GetEntitlementsAndPermissions'][0])
+    public function getEntitlementsForCurrentUserAsyncWithHttpInfo(string $contentType = self::contentTypes['getEntitlementsForCurrentUser'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv510GetEntitlementsAndPermissions200Response';
-        $request = $this->oBPv510GetEntitlementsAndPermissionsRequest($userid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetUserByProviderAndUsername200ResponseEntitlements';
+        $request = $this->getEntitlementsForCurrentUserRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4208,26 +4200,18 @@ class EntitlementApi
     }
 
     /**
-     * Create request for operation 'oBPv510GetEntitlementsAndPermissions'
+     * Create request for operation 'getEntitlementsForCurrentUser'
      *
-     * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetEntitlementsAndPermissions'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEntitlementsForCurrentUser'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510GetEntitlementsAndPermissionsRequest($userid, string $contentType = self::contentTypes['oBPv510GetEntitlementsAndPermissions'][0])
+    public function getEntitlementsForCurrentUserRequest(string $contentType = self::contentTypes['getEntitlementsForCurrentUser'][0])
     {
 
-        // verify the required parameter 'userid' is set
-        if ($userid === null || (is_array($userid) && count($userid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $userid when calling oBPv510GetEntitlementsAndPermissions'
-            );
-        }
 
-
-        $resourcePath = '/obp/v5.1.0/users/{userid}/entitlements-and-permissions';
+        $resourcePath = '/obp/v3.0.0/my/entitlements';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -4236,14 +4220,6 @@ class EntitlementApi
 
 
 
-        // path params
-        if ($userid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'userid' . '}',
-                ObjectSerializer::toPathValue($userid),
-                $resourcePath
-            );
-        }
 
 
         $headers = $this->headerSelector->selectHeaders(
@@ -4287,9 +4263,9 @@ class EntitlementApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -4314,40 +4290,38 @@ class EntitlementApi
     }
 
     /**
-     * Operation oBPv600AddUserToGroup
+     * Operation getGroupEntitlements
      *
-     * Grant User Membership to Group Entitlements
+     * Get Group Entitlements
      *
-     * @param  string $userid The USERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600AddUserToGroupRequest $obpv600_add_user_to_group_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600AddUserToGroup'] to see the possible values for this operation
+     * @param  string $groupid The GROUPID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGroupEntitlements'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600AddUserToGroup200Response
+     * @return \OpenBankProject\Model\GetGroupEntitlements200Response
      */
-    public function oBPv600AddUserToGroup($userid, $obpv600_add_user_to_group_request, string $contentType = self::contentTypes['oBPv600AddUserToGroup'][0])
+    public function getGroupEntitlements($groupid, string $contentType = self::contentTypes['getGroupEntitlements'][0])
     {
-        list($response) = $this->oBPv600AddUserToGroupWithHttpInfo($userid, $obpv600_add_user_to_group_request, $contentType);
+        list($response) = $this->getGroupEntitlementsWithHttpInfo($groupid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600AddUserToGroupWithHttpInfo
+     * Operation getGroupEntitlementsWithHttpInfo
      *
-     * Grant User Membership to Group Entitlements
+     * Get Group Entitlements
      *
-     * @param  string $userid The USERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600AddUserToGroupRequest $obpv600_add_user_to_group_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600AddUserToGroup'] to see the possible values for this operation
+     * @param  string $groupid The GROUPID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGroupEntitlements'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600AddUserToGroup200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetGroupEntitlements200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600AddUserToGroupWithHttpInfo($userid, $obpv600_add_user_to_group_request, string $contentType = self::contentTypes['oBPv600AddUserToGroup'][0])
+    public function getGroupEntitlementsWithHttpInfo($groupid, string $contentType = self::contentTypes['getGroupEntitlements'][0])
     {
-        $request = $this->oBPv600AddUserToGroupRequest($userid, $obpv600_add_user_to_group_request, $contentType);
+        $request = $this->getGroupEntitlementsRequest($groupid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4375,7 +4349,7 @@ class EntitlementApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600AddUserToGroup200Response',
+                        '\OpenBankProject\Model\GetGroupEntitlements200Response',
                         $request,
                         $response,
                     );
@@ -4397,7 +4371,7 @@ class EntitlementApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600AddUserToGroup200Response',
+                '\OpenBankProject\Model\GetGroupEntitlements200Response',
                 $request,
                 $response,
             );
@@ -4406,7 +4380,7 @@ class EntitlementApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600AddUserToGroup200Response',
+                        '\OpenBankProject\Model\GetGroupEntitlements200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4419,20 +4393,19 @@ class EntitlementApi
     }
 
     /**
-     * Operation oBPv600AddUserToGroupAsync
+     * Operation getGroupEntitlementsAsync
      *
-     * Grant User Membership to Group Entitlements
+     * Get Group Entitlements
      *
-     * @param  string $userid The USERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600AddUserToGroupRequest $obpv600_add_user_to_group_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600AddUserToGroup'] to see the possible values for this operation
+     * @param  string $groupid The GROUPID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGroupEntitlements'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600AddUserToGroupAsync($userid, $obpv600_add_user_to_group_request, string $contentType = self::contentTypes['oBPv600AddUserToGroup'][0])
+    public function getGroupEntitlementsAsync($groupid, string $contentType = self::contentTypes['getGroupEntitlements'][0])
     {
-        return $this->oBPv600AddUserToGroupAsyncWithHttpInfo($userid, $obpv600_add_user_to_group_request, $contentType)
+        return $this->getGroupEntitlementsAsyncWithHttpInfo($groupid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4441,21 +4414,20 @@ class EntitlementApi
     }
 
     /**
-     * Operation oBPv600AddUserToGroupAsyncWithHttpInfo
+     * Operation getGroupEntitlementsAsyncWithHttpInfo
      *
-     * Grant User Membership to Group Entitlements
+     * Get Group Entitlements
      *
-     * @param  string $userid The USERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600AddUserToGroupRequest $obpv600_add_user_to_group_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600AddUserToGroup'] to see the possible values for this operation
+     * @param  string $groupid The GROUPID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGroupEntitlements'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600AddUserToGroupAsyncWithHttpInfo($userid, $obpv600_add_user_to_group_request, string $contentType = self::contentTypes['oBPv600AddUserToGroup'][0])
+    public function getGroupEntitlementsAsyncWithHttpInfo($groupid, string $contentType = self::contentTypes['getGroupEntitlements'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600AddUserToGroup200Response';
-        $request = $this->oBPv600AddUserToGroupRequest($userid, $obpv600_add_user_to_group_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetGroupEntitlements200Response';
+        $request = $this->getGroupEntitlementsRequest($groupid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4494,550 +4466,21 @@ class EntitlementApi
     }
 
     /**
-     * Create request for operation 'oBPv600AddUserToGroup'
+     * Create request for operation 'getGroupEntitlements'
      *
-     * @param  string $userid The USERID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600AddUserToGroupRequest $obpv600_add_user_to_group_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600AddUserToGroup'] to see the possible values for this operation
+     * @param  string $groupid The GROUPID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGroupEntitlements'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600AddUserToGroupRequest($userid, $obpv600_add_user_to_group_request, string $contentType = self::contentTypes['oBPv600AddUserToGroup'][0])
-    {
-
-        // verify the required parameter 'userid' is set
-        if ($userid === null || (is_array($userid) && count($userid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $userid when calling oBPv600AddUserToGroup'
-            );
-        }
-
-        // verify the required parameter 'obpv600_add_user_to_group_request' is set
-        if ($obpv600_add_user_to_group_request === null || (is_array($obpv600_add_user_to_group_request) && count($obpv600_add_user_to_group_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_add_user_to_group_request when calling oBPv600AddUserToGroup'
-            );
-        }
-
-
-        $resourcePath = '/obp/v6.0.0/users/{userid}/group-entitlements';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($userid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'userid' . '}',
-                ObjectSerializer::toPathValue($userid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($obpv600_add_user_to_group_request)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_add_user_to_group_request));
-            } else {
-                $httpBody = $obpv600_add_user_to_group_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv600DeleteEntitlement
-     *
-     * Delete Entitlement
-     *
-     * @param  string $entitlementid The ENTITLEMENTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteEntitlement'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return void
-     */
-    public function oBPv600DeleteEntitlement($entitlementid, string $contentType = self::contentTypes['oBPv600DeleteEntitlement'][0])
-    {
-        $this->oBPv600DeleteEntitlementWithHttpInfo($entitlementid, $contentType);
-    }
-
-    /**
-     * Operation oBPv600DeleteEntitlementWithHttpInfo
-     *
-     * Delete Entitlement
-     *
-     * @param  string $entitlementid The ENTITLEMENTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteEntitlement'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv600DeleteEntitlementWithHttpInfo($entitlementid, string $contentType = self::contentTypes['oBPv600DeleteEntitlement'][0])
-    {
-        $request = $this->oBPv600DeleteEntitlementRequest($entitlementid, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            return [null, $statusCode, $response->getHeaders()];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv600DeleteEntitlementAsync
-     *
-     * Delete Entitlement
-     *
-     * @param  string $entitlementid The ENTITLEMENTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteEntitlement'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv600DeleteEntitlementAsync($entitlementid, string $contentType = self::contentTypes['oBPv600DeleteEntitlement'][0])
-    {
-        return $this->oBPv600DeleteEntitlementAsyncWithHttpInfo($entitlementid, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv600DeleteEntitlementAsyncWithHttpInfo
-     *
-     * Delete Entitlement
-     *
-     * @param  string $entitlementid The ENTITLEMENTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteEntitlement'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv600DeleteEntitlementAsyncWithHttpInfo($entitlementid, string $contentType = self::contentTypes['oBPv600DeleteEntitlement'][0])
-    {
-        $returnType = '';
-        $request = $this->oBPv600DeleteEntitlementRequest($entitlementid, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv600DeleteEntitlement'
-     *
-     * @param  string $entitlementid The ENTITLEMENTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteEntitlement'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv600DeleteEntitlementRequest($entitlementid, string $contentType = self::contentTypes['oBPv600DeleteEntitlement'][0])
-    {
-
-        // verify the required parameter 'entitlementid' is set
-        if ($entitlementid === null || (is_array($entitlementid) && count($entitlementid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $entitlementid when calling oBPv600DeleteEntitlement'
-            );
-        }
-
-
-        $resourcePath = '/obp/v6.0.0/entitlements/{entitlementid}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($entitlementid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'entitlementid' . '}',
-                ObjectSerializer::toPathValue($entitlementid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            [],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv600GetGroupEntitlements
-     *
-     * Get Group Entitlements
-     *
-     * @param  string $groupid The GROUPID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetGroupEntitlements'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetGroupEntitlements200Response
-     */
-    public function oBPv600GetGroupEntitlements($groupid, string $contentType = self::contentTypes['oBPv600GetGroupEntitlements'][0])
-    {
-        list($response) = $this->oBPv600GetGroupEntitlementsWithHttpInfo($groupid, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv600GetGroupEntitlementsWithHttpInfo
-     *
-     * Get Group Entitlements
-     *
-     * @param  string $groupid The GROUPID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetGroupEntitlements'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetGroupEntitlements200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv600GetGroupEntitlementsWithHttpInfo($groupid, string $contentType = self::contentTypes['oBPv600GetGroupEntitlements'][0])
-    {
-        $request = $this->oBPv600GetGroupEntitlementsRequest($groupid, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetGroupEntitlements200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetGroupEntitlements200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetGroupEntitlements200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv600GetGroupEntitlementsAsync
-     *
-     * Get Group Entitlements
-     *
-     * @param  string $groupid The GROUPID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetGroupEntitlements'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv600GetGroupEntitlementsAsync($groupid, string $contentType = self::contentTypes['oBPv600GetGroupEntitlements'][0])
-    {
-        return $this->oBPv600GetGroupEntitlementsAsyncWithHttpInfo($groupid, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv600GetGroupEntitlementsAsyncWithHttpInfo
-     *
-     * Get Group Entitlements
-     *
-     * @param  string $groupid The GROUPID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetGroupEntitlements'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv600GetGroupEntitlementsAsyncWithHttpInfo($groupid, string $contentType = self::contentTypes['oBPv600GetGroupEntitlements'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv600GetGroupEntitlements200Response';
-        $request = $this->oBPv600GetGroupEntitlementsRequest($groupid, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv600GetGroupEntitlements'
-     *
-     * @param  string $groupid The GROUPID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetGroupEntitlements'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv600GetGroupEntitlementsRequest($groupid, string $contentType = self::contentTypes['oBPv600GetGroupEntitlements'][0])
+    public function getGroupEntitlementsRequest($groupid, string $contentType = self::contentTypes['getGroupEntitlements'][0])
     {
 
         // verify the required parameter 'groupid' is set
         if ($groupid === null || (is_array($groupid) && count($groupid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $groupid when calling oBPv600GetGroupEntitlements'
+                'Missing the required parameter $groupid when calling getGroupEntitlements'
             );
         }
 
@@ -5102,9 +4545,9 @@ class EntitlementApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -5129,36 +4572,40 @@ class EntitlementApi
     }
 
     /**
-     * Operation oBPv600GetRolesWithEntitlementCountsAtAllBanks
+     * Operation getPermissionsForBankAccount
      *
-     * Get Roles with Entitlement Counts
+     * Get access
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetRolesWithEntitlementCountsAtAllBanks'] to see the possible values for this operation
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPermissionsForBankAccount'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetRolesWithEntitlementCountsAtAllBanks200Response
+     * @return \OpenBankProject\Model\GetPermissionsForBankAccount200Response
      */
-    public function oBPv600GetRolesWithEntitlementCountsAtAllBanks(string $contentType = self::contentTypes['oBPv600GetRolesWithEntitlementCountsAtAllBanks'][0])
+    public function getPermissionsForBankAccount($bankid, $accountid, string $contentType = self::contentTypes['getPermissionsForBankAccount'][0])
     {
-        list($response) = $this->oBPv600GetRolesWithEntitlementCountsAtAllBanksWithHttpInfo($contentType);
+        list($response) = $this->getPermissionsForBankAccountWithHttpInfo($bankid, $accountid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetRolesWithEntitlementCountsAtAllBanksWithHttpInfo
+     * Operation getPermissionsForBankAccountWithHttpInfo
      *
-     * Get Roles with Entitlement Counts
+     * Get access
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetRolesWithEntitlementCountsAtAllBanks'] to see the possible values for this operation
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPermissionsForBankAccount'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetRolesWithEntitlementCountsAtAllBanks200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetPermissionsForBankAccount200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetRolesWithEntitlementCountsAtAllBanksWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetRolesWithEntitlementCountsAtAllBanks'][0])
+    public function getPermissionsForBankAccountWithHttpInfo($bankid, $accountid, string $contentType = self::contentTypes['getPermissionsForBankAccount'][0])
     {
-        $request = $this->oBPv600GetRolesWithEntitlementCountsAtAllBanksRequest($contentType);
+        $request = $this->getPermissionsForBankAccountRequest($bankid, $accountid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5186,7 +4633,7 @@ class EntitlementApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetRolesWithEntitlementCountsAtAllBanks200Response',
+                        '\OpenBankProject\Model\GetPermissionsForBankAccount200Response',
                         $request,
                         $response,
                     );
@@ -5208,7 +4655,7 @@ class EntitlementApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetRolesWithEntitlementCountsAtAllBanks200Response',
+                '\OpenBankProject\Model\GetPermissionsForBankAccount200Response',
                 $request,
                 $response,
             );
@@ -5217,7 +4664,7 @@ class EntitlementApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetRolesWithEntitlementCountsAtAllBanks200Response',
+                        '\OpenBankProject\Model\GetPermissionsForBankAccount200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5230,18 +4677,20 @@ class EntitlementApi
     }
 
     /**
-     * Operation oBPv600GetRolesWithEntitlementCountsAtAllBanksAsync
+     * Operation getPermissionsForBankAccountAsync
      *
-     * Get Roles with Entitlement Counts
+     * Get access
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetRolesWithEntitlementCountsAtAllBanks'] to see the possible values for this operation
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPermissionsForBankAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetRolesWithEntitlementCountsAtAllBanksAsync(string $contentType = self::contentTypes['oBPv600GetRolesWithEntitlementCountsAtAllBanks'][0])
+    public function getPermissionsForBankAccountAsync($bankid, $accountid, string $contentType = self::contentTypes['getPermissionsForBankAccount'][0])
     {
-        return $this->oBPv600GetRolesWithEntitlementCountsAtAllBanksAsyncWithHttpInfo($contentType)
+        return $this->getPermissionsForBankAccountAsyncWithHttpInfo($bankid, $accountid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5250,19 +4699,21 @@ class EntitlementApi
     }
 
     /**
-     * Operation oBPv600GetRolesWithEntitlementCountsAtAllBanksAsyncWithHttpInfo
+     * Operation getPermissionsForBankAccountAsyncWithHttpInfo
      *
-     * Get Roles with Entitlement Counts
+     * Get access
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetRolesWithEntitlementCountsAtAllBanks'] to see the possible values for this operation
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPermissionsForBankAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetRolesWithEntitlementCountsAtAllBanksAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetRolesWithEntitlementCountsAtAllBanks'][0])
+    public function getPermissionsForBankAccountAsyncWithHttpInfo($bankid, $accountid, string $contentType = self::contentTypes['getPermissionsForBankAccount'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetRolesWithEntitlementCountsAtAllBanks200Response';
-        $request = $this->oBPv600GetRolesWithEntitlementCountsAtAllBanksRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetPermissionsForBankAccount200Response';
+        $request = $this->getPermissionsForBankAccountRequest($bankid, $accountid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5301,14 +4752,308 @@ class EntitlementApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetRolesWithEntitlementCountsAtAllBanks'
+     * Create request for operation 'getPermissionsForBankAccount'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetRolesWithEntitlementCountsAtAllBanks'] to see the possible values for this operation
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPermissionsForBankAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetRolesWithEntitlementCountsAtAllBanksRequest(string $contentType = self::contentTypes['oBPv600GetRolesWithEntitlementCountsAtAllBanks'][0])
+    public function getPermissionsForBankAccountRequest($bankid, $accountid, string $contentType = self::contentTypes['getPermissionsForBankAccount'][0])
+    {
+
+        // verify the required parameter 'bankid' is set
+        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $bankid when calling getPermissionsForBankAccount'
+            );
+        }
+
+        // verify the required parameter 'accountid' is set
+        if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $accountid when calling getPermissionsForBankAccount'
+            );
+        }
+
+
+        $resourcePath = '/obp/v2.0.0/banks/{bankid}/accounts/{accountid}/permissions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($bankid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'bankid' . '}',
+                ObjectSerializer::toPathValue($bankid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($accountid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'accountid' . '}',
+                ObjectSerializer::toPathValue($accountid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getRolesWithEntitlementCountsAtAllBanks
+     *
+     * Get Roles with Entitlement Counts
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRolesWithEntitlementCountsAtAllBanks'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetRolesWithEntitlementCountsAtAllBanks200Response
+     */
+    public function getRolesWithEntitlementCountsAtAllBanks(string $contentType = self::contentTypes['getRolesWithEntitlementCountsAtAllBanks'][0])
+    {
+        list($response) = $this->getRolesWithEntitlementCountsAtAllBanksWithHttpInfo($contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getRolesWithEntitlementCountsAtAllBanksWithHttpInfo
+     *
+     * Get Roles with Entitlement Counts
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRolesWithEntitlementCountsAtAllBanks'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetRolesWithEntitlementCountsAtAllBanks200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getRolesWithEntitlementCountsAtAllBanksWithHttpInfo(string $contentType = self::contentTypes['getRolesWithEntitlementCountsAtAllBanks'][0])
+    {
+        $request = $this->getRolesWithEntitlementCountsAtAllBanksRequest($contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetRolesWithEntitlementCountsAtAllBanks200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetRolesWithEntitlementCountsAtAllBanks200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetRolesWithEntitlementCountsAtAllBanks200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getRolesWithEntitlementCountsAtAllBanksAsync
+     *
+     * Get Roles with Entitlement Counts
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRolesWithEntitlementCountsAtAllBanks'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getRolesWithEntitlementCountsAtAllBanksAsync(string $contentType = self::contentTypes['getRolesWithEntitlementCountsAtAllBanks'][0])
+    {
+        return $this->getRolesWithEntitlementCountsAtAllBanksAsyncWithHttpInfo($contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getRolesWithEntitlementCountsAtAllBanksAsyncWithHttpInfo
+     *
+     * Get Roles with Entitlement Counts
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRolesWithEntitlementCountsAtAllBanks'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getRolesWithEntitlementCountsAtAllBanksAsyncWithHttpInfo(string $contentType = self::contentTypes['getRolesWithEntitlementCountsAtAllBanks'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetRolesWithEntitlementCountsAtAllBanks200Response';
+        $request = $this->getRolesWithEntitlementCountsAtAllBanksRequest($contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getRolesWithEntitlementCountsAtAllBanks'
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRolesWithEntitlementCountsAtAllBanks'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getRolesWithEntitlementCountsAtAllBanksRequest(string $contentType = self::contentTypes['getRolesWithEntitlementCountsAtAllBanks'][0])
     {
 
 
@@ -5364,9 +5109,9 @@ class EntitlementApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -5391,38 +5136,38 @@ class EntitlementApi
     }
 
     /**
-     * Operation oBPv600GetUserGroupMemberships
+     * Operation getUserGroupMemberships
      *
      * Get User&#39;s Group Memberships
      *
      * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetUserGroupMemberships'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserGroupMemberships'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetUserGroupMemberships200Response
+     * @return \OpenBankProject\Model\GetUserGroupMemberships200Response
      */
-    public function oBPv600GetUserGroupMemberships($userid, string $contentType = self::contentTypes['oBPv600GetUserGroupMemberships'][0])
+    public function getUserGroupMemberships($userid, string $contentType = self::contentTypes['getUserGroupMemberships'][0])
     {
-        list($response) = $this->oBPv600GetUserGroupMembershipsWithHttpInfo($userid, $contentType);
+        list($response) = $this->getUserGroupMembershipsWithHttpInfo($userid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetUserGroupMembershipsWithHttpInfo
+     * Operation getUserGroupMembershipsWithHttpInfo
      *
      * Get User&#39;s Group Memberships
      *
      * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetUserGroupMemberships'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserGroupMemberships'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetUserGroupMemberships200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetUserGroupMemberships200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetUserGroupMembershipsWithHttpInfo($userid, string $contentType = self::contentTypes['oBPv600GetUserGroupMemberships'][0])
+    public function getUserGroupMembershipsWithHttpInfo($userid, string $contentType = self::contentTypes['getUserGroupMemberships'][0])
     {
-        $request = $this->oBPv600GetUserGroupMembershipsRequest($userid, $contentType);
+        $request = $this->getUserGroupMembershipsRequest($userid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5450,7 +5195,7 @@ class EntitlementApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetUserGroupMemberships200Response',
+                        '\OpenBankProject\Model\GetUserGroupMemberships200Response',
                         $request,
                         $response,
                     );
@@ -5472,7 +5217,7 @@ class EntitlementApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetUserGroupMemberships200Response',
+                '\OpenBankProject\Model\GetUserGroupMemberships200Response',
                 $request,
                 $response,
             );
@@ -5481,7 +5226,7 @@ class EntitlementApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetUserGroupMemberships200Response',
+                        '\OpenBankProject\Model\GetUserGroupMemberships200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5494,19 +5239,19 @@ class EntitlementApi
     }
 
     /**
-     * Operation oBPv600GetUserGroupMembershipsAsync
+     * Operation getUserGroupMembershipsAsync
      *
      * Get User&#39;s Group Memberships
      *
      * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetUserGroupMemberships'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserGroupMemberships'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetUserGroupMembershipsAsync($userid, string $contentType = self::contentTypes['oBPv600GetUserGroupMemberships'][0])
+    public function getUserGroupMembershipsAsync($userid, string $contentType = self::contentTypes['getUserGroupMemberships'][0])
     {
-        return $this->oBPv600GetUserGroupMembershipsAsyncWithHttpInfo($userid, $contentType)
+        return $this->getUserGroupMembershipsAsyncWithHttpInfo($userid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5515,20 +5260,20 @@ class EntitlementApi
     }
 
     /**
-     * Operation oBPv600GetUserGroupMembershipsAsyncWithHttpInfo
+     * Operation getUserGroupMembershipsAsyncWithHttpInfo
      *
      * Get User&#39;s Group Memberships
      *
      * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetUserGroupMemberships'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserGroupMemberships'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetUserGroupMembershipsAsyncWithHttpInfo($userid, string $contentType = self::contentTypes['oBPv600GetUserGroupMemberships'][0])
+    public function getUserGroupMembershipsAsyncWithHttpInfo($userid, string $contentType = self::contentTypes['getUserGroupMemberships'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetUserGroupMemberships200Response';
-        $request = $this->oBPv600GetUserGroupMembershipsRequest($userid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetUserGroupMemberships200Response';
+        $request = $this->getUserGroupMembershipsRequest($userid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5567,21 +5312,21 @@ class EntitlementApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetUserGroupMemberships'
+     * Create request for operation 'getUserGroupMemberships'
      *
      * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetUserGroupMemberships'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserGroupMemberships'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetUserGroupMembershipsRequest($userid, string $contentType = self::contentTypes['oBPv600GetUserGroupMemberships'][0])
+    public function getUserGroupMembershipsRequest($userid, string $contentType = self::contentTypes['getUserGroupMemberships'][0])
     {
 
         // verify the required parameter 'userid' is set
         if ($userid === null || (is_array($userid) && count($userid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $userid when calling oBPv600GetUserGroupMemberships'
+                'Missing the required parameter $userid when calling getUserGroupMemberships'
             );
         }
 
@@ -5646,9 +5391,9 @@ class EntitlementApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -5673,39 +5418,39 @@ class EntitlementApi
     }
 
     /**
-     * Operation oBPv600RemoveUserFromGroup
+     * Operation removeUserFromGroup
      *
      * Remove User from Group
      *
      * @param  string $userid The USERID identifier (required)
      * @param  string $groupid The GROUPID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600RemoveUserFromGroup'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['removeUserFromGroup'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv600RemoveUserFromGroup($userid, $groupid, string $contentType = self::contentTypes['oBPv600RemoveUserFromGroup'][0])
+    public function removeUserFromGroup($userid, $groupid, string $contentType = self::contentTypes['removeUserFromGroup'][0])
     {
-        $this->oBPv600RemoveUserFromGroupWithHttpInfo($userid, $groupid, $contentType);
+        $this->removeUserFromGroupWithHttpInfo($userid, $groupid, $contentType);
     }
 
     /**
-     * Operation oBPv600RemoveUserFromGroupWithHttpInfo
+     * Operation removeUserFromGroupWithHttpInfo
      *
      * Remove User from Group
      *
      * @param  string $userid The USERID identifier (required)
      * @param  string $groupid The GROUPID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600RemoveUserFromGroup'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['removeUserFromGroup'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600RemoveUserFromGroupWithHttpInfo($userid, $groupid, string $contentType = self::contentTypes['oBPv600RemoveUserFromGroup'][0])
+    public function removeUserFromGroupWithHttpInfo($userid, $groupid, string $contentType = self::contentTypes['removeUserFromGroup'][0])
     {
-        $request = $this->oBPv600RemoveUserFromGroupRequest($userid, $groupid, $contentType);
+        $request = $this->removeUserFromGroupRequest($userid, $groupid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5741,20 +5486,20 @@ class EntitlementApi
     }
 
     /**
-     * Operation oBPv600RemoveUserFromGroupAsync
+     * Operation removeUserFromGroupAsync
      *
      * Remove User from Group
      *
      * @param  string $userid The USERID identifier (required)
      * @param  string $groupid The GROUPID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600RemoveUserFromGroup'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['removeUserFromGroup'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600RemoveUserFromGroupAsync($userid, $groupid, string $contentType = self::contentTypes['oBPv600RemoveUserFromGroup'][0])
+    public function removeUserFromGroupAsync($userid, $groupid, string $contentType = self::contentTypes['removeUserFromGroup'][0])
     {
-        return $this->oBPv600RemoveUserFromGroupAsyncWithHttpInfo($userid, $groupid, $contentType)
+        return $this->removeUserFromGroupAsyncWithHttpInfo($userid, $groupid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5763,21 +5508,21 @@ class EntitlementApi
     }
 
     /**
-     * Operation oBPv600RemoveUserFromGroupAsyncWithHttpInfo
+     * Operation removeUserFromGroupAsyncWithHttpInfo
      *
      * Remove User from Group
      *
      * @param  string $userid The USERID identifier (required)
      * @param  string $groupid The GROUPID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600RemoveUserFromGroup'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['removeUserFromGroup'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600RemoveUserFromGroupAsyncWithHttpInfo($userid, $groupid, string $contentType = self::contentTypes['oBPv600RemoveUserFromGroup'][0])
+    public function removeUserFromGroupAsyncWithHttpInfo($userid, $groupid, string $contentType = self::contentTypes['removeUserFromGroup'][0])
     {
         $returnType = '';
-        $request = $this->oBPv600RemoveUserFromGroupRequest($userid, $groupid, $contentType);
+        $request = $this->removeUserFromGroupRequest($userid, $groupid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5803,29 +5548,29 @@ class EntitlementApi
     }
 
     /**
-     * Create request for operation 'oBPv600RemoveUserFromGroup'
+     * Create request for operation 'removeUserFromGroup'
      *
      * @param  string $userid The USERID identifier (required)
      * @param  string $groupid The GROUPID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600RemoveUserFromGroup'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['removeUserFromGroup'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600RemoveUserFromGroupRequest($userid, $groupid, string $contentType = self::contentTypes['oBPv600RemoveUserFromGroup'][0])
+    public function removeUserFromGroupRequest($userid, $groupid, string $contentType = self::contentTypes['removeUserFromGroup'][0])
     {
 
         // verify the required parameter 'userid' is set
         if ($userid === null || (is_array($userid) && count($userid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $userid when calling oBPv600RemoveUserFromGroup'
+                'Missing the required parameter $userid when calling removeUserFromGroup'
             );
         }
 
         // verify the required parameter 'groupid' is set
         if ($groupid === null || (is_array($groupid) && count($groupid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $groupid when calling oBPv600RemoveUserFromGroup'
+                'Missing the required parameter $groupid when calling removeUserFromGroup'
             );
         }
 
@@ -5898,9 +5643,9 @@ class EntitlementApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

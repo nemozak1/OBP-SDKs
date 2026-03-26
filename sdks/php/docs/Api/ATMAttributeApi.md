@@ -2,21 +2,21 @@
 
 
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv510CreateAtmAttribute()**](ATMAttributeApi.md#oBPv510CreateAtmAttribute) | **POST** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Create ATM Attribute |
-| [**oBPv510DeleteAtmAttribute()**](ATMAttributeApi.md#oBPv510DeleteAtmAttribute) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Delete ATM Attribute |
-| [**oBPv510GetAtmAttribute()**](ATMAttributeApi.md#oBPv510GetAtmAttribute) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Get ATM Attribute By ATM_ATTRIBUTE_ID |
-| [**oBPv510GetAtmAttributes()**](ATMAttributeApi.md#oBPv510GetAtmAttributes) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Get ATM Attributes |
-| [**oBPv510UpdateAtmAttribute()**](ATMAttributeApi.md#oBPv510UpdateAtmAttribute) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Update ATM Attribute |
+| [**createAtmAttribute()**](ATMAttributeApi.md#createAtmAttribute) | **POST** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Create ATM Attribute |
+| [**deleteAtmAttribute()**](ATMAttributeApi.md#deleteAtmAttribute) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Delete ATM Attribute |
+| [**getAtmAttribute()**](ATMAttributeApi.md#getAtmAttribute) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Get ATM Attribute By ATM_ATTRIBUTE_ID |
+| [**getAtmAttributes()**](ATMAttributeApi.md#getAtmAttributes) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Get ATM Attributes |
+| [**updateAtmAttribute()**](ATMAttributeApi.md#updateAtmAttribute) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Update ATM Attribute |
 
 
-## `oBPv510CreateAtmAttribute()`
+## `createAtmAttribute()`
 
 ```php
-oBPv510CreateAtmAttribute($bankid, $atmid, $obpv510_update_atm_attribute_request): \OpenBankProject\Model\OBPv510GetAtmAttribute200Response
+createAtmAttribute($bankid, $atmid, $update_atm_attribute_request): \OpenBankProject\Model\GetAtmAttribute200Response
 ```
 
 Create ATM Attribute
@@ -39,9 +39,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\ATMAttributeApi(
@@ -52,13 +52,13 @@ $apiInstance = new OpenBankProject\Api\ATMAttributeApi(
 );
 $bankid = 'bankid_example'; // string | The BANKID identifier
 $atmid = 'atmid_example'; // string | The ATMID identifier
-$obpv510_update_atm_attribute_request = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}}; // \OpenBankProject\Model\OBPv510UpdateAtmAttributeRequest | Request body
+$update_atm_attribute_request = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}}; // \OpenBankProject\Model\UpdateAtmAttributeRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv510CreateAtmAttribute($bankid, $atmid, $obpv510_update_atm_attribute_request);
+    $result = $apiInstance->createAtmAttribute($bankid, $atmid, $update_atm_attribute_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ATMAttributeApi->oBPv510CreateAtmAttribute: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ATMAttributeApi->createAtmAttribute: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -68,11 +68,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **bankid** | **string**| The BANKID identifier | |
 | **atmid** | **string**| The ATMID identifier | |
-| **obpv510_update_atm_attribute_request** | [**\OpenBankProject\Model\OBPv510UpdateAtmAttributeRequest**](../Model/OBPv510UpdateAtmAttributeRequest.md)| Request body | |
+| **update_atm_attribute_request** | [**\OpenBankProject\Model\UpdateAtmAttributeRequest**](../Model/UpdateAtmAttributeRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv510GetAtmAttribute200Response**](../Model/OBPv510GetAtmAttribute200Response.md)
+[**\OpenBankProject\Model\GetAtmAttribute200Response**](../Model/GetAtmAttribute200Response.md)
 
 ### Authorization
 
@@ -87,10 +87,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv510DeleteAtmAttribute()`
+## `deleteAtmAttribute()`
 
 ```php
-oBPv510DeleteAtmAttribute($bankid, $atmid, $atmattributeid)
+deleteAtmAttribute($bankid, $atmid, $atmattributeid)
 ```
 
 Delete ATM Attribute
@@ -113,9 +113,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\ATMAttributeApi(
@@ -129,9 +129,9 @@ $atmid = 'atmid_example'; // string | The ATMID identifier
 $atmattributeid = 'atmattributeid_example'; // string | The ATMATTRIBUTEID identifier
 
 try {
-    $apiInstance->oBPv510DeleteAtmAttribute($bankid, $atmid, $atmattributeid);
+    $apiInstance->deleteAtmAttribute($bankid, $atmid, $atmattributeid);
 } catch (Exception $e) {
-    echo 'Exception when calling ATMAttributeApi->oBPv510DeleteAtmAttribute: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ATMAttributeApi->deleteAtmAttribute: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -160,10 +160,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv510GetAtmAttribute()`
+## `getAtmAttribute()`
 
 ```php
-oBPv510GetAtmAttribute($bankid, $atmid, $atmattributeid): \OpenBankProject\Model\OBPv510GetAtmAttribute200Response
+getAtmAttribute($bankid, $atmid, $atmattributeid): \OpenBankProject\Model\GetAtmAttribute200Response
 ```
 
 Get ATM Attribute By ATM_ATTRIBUTE_ID
@@ -186,9 +186,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\ATMAttributeApi(
@@ -202,10 +202,10 @@ $atmid = 'atmid_example'; // string | The ATMID identifier
 $atmattributeid = 'atmattributeid_example'; // string | The ATMATTRIBUTEID identifier
 
 try {
-    $result = $apiInstance->oBPv510GetAtmAttribute($bankid, $atmid, $atmattributeid);
+    $result = $apiInstance->getAtmAttribute($bankid, $atmid, $atmattributeid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ATMAttributeApi->oBPv510GetAtmAttribute: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ATMAttributeApi->getAtmAttribute: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -219,7 +219,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv510GetAtmAttribute200Response**](../Model/OBPv510GetAtmAttribute200Response.md)
+[**\OpenBankProject\Model\GetAtmAttribute200Response**](../Model/GetAtmAttribute200Response.md)
 
 ### Authorization
 
@@ -234,10 +234,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv510GetAtmAttributes()`
+## `getAtmAttributes()`
 
 ```php
-oBPv510GetAtmAttributes($bankid, $atmid): \OpenBankProject\Model\OBPv510GetAtmAttributes200Response
+getAtmAttributes($bankid, $atmid): \OpenBankProject\Model\GetAtmAttributes200Response
 ```
 
 Get ATM Attributes
@@ -260,9 +260,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\ATMAttributeApi(
@@ -275,10 +275,10 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $atmid = 'atmid_example'; // string | The ATMID identifier
 
 try {
-    $result = $apiInstance->oBPv510GetAtmAttributes($bankid, $atmid);
+    $result = $apiInstance->getAtmAttributes($bankid, $atmid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ATMAttributeApi->oBPv510GetAtmAttributes: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ATMAttributeApi->getAtmAttributes: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -291,7 +291,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv510GetAtmAttributes200Response**](../Model/OBPv510GetAtmAttributes200Response.md)
+[**\OpenBankProject\Model\GetAtmAttributes200Response**](../Model/GetAtmAttributes200Response.md)
 
 ### Authorization
 
@@ -306,10 +306,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv510UpdateAtmAttribute()`
+## `updateAtmAttribute()`
 
 ```php
-oBPv510UpdateAtmAttribute($bankid, $atmid, $atmattributeid, $obpv510_update_atm_attribute_request): \OpenBankProject\Model\OBPv510GetAtmAttribute200Response
+updateAtmAttribute($bankid, $atmid, $atmattributeid, $update_atm_attribute_request): \OpenBankProject\Model\GetAtmAttribute200Response
 ```
 
 Update ATM Attribute
@@ -332,9 +332,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\ATMAttributeApi(
@@ -346,13 +346,13 @@ $apiInstance = new OpenBankProject\Api\ATMAttributeApi(
 $bankid = 'bankid_example'; // string | The BANKID identifier
 $atmid = 'atmid_example'; // string | The ATMID identifier
 $atmattributeid = 'atmattributeid_example'; // string | The ATMATTRIBUTEID identifier
-$obpv510_update_atm_attribute_request = {"type":"object","properties":{"name":{"type":"string"},"value":{"type":"string"},"is_active":{"type":"boolean"},"type":{"type":"string"}}}; // \OpenBankProject\Model\OBPv510UpdateAtmAttributeRequest | Request body
+$update_atm_attribute_request = {"type":"object","properties":{"name":{"type":"string"},"value":{"type":"string"},"is_active":{"type":"boolean"},"type":{"type":"string"}}}; // \OpenBankProject\Model\UpdateAtmAttributeRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv510UpdateAtmAttribute($bankid, $atmid, $atmattributeid, $obpv510_update_atm_attribute_request);
+    $result = $apiInstance->updateAtmAttribute($bankid, $atmid, $atmattributeid, $update_atm_attribute_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ATMAttributeApi->oBPv510UpdateAtmAttribute: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ATMAttributeApi->updateAtmAttribute: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -363,11 +363,11 @@ try {
 | **bankid** | **string**| The BANKID identifier | |
 | **atmid** | **string**| The ATMID identifier | |
 | **atmattributeid** | **string**| The ATMATTRIBUTEID identifier | |
-| **obpv510_update_atm_attribute_request** | [**\OpenBankProject\Model\OBPv510UpdateAtmAttributeRequest**](../Model/OBPv510UpdateAtmAttributeRequest.md)| Request body | |
+| **update_atm_attribute_request** | [**\OpenBankProject\Model\UpdateAtmAttributeRequest**](../Model/UpdateAtmAttributeRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv510GetAtmAttribute200Response**](../Model/OBPv510GetAtmAttribute200Response.md)
+[**\OpenBankProject\Model\GetAtmAttribute200Response**](../Model/GetAtmAttribute200Response.md)
 
 ### Authorization
 

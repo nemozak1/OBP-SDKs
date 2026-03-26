@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,16 +75,16 @@ class ApiProductAttributeApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv600CreateApiProductAttribute' => [
+        'createApiProductAttribute' => [
             'application/json',
         ],
-        'oBPv600DeleteApiProductAttribute' => [
+        'deleteApiProductAttribute' => [
             'application/json',
         ],
-        'oBPv600GetApiProductAttribute' => [
+        'getApiProductAttribute' => [
             'application/json',
         ],
-        'oBPv600UpdateApiProductAttribute' => [
+        'updateApiProductAttribute' => [
             'application/json',
         ],
     ];
@@ -136,42 +136,42 @@ class ApiProductAttributeApi
     }
 
     /**
-     * Operation oBPv600CreateApiProductAttribute
+     * Operation createApiProductAttribute
      *
      * Create Api Product Attribute
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $apiproductcode The APIPRODUCTCODE identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateAtmAttributeRequest $obpv510_update_atm_attribute_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateApiProductAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAtmAttributeRequest $update_atm_attribute_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createApiProductAttribute'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600CreateApiProductAttribute200Response
+     * @return \OpenBankProject\Model\CreateApiProductAttribute200Response
      */
-    public function oBPv600CreateApiProductAttribute($bankid, $apiproductcode, $obpv510_update_atm_attribute_request, string $contentType = self::contentTypes['oBPv600CreateApiProductAttribute'][0])
+    public function createApiProductAttribute($bankid, $apiproductcode, $update_atm_attribute_request, string $contentType = self::contentTypes['createApiProductAttribute'][0])
     {
-        list($response) = $this->oBPv600CreateApiProductAttributeWithHttpInfo($bankid, $apiproductcode, $obpv510_update_atm_attribute_request, $contentType);
+        list($response) = $this->createApiProductAttributeWithHttpInfo($bankid, $apiproductcode, $update_atm_attribute_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600CreateApiProductAttributeWithHttpInfo
+     * Operation createApiProductAttributeWithHttpInfo
      *
      * Create Api Product Attribute
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $apiproductcode The APIPRODUCTCODE identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateAtmAttributeRequest $obpv510_update_atm_attribute_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateApiProductAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAtmAttributeRequest $update_atm_attribute_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createApiProductAttribute'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600CreateApiProductAttribute200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\CreateApiProductAttribute200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600CreateApiProductAttributeWithHttpInfo($bankid, $apiproductcode, $obpv510_update_atm_attribute_request, string $contentType = self::contentTypes['oBPv600CreateApiProductAttribute'][0])
+    public function createApiProductAttributeWithHttpInfo($bankid, $apiproductcode, $update_atm_attribute_request, string $contentType = self::contentTypes['createApiProductAttribute'][0])
     {
-        $request = $this->oBPv600CreateApiProductAttributeRequest($bankid, $apiproductcode, $obpv510_update_atm_attribute_request, $contentType);
+        $request = $this->createApiProductAttributeRequest($bankid, $apiproductcode, $update_atm_attribute_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -199,7 +199,7 @@ class ApiProductAttributeApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600CreateApiProductAttribute200Response',
+                        '\OpenBankProject\Model\CreateApiProductAttribute200Response',
                         $request,
                         $response,
                     );
@@ -221,7 +221,7 @@ class ApiProductAttributeApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600CreateApiProductAttribute200Response',
+                '\OpenBankProject\Model\CreateApiProductAttribute200Response',
                 $request,
                 $response,
             );
@@ -230,7 +230,7 @@ class ApiProductAttributeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600CreateApiProductAttribute200Response',
+                        '\OpenBankProject\Model\CreateApiProductAttribute200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -243,21 +243,21 @@ class ApiProductAttributeApi
     }
 
     /**
-     * Operation oBPv600CreateApiProductAttributeAsync
+     * Operation createApiProductAttributeAsync
      *
      * Create Api Product Attribute
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $apiproductcode The APIPRODUCTCODE identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateAtmAttributeRequest $obpv510_update_atm_attribute_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateApiProductAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAtmAttributeRequest $update_atm_attribute_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createApiProductAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600CreateApiProductAttributeAsync($bankid, $apiproductcode, $obpv510_update_atm_attribute_request, string $contentType = self::contentTypes['oBPv600CreateApiProductAttribute'][0])
+    public function createApiProductAttributeAsync($bankid, $apiproductcode, $update_atm_attribute_request, string $contentType = self::contentTypes['createApiProductAttribute'][0])
     {
-        return $this->oBPv600CreateApiProductAttributeAsyncWithHttpInfo($bankid, $apiproductcode, $obpv510_update_atm_attribute_request, $contentType)
+        return $this->createApiProductAttributeAsyncWithHttpInfo($bankid, $apiproductcode, $update_atm_attribute_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -266,22 +266,22 @@ class ApiProductAttributeApi
     }
 
     /**
-     * Operation oBPv600CreateApiProductAttributeAsyncWithHttpInfo
+     * Operation createApiProductAttributeAsyncWithHttpInfo
      *
      * Create Api Product Attribute
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $apiproductcode The APIPRODUCTCODE identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateAtmAttributeRequest $obpv510_update_atm_attribute_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateApiProductAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAtmAttributeRequest $update_atm_attribute_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createApiProductAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600CreateApiProductAttributeAsyncWithHttpInfo($bankid, $apiproductcode, $obpv510_update_atm_attribute_request, string $contentType = self::contentTypes['oBPv600CreateApiProductAttribute'][0])
+    public function createApiProductAttributeAsyncWithHttpInfo($bankid, $apiproductcode, $update_atm_attribute_request, string $contentType = self::contentTypes['createApiProductAttribute'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600CreateApiProductAttribute200Response';
-        $request = $this->oBPv600CreateApiProductAttributeRequest($bankid, $apiproductcode, $obpv510_update_atm_attribute_request, $contentType);
+        $returnType = '\OpenBankProject\Model\CreateApiProductAttribute200Response';
+        $request = $this->createApiProductAttributeRequest($bankid, $apiproductcode, $update_atm_attribute_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -320,37 +320,37 @@ class ApiProductAttributeApi
     }
 
     /**
-     * Create request for operation 'oBPv600CreateApiProductAttribute'
+     * Create request for operation 'createApiProductAttribute'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $apiproductcode The APIPRODUCTCODE identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateAtmAttributeRequest $obpv510_update_atm_attribute_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateApiProductAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAtmAttributeRequest $update_atm_attribute_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createApiProductAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600CreateApiProductAttributeRequest($bankid, $apiproductcode, $obpv510_update_atm_attribute_request, string $contentType = self::contentTypes['oBPv600CreateApiProductAttribute'][0])
+    public function createApiProductAttributeRequest($bankid, $apiproductcode, $update_atm_attribute_request, string $contentType = self::contentTypes['createApiProductAttribute'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv600CreateApiProductAttribute'
+                'Missing the required parameter $bankid when calling createApiProductAttribute'
             );
         }
 
         // verify the required parameter 'apiproductcode' is set
         if ($apiproductcode === null || (is_array($apiproductcode) && count($apiproductcode) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $apiproductcode when calling oBPv600CreateApiProductAttribute'
+                'Missing the required parameter $apiproductcode when calling createApiProductAttribute'
             );
         }
 
-        // verify the required parameter 'obpv510_update_atm_attribute_request' is set
-        if ($obpv510_update_atm_attribute_request === null || (is_array($obpv510_update_atm_attribute_request) && count($obpv510_update_atm_attribute_request) === 0)) {
+        // verify the required parameter 'update_atm_attribute_request' is set
+        if ($update_atm_attribute_request === null || (is_array($update_atm_attribute_request) && count($update_atm_attribute_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv510_update_atm_attribute_request when calling oBPv600CreateApiProductAttribute'
+                'Missing the required parameter $update_atm_attribute_request when calling createApiProductAttribute'
             );
         }
 
@@ -389,12 +389,12 @@ class ApiProductAttributeApi
         );
 
         // for model (json/xml)
-        if (isset($obpv510_update_atm_attribute_request)) {
+        if (isset($update_atm_attribute_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv510_update_atm_attribute_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_atm_attribute_request));
             } else {
-                $httpBody = $obpv510_update_atm_attribute_request;
+                $httpBody = $update_atm_attribute_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -430,9 +430,9 @@ class ApiProductAttributeApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -457,41 +457,41 @@ class ApiProductAttributeApi
     }
 
     /**
-     * Operation oBPv600DeleteApiProductAttribute
+     * Operation deleteApiProductAttribute
      *
      * Delete Api Product Attribute
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $apiproductcode The APIPRODUCTCODE identifier (required)
      * @param  string $apiproductattributeid The APIPRODUCTATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteApiProductAttribute'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteApiProductAttribute'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv600DeleteApiProductAttribute($bankid, $apiproductcode, $apiproductattributeid, string $contentType = self::contentTypes['oBPv600DeleteApiProductAttribute'][0])
+    public function deleteApiProductAttribute($bankid, $apiproductcode, $apiproductattributeid, string $contentType = self::contentTypes['deleteApiProductAttribute'][0])
     {
-        $this->oBPv600DeleteApiProductAttributeWithHttpInfo($bankid, $apiproductcode, $apiproductattributeid, $contentType);
+        $this->deleteApiProductAttributeWithHttpInfo($bankid, $apiproductcode, $apiproductattributeid, $contentType);
     }
 
     /**
-     * Operation oBPv600DeleteApiProductAttributeWithHttpInfo
+     * Operation deleteApiProductAttributeWithHttpInfo
      *
      * Delete Api Product Attribute
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $apiproductcode The APIPRODUCTCODE identifier (required)
      * @param  string $apiproductattributeid The APIPRODUCTATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteApiProductAttribute'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteApiProductAttribute'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600DeleteApiProductAttributeWithHttpInfo($bankid, $apiproductcode, $apiproductattributeid, string $contentType = self::contentTypes['oBPv600DeleteApiProductAttribute'][0])
+    public function deleteApiProductAttributeWithHttpInfo($bankid, $apiproductcode, $apiproductattributeid, string $contentType = self::contentTypes['deleteApiProductAttribute'][0])
     {
-        $request = $this->oBPv600DeleteApiProductAttributeRequest($bankid, $apiproductcode, $apiproductattributeid, $contentType);
+        $request = $this->deleteApiProductAttributeRequest($bankid, $apiproductcode, $apiproductattributeid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -527,21 +527,21 @@ class ApiProductAttributeApi
     }
 
     /**
-     * Operation oBPv600DeleteApiProductAttributeAsync
+     * Operation deleteApiProductAttributeAsync
      *
      * Delete Api Product Attribute
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $apiproductcode The APIPRODUCTCODE identifier (required)
      * @param  string $apiproductattributeid The APIPRODUCTATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteApiProductAttribute'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteApiProductAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600DeleteApiProductAttributeAsync($bankid, $apiproductcode, $apiproductattributeid, string $contentType = self::contentTypes['oBPv600DeleteApiProductAttribute'][0])
+    public function deleteApiProductAttributeAsync($bankid, $apiproductcode, $apiproductattributeid, string $contentType = self::contentTypes['deleteApiProductAttribute'][0])
     {
-        return $this->oBPv600DeleteApiProductAttributeAsyncWithHttpInfo($bankid, $apiproductcode, $apiproductattributeid, $contentType)
+        return $this->deleteApiProductAttributeAsyncWithHttpInfo($bankid, $apiproductcode, $apiproductattributeid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -550,22 +550,22 @@ class ApiProductAttributeApi
     }
 
     /**
-     * Operation oBPv600DeleteApiProductAttributeAsyncWithHttpInfo
+     * Operation deleteApiProductAttributeAsyncWithHttpInfo
      *
      * Delete Api Product Attribute
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $apiproductcode The APIPRODUCTCODE identifier (required)
      * @param  string $apiproductattributeid The APIPRODUCTATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteApiProductAttribute'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteApiProductAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600DeleteApiProductAttributeAsyncWithHttpInfo($bankid, $apiproductcode, $apiproductattributeid, string $contentType = self::contentTypes['oBPv600DeleteApiProductAttribute'][0])
+    public function deleteApiProductAttributeAsyncWithHttpInfo($bankid, $apiproductcode, $apiproductattributeid, string $contentType = self::contentTypes['deleteApiProductAttribute'][0])
     {
         $returnType = '';
-        $request = $this->oBPv600DeleteApiProductAttributeRequest($bankid, $apiproductcode, $apiproductattributeid, $contentType);
+        $request = $this->deleteApiProductAttributeRequest($bankid, $apiproductcode, $apiproductattributeid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -591,37 +591,37 @@ class ApiProductAttributeApi
     }
 
     /**
-     * Create request for operation 'oBPv600DeleteApiProductAttribute'
+     * Create request for operation 'deleteApiProductAttribute'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $apiproductcode The APIPRODUCTCODE identifier (required)
      * @param  string $apiproductattributeid The APIPRODUCTATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteApiProductAttribute'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteApiProductAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600DeleteApiProductAttributeRequest($bankid, $apiproductcode, $apiproductattributeid, string $contentType = self::contentTypes['oBPv600DeleteApiProductAttribute'][0])
+    public function deleteApiProductAttributeRequest($bankid, $apiproductcode, $apiproductattributeid, string $contentType = self::contentTypes['deleteApiProductAttribute'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv600DeleteApiProductAttribute'
+                'Missing the required parameter $bankid when calling deleteApiProductAttribute'
             );
         }
 
         // verify the required parameter 'apiproductcode' is set
         if ($apiproductcode === null || (is_array($apiproductcode) && count($apiproductcode) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $apiproductcode when calling oBPv600DeleteApiProductAttribute'
+                'Missing the required parameter $apiproductcode when calling deleteApiProductAttribute'
             );
         }
 
         // verify the required parameter 'apiproductattributeid' is set
         if ($apiproductattributeid === null || (is_array($apiproductattributeid) && count($apiproductattributeid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $apiproductattributeid when calling oBPv600DeleteApiProductAttribute'
+                'Missing the required parameter $apiproductattributeid when calling deleteApiProductAttribute'
             );
         }
 
@@ -702,9 +702,9 @@ class ApiProductAttributeApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -729,42 +729,42 @@ class ApiProductAttributeApi
     }
 
     /**
-     * Operation oBPv600GetApiProductAttribute
+     * Operation getApiProductAttribute
      *
      * Get Api Product Attribute
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $apiproductcode The APIPRODUCTCODE identifier (required)
      * @param  string $apiproductattributeid The APIPRODUCTATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetApiProductAttribute'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getApiProductAttribute'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600CreateApiProductAttribute200Response
+     * @return \OpenBankProject\Model\CreateApiProductAttribute200Response
      */
-    public function oBPv600GetApiProductAttribute($bankid, $apiproductcode, $apiproductattributeid, string $contentType = self::contentTypes['oBPv600GetApiProductAttribute'][0])
+    public function getApiProductAttribute($bankid, $apiproductcode, $apiproductattributeid, string $contentType = self::contentTypes['getApiProductAttribute'][0])
     {
-        list($response) = $this->oBPv600GetApiProductAttributeWithHttpInfo($bankid, $apiproductcode, $apiproductattributeid, $contentType);
+        list($response) = $this->getApiProductAttributeWithHttpInfo($bankid, $apiproductcode, $apiproductattributeid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetApiProductAttributeWithHttpInfo
+     * Operation getApiProductAttributeWithHttpInfo
      *
      * Get Api Product Attribute
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $apiproductcode The APIPRODUCTCODE identifier (required)
      * @param  string $apiproductattributeid The APIPRODUCTATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetApiProductAttribute'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getApiProductAttribute'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600CreateApiProductAttribute200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\CreateApiProductAttribute200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetApiProductAttributeWithHttpInfo($bankid, $apiproductcode, $apiproductattributeid, string $contentType = self::contentTypes['oBPv600GetApiProductAttribute'][0])
+    public function getApiProductAttributeWithHttpInfo($bankid, $apiproductcode, $apiproductattributeid, string $contentType = self::contentTypes['getApiProductAttribute'][0])
     {
-        $request = $this->oBPv600GetApiProductAttributeRequest($bankid, $apiproductcode, $apiproductattributeid, $contentType);
+        $request = $this->getApiProductAttributeRequest($bankid, $apiproductcode, $apiproductattributeid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -792,7 +792,7 @@ class ApiProductAttributeApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600CreateApiProductAttribute200Response',
+                        '\OpenBankProject\Model\CreateApiProductAttribute200Response',
                         $request,
                         $response,
                     );
@@ -814,7 +814,7 @@ class ApiProductAttributeApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600CreateApiProductAttribute200Response',
+                '\OpenBankProject\Model\CreateApiProductAttribute200Response',
                 $request,
                 $response,
             );
@@ -823,7 +823,7 @@ class ApiProductAttributeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600CreateApiProductAttribute200Response',
+                        '\OpenBankProject\Model\CreateApiProductAttribute200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -836,21 +836,21 @@ class ApiProductAttributeApi
     }
 
     /**
-     * Operation oBPv600GetApiProductAttributeAsync
+     * Operation getApiProductAttributeAsync
      *
      * Get Api Product Attribute
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $apiproductcode The APIPRODUCTCODE identifier (required)
      * @param  string $apiproductattributeid The APIPRODUCTATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetApiProductAttribute'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getApiProductAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetApiProductAttributeAsync($bankid, $apiproductcode, $apiproductattributeid, string $contentType = self::contentTypes['oBPv600GetApiProductAttribute'][0])
+    public function getApiProductAttributeAsync($bankid, $apiproductcode, $apiproductattributeid, string $contentType = self::contentTypes['getApiProductAttribute'][0])
     {
-        return $this->oBPv600GetApiProductAttributeAsyncWithHttpInfo($bankid, $apiproductcode, $apiproductattributeid, $contentType)
+        return $this->getApiProductAttributeAsyncWithHttpInfo($bankid, $apiproductcode, $apiproductattributeid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -859,22 +859,22 @@ class ApiProductAttributeApi
     }
 
     /**
-     * Operation oBPv600GetApiProductAttributeAsyncWithHttpInfo
+     * Operation getApiProductAttributeAsyncWithHttpInfo
      *
      * Get Api Product Attribute
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $apiproductcode The APIPRODUCTCODE identifier (required)
      * @param  string $apiproductattributeid The APIPRODUCTATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetApiProductAttribute'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getApiProductAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetApiProductAttributeAsyncWithHttpInfo($bankid, $apiproductcode, $apiproductattributeid, string $contentType = self::contentTypes['oBPv600GetApiProductAttribute'][0])
+    public function getApiProductAttributeAsyncWithHttpInfo($bankid, $apiproductcode, $apiproductattributeid, string $contentType = self::contentTypes['getApiProductAttribute'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600CreateApiProductAttribute200Response';
-        $request = $this->oBPv600GetApiProductAttributeRequest($bankid, $apiproductcode, $apiproductattributeid, $contentType);
+        $returnType = '\OpenBankProject\Model\CreateApiProductAttribute200Response';
+        $request = $this->getApiProductAttributeRequest($bankid, $apiproductcode, $apiproductattributeid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -913,37 +913,37 @@ class ApiProductAttributeApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetApiProductAttribute'
+     * Create request for operation 'getApiProductAttribute'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $apiproductcode The APIPRODUCTCODE identifier (required)
      * @param  string $apiproductattributeid The APIPRODUCTATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetApiProductAttribute'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getApiProductAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetApiProductAttributeRequest($bankid, $apiproductcode, $apiproductattributeid, string $contentType = self::contentTypes['oBPv600GetApiProductAttribute'][0])
+    public function getApiProductAttributeRequest($bankid, $apiproductcode, $apiproductattributeid, string $contentType = self::contentTypes['getApiProductAttribute'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv600GetApiProductAttribute'
+                'Missing the required parameter $bankid when calling getApiProductAttribute'
             );
         }
 
         // verify the required parameter 'apiproductcode' is set
         if ($apiproductcode === null || (is_array($apiproductcode) && count($apiproductcode) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $apiproductcode when calling oBPv600GetApiProductAttribute'
+                'Missing the required parameter $apiproductcode when calling getApiProductAttribute'
             );
         }
 
         // verify the required parameter 'apiproductattributeid' is set
         if ($apiproductattributeid === null || (is_array($apiproductattributeid) && count($apiproductattributeid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $apiproductattributeid when calling oBPv600GetApiProductAttribute'
+                'Missing the required parameter $apiproductattributeid when calling getApiProductAttribute'
             );
         }
 
@@ -1037,44 +1037,44 @@ class ApiProductAttributeApi
     }
 
     /**
-     * Operation oBPv600UpdateApiProductAttribute
+     * Operation updateApiProductAttribute
      *
      * Update Api Product Attribute
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $apiproductcode The APIPRODUCTCODE identifier (required)
      * @param  string $apiproductattributeid The APIPRODUCTATTRIBUTEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateAtmAttributeRequest $obpv510_update_atm_attribute_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateApiProductAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAtmAttributeRequest $update_atm_attribute_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateApiProductAttribute'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600CreateApiProductAttribute200Response
+     * @return \OpenBankProject\Model\CreateApiProductAttribute200Response
      */
-    public function oBPv600UpdateApiProductAttribute($bankid, $apiproductcode, $apiproductattributeid, $obpv510_update_atm_attribute_request, string $contentType = self::contentTypes['oBPv600UpdateApiProductAttribute'][0])
+    public function updateApiProductAttribute($bankid, $apiproductcode, $apiproductattributeid, $update_atm_attribute_request, string $contentType = self::contentTypes['updateApiProductAttribute'][0])
     {
-        list($response) = $this->oBPv600UpdateApiProductAttributeWithHttpInfo($bankid, $apiproductcode, $apiproductattributeid, $obpv510_update_atm_attribute_request, $contentType);
+        list($response) = $this->updateApiProductAttributeWithHttpInfo($bankid, $apiproductcode, $apiproductattributeid, $update_atm_attribute_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600UpdateApiProductAttributeWithHttpInfo
+     * Operation updateApiProductAttributeWithHttpInfo
      *
      * Update Api Product Attribute
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $apiproductcode The APIPRODUCTCODE identifier (required)
      * @param  string $apiproductattributeid The APIPRODUCTATTRIBUTEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateAtmAttributeRequest $obpv510_update_atm_attribute_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateApiProductAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAtmAttributeRequest $update_atm_attribute_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateApiProductAttribute'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600CreateApiProductAttribute200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\CreateApiProductAttribute200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600UpdateApiProductAttributeWithHttpInfo($bankid, $apiproductcode, $apiproductattributeid, $obpv510_update_atm_attribute_request, string $contentType = self::contentTypes['oBPv600UpdateApiProductAttribute'][0])
+    public function updateApiProductAttributeWithHttpInfo($bankid, $apiproductcode, $apiproductattributeid, $update_atm_attribute_request, string $contentType = self::contentTypes['updateApiProductAttribute'][0])
     {
-        $request = $this->oBPv600UpdateApiProductAttributeRequest($bankid, $apiproductcode, $apiproductattributeid, $obpv510_update_atm_attribute_request, $contentType);
+        $request = $this->updateApiProductAttributeRequest($bankid, $apiproductcode, $apiproductattributeid, $update_atm_attribute_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1102,7 +1102,7 @@ class ApiProductAttributeApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600CreateApiProductAttribute200Response',
+                        '\OpenBankProject\Model\CreateApiProductAttribute200Response',
                         $request,
                         $response,
                     );
@@ -1124,7 +1124,7 @@ class ApiProductAttributeApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600CreateApiProductAttribute200Response',
+                '\OpenBankProject\Model\CreateApiProductAttribute200Response',
                 $request,
                 $response,
             );
@@ -1133,7 +1133,7 @@ class ApiProductAttributeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600CreateApiProductAttribute200Response',
+                        '\OpenBankProject\Model\CreateApiProductAttribute200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1146,22 +1146,22 @@ class ApiProductAttributeApi
     }
 
     /**
-     * Operation oBPv600UpdateApiProductAttributeAsync
+     * Operation updateApiProductAttributeAsync
      *
      * Update Api Product Attribute
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $apiproductcode The APIPRODUCTCODE identifier (required)
      * @param  string $apiproductattributeid The APIPRODUCTATTRIBUTEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateAtmAttributeRequest $obpv510_update_atm_attribute_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateApiProductAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAtmAttributeRequest $update_atm_attribute_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateApiProductAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600UpdateApiProductAttributeAsync($bankid, $apiproductcode, $apiproductattributeid, $obpv510_update_atm_attribute_request, string $contentType = self::contentTypes['oBPv600UpdateApiProductAttribute'][0])
+    public function updateApiProductAttributeAsync($bankid, $apiproductcode, $apiproductattributeid, $update_atm_attribute_request, string $contentType = self::contentTypes['updateApiProductAttribute'][0])
     {
-        return $this->oBPv600UpdateApiProductAttributeAsyncWithHttpInfo($bankid, $apiproductcode, $apiproductattributeid, $obpv510_update_atm_attribute_request, $contentType)
+        return $this->updateApiProductAttributeAsyncWithHttpInfo($bankid, $apiproductcode, $apiproductattributeid, $update_atm_attribute_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1170,23 +1170,23 @@ class ApiProductAttributeApi
     }
 
     /**
-     * Operation oBPv600UpdateApiProductAttributeAsyncWithHttpInfo
+     * Operation updateApiProductAttributeAsyncWithHttpInfo
      *
      * Update Api Product Attribute
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $apiproductcode The APIPRODUCTCODE identifier (required)
      * @param  string $apiproductattributeid The APIPRODUCTATTRIBUTEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateAtmAttributeRequest $obpv510_update_atm_attribute_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateApiProductAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAtmAttributeRequest $update_atm_attribute_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateApiProductAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600UpdateApiProductAttributeAsyncWithHttpInfo($bankid, $apiproductcode, $apiproductattributeid, $obpv510_update_atm_attribute_request, string $contentType = self::contentTypes['oBPv600UpdateApiProductAttribute'][0])
+    public function updateApiProductAttributeAsyncWithHttpInfo($bankid, $apiproductcode, $apiproductattributeid, $update_atm_attribute_request, string $contentType = self::contentTypes['updateApiProductAttribute'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600CreateApiProductAttribute200Response';
-        $request = $this->oBPv600UpdateApiProductAttributeRequest($bankid, $apiproductcode, $apiproductattributeid, $obpv510_update_atm_attribute_request, $contentType);
+        $returnType = '\OpenBankProject\Model\CreateApiProductAttribute200Response';
+        $request = $this->updateApiProductAttributeRequest($bankid, $apiproductcode, $apiproductattributeid, $update_atm_attribute_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1225,45 +1225,45 @@ class ApiProductAttributeApi
     }
 
     /**
-     * Create request for operation 'oBPv600UpdateApiProductAttribute'
+     * Create request for operation 'updateApiProductAttribute'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $apiproductcode The APIPRODUCTCODE identifier (required)
      * @param  string $apiproductattributeid The APIPRODUCTATTRIBUTEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateAtmAttributeRequest $obpv510_update_atm_attribute_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateApiProductAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAtmAttributeRequest $update_atm_attribute_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateApiProductAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600UpdateApiProductAttributeRequest($bankid, $apiproductcode, $apiproductattributeid, $obpv510_update_atm_attribute_request, string $contentType = self::contentTypes['oBPv600UpdateApiProductAttribute'][0])
+    public function updateApiProductAttributeRequest($bankid, $apiproductcode, $apiproductattributeid, $update_atm_attribute_request, string $contentType = self::contentTypes['updateApiProductAttribute'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv600UpdateApiProductAttribute'
+                'Missing the required parameter $bankid when calling updateApiProductAttribute'
             );
         }
 
         // verify the required parameter 'apiproductcode' is set
         if ($apiproductcode === null || (is_array($apiproductcode) && count($apiproductcode) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $apiproductcode when calling oBPv600UpdateApiProductAttribute'
+                'Missing the required parameter $apiproductcode when calling updateApiProductAttribute'
             );
         }
 
         // verify the required parameter 'apiproductattributeid' is set
         if ($apiproductattributeid === null || (is_array($apiproductattributeid) && count($apiproductattributeid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $apiproductattributeid when calling oBPv600UpdateApiProductAttribute'
+                'Missing the required parameter $apiproductattributeid when calling updateApiProductAttribute'
             );
         }
 
-        // verify the required parameter 'obpv510_update_atm_attribute_request' is set
-        if ($obpv510_update_atm_attribute_request === null || (is_array($obpv510_update_atm_attribute_request) && count($obpv510_update_atm_attribute_request) === 0)) {
+        // verify the required parameter 'update_atm_attribute_request' is set
+        if ($update_atm_attribute_request === null || (is_array($update_atm_attribute_request) && count($update_atm_attribute_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv510_update_atm_attribute_request when calling oBPv600UpdateApiProductAttribute'
+                'Missing the required parameter $update_atm_attribute_request when calling updateApiProductAttribute'
             );
         }
 
@@ -1310,12 +1310,12 @@ class ApiProductAttributeApi
         );
 
         // for model (json/xml)
-        if (isset($obpv510_update_atm_attribute_request)) {
+        if (isset($update_atm_attribute_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv510_update_atm_attribute_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_atm_attribute_request));
             } else {
-                $httpBody = $obpv510_update_atm_attribute_request;
+                $httpBody = $update_atm_attribute_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1351,9 +1351,9 @@ class ApiProductAttributeApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

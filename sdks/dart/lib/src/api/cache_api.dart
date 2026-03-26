@@ -8,11 +8,11 @@ import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:obp_dart/src/model/obpv600_get_cache_config200_response.dart';
-import 'package:obp_dart/src/model/obpv600_get_cache_info200_response.dart';
-import 'package:obp_dart/src/model/obpv600_get_cache_namespaces200_response.dart';
-import 'package:obp_dart/src/model/obpv600_invalidate_cache_namespace200_response.dart';
-import 'package:obp_dart/src/model/obpv600_invalidate_cache_namespace_request.dart';
+import 'package:obp_dart/src/model/get_cache_config200_response.dart';
+import 'package:obp_dart/src/model/get_cache_info200_response.dart';
+import 'package:obp_dart/src/model/get_cache_namespaces200_response.dart';
+import 'package:obp_dart/src/model/invalidate_cache_namespace200_response.dart';
+import 'package:obp_dart/src/model/invalidate_cache_namespace_request.dart';
 
 class CacheApi {
 
@@ -33,9 +33,9 @@ class CacheApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv600GetCacheConfig200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetCacheConfig200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv600GetCacheConfig200Response>> oBPv600GetCacheConfig({ 
+  Future<Response<GetCacheConfig200Response>> getCacheConfig({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -62,7 +62,7 @@ class CacheApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -79,14 +79,14 @@ class CacheApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv600GetCacheConfig200Response? _responseData;
+    GetCacheConfig200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv600GetCacheConfig200Response),
-      ) as OBPv600GetCacheConfig200Response;
+        specifiedType: const FullType(GetCacheConfig200Response),
+      ) as GetCacheConfig200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -98,7 +98,7 @@ class CacheApi {
       );
     }
 
-    return Response<OBPv600GetCacheConfig200Response>(
+    return Response<GetCacheConfig200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -121,9 +121,9 @@ class CacheApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv600GetCacheInfo200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetCacheInfo200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv600GetCacheInfo200Response>> oBPv600GetCacheInfo({ 
+  Future<Response<GetCacheInfo200Response>> getCacheInfo({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -150,7 +150,7 @@ class CacheApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -167,14 +167,14 @@ class CacheApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv600GetCacheInfo200Response? _responseData;
+    GetCacheInfo200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv600GetCacheInfo200Response),
-      ) as OBPv600GetCacheInfo200Response;
+        specifiedType: const FullType(GetCacheInfo200Response),
+      ) as GetCacheInfo200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -186,7 +186,7 @@ class CacheApi {
       );
     }
 
-    return Response<OBPv600GetCacheInfo200Response>(
+    return Response<GetCacheInfo200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -209,9 +209,9 @@ class CacheApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv600GetCacheNamespaces200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetCacheNamespaces200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv600GetCacheNamespaces200Response>> oBPv600GetCacheNamespaces({ 
+  Future<Response<GetCacheNamespaces200Response>> getCacheNamespaces({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -238,7 +238,7 @@ class CacheApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -255,14 +255,14 @@ class CacheApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv600GetCacheNamespaces200Response? _responseData;
+    GetCacheNamespaces200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv600GetCacheNamespaces200Response),
-      ) as OBPv600GetCacheNamespaces200Response;
+        specifiedType: const FullType(GetCacheNamespaces200Response),
+      ) as GetCacheNamespaces200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -274,7 +274,7 @@ class CacheApi {
       );
     }
 
-    return Response<OBPv600GetCacheNamespaces200Response>(
+    return Response<GetCacheNamespaces200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -290,7 +290,7 @@ class CacheApi {
   /// &lt;p&gt;Invalidates a cache namespace by incrementing its version counter.&lt;/p&gt; &lt;p&gt;This provides instant cache invalidation without deleting individual keys.&lt;br /&gt; Incrementing the version counter makes all keys with the old version unreachable.&lt;/p&gt; &lt;p&gt;Available namespace IDs: call_counter, rl_active, rd_localised, rd_dynamic,&lt;br /&gt; rd_static, rd_all, swagger_static, connector, metrics_stable, metrics_recent, abac_rule&lt;/p&gt; &lt;p&gt;Use after updating rate limits, translations, endpoints, or CBS data.&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;namespace_id&lt;/strong&gt;&lt;/a&gt;: namespace_id&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;namespace_id&lt;/strong&gt;&lt;/a&gt;: namespace_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;new_version&lt;/strong&gt;&lt;/a&gt;: new_version&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;old_version&lt;/strong&gt;&lt;/a&gt;: old_version&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
   ///
   /// Parameters:
-  /// * [oBPv600InvalidateCacheNamespaceRequest] - Request body
+  /// * [invalidateCacheNamespaceRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -298,10 +298,10 @@ class CacheApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv600InvalidateCacheNamespace200Response] as data
+  /// Returns a [Future] containing a [Response] with a [InvalidateCacheNamespace200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv600InvalidateCacheNamespace200Response>> oBPv600InvalidateCacheNamespace({ 
-    required OBPv600InvalidateCacheNamespaceRequest oBPv600InvalidateCacheNamespaceRequest,
+  Future<Response<InvalidateCacheNamespace200Response>> invalidateCacheNamespace({ 
+    required InvalidateCacheNamespaceRequest invalidateCacheNamespaceRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -328,7 +328,7 @@ class CacheApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -341,8 +341,8 @@ class CacheApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv600InvalidateCacheNamespaceRequest);
-      _bodyData = _serializers.serialize(oBPv600InvalidateCacheNamespaceRequest, specifiedType: _type);
+      const _type = FullType(InvalidateCacheNamespaceRequest);
+      _bodyData = _serializers.serialize(invalidateCacheNamespaceRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -365,14 +365,14 @@ class CacheApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv600InvalidateCacheNamespace200Response? _responseData;
+    InvalidateCacheNamespace200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv600InvalidateCacheNamespace200Response),
-      ) as OBPv600InvalidateCacheNamespace200Response;
+        specifiedType: const FullType(InvalidateCacheNamespace200Response),
+      ) as InvalidateCacheNamespace200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -384,7 +384,7 @@ class CacheApi {
       );
     }
 
-    return Response<OBPv600InvalidateCacheNamespace200Response>(
+    return Response<InvalidateCacheNamespace200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

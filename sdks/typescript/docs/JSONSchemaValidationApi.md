@@ -1,21 +1,21 @@
 # JSONSchemaValidationApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv400CreateJsonSchemaValidation**](JSONSchemaValidationApi.md#obpv400createjsonschemavalidation) | **POST** /obp/v4.0.0/management/json-schema-validations/{operationid} | Create a JSON Schema Validation |
-| [**oBPv400DeleteJsonSchemaValidation**](JSONSchemaValidationApi.md#obpv400deletejsonschemavalidation) | **DELETE** /obp/v4.0.0/management/json-schema-validations/{operationid} | Delete a JSON Schema Validation |
-| [**oBPv400GetAllJsonSchemaValidations**](JSONSchemaValidationApi.md#obpv400getalljsonschemavalidations) | **GET** /obp/v4.0.0/management/json-schema-validations | Get all JSON Schema Validations |
-| [**oBPv400GetAllJsonSchemaValidationsPublic**](JSONSchemaValidationApi.md#obpv400getalljsonschemavalidationspublic) | **GET** /obp/v4.0.0/endpoints/json-schema-validations | Get all JSON Schema Validations - public |
-| [**oBPv400GetJsonSchemaValidation**](JSONSchemaValidationApi.md#obpv400getjsonschemavalidation) | **GET** /obp/v4.0.0/management/json-schema-validations/{operationid} | Get a JSON Schema Validation |
-| [**oBPv400UpdateJsonSchemaValidation**](JSONSchemaValidationApi.md#obpv400updatejsonschemavalidation) | **PUT** /obp/v4.0.0/management/json-schema-validations/{operationid} | Update a JSON Schema Validation |
+| [**createJsonSchemaValidation**](JSONSchemaValidationApi.md#createjsonschemavalidation) | **POST** /obp/v4.0.0/management/json-schema-validations/{operationid} | Create a JSON Schema Validation |
+| [**deleteJsonSchemaValidation**](JSONSchemaValidationApi.md#deletejsonschemavalidation) | **DELETE** /obp/v4.0.0/management/json-schema-validations/{operationid} | Delete a JSON Schema Validation |
+| [**getAllJsonSchemaValidations**](JSONSchemaValidationApi.md#getalljsonschemavalidations) | **GET** /obp/v4.0.0/management/json-schema-validations | Get all JSON Schema Validations |
+| [**getAllJsonSchemaValidationsPublic**](JSONSchemaValidationApi.md#getalljsonschemavalidationspublic) | **GET** /obp/v4.0.0/endpoints/json-schema-validations | Get all JSON Schema Validations - public |
+| [**getJsonSchemaValidation**](JSONSchemaValidationApi.md#getjsonschemavalidation) | **GET** /obp/v4.0.0/management/json-schema-validations/{operationid} | Get a JSON Schema Validation |
+| [**updateJsonSchemaValidation**](JSONSchemaValidationApi.md#updatejsonschemavalidation) | **PUT** /obp/v4.0.0/management/json-schema-validations/{operationid} | Update a JSON Schema Validation |
 
 
 
-## oBPv400CreateJsonSchemaValidation
+## createJsonSchemaValidation
 
-> OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems oBPv400CreateJsonSchemaValidation(operationid, oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema)
+> GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner createJsonSchemaValidation(operationid, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema)
 
 Create a JSON Schema Validation
 
@@ -28,7 +28,7 @@ import {
   Configuration,
   JSONSchemaValidationApi,
 } from 'obp-typescript';
-import type { OBPv400CreateJsonSchemaValidationRequest } from 'obp-typescript';
+import type { CreateJsonSchemaValidationRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -45,12 +45,12 @@ async function example() {
   const body = {
     // string | The OPERATIONID identifier
     operationid: operationid_example,
-    // OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema | Request body
-    oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema: {type=object, properties={title={type=string}, required={type=array, items={type=string}}, $schema={type=string}, description={type=string}, type={type=string}, properties={type=object, properties={xxx_id={type=object, properties={minLength={type=integer}, maxLength={type=integer}, type={type=string}, examples={type=array, items={type=string}}}}}}, additionalProperties={type=boolean}}},
-  } satisfies OBPv400CreateJsonSchemaValidationRequest;
+    // GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema | Request body
+    getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema: {type=object, properties={title={type=string}, required={type=array, items={type=string}}, $schema={type=string}, description={type=string}, type={type=string}, properties={type=object, properties={xxx_id={type=object, properties={minLength={type=integer}, maxLength={type=integer}, type={type=string}, examples={type=array, items={type=string}}}}}}, additionalProperties={type=boolean}}},
+  } satisfies CreateJsonSchemaValidationRequest;
 
   try {
-    const data = await api.oBPv400CreateJsonSchemaValidation(body);
+    const data = await api.createJsonSchemaValidation(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -67,11 +67,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **operationid** | `string` | The OPERATIONID identifier | [Defaults to `undefined`] |
-| **oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema** | [OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema.md) | Request body | |
+| **getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema** | [GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema.md) | Request body | |
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems.md)
+[**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md)
 
 ### Authorization
 
@@ -92,9 +92,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400DeleteJsonSchemaValidation
+## deleteJsonSchemaValidation
 
-> oBPv400DeleteJsonSchemaValidation(operationid)
+> deleteJsonSchemaValidation(operationid)
 
 Delete a JSON Schema Validation
 
@@ -107,7 +107,7 @@ import {
   Configuration,
   JSONSchemaValidationApi,
 } from 'obp-typescript';
-import type { OBPv400DeleteJsonSchemaValidationRequest } from 'obp-typescript';
+import type { DeleteJsonSchemaValidationRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -124,10 +124,10 @@ async function example() {
   const body = {
     // string | The OPERATIONID identifier
     operationid: operationid_example,
-  } satisfies OBPv400DeleteJsonSchemaValidationRequest;
+  } satisfies DeleteJsonSchemaValidationRequest;
 
   try {
-    const data = await api.oBPv400DeleteJsonSchemaValidation(body);
+    const data = await api.deleteJsonSchemaValidation(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -168,9 +168,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400GetAllJsonSchemaValidations
+## getAllJsonSchemaValidations
 
-> OBPv400GetAllJsonSchemaValidationsPublic200Response oBPv400GetAllJsonSchemaValidations()
+> GetAllJsonSchemaValidationsPublic200Response getAllJsonSchemaValidations()
 
 Get all JSON Schema Validations
 
@@ -183,7 +183,7 @@ import {
   Configuration,
   JSONSchemaValidationApi,
 } from 'obp-typescript';
-import type { OBPv400GetAllJsonSchemaValidationsRequest } from 'obp-typescript';
+import type { GetAllJsonSchemaValidationsRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -198,7 +198,7 @@ async function example() {
   const api = new JSONSchemaValidationApi(config);
 
   try {
-    const data = await api.oBPv400GetAllJsonSchemaValidations();
+    const data = await api.getAllJsonSchemaValidations();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -215,7 +215,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200Response**](OBPv400GetAllJsonSchemaValidationsPublic200Response.md)
+[**GetAllJsonSchemaValidationsPublic200Response**](GetAllJsonSchemaValidationsPublic200Response.md)
 
 ### Authorization
 
@@ -236,9 +236,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400GetAllJsonSchemaValidationsPublic
+## getAllJsonSchemaValidationsPublic
 
-> OBPv400GetAllJsonSchemaValidationsPublic200Response oBPv400GetAllJsonSchemaValidationsPublic()
+> GetAllJsonSchemaValidationsPublic200Response getAllJsonSchemaValidationsPublic()
 
 Get all JSON Schema Validations - public
 
@@ -251,14 +251,14 @@ import {
   Configuration,
   JSONSchemaValidationApi,
 } from 'obp-typescript';
-import type { OBPv400GetAllJsonSchemaValidationsPublicRequest } from 'obp-typescript';
+import type { GetAllJsonSchemaValidationsPublicRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
   const api = new JSONSchemaValidationApi();
 
   try {
-    const data = await api.oBPv400GetAllJsonSchemaValidationsPublic();
+    const data = await api.getAllJsonSchemaValidationsPublic();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -275,7 +275,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200Response**](OBPv400GetAllJsonSchemaValidationsPublic200Response.md)
+[**GetAllJsonSchemaValidationsPublic200Response**](GetAllJsonSchemaValidationsPublic200Response.md)
 
 ### Authorization
 
@@ -296,9 +296,9 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400GetJsonSchemaValidation
+## getJsonSchemaValidation
 
-> OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems oBPv400GetJsonSchemaValidation(operationid)
+> GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner getJsonSchemaValidation(operationid)
 
 Get a JSON Schema Validation
 
@@ -311,7 +311,7 @@ import {
   Configuration,
   JSONSchemaValidationApi,
 } from 'obp-typescript';
-import type { OBPv400GetJsonSchemaValidationRequest } from 'obp-typescript';
+import type { GetJsonSchemaValidationRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -328,10 +328,10 @@ async function example() {
   const body = {
     // string | The OPERATIONID identifier
     operationid: operationid_example,
-  } satisfies OBPv400GetJsonSchemaValidationRequest;
+  } satisfies GetJsonSchemaValidationRequest;
 
   try {
-    const data = await api.oBPv400GetJsonSchemaValidation(body);
+    const data = await api.getJsonSchemaValidation(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -351,7 +351,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems.md)
+[**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md)
 
 ### Authorization
 
@@ -372,9 +372,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400UpdateJsonSchemaValidation
+## updateJsonSchemaValidation
 
-> OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems oBPv400UpdateJsonSchemaValidation(operationid, oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema)
+> GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner updateJsonSchemaValidation(operationid, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema)
 
 Update a JSON Schema Validation
 
@@ -387,7 +387,7 @@ import {
   Configuration,
   JSONSchemaValidationApi,
 } from 'obp-typescript';
-import type { OBPv400UpdateJsonSchemaValidationRequest } from 'obp-typescript';
+import type { UpdateJsonSchemaValidationRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -404,12 +404,12 @@ async function example() {
   const body = {
     // string | The OPERATIONID identifier
     operationid: operationid_example,
-    // OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema | Request body
-    oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema: {"type":"object","properties":{"title":{"type":"string"},"required":{"type":"array","items":{"type":"string"}},"$schema":{"type":"string"},"description":{"type":"string"},"type":{"type":"string"},"properties":{"type":"object","properties":{"xxx_id":{"type":"object","properties":{"minLength":{"type":"integer"},"maxLength":{"type":"integer"},"type":{"type":"string"},"examples":{"type":"array","items":{"type":"string"}}}}}},"additionalProperties":{"type":"boolean"}}},
-  } satisfies OBPv400UpdateJsonSchemaValidationRequest;
+    // GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema | Request body
+    getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema: {"type":"object","properties":{"title":{"type":"string"},"required":{"type":"array","items":{"type":"string"}},"$schema":{"type":"string"},"description":{"type":"string"},"type":{"type":"string"},"properties":{"type":"object","properties":{"xxx_id":{"type":"object","properties":{"minLength":{"type":"integer"},"maxLength":{"type":"integer"},"type":{"type":"string"},"examples":{"type":"array","items":{"type":"string"}}}}}},"additionalProperties":{"type":"boolean"}}},
+  } satisfies UpdateJsonSchemaValidationRequest;
 
   try {
-    const data = await api.oBPv400UpdateJsonSchemaValidation(body);
+    const data = await api.updateJsonSchemaValidation(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -426,11 +426,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **operationid** | `string` | The OPERATIONID identifier | [Defaults to `undefined`] |
-| **oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema** | [OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema.md) | Request body | |
+| **getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema** | [GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema.md) | Request body | |
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems.md)
+[**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md)
 
 ### Authorization
 

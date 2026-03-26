@@ -1,32 +1,32 @@
 # TransactionMetadataApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv121AddCommentForViewOnTransaction**](TransactionMetadataApi.md#obpv121addcommentforviewontransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Add a Transaction Comment |
-| [**oBPv121AddImageForViewOnTransaction**](TransactionMetadataApi.md#obpv121addimageforviewontransactionoperation) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Add a Transaction Image |
-| [**oBPv121AddTagForViewOnTransaction**](TransactionMetadataApi.md#obpv121addtagforviewontransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Add a Transaction Tag |
-| [**oBPv121AddTransactionNarrative**](TransactionMetadataApi.md#obpv121addtransactionnarrative) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Add a Transaction Narrative |
-| [**oBPv121AddWhereTagForViewOnTransaction**](TransactionMetadataApi.md#obpv121addwheretagforviewontransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Add a Transaction where Tag |
-| [**oBPv121DeleteCommentForViewOnTransaction**](TransactionMetadataApi.md#obpv121deletecommentforviewontransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments/{commentid} | Delete a Transaction Comment |
-| [**oBPv121DeleteImageForViewOnTransaction**](TransactionMetadataApi.md#obpv121deleteimageforviewontransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images/{imageid} | Delete a Transaction Image |
-| [**oBPv121DeleteTagForViewOnTransaction**](TransactionMetadataApi.md#obpv121deletetagforviewontransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags/{tagid} | Delete a Transaction Tag |
-| [**oBPv121DeleteTransactionNarrative**](TransactionMetadataApi.md#obpv121deletetransactionnarrative) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Delete a Transaction Narrative |
-| [**oBPv121DeleteWhereTagForViewOnTransaction**](TransactionMetadataApi.md#obpv121deletewheretagforviewontransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Delete a Transaction Tag |
-| [**oBPv121GetCommentsForViewOnTransaction**](TransactionMetadataApi.md#obpv121getcommentsforviewontransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Get Transaction Comments |
-| [**oBPv121GetImagesForViewOnTransaction**](TransactionMetadataApi.md#obpv121getimagesforviewontransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Get Transaction Images |
-| [**oBPv121GetTagsForViewOnTransaction**](TransactionMetadataApi.md#obpv121gettagsforviewontransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Get Transaction Tags |
-| [**oBPv121GetTransactionNarrative**](TransactionMetadataApi.md#obpv121gettransactionnarrative) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Get a Transaction Narrative |
-| [**oBPv121GetWhereTagForViewOnTransaction**](TransactionMetadataApi.md#obpv121getwheretagforviewontransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Get a Transaction where Tag |
-| [**oBPv121UpdateTransactionNarrative**](TransactionMetadataApi.md#obpv121updatetransactionnarrative) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Update a Transaction Narrative |
-| [**oBPv121UpdateWhereTagForViewOnTransaction**](TransactionMetadataApi.md#obpv121updatewheretagforviewontransactionoperation) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Update a Transaction where Tag |
+| [**addCommentForViewOnTransaction**](TransactionMetadataApi.md#addcommentforviewontransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Add a Transaction Comment |
+| [**addImageForViewOnTransaction**](TransactionMetadataApi.md#addimageforviewontransactionoperation) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Add a Transaction Image |
+| [**addTagForViewOnTransaction**](TransactionMetadataApi.md#addtagforviewontransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Add a Transaction Tag |
+| [**addTransactionNarrative**](TransactionMetadataApi.md#addtransactionnarrative) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Add a Transaction Narrative |
+| [**addWhereTagForViewOnTransaction**](TransactionMetadataApi.md#addwheretagforviewontransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Add a Transaction where Tag |
+| [**deleteCommentForViewOnTransaction**](TransactionMetadataApi.md#deletecommentforviewontransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments/{commentid} | Delete a Transaction Comment |
+| [**deleteImageForViewOnTransaction**](TransactionMetadataApi.md#deleteimageforviewontransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images/{imageid} | Delete a Transaction Image |
+| [**deleteTagForViewOnTransaction**](TransactionMetadataApi.md#deletetagforviewontransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags/{tagid} | Delete a Transaction Tag |
+| [**deleteTransactionNarrative**](TransactionMetadataApi.md#deletetransactionnarrative) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Delete a Transaction Narrative |
+| [**deleteWhereTagForViewOnTransaction**](TransactionMetadataApi.md#deletewheretagforviewontransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Delete a Transaction Tag |
+| [**getCommentsForViewOnTransaction**](TransactionMetadataApi.md#getcommentsforviewontransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Get Transaction Comments |
+| [**getImagesForViewOnTransaction**](TransactionMetadataApi.md#getimagesforviewontransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Get Transaction Images |
+| [**getTagsForViewOnTransaction**](TransactionMetadataApi.md#gettagsforviewontransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Get Transaction Tags |
+| [**getTransactionNarrative**](TransactionMetadataApi.md#gettransactionnarrative) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Get a Transaction Narrative |
+| [**getWhereTagForViewOnTransaction**](TransactionMetadataApi.md#getwheretagforviewontransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Get a Transaction where Tag |
+| [**updateTransactionNarrative**](TransactionMetadataApi.md#updatetransactionnarrative) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Update a Transaction Narrative |
+| [**updateWhereTagForViewOnTransaction**](TransactionMetadataApi.md#updatewheretagforviewontransactionoperation) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Update a Transaction where Tag |
 
 
 
-## oBPv121AddCommentForViewOnTransaction
+## addCommentForViewOnTransaction
 
-> OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems oBPv121AddCommentForViewOnTransaction(bankid, accountid, viewid, transactionid, oBPv400DeleteSystemLevelEndpointTag200Response)
+> GetTagsForViewOnAccount200ResponseTagsInner addCommentForViewOnTransaction(bankid, accountid, viewid, transactionid, getTransactionTypes200ResponseTransactionTypesInnerId)
 
 Add a Transaction Comment
 
@@ -39,7 +39,7 @@ import {
   Configuration,
   TransactionMetadataApi,
 } from 'obp-typescript';
-import type { OBPv121AddCommentForViewOnTransactionRequest } from 'obp-typescript';
+import type { AddCommentForViewOnTransactionRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -62,12 +62,12 @@ async function example() {
     viewid: viewid_example,
     // string | The TRANSACTIONID identifier
     transactionid: transactionid_example,
-    // OBPv400DeleteSystemLevelEndpointTag200Response | Request body
-    oBPv400DeleteSystemLevelEndpointTag200Response: {type=object, properties={value={type=string}}},
-  } satisfies OBPv121AddCommentForViewOnTransactionRequest;
+    // GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
+    getTransactionTypes200ResponseTransactionTypesInnerId: {type=object, properties={value={type=string}}},
+  } satisfies AddCommentForViewOnTransactionRequest;
 
   try {
-    const data = await api.oBPv121AddCommentForViewOnTransaction(body);
+    const data = await api.addCommentForViewOnTransaction(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -87,11 +87,11 @@ example().catch(console.error);
 | **accountid** | `string` | The ACCOUNTID identifier | [Defaults to `undefined`] |
 | **viewid** | `string` | The VIEWID identifier | [Defaults to `undefined`] |
 | **transactionid** | `string` | The TRANSACTIONID identifier | [Defaults to `undefined`] |
-| **oBPv400DeleteSystemLevelEndpointTag200Response** | [OBPv400DeleteSystemLevelEndpointTag200Response](OBPv400DeleteSystemLevelEndpointTag200Response.md) | Request body | |
+| **getTransactionTypes200ResponseTransactionTypesInnerId** | [GetTransactionTypes200ResponseTransactionTypesInnerId](GetTransactionTypes200ResponseTransactionTypesInnerId.md) | Request body | |
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)
+[**GetTagsForViewOnAccount200ResponseTagsInner**](GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 ### Authorization
 
@@ -113,9 +113,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv121AddImageForViewOnTransaction
+## addImageForViewOnTransaction
 
-> OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems oBPv121AddImageForViewOnTransaction(bankid, accountid, viewid, transactionid, oBPv121AddImageForViewOnTransactionRequest)
+> GetTransactionByIdForBankAccount200ResponseMetadataImagesInner addImageForViewOnTransaction(bankid, accountid, viewid, transactionid, addImageForViewOnTransactionRequest)
 
 Add a Transaction Image
 
@@ -128,7 +128,7 @@ import {
   Configuration,
   TransactionMetadataApi,
 } from 'obp-typescript';
-import type { OBPv121AddImageForViewOnTransactionOperationRequest } from 'obp-typescript';
+import type { AddImageForViewOnTransactionOperationRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -151,12 +151,12 @@ async function example() {
     viewid: viewid_example,
     // string | The TRANSACTIONID identifier
     transactionid: transactionid_example,
-    // OBPv121AddImageForViewOnTransactionRequest | Request body
-    oBPv121AddImageForViewOnTransactionRequest: {"type":"object","properties":{"URL":{"type":"string"},"label":{"type":"string"}}},
-  } satisfies OBPv121AddImageForViewOnTransactionOperationRequest;
+    // AddImageForViewOnTransactionRequest | Request body
+    addImageForViewOnTransactionRequest: {"type":"object","properties":{"URL":{"type":"string"},"label":{"type":"string"}}},
+  } satisfies AddImageForViewOnTransactionOperationRequest;
 
   try {
-    const data = await api.oBPv121AddImageForViewOnTransaction(body);
+    const data = await api.addImageForViewOnTransaction(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -176,11 +176,11 @@ example().catch(console.error);
 | **accountid** | `string` | The ACCOUNTID identifier | [Defaults to `undefined`] |
 | **viewid** | `string` | The VIEWID identifier | [Defaults to `undefined`] |
 | **transactionid** | `string` | The TRANSACTIONID identifier | [Defaults to `undefined`] |
-| **oBPv121AddImageForViewOnTransactionRequest** | [OBPv121AddImageForViewOnTransactionRequest](OBPv121AddImageForViewOnTransactionRequest.md) | Request body | |
+| **addImageForViewOnTransactionRequest** | [AddImageForViewOnTransactionRequest](AddImageForViewOnTransactionRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems**](OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems.md)
+[**GetTransactionByIdForBankAccount200ResponseMetadataImagesInner**](GetTransactionByIdForBankAccount200ResponseMetadataImagesInner.md)
 
 ### Authorization
 
@@ -202,9 +202,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv121AddTagForViewOnTransaction
+## addTagForViewOnTransaction
 
-> OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems oBPv121AddTagForViewOnTransaction(bankid, accountid, viewid, transactionid, oBPv400DeleteSystemLevelEndpointTag200Response)
+> GetTagsForViewOnAccount200ResponseTagsInner addTagForViewOnTransaction(bankid, accountid, viewid, transactionid, getTransactionTypes200ResponseTransactionTypesInnerId)
 
 Add a Transaction Tag
 
@@ -217,7 +217,7 @@ import {
   Configuration,
   TransactionMetadataApi,
 } from 'obp-typescript';
-import type { OBPv121AddTagForViewOnTransactionRequest } from 'obp-typescript';
+import type { AddTagForViewOnTransactionRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -240,12 +240,12 @@ async function example() {
     viewid: viewid_example,
     // string | The TRANSACTIONID identifier
     transactionid: transactionid_example,
-    // OBPv400DeleteSystemLevelEndpointTag200Response | Request body
-    oBPv400DeleteSystemLevelEndpointTag200Response: {type=object, properties={value={type=string}}},
-  } satisfies OBPv121AddTagForViewOnTransactionRequest;
+    // GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
+    getTransactionTypes200ResponseTransactionTypesInnerId: {type=object, properties={value={type=string}}},
+  } satisfies AddTagForViewOnTransactionRequest;
 
   try {
-    const data = await api.oBPv121AddTagForViewOnTransaction(body);
+    const data = await api.addTagForViewOnTransaction(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -265,11 +265,11 @@ example().catch(console.error);
 | **accountid** | `string` | The ACCOUNTID identifier | [Defaults to `undefined`] |
 | **viewid** | `string` | The VIEWID identifier | [Defaults to `undefined`] |
 | **transactionid** | `string` | The TRANSACTIONID identifier | [Defaults to `undefined`] |
-| **oBPv400DeleteSystemLevelEndpointTag200Response** | [OBPv400DeleteSystemLevelEndpointTag200Response](OBPv400DeleteSystemLevelEndpointTag200Response.md) | Request body | |
+| **getTransactionTypes200ResponseTransactionTypesInnerId** | [GetTransactionTypes200ResponseTransactionTypesInnerId](GetTransactionTypes200ResponseTransactionTypesInnerId.md) | Request body | |
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)
+[**GetTagsForViewOnAccount200ResponseTagsInner**](GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 ### Authorization
 
@@ -291,9 +291,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv121AddTransactionNarrative
+## addTransactionNarrative
 
-> OBPv121UpdateTransactionNarrative200Response oBPv121AddTransactionNarrative(bankid, accountid, viewid, transactionid, oBPv121GetTransactionNarrative200Response)
+> UpdateTransactionNarrative200Response addTransactionNarrative(bankid, accountid, viewid, transactionid, getTransactionNarrative200Response)
 
 Add a Transaction Narrative
 
@@ -306,7 +306,7 @@ import {
   Configuration,
   TransactionMetadataApi,
 } from 'obp-typescript';
-import type { OBPv121AddTransactionNarrativeRequest } from 'obp-typescript';
+import type { AddTransactionNarrativeRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -329,12 +329,12 @@ async function example() {
     viewid: viewid_example,
     // string | The TRANSACTIONID identifier
     transactionid: transactionid_example,
-    // OBPv121GetTransactionNarrative200Response | Request body
-    oBPv121GetTransactionNarrative200Response: {type=object, properties={narrative={type=string}}},
-  } satisfies OBPv121AddTransactionNarrativeRequest;
+    // GetTransactionNarrative200Response | Request body
+    getTransactionNarrative200Response: {type=object, properties={narrative={type=string}}},
+  } satisfies AddTransactionNarrativeRequest;
 
   try {
-    const data = await api.oBPv121AddTransactionNarrative(body);
+    const data = await api.addTransactionNarrative(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -354,11 +354,11 @@ example().catch(console.error);
 | **accountid** | `string` | The ACCOUNTID identifier | [Defaults to `undefined`] |
 | **viewid** | `string` | The VIEWID identifier | [Defaults to `undefined`] |
 | **transactionid** | `string` | The TRANSACTIONID identifier | [Defaults to `undefined`] |
-| **oBPv121GetTransactionNarrative200Response** | [OBPv121GetTransactionNarrative200Response](OBPv121GetTransactionNarrative200Response.md) | Request body | |
+| **getTransactionNarrative200Response** | [GetTransactionNarrative200Response](GetTransactionNarrative200Response.md) | Request body | |
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -380,9 +380,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv121AddWhereTagForViewOnTransaction
+## addWhereTagForViewOnTransaction
 
-> OBPv121UpdateTransactionNarrative200Response oBPv121AddWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid, oBPv121UpdateWhereTagForViewOnTransactionRequest)
+> UpdateTransactionNarrative200Response addWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid, updateWhereTagForViewOnTransactionRequest)
 
 Add a Transaction where Tag
 
@@ -395,7 +395,7 @@ import {
   Configuration,
   TransactionMetadataApi,
 } from 'obp-typescript';
-import type { OBPv121AddWhereTagForViewOnTransactionRequest } from 'obp-typescript';
+import type { AddWhereTagForViewOnTransactionRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -418,12 +418,12 @@ async function example() {
     viewid: viewid_example,
     // string | The TRANSACTIONID identifier
     transactionid: transactionid_example,
-    // OBPv121UpdateWhereTagForViewOnTransactionRequest | Request body
-    oBPv121UpdateWhereTagForViewOnTransactionRequest: {type=object, properties={where={type=object, properties={longitude={type=number}, latitude={type=number}}}}},
-  } satisfies OBPv121AddWhereTagForViewOnTransactionRequest;
+    // UpdateWhereTagForViewOnTransactionRequest | Request body
+    updateWhereTagForViewOnTransactionRequest: {type=object, properties={where={type=object, properties={longitude={type=number}, latitude={type=number}}}}},
+  } satisfies AddWhereTagForViewOnTransactionRequest;
 
   try {
-    const data = await api.oBPv121AddWhereTagForViewOnTransaction(body);
+    const data = await api.addWhereTagForViewOnTransaction(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -443,11 +443,11 @@ example().catch(console.error);
 | **accountid** | `string` | The ACCOUNTID identifier | [Defaults to `undefined`] |
 | **viewid** | `string` | The VIEWID identifier | [Defaults to `undefined`] |
 | **transactionid** | `string` | The TRANSACTIONID identifier | [Defaults to `undefined`] |
-| **oBPv121UpdateWhereTagForViewOnTransactionRequest** | [OBPv121UpdateWhereTagForViewOnTransactionRequest](OBPv121UpdateWhereTagForViewOnTransactionRequest.md) | Request body | |
+| **updateWhereTagForViewOnTransactionRequest** | [UpdateWhereTagForViewOnTransactionRequest](UpdateWhereTagForViewOnTransactionRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -469,9 +469,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv121DeleteCommentForViewOnTransaction
+## deleteCommentForViewOnTransaction
 
-> oBPv121DeleteCommentForViewOnTransaction(bankid, accountid, viewid, transactionid, commentid)
+> deleteCommentForViewOnTransaction(bankid, accountid, viewid, transactionid, commentid)
 
 Delete a Transaction Comment
 
@@ -484,7 +484,7 @@ import {
   Configuration,
   TransactionMetadataApi,
 } from 'obp-typescript';
-import type { OBPv121DeleteCommentForViewOnTransactionRequest } from 'obp-typescript';
+import type { DeleteCommentForViewOnTransactionRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -509,10 +509,10 @@ async function example() {
     transactionid: transactionid_example,
     // string | The COMMENTID identifier
     commentid: commentid_example,
-  } satisfies OBPv121DeleteCommentForViewOnTransactionRequest;
+  } satisfies DeleteCommentForViewOnTransactionRequest;
 
   try {
-    const data = await api.oBPv121DeleteCommentForViewOnTransaction(body);
+    const data = await api.deleteCommentForViewOnTransaction(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -558,9 +558,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv121DeleteImageForViewOnTransaction
+## deleteImageForViewOnTransaction
 
-> oBPv121DeleteImageForViewOnTransaction(bankid, accountid, viewid, transactionid, imageid)
+> deleteImageForViewOnTransaction(bankid, accountid, viewid, transactionid, imageid)
 
 Delete a Transaction Image
 
@@ -573,7 +573,7 @@ import {
   Configuration,
   TransactionMetadataApi,
 } from 'obp-typescript';
-import type { OBPv121DeleteImageForViewOnTransactionRequest } from 'obp-typescript';
+import type { DeleteImageForViewOnTransactionRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -598,10 +598,10 @@ async function example() {
     transactionid: transactionid_example,
     // string | The IMAGEID identifier
     imageid: imageid_example,
-  } satisfies OBPv121DeleteImageForViewOnTransactionRequest;
+  } satisfies DeleteImageForViewOnTransactionRequest;
 
   try {
-    const data = await api.oBPv121DeleteImageForViewOnTransaction(body);
+    const data = await api.deleteImageForViewOnTransaction(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -647,9 +647,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv121DeleteTagForViewOnTransaction
+## deleteTagForViewOnTransaction
 
-> oBPv121DeleteTagForViewOnTransaction(bankid, accountid, viewid, transactionid, tagid)
+> deleteTagForViewOnTransaction(bankid, accountid, viewid, transactionid, tagid)
 
 Delete a Transaction Tag
 
@@ -662,7 +662,7 @@ import {
   Configuration,
   TransactionMetadataApi,
 } from 'obp-typescript';
-import type { OBPv121DeleteTagForViewOnTransactionRequest } from 'obp-typescript';
+import type { DeleteTagForViewOnTransactionRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -679,10 +679,10 @@ async function example() {
     transactionid: transactionid_example,
     // string | The TAGID identifier
     tagid: tagid_example,
-  } satisfies OBPv121DeleteTagForViewOnTransactionRequest;
+  } satisfies DeleteTagForViewOnTransactionRequest;
 
   try {
-    const data = await api.oBPv121DeleteTagForViewOnTransaction(body);
+    const data = await api.deleteTagForViewOnTransaction(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -728,9 +728,9 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv121DeleteTransactionNarrative
+## deleteTransactionNarrative
 
-> oBPv121DeleteTransactionNarrative(bankid, accountid, viewid, transactionid)
+> deleteTransactionNarrative(bankid, accountid, viewid, transactionid)
 
 Delete a Transaction Narrative
 
@@ -743,7 +743,7 @@ import {
   Configuration,
   TransactionMetadataApi,
 } from 'obp-typescript';
-import type { OBPv121DeleteTransactionNarrativeRequest } from 'obp-typescript';
+import type { DeleteTransactionNarrativeRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -766,10 +766,10 @@ async function example() {
     viewid: viewid_example,
     // string | The TRANSACTIONID identifier
     transactionid: transactionid_example,
-  } satisfies OBPv121DeleteTransactionNarrativeRequest;
+  } satisfies DeleteTransactionNarrativeRequest;
 
   try {
-    const data = await api.oBPv121DeleteTransactionNarrative(body);
+    const data = await api.deleteTransactionNarrative(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -814,9 +814,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv121DeleteWhereTagForViewOnTransaction
+## deleteWhereTagForViewOnTransaction
 
-> oBPv121DeleteWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid)
+> deleteWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid)
 
 Delete a Transaction Tag
 
@@ -829,7 +829,7 @@ import {
   Configuration,
   TransactionMetadataApi,
 } from 'obp-typescript';
-import type { OBPv121DeleteWhereTagForViewOnTransactionRequest } from 'obp-typescript';
+import type { DeleteWhereTagForViewOnTransactionRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -852,10 +852,10 @@ async function example() {
     viewid: viewid_example,
     // string | The TRANSACTIONID identifier
     transactionid: transactionid_example,
-  } satisfies OBPv121DeleteWhereTagForViewOnTransactionRequest;
+  } satisfies DeleteWhereTagForViewOnTransactionRequest;
 
   try {
-    const data = await api.oBPv121DeleteWhereTagForViewOnTransaction(body);
+    const data = await api.deleteWhereTagForViewOnTransaction(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -900,9 +900,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv121GetCommentsForViewOnTransaction
+## getCommentsForViewOnTransaction
 
-> OBPv121GetCommentsForViewOnTransaction200Response oBPv121GetCommentsForViewOnTransaction(bankid, accountid, viewid, transactionid)
+> GetCommentsForViewOnTransaction200Response getCommentsForViewOnTransaction(bankid, accountid, viewid, transactionid)
 
 Get Transaction Comments
 
@@ -915,7 +915,7 @@ import {
   Configuration,
   TransactionMetadataApi,
 } from 'obp-typescript';
-import type { OBPv121GetCommentsForViewOnTransactionRequest } from 'obp-typescript';
+import type { GetCommentsForViewOnTransactionRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -938,10 +938,10 @@ async function example() {
     viewid: viewid_example,
     // string | The TRANSACTIONID identifier
     transactionid: transactionid_example,
-  } satisfies OBPv121GetCommentsForViewOnTransactionRequest;
+  } satisfies GetCommentsForViewOnTransactionRequest;
 
   try {
-    const data = await api.oBPv121GetCommentsForViewOnTransaction(body);
+    const data = await api.getCommentsForViewOnTransaction(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -964,7 +964,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv121GetCommentsForViewOnTransaction200Response**](OBPv121GetCommentsForViewOnTransaction200Response.md)
+[**GetCommentsForViewOnTransaction200Response**](GetCommentsForViewOnTransaction200Response.md)
 
 ### Authorization
 
@@ -986,9 +986,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv121GetImagesForViewOnTransaction
+## getImagesForViewOnTransaction
 
-> OBPv121GetImagesForViewOnTransaction200Response oBPv121GetImagesForViewOnTransaction(bankid, accountid, viewid, transactionid)
+> GetImagesForViewOnTransaction200Response getImagesForViewOnTransaction(bankid, accountid, viewid, transactionid)
 
 Get Transaction Images
 
@@ -1001,7 +1001,7 @@ import {
   Configuration,
   TransactionMetadataApi,
 } from 'obp-typescript';
-import type { OBPv121GetImagesForViewOnTransactionRequest } from 'obp-typescript';
+import type { GetImagesForViewOnTransactionRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -1024,10 +1024,10 @@ async function example() {
     viewid: viewid_example,
     // string | The TRANSACTIONID identifier
     transactionid: transactionid_example,
-  } satisfies OBPv121GetImagesForViewOnTransactionRequest;
+  } satisfies GetImagesForViewOnTransactionRequest;
 
   try {
-    const data = await api.oBPv121GetImagesForViewOnTransaction(body);
+    const data = await api.getImagesForViewOnTransaction(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -1050,7 +1050,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv121GetImagesForViewOnTransaction200Response**](OBPv121GetImagesForViewOnTransaction200Response.md)
+[**GetImagesForViewOnTransaction200Response**](GetImagesForViewOnTransaction200Response.md)
 
 ### Authorization
 
@@ -1072,9 +1072,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv121GetTagsForViewOnTransaction
+## getTagsForViewOnTransaction
 
-> OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems oBPv121GetTagsForViewOnTransaction(bankid, accountid, viewid, transactionid)
+> GetTagsForViewOnAccount200ResponseTagsInner getTagsForViewOnTransaction(bankid, accountid, viewid, transactionid)
 
 Get Transaction Tags
 
@@ -1087,7 +1087,7 @@ import {
   Configuration,
   TransactionMetadataApi,
 } from 'obp-typescript';
-import type { OBPv121GetTagsForViewOnTransactionRequest } from 'obp-typescript';
+import type { GetTagsForViewOnTransactionRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -1102,10 +1102,10 @@ async function example() {
     viewid: viewid_example,
     // string | The TRANSACTIONID identifier
     transactionid: transactionid_example,
-  } satisfies OBPv121GetTagsForViewOnTransactionRequest;
+  } satisfies GetTagsForViewOnTransactionRequest;
 
   try {
-    const data = await api.oBPv121GetTagsForViewOnTransaction(body);
+    const data = await api.getTagsForViewOnTransaction(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -1128,7 +1128,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)
+[**GetTagsForViewOnAccount200ResponseTagsInner**](GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 ### Authorization
 
@@ -1150,9 +1150,9 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv121GetTransactionNarrative
+## getTransactionNarrative
 
-> OBPv121GetTransactionNarrative200Response oBPv121GetTransactionNarrative(bankid, accountid, viewid, transactionid)
+> GetTransactionNarrative200Response getTransactionNarrative(bankid, accountid, viewid, transactionid)
 
 Get a Transaction Narrative
 
@@ -1165,7 +1165,7 @@ import {
   Configuration,
   TransactionMetadataApi,
 } from 'obp-typescript';
-import type { OBPv121GetTransactionNarrativeRequest } from 'obp-typescript';
+import type { GetTransactionNarrativeRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -1180,10 +1180,10 @@ async function example() {
     viewid: viewid_example,
     // string | The TRANSACTIONID identifier
     transactionid: transactionid_example,
-  } satisfies OBPv121GetTransactionNarrativeRequest;
+  } satisfies GetTransactionNarrativeRequest;
 
   try {
-    const data = await api.oBPv121GetTransactionNarrative(body);
+    const data = await api.getTransactionNarrative(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -1206,7 +1206,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv121GetTransactionNarrative200Response**](OBPv121GetTransactionNarrative200Response.md)
+[**GetTransactionNarrative200Response**](GetTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -1228,9 +1228,9 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv121GetWhereTagForViewOnTransaction
+## getWhereTagForViewOnTransaction
 
-> OBPv121GetWhereTagForViewOnTransaction200Response oBPv121GetWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid)
+> GetWhereTagForViewOnTransaction200Response getWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid)
 
 Get a Transaction where Tag
 
@@ -1243,7 +1243,7 @@ import {
   Configuration,
   TransactionMetadataApi,
 } from 'obp-typescript';
-import type { OBPv121GetWhereTagForViewOnTransactionRequest } from 'obp-typescript';
+import type { GetWhereTagForViewOnTransactionRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -1258,10 +1258,10 @@ async function example() {
     viewid: viewid_example,
     // string | The TRANSACTIONID identifier
     transactionid: transactionid_example,
-  } satisfies OBPv121GetWhereTagForViewOnTransactionRequest;
+  } satisfies GetWhereTagForViewOnTransactionRequest;
 
   try {
-    const data = await api.oBPv121GetWhereTagForViewOnTransaction(body);
+    const data = await api.getWhereTagForViewOnTransaction(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -1284,7 +1284,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv121GetWhereTagForViewOnTransaction200Response**](OBPv121GetWhereTagForViewOnTransaction200Response.md)
+[**GetWhereTagForViewOnTransaction200Response**](GetWhereTagForViewOnTransaction200Response.md)
 
 ### Authorization
 
@@ -1306,9 +1306,9 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv121UpdateTransactionNarrative
+## updateTransactionNarrative
 
-> OBPv121UpdateTransactionNarrative200Response oBPv121UpdateTransactionNarrative(bankid, accountid, viewid, transactionid, oBPv121GetTransactionNarrative200Response)
+> UpdateTransactionNarrative200Response updateTransactionNarrative(bankid, accountid, viewid, transactionid, getTransactionNarrative200Response)
 
 Update a Transaction Narrative
 
@@ -1321,7 +1321,7 @@ import {
   Configuration,
   TransactionMetadataApi,
 } from 'obp-typescript';
-import type { OBPv121UpdateTransactionNarrativeRequest } from 'obp-typescript';
+import type { UpdateTransactionNarrativeRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -1336,12 +1336,12 @@ async function example() {
     viewid: viewid_example,
     // string | The TRANSACTIONID identifier
     transactionid: transactionid_example,
-    // OBPv121GetTransactionNarrative200Response | Request body
-    oBPv121GetTransactionNarrative200Response: {"type":"object","properties":{"narrative":{"type":"string"}}},
-  } satisfies OBPv121UpdateTransactionNarrativeRequest;
+    // GetTransactionNarrative200Response | Request body
+    getTransactionNarrative200Response: {"type":"object","properties":{"narrative":{"type":"string"}}},
+  } satisfies UpdateTransactionNarrativeRequest;
 
   try {
-    const data = await api.oBPv121UpdateTransactionNarrative(body);
+    const data = await api.updateTransactionNarrative(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -1361,11 +1361,11 @@ example().catch(console.error);
 | **accountid** | `string` | The ACCOUNTID identifier | [Defaults to `undefined`] |
 | **viewid** | `string` | The VIEWID identifier | [Defaults to `undefined`] |
 | **transactionid** | `string` | The TRANSACTIONID identifier | [Defaults to `undefined`] |
-| **oBPv121GetTransactionNarrative200Response** | [OBPv121GetTransactionNarrative200Response](OBPv121GetTransactionNarrative200Response.md) | Request body | |
+| **getTransactionNarrative200Response** | [GetTransactionNarrative200Response](GetTransactionNarrative200Response.md) | Request body | |
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -1387,9 +1387,9 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv121UpdateWhereTagForViewOnTransaction
+## updateWhereTagForViewOnTransaction
 
-> OBPv121UpdateTransactionNarrative200Response oBPv121UpdateWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid, oBPv121UpdateWhereTagForViewOnTransactionRequest)
+> UpdateTransactionNarrative200Response updateWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid, updateWhereTagForViewOnTransactionRequest)
 
 Update a Transaction where Tag
 
@@ -1402,7 +1402,7 @@ import {
   Configuration,
   TransactionMetadataApi,
 } from 'obp-typescript';
-import type { OBPv121UpdateWhereTagForViewOnTransactionOperationRequest } from 'obp-typescript';
+import type { UpdateWhereTagForViewOnTransactionOperationRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -1425,12 +1425,12 @@ async function example() {
     viewid: viewid_example,
     // string | The TRANSACTIONID identifier
     transactionid: transactionid_example,
-    // OBPv121UpdateWhereTagForViewOnTransactionRequest | Request body
-    oBPv121UpdateWhereTagForViewOnTransactionRequest: {"type":"object","properties":{"where":{"type":"object","properties":{"longitude":{"type":"number"},"latitude":{"type":"number"}}}}},
-  } satisfies OBPv121UpdateWhereTagForViewOnTransactionOperationRequest;
+    // UpdateWhereTagForViewOnTransactionRequest | Request body
+    updateWhereTagForViewOnTransactionRequest: {"type":"object","properties":{"where":{"type":"object","properties":{"longitude":{"type":"number"},"latitude":{"type":"number"}}}}},
+  } satisfies UpdateWhereTagForViewOnTransactionOperationRequest;
 
   try {
-    const data = await api.oBPv121UpdateWhereTagForViewOnTransaction(body);
+    const data = await api.updateWhereTagForViewOnTransaction(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -1450,11 +1450,11 @@ example().catch(console.error);
 | **accountid** | `string` | The ACCOUNTID identifier | [Defaults to `undefined`] |
 | **viewid** | `string` | The VIEWID identifier | [Defaults to `undefined`] |
 | **transactionid** | `string` | The TRANSACTIONID identifier | [Defaults to `undefined`] |
-| **oBPv121UpdateWhereTagForViewOnTransactionRequest** | [OBPv121UpdateWhereTagForViewOnTransactionRequest](OBPv121UpdateWhereTagForViewOnTransactionRequest.md) | Request body | |
+| **updateWhereTagForViewOnTransactionRequest** | [UpdateWhereTagForViewOnTransactionRequest](UpdateWhereTagForViewOnTransactionRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 

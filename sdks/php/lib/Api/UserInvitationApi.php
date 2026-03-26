@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,16 +75,16 @@ class UserInvitationApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv400CreateUserInvitation' => [
+        'createUserInvitation' => [
             'application/json',
         ],
-        'oBPv400GetUserInvitation' => [
+        'getUserInvitation' => [
             'application/json',
         ],
-        'oBPv400GetUserInvitationAnonymous' => [
+        'getUserInvitationAnonymous' => [
             'application/json',
         ],
-        'oBPv400GetUserInvitations' => [
+        'getUserInvitations' => [
             'application/json',
         ],
     ];
@@ -136,40 +136,40 @@ class UserInvitationApi
     }
 
     /**
-     * Operation oBPv400CreateUserInvitation
+     * Operation createUserInvitation
      *
      * Create User Invitation
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateUserInvitationRequest $obpv400_create_user_invitation_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateUserInvitation'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateUserInvitationRequest $create_user_invitation_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUserInvitation'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetUserInvitations200Response
+     * @return \OpenBankProject\Model\GetUserInvitations200Response
      */
-    public function oBPv400CreateUserInvitation($bankid, $obpv400_create_user_invitation_request, string $contentType = self::contentTypes['oBPv400CreateUserInvitation'][0])
+    public function createUserInvitation($bankid, $create_user_invitation_request, string $contentType = self::contentTypes['createUserInvitation'][0])
     {
-        list($response) = $this->oBPv400CreateUserInvitationWithHttpInfo($bankid, $obpv400_create_user_invitation_request, $contentType);
+        list($response) = $this->createUserInvitationWithHttpInfo($bankid, $create_user_invitation_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400CreateUserInvitationWithHttpInfo
+     * Operation createUserInvitationWithHttpInfo
      *
      * Create User Invitation
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateUserInvitationRequest $obpv400_create_user_invitation_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateUserInvitation'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateUserInvitationRequest $create_user_invitation_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUserInvitation'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetUserInvitations200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetUserInvitations200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400CreateUserInvitationWithHttpInfo($bankid, $obpv400_create_user_invitation_request, string $contentType = self::contentTypes['oBPv400CreateUserInvitation'][0])
+    public function createUserInvitationWithHttpInfo($bankid, $create_user_invitation_request, string $contentType = self::contentTypes['createUserInvitation'][0])
     {
-        $request = $this->oBPv400CreateUserInvitationRequest($bankid, $obpv400_create_user_invitation_request, $contentType);
+        $request = $this->createUserInvitationRequest($bankid, $create_user_invitation_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -197,7 +197,7 @@ class UserInvitationApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetUserInvitations200Response',
+                        '\OpenBankProject\Model\GetUserInvitations200Response',
                         $request,
                         $response,
                     );
@@ -219,7 +219,7 @@ class UserInvitationApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetUserInvitations200Response',
+                '\OpenBankProject\Model\GetUserInvitations200Response',
                 $request,
                 $response,
             );
@@ -228,7 +228,7 @@ class UserInvitationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetUserInvitations200Response',
+                        '\OpenBankProject\Model\GetUserInvitations200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -241,20 +241,20 @@ class UserInvitationApi
     }
 
     /**
-     * Operation oBPv400CreateUserInvitationAsync
+     * Operation createUserInvitationAsync
      *
      * Create User Invitation
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateUserInvitationRequest $obpv400_create_user_invitation_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateUserInvitation'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateUserInvitationRequest $create_user_invitation_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUserInvitation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateUserInvitationAsync($bankid, $obpv400_create_user_invitation_request, string $contentType = self::contentTypes['oBPv400CreateUserInvitation'][0])
+    public function createUserInvitationAsync($bankid, $create_user_invitation_request, string $contentType = self::contentTypes['createUserInvitation'][0])
     {
-        return $this->oBPv400CreateUserInvitationAsyncWithHttpInfo($bankid, $obpv400_create_user_invitation_request, $contentType)
+        return $this->createUserInvitationAsyncWithHttpInfo($bankid, $create_user_invitation_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -263,21 +263,21 @@ class UserInvitationApi
     }
 
     /**
-     * Operation oBPv400CreateUserInvitationAsyncWithHttpInfo
+     * Operation createUserInvitationAsyncWithHttpInfo
      *
      * Create User Invitation
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateUserInvitationRequest $obpv400_create_user_invitation_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateUserInvitation'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateUserInvitationRequest $create_user_invitation_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUserInvitation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateUserInvitationAsyncWithHttpInfo($bankid, $obpv400_create_user_invitation_request, string $contentType = self::contentTypes['oBPv400CreateUserInvitation'][0])
+    public function createUserInvitationAsyncWithHttpInfo($bankid, $create_user_invitation_request, string $contentType = self::contentTypes['createUserInvitation'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetUserInvitations200Response';
-        $request = $this->oBPv400CreateUserInvitationRequest($bankid, $obpv400_create_user_invitation_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetUserInvitations200Response';
+        $request = $this->createUserInvitationRequest($bankid, $create_user_invitation_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -316,29 +316,29 @@ class UserInvitationApi
     }
 
     /**
-     * Create request for operation 'oBPv400CreateUserInvitation'
+     * Create request for operation 'createUserInvitation'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateUserInvitationRequest $obpv400_create_user_invitation_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateUserInvitation'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateUserInvitationRequest $create_user_invitation_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUserInvitation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400CreateUserInvitationRequest($bankid, $obpv400_create_user_invitation_request, string $contentType = self::contentTypes['oBPv400CreateUserInvitation'][0])
+    public function createUserInvitationRequest($bankid, $create_user_invitation_request, string $contentType = self::contentTypes['createUserInvitation'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400CreateUserInvitation'
+                'Missing the required parameter $bankid when calling createUserInvitation'
             );
         }
 
-        // verify the required parameter 'obpv400_create_user_invitation_request' is set
-        if ($obpv400_create_user_invitation_request === null || (is_array($obpv400_create_user_invitation_request) && count($obpv400_create_user_invitation_request) === 0)) {
+        // verify the required parameter 'create_user_invitation_request' is set
+        if ($create_user_invitation_request === null || (is_array($create_user_invitation_request) && count($create_user_invitation_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_create_user_invitation_request when calling oBPv400CreateUserInvitation'
+                'Missing the required parameter $create_user_invitation_request when calling createUserInvitation'
             );
         }
 
@@ -369,12 +369,12 @@ class UserInvitationApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_create_user_invitation_request)) {
+        if (isset($create_user_invitation_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_create_user_invitation_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_user_invitation_request));
             } else {
-                $httpBody = $obpv400_create_user_invitation_request;
+                $httpBody = $create_user_invitation_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -410,9 +410,9 @@ class UserInvitationApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -437,40 +437,40 @@ class UserInvitationApi
     }
 
     /**
-     * Operation oBPv400GetUserInvitation
+     * Operation getUserInvitation
      *
      * Get User Invitation
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $secretlink The SECRETLINK identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetUserInvitation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserInvitation'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetUserInvitations200Response
+     * @return \OpenBankProject\Model\GetUserInvitations200Response
      */
-    public function oBPv400GetUserInvitation($bankid, $secretlink, string $contentType = self::contentTypes['oBPv400GetUserInvitation'][0])
+    public function getUserInvitation($bankid, $secretlink, string $contentType = self::contentTypes['getUserInvitation'][0])
     {
-        list($response) = $this->oBPv400GetUserInvitationWithHttpInfo($bankid, $secretlink, $contentType);
+        list($response) = $this->getUserInvitationWithHttpInfo($bankid, $secretlink, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetUserInvitationWithHttpInfo
+     * Operation getUserInvitationWithHttpInfo
      *
      * Get User Invitation
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $secretlink The SECRETLINK identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetUserInvitation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserInvitation'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetUserInvitations200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetUserInvitations200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetUserInvitationWithHttpInfo($bankid, $secretlink, string $contentType = self::contentTypes['oBPv400GetUserInvitation'][0])
+    public function getUserInvitationWithHttpInfo($bankid, $secretlink, string $contentType = self::contentTypes['getUserInvitation'][0])
     {
-        $request = $this->oBPv400GetUserInvitationRequest($bankid, $secretlink, $contentType);
+        $request = $this->getUserInvitationRequest($bankid, $secretlink, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -498,7 +498,7 @@ class UserInvitationApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetUserInvitations200Response',
+                        '\OpenBankProject\Model\GetUserInvitations200Response',
                         $request,
                         $response,
                     );
@@ -520,7 +520,7 @@ class UserInvitationApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetUserInvitations200Response',
+                '\OpenBankProject\Model\GetUserInvitations200Response',
                 $request,
                 $response,
             );
@@ -529,7 +529,7 @@ class UserInvitationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetUserInvitations200Response',
+                        '\OpenBankProject\Model\GetUserInvitations200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -542,20 +542,20 @@ class UserInvitationApi
     }
 
     /**
-     * Operation oBPv400GetUserInvitationAsync
+     * Operation getUserInvitationAsync
      *
      * Get User Invitation
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $secretlink The SECRETLINK identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetUserInvitation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserInvitation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetUserInvitationAsync($bankid, $secretlink, string $contentType = self::contentTypes['oBPv400GetUserInvitation'][0])
+    public function getUserInvitationAsync($bankid, $secretlink, string $contentType = self::contentTypes['getUserInvitation'][0])
     {
-        return $this->oBPv400GetUserInvitationAsyncWithHttpInfo($bankid, $secretlink, $contentType)
+        return $this->getUserInvitationAsyncWithHttpInfo($bankid, $secretlink, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -564,21 +564,21 @@ class UserInvitationApi
     }
 
     /**
-     * Operation oBPv400GetUserInvitationAsyncWithHttpInfo
+     * Operation getUserInvitationAsyncWithHttpInfo
      *
      * Get User Invitation
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $secretlink The SECRETLINK identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetUserInvitation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserInvitation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetUserInvitationAsyncWithHttpInfo($bankid, $secretlink, string $contentType = self::contentTypes['oBPv400GetUserInvitation'][0])
+    public function getUserInvitationAsyncWithHttpInfo($bankid, $secretlink, string $contentType = self::contentTypes['getUserInvitation'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetUserInvitations200Response';
-        $request = $this->oBPv400GetUserInvitationRequest($bankid, $secretlink, $contentType);
+        $returnType = '\OpenBankProject\Model\GetUserInvitations200Response';
+        $request = $this->getUserInvitationRequest($bankid, $secretlink, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -617,29 +617,29 @@ class UserInvitationApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetUserInvitation'
+     * Create request for operation 'getUserInvitation'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $secretlink The SECRETLINK identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetUserInvitation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserInvitation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetUserInvitationRequest($bankid, $secretlink, string $contentType = self::contentTypes['oBPv400GetUserInvitation'][0])
+    public function getUserInvitationRequest($bankid, $secretlink, string $contentType = self::contentTypes['getUserInvitation'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400GetUserInvitation'
+                'Missing the required parameter $bankid when calling getUserInvitation'
             );
         }
 
         // verify the required parameter 'secretlink' is set
         if ($secretlink === null || (is_array($secretlink) && count($secretlink) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $secretlink when calling oBPv400GetUserInvitation'
+                'Missing the required parameter $secretlink when calling getUserInvitation'
             );
         }
 
@@ -712,9 +712,9 @@ class UserInvitationApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -739,40 +739,40 @@ class UserInvitationApi
     }
 
     /**
-     * Operation oBPv400GetUserInvitationAnonymous
+     * Operation getUserInvitationAnonymous
      *
      * Get User Invitation Information
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400GetUserInvitationAnonymousRequest $obpv400_get_user_invitation_anonymous_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetUserInvitationAnonymous'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetUserInvitationAnonymousRequest $get_user_invitation_anonymous_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserInvitationAnonymous'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetUserInvitations200Response
+     * @return \OpenBankProject\Model\GetUserInvitations200Response
      */
-    public function oBPv400GetUserInvitationAnonymous($bankid, $obpv400_get_user_invitation_anonymous_request, string $contentType = self::contentTypes['oBPv400GetUserInvitationAnonymous'][0])
+    public function getUserInvitationAnonymous($bankid, $get_user_invitation_anonymous_request, string $contentType = self::contentTypes['getUserInvitationAnonymous'][0])
     {
-        list($response) = $this->oBPv400GetUserInvitationAnonymousWithHttpInfo($bankid, $obpv400_get_user_invitation_anonymous_request, $contentType);
+        list($response) = $this->getUserInvitationAnonymousWithHttpInfo($bankid, $get_user_invitation_anonymous_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetUserInvitationAnonymousWithHttpInfo
+     * Operation getUserInvitationAnonymousWithHttpInfo
      *
      * Get User Invitation Information
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400GetUserInvitationAnonymousRequest $obpv400_get_user_invitation_anonymous_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetUserInvitationAnonymous'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetUserInvitationAnonymousRequest $get_user_invitation_anonymous_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserInvitationAnonymous'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetUserInvitations200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetUserInvitations200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetUserInvitationAnonymousWithHttpInfo($bankid, $obpv400_get_user_invitation_anonymous_request, string $contentType = self::contentTypes['oBPv400GetUserInvitationAnonymous'][0])
+    public function getUserInvitationAnonymousWithHttpInfo($bankid, $get_user_invitation_anonymous_request, string $contentType = self::contentTypes['getUserInvitationAnonymous'][0])
     {
-        $request = $this->oBPv400GetUserInvitationAnonymousRequest($bankid, $obpv400_get_user_invitation_anonymous_request, $contentType);
+        $request = $this->getUserInvitationAnonymousRequest($bankid, $get_user_invitation_anonymous_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -800,7 +800,7 @@ class UserInvitationApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetUserInvitations200Response',
+                        '\OpenBankProject\Model\GetUserInvitations200Response',
                         $request,
                         $response,
                     );
@@ -822,7 +822,7 @@ class UserInvitationApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetUserInvitations200Response',
+                '\OpenBankProject\Model\GetUserInvitations200Response',
                 $request,
                 $response,
             );
@@ -831,7 +831,7 @@ class UserInvitationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetUserInvitations200Response',
+                        '\OpenBankProject\Model\GetUserInvitations200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -844,20 +844,20 @@ class UserInvitationApi
     }
 
     /**
-     * Operation oBPv400GetUserInvitationAnonymousAsync
+     * Operation getUserInvitationAnonymousAsync
      *
      * Get User Invitation Information
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400GetUserInvitationAnonymousRequest $obpv400_get_user_invitation_anonymous_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetUserInvitationAnonymous'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetUserInvitationAnonymousRequest $get_user_invitation_anonymous_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserInvitationAnonymous'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetUserInvitationAnonymousAsync($bankid, $obpv400_get_user_invitation_anonymous_request, string $contentType = self::contentTypes['oBPv400GetUserInvitationAnonymous'][0])
+    public function getUserInvitationAnonymousAsync($bankid, $get_user_invitation_anonymous_request, string $contentType = self::contentTypes['getUserInvitationAnonymous'][0])
     {
-        return $this->oBPv400GetUserInvitationAnonymousAsyncWithHttpInfo($bankid, $obpv400_get_user_invitation_anonymous_request, $contentType)
+        return $this->getUserInvitationAnonymousAsyncWithHttpInfo($bankid, $get_user_invitation_anonymous_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -866,21 +866,21 @@ class UserInvitationApi
     }
 
     /**
-     * Operation oBPv400GetUserInvitationAnonymousAsyncWithHttpInfo
+     * Operation getUserInvitationAnonymousAsyncWithHttpInfo
      *
      * Get User Invitation Information
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400GetUserInvitationAnonymousRequest $obpv400_get_user_invitation_anonymous_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetUserInvitationAnonymous'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetUserInvitationAnonymousRequest $get_user_invitation_anonymous_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserInvitationAnonymous'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetUserInvitationAnonymousAsyncWithHttpInfo($bankid, $obpv400_get_user_invitation_anonymous_request, string $contentType = self::contentTypes['oBPv400GetUserInvitationAnonymous'][0])
+    public function getUserInvitationAnonymousAsyncWithHttpInfo($bankid, $get_user_invitation_anonymous_request, string $contentType = self::contentTypes['getUserInvitationAnonymous'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetUserInvitations200Response';
-        $request = $this->oBPv400GetUserInvitationAnonymousRequest($bankid, $obpv400_get_user_invitation_anonymous_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetUserInvitations200Response';
+        $request = $this->getUserInvitationAnonymousRequest($bankid, $get_user_invitation_anonymous_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -919,29 +919,29 @@ class UserInvitationApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetUserInvitationAnonymous'
+     * Create request for operation 'getUserInvitationAnonymous'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400GetUserInvitationAnonymousRequest $obpv400_get_user_invitation_anonymous_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetUserInvitationAnonymous'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetUserInvitationAnonymousRequest $get_user_invitation_anonymous_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserInvitationAnonymous'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetUserInvitationAnonymousRequest($bankid, $obpv400_get_user_invitation_anonymous_request, string $contentType = self::contentTypes['oBPv400GetUserInvitationAnonymous'][0])
+    public function getUserInvitationAnonymousRequest($bankid, $get_user_invitation_anonymous_request, string $contentType = self::contentTypes['getUserInvitationAnonymous'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400GetUserInvitationAnonymous'
+                'Missing the required parameter $bankid when calling getUserInvitationAnonymous'
             );
         }
 
-        // verify the required parameter 'obpv400_get_user_invitation_anonymous_request' is set
-        if ($obpv400_get_user_invitation_anonymous_request === null || (is_array($obpv400_get_user_invitation_anonymous_request) && count($obpv400_get_user_invitation_anonymous_request) === 0)) {
+        // verify the required parameter 'get_user_invitation_anonymous_request' is set
+        if ($get_user_invitation_anonymous_request === null || (is_array($get_user_invitation_anonymous_request) && count($get_user_invitation_anonymous_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_get_user_invitation_anonymous_request when calling oBPv400GetUserInvitationAnonymous'
+                'Missing the required parameter $get_user_invitation_anonymous_request when calling getUserInvitationAnonymous'
             );
         }
 
@@ -972,12 +972,12 @@ class UserInvitationApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_get_user_invitation_anonymous_request)) {
+        if (isset($get_user_invitation_anonymous_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_get_user_invitation_anonymous_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($get_user_invitation_anonymous_request));
             } else {
-                $httpBody = $obpv400_get_user_invitation_anonymous_request;
+                $httpBody = $get_user_invitation_anonymous_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1026,38 +1026,38 @@ class UserInvitationApi
     }
 
     /**
-     * Operation oBPv400GetUserInvitations
+     * Operation getUserInvitations
      *
      * Get User Invitations
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetUserInvitations'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserInvitations'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetUserInvitations200Response
+     * @return \OpenBankProject\Model\GetUserInvitations200Response
      */
-    public function oBPv400GetUserInvitations($bankid, string $contentType = self::contentTypes['oBPv400GetUserInvitations'][0])
+    public function getUserInvitations($bankid, string $contentType = self::contentTypes['getUserInvitations'][0])
     {
-        list($response) = $this->oBPv400GetUserInvitationsWithHttpInfo($bankid, $contentType);
+        list($response) = $this->getUserInvitationsWithHttpInfo($bankid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetUserInvitationsWithHttpInfo
+     * Operation getUserInvitationsWithHttpInfo
      *
      * Get User Invitations
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetUserInvitations'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserInvitations'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetUserInvitations200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetUserInvitations200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetUserInvitationsWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv400GetUserInvitations'][0])
+    public function getUserInvitationsWithHttpInfo($bankid, string $contentType = self::contentTypes['getUserInvitations'][0])
     {
-        $request = $this->oBPv400GetUserInvitationsRequest($bankid, $contentType);
+        $request = $this->getUserInvitationsRequest($bankid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1085,7 +1085,7 @@ class UserInvitationApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetUserInvitations200Response',
+                        '\OpenBankProject\Model\GetUserInvitations200Response',
                         $request,
                         $response,
                     );
@@ -1107,7 +1107,7 @@ class UserInvitationApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetUserInvitations200Response',
+                '\OpenBankProject\Model\GetUserInvitations200Response',
                 $request,
                 $response,
             );
@@ -1116,7 +1116,7 @@ class UserInvitationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetUserInvitations200Response',
+                        '\OpenBankProject\Model\GetUserInvitations200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1129,19 +1129,19 @@ class UserInvitationApi
     }
 
     /**
-     * Operation oBPv400GetUserInvitationsAsync
+     * Operation getUserInvitationsAsync
      *
      * Get User Invitations
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetUserInvitations'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserInvitations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetUserInvitationsAsync($bankid, string $contentType = self::contentTypes['oBPv400GetUserInvitations'][0])
+    public function getUserInvitationsAsync($bankid, string $contentType = self::contentTypes['getUserInvitations'][0])
     {
-        return $this->oBPv400GetUserInvitationsAsyncWithHttpInfo($bankid, $contentType)
+        return $this->getUserInvitationsAsyncWithHttpInfo($bankid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1150,20 +1150,20 @@ class UserInvitationApi
     }
 
     /**
-     * Operation oBPv400GetUserInvitationsAsyncWithHttpInfo
+     * Operation getUserInvitationsAsyncWithHttpInfo
      *
      * Get User Invitations
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetUserInvitations'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserInvitations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetUserInvitationsAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv400GetUserInvitations'][0])
+    public function getUserInvitationsAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['getUserInvitations'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetUserInvitations200Response';
-        $request = $this->oBPv400GetUserInvitationsRequest($bankid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetUserInvitations200Response';
+        $request = $this->getUserInvitationsRequest($bankid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1202,21 +1202,21 @@ class UserInvitationApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetUserInvitations'
+     * Create request for operation 'getUserInvitations'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetUserInvitations'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserInvitations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetUserInvitationsRequest($bankid, string $contentType = self::contentTypes['oBPv400GetUserInvitations'][0])
+    public function getUserInvitationsRequest($bankid, string $contentType = self::contentTypes['getUserInvitations'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400GetUserInvitations'
+                'Missing the required parameter $bankid when calling getUserInvitations'
             );
         }
 
@@ -1281,9 +1281,9 @@ class UserInvitationApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

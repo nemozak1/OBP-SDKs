@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,24 +24,24 @@ import (
 // UserAttributeAPIService UserAttributeAPI service
 type UserAttributeAPIService service
 
-type ApiOBPv600CreatePersonalDataFieldRequest struct {
+type ApiCreatePersonalDataFieldRequest struct {
 	ctx context.Context
 	ApiService *UserAttributeAPIService
-	oBPv600CreatePersonalDataFieldRequest *OBPv600CreatePersonalDataFieldRequest
+	createPersonalDataFieldRequest *CreatePersonalDataFieldRequest
 }
 
 // Request body
-func (r ApiOBPv600CreatePersonalDataFieldRequest) OBPv600CreatePersonalDataFieldRequest(oBPv600CreatePersonalDataFieldRequest OBPv600CreatePersonalDataFieldRequest) ApiOBPv600CreatePersonalDataFieldRequest {
-	r.oBPv600CreatePersonalDataFieldRequest = &oBPv600CreatePersonalDataFieldRequest
+func (r ApiCreatePersonalDataFieldRequest) CreatePersonalDataFieldRequest(createPersonalDataFieldRequest CreatePersonalDataFieldRequest) ApiCreatePersonalDataFieldRequest {
+	r.createPersonalDataFieldRequest = &createPersonalDataFieldRequest
 	return r
 }
 
-func (r ApiOBPv600CreatePersonalDataFieldRequest) Execute() (*OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems, *http.Response, error) {
-	return r.ApiService.OBPv600CreatePersonalDataFieldExecute(r)
+func (r ApiCreatePersonalDataFieldRequest) Execute() (*GetPersonalDataFields200ResponseUserAttributesInner, *http.Response, error) {
+	return r.ApiService.CreatePersonalDataFieldExecute(r)
 }
 
 /*
-OBPv600CreatePersonalDataField Create Personal Data Field
+CreatePersonalDataField Create Personal Data Field
 
 <p>Create a Personal Data Field for the currently authenticated user.</p>
 <p>Personal Data Fields (IsPersonal=true) are managed by the user themselves and do not require special roles.<br />
@@ -63,26 +63,26 @@ This data is not available in ABAC rules for privacy reasons.</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600CreatePersonalDataFieldRequest
+ @return ApiCreatePersonalDataFieldRequest
 */
-func (a *UserAttributeAPIService) OBPv600CreatePersonalDataField(ctx context.Context) ApiOBPv600CreatePersonalDataFieldRequest {
-	return ApiOBPv600CreatePersonalDataFieldRequest{
+func (a *UserAttributeAPIService) CreatePersonalDataField(ctx context.Context) ApiCreatePersonalDataFieldRequest {
+	return ApiCreatePersonalDataFieldRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
-func (a *UserAttributeAPIService) OBPv600CreatePersonalDataFieldExecute(r ApiOBPv600CreatePersonalDataFieldRequest) (*OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems, *http.Response, error) {
+//  @return GetPersonalDataFields200ResponseUserAttributesInner
+func (a *UserAttributeAPIService) CreatePersonalDataFieldExecute(r ApiCreatePersonalDataFieldRequest) (*GetPersonalDataFields200ResponseUserAttributesInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+		localVarReturnValue  *GetPersonalDataFields200ResponseUserAttributesInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAttributeAPIService.OBPv600CreatePersonalDataField")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAttributeAPIService.CreatePersonalDataField")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -92,8 +92,8 @@ func (a *UserAttributeAPIService) OBPv600CreatePersonalDataFieldExecute(r ApiOBP
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600CreatePersonalDataFieldRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600CreatePersonalDataFieldRequest is required and must be specified")
+	if r.createPersonalDataFieldRequest == nil {
+		return localVarReturnValue, nil, reportError("createPersonalDataFieldRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -114,7 +114,7 @@ func (a *UserAttributeAPIService) OBPv600CreatePersonalDataFieldExecute(r ApiOBP
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600CreatePersonalDataFieldRequest
+	localVarPostBody = r.createPersonalDataFieldRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -139,7 +139,7 @@ func (a *UserAttributeAPIService) OBPv600CreatePersonalDataFieldExecute(r ApiOBP
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -180,25 +180,25 @@ func (a *UserAttributeAPIService) OBPv600CreatePersonalDataFieldExecute(r ApiOBP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600CreateUserAttributeRequest struct {
+type ApiCreateUserAttributeRequest struct {
 	ctx context.Context
 	ApiService *UserAttributeAPIService
 	userid string
-	oBPv600CreatePersonalDataFieldRequest *OBPv600CreatePersonalDataFieldRequest
+	createPersonalDataFieldRequest *CreatePersonalDataFieldRequest
 }
 
 // Request body
-func (r ApiOBPv600CreateUserAttributeRequest) OBPv600CreatePersonalDataFieldRequest(oBPv600CreatePersonalDataFieldRequest OBPv600CreatePersonalDataFieldRequest) ApiOBPv600CreateUserAttributeRequest {
-	r.oBPv600CreatePersonalDataFieldRequest = &oBPv600CreatePersonalDataFieldRequest
+func (r ApiCreateUserAttributeRequest) CreatePersonalDataFieldRequest(createPersonalDataFieldRequest CreatePersonalDataFieldRequest) ApiCreateUserAttributeRequest {
+	r.createPersonalDataFieldRequest = &createPersonalDataFieldRequest
 	return r
 }
 
-func (r ApiOBPv600CreateUserAttributeRequest) Execute() (*OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems, *http.Response, error) {
-	return r.ApiService.OBPv600CreateUserAttributeExecute(r)
+func (r ApiCreateUserAttributeRequest) Execute() (*GetPersonalDataFields200ResponseUserAttributesInner, *http.Response, error) {
+	return r.ApiService.CreateUserAttributeExecute(r)
 }
 
 /*
-OBPv600CreateUserAttribute Create User Attribute
+CreateUserAttribute Create User Attribute
 
 <p>Create a User Attribute for the user specified by USER_ID.</p>
 <p>User Attributes are non-personal attributes (IsPersonal=false) that can be used in ABAC rules.<br />
@@ -223,10 +223,10 @@ They require a role to set, similar to Customer Attributes, Account Attributes, 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param userid The USERID identifier
- @return ApiOBPv600CreateUserAttributeRequest
+ @return ApiCreateUserAttributeRequest
 */
-func (a *UserAttributeAPIService) OBPv600CreateUserAttribute(ctx context.Context, userid string) ApiOBPv600CreateUserAttributeRequest {
-	return ApiOBPv600CreateUserAttributeRequest{
+func (a *UserAttributeAPIService) CreateUserAttribute(ctx context.Context, userid string) ApiCreateUserAttributeRequest {
+	return ApiCreateUserAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		userid: userid,
@@ -234,16 +234,16 @@ func (a *UserAttributeAPIService) OBPv600CreateUserAttribute(ctx context.Context
 }
 
 // Execute executes the request
-//  @return OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
-func (a *UserAttributeAPIService) OBPv600CreateUserAttributeExecute(r ApiOBPv600CreateUserAttributeRequest) (*OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems, *http.Response, error) {
+//  @return GetPersonalDataFields200ResponseUserAttributesInner
+func (a *UserAttributeAPIService) CreateUserAttributeExecute(r ApiCreateUserAttributeRequest) (*GetPersonalDataFields200ResponseUserAttributesInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+		localVarReturnValue  *GetPersonalDataFields200ResponseUserAttributesInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAttributeAPIService.OBPv600CreateUserAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAttributeAPIService.CreateUserAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -254,8 +254,8 @@ func (a *UserAttributeAPIService) OBPv600CreateUserAttributeExecute(r ApiOBPv600
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600CreatePersonalDataFieldRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600CreatePersonalDataFieldRequest is required and must be specified")
+	if r.createPersonalDataFieldRequest == nil {
+		return localVarReturnValue, nil, reportError("createPersonalDataFieldRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -276,7 +276,7 @@ func (a *UserAttributeAPIService) OBPv600CreateUserAttributeExecute(r ApiOBPv600
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600CreatePersonalDataFieldRequest
+	localVarPostBody = r.createPersonalDataFieldRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -301,7 +301,7 @@ func (a *UserAttributeAPIService) OBPv600CreateUserAttributeExecute(r ApiOBPv600
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -342,18 +342,18 @@ func (a *UserAttributeAPIService) OBPv600CreateUserAttributeExecute(r ApiOBPv600
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600DeletePersonalDataFieldRequest struct {
+type ApiDeletePersonalDataFieldRequest struct {
 	ctx context.Context
 	ApiService *UserAttributeAPIService
 	userattributeid string
 }
 
-func (r ApiOBPv600DeletePersonalDataFieldRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv600DeletePersonalDataFieldExecute(r)
+func (r ApiDeletePersonalDataFieldRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeletePersonalDataFieldExecute(r)
 }
 
 /*
-OBPv600DeletePersonalDataField Delete Personal Data Field
+DeletePersonalDataField Delete Personal Data Field
 
 <p>Delete a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -364,10 +364,10 @@ OBPv600DeletePersonalDataField Delete Personal Data Field
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param userattributeid The USERATTRIBUTEID identifier
- @return ApiOBPv600DeletePersonalDataFieldRequest
+ @return ApiDeletePersonalDataFieldRequest
 */
-func (a *UserAttributeAPIService) OBPv600DeletePersonalDataField(ctx context.Context, userattributeid string) ApiOBPv600DeletePersonalDataFieldRequest {
-	return ApiOBPv600DeletePersonalDataFieldRequest{
+func (a *UserAttributeAPIService) DeletePersonalDataField(ctx context.Context, userattributeid string) ApiDeletePersonalDataFieldRequest {
+	return ApiDeletePersonalDataFieldRequest{
 		ApiService: a,
 		ctx: ctx,
 		userattributeid: userattributeid,
@@ -375,14 +375,14 @@ func (a *UserAttributeAPIService) OBPv600DeletePersonalDataField(ctx context.Con
 }
 
 // Execute executes the request
-func (a *UserAttributeAPIService) OBPv600DeletePersonalDataFieldExecute(r ApiOBPv600DeletePersonalDataFieldRequest) (*http.Response, error) {
+func (a *UserAttributeAPIService) DeletePersonalDataFieldExecute(r ApiDeletePersonalDataFieldRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAttributeAPIService.OBPv600DeletePersonalDataField")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAttributeAPIService.DeletePersonalDataField")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -435,7 +435,7 @@ func (a *UserAttributeAPIService) OBPv600DeletePersonalDataFieldExecute(r ApiOBP
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -467,19 +467,19 @@ func (a *UserAttributeAPIService) OBPv600DeletePersonalDataFieldExecute(r ApiOBP
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv600DeleteUserAttributeRequest struct {
+type ApiDeleteUserAttributeRequest struct {
 	ctx context.Context
 	ApiService *UserAttributeAPIService
 	userid string
 	userattributeid string
 }
 
-func (r ApiOBPv600DeleteUserAttributeRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv600DeleteUserAttributeExecute(r)
+func (r ApiDeleteUserAttributeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteUserAttributeExecute(r)
 }
 
 /*
-OBPv600DeleteUserAttribute Delete User Attribute
+DeleteUserAttribute Delete User Attribute
 
 <p>Delete a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -492,10 +492,10 @@ OBPv600DeleteUserAttribute Delete User Attribute
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param userid The USERID identifier
  @param userattributeid The USERATTRIBUTEID identifier
- @return ApiOBPv600DeleteUserAttributeRequest
+ @return ApiDeleteUserAttributeRequest
 */
-func (a *UserAttributeAPIService) OBPv600DeleteUserAttribute(ctx context.Context, userid string, userattributeid string) ApiOBPv600DeleteUserAttributeRequest {
-	return ApiOBPv600DeleteUserAttributeRequest{
+func (a *UserAttributeAPIService) DeleteUserAttribute(ctx context.Context, userid string, userattributeid string) ApiDeleteUserAttributeRequest {
+	return ApiDeleteUserAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		userid: userid,
@@ -504,14 +504,14 @@ func (a *UserAttributeAPIService) OBPv600DeleteUserAttribute(ctx context.Context
 }
 
 // Execute executes the request
-func (a *UserAttributeAPIService) OBPv600DeleteUserAttributeExecute(r ApiOBPv600DeleteUserAttributeRequest) (*http.Response, error) {
+func (a *UserAttributeAPIService) DeleteUserAttributeExecute(r ApiDeleteUserAttributeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAttributeAPIService.OBPv600DeleteUserAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAttributeAPIService.DeleteUserAttribute")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -565,7 +565,7 @@ func (a *UserAttributeAPIService) OBPv600DeleteUserAttributeExecute(r ApiOBPv600
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -597,18 +597,18 @@ func (a *UserAttributeAPIService) OBPv600DeleteUserAttributeExecute(r ApiOBPv600
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetPersonalDataFieldByIdRequest struct {
+type ApiGetPersonalDataFieldByIdRequest struct {
 	ctx context.Context
 	ApiService *UserAttributeAPIService
 	userattributeid string
 }
 
-func (r ApiOBPv600GetPersonalDataFieldByIdRequest) Execute() (*OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems, *http.Response, error) {
-	return r.ApiService.OBPv600GetPersonalDataFieldByIdExecute(r)
+func (r ApiGetPersonalDataFieldByIdRequest) Execute() (*GetPersonalDataFields200ResponseUserAttributesInner, *http.Response, error) {
+	return r.ApiService.GetPersonalDataFieldByIdExecute(r)
 }
 
 /*
-OBPv600GetPersonalDataFieldById Get Personal Data Field By Id
+GetPersonalDataFieldById Get Personal Data Field By Id
 
 <p>Get a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -625,10 +625,10 @@ OBPv600GetPersonalDataFieldById Get Personal Data Field By Id
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param userattributeid The USERATTRIBUTEID identifier
- @return ApiOBPv600GetPersonalDataFieldByIdRequest
+ @return ApiGetPersonalDataFieldByIdRequest
 */
-func (a *UserAttributeAPIService) OBPv600GetPersonalDataFieldById(ctx context.Context, userattributeid string) ApiOBPv600GetPersonalDataFieldByIdRequest {
-	return ApiOBPv600GetPersonalDataFieldByIdRequest{
+func (a *UserAttributeAPIService) GetPersonalDataFieldById(ctx context.Context, userattributeid string) ApiGetPersonalDataFieldByIdRequest {
+	return ApiGetPersonalDataFieldByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		userattributeid: userattributeid,
@@ -636,16 +636,16 @@ func (a *UserAttributeAPIService) OBPv600GetPersonalDataFieldById(ctx context.Co
 }
 
 // Execute executes the request
-//  @return OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
-func (a *UserAttributeAPIService) OBPv600GetPersonalDataFieldByIdExecute(r ApiOBPv600GetPersonalDataFieldByIdRequest) (*OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems, *http.Response, error) {
+//  @return GetPersonalDataFields200ResponseUserAttributesInner
+func (a *UserAttributeAPIService) GetPersonalDataFieldByIdExecute(r ApiGetPersonalDataFieldByIdRequest) (*GetPersonalDataFields200ResponseUserAttributesInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+		localVarReturnValue  *GetPersonalDataFields200ResponseUserAttributesInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAttributeAPIService.OBPv600GetPersonalDataFieldById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAttributeAPIService.GetPersonalDataFieldById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -698,7 +698,7 @@ func (a *UserAttributeAPIService) OBPv600GetPersonalDataFieldByIdExecute(r ApiOB
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -739,17 +739,17 @@ func (a *UserAttributeAPIService) OBPv600GetPersonalDataFieldByIdExecute(r ApiOB
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetPersonalDataFieldsRequest struct {
+type ApiGetPersonalDataFieldsRequest struct {
 	ctx context.Context
 	ApiService *UserAttributeAPIService
 }
 
-func (r ApiOBPv600GetPersonalDataFieldsRequest) Execute() (*OBPv600GetPersonalDataFields200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetPersonalDataFieldsExecute(r)
+func (r ApiGetPersonalDataFieldsRequest) Execute() (*GetPersonalDataFields200Response, *http.Response, error) {
+	return r.ApiService.GetPersonalDataFieldsExecute(r)
 }
 
 /*
-OBPv600GetPersonalDataFields Get Personal Data Fields
+GetPersonalDataFields Get Personal Data Fields
 
 <p>Get Personal Data Fields for the currently authenticated user.</p>
 <p>Returns Personal Data Fields (IsPersonal=true) that are managed by the user.</p>
@@ -765,26 +765,26 @@ OBPv600GetPersonalDataFields Get Personal Data Fields
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetPersonalDataFieldsRequest
+ @return ApiGetPersonalDataFieldsRequest
 */
-func (a *UserAttributeAPIService) OBPv600GetPersonalDataFields(ctx context.Context) ApiOBPv600GetPersonalDataFieldsRequest {
-	return ApiOBPv600GetPersonalDataFieldsRequest{
+func (a *UserAttributeAPIService) GetPersonalDataFields(ctx context.Context) ApiGetPersonalDataFieldsRequest {
+	return ApiGetPersonalDataFieldsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetPersonalDataFields200Response
-func (a *UserAttributeAPIService) OBPv600GetPersonalDataFieldsExecute(r ApiOBPv600GetPersonalDataFieldsRequest) (*OBPv600GetPersonalDataFields200Response, *http.Response, error) {
+//  @return GetPersonalDataFields200Response
+func (a *UserAttributeAPIService) GetPersonalDataFieldsExecute(r ApiGetPersonalDataFieldsRequest) (*GetPersonalDataFields200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetPersonalDataFields200Response
+		localVarReturnValue  *GetPersonalDataFields200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAttributeAPIService.OBPv600GetPersonalDataFields")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAttributeAPIService.GetPersonalDataFields")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -836,7 +836,7 @@ func (a *UserAttributeAPIService) OBPv600GetPersonalDataFieldsExecute(r ApiOBPv6
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -877,19 +877,19 @@ func (a *UserAttributeAPIService) OBPv600GetPersonalDataFieldsExecute(r ApiOBPv6
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetUserAttributeByIdRequest struct {
+type ApiGetUserAttributeByIdRequest struct {
 	ctx context.Context
 	ApiService *UserAttributeAPIService
 	userid string
 	userattributeid string
 }
 
-func (r ApiOBPv600GetUserAttributeByIdRequest) Execute() (*OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems, *http.Response, error) {
-	return r.ApiService.OBPv600GetUserAttributeByIdExecute(r)
+func (r ApiGetUserAttributeByIdRequest) Execute() (*GetPersonalDataFields200ResponseUserAttributesInner, *http.Response, error) {
+	return r.ApiService.GetUserAttributeByIdExecute(r)
 }
 
 /*
-OBPv600GetUserAttributeById Get User Attribute By Id
+GetUserAttributeById Get User Attribute By Id
 
 <p>Get a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -908,10 +908,10 @@ OBPv600GetUserAttributeById Get User Attribute By Id
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param userid The USERID identifier
  @param userattributeid The USERATTRIBUTEID identifier
- @return ApiOBPv600GetUserAttributeByIdRequest
+ @return ApiGetUserAttributeByIdRequest
 */
-func (a *UserAttributeAPIService) OBPv600GetUserAttributeById(ctx context.Context, userid string, userattributeid string) ApiOBPv600GetUserAttributeByIdRequest {
-	return ApiOBPv600GetUserAttributeByIdRequest{
+func (a *UserAttributeAPIService) GetUserAttributeById(ctx context.Context, userid string, userattributeid string) ApiGetUserAttributeByIdRequest {
+	return ApiGetUserAttributeByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		userid: userid,
@@ -920,16 +920,16 @@ func (a *UserAttributeAPIService) OBPv600GetUserAttributeById(ctx context.Contex
 }
 
 // Execute executes the request
-//  @return OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
-func (a *UserAttributeAPIService) OBPv600GetUserAttributeByIdExecute(r ApiOBPv600GetUserAttributeByIdRequest) (*OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems, *http.Response, error) {
+//  @return GetPersonalDataFields200ResponseUserAttributesInner
+func (a *UserAttributeAPIService) GetUserAttributeByIdExecute(r ApiGetUserAttributeByIdRequest) (*GetPersonalDataFields200ResponseUserAttributesInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+		localVarReturnValue  *GetPersonalDataFields200ResponseUserAttributesInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAttributeAPIService.OBPv600GetUserAttributeById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAttributeAPIService.GetUserAttributeById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -983,7 +983,7 @@ func (a *UserAttributeAPIService) OBPv600GetUserAttributeByIdExecute(r ApiOBPv60
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1024,18 +1024,18 @@ func (a *UserAttributeAPIService) OBPv600GetUserAttributeByIdExecute(r ApiOBPv60
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetUserAttributesRequest struct {
+type ApiGetUserAttributesRequest struct {
 	ctx context.Context
 	ApiService *UserAttributeAPIService
 	userid string
 }
 
-func (r ApiOBPv600GetUserAttributesRequest) Execute() (*OBPv600GetPersonalDataFields200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetUserAttributesExecute(r)
+func (r ApiGetUserAttributesRequest) Execute() (*GetPersonalDataFields200Response, *http.Response, error) {
+	return r.ApiService.GetUserAttributesExecute(r)
 }
 
 /*
-OBPv600GetUserAttributes Get User Attributes
+GetUserAttributes Get User Attributes
 
 <p>Get User Attributes for the user specified by USER_ID.</p>
 <p>Returns non-personal user attributes (IsPersonal=false) that can be used in ABAC rules.</p>
@@ -1054,10 +1054,10 @@ OBPv600GetUserAttributes Get User Attributes
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param userid The USERID identifier
- @return ApiOBPv600GetUserAttributesRequest
+ @return ApiGetUserAttributesRequest
 */
-func (a *UserAttributeAPIService) OBPv600GetUserAttributes(ctx context.Context, userid string) ApiOBPv600GetUserAttributesRequest {
-	return ApiOBPv600GetUserAttributesRequest{
+func (a *UserAttributeAPIService) GetUserAttributes(ctx context.Context, userid string) ApiGetUserAttributesRequest {
+	return ApiGetUserAttributesRequest{
 		ApiService: a,
 		ctx: ctx,
 		userid: userid,
@@ -1065,16 +1065,16 @@ func (a *UserAttributeAPIService) OBPv600GetUserAttributes(ctx context.Context, 
 }
 
 // Execute executes the request
-//  @return OBPv600GetPersonalDataFields200Response
-func (a *UserAttributeAPIService) OBPv600GetUserAttributesExecute(r ApiOBPv600GetUserAttributesRequest) (*OBPv600GetPersonalDataFields200Response, *http.Response, error) {
+//  @return GetPersonalDataFields200Response
+func (a *UserAttributeAPIService) GetUserAttributesExecute(r ApiGetUserAttributesRequest) (*GetPersonalDataFields200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetPersonalDataFields200Response
+		localVarReturnValue  *GetPersonalDataFields200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAttributeAPIService.OBPv600GetUserAttributes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAttributeAPIService.GetUserAttributes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1127,7 +1127,7 @@ func (a *UserAttributeAPIService) OBPv600GetUserAttributesExecute(r ApiOBPv600Ge
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1168,25 +1168,25 @@ func (a *UserAttributeAPIService) OBPv600GetUserAttributesExecute(r ApiOBPv600Ge
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600UpdatePersonalDataFieldRequest struct {
+type ApiUpdatePersonalDataFieldRequest struct {
 	ctx context.Context
 	ApiService *UserAttributeAPIService
 	userattributeid string
-	oBPv600CreatePersonalDataFieldRequest *OBPv600CreatePersonalDataFieldRequest
+	createPersonalDataFieldRequest *CreatePersonalDataFieldRequest
 }
 
 // Request body
-func (r ApiOBPv600UpdatePersonalDataFieldRequest) OBPv600CreatePersonalDataFieldRequest(oBPv600CreatePersonalDataFieldRequest OBPv600CreatePersonalDataFieldRequest) ApiOBPv600UpdatePersonalDataFieldRequest {
-	r.oBPv600CreatePersonalDataFieldRequest = &oBPv600CreatePersonalDataFieldRequest
+func (r ApiUpdatePersonalDataFieldRequest) CreatePersonalDataFieldRequest(createPersonalDataFieldRequest CreatePersonalDataFieldRequest) ApiUpdatePersonalDataFieldRequest {
+	r.createPersonalDataFieldRequest = &createPersonalDataFieldRequest
 	return r
 }
 
-func (r ApiOBPv600UpdatePersonalDataFieldRequest) Execute() (*OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems, *http.Response, error) {
-	return r.ApiService.OBPv600UpdatePersonalDataFieldExecute(r)
+func (r ApiUpdatePersonalDataFieldRequest) Execute() (*GetPersonalDataFields200ResponseUserAttributesInner, *http.Response, error) {
+	return r.ApiService.UpdatePersonalDataFieldExecute(r)
 }
 
 /*
-OBPv600UpdatePersonalDataField Update Personal Data Field
+UpdatePersonalDataField Update Personal Data Field
 
 <p>Update a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -1203,10 +1203,10 @@ OBPv600UpdatePersonalDataField Update Personal Data Field
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param userattributeid The USERATTRIBUTEID identifier
- @return ApiOBPv600UpdatePersonalDataFieldRequest
+ @return ApiUpdatePersonalDataFieldRequest
 */
-func (a *UserAttributeAPIService) OBPv600UpdatePersonalDataField(ctx context.Context, userattributeid string) ApiOBPv600UpdatePersonalDataFieldRequest {
-	return ApiOBPv600UpdatePersonalDataFieldRequest{
+func (a *UserAttributeAPIService) UpdatePersonalDataField(ctx context.Context, userattributeid string) ApiUpdatePersonalDataFieldRequest {
+	return ApiUpdatePersonalDataFieldRequest{
 		ApiService: a,
 		ctx: ctx,
 		userattributeid: userattributeid,
@@ -1214,16 +1214,16 @@ func (a *UserAttributeAPIService) OBPv600UpdatePersonalDataField(ctx context.Con
 }
 
 // Execute executes the request
-//  @return OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
-func (a *UserAttributeAPIService) OBPv600UpdatePersonalDataFieldExecute(r ApiOBPv600UpdatePersonalDataFieldRequest) (*OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems, *http.Response, error) {
+//  @return GetPersonalDataFields200ResponseUserAttributesInner
+func (a *UserAttributeAPIService) UpdatePersonalDataFieldExecute(r ApiUpdatePersonalDataFieldRequest) (*GetPersonalDataFields200ResponseUserAttributesInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+		localVarReturnValue  *GetPersonalDataFields200ResponseUserAttributesInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAttributeAPIService.OBPv600UpdatePersonalDataField")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAttributeAPIService.UpdatePersonalDataField")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1234,8 +1234,8 @@ func (a *UserAttributeAPIService) OBPv600UpdatePersonalDataFieldExecute(r ApiOBP
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600CreatePersonalDataFieldRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600CreatePersonalDataFieldRequest is required and must be specified")
+	if r.createPersonalDataFieldRequest == nil {
+		return localVarReturnValue, nil, reportError("createPersonalDataFieldRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1256,7 +1256,7 @@ func (a *UserAttributeAPIService) OBPv600UpdatePersonalDataFieldExecute(r ApiOBP
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600CreatePersonalDataFieldRequest
+	localVarPostBody = r.createPersonalDataFieldRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1281,7 +1281,7 @@ func (a *UserAttributeAPIService) OBPv600UpdatePersonalDataFieldExecute(r ApiOBP
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1322,26 +1322,26 @@ func (a *UserAttributeAPIService) OBPv600UpdatePersonalDataFieldExecute(r ApiOBP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600UpdateUserAttributeRequest struct {
+type ApiUpdateUserAttributeRequest struct {
 	ctx context.Context
 	ApiService *UserAttributeAPIService
 	userid string
 	userattributeid string
-	oBPv600CreatePersonalDataFieldRequest *OBPv600CreatePersonalDataFieldRequest
+	createPersonalDataFieldRequest *CreatePersonalDataFieldRequest
 }
 
 // Request body
-func (r ApiOBPv600UpdateUserAttributeRequest) OBPv600CreatePersonalDataFieldRequest(oBPv600CreatePersonalDataFieldRequest OBPv600CreatePersonalDataFieldRequest) ApiOBPv600UpdateUserAttributeRequest {
-	r.oBPv600CreatePersonalDataFieldRequest = &oBPv600CreatePersonalDataFieldRequest
+func (r ApiUpdateUserAttributeRequest) CreatePersonalDataFieldRequest(createPersonalDataFieldRequest CreatePersonalDataFieldRequest) ApiUpdateUserAttributeRequest {
+	r.createPersonalDataFieldRequest = &createPersonalDataFieldRequest
 	return r
 }
 
-func (r ApiOBPv600UpdateUserAttributeRequest) Execute() (*OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems, *http.Response, error) {
-	return r.ApiService.OBPv600UpdateUserAttributeExecute(r)
+func (r ApiUpdateUserAttributeRequest) Execute() (*GetPersonalDataFields200ResponseUserAttributesInner, *http.Response, error) {
+	return r.ApiService.UpdateUserAttributeExecute(r)
 }
 
 /*
-OBPv600UpdateUserAttribute Update User Attribute
+UpdateUserAttribute Update User Attribute
 
 <p>Update a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -1360,10 +1360,10 @@ OBPv600UpdateUserAttribute Update User Attribute
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param userid The USERID identifier
  @param userattributeid The USERATTRIBUTEID identifier
- @return ApiOBPv600UpdateUserAttributeRequest
+ @return ApiUpdateUserAttributeRequest
 */
-func (a *UserAttributeAPIService) OBPv600UpdateUserAttribute(ctx context.Context, userid string, userattributeid string) ApiOBPv600UpdateUserAttributeRequest {
-	return ApiOBPv600UpdateUserAttributeRequest{
+func (a *UserAttributeAPIService) UpdateUserAttribute(ctx context.Context, userid string, userattributeid string) ApiUpdateUserAttributeRequest {
+	return ApiUpdateUserAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		userid: userid,
@@ -1372,16 +1372,16 @@ func (a *UserAttributeAPIService) OBPv600UpdateUserAttribute(ctx context.Context
 }
 
 // Execute executes the request
-//  @return OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
-func (a *UserAttributeAPIService) OBPv600UpdateUserAttributeExecute(r ApiOBPv600UpdateUserAttributeRequest) (*OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems, *http.Response, error) {
+//  @return GetPersonalDataFields200ResponseUserAttributesInner
+func (a *UserAttributeAPIService) UpdateUserAttributeExecute(r ApiUpdateUserAttributeRequest) (*GetPersonalDataFields200ResponseUserAttributesInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+		localVarReturnValue  *GetPersonalDataFields200ResponseUserAttributesInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAttributeAPIService.OBPv600UpdateUserAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAttributeAPIService.UpdateUserAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1393,8 +1393,8 @@ func (a *UserAttributeAPIService) OBPv600UpdateUserAttributeExecute(r ApiOBPv600
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600CreatePersonalDataFieldRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600CreatePersonalDataFieldRequest is required and must be specified")
+	if r.createPersonalDataFieldRequest == nil {
+		return localVarReturnValue, nil, reportError("createPersonalDataFieldRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1415,7 +1415,7 @@ func (a *UserAttributeAPIService) OBPv600UpdateUserAttributeExecute(r ApiOBPv600
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600CreatePersonalDataFieldRequest
+	localVarPostBody = r.createPersonalDataFieldRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1440,7 +1440,7 @@ func (a *UserAttributeAPIService) OBPv600UpdateUserAttributeExecute(r ApiOBPv600
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

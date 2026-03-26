@@ -13,12 +13,12 @@ open class AuthenticationTypeValidationAPI {
      Create an Authentication Type Validation
      
      - parameter operationid: (path) The OPERATIONID identifier 
-     - parameter oBPv400UpdateAuthenticationTypeValidationRequest: (body) Request body 
+     - parameter updateAuthenticationTypeValidationRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems
+     - returns: GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
      */
-    open class func oBPv400CreateAuthenticationTypeValidation(operationid: String, oBPv400UpdateAuthenticationTypeValidationRequest: OBPv400UpdateAuthenticationTypeValidationRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems {
-        return try await oBPv400CreateAuthenticationTypeValidationWithRequestBuilder(operationid: operationid, oBPv400UpdateAuthenticationTypeValidationRequest: oBPv400UpdateAuthenticationTypeValidationRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func createAuthenticationTypeValidation(operationid: String, updateAuthenticationTypeValidationRequest: UpdateAuthenticationTypeValidationRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner {
+        return try await createAuthenticationTypeValidationWithRequestBuilder(operationid: operationid, updateAuthenticationTypeValidationRequest: updateAuthenticationTypeValidationRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -32,20 +32,20 @@ open class AuthenticationTypeValidationAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter operationid: (path) The OPERATIONID identifier 
-     - parameter oBPv400UpdateAuthenticationTypeValidationRequest: (body) Request body 
+     - parameter updateAuthenticationTypeValidationRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems> 
+     - returns: RequestBuilder<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner> 
      */
-    open class func oBPv400CreateAuthenticationTypeValidationWithRequestBuilder(operationid: String, oBPv400UpdateAuthenticationTypeValidationRequest: OBPv400UpdateAuthenticationTypeValidationRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems> {
+    open class func createAuthenticationTypeValidationWithRequestBuilder(operationid: String, updateAuthenticationTypeValidationRequest: UpdateAuthenticationTypeValidationRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner> {
         var localVariablePath = "/obp/v4.0.0/management/authentication-type-validations/{operationid}"
         let operationidPreEscape = "\(APIHelper.mapValueToPathItem(operationid))"
         let operationidPostEscape = operationidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{operationid}", with: operationidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400UpdateAuthenticationTypeValidationRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateAuthenticationTypeValidationRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -55,7 +55,7 @@ open class AuthenticationTypeValidationAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -67,8 +67,8 @@ open class AuthenticationTypeValidationAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv400DeleteAuthenticationTypeValidation(operationid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv400DeleteAuthenticationTypeValidationWithRequestBuilder(operationid: operationid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteAuthenticationTypeValidation(operationid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteAuthenticationTypeValidationWithRequestBuilder(operationid: operationid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -82,13 +82,13 @@ open class AuthenticationTypeValidationAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter operationid: (path) The OPERATIONID identifier 
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv400DeleteAuthenticationTypeValidationWithRequestBuilder(operationid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteAuthenticationTypeValidationWithRequestBuilder(operationid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v4.0.0/management/authentication-type-validations/{operationid}"
         let operationidPreEscape = "\(APIHelper.mapValueToPathItem(operationid))"
         let operationidPostEscape = operationidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -113,10 +113,10 @@ open class AuthenticationTypeValidationAPI {
      Get all Authentication Type Validations
      
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetAllAuthenticationTypeValidationsPublic200Response
+     - returns: GetAllAuthenticationTypeValidationsPublic200Response
      */
-    open class func oBPv400GetAllAuthenticationTypeValidations(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetAllAuthenticationTypeValidationsPublic200Response {
-        return try await oBPv400GetAllAuthenticationTypeValidationsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    open class func getAllAuthenticationTypeValidations(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAllAuthenticationTypeValidationsPublic200Response {
+        return try await getAllAuthenticationTypeValidationsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -130,12 +130,12 @@ open class AuthenticationTypeValidationAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetAllAuthenticationTypeValidationsPublic200Response> 
+     - returns: RequestBuilder<GetAllAuthenticationTypeValidationsPublic200Response> 
      */
-    open class func oBPv400GetAllAuthenticationTypeValidationsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetAllAuthenticationTypeValidationsPublic200Response> {
+    open class func getAllAuthenticationTypeValidationsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAllAuthenticationTypeValidationsPublic200Response> {
         let localVariablePath = "/obp/v4.0.0/management/authentication-type-validations"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -148,7 +148,7 @@ open class AuthenticationTypeValidationAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetAllAuthenticationTypeValidationsPublic200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAllAuthenticationTypeValidationsPublic200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -157,10 +157,10 @@ open class AuthenticationTypeValidationAPI {
      Get all Authentication Type Validations - public
      
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetAllAuthenticationTypeValidationsPublic200Response
+     - returns: GetAllAuthenticationTypeValidationsPublic200Response
      */
-    open class func oBPv400GetAllAuthenticationTypeValidationsPublic(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetAllAuthenticationTypeValidationsPublic200Response {
-        return try await oBPv400GetAllAuthenticationTypeValidationsPublicWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    open class func getAllAuthenticationTypeValidationsPublic(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAllAuthenticationTypeValidationsPublic200Response {
+        return try await getAllAuthenticationTypeValidationsPublicWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -168,9 +168,9 @@ open class AuthenticationTypeValidationAPI {
      - GET /obp/v4.0.0/endpoints/authentication-type-validations
      - <p>Get all Authentication Type Validations - public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetAllAuthenticationTypeValidationsPublic200Response> 
+     - returns: RequestBuilder<GetAllAuthenticationTypeValidationsPublic200Response> 
      */
-    open class func oBPv400GetAllAuthenticationTypeValidationsPublicWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetAllAuthenticationTypeValidationsPublic200Response> {
+    open class func getAllAuthenticationTypeValidationsPublicWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAllAuthenticationTypeValidationsPublic200Response> {
         let localVariablePath = "/obp/v4.0.0/endpoints/authentication-type-validations"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -183,7 +183,7 @@ open class AuthenticationTypeValidationAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetAllAuthenticationTypeValidationsPublic200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAllAuthenticationTypeValidationsPublic200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
     }
@@ -193,10 +193,10 @@ open class AuthenticationTypeValidationAPI {
      
      - parameter operationid: (path) The OPERATIONID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems
+     - returns: GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
      */
-    open class func oBPv400GetAuthenticationTypeValidation(operationid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems {
-        return try await oBPv400GetAuthenticationTypeValidationWithRequestBuilder(operationid: operationid, apiConfiguration: apiConfiguration).execute().body
+    open class func getAuthenticationTypeValidation(operationid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner {
+        return try await getAuthenticationTypeValidationWithRequestBuilder(operationid: operationid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -210,13 +210,13 @@ open class AuthenticationTypeValidationAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter operationid: (path) The OPERATIONID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems> 
+     - returns: RequestBuilder<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner> 
      */
-    open class func oBPv400GetAuthenticationTypeValidationWithRequestBuilder(operationid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems> {
+    open class func getAuthenticationTypeValidationWithRequestBuilder(operationid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner> {
         var localVariablePath = "/obp/v4.0.0/management/authentication-type-validations/{operationid}"
         let operationidPreEscape = "\(APIHelper.mapValueToPathItem(operationid))"
         let operationidPostEscape = operationidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -232,7 +232,7 @@ open class AuthenticationTypeValidationAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -241,12 +241,12 @@ open class AuthenticationTypeValidationAPI {
      Update an Authentication Type Validation
      
      - parameter operationid: (path) The OPERATIONID identifier 
-     - parameter oBPv400UpdateAuthenticationTypeValidationRequest: (body) Request body 
+     - parameter updateAuthenticationTypeValidationRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems
+     - returns: GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
      */
-    open class func oBPv400UpdateAuthenticationTypeValidation(operationid: String, oBPv400UpdateAuthenticationTypeValidationRequest: OBPv400UpdateAuthenticationTypeValidationRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems {
-        return try await oBPv400UpdateAuthenticationTypeValidationWithRequestBuilder(operationid: operationid, oBPv400UpdateAuthenticationTypeValidationRequest: oBPv400UpdateAuthenticationTypeValidationRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func updateAuthenticationTypeValidation(operationid: String, updateAuthenticationTypeValidationRequest: UpdateAuthenticationTypeValidationRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner {
+        return try await updateAuthenticationTypeValidationWithRequestBuilder(operationid: operationid, updateAuthenticationTypeValidationRequest: updateAuthenticationTypeValidationRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -260,20 +260,20 @@ open class AuthenticationTypeValidationAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter operationid: (path) The OPERATIONID identifier 
-     - parameter oBPv400UpdateAuthenticationTypeValidationRequest: (body) Request body 
+     - parameter updateAuthenticationTypeValidationRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems> 
+     - returns: RequestBuilder<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner> 
      */
-    open class func oBPv400UpdateAuthenticationTypeValidationWithRequestBuilder(operationid: String, oBPv400UpdateAuthenticationTypeValidationRequest: OBPv400UpdateAuthenticationTypeValidationRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems> {
+    open class func updateAuthenticationTypeValidationWithRequestBuilder(operationid: String, updateAuthenticationTypeValidationRequest: UpdateAuthenticationTypeValidationRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner> {
         var localVariablePath = "/obp/v4.0.0/management/authentication-type-validations/{operationid}"
         let operationidPreEscape = "\(APIHelper.mapValueToPathItem(operationid))"
         let operationidPostEscape = operationidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{operationid}", with: operationidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400UpdateAuthenticationTypeValidationRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateAuthenticationTypeValidationRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -283,7 +283,7 @@ open class AuthenticationTypeValidationAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }

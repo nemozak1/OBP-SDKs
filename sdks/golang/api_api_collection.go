@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,24 +24,172 @@ import (
 // ApiCollectionAPIService ApiCollectionAPI service
 type ApiCollectionAPIService service
 
-type ApiOBPv400CreateMyApiCollectionRequest struct {
+type ApiCreateFeaturedApiCollectionRequest struct {
 	ctx context.Context
 	ApiService *ApiCollectionAPIService
-	oBPv400CreateMyApiCollectionRequest *OBPv400CreateMyApiCollectionRequest
+	createFeaturedApiCollectionRequest *CreateFeaturedApiCollectionRequest
 }
 
 // Request body
-func (r ApiOBPv400CreateMyApiCollectionRequest) OBPv400CreateMyApiCollectionRequest(oBPv400CreateMyApiCollectionRequest OBPv400CreateMyApiCollectionRequest) ApiOBPv400CreateMyApiCollectionRequest {
-	r.oBPv400CreateMyApiCollectionRequest = &oBPv400CreateMyApiCollectionRequest
+func (r ApiCreateFeaturedApiCollectionRequest) CreateFeaturedApiCollectionRequest(createFeaturedApiCollectionRequest CreateFeaturedApiCollectionRequest) ApiCreateFeaturedApiCollectionRequest {
+	r.createFeaturedApiCollectionRequest = &createFeaturedApiCollectionRequest
 	return r
 }
 
-func (r ApiOBPv400CreateMyApiCollectionRequest) Execute() (*OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems, *http.Response, error) {
-	return r.ApiService.OBPv400CreateMyApiCollectionExecute(r)
+func (r ApiCreateFeaturedApiCollectionRequest) Execute() (*GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner, *http.Response, error) {
+	return r.ApiService.CreateFeaturedApiCollectionExecute(r)
 }
 
 /*
-OBPv400CreateMyApiCollection Create My Api Collection
+CreateFeaturedApiCollection Create Featured Api Collection
+
+<p>Add an API Collection to the featured list.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#"><strong>sort_order</strong></a>: 1</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#"><strong>sort_order</strong></a>: 1</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiCreateFeaturedApiCollectionRequest
+*/
+func (a *ApiCollectionAPIService) CreateFeaturedApiCollection(ctx context.Context) ApiCreateFeaturedApiCollectionRequest {
+	return ApiCreateFeaturedApiCollectionRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner
+func (a *ApiCollectionAPIService) CreateFeaturedApiCollectionExecute(r ApiCreateFeaturedApiCollectionRequest) (*GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.CreateFeaturedApiCollection")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v6.0.0/management/api-collections/featured"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createFeaturedApiCollectionRequest == nil {
+		return localVarReturnValue, nil, reportError("createFeaturedApiCollectionRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createFeaturedApiCollectionRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreateMyApiCollectionRequest struct {
+	ctx context.Context
+	ApiService *ApiCollectionAPIService
+	createMyApiCollectionRequest *CreateMyApiCollectionRequest
+}
+
+// Request body
+func (r ApiCreateMyApiCollectionRequest) CreateMyApiCollectionRequest(createMyApiCollectionRequest CreateMyApiCollectionRequest) ApiCreateMyApiCollectionRequest {
+	r.createMyApiCollectionRequest = &createMyApiCollectionRequest
+	return r
+}
+
+func (r ApiCreateMyApiCollectionRequest) Execute() (*GetApiCollectionsForUser200ResponseApiCollectionsInner, *http.Response, error) {
+	return r.ApiService.CreateMyApiCollectionExecute(r)
+}
+
+/*
+CreateMyApiCollection Create My Api Collection
 
 <p>Create Api Collection for logged in user.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -58,26 +206,26 @@ OBPv400CreateMyApiCollection Create My Api Collection
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv400CreateMyApiCollectionRequest
+ @return ApiCreateMyApiCollectionRequest
 */
-func (a *ApiCollectionAPIService) OBPv400CreateMyApiCollection(ctx context.Context) ApiOBPv400CreateMyApiCollectionRequest {
-	return ApiOBPv400CreateMyApiCollectionRequest{
+func (a *ApiCollectionAPIService) CreateMyApiCollection(ctx context.Context) ApiCreateMyApiCollectionRequest {
+	return ApiCreateMyApiCollectionRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
-func (a *ApiCollectionAPIService) OBPv400CreateMyApiCollectionExecute(r ApiOBPv400CreateMyApiCollectionRequest) (*OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems, *http.Response, error) {
+//  @return GetApiCollectionsForUser200ResponseApiCollectionsInner
+func (a *ApiCollectionAPIService) CreateMyApiCollectionExecute(r ApiCreateMyApiCollectionRequest) (*GetApiCollectionsForUser200ResponseApiCollectionsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
+		localVarReturnValue  *GetApiCollectionsForUser200ResponseApiCollectionsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.OBPv400CreateMyApiCollection")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.CreateMyApiCollection")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -87,8 +235,8 @@ func (a *ApiCollectionAPIService) OBPv400CreateMyApiCollectionExecute(r ApiOBPv4
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400CreateMyApiCollectionRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateMyApiCollectionRequest is required and must be specified")
+	if r.createMyApiCollectionRequest == nil {
+		return localVarReturnValue, nil, reportError("createMyApiCollectionRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -109,7 +257,7 @@ func (a *ApiCollectionAPIService) OBPv400CreateMyApiCollectionExecute(r ApiOBPv4
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400CreateMyApiCollectionRequest
+	localVarPostBody = r.createMyApiCollectionRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -134,7 +282,7 @@ func (a *ApiCollectionAPIService) OBPv400CreateMyApiCollectionExecute(r ApiOBPv4
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -175,25 +323,25 @@ func (a *ApiCollectionAPIService) OBPv400CreateMyApiCollectionExecute(r ApiOBPv4
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400CreateMyApiCollectionEndpointRequest struct {
+type ApiCreateMyApiCollectionEndpointRequest struct {
 	ctx context.Context
 	ApiService *ApiCollectionAPIService
 	apicollectionname string
-	oBPv400CreateMyApiCollectionEndpointRequest *OBPv400CreateMyApiCollectionEndpointRequest
+	createMyApiCollectionEndpointRequest *CreateMyApiCollectionEndpointRequest
 }
 
 // Request body
-func (r ApiOBPv400CreateMyApiCollectionEndpointRequest) OBPv400CreateMyApiCollectionEndpointRequest(oBPv400CreateMyApiCollectionEndpointRequest OBPv400CreateMyApiCollectionEndpointRequest) ApiOBPv400CreateMyApiCollectionEndpointRequest {
-	r.oBPv400CreateMyApiCollectionEndpointRequest = &oBPv400CreateMyApiCollectionEndpointRequest
+func (r ApiCreateMyApiCollectionEndpointRequest) CreateMyApiCollectionEndpointRequest(createMyApiCollectionEndpointRequest CreateMyApiCollectionEndpointRequest) ApiCreateMyApiCollectionEndpointRequest {
+	r.createMyApiCollectionEndpointRequest = &createMyApiCollectionEndpointRequest
 	return r
 }
 
-func (r ApiOBPv400CreateMyApiCollectionEndpointRequest) Execute() (*OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems, *http.Response, error) {
-	return r.ApiService.OBPv400CreateMyApiCollectionEndpointExecute(r)
+func (r ApiCreateMyApiCollectionEndpointRequest) Execute() (*GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner, *http.Response, error) {
+	return r.ApiService.CreateMyApiCollectionEndpointExecute(r)
 }
 
 /*
-OBPv400CreateMyApiCollectionEndpoint Create My Api Collection Endpoint
+CreateMyApiCollectionEndpoint Create My Api Collection Endpoint
 
 <p>Create Api Collection Endpoint.</p>
 <p>glossary-item-not-found</p>
@@ -210,10 +358,10 @@ OBPv400CreateMyApiCollectionEndpoint Create My Api Collection Endpoint
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param apicollectionname The APICOLLECTIONNAME identifier
- @return ApiOBPv400CreateMyApiCollectionEndpointRequest
+ @return ApiCreateMyApiCollectionEndpointRequest
 */
-func (a *ApiCollectionAPIService) OBPv400CreateMyApiCollectionEndpoint(ctx context.Context, apicollectionname string) ApiOBPv400CreateMyApiCollectionEndpointRequest {
-	return ApiOBPv400CreateMyApiCollectionEndpointRequest{
+func (a *ApiCollectionAPIService) CreateMyApiCollectionEndpoint(ctx context.Context, apicollectionname string) ApiCreateMyApiCollectionEndpointRequest {
+	return ApiCreateMyApiCollectionEndpointRequest{
 		ApiService: a,
 		ctx: ctx,
 		apicollectionname: apicollectionname,
@@ -221,16 +369,16 @@ func (a *ApiCollectionAPIService) OBPv400CreateMyApiCollectionEndpoint(ctx conte
 }
 
 // Execute executes the request
-//  @return OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems
-func (a *ApiCollectionAPIService) OBPv400CreateMyApiCollectionEndpointExecute(r ApiOBPv400CreateMyApiCollectionEndpointRequest) (*OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems, *http.Response, error) {
+//  @return GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner
+func (a *ApiCollectionAPIService) CreateMyApiCollectionEndpointExecute(r ApiCreateMyApiCollectionEndpointRequest) (*GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems
+		localVarReturnValue  *GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.OBPv400CreateMyApiCollectionEndpoint")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.CreateMyApiCollectionEndpoint")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -241,8 +389,8 @@ func (a *ApiCollectionAPIService) OBPv400CreateMyApiCollectionEndpointExecute(r 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400CreateMyApiCollectionEndpointRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateMyApiCollectionEndpointRequest is required and must be specified")
+	if r.createMyApiCollectionEndpointRequest == nil {
+		return localVarReturnValue, nil, reportError("createMyApiCollectionEndpointRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -263,7 +411,7 @@ func (a *ApiCollectionAPIService) OBPv400CreateMyApiCollectionEndpointExecute(r 
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400CreateMyApiCollectionEndpointRequest
+	localVarPostBody = r.createMyApiCollectionEndpointRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -288,7 +436,7 @@ func (a *ApiCollectionAPIService) OBPv400CreateMyApiCollectionEndpointExecute(r 
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -329,25 +477,25 @@ func (a *ApiCollectionAPIService) OBPv400CreateMyApiCollectionEndpointExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400CreateMyApiCollectionEndpointByIdRequest struct {
+type ApiCreateMyApiCollectionEndpointByIdRequest struct {
 	ctx context.Context
 	ApiService *ApiCollectionAPIService
 	apicollectionid string
-	oBPv400CreateMyApiCollectionEndpointRequest *OBPv400CreateMyApiCollectionEndpointRequest
+	createMyApiCollectionEndpointRequest *CreateMyApiCollectionEndpointRequest
 }
 
 // Request body
-func (r ApiOBPv400CreateMyApiCollectionEndpointByIdRequest) OBPv400CreateMyApiCollectionEndpointRequest(oBPv400CreateMyApiCollectionEndpointRequest OBPv400CreateMyApiCollectionEndpointRequest) ApiOBPv400CreateMyApiCollectionEndpointByIdRequest {
-	r.oBPv400CreateMyApiCollectionEndpointRequest = &oBPv400CreateMyApiCollectionEndpointRequest
+func (r ApiCreateMyApiCollectionEndpointByIdRequest) CreateMyApiCollectionEndpointRequest(createMyApiCollectionEndpointRequest CreateMyApiCollectionEndpointRequest) ApiCreateMyApiCollectionEndpointByIdRequest {
+	r.createMyApiCollectionEndpointRequest = &createMyApiCollectionEndpointRequest
 	return r
 }
 
-func (r ApiOBPv400CreateMyApiCollectionEndpointByIdRequest) Execute() (*OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems, *http.Response, error) {
-	return r.ApiService.OBPv400CreateMyApiCollectionEndpointByIdExecute(r)
+func (r ApiCreateMyApiCollectionEndpointByIdRequest) Execute() (*GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner, *http.Response, error) {
+	return r.ApiService.CreateMyApiCollectionEndpointByIdExecute(r)
 }
 
 /*
-OBPv400CreateMyApiCollectionEndpointById Create My Api Collection Endpoint By Id
+CreateMyApiCollectionEndpointById Create My Api Collection Endpoint By Id
 
 <p>Create Api Collection Endpoint By Id.</p>
 <p>glossary-item-not-found</p>
@@ -364,10 +512,10 @@ OBPv400CreateMyApiCollectionEndpointById Create My Api Collection Endpoint By Id
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param apicollectionid The APICOLLECTIONID identifier
- @return ApiOBPv400CreateMyApiCollectionEndpointByIdRequest
+ @return ApiCreateMyApiCollectionEndpointByIdRequest
 */
-func (a *ApiCollectionAPIService) OBPv400CreateMyApiCollectionEndpointById(ctx context.Context, apicollectionid string) ApiOBPv400CreateMyApiCollectionEndpointByIdRequest {
-	return ApiOBPv400CreateMyApiCollectionEndpointByIdRequest{
+func (a *ApiCollectionAPIService) CreateMyApiCollectionEndpointById(ctx context.Context, apicollectionid string) ApiCreateMyApiCollectionEndpointByIdRequest {
+	return ApiCreateMyApiCollectionEndpointByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		apicollectionid: apicollectionid,
@@ -375,16 +523,16 @@ func (a *ApiCollectionAPIService) OBPv400CreateMyApiCollectionEndpointById(ctx c
 }
 
 // Execute executes the request
-//  @return OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems
-func (a *ApiCollectionAPIService) OBPv400CreateMyApiCollectionEndpointByIdExecute(r ApiOBPv400CreateMyApiCollectionEndpointByIdRequest) (*OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems, *http.Response, error) {
+//  @return GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner
+func (a *ApiCollectionAPIService) CreateMyApiCollectionEndpointByIdExecute(r ApiCreateMyApiCollectionEndpointByIdRequest) (*GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems
+		localVarReturnValue  *GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.OBPv400CreateMyApiCollectionEndpointById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.CreateMyApiCollectionEndpointById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -395,8 +543,8 @@ func (a *ApiCollectionAPIService) OBPv400CreateMyApiCollectionEndpointByIdExecut
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400CreateMyApiCollectionEndpointRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateMyApiCollectionEndpointRequest is required and must be specified")
+	if r.createMyApiCollectionEndpointRequest == nil {
+		return localVarReturnValue, nil, reportError("createMyApiCollectionEndpointRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -417,7 +565,7 @@ func (a *ApiCollectionAPIService) OBPv400CreateMyApiCollectionEndpointByIdExecut
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400CreateMyApiCollectionEndpointRequest
+	localVarPostBody = r.createMyApiCollectionEndpointRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -442,7 +590,7 @@ func (a *ApiCollectionAPIService) OBPv400CreateMyApiCollectionEndpointByIdExecut
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -483,18 +631,143 @@ func (a *ApiCollectionAPIService) OBPv400CreateMyApiCollectionEndpointByIdExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400DeleteMyApiCollectionRequest struct {
+type ApiDeleteFeaturedApiCollectionRequest struct {
 	ctx context.Context
 	ApiService *ApiCollectionAPIService
 	apicollectionid string
 }
 
-func (r ApiOBPv400DeleteMyApiCollectionRequest) Execute() (*OBPv400DeleteSystemLevelEndpointTag200Response, *http.Response, error) {
-	return r.ApiService.OBPv400DeleteMyApiCollectionExecute(r)
+func (r ApiDeleteFeaturedApiCollectionRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteFeaturedApiCollectionExecute(r)
 }
 
 /*
-OBPv400DeleteMyApiCollection Delete My Api Collection
+DeleteFeaturedApiCollection Delete Featured Api Collection
+
+<p>Remove an API Collection from the featured list.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param apicollectionid The APICOLLECTIONID identifier
+ @return ApiDeleteFeaturedApiCollectionRequest
+*/
+func (a *ApiCollectionAPIService) DeleteFeaturedApiCollection(ctx context.Context, apicollectionid string) ApiDeleteFeaturedApiCollectionRequest {
+	return ApiDeleteFeaturedApiCollectionRequest{
+		ApiService: a,
+		ctx: ctx,
+		apicollectionid: apicollectionid,
+	}
+}
+
+// Execute executes the request
+func (a *ApiCollectionAPIService) DeleteFeaturedApiCollectionExecute(r ApiDeleteFeaturedApiCollectionRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.DeleteFeaturedApiCollection")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v6.0.0/management/api-collections/featured/{apicollectionid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"apicollectionid"+"}", url.PathEscape(parameterValueToString(r.apicollectionid, "apicollectionid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiDeleteMyApiCollectionRequest struct {
+	ctx context.Context
+	ApiService *ApiCollectionAPIService
+	apicollectionid string
+}
+
+func (r ApiDeleteMyApiCollectionRequest) Execute() (*DeleteSystemLevelEndpointTag200Response, *http.Response, error) {
+	return r.ApiService.DeleteMyApiCollectionExecute(r)
+}
+
+/*
+DeleteMyApiCollection Delete My Api Collection
 
 <p>Delete Api Collection By API_COLLECTION_ID</p>
 <p>glossary-item-not-found</p>
@@ -506,10 +779,10 @@ OBPv400DeleteMyApiCollection Delete My Api Collection
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param apicollectionid The APICOLLECTIONID identifier
- @return ApiOBPv400DeleteMyApiCollectionRequest
+ @return ApiDeleteMyApiCollectionRequest
 */
-func (a *ApiCollectionAPIService) OBPv400DeleteMyApiCollection(ctx context.Context, apicollectionid string) ApiOBPv400DeleteMyApiCollectionRequest {
-	return ApiOBPv400DeleteMyApiCollectionRequest{
+func (a *ApiCollectionAPIService) DeleteMyApiCollection(ctx context.Context, apicollectionid string) ApiDeleteMyApiCollectionRequest {
+	return ApiDeleteMyApiCollectionRequest{
 		ApiService: a,
 		ctx: ctx,
 		apicollectionid: apicollectionid,
@@ -517,16 +790,16 @@ func (a *ApiCollectionAPIService) OBPv400DeleteMyApiCollection(ctx context.Conte
 }
 
 // Execute executes the request
-//  @return OBPv400DeleteSystemLevelEndpointTag200Response
-func (a *ApiCollectionAPIService) OBPv400DeleteMyApiCollectionExecute(r ApiOBPv400DeleteMyApiCollectionRequest) (*OBPv400DeleteSystemLevelEndpointTag200Response, *http.Response, error) {
+//  @return DeleteSystemLevelEndpointTag200Response
+func (a *ApiCollectionAPIService) DeleteMyApiCollectionExecute(r ApiDeleteMyApiCollectionRequest) (*DeleteSystemLevelEndpointTag200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400DeleteSystemLevelEndpointTag200Response
+		localVarReturnValue  *DeleteSystemLevelEndpointTag200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.OBPv400DeleteMyApiCollection")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.DeleteMyApiCollection")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -579,7 +852,7 @@ func (a *ApiCollectionAPIService) OBPv400DeleteMyApiCollectionExecute(r ApiOBPv4
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -620,19 +893,19 @@ func (a *ApiCollectionAPIService) OBPv400DeleteMyApiCollectionExecute(r ApiOBPv4
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400DeleteMyApiCollectionEndpointRequest struct {
+type ApiDeleteMyApiCollectionEndpointRequest struct {
 	ctx context.Context
 	ApiService *ApiCollectionAPIService
 	apicollectionname string
 	operationid string
 }
 
-func (r ApiOBPv400DeleteMyApiCollectionEndpointRequest) Execute() (*OBPv400DeleteSystemLevelEndpointTag200Response, *http.Response, error) {
-	return r.ApiService.OBPv400DeleteMyApiCollectionEndpointExecute(r)
+func (r ApiDeleteMyApiCollectionEndpointRequest) Execute() (*DeleteSystemLevelEndpointTag200Response, *http.Response, error) {
+	return r.ApiService.DeleteMyApiCollectionEndpointExecute(r)
 }
 
 /*
-OBPv400DeleteMyApiCollectionEndpoint Delete My Api Collection Endpoint
+DeleteMyApiCollectionEndpoint Delete My Api Collection Endpoint
 
 <p>glossary-item-not-found</p>
 <p>Delete Api Collection Endpoint By OPERATION_ID</p>
@@ -646,10 +919,10 @@ OBPv400DeleteMyApiCollectionEndpoint Delete My Api Collection Endpoint
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param apicollectionname The APICOLLECTIONNAME identifier
  @param operationid The OPERATIONID identifier
- @return ApiOBPv400DeleteMyApiCollectionEndpointRequest
+ @return ApiDeleteMyApiCollectionEndpointRequest
 */
-func (a *ApiCollectionAPIService) OBPv400DeleteMyApiCollectionEndpoint(ctx context.Context, apicollectionname string, operationid string) ApiOBPv400DeleteMyApiCollectionEndpointRequest {
-	return ApiOBPv400DeleteMyApiCollectionEndpointRequest{
+func (a *ApiCollectionAPIService) DeleteMyApiCollectionEndpoint(ctx context.Context, apicollectionname string, operationid string) ApiDeleteMyApiCollectionEndpointRequest {
+	return ApiDeleteMyApiCollectionEndpointRequest{
 		ApiService: a,
 		ctx: ctx,
 		apicollectionname: apicollectionname,
@@ -658,16 +931,16 @@ func (a *ApiCollectionAPIService) OBPv400DeleteMyApiCollectionEndpoint(ctx conte
 }
 
 // Execute executes the request
-//  @return OBPv400DeleteSystemLevelEndpointTag200Response
-func (a *ApiCollectionAPIService) OBPv400DeleteMyApiCollectionEndpointExecute(r ApiOBPv400DeleteMyApiCollectionEndpointRequest) (*OBPv400DeleteSystemLevelEndpointTag200Response, *http.Response, error) {
+//  @return DeleteSystemLevelEndpointTag200Response
+func (a *ApiCollectionAPIService) DeleteMyApiCollectionEndpointExecute(r ApiDeleteMyApiCollectionEndpointRequest) (*DeleteSystemLevelEndpointTag200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400DeleteSystemLevelEndpointTag200Response
+		localVarReturnValue  *DeleteSystemLevelEndpointTag200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.OBPv400DeleteMyApiCollectionEndpoint")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.DeleteMyApiCollectionEndpoint")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -721,7 +994,7 @@ func (a *ApiCollectionAPIService) OBPv400DeleteMyApiCollectionEndpointExecute(r 
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -762,19 +1035,19 @@ func (a *ApiCollectionAPIService) OBPv400DeleteMyApiCollectionEndpointExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400DeleteMyApiCollectionEndpointByIdRequest struct {
+type ApiDeleteMyApiCollectionEndpointByIdRequest struct {
 	ctx context.Context
 	ApiService *ApiCollectionAPIService
 	apicollectionid string
 	apicollectionendpointid string
 }
 
-func (r ApiOBPv400DeleteMyApiCollectionEndpointByIdRequest) Execute() (*OBPv400DeleteSystemLevelEndpointTag200Response, *http.Response, error) {
-	return r.ApiService.OBPv400DeleteMyApiCollectionEndpointByIdExecute(r)
+func (r ApiDeleteMyApiCollectionEndpointByIdRequest) Execute() (*DeleteSystemLevelEndpointTag200Response, *http.Response, error) {
+	return r.ApiService.DeleteMyApiCollectionEndpointByIdExecute(r)
 }
 
 /*
-OBPv400DeleteMyApiCollectionEndpointById Delete My Api Collection Endpoint By Id
+DeleteMyApiCollectionEndpointById Delete My Api Collection Endpoint By Id
 
 <p>glossary-item-not-found<br />
 Delete Api Collection Endpoint<br />
@@ -789,10 +1062,10 @@ Delete Api Collection Endpoint By Id</p>
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param apicollectionid The APICOLLECTIONID identifier
  @param apicollectionendpointid The APICOLLECTIONENDPOINTID identifier
- @return ApiOBPv400DeleteMyApiCollectionEndpointByIdRequest
+ @return ApiDeleteMyApiCollectionEndpointByIdRequest
 */
-func (a *ApiCollectionAPIService) OBPv400DeleteMyApiCollectionEndpointById(ctx context.Context, apicollectionid string, apicollectionendpointid string) ApiOBPv400DeleteMyApiCollectionEndpointByIdRequest {
-	return ApiOBPv400DeleteMyApiCollectionEndpointByIdRequest{
+func (a *ApiCollectionAPIService) DeleteMyApiCollectionEndpointById(ctx context.Context, apicollectionid string, apicollectionendpointid string) ApiDeleteMyApiCollectionEndpointByIdRequest {
+	return ApiDeleteMyApiCollectionEndpointByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		apicollectionid: apicollectionid,
@@ -801,16 +1074,16 @@ func (a *ApiCollectionAPIService) OBPv400DeleteMyApiCollectionEndpointById(ctx c
 }
 
 // Execute executes the request
-//  @return OBPv400DeleteSystemLevelEndpointTag200Response
-func (a *ApiCollectionAPIService) OBPv400DeleteMyApiCollectionEndpointByIdExecute(r ApiOBPv400DeleteMyApiCollectionEndpointByIdRequest) (*OBPv400DeleteSystemLevelEndpointTag200Response, *http.Response, error) {
+//  @return DeleteSystemLevelEndpointTag200Response
+func (a *ApiCollectionAPIService) DeleteMyApiCollectionEndpointByIdExecute(r ApiDeleteMyApiCollectionEndpointByIdRequest) (*DeleteSystemLevelEndpointTag200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400DeleteSystemLevelEndpointTag200Response
+		localVarReturnValue  *DeleteSystemLevelEndpointTag200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.OBPv400DeleteMyApiCollectionEndpointById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.DeleteMyApiCollectionEndpointById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -864,7 +1137,7 @@ func (a *ApiCollectionAPIService) OBPv400DeleteMyApiCollectionEndpointByIdExecut
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -905,19 +1178,19 @@ func (a *ApiCollectionAPIService) OBPv400DeleteMyApiCollectionEndpointByIdExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400DeleteMyApiCollectionEndpointByOperationIdRequest struct {
+type ApiDeleteMyApiCollectionEndpointByOperationIdRequest struct {
 	ctx context.Context
 	ApiService *ApiCollectionAPIService
 	apicollectionid string
 	operationid string
 }
 
-func (r ApiOBPv400DeleteMyApiCollectionEndpointByOperationIdRequest) Execute() (*OBPv400DeleteSystemLevelEndpointTag200Response, *http.Response, error) {
-	return r.ApiService.OBPv400DeleteMyApiCollectionEndpointByOperationIdExecute(r)
+func (r ApiDeleteMyApiCollectionEndpointByOperationIdRequest) Execute() (*DeleteSystemLevelEndpointTag200Response, *http.Response, error) {
+	return r.ApiService.DeleteMyApiCollectionEndpointByOperationIdExecute(r)
 }
 
 /*
-OBPv400DeleteMyApiCollectionEndpointByOperationId Delete My Api Collection Endpoint By Id
+DeleteMyApiCollectionEndpointByOperationId Delete My Api Collection Endpoint By Id
 
 <p>glossary-item-not-found</p>
 <p>Delete Api Collection Endpoint By OPERATION_ID</p>
@@ -931,10 +1204,10 @@ OBPv400DeleteMyApiCollectionEndpointByOperationId Delete My Api Collection Endpo
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param apicollectionid The APICOLLECTIONID identifier
  @param operationid The OPERATIONID identifier
- @return ApiOBPv400DeleteMyApiCollectionEndpointByOperationIdRequest
+ @return ApiDeleteMyApiCollectionEndpointByOperationIdRequest
 */
-func (a *ApiCollectionAPIService) OBPv400DeleteMyApiCollectionEndpointByOperationId(ctx context.Context, apicollectionid string, operationid string) ApiOBPv400DeleteMyApiCollectionEndpointByOperationIdRequest {
-	return ApiOBPv400DeleteMyApiCollectionEndpointByOperationIdRequest{
+func (a *ApiCollectionAPIService) DeleteMyApiCollectionEndpointByOperationId(ctx context.Context, apicollectionid string, operationid string) ApiDeleteMyApiCollectionEndpointByOperationIdRequest {
+	return ApiDeleteMyApiCollectionEndpointByOperationIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		apicollectionid: apicollectionid,
@@ -943,16 +1216,16 @@ func (a *ApiCollectionAPIService) OBPv400DeleteMyApiCollectionEndpointByOperatio
 }
 
 // Execute executes the request
-//  @return OBPv400DeleteSystemLevelEndpointTag200Response
-func (a *ApiCollectionAPIService) OBPv400DeleteMyApiCollectionEndpointByOperationIdExecute(r ApiOBPv400DeleteMyApiCollectionEndpointByOperationIdRequest) (*OBPv400DeleteSystemLevelEndpointTag200Response, *http.Response, error) {
+//  @return DeleteSystemLevelEndpointTag200Response
+func (a *ApiCollectionAPIService) DeleteMyApiCollectionEndpointByOperationIdExecute(r ApiDeleteMyApiCollectionEndpointByOperationIdRequest) (*DeleteSystemLevelEndpointTag200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400DeleteSystemLevelEndpointTag200Response
+		localVarReturnValue  *DeleteSystemLevelEndpointTag200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.OBPv400DeleteMyApiCollectionEndpointByOperationId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.DeleteMyApiCollectionEndpointByOperationId")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1006,7 +1279,7 @@ func (a *ApiCollectionAPIService) OBPv400DeleteMyApiCollectionEndpointByOperatio
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1047,18 +1320,154 @@ func (a *ApiCollectionAPIService) OBPv400DeleteMyApiCollectionEndpointByOperatio
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetApiCollectionEndpointsRequest struct {
+type ApiGetAllApiCollectionsRequest struct {
+	ctx context.Context
+	ApiService *ApiCollectionAPIService
+}
+
+func (r ApiGetAllApiCollectionsRequest) Execute() (*GetApiCollectionsForUser200Response, *http.Response, error) {
+	return r.ApiService.GetAllApiCollectionsExecute(r)
+}
+
+/*
+GetAllApiCollections Get All API Collections
+
+<p>Get All API Collections.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#"><strong>api_collection_name</strong></a>: Favourites</p>
+<p><a href="/glossary#"><strong>api_collections</strong></a>: api_collections</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#"><strong>is_sharable</strong></a>: is_sharable</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetAllApiCollectionsRequest
+*/
+func (a *ApiCollectionAPIService) GetAllApiCollections(ctx context.Context) ApiGetAllApiCollectionsRequest {
+	return ApiGetAllApiCollectionsRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return GetApiCollectionsForUser200Response
+func (a *ApiCollectionAPIService) GetAllApiCollectionsExecute(r ApiGetAllApiCollectionsRequest) (*GetApiCollectionsForUser200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetApiCollectionsForUser200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.GetAllApiCollections")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/management/api-collections"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetApiCollectionEndpointsRequest struct {
 	ctx context.Context
 	ApiService *ApiCollectionAPIService
 	apicollectionid string
 }
 
-func (r ApiOBPv400GetApiCollectionEndpointsRequest) Execute() (*OBPv400GetMyApiCollectionEndpoints200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetApiCollectionEndpointsExecute(r)
+func (r ApiGetApiCollectionEndpointsRequest) Execute() (*GetMyApiCollectionEndpoints200Response, *http.Response, error) {
+	return r.ApiService.GetApiCollectionEndpointsExecute(r)
 }
 
 /*
-OBPv400GetApiCollectionEndpoints Get Api Collection Endpoints
+GetApiCollectionEndpoints Get Api Collection Endpoints
 
 <p>Get Api Collection Endpoints By API_COLLECTION_ID.</p>
 <p>User Authentication is Optional. The User need not be logged in.</p>
@@ -1073,10 +1482,10 @@ OBPv400GetApiCollectionEndpoints Get Api Collection Endpoints
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param apicollectionid The APICOLLECTIONID identifier
- @return ApiOBPv400GetApiCollectionEndpointsRequest
+ @return ApiGetApiCollectionEndpointsRequest
 */
-func (a *ApiCollectionAPIService) OBPv400GetApiCollectionEndpoints(ctx context.Context, apicollectionid string) ApiOBPv400GetApiCollectionEndpointsRequest {
-	return ApiOBPv400GetApiCollectionEndpointsRequest{
+func (a *ApiCollectionAPIService) GetApiCollectionEndpoints(ctx context.Context, apicollectionid string) ApiGetApiCollectionEndpointsRequest {
+	return ApiGetApiCollectionEndpointsRequest{
 		ApiService: a,
 		ctx: ctx,
 		apicollectionid: apicollectionid,
@@ -1084,16 +1493,16 @@ func (a *ApiCollectionAPIService) OBPv400GetApiCollectionEndpoints(ctx context.C
 }
 
 // Execute executes the request
-//  @return OBPv400GetMyApiCollectionEndpoints200Response
-func (a *ApiCollectionAPIService) OBPv400GetApiCollectionEndpointsExecute(r ApiOBPv400GetApiCollectionEndpointsRequest) (*OBPv400GetMyApiCollectionEndpoints200Response, *http.Response, error) {
+//  @return GetMyApiCollectionEndpoints200Response
+func (a *ApiCollectionAPIService) GetApiCollectionEndpointsExecute(r ApiGetApiCollectionEndpointsRequest) (*GetMyApiCollectionEndpoints200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetMyApiCollectionEndpoints200Response
+		localVarReturnValue  *GetMyApiCollectionEndpoints200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.OBPv400GetApiCollectionEndpoints")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.GetApiCollectionEndpoints")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1159,18 +1568,18 @@ func (a *ApiCollectionAPIService) OBPv400GetApiCollectionEndpointsExecute(r ApiO
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetApiCollectionsForUserRequest struct {
+type ApiGetApiCollectionsForUserRequest struct {
 	ctx context.Context
 	ApiService *ApiCollectionAPIService
 	userid string
 }
 
-func (r ApiOBPv400GetApiCollectionsForUserRequest) Execute() (*OBPv400GetApiCollectionsForUser200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetApiCollectionsForUserExecute(r)
+func (r ApiGetApiCollectionsForUserRequest) Execute() (*GetApiCollectionsForUser200Response, *http.Response, error) {
+	return r.ApiService.GetApiCollectionsForUserExecute(r)
 }
 
 /*
-OBPv400GetApiCollectionsForUser Get Api Collections for User
+GetApiCollectionsForUser Get Api Collections for User
 
 <p>Get Api Collections for User.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -1187,10 +1596,10 @@ OBPv400GetApiCollectionsForUser Get Api Collections for User
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param userid The USERID identifier
- @return ApiOBPv400GetApiCollectionsForUserRequest
+ @return ApiGetApiCollectionsForUserRequest
 */
-func (a *ApiCollectionAPIService) OBPv400GetApiCollectionsForUser(ctx context.Context, userid string) ApiOBPv400GetApiCollectionsForUserRequest {
-	return ApiOBPv400GetApiCollectionsForUserRequest{
+func (a *ApiCollectionAPIService) GetApiCollectionsForUser(ctx context.Context, userid string) ApiGetApiCollectionsForUserRequest {
+	return ApiGetApiCollectionsForUserRequest{
 		ApiService: a,
 		ctx: ctx,
 		userid: userid,
@@ -1198,16 +1607,16 @@ func (a *ApiCollectionAPIService) OBPv400GetApiCollectionsForUser(ctx context.Co
 }
 
 // Execute executes the request
-//  @return OBPv400GetApiCollectionsForUser200Response
-func (a *ApiCollectionAPIService) OBPv400GetApiCollectionsForUserExecute(r ApiOBPv400GetApiCollectionsForUserRequest) (*OBPv400GetApiCollectionsForUser200Response, *http.Response, error) {
+//  @return GetApiCollectionsForUser200Response
+func (a *ApiCollectionAPIService) GetApiCollectionsForUserExecute(r ApiGetApiCollectionsForUserRequest) (*GetApiCollectionsForUser200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetApiCollectionsForUser200Response
+		localVarReturnValue  *GetApiCollectionsForUser200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.OBPv400GetApiCollectionsForUser")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.GetApiCollectionsForUser")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1260,7 +1669,7 @@ func (a *ApiCollectionAPIService) OBPv400GetApiCollectionsForUserExecute(r ApiOB
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1301,17 +1710,17 @@ func (a *ApiCollectionAPIService) OBPv400GetApiCollectionsForUserExecute(r ApiOB
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetFeaturedApiCollectionsRequest struct {
+type ApiGetFeaturedApiCollectionsRequest struct {
 	ctx context.Context
 	ApiService *ApiCollectionAPIService
 }
 
-func (r ApiOBPv400GetFeaturedApiCollectionsRequest) Execute() (*OBPv400GetApiCollectionsForUser200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetFeaturedApiCollectionsExecute(r)
+func (r ApiGetFeaturedApiCollectionsRequest) Execute() (*GetApiCollectionsForUser200Response, *http.Response, error) {
+	return r.ApiService.GetFeaturedApiCollectionsExecute(r)
 }
 
 /*
-OBPv400GetFeaturedApiCollections Get Featured Api Collections
+GetFeaturedApiCollections Get Featured Api Collections
 
 <p>Get Featured Api Collections.</p>
 <p>User Authentication is Optional. The User need not be logged in.</p>
@@ -1325,26 +1734,26 @@ OBPv400GetFeaturedApiCollections Get Featured Api Collections
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv400GetFeaturedApiCollectionsRequest
+ @return ApiGetFeaturedApiCollectionsRequest
 */
-func (a *ApiCollectionAPIService) OBPv400GetFeaturedApiCollections(ctx context.Context) ApiOBPv400GetFeaturedApiCollectionsRequest {
-	return ApiOBPv400GetFeaturedApiCollectionsRequest{
+func (a *ApiCollectionAPIService) GetFeaturedApiCollections(ctx context.Context) ApiGetFeaturedApiCollectionsRequest {
+	return ApiGetFeaturedApiCollectionsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv400GetApiCollectionsForUser200Response
-func (a *ApiCollectionAPIService) OBPv400GetFeaturedApiCollectionsExecute(r ApiOBPv400GetFeaturedApiCollectionsRequest) (*OBPv400GetApiCollectionsForUser200Response, *http.Response, error) {
+//  @return GetApiCollectionsForUser200Response
+func (a *ApiCollectionAPIService) GetFeaturedApiCollectionsExecute(r ApiGetFeaturedApiCollectionsRequest) (*GetApiCollectionsForUser200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetApiCollectionsForUser200Response
+		localVarReturnValue  *GetApiCollectionsForUser200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.OBPv400GetFeaturedApiCollections")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.GetFeaturedApiCollections")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1409,18 +1818,154 @@ func (a *ApiCollectionAPIService) OBPv400GetFeaturedApiCollectionsExecute(r ApiO
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetMyApiCollectionByIdRequest struct {
+type ApiGetFeaturedApiCollectionsAdminRequest struct {
+	ctx context.Context
+	ApiService *ApiCollectionAPIService
+}
+
+func (r ApiGetFeaturedApiCollectionsAdminRequest) Execute() (*GetFeaturedApiCollectionsAdmin200Response, *http.Response, error) {
+	return r.ApiService.GetFeaturedApiCollectionsAdminExecute(r)
+}
+
+/*
+GetFeaturedApiCollectionsAdmin Get Featured Api Collections (Admin)
+
+<p>Get all featured API collections with their sort order (admin view).</p>
+<p>This endpoint returns the featured collections stored in the database with their sort order.<br />
+It is intended for administrators to manage the featured list.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#"><strong>featured_api_collections</strong></a>: featured_api_collections</p>
+<p><a href="/glossary#"><strong>sort_order</strong></a>: 1</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetFeaturedApiCollectionsAdminRequest
+*/
+func (a *ApiCollectionAPIService) GetFeaturedApiCollectionsAdmin(ctx context.Context) ApiGetFeaturedApiCollectionsAdminRequest {
+	return ApiGetFeaturedApiCollectionsAdminRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return GetFeaturedApiCollectionsAdmin200Response
+func (a *ApiCollectionAPIService) GetFeaturedApiCollectionsAdminExecute(r ApiGetFeaturedApiCollectionsAdminRequest) (*GetFeaturedApiCollectionsAdmin200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetFeaturedApiCollectionsAdmin200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.GetFeaturedApiCollectionsAdmin")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v6.0.0/management/api-collections/featured"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetMyApiCollectionByIdRequest struct {
 	ctx context.Context
 	ApiService *ApiCollectionAPIService
 	apicollectionid string
 }
 
-func (r ApiOBPv400GetMyApiCollectionByIdRequest) Execute() (*OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems, *http.Response, error) {
-	return r.ApiService.OBPv400GetMyApiCollectionByIdExecute(r)
+func (r ApiGetMyApiCollectionByIdRequest) Execute() (*GetApiCollectionsForUser200ResponseApiCollectionsInner, *http.Response, error) {
+	return r.ApiService.GetMyApiCollectionByIdExecute(r)
 }
 
 /*
-OBPv400GetMyApiCollectionById Get My Api Collection By Id
+GetMyApiCollectionById Get My Api Collection By Id
 
 <p>Get Api Collection By API_COLLECTION_ID.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -1436,10 +1981,10 @@ OBPv400GetMyApiCollectionById Get My Api Collection By Id
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param apicollectionid The APICOLLECTIONID identifier
- @return ApiOBPv400GetMyApiCollectionByIdRequest
+ @return ApiGetMyApiCollectionByIdRequest
 */
-func (a *ApiCollectionAPIService) OBPv400GetMyApiCollectionById(ctx context.Context, apicollectionid string) ApiOBPv400GetMyApiCollectionByIdRequest {
-	return ApiOBPv400GetMyApiCollectionByIdRequest{
+func (a *ApiCollectionAPIService) GetMyApiCollectionById(ctx context.Context, apicollectionid string) ApiGetMyApiCollectionByIdRequest {
+	return ApiGetMyApiCollectionByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		apicollectionid: apicollectionid,
@@ -1447,16 +1992,16 @@ func (a *ApiCollectionAPIService) OBPv400GetMyApiCollectionById(ctx context.Cont
 }
 
 // Execute executes the request
-//  @return OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
-func (a *ApiCollectionAPIService) OBPv400GetMyApiCollectionByIdExecute(r ApiOBPv400GetMyApiCollectionByIdRequest) (*OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems, *http.Response, error) {
+//  @return GetApiCollectionsForUser200ResponseApiCollectionsInner
+func (a *ApiCollectionAPIService) GetMyApiCollectionByIdExecute(r ApiGetMyApiCollectionByIdRequest) (*GetApiCollectionsForUser200ResponseApiCollectionsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
+		localVarReturnValue  *GetApiCollectionsForUser200ResponseApiCollectionsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.OBPv400GetMyApiCollectionById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.GetMyApiCollectionById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1509,7 +2054,7 @@ func (a *ApiCollectionAPIService) OBPv400GetMyApiCollectionByIdExecute(r ApiOBPv
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1550,18 +2095,18 @@ func (a *ApiCollectionAPIService) OBPv400GetMyApiCollectionByIdExecute(r ApiOBPv
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetMyApiCollectionByNameRequest struct {
+type ApiGetMyApiCollectionByNameRequest struct {
 	ctx context.Context
 	ApiService *ApiCollectionAPIService
 	apicollectionname string
 }
 
-func (r ApiOBPv400GetMyApiCollectionByNameRequest) Execute() (*OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems, *http.Response, error) {
-	return r.ApiService.OBPv400GetMyApiCollectionByNameExecute(r)
+func (r ApiGetMyApiCollectionByNameRequest) Execute() (*GetApiCollectionsForUser200ResponseApiCollectionsInner, *http.Response, error) {
+	return r.ApiService.GetMyApiCollectionByNameExecute(r)
 }
 
 /*
-OBPv400GetMyApiCollectionByName Get My Api Collection By Name
+GetMyApiCollectionByName Get My Api Collection By Name
 
 <p>Get Api Collection By API_COLLECTION_NAME.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -1577,10 +2122,10 @@ OBPv400GetMyApiCollectionByName Get My Api Collection By Name
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param apicollectionname The APICOLLECTIONNAME identifier
- @return ApiOBPv400GetMyApiCollectionByNameRequest
+ @return ApiGetMyApiCollectionByNameRequest
 */
-func (a *ApiCollectionAPIService) OBPv400GetMyApiCollectionByName(ctx context.Context, apicollectionname string) ApiOBPv400GetMyApiCollectionByNameRequest {
-	return ApiOBPv400GetMyApiCollectionByNameRequest{
+func (a *ApiCollectionAPIService) GetMyApiCollectionByName(ctx context.Context, apicollectionname string) ApiGetMyApiCollectionByNameRequest {
+	return ApiGetMyApiCollectionByNameRequest{
 		ApiService: a,
 		ctx: ctx,
 		apicollectionname: apicollectionname,
@@ -1588,16 +2133,16 @@ func (a *ApiCollectionAPIService) OBPv400GetMyApiCollectionByName(ctx context.Co
 }
 
 // Execute executes the request
-//  @return OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
-func (a *ApiCollectionAPIService) OBPv400GetMyApiCollectionByNameExecute(r ApiOBPv400GetMyApiCollectionByNameRequest) (*OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems, *http.Response, error) {
+//  @return GetApiCollectionsForUser200ResponseApiCollectionsInner
+func (a *ApiCollectionAPIService) GetMyApiCollectionByNameExecute(r ApiGetMyApiCollectionByNameRequest) (*GetApiCollectionsForUser200ResponseApiCollectionsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
+		localVarReturnValue  *GetApiCollectionsForUser200ResponseApiCollectionsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.OBPv400GetMyApiCollectionByName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.GetMyApiCollectionByName")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1650,7 +2195,7 @@ func (a *ApiCollectionAPIService) OBPv400GetMyApiCollectionByNameExecute(r ApiOB
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1691,19 +2236,19 @@ func (a *ApiCollectionAPIService) OBPv400GetMyApiCollectionByNameExecute(r ApiOB
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetMyApiCollectionEndpointRequest struct {
+type ApiGetMyApiCollectionEndpointRequest struct {
 	ctx context.Context
 	ApiService *ApiCollectionAPIService
 	apicollectionname string
 	operationid string
 }
 
-func (r ApiOBPv400GetMyApiCollectionEndpointRequest) Execute() (*OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems, *http.Response, error) {
-	return r.ApiService.OBPv400GetMyApiCollectionEndpointExecute(r)
+func (r ApiGetMyApiCollectionEndpointRequest) Execute() (*GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner, *http.Response, error) {
+	return r.ApiService.GetMyApiCollectionEndpointExecute(r)
 }
 
 /*
-OBPv400GetMyApiCollectionEndpoint Get My Api Collection Endpoint
+GetMyApiCollectionEndpoint Get My Api Collection Endpoint
 
 <p>Get Api Collection Endpoint By API_COLLECTION_NAME and OPERATION_ID.</p>
 <p>User Authentication is Optional. The User need not be logged in.</p>
@@ -1719,10 +2264,10 @@ OBPv400GetMyApiCollectionEndpoint Get My Api Collection Endpoint
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param apicollectionname The APICOLLECTIONNAME identifier
  @param operationid The OPERATIONID identifier
- @return ApiOBPv400GetMyApiCollectionEndpointRequest
+ @return ApiGetMyApiCollectionEndpointRequest
 */
-func (a *ApiCollectionAPIService) OBPv400GetMyApiCollectionEndpoint(ctx context.Context, apicollectionname string, operationid string) ApiOBPv400GetMyApiCollectionEndpointRequest {
-	return ApiOBPv400GetMyApiCollectionEndpointRequest{
+func (a *ApiCollectionAPIService) GetMyApiCollectionEndpoint(ctx context.Context, apicollectionname string, operationid string) ApiGetMyApiCollectionEndpointRequest {
+	return ApiGetMyApiCollectionEndpointRequest{
 		ApiService: a,
 		ctx: ctx,
 		apicollectionname: apicollectionname,
@@ -1731,16 +2276,16 @@ func (a *ApiCollectionAPIService) OBPv400GetMyApiCollectionEndpoint(ctx context.
 }
 
 // Execute executes the request
-//  @return OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems
-func (a *ApiCollectionAPIService) OBPv400GetMyApiCollectionEndpointExecute(r ApiOBPv400GetMyApiCollectionEndpointRequest) (*OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems, *http.Response, error) {
+//  @return GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner
+func (a *ApiCollectionAPIService) GetMyApiCollectionEndpointExecute(r ApiGetMyApiCollectionEndpointRequest) (*GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems
+		localVarReturnValue  *GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.OBPv400GetMyApiCollectionEndpoint")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.GetMyApiCollectionEndpoint")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1807,18 +2352,18 @@ func (a *ApiCollectionAPIService) OBPv400GetMyApiCollectionEndpointExecute(r Api
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetMyApiCollectionEndpointsRequest struct {
+type ApiGetMyApiCollectionEndpointsRequest struct {
 	ctx context.Context
 	ApiService *ApiCollectionAPIService
 	apicollectionname string
 }
 
-func (r ApiOBPv400GetMyApiCollectionEndpointsRequest) Execute() (*OBPv400GetMyApiCollectionEndpoints200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetMyApiCollectionEndpointsExecute(r)
+func (r ApiGetMyApiCollectionEndpointsRequest) Execute() (*GetMyApiCollectionEndpoints200Response, *http.Response, error) {
+	return r.ApiService.GetMyApiCollectionEndpointsExecute(r)
 }
 
 /*
-OBPv400GetMyApiCollectionEndpoints Get My Api Collection Endpoints
+GetMyApiCollectionEndpoints Get My Api Collection Endpoints
 
 <p>Get Api Collection Endpoints By API_COLLECTION_NAME.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -1833,10 +2378,10 @@ OBPv400GetMyApiCollectionEndpoints Get My Api Collection Endpoints
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param apicollectionname The APICOLLECTIONNAME identifier
- @return ApiOBPv400GetMyApiCollectionEndpointsRequest
+ @return ApiGetMyApiCollectionEndpointsRequest
 */
-func (a *ApiCollectionAPIService) OBPv400GetMyApiCollectionEndpoints(ctx context.Context, apicollectionname string) ApiOBPv400GetMyApiCollectionEndpointsRequest {
-	return ApiOBPv400GetMyApiCollectionEndpointsRequest{
+func (a *ApiCollectionAPIService) GetMyApiCollectionEndpoints(ctx context.Context, apicollectionname string) ApiGetMyApiCollectionEndpointsRequest {
+	return ApiGetMyApiCollectionEndpointsRequest{
 		ApiService: a,
 		ctx: ctx,
 		apicollectionname: apicollectionname,
@@ -1844,16 +2389,16 @@ func (a *ApiCollectionAPIService) OBPv400GetMyApiCollectionEndpoints(ctx context
 }
 
 // Execute executes the request
-//  @return OBPv400GetMyApiCollectionEndpoints200Response
-func (a *ApiCollectionAPIService) OBPv400GetMyApiCollectionEndpointsExecute(r ApiOBPv400GetMyApiCollectionEndpointsRequest) (*OBPv400GetMyApiCollectionEndpoints200Response, *http.Response, error) {
+//  @return GetMyApiCollectionEndpoints200Response
+func (a *ApiCollectionAPIService) GetMyApiCollectionEndpointsExecute(r ApiGetMyApiCollectionEndpointsRequest) (*GetMyApiCollectionEndpoints200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetMyApiCollectionEndpoints200Response
+		localVarReturnValue  *GetMyApiCollectionEndpoints200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.OBPv400GetMyApiCollectionEndpoints")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.GetMyApiCollectionEndpoints")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1906,7 +2451,7 @@ func (a *ApiCollectionAPIService) OBPv400GetMyApiCollectionEndpointsExecute(r Ap
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1947,18 +2492,18 @@ func (a *ApiCollectionAPIService) OBPv400GetMyApiCollectionEndpointsExecute(r Ap
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetMyApiCollectionEndpointsByIdRequest struct {
+type ApiGetMyApiCollectionEndpointsByIdRequest struct {
 	ctx context.Context
 	ApiService *ApiCollectionAPIService
 	apicollectionid string
 }
 
-func (r ApiOBPv400GetMyApiCollectionEndpointsByIdRequest) Execute() (*OBPv400GetMyApiCollectionEndpoints200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetMyApiCollectionEndpointsByIdExecute(r)
+func (r ApiGetMyApiCollectionEndpointsByIdRequest) Execute() (*GetMyApiCollectionEndpoints200Response, *http.Response, error) {
+	return r.ApiService.GetMyApiCollectionEndpointsByIdExecute(r)
 }
 
 /*
-OBPv400GetMyApiCollectionEndpointsById Get My Api Collection Endpoints By Id
+GetMyApiCollectionEndpointsById Get My Api Collection Endpoints By Id
 
 <p>Get Api Collection Endpoints By API_COLLECTION_ID.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -1973,10 +2518,10 @@ OBPv400GetMyApiCollectionEndpointsById Get My Api Collection Endpoints By Id
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param apicollectionid The APICOLLECTIONID identifier
- @return ApiOBPv400GetMyApiCollectionEndpointsByIdRequest
+ @return ApiGetMyApiCollectionEndpointsByIdRequest
 */
-func (a *ApiCollectionAPIService) OBPv400GetMyApiCollectionEndpointsById(ctx context.Context, apicollectionid string) ApiOBPv400GetMyApiCollectionEndpointsByIdRequest {
-	return ApiOBPv400GetMyApiCollectionEndpointsByIdRequest{
+func (a *ApiCollectionAPIService) GetMyApiCollectionEndpointsById(ctx context.Context, apicollectionid string) ApiGetMyApiCollectionEndpointsByIdRequest {
+	return ApiGetMyApiCollectionEndpointsByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		apicollectionid: apicollectionid,
@@ -1984,16 +2529,16 @@ func (a *ApiCollectionAPIService) OBPv400GetMyApiCollectionEndpointsById(ctx con
 }
 
 // Execute executes the request
-//  @return OBPv400GetMyApiCollectionEndpoints200Response
-func (a *ApiCollectionAPIService) OBPv400GetMyApiCollectionEndpointsByIdExecute(r ApiOBPv400GetMyApiCollectionEndpointsByIdRequest) (*OBPv400GetMyApiCollectionEndpoints200Response, *http.Response, error) {
+//  @return GetMyApiCollectionEndpoints200Response
+func (a *ApiCollectionAPIService) GetMyApiCollectionEndpointsByIdExecute(r ApiGetMyApiCollectionEndpointsByIdRequest) (*GetMyApiCollectionEndpoints200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetMyApiCollectionEndpoints200Response
+		localVarReturnValue  *GetMyApiCollectionEndpoints200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.OBPv400GetMyApiCollectionEndpointsById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.GetMyApiCollectionEndpointsById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2046,7 +2591,7 @@ func (a *ApiCollectionAPIService) OBPv400GetMyApiCollectionEndpointsByIdExecute(
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -2087,20 +2632,22 @@ func (a *ApiCollectionAPIService) OBPv400GetMyApiCollectionEndpointsByIdExecute(
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetMyApiCollectionsRequest struct {
+type ApiGetMyApiCollectionsRequest struct {
 	ctx context.Context
 	ApiService *ApiCollectionAPIService
 }
 
-func (r ApiOBPv400GetMyApiCollectionsRequest) Execute() (*OBPv400GetApiCollectionsForUser200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetMyApiCollectionsExecute(r)
+func (r ApiGetMyApiCollectionsRequest) Execute() (*GetApiCollectionsForUser200Response, *http.Response, error) {
+	return r.ApiService.GetMyApiCollectionsExecute(r)
 }
 
 /*
-OBPv400GetMyApiCollections Get My Api Collections
+GetMyApiCollections Get My Api Collections
 
 <p>Get all the apiCollections for logged in user.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>1 limit (for pagination: defaults to 50)  eg:limit=200</p>
+<p>2 offset (for pagination: zero index, defaults to 0) eg: offset=10</p>
 <p><strong>JSON response body fields:</strong></p>
 <p><a href="/glossary#"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
 <p><a href="/glossary#"><strong>api_collection_name</strong></a>: Favourites</p>
@@ -2111,26 +2658,26 @@ OBPv400GetMyApiCollections Get My Api Collections
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv400GetMyApiCollectionsRequest
+ @return ApiGetMyApiCollectionsRequest
 */
-func (a *ApiCollectionAPIService) OBPv400GetMyApiCollections(ctx context.Context) ApiOBPv400GetMyApiCollectionsRequest {
-	return ApiOBPv400GetMyApiCollectionsRequest{
+func (a *ApiCollectionAPIService) GetMyApiCollections(ctx context.Context) ApiGetMyApiCollectionsRequest {
+	return ApiGetMyApiCollectionsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv400GetApiCollectionsForUser200Response
-func (a *ApiCollectionAPIService) OBPv400GetMyApiCollectionsExecute(r ApiOBPv400GetMyApiCollectionsRequest) (*OBPv400GetApiCollectionsForUser200Response, *http.Response, error) {
+//  @return GetApiCollectionsForUser200Response
+func (a *ApiCollectionAPIService) GetMyApiCollectionsExecute(r ApiGetMyApiCollectionsRequest) (*GetApiCollectionsForUser200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetApiCollectionsForUser200Response
+		localVarReturnValue  *GetApiCollectionsForUser200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.OBPv400GetMyApiCollections")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.GetMyApiCollections")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2182,7 +2729,7 @@ func (a *ApiCollectionAPIService) OBPv400GetMyApiCollectionsExecute(r ApiOBPv400
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -2223,18 +2770,18 @@ func (a *ApiCollectionAPIService) OBPv400GetMyApiCollectionsExecute(r ApiOBPv400
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetSharableApiCollectionByIdRequest struct {
+type ApiGetSharableApiCollectionByIdRequest struct {
 	ctx context.Context
 	ApiService *ApiCollectionAPIService
 	apicollectionid string
 }
 
-func (r ApiOBPv400GetSharableApiCollectionByIdRequest) Execute() (*OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems, *http.Response, error) {
-	return r.ApiService.OBPv400GetSharableApiCollectionByIdExecute(r)
+func (r ApiGetSharableApiCollectionByIdRequest) Execute() (*GetApiCollectionsForUser200ResponseApiCollectionsInner, *http.Response, error) {
+	return r.ApiService.GetSharableApiCollectionByIdExecute(r)
 }
 
 /*
-OBPv400GetSharableApiCollectionById Get Sharable Api Collection By Id
+GetSharableApiCollectionById Get Sharable Api Collection By Id
 
 <p>Get Sharable Api Collection By Id.<br />
 User Authentication is Optional. The User need not be logged in.</p>
@@ -2250,10 +2797,10 @@ User Authentication is Optional. The User need not be logged in.</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param apicollectionid The APICOLLECTIONID identifier
- @return ApiOBPv400GetSharableApiCollectionByIdRequest
+ @return ApiGetSharableApiCollectionByIdRequest
 */
-func (a *ApiCollectionAPIService) OBPv400GetSharableApiCollectionById(ctx context.Context, apicollectionid string) ApiOBPv400GetSharableApiCollectionByIdRequest {
-	return ApiOBPv400GetSharableApiCollectionByIdRequest{
+func (a *ApiCollectionAPIService) GetSharableApiCollectionById(ctx context.Context, apicollectionid string) ApiGetSharableApiCollectionByIdRequest {
+	return ApiGetSharableApiCollectionByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		apicollectionid: apicollectionid,
@@ -2261,16 +2808,16 @@ func (a *ApiCollectionAPIService) OBPv400GetSharableApiCollectionById(ctx contex
 }
 
 // Execute executes the request
-//  @return OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
-func (a *ApiCollectionAPIService) OBPv400GetSharableApiCollectionByIdExecute(r ApiOBPv400GetSharableApiCollectionByIdRequest) (*OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems, *http.Response, error) {
+//  @return GetApiCollectionsForUser200ResponseApiCollectionsInner
+func (a *ApiCollectionAPIService) GetSharableApiCollectionByIdExecute(r ApiGetSharableApiCollectionByIdRequest) (*GetApiCollectionsForUser200ResponseApiCollectionsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
+		localVarReturnValue  *GetApiCollectionsForUser200ResponseApiCollectionsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.OBPv400GetSharableApiCollectionById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.GetSharableApiCollectionById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2336,62 +2883,75 @@ func (a *ApiCollectionAPIService) OBPv400GetSharableApiCollectionByIdExecute(r A
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510GetAllApiCollectionsRequest struct {
+type ApiUpdateFeaturedApiCollectionRequest struct {
 	ctx context.Context
 	ApiService *ApiCollectionAPIService
+	apicollectionid string
+	updateFeaturedApiCollectionRequest *UpdateFeaturedApiCollectionRequest
 }
 
-func (r ApiOBPv510GetAllApiCollectionsRequest) Execute() (*OBPv400GetApiCollectionsForUser200Response, *http.Response, error) {
-	return r.ApiService.OBPv510GetAllApiCollectionsExecute(r)
+// Request body
+func (r ApiUpdateFeaturedApiCollectionRequest) UpdateFeaturedApiCollectionRequest(updateFeaturedApiCollectionRequest UpdateFeaturedApiCollectionRequest) ApiUpdateFeaturedApiCollectionRequest {
+	r.updateFeaturedApiCollectionRequest = &updateFeaturedApiCollectionRequest
+	return r
+}
+
+func (r ApiUpdateFeaturedApiCollectionRequest) Execute() (*GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner, *http.Response, error) {
+	return r.ApiService.UpdateFeaturedApiCollectionExecute(r)
 }
 
 /*
-OBPv510GetAllApiCollections Get All API Collections
+UpdateFeaturedApiCollection Update Featured Api Collection
 
-<p>Get All API Collections.</p>
+<p>Update the sort order of a featured API collection.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
 <p><strong>JSON response body fields:</strong></p>
 <p><a href="/glossary#"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>api_collection_name</strong></a>: Favourites</p>
-<p><a href="/glossary#"><strong>api_collections</strong></a>: api_collections</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#"><strong>is_sharable</strong></a>: is_sharable</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#"><strong>sort_order</strong></a>: 1</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv510GetAllApiCollectionsRequest
+ @param apicollectionid The APICOLLECTIONID identifier
+ @return ApiUpdateFeaturedApiCollectionRequest
 */
-func (a *ApiCollectionAPIService) OBPv510GetAllApiCollections(ctx context.Context) ApiOBPv510GetAllApiCollectionsRequest {
-	return ApiOBPv510GetAllApiCollectionsRequest{
+func (a *ApiCollectionAPIService) UpdateFeaturedApiCollection(ctx context.Context, apicollectionid string) ApiUpdateFeaturedApiCollectionRequest {
+	return ApiUpdateFeaturedApiCollectionRequest{
 		ApiService: a,
 		ctx: ctx,
+		apicollectionid: apicollectionid,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv400GetApiCollectionsForUser200Response
-func (a *ApiCollectionAPIService) OBPv510GetAllApiCollectionsExecute(r ApiOBPv510GetAllApiCollectionsRequest) (*OBPv400GetApiCollectionsForUser200Response, *http.Response, error) {
+//  @return GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner
+func (a *ApiCollectionAPIService) UpdateFeaturedApiCollectionExecute(r ApiUpdateFeaturedApiCollectionRequest) (*GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
+		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetApiCollectionsForUser200Response
+		localVarReturnValue  *GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.OBPv510GetAllApiCollections")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.UpdateFeaturedApiCollection")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/obp/v5.1.0/management/api-collections"
+	localVarPath := localBasePath + "/obp/v6.0.0/management/api-collections/featured/{apicollectionid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"apicollectionid"+"}", url.PathEscape(parameterValueToString(r.apicollectionid, "apicollectionid")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
+	if r.updateFeaturedApiCollectionRequest == nil {
+		return localVarReturnValue, nil, reportError("updateFeaturedApiCollectionRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -2407,6 +2967,8 @@ func (a *ApiCollectionAPIService) OBPv510GetAllApiCollectionsExecute(r ApiOBPv51
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	// body params
+	localVarPostBody = r.updateFeaturedApiCollectionRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -2431,7 +2993,7 @@ func (a *ApiCollectionAPIService) OBPv510GetAllApiCollectionsExecute(r ApiOBPv51
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -2472,25 +3034,25 @@ func (a *ApiCollectionAPIService) OBPv510GetAllApiCollectionsExecute(r ApiOBPv51
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510UpdateMyApiCollectionRequest struct {
+type ApiUpdateMyApiCollectionRequest struct {
 	ctx context.Context
 	ApiService *ApiCollectionAPIService
 	apicollectionid string
-	oBPv400CreateMyApiCollectionRequest *OBPv400CreateMyApiCollectionRequest
+	createMyApiCollectionRequest *CreateMyApiCollectionRequest
 }
 
 // Request body
-func (r ApiOBPv510UpdateMyApiCollectionRequest) OBPv400CreateMyApiCollectionRequest(oBPv400CreateMyApiCollectionRequest OBPv400CreateMyApiCollectionRequest) ApiOBPv510UpdateMyApiCollectionRequest {
-	r.oBPv400CreateMyApiCollectionRequest = &oBPv400CreateMyApiCollectionRequest
+func (r ApiUpdateMyApiCollectionRequest) CreateMyApiCollectionRequest(createMyApiCollectionRequest CreateMyApiCollectionRequest) ApiUpdateMyApiCollectionRequest {
+	r.createMyApiCollectionRequest = &createMyApiCollectionRequest
 	return r
 }
 
-func (r ApiOBPv510UpdateMyApiCollectionRequest) Execute() (*OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems, *http.Response, error) {
-	return r.ApiService.OBPv510UpdateMyApiCollectionExecute(r)
+func (r ApiUpdateMyApiCollectionRequest) Execute() (*GetApiCollectionsForUser200ResponseApiCollectionsInner, *http.Response, error) {
+	return r.ApiService.UpdateMyApiCollectionExecute(r)
 }
 
 /*
-OBPv510UpdateMyApiCollection Update My Api Collection By API_COLLECTION_ID
+UpdateMyApiCollection Update My Api Collection By API_COLLECTION_ID
 
 <p>Update Api Collection for logged in user.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -2506,10 +3068,10 @@ OBPv510UpdateMyApiCollection Update My Api Collection By API_COLLECTION_ID
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param apicollectionid The APICOLLECTIONID identifier
- @return ApiOBPv510UpdateMyApiCollectionRequest
+ @return ApiUpdateMyApiCollectionRequest
 */
-func (a *ApiCollectionAPIService) OBPv510UpdateMyApiCollection(ctx context.Context, apicollectionid string) ApiOBPv510UpdateMyApiCollectionRequest {
-	return ApiOBPv510UpdateMyApiCollectionRequest{
+func (a *ApiCollectionAPIService) UpdateMyApiCollection(ctx context.Context, apicollectionid string) ApiUpdateMyApiCollectionRequest {
+	return ApiUpdateMyApiCollectionRequest{
 		ApiService: a,
 		ctx: ctx,
 		apicollectionid: apicollectionid,
@@ -2517,16 +3079,16 @@ func (a *ApiCollectionAPIService) OBPv510UpdateMyApiCollection(ctx context.Conte
 }
 
 // Execute executes the request
-//  @return OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
-func (a *ApiCollectionAPIService) OBPv510UpdateMyApiCollectionExecute(r ApiOBPv510UpdateMyApiCollectionRequest) (*OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems, *http.Response, error) {
+//  @return GetApiCollectionsForUser200ResponseApiCollectionsInner
+func (a *ApiCollectionAPIService) UpdateMyApiCollectionExecute(r ApiUpdateMyApiCollectionRequest) (*GetApiCollectionsForUser200ResponseApiCollectionsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
+		localVarReturnValue  *GetApiCollectionsForUser200ResponseApiCollectionsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.OBPv510UpdateMyApiCollection")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.UpdateMyApiCollection")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2537,8 +3099,8 @@ func (a *ApiCollectionAPIService) OBPv510UpdateMyApiCollectionExecute(r ApiOBPv5
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400CreateMyApiCollectionRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateMyApiCollectionRequest is required and must be specified")
+	if r.createMyApiCollectionRequest == nil {
+		return localVarReturnValue, nil, reportError("createMyApiCollectionRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -2559,7 +3121,7 @@ func (a *ApiCollectionAPIService) OBPv510UpdateMyApiCollectionExecute(r ApiOBPv5
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400CreateMyApiCollectionRequest
+	localVarPostBody = r.createMyApiCollectionRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -2584,567 +3146,7 @@ func (a *ApiCollectionAPIService) OBPv510UpdateMyApiCollectionExecute(r ApiOBPv5
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv600CreateFeaturedApiCollectionRequest struct {
-	ctx context.Context
-	ApiService *ApiCollectionAPIService
-	oBPv600CreateFeaturedApiCollectionRequest *OBPv600CreateFeaturedApiCollectionRequest
-}
-
-// Request body
-func (r ApiOBPv600CreateFeaturedApiCollectionRequest) OBPv600CreateFeaturedApiCollectionRequest(oBPv600CreateFeaturedApiCollectionRequest OBPv600CreateFeaturedApiCollectionRequest) ApiOBPv600CreateFeaturedApiCollectionRequest {
-	r.oBPv600CreateFeaturedApiCollectionRequest = &oBPv600CreateFeaturedApiCollectionRequest
-	return r
-}
-
-func (r ApiOBPv600CreateFeaturedApiCollectionRequest) Execute() (*OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems, *http.Response, error) {
-	return r.ApiService.OBPv600CreateFeaturedApiCollectionExecute(r)
-}
-
-/*
-OBPv600CreateFeaturedApiCollection Create Featured Api Collection
-
-<p>Add an API Collection to the featured list.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>sort_order</strong></a>: 1</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>sort_order</strong></a>: 1</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600CreateFeaturedApiCollectionRequest
-*/
-func (a *ApiCollectionAPIService) OBPv600CreateFeaturedApiCollection(ctx context.Context) ApiOBPv600CreateFeaturedApiCollectionRequest {
-	return ApiOBPv600CreateFeaturedApiCollectionRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems
-func (a *ApiCollectionAPIService) OBPv600CreateFeaturedApiCollectionExecute(r ApiOBPv600CreateFeaturedApiCollectionRequest) (*OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.OBPv600CreateFeaturedApiCollection")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v6.0.0/management/api-collections/featured"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv600CreateFeaturedApiCollectionRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600CreateFeaturedApiCollectionRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv600CreateFeaturedApiCollectionRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv600DeleteFeaturedApiCollectionRequest struct {
-	ctx context.Context
-	ApiService *ApiCollectionAPIService
-	apicollectionid string
-}
-
-func (r ApiOBPv600DeleteFeaturedApiCollectionRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv600DeleteFeaturedApiCollectionExecute(r)
-}
-
-/*
-OBPv600DeleteFeaturedApiCollection Delete Featured Api Collection
-
-<p>Remove an API Collection from the featured list.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param apicollectionid The APICOLLECTIONID identifier
- @return ApiOBPv600DeleteFeaturedApiCollectionRequest
-*/
-func (a *ApiCollectionAPIService) OBPv600DeleteFeaturedApiCollection(ctx context.Context, apicollectionid string) ApiOBPv600DeleteFeaturedApiCollectionRequest {
-	return ApiOBPv600DeleteFeaturedApiCollectionRequest{
-		ApiService: a,
-		ctx: ctx,
-		apicollectionid: apicollectionid,
-	}
-}
-
-// Execute executes the request
-func (a *ApiCollectionAPIService) OBPv600DeleteFeaturedApiCollectionExecute(r ApiOBPv600DeleteFeaturedApiCollectionRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.OBPv600DeleteFeaturedApiCollection")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v6.0.0/management/api-collections/featured/{apicollectionid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"apicollectionid"+"}", url.PathEscape(parameterValueToString(r.apicollectionid, "apicollectionid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv600GetFeaturedApiCollectionsAdminRequest struct {
-	ctx context.Context
-	ApiService *ApiCollectionAPIService
-}
-
-func (r ApiOBPv600GetFeaturedApiCollectionsAdminRequest) Execute() (*OBPv600GetFeaturedApiCollectionsAdmin200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetFeaturedApiCollectionsAdminExecute(r)
-}
-
-/*
-OBPv600GetFeaturedApiCollectionsAdmin Get Featured Api Collections (Admin)
-
-<p>Get all featured API collections with their sort order (admin view).</p>
-<p>This endpoint returns the featured collections stored in the database with their sort order.<br />
-It is intended for administrators to manage the featured list.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>featured_api_collections</strong></a>: featured_api_collections</p>
-<p><a href="/glossary#"><strong>sort_order</strong></a>: 1</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetFeaturedApiCollectionsAdminRequest
-*/
-func (a *ApiCollectionAPIService) OBPv600GetFeaturedApiCollectionsAdmin(ctx context.Context) ApiOBPv600GetFeaturedApiCollectionsAdminRequest {
-	return ApiOBPv600GetFeaturedApiCollectionsAdminRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv600GetFeaturedApiCollectionsAdmin200Response
-func (a *ApiCollectionAPIService) OBPv600GetFeaturedApiCollectionsAdminExecute(r ApiOBPv600GetFeaturedApiCollectionsAdminRequest) (*OBPv600GetFeaturedApiCollectionsAdmin200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetFeaturedApiCollectionsAdmin200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.OBPv600GetFeaturedApiCollectionsAdmin")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v6.0.0/management/api-collections/featured"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv600UpdateFeaturedApiCollectionRequest struct {
-	ctx context.Context
-	ApiService *ApiCollectionAPIService
-	apicollectionid string
-	oBPv600UpdateFeaturedApiCollectionRequest *OBPv600UpdateFeaturedApiCollectionRequest
-}
-
-// Request body
-func (r ApiOBPv600UpdateFeaturedApiCollectionRequest) OBPv600UpdateFeaturedApiCollectionRequest(oBPv600UpdateFeaturedApiCollectionRequest OBPv600UpdateFeaturedApiCollectionRequest) ApiOBPv600UpdateFeaturedApiCollectionRequest {
-	r.oBPv600UpdateFeaturedApiCollectionRequest = &oBPv600UpdateFeaturedApiCollectionRequest
-	return r
-}
-
-func (r ApiOBPv600UpdateFeaturedApiCollectionRequest) Execute() (*OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems, *http.Response, error) {
-	return r.ApiService.OBPv600UpdateFeaturedApiCollectionExecute(r)
-}
-
-/*
-OBPv600UpdateFeaturedApiCollection Update Featured Api Collection
-
-<p>Update the sort order of a featured API collection.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>sort_order</strong></a>: 1</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param apicollectionid The APICOLLECTIONID identifier
- @return ApiOBPv600UpdateFeaturedApiCollectionRequest
-*/
-func (a *ApiCollectionAPIService) OBPv600UpdateFeaturedApiCollection(ctx context.Context, apicollectionid string) ApiOBPv600UpdateFeaturedApiCollectionRequest {
-	return ApiOBPv600UpdateFeaturedApiCollectionRequest{
-		ApiService: a,
-		ctx: ctx,
-		apicollectionid: apicollectionid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems
-func (a *ApiCollectionAPIService) OBPv600UpdateFeaturedApiCollectionExecute(r ApiOBPv600UpdateFeaturedApiCollectionRequest) (*OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiCollectionAPIService.OBPv600UpdateFeaturedApiCollection")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v6.0.0/management/api-collections/featured/{apicollectionid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"apicollectionid"+"}", url.PathEscape(parameterValueToString(r.apicollectionid, "apicollectionid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv600UpdateFeaturedApiCollectionRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600UpdateFeaturedApiCollectionRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv600UpdateFeaturedApiCollectionRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

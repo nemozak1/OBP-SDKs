@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,11 +15,11 @@
 
 import * as runtime from '../runtime';
 import type {
-  OBPv600GetAvailablePersonalDynamicEntities200Response,
+  GetAvailablePersonalDynamicEntities200Response,
 } from '../models/index';
 import {
-    OBPv600GetAvailablePersonalDynamicEntities200ResponseFromJSON,
-    OBPv600GetAvailablePersonalDynamicEntities200ResponseToJSON,
+    GetAvailablePersonalDynamicEntities200ResponseFromJSON,
+    GetAvailablePersonalDynamicEntities200ResponseToJSON,
 } from '../models/index';
 
 /**
@@ -28,9 +28,9 @@ import {
 export class PersonalDynamicEntityApi extends runtime.BaseAPI {
 
     /**
-     * Creates request options for oBPv600GetAvailablePersonalDynamicEntities without sending the request
+     * Creates request options for getAvailablePersonalDynamicEntities without sending the request
      */
-    async oBPv600GetAvailablePersonalDynamicEntitiesRequestOpts(): Promise<runtime.RequestOpts> {
+    async getAvailablePersonalDynamicEntitiesRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -45,7 +45,7 @@ export class PersonalDynamicEntityApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -63,19 +63,19 @@ export class PersonalDynamicEntityApi extends runtime.BaseAPI {
      * <p>Get all Dynamic Entities that support personal data storage (hasPersonalEntity == true).</p> <p>This endpoint allows regular users (without admin roles) to discover which dynamic entities<br /> they can interact with for storing personal data via the /my/ENTITY_NAME endpoints.</p> <p>Authentication: User must be logged in (no special roles required).</p> <p>Use case: Portals and apps can show users what personal data types are available<br /> without needing admin access to view all dynamic entity definitions.</p> <p>For more information see <a href=\"/glossary#My-Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      * Get Available Personal Dynamic Entities
      */
-    async oBPv600GetAvailablePersonalDynamicEntitiesRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600GetAvailablePersonalDynamicEntities200Response>> {
-        const requestOptions = await this.oBPv600GetAvailablePersonalDynamicEntitiesRequestOpts();
+    async getAvailablePersonalDynamicEntitiesRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAvailablePersonalDynamicEntities200Response>> {
+        const requestOptions = await this.getAvailablePersonalDynamicEntitiesRequestOpts();
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600GetAvailablePersonalDynamicEntities200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetAvailablePersonalDynamicEntities200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get all Dynamic Entities that support personal data storage (hasPersonalEntity == true).</p> <p>This endpoint allows regular users (without admin roles) to discover which dynamic entities<br /> they can interact with for storing personal data via the /my/ENTITY_NAME endpoints.</p> <p>Authentication: User must be logged in (no special roles required).</p> <p>Use case: Portals and apps can show users what personal data types are available<br /> without needing admin access to view all dynamic entity definitions.</p> <p>For more information see <a href=\"/glossary#My-Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      * Get Available Personal Dynamic Entities
      */
-    async oBPv600GetAvailablePersonalDynamicEntities(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600GetAvailablePersonalDynamicEntities200Response> {
-        const response = await this.oBPv600GetAvailablePersonalDynamicEntitiesRaw(initOverrides);
+    async getAvailablePersonalDynamicEntities(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAvailablePersonalDynamicEntities200Response> {
+        const response = await this.getAvailablePersonalDynamicEntitiesRaw(initOverrides);
         return await response.value();
     }
 

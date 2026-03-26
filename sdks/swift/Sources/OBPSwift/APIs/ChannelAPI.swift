@@ -14,10 +14,10 @@ open class ChannelAPI {
      
      - parameter channelname: (path) The CHANNELNAME identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600DeleteSignalChannel200Response
+     - returns: DeleteSignalChannel200Response
      */
-    open class func oBPv600DeleteSignalChannel(channelname: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600DeleteSignalChannel200Response {
-        return try await oBPv600DeleteSignalChannelWithRequestBuilder(channelname: channelname, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteSignalChannel(channelname: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> DeleteSignalChannel200Response {
+        return try await deleteSignalChannelWithRequestBuilder(channelname: channelname, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -31,13 +31,13 @@ open class ChannelAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter channelname: (path) The CHANNELNAME identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600DeleteSignalChannel200Response> 
+     - returns: RequestBuilder<DeleteSignalChannel200Response> 
      */
-    open class func oBPv600DeleteSignalChannelWithRequestBuilder(channelname: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600DeleteSignalChannel200Response> {
+    open class func deleteSignalChannelWithRequestBuilder(channelname: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<DeleteSignalChannel200Response> {
         var localVariablePath = "/obp/v6.0.0/signal/channels/{channelname}"
         let channelnamePreEscape = "\(APIHelper.mapValueToPathItem(channelname))"
         let channelnamePostEscape = channelnamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -53,7 +53,7 @@ open class ChannelAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600DeleteSignalChannel200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<DeleteSignalChannel200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "DELETE", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -63,10 +63,10 @@ open class ChannelAPI {
      
      - parameter channelname: (path) The CHANNELNAME identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetSignalChannelInfo200Response
+     - returns: GetSignalChannelInfo200Response
      */
-    open class func oBPv600GetSignalChannelInfo(channelname: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetSignalChannelInfo200Response {
-        return try await oBPv600GetSignalChannelInfoWithRequestBuilder(channelname: channelname, apiConfiguration: apiConfiguration).execute().body
+    open class func getSignalChannelInfo(channelname: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetSignalChannelInfo200Response {
+        return try await getSignalChannelInfoWithRequestBuilder(channelname: channelname, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -80,13 +80,13 @@ open class ChannelAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter channelname: (path) The CHANNELNAME identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetSignalChannelInfo200Response> 
+     - returns: RequestBuilder<GetSignalChannelInfo200Response> 
      */
-    open class func oBPv600GetSignalChannelInfoWithRequestBuilder(channelname: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetSignalChannelInfo200Response> {
+    open class func getSignalChannelInfoWithRequestBuilder(channelname: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetSignalChannelInfo200Response> {
         var localVariablePath = "/obp/v6.0.0/signal/channels/{channelname}/info"
         let channelnamePreEscape = "\(APIHelper.mapValueToPathItem(channelname))"
         let channelnamePostEscape = channelnamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -102,7 +102,7 @@ open class ChannelAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetSignalChannelInfo200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetSignalChannelInfo200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -111,10 +111,10 @@ open class ChannelAPI {
      List Signal Channels
      
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetSignalChannels200Response
+     - returns: GetSignalChannels200Response
      */
-    open class func oBPv600GetSignalChannels(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetSignalChannels200Response {
-        return try await oBPv600GetSignalChannelsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    open class func getSignalChannels(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetSignalChannels200Response {
+        return try await getSignalChannelsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -128,12 +128,12 @@ open class ChannelAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetSignalChannels200Response> 
+     - returns: RequestBuilder<GetSignalChannels200Response> 
      */
-    open class func oBPv600GetSignalChannelsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetSignalChannels200Response> {
+    open class func getSignalChannelsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetSignalChannels200Response> {
         let localVariablePath = "/obp/v6.0.0/signal/channels"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -146,7 +146,7 @@ open class ChannelAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetSignalChannels200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetSignalChannels200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -156,10 +156,10 @@ open class ChannelAPI {
      
      - parameter channelname: (path) The CHANNELNAME identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetSignalMessages200Response
+     - returns: GetSignalMessages200Response
      */
-    open class func oBPv600GetSignalMessages(channelname: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetSignalMessages200Response {
-        return try await oBPv600GetSignalMessagesWithRequestBuilder(channelname: channelname, apiConfiguration: apiConfiguration).execute().body
+    open class func getSignalMessages(channelname: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetSignalMessages200Response {
+        return try await getSignalMessagesWithRequestBuilder(channelname: channelname, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -173,13 +173,13 @@ open class ChannelAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter channelname: (path) The CHANNELNAME identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetSignalMessages200Response> 
+     - returns: RequestBuilder<GetSignalMessages200Response> 
      */
-    open class func oBPv600GetSignalMessagesWithRequestBuilder(channelname: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetSignalMessages200Response> {
+    open class func getSignalMessagesWithRequestBuilder(channelname: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetSignalMessages200Response> {
         var localVariablePath = "/obp/v6.0.0/signal/channels/{channelname}/messages"
         let channelnamePreEscape = "\(APIHelper.mapValueToPathItem(channelname))"
         let channelnamePostEscape = channelnamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -195,7 +195,7 @@ open class ChannelAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetSignalMessages200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetSignalMessages200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -204,10 +204,10 @@ open class ChannelAPI {
      Get Signal Channel Stats
      
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetSignalStats200Response
+     - returns: GetSignalStats200Response
      */
-    open class func oBPv600GetSignalStats(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetSignalStats200Response {
-        return try await oBPv600GetSignalStatsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    open class func getSignalStats(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetSignalStats200Response {
+        return try await getSignalStatsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -221,12 +221,12 @@ open class ChannelAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetSignalStats200Response> 
+     - returns: RequestBuilder<GetSignalStats200Response> 
      */
-    open class func oBPv600GetSignalStatsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetSignalStats200Response> {
+    open class func getSignalStatsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetSignalStats200Response> {
         let localVariablePath = "/obp/v6.0.0/signal/channels/stats"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -239,7 +239,7 @@ open class ChannelAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetSignalStats200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetSignalStats200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -248,12 +248,12 @@ open class ChannelAPI {
      Publish Signal Message
      
      - parameter channelname: (path) The CHANNELNAME identifier 
-     - parameter oBPv600PublishSignalMessageRequest: (body) Request body 
+     - parameter publishSignalMessageRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600PublishSignalMessage200Response
+     - returns: PublishSignalMessage200Response
      */
-    open class func oBPv600PublishSignalMessage(channelname: String, oBPv600PublishSignalMessageRequest: OBPv600PublishSignalMessageRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600PublishSignalMessage200Response {
-        return try await oBPv600PublishSignalMessageWithRequestBuilder(channelname: channelname, oBPv600PublishSignalMessageRequest: oBPv600PublishSignalMessageRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func publishSignalMessage(channelname: String, publishSignalMessageRequest: PublishSignalMessageRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> PublishSignalMessage200Response {
+        return try await publishSignalMessageWithRequestBuilder(channelname: channelname, publishSignalMessageRequest: publishSignalMessageRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -267,20 +267,20 @@ open class ChannelAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter channelname: (path) The CHANNELNAME identifier 
-     - parameter oBPv600PublishSignalMessageRequest: (body) Request body 
+     - parameter publishSignalMessageRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600PublishSignalMessage200Response> 
+     - returns: RequestBuilder<PublishSignalMessage200Response> 
      */
-    open class func oBPv600PublishSignalMessageWithRequestBuilder(channelname: String, oBPv600PublishSignalMessageRequest: OBPv600PublishSignalMessageRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600PublishSignalMessage200Response> {
+    open class func publishSignalMessageWithRequestBuilder(channelname: String, publishSignalMessageRequest: PublishSignalMessageRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<PublishSignalMessage200Response> {
         var localVariablePath = "/obp/v6.0.0/signal/channels/{channelname}/messages"
         let channelnamePreEscape = "\(APIHelper.mapValueToPathItem(channelname))"
         let channelnamePostEscape = channelnamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{channelname}", with: channelnamePostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv600PublishSignalMessageRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: publishSignalMessageRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -290,7 +290,7 @@ open class ChannelAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600PublishSignalMessage200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<PublishSignalMessage200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }

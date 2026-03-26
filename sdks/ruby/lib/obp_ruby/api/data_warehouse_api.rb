@@ -1,7 +1,7 @@
 =begin
 #Open Bank Project API v6.0.0
 
-#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 The version of the OpenAPI document: 6.0.0
 Contact: contact@tesobe.com
@@ -22,31 +22,31 @@ module OpenBankProject
     # Data Warehouse Search
     # <p>Search the data warehouse and get row level results.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>CanSearchWarehouse entitlement is required. You can request the Role below.</p> <p>Elastic (search) is used in the background. See links below for syntax.</p> <p>Examples of usage:</p> <p>POST /search/warehouse/THE_INDEX_YOU_WANT_TO_USE</p> <p>POST /search/warehouse/INDEX1,INDEX2</p> <p>POST /search/warehouse/ALL</p> <p>{ Any valid elasticsearch query DSL in the body }</p> <p><a href=\"https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html\">Elasticsearch query DSL</a></p> <p><a href=\"https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-request-body.html\">Elastic simple query</a></p> <p><a href=\"https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-aggregations.html\">Elastic aggregations</a></p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#index\">INDEX</a>:</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#match_all\"><strong>match_all</strong></a>:</p> <p><a href=\"/glossary#query\"><strong>query</strong></a>:</p> <p><a href=\"/glossary#none\">none</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#none\">none</a>:</p> 
     # @param index [String] The INDEX identifier
-    # @param obpv300_data_warehouse_search_request [OBPv300DataWarehouseSearchRequest] Request body
+    # @param data_warehouse_search_request [DataWarehouseSearchRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage]
-    def o_bpv3_0_0_data_warehouse_search(index, obpv300_data_warehouse_search_request, opts = {})
-      data, _status_code, _headers = o_bpv3_0_0_data_warehouse_search_with_http_info(index, obpv300_data_warehouse_search_request, opts)
+    # @return [Object]
+    def data_warehouse_search(index, data_warehouse_search_request, opts = {})
+      data, _status_code, _headers = data_warehouse_search_with_http_info(index, data_warehouse_search_request, opts)
       data
     end
 
     # Data Warehouse Search
     # &lt;p&gt;Search the data warehouse and get row level results.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;CanSearchWarehouse entitlement is required. You can request the Role below.&lt;/p&gt; &lt;p&gt;Elastic (search) is used in the background. See links below for syntax.&lt;/p&gt; &lt;p&gt;Examples of usage:&lt;/p&gt; &lt;p&gt;POST /search/warehouse/THE_INDEX_YOU_WANT_TO_USE&lt;/p&gt; &lt;p&gt;POST /search/warehouse/INDEX1,INDEX2&lt;/p&gt; &lt;p&gt;POST /search/warehouse/ALL&lt;/p&gt; &lt;p&gt;{ Any valid elasticsearch query DSL in the body }&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html\&quot;&gt;Elasticsearch query DSL&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-request-body.html\&quot;&gt;Elastic simple query&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-aggregations.html\&quot;&gt;Elastic aggregations&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#index\&quot;&gt;INDEX&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#match_all\&quot;&gt;&lt;strong&gt;match_all&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#query\&quot;&gt;&lt;strong&gt;query&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#none\&quot;&gt;none&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#none\&quot;&gt;none&lt;/a&gt;:&lt;/p&gt; 
     # @param index [String] The INDEX identifier
-    # @param obpv300_data_warehouse_search_request [OBPv300DataWarehouseSearchRequest] Request body
+    # @param data_warehouse_search_request [DataWarehouseSearchRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage, Integer, Hash)>] OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage data, response status code and response headers
-    def o_bpv3_0_0_data_warehouse_search_with_http_info(index, obpv300_data_warehouse_search_request, opts = {})
+    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    def data_warehouse_search_with_http_info(index, data_warehouse_search_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DataWarehouseApi.o_bpv3_0_0_data_warehouse_search ...'
+        @api_client.config.logger.debug 'Calling API: DataWarehouseApi.data_warehouse_search ...'
       end
       # verify the required parameter 'index' is set
       if @api_client.config.client_side_validation && index.nil?
-        fail ArgumentError, "Missing the required parameter 'index' when calling DataWarehouseApi.o_bpv3_0_0_data_warehouse_search"
+        fail ArgumentError, "Missing the required parameter 'index' when calling DataWarehouseApi.data_warehouse_search"
       end
-      # verify the required parameter 'obpv300_data_warehouse_search_request' is set
-      if @api_client.config.client_side_validation && obpv300_data_warehouse_search_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv300_data_warehouse_search_request' when calling DataWarehouseApi.o_bpv3_0_0_data_warehouse_search"
+      # verify the required parameter 'data_warehouse_search_request' is set
+      if @api_client.config.client_side_validation && data_warehouse_search_request.nil?
+        fail ArgumentError, "Missing the required parameter 'data_warehouse_search_request' when calling DataWarehouseApi.data_warehouse_search"
       end
       # resource path
       local_var_path = '/obp/v3.0.0/search/warehouse/{index}'.sub('{' + 'index' + '}', CGI.escape(index.to_s))
@@ -68,16 +68,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv300_data_warehouse_search_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(data_warehouse_search_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage'
+      return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DataWarehouseApi.o_bpv3_0_0_data_warehouse_search",
+        :operation => :"DataWarehouseApi.data_warehouse_search",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -88,7 +88,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DataWarehouseApi#o_bpv3_0_0_data_warehouse_search\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DataWarehouseApi#data_warehouse_search\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -97,11 +97,11 @@ module OpenBankProject
     # <p>Search the data warehouse and get statistical aggregations over a warehouse field</p> <p>Does a stats aggregation over some numeric field:</p> <p><a href=\"https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-stats-aggregation.html\">https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-stats-aggregation.html</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>CanSearchWarehouseStats Role is required. You can request this below.</p> <p>Elastic (search) is used in the background. See links below for syntax.</p> <p>Examples of usage:</p> <p>POST /search/warehouse/statistics/INDEX/FIELD</p> <p>POST /search/warehouse/statistics/ALL/FIELD</p> <p>{ Any valid elasticsearch query DSL in the body }</p> <p><a href=\"https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html\">Elasticsearch query DSL</a></p> <p><a href=\"https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-request-body.html\">Elastic simple query</a></p> <p><a href=\"https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-aggregations.html\">Elastic aggregations</a></p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#field\">FIELD</a>:</p> <p><a href=\"/glossary#index\">INDEX</a>:</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#match_all\"><strong>match_all</strong></a>:</p> <p><a href=\"/glossary#query\"><strong>query</strong></a>:</p> <p><a href=\"/glossary#none\">none</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#none\">none</a>:</p> 
     # @param index [String] The INDEX identifier
     # @param field [String] The FIELD identifier
-    # @param obpv300_data_warehouse_search_request [OBPv300DataWarehouseSearchRequest] Request body
+    # @param data_warehouse_search_request [DataWarehouseSearchRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage]
-    def o_bpv3_0_0_data_warehouse_statistics(index, field, obpv300_data_warehouse_search_request, opts = {})
-      data, _status_code, _headers = o_bpv3_0_0_data_warehouse_statistics_with_http_info(index, field, obpv300_data_warehouse_search_request, opts)
+    # @return [Object]
+    def data_warehouse_statistics(index, field, data_warehouse_search_request, opts = {})
+      data, _status_code, _headers = data_warehouse_statistics_with_http_info(index, field, data_warehouse_search_request, opts)
       data
     end
 
@@ -109,24 +109,24 @@ module OpenBankProject
     # &lt;p&gt;Search the data warehouse and get statistical aggregations over a warehouse field&lt;/p&gt; &lt;p&gt;Does a stats aggregation over some numeric field:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-stats-aggregation.html\&quot;&gt;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-stats-aggregation.html&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;CanSearchWarehouseStats Role is required. You can request this below.&lt;/p&gt; &lt;p&gt;Elastic (search) is used in the background. See links below for syntax.&lt;/p&gt; &lt;p&gt;Examples of usage:&lt;/p&gt; &lt;p&gt;POST /search/warehouse/statistics/INDEX/FIELD&lt;/p&gt; &lt;p&gt;POST /search/warehouse/statistics/ALL/FIELD&lt;/p&gt; &lt;p&gt;{ Any valid elasticsearch query DSL in the body }&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html\&quot;&gt;Elasticsearch query DSL&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-request-body.html\&quot;&gt;Elastic simple query&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-aggregations.html\&quot;&gt;Elastic aggregations&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#field\&quot;&gt;FIELD&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#index\&quot;&gt;INDEX&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#match_all\&quot;&gt;&lt;strong&gt;match_all&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#query\&quot;&gt;&lt;strong&gt;query&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#none\&quot;&gt;none&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#none\&quot;&gt;none&lt;/a&gt;:&lt;/p&gt; 
     # @param index [String] The INDEX identifier
     # @param field [String] The FIELD identifier
-    # @param obpv300_data_warehouse_search_request [OBPv300DataWarehouseSearchRequest] Request body
+    # @param data_warehouse_search_request [DataWarehouseSearchRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage, Integer, Hash)>] OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage data, response status code and response headers
-    def o_bpv3_0_0_data_warehouse_statistics_with_http_info(index, field, obpv300_data_warehouse_search_request, opts = {})
+    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    def data_warehouse_statistics_with_http_info(index, field, data_warehouse_search_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DataWarehouseApi.o_bpv3_0_0_data_warehouse_statistics ...'
+        @api_client.config.logger.debug 'Calling API: DataWarehouseApi.data_warehouse_statistics ...'
       end
       # verify the required parameter 'index' is set
       if @api_client.config.client_side_validation && index.nil?
-        fail ArgumentError, "Missing the required parameter 'index' when calling DataWarehouseApi.o_bpv3_0_0_data_warehouse_statistics"
+        fail ArgumentError, "Missing the required parameter 'index' when calling DataWarehouseApi.data_warehouse_statistics"
       end
       # verify the required parameter 'field' is set
       if @api_client.config.client_side_validation && field.nil?
-        fail ArgumentError, "Missing the required parameter 'field' when calling DataWarehouseApi.o_bpv3_0_0_data_warehouse_statistics"
+        fail ArgumentError, "Missing the required parameter 'field' when calling DataWarehouseApi.data_warehouse_statistics"
       end
-      # verify the required parameter 'obpv300_data_warehouse_search_request' is set
-      if @api_client.config.client_side_validation && obpv300_data_warehouse_search_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv300_data_warehouse_search_request' when calling DataWarehouseApi.o_bpv3_0_0_data_warehouse_statistics"
+      # verify the required parameter 'data_warehouse_search_request' is set
+      if @api_client.config.client_side_validation && data_warehouse_search_request.nil?
+        fail ArgumentError, "Missing the required parameter 'data_warehouse_search_request' when calling DataWarehouseApi.data_warehouse_statistics"
       end
       # resource path
       local_var_path = '/obp/v3.0.0/search/warehouse/statistics/{index}/{field}'.sub('{' + 'index' + '}', CGI.escape(index.to_s)).sub('{' + 'field' + '}', CGI.escape(field.to_s))
@@ -148,16 +148,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv300_data_warehouse_search_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(data_warehouse_search_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage'
+      return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DataWarehouseApi.o_bpv3_0_0_data_warehouse_statistics",
+        :operation => :"DataWarehouseApi.data_warehouse_statistics",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -168,7 +168,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DataWarehouseApi#o_bpv3_0_0_data_warehouse_statistics\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DataWarehouseApi#data_warehouse_statistics\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

@@ -19,14 +19,14 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import com.openbankproject.models.OBPv600AddUserToGroup200Response
-import com.openbankproject.models.OBPv600AddUserToGroupRequest
-import com.openbankproject.models.OBPv600CreateGroupRequest
-import com.openbankproject.models.OBPv600GetGroupEntitlements200Response
-import com.openbankproject.models.OBPv600GetGroups200Response
-import com.openbankproject.models.OBPv600GetGroups200ResponsePropertiesGroupsItems
-import com.openbankproject.models.OBPv600GetUserGroupMemberships200Response
-import com.openbankproject.models.OBPv600UpdateGroupRequest
+import com.openbankproject.models.AddUserToGroup200Response
+import com.openbankproject.models.AddUserToGroupRequest
+import com.openbankproject.models.CreateGroupRequest
+import com.openbankproject.models.GetGroupEntitlements200Response
+import com.openbankproject.models.GetGroups200Response
+import com.openbankproject.models.GetGroups200ResponseGroupsInner
+import com.openbankproject.models.GetUserGroupMemberships200Response
+import com.openbankproject.models.UpdateGroupRequest
 
 import com.squareup.moshi.Json
 
@@ -48,7 +48,7 @@ open class GroupApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://apisandbox.openbankproject.com")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "http://127.0.0.1:8080")
         }
     }
 
@@ -57,8 +57,8 @@ open class GroupApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * Grant User Membership to Group Entitlements
      * &lt;p&gt;Grant the User Group Entitlements.&lt;/p&gt; &lt;p&gt;This endpoint creates entitlements for every Role in the Group. If the user&lt;br /&gt; already has a particular role at the same bank, that entitlement is skipped (not duplicated).&lt;/p&gt; &lt;p&gt;Each entitlement created will have:&lt;br /&gt; - group_id set to the group ID&lt;br /&gt; - process set to &amp;quot;GROUP_MEMBERSHIP&amp;quot;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;br /&gt; - target_entitlements: All roles defined in the group (the complete list of entitlements that this group aims to grant)&lt;br /&gt; - entitlements_created: Roles that were newly created as entitlements during this operation&lt;br /&gt; - entitlements_skipped: Roles that the user already possessed, so no new entitlement was created&lt;/p&gt; &lt;p&gt;Note: target_entitlements &#x3D; entitlements_created + entitlements_skipped&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanAddUserToGroupAtAllBanks (for any group)&lt;br /&gt; - CanAddUserToGroupAtOneBank (for groups at specific bank)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;entitlements_created&lt;/strong&gt;&lt;/a&gt;: entitlements_created&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;entitlements_skipped&lt;/strong&gt;&lt;/a&gt;: entitlements_skipped&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_entitlements&lt;/strong&gt;&lt;/a&gt;: target_entitlements&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
      * @param userid The USERID identifier
-     * @param obPv600AddUserToGroupRequest Request body
-     * @return OBPv600AddUserToGroup200Response
+     * @param addUserToGroupRequest Request body
+     * @return AddUserToGroup200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -67,11 +67,11 @@ open class GroupApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600AddUserToGroup(userid: kotlin.String, obPv600AddUserToGroupRequest: OBPv600AddUserToGroupRequest) : OBPv600AddUserToGroup200Response {
-        val localVarResponse = oBPv600AddUserToGroupWithHttpInfo(userid = userid, obPv600AddUserToGroupRequest = obPv600AddUserToGroupRequest)
+    fun addUserToGroup(userid: kotlin.String, addUserToGroupRequest: AddUserToGroupRequest) : AddUserToGroup200Response {
+        val localVarResponse = addUserToGroupWithHttpInfo(userid = userid, addUserToGroupRequest = addUserToGroupRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600AddUserToGroup200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AddUserToGroup200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -90,30 +90,30 @@ open class GroupApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * Grant User Membership to Group Entitlements
      * &lt;p&gt;Grant the User Group Entitlements.&lt;/p&gt; &lt;p&gt;This endpoint creates entitlements for every Role in the Group. If the user&lt;br /&gt; already has a particular role at the same bank, that entitlement is skipped (not duplicated).&lt;/p&gt; &lt;p&gt;Each entitlement created will have:&lt;br /&gt; - group_id set to the group ID&lt;br /&gt; - process set to &amp;quot;GROUP_MEMBERSHIP&amp;quot;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;br /&gt; - target_entitlements: All roles defined in the group (the complete list of entitlements that this group aims to grant)&lt;br /&gt; - entitlements_created: Roles that were newly created as entitlements during this operation&lt;br /&gt; - entitlements_skipped: Roles that the user already possessed, so no new entitlement was created&lt;/p&gt; &lt;p&gt;Note: target_entitlements &#x3D; entitlements_created + entitlements_skipped&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanAddUserToGroupAtAllBanks (for any group)&lt;br /&gt; - CanAddUserToGroupAtOneBank (for groups at specific bank)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;entitlements_created&lt;/strong&gt;&lt;/a&gt;: entitlements_created&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;entitlements_skipped&lt;/strong&gt;&lt;/a&gt;: entitlements_skipped&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_entitlements&lt;/strong&gt;&lt;/a&gt;: target_entitlements&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
      * @param userid The USERID identifier
-     * @param obPv600AddUserToGroupRequest Request body
-     * @return ApiResponse<OBPv600AddUserToGroup200Response?>
+     * @param addUserToGroupRequest Request body
+     * @return ApiResponse<AddUserToGroup200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600AddUserToGroupWithHttpInfo(userid: kotlin.String, obPv600AddUserToGroupRequest: OBPv600AddUserToGroupRequest) : ApiResponse<OBPv600AddUserToGroup200Response?> {
-        val localVariableConfig = oBPv600AddUserToGroupRequestConfig(userid = userid, obPv600AddUserToGroupRequest = obPv600AddUserToGroupRequest)
+    fun addUserToGroupWithHttpInfo(userid: kotlin.String, addUserToGroupRequest: AddUserToGroupRequest) : ApiResponse<AddUserToGroup200Response?> {
+        val localVariableConfig = addUserToGroupRequestConfig(userid = userid, addUserToGroupRequest = addUserToGroupRequest)
 
-        return request<OBPv600AddUserToGroupRequest, OBPv600AddUserToGroup200Response>(
+        return request<AddUserToGroupRequest, AddUserToGroup200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv600AddUserToGroup
+     * To obtain the request config of the operation addUserToGroup
      *
      * @param userid The USERID identifier
-     * @param obPv600AddUserToGroupRequest Request body
+     * @param addUserToGroupRequest Request body
      * @return RequestConfig
      */
-    fun oBPv600AddUserToGroupRequestConfig(userid: kotlin.String, obPv600AddUserToGroupRequest: OBPv600AddUserToGroupRequest) : RequestConfig<OBPv600AddUserToGroupRequest> {
-        val localVariableBody = obPv600AddUserToGroupRequest
+    fun addUserToGroupRequestConfig(userid: kotlin.String, addUserToGroupRequest: AddUserToGroupRequest) : RequestConfig<AddUserToGroupRequest> {
+        val localVariableBody = addUserToGroupRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -133,8 +133,8 @@ open class GroupApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * POST /obp/v6.0.0/management/groups
      * Create Group
      * &lt;p&gt;Create a new group of roles.&lt;/p&gt; &lt;p&gt;Groups can be either:&lt;br /&gt; - System-level (bank_id &#x3D; null) - requires CanCreateGroupAtAllBanks role&lt;br /&gt; - Bank-level (bank_id provided) - requires CanCreateGroupAtOneBank role&lt;/p&gt; &lt;p&gt;A group contains a list of role names that can be assigned together.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
-     * @param obPv600CreateGroupRequest Request body
-     * @return OBPv600GetGroups200ResponsePropertiesGroupsItems
+     * @param createGroupRequest Request body
+     * @return GetGroups200ResponseGroupsInner
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -143,11 +143,11 @@ open class GroupApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600CreateGroup(obPv600CreateGroupRequest: OBPv600CreateGroupRequest) : OBPv600GetGroups200ResponsePropertiesGroupsItems {
-        val localVarResponse = oBPv600CreateGroupWithHttpInfo(obPv600CreateGroupRequest = obPv600CreateGroupRequest)
+    fun createGroup(createGroupRequest: CreateGroupRequest) : GetGroups200ResponseGroupsInner {
+        val localVarResponse = createGroupWithHttpInfo(createGroupRequest = createGroupRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600GetGroups200ResponsePropertiesGroupsItems
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetGroups200ResponseGroupsInner
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -165,29 +165,29 @@ open class GroupApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * POST /obp/v6.0.0/management/groups
      * Create Group
      * &lt;p&gt;Create a new group of roles.&lt;/p&gt; &lt;p&gt;Groups can be either:&lt;br /&gt; - System-level (bank_id &#x3D; null) - requires CanCreateGroupAtAllBanks role&lt;br /&gt; - Bank-level (bank_id provided) - requires CanCreateGroupAtOneBank role&lt;/p&gt; &lt;p&gt;A group contains a list of role names that can be assigned together.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
-     * @param obPv600CreateGroupRequest Request body
-     * @return ApiResponse<OBPv600GetGroups200ResponsePropertiesGroupsItems?>
+     * @param createGroupRequest Request body
+     * @return ApiResponse<GetGroups200ResponseGroupsInner?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600CreateGroupWithHttpInfo(obPv600CreateGroupRequest: OBPv600CreateGroupRequest) : ApiResponse<OBPv600GetGroups200ResponsePropertiesGroupsItems?> {
-        val localVariableConfig = oBPv600CreateGroupRequestConfig(obPv600CreateGroupRequest = obPv600CreateGroupRequest)
+    fun createGroupWithHttpInfo(createGroupRequest: CreateGroupRequest) : ApiResponse<GetGroups200ResponseGroupsInner?> {
+        val localVariableConfig = createGroupRequestConfig(createGroupRequest = createGroupRequest)
 
-        return request<OBPv600CreateGroupRequest, OBPv600GetGroups200ResponsePropertiesGroupsItems>(
+        return request<CreateGroupRequest, GetGroups200ResponseGroupsInner>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv600CreateGroup
+     * To obtain the request config of the operation createGroup
      *
-     * @param obPv600CreateGroupRequest Request body
+     * @param createGroupRequest Request body
      * @return RequestConfig
      */
-    fun oBPv600CreateGroupRequestConfig(obPv600CreateGroupRequest: OBPv600CreateGroupRequest) : RequestConfig<OBPv600CreateGroupRequest> {
-        val localVariableBody = obPv600CreateGroupRequest
+    fun createGroupRequestConfig(createGroupRequest: CreateGroupRequest) : RequestConfig<CreateGroupRequest> {
+        val localVariableBody = createGroupRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -216,8 +216,8 @@ open class GroupApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600DeleteGroup(groupid: kotlin.String) : Unit {
-        val localVarResponse = oBPv600DeleteGroupWithHttpInfo(groupid = groupid)
+    fun deleteGroup(groupid: kotlin.String) : Unit {
+        val localVarResponse = deleteGroupWithHttpInfo(groupid = groupid)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -244,8 +244,8 @@ open class GroupApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600DeleteGroupWithHttpInfo(groupid: kotlin.String) : ApiResponse<Unit?> {
-        val localVariableConfig = oBPv600DeleteGroupRequestConfig(groupid = groupid)
+    fun deleteGroupWithHttpInfo(groupid: kotlin.String) : ApiResponse<Unit?> {
+        val localVariableConfig = deleteGroupRequestConfig(groupid = groupid)
 
         return request<Unit, Unit>(
             localVariableConfig
@@ -253,12 +253,12 @@ open class GroupApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
-     * To obtain the request config of the operation oBPv600DeleteGroup
+     * To obtain the request config of the operation deleteGroup
      *
      * @param groupid The GROUPID identifier
      * @return RequestConfig
      */
-    fun oBPv600DeleteGroupRequestConfig(groupid: kotlin.String) : RequestConfig<Unit> {
+    fun deleteGroupRequestConfig(groupid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -278,7 +278,7 @@ open class GroupApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * Get Group
      * &lt;p&gt;Get a group by its ID.&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanGetGroupsAtAllBanks (for any group)&lt;br /&gt; - CanGetGroupsAtOneBank (for groups at specific bank)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;GROUP_ID&lt;/a&gt;: GROUP_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
      * @param groupid The GROUPID identifier
-     * @return OBPv600GetGroups200ResponsePropertiesGroupsItems
+     * @return GetGroups200ResponseGroupsInner
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -287,11 +287,11 @@ open class GroupApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600GetGroup(groupid: kotlin.String) : OBPv600GetGroups200ResponsePropertiesGroupsItems {
-        val localVarResponse = oBPv600GetGroupWithHttpInfo(groupid = groupid)
+    fun getGroup(groupid: kotlin.String) : GetGroups200ResponseGroupsInner {
+        val localVarResponse = getGroupWithHttpInfo(groupid = groupid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600GetGroups200ResponsePropertiesGroupsItems
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetGroups200ResponseGroupsInner
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -310,27 +310,27 @@ open class GroupApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * Get Group
      * &lt;p&gt;Get a group by its ID.&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanGetGroupsAtAllBanks (for any group)&lt;br /&gt; - CanGetGroupsAtOneBank (for groups at specific bank)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;GROUP_ID&lt;/a&gt;: GROUP_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
      * @param groupid The GROUPID identifier
-     * @return ApiResponse<OBPv600GetGroups200ResponsePropertiesGroupsItems?>
+     * @return ApiResponse<GetGroups200ResponseGroupsInner?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600GetGroupWithHttpInfo(groupid: kotlin.String) : ApiResponse<OBPv600GetGroups200ResponsePropertiesGroupsItems?> {
-        val localVariableConfig = oBPv600GetGroupRequestConfig(groupid = groupid)
+    fun getGroupWithHttpInfo(groupid: kotlin.String) : ApiResponse<GetGroups200ResponseGroupsInner?> {
+        val localVariableConfig = getGroupRequestConfig(groupid = groupid)
 
-        return request<Unit, OBPv600GetGroups200ResponsePropertiesGroupsItems>(
+        return request<Unit, GetGroups200ResponseGroupsInner>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv600GetGroup
+     * To obtain the request config of the operation getGroup
      *
      * @param groupid The GROUPID identifier
      * @return RequestConfig
      */
-    fun oBPv600GetGroupRequestConfig(groupid: kotlin.String) : RequestConfig<Unit> {
+    fun getGroupRequestConfig(groupid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -351,7 +351,7 @@ open class GroupApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * Get Group Entitlements
      * &lt;p&gt;Get all entitlements that have been granted from a specific group.&lt;/p&gt; &lt;p&gt;This returns all entitlements where the group_id matches the specified GROUP_ID.&lt;/p&gt; &lt;p&gt;Requires:&lt;br /&gt; - CanGetEntitlementsForAnyBank&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;GROUP_ID&lt;/a&gt;: GROUP_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#entitlement_id\&quot;&gt;&lt;strong&gt;entitlement_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#entitlements\&quot;&gt;&lt;strong&gt;entitlements&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#role_name\&quot;&gt;&lt;strong&gt;role_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;username&lt;/strong&gt;&lt;/a&gt;: felixsmith&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;group_id&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;process&lt;/a&gt;: obp.getBank&lt;/p&gt; 
      * @param groupid The GROUPID identifier
-     * @return OBPv600GetGroupEntitlements200Response
+     * @return GetGroupEntitlements200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -360,11 +360,11 @@ open class GroupApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600GetGroupEntitlements(groupid: kotlin.String) : OBPv600GetGroupEntitlements200Response {
-        val localVarResponse = oBPv600GetGroupEntitlementsWithHttpInfo(groupid = groupid)
+    fun getGroupEntitlements(groupid: kotlin.String) : GetGroupEntitlements200Response {
+        val localVarResponse = getGroupEntitlementsWithHttpInfo(groupid = groupid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600GetGroupEntitlements200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetGroupEntitlements200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -383,27 +383,27 @@ open class GroupApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * Get Group Entitlements
      * &lt;p&gt;Get all entitlements that have been granted from a specific group.&lt;/p&gt; &lt;p&gt;This returns all entitlements where the group_id matches the specified GROUP_ID.&lt;/p&gt; &lt;p&gt;Requires:&lt;br /&gt; - CanGetEntitlementsForAnyBank&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;GROUP_ID&lt;/a&gt;: GROUP_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#entitlement_id\&quot;&gt;&lt;strong&gt;entitlement_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#entitlements\&quot;&gt;&lt;strong&gt;entitlements&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#role_name\&quot;&gt;&lt;strong&gt;role_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;username&lt;/strong&gt;&lt;/a&gt;: felixsmith&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;group_id&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;process&lt;/a&gt;: obp.getBank&lt;/p&gt; 
      * @param groupid The GROUPID identifier
-     * @return ApiResponse<OBPv600GetGroupEntitlements200Response?>
+     * @return ApiResponse<GetGroupEntitlements200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600GetGroupEntitlementsWithHttpInfo(groupid: kotlin.String) : ApiResponse<OBPv600GetGroupEntitlements200Response?> {
-        val localVariableConfig = oBPv600GetGroupEntitlementsRequestConfig(groupid = groupid)
+    fun getGroupEntitlementsWithHttpInfo(groupid: kotlin.String) : ApiResponse<GetGroupEntitlements200Response?> {
+        val localVariableConfig = getGroupEntitlementsRequestConfig(groupid = groupid)
 
-        return request<Unit, OBPv600GetGroupEntitlements200Response>(
+        return request<Unit, GetGroupEntitlements200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv600GetGroupEntitlements
+     * To obtain the request config of the operation getGroupEntitlements
      *
      * @param groupid The GROUPID identifier
      * @return RequestConfig
      */
-    fun oBPv600GetGroupEntitlementsRequestConfig(groupid: kotlin.String) : RequestConfig<Unit> {
+    fun getGroupEntitlementsRequestConfig(groupid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -423,7 +423,7 @@ open class GroupApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * GET /obp/v6.0.0/management/groups
      * Get Groups
      * &lt;p&gt;Get all groups. Optionally filter by bank_id.&lt;/p&gt; &lt;p&gt;Query parameters:&lt;br /&gt; - bank_id (optional): Filter groups by bank. Use &amp;quot;null&amp;quot; or omit for system-level groups.&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanGetGroupsAtAllBanks (for any/all groups)&lt;br /&gt; - CanGetGroupsAtOneBank (for groups at specific bank with bank_id parameter)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;groups&lt;/strong&gt;&lt;/a&gt;: groups&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
-     * @return OBPv600GetGroups200Response
+     * @return GetGroups200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -432,11 +432,11 @@ open class GroupApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600GetGroups() : OBPv600GetGroups200Response {
-        val localVarResponse = oBPv600GetGroupsWithHttpInfo()
+    fun getGroups() : GetGroups200Response {
+        val localVarResponse = getGroupsWithHttpInfo()
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600GetGroups200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetGroups200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -454,26 +454,26 @@ open class GroupApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * GET /obp/v6.0.0/management/groups
      * Get Groups
      * &lt;p&gt;Get all groups. Optionally filter by bank_id.&lt;/p&gt; &lt;p&gt;Query parameters:&lt;br /&gt; - bank_id (optional): Filter groups by bank. Use &amp;quot;null&amp;quot; or omit for system-level groups.&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanGetGroupsAtAllBanks (for any/all groups)&lt;br /&gt; - CanGetGroupsAtOneBank (for groups at specific bank with bank_id parameter)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;groups&lt;/strong&gt;&lt;/a&gt;: groups&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
-     * @return ApiResponse<OBPv600GetGroups200Response?>
+     * @return ApiResponse<GetGroups200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600GetGroupsWithHttpInfo() : ApiResponse<OBPv600GetGroups200Response?> {
-        val localVariableConfig = oBPv600GetGroupsRequestConfig()
+    fun getGroupsWithHttpInfo() : ApiResponse<GetGroups200Response?> {
+        val localVariableConfig = getGroupsRequestConfig()
 
-        return request<Unit, OBPv600GetGroups200Response>(
+        return request<Unit, GetGroups200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv600GetGroups
+     * To obtain the request config of the operation getGroups
      *
      * @return RequestConfig
      */
-    fun oBPv600GetGroupsRequestConfig() : RequestConfig<Unit> {
+    fun getGroupsRequestConfig() : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -494,7 +494,7 @@ open class GroupApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * Get User&#39;s Group Memberships
      * &lt;p&gt;Get all groups a user is a member of.&lt;/p&gt; &lt;p&gt;Returns groups where the user has entitlements with process &#x3D; &amp;quot;GROUP_MEMBERSHIP&amp;quot;.&lt;/p&gt; &lt;p&gt;The response includes:&lt;br /&gt; - list_of_entitlements: entitlements the user currently has from this group membership&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanGetUserGroupMembershipsAtAllBanks (for any user)&lt;br /&gt; - CanGetUserGroupMembershipsAtOneBank (for users at specific bank)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_entitlements&lt;/strong&gt;&lt;/a&gt;: group_entitlements&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_entitlements&lt;/strong&gt;&lt;/a&gt;: list_of_entitlements&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
      * @param userid The USERID identifier
-     * @return OBPv600GetUserGroupMemberships200Response
+     * @return GetUserGroupMemberships200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -503,11 +503,11 @@ open class GroupApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600GetUserGroupMemberships(userid: kotlin.String) : OBPv600GetUserGroupMemberships200Response {
-        val localVarResponse = oBPv600GetUserGroupMembershipsWithHttpInfo(userid = userid)
+    fun getUserGroupMemberships(userid: kotlin.String) : GetUserGroupMemberships200Response {
+        val localVarResponse = getUserGroupMembershipsWithHttpInfo(userid = userid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600GetUserGroupMemberships200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetUserGroupMemberships200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -526,27 +526,27 @@ open class GroupApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * Get User&#39;s Group Memberships
      * &lt;p&gt;Get all groups a user is a member of.&lt;/p&gt; &lt;p&gt;Returns groups where the user has entitlements with process &#x3D; &amp;quot;GROUP_MEMBERSHIP&amp;quot;.&lt;/p&gt; &lt;p&gt;The response includes:&lt;br /&gt; - list_of_entitlements: entitlements the user currently has from this group membership&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanGetUserGroupMembershipsAtAllBanks (for any user)&lt;br /&gt; - CanGetUserGroupMembershipsAtOneBank (for users at specific bank)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_entitlements&lt;/strong&gt;&lt;/a&gt;: group_entitlements&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_entitlements&lt;/strong&gt;&lt;/a&gt;: list_of_entitlements&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
      * @param userid The USERID identifier
-     * @return ApiResponse<OBPv600GetUserGroupMemberships200Response?>
+     * @return ApiResponse<GetUserGroupMemberships200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600GetUserGroupMembershipsWithHttpInfo(userid: kotlin.String) : ApiResponse<OBPv600GetUserGroupMemberships200Response?> {
-        val localVariableConfig = oBPv600GetUserGroupMembershipsRequestConfig(userid = userid)
+    fun getUserGroupMembershipsWithHttpInfo(userid: kotlin.String) : ApiResponse<GetUserGroupMemberships200Response?> {
+        val localVariableConfig = getUserGroupMembershipsRequestConfig(userid = userid)
 
-        return request<Unit, OBPv600GetUserGroupMemberships200Response>(
+        return request<Unit, GetUserGroupMemberships200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv600GetUserGroupMemberships
+     * To obtain the request config of the operation getUserGroupMemberships
      *
      * @param userid The USERID identifier
      * @return RequestConfig
      */
-    fun oBPv600GetUserGroupMembershipsRequestConfig(userid: kotlin.String) : RequestConfig<Unit> {
+    fun getUserGroupMembershipsRequestConfig(userid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -576,8 +576,8 @@ open class GroupApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600RemoveUserFromGroup(userid: kotlin.String, groupid: kotlin.String) : Unit {
-        val localVarResponse = oBPv600RemoveUserFromGroupWithHttpInfo(userid = userid, groupid = groupid)
+    fun removeUserFromGroup(userid: kotlin.String, groupid: kotlin.String) : Unit {
+        val localVarResponse = removeUserFromGroupWithHttpInfo(userid = userid, groupid = groupid)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -605,8 +605,8 @@ open class GroupApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600RemoveUserFromGroupWithHttpInfo(userid: kotlin.String, groupid: kotlin.String) : ApiResponse<Unit?> {
-        val localVariableConfig = oBPv600RemoveUserFromGroupRequestConfig(userid = userid, groupid = groupid)
+    fun removeUserFromGroupWithHttpInfo(userid: kotlin.String, groupid: kotlin.String) : ApiResponse<Unit?> {
+        val localVariableConfig = removeUserFromGroupRequestConfig(userid = userid, groupid = groupid)
 
         return request<Unit, Unit>(
             localVariableConfig
@@ -614,13 +614,13 @@ open class GroupApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
-     * To obtain the request config of the operation oBPv600RemoveUserFromGroup
+     * To obtain the request config of the operation removeUserFromGroup
      *
      * @param userid The USERID identifier
      * @param groupid The GROUPID identifier
      * @return RequestConfig
      */
-    fun oBPv600RemoveUserFromGroupRequestConfig(userid: kotlin.String, groupid: kotlin.String) : RequestConfig<Unit> {
+    fun removeUserFromGroupRequestConfig(userid: kotlin.String, groupid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -640,8 +640,8 @@ open class GroupApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * Update Group
      * &lt;p&gt;Update a group. All fields are optional.&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanUpdateGroupAtAllBanks (for any group)&lt;br /&gt; - CanUpdateGroupAtOneBank (for groups at specific bank)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;GROUP_ID&lt;/a&gt;: GROUP_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
      * @param groupid The GROUPID identifier
-     * @param obPv600UpdateGroupRequest Request body
-     * @return OBPv600GetGroups200ResponsePropertiesGroupsItems
+     * @param updateGroupRequest Request body
+     * @return GetGroups200ResponseGroupsInner
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -650,11 +650,11 @@ open class GroupApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600UpdateGroup(groupid: kotlin.String, obPv600UpdateGroupRequest: OBPv600UpdateGroupRequest) : OBPv600GetGroups200ResponsePropertiesGroupsItems {
-        val localVarResponse = oBPv600UpdateGroupWithHttpInfo(groupid = groupid, obPv600UpdateGroupRequest = obPv600UpdateGroupRequest)
+    fun updateGroup(groupid: kotlin.String, updateGroupRequest: UpdateGroupRequest) : GetGroups200ResponseGroupsInner {
+        val localVarResponse = updateGroupWithHttpInfo(groupid = groupid, updateGroupRequest = updateGroupRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600GetGroups200ResponsePropertiesGroupsItems
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetGroups200ResponseGroupsInner
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -673,30 +673,30 @@ open class GroupApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * Update Group
      * &lt;p&gt;Update a group. All fields are optional.&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanUpdateGroupAtAllBanks (for any group)&lt;br /&gt; - CanUpdateGroupAtOneBank (for groups at specific bank)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;GROUP_ID&lt;/a&gt;: GROUP_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
      * @param groupid The GROUPID identifier
-     * @param obPv600UpdateGroupRequest Request body
-     * @return ApiResponse<OBPv600GetGroups200ResponsePropertiesGroupsItems?>
+     * @param updateGroupRequest Request body
+     * @return ApiResponse<GetGroups200ResponseGroupsInner?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600UpdateGroupWithHttpInfo(groupid: kotlin.String, obPv600UpdateGroupRequest: OBPv600UpdateGroupRequest) : ApiResponse<OBPv600GetGroups200ResponsePropertiesGroupsItems?> {
-        val localVariableConfig = oBPv600UpdateGroupRequestConfig(groupid = groupid, obPv600UpdateGroupRequest = obPv600UpdateGroupRequest)
+    fun updateGroupWithHttpInfo(groupid: kotlin.String, updateGroupRequest: UpdateGroupRequest) : ApiResponse<GetGroups200ResponseGroupsInner?> {
+        val localVariableConfig = updateGroupRequestConfig(groupid = groupid, updateGroupRequest = updateGroupRequest)
 
-        return request<OBPv600UpdateGroupRequest, OBPv600GetGroups200ResponsePropertiesGroupsItems>(
+        return request<UpdateGroupRequest, GetGroups200ResponseGroupsInner>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv600UpdateGroup
+     * To obtain the request config of the operation updateGroup
      *
      * @param groupid The GROUPID identifier
-     * @param obPv600UpdateGroupRequest Request body
+     * @param updateGroupRequest Request body
      * @return RequestConfig
      */
-    fun oBPv600UpdateGroupRequestConfig(groupid: kotlin.String, obPv600UpdateGroupRequest: OBPv600UpdateGroupRequest) : RequestConfig<OBPv600UpdateGroupRequest> {
-        val localVariableBody = obPv600UpdateGroupRequest
+    fun updateGroupRequestConfig(groupid: kotlin.String, updateGroupRequest: UpdateGroupRequest) : RequestConfig<UpdateGroupRequest> {
+        val localVariableBody = updateGroupRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"

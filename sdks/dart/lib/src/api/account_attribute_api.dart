@@ -9,11 +9,11 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:obp_dart/src/api_util.dart';
-import 'package:obp_dart/src/model/obpv310_update_account_attribute_request.dart';
-import 'package:obp_dart/src/model/obpv400_create_or_update_transaction_request_attribute_definition_request.dart';
-import 'package:obp_dart/src/model/obpv400_get_private_account_by_id_full200_response_properties_account_attributes_items.dart';
-import 'package:obp_dart/src/model/obpv400_get_transaction_request_attribute_definition200_response.dart';
-import 'package:obp_dart/src/model/obpv400_get_transaction_request_attribute_definition200_response_properties_attributes_items.dart';
+import 'package:obp_dart/src/model/create_or_update_transaction_request_attribute_definition_request.dart';
+import 'package:obp_dart/src/model/get_accounts_by_account_routing_regex200_response_accounts_inner_account_attributes_inner.dart';
+import 'package:obp_dart/src/model/get_transaction_request_attribute_definition200_response.dart';
+import 'package:obp_dart/src/model/get_transaction_request_attribute_definition200_response_attributes_inner.dart';
+import 'package:obp_dart/src/model/update_account_attribute_request.dart';
 
 class AccountAttributeApi {
 
@@ -30,7 +30,7 @@ class AccountAttributeApi {
   /// * [bankid] - The BANKID identifier
   /// * [accountid] - The ACCOUNTID identifier
   /// * [productcode] - The PRODUCTCODE identifier
-  /// * [oBPv310UpdateAccountAttributeRequest] - Request body
+  /// * [updateAccountAttributeRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -38,13 +38,13 @@ class AccountAttributeApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems>> oBPv310CreateAccountAttribute({ 
+  Future<Response<GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner>> createAccountAttribute({ 
     required String bankid,
     required String accountid,
     required String productcode,
-    required OBPv310UpdateAccountAttributeRequest oBPv310UpdateAccountAttributeRequest,
+    required UpdateAccountAttributeRequest updateAccountAttributeRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -71,7 +71,7 @@ class AccountAttributeApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -84,8 +84,8 @@ class AccountAttributeApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv310UpdateAccountAttributeRequest);
-      _bodyData = _serializers.serialize(oBPv310UpdateAccountAttributeRequest, specifiedType: _type);
+      const _type = FullType(UpdateAccountAttributeRequest);
+      _bodyData = _serializers.serialize(updateAccountAttributeRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -108,14 +108,14 @@ class AccountAttributeApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems? _responseData;
+    GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems),
-      ) as OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems;
+        specifiedType: const FullType(GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner),
+      ) as GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -127,125 +127,7 @@ class AccountAttributeApi {
       );
     }
 
-    return Response<OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
-  }
-
-  /// Update Account Attribute
-  /// &lt;p&gt;Update Account Attribute&lt;/p&gt; &lt;p&gt;Account Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Account Attribute is linked to its Account by ACCOUNT_ID&lt;/p&gt; &lt;p&gt;Typical account attributes might be:&lt;/p&gt; &lt;p&gt;ISIN (for International bonds)&lt;br /&gt; VKN (for German bonds)&lt;br /&gt; REDCODE (markit short code for credit derivative)&lt;br /&gt; LOAN_ID (e.g. used for Anacredit reporting)&lt;/p&gt; &lt;p&gt;ISSUE_DATE (When the bond was issued in the market)&lt;br /&gt; MATURITY_DATE (End of life time of a product)&lt;br /&gt; TRADABLE&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;http://www.fpml.org/\&quot;&gt;FPML&lt;/a&gt; for more examples.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attribute_id\&quot;&gt;ACCOUNT_ATTRIBUTE_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attribute_id\&quot;&gt;&lt;strong&gt;account_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;product_instance_code&lt;/a&gt;: product_instance_code&lt;/p&gt; 
-  ///
-  /// Parameters:
-  /// * [bankid] - The BANKID identifier
-  /// * [accountid] - The ACCOUNTID identifier
-  /// * [productcode] - The PRODUCTCODE identifier
-  /// * [accountattributeid] - The ACCOUNTATTRIBUTEID identifier
-  /// * [oBPv310UpdateAccountAttributeRequest] - Request body
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems] as data
-  /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems>> oBPv310UpdateAccountAttribute({ 
-    required String bankid,
-    required String accountid,
-    required String productcode,
-    required String accountattributeid,
-    required OBPv310UpdateAccountAttributeRequest oBPv310UpdateAccountAttributeRequest,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attributes/{accountattributeid}'.replaceAll('{' r'bankid' '}', encodeQueryParameter(_serializers, bankid, const FullType(String)).toString()).replaceAll('{' r'accountid' '}', encodeQueryParameter(_serializers, accountid, const FullType(String)).toString()).replaceAll('{' r'productcode' '}', encodeQueryParameter(_serializers, productcode, const FullType(String)).toString()).replaceAll('{' r'accountattributeid' '}', encodeQueryParameter(_serializers, accountattributeid, const FullType(String)).toString());
-    final _options = Options(
-      method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },{
-            'type': 'apiKey',
-            'name': 'GatewayLogin',
-            'keyName': 'Authorization',
-            'where': 'header',
-          },{
-            'type': 'apiKey',
-            'name': 'DirectLogin',
-            'keyName': 'Authorization',
-            'where': 'header',
-          },
-        ],
-        ...?extra,
-      },
-      contentType: 'application/json',
-      validateStatus: validateStatus,
-    );
-
-    dynamic _bodyData;
-
-    try {
-      const _type = FullType(OBPv310UpdateAccountAttributeRequest);
-      _bodyData = _serializers.serialize(oBPv310UpdateAccountAttributeRequest, specifiedType: _type);
-
-    } catch(error, stackTrace) {
-      throw DioException(
-         requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    final _response = await _dio.request<Object>(
-      _path,
-      data: _bodyData,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems? _responseData;
-
-    try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems),
-      ) as OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems;
-
-    } catch (error, stackTrace) {
-      throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems>(
+    return Response<GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -262,7 +144,7 @@ class AccountAttributeApi {
   ///
   /// Parameters:
   /// * [bankid] - The BANKID identifier
-  /// * [oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest] - Request body
+  /// * [createOrUpdateTransactionRequestAttributeDefinitionRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -270,11 +152,11 @@ class AccountAttributeApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetTransactionRequestAttributeDefinition200ResponseAttributesInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems>> oBPv400CreateOrUpdateAccountAttributeDefinition({ 
+  Future<Response<GetTransactionRequestAttributeDefinition200ResponseAttributesInner>> createOrUpdateAccountAttributeDefinition({ 
     required String bankid,
-    required OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest,
+    required CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -301,7 +183,7 @@ class AccountAttributeApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -314,8 +196,8 @@ class AccountAttributeApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
-      _bodyData = _serializers.serialize(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, specifiedType: _type);
+      const _type = FullType(CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+      _bodyData = _serializers.serialize(createOrUpdateTransactionRequestAttributeDefinitionRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -338,14 +220,14 @@ class AccountAttributeApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems? _responseData;
+    GetTransactionRequestAttributeDefinition200ResponseAttributesInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems),
-      ) as OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems;
+        specifiedType: const FullType(GetTransactionRequestAttributeDefinition200ResponseAttributesInner),
+      ) as GetTransactionRequestAttributeDefinition200ResponseAttributesInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -357,7 +239,7 @@ class AccountAttributeApi {
       );
     }
 
-    return Response<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems>(
+    return Response<GetTransactionRequestAttributeDefinition200ResponseAttributesInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -384,7 +266,7 @@ class AccountAttributeApi {
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> oBPv400DeleteAccountAttributeDefinition({ 
+  Future<Response<void>> deleteAccountAttributeDefinition({ 
     required String bankid,
     required String attributedefinitionid,
     CancelToken? cancelToken,
@@ -413,7 +295,7 @@ class AccountAttributeApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -445,9 +327,9 @@ class AccountAttributeApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetTransactionRequestAttributeDefinition200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetTransactionRequestAttributeDefinition200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetTransactionRequestAttributeDefinition200Response>> oBPv400GetAccountAttributeDefinition({ 
+  Future<Response<GetTransactionRequestAttributeDefinition200Response>> getAccountAttributeDefinition({ 
     required String bankid,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -475,7 +357,7 @@ class AccountAttributeApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -492,14 +374,14 @@ class AccountAttributeApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetTransactionRequestAttributeDefinition200Response? _responseData;
+    GetTransactionRequestAttributeDefinition200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetTransactionRequestAttributeDefinition200Response),
-      ) as OBPv400GetTransactionRequestAttributeDefinition200Response;
+        specifiedType: const FullType(GetTransactionRequestAttributeDefinition200Response),
+      ) as GetTransactionRequestAttributeDefinition200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -511,7 +393,125 @@ class AccountAttributeApi {
       );
     }
 
-    return Response<OBPv400GetTransactionRequestAttributeDefinition200Response>(
+    return Response<GetTransactionRequestAttributeDefinition200Response>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Update Account Attribute
+  /// &lt;p&gt;Update Account Attribute&lt;/p&gt; &lt;p&gt;Account Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Account Attribute is linked to its Account by ACCOUNT_ID&lt;/p&gt; &lt;p&gt;Typical account attributes might be:&lt;/p&gt; &lt;p&gt;ISIN (for International bonds)&lt;br /&gt; VKN (for German bonds)&lt;br /&gt; REDCODE (markit short code for credit derivative)&lt;br /&gt; LOAN_ID (e.g. used for Anacredit reporting)&lt;/p&gt; &lt;p&gt;ISSUE_DATE (When the bond was issued in the market)&lt;br /&gt; MATURITY_DATE (End of life time of a product)&lt;br /&gt; TRADABLE&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;http://www.fpml.org/\&quot;&gt;FPML&lt;/a&gt; for more examples.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attribute_id\&quot;&gt;ACCOUNT_ATTRIBUTE_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attribute_id\&quot;&gt;&lt;strong&gt;account_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;product_instance_code&lt;/a&gt;: product_instance_code&lt;/p&gt; 
+  ///
+  /// Parameters:
+  /// * [bankid] - The BANKID identifier
+  /// * [accountid] - The ACCOUNTID identifier
+  /// * [productcode] - The PRODUCTCODE identifier
+  /// * [accountattributeid] - The ACCOUNTATTRIBUTEID identifier
+  /// * [updateAccountAttributeRequest] - Request body
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner>> updateAccountAttribute({ 
+    required String bankid,
+    required String accountid,
+    required String productcode,
+    required String accountattributeid,
+    required UpdateAccountAttributeRequest updateAccountAttributeRequest,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attributes/{accountattributeid}'.replaceAll('{' r'bankid' '}', encodeQueryParameter(_serializers, bankid, const FullType(String)).toString()).replaceAll('{' r'accountid' '}', encodeQueryParameter(_serializers, accountid, const FullType(String)).toString()).replaceAll('{' r'productcode' '}', encodeQueryParameter(_serializers, productcode, const FullType(String)).toString()).replaceAll('{' r'accountattributeid' '}', encodeQueryParameter(_serializers, accountattributeid, const FullType(String)).toString());
+    final _options = Options(
+      method: r'PUT',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'oauth2',
+            'name': 'OAuth2',
+          },{
+            'type': 'apiKey',
+            'name': 'GatewayLogin',
+            'keyName': 'Authorization',
+            'where': 'header',
+          },{
+            'type': 'apiKey',
+            'name': 'DirectLogin',
+            'keyName': 'DirectLogin',
+            'where': 'header',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+      const _type = FullType(UpdateAccountAttributeRequest);
+      _bodyData = _serializers.serialize(updateAccountAttributeRequest, specifiedType: _type);
+
+    } catch(error, stackTrace) {
+      throw DioException(
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner? _responseData;
+
+    try {
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner),
+      ) as GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner;
+
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

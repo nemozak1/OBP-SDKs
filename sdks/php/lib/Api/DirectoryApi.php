@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,34 +75,34 @@ class DirectoryApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv510CreateConsumerDynamicRegistration' => [
+        'createConsumerDynamicRegistration' => [
             'application/json',
         ],
-        'oBPv510CreateRegulatedEntity' => [
+        'createRegulatedEntity' => [
             'application/json',
         ],
-        'oBPv510CreateRegulatedEntityAttribute' => [
+        'createRegulatedEntityAttribute' => [
             'application/json',
         ],
-        'oBPv510DeleteRegulatedEntity' => [
+        'deleteRegulatedEntity' => [
             'application/json',
         ],
-        'oBPv510DeleteRegulatedEntityAttribute' => [
+        'deleteRegulatedEntityAttribute' => [
             'application/json',
         ],
-        'oBPv510GetAllRegulatedEntityAttributes' => [
+        'getAllRegulatedEntityAttributes' => [
             'application/json',
         ],
-        'oBPv510GetRegulatedEntityAttributeById' => [
+        'getRegulatedEntityAttributeById' => [
             'application/json',
         ],
-        'oBPv510GetRegulatedEntityById' => [
+        'getRegulatedEntityById' => [
             'application/json',
         ],
-        'oBPv510RegulatedEntities' => [
+        'regulatedEntities' => [
             'application/json',
         ],
-        'oBPv510UpdateRegulatedEntityAttribute' => [
+        'updateRegulatedEntityAttribute' => [
             'application/json',
         ],
     ];
@@ -154,38 +154,38 @@ class DirectoryApi
     }
 
     /**
-     * Operation oBPv510CreateConsumerDynamicRegistration
+     * Operation createConsumerDynamicRegistration
      *
      * Create a Consumer(Dynamic Registration)
      *
-     * @param  \OpenBankProject\Model\OBPv510CreateConsumerDynamicRegistrationRequest $obpv510_create_consumer_dynamic_registration_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateConsumerDynamicRegistration'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateConsumerDynamicRegistrationRequest $create_consumer_dynamic_registration_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createConsumerDynamicRegistration'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510UpdateConsumerName200Response
+     * @return \OpenBankProject\Model\UpdateConsumerName200Response
      */
-    public function oBPv510CreateConsumerDynamicRegistration($obpv510_create_consumer_dynamic_registration_request, string $contentType = self::contentTypes['oBPv510CreateConsumerDynamicRegistration'][0])
+    public function createConsumerDynamicRegistration($create_consumer_dynamic_registration_request, string $contentType = self::contentTypes['createConsumerDynamicRegistration'][0])
     {
-        list($response) = $this->oBPv510CreateConsumerDynamicRegistrationWithHttpInfo($obpv510_create_consumer_dynamic_registration_request, $contentType);
+        list($response) = $this->createConsumerDynamicRegistrationWithHttpInfo($create_consumer_dynamic_registration_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv510CreateConsumerDynamicRegistrationWithHttpInfo
+     * Operation createConsumerDynamicRegistrationWithHttpInfo
      *
      * Create a Consumer(Dynamic Registration)
      *
-     * @param  \OpenBankProject\Model\OBPv510CreateConsumerDynamicRegistrationRequest $obpv510_create_consumer_dynamic_registration_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateConsumerDynamicRegistration'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateConsumerDynamicRegistrationRequest $create_consumer_dynamic_registration_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createConsumerDynamicRegistration'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510UpdateConsumerName200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\UpdateConsumerName200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510CreateConsumerDynamicRegistrationWithHttpInfo($obpv510_create_consumer_dynamic_registration_request, string $contentType = self::contentTypes['oBPv510CreateConsumerDynamicRegistration'][0])
+    public function createConsumerDynamicRegistrationWithHttpInfo($create_consumer_dynamic_registration_request, string $contentType = self::contentTypes['createConsumerDynamicRegistration'][0])
     {
-        $request = $this->oBPv510CreateConsumerDynamicRegistrationRequest($obpv510_create_consumer_dynamic_registration_request, $contentType);
+        $request = $this->createConsumerDynamicRegistrationRequest($create_consumer_dynamic_registration_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -213,7 +213,7 @@ class DirectoryApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510UpdateConsumerName200Response',
+                        '\OpenBankProject\Model\UpdateConsumerName200Response',
                         $request,
                         $response,
                     );
@@ -235,7 +235,7 @@ class DirectoryApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510UpdateConsumerName200Response',
+                '\OpenBankProject\Model\UpdateConsumerName200Response',
                 $request,
                 $response,
             );
@@ -244,7 +244,7 @@ class DirectoryApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510UpdateConsumerName200Response',
+                        '\OpenBankProject\Model\UpdateConsumerName200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -257,19 +257,19 @@ class DirectoryApi
     }
 
     /**
-     * Operation oBPv510CreateConsumerDynamicRegistrationAsync
+     * Operation createConsumerDynamicRegistrationAsync
      *
      * Create a Consumer(Dynamic Registration)
      *
-     * @param  \OpenBankProject\Model\OBPv510CreateConsumerDynamicRegistrationRequest $obpv510_create_consumer_dynamic_registration_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateConsumerDynamicRegistration'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateConsumerDynamicRegistrationRequest $create_consumer_dynamic_registration_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createConsumerDynamicRegistration'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510CreateConsumerDynamicRegistrationAsync($obpv510_create_consumer_dynamic_registration_request, string $contentType = self::contentTypes['oBPv510CreateConsumerDynamicRegistration'][0])
+    public function createConsumerDynamicRegistrationAsync($create_consumer_dynamic_registration_request, string $contentType = self::contentTypes['createConsumerDynamicRegistration'][0])
     {
-        return $this->oBPv510CreateConsumerDynamicRegistrationAsyncWithHttpInfo($obpv510_create_consumer_dynamic_registration_request, $contentType)
+        return $this->createConsumerDynamicRegistrationAsyncWithHttpInfo($create_consumer_dynamic_registration_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -278,20 +278,20 @@ class DirectoryApi
     }
 
     /**
-     * Operation oBPv510CreateConsumerDynamicRegistrationAsyncWithHttpInfo
+     * Operation createConsumerDynamicRegistrationAsyncWithHttpInfo
      *
      * Create a Consumer(Dynamic Registration)
      *
-     * @param  \OpenBankProject\Model\OBPv510CreateConsumerDynamicRegistrationRequest $obpv510_create_consumer_dynamic_registration_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateConsumerDynamicRegistration'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateConsumerDynamicRegistrationRequest $create_consumer_dynamic_registration_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createConsumerDynamicRegistration'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510CreateConsumerDynamicRegistrationAsyncWithHttpInfo($obpv510_create_consumer_dynamic_registration_request, string $contentType = self::contentTypes['oBPv510CreateConsumerDynamicRegistration'][0])
+    public function createConsumerDynamicRegistrationAsyncWithHttpInfo($create_consumer_dynamic_registration_request, string $contentType = self::contentTypes['createConsumerDynamicRegistration'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv510UpdateConsumerName200Response';
-        $request = $this->oBPv510CreateConsumerDynamicRegistrationRequest($obpv510_create_consumer_dynamic_registration_request, $contentType);
+        $returnType = '\OpenBankProject\Model\UpdateConsumerName200Response';
+        $request = $this->createConsumerDynamicRegistrationRequest($create_consumer_dynamic_registration_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -330,21 +330,21 @@ class DirectoryApi
     }
 
     /**
-     * Create request for operation 'oBPv510CreateConsumerDynamicRegistration'
+     * Create request for operation 'createConsumerDynamicRegistration'
      *
-     * @param  \OpenBankProject\Model\OBPv510CreateConsumerDynamicRegistrationRequest $obpv510_create_consumer_dynamic_registration_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateConsumerDynamicRegistration'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateConsumerDynamicRegistrationRequest $create_consumer_dynamic_registration_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createConsumerDynamicRegistration'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510CreateConsumerDynamicRegistrationRequest($obpv510_create_consumer_dynamic_registration_request, string $contentType = self::contentTypes['oBPv510CreateConsumerDynamicRegistration'][0])
+    public function createConsumerDynamicRegistrationRequest($create_consumer_dynamic_registration_request, string $contentType = self::contentTypes['createConsumerDynamicRegistration'][0])
     {
 
-        // verify the required parameter 'obpv510_create_consumer_dynamic_registration_request' is set
-        if ($obpv510_create_consumer_dynamic_registration_request === null || (is_array($obpv510_create_consumer_dynamic_registration_request) && count($obpv510_create_consumer_dynamic_registration_request) === 0)) {
+        // verify the required parameter 'create_consumer_dynamic_registration_request' is set
+        if ($create_consumer_dynamic_registration_request === null || (is_array($create_consumer_dynamic_registration_request) && count($create_consumer_dynamic_registration_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv510_create_consumer_dynamic_registration_request when calling oBPv510CreateConsumerDynamicRegistration'
+                'Missing the required parameter $create_consumer_dynamic_registration_request when calling createConsumerDynamicRegistration'
             );
         }
 
@@ -367,12 +367,12 @@ class DirectoryApi
         );
 
         // for model (json/xml)
-        if (isset($obpv510_create_consumer_dynamic_registration_request)) {
+        if (isset($create_consumer_dynamic_registration_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv510_create_consumer_dynamic_registration_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_consumer_dynamic_registration_request));
             } else {
-                $httpBody = $obpv510_create_consumer_dynamic_registration_request;
+                $httpBody = $create_consumer_dynamic_registration_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -408,9 +408,9 @@ class DirectoryApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -435,38 +435,38 @@ class DirectoryApi
     }
 
     /**
-     * Operation oBPv510CreateRegulatedEntity
+     * Operation createRegulatedEntity
      *
      * Create Regulated Entity
      *
-     * @param  \OpenBankProject\Model\OBPv510CreateRegulatedEntityRequest $obpv510_create_regulated_entity_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateRegulatedEntity'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateRegulatedEntityRequest $create_regulated_entity_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRegulatedEntity'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510GetRegulatedEntityById200Response
+     * @return \OpenBankProject\Model\GetRegulatedEntityById200Response
      */
-    public function oBPv510CreateRegulatedEntity($obpv510_create_regulated_entity_request, string $contentType = self::contentTypes['oBPv510CreateRegulatedEntity'][0])
+    public function createRegulatedEntity($create_regulated_entity_request, string $contentType = self::contentTypes['createRegulatedEntity'][0])
     {
-        list($response) = $this->oBPv510CreateRegulatedEntityWithHttpInfo($obpv510_create_regulated_entity_request, $contentType);
+        list($response) = $this->createRegulatedEntityWithHttpInfo($create_regulated_entity_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv510CreateRegulatedEntityWithHttpInfo
+     * Operation createRegulatedEntityWithHttpInfo
      *
      * Create Regulated Entity
      *
-     * @param  \OpenBankProject\Model\OBPv510CreateRegulatedEntityRequest $obpv510_create_regulated_entity_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateRegulatedEntity'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateRegulatedEntityRequest $create_regulated_entity_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRegulatedEntity'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510GetRegulatedEntityById200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetRegulatedEntityById200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510CreateRegulatedEntityWithHttpInfo($obpv510_create_regulated_entity_request, string $contentType = self::contentTypes['oBPv510CreateRegulatedEntity'][0])
+    public function createRegulatedEntityWithHttpInfo($create_regulated_entity_request, string $contentType = self::contentTypes['createRegulatedEntity'][0])
     {
-        $request = $this->oBPv510CreateRegulatedEntityRequest($obpv510_create_regulated_entity_request, $contentType);
+        $request = $this->createRegulatedEntityRequest($create_regulated_entity_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -494,7 +494,7 @@ class DirectoryApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510GetRegulatedEntityById200Response',
+                        '\OpenBankProject\Model\GetRegulatedEntityById200Response',
                         $request,
                         $response,
                     );
@@ -516,7 +516,7 @@ class DirectoryApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510GetRegulatedEntityById200Response',
+                '\OpenBankProject\Model\GetRegulatedEntityById200Response',
                 $request,
                 $response,
             );
@@ -525,7 +525,7 @@ class DirectoryApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510GetRegulatedEntityById200Response',
+                        '\OpenBankProject\Model\GetRegulatedEntityById200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -538,19 +538,19 @@ class DirectoryApi
     }
 
     /**
-     * Operation oBPv510CreateRegulatedEntityAsync
+     * Operation createRegulatedEntityAsync
      *
      * Create Regulated Entity
      *
-     * @param  \OpenBankProject\Model\OBPv510CreateRegulatedEntityRequest $obpv510_create_regulated_entity_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateRegulatedEntity'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateRegulatedEntityRequest $create_regulated_entity_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRegulatedEntity'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510CreateRegulatedEntityAsync($obpv510_create_regulated_entity_request, string $contentType = self::contentTypes['oBPv510CreateRegulatedEntity'][0])
+    public function createRegulatedEntityAsync($create_regulated_entity_request, string $contentType = self::contentTypes['createRegulatedEntity'][0])
     {
-        return $this->oBPv510CreateRegulatedEntityAsyncWithHttpInfo($obpv510_create_regulated_entity_request, $contentType)
+        return $this->createRegulatedEntityAsyncWithHttpInfo($create_regulated_entity_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -559,20 +559,20 @@ class DirectoryApi
     }
 
     /**
-     * Operation oBPv510CreateRegulatedEntityAsyncWithHttpInfo
+     * Operation createRegulatedEntityAsyncWithHttpInfo
      *
      * Create Regulated Entity
      *
-     * @param  \OpenBankProject\Model\OBPv510CreateRegulatedEntityRequest $obpv510_create_regulated_entity_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateRegulatedEntity'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateRegulatedEntityRequest $create_regulated_entity_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRegulatedEntity'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510CreateRegulatedEntityAsyncWithHttpInfo($obpv510_create_regulated_entity_request, string $contentType = self::contentTypes['oBPv510CreateRegulatedEntity'][0])
+    public function createRegulatedEntityAsyncWithHttpInfo($create_regulated_entity_request, string $contentType = self::contentTypes['createRegulatedEntity'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv510GetRegulatedEntityById200Response';
-        $request = $this->oBPv510CreateRegulatedEntityRequest($obpv510_create_regulated_entity_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetRegulatedEntityById200Response';
+        $request = $this->createRegulatedEntityRequest($create_regulated_entity_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -611,21 +611,21 @@ class DirectoryApi
     }
 
     /**
-     * Create request for operation 'oBPv510CreateRegulatedEntity'
+     * Create request for operation 'createRegulatedEntity'
      *
-     * @param  \OpenBankProject\Model\OBPv510CreateRegulatedEntityRequest $obpv510_create_regulated_entity_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateRegulatedEntity'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateRegulatedEntityRequest $create_regulated_entity_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRegulatedEntity'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510CreateRegulatedEntityRequest($obpv510_create_regulated_entity_request, string $contentType = self::contentTypes['oBPv510CreateRegulatedEntity'][0])
+    public function createRegulatedEntityRequest($create_regulated_entity_request, string $contentType = self::contentTypes['createRegulatedEntity'][0])
     {
 
-        // verify the required parameter 'obpv510_create_regulated_entity_request' is set
-        if ($obpv510_create_regulated_entity_request === null || (is_array($obpv510_create_regulated_entity_request) && count($obpv510_create_regulated_entity_request) === 0)) {
+        // verify the required parameter 'create_regulated_entity_request' is set
+        if ($create_regulated_entity_request === null || (is_array($create_regulated_entity_request) && count($create_regulated_entity_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv510_create_regulated_entity_request when calling oBPv510CreateRegulatedEntity'
+                'Missing the required parameter $create_regulated_entity_request when calling createRegulatedEntity'
             );
         }
 
@@ -648,12 +648,12 @@ class DirectoryApi
         );
 
         // for model (json/xml)
-        if (isset($obpv510_create_regulated_entity_request)) {
+        if (isset($create_regulated_entity_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv510_create_regulated_entity_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_regulated_entity_request));
             } else {
-                $httpBody = $obpv510_create_regulated_entity_request;
+                $httpBody = $create_regulated_entity_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -689,9 +689,9 @@ class DirectoryApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -716,40 +716,40 @@ class DirectoryApi
     }
 
     /**
-     * Operation oBPv510CreateRegulatedEntityAttribute
+     * Operation createRegulatedEntityAttribute
      *
      * Create Regulated Entity Attribute
      *
      * @param  string $regulatedentityid The REGULATEDENTITYID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateRegulatedEntityAttributeRequest $obpv510_update_regulated_entity_attribute_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateRegulatedEntityAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateCounterpartyAttributeRequest $create_counterparty_attribute_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRegulatedEntityAttribute'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510GetRegulatedEntityAttributeById200Response
+     * @return \OpenBankProject\Model\GetRegulatedEntityAttributeById200Response
      */
-    public function oBPv510CreateRegulatedEntityAttribute($regulatedentityid, $obpv510_update_regulated_entity_attribute_request, string $contentType = self::contentTypes['oBPv510CreateRegulatedEntityAttribute'][0])
+    public function createRegulatedEntityAttribute($regulatedentityid, $create_counterparty_attribute_request, string $contentType = self::contentTypes['createRegulatedEntityAttribute'][0])
     {
-        list($response) = $this->oBPv510CreateRegulatedEntityAttributeWithHttpInfo($regulatedentityid, $obpv510_update_regulated_entity_attribute_request, $contentType);
+        list($response) = $this->createRegulatedEntityAttributeWithHttpInfo($regulatedentityid, $create_counterparty_attribute_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv510CreateRegulatedEntityAttributeWithHttpInfo
+     * Operation createRegulatedEntityAttributeWithHttpInfo
      *
      * Create Regulated Entity Attribute
      *
      * @param  string $regulatedentityid The REGULATEDENTITYID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateRegulatedEntityAttributeRequest $obpv510_update_regulated_entity_attribute_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateRegulatedEntityAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateCounterpartyAttributeRequest $create_counterparty_attribute_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRegulatedEntityAttribute'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510GetRegulatedEntityAttributeById200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetRegulatedEntityAttributeById200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510CreateRegulatedEntityAttributeWithHttpInfo($regulatedentityid, $obpv510_update_regulated_entity_attribute_request, string $contentType = self::contentTypes['oBPv510CreateRegulatedEntityAttribute'][0])
+    public function createRegulatedEntityAttributeWithHttpInfo($regulatedentityid, $create_counterparty_attribute_request, string $contentType = self::contentTypes['createRegulatedEntityAttribute'][0])
     {
-        $request = $this->oBPv510CreateRegulatedEntityAttributeRequest($regulatedentityid, $obpv510_update_regulated_entity_attribute_request, $contentType);
+        $request = $this->createRegulatedEntityAttributeRequest($regulatedentityid, $create_counterparty_attribute_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -777,7 +777,7 @@ class DirectoryApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510GetRegulatedEntityAttributeById200Response',
+                        '\OpenBankProject\Model\GetRegulatedEntityAttributeById200Response',
                         $request,
                         $response,
                     );
@@ -799,7 +799,7 @@ class DirectoryApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510GetRegulatedEntityAttributeById200Response',
+                '\OpenBankProject\Model\GetRegulatedEntityAttributeById200Response',
                 $request,
                 $response,
             );
@@ -808,7 +808,7 @@ class DirectoryApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510GetRegulatedEntityAttributeById200Response',
+                        '\OpenBankProject\Model\GetRegulatedEntityAttributeById200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -821,20 +821,20 @@ class DirectoryApi
     }
 
     /**
-     * Operation oBPv510CreateRegulatedEntityAttributeAsync
+     * Operation createRegulatedEntityAttributeAsync
      *
      * Create Regulated Entity Attribute
      *
      * @param  string $regulatedentityid The REGULATEDENTITYID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateRegulatedEntityAttributeRequest $obpv510_update_regulated_entity_attribute_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateRegulatedEntityAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateCounterpartyAttributeRequest $create_counterparty_attribute_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRegulatedEntityAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510CreateRegulatedEntityAttributeAsync($regulatedentityid, $obpv510_update_regulated_entity_attribute_request, string $contentType = self::contentTypes['oBPv510CreateRegulatedEntityAttribute'][0])
+    public function createRegulatedEntityAttributeAsync($regulatedentityid, $create_counterparty_attribute_request, string $contentType = self::contentTypes['createRegulatedEntityAttribute'][0])
     {
-        return $this->oBPv510CreateRegulatedEntityAttributeAsyncWithHttpInfo($regulatedentityid, $obpv510_update_regulated_entity_attribute_request, $contentType)
+        return $this->createRegulatedEntityAttributeAsyncWithHttpInfo($regulatedentityid, $create_counterparty_attribute_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -843,21 +843,21 @@ class DirectoryApi
     }
 
     /**
-     * Operation oBPv510CreateRegulatedEntityAttributeAsyncWithHttpInfo
+     * Operation createRegulatedEntityAttributeAsyncWithHttpInfo
      *
      * Create Regulated Entity Attribute
      *
      * @param  string $regulatedentityid The REGULATEDENTITYID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateRegulatedEntityAttributeRequest $obpv510_update_regulated_entity_attribute_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateRegulatedEntityAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateCounterpartyAttributeRequest $create_counterparty_attribute_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRegulatedEntityAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510CreateRegulatedEntityAttributeAsyncWithHttpInfo($regulatedentityid, $obpv510_update_regulated_entity_attribute_request, string $contentType = self::contentTypes['oBPv510CreateRegulatedEntityAttribute'][0])
+    public function createRegulatedEntityAttributeAsyncWithHttpInfo($regulatedentityid, $create_counterparty_attribute_request, string $contentType = self::contentTypes['createRegulatedEntityAttribute'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv510GetRegulatedEntityAttributeById200Response';
-        $request = $this->oBPv510CreateRegulatedEntityAttributeRequest($regulatedentityid, $obpv510_update_regulated_entity_attribute_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetRegulatedEntityAttributeById200Response';
+        $request = $this->createRegulatedEntityAttributeRequest($regulatedentityid, $create_counterparty_attribute_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -896,29 +896,29 @@ class DirectoryApi
     }
 
     /**
-     * Create request for operation 'oBPv510CreateRegulatedEntityAttribute'
+     * Create request for operation 'createRegulatedEntityAttribute'
      *
      * @param  string $regulatedentityid The REGULATEDENTITYID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateRegulatedEntityAttributeRequest $obpv510_update_regulated_entity_attribute_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateRegulatedEntityAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateCounterpartyAttributeRequest $create_counterparty_attribute_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRegulatedEntityAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510CreateRegulatedEntityAttributeRequest($regulatedentityid, $obpv510_update_regulated_entity_attribute_request, string $contentType = self::contentTypes['oBPv510CreateRegulatedEntityAttribute'][0])
+    public function createRegulatedEntityAttributeRequest($regulatedentityid, $create_counterparty_attribute_request, string $contentType = self::contentTypes['createRegulatedEntityAttribute'][0])
     {
 
         // verify the required parameter 'regulatedentityid' is set
         if ($regulatedentityid === null || (is_array($regulatedentityid) && count($regulatedentityid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $regulatedentityid when calling oBPv510CreateRegulatedEntityAttribute'
+                'Missing the required parameter $regulatedentityid when calling createRegulatedEntityAttribute'
             );
         }
 
-        // verify the required parameter 'obpv510_update_regulated_entity_attribute_request' is set
-        if ($obpv510_update_regulated_entity_attribute_request === null || (is_array($obpv510_update_regulated_entity_attribute_request) && count($obpv510_update_regulated_entity_attribute_request) === 0)) {
+        // verify the required parameter 'create_counterparty_attribute_request' is set
+        if ($create_counterparty_attribute_request === null || (is_array($create_counterparty_attribute_request) && count($create_counterparty_attribute_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv510_update_regulated_entity_attribute_request when calling oBPv510CreateRegulatedEntityAttribute'
+                'Missing the required parameter $create_counterparty_attribute_request when calling createRegulatedEntityAttribute'
             );
         }
 
@@ -949,12 +949,12 @@ class DirectoryApi
         );
 
         // for model (json/xml)
-        if (isset($obpv510_update_regulated_entity_attribute_request)) {
+        if (isset($create_counterparty_attribute_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv510_update_regulated_entity_attribute_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_counterparty_attribute_request));
             } else {
-                $httpBody = $obpv510_update_regulated_entity_attribute_request;
+                $httpBody = $create_counterparty_attribute_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -990,9 +990,9 @@ class DirectoryApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1017,37 +1017,37 @@ class DirectoryApi
     }
 
     /**
-     * Operation oBPv510DeleteRegulatedEntity
+     * Operation deleteRegulatedEntity
      *
      * Delete Regulated Entity
      *
      * @param  string $regulatedentityid The REGULATEDENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510DeleteRegulatedEntity'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteRegulatedEntity'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv510DeleteRegulatedEntity($regulatedentityid, string $contentType = self::contentTypes['oBPv510DeleteRegulatedEntity'][0])
+    public function deleteRegulatedEntity($regulatedentityid, string $contentType = self::contentTypes['deleteRegulatedEntity'][0])
     {
-        $this->oBPv510DeleteRegulatedEntityWithHttpInfo($regulatedentityid, $contentType);
+        $this->deleteRegulatedEntityWithHttpInfo($regulatedentityid, $contentType);
     }
 
     /**
-     * Operation oBPv510DeleteRegulatedEntityWithHttpInfo
+     * Operation deleteRegulatedEntityWithHttpInfo
      *
      * Delete Regulated Entity
      *
      * @param  string $regulatedentityid The REGULATEDENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510DeleteRegulatedEntity'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteRegulatedEntity'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510DeleteRegulatedEntityWithHttpInfo($regulatedentityid, string $contentType = self::contentTypes['oBPv510DeleteRegulatedEntity'][0])
+    public function deleteRegulatedEntityWithHttpInfo($regulatedentityid, string $contentType = self::contentTypes['deleteRegulatedEntity'][0])
     {
-        $request = $this->oBPv510DeleteRegulatedEntityRequest($regulatedentityid, $contentType);
+        $request = $this->deleteRegulatedEntityRequest($regulatedentityid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1083,19 +1083,19 @@ class DirectoryApi
     }
 
     /**
-     * Operation oBPv510DeleteRegulatedEntityAsync
+     * Operation deleteRegulatedEntityAsync
      *
      * Delete Regulated Entity
      *
      * @param  string $regulatedentityid The REGULATEDENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510DeleteRegulatedEntity'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteRegulatedEntity'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510DeleteRegulatedEntityAsync($regulatedentityid, string $contentType = self::contentTypes['oBPv510DeleteRegulatedEntity'][0])
+    public function deleteRegulatedEntityAsync($regulatedentityid, string $contentType = self::contentTypes['deleteRegulatedEntity'][0])
     {
-        return $this->oBPv510DeleteRegulatedEntityAsyncWithHttpInfo($regulatedentityid, $contentType)
+        return $this->deleteRegulatedEntityAsyncWithHttpInfo($regulatedentityid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1104,20 +1104,20 @@ class DirectoryApi
     }
 
     /**
-     * Operation oBPv510DeleteRegulatedEntityAsyncWithHttpInfo
+     * Operation deleteRegulatedEntityAsyncWithHttpInfo
      *
      * Delete Regulated Entity
      *
      * @param  string $regulatedentityid The REGULATEDENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510DeleteRegulatedEntity'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteRegulatedEntity'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510DeleteRegulatedEntityAsyncWithHttpInfo($regulatedentityid, string $contentType = self::contentTypes['oBPv510DeleteRegulatedEntity'][0])
+    public function deleteRegulatedEntityAsyncWithHttpInfo($regulatedentityid, string $contentType = self::contentTypes['deleteRegulatedEntity'][0])
     {
         $returnType = '';
-        $request = $this->oBPv510DeleteRegulatedEntityRequest($regulatedentityid, $contentType);
+        $request = $this->deleteRegulatedEntityRequest($regulatedentityid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1143,21 +1143,21 @@ class DirectoryApi
     }
 
     /**
-     * Create request for operation 'oBPv510DeleteRegulatedEntity'
+     * Create request for operation 'deleteRegulatedEntity'
      *
      * @param  string $regulatedentityid The REGULATEDENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510DeleteRegulatedEntity'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteRegulatedEntity'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510DeleteRegulatedEntityRequest($regulatedentityid, string $contentType = self::contentTypes['oBPv510DeleteRegulatedEntity'][0])
+    public function deleteRegulatedEntityRequest($regulatedentityid, string $contentType = self::contentTypes['deleteRegulatedEntity'][0])
     {
 
         // verify the required parameter 'regulatedentityid' is set
         if ($regulatedentityid === null || (is_array($regulatedentityid) && count($regulatedentityid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $regulatedentityid when calling oBPv510DeleteRegulatedEntity'
+                'Missing the required parameter $regulatedentityid when calling deleteRegulatedEntity'
             );
         }
 
@@ -1222,9 +1222,9 @@ class DirectoryApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1249,39 +1249,39 @@ class DirectoryApi
     }
 
     /**
-     * Operation oBPv510DeleteRegulatedEntityAttribute
+     * Operation deleteRegulatedEntityAttribute
      *
      * Delete Regulated Entity Attribute
      *
      * @param  string $regulatedentityid The REGULATEDENTITYID identifier (required)
      * @param  string $regulatedentityattributeid The REGULATEDENTITYATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510DeleteRegulatedEntityAttribute'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteRegulatedEntityAttribute'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv510DeleteRegulatedEntityAttribute($regulatedentityid, $regulatedentityattributeid, string $contentType = self::contentTypes['oBPv510DeleteRegulatedEntityAttribute'][0])
+    public function deleteRegulatedEntityAttribute($regulatedentityid, $regulatedentityattributeid, string $contentType = self::contentTypes['deleteRegulatedEntityAttribute'][0])
     {
-        $this->oBPv510DeleteRegulatedEntityAttributeWithHttpInfo($regulatedentityid, $regulatedentityattributeid, $contentType);
+        $this->deleteRegulatedEntityAttributeWithHttpInfo($regulatedentityid, $regulatedentityattributeid, $contentType);
     }
 
     /**
-     * Operation oBPv510DeleteRegulatedEntityAttributeWithHttpInfo
+     * Operation deleteRegulatedEntityAttributeWithHttpInfo
      *
      * Delete Regulated Entity Attribute
      *
      * @param  string $regulatedentityid The REGULATEDENTITYID identifier (required)
      * @param  string $regulatedentityattributeid The REGULATEDENTITYATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510DeleteRegulatedEntityAttribute'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteRegulatedEntityAttribute'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510DeleteRegulatedEntityAttributeWithHttpInfo($regulatedentityid, $regulatedentityattributeid, string $contentType = self::contentTypes['oBPv510DeleteRegulatedEntityAttribute'][0])
+    public function deleteRegulatedEntityAttributeWithHttpInfo($regulatedentityid, $regulatedentityattributeid, string $contentType = self::contentTypes['deleteRegulatedEntityAttribute'][0])
     {
-        $request = $this->oBPv510DeleteRegulatedEntityAttributeRequest($regulatedentityid, $regulatedentityattributeid, $contentType);
+        $request = $this->deleteRegulatedEntityAttributeRequest($regulatedentityid, $regulatedentityattributeid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1317,20 +1317,20 @@ class DirectoryApi
     }
 
     /**
-     * Operation oBPv510DeleteRegulatedEntityAttributeAsync
+     * Operation deleteRegulatedEntityAttributeAsync
      *
      * Delete Regulated Entity Attribute
      *
      * @param  string $regulatedentityid The REGULATEDENTITYID identifier (required)
      * @param  string $regulatedentityattributeid The REGULATEDENTITYATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510DeleteRegulatedEntityAttribute'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteRegulatedEntityAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510DeleteRegulatedEntityAttributeAsync($regulatedentityid, $regulatedentityattributeid, string $contentType = self::contentTypes['oBPv510DeleteRegulatedEntityAttribute'][0])
+    public function deleteRegulatedEntityAttributeAsync($regulatedentityid, $regulatedentityattributeid, string $contentType = self::contentTypes['deleteRegulatedEntityAttribute'][0])
     {
-        return $this->oBPv510DeleteRegulatedEntityAttributeAsyncWithHttpInfo($regulatedentityid, $regulatedentityattributeid, $contentType)
+        return $this->deleteRegulatedEntityAttributeAsyncWithHttpInfo($regulatedentityid, $regulatedentityattributeid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1339,21 +1339,21 @@ class DirectoryApi
     }
 
     /**
-     * Operation oBPv510DeleteRegulatedEntityAttributeAsyncWithHttpInfo
+     * Operation deleteRegulatedEntityAttributeAsyncWithHttpInfo
      *
      * Delete Regulated Entity Attribute
      *
      * @param  string $regulatedentityid The REGULATEDENTITYID identifier (required)
      * @param  string $regulatedentityattributeid The REGULATEDENTITYATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510DeleteRegulatedEntityAttribute'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteRegulatedEntityAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510DeleteRegulatedEntityAttributeAsyncWithHttpInfo($regulatedentityid, $regulatedentityattributeid, string $contentType = self::contentTypes['oBPv510DeleteRegulatedEntityAttribute'][0])
+    public function deleteRegulatedEntityAttributeAsyncWithHttpInfo($regulatedentityid, $regulatedentityattributeid, string $contentType = self::contentTypes['deleteRegulatedEntityAttribute'][0])
     {
         $returnType = '';
-        $request = $this->oBPv510DeleteRegulatedEntityAttributeRequest($regulatedentityid, $regulatedentityattributeid, $contentType);
+        $request = $this->deleteRegulatedEntityAttributeRequest($regulatedentityid, $regulatedentityattributeid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1379,29 +1379,29 @@ class DirectoryApi
     }
 
     /**
-     * Create request for operation 'oBPv510DeleteRegulatedEntityAttribute'
+     * Create request for operation 'deleteRegulatedEntityAttribute'
      *
      * @param  string $regulatedentityid The REGULATEDENTITYID identifier (required)
      * @param  string $regulatedentityattributeid The REGULATEDENTITYATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510DeleteRegulatedEntityAttribute'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteRegulatedEntityAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510DeleteRegulatedEntityAttributeRequest($regulatedentityid, $regulatedentityattributeid, string $contentType = self::contentTypes['oBPv510DeleteRegulatedEntityAttribute'][0])
+    public function deleteRegulatedEntityAttributeRequest($regulatedentityid, $regulatedentityattributeid, string $contentType = self::contentTypes['deleteRegulatedEntityAttribute'][0])
     {
 
         // verify the required parameter 'regulatedentityid' is set
         if ($regulatedentityid === null || (is_array($regulatedentityid) && count($regulatedentityid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $regulatedentityid when calling oBPv510DeleteRegulatedEntityAttribute'
+                'Missing the required parameter $regulatedentityid when calling deleteRegulatedEntityAttribute'
             );
         }
 
         // verify the required parameter 'regulatedentityattributeid' is set
         if ($regulatedentityattributeid === null || (is_array($regulatedentityattributeid) && count($regulatedentityattributeid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $regulatedentityattributeid when calling oBPv510DeleteRegulatedEntityAttribute'
+                'Missing the required parameter $regulatedentityattributeid when calling deleteRegulatedEntityAttribute'
             );
         }
 
@@ -1474,9 +1474,9 @@ class DirectoryApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1501,38 +1501,38 @@ class DirectoryApi
     }
 
     /**
-     * Operation oBPv510GetAllRegulatedEntityAttributes
+     * Operation getAllRegulatedEntityAttributes
      *
      * Get All Regulated Entity Attributes
      *
      * @param  string $regulatedentityid The REGULATEDENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetAllRegulatedEntityAttributes'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllRegulatedEntityAttributes'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510GetAllRegulatedEntityAttributes200Response
+     * @return \OpenBankProject\Model\GetAllRegulatedEntityAttributes200Response
      */
-    public function oBPv510GetAllRegulatedEntityAttributes($regulatedentityid, string $contentType = self::contentTypes['oBPv510GetAllRegulatedEntityAttributes'][0])
+    public function getAllRegulatedEntityAttributes($regulatedentityid, string $contentType = self::contentTypes['getAllRegulatedEntityAttributes'][0])
     {
-        list($response) = $this->oBPv510GetAllRegulatedEntityAttributesWithHttpInfo($regulatedentityid, $contentType);
+        list($response) = $this->getAllRegulatedEntityAttributesWithHttpInfo($regulatedentityid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv510GetAllRegulatedEntityAttributesWithHttpInfo
+     * Operation getAllRegulatedEntityAttributesWithHttpInfo
      *
      * Get All Regulated Entity Attributes
      *
      * @param  string $regulatedentityid The REGULATEDENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetAllRegulatedEntityAttributes'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllRegulatedEntityAttributes'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510GetAllRegulatedEntityAttributes200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAllRegulatedEntityAttributes200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510GetAllRegulatedEntityAttributesWithHttpInfo($regulatedentityid, string $contentType = self::contentTypes['oBPv510GetAllRegulatedEntityAttributes'][0])
+    public function getAllRegulatedEntityAttributesWithHttpInfo($regulatedentityid, string $contentType = self::contentTypes['getAllRegulatedEntityAttributes'][0])
     {
-        $request = $this->oBPv510GetAllRegulatedEntityAttributesRequest($regulatedentityid, $contentType);
+        $request = $this->getAllRegulatedEntityAttributesRequest($regulatedentityid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1560,7 +1560,7 @@ class DirectoryApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510GetAllRegulatedEntityAttributes200Response',
+                        '\OpenBankProject\Model\GetAllRegulatedEntityAttributes200Response',
                         $request,
                         $response,
                     );
@@ -1582,7 +1582,7 @@ class DirectoryApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510GetAllRegulatedEntityAttributes200Response',
+                '\OpenBankProject\Model\GetAllRegulatedEntityAttributes200Response',
                 $request,
                 $response,
             );
@@ -1591,7 +1591,7 @@ class DirectoryApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510GetAllRegulatedEntityAttributes200Response',
+                        '\OpenBankProject\Model\GetAllRegulatedEntityAttributes200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1604,19 +1604,19 @@ class DirectoryApi
     }
 
     /**
-     * Operation oBPv510GetAllRegulatedEntityAttributesAsync
+     * Operation getAllRegulatedEntityAttributesAsync
      *
      * Get All Regulated Entity Attributes
      *
      * @param  string $regulatedentityid The REGULATEDENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetAllRegulatedEntityAttributes'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllRegulatedEntityAttributes'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510GetAllRegulatedEntityAttributesAsync($regulatedentityid, string $contentType = self::contentTypes['oBPv510GetAllRegulatedEntityAttributes'][0])
+    public function getAllRegulatedEntityAttributesAsync($regulatedentityid, string $contentType = self::contentTypes['getAllRegulatedEntityAttributes'][0])
     {
-        return $this->oBPv510GetAllRegulatedEntityAttributesAsyncWithHttpInfo($regulatedentityid, $contentType)
+        return $this->getAllRegulatedEntityAttributesAsyncWithHttpInfo($regulatedentityid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1625,20 +1625,20 @@ class DirectoryApi
     }
 
     /**
-     * Operation oBPv510GetAllRegulatedEntityAttributesAsyncWithHttpInfo
+     * Operation getAllRegulatedEntityAttributesAsyncWithHttpInfo
      *
      * Get All Regulated Entity Attributes
      *
      * @param  string $regulatedentityid The REGULATEDENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetAllRegulatedEntityAttributes'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllRegulatedEntityAttributes'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510GetAllRegulatedEntityAttributesAsyncWithHttpInfo($regulatedentityid, string $contentType = self::contentTypes['oBPv510GetAllRegulatedEntityAttributes'][0])
+    public function getAllRegulatedEntityAttributesAsyncWithHttpInfo($regulatedentityid, string $contentType = self::contentTypes['getAllRegulatedEntityAttributes'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv510GetAllRegulatedEntityAttributes200Response';
-        $request = $this->oBPv510GetAllRegulatedEntityAttributesRequest($regulatedentityid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAllRegulatedEntityAttributes200Response';
+        $request = $this->getAllRegulatedEntityAttributesRequest($regulatedentityid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1677,21 +1677,21 @@ class DirectoryApi
     }
 
     /**
-     * Create request for operation 'oBPv510GetAllRegulatedEntityAttributes'
+     * Create request for operation 'getAllRegulatedEntityAttributes'
      *
      * @param  string $regulatedentityid The REGULATEDENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetAllRegulatedEntityAttributes'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllRegulatedEntityAttributes'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510GetAllRegulatedEntityAttributesRequest($regulatedentityid, string $contentType = self::contentTypes['oBPv510GetAllRegulatedEntityAttributes'][0])
+    public function getAllRegulatedEntityAttributesRequest($regulatedentityid, string $contentType = self::contentTypes['getAllRegulatedEntityAttributes'][0])
     {
 
         // verify the required parameter 'regulatedentityid' is set
         if ($regulatedentityid === null || (is_array($regulatedentityid) && count($regulatedentityid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $regulatedentityid when calling oBPv510GetAllRegulatedEntityAttributes'
+                'Missing the required parameter $regulatedentityid when calling getAllRegulatedEntityAttributes'
             );
         }
 
@@ -1756,9 +1756,9 @@ class DirectoryApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1783,40 +1783,40 @@ class DirectoryApi
     }
 
     /**
-     * Operation oBPv510GetRegulatedEntityAttributeById
+     * Operation getRegulatedEntityAttributeById
      *
      * Get Regulated Entity Attribute By ID
      *
      * @param  string $regulatedentityid The REGULATEDENTITYID identifier (required)
      * @param  string $regulatedentityattributeid The REGULATEDENTITYATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetRegulatedEntityAttributeById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRegulatedEntityAttributeById'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510GetRegulatedEntityAttributeById200Response
+     * @return \OpenBankProject\Model\GetRegulatedEntityAttributeById200Response
      */
-    public function oBPv510GetRegulatedEntityAttributeById($regulatedentityid, $regulatedentityattributeid, string $contentType = self::contentTypes['oBPv510GetRegulatedEntityAttributeById'][0])
+    public function getRegulatedEntityAttributeById($regulatedentityid, $regulatedentityattributeid, string $contentType = self::contentTypes['getRegulatedEntityAttributeById'][0])
     {
-        list($response) = $this->oBPv510GetRegulatedEntityAttributeByIdWithHttpInfo($regulatedentityid, $regulatedentityattributeid, $contentType);
+        list($response) = $this->getRegulatedEntityAttributeByIdWithHttpInfo($regulatedentityid, $regulatedentityattributeid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv510GetRegulatedEntityAttributeByIdWithHttpInfo
+     * Operation getRegulatedEntityAttributeByIdWithHttpInfo
      *
      * Get Regulated Entity Attribute By ID
      *
      * @param  string $regulatedentityid The REGULATEDENTITYID identifier (required)
      * @param  string $regulatedentityattributeid The REGULATEDENTITYATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetRegulatedEntityAttributeById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRegulatedEntityAttributeById'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510GetRegulatedEntityAttributeById200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetRegulatedEntityAttributeById200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510GetRegulatedEntityAttributeByIdWithHttpInfo($regulatedentityid, $regulatedentityattributeid, string $contentType = self::contentTypes['oBPv510GetRegulatedEntityAttributeById'][0])
+    public function getRegulatedEntityAttributeByIdWithHttpInfo($regulatedentityid, $regulatedentityattributeid, string $contentType = self::contentTypes['getRegulatedEntityAttributeById'][0])
     {
-        $request = $this->oBPv510GetRegulatedEntityAttributeByIdRequest($regulatedentityid, $regulatedentityattributeid, $contentType);
+        $request = $this->getRegulatedEntityAttributeByIdRequest($regulatedentityid, $regulatedentityattributeid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1844,7 +1844,7 @@ class DirectoryApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510GetRegulatedEntityAttributeById200Response',
+                        '\OpenBankProject\Model\GetRegulatedEntityAttributeById200Response',
                         $request,
                         $response,
                     );
@@ -1866,7 +1866,7 @@ class DirectoryApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510GetRegulatedEntityAttributeById200Response',
+                '\OpenBankProject\Model\GetRegulatedEntityAttributeById200Response',
                 $request,
                 $response,
             );
@@ -1875,7 +1875,7 @@ class DirectoryApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510GetRegulatedEntityAttributeById200Response',
+                        '\OpenBankProject\Model\GetRegulatedEntityAttributeById200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1888,20 +1888,20 @@ class DirectoryApi
     }
 
     /**
-     * Operation oBPv510GetRegulatedEntityAttributeByIdAsync
+     * Operation getRegulatedEntityAttributeByIdAsync
      *
      * Get Regulated Entity Attribute By ID
      *
      * @param  string $regulatedentityid The REGULATEDENTITYID identifier (required)
      * @param  string $regulatedentityattributeid The REGULATEDENTITYATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetRegulatedEntityAttributeById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRegulatedEntityAttributeById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510GetRegulatedEntityAttributeByIdAsync($regulatedentityid, $regulatedentityattributeid, string $contentType = self::contentTypes['oBPv510GetRegulatedEntityAttributeById'][0])
+    public function getRegulatedEntityAttributeByIdAsync($regulatedentityid, $regulatedentityattributeid, string $contentType = self::contentTypes['getRegulatedEntityAttributeById'][0])
     {
-        return $this->oBPv510GetRegulatedEntityAttributeByIdAsyncWithHttpInfo($regulatedentityid, $regulatedentityattributeid, $contentType)
+        return $this->getRegulatedEntityAttributeByIdAsyncWithHttpInfo($regulatedentityid, $regulatedentityattributeid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1910,21 +1910,21 @@ class DirectoryApi
     }
 
     /**
-     * Operation oBPv510GetRegulatedEntityAttributeByIdAsyncWithHttpInfo
+     * Operation getRegulatedEntityAttributeByIdAsyncWithHttpInfo
      *
      * Get Regulated Entity Attribute By ID
      *
      * @param  string $regulatedentityid The REGULATEDENTITYID identifier (required)
      * @param  string $regulatedentityattributeid The REGULATEDENTITYATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetRegulatedEntityAttributeById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRegulatedEntityAttributeById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510GetRegulatedEntityAttributeByIdAsyncWithHttpInfo($regulatedentityid, $regulatedentityattributeid, string $contentType = self::contentTypes['oBPv510GetRegulatedEntityAttributeById'][0])
+    public function getRegulatedEntityAttributeByIdAsyncWithHttpInfo($regulatedentityid, $regulatedentityattributeid, string $contentType = self::contentTypes['getRegulatedEntityAttributeById'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv510GetRegulatedEntityAttributeById200Response';
-        $request = $this->oBPv510GetRegulatedEntityAttributeByIdRequest($regulatedentityid, $regulatedentityattributeid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetRegulatedEntityAttributeById200Response';
+        $request = $this->getRegulatedEntityAttributeByIdRequest($regulatedentityid, $regulatedentityattributeid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1963,29 +1963,29 @@ class DirectoryApi
     }
 
     /**
-     * Create request for operation 'oBPv510GetRegulatedEntityAttributeById'
+     * Create request for operation 'getRegulatedEntityAttributeById'
      *
      * @param  string $regulatedentityid The REGULATEDENTITYID identifier (required)
      * @param  string $regulatedentityattributeid The REGULATEDENTITYATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetRegulatedEntityAttributeById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRegulatedEntityAttributeById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510GetRegulatedEntityAttributeByIdRequest($regulatedentityid, $regulatedentityattributeid, string $contentType = self::contentTypes['oBPv510GetRegulatedEntityAttributeById'][0])
+    public function getRegulatedEntityAttributeByIdRequest($regulatedentityid, $regulatedentityattributeid, string $contentType = self::contentTypes['getRegulatedEntityAttributeById'][0])
     {
 
         // verify the required parameter 'regulatedentityid' is set
         if ($regulatedentityid === null || (is_array($regulatedentityid) && count($regulatedentityid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $regulatedentityid when calling oBPv510GetRegulatedEntityAttributeById'
+                'Missing the required parameter $regulatedentityid when calling getRegulatedEntityAttributeById'
             );
         }
 
         // verify the required parameter 'regulatedentityattributeid' is set
         if ($regulatedentityattributeid === null || (is_array($regulatedentityattributeid) && count($regulatedentityattributeid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $regulatedentityattributeid when calling oBPv510GetRegulatedEntityAttributeById'
+                'Missing the required parameter $regulatedentityattributeid when calling getRegulatedEntityAttributeById'
             );
         }
 
@@ -2058,9 +2058,9 @@ class DirectoryApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2085,38 +2085,38 @@ class DirectoryApi
     }
 
     /**
-     * Operation oBPv510GetRegulatedEntityById
+     * Operation getRegulatedEntityById
      *
      * Get Regulated Entity
      *
      * @param  string $regulatedentityid The REGULATEDENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetRegulatedEntityById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRegulatedEntityById'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510GetRegulatedEntityById200Response
+     * @return \OpenBankProject\Model\GetRegulatedEntityById200Response
      */
-    public function oBPv510GetRegulatedEntityById($regulatedentityid, string $contentType = self::contentTypes['oBPv510GetRegulatedEntityById'][0])
+    public function getRegulatedEntityById($regulatedentityid, string $contentType = self::contentTypes['getRegulatedEntityById'][0])
     {
-        list($response) = $this->oBPv510GetRegulatedEntityByIdWithHttpInfo($regulatedentityid, $contentType);
+        list($response) = $this->getRegulatedEntityByIdWithHttpInfo($regulatedentityid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv510GetRegulatedEntityByIdWithHttpInfo
+     * Operation getRegulatedEntityByIdWithHttpInfo
      *
      * Get Regulated Entity
      *
      * @param  string $regulatedentityid The REGULATEDENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetRegulatedEntityById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRegulatedEntityById'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510GetRegulatedEntityById200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetRegulatedEntityById200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510GetRegulatedEntityByIdWithHttpInfo($regulatedentityid, string $contentType = self::contentTypes['oBPv510GetRegulatedEntityById'][0])
+    public function getRegulatedEntityByIdWithHttpInfo($regulatedentityid, string $contentType = self::contentTypes['getRegulatedEntityById'][0])
     {
-        $request = $this->oBPv510GetRegulatedEntityByIdRequest($regulatedentityid, $contentType);
+        $request = $this->getRegulatedEntityByIdRequest($regulatedentityid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2144,7 +2144,7 @@ class DirectoryApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510GetRegulatedEntityById200Response',
+                        '\OpenBankProject\Model\GetRegulatedEntityById200Response',
                         $request,
                         $response,
                     );
@@ -2166,7 +2166,7 @@ class DirectoryApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510GetRegulatedEntityById200Response',
+                '\OpenBankProject\Model\GetRegulatedEntityById200Response',
                 $request,
                 $response,
             );
@@ -2175,7 +2175,7 @@ class DirectoryApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510GetRegulatedEntityById200Response',
+                        '\OpenBankProject\Model\GetRegulatedEntityById200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2188,19 +2188,19 @@ class DirectoryApi
     }
 
     /**
-     * Operation oBPv510GetRegulatedEntityByIdAsync
+     * Operation getRegulatedEntityByIdAsync
      *
      * Get Regulated Entity
      *
      * @param  string $regulatedentityid The REGULATEDENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetRegulatedEntityById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRegulatedEntityById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510GetRegulatedEntityByIdAsync($regulatedentityid, string $contentType = self::contentTypes['oBPv510GetRegulatedEntityById'][0])
+    public function getRegulatedEntityByIdAsync($regulatedentityid, string $contentType = self::contentTypes['getRegulatedEntityById'][0])
     {
-        return $this->oBPv510GetRegulatedEntityByIdAsyncWithHttpInfo($regulatedentityid, $contentType)
+        return $this->getRegulatedEntityByIdAsyncWithHttpInfo($regulatedentityid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2209,20 +2209,20 @@ class DirectoryApi
     }
 
     /**
-     * Operation oBPv510GetRegulatedEntityByIdAsyncWithHttpInfo
+     * Operation getRegulatedEntityByIdAsyncWithHttpInfo
      *
      * Get Regulated Entity
      *
      * @param  string $regulatedentityid The REGULATEDENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetRegulatedEntityById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRegulatedEntityById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510GetRegulatedEntityByIdAsyncWithHttpInfo($regulatedentityid, string $contentType = self::contentTypes['oBPv510GetRegulatedEntityById'][0])
+    public function getRegulatedEntityByIdAsyncWithHttpInfo($regulatedentityid, string $contentType = self::contentTypes['getRegulatedEntityById'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv510GetRegulatedEntityById200Response';
-        $request = $this->oBPv510GetRegulatedEntityByIdRequest($regulatedentityid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetRegulatedEntityById200Response';
+        $request = $this->getRegulatedEntityByIdRequest($regulatedentityid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2261,21 +2261,21 @@ class DirectoryApi
     }
 
     /**
-     * Create request for operation 'oBPv510GetRegulatedEntityById'
+     * Create request for operation 'getRegulatedEntityById'
      *
      * @param  string $regulatedentityid The REGULATEDENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetRegulatedEntityById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRegulatedEntityById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510GetRegulatedEntityByIdRequest($regulatedentityid, string $contentType = self::contentTypes['oBPv510GetRegulatedEntityById'][0])
+    public function getRegulatedEntityByIdRequest($regulatedentityid, string $contentType = self::contentTypes['getRegulatedEntityById'][0])
     {
 
         // verify the required parameter 'regulatedentityid' is set
         if ($regulatedentityid === null || (is_array($regulatedentityid) && count($regulatedentityid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $regulatedentityid when calling oBPv510GetRegulatedEntityById'
+                'Missing the required parameter $regulatedentityid when calling getRegulatedEntityById'
             );
         }
 
@@ -2353,36 +2353,36 @@ class DirectoryApi
     }
 
     /**
-     * Operation oBPv510RegulatedEntities
+     * Operation regulatedEntities
      *
      * Get Regulated Entities
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510RegulatedEntities'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['regulatedEntities'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510RegulatedEntities200Response
+     * @return \OpenBankProject\Model\RegulatedEntities200Response
      */
-    public function oBPv510RegulatedEntities(string $contentType = self::contentTypes['oBPv510RegulatedEntities'][0])
+    public function regulatedEntities(string $contentType = self::contentTypes['regulatedEntities'][0])
     {
-        list($response) = $this->oBPv510RegulatedEntitiesWithHttpInfo($contentType);
+        list($response) = $this->regulatedEntitiesWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv510RegulatedEntitiesWithHttpInfo
+     * Operation regulatedEntitiesWithHttpInfo
      *
      * Get Regulated Entities
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510RegulatedEntities'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['regulatedEntities'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510RegulatedEntities200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\RegulatedEntities200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510RegulatedEntitiesWithHttpInfo(string $contentType = self::contentTypes['oBPv510RegulatedEntities'][0])
+    public function regulatedEntitiesWithHttpInfo(string $contentType = self::contentTypes['regulatedEntities'][0])
     {
-        $request = $this->oBPv510RegulatedEntitiesRequest($contentType);
+        $request = $this->regulatedEntitiesRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2410,7 +2410,7 @@ class DirectoryApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510RegulatedEntities200Response',
+                        '\OpenBankProject\Model\RegulatedEntities200Response',
                         $request,
                         $response,
                     );
@@ -2432,7 +2432,7 @@ class DirectoryApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510RegulatedEntities200Response',
+                '\OpenBankProject\Model\RegulatedEntities200Response',
                 $request,
                 $response,
             );
@@ -2441,7 +2441,7 @@ class DirectoryApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510RegulatedEntities200Response',
+                        '\OpenBankProject\Model\RegulatedEntities200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2454,18 +2454,18 @@ class DirectoryApi
     }
 
     /**
-     * Operation oBPv510RegulatedEntitiesAsync
+     * Operation regulatedEntitiesAsync
      *
      * Get Regulated Entities
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510RegulatedEntities'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['regulatedEntities'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510RegulatedEntitiesAsync(string $contentType = self::contentTypes['oBPv510RegulatedEntities'][0])
+    public function regulatedEntitiesAsync(string $contentType = self::contentTypes['regulatedEntities'][0])
     {
-        return $this->oBPv510RegulatedEntitiesAsyncWithHttpInfo($contentType)
+        return $this->regulatedEntitiesAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2474,19 +2474,19 @@ class DirectoryApi
     }
 
     /**
-     * Operation oBPv510RegulatedEntitiesAsyncWithHttpInfo
+     * Operation regulatedEntitiesAsyncWithHttpInfo
      *
      * Get Regulated Entities
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510RegulatedEntities'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['regulatedEntities'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510RegulatedEntitiesAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv510RegulatedEntities'][0])
+    public function regulatedEntitiesAsyncWithHttpInfo(string $contentType = self::contentTypes['regulatedEntities'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv510RegulatedEntities200Response';
-        $request = $this->oBPv510RegulatedEntitiesRequest($contentType);
+        $returnType = '\OpenBankProject\Model\RegulatedEntities200Response';
+        $request = $this->regulatedEntitiesRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2525,14 +2525,14 @@ class DirectoryApi
     }
 
     /**
-     * Create request for operation 'oBPv510RegulatedEntities'
+     * Create request for operation 'regulatedEntities'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510RegulatedEntities'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['regulatedEntities'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510RegulatedEntitiesRequest(string $contentType = self::contentTypes['oBPv510RegulatedEntities'][0])
+    public function regulatedEntitiesRequest(string $contentType = self::contentTypes['regulatedEntities'][0])
     {
 
 
@@ -2601,42 +2601,42 @@ class DirectoryApi
     }
 
     /**
-     * Operation oBPv510UpdateRegulatedEntityAttribute
+     * Operation updateRegulatedEntityAttribute
      *
      * Update Regulated Entity Attribute
      *
      * @param  string $regulatedentityid The REGULATEDENTITYID identifier (required)
      * @param  string $regulatedentityattributeid The REGULATEDENTITYATTRIBUTEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateRegulatedEntityAttributeRequest $obpv510_update_regulated_entity_attribute_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateRegulatedEntityAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateCounterpartyAttributeRequest $create_counterparty_attribute_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateRegulatedEntityAttribute'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510GetRegulatedEntityAttributeById200Response
+     * @return \OpenBankProject\Model\GetRegulatedEntityAttributeById200Response
      */
-    public function oBPv510UpdateRegulatedEntityAttribute($regulatedentityid, $regulatedentityattributeid, $obpv510_update_regulated_entity_attribute_request, string $contentType = self::contentTypes['oBPv510UpdateRegulatedEntityAttribute'][0])
+    public function updateRegulatedEntityAttribute($regulatedentityid, $regulatedentityattributeid, $create_counterparty_attribute_request, string $contentType = self::contentTypes['updateRegulatedEntityAttribute'][0])
     {
-        list($response) = $this->oBPv510UpdateRegulatedEntityAttributeWithHttpInfo($regulatedentityid, $regulatedentityattributeid, $obpv510_update_regulated_entity_attribute_request, $contentType);
+        list($response) = $this->updateRegulatedEntityAttributeWithHttpInfo($regulatedentityid, $regulatedentityattributeid, $create_counterparty_attribute_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv510UpdateRegulatedEntityAttributeWithHttpInfo
+     * Operation updateRegulatedEntityAttributeWithHttpInfo
      *
      * Update Regulated Entity Attribute
      *
      * @param  string $regulatedentityid The REGULATEDENTITYID identifier (required)
      * @param  string $regulatedentityattributeid The REGULATEDENTITYATTRIBUTEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateRegulatedEntityAttributeRequest $obpv510_update_regulated_entity_attribute_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateRegulatedEntityAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateCounterpartyAttributeRequest $create_counterparty_attribute_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateRegulatedEntityAttribute'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510GetRegulatedEntityAttributeById200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetRegulatedEntityAttributeById200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510UpdateRegulatedEntityAttributeWithHttpInfo($regulatedentityid, $regulatedentityattributeid, $obpv510_update_regulated_entity_attribute_request, string $contentType = self::contentTypes['oBPv510UpdateRegulatedEntityAttribute'][0])
+    public function updateRegulatedEntityAttributeWithHttpInfo($regulatedentityid, $regulatedentityattributeid, $create_counterparty_attribute_request, string $contentType = self::contentTypes['updateRegulatedEntityAttribute'][0])
     {
-        $request = $this->oBPv510UpdateRegulatedEntityAttributeRequest($regulatedentityid, $regulatedentityattributeid, $obpv510_update_regulated_entity_attribute_request, $contentType);
+        $request = $this->updateRegulatedEntityAttributeRequest($regulatedentityid, $regulatedentityattributeid, $create_counterparty_attribute_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2664,7 +2664,7 @@ class DirectoryApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510GetRegulatedEntityAttributeById200Response',
+                        '\OpenBankProject\Model\GetRegulatedEntityAttributeById200Response',
                         $request,
                         $response,
                     );
@@ -2686,7 +2686,7 @@ class DirectoryApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510GetRegulatedEntityAttributeById200Response',
+                '\OpenBankProject\Model\GetRegulatedEntityAttributeById200Response',
                 $request,
                 $response,
             );
@@ -2695,7 +2695,7 @@ class DirectoryApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510GetRegulatedEntityAttributeById200Response',
+                        '\OpenBankProject\Model\GetRegulatedEntityAttributeById200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2708,21 +2708,21 @@ class DirectoryApi
     }
 
     /**
-     * Operation oBPv510UpdateRegulatedEntityAttributeAsync
+     * Operation updateRegulatedEntityAttributeAsync
      *
      * Update Regulated Entity Attribute
      *
      * @param  string $regulatedentityid The REGULATEDENTITYID identifier (required)
      * @param  string $regulatedentityattributeid The REGULATEDENTITYATTRIBUTEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateRegulatedEntityAttributeRequest $obpv510_update_regulated_entity_attribute_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateRegulatedEntityAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateCounterpartyAttributeRequest $create_counterparty_attribute_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateRegulatedEntityAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510UpdateRegulatedEntityAttributeAsync($regulatedentityid, $regulatedentityattributeid, $obpv510_update_regulated_entity_attribute_request, string $contentType = self::contentTypes['oBPv510UpdateRegulatedEntityAttribute'][0])
+    public function updateRegulatedEntityAttributeAsync($regulatedentityid, $regulatedentityattributeid, $create_counterparty_attribute_request, string $contentType = self::contentTypes['updateRegulatedEntityAttribute'][0])
     {
-        return $this->oBPv510UpdateRegulatedEntityAttributeAsyncWithHttpInfo($regulatedentityid, $regulatedentityattributeid, $obpv510_update_regulated_entity_attribute_request, $contentType)
+        return $this->updateRegulatedEntityAttributeAsyncWithHttpInfo($regulatedentityid, $regulatedentityattributeid, $create_counterparty_attribute_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2731,22 +2731,22 @@ class DirectoryApi
     }
 
     /**
-     * Operation oBPv510UpdateRegulatedEntityAttributeAsyncWithHttpInfo
+     * Operation updateRegulatedEntityAttributeAsyncWithHttpInfo
      *
      * Update Regulated Entity Attribute
      *
      * @param  string $regulatedentityid The REGULATEDENTITYID identifier (required)
      * @param  string $regulatedentityattributeid The REGULATEDENTITYATTRIBUTEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateRegulatedEntityAttributeRequest $obpv510_update_regulated_entity_attribute_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateRegulatedEntityAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateCounterpartyAttributeRequest $create_counterparty_attribute_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateRegulatedEntityAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510UpdateRegulatedEntityAttributeAsyncWithHttpInfo($regulatedentityid, $regulatedentityattributeid, $obpv510_update_regulated_entity_attribute_request, string $contentType = self::contentTypes['oBPv510UpdateRegulatedEntityAttribute'][0])
+    public function updateRegulatedEntityAttributeAsyncWithHttpInfo($regulatedentityid, $regulatedentityattributeid, $create_counterparty_attribute_request, string $contentType = self::contentTypes['updateRegulatedEntityAttribute'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv510GetRegulatedEntityAttributeById200Response';
-        $request = $this->oBPv510UpdateRegulatedEntityAttributeRequest($regulatedentityid, $regulatedentityattributeid, $obpv510_update_regulated_entity_attribute_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetRegulatedEntityAttributeById200Response';
+        $request = $this->updateRegulatedEntityAttributeRequest($regulatedentityid, $regulatedentityattributeid, $create_counterparty_attribute_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2785,37 +2785,37 @@ class DirectoryApi
     }
 
     /**
-     * Create request for operation 'oBPv510UpdateRegulatedEntityAttribute'
+     * Create request for operation 'updateRegulatedEntityAttribute'
      *
      * @param  string $regulatedentityid The REGULATEDENTITYID identifier (required)
      * @param  string $regulatedentityattributeid The REGULATEDENTITYATTRIBUTEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510UpdateRegulatedEntityAttributeRequest $obpv510_update_regulated_entity_attribute_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateRegulatedEntityAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateCounterpartyAttributeRequest $create_counterparty_attribute_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateRegulatedEntityAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510UpdateRegulatedEntityAttributeRequest($regulatedentityid, $regulatedentityattributeid, $obpv510_update_regulated_entity_attribute_request, string $contentType = self::contentTypes['oBPv510UpdateRegulatedEntityAttribute'][0])
+    public function updateRegulatedEntityAttributeRequest($regulatedentityid, $regulatedentityattributeid, $create_counterparty_attribute_request, string $contentType = self::contentTypes['updateRegulatedEntityAttribute'][0])
     {
 
         // verify the required parameter 'regulatedentityid' is set
         if ($regulatedentityid === null || (is_array($regulatedentityid) && count($regulatedentityid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $regulatedentityid when calling oBPv510UpdateRegulatedEntityAttribute'
+                'Missing the required parameter $regulatedentityid when calling updateRegulatedEntityAttribute'
             );
         }
 
         // verify the required parameter 'regulatedentityattributeid' is set
         if ($regulatedentityattributeid === null || (is_array($regulatedentityattributeid) && count($regulatedentityattributeid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $regulatedentityattributeid when calling oBPv510UpdateRegulatedEntityAttribute'
+                'Missing the required parameter $regulatedentityattributeid when calling updateRegulatedEntityAttribute'
             );
         }
 
-        // verify the required parameter 'obpv510_update_regulated_entity_attribute_request' is set
-        if ($obpv510_update_regulated_entity_attribute_request === null || (is_array($obpv510_update_regulated_entity_attribute_request) && count($obpv510_update_regulated_entity_attribute_request) === 0)) {
+        // verify the required parameter 'create_counterparty_attribute_request' is set
+        if ($create_counterparty_attribute_request === null || (is_array($create_counterparty_attribute_request) && count($create_counterparty_attribute_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv510_update_regulated_entity_attribute_request when calling oBPv510UpdateRegulatedEntityAttribute'
+                'Missing the required parameter $create_counterparty_attribute_request when calling updateRegulatedEntityAttribute'
             );
         }
 
@@ -2854,12 +2854,12 @@ class DirectoryApi
         );
 
         // for model (json/xml)
-        if (isset($obpv510_update_regulated_entity_attribute_request)) {
+        if (isset($create_counterparty_attribute_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv510_update_regulated_entity_attribute_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_counterparty_attribute_request));
             } else {
-                $httpBody = $obpv510_update_regulated_entity_attribute_request;
+                $httpBody = $create_counterparty_attribute_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2895,9 +2895,9 @@ class DirectoryApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

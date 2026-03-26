@@ -13,10 +13,10 @@ open class OAuthAPI {
      Get JSON Web Key (JWK) URIs
      
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv310GetOAuth2ServerJWKsURIs200Response
+     - returns: GetOAuth2ServerJWKsURIs200Response
      */
-    open class func oBPv310GetOAuth2ServerJWKsURIs(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv310GetOAuth2ServerJWKsURIs200Response {
-        return try await oBPv310GetOAuth2ServerJWKsURIsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    open class func getOAuth2ServerJWKsURIs(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetOAuth2ServerJWKsURIs200Response {
+        return try await getOAuth2ServerJWKsURIsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -24,9 +24,9 @@ open class OAuthAPI {
      - GET /obp/v3.1.0/jwks-uris
      - <p>Get the OAuth2 server's public JSON Web Key (JWK) URIs.<br /> It is required by client applications to validate ID tokens, self-contained access tokens and other issued objects.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#jwks_uri\"><strong>jwks_uri</strong></a>:</p> <p><a href=\"/glossary#jwks_uris\"><strong>jwks_uris</strong></a>:</p> 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv310GetOAuth2ServerJWKsURIs200Response> 
+     - returns: RequestBuilder<GetOAuth2ServerJWKsURIs200Response> 
      */
-    open class func oBPv310GetOAuth2ServerJWKsURIsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv310GetOAuth2ServerJWKsURIs200Response> {
+    open class func getOAuth2ServerJWKsURIsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetOAuth2ServerJWKsURIs200Response> {
         let localVariablePath = "/obp/v3.1.0/jwks-uris"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -39,7 +39,7 @@ open class OAuthAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv310GetOAuth2ServerJWKsURIs200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetOAuth2ServerJWKsURIs200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
     }
@@ -48,10 +48,10 @@ open class OAuthAPI {
      Get Connector Status (Loopback)
      
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv310GetObpConnectorLoopback200Response
+     - returns: GetObpConnectorLoopback200Response
      */
-    open class func oBPv310GetObpConnectorLoopback(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv310GetObpConnectorLoopback200Response {
-        return try await oBPv310GetObpConnectorLoopbackWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    open class func getObpConnectorLoopback(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetObpConnectorLoopback200Response {
+        return try await getObpConnectorLoopbackWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -65,12 +65,12 @@ open class OAuthAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv310GetObpConnectorLoopback200Response> 
+     - returns: RequestBuilder<GetObpConnectorLoopback200Response> 
      */
-    open class func oBPv310GetObpConnectorLoopbackWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv310GetObpConnectorLoopback200Response> {
+    open class func getObpConnectorLoopbackWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetObpConnectorLoopback200Response> {
         let localVariablePath = "/obp/v3.1.0/connector/loopback"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -83,7 +83,7 @@ open class OAuthAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv310GetObpConnectorLoopback200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetObpConnectorLoopback200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -93,16 +93,16 @@ open class OAuthAPI {
      
      - parameter clientid: (path) The CLIENTID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetOidcClient200Response
+     - returns: GetOidcClient200Response
      */
-    open class func oBPv600GetOidcClient(clientid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetOidcClient200Response {
-        return try await oBPv600GetOidcClientWithRequestBuilder(clientid: clientid, apiConfiguration: apiConfiguration).execute().body
+    open class func getOidcClient(clientid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetOidcClient200Response {
+        return try await getOidcClientWithRequestBuilder(clientid: clientid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
      Get OIDC Client
      - GET /obp/v6.0.0/oidc/clients/{clientid}
-     - <p>Gets an OIDC/OAuth2 client's metadata by client_id.</p> <p>Returns client information including name, consumer_id, redirect_uris, and enabled status.<br /> This endpoint does not verify the client secret - use POST /oidc/clients/verify for authentication.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CLIENT_ID</a>: CLIENT_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>client_id</strong></a>: client_id</p> <p><a href=\"/glossary#\"><strong>client_name</strong></a>: client_name</p> <p><a href=\"/glossary#\"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#enabled\"><strong>enabled</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>redirect_uris</strong></a>: redirect_uris</p> 
+     - <p>Gets an OIDC/OAuth2 client's metadata by client_id.</p> <p>Returns client information including name, consumer_id, redirect_uris, and enabled status.<br /> This endpoint does not verify the client secret - use POST /oidc/clients/verify for authentication.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CLIENT_ID</a>: CLIENT_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>client_id</strong></a>: client_id</p> <p><a href=\"/glossary#\"><strong>client_name</strong></a>: client_name</p> <p><a href=\"/glossary#\"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#enabled\"><strong>enabled</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>redirect_uris</strong></a>: redirect_uris</p> 
      - OAuth:
        - type: oauth2
        - name: OAuth2
@@ -110,13 +110,13 @@ open class OAuthAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter clientid: (path) The CLIENTID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetOidcClient200Response> 
+     - returns: RequestBuilder<GetOidcClient200Response> 
      */
-    open class func oBPv600GetOidcClientWithRequestBuilder(clientid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetOidcClient200Response> {
+    open class func getOidcClientWithRequestBuilder(clientid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetOidcClient200Response> {
         var localVariablePath = "/obp/v6.0.0/oidc/clients/{clientid}"
         let clientidPreEscape = "\(APIHelper.mapValueToPathItem(clientid))"
         let clientidPostEscape = clientidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -132,7 +132,7 @@ open class OAuthAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetOidcClient200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetOidcClient200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -140,18 +140,18 @@ open class OAuthAPI {
     /**
      Verify OIDC Client
      
-     - parameter oBPv600VerifyOidcClientRequest: (body) Request body 
+     - parameter verifyOidcClientRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600VerifyOidcClient200Response
+     - returns: VerifyOidcClient200Response
      */
-    open class func oBPv600VerifyOidcClient(oBPv600VerifyOidcClientRequest: OBPv600VerifyOidcClientRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600VerifyOidcClient200Response {
-        return try await oBPv600VerifyOidcClientWithRequestBuilder(oBPv600VerifyOidcClientRequest: oBPv600VerifyOidcClientRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func verifyOidcClient(verifyOidcClientRequest: VerifyOidcClientRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> VerifyOidcClient200Response {
+        return try await verifyOidcClientWithRequestBuilder(verifyOidcClientRequest: verifyOidcClientRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
      Verify OIDC Client
      - POST /obp/v6.0.0/oidc/clients/verify
-     - <p>Verifies an OIDC/OAuth2 client's credentials.</p> <p>Returns <code>valid: true</code> if the client_id and client_secret match an active consumer.<br /> Also returns the consumer_id and redirect_uris for use by the OIDC provider.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>client_id</strong></a>: client_id</p> <p><a href=\"/glossary#\"><strong>client_secret</strong></a>: client_secret</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>valid</strong></a>: valid</p> <p><a href=\"/glossary#\">client_id</a>: client_id</p> <p><a href=\"/glossary#\">consumer_id</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">redirect_uris</a>: redirect_uris</p> 
+     - <p>Verifies an OIDC/OAuth2 client's credentials.</p> <p>Returns <code>valid: true</code> if the client_id and client_secret match an active consumer.<br /> Also returns the consumer_id and redirect_uris for use by the OIDC provider.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>client_id</strong></a>: client_id</p> <p><a href=\"/glossary#\"><strong>client_secret</strong></a>: client_secret</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>valid</strong></a>: valid</p> <p><a href=\"/glossary#\">client_id</a>: client_id</p> <p><a href=\"/glossary#\">consumer_id</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">redirect_uris</a>: redirect_uris</p> 
      - OAuth:
        - type: oauth2
        - name: OAuth2
@@ -159,16 +159,16 @@ open class OAuthAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
-     - parameter oBPv600VerifyOidcClientRequest: (body) Request body 
+     - parameter verifyOidcClientRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600VerifyOidcClient200Response> 
+     - returns: RequestBuilder<VerifyOidcClient200Response> 
      */
-    open class func oBPv600VerifyOidcClientWithRequestBuilder(oBPv600VerifyOidcClientRequest: OBPv600VerifyOidcClientRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600VerifyOidcClient200Response> {
+    open class func verifyOidcClientWithRequestBuilder(verifyOidcClientRequest: VerifyOidcClientRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<VerifyOidcClient200Response> {
         let localVariablePath = "/obp/v6.0.0/oidc/clients/verify"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv600VerifyOidcClientRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: verifyOidcClientRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -178,7 +178,7 @@ open class OAuthAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600VerifyOidcClient200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<VerifyOidcClient200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }

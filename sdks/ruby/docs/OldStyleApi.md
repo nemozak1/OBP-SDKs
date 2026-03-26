@@ -1,15 +1,15 @@
 # OpenBankProject::OldStyleApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**o_bpv2_0_0_elastic_search_metrics**](OldStyleApi.md#o_bpv2_0_0_elastic_search_metrics) | **GET** /obp/v2.0.0/search/metrics | Search API Metrics via Elasticsearch |
+| [**elastic_search_metrics**](OldStyleApi.md#elastic_search_metrics) | **GET** /obp/v2.0.0/search/metrics | Search API Metrics via Elasticsearch |
 
 
-## o_bpv2_0_0_elastic_search_metrics
+## elastic_search_metrics
 
-> <OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage> o_bpv2_0_0_elastic_search_metrics
+> Object elastic_search_metrics
 
 Search API Metrics via Elasticsearch
 
@@ -31,37 +31,37 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::OldStyleApi.new
 
 begin
   # Search API Metrics via Elasticsearch
-  result = api_instance.o_bpv2_0_0_elastic_search_metrics
+  result = api_instance.elastic_search_metrics
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling OldStyleApi->o_bpv2_0_0_elastic_search_metrics: #{e}"
+  puts "Error when calling OldStyleApi->elastic_search_metrics: #{e}"
 end
 ```
 
-#### Using the o_bpv2_0_0_elastic_search_metrics_with_http_info variant
+#### Using the elastic_search_metrics_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage>, Integer, Hash)> o_bpv2_0_0_elastic_search_metrics_with_http_info
+> <Array(Object, Integer, Hash)> elastic_search_metrics_with_http_info
 
 ```ruby
 begin
   # Search API Metrics via Elasticsearch
-  data, status_code, headers = api_instance.o_bpv2_0_0_elastic_search_metrics_with_http_info
+  data, status_code, headers = api_instance.elastic_search_metrics_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage>
+  p data # => Object
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling OldStyleApi->o_bpv2_0_0_elastic_search_metrics_with_http_info: #{e}"
+  puts "Error when calling OldStyleApi->elastic_search_metrics_with_http_info: #{e}"
 end
 ```
 
@@ -71,7 +71,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage**](OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.md)
+**Object**
 
 ### Authorization
 

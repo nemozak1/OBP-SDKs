@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,34 +75,34 @@ class MetricApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv200ElasticSearchMetrics' => [
+        'elasticSearchMetrics' => [
             'application/json',
         ],
-        'oBPv220GetConnectorMetrics' => [
+        'getAggregateMetrics' => [
             'application/json',
         ],
-        'oBPv310GetMetricsTopConsumers' => [
+        'getConnectorCallCounts' => [
             'application/json',
         ],
-        'oBPv500GetMetricsAtBank' => [
+        'getConnectorMetrics' => [
             'application/json',
         ],
-        'oBPv600GetAggregateMetrics' => [
+        'getConnectorTraces' => [
             'application/json',
         ],
-        'oBPv600GetConnectorCallCounts' => [
+        'getMetrics' => [
             'application/json',
         ],
-        'oBPv600GetConnectorTraces' => [
+        'getMetricsAtBank' => [
             'application/json',
         ],
-        'oBPv600GetMetrics' => [
+        'getMetricsTopConsumers' => [
             'application/json',
         ],
-        'oBPv600GetPopularApis' => [
+        'getPopularApis' => [
             'application/json',
         ],
-        'oBPv600GetTopAPIs' => [
+        'getTopAPIs' => [
             'application/json',
         ],
     ];
@@ -154,36 +154,36 @@ class MetricApi
     }
 
     /**
-     * Operation oBPv200ElasticSearchMetrics
+     * Operation elasticSearchMetrics
      *
      * Search API Metrics via Elasticsearch
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv200ElasticSearchMetrics'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['elasticSearchMetrics'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage
+     * @return object
      */
-    public function oBPv200ElasticSearchMetrics(string $contentType = self::contentTypes['oBPv200ElasticSearchMetrics'][0])
+    public function elasticSearchMetrics(string $contentType = self::contentTypes['elasticSearchMetrics'][0])
     {
-        list($response) = $this->oBPv200ElasticSearchMetricsWithHttpInfo($contentType);
+        list($response) = $this->elasticSearchMetricsWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv200ElasticSearchMetricsWithHttpInfo
+     * Operation elasticSearchMetricsWithHttpInfo
      *
      * Search API Metrics via Elasticsearch
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv200ElasticSearchMetrics'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['elasticSearchMetrics'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage, HTTP status code, HTTP response headers (array of strings)
+     * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv200ElasticSearchMetricsWithHttpInfo(string $contentType = self::contentTypes['oBPv200ElasticSearchMetrics'][0])
+    public function elasticSearchMetricsWithHttpInfo(string $contentType = self::contentTypes['elasticSearchMetrics'][0])
     {
-        $request = $this->oBPv200ElasticSearchMetricsRequest($contentType);
+        $request = $this->elasticSearchMetricsRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -211,7 +211,7 @@ class MetricApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage',
+                        'object',
                         $request,
                         $response,
                     );
@@ -233,7 +233,7 @@ class MetricApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage',
+                'object',
                 $request,
                 $response,
             );
@@ -242,7 +242,7 @@ class MetricApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage',
+                        'object',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -255,18 +255,18 @@ class MetricApi
     }
 
     /**
-     * Operation oBPv200ElasticSearchMetricsAsync
+     * Operation elasticSearchMetricsAsync
      *
      * Search API Metrics via Elasticsearch
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv200ElasticSearchMetrics'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['elasticSearchMetrics'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv200ElasticSearchMetricsAsync(string $contentType = self::contentTypes['oBPv200ElasticSearchMetrics'][0])
+    public function elasticSearchMetricsAsync(string $contentType = self::contentTypes['elasticSearchMetrics'][0])
     {
-        return $this->oBPv200ElasticSearchMetricsAsyncWithHttpInfo($contentType)
+        return $this->elasticSearchMetricsAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -275,19 +275,19 @@ class MetricApi
     }
 
     /**
-     * Operation oBPv200ElasticSearchMetricsAsyncWithHttpInfo
+     * Operation elasticSearchMetricsAsyncWithHttpInfo
      *
      * Search API Metrics via Elasticsearch
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv200ElasticSearchMetrics'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['elasticSearchMetrics'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv200ElasticSearchMetricsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv200ElasticSearchMetrics'][0])
+    public function elasticSearchMetricsAsyncWithHttpInfo(string $contentType = self::contentTypes['elasticSearchMetrics'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage';
-        $request = $this->oBPv200ElasticSearchMetricsRequest($contentType);
+        $returnType = 'object';
+        $request = $this->elasticSearchMetricsRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -326,14 +326,14 @@ class MetricApi
     }
 
     /**
-     * Create request for operation 'oBPv200ElasticSearchMetrics'
+     * Create request for operation 'elasticSearchMetrics'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv200ElasticSearchMetrics'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['elasticSearchMetrics'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv200ElasticSearchMetricsRequest(string $contentType = self::contentTypes['oBPv200ElasticSearchMetrics'][0])
+    public function elasticSearchMetricsRequest(string $contentType = self::contentTypes['elasticSearchMetrics'][0])
     {
 
 
@@ -389,9 +389,9 @@ class MetricApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -416,36 +416,36 @@ class MetricApi
     }
 
     /**
-     * Operation oBPv220GetConnectorMetrics
+     * Operation getAggregateMetrics
      *
-     * Get Connector Metrics
+     * Get Aggregate Metrics
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv220GetConnectorMetrics'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAggregateMetrics'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv220GetConnectorMetrics200Response
+     * @return \OpenBankProject\Model\GetAggregateMetrics200Response
      */
-    public function oBPv220GetConnectorMetrics(string $contentType = self::contentTypes['oBPv220GetConnectorMetrics'][0])
+    public function getAggregateMetrics(string $contentType = self::contentTypes['getAggregateMetrics'][0])
     {
-        list($response) = $this->oBPv220GetConnectorMetricsWithHttpInfo($contentType);
+        list($response) = $this->getAggregateMetricsWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv220GetConnectorMetricsWithHttpInfo
+     * Operation getAggregateMetricsWithHttpInfo
      *
-     * Get Connector Metrics
+     * Get Aggregate Metrics
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv220GetConnectorMetrics'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAggregateMetrics'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv220GetConnectorMetrics200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAggregateMetrics200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv220GetConnectorMetricsWithHttpInfo(string $contentType = self::contentTypes['oBPv220GetConnectorMetrics'][0])
+    public function getAggregateMetricsWithHttpInfo(string $contentType = self::contentTypes['getAggregateMetrics'][0])
     {
-        $request = $this->oBPv220GetConnectorMetricsRequest($contentType);
+        $request = $this->getAggregateMetricsRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -473,7 +473,7 @@ class MetricApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv220GetConnectorMetrics200Response',
+                        '\OpenBankProject\Model\GetAggregateMetrics200Response',
                         $request,
                         $response,
                     );
@@ -495,7 +495,7 @@ class MetricApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv220GetConnectorMetrics200Response',
+                '\OpenBankProject\Model\GetAggregateMetrics200Response',
                 $request,
                 $response,
             );
@@ -504,7 +504,7 @@ class MetricApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv220GetConnectorMetrics200Response',
+                        '\OpenBankProject\Model\GetAggregateMetrics200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -517,18 +517,18 @@ class MetricApi
     }
 
     /**
-     * Operation oBPv220GetConnectorMetricsAsync
+     * Operation getAggregateMetricsAsync
      *
-     * Get Connector Metrics
+     * Get Aggregate Metrics
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv220GetConnectorMetrics'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAggregateMetrics'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv220GetConnectorMetricsAsync(string $contentType = self::contentTypes['oBPv220GetConnectorMetrics'][0])
+    public function getAggregateMetricsAsync(string $contentType = self::contentTypes['getAggregateMetrics'][0])
     {
-        return $this->oBPv220GetConnectorMetricsAsyncWithHttpInfo($contentType)
+        return $this->getAggregateMetricsAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -537,19 +537,19 @@ class MetricApi
     }
 
     /**
-     * Operation oBPv220GetConnectorMetricsAsyncWithHttpInfo
+     * Operation getAggregateMetricsAsyncWithHttpInfo
      *
-     * Get Connector Metrics
+     * Get Aggregate Metrics
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv220GetConnectorMetrics'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAggregateMetrics'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv220GetConnectorMetricsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv220GetConnectorMetrics'][0])
+    public function getAggregateMetricsAsyncWithHttpInfo(string $contentType = self::contentTypes['getAggregateMetrics'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv220GetConnectorMetrics200Response';
-        $request = $this->oBPv220GetConnectorMetricsRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetAggregateMetrics200Response';
+        $request = $this->getAggregateMetricsRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -588,14 +588,538 @@ class MetricApi
     }
 
     /**
-     * Create request for operation 'oBPv220GetConnectorMetrics'
+     * Create request for operation 'getAggregateMetrics'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv220GetConnectorMetrics'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAggregateMetrics'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv220GetConnectorMetricsRequest(string $contentType = self::contentTypes['oBPv220GetConnectorMetrics'][0])
+    public function getAggregateMetricsRequest(string $contentType = self::contentTypes['getAggregateMetrics'][0])
+    {
+
+
+        $resourcePath = '/obp/v6.0.0/management/aggregate-metrics';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getConnectorCallCounts
+     *
+     * Get Connector Call Counts
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectorCallCounts'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetConnectorCallCounts200Response
+     */
+    public function getConnectorCallCounts(string $contentType = self::contentTypes['getConnectorCallCounts'][0])
+    {
+        list($response) = $this->getConnectorCallCountsWithHttpInfo($contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getConnectorCallCountsWithHttpInfo
+     *
+     * Get Connector Call Counts
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectorCallCounts'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetConnectorCallCounts200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getConnectorCallCountsWithHttpInfo(string $contentType = self::contentTypes['getConnectorCallCounts'][0])
+    {
+        $request = $this->getConnectorCallCountsRequest($contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetConnectorCallCounts200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetConnectorCallCounts200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetConnectorCallCounts200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getConnectorCallCountsAsync
+     *
+     * Get Connector Call Counts
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectorCallCounts'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getConnectorCallCountsAsync(string $contentType = self::contentTypes['getConnectorCallCounts'][0])
+    {
+        return $this->getConnectorCallCountsAsyncWithHttpInfo($contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getConnectorCallCountsAsyncWithHttpInfo
+     *
+     * Get Connector Call Counts
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectorCallCounts'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getConnectorCallCountsAsyncWithHttpInfo(string $contentType = self::contentTypes['getConnectorCallCounts'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetConnectorCallCounts200Response';
+        $request = $this->getConnectorCallCountsRequest($contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getConnectorCallCounts'
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectorCallCounts'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getConnectorCallCountsRequest(string $contentType = self::contentTypes['getConnectorCallCounts'][0])
+    {
+
+
+        $resourcePath = '/obp/v6.0.0/management/connector/metrics/counts';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getConnectorMetrics
+     *
+     * Get Connector Metrics
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectorMetrics'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetConnectorMetrics200Response
+     */
+    public function getConnectorMetrics(string $contentType = self::contentTypes['getConnectorMetrics'][0])
+    {
+        list($response) = $this->getConnectorMetricsWithHttpInfo($contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getConnectorMetricsWithHttpInfo
+     *
+     * Get Connector Metrics
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectorMetrics'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetConnectorMetrics200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getConnectorMetricsWithHttpInfo(string $contentType = self::contentTypes['getConnectorMetrics'][0])
+    {
+        $request = $this->getConnectorMetricsRequest($contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetConnectorMetrics200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetConnectorMetrics200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetConnectorMetrics200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getConnectorMetricsAsync
+     *
+     * Get Connector Metrics
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectorMetrics'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getConnectorMetricsAsync(string $contentType = self::contentTypes['getConnectorMetrics'][0])
+    {
+        return $this->getConnectorMetricsAsyncWithHttpInfo($contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getConnectorMetricsAsyncWithHttpInfo
+     *
+     * Get Connector Metrics
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectorMetrics'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getConnectorMetricsAsyncWithHttpInfo(string $contentType = self::contentTypes['getConnectorMetrics'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetConnectorMetrics200Response';
+        $request = $this->getConnectorMetricsRequest($contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getConnectorMetrics'
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectorMetrics'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getConnectorMetricsRequest(string $contentType = self::contentTypes['getConnectorMetrics'][0])
     {
 
 
@@ -651,9 +1175,9 @@ class MetricApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -678,36 +1202,36 @@ class MetricApi
     }
 
     /**
-     * Operation oBPv310GetMetricsTopConsumers
+     * Operation getConnectorTraces
      *
-     * Get Top Consumers
+     * Get Connector Traces
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetMetricsTopConsumers'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectorTraces'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv310GetMetricsTopConsumers200Response
+     * @return \OpenBankProject\Model\GetConnectorTraces200Response
      */
-    public function oBPv310GetMetricsTopConsumers(string $contentType = self::contentTypes['oBPv310GetMetricsTopConsumers'][0])
+    public function getConnectorTraces(string $contentType = self::contentTypes['getConnectorTraces'][0])
     {
-        list($response) = $this->oBPv310GetMetricsTopConsumersWithHttpInfo($contentType);
+        list($response) = $this->getConnectorTracesWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv310GetMetricsTopConsumersWithHttpInfo
+     * Operation getConnectorTracesWithHttpInfo
      *
-     * Get Top Consumers
+     * Get Connector Traces
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetMetricsTopConsumers'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectorTraces'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv310GetMetricsTopConsumers200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetConnectorTraces200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv310GetMetricsTopConsumersWithHttpInfo(string $contentType = self::contentTypes['oBPv310GetMetricsTopConsumers'][0])
+    public function getConnectorTracesWithHttpInfo(string $contentType = self::contentTypes['getConnectorTraces'][0])
     {
-        $request = $this->oBPv310GetMetricsTopConsumersRequest($contentType);
+        $request = $this->getConnectorTracesRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -735,7 +1259,7 @@ class MetricApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv310GetMetricsTopConsumers200Response',
+                        '\OpenBankProject\Model\GetConnectorTraces200Response',
                         $request,
                         $response,
                     );
@@ -757,7 +1281,7 @@ class MetricApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv310GetMetricsTopConsumers200Response',
+                '\OpenBankProject\Model\GetConnectorTraces200Response',
                 $request,
                 $response,
             );
@@ -766,7 +1290,7 @@ class MetricApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv310GetMetricsTopConsumers200Response',
+                        '\OpenBankProject\Model\GetConnectorTraces200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -779,18 +1303,18 @@ class MetricApi
     }
 
     /**
-     * Operation oBPv310GetMetricsTopConsumersAsync
+     * Operation getConnectorTracesAsync
      *
-     * Get Top Consumers
+     * Get Connector Traces
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetMetricsTopConsumers'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectorTraces'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310GetMetricsTopConsumersAsync(string $contentType = self::contentTypes['oBPv310GetMetricsTopConsumers'][0])
+    public function getConnectorTracesAsync(string $contentType = self::contentTypes['getConnectorTraces'][0])
     {
-        return $this->oBPv310GetMetricsTopConsumersAsyncWithHttpInfo($contentType)
+        return $this->getConnectorTracesAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -799,19 +1323,19 @@ class MetricApi
     }
 
     /**
-     * Operation oBPv310GetMetricsTopConsumersAsyncWithHttpInfo
+     * Operation getConnectorTracesAsyncWithHttpInfo
      *
-     * Get Top Consumers
+     * Get Connector Traces
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetMetricsTopConsumers'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectorTraces'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310GetMetricsTopConsumersAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv310GetMetricsTopConsumers'][0])
+    public function getConnectorTracesAsyncWithHttpInfo(string $contentType = self::contentTypes['getConnectorTraces'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv310GetMetricsTopConsumers200Response';
-        $request = $this->oBPv310GetMetricsTopConsumersRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetConnectorTraces200Response';
+        $request = $this->getConnectorTracesRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -850,18 +1374,18 @@ class MetricApi
     }
 
     /**
-     * Create request for operation 'oBPv310GetMetricsTopConsumers'
+     * Create request for operation 'getConnectorTraces'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetMetricsTopConsumers'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectorTraces'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv310GetMetricsTopConsumersRequest(string $contentType = self::contentTypes['oBPv310GetMetricsTopConsumers'][0])
+    public function getConnectorTracesRequest(string $contentType = self::contentTypes['getConnectorTraces'][0])
     {
 
 
-        $resourcePath = '/obp/v3.1.0/management/metrics/top-consumers';
+        $resourcePath = '/obp/v6.0.0/management/connector/traces';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -913,9 +1437,9 @@ class MetricApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -940,38 +1464,36 @@ class MetricApi
     }
 
     /**
-     * Operation oBPv500GetMetricsAtBank
+     * Operation getMetrics
      *
-     * Get Metrics at Bank
+     * Get Metrics
      *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500GetMetricsAtBank'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMetrics'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv500GetMetricsAtBank200Response
+     * @return \OpenBankProject\Model\GetMetrics200Response
      */
-    public function oBPv500GetMetricsAtBank($bankid, string $contentType = self::contentTypes['oBPv500GetMetricsAtBank'][0])
+    public function getMetrics(string $contentType = self::contentTypes['getMetrics'][0])
     {
-        list($response) = $this->oBPv500GetMetricsAtBankWithHttpInfo($bankid, $contentType);
+        list($response) = $this->getMetricsWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv500GetMetricsAtBankWithHttpInfo
+     * Operation getMetricsWithHttpInfo
      *
-     * Get Metrics at Bank
+     * Get Metrics
      *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500GetMetricsAtBank'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMetrics'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv500GetMetricsAtBank200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetMetrics200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv500GetMetricsAtBankWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv500GetMetricsAtBank'][0])
+    public function getMetricsWithHttpInfo(string $contentType = self::contentTypes['getMetrics'][0])
     {
-        $request = $this->oBPv500GetMetricsAtBankRequest($bankid, $contentType);
+        $request = $this->getMetricsRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -999,7 +1521,7 @@ class MetricApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv500GetMetricsAtBank200Response',
+                        '\OpenBankProject\Model\GetMetrics200Response',
                         $request,
                         $response,
                     );
@@ -1021,7 +1543,7 @@ class MetricApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv500GetMetricsAtBank200Response',
+                '\OpenBankProject\Model\GetMetrics200Response',
                 $request,
                 $response,
             );
@@ -1030,7 +1552,7 @@ class MetricApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv500GetMetricsAtBank200Response',
+                        '\OpenBankProject\Model\GetMetrics200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1043,19 +1565,18 @@ class MetricApi
     }
 
     /**
-     * Operation oBPv500GetMetricsAtBankAsync
+     * Operation getMetricsAsync
      *
-     * Get Metrics at Bank
+     * Get Metrics
      *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500GetMetricsAtBank'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMetrics'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv500GetMetricsAtBankAsync($bankid, string $contentType = self::contentTypes['oBPv500GetMetricsAtBank'][0])
+    public function getMetricsAsync(string $contentType = self::contentTypes['getMetrics'][0])
     {
-        return $this->oBPv500GetMetricsAtBankAsyncWithHttpInfo($bankid, $contentType)
+        return $this->getMetricsAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1064,20 +1585,19 @@ class MetricApi
     }
 
     /**
-     * Operation oBPv500GetMetricsAtBankAsyncWithHttpInfo
+     * Operation getMetricsAsyncWithHttpInfo
      *
-     * Get Metrics at Bank
+     * Get Metrics
      *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500GetMetricsAtBank'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMetrics'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv500GetMetricsAtBankAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv500GetMetricsAtBank'][0])
+    public function getMetricsAsyncWithHttpInfo(string $contentType = self::contentTypes['getMetrics'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv500GetMetricsAtBank200Response';
-        $request = $this->oBPv500GetMetricsAtBankRequest($bankid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetMetrics200Response';
+        $request = $this->getMetricsRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1116,21 +1636,287 @@ class MetricApi
     }
 
     /**
-     * Create request for operation 'oBPv500GetMetricsAtBank'
+     * Create request for operation 'getMetrics'
      *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500GetMetricsAtBank'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMetrics'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv500GetMetricsAtBankRequest($bankid, string $contentType = self::contentTypes['oBPv500GetMetricsAtBank'][0])
+    public function getMetricsRequest(string $contentType = self::contentTypes['getMetrics'][0])
+    {
+
+
+        $resourcePath = '/obp/v6.0.0/management/metrics';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getMetricsAtBank
+     *
+     * Get Metrics at Bank
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMetricsAtBank'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetMetricsAtBank200Response
+     */
+    public function getMetricsAtBank($bankid, string $contentType = self::contentTypes['getMetricsAtBank'][0])
+    {
+        list($response) = $this->getMetricsAtBankWithHttpInfo($bankid, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getMetricsAtBankWithHttpInfo
+     *
+     * Get Metrics at Bank
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMetricsAtBank'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetMetricsAtBank200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getMetricsAtBankWithHttpInfo($bankid, string $contentType = self::contentTypes['getMetricsAtBank'][0])
+    {
+        $request = $this->getMetricsAtBankRequest($bankid, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetMetricsAtBank200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetMetricsAtBank200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetMetricsAtBank200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getMetricsAtBankAsync
+     *
+     * Get Metrics at Bank
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMetricsAtBank'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getMetricsAtBankAsync($bankid, string $contentType = self::contentTypes['getMetricsAtBank'][0])
+    {
+        return $this->getMetricsAtBankAsyncWithHttpInfo($bankid, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getMetricsAtBankAsyncWithHttpInfo
+     *
+     * Get Metrics at Bank
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMetricsAtBank'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getMetricsAtBankAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['getMetricsAtBank'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetMetricsAtBank200Response';
+        $request = $this->getMetricsAtBankRequest($bankid, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getMetricsAtBank'
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMetricsAtBank'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getMetricsAtBankRequest($bankid, string $contentType = self::contentTypes['getMetricsAtBank'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv500GetMetricsAtBank'
+                'Missing the required parameter $bankid when calling getMetricsAtBank'
             );
         }
 
@@ -1195,9 +1981,9 @@ class MetricApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1222,36 +2008,36 @@ class MetricApi
     }
 
     /**
-     * Operation oBPv600GetAggregateMetrics
+     * Operation getMetricsTopConsumers
      *
-     * Get Aggregate Metrics
+     * Get Top Consumers
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAggregateMetrics'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMetricsTopConsumers'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetAggregateMetrics200Response
+     * @return \OpenBankProject\Model\GetMetricsTopConsumers200Response
      */
-    public function oBPv600GetAggregateMetrics(string $contentType = self::contentTypes['oBPv600GetAggregateMetrics'][0])
+    public function getMetricsTopConsumers(string $contentType = self::contentTypes['getMetricsTopConsumers'][0])
     {
-        list($response) = $this->oBPv600GetAggregateMetricsWithHttpInfo($contentType);
+        list($response) = $this->getMetricsTopConsumersWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetAggregateMetricsWithHttpInfo
+     * Operation getMetricsTopConsumersWithHttpInfo
      *
-     * Get Aggregate Metrics
+     * Get Top Consumers
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAggregateMetrics'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMetricsTopConsumers'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetAggregateMetrics200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetMetricsTopConsumers200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetAggregateMetricsWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetAggregateMetrics'][0])
+    public function getMetricsTopConsumersWithHttpInfo(string $contentType = self::contentTypes['getMetricsTopConsumers'][0])
     {
-        $request = $this->oBPv600GetAggregateMetricsRequest($contentType);
+        $request = $this->getMetricsTopConsumersRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1279,7 +2065,7 @@ class MetricApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetAggregateMetrics200Response',
+                        '\OpenBankProject\Model\GetMetricsTopConsumers200Response',
                         $request,
                         $response,
                     );
@@ -1301,7 +2087,7 @@ class MetricApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetAggregateMetrics200Response',
+                '\OpenBankProject\Model\GetMetricsTopConsumers200Response',
                 $request,
                 $response,
             );
@@ -1310,7 +2096,7 @@ class MetricApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetAggregateMetrics200Response',
+                        '\OpenBankProject\Model\GetMetricsTopConsumers200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1323,18 +2109,18 @@ class MetricApi
     }
 
     /**
-     * Operation oBPv600GetAggregateMetricsAsync
+     * Operation getMetricsTopConsumersAsync
      *
-     * Get Aggregate Metrics
+     * Get Top Consumers
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAggregateMetrics'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMetricsTopConsumers'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetAggregateMetricsAsync(string $contentType = self::contentTypes['oBPv600GetAggregateMetrics'][0])
+    public function getMetricsTopConsumersAsync(string $contentType = self::contentTypes['getMetricsTopConsumers'][0])
     {
-        return $this->oBPv600GetAggregateMetricsAsyncWithHttpInfo($contentType)
+        return $this->getMetricsTopConsumersAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1343,19 +2129,19 @@ class MetricApi
     }
 
     /**
-     * Operation oBPv600GetAggregateMetricsAsyncWithHttpInfo
+     * Operation getMetricsTopConsumersAsyncWithHttpInfo
      *
-     * Get Aggregate Metrics
+     * Get Top Consumers
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAggregateMetrics'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMetricsTopConsumers'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetAggregateMetricsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetAggregateMetrics'][0])
+    public function getMetricsTopConsumersAsyncWithHttpInfo(string $contentType = self::contentTypes['getMetricsTopConsumers'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetAggregateMetrics200Response';
-        $request = $this->oBPv600GetAggregateMetricsRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetMetricsTopConsumers200Response';
+        $request = $this->getMetricsTopConsumersRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1394,18 +2180,18 @@ class MetricApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetAggregateMetrics'
+     * Create request for operation 'getMetricsTopConsumers'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAggregateMetrics'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMetricsTopConsumers'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetAggregateMetricsRequest(string $contentType = self::contentTypes['oBPv600GetAggregateMetrics'][0])
+    public function getMetricsTopConsumersRequest(string $contentType = self::contentTypes['getMetricsTopConsumers'][0])
     {
 
 
-        $resourcePath = '/obp/v6.0.0/management/aggregate-metrics';
+        $resourcePath = '/obp/v3.1.0/management/metrics/top-consumers';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1457,9 +2243,9 @@ class MetricApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1484,36 +2270,36 @@ class MetricApi
     }
 
     /**
-     * Operation oBPv600GetConnectorCallCounts
+     * Operation getPopularApis
      *
-     * Get Connector Call Counts
+     * Get Popular Endpoints
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConnectorCallCounts'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPopularApis'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetConnectorCallCounts200Response
+     * @return \OpenBankProject\Model\GetPopularApis200Response
      */
-    public function oBPv600GetConnectorCallCounts(string $contentType = self::contentTypes['oBPv600GetConnectorCallCounts'][0])
+    public function getPopularApis(string $contentType = self::contentTypes['getPopularApis'][0])
     {
-        list($response) = $this->oBPv600GetConnectorCallCountsWithHttpInfo($contentType);
+        list($response) = $this->getPopularApisWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetConnectorCallCountsWithHttpInfo
+     * Operation getPopularApisWithHttpInfo
      *
-     * Get Connector Call Counts
+     * Get Popular Endpoints
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConnectorCallCounts'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPopularApis'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetConnectorCallCounts200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetPopularApis200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetConnectorCallCountsWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetConnectorCallCounts'][0])
+    public function getPopularApisWithHttpInfo(string $contentType = self::contentTypes['getPopularApis'][0])
     {
-        $request = $this->oBPv600GetConnectorCallCountsRequest($contentType);
+        $request = $this->getPopularApisRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1541,7 +2327,7 @@ class MetricApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetConnectorCallCounts200Response',
+                        '\OpenBankProject\Model\GetPopularApis200Response',
                         $request,
                         $response,
                     );
@@ -1563,7 +2349,7 @@ class MetricApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetConnectorCallCounts200Response',
+                '\OpenBankProject\Model\GetPopularApis200Response',
                 $request,
                 $response,
             );
@@ -1572,7 +2358,7 @@ class MetricApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetConnectorCallCounts200Response',
+                        '\OpenBankProject\Model\GetPopularApis200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1585,18 +2371,18 @@ class MetricApi
     }
 
     /**
-     * Operation oBPv600GetConnectorCallCountsAsync
+     * Operation getPopularApisAsync
      *
-     * Get Connector Call Counts
+     * Get Popular Endpoints
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConnectorCallCounts'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPopularApis'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetConnectorCallCountsAsync(string $contentType = self::contentTypes['oBPv600GetConnectorCallCounts'][0])
+    public function getPopularApisAsync(string $contentType = self::contentTypes['getPopularApis'][0])
     {
-        return $this->oBPv600GetConnectorCallCountsAsyncWithHttpInfo($contentType)
+        return $this->getPopularApisAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1605,19 +2391,19 @@ class MetricApi
     }
 
     /**
-     * Operation oBPv600GetConnectorCallCountsAsyncWithHttpInfo
+     * Operation getPopularApisAsyncWithHttpInfo
      *
-     * Get Connector Call Counts
+     * Get Popular Endpoints
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConnectorCallCounts'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPopularApis'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetConnectorCallCountsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetConnectorCallCounts'][0])
+    public function getPopularApisAsyncWithHttpInfo(string $contentType = self::contentTypes['getPopularApis'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetConnectorCallCounts200Response';
-        $request = $this->oBPv600GetConnectorCallCountsRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetPopularApis200Response';
+        $request = $this->getPopularApisRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1656,800 +2442,14 @@ class MetricApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetConnectorCallCounts'
+     * Create request for operation 'getPopularApis'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConnectorCallCounts'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv600GetConnectorCallCountsRequest(string $contentType = self::contentTypes['oBPv600GetConnectorCallCounts'][0])
-    {
-
-
-        $resourcePath = '/obp/v6.0.0/management/connector/metrics/counts';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv600GetConnectorTraces
-     *
-     * Get Connector Traces
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConnectorTraces'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetConnectorTraces200Response
-     */
-    public function oBPv600GetConnectorTraces(string $contentType = self::contentTypes['oBPv600GetConnectorTraces'][0])
-    {
-        list($response) = $this->oBPv600GetConnectorTracesWithHttpInfo($contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv600GetConnectorTracesWithHttpInfo
-     *
-     * Get Connector Traces
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConnectorTraces'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetConnectorTraces200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv600GetConnectorTracesWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetConnectorTraces'][0])
-    {
-        $request = $this->oBPv600GetConnectorTracesRequest($contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetConnectorTraces200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetConnectorTraces200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetConnectorTraces200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv600GetConnectorTracesAsync
-     *
-     * Get Connector Traces
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConnectorTraces'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv600GetConnectorTracesAsync(string $contentType = self::contentTypes['oBPv600GetConnectorTraces'][0])
-    {
-        return $this->oBPv600GetConnectorTracesAsyncWithHttpInfo($contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv600GetConnectorTracesAsyncWithHttpInfo
-     *
-     * Get Connector Traces
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConnectorTraces'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv600GetConnectorTracesAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetConnectorTraces'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv600GetConnectorTraces200Response';
-        $request = $this->oBPv600GetConnectorTracesRequest($contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv600GetConnectorTraces'
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConnectorTraces'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPopularApis'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetConnectorTracesRequest(string $contentType = self::contentTypes['oBPv600GetConnectorTraces'][0])
-    {
-
-
-        $resourcePath = '/obp/v6.0.0/management/connector/traces';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv600GetMetrics
-     *
-     * Get Metrics
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetMetrics'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetMetrics200Response
-     */
-    public function oBPv600GetMetrics(string $contentType = self::contentTypes['oBPv600GetMetrics'][0])
-    {
-        list($response) = $this->oBPv600GetMetricsWithHttpInfo($contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv600GetMetricsWithHttpInfo
-     *
-     * Get Metrics
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetMetrics'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetMetrics200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv600GetMetricsWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetMetrics'][0])
-    {
-        $request = $this->oBPv600GetMetricsRequest($contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetMetrics200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetMetrics200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetMetrics200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv600GetMetricsAsync
-     *
-     * Get Metrics
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetMetrics'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv600GetMetricsAsync(string $contentType = self::contentTypes['oBPv600GetMetrics'][0])
-    {
-        return $this->oBPv600GetMetricsAsyncWithHttpInfo($contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv600GetMetricsAsyncWithHttpInfo
-     *
-     * Get Metrics
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetMetrics'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv600GetMetricsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetMetrics'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv600GetMetrics200Response';
-        $request = $this->oBPv600GetMetricsRequest($contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv600GetMetrics'
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetMetrics'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv600GetMetricsRequest(string $contentType = self::contentTypes['oBPv600GetMetrics'][0])
-    {
-
-
-        $resourcePath = '/obp/v6.0.0/management/metrics';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv600GetPopularApis
-     *
-     * Get Popular Endpoints
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetPopularApis'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetPopularApis200Response
-     */
-    public function oBPv600GetPopularApis(string $contentType = self::contentTypes['oBPv600GetPopularApis'][0])
-    {
-        list($response) = $this->oBPv600GetPopularApisWithHttpInfo($contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv600GetPopularApisWithHttpInfo
-     *
-     * Get Popular Endpoints
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetPopularApis'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetPopularApis200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv600GetPopularApisWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetPopularApis'][0])
-    {
-        $request = $this->oBPv600GetPopularApisRequest($contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetPopularApis200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetPopularApis200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetPopularApis200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv600GetPopularApisAsync
-     *
-     * Get Popular Endpoints
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetPopularApis'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv600GetPopularApisAsync(string $contentType = self::contentTypes['oBPv600GetPopularApis'][0])
-    {
-        return $this->oBPv600GetPopularApisAsyncWithHttpInfo($contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv600GetPopularApisAsyncWithHttpInfo
-     *
-     * Get Popular Endpoints
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetPopularApis'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv600GetPopularApisAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetPopularApis'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv600GetPopularApis200Response';
-        $request = $this->oBPv600GetPopularApisRequest($contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv600GetPopularApis'
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetPopularApis'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv600GetPopularApisRequest(string $contentType = self::contentTypes['oBPv600GetPopularApis'][0])
+    public function getPopularApisRequest(string $contentType = self::contentTypes['getPopularApis'][0])
     {
 
 
@@ -2518,36 +2518,36 @@ class MetricApi
     }
 
     /**
-     * Operation oBPv600GetTopAPIs
+     * Operation getTopAPIs
      *
      * Get Top APIs
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetTopAPIs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTopAPIs'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetTopAPIs200Response
+     * @return \OpenBankProject\Model\GetTopAPIs200Response
      */
-    public function oBPv600GetTopAPIs(string $contentType = self::contentTypes['oBPv600GetTopAPIs'][0])
+    public function getTopAPIs(string $contentType = self::contentTypes['getTopAPIs'][0])
     {
-        list($response) = $this->oBPv600GetTopAPIsWithHttpInfo($contentType);
+        list($response) = $this->getTopAPIsWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetTopAPIsWithHttpInfo
+     * Operation getTopAPIsWithHttpInfo
      *
      * Get Top APIs
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetTopAPIs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTopAPIs'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetTopAPIs200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetTopAPIs200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetTopAPIsWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetTopAPIs'][0])
+    public function getTopAPIsWithHttpInfo(string $contentType = self::contentTypes['getTopAPIs'][0])
     {
-        $request = $this->oBPv600GetTopAPIsRequest($contentType);
+        $request = $this->getTopAPIsRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2575,7 +2575,7 @@ class MetricApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetTopAPIs200Response',
+                        '\OpenBankProject\Model\GetTopAPIs200Response',
                         $request,
                         $response,
                     );
@@ -2597,7 +2597,7 @@ class MetricApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetTopAPIs200Response',
+                '\OpenBankProject\Model\GetTopAPIs200Response',
                 $request,
                 $response,
             );
@@ -2606,7 +2606,7 @@ class MetricApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetTopAPIs200Response',
+                        '\OpenBankProject\Model\GetTopAPIs200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2619,18 +2619,18 @@ class MetricApi
     }
 
     /**
-     * Operation oBPv600GetTopAPIsAsync
+     * Operation getTopAPIsAsync
      *
      * Get Top APIs
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetTopAPIs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTopAPIs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetTopAPIsAsync(string $contentType = self::contentTypes['oBPv600GetTopAPIs'][0])
+    public function getTopAPIsAsync(string $contentType = self::contentTypes['getTopAPIs'][0])
     {
-        return $this->oBPv600GetTopAPIsAsyncWithHttpInfo($contentType)
+        return $this->getTopAPIsAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2639,19 +2639,19 @@ class MetricApi
     }
 
     /**
-     * Operation oBPv600GetTopAPIsAsyncWithHttpInfo
+     * Operation getTopAPIsAsyncWithHttpInfo
      *
      * Get Top APIs
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetTopAPIs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTopAPIs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetTopAPIsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetTopAPIs'][0])
+    public function getTopAPIsAsyncWithHttpInfo(string $contentType = self::contentTypes['getTopAPIs'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetTopAPIs200Response';
-        $request = $this->oBPv600GetTopAPIsRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetTopAPIs200Response';
+        $request = $this->getTopAPIsRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2690,14 +2690,14 @@ class MetricApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetTopAPIs'
+     * Create request for operation 'getTopAPIs'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetTopAPIs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTopAPIs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetTopAPIsRequest(string $contentType = self::contentTypes['oBPv600GetTopAPIs'][0])
+    public function getTopAPIsRequest(string $contentType = self::contentTypes['getTopAPIs'][0])
     {
 
 
@@ -2753,9 +2753,9 @@ class MetricApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

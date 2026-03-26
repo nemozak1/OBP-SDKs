@@ -2,20 +2,20 @@
 
 Operations related to OIDC
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv310GetOAuth2ServerJWKsURIs()**](OIDCApi.md#oBPv310GetOAuth2ServerJWKsURIs) | **GET** /obp/v3.1.0/jwks-uris | Get JSON Web Key (JWK) URIs |
-| [**oBPv310GetObpConnectorLoopback()**](OIDCApi.md#oBPv310GetObpConnectorLoopback) | **GET** /obp/v3.1.0/connector/loopback | Get Connector Status (Loopback) |
-| [**oBPv600GetOidcClient()**](OIDCApi.md#oBPv600GetOidcClient) | **GET** /obp/v6.0.0/oidc/clients/{clientid} | Get OIDC Client |
-| [**oBPv600VerifyOidcClient()**](OIDCApi.md#oBPv600VerifyOidcClient) | **POST** /obp/v6.0.0/oidc/clients/verify | Verify OIDC Client |
+| [**getOAuth2ServerJWKsURIs()**](OIDCApi.md#getOAuth2ServerJWKsURIs) | **GET** /obp/v3.1.0/jwks-uris | Get JSON Web Key (JWK) URIs |
+| [**getObpConnectorLoopback()**](OIDCApi.md#getObpConnectorLoopback) | **GET** /obp/v3.1.0/connector/loopback | Get Connector Status (Loopback) |
+| [**getOidcClient()**](OIDCApi.md#getOidcClient) | **GET** /obp/v6.0.0/oidc/clients/{clientid} | Get OIDC Client |
+| [**verifyOidcClient()**](OIDCApi.md#verifyOidcClient) | **POST** /obp/v6.0.0/oidc/clients/verify | Verify OIDC Client |
 
 
-## `oBPv310GetOAuth2ServerJWKsURIs()`
+## `getOAuth2ServerJWKsURIs()`
 
 ```php
-oBPv310GetOAuth2ServerJWKsURIs(): \OpenBankProject\Model\OBPv310GetOAuth2ServerJWKsURIs200Response
+getOAuth2ServerJWKsURIs(): \OpenBankProject\Model\GetOAuth2ServerJWKsURIs200Response
 ```
 
 Get JSON Web Key (JWK) URIs
@@ -37,10 +37,10 @@ $apiInstance = new OpenBankProject\Api\OIDCApi(
 );
 
 try {
-    $result = $apiInstance->oBPv310GetOAuth2ServerJWKsURIs();
+    $result = $apiInstance->getOAuth2ServerJWKsURIs();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OIDCApi->oBPv310GetOAuth2ServerJWKsURIs: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OIDCApi->getOAuth2ServerJWKsURIs: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -50,7 +50,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv310GetOAuth2ServerJWKsURIs200Response**](../Model/OBPv310GetOAuth2ServerJWKsURIs200Response.md)
+[**\OpenBankProject\Model\GetOAuth2ServerJWKsURIs200Response**](../Model/GetOAuth2ServerJWKsURIs200Response.md)
 
 ### Authorization
 
@@ -65,10 +65,10 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv310GetObpConnectorLoopback()`
+## `getObpConnectorLoopback()`
 
 ```php
-oBPv310GetObpConnectorLoopback(): \OpenBankProject\Model\OBPv310GetObpConnectorLoopback200Response
+getObpConnectorLoopback(): \OpenBankProject\Model\GetObpConnectorLoopback200Response
 ```
 
 Get Connector Status (Loopback)
@@ -91,9 +91,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\OIDCApi(
@@ -104,10 +104,10 @@ $apiInstance = new OpenBankProject\Api\OIDCApi(
 );
 
 try {
-    $result = $apiInstance->oBPv310GetObpConnectorLoopback();
+    $result = $apiInstance->getObpConnectorLoopback();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OIDCApi->oBPv310GetObpConnectorLoopback: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OIDCApi->getObpConnectorLoopback: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -117,7 +117,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv310GetObpConnectorLoopback200Response**](../Model/OBPv310GetObpConnectorLoopback200Response.md)
+[**\OpenBankProject\Model\GetObpConnectorLoopback200Response**](../Model/GetObpConnectorLoopback200Response.md)
 
 ### Authorization
 
@@ -132,15 +132,15 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600GetOidcClient()`
+## `getOidcClient()`
 
 ```php
-oBPv600GetOidcClient($clientid): \OpenBankProject\Model\OBPv600GetOidcClient200Response
+getOidcClient($clientid): \OpenBankProject\Model\GetOidcClient200Response
 ```
 
 Get OIDC Client
 
-<p>Gets an OIDC/OAuth2 client's metadata by client_id.</p> <p>Returns client information including name, consumer_id, redirect_uris, and enabled status.<br /> This endpoint does not verify the client secret - use POST /oidc/clients/verify for authentication.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CLIENT_ID</a>: CLIENT_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>client_id</strong></a>: client_id</p> <p><a href=\"/glossary#\"><strong>client_name</strong></a>: client_name</p> <p><a href=\"/glossary#\"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#enabled\"><strong>enabled</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>redirect_uris</strong></a>: redirect_uris</p>
+<p>Gets an OIDC/OAuth2 client's metadata by client_id.</p> <p>Returns client information including name, consumer_id, redirect_uris, and enabled status.<br /> This endpoint does not verify the client secret - use POST /oidc/clients/verify for authentication.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CLIENT_ID</a>: CLIENT_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>client_id</strong></a>: client_id</p> <p><a href=\"/glossary#\"><strong>client_name</strong></a>: client_name</p> <p><a href=\"/glossary#\"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#enabled\"><strong>enabled</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>redirect_uris</strong></a>: redirect_uris</p>
 
 ### Example
 
@@ -158,9 +158,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\OIDCApi(
@@ -172,10 +172,10 @@ $apiInstance = new OpenBankProject\Api\OIDCApi(
 $clientid = 'clientid_example'; // string | The CLIENTID identifier
 
 try {
-    $result = $apiInstance->oBPv600GetOidcClient($clientid);
+    $result = $apiInstance->getOidcClient($clientid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OIDCApi->oBPv600GetOidcClient: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OIDCApi->getOidcClient: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -187,7 +187,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetOidcClient200Response**](../Model/OBPv600GetOidcClient200Response.md)
+[**\OpenBankProject\Model\GetOidcClient200Response**](../Model/GetOidcClient200Response.md)
 
 ### Authorization
 
@@ -202,15 +202,15 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600VerifyOidcClient()`
+## `verifyOidcClient()`
 
 ```php
-oBPv600VerifyOidcClient($obpv600_verify_oidc_client_request): \OpenBankProject\Model\OBPv600VerifyOidcClient200Response
+verifyOidcClient($verify_oidc_client_request): \OpenBankProject\Model\VerifyOidcClient200Response
 ```
 
 Verify OIDC Client
 
-<p>Verifies an OIDC/OAuth2 client's credentials.</p> <p>Returns <code>valid: true</code> if the client_id and client_secret match an active consumer.<br /> Also returns the consumer_id and redirect_uris for use by the OIDC provider.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>client_id</strong></a>: client_id</p> <p><a href=\"/glossary#\"><strong>client_secret</strong></a>: client_secret</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>valid</strong></a>: valid</p> <p><a href=\"/glossary#\">client_id</a>: client_id</p> <p><a href=\"/glossary#\">consumer_id</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">redirect_uris</a>: redirect_uris</p>
+<p>Verifies an OIDC/OAuth2 client's credentials.</p> <p>Returns <code>valid: true</code> if the client_id and client_secret match an active consumer.<br /> Also returns the consumer_id and redirect_uris for use by the OIDC provider.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>client_id</strong></a>: client_id</p> <p><a href=\"/glossary#\"><strong>client_secret</strong></a>: client_secret</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>valid</strong></a>: valid</p> <p><a href=\"/glossary#\">client_id</a>: client_id</p> <p><a href=\"/glossary#\">consumer_id</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">redirect_uris</a>: redirect_uris</p>
 
 ### Example
 
@@ -228,9 +228,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\OIDCApi(
@@ -239,13 +239,13 @@ $apiInstance = new OpenBankProject\Api\OIDCApi(
     new GuzzleHttp\Client(),
     $config
 );
-$obpv600_verify_oidc_client_request = {"type":"object","properties":{"client_id":{"type":"string"},"client_secret":{"type":"string"}}}; // \OpenBankProject\Model\OBPv600VerifyOidcClientRequest | Request body
+$verify_oidc_client_request = {"type":"object","properties":{"client_id":{"type":"string"},"client_secret":{"type":"string"}}}; // \OpenBankProject\Model\VerifyOidcClientRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv600VerifyOidcClient($obpv600_verify_oidc_client_request);
+    $result = $apiInstance->verifyOidcClient($verify_oidc_client_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OIDCApi->oBPv600VerifyOidcClient: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OIDCApi->verifyOidcClient: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -253,11 +253,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obpv600_verify_oidc_client_request** | [**\OpenBankProject\Model\OBPv600VerifyOidcClientRequest**](../Model/OBPv600VerifyOidcClientRequest.md)| Request body | |
+| **verify_oidc_client_request** | [**\OpenBankProject\Model\VerifyOidcClientRequest**](../Model/VerifyOidcClientRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600VerifyOidcClient200Response**](../Model/OBPv600VerifyOidcClient200Response.md)
+[**\OpenBankProject\Model\VerifyOidcClient200Response**](../Model/VerifyOidcClient200Response.md)
 
 ### Authorization
 

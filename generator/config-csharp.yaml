@@ -1,6 +1,6 @@
 generatorName: csharp
 outputDir: ../sdks/csharp
-inputSpec: ../openapi-spec/obp-openapi.json
+inputSpec: ../openapi-spec/obp-openapi-simplified.json
 additionalProperties:
   packageName: OpenBankProject
   packageVersion: "1.0.0"

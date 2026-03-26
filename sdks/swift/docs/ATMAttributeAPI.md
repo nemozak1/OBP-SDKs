@@ -1,19 +1,19 @@
 # ATMAttributeAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv510CreateAtmAttribute**](ATMAttributeAPI.md#obpv510createatmattribute) | **POST** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Create ATM Attribute
-[**oBPv510DeleteAtmAttribute**](ATMAttributeAPI.md#obpv510deleteatmattribute) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Delete ATM Attribute
-[**oBPv510GetAtmAttribute**](ATMAttributeAPI.md#obpv510getatmattribute) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Get ATM Attribute By ATM_ATTRIBUTE_ID
-[**oBPv510GetAtmAttributes**](ATMAttributeAPI.md#obpv510getatmattributes) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Get ATM Attributes
-[**oBPv510UpdateAtmAttribute**](ATMAttributeAPI.md#obpv510updateatmattribute) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Update ATM Attribute
+[**createAtmAttribute**](ATMAttributeAPI.md#createatmattribute) | **POST** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Create ATM Attribute
+[**deleteAtmAttribute**](ATMAttributeAPI.md#deleteatmattribute) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Delete ATM Attribute
+[**getAtmAttribute**](ATMAttributeAPI.md#getatmattribute) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Get ATM Attribute By ATM_ATTRIBUTE_ID
+[**getAtmAttributes**](ATMAttributeAPI.md#getatmattributes) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Get ATM Attributes
+[**updateAtmAttribute**](ATMAttributeAPI.md#updateatmattribute) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Update ATM Attribute
 
 
-# **oBPv510CreateAtmAttribute**
+# **createAtmAttribute**
 ```swift
-    open class func oBPv510CreateAtmAttribute(bankid: String, atmid: String, oBPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest, completion: @escaping (_ data: OBPv510GetAtmAttribute200Response?, _ error: Error?) -> Void)
+    open class func createAtmAttribute(bankid: String, atmid: String, updateAtmAttributeRequest: UpdateAtmAttributeRequest, completion: @escaping (_ data: GetAtmAttribute200Response?, _ error: Error?) -> Void)
 ```
 
 Create ATM Attribute
@@ -27,10 +27,10 @@ import OBPSwift
 
 let bankid = "bankid_example" // String | The BANKID identifier
 let atmid = "atmid_example" // String | The ATMID identifier
-let oBPv510UpdateAtmAttributeRequest = OBPv5_1_0_updateAtmAttribute_request(type: "type_example", properties: OBPv5_1_0_updateAtmAttribute_request_properties(name: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), value: nil, isActive: nil, type: nil)) // OBPv510UpdateAtmAttributeRequest | Request body
+let updateAtmAttributeRequest = updateAtmAttribute_request(name: "name_example", value: "value_example", isActive: false, type: "type_example") // UpdateAtmAttributeRequest | Request body
 
 // Create ATM Attribute
-ATMAttributeAPI.oBPv510CreateAtmAttribute(bankid: bankid, atmid: atmid, oBPv510UpdateAtmAttributeRequest: oBPv510UpdateAtmAttributeRequest) { (response, error) in
+ATMAttributeAPI.createAtmAttribute(bankid: bankid, atmid: atmid, updateAtmAttributeRequest: updateAtmAttributeRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -48,11 +48,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String** | The BANKID identifier | 
  **atmid** | **String** | The ATMID identifier | 
- **oBPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md) | Request body | 
+ **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv510GetAtmAttribute200Response**](OBPv510GetAtmAttribute200Response.md)
+[**GetAtmAttribute200Response**](GetAtmAttribute200Response.md)
 
 ### Authorization
 
@@ -65,9 +65,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510DeleteAtmAttribute**
+# **deleteAtmAttribute**
 ```swift
-    open class func oBPv510DeleteAtmAttribute(bankid: String, atmid: String, atmattributeid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func deleteAtmAttribute(bankid: String, atmid: String, atmattributeid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete ATM Attribute
@@ -84,7 +84,7 @@ let atmid = "atmid_example" // String | The ATMID identifier
 let atmattributeid = "atmattributeid_example" // String | The ATMATTRIBUTEID identifier
 
 // Delete ATM Attribute
-ATMAttributeAPI.oBPv510DeleteAtmAttribute(bankid: bankid, atmid: atmid, atmattributeid: atmattributeid) { (response, error) in
+ATMAttributeAPI.deleteAtmAttribute(bankid: bankid, atmid: atmid, atmattributeid: atmattributeid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -119,9 +119,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510GetAtmAttribute**
+# **getAtmAttribute**
 ```swift
-    open class func oBPv510GetAtmAttribute(bankid: String, atmid: String, atmattributeid: String, completion: @escaping (_ data: OBPv510GetAtmAttribute200Response?, _ error: Error?) -> Void)
+    open class func getAtmAttribute(bankid: String, atmid: String, atmattributeid: String, completion: @escaping (_ data: GetAtmAttribute200Response?, _ error: Error?) -> Void)
 ```
 
 Get ATM Attribute By ATM_ATTRIBUTE_ID
@@ -138,7 +138,7 @@ let atmid = "atmid_example" // String | The ATMID identifier
 let atmattributeid = "atmattributeid_example" // String | The ATMATTRIBUTEID identifier
 
 // Get ATM Attribute By ATM_ATTRIBUTE_ID
-ATMAttributeAPI.oBPv510GetAtmAttribute(bankid: bankid, atmid: atmid, atmattributeid: atmattributeid) { (response, error) in
+ATMAttributeAPI.getAtmAttribute(bankid: bankid, atmid: atmid, atmattributeid: atmattributeid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetAtmAttribute200Response**](OBPv510GetAtmAttribute200Response.md)
+[**GetAtmAttribute200Response**](GetAtmAttribute200Response.md)
 
 ### Authorization
 
@@ -173,9 +173,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510GetAtmAttributes**
+# **getAtmAttributes**
 ```swift
-    open class func oBPv510GetAtmAttributes(bankid: String, atmid: String, completion: @escaping (_ data: OBPv510GetAtmAttributes200Response?, _ error: Error?) -> Void)
+    open class func getAtmAttributes(bankid: String, atmid: String, completion: @escaping (_ data: GetAtmAttributes200Response?, _ error: Error?) -> Void)
 ```
 
 Get ATM Attributes
@@ -191,7 +191,7 @@ let bankid = "bankid_example" // String | The BANKID identifier
 let atmid = "atmid_example" // String | The ATMID identifier
 
 // Get ATM Attributes
-ATMAttributeAPI.oBPv510GetAtmAttributes(bankid: bankid, atmid: atmid) { (response, error) in
+ATMAttributeAPI.getAtmAttributes(bankid: bankid, atmid: atmid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetAtmAttributes200Response**](OBPv510GetAtmAttributes200Response.md)
+[**GetAtmAttributes200Response**](GetAtmAttributes200Response.md)
 
 ### Authorization
 
@@ -225,9 +225,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510UpdateAtmAttribute**
+# **updateAtmAttribute**
 ```swift
-    open class func oBPv510UpdateAtmAttribute(bankid: String, atmid: String, atmattributeid: String, oBPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest, completion: @escaping (_ data: OBPv510GetAtmAttribute200Response?, _ error: Error?) -> Void)
+    open class func updateAtmAttribute(bankid: String, atmid: String, atmattributeid: String, updateAtmAttributeRequest: UpdateAtmAttributeRequest, completion: @escaping (_ data: GetAtmAttribute200Response?, _ error: Error?) -> Void)
 ```
 
 Update ATM Attribute
@@ -242,10 +242,10 @@ import OBPSwift
 let bankid = "bankid_example" // String | The BANKID identifier
 let atmid = "atmid_example" // String | The ATMID identifier
 let atmattributeid = "atmattributeid_example" // String | The ATMATTRIBUTEID identifier
-let oBPv510UpdateAtmAttributeRequest = OBPv5_1_0_updateAtmAttribute_request(type: "type_example", properties: OBPv5_1_0_updateAtmAttribute_request_properties(name: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), value: nil, isActive: nil, type: nil)) // OBPv510UpdateAtmAttributeRequest | Request body
+let updateAtmAttributeRequest = updateAtmAttribute_request(name: "name_example", value: "value_example", isActive: false, type: "type_example") // UpdateAtmAttributeRequest | Request body
 
 // Update ATM Attribute
-ATMAttributeAPI.oBPv510UpdateAtmAttribute(bankid: bankid, atmid: atmid, atmattributeid: atmattributeid, oBPv510UpdateAtmAttributeRequest: oBPv510UpdateAtmAttributeRequest) { (response, error) in
+ATMAttributeAPI.updateAtmAttribute(bankid: bankid, atmid: atmid, atmattributeid: atmattributeid, updateAtmAttributeRequest: updateAtmAttributeRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -264,11 +264,11 @@ Name | Type | Description  | Notes
  **bankid** | **String** | The BANKID identifier | 
  **atmid** | **String** | The ATMID identifier | 
  **atmattributeid** | **String** | The ATMATTRIBUTEID identifier | 
- **oBPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md) | Request body | 
+ **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv510GetAtmAttribute200Response**](OBPv510GetAtmAttribute200Response.md)
+[**GetAtmAttribute200Response**](GetAtmAttribute200Response.md)
 
 ### Authorization
 

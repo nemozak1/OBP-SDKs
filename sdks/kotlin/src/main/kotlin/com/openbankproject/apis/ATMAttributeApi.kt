@@ -19,9 +19,9 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import com.openbankproject.models.OBPv510GetAtmAttribute200Response
-import com.openbankproject.models.OBPv510GetAtmAttributes200Response
-import com.openbankproject.models.OBPv510UpdateAtmAttributeRequest
+import com.openbankproject.models.GetAtmAttribute200Response
+import com.openbankproject.models.GetAtmAttributes200Response
+import com.openbankproject.models.UpdateAtmAttributeRequest
 
 import com.squareup.moshi.Json
 
@@ -43,7 +43,7 @@ open class ATMAttributeApi(basePath: kotlin.String = defaultBasePath, client: Ca
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://apisandbox.openbankproject.com")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "http://127.0.0.1:8080")
         }
     }
 
@@ -53,8 +53,8 @@ open class ATMAttributeApi(basePath: kotlin.String = defaultBasePath, client: Ca
      * &lt;p&gt;Create ATM Attribute&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;ATM_ID&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;atm_attribute_id&lt;/strong&gt;&lt;/a&gt;: xxaf2a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;&lt;strong&gt;atm_id&lt;/strong&gt;&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
      * @param bankid The BANKID identifier
      * @param atmid The ATMID identifier
-     * @param obPv510UpdateAtmAttributeRequest Request body
-     * @return OBPv510GetAtmAttribute200Response
+     * @param updateAtmAttributeRequest Request body
+     * @return GetAtmAttribute200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -63,11 +63,11 @@ open class ATMAttributeApi(basePath: kotlin.String = defaultBasePath, client: Ca
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv510CreateAtmAttribute(bankid: kotlin.String, atmid: kotlin.String, obPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest) : OBPv510GetAtmAttribute200Response {
-        val localVarResponse = oBPv510CreateAtmAttributeWithHttpInfo(bankid = bankid, atmid = atmid, obPv510UpdateAtmAttributeRequest = obPv510UpdateAtmAttributeRequest)
+    fun createAtmAttribute(bankid: kotlin.String, atmid: kotlin.String, updateAtmAttributeRequest: UpdateAtmAttributeRequest) : GetAtmAttribute200Response {
+        val localVarResponse = createAtmAttributeWithHttpInfo(bankid = bankid, atmid = atmid, updateAtmAttributeRequest = updateAtmAttributeRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv510GetAtmAttribute200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetAtmAttribute200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -87,31 +87,31 @@ open class ATMAttributeApi(basePath: kotlin.String = defaultBasePath, client: Ca
      * &lt;p&gt;Create ATM Attribute&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;ATM_ID&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;atm_attribute_id&lt;/strong&gt;&lt;/a&gt;: xxaf2a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;&lt;strong&gt;atm_id&lt;/strong&gt;&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
      * @param bankid The BANKID identifier
      * @param atmid The ATMID identifier
-     * @param obPv510UpdateAtmAttributeRequest Request body
-     * @return ApiResponse<OBPv510GetAtmAttribute200Response?>
+     * @param updateAtmAttributeRequest Request body
+     * @return ApiResponse<GetAtmAttribute200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv510CreateAtmAttributeWithHttpInfo(bankid: kotlin.String, atmid: kotlin.String, obPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest) : ApiResponse<OBPv510GetAtmAttribute200Response?> {
-        val localVariableConfig = oBPv510CreateAtmAttributeRequestConfig(bankid = bankid, atmid = atmid, obPv510UpdateAtmAttributeRequest = obPv510UpdateAtmAttributeRequest)
+    fun createAtmAttributeWithHttpInfo(bankid: kotlin.String, atmid: kotlin.String, updateAtmAttributeRequest: UpdateAtmAttributeRequest) : ApiResponse<GetAtmAttribute200Response?> {
+        val localVariableConfig = createAtmAttributeRequestConfig(bankid = bankid, atmid = atmid, updateAtmAttributeRequest = updateAtmAttributeRequest)
 
-        return request<OBPv510UpdateAtmAttributeRequest, OBPv510GetAtmAttribute200Response>(
+        return request<UpdateAtmAttributeRequest, GetAtmAttribute200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv510CreateAtmAttribute
+     * To obtain the request config of the operation createAtmAttribute
      *
      * @param bankid The BANKID identifier
      * @param atmid The ATMID identifier
-     * @param obPv510UpdateAtmAttributeRequest Request body
+     * @param updateAtmAttributeRequest Request body
      * @return RequestConfig
      */
-    fun oBPv510CreateAtmAttributeRequestConfig(bankid: kotlin.String, atmid: kotlin.String, obPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest) : RequestConfig<OBPv510UpdateAtmAttributeRequest> {
-        val localVariableBody = obPv510UpdateAtmAttributeRequest
+    fun createAtmAttributeRequestConfig(bankid: kotlin.String, atmid: kotlin.String, updateAtmAttributeRequest: UpdateAtmAttributeRequest) : RequestConfig<UpdateAtmAttributeRequest> {
+        val localVariableBody = updateAtmAttributeRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -142,8 +142,8 @@ open class ATMAttributeApi(basePath: kotlin.String = defaultBasePath, client: Ca
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv510DeleteAtmAttribute(bankid: kotlin.String, atmid: kotlin.String, atmattributeid: kotlin.String) : Unit {
-        val localVarResponse = oBPv510DeleteAtmAttributeWithHttpInfo(bankid = bankid, atmid = atmid, atmattributeid = atmattributeid)
+    fun deleteAtmAttribute(bankid: kotlin.String, atmid: kotlin.String, atmattributeid: kotlin.String) : Unit {
+        val localVarResponse = deleteAtmAttributeWithHttpInfo(bankid = bankid, atmid = atmid, atmattributeid = atmattributeid)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -172,8 +172,8 @@ open class ATMAttributeApi(basePath: kotlin.String = defaultBasePath, client: Ca
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv510DeleteAtmAttributeWithHttpInfo(bankid: kotlin.String, atmid: kotlin.String, atmattributeid: kotlin.String) : ApiResponse<Unit?> {
-        val localVariableConfig = oBPv510DeleteAtmAttributeRequestConfig(bankid = bankid, atmid = atmid, atmattributeid = atmattributeid)
+    fun deleteAtmAttributeWithHttpInfo(bankid: kotlin.String, atmid: kotlin.String, atmattributeid: kotlin.String) : ApiResponse<Unit?> {
+        val localVariableConfig = deleteAtmAttributeRequestConfig(bankid = bankid, atmid = atmid, atmattributeid = atmattributeid)
 
         return request<Unit, Unit>(
             localVariableConfig
@@ -181,14 +181,14 @@ open class ATMAttributeApi(basePath: kotlin.String = defaultBasePath, client: Ca
     }
 
     /**
-     * To obtain the request config of the operation oBPv510DeleteAtmAttribute
+     * To obtain the request config of the operation deleteAtmAttribute
      *
      * @param bankid The BANKID identifier
      * @param atmid The ATMID identifier
      * @param atmattributeid The ATMATTRIBUTEID identifier
      * @return RequestConfig
      */
-    fun oBPv510DeleteAtmAttributeRequestConfig(bankid: kotlin.String, atmid: kotlin.String, atmattributeid: kotlin.String) : RequestConfig<Unit> {
+    fun deleteAtmAttributeRequestConfig(bankid: kotlin.String, atmid: kotlin.String, atmattributeid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -210,7 +210,7 @@ open class ATMAttributeApi(basePath: kotlin.String = defaultBasePath, client: Ca
      * @param bankid The BANKID identifier
      * @param atmid The ATMID identifier
      * @param atmattributeid The ATMATTRIBUTEID identifier
-     * @return OBPv510GetAtmAttribute200Response
+     * @return GetAtmAttribute200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -219,11 +219,11 @@ open class ATMAttributeApi(basePath: kotlin.String = defaultBasePath, client: Ca
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv510GetAtmAttribute(bankid: kotlin.String, atmid: kotlin.String, atmattributeid: kotlin.String) : OBPv510GetAtmAttribute200Response {
-        val localVarResponse = oBPv510GetAtmAttributeWithHttpInfo(bankid = bankid, atmid = atmid, atmattributeid = atmattributeid)
+    fun getAtmAttribute(bankid: kotlin.String, atmid: kotlin.String, atmattributeid: kotlin.String) : GetAtmAttribute200Response {
+        val localVarResponse = getAtmAttributeWithHttpInfo(bankid = bankid, atmid = atmid, atmattributeid = atmattributeid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv510GetAtmAttribute200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetAtmAttribute200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -244,29 +244,29 @@ open class ATMAttributeApi(basePath: kotlin.String = defaultBasePath, client: Ca
      * @param bankid The BANKID identifier
      * @param atmid The ATMID identifier
      * @param atmattributeid The ATMATTRIBUTEID identifier
-     * @return ApiResponse<OBPv510GetAtmAttribute200Response?>
+     * @return ApiResponse<GetAtmAttribute200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv510GetAtmAttributeWithHttpInfo(bankid: kotlin.String, atmid: kotlin.String, atmattributeid: kotlin.String) : ApiResponse<OBPv510GetAtmAttribute200Response?> {
-        val localVariableConfig = oBPv510GetAtmAttributeRequestConfig(bankid = bankid, atmid = atmid, atmattributeid = atmattributeid)
+    fun getAtmAttributeWithHttpInfo(bankid: kotlin.String, atmid: kotlin.String, atmattributeid: kotlin.String) : ApiResponse<GetAtmAttribute200Response?> {
+        val localVariableConfig = getAtmAttributeRequestConfig(bankid = bankid, atmid = atmid, atmattributeid = atmattributeid)
 
-        return request<Unit, OBPv510GetAtmAttribute200Response>(
+        return request<Unit, GetAtmAttribute200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv510GetAtmAttribute
+     * To obtain the request config of the operation getAtmAttribute
      *
      * @param bankid The BANKID identifier
      * @param atmid The ATMID identifier
      * @param atmattributeid The ATMATTRIBUTEID identifier
      * @return RequestConfig
      */
-    fun oBPv510GetAtmAttributeRequestConfig(bankid: kotlin.String, atmid: kotlin.String, atmattributeid: kotlin.String) : RequestConfig<Unit> {
+    fun getAtmAttributeRequestConfig(bankid: kotlin.String, atmid: kotlin.String, atmattributeid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -288,7 +288,7 @@ open class ATMAttributeApi(basePath: kotlin.String = defaultBasePath, client: Ca
      * &lt;p&gt;Get ATM Attributes&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;ATM_ID&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;atm_attribute_id&lt;/strong&gt;&lt;/a&gt;: xxaf2a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;atm_attributes&lt;/strong&gt;&lt;/a&gt;: atm_attributes&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;&lt;strong&gt;atm_id&lt;/strong&gt;&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
      * @param bankid The BANKID identifier
      * @param atmid The ATMID identifier
-     * @return OBPv510GetAtmAttributes200Response
+     * @return GetAtmAttributes200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -297,11 +297,11 @@ open class ATMAttributeApi(basePath: kotlin.String = defaultBasePath, client: Ca
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv510GetAtmAttributes(bankid: kotlin.String, atmid: kotlin.String) : OBPv510GetAtmAttributes200Response {
-        val localVarResponse = oBPv510GetAtmAttributesWithHttpInfo(bankid = bankid, atmid = atmid)
+    fun getAtmAttributes(bankid: kotlin.String, atmid: kotlin.String) : GetAtmAttributes200Response {
+        val localVarResponse = getAtmAttributesWithHttpInfo(bankid = bankid, atmid = atmid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv510GetAtmAttributes200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetAtmAttributes200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -321,28 +321,28 @@ open class ATMAttributeApi(basePath: kotlin.String = defaultBasePath, client: Ca
      * &lt;p&gt;Get ATM Attributes&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;ATM_ID&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;atm_attribute_id&lt;/strong&gt;&lt;/a&gt;: xxaf2a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;atm_attributes&lt;/strong&gt;&lt;/a&gt;: atm_attributes&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;&lt;strong&gt;atm_id&lt;/strong&gt;&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
      * @param bankid The BANKID identifier
      * @param atmid The ATMID identifier
-     * @return ApiResponse<OBPv510GetAtmAttributes200Response?>
+     * @return ApiResponse<GetAtmAttributes200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv510GetAtmAttributesWithHttpInfo(bankid: kotlin.String, atmid: kotlin.String) : ApiResponse<OBPv510GetAtmAttributes200Response?> {
-        val localVariableConfig = oBPv510GetAtmAttributesRequestConfig(bankid = bankid, atmid = atmid)
+    fun getAtmAttributesWithHttpInfo(bankid: kotlin.String, atmid: kotlin.String) : ApiResponse<GetAtmAttributes200Response?> {
+        val localVariableConfig = getAtmAttributesRequestConfig(bankid = bankid, atmid = atmid)
 
-        return request<Unit, OBPv510GetAtmAttributes200Response>(
+        return request<Unit, GetAtmAttributes200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv510GetAtmAttributes
+     * To obtain the request config of the operation getAtmAttributes
      *
      * @param bankid The BANKID identifier
      * @param atmid The ATMID identifier
      * @return RequestConfig
      */
-    fun oBPv510GetAtmAttributesRequestConfig(bankid: kotlin.String, atmid: kotlin.String) : RequestConfig<Unit> {
+    fun getAtmAttributesRequestConfig(bankid: kotlin.String, atmid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -365,8 +365,8 @@ open class ATMAttributeApi(basePath: kotlin.String = defaultBasePath, client: Ca
      * @param bankid The BANKID identifier
      * @param atmid The ATMID identifier
      * @param atmattributeid The ATMATTRIBUTEID identifier
-     * @param obPv510UpdateAtmAttributeRequest Request body
-     * @return OBPv510GetAtmAttribute200Response
+     * @param updateAtmAttributeRequest Request body
+     * @return GetAtmAttribute200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -375,11 +375,11 @@ open class ATMAttributeApi(basePath: kotlin.String = defaultBasePath, client: Ca
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv510UpdateAtmAttribute(bankid: kotlin.String, atmid: kotlin.String, atmattributeid: kotlin.String, obPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest) : OBPv510GetAtmAttribute200Response {
-        val localVarResponse = oBPv510UpdateAtmAttributeWithHttpInfo(bankid = bankid, atmid = atmid, atmattributeid = atmattributeid, obPv510UpdateAtmAttributeRequest = obPv510UpdateAtmAttributeRequest)
+    fun updateAtmAttribute(bankid: kotlin.String, atmid: kotlin.String, atmattributeid: kotlin.String, updateAtmAttributeRequest: UpdateAtmAttributeRequest) : GetAtmAttribute200Response {
+        val localVarResponse = updateAtmAttributeWithHttpInfo(bankid = bankid, atmid = atmid, atmattributeid = atmattributeid, updateAtmAttributeRequest = updateAtmAttributeRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv510GetAtmAttribute200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetAtmAttribute200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -400,32 +400,32 @@ open class ATMAttributeApi(basePath: kotlin.String = defaultBasePath, client: Ca
      * @param bankid The BANKID identifier
      * @param atmid The ATMID identifier
      * @param atmattributeid The ATMATTRIBUTEID identifier
-     * @param obPv510UpdateAtmAttributeRequest Request body
-     * @return ApiResponse<OBPv510GetAtmAttribute200Response?>
+     * @param updateAtmAttributeRequest Request body
+     * @return ApiResponse<GetAtmAttribute200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv510UpdateAtmAttributeWithHttpInfo(bankid: kotlin.String, atmid: kotlin.String, atmattributeid: kotlin.String, obPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest) : ApiResponse<OBPv510GetAtmAttribute200Response?> {
-        val localVariableConfig = oBPv510UpdateAtmAttributeRequestConfig(bankid = bankid, atmid = atmid, atmattributeid = atmattributeid, obPv510UpdateAtmAttributeRequest = obPv510UpdateAtmAttributeRequest)
+    fun updateAtmAttributeWithHttpInfo(bankid: kotlin.String, atmid: kotlin.String, atmattributeid: kotlin.String, updateAtmAttributeRequest: UpdateAtmAttributeRequest) : ApiResponse<GetAtmAttribute200Response?> {
+        val localVariableConfig = updateAtmAttributeRequestConfig(bankid = bankid, atmid = atmid, atmattributeid = atmattributeid, updateAtmAttributeRequest = updateAtmAttributeRequest)
 
-        return request<OBPv510UpdateAtmAttributeRequest, OBPv510GetAtmAttribute200Response>(
+        return request<UpdateAtmAttributeRequest, GetAtmAttribute200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv510UpdateAtmAttribute
+     * To obtain the request config of the operation updateAtmAttribute
      *
      * @param bankid The BANKID identifier
      * @param atmid The ATMID identifier
      * @param atmattributeid The ATMATTRIBUTEID identifier
-     * @param obPv510UpdateAtmAttributeRequest Request body
+     * @param updateAtmAttributeRequest Request body
      * @return RequestConfig
      */
-    fun oBPv510UpdateAtmAttributeRequestConfig(bankid: kotlin.String, atmid: kotlin.String, atmattributeid: kotlin.String, obPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest) : RequestConfig<OBPv510UpdateAtmAttributeRequest> {
-        val localVariableBody = obPv510UpdateAtmAttributeRequest
+    fun updateAtmAttributeRequestConfig(bankid: kotlin.String, atmid: kotlin.String, atmattributeid: kotlin.String, updateAtmAttributeRequest: UpdateAtmAttributeRequest) : RequestConfig<UpdateAtmAttributeRequest> {
+        val localVariableBody = updateAtmAttributeRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"

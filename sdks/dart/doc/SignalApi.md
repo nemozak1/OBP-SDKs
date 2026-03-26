@@ -5,20 +5,20 @@
 import 'package:obp_dart/api.dart';
 ```
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv600DeleteSignalChannel**](SignalApi.md#obpv600deletesignalchannel) | **DELETE** /obp/v6.0.0/signal/channels/{channelname} | Delete Signal Channel
-[**oBPv600GetSignalChannelInfo**](SignalApi.md#obpv600getsignalchannelinfo) | **GET** /obp/v6.0.0/signal/channels/{channelname}/info | Get Signal Channel Info
-[**oBPv600GetSignalChannels**](SignalApi.md#obpv600getsignalchannels) | **GET** /obp/v6.0.0/signal/channels | List Signal Channels
-[**oBPv600GetSignalMessages**](SignalApi.md#obpv600getsignalmessages) | **GET** /obp/v6.0.0/signal/channels/{channelname}/messages | Get Signal Messages
-[**oBPv600GetSignalStats**](SignalApi.md#obpv600getsignalstats) | **GET** /obp/v6.0.0/signal/channels/stats | Get Signal Channel Stats
-[**oBPv600PublishSignalMessage**](SignalApi.md#obpv600publishsignalmessage) | **POST** /obp/v6.0.0/signal/channels/{channelname}/messages | Publish Signal Message
+[**deleteSignalChannel**](SignalApi.md#deletesignalchannel) | **DELETE** /obp/v6.0.0/signal/channels/{channelname} | Delete Signal Channel
+[**getSignalChannelInfo**](SignalApi.md#getsignalchannelinfo) | **GET** /obp/v6.0.0/signal/channels/{channelname}/info | Get Signal Channel Info
+[**getSignalChannels**](SignalApi.md#getsignalchannels) | **GET** /obp/v6.0.0/signal/channels | List Signal Channels
+[**getSignalMessages**](SignalApi.md#getsignalmessages) | **GET** /obp/v6.0.0/signal/channels/{channelname}/messages | Get Signal Messages
+[**getSignalStats**](SignalApi.md#getsignalstats) | **GET** /obp/v6.0.0/signal/channels/stats | Get Signal Channel Stats
+[**publishSignalMessage**](SignalApi.md#publishsignalmessage) | **POST** /obp/v6.0.0/signal/channels/{channelname}/messages | Publish Signal Message
 
 
-# **oBPv600DeleteSignalChannel**
-> OBPv600DeleteSignalChannel200Response oBPv600DeleteSignalChannel(channelname)
+# **deleteSignalChannel**
+> DeleteSignalChannel200Response deleteSignalChannel(channelname)
 
 Delete Signal Channel
 
@@ -42,10 +42,10 @@ final api = ObpDart().getSignalApi();
 final String channelname = channelname_example; // String | The CHANNELNAME identifier
 
 try {
-    final response = api.oBPv600DeleteSignalChannel(channelname);
+    final response = api.deleteSignalChannel(channelname);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling SignalApi->oBPv600DeleteSignalChannel: $e\n');
+    print('Exception when calling SignalApi->deleteSignalChannel: $e\n');
 }
 ```
 
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600DeleteSignalChannel200Response**](OBPv600DeleteSignalChannel200Response.md)
+[**DeleteSignalChannel200Response**](DeleteSignalChannel200Response.md)
 
 ### Authorization
 
@@ -70,8 +70,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetSignalChannelInfo**
-> OBPv600GetSignalChannelInfo200Response oBPv600GetSignalChannelInfo(channelname)
+# **getSignalChannelInfo**
+> GetSignalChannelInfo200Response getSignalChannelInfo(channelname)
 
 Get Signal Channel Info
 
@@ -95,10 +95,10 @@ final api = ObpDart().getSignalApi();
 final String channelname = channelname_example; // String | The CHANNELNAME identifier
 
 try {
-    final response = api.oBPv600GetSignalChannelInfo(channelname);
+    final response = api.getSignalChannelInfo(channelname);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling SignalApi->oBPv600GetSignalChannelInfo: $e\n');
+    print('Exception when calling SignalApi->getSignalChannelInfo: $e\n');
 }
 ```
 
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetSignalChannelInfo200Response**](OBPv600GetSignalChannelInfo200Response.md)
+[**GetSignalChannelInfo200Response**](GetSignalChannelInfo200Response.md)
 
 ### Authorization
 
@@ -123,8 +123,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetSignalChannels**
-> OBPv600GetSignalChannels200Response oBPv600GetSignalChannels()
+# **getSignalChannels**
+> GetSignalChannels200Response getSignalChannels()
 
 List Signal Channels
 
@@ -147,10 +147,10 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getSignalApi();
 
 try {
-    final response = api.oBPv600GetSignalChannels();
+    final response = api.getSignalChannels();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling SignalApi->oBPv600GetSignalChannels: $e\n');
+    print('Exception when calling SignalApi->getSignalChannels: $e\n');
 }
 ```
 
@@ -159,7 +159,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetSignalChannels200Response**](OBPv600GetSignalChannels200Response.md)
+[**GetSignalChannels200Response**](GetSignalChannels200Response.md)
 
 ### Authorization
 
@@ -172,8 +172,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetSignalMessages**
-> OBPv600GetSignalMessages200Response oBPv600GetSignalMessages(channelname)
+# **getSignalMessages**
+> GetSignalMessages200Response getSignalMessages(channelname)
 
 Get Signal Messages
 
@@ -197,10 +197,10 @@ final api = ObpDart().getSignalApi();
 final String channelname = channelname_example; // String | The CHANNELNAME identifier
 
 try {
-    final response = api.oBPv600GetSignalMessages(channelname);
+    final response = api.getSignalMessages(channelname);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling SignalApi->oBPv600GetSignalMessages: $e\n');
+    print('Exception when calling SignalApi->getSignalMessages: $e\n');
 }
 ```
 
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetSignalMessages200Response**](OBPv600GetSignalMessages200Response.md)
+[**GetSignalMessages200Response**](GetSignalMessages200Response.md)
 
 ### Authorization
 
@@ -225,8 +225,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetSignalStats**
-> OBPv600GetSignalStats200Response oBPv600GetSignalStats()
+# **getSignalStats**
+> GetSignalStats200Response getSignalStats()
 
 Get Signal Channel Stats
 
@@ -249,10 +249,10 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getSignalApi();
 
 try {
-    final response = api.oBPv600GetSignalStats();
+    final response = api.getSignalStats();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling SignalApi->oBPv600GetSignalStats: $e\n');
+    print('Exception when calling SignalApi->getSignalStats: $e\n');
 }
 ```
 
@@ -261,7 +261,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetSignalStats200Response**](OBPv600GetSignalStats200Response.md)
+[**GetSignalStats200Response**](GetSignalStats200Response.md)
 
 ### Authorization
 
@@ -274,8 +274,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600PublishSignalMessage**
-> OBPv600PublishSignalMessage200Response oBPv600PublishSignalMessage(channelname, oBPv600PublishSignalMessageRequest)
+# **publishSignalMessage**
+> PublishSignalMessage200Response publishSignalMessage(channelname, publishSignalMessageRequest)
 
 Publish Signal Message
 
@@ -297,13 +297,13 @@ import 'package:obp_dart/api.dart';
 
 final api = ObpDart().getSignalApi();
 final String channelname = channelname_example; // String | The CHANNELNAME identifier
-final OBPv600PublishSignalMessageRequest oBPv600PublishSignalMessageRequest = {"type":"object","properties":{"message_type":{"type":"string"},"payload":{"type":"object","properties":{"agent_name":{"type":"string"},"capabilities":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}}}}; // OBPv600PublishSignalMessageRequest | Request body
+final PublishSignalMessageRequest publishSignalMessageRequest = {"type":"object","properties":{"message_type":{"type":"string"},"payload":{"type":"object","properties":{"agent_name":{"type":"string"},"capabilities":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}}}}; // PublishSignalMessageRequest | Request body
 
 try {
-    final response = api.oBPv600PublishSignalMessage(channelname, oBPv600PublishSignalMessageRequest);
+    final response = api.publishSignalMessage(channelname, publishSignalMessageRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling SignalApi->oBPv600PublishSignalMessage: $e\n');
+    print('Exception when calling SignalApi->publishSignalMessage: $e\n');
 }
 ```
 
@@ -312,11 +312,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **channelname** | **String**| The CHANNELNAME identifier | 
- **oBPv600PublishSignalMessageRequest** | [**OBPv600PublishSignalMessageRequest**](OBPv600PublishSignalMessageRequest.md)| Request body | 
+ **publishSignalMessageRequest** | [**PublishSignalMessageRequest**](PublishSignalMessageRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600PublishSignalMessage200Response**](OBPv600PublishSignalMessage200Response.md)
+[**PublishSignalMessage200Response**](PublishSignalMessage200Response.md)
 
 ### Authorization
 

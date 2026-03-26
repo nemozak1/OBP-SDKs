@@ -1,19 +1,19 @@
 # \UserInvitationAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv400CreateUserInvitation**](UserInvitationAPI.md#OBPv400CreateUserInvitation) | **Post** /obp/v4.0.0/banks/{bankid}/user-invitation | Create User Invitation
-[**OBPv400GetUserInvitation**](UserInvitationAPI.md#OBPv400GetUserInvitation) | **Get** /obp/v4.0.0/banks/{bankid}/user-invitations/{secretlink} | Get User Invitation
-[**OBPv400GetUserInvitationAnonymous**](UserInvitationAPI.md#OBPv400GetUserInvitationAnonymous) | **Post** /obp/v4.0.0/banks/{bankid}/user-invitations | Get User Invitation Information
-[**OBPv400GetUserInvitations**](UserInvitationAPI.md#OBPv400GetUserInvitations) | **Get** /obp/v4.0.0/banks/{bankid}/user-invitations | Get User Invitations
+[**CreateUserInvitation**](UserInvitationAPI.md#CreateUserInvitation) | **Post** /obp/v4.0.0/banks/{bankid}/user-invitation | Create User Invitation
+[**GetUserInvitation**](UserInvitationAPI.md#GetUserInvitation) | **Get** /obp/v4.0.0/banks/{bankid}/user-invitations/{secretlink} | Get User Invitation
+[**GetUserInvitationAnonymous**](UserInvitationAPI.md#GetUserInvitationAnonymous) | **Post** /obp/v4.0.0/banks/{bankid}/user-invitations | Get User Invitation Information
+[**GetUserInvitations**](UserInvitationAPI.md#GetUserInvitations) | **Get** /obp/v4.0.0/banks/{bankid}/user-invitations | Get User Invitations
 
 
 
-## OBPv400CreateUserInvitation
+## CreateUserInvitation
 
-> OBPv400GetUserInvitations200Response OBPv400CreateUserInvitation(ctx, bankid).OBPv400CreateUserInvitationRequest(oBPv400CreateUserInvitationRequest).Execute()
+> GetUserInvitations200Response CreateUserInvitation(ctx, bankid).CreateUserInvitationRequest(createUserInvitationRequest).Execute()
 
 Create User Invitation
 
@@ -33,17 +33,17 @@ import (
 
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
-	oBPv400CreateUserInvitationRequest := *openapiclient.NewOBPv400CreateUserInvitationRequest("Type_example", *openapiclient.NewOBPv400CreateUserInvitationRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv400CreateUserInvitationRequest | Request body
+	createUserInvitationRequest := *openapiclient.NewCreateUserInvitationRequest() // CreateUserInvitationRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UserInvitationAPI.OBPv400CreateUserInvitation(context.Background(), bankid).OBPv400CreateUserInvitationRequest(oBPv400CreateUserInvitationRequest).Execute()
+	resp, r, err := apiClient.UserInvitationAPI.CreateUserInvitation(context.Background(), bankid).CreateUserInvitationRequest(createUserInvitationRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `UserInvitationAPI.OBPv400CreateUserInvitation``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `UserInvitationAPI.CreateUserInvitation``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400CreateUserInvitation`: OBPv400GetUserInvitations200Response
-	fmt.Fprintf(os.Stdout, "Response from `UserInvitationAPI.OBPv400CreateUserInvitation`: %v\n", resp)
+	// response from `CreateUserInvitation`: GetUserInvitations200Response
+	fmt.Fprintf(os.Stdout, "Response from `UserInvitationAPI.CreateUserInvitation`: %v\n", resp)
 }
 ```
 
@@ -57,17 +57,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400CreateUserInvitationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateUserInvitationRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv400CreateUserInvitationRequest** | [**OBPv400CreateUserInvitationRequest**](OBPv400CreateUserInvitationRequest.md) | Request body | 
+ **createUserInvitationRequest** | [**CreateUserInvitationRequest**](CreateUserInvitationRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetUserInvitations200Response**](OBPv400GetUserInvitations200Response.md)
+[**GetUserInvitations200Response**](GetUserInvitations200Response.md)
 
 ### Authorization
 
@@ -83,9 +83,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400GetUserInvitation
+## GetUserInvitation
 
-> OBPv400GetUserInvitations200Response OBPv400GetUserInvitation(ctx, bankid, secretlink).Execute()
+> GetUserInvitations200Response GetUserInvitation(ctx, bankid, secretlink).Execute()
 
 Get User Invitation
 
@@ -109,13 +109,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UserInvitationAPI.OBPv400GetUserInvitation(context.Background(), bankid, secretlink).Execute()
+	resp, r, err := apiClient.UserInvitationAPI.GetUserInvitation(context.Background(), bankid, secretlink).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `UserInvitationAPI.OBPv400GetUserInvitation``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `UserInvitationAPI.GetUserInvitation``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400GetUserInvitation`: OBPv400GetUserInvitations200Response
-	fmt.Fprintf(os.Stdout, "Response from `UserInvitationAPI.OBPv400GetUserInvitation`: %v\n", resp)
+	// response from `GetUserInvitation`: GetUserInvitations200Response
+	fmt.Fprintf(os.Stdout, "Response from `UserInvitationAPI.GetUserInvitation`: %v\n", resp)
 }
 ```
 
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400GetUserInvitationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetUserInvitationRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetUserInvitations200Response**](OBPv400GetUserInvitations200Response.md)
+[**GetUserInvitations200Response**](GetUserInvitations200Response.md)
 
 ### Authorization
 
@@ -156,9 +156,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400GetUserInvitationAnonymous
+## GetUserInvitationAnonymous
 
-> OBPv400GetUserInvitations200Response OBPv400GetUserInvitationAnonymous(ctx, bankid).OBPv400GetUserInvitationAnonymousRequest(oBPv400GetUserInvitationAnonymousRequest).Execute()
+> GetUserInvitations200Response GetUserInvitationAnonymous(ctx, bankid).GetUserInvitationAnonymousRequest(getUserInvitationAnonymousRequest).Execute()
 
 Get User Invitation Information
 
@@ -178,17 +178,17 @@ import (
 
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
-	oBPv400GetUserInvitationAnonymousRequest := *openapiclient.NewOBPv400GetUserInvitationAnonymousRequest("Type_example", *openapiclient.NewOBPv400GetUserInvitationAnonymousRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv400GetUserInvitationAnonymousRequest | Request body
+	getUserInvitationAnonymousRequest := *openapiclient.NewGetUserInvitationAnonymousRequest() // GetUserInvitationAnonymousRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UserInvitationAPI.OBPv400GetUserInvitationAnonymous(context.Background(), bankid).OBPv400GetUserInvitationAnonymousRequest(oBPv400GetUserInvitationAnonymousRequest).Execute()
+	resp, r, err := apiClient.UserInvitationAPI.GetUserInvitationAnonymous(context.Background(), bankid).GetUserInvitationAnonymousRequest(getUserInvitationAnonymousRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `UserInvitationAPI.OBPv400GetUserInvitationAnonymous``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `UserInvitationAPI.GetUserInvitationAnonymous``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400GetUserInvitationAnonymous`: OBPv400GetUserInvitations200Response
-	fmt.Fprintf(os.Stdout, "Response from `UserInvitationAPI.OBPv400GetUserInvitationAnonymous`: %v\n", resp)
+	// response from `GetUserInvitationAnonymous`: GetUserInvitations200Response
+	fmt.Fprintf(os.Stdout, "Response from `UserInvitationAPI.GetUserInvitationAnonymous`: %v\n", resp)
 }
 ```
 
@@ -202,17 +202,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400GetUserInvitationAnonymousRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetUserInvitationAnonymousRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv400GetUserInvitationAnonymousRequest** | [**OBPv400GetUserInvitationAnonymousRequest**](OBPv400GetUserInvitationAnonymousRequest.md) | Request body | 
+ **getUserInvitationAnonymousRequest** | [**GetUserInvitationAnonymousRequest**](GetUserInvitationAnonymousRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetUserInvitations200Response**](OBPv400GetUserInvitations200Response.md)
+[**GetUserInvitations200Response**](GetUserInvitations200Response.md)
 
 ### Authorization
 
@@ -228,9 +228,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## OBPv400GetUserInvitations
+## GetUserInvitations
 
-> OBPv400GetUserInvitations200Response OBPv400GetUserInvitations(ctx, bankid).Execute()
+> GetUserInvitations200Response GetUserInvitations(ctx, bankid).Execute()
 
 Get User Invitations
 
@@ -253,13 +253,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UserInvitationAPI.OBPv400GetUserInvitations(context.Background(), bankid).Execute()
+	resp, r, err := apiClient.UserInvitationAPI.GetUserInvitations(context.Background(), bankid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `UserInvitationAPI.OBPv400GetUserInvitations``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `UserInvitationAPI.GetUserInvitations``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400GetUserInvitations`: OBPv400GetUserInvitations200Response
-	fmt.Fprintf(os.Stdout, "Response from `UserInvitationAPI.OBPv400GetUserInvitations`: %v\n", resp)
+	// response from `GetUserInvitations`: GetUserInvitations200Response
+	fmt.Fprintf(os.Stdout, "Response from `UserInvitationAPI.GetUserInvitations`: %v\n", resp)
 }
 ```
 
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400GetUserInvitationsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetUserInvitationsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetUserInvitations200Response**](OBPv400GetUserInvitations200Response.md)
+[**GetUserInvitations200Response**](GetUserInvitations200Response.md)
 
 ### Authorization
 

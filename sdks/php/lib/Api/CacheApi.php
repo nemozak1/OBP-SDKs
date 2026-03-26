@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,16 +75,16 @@ class CacheApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv600GetCacheConfig' => [
+        'getCacheConfig' => [
             'application/json',
         ],
-        'oBPv600GetCacheInfo' => [
+        'getCacheInfo' => [
             'application/json',
         ],
-        'oBPv600GetCacheNamespaces' => [
+        'getCacheNamespaces' => [
             'application/json',
         ],
-        'oBPv600InvalidateCacheNamespace' => [
+        'invalidateCacheNamespace' => [
             'application/json',
         ],
     ];
@@ -136,36 +136,36 @@ class CacheApi
     }
 
     /**
-     * Operation oBPv600GetCacheConfig
+     * Operation getCacheConfig
      *
      * Get Cache Configuration
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCacheConfig'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCacheConfig'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetCacheConfig200Response
+     * @return \OpenBankProject\Model\GetCacheConfig200Response
      */
-    public function oBPv600GetCacheConfig(string $contentType = self::contentTypes['oBPv600GetCacheConfig'][0])
+    public function getCacheConfig(string $contentType = self::contentTypes['getCacheConfig'][0])
     {
-        list($response) = $this->oBPv600GetCacheConfigWithHttpInfo($contentType);
+        list($response) = $this->getCacheConfigWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetCacheConfigWithHttpInfo
+     * Operation getCacheConfigWithHttpInfo
      *
      * Get Cache Configuration
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCacheConfig'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCacheConfig'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetCacheConfig200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetCacheConfig200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetCacheConfigWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetCacheConfig'][0])
+    public function getCacheConfigWithHttpInfo(string $contentType = self::contentTypes['getCacheConfig'][0])
     {
-        $request = $this->oBPv600GetCacheConfigRequest($contentType);
+        $request = $this->getCacheConfigRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -193,7 +193,7 @@ class CacheApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetCacheConfig200Response',
+                        '\OpenBankProject\Model\GetCacheConfig200Response',
                         $request,
                         $response,
                     );
@@ -215,7 +215,7 @@ class CacheApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetCacheConfig200Response',
+                '\OpenBankProject\Model\GetCacheConfig200Response',
                 $request,
                 $response,
             );
@@ -224,7 +224,7 @@ class CacheApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetCacheConfig200Response',
+                        '\OpenBankProject\Model\GetCacheConfig200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -237,18 +237,18 @@ class CacheApi
     }
 
     /**
-     * Operation oBPv600GetCacheConfigAsync
+     * Operation getCacheConfigAsync
      *
      * Get Cache Configuration
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCacheConfig'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCacheConfig'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetCacheConfigAsync(string $contentType = self::contentTypes['oBPv600GetCacheConfig'][0])
+    public function getCacheConfigAsync(string $contentType = self::contentTypes['getCacheConfig'][0])
     {
-        return $this->oBPv600GetCacheConfigAsyncWithHttpInfo($contentType)
+        return $this->getCacheConfigAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -257,19 +257,19 @@ class CacheApi
     }
 
     /**
-     * Operation oBPv600GetCacheConfigAsyncWithHttpInfo
+     * Operation getCacheConfigAsyncWithHttpInfo
      *
      * Get Cache Configuration
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCacheConfig'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCacheConfig'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetCacheConfigAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetCacheConfig'][0])
+    public function getCacheConfigAsyncWithHttpInfo(string $contentType = self::contentTypes['getCacheConfig'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetCacheConfig200Response';
-        $request = $this->oBPv600GetCacheConfigRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetCacheConfig200Response';
+        $request = $this->getCacheConfigRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -308,14 +308,14 @@ class CacheApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetCacheConfig'
+     * Create request for operation 'getCacheConfig'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCacheConfig'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCacheConfig'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetCacheConfigRequest(string $contentType = self::contentTypes['oBPv600GetCacheConfig'][0])
+    public function getCacheConfigRequest(string $contentType = self::contentTypes['getCacheConfig'][0])
     {
 
 
@@ -371,9 +371,9 @@ class CacheApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -398,36 +398,36 @@ class CacheApi
     }
 
     /**
-     * Operation oBPv600GetCacheInfo
+     * Operation getCacheInfo
      *
      * Get Cache Information
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCacheInfo'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCacheInfo'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetCacheInfo200Response
+     * @return \OpenBankProject\Model\GetCacheInfo200Response
      */
-    public function oBPv600GetCacheInfo(string $contentType = self::contentTypes['oBPv600GetCacheInfo'][0])
+    public function getCacheInfo(string $contentType = self::contentTypes['getCacheInfo'][0])
     {
-        list($response) = $this->oBPv600GetCacheInfoWithHttpInfo($contentType);
+        list($response) = $this->getCacheInfoWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetCacheInfoWithHttpInfo
+     * Operation getCacheInfoWithHttpInfo
      *
      * Get Cache Information
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCacheInfo'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCacheInfo'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetCacheInfo200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetCacheInfo200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetCacheInfoWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetCacheInfo'][0])
+    public function getCacheInfoWithHttpInfo(string $contentType = self::contentTypes['getCacheInfo'][0])
     {
-        $request = $this->oBPv600GetCacheInfoRequest($contentType);
+        $request = $this->getCacheInfoRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -455,7 +455,7 @@ class CacheApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetCacheInfo200Response',
+                        '\OpenBankProject\Model\GetCacheInfo200Response',
                         $request,
                         $response,
                     );
@@ -477,7 +477,7 @@ class CacheApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetCacheInfo200Response',
+                '\OpenBankProject\Model\GetCacheInfo200Response',
                 $request,
                 $response,
             );
@@ -486,7 +486,7 @@ class CacheApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetCacheInfo200Response',
+                        '\OpenBankProject\Model\GetCacheInfo200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -499,18 +499,18 @@ class CacheApi
     }
 
     /**
-     * Operation oBPv600GetCacheInfoAsync
+     * Operation getCacheInfoAsync
      *
      * Get Cache Information
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCacheInfo'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCacheInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetCacheInfoAsync(string $contentType = self::contentTypes['oBPv600GetCacheInfo'][0])
+    public function getCacheInfoAsync(string $contentType = self::contentTypes['getCacheInfo'][0])
     {
-        return $this->oBPv600GetCacheInfoAsyncWithHttpInfo($contentType)
+        return $this->getCacheInfoAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -519,19 +519,19 @@ class CacheApi
     }
 
     /**
-     * Operation oBPv600GetCacheInfoAsyncWithHttpInfo
+     * Operation getCacheInfoAsyncWithHttpInfo
      *
      * Get Cache Information
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCacheInfo'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCacheInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetCacheInfoAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetCacheInfo'][0])
+    public function getCacheInfoAsyncWithHttpInfo(string $contentType = self::contentTypes['getCacheInfo'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetCacheInfo200Response';
-        $request = $this->oBPv600GetCacheInfoRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetCacheInfo200Response';
+        $request = $this->getCacheInfoRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -570,14 +570,14 @@ class CacheApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetCacheInfo'
+     * Create request for operation 'getCacheInfo'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCacheInfo'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCacheInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetCacheInfoRequest(string $contentType = self::contentTypes['oBPv600GetCacheInfo'][0])
+    public function getCacheInfoRequest(string $contentType = self::contentTypes['getCacheInfo'][0])
     {
 
 
@@ -633,9 +633,9 @@ class CacheApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -660,36 +660,36 @@ class CacheApi
     }
 
     /**
-     * Operation oBPv600GetCacheNamespaces
+     * Operation getCacheNamespaces
      *
      * Get Cache Namespaces
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCacheNamespaces'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCacheNamespaces'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetCacheNamespaces200Response
+     * @return \OpenBankProject\Model\GetCacheNamespaces200Response
      */
-    public function oBPv600GetCacheNamespaces(string $contentType = self::contentTypes['oBPv600GetCacheNamespaces'][0])
+    public function getCacheNamespaces(string $contentType = self::contentTypes['getCacheNamespaces'][0])
     {
-        list($response) = $this->oBPv600GetCacheNamespacesWithHttpInfo($contentType);
+        list($response) = $this->getCacheNamespacesWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetCacheNamespacesWithHttpInfo
+     * Operation getCacheNamespacesWithHttpInfo
      *
      * Get Cache Namespaces
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCacheNamespaces'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCacheNamespaces'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetCacheNamespaces200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetCacheNamespaces200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetCacheNamespacesWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetCacheNamespaces'][0])
+    public function getCacheNamespacesWithHttpInfo(string $contentType = self::contentTypes['getCacheNamespaces'][0])
     {
-        $request = $this->oBPv600GetCacheNamespacesRequest($contentType);
+        $request = $this->getCacheNamespacesRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -717,7 +717,7 @@ class CacheApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetCacheNamespaces200Response',
+                        '\OpenBankProject\Model\GetCacheNamespaces200Response',
                         $request,
                         $response,
                     );
@@ -739,7 +739,7 @@ class CacheApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetCacheNamespaces200Response',
+                '\OpenBankProject\Model\GetCacheNamespaces200Response',
                 $request,
                 $response,
             );
@@ -748,7 +748,7 @@ class CacheApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetCacheNamespaces200Response',
+                        '\OpenBankProject\Model\GetCacheNamespaces200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -761,18 +761,18 @@ class CacheApi
     }
 
     /**
-     * Operation oBPv600GetCacheNamespacesAsync
+     * Operation getCacheNamespacesAsync
      *
      * Get Cache Namespaces
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCacheNamespaces'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCacheNamespaces'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetCacheNamespacesAsync(string $contentType = self::contentTypes['oBPv600GetCacheNamespaces'][0])
+    public function getCacheNamespacesAsync(string $contentType = self::contentTypes['getCacheNamespaces'][0])
     {
-        return $this->oBPv600GetCacheNamespacesAsyncWithHttpInfo($contentType)
+        return $this->getCacheNamespacesAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -781,19 +781,19 @@ class CacheApi
     }
 
     /**
-     * Operation oBPv600GetCacheNamespacesAsyncWithHttpInfo
+     * Operation getCacheNamespacesAsyncWithHttpInfo
      *
      * Get Cache Namespaces
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCacheNamespaces'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCacheNamespaces'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetCacheNamespacesAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetCacheNamespaces'][0])
+    public function getCacheNamespacesAsyncWithHttpInfo(string $contentType = self::contentTypes['getCacheNamespaces'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetCacheNamespaces200Response';
-        $request = $this->oBPv600GetCacheNamespacesRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetCacheNamespaces200Response';
+        $request = $this->getCacheNamespacesRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -832,14 +832,14 @@ class CacheApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetCacheNamespaces'
+     * Create request for operation 'getCacheNamespaces'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCacheNamespaces'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCacheNamespaces'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetCacheNamespacesRequest(string $contentType = self::contentTypes['oBPv600GetCacheNamespaces'][0])
+    public function getCacheNamespacesRequest(string $contentType = self::contentTypes['getCacheNamespaces'][0])
     {
 
 
@@ -895,9 +895,9 @@ class CacheApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -922,38 +922,38 @@ class CacheApi
     }
 
     /**
-     * Operation oBPv600InvalidateCacheNamespace
+     * Operation invalidateCacheNamespace
      *
      * Invalidate Cache Namespace
      *
-     * @param  \OpenBankProject\Model\OBPv600InvalidateCacheNamespaceRequest $obpv600_invalidate_cache_namespace_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600InvalidateCacheNamespace'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\InvalidateCacheNamespaceRequest $invalidate_cache_namespace_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['invalidateCacheNamespace'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600InvalidateCacheNamespace200Response
+     * @return \OpenBankProject\Model\InvalidateCacheNamespace200Response
      */
-    public function oBPv600InvalidateCacheNamespace($obpv600_invalidate_cache_namespace_request, string $contentType = self::contentTypes['oBPv600InvalidateCacheNamespace'][0])
+    public function invalidateCacheNamespace($invalidate_cache_namespace_request, string $contentType = self::contentTypes['invalidateCacheNamespace'][0])
     {
-        list($response) = $this->oBPv600InvalidateCacheNamespaceWithHttpInfo($obpv600_invalidate_cache_namespace_request, $contentType);
+        list($response) = $this->invalidateCacheNamespaceWithHttpInfo($invalidate_cache_namespace_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600InvalidateCacheNamespaceWithHttpInfo
+     * Operation invalidateCacheNamespaceWithHttpInfo
      *
      * Invalidate Cache Namespace
      *
-     * @param  \OpenBankProject\Model\OBPv600InvalidateCacheNamespaceRequest $obpv600_invalidate_cache_namespace_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600InvalidateCacheNamespace'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\InvalidateCacheNamespaceRequest $invalidate_cache_namespace_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['invalidateCacheNamespace'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600InvalidateCacheNamespace200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\InvalidateCacheNamespace200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600InvalidateCacheNamespaceWithHttpInfo($obpv600_invalidate_cache_namespace_request, string $contentType = self::contentTypes['oBPv600InvalidateCacheNamespace'][0])
+    public function invalidateCacheNamespaceWithHttpInfo($invalidate_cache_namespace_request, string $contentType = self::contentTypes['invalidateCacheNamespace'][0])
     {
-        $request = $this->oBPv600InvalidateCacheNamespaceRequest($obpv600_invalidate_cache_namespace_request, $contentType);
+        $request = $this->invalidateCacheNamespaceRequest($invalidate_cache_namespace_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -981,7 +981,7 @@ class CacheApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600InvalidateCacheNamespace200Response',
+                        '\OpenBankProject\Model\InvalidateCacheNamespace200Response',
                         $request,
                         $response,
                     );
@@ -1003,7 +1003,7 @@ class CacheApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600InvalidateCacheNamespace200Response',
+                '\OpenBankProject\Model\InvalidateCacheNamespace200Response',
                 $request,
                 $response,
             );
@@ -1012,7 +1012,7 @@ class CacheApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600InvalidateCacheNamespace200Response',
+                        '\OpenBankProject\Model\InvalidateCacheNamespace200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1025,19 +1025,19 @@ class CacheApi
     }
 
     /**
-     * Operation oBPv600InvalidateCacheNamespaceAsync
+     * Operation invalidateCacheNamespaceAsync
      *
      * Invalidate Cache Namespace
      *
-     * @param  \OpenBankProject\Model\OBPv600InvalidateCacheNamespaceRequest $obpv600_invalidate_cache_namespace_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600InvalidateCacheNamespace'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\InvalidateCacheNamespaceRequest $invalidate_cache_namespace_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['invalidateCacheNamespace'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600InvalidateCacheNamespaceAsync($obpv600_invalidate_cache_namespace_request, string $contentType = self::contentTypes['oBPv600InvalidateCacheNamespace'][0])
+    public function invalidateCacheNamespaceAsync($invalidate_cache_namespace_request, string $contentType = self::contentTypes['invalidateCacheNamespace'][0])
     {
-        return $this->oBPv600InvalidateCacheNamespaceAsyncWithHttpInfo($obpv600_invalidate_cache_namespace_request, $contentType)
+        return $this->invalidateCacheNamespaceAsyncWithHttpInfo($invalidate_cache_namespace_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1046,20 +1046,20 @@ class CacheApi
     }
 
     /**
-     * Operation oBPv600InvalidateCacheNamespaceAsyncWithHttpInfo
+     * Operation invalidateCacheNamespaceAsyncWithHttpInfo
      *
      * Invalidate Cache Namespace
      *
-     * @param  \OpenBankProject\Model\OBPv600InvalidateCacheNamespaceRequest $obpv600_invalidate_cache_namespace_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600InvalidateCacheNamespace'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\InvalidateCacheNamespaceRequest $invalidate_cache_namespace_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['invalidateCacheNamespace'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600InvalidateCacheNamespaceAsyncWithHttpInfo($obpv600_invalidate_cache_namespace_request, string $contentType = self::contentTypes['oBPv600InvalidateCacheNamespace'][0])
+    public function invalidateCacheNamespaceAsyncWithHttpInfo($invalidate_cache_namespace_request, string $contentType = self::contentTypes['invalidateCacheNamespace'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600InvalidateCacheNamespace200Response';
-        $request = $this->oBPv600InvalidateCacheNamespaceRequest($obpv600_invalidate_cache_namespace_request, $contentType);
+        $returnType = '\OpenBankProject\Model\InvalidateCacheNamespace200Response';
+        $request = $this->invalidateCacheNamespaceRequest($invalidate_cache_namespace_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1098,21 +1098,21 @@ class CacheApi
     }
 
     /**
-     * Create request for operation 'oBPv600InvalidateCacheNamespace'
+     * Create request for operation 'invalidateCacheNamespace'
      *
-     * @param  \OpenBankProject\Model\OBPv600InvalidateCacheNamespaceRequest $obpv600_invalidate_cache_namespace_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600InvalidateCacheNamespace'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\InvalidateCacheNamespaceRequest $invalidate_cache_namespace_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['invalidateCacheNamespace'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600InvalidateCacheNamespaceRequest($obpv600_invalidate_cache_namespace_request, string $contentType = self::contentTypes['oBPv600InvalidateCacheNamespace'][0])
+    public function invalidateCacheNamespaceRequest($invalidate_cache_namespace_request, string $contentType = self::contentTypes['invalidateCacheNamespace'][0])
     {
 
-        // verify the required parameter 'obpv600_invalidate_cache_namespace_request' is set
-        if ($obpv600_invalidate_cache_namespace_request === null || (is_array($obpv600_invalidate_cache_namespace_request) && count($obpv600_invalidate_cache_namespace_request) === 0)) {
+        // verify the required parameter 'invalidate_cache_namespace_request' is set
+        if ($invalidate_cache_namespace_request === null || (is_array($invalidate_cache_namespace_request) && count($invalidate_cache_namespace_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_invalidate_cache_namespace_request when calling oBPv600InvalidateCacheNamespace'
+                'Missing the required parameter $invalidate_cache_namespace_request when calling invalidateCacheNamespace'
             );
         }
 
@@ -1135,12 +1135,12 @@ class CacheApi
         );
 
         // for model (json/xml)
-        if (isset($obpv600_invalidate_cache_namespace_request)) {
+        if (isset($invalidate_cache_namespace_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_invalidate_cache_namespace_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($invalidate_cache_namespace_request));
             } else {
-                $httpBody = $obpv600_invalidate_cache_namespace_request;
+                $httpBody = $invalidate_cache_namespace_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1176,9 +1176,9 @@ class CacheApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

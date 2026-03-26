@@ -1,425 +1,31 @@
 # ATMApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv400UpdateAtmAccessibilityFeatures**](ATMApi.md#oBPv400UpdateAtmAccessibilityFeatures) | **PUT** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/accessibility-features | Update ATM Accessibility Features |
-| [**oBPv400UpdateAtmLocationCategories**](ATMApi.md#oBPv400UpdateAtmLocationCategories) | **PUT** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/location-categories | Update ATM Location Categories |
-| [**oBPv400UpdateAtmNotes**](ATMApi.md#oBPv400UpdateAtmNotes) | **PUT** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/notes | Update ATM Notes |
-| [**oBPv400UpdateAtmServices**](ATMApi.md#oBPv400UpdateAtmServices) | **PUT** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/services | Update ATM Services |
-| [**oBPv400UpdateAtmSupportedCurrencies**](ATMApi.md#oBPv400UpdateAtmSupportedCurrencies) | **PUT** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/supported-currencies | Update ATM Supported Currencies |
-| [**oBPv400UpdateAtmSupportedLanguages**](ATMApi.md#oBPv400UpdateAtmSupportedLanguages) | **PUT** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/supported-languages | Update ATM Supported Languages |
-| [**oBPv500HeadAtms**](ATMApi.md#oBPv500HeadAtms) | **HEAD** /obp/v5.0.0/banks/{bankid}/atms | Head Bank ATMS |
-| [**oBPv510CreateAtm**](ATMApi.md#oBPv510CreateAtm) | **POST** /obp/v5.1.0/banks/{bankid}/atms | Create ATM |
-| [**oBPv510CreateAtmAttribute**](ATMApi.md#oBPv510CreateAtmAttribute) | **POST** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Create ATM Attribute |
-| [**oBPv510DeleteAtm**](ATMApi.md#oBPv510DeleteAtm) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid} | Delete ATM |
-| [**oBPv510DeleteAtmAttribute**](ATMApi.md#oBPv510DeleteAtmAttribute) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Delete ATM Attribute |
-| [**oBPv510GetAtm**](ATMApi.md#oBPv510GetAtm) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid} | Get Bank ATM |
-| [**oBPv510GetAtmAttribute**](ATMApi.md#oBPv510GetAtmAttribute) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Get ATM Attribute By ATM_ATTRIBUTE_ID |
-| [**oBPv510GetAtmAttributes**](ATMApi.md#oBPv510GetAtmAttributes) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Get ATM Attributes |
-| [**oBPv510GetAtms**](ATMApi.md#oBPv510GetAtms) | **GET** /obp/v5.1.0/banks/{bankid}/atms | Get Bank ATMS |
-| [**oBPv510UpdateAtm**](ATMApi.md#oBPv510UpdateAtm) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid} | UPDATE ATM |
-| [**oBPv510UpdateAtmAttribute**](ATMApi.md#oBPv510UpdateAtmAttribute) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Update ATM Attribute |
-
-
-<a id="oBPv400UpdateAtmAccessibilityFeatures"></a>
-# **oBPv400UpdateAtmAccessibilityFeatures**
-> OBPv400UpdateAtmAccessibilityFeatures200Response oBPv400UpdateAtmAccessibilityFeatures(bankid, atmid, obPv400UpdateAtmAccessibilityFeaturesRequest)
-
-Update ATM Accessibility Features
-
-&lt;p&gt;Update ATM Accessibility Features.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;ATM_ID&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#accessibility_features\&quot;&gt;&lt;strong&gt;accessibility_features&lt;/strong&gt;&lt;/a&gt;: [&amp;quot;ATAC&amp;quot;,&amp;quot;ATAD&amp;quot;]&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;&lt;strong&gt;atm_id&lt;/strong&gt;&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; 
-
-### Example
-```kotlin
-// Import classes:
-//import com.openbankproject.infrastructure.*
-//import com.openbankproject.models.*
-
-val apiInstance = ATMApi()
-val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
-val atmid : kotlin.String = atmid_example // kotlin.String | The ATMID identifier
-val obPv400UpdateAtmAccessibilityFeaturesRequest : OBPv400UpdateAtmAccessibilityFeaturesRequest = {"type":"object","properties":{"accessibility_features":{"type":"array","items":{"type":"string"}}}} // OBPv400UpdateAtmAccessibilityFeaturesRequest | Request body
-try {
-    val result : OBPv400UpdateAtmAccessibilityFeatures200Response = apiInstance.oBPv400UpdateAtmAccessibilityFeatures(bankid, atmid, obPv400UpdateAtmAccessibilityFeaturesRequest)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling ATMApi#oBPv400UpdateAtmAccessibilityFeatures")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling ATMApi#oBPv400UpdateAtmAccessibilityFeatures")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| **bankid** | **kotlin.String**| The BANKID identifier | |
-| **atmid** | **kotlin.String**| The ATMID identifier | |
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **obPv400UpdateAtmAccessibilityFeaturesRequest** | [**OBPv400UpdateAtmAccessibilityFeaturesRequest**](OBPv400UpdateAtmAccessibilityFeaturesRequest.md)| Request body | |
-
-### Return type
-
-[**OBPv400UpdateAtmAccessibilityFeatures200Response**](OBPv400UpdateAtmAccessibilityFeatures200Response.md)
-
-### Authorization
-
-
-Configure OAuth2:
-    ApiClient.accessToken = ""
-Configure GatewayLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a id="oBPv400UpdateAtmLocationCategories"></a>
-# **oBPv400UpdateAtmLocationCategories**
-> OBPv400UpdateAtmLocationCategories200Response oBPv400UpdateAtmLocationCategories(bankid, atmid, obPv400UpdateAtmLocationCategoriesRequest)
-
-Update ATM Location Categories
-
-&lt;p&gt;Update ATM Location Categories.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;ATM_ID&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;&lt;strong&gt;atm_id&lt;/strong&gt;&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;location_categories&lt;/strong&gt;&lt;/a&gt;: location_categories&lt;/p&gt; 
-
-### Example
-```kotlin
-// Import classes:
-//import com.openbankproject.infrastructure.*
-//import com.openbankproject.models.*
-
-val apiInstance = ATMApi()
-val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
-val atmid : kotlin.String = atmid_example // kotlin.String | The ATMID identifier
-val obPv400UpdateAtmLocationCategoriesRequest : OBPv400UpdateAtmLocationCategoriesRequest = {"type":"object","properties":{"location_categories":{"type":"array","items":{"type":"string"}}}} // OBPv400UpdateAtmLocationCategoriesRequest | Request body
-try {
-    val result : OBPv400UpdateAtmLocationCategories200Response = apiInstance.oBPv400UpdateAtmLocationCategories(bankid, atmid, obPv400UpdateAtmLocationCategoriesRequest)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling ATMApi#oBPv400UpdateAtmLocationCategories")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling ATMApi#oBPv400UpdateAtmLocationCategories")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| **bankid** | **kotlin.String**| The BANKID identifier | |
-| **atmid** | **kotlin.String**| The ATMID identifier | |
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **obPv400UpdateAtmLocationCategoriesRequest** | [**OBPv400UpdateAtmLocationCategoriesRequest**](OBPv400UpdateAtmLocationCategoriesRequest.md)| Request body | |
-
-### Return type
-
-[**OBPv400UpdateAtmLocationCategories200Response**](OBPv400UpdateAtmLocationCategories200Response.md)
-
-### Authorization
-
-
-Configure OAuth2:
-    ApiClient.accessToken = ""
-Configure GatewayLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a id="oBPv400UpdateAtmNotes"></a>
-# **oBPv400UpdateAtmNotes**
-> OBPv400UpdateAtmNotes200Response oBPv400UpdateAtmNotes(bankid, atmid, obPv400UpdateAtmNotesRequest)
-
-Update ATM Notes
-
-&lt;p&gt;Update ATM Notes.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;ATM_ID&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;&lt;strong&gt;atm_id&lt;/strong&gt;&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;notes&lt;/strong&gt;&lt;/a&gt;: notes&lt;/p&gt; 
-
-### Example
-```kotlin
-// Import classes:
-//import com.openbankproject.infrastructure.*
-//import com.openbankproject.models.*
-
-val apiInstance = ATMApi()
-val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
-val atmid : kotlin.String = atmid_example // kotlin.String | The ATMID identifier
-val obPv400UpdateAtmNotesRequest : OBPv400UpdateAtmNotesRequest = {"type":"object","properties":{"notes":{"type":"array","items":{"type":"string"}}}} // OBPv400UpdateAtmNotesRequest | Request body
-try {
-    val result : OBPv400UpdateAtmNotes200Response = apiInstance.oBPv400UpdateAtmNotes(bankid, atmid, obPv400UpdateAtmNotesRequest)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling ATMApi#oBPv400UpdateAtmNotes")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling ATMApi#oBPv400UpdateAtmNotes")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| **bankid** | **kotlin.String**| The BANKID identifier | |
-| **atmid** | **kotlin.String**| The ATMID identifier | |
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **obPv400UpdateAtmNotesRequest** | [**OBPv400UpdateAtmNotesRequest**](OBPv400UpdateAtmNotesRequest.md)| Request body | |
-
-### Return type
-
-[**OBPv400UpdateAtmNotes200Response**](OBPv400UpdateAtmNotes200Response.md)
-
-### Authorization
-
-
-Configure OAuth2:
-    ApiClient.accessToken = ""
-Configure GatewayLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a id="oBPv400UpdateAtmServices"></a>
-# **oBPv400UpdateAtmServices**
-> OBPv400UpdateAtmServices200Response oBPv400UpdateAtmServices(bankid, atmid, obPv400UpdateAtmServicesRequest)
-
-Update ATM Services
-
-&lt;p&gt;Update ATM Services.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;ATM_ID&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;&lt;strong&gt;atm_id&lt;/strong&gt;&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#services\&quot;&gt;&lt;strong&gt;services&lt;/strong&gt;&lt;/a&gt;: [{&amp;quot;CY&amp;quot;:[&amp;quot;PS_010&amp;quot;,&amp;quot;PS_020&amp;quot;,&amp;quot;PS_03C&amp;quot;,&amp;quot;PS_04C&amp;quot;]}]&lt;/p&gt; 
-
-### Example
-```kotlin
-// Import classes:
-//import com.openbankproject.infrastructure.*
-//import com.openbankproject.models.*
-
-val apiInstance = ATMApi()
-val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
-val atmid : kotlin.String = atmid_example // kotlin.String | The ATMID identifier
-val obPv400UpdateAtmServicesRequest : OBPv400UpdateAtmServicesRequest = {"type":"object","properties":{"services":{"type":"array","items":{"type":"string"}}}} // OBPv400UpdateAtmServicesRequest | Request body
-try {
-    val result : OBPv400UpdateAtmServices200Response = apiInstance.oBPv400UpdateAtmServices(bankid, atmid, obPv400UpdateAtmServicesRequest)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling ATMApi#oBPv400UpdateAtmServices")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling ATMApi#oBPv400UpdateAtmServices")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| **bankid** | **kotlin.String**| The BANKID identifier | |
-| **atmid** | **kotlin.String**| The ATMID identifier | |
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **obPv400UpdateAtmServicesRequest** | [**OBPv400UpdateAtmServicesRequest**](OBPv400UpdateAtmServicesRequest.md)| Request body | |
-
-### Return type
-
-[**OBPv400UpdateAtmServices200Response**](OBPv400UpdateAtmServices200Response.md)
-
-### Authorization
-
-
-Configure OAuth2:
-    ApiClient.accessToken = ""
-Configure GatewayLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a id="oBPv400UpdateAtmSupportedCurrencies"></a>
-# **oBPv400UpdateAtmSupportedCurrencies**
-> OBPv400UpdateAtmSupportedCurrencies200Response oBPv400UpdateAtmSupportedCurrencies(bankid, atmid, obPv400UpdateAtmSupportedCurrenciesRequest)
-
-Update ATM Supported Currencies
-
-&lt;p&gt;Update ATM Supported Currencies.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;ATM_ID&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;&lt;strong&gt;atm_id&lt;/strong&gt;&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#supported_currencies\&quot;&gt;&lt;strong&gt;supported_currencies&lt;/strong&gt;&lt;/a&gt;: [&amp;quot;EUR&amp;quot;,&amp;quot;MXN&amp;quot;,&amp;quot;USD&amp;quot;]&lt;/p&gt; 
-
-### Example
-```kotlin
-// Import classes:
-//import com.openbankproject.infrastructure.*
-//import com.openbankproject.models.*
-
-val apiInstance = ATMApi()
-val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
-val atmid : kotlin.String = atmid_example // kotlin.String | The ATMID identifier
-val obPv400UpdateAtmSupportedCurrenciesRequest : OBPv400UpdateAtmSupportedCurrenciesRequest = {"type":"object","properties":{"supported_currencies":{"type":"array","items":{"type":"string"}}}} // OBPv400UpdateAtmSupportedCurrenciesRequest | Request body
-try {
-    val result : OBPv400UpdateAtmSupportedCurrencies200Response = apiInstance.oBPv400UpdateAtmSupportedCurrencies(bankid, atmid, obPv400UpdateAtmSupportedCurrenciesRequest)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling ATMApi#oBPv400UpdateAtmSupportedCurrencies")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling ATMApi#oBPv400UpdateAtmSupportedCurrencies")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| **bankid** | **kotlin.String**| The BANKID identifier | |
-| **atmid** | **kotlin.String**| The ATMID identifier | |
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **obPv400UpdateAtmSupportedCurrenciesRequest** | [**OBPv400UpdateAtmSupportedCurrenciesRequest**](OBPv400UpdateAtmSupportedCurrenciesRequest.md)| Request body | |
-
-### Return type
-
-[**OBPv400UpdateAtmSupportedCurrencies200Response**](OBPv400UpdateAtmSupportedCurrencies200Response.md)
-
-### Authorization
-
-
-Configure OAuth2:
-    ApiClient.accessToken = ""
-Configure GatewayLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a id="oBPv400UpdateAtmSupportedLanguages"></a>
-# **oBPv400UpdateAtmSupportedLanguages**
-> OBPv400UpdateAtmSupportedLanguages200Response oBPv400UpdateAtmSupportedLanguages(bankid, atmid, obPv400UpdateAtmSupportedLanguagesRequest)
-
-Update ATM Supported Languages
-
-&lt;p&gt;Update ATM Supported Languages.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;ATM_ID&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;&lt;strong&gt;atm_id&lt;/strong&gt;&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#supported_languages\&quot;&gt;&lt;strong&gt;supported_languages&lt;/strong&gt;&lt;/a&gt;: [&amp;quot;es&amp;quot;,&amp;quot;fr&amp;quot;,&amp;quot;de&amp;quot;]&lt;/p&gt; 
-
-### Example
-```kotlin
-// Import classes:
-//import com.openbankproject.infrastructure.*
-//import com.openbankproject.models.*
-
-val apiInstance = ATMApi()
-val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
-val atmid : kotlin.String = atmid_example // kotlin.String | The ATMID identifier
-val obPv400UpdateAtmSupportedLanguagesRequest : OBPv400UpdateAtmSupportedLanguagesRequest = {"type":"object","properties":{"supported_languages":{"type":"array","items":{"type":"string"}}}} // OBPv400UpdateAtmSupportedLanguagesRequest | Request body
-try {
-    val result : OBPv400UpdateAtmSupportedLanguages200Response = apiInstance.oBPv400UpdateAtmSupportedLanguages(bankid, atmid, obPv400UpdateAtmSupportedLanguagesRequest)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling ATMApi#oBPv400UpdateAtmSupportedLanguages")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling ATMApi#oBPv400UpdateAtmSupportedLanguages")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| **bankid** | **kotlin.String**| The BANKID identifier | |
-| **atmid** | **kotlin.String**| The ATMID identifier | |
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **obPv400UpdateAtmSupportedLanguagesRequest** | [**OBPv400UpdateAtmSupportedLanguagesRequest**](OBPv400UpdateAtmSupportedLanguagesRequest.md)| Request body | |
-
-### Return type
-
-[**OBPv400UpdateAtmSupportedLanguages200Response**](OBPv400UpdateAtmSupportedLanguages200Response.md)
-
-### Authorization
-
-
-Configure OAuth2:
-    ApiClient.accessToken = ""
-Configure GatewayLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a id="oBPv500HeadAtms"></a>
-# **oBPv500HeadAtms**
-> OBPv500HeadAtms200Response oBPv500HeadAtms(bankid)
-
-Head Bank ATMS
-
-&lt;p&gt;Head Bank ATMS.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#accessibility_features\&quot;&gt;&lt;strong&gt;accessibility_features&lt;/strong&gt;&lt;/a&gt;: [&amp;quot;ATAC&amp;quot;,&amp;quot;ATAD&amp;quot;]&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atms\&quot;&gt;&lt;strong&gt;atms&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;balance_inquiry_fee&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;branch_identification&lt;/strong&gt;&lt;/a&gt;: branch_identification&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;cash_withdrawal_international_fee&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;cash_withdrawal_national_fee&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#city\&quot;&gt;&lt;strong&gt;city&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#closing_time\&quot;&gt;&lt;strong&gt;closing_time&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#country_code\&quot;&gt;&lt;strong&gt;country_code&lt;/strong&gt;&lt;/a&gt;: 1254&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#county\&quot;&gt;&lt;strong&gt;county&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#friday\&quot;&gt;&lt;strong&gt;friday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;has_deposit_capability&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_accessible&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;line_1&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;line_2&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;line_3&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;located_at&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#location\&quot;&gt;&lt;strong&gt;location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;location_categories&lt;/strong&gt;&lt;/a&gt;: location_categories&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;minimum_withdrawal&lt;/strong&gt;&lt;/a&gt;: minimum_withdrawal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#monday\&quot;&gt;&lt;strong&gt;monday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;notes&lt;/strong&gt;&lt;/a&gt;: notes&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#opening_time\&quot;&gt;&lt;strong&gt;opening_time&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#postcode\&quot;&gt;&lt;strong&gt;postcode&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#saturday\&quot;&gt;&lt;strong&gt;saturday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#services\&quot;&gt;&lt;strong&gt;services&lt;/strong&gt;&lt;/a&gt;: [{&amp;quot;CY&amp;quot;:[&amp;quot;PS_010&amp;quot;,&amp;quot;PS_020&amp;quot;,&amp;quot;PS_03C&amp;quot;,&amp;quot;PS_04C&amp;quot;]}]&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;site_identification&lt;/strong&gt;&lt;/a&gt;: site_identification&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;site_name&lt;/strong&gt;&lt;/a&gt;: site_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#state\&quot;&gt;&lt;strong&gt;state&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#sunday\&quot;&gt;&lt;strong&gt;sunday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#supported_currencies\&quot;&gt;&lt;strong&gt;supported_currencies&lt;/strong&gt;&lt;/a&gt;: [&amp;quot;EUR&amp;quot;,&amp;quot;MXN&amp;quot;,&amp;quot;USD&amp;quot;]&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#supported_languages\&quot;&gt;&lt;strong&gt;supported_languages&lt;/strong&gt;&lt;/a&gt;: [&amp;quot;es&amp;quot;,&amp;quot;fr&amp;quot;,&amp;quot;de&amp;quot;]&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#thursday\&quot;&gt;&lt;strong&gt;thursday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tuesday\&quot;&gt;&lt;strong&gt;tuesday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#wednesday\&quot;&gt;&lt;strong&gt;wednesday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; 
-
-### Example
-```kotlin
-// Import classes:
-//import com.openbankproject.infrastructure.*
-//import com.openbankproject.models.*
-
-val apiInstance = ATMApi()
-val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
-try {
-    val result : OBPv500HeadAtms200Response = apiInstance.oBPv500HeadAtms(bankid)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling ATMApi#oBPv500HeadAtms")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling ATMApi#oBPv500HeadAtms")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **bankid** | **kotlin.String**| The BANKID identifier | |
-
-### Return type
-
-[**OBPv500HeadAtms200Response**](OBPv500HeadAtms200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a id="oBPv510CreateAtm"></a>
-# **oBPv510CreateAtm**
-> OBPv510GetAtm200Response oBPv510CreateAtm(bankid, obPv510CreateAtmRequest)
+| [**createAtm**](ATMApi.md#createAtm) | **POST** /obp/v5.1.0/banks/{bankid}/atms | Create ATM |
+| [**createAtmAttribute**](ATMApi.md#createAtmAttribute) | **POST** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Create ATM Attribute |
+| [**deleteAtm**](ATMApi.md#deleteAtm) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid} | Delete ATM |
+| [**deleteAtmAttribute**](ATMApi.md#deleteAtmAttribute) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Delete ATM Attribute |
+| [**getAtm**](ATMApi.md#getAtm) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid} | Get Bank ATM |
+| [**getAtmAttribute**](ATMApi.md#getAtmAttribute) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Get ATM Attribute By ATM_ATTRIBUTE_ID |
+| [**getAtmAttributes**](ATMApi.md#getAtmAttributes) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Get ATM Attributes |
+| [**getAtms**](ATMApi.md#getAtms) | **GET** /obp/v5.1.0/banks/{bankid}/atms | Get Bank ATMS |
+| [**headAtms**](ATMApi.md#headAtms) | **HEAD** /obp/v5.0.0/banks/{bankid}/atms | Head Bank ATMS |
+| [**updateAtm**](ATMApi.md#updateAtm) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid} | UPDATE ATM |
+| [**updateAtmAccessibilityFeatures**](ATMApi.md#updateAtmAccessibilityFeatures) | **PUT** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/accessibility-features | Update ATM Accessibility Features |
+| [**updateAtmAttribute**](ATMApi.md#updateAtmAttribute) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Update ATM Attribute |
+| [**updateAtmLocationCategories**](ATMApi.md#updateAtmLocationCategories) | **PUT** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/location-categories | Update ATM Location Categories |
+| [**updateAtmNotes**](ATMApi.md#updateAtmNotes) | **PUT** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/notes | Update ATM Notes |
+| [**updateAtmServices**](ATMApi.md#updateAtmServices) | **PUT** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/services | Update ATM Services |
+| [**updateAtmSupportedCurrencies**](ATMApi.md#updateAtmSupportedCurrencies) | **PUT** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/supported-currencies | Update ATM Supported Currencies |
+| [**updateAtmSupportedLanguages**](ATMApi.md#updateAtmSupportedLanguages) | **PUT** /obp/v4.0.0/banks/{bankid}/atms/{atmid}/supported-languages | Update ATM Supported Languages |
+
+
+<a id="createAtm"></a>
+# **createAtm**
+> GetAtm200Response createAtm(bankid, createAtmRequest)
 
 Create ATM
 
@@ -433,15 +39,15 @@ Create ATM
 
 val apiInstance = ATMApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
-val obPv510CreateAtmRequest : OBPv510CreateAtmRequest = {"type":"object","properties":{"name":{"type":"string"},"site_name":{"type":"string"},"friday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"id":{"type":"string"},"is_accessible":{"type":"string"},"site_identification":{"type":"string"},"atm_type":{"type":"string"},"accessibility_features":{"type":"array","items":{"type":"string"}},"supported_currencies":{"type":"array","items":{"type":"string"}},"bank_id":{"type":"string"},"monday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"cash_withdrawal_international_fee":{"type":"string"},"has_deposit_capability":{"type":"string"},"supported_languages":{"type":"array","items":{"type":"string"}},"balance_inquiry_fee":{"type":"string"},"meta":{"type":"object","properties":{"license":{"type":"object","properties":{"name":{"type":"string"},"id":{"type":"string"}}}}},"notes":{"type":"array","items":{"type":"string"}},"saturday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"thursday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"tuesday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"wednesday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"phone":{"type":"string"},"sunday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"located_at":{"type":"string"},"more_info":{"type":"string"},"address":{"type":"object","properties":{"city":{"type":"string"},"postcode":{"type":"string"},"line_1":{"type":"string"},"line_2":{"type":"string"},"line_3":{"type":"string"},"state":{"type":"string"},"country_code":{"type":"string"},"county":{"type":"string"}}},"minimum_withdrawal":{"type":"string"},"branch_identification":{"type":"string"},"location":{"type":"object","properties":{"longitude":{"type":"number"},"latitude":{"type":"number"}}},"services":{"type":"array","items":{"type":"string"}},"cash_withdrawal_national_fee":{"type":"string"},"location_categories":{"type":"array","items":{"type":"string"}}}} // OBPv510CreateAtmRequest | Request body
+val createAtmRequest : CreateAtmRequest = {"type":"object","properties":{"name":{"type":"string"},"site_name":{"type":"string"},"friday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"id":{"type":"string"},"is_accessible":{"type":"string"},"site_identification":{"type":"string"},"atm_type":{"type":"string"},"accessibility_features":{"type":"array","items":{"type":"string"}},"supported_currencies":{"type":"array","items":{"type":"string"}},"bank_id":{"type":"string"},"monday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"cash_withdrawal_international_fee":{"type":"string"},"has_deposit_capability":{"type":"string"},"supported_languages":{"type":"array","items":{"type":"string"}},"balance_inquiry_fee":{"type":"string"},"meta":{"type":"object","properties":{"license":{"type":"object","properties":{"name":{"type":"string"},"id":{"type":"string"}}}}},"notes":{"type":"array","items":{"type":"string"}},"saturday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"thursday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"tuesday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"wednesday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"phone":{"type":"string"},"sunday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"located_at":{"type":"string"},"more_info":{"type":"string"},"address":{"type":"object","properties":{"city":{"type":"string"},"postcode":{"type":"string"},"line_1":{"type":"string"},"line_2":{"type":"string"},"line_3":{"type":"string"},"state":{"type":"string"},"country_code":{"type":"string"},"county":{"type":"string"}}},"minimum_withdrawal":{"type":"string"},"branch_identification":{"type":"string"},"location":{"type":"object","properties":{"longitude":{"type":"number"},"latitude":{"type":"number"}}},"services":{"type":"array","items":{"type":"string"}},"cash_withdrawal_national_fee":{"type":"string"},"location_categories":{"type":"array","items":{"type":"string"}}}} // CreateAtmRequest | Request body
 try {
-    val result : OBPv510GetAtm200Response = apiInstance.oBPv510CreateAtm(bankid, obPv510CreateAtmRequest)
+    val result : GetAtm200Response = apiInstance.createAtm(bankid, createAtmRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ATMApi#oBPv510CreateAtm")
+    println("4xx response calling ATMApi#createAtm")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ATMApi#oBPv510CreateAtm")
+    println("5xx response calling ATMApi#createAtm")
     e.printStackTrace()
 }
 ```
@@ -450,11 +56,11 @@ try {
 | **bankid** | **kotlin.String**| The BANKID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv510CreateAtmRequest** | [**OBPv510CreateAtmRequest**](OBPv510CreateAtmRequest.md)| Request body | |
+| **createAtmRequest** | [**CreateAtmRequest**](CreateAtmRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv510GetAtm200Response**](OBPv510GetAtm200Response.md)
+[**GetAtm200Response**](GetAtm200Response.md)
 
 ### Authorization
 
@@ -465,17 +71,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv510CreateAtmAttribute"></a>
-# **oBPv510CreateAtmAttribute**
-> OBPv510GetAtmAttribute200Response oBPv510CreateAtmAttribute(bankid, atmid, obPv510UpdateAtmAttributeRequest)
+<a id="createAtmAttribute"></a>
+# **createAtmAttribute**
+> GetAtmAttribute200Response createAtmAttribute(bankid, atmid, updateAtmAttributeRequest)
 
 Create ATM Attribute
 
@@ -490,15 +96,15 @@ Create ATM Attribute
 val apiInstance = ATMApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val atmid : kotlin.String = atmid_example // kotlin.String | The ATMID identifier
-val obPv510UpdateAtmAttributeRequest : OBPv510UpdateAtmAttributeRequest = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}} // OBPv510UpdateAtmAttributeRequest | Request body
+val updateAtmAttributeRequest : UpdateAtmAttributeRequest = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}} // UpdateAtmAttributeRequest | Request body
 try {
-    val result : OBPv510GetAtmAttribute200Response = apiInstance.oBPv510CreateAtmAttribute(bankid, atmid, obPv510UpdateAtmAttributeRequest)
+    val result : GetAtmAttribute200Response = apiInstance.createAtmAttribute(bankid, atmid, updateAtmAttributeRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ATMApi#oBPv510CreateAtmAttribute")
+    println("4xx response calling ATMApi#createAtmAttribute")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ATMApi#oBPv510CreateAtmAttribute")
+    println("5xx response calling ATMApi#createAtmAttribute")
     e.printStackTrace()
 }
 ```
@@ -508,11 +114,11 @@ try {
 | **atmid** | **kotlin.String**| The ATMID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md)| Request body | |
+| **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv510GetAtmAttribute200Response**](OBPv510GetAtmAttribute200Response.md)
+[**GetAtmAttribute200Response**](GetAtmAttribute200Response.md)
 
 ### Authorization
 
@@ -523,17 +129,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv510DeleteAtm"></a>
-# **oBPv510DeleteAtm**
-> oBPv510DeleteAtm(bankid, atmid)
+<a id="deleteAtm"></a>
+# **deleteAtm**
+> deleteAtm(bankid, atmid)
 
 Delete ATM
 
@@ -549,12 +155,12 @@ val apiInstance = ATMApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val atmid : kotlin.String = atmid_example // kotlin.String | The ATMID identifier
 try {
-    apiInstance.oBPv510DeleteAtm(bankid, atmid)
+    apiInstance.deleteAtm(bankid, atmid)
 } catch (e: ClientException) {
-    println("4xx response calling ATMApi#oBPv510DeleteAtm")
+    println("4xx response calling ATMApi#deleteAtm")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ATMApi#oBPv510DeleteAtm")
+    println("5xx response calling ATMApi#deleteAtm")
     e.printStackTrace()
 }
 ```
@@ -578,17 +184,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv510DeleteAtmAttribute"></a>
-# **oBPv510DeleteAtmAttribute**
-> oBPv510DeleteAtmAttribute(bankid, atmid, atmattributeid)
+<a id="deleteAtmAttribute"></a>
+# **deleteAtmAttribute**
+> deleteAtmAttribute(bankid, atmid, atmattributeid)
 
 Delete ATM Attribute
 
@@ -605,12 +211,12 @@ val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identi
 val atmid : kotlin.String = atmid_example // kotlin.String | The ATMID identifier
 val atmattributeid : kotlin.String = atmattributeid_example // kotlin.String | The ATMATTRIBUTEID identifier
 try {
-    apiInstance.oBPv510DeleteAtmAttribute(bankid, atmid, atmattributeid)
+    apiInstance.deleteAtmAttribute(bankid, atmid, atmattributeid)
 } catch (e: ClientException) {
-    println("4xx response calling ATMApi#oBPv510DeleteAtmAttribute")
+    println("4xx response calling ATMApi#deleteAtmAttribute")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ATMApi#oBPv510DeleteAtmAttribute")
+    println("5xx response calling ATMApi#deleteAtmAttribute")
     e.printStackTrace()
 }
 ```
@@ -635,17 +241,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv510GetAtm"></a>
-# **oBPv510GetAtm**
-> OBPv510GetAtm200Response oBPv510GetAtm(bankid, atmid)
+<a id="getAtm"></a>
+# **getAtm**
+> GetAtm200Response getAtm(bankid, atmid)
 
 Get Bank ATM
 
@@ -661,13 +267,13 @@ val apiInstance = ATMApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val atmid : kotlin.String = atmid_example // kotlin.String | The ATMID identifier
 try {
-    val result : OBPv510GetAtm200Response = apiInstance.oBPv510GetAtm(bankid, atmid)
+    val result : GetAtm200Response = apiInstance.getAtm(bankid, atmid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ATMApi#oBPv510GetAtm")
+    println("4xx response calling ATMApi#getAtm")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ATMApi#oBPv510GetAtm")
+    println("5xx response calling ATMApi#getAtm")
     e.printStackTrace()
 }
 ```
@@ -680,7 +286,7 @@ try {
 
 ### Return type
 
-[**OBPv510GetAtm200Response**](OBPv510GetAtm200Response.md)
+[**GetAtm200Response**](GetAtm200Response.md)
 
 ### Authorization
 
@@ -691,9 +297,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv510GetAtmAttribute"></a>
-# **oBPv510GetAtmAttribute**
-> OBPv510GetAtmAttribute200Response oBPv510GetAtmAttribute(bankid, atmid, atmattributeid)
+<a id="getAtmAttribute"></a>
+# **getAtmAttribute**
+> GetAtmAttribute200Response getAtmAttribute(bankid, atmid, atmattributeid)
 
 Get ATM Attribute By ATM_ATTRIBUTE_ID
 
@@ -710,13 +316,13 @@ val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identi
 val atmid : kotlin.String = atmid_example // kotlin.String | The ATMID identifier
 val atmattributeid : kotlin.String = atmattributeid_example // kotlin.String | The ATMATTRIBUTEID identifier
 try {
-    val result : OBPv510GetAtmAttribute200Response = apiInstance.oBPv510GetAtmAttribute(bankid, atmid, atmattributeid)
+    val result : GetAtmAttribute200Response = apiInstance.getAtmAttribute(bankid, atmid, atmattributeid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ATMApi#oBPv510GetAtmAttribute")
+    println("4xx response calling ATMApi#getAtmAttribute")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ATMApi#oBPv510GetAtmAttribute")
+    println("5xx response calling ATMApi#getAtmAttribute")
     e.printStackTrace()
 }
 ```
@@ -730,7 +336,7 @@ try {
 
 ### Return type
 
-[**OBPv510GetAtmAttribute200Response**](OBPv510GetAtmAttribute200Response.md)
+[**GetAtmAttribute200Response**](GetAtmAttribute200Response.md)
 
 ### Authorization
 
@@ -741,17 +347,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv510GetAtmAttributes"></a>
-# **oBPv510GetAtmAttributes**
-> OBPv510GetAtmAttributes200Response oBPv510GetAtmAttributes(bankid, atmid)
+<a id="getAtmAttributes"></a>
+# **getAtmAttributes**
+> GetAtmAttributes200Response getAtmAttributes(bankid, atmid)
 
 Get ATM Attributes
 
@@ -767,13 +373,13 @@ val apiInstance = ATMApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val atmid : kotlin.String = atmid_example // kotlin.String | The ATMID identifier
 try {
-    val result : OBPv510GetAtmAttributes200Response = apiInstance.oBPv510GetAtmAttributes(bankid, atmid)
+    val result : GetAtmAttributes200Response = apiInstance.getAtmAttributes(bankid, atmid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ATMApi#oBPv510GetAtmAttributes")
+    println("4xx response calling ATMApi#getAtmAttributes")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ATMApi#oBPv510GetAtmAttributes")
+    println("5xx response calling ATMApi#getAtmAttributes")
     e.printStackTrace()
 }
 ```
@@ -786,7 +392,7 @@ try {
 
 ### Return type
 
-[**OBPv510GetAtmAttributes200Response**](OBPv510GetAtmAttributes200Response.md)
+[**GetAtmAttributes200Response**](GetAtmAttributes200Response.md)
 
 ### Authorization
 
@@ -797,17 +403,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv510GetAtms"></a>
-# **oBPv510GetAtms**
-> OBPv510GetAtms200Response oBPv510GetAtms(bankid)
+<a id="getAtms"></a>
+# **getAtms**
+> GetAtms200Response getAtms(bankid)
 
 Get Bank ATMS
 
@@ -822,13 +428,13 @@ Get Bank ATMS
 val apiInstance = ATMApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 try {
-    val result : OBPv510GetAtms200Response = apiInstance.oBPv510GetAtms(bankid)
+    val result : GetAtms200Response = apiInstance.getAtms(bankid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ATMApi#oBPv510GetAtms")
+    println("4xx response calling ATMApi#getAtms")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ATMApi#oBPv510GetAtms")
+    println("5xx response calling ATMApi#getAtms")
     e.printStackTrace()
 }
 ```
@@ -840,7 +446,7 @@ try {
 
 ### Return type
 
-[**OBPv510GetAtms200Response**](OBPv510GetAtms200Response.md)
+[**GetAtms200Response**](GetAtms200Response.md)
 
 ### Authorization
 
@@ -851,9 +457,55 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv510UpdateAtm"></a>
-# **oBPv510UpdateAtm**
-> OBPv510GetAtm200Response oBPv510UpdateAtm(bankid, atmid, obPv510UpdateAtmRequest)
+<a id="headAtms"></a>
+# **headAtms**
+> HeadAtms200Response headAtms(bankid)
+
+Head Bank ATMS
+
+&lt;p&gt;Head Bank ATMS.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#accessibility_features\&quot;&gt;&lt;strong&gt;accessibility_features&lt;/strong&gt;&lt;/a&gt;: [&amp;quot;ATAC&amp;quot;,&amp;quot;ATAD&amp;quot;]&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atms\&quot;&gt;&lt;strong&gt;atms&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;balance_inquiry_fee&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;branch_identification&lt;/strong&gt;&lt;/a&gt;: branch_identification&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;cash_withdrawal_international_fee&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;cash_withdrawal_national_fee&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#city\&quot;&gt;&lt;strong&gt;city&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#closing_time\&quot;&gt;&lt;strong&gt;closing_time&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#country_code\&quot;&gt;&lt;strong&gt;country_code&lt;/strong&gt;&lt;/a&gt;: 1254&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#county\&quot;&gt;&lt;strong&gt;county&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#friday\&quot;&gt;&lt;strong&gt;friday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;has_deposit_capability&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_accessible&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;line_1&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;line_2&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;line_3&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;located_at&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#location\&quot;&gt;&lt;strong&gt;location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;location_categories&lt;/strong&gt;&lt;/a&gt;: location_categories&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;minimum_withdrawal&lt;/strong&gt;&lt;/a&gt;: minimum_withdrawal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#monday\&quot;&gt;&lt;strong&gt;monday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;notes&lt;/strong&gt;&lt;/a&gt;: notes&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#opening_time\&quot;&gt;&lt;strong&gt;opening_time&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#postcode\&quot;&gt;&lt;strong&gt;postcode&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#saturday\&quot;&gt;&lt;strong&gt;saturday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#services\&quot;&gt;&lt;strong&gt;services&lt;/strong&gt;&lt;/a&gt;: [{&amp;quot;CY&amp;quot;:[&amp;quot;PS_010&amp;quot;,&amp;quot;PS_020&amp;quot;,&amp;quot;PS_03C&amp;quot;,&amp;quot;PS_04C&amp;quot;]}]&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;site_identification&lt;/strong&gt;&lt;/a&gt;: site_identification&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;site_name&lt;/strong&gt;&lt;/a&gt;: site_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#state\&quot;&gt;&lt;strong&gt;state&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#sunday\&quot;&gt;&lt;strong&gt;sunday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#supported_currencies\&quot;&gt;&lt;strong&gt;supported_currencies&lt;/strong&gt;&lt;/a&gt;: [&amp;quot;EUR&amp;quot;,&amp;quot;MXN&amp;quot;,&amp;quot;USD&amp;quot;]&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#supported_languages\&quot;&gt;&lt;strong&gt;supported_languages&lt;/strong&gt;&lt;/a&gt;: [&amp;quot;es&amp;quot;,&amp;quot;fr&amp;quot;,&amp;quot;de&amp;quot;]&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#thursday\&quot;&gt;&lt;strong&gt;thursday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tuesday\&quot;&gt;&lt;strong&gt;tuesday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#wednesday\&quot;&gt;&lt;strong&gt;wednesday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; 
+
+### Example
+```kotlin
+// Import classes:
+//import com.openbankproject.infrastructure.*
+//import com.openbankproject.models.*
+
+val apiInstance = ATMApi()
+val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
+try {
+    val result : HeadAtms200Response = apiInstance.headAtms(bankid)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling ATMApi#headAtms")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling ATMApi#headAtms")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **bankid** | **kotlin.String**| The BANKID identifier | |
+
+### Return type
+
+[**HeadAtms200Response**](HeadAtms200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a id="updateAtm"></a>
+# **updateAtm**
+> GetAtm200Response updateAtm(bankid, atmid, updateAtmRequest)
 
 UPDATE ATM
 
@@ -868,15 +520,15 @@ UPDATE ATM
 val apiInstance = ATMApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val atmid : kotlin.String = atmid_example // kotlin.String | The ATMID identifier
-val obPv510UpdateAtmRequest : OBPv510UpdateAtmRequest = {"type":"object","properties":{"name":{"type":"string"},"site_name":{"type":"string"},"friday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"is_accessible":{"type":"string"},"site_identification":{"type":"string"},"atm_type":{"type":"string"},"accessibility_features":{"type":"array","items":{"type":"string"}},"supported_currencies":{"type":"array","items":{"type":"string"}},"bank_id":{"type":"string"},"monday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"cash_withdrawal_international_fee":{"type":"string"},"has_deposit_capability":{"type":"string"},"supported_languages":{"type":"array","items":{"type":"string"}},"balance_inquiry_fee":{"type":"string"},"meta":{"type":"object","properties":{"license":{"type":"object","properties":{"name":{"type":"string"},"id":{"type":"string"}}}}},"notes":{"type":"array","items":{"type":"string"}},"saturday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"thursday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"tuesday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"wednesday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"phone":{"type":"string"},"sunday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"located_at":{"type":"string"},"more_info":{"type":"string"},"address":{"type":"object","properties":{"city":{"type":"string"},"postcode":{"type":"string"},"line_1":{"type":"string"},"line_2":{"type":"string"},"line_3":{"type":"string"},"state":{"type":"string"},"country_code":{"type":"string"},"county":{"type":"string"}}},"minimum_withdrawal":{"type":"string"},"branch_identification":{"type":"string"},"location":{"type":"object","properties":{"longitude":{"type":"number"},"latitude":{"type":"number"}}},"services":{"type":"array","items":{"type":"string"}},"cash_withdrawal_national_fee":{"type":"string"},"location_categories":{"type":"array","items":{"type":"string"}}}} // OBPv510UpdateAtmRequest | Request body
+val updateAtmRequest : UpdateAtmRequest = {"type":"object","properties":{"name":{"type":"string"},"site_name":{"type":"string"},"friday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"is_accessible":{"type":"string"},"site_identification":{"type":"string"},"atm_type":{"type":"string"},"accessibility_features":{"type":"array","items":{"type":"string"}},"supported_currencies":{"type":"array","items":{"type":"string"}},"bank_id":{"type":"string"},"monday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"cash_withdrawal_international_fee":{"type":"string"},"has_deposit_capability":{"type":"string"},"supported_languages":{"type":"array","items":{"type":"string"}},"balance_inquiry_fee":{"type":"string"},"meta":{"type":"object","properties":{"license":{"type":"object","properties":{"name":{"type":"string"},"id":{"type":"string"}}}}},"notes":{"type":"array","items":{"type":"string"}},"saturday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"thursday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"tuesday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"wednesday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"phone":{"type":"string"},"sunday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"located_at":{"type":"string"},"more_info":{"type":"string"},"address":{"type":"object","properties":{"city":{"type":"string"},"postcode":{"type":"string"},"line_1":{"type":"string"},"line_2":{"type":"string"},"line_3":{"type":"string"},"state":{"type":"string"},"country_code":{"type":"string"},"county":{"type":"string"}}},"minimum_withdrawal":{"type":"string"},"branch_identification":{"type":"string"},"location":{"type":"object","properties":{"longitude":{"type":"number"},"latitude":{"type":"number"}}},"services":{"type":"array","items":{"type":"string"}},"cash_withdrawal_national_fee":{"type":"string"},"location_categories":{"type":"array","items":{"type":"string"}}}} // UpdateAtmRequest | Request body
 try {
-    val result : OBPv510GetAtm200Response = apiInstance.oBPv510UpdateAtm(bankid, atmid, obPv510UpdateAtmRequest)
+    val result : GetAtm200Response = apiInstance.updateAtm(bankid, atmid, updateAtmRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ATMApi#oBPv510UpdateAtm")
+    println("4xx response calling ATMApi#updateAtm")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ATMApi#oBPv510UpdateAtm")
+    println("5xx response calling ATMApi#updateAtm")
     e.printStackTrace()
 }
 ```
@@ -886,11 +538,11 @@ try {
 | **atmid** | **kotlin.String**| The ATMID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv510UpdateAtmRequest** | [**OBPv510UpdateAtmRequest**](OBPv510UpdateAtmRequest.md)| Request body | |
+| **updateAtmRequest** | [**UpdateAtmRequest**](UpdateAtmRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv510GetAtm200Response**](OBPv510GetAtm200Response.md)
+[**GetAtm200Response**](GetAtm200Response.md)
 
 ### Authorization
 
@@ -901,17 +553,75 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv510UpdateAtmAttribute"></a>
-# **oBPv510UpdateAtmAttribute**
-> OBPv510GetAtmAttribute200Response oBPv510UpdateAtmAttribute(bankid, atmid, atmattributeid, obPv510UpdateAtmAttributeRequest)
+<a id="updateAtmAccessibilityFeatures"></a>
+# **updateAtmAccessibilityFeatures**
+> UpdateAtmAccessibilityFeatures200Response updateAtmAccessibilityFeatures(bankid, atmid, updateAtmAccessibilityFeaturesRequest)
+
+Update ATM Accessibility Features
+
+&lt;p&gt;Update ATM Accessibility Features.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;ATM_ID&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#accessibility_features\&quot;&gt;&lt;strong&gt;accessibility_features&lt;/strong&gt;&lt;/a&gt;: [&amp;quot;ATAC&amp;quot;,&amp;quot;ATAD&amp;quot;]&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;&lt;strong&gt;atm_id&lt;/strong&gt;&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; 
+
+### Example
+```kotlin
+// Import classes:
+//import com.openbankproject.infrastructure.*
+//import com.openbankproject.models.*
+
+val apiInstance = ATMApi()
+val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
+val atmid : kotlin.String = atmid_example // kotlin.String | The ATMID identifier
+val updateAtmAccessibilityFeaturesRequest : UpdateAtmAccessibilityFeaturesRequest = {"type":"object","properties":{"accessibility_features":{"type":"array","items":{"type":"string"}}}} // UpdateAtmAccessibilityFeaturesRequest | Request body
+try {
+    val result : UpdateAtmAccessibilityFeatures200Response = apiInstance.updateAtmAccessibilityFeatures(bankid, atmid, updateAtmAccessibilityFeaturesRequest)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling ATMApi#updateAtmAccessibilityFeatures")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling ATMApi#updateAtmAccessibilityFeatures")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| **bankid** | **kotlin.String**| The BANKID identifier | |
+| **atmid** | **kotlin.String**| The ATMID identifier | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **updateAtmAccessibilityFeaturesRequest** | [**UpdateAtmAccessibilityFeaturesRequest**](UpdateAtmAccessibilityFeaturesRequest.md)| Request body | |
+
+### Return type
+
+[**UpdateAtmAccessibilityFeatures200Response**](UpdateAtmAccessibilityFeatures200Response.md)
+
+### Authorization
+
+
+Configure OAuth2:
+    ApiClient.accessToken = ""
+Configure GatewayLogin:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure DirectLogin:
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a id="updateAtmAttribute"></a>
+# **updateAtmAttribute**
+> GetAtmAttribute200Response updateAtmAttribute(bankid, atmid, atmattributeid, updateAtmAttributeRequest)
 
 Update ATM Attribute
 
@@ -927,15 +637,15 @@ val apiInstance = ATMApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val atmid : kotlin.String = atmid_example // kotlin.String | The ATMID identifier
 val atmattributeid : kotlin.String = atmattributeid_example // kotlin.String | The ATMATTRIBUTEID identifier
-val obPv510UpdateAtmAttributeRequest : OBPv510UpdateAtmAttributeRequest = {"type":"object","properties":{"name":{"type":"string"},"value":{"type":"string"},"is_active":{"type":"boolean"},"type":{"type":"string"}}} // OBPv510UpdateAtmAttributeRequest | Request body
+val updateAtmAttributeRequest : UpdateAtmAttributeRequest = {"type":"object","properties":{"name":{"type":"string"},"value":{"type":"string"},"is_active":{"type":"boolean"},"type":{"type":"string"}}} // UpdateAtmAttributeRequest | Request body
 try {
-    val result : OBPv510GetAtmAttribute200Response = apiInstance.oBPv510UpdateAtmAttribute(bankid, atmid, atmattributeid, obPv510UpdateAtmAttributeRequest)
+    val result : GetAtmAttribute200Response = apiInstance.updateAtmAttribute(bankid, atmid, atmattributeid, updateAtmAttributeRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ATMApi#oBPv510UpdateAtmAttribute")
+    println("4xx response calling ATMApi#updateAtmAttribute")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ATMApi#oBPv510UpdateAtmAttribute")
+    println("5xx response calling ATMApi#updateAtmAttribute")
     e.printStackTrace()
 }
 ```
@@ -946,11 +656,11 @@ try {
 | **atmattributeid** | **kotlin.String**| The ATMATTRIBUTEID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md)| Request body | |
+| **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv510GetAtmAttribute200Response**](OBPv510GetAtmAttribute200Response.md)
+[**GetAtmAttribute200Response**](GetAtmAttribute200Response.md)
 
 ### Authorization
 
@@ -961,8 +671,298 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a id="updateAtmLocationCategories"></a>
+# **updateAtmLocationCategories**
+> UpdateAtmLocationCategories200Response updateAtmLocationCategories(bankid, atmid, updateAtmLocationCategoriesRequest)
+
+Update ATM Location Categories
+
+&lt;p&gt;Update ATM Location Categories.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;ATM_ID&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;&lt;strong&gt;atm_id&lt;/strong&gt;&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;location_categories&lt;/strong&gt;&lt;/a&gt;: location_categories&lt;/p&gt; 
+
+### Example
+```kotlin
+// Import classes:
+//import com.openbankproject.infrastructure.*
+//import com.openbankproject.models.*
+
+val apiInstance = ATMApi()
+val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
+val atmid : kotlin.String = atmid_example // kotlin.String | The ATMID identifier
+val updateAtmLocationCategoriesRequest : UpdateAtmLocationCategoriesRequest = {"type":"object","properties":{"location_categories":{"type":"array","items":{"type":"string"}}}} // UpdateAtmLocationCategoriesRequest | Request body
+try {
+    val result : UpdateAtmLocationCategories200Response = apiInstance.updateAtmLocationCategories(bankid, atmid, updateAtmLocationCategoriesRequest)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling ATMApi#updateAtmLocationCategories")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling ATMApi#updateAtmLocationCategories")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| **bankid** | **kotlin.String**| The BANKID identifier | |
+| **atmid** | **kotlin.String**| The ATMID identifier | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **updateAtmLocationCategoriesRequest** | [**UpdateAtmLocationCategoriesRequest**](UpdateAtmLocationCategoriesRequest.md)| Request body | |
+
+### Return type
+
+[**UpdateAtmLocationCategories200Response**](UpdateAtmLocationCategories200Response.md)
+
+### Authorization
+
+
+Configure OAuth2:
+    ApiClient.accessToken = ""
+Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure DirectLogin:
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a id="updateAtmNotes"></a>
+# **updateAtmNotes**
+> UpdateAtmNotes200Response updateAtmNotes(bankid, atmid, updateAtmNotesRequest)
+
+Update ATM Notes
+
+&lt;p&gt;Update ATM Notes.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;ATM_ID&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;&lt;strong&gt;atm_id&lt;/strong&gt;&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;notes&lt;/strong&gt;&lt;/a&gt;: notes&lt;/p&gt; 
+
+### Example
+```kotlin
+// Import classes:
+//import com.openbankproject.infrastructure.*
+//import com.openbankproject.models.*
+
+val apiInstance = ATMApi()
+val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
+val atmid : kotlin.String = atmid_example // kotlin.String | The ATMID identifier
+val updateAtmNotesRequest : UpdateAtmNotesRequest = {"type":"object","properties":{"notes":{"type":"array","items":{"type":"string"}}}} // UpdateAtmNotesRequest | Request body
+try {
+    val result : UpdateAtmNotes200Response = apiInstance.updateAtmNotes(bankid, atmid, updateAtmNotesRequest)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling ATMApi#updateAtmNotes")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling ATMApi#updateAtmNotes")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| **bankid** | **kotlin.String**| The BANKID identifier | |
+| **atmid** | **kotlin.String**| The ATMID identifier | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **updateAtmNotesRequest** | [**UpdateAtmNotesRequest**](UpdateAtmNotesRequest.md)| Request body | |
+
+### Return type
+
+[**UpdateAtmNotes200Response**](UpdateAtmNotes200Response.md)
+
+### Authorization
+
+
+Configure OAuth2:
+    ApiClient.accessToken = ""
+Configure GatewayLogin:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure DirectLogin:
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a id="updateAtmServices"></a>
+# **updateAtmServices**
+> UpdateAtmServices200Response updateAtmServices(bankid, atmid, updateAtmServicesRequest)
+
+Update ATM Services
+
+&lt;p&gt;Update ATM Services.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;ATM_ID&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;&lt;strong&gt;atm_id&lt;/strong&gt;&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#services\&quot;&gt;&lt;strong&gt;services&lt;/strong&gt;&lt;/a&gt;: [{&amp;quot;CY&amp;quot;:[&amp;quot;PS_010&amp;quot;,&amp;quot;PS_020&amp;quot;,&amp;quot;PS_03C&amp;quot;,&amp;quot;PS_04C&amp;quot;]}]&lt;/p&gt; 
+
+### Example
+```kotlin
+// Import classes:
+//import com.openbankproject.infrastructure.*
+//import com.openbankproject.models.*
+
+val apiInstance = ATMApi()
+val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
+val atmid : kotlin.String = atmid_example // kotlin.String | The ATMID identifier
+val updateAtmServicesRequest : UpdateAtmServicesRequest = {"type":"object","properties":{"services":{"type":"array","items":{"type":"string"}}}} // UpdateAtmServicesRequest | Request body
+try {
+    val result : UpdateAtmServices200Response = apiInstance.updateAtmServices(bankid, atmid, updateAtmServicesRequest)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling ATMApi#updateAtmServices")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling ATMApi#updateAtmServices")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| **bankid** | **kotlin.String**| The BANKID identifier | |
+| **atmid** | **kotlin.String**| The ATMID identifier | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **updateAtmServicesRequest** | [**UpdateAtmServicesRequest**](UpdateAtmServicesRequest.md)| Request body | |
+
+### Return type
+
+[**UpdateAtmServices200Response**](UpdateAtmServices200Response.md)
+
+### Authorization
+
+
+Configure OAuth2:
+    ApiClient.accessToken = ""
+Configure GatewayLogin:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure DirectLogin:
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a id="updateAtmSupportedCurrencies"></a>
+# **updateAtmSupportedCurrencies**
+> UpdateAtmSupportedCurrencies200Response updateAtmSupportedCurrencies(bankid, atmid, updateAtmSupportedCurrenciesRequest)
+
+Update ATM Supported Currencies
+
+&lt;p&gt;Update ATM Supported Currencies.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;ATM_ID&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;&lt;strong&gt;atm_id&lt;/strong&gt;&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#supported_currencies\&quot;&gt;&lt;strong&gt;supported_currencies&lt;/strong&gt;&lt;/a&gt;: [&amp;quot;EUR&amp;quot;,&amp;quot;MXN&amp;quot;,&amp;quot;USD&amp;quot;]&lt;/p&gt; 
+
+### Example
+```kotlin
+// Import classes:
+//import com.openbankproject.infrastructure.*
+//import com.openbankproject.models.*
+
+val apiInstance = ATMApi()
+val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
+val atmid : kotlin.String = atmid_example // kotlin.String | The ATMID identifier
+val updateAtmSupportedCurrenciesRequest : UpdateAtmSupportedCurrenciesRequest = {"type":"object","properties":{"supported_currencies":{"type":"array","items":{"type":"string"}}}} // UpdateAtmSupportedCurrenciesRequest | Request body
+try {
+    val result : UpdateAtmSupportedCurrencies200Response = apiInstance.updateAtmSupportedCurrencies(bankid, atmid, updateAtmSupportedCurrenciesRequest)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling ATMApi#updateAtmSupportedCurrencies")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling ATMApi#updateAtmSupportedCurrencies")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| **bankid** | **kotlin.String**| The BANKID identifier | |
+| **atmid** | **kotlin.String**| The ATMID identifier | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **updateAtmSupportedCurrenciesRequest** | [**UpdateAtmSupportedCurrenciesRequest**](UpdateAtmSupportedCurrenciesRequest.md)| Request body | |
+
+### Return type
+
+[**UpdateAtmSupportedCurrencies200Response**](UpdateAtmSupportedCurrencies200Response.md)
+
+### Authorization
+
+
+Configure OAuth2:
+    ApiClient.accessToken = ""
+Configure GatewayLogin:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure DirectLogin:
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a id="updateAtmSupportedLanguages"></a>
+# **updateAtmSupportedLanguages**
+> UpdateAtmSupportedLanguages200Response updateAtmSupportedLanguages(bankid, atmid, updateAtmSupportedLanguagesRequest)
+
+Update ATM Supported Languages
+
+&lt;p&gt;Update ATM Supported Languages.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;ATM_ID&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;&lt;strong&gt;atm_id&lt;/strong&gt;&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#supported_languages\&quot;&gt;&lt;strong&gt;supported_languages&lt;/strong&gt;&lt;/a&gt;: [&amp;quot;es&amp;quot;,&amp;quot;fr&amp;quot;,&amp;quot;de&amp;quot;]&lt;/p&gt; 
+
+### Example
+```kotlin
+// Import classes:
+//import com.openbankproject.infrastructure.*
+//import com.openbankproject.models.*
+
+val apiInstance = ATMApi()
+val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
+val atmid : kotlin.String = atmid_example // kotlin.String | The ATMID identifier
+val updateAtmSupportedLanguagesRequest : UpdateAtmSupportedLanguagesRequest = {"type":"object","properties":{"supported_languages":{"type":"array","items":{"type":"string"}}}} // UpdateAtmSupportedLanguagesRequest | Request body
+try {
+    val result : UpdateAtmSupportedLanguages200Response = apiInstance.updateAtmSupportedLanguages(bankid, atmid, updateAtmSupportedLanguagesRequest)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling ATMApi#updateAtmSupportedLanguages")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling ATMApi#updateAtmSupportedLanguages")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| **bankid** | **kotlin.String**| The BANKID identifier | |
+| **atmid** | **kotlin.String**| The ATMID identifier | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **updateAtmSupportedLanguagesRequest** | [**UpdateAtmSupportedLanguagesRequest**](UpdateAtmSupportedLanguagesRequest.md)| Request body | |
+
+### Return type
+
+[**UpdateAtmSupportedLanguages200Response**](UpdateAtmSupportedLanguages200Response.md)
+
+### Authorization
+
+
+Configure OAuth2:
+    ApiClient.accessToken = ""
+Configure GatewayLogin:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure DirectLogin:
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 

@@ -1,384 +1,30 @@
 # \SystemAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv510LogCacheAllEndpoint**](SystemAPI.md#OBPv510LogCacheAllEndpoint) | **Get** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache
-[**OBPv510LogCacheDebugEndpoint**](SystemAPI.md#OBPv510LogCacheDebugEndpoint) | **Get** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache
-[**OBPv510LogCacheErrorEndpoint**](SystemAPI.md#OBPv510LogCacheErrorEndpoint) | **Get** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache
-[**OBPv510LogCacheInfoEndpoint**](SystemAPI.md#OBPv510LogCacheInfoEndpoint) | **Get** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache
-[**OBPv510LogCacheTraceEndpoint**](SystemAPI.md#OBPv510LogCacheTraceEndpoint) | **Get** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache
-[**OBPv510LogCacheWarningEndpoint**](SystemAPI.md#OBPv510LogCacheWarningEndpoint) | **Get** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache
-[**OBPv600GetCacheConfig**](SystemAPI.md#OBPv600GetCacheConfig) | **Get** /obp/v6.0.0/system/cache/config | Get Cache Configuration
-[**OBPv600GetCacheInfo**](SystemAPI.md#OBPv600GetCacheInfo) | **Get** /obp/v6.0.0/system/cache/info | Get Cache Information
-[**OBPv600GetCacheNamespaces**](SystemAPI.md#OBPv600GetCacheNamespaces) | **Get** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces
-[**OBPv600GetConnectorMethodNames**](SystemAPI.md#OBPv600GetConnectorMethodNames) | **Get** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names
-[**OBPv600GetConnectors**](SystemAPI.md#OBPv600GetConnectors) | **Get** /obp/v6.0.0/system/connectors | Get Connectors
-[**OBPv600GetDatabasePoolInfo**](SystemAPI.md#OBPv600GetDatabasePoolInfo) | **Get** /obp/v6.0.0/system/database/pool | Get Database Pool Information
-[**OBPv600GetMigrations**](SystemAPI.md#OBPv600GetMigrations) | **Get** /obp/v6.0.0/system/migrations | Get Database Migrations
-[**OBPv600GetStoredProcedureConnectorHealth**](SystemAPI.md#OBPv600GetStoredProcedureConnectorHealth) | **Get** /obp/v6.0.0/system/connectors/stored_procedure_vDec2019/health | Get Stored Procedure Connector Health
-[**OBPv600InvalidateCacheNamespace**](SystemAPI.md#OBPv600InvalidateCacheNamespace) | **Post** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace
-
-
-
-## OBPv510LogCacheAllEndpoint
-
-> OBPv510LogCacheAllEndpoint(ctx).Execute()
-
-Get All Level Log Cache
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.SystemAPI.OBPv510LogCacheAllEndpoint(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.OBPv510LogCacheAllEndpoint``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv510LogCacheAllEndpointRequest struct via the builder pattern
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510LogCacheDebugEndpoint
-
-> OBPv510LogCacheDebugEndpoint(ctx).Execute()
-
-Get Debug Level Log Cache
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.SystemAPI.OBPv510LogCacheDebugEndpoint(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.OBPv510LogCacheDebugEndpoint``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv510LogCacheDebugEndpointRequest struct via the builder pattern
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510LogCacheErrorEndpoint
-
-> OBPv510LogCacheErrorEndpoint(ctx).Execute()
-
-Get Error Level Log Cache
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.SystemAPI.OBPv510LogCacheErrorEndpoint(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.OBPv510LogCacheErrorEndpoint``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv510LogCacheErrorEndpointRequest struct via the builder pattern
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510LogCacheInfoEndpoint
-
-> OBPv510LogCacheInfoEndpoint(ctx).Execute()
-
-Get Info Level Log Cache
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.SystemAPI.OBPv510LogCacheInfoEndpoint(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.OBPv510LogCacheInfoEndpoint``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv510LogCacheInfoEndpointRequest struct via the builder pattern
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510LogCacheTraceEndpoint
-
-> OBPv510LogCacheTraceEndpoint(ctx).Execute()
-
-Get Trace Level Log Cache
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.SystemAPI.OBPv510LogCacheTraceEndpoint(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.OBPv510LogCacheTraceEndpoint``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv510LogCacheTraceEndpointRequest struct via the builder pattern
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510LogCacheWarningEndpoint
-
-> OBPv510LogCacheWarningEndpoint(ctx).Execute()
-
-Get Warning Level Log Cache
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.SystemAPI.OBPv510LogCacheWarningEndpoint(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.OBPv510LogCacheWarningEndpoint``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv510LogCacheWarningEndpointRequest struct via the builder pattern
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv600GetCacheConfig
-
-> OBPv600GetCacheConfig200Response OBPv600GetCacheConfig(ctx).Execute()
+[**GetCacheConfig**](SystemAPI.md#GetCacheConfig) | **Get** /obp/v6.0.0/system/cache/config | Get Cache Configuration
+[**GetCacheInfo**](SystemAPI.md#GetCacheInfo) | **Get** /obp/v6.0.0/system/cache/info | Get Cache Information
+[**GetCacheNamespaces**](SystemAPI.md#GetCacheNamespaces) | **Get** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces
+[**GetConnectorMethodNames**](SystemAPI.md#GetConnectorMethodNames) | **Get** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names
+[**GetConnectors**](SystemAPI.md#GetConnectors) | **Get** /obp/v6.0.0/system/connectors | Get Connectors
+[**GetDatabasePoolInfo**](SystemAPI.md#GetDatabasePoolInfo) | **Get** /obp/v6.0.0/system/database/pool | Get Database Pool Information
+[**GetMigrations**](SystemAPI.md#GetMigrations) | **Get** /obp/v6.0.0/system/migrations | Get Database Migrations
+[**GetStoredProcedureConnectorHealth**](SystemAPI.md#GetStoredProcedureConnectorHealth) | **Get** /obp/v6.0.0/system/connectors/stored_procedure_vDec2019/health | Get Stored Procedure Connector Health
+[**InvalidateCacheNamespace**](SystemAPI.md#InvalidateCacheNamespace) | **Post** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace
+[**LogCacheAllEndpoint**](SystemAPI.md#LogCacheAllEndpoint) | **Get** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache
+[**LogCacheDebugEndpoint**](SystemAPI.md#LogCacheDebugEndpoint) | **Get** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache
+[**LogCacheErrorEndpoint**](SystemAPI.md#LogCacheErrorEndpoint) | **Get** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache
+[**LogCacheInfoEndpoint**](SystemAPI.md#LogCacheInfoEndpoint) | **Get** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache
+[**LogCacheTraceEndpoint**](SystemAPI.md#LogCacheTraceEndpoint) | **Get** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache
+[**LogCacheWarningEndpoint**](SystemAPI.md#LogCacheWarningEndpoint) | **Get** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache
+
+
+
+## GetCacheConfig
+
+> GetCacheConfig200Response GetCacheConfig(ctx).Execute()
 
 Get Cache Configuration
 
@@ -400,13 +46,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SystemAPI.OBPv600GetCacheConfig(context.Background()).Execute()
+	resp, r, err := apiClient.SystemAPI.GetCacheConfig(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.OBPv600GetCacheConfig``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.GetCacheConfig``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetCacheConfig`: OBPv600GetCacheConfig200Response
-	fmt.Fprintf(os.Stdout, "Response from `SystemAPI.OBPv600GetCacheConfig`: %v\n", resp)
+	// response from `GetCacheConfig`: GetCacheConfig200Response
+	fmt.Fprintf(os.Stdout, "Response from `SystemAPI.GetCacheConfig`: %v\n", resp)
 }
 ```
 
@@ -416,12 +62,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetCacheConfigRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCacheConfigRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetCacheConfig200Response**](OBPv600GetCacheConfig200Response.md)
+[**GetCacheConfig200Response**](GetCacheConfig200Response.md)
 
 ### Authorization
 
@@ -437,9 +83,9 @@ Other parameters are passed through a pointer to a apiOBPv600GetCacheConfigReque
 [[Back to README]](../README.md)
 
 
-## OBPv600GetCacheInfo
+## GetCacheInfo
 
-> OBPv600GetCacheInfo200Response OBPv600GetCacheInfo(ctx).Execute()
+> GetCacheInfo200Response GetCacheInfo(ctx).Execute()
 
 Get Cache Information
 
@@ -461,13 +107,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SystemAPI.OBPv600GetCacheInfo(context.Background()).Execute()
+	resp, r, err := apiClient.SystemAPI.GetCacheInfo(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.OBPv600GetCacheInfo``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.GetCacheInfo``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetCacheInfo`: OBPv600GetCacheInfo200Response
-	fmt.Fprintf(os.Stdout, "Response from `SystemAPI.OBPv600GetCacheInfo`: %v\n", resp)
+	// response from `GetCacheInfo`: GetCacheInfo200Response
+	fmt.Fprintf(os.Stdout, "Response from `SystemAPI.GetCacheInfo`: %v\n", resp)
 }
 ```
 
@@ -477,12 +123,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetCacheInfoRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCacheInfoRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetCacheInfo200Response**](OBPv600GetCacheInfo200Response.md)
+[**GetCacheInfo200Response**](GetCacheInfo200Response.md)
 
 ### Authorization
 
@@ -498,9 +144,9 @@ Other parameters are passed through a pointer to a apiOBPv600GetCacheInfoRequest
 [[Back to README]](../README.md)
 
 
-## OBPv600GetCacheNamespaces
+## GetCacheNamespaces
 
-> OBPv600GetCacheNamespaces200Response OBPv600GetCacheNamespaces(ctx).Execute()
+> GetCacheNamespaces200Response GetCacheNamespaces(ctx).Execute()
 
 Get Cache Namespaces
 
@@ -522,13 +168,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SystemAPI.OBPv600GetCacheNamespaces(context.Background()).Execute()
+	resp, r, err := apiClient.SystemAPI.GetCacheNamespaces(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.OBPv600GetCacheNamespaces``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.GetCacheNamespaces``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetCacheNamespaces`: OBPv600GetCacheNamespaces200Response
-	fmt.Fprintf(os.Stdout, "Response from `SystemAPI.OBPv600GetCacheNamespaces`: %v\n", resp)
+	// response from `GetCacheNamespaces`: GetCacheNamespaces200Response
+	fmt.Fprintf(os.Stdout, "Response from `SystemAPI.GetCacheNamespaces`: %v\n", resp)
 }
 ```
 
@@ -538,12 +184,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetCacheNamespacesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCacheNamespacesRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetCacheNamespaces200Response**](OBPv600GetCacheNamespaces200Response.md)
+[**GetCacheNamespaces200Response**](GetCacheNamespaces200Response.md)
 
 ### Authorization
 
@@ -559,9 +205,9 @@ Other parameters are passed through a pointer to a apiOBPv600GetCacheNamespacesR
 [[Back to README]](../README.md)
 
 
-## OBPv600GetConnectorMethodNames
+## GetConnectorMethodNames
 
-> OBPv600GetConnectorMethodNames200Response OBPv600GetConnectorMethodNames(ctx).Execute()
+> GetConnectorMethodNames200Response GetConnectorMethodNames(ctx).Execute()
 
 Get Connector Method Names
 
@@ -583,13 +229,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SystemAPI.OBPv600GetConnectorMethodNames(context.Background()).Execute()
+	resp, r, err := apiClient.SystemAPI.GetConnectorMethodNames(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.OBPv600GetConnectorMethodNames``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.GetConnectorMethodNames``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetConnectorMethodNames`: OBPv600GetConnectorMethodNames200Response
-	fmt.Fprintf(os.Stdout, "Response from `SystemAPI.OBPv600GetConnectorMethodNames`: %v\n", resp)
+	// response from `GetConnectorMethodNames`: GetConnectorMethodNames200Response
+	fmt.Fprintf(os.Stdout, "Response from `SystemAPI.GetConnectorMethodNames`: %v\n", resp)
 }
 ```
 
@@ -599,12 +245,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetConnectorMethodNamesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetConnectorMethodNamesRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetConnectorMethodNames200Response**](OBPv600GetConnectorMethodNames200Response.md)
+[**GetConnectorMethodNames200Response**](GetConnectorMethodNames200Response.md)
 
 ### Authorization
 
@@ -620,9 +266,9 @@ Other parameters are passed through a pointer to a apiOBPv600GetConnectorMethodN
 [[Back to README]](../README.md)
 
 
-## OBPv600GetConnectors
+## GetConnectors
 
-> OBPv600GetConnectors200Response OBPv600GetConnectors(ctx).Execute()
+> GetConnectors200Response GetConnectors(ctx).Execute()
 
 Get Connectors
 
@@ -644,13 +290,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SystemAPI.OBPv600GetConnectors(context.Background()).Execute()
+	resp, r, err := apiClient.SystemAPI.GetConnectors(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.OBPv600GetConnectors``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.GetConnectors``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetConnectors`: OBPv600GetConnectors200Response
-	fmt.Fprintf(os.Stdout, "Response from `SystemAPI.OBPv600GetConnectors`: %v\n", resp)
+	// response from `GetConnectors`: GetConnectors200Response
+	fmt.Fprintf(os.Stdout, "Response from `SystemAPI.GetConnectors`: %v\n", resp)
 }
 ```
 
@@ -660,16 +306,16 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetConnectorsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetConnectorsRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetConnectors200Response**](OBPv600GetConnectors200Response.md)
+[**GetConnectors200Response**](GetConnectors200Response.md)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+No authorization required
 
 ### HTTP request headers
 
@@ -681,9 +327,9 @@ Other parameters are passed through a pointer to a apiOBPv600GetConnectorsReques
 [[Back to README]](../README.md)
 
 
-## OBPv600GetDatabasePoolInfo
+## GetDatabasePoolInfo
 
-> OBPv600GetDatabasePoolInfo200Response OBPv600GetDatabasePoolInfo(ctx).Execute()
+> GetDatabasePoolInfo200Response GetDatabasePoolInfo(ctx).Execute()
 
 Get Database Pool Information
 
@@ -705,13 +351,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SystemAPI.OBPv600GetDatabasePoolInfo(context.Background()).Execute()
+	resp, r, err := apiClient.SystemAPI.GetDatabasePoolInfo(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.OBPv600GetDatabasePoolInfo``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.GetDatabasePoolInfo``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetDatabasePoolInfo`: OBPv600GetDatabasePoolInfo200Response
-	fmt.Fprintf(os.Stdout, "Response from `SystemAPI.OBPv600GetDatabasePoolInfo`: %v\n", resp)
+	// response from `GetDatabasePoolInfo`: GetDatabasePoolInfo200Response
+	fmt.Fprintf(os.Stdout, "Response from `SystemAPI.GetDatabasePoolInfo`: %v\n", resp)
 }
 ```
 
@@ -721,12 +367,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetDatabasePoolInfoRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetDatabasePoolInfoRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetDatabasePoolInfo200Response**](OBPv600GetDatabasePoolInfo200Response.md)
+[**GetDatabasePoolInfo200Response**](GetDatabasePoolInfo200Response.md)
 
 ### Authorization
 
@@ -742,9 +388,9 @@ Other parameters are passed through a pointer to a apiOBPv600GetDatabasePoolInfo
 [[Back to README]](../README.md)
 
 
-## OBPv600GetMigrations
+## GetMigrations
 
-> OBPv600GetMigrations200Response OBPv600GetMigrations(ctx).Execute()
+> GetMigrations200Response GetMigrations(ctx).Execute()
 
 Get Database Migrations
 
@@ -766,13 +412,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SystemAPI.OBPv600GetMigrations(context.Background()).Execute()
+	resp, r, err := apiClient.SystemAPI.GetMigrations(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.OBPv600GetMigrations``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.GetMigrations``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetMigrations`: OBPv600GetMigrations200Response
-	fmt.Fprintf(os.Stdout, "Response from `SystemAPI.OBPv600GetMigrations`: %v\n", resp)
+	// response from `GetMigrations`: GetMigrations200Response
+	fmt.Fprintf(os.Stdout, "Response from `SystemAPI.GetMigrations`: %v\n", resp)
 }
 ```
 
@@ -782,12 +428,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetMigrationsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetMigrationsRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetMigrations200Response**](OBPv600GetMigrations200Response.md)
+[**GetMigrations200Response**](GetMigrations200Response.md)
 
 ### Authorization
 
@@ -803,9 +449,9 @@ Other parameters are passed through a pointer to a apiOBPv600GetMigrationsReques
 [[Back to README]](../README.md)
 
 
-## OBPv600GetStoredProcedureConnectorHealth
+## GetStoredProcedureConnectorHealth
 
-> OBPv600GetStoredProcedureConnectorHealth200Response OBPv600GetStoredProcedureConnectorHealth(ctx).Execute()
+> GetStoredProcedureConnectorHealth200Response GetStoredProcedureConnectorHealth(ctx).Execute()
 
 Get Stored Procedure Connector Health
 
@@ -827,13 +473,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SystemAPI.OBPv600GetStoredProcedureConnectorHealth(context.Background()).Execute()
+	resp, r, err := apiClient.SystemAPI.GetStoredProcedureConnectorHealth(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.OBPv600GetStoredProcedureConnectorHealth``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.GetStoredProcedureConnectorHealth``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetStoredProcedureConnectorHealth`: OBPv600GetStoredProcedureConnectorHealth200Response
-	fmt.Fprintf(os.Stdout, "Response from `SystemAPI.OBPv600GetStoredProcedureConnectorHealth`: %v\n", resp)
+	// response from `GetStoredProcedureConnectorHealth`: GetStoredProcedureConnectorHealth200Response
+	fmt.Fprintf(os.Stdout, "Response from `SystemAPI.GetStoredProcedureConnectorHealth`: %v\n", resp)
 }
 ```
 
@@ -843,12 +489,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetStoredProcedureConnectorHealthRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetStoredProcedureConnectorHealthRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetStoredProcedureConnectorHealth200Response**](OBPv600GetStoredProcedureConnectorHealth200Response.md)
+[**GetStoredProcedureConnectorHealth200Response**](GetStoredProcedureConnectorHealth200Response.md)
 
 ### Authorization
 
@@ -864,9 +510,9 @@ Other parameters are passed through a pointer to a apiOBPv600GetStoredProcedureC
 [[Back to README]](../README.md)
 
 
-## OBPv600InvalidateCacheNamespace
+## InvalidateCacheNamespace
 
-> OBPv600InvalidateCacheNamespace200Response OBPv600InvalidateCacheNamespace(ctx).OBPv600InvalidateCacheNamespaceRequest(oBPv600InvalidateCacheNamespaceRequest).Execute()
+> InvalidateCacheNamespace200Response InvalidateCacheNamespace(ctx).InvalidateCacheNamespaceRequest(invalidateCacheNamespaceRequest).Execute()
 
 Invalidate Cache Namespace
 
@@ -885,17 +531,17 @@ import (
 )
 
 func main() {
-	oBPv600InvalidateCacheNamespaceRequest := *openapiclient.NewOBPv600InvalidateCacheNamespaceRequest("Type_example", *openapiclient.NewOBPv600InvalidateCacheNamespaceRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv600InvalidateCacheNamespaceRequest | Request body
+	invalidateCacheNamespaceRequest := *openapiclient.NewInvalidateCacheNamespaceRequest() // InvalidateCacheNamespaceRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SystemAPI.OBPv600InvalidateCacheNamespace(context.Background()).OBPv600InvalidateCacheNamespaceRequest(oBPv600InvalidateCacheNamespaceRequest).Execute()
+	resp, r, err := apiClient.SystemAPI.InvalidateCacheNamespace(context.Background()).InvalidateCacheNamespaceRequest(invalidateCacheNamespaceRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.OBPv600InvalidateCacheNamespace``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.InvalidateCacheNamespace``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600InvalidateCacheNamespace`: OBPv600InvalidateCacheNamespace200Response
-	fmt.Fprintf(os.Stdout, "Response from `SystemAPI.OBPv600InvalidateCacheNamespace`: %v\n", resp)
+	// response from `InvalidateCacheNamespace`: InvalidateCacheNamespace200Response
+	fmt.Fprintf(os.Stdout, "Response from `SystemAPI.InvalidateCacheNamespace`: %v\n", resp)
 }
 ```
 
@@ -905,16 +551,16 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600InvalidateCacheNamespaceRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiInvalidateCacheNamespaceRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv600InvalidateCacheNamespaceRequest** | [**OBPv600InvalidateCacheNamespaceRequest**](OBPv600InvalidateCacheNamespaceRequest.md) | Request body | 
+ **invalidateCacheNamespaceRequest** | [**InvalidateCacheNamespaceRequest**](InvalidateCacheNamespaceRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600InvalidateCacheNamespace200Response**](OBPv600InvalidateCacheNamespace200Response.md)
+[**InvalidateCacheNamespace200Response**](InvalidateCacheNamespace200Response.md)
 
 ### Authorization
 
@@ -924,6 +570,360 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: application/json
 - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## LogCacheAllEndpoint
+
+> LogCacheAllEndpoint(ctx).Execute()
+
+Get All Level Log Cache
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.SystemAPI.LogCacheAllEndpoint(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.LogCacheAllEndpoint``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiLogCacheAllEndpointRequest struct via the builder pattern
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## LogCacheDebugEndpoint
+
+> LogCacheDebugEndpoint(ctx).Execute()
+
+Get Debug Level Log Cache
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.SystemAPI.LogCacheDebugEndpoint(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.LogCacheDebugEndpoint``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiLogCacheDebugEndpointRequest struct via the builder pattern
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## LogCacheErrorEndpoint
+
+> LogCacheErrorEndpoint(ctx).Execute()
+
+Get Error Level Log Cache
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.SystemAPI.LogCacheErrorEndpoint(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.LogCacheErrorEndpoint``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiLogCacheErrorEndpointRequest struct via the builder pattern
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## LogCacheInfoEndpoint
+
+> LogCacheInfoEndpoint(ctx).Execute()
+
+Get Info Level Log Cache
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.SystemAPI.LogCacheInfoEndpoint(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.LogCacheInfoEndpoint``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiLogCacheInfoEndpointRequest struct via the builder pattern
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## LogCacheTraceEndpoint
+
+> LogCacheTraceEndpoint(ctx).Execute()
+
+Get Trace Level Log Cache
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.SystemAPI.LogCacheTraceEndpoint(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.LogCacheTraceEndpoint``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiLogCacheTraceEndpointRequest struct via the builder pattern
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## LogCacheWarningEndpoint
+
+> LogCacheWarningEndpoint(ctx).Execute()
+
+Get Warning Level Log Cache
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.SystemAPI.LogCacheWarningEndpoint(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.LogCacheWarningEndpoint``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiLogCacheWarningEndpointRequest struct via the builder pattern
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

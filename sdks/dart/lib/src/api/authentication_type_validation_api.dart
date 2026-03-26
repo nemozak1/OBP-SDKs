@@ -9,9 +9,9 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:obp_dart/src/api_util.dart';
-import 'package:obp_dart/src/model/obpv400_get_all_authentication_type_validations_public200_response.dart';
-import 'package:obp_dart/src/model/obpv400_get_all_authentication_type_validations_public200_response_properties_authentication_types_validations_items.dart';
-import 'package:obp_dart/src/model/obpv400_update_authentication_type_validation_request.dart';
+import 'package:obp_dart/src/model/get_all_authentication_type_validations_public200_response.dart';
+import 'package:obp_dart/src/model/get_all_authentication_type_validations_public200_response_authentication_types_validations_inner.dart';
+import 'package:obp_dart/src/model/update_authentication_type_validation_request.dart';
 
 class AuthenticationTypeValidationApi {
 
@@ -26,7 +26,7 @@ class AuthenticationTypeValidationApi {
   ///
   /// Parameters:
   /// * [operationid] - The OPERATIONID identifier
-  /// * [oBPv400UpdateAuthenticationTypeValidationRequest] - Request body
+  /// * [updateAuthenticationTypeValidationRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -34,11 +34,11 @@ class AuthenticationTypeValidationApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems>> oBPv400CreateAuthenticationTypeValidation({ 
+  Future<Response<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner>> createAuthenticationTypeValidation({ 
     required String operationid,
-    required OBPv400UpdateAuthenticationTypeValidationRequest oBPv400UpdateAuthenticationTypeValidationRequest,
+    required UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -65,7 +65,7 @@ class AuthenticationTypeValidationApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -78,8 +78,8 @@ class AuthenticationTypeValidationApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv400UpdateAuthenticationTypeValidationRequest);
-      _bodyData = _serializers.serialize(oBPv400UpdateAuthenticationTypeValidationRequest, specifiedType: _type);
+      const _type = FullType(UpdateAuthenticationTypeValidationRequest);
+      _bodyData = _serializers.serialize(updateAuthenticationTypeValidationRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -102,14 +102,14 @@ class AuthenticationTypeValidationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems? _responseData;
+    GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems),
-      ) as OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems;
+        specifiedType: const FullType(GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner),
+      ) as GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -121,7 +121,7 @@ class AuthenticationTypeValidationApi {
       );
     }
 
-    return Response<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems>(
+    return Response<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -147,7 +147,7 @@ class AuthenticationTypeValidationApi {
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> oBPv400DeleteAuthenticationTypeValidation({ 
+  Future<Response<void>> deleteAuthenticationTypeValidation({ 
     required String operationid,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -175,7 +175,7 @@ class AuthenticationTypeValidationApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -206,9 +206,9 @@ class AuthenticationTypeValidationApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetAllAuthenticationTypeValidationsPublic200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetAllAuthenticationTypeValidationsPublic200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetAllAuthenticationTypeValidationsPublic200Response>> oBPv400GetAllAuthenticationTypeValidations({ 
+  Future<Response<GetAllAuthenticationTypeValidationsPublic200Response>> getAllAuthenticationTypeValidations({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -235,7 +235,7 @@ class AuthenticationTypeValidationApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -252,14 +252,14 @@ class AuthenticationTypeValidationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetAllAuthenticationTypeValidationsPublic200Response? _responseData;
+    GetAllAuthenticationTypeValidationsPublic200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetAllAuthenticationTypeValidationsPublic200Response),
-      ) as OBPv400GetAllAuthenticationTypeValidationsPublic200Response;
+        specifiedType: const FullType(GetAllAuthenticationTypeValidationsPublic200Response),
+      ) as GetAllAuthenticationTypeValidationsPublic200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -271,7 +271,7 @@ class AuthenticationTypeValidationApi {
       );
     }
 
-    return Response<OBPv400GetAllAuthenticationTypeValidationsPublic200Response>(
+    return Response<GetAllAuthenticationTypeValidationsPublic200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -294,9 +294,9 @@ class AuthenticationTypeValidationApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetAllAuthenticationTypeValidationsPublic200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetAllAuthenticationTypeValidationsPublic200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetAllAuthenticationTypeValidationsPublic200Response>> oBPv400GetAllAuthenticationTypeValidationsPublic({ 
+  Future<Response<GetAllAuthenticationTypeValidationsPublic200Response>> getAllAuthenticationTypeValidationsPublic({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -325,14 +325,14 @@ class AuthenticationTypeValidationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetAllAuthenticationTypeValidationsPublic200Response? _responseData;
+    GetAllAuthenticationTypeValidationsPublic200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetAllAuthenticationTypeValidationsPublic200Response),
-      ) as OBPv400GetAllAuthenticationTypeValidationsPublic200Response;
+        specifiedType: const FullType(GetAllAuthenticationTypeValidationsPublic200Response),
+      ) as GetAllAuthenticationTypeValidationsPublic200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -344,7 +344,7 @@ class AuthenticationTypeValidationApi {
       );
     }
 
-    return Response<OBPv400GetAllAuthenticationTypeValidationsPublic200Response>(
+    return Response<GetAllAuthenticationTypeValidationsPublic200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -368,9 +368,9 @@ class AuthenticationTypeValidationApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems>> oBPv400GetAuthenticationTypeValidation({ 
+  Future<Response<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner>> getAuthenticationTypeValidation({ 
     required String operationid,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -398,7 +398,7 @@ class AuthenticationTypeValidationApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -415,14 +415,14 @@ class AuthenticationTypeValidationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems? _responseData;
+    GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems),
-      ) as OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems;
+        specifiedType: const FullType(GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner),
+      ) as GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -434,7 +434,7 @@ class AuthenticationTypeValidationApi {
       );
     }
 
-    return Response<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems>(
+    return Response<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -451,7 +451,7 @@ class AuthenticationTypeValidationApi {
   ///
   /// Parameters:
   /// * [operationid] - The OPERATIONID identifier
-  /// * [oBPv400UpdateAuthenticationTypeValidationRequest] - Request body
+  /// * [updateAuthenticationTypeValidationRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -459,11 +459,11 @@ class AuthenticationTypeValidationApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems>> oBPv400UpdateAuthenticationTypeValidation({ 
+  Future<Response<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner>> updateAuthenticationTypeValidation({ 
     required String operationid,
-    required OBPv400UpdateAuthenticationTypeValidationRequest oBPv400UpdateAuthenticationTypeValidationRequest,
+    required UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -490,7 +490,7 @@ class AuthenticationTypeValidationApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -503,8 +503,8 @@ class AuthenticationTypeValidationApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv400UpdateAuthenticationTypeValidationRequest);
-      _bodyData = _serializers.serialize(oBPv400UpdateAuthenticationTypeValidationRequest, specifiedType: _type);
+      const _type = FullType(UpdateAuthenticationTypeValidationRequest);
+      _bodyData = _serializers.serialize(updateAuthenticationTypeValidationRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -527,14 +527,14 @@ class AuthenticationTypeValidationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems? _responseData;
+    GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems),
-      ) as OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems;
+        specifiedType: const FullType(GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner),
+      ) as GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -546,7 +546,7 @@ class AuthenticationTypeValidationApi {
       );
     }
 
-    return Response<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems>(
+    return Response<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

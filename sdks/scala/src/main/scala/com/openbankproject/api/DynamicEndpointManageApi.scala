@@ -1,6 +1,6 @@
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -11,16 +11,16 @@
  */
 package com.openbankproject.api
 
-import com.openbankproject.model.OBPv400GetDynamicEndpoints200Response
-import com.openbankproject.model.OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
-import com.openbankproject.model.OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString
-import com.openbankproject.model.OBPv400UpdateBankLevelDynamicEndpointHostRequest
+import com.openbankproject.model.GetDynamicEndpoints200Response
+import com.openbankproject.model.GetDynamicEndpoints200ResponseDynamicEndpointsInner
+import com.openbankproject.model.GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString
+import com.openbankproject.model.UpdateBankLevelDynamicEndpointHostRequest
 import org.openapitools.client.core.JsonSupport._
 import sttp.client4._
 import sttp.model.Method
 
 object DynamicEndpointManageApi {
-  def apply(baseUrl: String = "https://apisandbox.openbankproject.com") = new DynamicEndpointManageApi(baseUrl)
+  def apply(baseUrl: String = "http://127.0.0.1:8080") = new DynamicEndpointManageApi(baseUrl)
 }
 
 class DynamicEndpointManageApi(baseUrl: String) {
@@ -29,7 +29,7 @@ class DynamicEndpointManageApi(baseUrl: String) {
    * <p>Create dynamic endpoints.</p> <p>Create dynamic endpoints with one json format swagger content.</p> <p>If the host of swagger is <code>dynamic_entity</code>, then you need link the swagger fields to the dynamic entity fields,<br /> please check <code>Endpoint Mapping</code> endpoints.</p> <p>If the host of swagger is <code>obp_mock</code>, every dynamic endpoint will return example response of swagger,</p> <p>when create MethodRouting for given dynamic endpoint, it will be routed to given url.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems (Successful operation)
+   *   code 200 : GetDynamicEndpoints200ResponseDynamicEndpointsInner (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -38,38 +38,38 @@ class DynamicEndpointManageApi(baseUrl: String) {
    *   DirectLogin (apiKey)
    * 
    * @param bankid The BANKID identifier
-   * @param oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString Request body
+   * @param getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString Request body
    */
-  def oBPv400CreateBankLevelDynamicEndpoint(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString): Request[Either[ResponseException[String, Exception], OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems]] =
+  def createBankLevelDynamicEndpoint(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString: GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString): Request[Either[ResponseException[String, Exception], GetDynamicEndpoints200ResponseDynamicEndpointsInner]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v4.0.0/management/banks/${bankid}/dynamic-endpoints")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString)
-      .response(asJson[OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems])
+      .header("DirectLogin", apiKeyHeader)
+      .body(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString)
+      .response(asJson[GetDynamicEndpoints200ResponseDynamicEndpointsInner])
 
   /**
    * <p>Create dynamic endpoints.</p> <p>Create dynamic endpoints with one json format swagger content.</p> <p>If the host of swagger is <code>dynamic_entity</code>, then you need link the swagger fields to the dynamic entity fields,<br /> please check <code>Endpoint Mapping</code> endpoints.</p> <p>If the host of swagger is <code>obp_mock</code>, every dynamic endpoint will return example response of swagger,</p> <p>when create MethodRouting for given dynamic endpoint, it will be routed to given url.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems (Successful operation)
+   *   code 200 : GetDynamicEndpoints200ResponseDynamicEndpointsInner (Successful operation)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
    *   GatewayLogin (apiKey)
    *   DirectLogin (apiKey)
    * 
-   * @param oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString Request body
+   * @param getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString Request body
    */
-  def oBPv400CreateDynamicEndpoint(apiKeyHeader: String, apiKeyHeader: String)(oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString): Request[Either[ResponseException[String, Exception], OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems]] =
+  def createDynamicEndpoint(apiKeyHeader: String, apiKeyHeader: String)(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString: GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString): Request[Either[ResponseException[String, Exception], GetDynamicEndpoints200ResponseDynamicEndpointsInner]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v4.0.0/management/dynamic-endpoints")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString)
-      .response(asJson[OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems])
+      .header("DirectLogin", apiKeyHeader)
+      .body(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString)
+      .response(asJson[GetDynamicEndpoints200ResponseDynamicEndpointsInner])
 
   /**
    * <p>Delete a Bank Level DynamicEndpoint specified by DYNAMIC_ENDPOINT_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
@@ -86,12 +86,12 @@ class DynamicEndpointManageApi(baseUrl: String) {
    * @param bankid The BANKID identifier
    * @param dynamicendpointid The DYNAMICENDPOINTID identifier
    */
-  def oBPv400DeleteBankLevelDynamicEndpoint(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, dynamicendpointid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+  def deleteBankLevelDynamicEndpoint(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, dynamicendpointid: String): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.DELETE, uri"$baseUrl/obp/v4.0.0/management/banks/${bankid}/dynamic-endpoints/${dynamicendpointid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
@@ -108,12 +108,12 @@ class DynamicEndpointManageApi(baseUrl: String) {
    * 
    * @param dynamicendpointid The DYNAMICENDPOINTID identifier
    */
-  def oBPv400DeleteDynamicEndpoint(apiKeyHeader: String, apiKeyHeader: String)(dynamicendpointid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+  def deleteDynamicEndpoint(apiKeyHeader: String, apiKeyHeader: String)(dynamicendpointid: String): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.DELETE, uri"$baseUrl/obp/v4.0.0/management/dynamic-endpoints/${dynamicendpointid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
@@ -130,19 +130,19 @@ class DynamicEndpointManageApi(baseUrl: String) {
    * 
    * @param dynamicendpointid The DYNAMICENDPOINTID identifier
    */
-  def oBPv400DeleteMyDynamicEndpoint(apiKeyHeader: String, apiKeyHeader: String)(dynamicendpointid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+  def deleteMyDynamicEndpoint(apiKeyHeader: String, apiKeyHeader: String)(dynamicendpointid: String): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.DELETE, uri"$baseUrl/obp/v4.0.0/my/dynamic-endpoints/${dynamicendpointid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
    * <p>Get a Bank Level Dynamic Endpoint.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems (Successful operation)
+   *   code 200 : GetDynamicEndpoints200ResponseDynamicEndpointsInner (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -153,19 +153,19 @@ class DynamicEndpointManageApi(baseUrl: String) {
    * @param bankid The BANKID identifier
    * @param dynamicendpointid The DYNAMICENDPOINTID identifier
    */
-  def oBPv400GetBankLevelDynamicEndpoint(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, dynamicendpointid: String): Request[Either[ResponseException[String, Exception], OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems]] =
+  def getBankLevelDynamicEndpoint(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, dynamicendpointid: String): Request[Either[ResponseException[String, Exception], GetDynamicEndpoints200ResponseDynamicEndpointsInner]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/management/banks/${bankid}/dynamic-endpoints/${dynamicendpointid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetDynamicEndpoints200ResponseDynamicEndpointsInner])
 
   /**
    * <p>Get Bank Level Dynamic Endpoints.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetDynamicEndpoints200Response (Successful operation)
+   *   code 200 : GetDynamicEndpoints200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -175,19 +175,19 @@ class DynamicEndpointManageApi(baseUrl: String) {
    * 
    * @param bankid The BANKID identifier
    */
-  def oBPv400GetBankLevelDynamicEndpoints(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], OBPv400GetDynamicEndpoints200Response]] =
+  def getBankLevelDynamicEndpoints(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], GetDynamicEndpoints200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/management/banks/${bankid}/dynamic-endpoints")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetDynamicEndpoints200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetDynamicEndpoints200Response])
 
   /**
    * <p>Get a Dynamic Endpoint.</p> <p>Get one DynamicEndpoint,</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems (Successful operation)
+   *   code 200 : GetDynamicEndpoints200ResponseDynamicEndpointsInner (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -197,57 +197,57 @@ class DynamicEndpointManageApi(baseUrl: String) {
    * 
    * @param dynamicendpointid The DYNAMICENDPOINTID identifier
    */
-  def oBPv400GetDynamicEndpoint(apiKeyHeader: String, apiKeyHeader: String)(dynamicendpointid: String): Request[Either[ResponseException[String, Exception], OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems]] =
+  def getDynamicEndpoint(apiKeyHeader: String, apiKeyHeader: String)(dynamicendpointid: String): Request[Either[ResponseException[String, Exception], GetDynamicEndpoints200ResponseDynamicEndpointsInner]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/management/dynamic-endpoints/${dynamicendpointid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetDynamicEndpoints200ResponseDynamicEndpointsInner])
 
   /**
    * <p>Get Dynamic Endpoints.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetDynamicEndpoints200Response (Successful operation)
+   *   code 200 : GetDynamicEndpoints200Response (Successful operation)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
    *   GatewayLogin (apiKey)
    *   DirectLogin (apiKey)
    */
-  def oBPv400GetDynamicEndpoints(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], OBPv400GetDynamicEndpoints200Response]] =
+  def getDynamicEndpoints(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], GetDynamicEndpoints200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/management/dynamic-endpoints")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetDynamicEndpoints200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetDynamicEndpoints200Response])
 
   /**
    * <p>Get My Dynamic Endpoints.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetDynamicEndpoints200Response (Successful operation)
+   *   code 200 : GetDynamicEndpoints200Response (Successful operation)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
    *   GatewayLogin (apiKey)
    *   DirectLogin (apiKey)
    */
-  def oBPv400GetMyDynamicEndpoints(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], OBPv400GetDynamicEndpoints200Response]] =
+  def getMyDynamicEndpoints(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], GetDynamicEndpoints200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/my/dynamic-endpoints")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetDynamicEndpoints200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetDynamicEndpoints200Response])
 
   /**
    * <p>Update Bank Level  dynamic endpoint Host.<br /> The value can be obp_mock, dynamic_entity, or some service url.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400UpdateBankLevelDynamicEndpointHostRequest (Successful operation)
+   *   code 200 : UpdateBankLevelDynamicEndpointHostRequest (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -257,22 +257,22 @@ class DynamicEndpointManageApi(baseUrl: String) {
    * 
    * @param bankid The BANKID identifier
    * @param dynamicendpointid The DYNAMICENDPOINTID identifier
-   * @param oBPv400UpdateBankLevelDynamicEndpointHostRequest Request body
+   * @param updateBankLevelDynamicEndpointHostRequest Request body
    */
-  def oBPv400UpdateBankLevelDynamicEndpointHost(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, dynamicendpointid: String, oBPv400UpdateBankLevelDynamicEndpointHostRequest: OBPv400UpdateBankLevelDynamicEndpointHostRequest): Request[Either[ResponseException[String, Exception], OBPv400UpdateBankLevelDynamicEndpointHostRequest]] =
+  def updateBankLevelDynamicEndpointHost(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, dynamicendpointid: String, updateBankLevelDynamicEndpointHostRequest: UpdateBankLevelDynamicEndpointHostRequest): Request[Either[ResponseException[String, Exception], UpdateBankLevelDynamicEndpointHostRequest]] =
     basicRequest
       .method(Method.PUT, uri"$baseUrl/obp/v4.0.0/management/banks/${bankid}/dynamic-endpoints/${dynamicendpointid}/host")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400UpdateBankLevelDynamicEndpointHostRequest)
-      .response(asJson[OBPv400UpdateBankLevelDynamicEndpointHostRequest])
+      .header("DirectLogin", apiKeyHeader)
+      .body(updateBankLevelDynamicEndpointHostRequest)
+      .response(asJson[UpdateBankLevelDynamicEndpointHostRequest])
 
   /**
    * <p>Update dynamic endpoint Host.<br /> The value can be obp_mock, dynamic_entity, or some service url.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400UpdateBankLevelDynamicEndpointHostRequest (Successful operation)
+   *   code 200 : UpdateBankLevelDynamicEndpointHostRequest (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -281,15 +281,15 @@ class DynamicEndpointManageApi(baseUrl: String) {
    *   DirectLogin (apiKey)
    * 
    * @param dynamicendpointid The DYNAMICENDPOINTID identifier
-   * @param oBPv400UpdateBankLevelDynamicEndpointHostRequest Request body
+   * @param updateBankLevelDynamicEndpointHostRequest Request body
    */
-  def oBPv400UpdateDynamicEndpointHost(apiKeyHeader: String, apiKeyHeader: String)(dynamicendpointid: String, oBPv400UpdateBankLevelDynamicEndpointHostRequest: OBPv400UpdateBankLevelDynamicEndpointHostRequest): Request[Either[ResponseException[String, Exception], OBPv400UpdateBankLevelDynamicEndpointHostRequest]] =
+  def updateDynamicEndpointHost(apiKeyHeader: String, apiKeyHeader: String)(dynamicendpointid: String, updateBankLevelDynamicEndpointHostRequest: UpdateBankLevelDynamicEndpointHostRequest): Request[Either[ResponseException[String, Exception], UpdateBankLevelDynamicEndpointHostRequest]] =
     basicRequest
       .method(Method.PUT, uri"$baseUrl/obp/v4.0.0/management/dynamic-endpoints/${dynamicendpointid}/host")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400UpdateBankLevelDynamicEndpointHostRequest)
-      .response(asJson[OBPv400UpdateBankLevelDynamicEndpointHostRequest])
+      .header("DirectLogin", apiKeyHeader)
+      .body(updateBankLevelDynamicEndpointHostRequest)
+      .response(asJson[UpdateBankLevelDynamicEndpointHostRequest])
 
 }

@@ -14,12 +14,12 @@ open class ApiProductAPI {
      
      - parameter bankid: (path) The BANKID identifier 
      - parameter apiproductcode: (path) The APIPRODUCTCODE identifier 
-     - parameter oBPv600CreateOrUpdateApiProductRequest: (body) Request body 
+     - parameter createOrUpdateApiProductRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetApiProducts200ResponsePropertiesApiProductsItems
+     - returns: GetApiProducts200ResponseApiProductsInner
      */
-    open class func oBPv600CreateApiProduct(bankid: String, apiproductcode: String, oBPv600CreateOrUpdateApiProductRequest: OBPv600CreateOrUpdateApiProductRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetApiProducts200ResponsePropertiesApiProductsItems {
-        return try await oBPv600CreateApiProductWithRequestBuilder(bankid: bankid, apiproductcode: apiproductcode, oBPv600CreateOrUpdateApiProductRequest: oBPv600CreateOrUpdateApiProductRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func createApiProduct(bankid: String, apiproductcode: String, createOrUpdateApiProductRequest: CreateOrUpdateApiProductRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetApiProducts200ResponseApiProductsInner {
+        return try await createApiProductWithRequestBuilder(bankid: bankid, apiproductcode: apiproductcode, createOrUpdateApiProductRequest: createOrUpdateApiProductRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -33,15 +33,15 @@ open class ApiProductAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter apiproductcode: (path) The APIPRODUCTCODE identifier 
-     - parameter oBPv600CreateOrUpdateApiProductRequest: (body) Request body 
+     - parameter createOrUpdateApiProductRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetApiProducts200ResponsePropertiesApiProductsItems> 
+     - returns: RequestBuilder<GetApiProducts200ResponseApiProductsInner> 
      */
-    open class func oBPv600CreateApiProductWithRequestBuilder(bankid: String, apiproductcode: String, oBPv600CreateOrUpdateApiProductRequest: OBPv600CreateOrUpdateApiProductRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetApiProducts200ResponsePropertiesApiProductsItems> {
+    open class func createApiProductWithRequestBuilder(bankid: String, apiproductcode: String, createOrUpdateApiProductRequest: CreateOrUpdateApiProductRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetApiProducts200ResponseApiProductsInner> {
         var localVariablePath = "/obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -50,7 +50,7 @@ open class ApiProductAPI {
         let apiproductcodePostEscape = apiproductcodePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{apiproductcode}", with: apiproductcodePostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv600CreateOrUpdateApiProductRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createOrUpdateApiProductRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -60,7 +60,7 @@ open class ApiProductAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetApiProducts200ResponsePropertiesApiProductsItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetApiProducts200ResponseApiProductsInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -70,12 +70,12 @@ open class ApiProductAPI {
      
      - parameter bankid: (path) The BANKID identifier 
      - parameter apiproductcode: (path) The APIPRODUCTCODE identifier 
-     - parameter oBPv600CreateOrUpdateApiProductRequest: (body) Request body 
+     - parameter createOrUpdateApiProductRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetApiProducts200ResponsePropertiesApiProductsItems
+     - returns: GetApiProducts200ResponseApiProductsInner
      */
-    open class func oBPv600CreateOrUpdateApiProduct(bankid: String, apiproductcode: String, oBPv600CreateOrUpdateApiProductRequest: OBPv600CreateOrUpdateApiProductRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetApiProducts200ResponsePropertiesApiProductsItems {
-        return try await oBPv600CreateOrUpdateApiProductWithRequestBuilder(bankid: bankid, apiproductcode: apiproductcode, oBPv600CreateOrUpdateApiProductRequest: oBPv600CreateOrUpdateApiProductRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func createOrUpdateApiProduct(bankid: String, apiproductcode: String, createOrUpdateApiProductRequest: CreateOrUpdateApiProductRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetApiProducts200ResponseApiProductsInner {
+        return try await createOrUpdateApiProductWithRequestBuilder(bankid: bankid, apiproductcode: apiproductcode, createOrUpdateApiProductRequest: createOrUpdateApiProductRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -89,15 +89,15 @@ open class ApiProductAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter apiproductcode: (path) The APIPRODUCTCODE identifier 
-     - parameter oBPv600CreateOrUpdateApiProductRequest: (body) Request body 
+     - parameter createOrUpdateApiProductRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetApiProducts200ResponsePropertiesApiProductsItems> 
+     - returns: RequestBuilder<GetApiProducts200ResponseApiProductsInner> 
      */
-    open class func oBPv600CreateOrUpdateApiProductWithRequestBuilder(bankid: String, apiproductcode: String, oBPv600CreateOrUpdateApiProductRequest: OBPv600CreateOrUpdateApiProductRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetApiProducts200ResponsePropertiesApiProductsItems> {
+    open class func createOrUpdateApiProductWithRequestBuilder(bankid: String, apiproductcode: String, createOrUpdateApiProductRequest: CreateOrUpdateApiProductRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetApiProducts200ResponseApiProductsInner> {
         var localVariablePath = "/obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -106,7 +106,7 @@ open class ApiProductAPI {
         let apiproductcodePostEscape = apiproductcodePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{apiproductcode}", with: apiproductcodePostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv600CreateOrUpdateApiProductRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createOrUpdateApiProductRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -116,7 +116,7 @@ open class ApiProductAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetApiProducts200ResponsePropertiesApiProductsItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetApiProducts200ResponseApiProductsInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -129,8 +129,8 @@ open class ApiProductAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv600DeleteApiProduct(bankid: String, apiproductcode: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv600DeleteApiProductWithRequestBuilder(bankid: bankid, apiproductcode: apiproductcode, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteApiProduct(bankid: String, apiproductcode: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteApiProductWithRequestBuilder(bankid: bankid, apiproductcode: apiproductcode, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -144,14 +144,14 @@ open class ApiProductAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter apiproductcode: (path) The APIPRODUCTCODE identifier 
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv600DeleteApiProductWithRequestBuilder(bankid: String, apiproductcode: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteApiProductWithRequestBuilder(bankid: String, apiproductcode: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -181,10 +181,10 @@ open class ApiProductAPI {
      - parameter bankid: (path) The BANKID identifier 
      - parameter apiproductcode: (path) The APIPRODUCTCODE identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetApiProducts200ResponsePropertiesApiProductsItems
+     - returns: GetApiProducts200ResponseApiProductsInner
      */
-    open class func oBPv600GetApiProduct(bankid: String, apiproductcode: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetApiProducts200ResponsePropertiesApiProductsItems {
-        return try await oBPv600GetApiProductWithRequestBuilder(bankid: bankid, apiproductcode: apiproductcode, apiConfiguration: apiConfiguration).execute().body
+    open class func getApiProduct(bankid: String, apiproductcode: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetApiProducts200ResponseApiProductsInner {
+        return try await getApiProductWithRequestBuilder(bankid: bankid, apiproductcode: apiproductcode, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -194,9 +194,9 @@ open class ApiProductAPI {
      - parameter bankid: (path) The BANKID identifier 
      - parameter apiproductcode: (path) The APIPRODUCTCODE identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetApiProducts200ResponsePropertiesApiProductsItems> 
+     - returns: RequestBuilder<GetApiProducts200ResponseApiProductsInner> 
      */
-    open class func oBPv600GetApiProductWithRequestBuilder(bankid: String, apiproductcode: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetApiProducts200ResponsePropertiesApiProductsItems> {
+    open class func getApiProductWithRequestBuilder(bankid: String, apiproductcode: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetApiProducts200ResponseApiProductsInner> {
         var localVariablePath = "/obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -215,7 +215,7 @@ open class ApiProductAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetApiProducts200ResponsePropertiesApiProductsItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetApiProducts200ResponseApiProductsInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
     }
@@ -225,10 +225,10 @@ open class ApiProductAPI {
      
      - parameter bankid: (path) The BANKID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetApiProducts200Response
+     - returns: GetApiProducts200Response
      */
-    open class func oBPv600GetApiProducts(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetApiProducts200Response {
-        return try await oBPv600GetApiProductsWithRequestBuilder(bankid: bankid, apiConfiguration: apiConfiguration).execute().body
+    open class func getApiProducts(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetApiProducts200Response {
+        return try await getApiProductsWithRequestBuilder(bankid: bankid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -237,9 +237,9 @@ open class ApiProductAPI {
      - <p>Get Api Products for the Bank.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_product_attribute_id</strong></a>: api_product_attribute_id</p> <p><a href=\"/glossary#\"><strong>api_product_code</strong></a>: api_product_code</p> <p><a href=\"/glossary#\"><strong>api_product_id</strong></a>: api_product_id</p> <p><a href=\"/glossary#\"><strong>api_products</strong></a>: api_products</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#\"><strong>collection_id</strong></a>: collection_id</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>monthly_subscription_amount</strong></a>: monthly_subscription_amount</p> <p><a href=\"/glossary#\"><strong>monthly_subscription_currency</strong></a>: monthly_subscription_currency</p> <p><a href=\"/glossary#more_info_url\"><strong>more_info_url</strong></a>: <a href=\"http://www.example.com/abc\">www.example.com/abc</a></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>parent_api_product_code</strong></a>: parent_api_product_code</p> <p><a href=\"/glossary#per_day_call_limit\"><strong>per_day_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_hour_call_limit\"><strong>per_hour_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_minute_call_limit\"><strong>per_minute_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_month_call_limit\"><strong>per_month_call_limit</strong></a>:</p> <p><a href=\"/glossary#per_second_call_limit\"><strong>per_second_call_limit</strong></a>: 10</p> <p><a href=\"/glossary#per_week_call_limit\"><strong>per_week_call_limit</strong></a>:</p> <p><a href=\"/glossary#\"><strong>terms_and_conditions_url</strong></a>: <a href=\"http://www.example.com/xyz\">www.example.com/xyz</a></p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#attributes\">attributes</a>: attribute value in form of (name, value)</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
      - parameter bankid: (path) The BANKID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetApiProducts200Response> 
+     - returns: RequestBuilder<GetApiProducts200Response> 
      */
-    open class func oBPv600GetApiProductsWithRequestBuilder(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetApiProducts200Response> {
+    open class func getApiProductsWithRequestBuilder(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetApiProducts200Response> {
         var localVariablePath = "/obp/v6.0.0/banks/{bankid}/api-products"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -255,7 +255,7 @@ open class ApiProductAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetApiProducts200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetApiProducts200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
     }

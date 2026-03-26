@@ -4,22 +4,126 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv5_0_0_create_system_view**](ViewSystemApi.md#o_bpv5_0_0_create_system_view) | **POST** /obp/v5.0.0/system-views | Create System View
-[**o_bpv5_0_0_delete_system_view**](ViewSystemApi.md#o_bpv5_0_0_delete_system_view) | **DELETE** /obp/v5.0.0/system-views/{viewid} | Delete System View
-[**o_bpv5_0_0_get_system_view**](ViewSystemApi.md#o_bpv5_0_0_get_system_view) | **GET** /obp/v5.0.0/system-views/{viewid} | Get System View
-[**o_bpv5_0_0_get_system_views_ids**](ViewSystemApi.md#o_bpv5_0_0_get_system_views_ids) | **GET** /obp/v5.0.0/system-views-ids | Get Ids of System Views
-[**o_bpv5_1_0_add_system_view_permission**](ViewSystemApi.md#o_bpv5_1_0_add_system_view_permission) | **POST** /obp/v5.1.0/system-views/{viewid}/permissions | Add Permission to a System View
-[**o_bpv5_1_0_delete_system_view_permission**](ViewSystemApi.md#o_bpv5_1_0_delete_system_view_permission) | **DELETE** /obp/v5.1.0/system-views/{viewid}/permissions/{permissionname} | Delete Permission to a System View
-[**o_bpv6_0_0_get_custom_view_by_id**](ViewSystemApi.md#o_bpv6_0_0_get_custom_view_by_id) | **GET** /obp/v6.0.0/management/banks/{bankid}/accounts/{accountid}/views/{viewid} | Get Custom View
-[**o_bpv6_0_0_get_custom_views**](ViewSystemApi.md#o_bpv6_0_0_get_custom_views) | **GET** /obp/v6.0.0/management/custom-views | Get Custom Views
-[**o_bpv6_0_0_get_system_view_by_id**](ViewSystemApi.md#o_bpv6_0_0_get_system_view_by_id) | **GET** /obp/v6.0.0/management/system-views/{viewid} | Get System View
-[**o_bpv6_0_0_get_system_views**](ViewSystemApi.md#o_bpv6_0_0_get_system_views) | **GET** /obp/v6.0.0/management/system-views | Get System Views
-[**o_bpv6_0_0_get_view_permissions**](ViewSystemApi.md#o_bpv6_0_0_get_view_permissions) | **GET** /obp/v6.0.0/management/view-permissions | Get View Permissions
-[**o_bpv6_0_0_update_system_view**](ViewSystemApi.md#o_bpv6_0_0_update_system_view) | **PUT** /obp/v6.0.0/system-views/{viewid} | Update System View
+[**add_system_view_permission**](ViewSystemApi.md#add_system_view_permission) | **POST** /obp/v5.1.0/system-views/{viewid}/permissions | Add Permission to a System View
+[**create_system_view**](ViewSystemApi.md#create_system_view) | **POST** /obp/v5.0.0/system-views | Create System View
+[**delete_system_view**](ViewSystemApi.md#delete_system_view) | **DELETE** /obp/v5.0.0/system-views/{viewid} | Delete System View
+[**delete_system_view_permission**](ViewSystemApi.md#delete_system_view_permission) | **DELETE** /obp/v5.1.0/system-views/{viewid}/permissions/{permissionname} | Delete Permission to a System View
+[**get_custom_view_by_id**](ViewSystemApi.md#get_custom_view_by_id) | **GET** /obp/v6.0.0/management/banks/{bankid}/accounts/{accountid}/views/{viewid} | Get Custom View
+[**get_custom_views**](ViewSystemApi.md#get_custom_views) | **GET** /obp/v6.0.0/management/custom-views | Get Custom Views
+[**get_system_view**](ViewSystemApi.md#get_system_view) | **GET** /obp/v5.0.0/system-views/{viewid} | Get System View
+[**get_system_view_by_id**](ViewSystemApi.md#get_system_view_by_id) | **GET** /obp/v6.0.0/management/system-views/{viewid} | Get System View
+[**get_system_views**](ViewSystemApi.md#get_system_views) | **GET** /obp/v6.0.0/management/system-views | Get System Views
+[**get_system_views_ids**](ViewSystemApi.md#get_system_views_ids) | **GET** /obp/v5.0.0/system-views-ids | Get Ids of System Views
+[**get_view_permissions**](ViewSystemApi.md#get_view_permissions) | **GET** /obp/v6.0.0/management/view-permissions | Get View Permissions
+[**update_system_view**](ViewSystemApi.md#update_system_view) | **PUT** /obp/v6.0.0/system-views/{viewid} | Update System View
 
 
-# **o_bpv5_0_0_create_system_view**
-> OBPv500GetViewsForBankAccount200ResponseViewsInner o_bpv5_0_0_create_system_view(obpv500_create_system_view_request)
+# **add_system_view_permission**
+> AddSystemViewPermission200Response add_system_view_permission(viewid, add_system_view_permission_request)
+
+Add Permission to a System View
+
+<p>Add Permission to a System View.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>permission_name</strong></a>: permission_name</p>
+<p><a href="/glossary#">extra_data</a>: extra_data</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#entitlement_id"><strong>entitlement_id</strong></a>:</p>
+<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.add_system_view_permission200_response import AddSystemViewPermission200Response
+from obp_python.models.add_system_view_permission_request import AddSystemViewPermissionRequest
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ViewSystemApi(api_client)
+    viewid = 'viewid_example' # str | The VIEWID identifier
+    add_system_view_permission_request = {"type":"object","properties":{"extra_data":{"type":"array","items":{"type":"string"}},"permission_name":{"type":"string"}}} # AddSystemViewPermissionRequest | Request body
+
+    try:
+        # Add Permission to a System View
+        api_response = api_instance.add_system_view_permission(viewid, add_system_view_permission_request)
+        print("The response of ViewSystemApi->add_system_view_permission:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ViewSystemApi->add_system_view_permission: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **viewid** | **str**| The VIEWID identifier | 
+ **add_system_view_permission_request** | [**AddSystemViewPermissionRequest**](AddSystemViewPermissionRequest.md)| Request body | 
+
+### Return type
+
+[**AddSystemViewPermission200Response**](AddSystemViewPermission200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_system_view**
+> GetViewsForBankAccount200ResponseViewsInner create_system_view(create_system_view_request)
 
 Create System View
 
@@ -142,8 +246,8 @@ All the actions contained in the list will be set to <code>true</code> on the vi
 
 ```python
 import obp_python
-from obp_python.models.obpv500_create_system_view_request import OBPv500CreateSystemViewRequest
-from obp_python.models.obpv500_get_views_for_bank_account200_response_views_inner import OBPv500GetViewsForBankAccount200ResponseViewsInner
+from obp_python.models.create_system_view_request import CreateSystemViewRequest
+from obp_python.models.get_views_for_bank_account200_response_views_inner import GetViewsForBankAccount200ResponseViewsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -176,15 +280,15 @@ configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
 with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.ViewSystemApi(api_client)
-    obpv500_create_system_view_request = {"type":"object","properties":{"hide_metadata_if_alias_used":{"type":"boolean"},"description":{"type":"string"},"is_public":{"type":"boolean"},"which_alias_to_use":{"type":"string"},"can_revoke_access_to_views":{"type":"array","items":{"type":"string"}},"can_grant_access_to_views":{"type":"array","items":{"type":"string"}},"name":{"type":"string"},"allowed_actions":{"type":"array","items":{"type":"string"}},"metadata_view":{"type":"string"}}} # OBPv500CreateSystemViewRequest | Request body
+    create_system_view_request = {"type":"object","properties":{"hide_metadata_if_alias_used":{"type":"boolean"},"description":{"type":"string"},"is_public":{"type":"boolean"},"which_alias_to_use":{"type":"string"},"can_revoke_access_to_views":{"type":"array","items":{"type":"string"}},"can_grant_access_to_views":{"type":"array","items":{"type":"string"}},"name":{"type":"string"},"allowed_actions":{"type":"array","items":{"type":"string"}},"metadata_view":{"type":"string"}}} # CreateSystemViewRequest | Request body
 
     try:
         # Create System View
-        api_response = api_instance.o_bpv5_0_0_create_system_view(obpv500_create_system_view_request)
-        print("The response of ViewSystemApi->o_bpv5_0_0_create_system_view:\n")
+        api_response = api_instance.create_system_view(create_system_view_request)
+        print("The response of ViewSystemApi->create_system_view:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ViewSystemApi->o_bpv5_0_0_create_system_view: %s\n" % e)
+        print("Exception when calling ViewSystemApi->create_system_view: %s\n" % e)
 ```
 
 
@@ -194,11 +298,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **obpv500_create_system_view_request** | [**OBPv500CreateSystemViewRequest**](OBPv500CreateSystemViewRequest.md)| Request body | 
+ **create_system_view_request** | [**CreateSystemViewRequest**](CreateSystemViewRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv500GetViewsForBankAccount200ResponseViewsInner**](OBPv500GetViewsForBankAccount200ResponseViewsInner.md)
+[**GetViewsForBankAccount200ResponseViewsInner**](GetViewsForBankAccount200ResponseViewsInner.md)
 
 ### Authorization
 
@@ -218,8 +322,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_0_0_delete_system_view**
-> o_bpv5_0_0_delete_system_view(viewid)
+# **delete_system_view**
+> delete_system_view(viewid)
 
 Delete System View
 
@@ -274,9 +378,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete System View
-        api_instance.o_bpv5_0_0_delete_system_view(viewid)
+        api_instance.delete_system_view(viewid)
     except Exception as e:
-        print("Exception when calling ViewSystemApi->o_bpv5_0_0_delete_system_view: %s\n" % e)
+        print("Exception when calling ViewSystemApi->delete_system_view: %s\n" % e)
 ```
 
 
@@ -311,8 +415,319 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_0_0_get_system_view**
-> OBPv500GetViewsForBankAccount200ResponseViewsInner o_bpv5_0_0_get_system_view(viewid)
+# **delete_system_view_permission**
+> delete_system_view_permission(viewid, permissionname)
+
+Delete Permission to a System View
+
+<p>Delete Permission to a System View</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">PERMISSION_NAME</a>: PERMISSION_NAME</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ViewSystemApi(api_client)
+    viewid = 'viewid_example' # str | The VIEWID identifier
+    permissionname = 'permissionname_example' # str | The PERMISSIONNAME identifier
+
+    try:
+        # Delete Permission to a System View
+        api_instance.delete_system_view_permission(viewid, permissionname)
+    except Exception as e:
+        print("Exception when calling ViewSystemApi->delete_system_view_permission: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **viewid** | **str**| The VIEWID identifier | 
+ **permissionname** | **str**| The PERMISSIONNAME identifier | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_custom_view_by_id**
+> GetSystemViewById200Response get_custom_view_by_id(bankid, accountid, viewid)
+
+Get Custom View
+
+<p>Get a single custom view by bank, account, and view ID.</p>
+<p>Custom views are user-created views with names starting with underscore (_), such as:<br />
+- _work<br />
+- _personal<br />
+- _audit</p>
+<p>Custom views are unique per bank_id, account_id, and view_id combination.</p>
+<p>The view is returned with an <code>allowed_actions</code> array containing all permissions for that view.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
+<p><a href="/glossary#allowed_actions"><strong>allowed_actions</strong></a>:</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>can_grant_access_to_views</strong></a>: can_grant_access_to_views</p>
+<p><a href="/glossary#"><strong>can_revoke_access_to_views</strong></a>: can_revoke_access_to_views</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
+<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
+<p><a href="/glossary#"><strong>is_system</strong></a>: true</p>
+<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
+<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
+<p><a href="/glossary#"><strong>view_name</strong></a>: owner</p>
+<p><a href="/glossary#is_firehose">is_firehose</a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_system_view_by_id200_response import GetSystemViewById200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ViewSystemApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    viewid = 'viewid_example' # str | The VIEWID identifier
+
+    try:
+        # Get Custom View
+        api_response = api_instance.get_custom_view_by_id(bankid, accountid, viewid)
+        print("The response of ViewSystemApi->get_custom_view_by_id:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ViewSystemApi->get_custom_view_by_id: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **viewid** | **str**| The VIEWID identifier | 
+
+### Return type
+
+[**GetSystemViewById200Response**](GetSystemViewById200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_custom_views**
+> GetCustomViews200Response get_custom_views()
+
+Get Custom Views
+
+<p>Get all custom views.</p>
+<p>Custom views are user-created views with names starting with underscore (_), such as:<br />
+- _work<br />
+- _personal<br />
+- _audit</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#views"><strong>views</strong></a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_custom_views200_response import GetCustomViews200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ViewSystemApi(api_client)
+
+    try:
+        # Get Custom Views
+        api_response = api_instance.get_custom_views()
+        print("The response of ViewSystemApi->get_custom_views:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ViewSystemApi->get_custom_views: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**GetCustomViews200Response**](GetCustomViews200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_system_view**
+> GetViewsForBankAccount200ResponseViewsInner get_system_view(viewid)
 
 Get System View
 
@@ -416,7 +831,7 @@ Get System View
 
 ```python
 import obp_python
-from obp_python.models.obpv500_get_views_for_bank_account200_response_views_inner import OBPv500GetViewsForBankAccount200ResponseViewsInner
+from obp_python.models.get_views_for_bank_account200_response_views_inner import GetViewsForBankAccount200ResponseViewsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -453,11 +868,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get System View
-        api_response = api_instance.o_bpv5_0_0_get_system_view(viewid)
-        print("The response of ViewSystemApi->o_bpv5_0_0_get_system_view:\n")
+        api_response = api_instance.get_system_view(viewid)
+        print("The response of ViewSystemApi->get_system_view:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ViewSystemApi->o_bpv5_0_0_get_system_view: %s\n" % e)
+        print("Exception when calling ViewSystemApi->get_system_view: %s\n" % e)
 ```
 
 
@@ -471,7 +886,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv500GetViewsForBankAccount200ResponseViewsInner**](OBPv500GetViewsForBankAccount200ResponseViewsInner.md)
+[**GetViewsForBankAccount200ResponseViewsInner**](GetViewsForBankAccount200ResponseViewsInner.md)
 
 ### Authorization
 
@@ -492,515 +907,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_0_0_get_system_views_ids**
-> OBPv500GetSystemViewsIds200Response o_bpv5_0_0_get_system_views_ids()
-
-Get Ids of System Views
-
-<p>Get Ids of System Views</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#views"><strong>views</strong></a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv500_get_system_views_ids200_response import OBPv500GetSystemViewsIds200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ViewSystemApi(api_client)
-
-    try:
-        # Get Ids of System Views
-        api_response = api_instance.o_bpv5_0_0_get_system_views_ids()
-        print("The response of ViewSystemApi->o_bpv5_0_0_get_system_views_ids:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ViewSystemApi->o_bpv5_0_0_get_system_views_ids: %s\n" % e)
-```
-
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**OBPv500GetSystemViewsIds200Response**](OBPv500GetSystemViewsIds200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv5_1_0_add_system_view_permission**
-> OBPv510AddSystemViewPermission200Response o_bpv5_1_0_add_system_view_permission(viewid, obpv510_add_system_view_permission_request)
-
-Add Permission to a System View
-
-<p>Add Permission to a System View.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>permission_name</strong></a>: permission_name</p>
-<p><a href="/glossary#">extra_data</a>: extra_data</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#entitlement_id"><strong>entitlement_id</strong></a>:</p>
-<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv510_add_system_view_permission200_response import OBPv510AddSystemViewPermission200Response
-from obp_python.models.obpv510_add_system_view_permission_request import OBPv510AddSystemViewPermissionRequest
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ViewSystemApi(api_client)
-    viewid = 'viewid_example' # str | The VIEWID identifier
-    obpv510_add_system_view_permission_request = {"type":"object","properties":{"extra_data":{"type":"array","items":{"type":"string"}},"permission_name":{"type":"string"}}} # OBPv510AddSystemViewPermissionRequest | Request body
-
-    try:
-        # Add Permission to a System View
-        api_response = api_instance.o_bpv5_1_0_add_system_view_permission(viewid, obpv510_add_system_view_permission_request)
-        print("The response of ViewSystemApi->o_bpv5_1_0_add_system_view_permission:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ViewSystemApi->o_bpv5_1_0_add_system_view_permission: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **viewid** | **str**| The VIEWID identifier | 
- **obpv510_add_system_view_permission_request** | [**OBPv510AddSystemViewPermissionRequest**](OBPv510AddSystemViewPermissionRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv510AddSystemViewPermission200Response**](OBPv510AddSystemViewPermission200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv5_1_0_delete_system_view_permission**
-> o_bpv5_1_0_delete_system_view_permission(viewid, permissionname)
-
-Delete Permission to a System View
-
-<p>Delete Permission to a System View</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">PERMISSION_NAME</a>: PERMISSION_NAME</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ViewSystemApi(api_client)
-    viewid = 'viewid_example' # str | The VIEWID identifier
-    permissionname = 'permissionname_example' # str | The PERMISSIONNAME identifier
-
-    try:
-        # Delete Permission to a System View
-        api_instance.o_bpv5_1_0_delete_system_view_permission(viewid, permissionname)
-    except Exception as e:
-        print("Exception when calling ViewSystemApi->o_bpv5_1_0_delete_system_view_permission: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **viewid** | **str**| The VIEWID identifier | 
- **permissionname** | **str**| The PERMISSIONNAME identifier | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv6_0_0_get_custom_view_by_id**
-> OBPv600GetSystemViewById200Response o_bpv6_0_0_get_custom_view_by_id(bankid, accountid, viewid)
-
-Get Custom View
-
-<p>Get a single custom view by bank, account, and view ID.</p>
-<p>Custom views are user-created views with names starting with underscore (_), such as:<br />
-- _work<br />
-- _personal<br />
-- _audit</p>
-<p>Custom views are unique per bank_id, account_id, and view_id combination.</p>
-<p>The view is returned with an <code>allowed_actions</code> array containing all permissions for that view.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
-<p><a href="/glossary#allowed_actions"><strong>allowed_actions</strong></a>:</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#"><strong>can_grant_access_to_views</strong></a>: can_grant_access_to_views</p>
-<p><a href="/glossary#"><strong>can_revoke_access_to_views</strong></a>: can_revoke_access_to_views</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
-<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
-<p><a href="/glossary#"><strong>is_system</strong></a>: true</p>
-<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
-<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
-<p><a href="/glossary#"><strong>view_name</strong></a>: owner</p>
-<p><a href="/glossary#is_firehose">is_firehose</a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv600_get_system_view_by_id200_response import OBPv600GetSystemViewById200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ViewSystemApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    viewid = 'viewid_example' # str | The VIEWID identifier
-
-    try:
-        # Get Custom View
-        api_response = api_instance.o_bpv6_0_0_get_custom_view_by_id(bankid, accountid, viewid)
-        print("The response of ViewSystemApi->o_bpv6_0_0_get_custom_view_by_id:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ViewSystemApi->o_bpv6_0_0_get_custom_view_by_id: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **viewid** | **str**| The VIEWID identifier | 
-
-### Return type
-
-[**OBPv600GetSystemViewById200Response**](OBPv600GetSystemViewById200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv6_0_0_get_custom_views**
-> OBPv600GetCustomViews200Response o_bpv6_0_0_get_custom_views()
-
-Get Custom Views
-
-<p>Get all custom views.</p>
-<p>Custom views are user-created views with names starting with underscore (_), such as:<br />
-- _work<br />
-- _personal<br />
-- _audit</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#views"><strong>views</strong></a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv600_get_custom_views200_response import OBPv600GetCustomViews200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ViewSystemApi(api_client)
-
-    try:
-        # Get Custom Views
-        api_response = api_instance.o_bpv6_0_0_get_custom_views()
-        print("The response of ViewSystemApi->o_bpv6_0_0_get_custom_views:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ViewSystemApi->o_bpv6_0_0_get_custom_views: %s\n" % e)
-```
-
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**OBPv600GetCustomViews200Response**](OBPv600GetCustomViews200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv6_0_0_get_system_view_by_id**
-> OBPv600GetSystemViewById200Response o_bpv6_0_0_get_system_view_by_id(viewid)
+# **get_system_view_by_id**
+> GetSystemViewById200Response get_system_view_by_id(viewid)
 
 Get System View
 
@@ -1039,7 +947,7 @@ Get System View
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_system_view_by_id200_response import OBPv600GetSystemViewById200Response
+from obp_python.models.get_system_view_by_id200_response import GetSystemViewById200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -1076,11 +984,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get System View
-        api_response = api_instance.o_bpv6_0_0_get_system_view_by_id(viewid)
-        print("The response of ViewSystemApi->o_bpv6_0_0_get_system_view_by_id:\n")
+        api_response = api_instance.get_system_view_by_id(viewid)
+        print("The response of ViewSystemApi->get_system_view_by_id:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ViewSystemApi->o_bpv6_0_0_get_system_view_by_id: %s\n" % e)
+        print("Exception when calling ViewSystemApi->get_system_view_by_id: %s\n" % e)
 ```
 
 
@@ -1094,7 +1002,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetSystemViewById200Response**](OBPv600GetSystemViewById200Response.md)
+[**GetSystemViewById200Response**](GetSystemViewById200Response.md)
 
 ### Authorization
 
@@ -1115,8 +1023,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_system_views**
-> OBPv600GetSystemViews200Response o_bpv6_0_0_get_system_views()
+# **get_system_views**
+> GetSystemViews200Response get_system_views()
 
 Get System Views
 
@@ -1154,7 +1062,7 @@ Get System Views
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_system_views200_response import OBPv600GetSystemViews200Response
+from obp_python.models.get_system_views200_response import GetSystemViews200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -1190,11 +1098,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get System Views
-        api_response = api_instance.o_bpv6_0_0_get_system_views()
-        print("The response of ViewSystemApi->o_bpv6_0_0_get_system_views:\n")
+        api_response = api_instance.get_system_views()
+        print("The response of ViewSystemApi->get_system_views:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ViewSystemApi->o_bpv6_0_0_get_system_views: %s\n" % e)
+        print("Exception when calling ViewSystemApi->get_system_views: %s\n" % e)
 ```
 
 
@@ -1205,7 +1113,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetSystemViews200Response**](OBPv600GetSystemViews200Response.md)
+[**GetSystemViews200Response**](GetSystemViews200Response.md)
 
 ### Authorization
 
@@ -1225,8 +1133,100 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_view_permissions**
-> OBPv600GetViewPermissions200Response o_bpv6_0_0_get_view_permissions()
+# **get_system_views_ids**
+> GetSystemViewsIds200Response get_system_views_ids()
+
+Get Ids of System Views
+
+<p>Get Ids of System Views</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#views"><strong>views</strong></a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_system_views_ids200_response import GetSystemViewsIds200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ViewSystemApi(api_client)
+
+    try:
+        # Get Ids of System Views
+        api_response = api_instance.get_system_views_ids()
+        print("The response of ViewSystemApi->get_system_views_ids:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ViewSystemApi->get_system_views_ids: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**GetSystemViewsIds200Response**](GetSystemViewsIds200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_view_permissions**
+> GetViewPermissions200Response get_view_permissions()
 
 Get View Permissions
 
@@ -1251,7 +1251,7 @@ through a view.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_view_permissions200_response import OBPv600GetViewPermissions200Response
+from obp_python.models.get_view_permissions200_response import GetViewPermissions200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -1287,11 +1287,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get View Permissions
-        api_response = api_instance.o_bpv6_0_0_get_view_permissions()
-        print("The response of ViewSystemApi->o_bpv6_0_0_get_view_permissions:\n")
+        api_response = api_instance.get_view_permissions()
+        print("The response of ViewSystemApi->get_view_permissions:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ViewSystemApi->o_bpv6_0_0_get_view_permissions: %s\n" % e)
+        print("Exception when calling ViewSystemApi->get_view_permissions: %s\n" % e)
 ```
 
 
@@ -1302,7 +1302,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetViewPermissions200Response**](OBPv600GetViewPermissions200Response.md)
+[**GetViewPermissions200Response**](GetViewPermissions200Response.md)
 
 ### Authorization
 
@@ -1322,8 +1322,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_update_system_view**
-> OBPv600GetSystemViewById200Response o_bpv6_0_0_update_system_view(viewid, obpv600_update_system_view_request)
+# **update_system_view**
+> GetSystemViewById200Response update_system_view(viewid, update_system_view_request)
 
 Update System View
 
@@ -1360,8 +1360,8 @@ of a view is not editable (it is only set when a view is created).</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_system_view_by_id200_response import OBPv600GetSystemViewById200Response
-from obp_python.models.obpv600_update_system_view_request import OBPv600UpdateSystemViewRequest
+from obp_python.models.get_system_view_by_id200_response import GetSystemViewById200Response
+from obp_python.models.update_system_view_request import UpdateSystemViewRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -1395,15 +1395,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.ViewSystemApi(api_client)
     viewid = 'viewid_example' # str | The VIEWID identifier
-    obpv600_update_system_view_request = {"type":"object","properties":{"is_firehose":{"type":"boolean"},"which_alias_to_use":{"type":"string"},"hide_metadata_if_alias_used":{"type":"boolean"},"allowed_actions":{"type":"array","items":{"type":"string"}},"can_grant_access_to_views":{"type":"array","items":{"type":"string"}},"is_public":{"type":"boolean"},"metadata_view":{"type":"string"},"description":{"type":"string"},"can_revoke_access_to_views":{"type":"array","items":{"type":"string"}}}} # OBPv600UpdateSystemViewRequest | Request body
+    update_system_view_request = {"type":"object","properties":{"is_firehose":{"type":"boolean"},"which_alias_to_use":{"type":"string"},"hide_metadata_if_alias_used":{"type":"boolean"},"allowed_actions":{"type":"array","items":{"type":"string"}},"can_grant_access_to_views":{"type":"array","items":{"type":"string"}},"is_public":{"type":"boolean"},"metadata_view":{"type":"string"},"description":{"type":"string"},"can_revoke_access_to_views":{"type":"array","items":{"type":"string"}}}} # UpdateSystemViewRequest | Request body
 
     try:
         # Update System View
-        api_response = api_instance.o_bpv6_0_0_update_system_view(viewid, obpv600_update_system_view_request)
-        print("The response of ViewSystemApi->o_bpv6_0_0_update_system_view:\n")
+        api_response = api_instance.update_system_view(viewid, update_system_view_request)
+        print("The response of ViewSystemApi->update_system_view:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ViewSystemApi->o_bpv6_0_0_update_system_view: %s\n" % e)
+        print("Exception when calling ViewSystemApi->update_system_view: %s\n" % e)
 ```
 
 
@@ -1414,11 +1414,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **viewid** | **str**| The VIEWID identifier | 
- **obpv600_update_system_view_request** | [**OBPv600UpdateSystemViewRequest**](OBPv600UpdateSystemViewRequest.md)| Request body | 
+ **update_system_view_request** | [**UpdateSystemViewRequest**](UpdateSystemViewRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600GetSystemViewById200Response**](OBPv600GetSystemViewById200Response.md)
+[**GetSystemViewById200Response**](GetSystemViewById200Response.md)
 
 ### Authorization
 

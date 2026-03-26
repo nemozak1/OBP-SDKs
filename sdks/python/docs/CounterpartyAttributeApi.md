@@ -4,15 +4,15 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv6_0_0_create_counterparty_attribute**](CounterpartyAttributeApi.md#o_bpv6_0_0_create_counterparty_attribute) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes | Create Counterparty Attribute
-[**o_bpv6_0_0_delete_counterparty_attribute**](CounterpartyAttributeApi.md#o_bpv6_0_0_delete_counterparty_attribute) | **DELETE** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes/{counterpartyattributeid} | Delete Counterparty Attribute
-[**o_bpv6_0_0_get_all_counterparty_attributes**](CounterpartyAttributeApi.md#o_bpv6_0_0_get_all_counterparty_attributes) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes | Get All Counterparty Attributes
-[**o_bpv6_0_0_get_counterparty_attribute_by_id**](CounterpartyAttributeApi.md#o_bpv6_0_0_get_counterparty_attribute_by_id) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes/{counterpartyattributeid} | Get Counterparty Attribute By ID
-[**o_bpv6_0_0_update_counterparty_attribute**](CounterpartyAttributeApi.md#o_bpv6_0_0_update_counterparty_attribute) | **PUT** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes/{counterpartyattributeid} | Update Counterparty Attribute
+[**create_counterparty_attribute**](CounterpartyAttributeApi.md#create_counterparty_attribute) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes | Create Counterparty Attribute
+[**delete_counterparty_attribute**](CounterpartyAttributeApi.md#delete_counterparty_attribute) | **DELETE** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes/{counterpartyattributeid} | Delete Counterparty Attribute
+[**get_all_counterparty_attributes**](CounterpartyAttributeApi.md#get_all_counterparty_attributes) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes | Get All Counterparty Attributes
+[**get_counterparty_attribute_by_id**](CounterpartyAttributeApi.md#get_counterparty_attribute_by_id) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes/{counterpartyattributeid} | Get Counterparty Attribute By ID
+[**update_counterparty_attribute**](CounterpartyAttributeApi.md#update_counterparty_attribute) | **PUT** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes/{counterpartyattributeid} | Update Counterparty Attribute
 
 
-# **o_bpv6_0_0_create_counterparty_attribute**
-> OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner o_bpv6_0_0_create_counterparty_attribute(bankid, accountid, counterpartyid, obpv600_create_counterparty_attribute_request)
+# **create_counterparty_attribute**
+> GetAllCounterpartyAttributes200ResponseAttributesInner create_counterparty_attribute(bankid, accountid, counterpartyid, create_counterparty_attribute_request)
 
 Create Counterparty Attribute
 
@@ -46,8 +46,8 @@ Authentication is Required</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv600_create_counterparty_attribute_request import OBPv600CreateCounterpartyAttributeRequest
-from obp_python.models.obpv600_get_all_counterparty_attributes200_response_attributes_inner import OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner
+from obp_python.models.create_counterparty_attribute_request import CreateCounterpartyAttributeRequest
+from obp_python.models.get_all_counterparty_attributes200_response_attributes_inner import GetAllCounterpartyAttributes200ResponseAttributesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -83,15 +83,15 @@ with obp_python.ApiClient(configuration) as api_client:
     bankid = 'bankid_example' # str | The BANKID identifier
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     counterpartyid = 'counterpartyid_example' # str | The COUNTERPARTYID identifier
-    obpv600_create_counterparty_attribute_request = {"type":"object","properties":{"attribute_type":{"type":"string"},"name":{"type":"string"},"is_active":{"type":"boolean"},"value":{"type":"string"}}} # OBPv600CreateCounterpartyAttributeRequest | Request body
+    create_counterparty_attribute_request = {"type":"object","properties":{"attribute_type":{"type":"string"},"name":{"type":"string"},"is_active":{"type":"boolean"},"value":{"type":"string"}}} # CreateCounterpartyAttributeRequest | Request body
 
     try:
         # Create Counterparty Attribute
-        api_response = api_instance.o_bpv6_0_0_create_counterparty_attribute(bankid, accountid, counterpartyid, obpv600_create_counterparty_attribute_request)
-        print("The response of CounterpartyAttributeApi->o_bpv6_0_0_create_counterparty_attribute:\n")
+        api_response = api_instance.create_counterparty_attribute(bankid, accountid, counterpartyid, create_counterparty_attribute_request)
+        print("The response of CounterpartyAttributeApi->create_counterparty_attribute:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CounterpartyAttributeApi->o_bpv6_0_0_create_counterparty_attribute: %s\n" % e)
+        print("Exception when calling CounterpartyAttributeApi->create_counterparty_attribute: %s\n" % e)
 ```
 
 
@@ -104,11 +104,11 @@ Name | Type | Description  | Notes
  **bankid** | **str**| The BANKID identifier | 
  **accountid** | **str**| The ACCOUNTID identifier | 
  **counterpartyid** | **str**| The COUNTERPARTYID identifier | 
- **obpv600_create_counterparty_attribute_request** | [**OBPv600CreateCounterpartyAttributeRequest**](OBPv600CreateCounterpartyAttributeRequest.md)| Request body | 
+ **create_counterparty_attribute_request** | [**CreateCounterpartyAttributeRequest**](CreateCounterpartyAttributeRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner**](OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner.md)
+[**GetAllCounterpartyAttributes200ResponseAttributesInner**](GetAllCounterpartyAttributes200ResponseAttributesInner.md)
 
 ### Authorization
 
@@ -128,8 +128,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_delete_counterparty_attribute**
-> o_bpv6_0_0_delete_counterparty_attribute(bankid, accountid, counterpartyid, counterpartyattributeid)
+# **delete_counterparty_attribute**
+> delete_counterparty_attribute(bankid, accountid, counterpartyid, counterpartyattributeid)
 
 Delete Counterparty Attribute
 
@@ -191,9 +191,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete Counterparty Attribute
-        api_instance.o_bpv6_0_0_delete_counterparty_attribute(bankid, accountid, counterpartyid, counterpartyattributeid)
+        api_instance.delete_counterparty_attribute(bankid, accountid, counterpartyid, counterpartyattributeid)
     except Exception as e:
-        print("Exception when calling CounterpartyAttributeApi->o_bpv6_0_0_delete_counterparty_attribute: %s\n" % e)
+        print("Exception when calling CounterpartyAttributeApi->delete_counterparty_attribute: %s\n" % e)
 ```
 
 
@@ -230,8 +230,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_all_counterparty_attributes**
-> OBPv600GetAllCounterpartyAttributes200Response o_bpv6_0_0_get_all_counterparty_attributes(bankid, accountid, counterpartyid)
+# **get_all_counterparty_attributes**
+> GetAllCounterpartyAttributes200Response get_all_counterparty_attributes(bankid, accountid, counterpartyid)
 
 Get All Counterparty Attributes
 
@@ -260,7 +260,7 @@ Get All Counterparty Attributes
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_all_counterparty_attributes200_response import OBPv600GetAllCounterpartyAttributes200Response
+from obp_python.models.get_all_counterparty_attributes200_response import GetAllCounterpartyAttributes200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -299,11 +299,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get All Counterparty Attributes
-        api_response = api_instance.o_bpv6_0_0_get_all_counterparty_attributes(bankid, accountid, counterpartyid)
-        print("The response of CounterpartyAttributeApi->o_bpv6_0_0_get_all_counterparty_attributes:\n")
+        api_response = api_instance.get_all_counterparty_attributes(bankid, accountid, counterpartyid)
+        print("The response of CounterpartyAttributeApi->get_all_counterparty_attributes:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CounterpartyAttributeApi->o_bpv6_0_0_get_all_counterparty_attributes: %s\n" % e)
+        print("Exception when calling CounterpartyAttributeApi->get_all_counterparty_attributes: %s\n" % e)
 ```
 
 
@@ -319,7 +319,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetAllCounterpartyAttributes200Response**](OBPv600GetAllCounterpartyAttributes200Response.md)
+[**GetAllCounterpartyAttributes200Response**](GetAllCounterpartyAttributes200Response.md)
 
 ### Authorization
 
@@ -339,8 +339,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_counterparty_attribute_by_id**
-> OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner o_bpv6_0_0_get_counterparty_attribute_by_id(bankid, accountid, counterpartyid, counterpartyattributeid)
+# **get_counterparty_attribute_by_id**
+> GetAllCounterpartyAttributes200ResponseAttributesInner get_counterparty_attribute_by_id(bankid, accountid, counterpartyid, counterpartyattributeid)
 
 Get Counterparty Attribute By ID
 
@@ -369,7 +369,7 @@ Get Counterparty Attribute By ID
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_all_counterparty_attributes200_response_attributes_inner import OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner
+from obp_python.models.get_all_counterparty_attributes200_response_attributes_inner import GetAllCounterpartyAttributes200ResponseAttributesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -409,11 +409,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Counterparty Attribute By ID
-        api_response = api_instance.o_bpv6_0_0_get_counterparty_attribute_by_id(bankid, accountid, counterpartyid, counterpartyattributeid)
-        print("The response of CounterpartyAttributeApi->o_bpv6_0_0_get_counterparty_attribute_by_id:\n")
+        api_response = api_instance.get_counterparty_attribute_by_id(bankid, accountid, counterpartyid, counterpartyattributeid)
+        print("The response of CounterpartyAttributeApi->get_counterparty_attribute_by_id:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CounterpartyAttributeApi->o_bpv6_0_0_get_counterparty_attribute_by_id: %s\n" % e)
+        print("Exception when calling CounterpartyAttributeApi->get_counterparty_attribute_by_id: %s\n" % e)
 ```
 
 
@@ -430,7 +430,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner**](OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner.md)
+[**GetAllCounterpartyAttributes200ResponseAttributesInner**](GetAllCounterpartyAttributes200ResponseAttributesInner.md)
 
 ### Authorization
 
@@ -450,8 +450,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_update_counterparty_attribute**
-> OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner o_bpv6_0_0_update_counterparty_attribute(bankid, accountid, counterpartyid, counterpartyattributeid, obpv600_create_counterparty_attribute_request)
+# **update_counterparty_attribute**
+> GetAllCounterpartyAttributes200ResponseAttributesInner update_counterparty_attribute(bankid, accountid, counterpartyid, counterpartyattributeid, create_counterparty_attribute_request)
 
 Update Counterparty Attribute
 
@@ -480,8 +480,8 @@ Update Counterparty Attribute
 
 ```python
 import obp_python
-from obp_python.models.obpv600_create_counterparty_attribute_request import OBPv600CreateCounterpartyAttributeRequest
-from obp_python.models.obpv600_get_all_counterparty_attributes200_response_attributes_inner import OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner
+from obp_python.models.create_counterparty_attribute_request import CreateCounterpartyAttributeRequest
+from obp_python.models.get_all_counterparty_attributes200_response_attributes_inner import GetAllCounterpartyAttributes200ResponseAttributesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -518,15 +518,15 @@ with obp_python.ApiClient(configuration) as api_client:
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     counterpartyid = 'counterpartyid_example' # str | The COUNTERPARTYID identifier
     counterpartyattributeid = 'counterpartyattributeid_example' # str | The COUNTERPARTYATTRIBUTEID identifier
-    obpv600_create_counterparty_attribute_request = {type=object, properties={attribute_type={type=string}, name={type=string}, is_active={type=boolean}, value={type=string}}} # OBPv600CreateCounterpartyAttributeRequest | Request body
+    create_counterparty_attribute_request = {type=object, properties={attribute_type={type=string}, name={type=string}, is_active={type=boolean}, value={type=string}}} # CreateCounterpartyAttributeRequest | Request body
 
     try:
         # Update Counterparty Attribute
-        api_response = api_instance.o_bpv6_0_0_update_counterparty_attribute(bankid, accountid, counterpartyid, counterpartyattributeid, obpv600_create_counterparty_attribute_request)
-        print("The response of CounterpartyAttributeApi->o_bpv6_0_0_update_counterparty_attribute:\n")
+        api_response = api_instance.update_counterparty_attribute(bankid, accountid, counterpartyid, counterpartyattributeid, create_counterparty_attribute_request)
+        print("The response of CounterpartyAttributeApi->update_counterparty_attribute:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CounterpartyAttributeApi->o_bpv6_0_0_update_counterparty_attribute: %s\n" % e)
+        print("Exception when calling CounterpartyAttributeApi->update_counterparty_attribute: %s\n" % e)
 ```
 
 
@@ -540,11 +540,11 @@ Name | Type | Description  | Notes
  **accountid** | **str**| The ACCOUNTID identifier | 
  **counterpartyid** | **str**| The COUNTERPARTYID identifier | 
  **counterpartyattributeid** | **str**| The COUNTERPARTYATTRIBUTEID identifier | 
- **obpv600_create_counterparty_attribute_request** | [**OBPv600CreateCounterpartyAttributeRequest**](OBPv600CreateCounterpartyAttributeRequest.md)| Request body | 
+ **create_counterparty_attribute_request** | [**CreateCounterpartyAttributeRequest**](CreateCounterpartyAttributeRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner**](OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner.md)
+[**GetAllCounterpartyAttributes200ResponseAttributesInner**](GetAllCounterpartyAttributes200ResponseAttributesInner.md)
 
 ### Authorization
 

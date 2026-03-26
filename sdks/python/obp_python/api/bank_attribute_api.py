@@ -18,11 +18,11 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
-from obp_python.models.obpv400_create_or_update_transaction_request_attribute_definition_request import OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
-from obp_python.models.obpv400_get_bank_attributes200_response import OBPv400GetBankAttributes200Response
-from obp_python.models.obpv400_get_bank_attributes200_response_bank_attributes_inner import OBPv400GetBankAttributes200ResponseBankAttributesInner
-from obp_python.models.obpv400_get_transaction_request_attribute_definition200_response_attributes_inner import OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner
-from obp_python.models.obpv510_update_atm_attribute_request import OBPv510UpdateAtmAttributeRequest
+from obp_python.models.create_or_update_transaction_request_attribute_definition_request import CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+from obp_python.models.get_bank_attributes200_response import GetBankAttributes200Response
+from obp_python.models.get_bank_attributes200_response_bank_attributes_inner import GetBankAttributes200ResponseBankAttributesInner
+from obp_python.models.get_transaction_request_attribute_definition200_response_attributes_inner import GetTransactionRequestAttributeDefinition200ResponseAttributesInner
+from obp_python.models.update_atm_attribute_request import UpdateAtmAttributeRequest
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -43,10 +43,10 @@ class BankAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_bank_attribute(
+    def create_bank_attribute(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv510_update_atm_attribute_request: Annotated[OBPv510UpdateAtmAttributeRequest, Field(description="Request body")],
+        update_atm_attribute_request: Annotated[UpdateAtmAttributeRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -59,15 +59,15 @@ class BankAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetBankAttributes200ResponseBankAttributesInner:
+    ) -> GetBankAttributes200ResponseBankAttributesInner:
         """Create Bank Attribute
 
         <p>Create Bank Attribute</p> <p>Typical product attributes might be:</p> <p>ISIN (for International bonds)<br /> VKN (for German bonds)<br /> REDCODE (markit short code for credit derivative)<br /> LOAN_ID (e.g. used for Anacredit reporting)</p> <p>ISSUE_DATE (When the bond was issued in the market)<br /> MATURITY_DATE (End of life time of a product)<br /> TRADABLE</p> <p>See <a href=\"http://www.fpml.org/\">FPML</a> for more examples.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_attribute_id</strong></a>: bank_attribute_id</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv510_update_atm_attribute_request: Request body (required)
-        :type obpv510_update_atm_attribute_request: OBPv510UpdateAtmAttributeRequest
+        :param update_atm_attribute_request: Request body (required)
+        :type update_atm_attribute_request: UpdateAtmAttributeRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -90,9 +90,9 @@ class BankAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_bank_attribute_serialize(
+        _param = self._create_bank_attribute_serialize(
             bankid=bankid,
-            obpv510_update_atm_attribute_request=obpv510_update_atm_attribute_request,
+            update_atm_attribute_request=update_atm_attribute_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -100,7 +100,7 @@ class BankAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankAttributes200ResponseBankAttributesInner",
+            '200': "GetBankAttributes200ResponseBankAttributesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -115,10 +115,10 @@ class BankAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_bank_attribute_with_http_info(
+    def create_bank_attribute_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv510_update_atm_attribute_request: Annotated[OBPv510UpdateAtmAttributeRequest, Field(description="Request body")],
+        update_atm_attribute_request: Annotated[UpdateAtmAttributeRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -131,15 +131,15 @@ class BankAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetBankAttributes200ResponseBankAttributesInner]:
+    ) -> ApiResponse[GetBankAttributes200ResponseBankAttributesInner]:
         """Create Bank Attribute
 
         <p>Create Bank Attribute</p> <p>Typical product attributes might be:</p> <p>ISIN (for International bonds)<br /> VKN (for German bonds)<br /> REDCODE (markit short code for credit derivative)<br /> LOAN_ID (e.g. used for Anacredit reporting)</p> <p>ISSUE_DATE (When the bond was issued in the market)<br /> MATURITY_DATE (End of life time of a product)<br /> TRADABLE</p> <p>See <a href=\"http://www.fpml.org/\">FPML</a> for more examples.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_attribute_id</strong></a>: bank_attribute_id</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv510_update_atm_attribute_request: Request body (required)
-        :type obpv510_update_atm_attribute_request: OBPv510UpdateAtmAttributeRequest
+        :param update_atm_attribute_request: Request body (required)
+        :type update_atm_attribute_request: UpdateAtmAttributeRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -162,9 +162,9 @@ class BankAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_bank_attribute_serialize(
+        _param = self._create_bank_attribute_serialize(
             bankid=bankid,
-            obpv510_update_atm_attribute_request=obpv510_update_atm_attribute_request,
+            update_atm_attribute_request=update_atm_attribute_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -172,7 +172,7 @@ class BankAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankAttributes200ResponseBankAttributesInner",
+            '200': "GetBankAttributes200ResponseBankAttributesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -187,10 +187,10 @@ class BankAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_bank_attribute_without_preload_content(
+    def create_bank_attribute_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv510_update_atm_attribute_request: Annotated[OBPv510UpdateAtmAttributeRequest, Field(description="Request body")],
+        update_atm_attribute_request: Annotated[UpdateAtmAttributeRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -210,8 +210,8 @@ class BankAttributeApi:
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv510_update_atm_attribute_request: Request body (required)
-        :type obpv510_update_atm_attribute_request: OBPv510UpdateAtmAttributeRequest
+        :param update_atm_attribute_request: Request body (required)
+        :type update_atm_attribute_request: UpdateAtmAttributeRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -234,9 +234,9 @@ class BankAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_bank_attribute_serialize(
+        _param = self._create_bank_attribute_serialize(
             bankid=bankid,
-            obpv510_update_atm_attribute_request=obpv510_update_atm_attribute_request,
+            update_atm_attribute_request=update_atm_attribute_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -244,7 +244,7 @@ class BankAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankAttributes200ResponseBankAttributesInner",
+            '200': "GetBankAttributes200ResponseBankAttributesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -254,10 +254,10 @@ class BankAttributeApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_create_bank_attribute_serialize(
+    def _create_bank_attribute_serialize(
         self,
         bankid,
-        obpv510_update_atm_attribute_request,
+        update_atm_attribute_request,
         _request_auth,
         _content_type,
         _headers,
@@ -285,8 +285,8 @@ class BankAttributeApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv510_update_atm_attribute_request is not None:
-            _body_params = obpv510_update_atm_attribute_request
+        if update_atm_attribute_request is not None:
+            _body_params = update_atm_attribute_request
 
 
         # set the HTTP header `Accept`
@@ -337,10 +337,10 @@ class BankAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_or_update_bank_attribute_definition(
+    def create_or_update_bank_attribute_definition(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv400_create_or_update_transaction_request_attribute_definition_request: Annotated[OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, Field(description="Request body")],
+        create_or_update_transaction_request_attribute_definition_request: Annotated[CreateOrUpdateTransactionRequestAttributeDefinitionRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -353,15 +353,15 @@ class BankAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner:
+    ) -> GetTransactionRequestAttributeDefinition200ResponseAttributesInner:
         """Create or Update Bank Attribute Definition
 
         <p>Create or Update Bank Attribute Definition</p> <p>The category field must be Bank</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv400_create_or_update_transaction_request_attribute_definition_request: Request body (required)
-        :type obpv400_create_or_update_transaction_request_attribute_definition_request: OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+        :param create_or_update_transaction_request_attribute_definition_request: Request body (required)
+        :type create_or_update_transaction_request_attribute_definition_request: CreateOrUpdateTransactionRequestAttributeDefinitionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -384,9 +384,9 @@ class BankAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_or_update_bank_attribute_definition_serialize(
+        _param = self._create_or_update_bank_attribute_definition_serialize(
             bankid=bankid,
-            obpv400_create_or_update_transaction_request_attribute_definition_request=obpv400_create_or_update_transaction_request_attribute_definition_request,
+            create_or_update_transaction_request_attribute_definition_request=create_or_update_transaction_request_attribute_definition_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -394,7 +394,7 @@ class BankAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
+            '200': "GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
             '404': None,
             '500': None,
         }
@@ -410,10 +410,10 @@ class BankAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_or_update_bank_attribute_definition_with_http_info(
+    def create_or_update_bank_attribute_definition_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv400_create_or_update_transaction_request_attribute_definition_request: Annotated[OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, Field(description="Request body")],
+        create_or_update_transaction_request_attribute_definition_request: Annotated[CreateOrUpdateTransactionRequestAttributeDefinitionRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -426,15 +426,15 @@ class BankAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner]:
+    ) -> ApiResponse[GetTransactionRequestAttributeDefinition200ResponseAttributesInner]:
         """Create or Update Bank Attribute Definition
 
         <p>Create or Update Bank Attribute Definition</p> <p>The category field must be Bank</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv400_create_or_update_transaction_request_attribute_definition_request: Request body (required)
-        :type obpv400_create_or_update_transaction_request_attribute_definition_request: OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+        :param create_or_update_transaction_request_attribute_definition_request: Request body (required)
+        :type create_or_update_transaction_request_attribute_definition_request: CreateOrUpdateTransactionRequestAttributeDefinitionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -457,9 +457,9 @@ class BankAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_or_update_bank_attribute_definition_serialize(
+        _param = self._create_or_update_bank_attribute_definition_serialize(
             bankid=bankid,
-            obpv400_create_or_update_transaction_request_attribute_definition_request=obpv400_create_or_update_transaction_request_attribute_definition_request,
+            create_or_update_transaction_request_attribute_definition_request=create_or_update_transaction_request_attribute_definition_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -467,7 +467,7 @@ class BankAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
+            '200': "GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
             '404': None,
             '500': None,
         }
@@ -483,10 +483,10 @@ class BankAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_or_update_bank_attribute_definition_without_preload_content(
+    def create_or_update_bank_attribute_definition_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv400_create_or_update_transaction_request_attribute_definition_request: Annotated[OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, Field(description="Request body")],
+        create_or_update_transaction_request_attribute_definition_request: Annotated[CreateOrUpdateTransactionRequestAttributeDefinitionRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -506,8 +506,8 @@ class BankAttributeApi:
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv400_create_or_update_transaction_request_attribute_definition_request: Request body (required)
-        :type obpv400_create_or_update_transaction_request_attribute_definition_request: OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+        :param create_or_update_transaction_request_attribute_definition_request: Request body (required)
+        :type create_or_update_transaction_request_attribute_definition_request: CreateOrUpdateTransactionRequestAttributeDefinitionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -530,9 +530,9 @@ class BankAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_or_update_bank_attribute_definition_serialize(
+        _param = self._create_or_update_bank_attribute_definition_serialize(
             bankid=bankid,
-            obpv400_create_or_update_transaction_request_attribute_definition_request=obpv400_create_or_update_transaction_request_attribute_definition_request,
+            create_or_update_transaction_request_attribute_definition_request=create_or_update_transaction_request_attribute_definition_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -540,7 +540,7 @@ class BankAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
+            '200': "GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
             '404': None,
             '500': None,
         }
@@ -551,10 +551,10 @@ class BankAttributeApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_create_or_update_bank_attribute_definition_serialize(
+    def _create_or_update_bank_attribute_definition_serialize(
         self,
         bankid,
-        obpv400_create_or_update_transaction_request_attribute_definition_request,
+        create_or_update_transaction_request_attribute_definition_request,
         _request_auth,
         _content_type,
         _headers,
@@ -582,8 +582,8 @@ class BankAttributeApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_create_or_update_transaction_request_attribute_definition_request is not None:
-            _body_params = obpv400_create_or_update_transaction_request_attribute_definition_request
+        if create_or_update_transaction_request_attribute_definition_request is not None:
+            _body_params = create_or_update_transaction_request_attribute_definition_request
 
 
         # set the HTTP header `Accept`
@@ -634,7 +634,7 @@ class BankAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_bank_attribute(
+    def delete_bank_attribute(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         bankattributeid: Annotated[StrictStr, Field(description="The BANKATTRIBUTEID identifier")],
@@ -681,7 +681,7 @@ class BankAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_bank_attribute_serialize(
+        _param = self._delete_bank_attribute_serialize(
             bankid=bankid,
             bankattributeid=bankattributeid,
             _request_auth=_request_auth,
@@ -707,7 +707,7 @@ class BankAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_bank_attribute_with_http_info(
+    def delete_bank_attribute_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         bankattributeid: Annotated[StrictStr, Field(description="The BANKATTRIBUTEID identifier")],
@@ -754,7 +754,7 @@ class BankAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_bank_attribute_serialize(
+        _param = self._delete_bank_attribute_serialize(
             bankid=bankid,
             bankattributeid=bankattributeid,
             _request_auth=_request_auth,
@@ -780,7 +780,7 @@ class BankAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_bank_attribute_without_preload_content(
+    def delete_bank_attribute_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         bankattributeid: Annotated[StrictStr, Field(description="The BANKATTRIBUTEID identifier")],
@@ -827,7 +827,7 @@ class BankAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_bank_attribute_serialize(
+        _param = self._delete_bank_attribute_serialize(
             bankid=bankid,
             bankattributeid=bankattributeid,
             _request_auth=_request_auth,
@@ -848,7 +848,7 @@ class BankAttributeApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_delete_bank_attribute_serialize(
+    def _delete_bank_attribute_serialize(
         self,
         bankid,
         bankattributeid,
@@ -911,7 +911,7 @@ class BankAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_bank_attribute(
+    def get_bank_attribute(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         bankattributeid: Annotated[StrictStr, Field(description="The BANKATTRIBUTEID identifier")],
@@ -927,7 +927,7 @@ class BankAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetBankAttributes200ResponseBankAttributesInner:
+    ) -> GetBankAttributes200ResponseBankAttributesInner:
         """Get Bank Attribute By BANK_ATTRIBUTE_ID
 
         <p>Get Bank Attribute By BANK_ATTRIBUTE_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">BANK_ATTRIBUTE_ID</a>: BANK_ATTRIBUTE_ID</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_attribute_id</strong></a>: bank_attribute_id</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -958,7 +958,7 @@ class BankAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_bank_attribute_serialize(
+        _param = self._get_bank_attribute_serialize(
             bankid=bankid,
             bankattributeid=bankattributeid,
             _request_auth=_request_auth,
@@ -968,7 +968,7 @@ class BankAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankAttributes200ResponseBankAttributesInner",
+            '200': "GetBankAttributes200ResponseBankAttributesInner",
             '404': None,
             '500': None,
         }
@@ -984,7 +984,7 @@ class BankAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_bank_attribute_with_http_info(
+    def get_bank_attribute_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         bankattributeid: Annotated[StrictStr, Field(description="The BANKATTRIBUTEID identifier")],
@@ -1000,7 +1000,7 @@ class BankAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetBankAttributes200ResponseBankAttributesInner]:
+    ) -> ApiResponse[GetBankAttributes200ResponseBankAttributesInner]:
         """Get Bank Attribute By BANK_ATTRIBUTE_ID
 
         <p>Get Bank Attribute By BANK_ATTRIBUTE_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">BANK_ATTRIBUTE_ID</a>: BANK_ATTRIBUTE_ID</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_attribute_id</strong></a>: bank_attribute_id</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -1031,7 +1031,7 @@ class BankAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_bank_attribute_serialize(
+        _param = self._get_bank_attribute_serialize(
             bankid=bankid,
             bankattributeid=bankattributeid,
             _request_auth=_request_auth,
@@ -1041,7 +1041,7 @@ class BankAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankAttributes200ResponseBankAttributesInner",
+            '200': "GetBankAttributes200ResponseBankAttributesInner",
             '404': None,
             '500': None,
         }
@@ -1057,7 +1057,7 @@ class BankAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_bank_attribute_without_preload_content(
+    def get_bank_attribute_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         bankattributeid: Annotated[StrictStr, Field(description="The BANKATTRIBUTEID identifier")],
@@ -1104,7 +1104,7 @@ class BankAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_bank_attribute_serialize(
+        _param = self._get_bank_attribute_serialize(
             bankid=bankid,
             bankattributeid=bankattributeid,
             _request_auth=_request_auth,
@@ -1114,7 +1114,7 @@ class BankAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankAttributes200ResponseBankAttributesInner",
+            '200': "GetBankAttributes200ResponseBankAttributesInner",
             '404': None,
             '500': None,
         }
@@ -1125,7 +1125,7 @@ class BankAttributeApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_bank_attribute_serialize(
+    def _get_bank_attribute_serialize(
         self,
         bankid,
         bankattributeid,
@@ -1195,7 +1195,7 @@ class BankAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_bank_attributes(
+    def get_bank_attributes(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -1210,7 +1210,7 @@ class BankAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetBankAttributes200Response:
+    ) -> GetBankAttributes200Response:
         """Get Bank Attributes
 
         <p>Get Bank Attributes</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_attribute_id</strong></a>: bank_attribute_id</p> <p><a href=\"/glossary#\"><strong>bank_attributes</strong></a>: bank_attributes</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -1239,7 +1239,7 @@ class BankAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_bank_attributes_serialize(
+        _param = self._get_bank_attributes_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1248,7 +1248,7 @@ class BankAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankAttributes200Response",
+            '200': "GetBankAttributes200Response",
             '404': None,
             '500': None,
         }
@@ -1264,7 +1264,7 @@ class BankAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_bank_attributes_with_http_info(
+    def get_bank_attributes_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -1279,7 +1279,7 @@ class BankAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetBankAttributes200Response]:
+    ) -> ApiResponse[GetBankAttributes200Response]:
         """Get Bank Attributes
 
         <p>Get Bank Attributes</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_attribute_id</strong></a>: bank_attribute_id</p> <p><a href=\"/glossary#\"><strong>bank_attributes</strong></a>: bank_attributes</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -1308,7 +1308,7 @@ class BankAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_bank_attributes_serialize(
+        _param = self._get_bank_attributes_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1317,7 +1317,7 @@ class BankAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankAttributes200Response",
+            '200': "GetBankAttributes200Response",
             '404': None,
             '500': None,
         }
@@ -1333,7 +1333,7 @@ class BankAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_bank_attributes_without_preload_content(
+    def get_bank_attributes_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -1377,7 +1377,7 @@ class BankAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_bank_attributes_serialize(
+        _param = self._get_bank_attributes_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1386,7 +1386,7 @@ class BankAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankAttributes200Response",
+            '200': "GetBankAttributes200Response",
             '404': None,
             '500': None,
         }
@@ -1397,7 +1397,7 @@ class BankAttributeApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_bank_attributes_serialize(
+    def _get_bank_attributes_serialize(
         self,
         bankid,
         _request_auth,
@@ -1464,11 +1464,11 @@ class BankAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_update_bank_attribute(
+    def update_bank_attribute(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         bankattributeid: Annotated[StrictStr, Field(description="The BANKATTRIBUTEID identifier")],
-        obpv510_update_atm_attribute_request: Annotated[OBPv510UpdateAtmAttributeRequest, Field(description="Request body")],
+        update_atm_attribute_request: Annotated[UpdateAtmAttributeRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1481,7 +1481,7 @@ class BankAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest:
+    ) -> CreateOrUpdateTransactionRequestAttributeDefinitionRequest:
         """Update Bank Attribute
 
         <p>Update Bank Attribute.</p> <p>Update one Bak Attribute by its id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">BANK_ATTRIBUTE_ID</a>: BANK_ATTRIBUTE_ID</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
@@ -1490,8 +1490,8 @@ class BankAttributeApi:
         :type bankid: str
         :param bankattributeid: The BANKATTRIBUTEID identifier (required)
         :type bankattributeid: str
-        :param obpv510_update_atm_attribute_request: Request body (required)
-        :type obpv510_update_atm_attribute_request: OBPv510UpdateAtmAttributeRequest
+        :param update_atm_attribute_request: Request body (required)
+        :type update_atm_attribute_request: UpdateAtmAttributeRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1514,10 +1514,10 @@ class BankAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_update_bank_attribute_serialize(
+        _param = self._update_bank_attribute_serialize(
             bankid=bankid,
             bankattributeid=bankattributeid,
-            obpv510_update_atm_attribute_request=obpv510_update_atm_attribute_request,
+            update_atm_attribute_request=update_atm_attribute_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1525,7 +1525,7 @@ class BankAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest",
+            '200': "CreateOrUpdateTransactionRequestAttributeDefinitionRequest",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1540,11 +1540,11 @@ class BankAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_update_bank_attribute_with_http_info(
+    def update_bank_attribute_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         bankattributeid: Annotated[StrictStr, Field(description="The BANKATTRIBUTEID identifier")],
-        obpv510_update_atm_attribute_request: Annotated[OBPv510UpdateAtmAttributeRequest, Field(description="Request body")],
+        update_atm_attribute_request: Annotated[UpdateAtmAttributeRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1557,7 +1557,7 @@ class BankAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest]:
+    ) -> ApiResponse[CreateOrUpdateTransactionRequestAttributeDefinitionRequest]:
         """Update Bank Attribute
 
         <p>Update Bank Attribute.</p> <p>Update one Bak Attribute by its id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">BANK_ATTRIBUTE_ID</a>: BANK_ATTRIBUTE_ID</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
@@ -1566,8 +1566,8 @@ class BankAttributeApi:
         :type bankid: str
         :param bankattributeid: The BANKATTRIBUTEID identifier (required)
         :type bankattributeid: str
-        :param obpv510_update_atm_attribute_request: Request body (required)
-        :type obpv510_update_atm_attribute_request: OBPv510UpdateAtmAttributeRequest
+        :param update_atm_attribute_request: Request body (required)
+        :type update_atm_attribute_request: UpdateAtmAttributeRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1590,10 +1590,10 @@ class BankAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_update_bank_attribute_serialize(
+        _param = self._update_bank_attribute_serialize(
             bankid=bankid,
             bankattributeid=bankattributeid,
-            obpv510_update_atm_attribute_request=obpv510_update_atm_attribute_request,
+            update_atm_attribute_request=update_atm_attribute_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1601,7 +1601,7 @@ class BankAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest",
+            '200': "CreateOrUpdateTransactionRequestAttributeDefinitionRequest",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1616,11 +1616,11 @@ class BankAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_update_bank_attribute_without_preload_content(
+    def update_bank_attribute_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         bankattributeid: Annotated[StrictStr, Field(description="The BANKATTRIBUTEID identifier")],
-        obpv510_update_atm_attribute_request: Annotated[OBPv510UpdateAtmAttributeRequest, Field(description="Request body")],
+        update_atm_attribute_request: Annotated[UpdateAtmAttributeRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1642,8 +1642,8 @@ class BankAttributeApi:
         :type bankid: str
         :param bankattributeid: The BANKATTRIBUTEID identifier (required)
         :type bankattributeid: str
-        :param obpv510_update_atm_attribute_request: Request body (required)
-        :type obpv510_update_atm_attribute_request: OBPv510UpdateAtmAttributeRequest
+        :param update_atm_attribute_request: Request body (required)
+        :type update_atm_attribute_request: UpdateAtmAttributeRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1666,10 +1666,10 @@ class BankAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_update_bank_attribute_serialize(
+        _param = self._update_bank_attribute_serialize(
             bankid=bankid,
             bankattributeid=bankattributeid,
-            obpv510_update_atm_attribute_request=obpv510_update_atm_attribute_request,
+            update_atm_attribute_request=update_atm_attribute_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1677,7 +1677,7 @@ class BankAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest",
+            '200': "CreateOrUpdateTransactionRequestAttributeDefinitionRequest",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1687,11 +1687,11 @@ class BankAttributeApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_update_bank_attribute_serialize(
+    def _update_bank_attribute_serialize(
         self,
         bankid,
         bankattributeid,
-        obpv510_update_atm_attribute_request,
+        update_atm_attribute_request,
         _request_auth,
         _content_type,
         _headers,
@@ -1721,8 +1721,8 @@ class BankAttributeApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv510_update_atm_attribute_request is not None:
-            _body_params = obpv510_update_atm_attribute_request
+        if update_atm_attribute_request is not None:
+            _body_params = update_atm_attribute_request
 
 
         # set the HTTP header `Accept`

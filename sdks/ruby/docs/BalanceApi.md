@@ -1,19 +1,19 @@
 # OpenBankProject::BalanceApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**o_bpv5_1_0_create_bank_account_balance**](BalanceApi.md#o_bpv5_1_0_create_bank_account_balance) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Create Bank Account Balance |
-| [**o_bpv5_1_0_delete_bank_account_balance**](BalanceApi.md#o_bpv5_1_0_delete_bank_account_balance) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Delete Bank Account Balance |
-| [**o_bpv5_1_0_get_all_bank_account_balances**](BalanceApi.md#o_bpv5_1_0_get_all_bank_account_balances) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Get All Bank Account Balances |
-| [**o_bpv5_1_0_get_bank_account_balance_by_id**](BalanceApi.md#o_bpv5_1_0_get_bank_account_balance_by_id) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Get Bank Account Balance By ID |
-| [**o_bpv5_1_0_update_bank_account_balance**](BalanceApi.md#o_bpv5_1_0_update_bank_account_balance) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Update Bank Account Balance |
+| [**create_bank_account_balance**](BalanceApi.md#create_bank_account_balance) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Create Bank Account Balance |
+| [**delete_bank_account_balance**](BalanceApi.md#delete_bank_account_balance) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Delete Bank Account Balance |
+| [**get_all_bank_account_balances**](BalanceApi.md#get_all_bank_account_balances) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Get All Bank Account Balances |
+| [**get_bank_account_balance_by_id**](BalanceApi.md#get_bank_account_balance_by_id) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Get Bank Account Balance By ID |
+| [**update_bank_account_balance**](BalanceApi.md#update_bank_account_balance) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Update Bank Account Balance |
 
 
-## o_bpv5_1_0_create_bank_account_balance
+## create_bank_account_balance
 
-> <OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems> o_bpv5_1_0_create_bank_account_balance(bankid, accountid, obpv510_create_bank_account_balance_request)
+> <GetAllBankAccountBalances200ResponseBalancesInner> create_bank_account_balance(bankid, accountid, create_bank_account_balance_request)
 
 Create Bank Account Balance
 
@@ -35,40 +35,40 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::BalanceApi.new
 bankid = 'bankid_example' # String | The BANKID identifier
 accountid = 'accountid_example' # String | The ACCOUNTID identifier
-obpv510_create_bank_account_balance_request = OpenBankProject::OBPv510CreateBankAccountBalanceRequest.new({type: 'type_example', properties: OpenBankProject::OBPv510CreateBankAccountBalanceRequestProperties.new({balance_amount: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), balance_type: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'})})}) # OBPv510CreateBankAccountBalanceRequest | Request body
+create_bank_account_balance_request = OpenBankProject::CreateBankAccountBalanceRequest.new # CreateBankAccountBalanceRequest | Request body
 
 begin
   # Create Bank Account Balance
-  result = api_instance.o_bpv5_1_0_create_bank_account_balance(bankid, accountid, obpv510_create_bank_account_balance_request)
+  result = api_instance.create_bank_account_balance(bankid, accountid, create_bank_account_balance_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling BalanceApi->o_bpv5_1_0_create_bank_account_balance: #{e}"
+  puts "Error when calling BalanceApi->create_bank_account_balance: #{e}"
 end
 ```
 
-#### Using the o_bpv5_1_0_create_bank_account_balance_with_http_info variant
+#### Using the create_bank_account_balance_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems>, Integer, Hash)> o_bpv5_1_0_create_bank_account_balance_with_http_info(bankid, accountid, obpv510_create_bank_account_balance_request)
+> <Array(<GetAllBankAccountBalances200ResponseBalancesInner>, Integer, Hash)> create_bank_account_balance_with_http_info(bankid, accountid, create_bank_account_balance_request)
 
 ```ruby
 begin
   # Create Bank Account Balance
-  data, status_code, headers = api_instance.o_bpv5_1_0_create_bank_account_balance_with_http_info(bankid, accountid, obpv510_create_bank_account_balance_request)
+  data, status_code, headers = api_instance.create_bank_account_balance_with_http_info(bankid, accountid, create_bank_account_balance_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems>
+  p data # => <GetAllBankAccountBalances200ResponseBalancesInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling BalanceApi->o_bpv5_1_0_create_bank_account_balance_with_http_info: #{e}"
+  puts "Error when calling BalanceApi->create_bank_account_balance_with_http_info: #{e}"
 end
 ```
 
@@ -78,11 +78,11 @@ end
 | ---- | ---- | ----------- | ----- |
 | **bankid** | **String** | The BANKID identifier |  |
 | **accountid** | **String** | The ACCOUNTID identifier |  |
-| **obpv510_create_bank_account_balance_request** | [**OBPv510CreateBankAccountBalanceRequest**](OBPv510CreateBankAccountBalanceRequest.md) | Request body |  |
+| **create_bank_account_balance_request** | [**CreateBankAccountBalanceRequest**](CreateBankAccountBalanceRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems**](OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems.md)
+[**GetAllBankAccountBalances200ResponseBalancesInner**](GetAllBankAccountBalances200ResponseBalancesInner.md)
 
 ### Authorization
 
@@ -94,9 +94,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv5_1_0_delete_bank_account_balance
+## delete_bank_account_balance
 
-> o_bpv5_1_0_delete_bank_account_balance(bankid, accountid, balanceid)
+> delete_bank_account_balance(bankid, accountid, balanceid)
 
 Delete Bank Account Balance
 
@@ -118,9 +118,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::BalanceApi.new
@@ -130,27 +130,27 @@ balanceid = 'balanceid_example' # String | The BALANCEID identifier
 
 begin
   # Delete Bank Account Balance
-  api_instance.o_bpv5_1_0_delete_bank_account_balance(bankid, accountid, balanceid)
+  api_instance.delete_bank_account_balance(bankid, accountid, balanceid)
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling BalanceApi->o_bpv5_1_0_delete_bank_account_balance: #{e}"
+  puts "Error when calling BalanceApi->delete_bank_account_balance: #{e}"
 end
 ```
 
-#### Using the o_bpv5_1_0_delete_bank_account_balance_with_http_info variant
+#### Using the delete_bank_account_balance_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> o_bpv5_1_0_delete_bank_account_balance_with_http_info(bankid, accountid, balanceid)
+> <Array(nil, Integer, Hash)> delete_bank_account_balance_with_http_info(bankid, accountid, balanceid)
 
 ```ruby
 begin
   # Delete Bank Account Balance
-  data, status_code, headers = api_instance.o_bpv5_1_0_delete_bank_account_balance_with_http_info(bankid, accountid, balanceid)
+  data, status_code, headers = api_instance.delete_bank_account_balance_with_http_info(bankid, accountid, balanceid)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling BalanceApi->o_bpv5_1_0_delete_bank_account_balance_with_http_info: #{e}"
+  puts "Error when calling BalanceApi->delete_bank_account_balance_with_http_info: #{e}"
 end
 ```
 
@@ -176,9 +176,9 @@ nil (empty response body)
 - **Accept**: Not defined
 
 
-## o_bpv5_1_0_get_all_bank_account_balances
+## get_all_bank_account_balances
 
-> <OBPv510GetAllBankAccountBalances200Response> o_bpv5_1_0_get_all_bank_account_balances(bankid, accountid)
+> <GetAllBankAccountBalances200Response> get_all_bank_account_balances(bankid, accountid)
 
 Get All Bank Account Balances
 
@@ -200,9 +200,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::BalanceApi.new
@@ -211,28 +211,28 @@ accountid = 'accountid_example' # String | The ACCOUNTID identifier
 
 begin
   # Get All Bank Account Balances
-  result = api_instance.o_bpv5_1_0_get_all_bank_account_balances(bankid, accountid)
+  result = api_instance.get_all_bank_account_balances(bankid, accountid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling BalanceApi->o_bpv5_1_0_get_all_bank_account_balances: #{e}"
+  puts "Error when calling BalanceApi->get_all_bank_account_balances: #{e}"
 end
 ```
 
-#### Using the o_bpv5_1_0_get_all_bank_account_balances_with_http_info variant
+#### Using the get_all_bank_account_balances_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv510GetAllBankAccountBalances200Response>, Integer, Hash)> o_bpv5_1_0_get_all_bank_account_balances_with_http_info(bankid, accountid)
+> <Array(<GetAllBankAccountBalances200Response>, Integer, Hash)> get_all_bank_account_balances_with_http_info(bankid, accountid)
 
 ```ruby
 begin
   # Get All Bank Account Balances
-  data, status_code, headers = api_instance.o_bpv5_1_0_get_all_bank_account_balances_with_http_info(bankid, accountid)
+  data, status_code, headers = api_instance.get_all_bank_account_balances_with_http_info(bankid, accountid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv510GetAllBankAccountBalances200Response>
+  p data # => <GetAllBankAccountBalances200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling BalanceApi->o_bpv5_1_0_get_all_bank_account_balances_with_http_info: #{e}"
+  puts "Error when calling BalanceApi->get_all_bank_account_balances_with_http_info: #{e}"
 end
 ```
 
@@ -245,7 +245,7 @@ end
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200Response**](OBPv510GetAllBankAccountBalances200Response.md)
+[**GetAllBankAccountBalances200Response**](GetAllBankAccountBalances200Response.md)
 
 ### Authorization
 
@@ -257,9 +257,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv5_1_0_get_bank_account_balance_by_id
+## get_bank_account_balance_by_id
 
-> <OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems> o_bpv5_1_0_get_bank_account_balance_by_id(bankid, accountid, balanceid)
+> <GetAllBankAccountBalances200ResponseBalancesInner> get_bank_account_balance_by_id(bankid, accountid, balanceid)
 
 Get Bank Account Balance By ID
 
@@ -281,9 +281,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::BalanceApi.new
@@ -293,28 +293,28 @@ balanceid = 'balanceid_example' # String | The BALANCEID identifier
 
 begin
   # Get Bank Account Balance By ID
-  result = api_instance.o_bpv5_1_0_get_bank_account_balance_by_id(bankid, accountid, balanceid)
+  result = api_instance.get_bank_account_balance_by_id(bankid, accountid, balanceid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling BalanceApi->o_bpv5_1_0_get_bank_account_balance_by_id: #{e}"
+  puts "Error when calling BalanceApi->get_bank_account_balance_by_id: #{e}"
 end
 ```
 
-#### Using the o_bpv5_1_0_get_bank_account_balance_by_id_with_http_info variant
+#### Using the get_bank_account_balance_by_id_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems>, Integer, Hash)> o_bpv5_1_0_get_bank_account_balance_by_id_with_http_info(bankid, accountid, balanceid)
+> <Array(<GetAllBankAccountBalances200ResponseBalancesInner>, Integer, Hash)> get_bank_account_balance_by_id_with_http_info(bankid, accountid, balanceid)
 
 ```ruby
 begin
   # Get Bank Account Balance By ID
-  data, status_code, headers = api_instance.o_bpv5_1_0_get_bank_account_balance_by_id_with_http_info(bankid, accountid, balanceid)
+  data, status_code, headers = api_instance.get_bank_account_balance_by_id_with_http_info(bankid, accountid, balanceid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems>
+  p data # => <GetAllBankAccountBalances200ResponseBalancesInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling BalanceApi->o_bpv5_1_0_get_bank_account_balance_by_id_with_http_info: #{e}"
+  puts "Error when calling BalanceApi->get_bank_account_balance_by_id_with_http_info: #{e}"
 end
 ```
 
@@ -328,7 +328,7 @@ end
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems**](OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems.md)
+[**GetAllBankAccountBalances200ResponseBalancesInner**](GetAllBankAccountBalances200ResponseBalancesInner.md)
 
 ### Authorization
 
@@ -340,9 +340,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv5_1_0_update_bank_account_balance
+## update_bank_account_balance
 
-> <OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems> o_bpv5_1_0_update_bank_account_balance(bankid, accountid, balanceid, obpv510_create_bank_account_balance_request)
+> <GetAllBankAccountBalances200ResponseBalancesInner> update_bank_account_balance(bankid, accountid, balanceid, create_bank_account_balance_request)
 
 Update Bank Account Balance
 
@@ -364,41 +364,41 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::BalanceApi.new
 bankid = 'bankid_example' # String | The BANKID identifier
 accountid = 'accountid_example' # String | The ACCOUNTID identifier
 balanceid = 'balanceid_example' # String | The BALANCEID identifier
-obpv510_create_bank_account_balance_request = OpenBankProject::OBPv510CreateBankAccountBalanceRequest.new({type: 'type_example', properties: OpenBankProject::OBPv510CreateBankAccountBalanceRequestProperties.new({balance_amount: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), balance_type: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'})})}) # OBPv510CreateBankAccountBalanceRequest | Request body
+create_bank_account_balance_request = OpenBankProject::CreateBankAccountBalanceRequest.new # CreateBankAccountBalanceRequest | Request body
 
 begin
   # Update Bank Account Balance
-  result = api_instance.o_bpv5_1_0_update_bank_account_balance(bankid, accountid, balanceid, obpv510_create_bank_account_balance_request)
+  result = api_instance.update_bank_account_balance(bankid, accountid, balanceid, create_bank_account_balance_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling BalanceApi->o_bpv5_1_0_update_bank_account_balance: #{e}"
+  puts "Error when calling BalanceApi->update_bank_account_balance: #{e}"
 end
 ```
 
-#### Using the o_bpv5_1_0_update_bank_account_balance_with_http_info variant
+#### Using the update_bank_account_balance_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems>, Integer, Hash)> o_bpv5_1_0_update_bank_account_balance_with_http_info(bankid, accountid, balanceid, obpv510_create_bank_account_balance_request)
+> <Array(<GetAllBankAccountBalances200ResponseBalancesInner>, Integer, Hash)> update_bank_account_balance_with_http_info(bankid, accountid, balanceid, create_bank_account_balance_request)
 
 ```ruby
 begin
   # Update Bank Account Balance
-  data, status_code, headers = api_instance.o_bpv5_1_0_update_bank_account_balance_with_http_info(bankid, accountid, balanceid, obpv510_create_bank_account_balance_request)
+  data, status_code, headers = api_instance.update_bank_account_balance_with_http_info(bankid, accountid, balanceid, create_bank_account_balance_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems>
+  p data # => <GetAllBankAccountBalances200ResponseBalancesInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling BalanceApi->o_bpv5_1_0_update_bank_account_balance_with_http_info: #{e}"
+  puts "Error when calling BalanceApi->update_bank_account_balance_with_http_info: #{e}"
 end
 ```
 
@@ -409,11 +409,11 @@ end
 | **bankid** | **String** | The BANKID identifier |  |
 | **accountid** | **String** | The ACCOUNTID identifier |  |
 | **balanceid** | **String** | The BALANCEID identifier |  |
-| **obpv510_create_bank_account_balance_request** | [**OBPv510CreateBankAccountBalanceRequest**](OBPv510CreateBankAccountBalanceRequest.md) | Request body |  |
+| **create_bank_account_balance_request** | [**CreateBankAccountBalanceRequest**](CreateBankAccountBalanceRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems**](OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems.md)
+[**GetAllBankAccountBalances200ResponseBalancesInner**](GetAllBankAccountBalances200ResponseBalancesInner.md)
 
 ### Authorization
 

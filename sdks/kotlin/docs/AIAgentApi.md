@@ -1,20 +1,20 @@
 # AIAgentApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv600DeleteSignalChannel**](AIAgentApi.md#oBPv600DeleteSignalChannel) | **DELETE** /obp/v6.0.0/signal/channels/{channelname} | Delete Signal Channel |
-| [**oBPv600GetSignalChannelInfo**](AIAgentApi.md#oBPv600GetSignalChannelInfo) | **GET** /obp/v6.0.0/signal/channels/{channelname}/info | Get Signal Channel Info |
-| [**oBPv600GetSignalChannels**](AIAgentApi.md#oBPv600GetSignalChannels) | **GET** /obp/v6.0.0/signal/channels | List Signal Channels |
-| [**oBPv600GetSignalMessages**](AIAgentApi.md#oBPv600GetSignalMessages) | **GET** /obp/v6.0.0/signal/channels/{channelname}/messages | Get Signal Messages |
-| [**oBPv600GetSignalStats**](AIAgentApi.md#oBPv600GetSignalStats) | **GET** /obp/v6.0.0/signal/channels/stats | Get Signal Channel Stats |
-| [**oBPv600PublishSignalMessage**](AIAgentApi.md#oBPv600PublishSignalMessage) | **POST** /obp/v6.0.0/signal/channels/{channelname}/messages | Publish Signal Message |
+| [**deleteSignalChannel**](AIAgentApi.md#deleteSignalChannel) | **DELETE** /obp/v6.0.0/signal/channels/{channelname} | Delete Signal Channel |
+| [**getSignalChannelInfo**](AIAgentApi.md#getSignalChannelInfo) | **GET** /obp/v6.0.0/signal/channels/{channelname}/info | Get Signal Channel Info |
+| [**getSignalChannels**](AIAgentApi.md#getSignalChannels) | **GET** /obp/v6.0.0/signal/channels | List Signal Channels |
+| [**getSignalMessages**](AIAgentApi.md#getSignalMessages) | **GET** /obp/v6.0.0/signal/channels/{channelname}/messages | Get Signal Messages |
+| [**getSignalStats**](AIAgentApi.md#getSignalStats) | **GET** /obp/v6.0.0/signal/channels/stats | Get Signal Channel Stats |
+| [**publishSignalMessage**](AIAgentApi.md#publishSignalMessage) | **POST** /obp/v6.0.0/signal/channels/{channelname}/messages | Publish Signal Message |
 
 
-<a id="oBPv600DeleteSignalChannel"></a>
-# **oBPv600DeleteSignalChannel**
-> OBPv600DeleteSignalChannel200Response oBPv600DeleteSignalChannel(channelname)
+<a id="deleteSignalChannel"></a>
+# **deleteSignalChannel**
+> DeleteSignalChannel200Response deleteSignalChannel(channelname)
 
 Delete Signal Channel
 
@@ -29,13 +29,13 @@ Delete Signal Channel
 val apiInstance = AIAgentApi()
 val channelname : kotlin.String = channelname_example // kotlin.String | The CHANNELNAME identifier
 try {
-    val result : OBPv600DeleteSignalChannel200Response = apiInstance.oBPv600DeleteSignalChannel(channelname)
+    val result : DeleteSignalChannel200Response = apiInstance.deleteSignalChannel(channelname)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling AIAgentApi#oBPv600DeleteSignalChannel")
+    println("4xx response calling AIAgentApi#deleteSignalChannel")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling AIAgentApi#oBPv600DeleteSignalChannel")
+    println("5xx response calling AIAgentApi#deleteSignalChannel")
     e.printStackTrace()
 }
 ```
@@ -47,7 +47,7 @@ try {
 
 ### Return type
 
-[**OBPv600DeleteSignalChannel200Response**](OBPv600DeleteSignalChannel200Response.md)
+[**DeleteSignalChannel200Response**](DeleteSignalChannel200Response.md)
 
 ### Authorization
 
@@ -58,17 +58,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600GetSignalChannelInfo"></a>
-# **oBPv600GetSignalChannelInfo**
-> OBPv600GetSignalChannelInfo200Response oBPv600GetSignalChannelInfo(channelname)
+<a id="getSignalChannelInfo"></a>
+# **getSignalChannelInfo**
+> GetSignalChannelInfo200Response getSignalChannelInfo(channelname)
 
 Get Signal Channel Info
 
@@ -83,13 +83,13 @@ Get Signal Channel Info
 val apiInstance = AIAgentApi()
 val channelname : kotlin.String = channelname_example // kotlin.String | The CHANNELNAME identifier
 try {
-    val result : OBPv600GetSignalChannelInfo200Response = apiInstance.oBPv600GetSignalChannelInfo(channelname)
+    val result : GetSignalChannelInfo200Response = apiInstance.getSignalChannelInfo(channelname)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling AIAgentApi#oBPv600GetSignalChannelInfo")
+    println("4xx response calling AIAgentApi#getSignalChannelInfo")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling AIAgentApi#oBPv600GetSignalChannelInfo")
+    println("5xx response calling AIAgentApi#getSignalChannelInfo")
     e.printStackTrace()
 }
 ```
@@ -101,7 +101,7 @@ try {
 
 ### Return type
 
-[**OBPv600GetSignalChannelInfo200Response**](OBPv600GetSignalChannelInfo200Response.md)
+[**GetSignalChannelInfo200Response**](GetSignalChannelInfo200Response.md)
 
 ### Authorization
 
@@ -112,17 +112,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600GetSignalChannels"></a>
-# **oBPv600GetSignalChannels**
-> OBPv600GetSignalChannels200Response oBPv600GetSignalChannels()
+<a id="getSignalChannels"></a>
+# **getSignalChannels**
+> GetSignalChannels200Response getSignalChannels()
 
 List Signal Channels
 
@@ -136,13 +136,13 @@ List Signal Channels
 
 val apiInstance = AIAgentApi()
 try {
-    val result : OBPv600GetSignalChannels200Response = apiInstance.oBPv600GetSignalChannels()
+    val result : GetSignalChannels200Response = apiInstance.getSignalChannels()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling AIAgentApi#oBPv600GetSignalChannels")
+    println("4xx response calling AIAgentApi#getSignalChannels")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling AIAgentApi#oBPv600GetSignalChannels")
+    println("5xx response calling AIAgentApi#getSignalChannels")
     e.printStackTrace()
 }
 ```
@@ -152,7 +152,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetSignalChannels200Response**](OBPv600GetSignalChannels200Response.md)
+[**GetSignalChannels200Response**](GetSignalChannels200Response.md)
 
 ### Authorization
 
@@ -163,17 +163,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600GetSignalMessages"></a>
-# **oBPv600GetSignalMessages**
-> OBPv600GetSignalMessages200Response oBPv600GetSignalMessages(channelname)
+<a id="getSignalMessages"></a>
+# **getSignalMessages**
+> GetSignalMessages200Response getSignalMessages(channelname)
 
 Get Signal Messages
 
@@ -188,13 +188,13 @@ Get Signal Messages
 val apiInstance = AIAgentApi()
 val channelname : kotlin.String = channelname_example // kotlin.String | The CHANNELNAME identifier
 try {
-    val result : OBPv600GetSignalMessages200Response = apiInstance.oBPv600GetSignalMessages(channelname)
+    val result : GetSignalMessages200Response = apiInstance.getSignalMessages(channelname)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling AIAgentApi#oBPv600GetSignalMessages")
+    println("4xx response calling AIAgentApi#getSignalMessages")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling AIAgentApi#oBPv600GetSignalMessages")
+    println("5xx response calling AIAgentApi#getSignalMessages")
     e.printStackTrace()
 }
 ```
@@ -206,7 +206,7 @@ try {
 
 ### Return type
 
-[**OBPv600GetSignalMessages200Response**](OBPv600GetSignalMessages200Response.md)
+[**GetSignalMessages200Response**](GetSignalMessages200Response.md)
 
 ### Authorization
 
@@ -217,17 +217,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600GetSignalStats"></a>
-# **oBPv600GetSignalStats**
-> OBPv600GetSignalStats200Response oBPv600GetSignalStats()
+<a id="getSignalStats"></a>
+# **getSignalStats**
+> GetSignalStats200Response getSignalStats()
 
 Get Signal Channel Stats
 
@@ -241,13 +241,13 @@ Get Signal Channel Stats
 
 val apiInstance = AIAgentApi()
 try {
-    val result : OBPv600GetSignalStats200Response = apiInstance.oBPv600GetSignalStats()
+    val result : GetSignalStats200Response = apiInstance.getSignalStats()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling AIAgentApi#oBPv600GetSignalStats")
+    println("4xx response calling AIAgentApi#getSignalStats")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling AIAgentApi#oBPv600GetSignalStats")
+    println("5xx response calling AIAgentApi#getSignalStats")
     e.printStackTrace()
 }
 ```
@@ -257,7 +257,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetSignalStats200Response**](OBPv600GetSignalStats200Response.md)
+[**GetSignalStats200Response**](GetSignalStats200Response.md)
 
 ### Authorization
 
@@ -268,17 +268,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600PublishSignalMessage"></a>
-# **oBPv600PublishSignalMessage**
-> OBPv600PublishSignalMessage200Response oBPv600PublishSignalMessage(channelname, obPv600PublishSignalMessageRequest)
+<a id="publishSignalMessage"></a>
+# **publishSignalMessage**
+> PublishSignalMessage200Response publishSignalMessage(channelname, publishSignalMessageRequest)
 
 Publish Signal Message
 
@@ -292,15 +292,15 @@ Publish Signal Message
 
 val apiInstance = AIAgentApi()
 val channelname : kotlin.String = channelname_example // kotlin.String | The CHANNELNAME identifier
-val obPv600PublishSignalMessageRequest : OBPv600PublishSignalMessageRequest = {"type":"object","properties":{"message_type":{"type":"string"},"payload":{"type":"object","properties":{"agent_name":{"type":"string"},"capabilities":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}}}} // OBPv600PublishSignalMessageRequest | Request body
+val publishSignalMessageRequest : PublishSignalMessageRequest = {"type":"object","properties":{"message_type":{"type":"string"},"payload":{"type":"object","properties":{"agent_name":{"type":"string"},"capabilities":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}}}} // PublishSignalMessageRequest | Request body
 try {
-    val result : OBPv600PublishSignalMessage200Response = apiInstance.oBPv600PublishSignalMessage(channelname, obPv600PublishSignalMessageRequest)
+    val result : PublishSignalMessage200Response = apiInstance.publishSignalMessage(channelname, publishSignalMessageRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling AIAgentApi#oBPv600PublishSignalMessage")
+    println("4xx response calling AIAgentApi#publishSignalMessage")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling AIAgentApi#oBPv600PublishSignalMessage")
+    println("5xx response calling AIAgentApi#publishSignalMessage")
     e.printStackTrace()
 }
 ```
@@ -309,11 +309,11 @@ try {
 | **channelname** | **kotlin.String**| The CHANNELNAME identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv600PublishSignalMessageRequest** | [**OBPv600PublishSignalMessageRequest**](OBPv600PublishSignalMessageRequest.md)| Request body | |
+| **publishSignalMessageRequest** | [**PublishSignalMessageRequest**](PublishSignalMessageRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600PublishSignalMessage200Response**](OBPv600PublishSignalMessage200Response.md)
+[**PublishSignalMessage200Response**](PublishSignalMessage200Response.md)
 
 ### Authorization
 
@@ -324,8 +324,8 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 

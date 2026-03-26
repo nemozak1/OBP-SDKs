@@ -1,17 +1,17 @@
 # PrivateDataApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv300CorePrivateAccountsAllBanks**](PrivateDataApi.md#obpv300coreprivateaccountsallbanks) | **GET** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private) |
-| [**oBPv600GetAccountsAtBank**](PrivateDataApi.md#obpv600getaccountsatbank) | **GET** /obp/v6.0.0/banks/{bankid}/accounts | Get Accounts at Bank |
+| [**corePrivateAccountsAllBanks**](PrivateDataApi.md#coreprivateaccountsallbanks) | **GET** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private) |
+| [**getAccountsAtBank**](PrivateDataApi.md#getaccountsatbank) | **GET** /obp/v6.0.0/banks/{bankid}/accounts | Get Accounts at Bank |
 
 
 
-## oBPv300CorePrivateAccountsAllBanks
+## corePrivateAccountsAllBanks
 
-> OBPv300PrivateAccountsAtOneBank200Response oBPv300CorePrivateAccountsAllBanks()
+> PrivateAccountsAtOneBank200Response corePrivateAccountsAllBanks()
 
 Get Accounts at all Banks (private)
 
@@ -24,7 +24,7 @@ import {
   Configuration,
   PrivateDataApi,
 } from 'obp-typescript';
-import type { OBPv300CorePrivateAccountsAllBanksRequest } from 'obp-typescript';
+import type { CorePrivateAccountsAllBanksRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -39,7 +39,7 @@ async function example() {
   const api = new PrivateDataApi(config);
 
   try {
-    const data = await api.oBPv300CorePrivateAccountsAllBanks();
+    const data = await api.corePrivateAccountsAllBanks();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -56,7 +56,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv300PrivateAccountsAtOneBank200Response**](OBPv300PrivateAccountsAtOneBank200Response.md)
+[**PrivateAccountsAtOneBank200Response**](PrivateAccountsAtOneBank200Response.md)
 
 ### Authorization
 
@@ -77,9 +77,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600GetAccountsAtBank
+## getAccountsAtBank
 
-> OBPv600GetAccountsAtBank200Response oBPv600GetAccountsAtBank(bankid)
+> GetAccountsAtBank200Response getAccountsAtBank(bankid)
 
 Get Accounts at Bank
 
@@ -92,7 +92,7 @@ import {
   Configuration,
   PrivateDataApi,
 } from 'obp-typescript';
-import type { OBPv600GetAccountsAtBankRequest } from 'obp-typescript';
+import type { GetAccountsAtBankRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -109,10 +109,10 @@ async function example() {
   const body = {
     // string | The BANKID identifier
     bankid: bankid_example,
-  } satisfies OBPv600GetAccountsAtBankRequest;
+  } satisfies GetAccountsAtBankRequest;
 
   try {
-    const data = await api.oBPv600GetAccountsAtBank(body);
+    const data = await api.getAccountsAtBank(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -132,7 +132,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv600GetAccountsAtBank200Response**](OBPv600GetAccountsAtBank200Response.md)
+[**GetAccountsAtBank200Response**](GetAccountsAtBank200Response.md)
 
 ### Authorization
 

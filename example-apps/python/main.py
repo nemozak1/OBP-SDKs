@@ -61,7 +61,7 @@ def main():
         # List banks (public endpoint, no auth required)
         bank_api = BankApi(api_client)
         try:
-            response = bank_api.o_bpv6_0_0_get_banks()
+            response = bank_api.get_banks()
             print("Available banks:")
             for bank in response.banks or []:
                 print(f"  - {bank.full_name} (id: {bank.bank_id})")
@@ -73,7 +73,7 @@ def main():
         if "DirectLogin" in configuration.api_key:
             user_api = UserApi(api_client)
             try:
-                user = user_api.o_bpv6_0_0_get_current_user()
+                user = user_api.get_current_user()
                 print(f"\nAuthenticated as:")
                 print(f"  Username:  {user.username}")
                 print(f"  User ID:   {user.user_id}")

@@ -4,14 +4,14 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv6_0_0_get_cache_config**](CacheApi.md#o_bpv6_0_0_get_cache_config) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration
-[**o_bpv6_0_0_get_cache_info**](CacheApi.md#o_bpv6_0_0_get_cache_info) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information
-[**o_bpv6_0_0_get_cache_namespaces**](CacheApi.md#o_bpv6_0_0_get_cache_namespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces
-[**o_bpv6_0_0_invalidate_cache_namespace**](CacheApi.md#o_bpv6_0_0_invalidate_cache_namespace) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace
+[**get_cache_config**](CacheApi.md#get_cache_config) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration
+[**get_cache_info**](CacheApi.md#get_cache_info) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information
+[**get_cache_namespaces**](CacheApi.md#get_cache_namespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces
+[**invalidate_cache_namespace**](CacheApi.md#invalidate_cache_namespace) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace
 
 
-# **o_bpv6_0_0_get_cache_config**
-> OBPv600GetCacheConfig200Response o_bpv6_0_0_get_cache_config()
+# **get_cache_config**
+> GetCacheConfig200Response get_cache_config()
 
 Get Cache Configuration
 
@@ -46,7 +46,7 @@ Get Cache Configuration
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_cache_config200_response import OBPv600GetCacheConfig200Response
+from obp_python.models.get_cache_config200_response import GetCacheConfig200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -82,11 +82,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Cache Configuration
-        api_response = api_instance.o_bpv6_0_0_get_cache_config()
-        print("The response of CacheApi->o_bpv6_0_0_get_cache_config:\n")
+        api_response = api_instance.get_cache_config()
+        print("The response of CacheApi->get_cache_config:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CacheApi->o_bpv6_0_0_get_cache_config: %s\n" % e)
+        print("Exception when calling CacheApi->get_cache_config: %s\n" % e)
 ```
 
 
@@ -97,7 +97,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetCacheConfig200Response**](OBPv600GetCacheConfig200Response.md)
+[**GetCacheConfig200Response**](GetCacheConfig200Response.md)
 
 ### Authorization
 
@@ -117,8 +117,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_cache_info**
-> OBPv600GetCacheInfo200Response o_bpv6_0_0_get_cache_info()
+# **get_cache_info**
+> GetCacheInfo200Response get_cache_info()
 
 Get Cache Information
 
@@ -164,7 +164,7 @@ Get Cache Information
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_cache_info200_response import OBPv600GetCacheInfo200Response
+from obp_python.models.get_cache_info200_response import GetCacheInfo200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -200,11 +200,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Cache Information
-        api_response = api_instance.o_bpv6_0_0_get_cache_info()
-        print("The response of CacheApi->o_bpv6_0_0_get_cache_info:\n")
+        api_response = api_instance.get_cache_info()
+        print("The response of CacheApi->get_cache_info:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CacheApi->o_bpv6_0_0_get_cache_info: %s\n" % e)
+        print("Exception when calling CacheApi->get_cache_info: %s\n" % e)
 ```
 
 
@@ -215,7 +215,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetCacheInfo200Response**](OBPv600GetCacheInfo200Response.md)
+[**GetCacheInfo200Response**](GetCacheInfo200Response.md)
 
 ### Authorization
 
@@ -235,8 +235,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_cache_namespaces**
-> OBPv600GetCacheNamespaces200Response o_bpv6_0_0_get_cache_namespaces()
+# **get_cache_namespaces**
+> GetCacheNamespaces200Response get_cache_namespaces()
 
 Get Cache Namespaces
 
@@ -270,7 +270,7 @@ Get Cache Namespaces
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_cache_namespaces200_response import OBPv600GetCacheNamespaces200Response
+from obp_python.models.get_cache_namespaces200_response import GetCacheNamespaces200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -306,11 +306,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Cache Namespaces
-        api_response = api_instance.o_bpv6_0_0_get_cache_namespaces()
-        print("The response of CacheApi->o_bpv6_0_0_get_cache_namespaces:\n")
+        api_response = api_instance.get_cache_namespaces()
+        print("The response of CacheApi->get_cache_namespaces:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CacheApi->o_bpv6_0_0_get_cache_namespaces: %s\n" % e)
+        print("Exception when calling CacheApi->get_cache_namespaces: %s\n" % e)
 ```
 
 
@@ -321,7 +321,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetCacheNamespaces200Response**](OBPv600GetCacheNamespaces200Response.md)
+[**GetCacheNamespaces200Response**](GetCacheNamespaces200Response.md)
 
 ### Authorization
 
@@ -341,8 +341,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_invalidate_cache_namespace**
-> OBPv600InvalidateCacheNamespace200Response o_bpv6_0_0_invalidate_cache_namespace(obpv600_invalidate_cache_namespace_request)
+# **invalidate_cache_namespace**
+> InvalidateCacheNamespace200Response invalidate_cache_namespace(invalidate_cache_namespace_request)
 
 Invalidate Cache Namespace
 
@@ -371,8 +371,8 @@ rd_static, rd_all, swagger_static, connector, metrics_stable, metrics_recent, ab
 
 ```python
 import obp_python
-from obp_python.models.obpv600_invalidate_cache_namespace200_response import OBPv600InvalidateCacheNamespace200Response
-from obp_python.models.obpv600_invalidate_cache_namespace_request import OBPv600InvalidateCacheNamespaceRequest
+from obp_python.models.invalidate_cache_namespace200_response import InvalidateCacheNamespace200Response
+from obp_python.models.invalidate_cache_namespace_request import InvalidateCacheNamespaceRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -405,15 +405,15 @@ configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
 with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.CacheApi(api_client)
-    obpv600_invalidate_cache_namespace_request = {"type":"object","properties":{"namespace_id":{"type":"string"}}} # OBPv600InvalidateCacheNamespaceRequest | Request body
+    invalidate_cache_namespace_request = {"type":"object","properties":{"namespace_id":{"type":"string"}}} # InvalidateCacheNamespaceRequest | Request body
 
     try:
         # Invalidate Cache Namespace
-        api_response = api_instance.o_bpv6_0_0_invalidate_cache_namespace(obpv600_invalidate_cache_namespace_request)
-        print("The response of CacheApi->o_bpv6_0_0_invalidate_cache_namespace:\n")
+        api_response = api_instance.invalidate_cache_namespace(invalidate_cache_namespace_request)
+        print("The response of CacheApi->invalidate_cache_namespace:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CacheApi->o_bpv6_0_0_invalidate_cache_namespace: %s\n" % e)
+        print("Exception when calling CacheApi->invalidate_cache_namespace: %s\n" % e)
 ```
 
 
@@ -423,11 +423,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **obpv600_invalidate_cache_namespace_request** | [**OBPv600InvalidateCacheNamespaceRequest**](OBPv600InvalidateCacheNamespaceRequest.md)| Request body | 
+ **invalidate_cache_namespace_request** | [**InvalidateCacheNamespaceRequest**](InvalidateCacheNamespaceRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600InvalidateCacheNamespace200Response**](OBPv600InvalidateCacheNamespace200Response.md)
+[**InvalidateCacheNamespace200Response**](InvalidateCacheNamespace200Response.md)
 
 ### Authorization
 

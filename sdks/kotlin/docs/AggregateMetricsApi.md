@@ -1,15 +1,15 @@
 # AggregateMetricsApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv600GetAggregateMetrics**](AggregateMetricsApi.md#oBPv600GetAggregateMetrics) | **GET** /obp/v6.0.0/management/aggregate-metrics | Get Aggregate Metrics |
+| [**getAggregateMetrics**](AggregateMetricsApi.md#getAggregateMetrics) | **GET** /obp/v6.0.0/management/aggregate-metrics | Get Aggregate Metrics |
 
 
-<a id="oBPv600GetAggregateMetrics"></a>
-# **oBPv600GetAggregateMetrics**
-> OBPv600GetAggregateMetrics200Response oBPv600GetAggregateMetrics()
+<a id="getAggregateMetrics"></a>
+# **getAggregateMetrics**
+> GetAggregateMetrics200Response getAggregateMetrics()
 
 Get Aggregate Metrics
 
@@ -23,13 +23,13 @@ Get Aggregate Metrics
 
 val apiInstance = AggregateMetricsApi()
 try {
-    val result : OBPv600GetAggregateMetrics200Response = apiInstance.oBPv600GetAggregateMetrics()
+    val result : GetAggregateMetrics200Response = apiInstance.getAggregateMetrics()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling AggregateMetricsApi#oBPv600GetAggregateMetrics")
+    println("4xx response calling AggregateMetricsApi#getAggregateMetrics")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling AggregateMetricsApi#oBPv600GetAggregateMetrics")
+    println("5xx response calling AggregateMetricsApi#getAggregateMetrics")
     e.printStackTrace()
 }
 ```
@@ -39,7 +39,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAggregateMetrics200Response**](OBPv600GetAggregateMetrics200Response.md)
+[**GetAggregateMetrics200Response**](GetAggregateMetrics200Response.md)
 
 ### Authorization
 
@@ -50,8 +50,8 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 

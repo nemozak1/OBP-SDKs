@@ -5,20 +5,20 @@
 import 'package:obp_dart/api.dart';
 ```
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv600ApproveAccountAccessRequest**](AccountAccessRequestApi.md#obpv600approveaccountaccessrequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/approval | Approve Account Access Request
-[**oBPv600CreateAccountAccessRequest**](AccountAccessRequestApi.md#obpv600createaccountaccessrequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Create Account Access Request
-[**oBPv600GetAccountAccessRequestById**](AccountAccessRequestApi.md#obpv600getaccountaccessrequestbyid) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid} | Get Account Access Request by Id
-[**oBPv600GetAccountAccessRequestsForAccount**](AccountAccessRequestApi.md#obpv600getaccountaccessrequestsforaccount) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Get Account Access Requests for Account
-[**oBPv600GetMyAccountAccessRequests**](AccountAccessRequestApi.md#obpv600getmyaccountaccessrequests) | **GET** /obp/v6.0.0/my/account-access-requests | Get My Account Access Requests
-[**oBPv600RejectAccountAccessRequest**](AccountAccessRequestApi.md#obpv600rejectaccountaccessrequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/rejection | Reject Account Access Request
+[**approveAccountAccessRequest**](AccountAccessRequestApi.md#approveaccountaccessrequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/approval | Approve Account Access Request
+[**createAccountAccessRequest**](AccountAccessRequestApi.md#createaccountaccessrequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Create Account Access Request
+[**getAccountAccessRequestById**](AccountAccessRequestApi.md#getaccountaccessrequestbyid) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid} | Get Account Access Request by Id
+[**getAccountAccessRequestsForAccount**](AccountAccessRequestApi.md#getaccountaccessrequestsforaccount) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Get Account Access Requests for Account
+[**getMyAccountAccessRequests**](AccountAccessRequestApi.md#getmyaccountaccessrequests) | **GET** /obp/v6.0.0/my/account-access-requests | Get My Account Access Requests
+[**rejectAccountAccessRequest**](AccountAccessRequestApi.md#rejectaccountaccessrequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/rejection | Reject Account Access Request
 
 
-# **oBPv600ApproveAccountAccessRequest**
-> OBPv600RejectAccountAccessRequest200Response oBPv600ApproveAccountAccessRequest(bankid, accountid, accountaccessrequestid, oBPv600RejectAccountAccessRequestRequest)
+# **approveAccountAccessRequest**
+> RejectAccountAccessRequest200Response approveAccountAccessRequest(bankid, accountid, accountaccessrequestid, rejectAccountAccessRequestRequest)
 
 Approve Account Access Request
 
@@ -42,13 +42,13 @@ final api = ObpDart().getAccountAccessRequestApi();
 final String bankid = bankid_example; // String | The BANKID identifier
 final String accountid = accountid_example; // String | The ACCOUNTID identifier
 final String accountaccessrequestid = accountaccessrequestid_example; // String | The ACCOUNTACCESSREQUESTID identifier
-final OBPv600RejectAccountAccessRequestRequest oBPv600RejectAccountAccessRequestRequest = {type=object, properties={comment={type=string}}}; // OBPv600RejectAccountAccessRequestRequest | Request body
+final RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest = {type=object, properties={comment={type=string}}}; // RejectAccountAccessRequestRequest | Request body
 
 try {
-    final response = api.oBPv600ApproveAccountAccessRequest(bankid, accountid, accountaccessrequestid, oBPv600RejectAccountAccessRequestRequest);
+    final response = api.approveAccountAccessRequest(bankid, accountid, accountaccessrequestid, rejectAccountAccessRequestRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling AccountAccessRequestApi->oBPv600ApproveAccountAccessRequest: $e\n');
+    print('Exception when calling AccountAccessRequestApi->approveAccountAccessRequest: $e\n');
 }
 ```
 
@@ -59,11 +59,11 @@ Name | Type | Description  | Notes
  **bankid** | **String**| The BANKID identifier | 
  **accountid** | **String**| The ACCOUNTID identifier | 
  **accountaccessrequestid** | **String**| The ACCOUNTACCESSREQUESTID identifier | 
- **oBPv600RejectAccountAccessRequestRequest** | [**OBPv600RejectAccountAccessRequestRequest**](OBPv600RejectAccountAccessRequestRequest.md)| Request body | 
+ **rejectAccountAccessRequestRequest** | [**RejectAccountAccessRequestRequest**](RejectAccountAccessRequestRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)
+[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)
 
 ### Authorization
 
@@ -76,8 +76,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600CreateAccountAccessRequest**
-> OBPv600RejectAccountAccessRequest200Response oBPv600CreateAccountAccessRequest(bankid, accountid, oBPv600CreateAccountAccessRequestRequest)
+# **createAccountAccessRequest**
+> RejectAccountAccessRequest200Response createAccountAccessRequest(bankid, accountid, createAccountAccessRequestRequest)
 
 Create Account Access Request
 
@@ -100,13 +100,13 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getAccountAccessRequestApi();
 final String bankid = bankid_example; // String | The BANKID identifier
 final String accountid = accountid_example; // String | The ACCOUNTID identifier
-final OBPv600CreateAccountAccessRequestRequest oBPv600CreateAccountAccessRequestRequest = {"type":"object","properties":{"is_system_view":{"type":"boolean"},"business_justification":{"type":"string"},"view_id":{"type":"string"},"target_user_id":{"type":"string"}}}; // OBPv600CreateAccountAccessRequestRequest | Request body
+final CreateAccountAccessRequestRequest createAccountAccessRequestRequest = {"type":"object","properties":{"is_system_view":{"type":"boolean"},"business_justification":{"type":"string"},"view_id":{"type":"string"},"target_user_id":{"type":"string"}}}; // CreateAccountAccessRequestRequest | Request body
 
 try {
-    final response = api.oBPv600CreateAccountAccessRequest(bankid, accountid, oBPv600CreateAccountAccessRequestRequest);
+    final response = api.createAccountAccessRequest(bankid, accountid, createAccountAccessRequestRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling AccountAccessRequestApi->oBPv600CreateAccountAccessRequest: $e\n');
+    print('Exception when calling AccountAccessRequestApi->createAccountAccessRequest: $e\n');
 }
 ```
 
@@ -116,11 +116,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String**| The BANKID identifier | 
  **accountid** | **String**| The ACCOUNTID identifier | 
- **oBPv600CreateAccountAccessRequestRequest** | [**OBPv600CreateAccountAccessRequestRequest**](OBPv600CreateAccountAccessRequestRequest.md)| Request body | 
+ **createAccountAccessRequestRequest** | [**CreateAccountAccessRequestRequest**](CreateAccountAccessRequestRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)
+[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)
 
 ### Authorization
 
@@ -133,8 +133,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetAccountAccessRequestById**
-> OBPv600RejectAccountAccessRequest200Response oBPv600GetAccountAccessRequestById(bankid, accountid, accountaccessrequestid)
+# **getAccountAccessRequestById**
+> RejectAccountAccessRequest200Response getAccountAccessRequestById(bankid, accountid, accountaccessrequestid)
 
 Get Account Access Request by Id
 
@@ -160,10 +160,10 @@ final String accountid = accountid_example; // String | The ACCOUNTID identifier
 final String accountaccessrequestid = accountaccessrequestid_example; // String | The ACCOUNTACCESSREQUESTID identifier
 
 try {
-    final response = api.oBPv600GetAccountAccessRequestById(bankid, accountid, accountaccessrequestid);
+    final response = api.getAccountAccessRequestById(bankid, accountid, accountaccessrequestid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling AccountAccessRequestApi->oBPv600GetAccountAccessRequestById: $e\n');
+    print('Exception when calling AccountAccessRequestApi->getAccountAccessRequestById: $e\n');
 }
 ```
 
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)
+[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)
 
 ### Authorization
 
@@ -190,8 +190,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetAccountAccessRequestsForAccount**
-> OBPv600GetAccountAccessRequestsForAccount200Response oBPv600GetAccountAccessRequestsForAccount(bankid, accountid)
+# **getAccountAccessRequestsForAccount**
+> GetAccountAccessRequestsForAccount200Response getAccountAccessRequestsForAccount(bankid, accountid)
 
 Get Account Access Requests for Account
 
@@ -216,10 +216,10 @@ final String bankid = bankid_example; // String | The BANKID identifier
 final String accountid = accountid_example; // String | The ACCOUNTID identifier
 
 try {
-    final response = api.oBPv600GetAccountAccessRequestsForAccount(bankid, accountid);
+    final response = api.getAccountAccessRequestsForAccount(bankid, accountid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling AccountAccessRequestApi->oBPv600GetAccountAccessRequestsForAccount: $e\n');
+    print('Exception when calling AccountAccessRequestApi->getAccountAccessRequestsForAccount: $e\n');
 }
 ```
 
@@ -232,7 +232,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetAccountAccessRequestsForAccount200Response**](OBPv600GetAccountAccessRequestsForAccount200Response.md)
+[**GetAccountAccessRequestsForAccount200Response**](GetAccountAccessRequestsForAccount200Response.md)
 
 ### Authorization
 
@@ -245,8 +245,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetMyAccountAccessRequests**
-> OBPv600GetAccountAccessRequestsForAccount200Response oBPv600GetMyAccountAccessRequests()
+# **getMyAccountAccessRequests**
+> GetAccountAccessRequestsForAccount200Response getMyAccountAccessRequests()
 
 Get My Account Access Requests
 
@@ -269,10 +269,10 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getAccountAccessRequestApi();
 
 try {
-    final response = api.oBPv600GetMyAccountAccessRequests();
+    final response = api.getMyAccountAccessRequests();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling AccountAccessRequestApi->oBPv600GetMyAccountAccessRequests: $e\n');
+    print('Exception when calling AccountAccessRequestApi->getMyAccountAccessRequests: $e\n');
 }
 ```
 
@@ -281,7 +281,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAccountAccessRequestsForAccount200Response**](OBPv600GetAccountAccessRequestsForAccount200Response.md)
+[**GetAccountAccessRequestsForAccount200Response**](GetAccountAccessRequestsForAccount200Response.md)
 
 ### Authorization
 
@@ -294,8 +294,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600RejectAccountAccessRequest**
-> OBPv600RejectAccountAccessRequest200Response oBPv600RejectAccountAccessRequest(bankid, accountid, accountaccessrequestid, oBPv600RejectAccountAccessRequestRequest)
+# **rejectAccountAccessRequest**
+> RejectAccountAccessRequest200Response rejectAccountAccessRequest(bankid, accountid, accountaccessrequestid, rejectAccountAccessRequestRequest)
 
 Reject Account Access Request
 
@@ -319,13 +319,13 @@ final api = ObpDart().getAccountAccessRequestApi();
 final String bankid = bankid_example; // String | The BANKID identifier
 final String accountid = accountid_example; // String | The ACCOUNTID identifier
 final String accountaccessrequestid = accountaccessrequestid_example; // String | The ACCOUNTACCESSREQUESTID identifier
-final OBPv600RejectAccountAccessRequestRequest oBPv600RejectAccountAccessRequestRequest = {"type":"object","properties":{"comment":{"type":"string"}}}; // OBPv600RejectAccountAccessRequestRequest | Request body
+final RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest = {"type":"object","properties":{"comment":{"type":"string"}}}; // RejectAccountAccessRequestRequest | Request body
 
 try {
-    final response = api.oBPv600RejectAccountAccessRequest(bankid, accountid, accountaccessrequestid, oBPv600RejectAccountAccessRequestRequest);
+    final response = api.rejectAccountAccessRequest(bankid, accountid, accountaccessrequestid, rejectAccountAccessRequestRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling AccountAccessRequestApi->oBPv600RejectAccountAccessRequest: $e\n');
+    print('Exception when calling AccountAccessRequestApi->rejectAccountAccessRequest: $e\n');
 }
 ```
 
@@ -336,11 +336,11 @@ Name | Type | Description  | Notes
  **bankid** | **String**| The BANKID identifier | 
  **accountid** | **String**| The ACCOUNTID identifier | 
  **accountaccessrequestid** | **String**| The ACCOUNTACCESSREQUESTID identifier | 
- **oBPv600RejectAccountAccessRequestRequest** | [**OBPv600RejectAccountAccessRequestRequest**](OBPv600RejectAccountAccessRequestRequest.md)| Request body | 
+ **rejectAccountAccessRequestRequest** | [**RejectAccountAccessRequestRequest**](RejectAccountAccessRequestRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)
+[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)
 
 ### Authorization
 

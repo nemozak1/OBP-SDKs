@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -49,10 +49,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
-        /// <param name="oBPv400DeleteSystemLevelEndpointTag200Response">Request body</param>
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInnerId">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddCommentForViewOnTransactionApiResponse"/>&gt;</returns>
-        Task<IOBPv121AddCommentForViewOnTransactionApiResponse> OBPv121AddCommentForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddCommentForViewOnTransactionApiResponse"/>&gt;</returns>
+        Task<IAddCommentForViewOnTransactionApiResponse> AddCommentForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Add a Transaction Comment
@@ -64,10 +64,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
-        /// <param name="oBPv400DeleteSystemLevelEndpointTag200Response">Request body</param>
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInnerId">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddCommentForViewOnTransactionApiResponse"/>?&gt;</returns>
-        Task<IOBPv121AddCommentForViewOnTransactionApiResponse?> OBPv121AddCommentForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddCommentForViewOnTransactionApiResponse"/>?&gt;</returns>
+        Task<IAddCommentForViewOnTransactionApiResponse?> AddCommentForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Add a Transaction Image
@@ -80,10 +80,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
-        /// <param name="oBPv121AddImageForViewOnTransactionRequest">Request body</param>
+        /// <param name="addImageForViewOnTransactionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddImageForViewOnTransactionApiResponse"/>&gt;</returns>
-        Task<IOBPv121AddImageForViewOnTransactionApiResponse> OBPv121AddImageForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, OBPv121AddImageForViewOnTransactionRequest oBPv121AddImageForViewOnTransactionRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddImageForViewOnTransactionApiResponse"/>&gt;</returns>
+        Task<IAddImageForViewOnTransactionApiResponse> AddImageForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, AddImageForViewOnTransactionRequest addImageForViewOnTransactionRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Add a Transaction Image
@@ -95,10 +95,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
-        /// <param name="oBPv121AddImageForViewOnTransactionRequest">Request body</param>
+        /// <param name="addImageForViewOnTransactionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddImageForViewOnTransactionApiResponse"/>?&gt;</returns>
-        Task<IOBPv121AddImageForViewOnTransactionApiResponse?> OBPv121AddImageForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, OBPv121AddImageForViewOnTransactionRequest oBPv121AddImageForViewOnTransactionRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddImageForViewOnTransactionApiResponse"/>?&gt;</returns>
+        Task<IAddImageForViewOnTransactionApiResponse?> AddImageForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, AddImageForViewOnTransactionRequest addImageForViewOnTransactionRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Add a Transaction Tag
@@ -111,10 +111,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
-        /// <param name="oBPv400DeleteSystemLevelEndpointTag200Response">Request body</param>
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInnerId">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddTagForViewOnTransactionApiResponse"/>&gt;</returns>
-        Task<IOBPv121AddTagForViewOnTransactionApiResponse> OBPv121AddTagForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddTagForViewOnTransactionApiResponse"/>&gt;</returns>
+        Task<IAddTagForViewOnTransactionApiResponse> AddTagForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Add a Transaction Tag
@@ -126,10 +126,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
-        /// <param name="oBPv400DeleteSystemLevelEndpointTag200Response">Request body</param>
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInnerId">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddTagForViewOnTransactionApiResponse"/>?&gt;</returns>
-        Task<IOBPv121AddTagForViewOnTransactionApiResponse?> OBPv121AddTagForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddTagForViewOnTransactionApiResponse"/>?&gt;</returns>
+        Task<IAddTagForViewOnTransactionApiResponse?> AddTagForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Add a Transaction Narrative
@@ -142,10 +142,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
-        /// <param name="oBPv121GetTransactionNarrative200Response">Request body</param>
+        /// <param name="getTransactionNarrative200Response">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddTransactionNarrativeApiResponse"/>&gt;</returns>
-        Task<IOBPv121AddTransactionNarrativeApiResponse> OBPv121AddTransactionNarrativeAsync(string bankid, string accountid, string viewid, string transactionid, OBPv121GetTransactionNarrative200Response oBPv121GetTransactionNarrative200Response, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddTransactionNarrativeApiResponse"/>&gt;</returns>
+        Task<IAddTransactionNarrativeApiResponse> AddTransactionNarrativeAsync(string bankid, string accountid, string viewid, string transactionid, GetTransactionNarrative200Response getTransactionNarrative200Response, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Add a Transaction Narrative
@@ -157,10 +157,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
-        /// <param name="oBPv121GetTransactionNarrative200Response">Request body</param>
+        /// <param name="getTransactionNarrative200Response">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddTransactionNarrativeApiResponse"/>?&gt;</returns>
-        Task<IOBPv121AddTransactionNarrativeApiResponse?> OBPv121AddTransactionNarrativeOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, OBPv121GetTransactionNarrative200Response oBPv121GetTransactionNarrative200Response, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddTransactionNarrativeApiResponse"/>?&gt;</returns>
+        Task<IAddTransactionNarrativeApiResponse?> AddTransactionNarrativeOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, GetTransactionNarrative200Response getTransactionNarrative200Response, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Add a Transaction where Tag
@@ -173,10 +173,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
-        /// <param name="oBPv121UpdateWhereTagForViewOnTransactionRequest">Request body</param>
+        /// <param name="updateWhereTagForViewOnTransactionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddWhereTagForViewOnTransactionApiResponse"/>&gt;</returns>
-        Task<IOBPv121AddWhereTagForViewOnTransactionApiResponse> OBPv121AddWhereTagForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, OBPv121UpdateWhereTagForViewOnTransactionRequest oBPv121UpdateWhereTagForViewOnTransactionRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddWhereTagForViewOnTransactionApiResponse"/>&gt;</returns>
+        Task<IAddWhereTagForViewOnTransactionApiResponse> AddWhereTagForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, UpdateWhereTagForViewOnTransactionRequest updateWhereTagForViewOnTransactionRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Add a Transaction where Tag
@@ -188,10 +188,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
-        /// <param name="oBPv121UpdateWhereTagForViewOnTransactionRequest">Request body</param>
+        /// <param name="updateWhereTagForViewOnTransactionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddWhereTagForViewOnTransactionApiResponse"/>?&gt;</returns>
-        Task<IOBPv121AddWhereTagForViewOnTransactionApiResponse?> OBPv121AddWhereTagForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, OBPv121UpdateWhereTagForViewOnTransactionRequest oBPv121UpdateWhereTagForViewOnTransactionRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddWhereTagForViewOnTransactionApiResponse"/>?&gt;</returns>
+        Task<IAddWhereTagForViewOnTransactionApiResponse?> AddWhereTagForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, UpdateWhereTagForViewOnTransactionRequest updateWhereTagForViewOnTransactionRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete a Transaction Comment
@@ -206,8 +206,8 @@ namespace OpenBankProject.Api
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="commentid">The COMMENTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteCommentForViewOnTransactionApiResponse"/>&gt;</returns>
-        Task<IOBPv121DeleteCommentForViewOnTransactionApiResponse> OBPv121DeleteCommentForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, string commentid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCommentForViewOnTransactionApiResponse"/>&gt;</returns>
+        Task<IDeleteCommentForViewOnTransactionApiResponse> DeleteCommentForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, string commentid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete a Transaction Comment
@@ -221,8 +221,8 @@ namespace OpenBankProject.Api
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="commentid">The COMMENTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteCommentForViewOnTransactionApiResponse"/>?&gt;</returns>
-        Task<IOBPv121DeleteCommentForViewOnTransactionApiResponse?> OBPv121DeleteCommentForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, string commentid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCommentForViewOnTransactionApiResponse"/>?&gt;</returns>
+        Task<IDeleteCommentForViewOnTransactionApiResponse?> DeleteCommentForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, string commentid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete a Transaction Image
@@ -237,8 +237,8 @@ namespace OpenBankProject.Api
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="imageid">The IMAGEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteImageForViewOnTransactionApiResponse"/>&gt;</returns>
-        Task<IOBPv121DeleteImageForViewOnTransactionApiResponse> OBPv121DeleteImageForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, string imageid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteImageForViewOnTransactionApiResponse"/>&gt;</returns>
+        Task<IDeleteImageForViewOnTransactionApiResponse> DeleteImageForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, string imageid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete a Transaction Image
@@ -252,8 +252,8 @@ namespace OpenBankProject.Api
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="imageid">The IMAGEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteImageForViewOnTransactionApiResponse"/>?&gt;</returns>
-        Task<IOBPv121DeleteImageForViewOnTransactionApiResponse?> OBPv121DeleteImageForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, string imageid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteImageForViewOnTransactionApiResponse"/>?&gt;</returns>
+        Task<IDeleteImageForViewOnTransactionApiResponse?> DeleteImageForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, string imageid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete a Transaction Tag
@@ -268,8 +268,8 @@ namespace OpenBankProject.Api
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="tagid">The TAGID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteTagForViewOnTransactionApiResponse"/>&gt;</returns>
-        Task<IOBPv121DeleteTagForViewOnTransactionApiResponse> OBPv121DeleteTagForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, string tagid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteTagForViewOnTransactionApiResponse"/>&gt;</returns>
+        Task<IDeleteTagForViewOnTransactionApiResponse> DeleteTagForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, string tagid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete a Transaction Tag
@@ -283,8 +283,8 @@ namespace OpenBankProject.Api
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="tagid">The TAGID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteTagForViewOnTransactionApiResponse"/>?&gt;</returns>
-        Task<IOBPv121DeleteTagForViewOnTransactionApiResponse?> OBPv121DeleteTagForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, string tagid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteTagForViewOnTransactionApiResponse"/>?&gt;</returns>
+        Task<IDeleteTagForViewOnTransactionApiResponse?> DeleteTagForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, string tagid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete a Transaction Narrative
@@ -298,8 +298,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteTransactionNarrativeApiResponse"/>&gt;</returns>
-        Task<IOBPv121DeleteTransactionNarrativeApiResponse> OBPv121DeleteTransactionNarrativeAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteTransactionNarrativeApiResponse"/>&gt;</returns>
+        Task<IDeleteTransactionNarrativeApiResponse> DeleteTransactionNarrativeAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete a Transaction Narrative
@@ -312,8 +312,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteTransactionNarrativeApiResponse"/>?&gt;</returns>
-        Task<IOBPv121DeleteTransactionNarrativeApiResponse?> OBPv121DeleteTransactionNarrativeOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteTransactionNarrativeApiResponse"/>?&gt;</returns>
+        Task<IDeleteTransactionNarrativeApiResponse?> DeleteTransactionNarrativeOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete a Transaction Tag
@@ -327,8 +327,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteWhereTagForViewOnTransactionApiResponse"/>&gt;</returns>
-        Task<IOBPv121DeleteWhereTagForViewOnTransactionApiResponse> OBPv121DeleteWhereTagForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteWhereTagForViewOnTransactionApiResponse"/>&gt;</returns>
+        Task<IDeleteWhereTagForViewOnTransactionApiResponse> DeleteWhereTagForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete a Transaction Tag
@@ -341,8 +341,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteWhereTagForViewOnTransactionApiResponse"/>?&gt;</returns>
-        Task<IOBPv121DeleteWhereTagForViewOnTransactionApiResponse?> OBPv121DeleteWhereTagForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteWhereTagForViewOnTransactionApiResponse"/>?&gt;</returns>
+        Task<IDeleteWhereTagForViewOnTransactionApiResponse?> DeleteWhereTagForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Transaction Comments
@@ -356,8 +356,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121GetCommentsForViewOnTransactionApiResponse"/>&gt;</returns>
-        Task<IOBPv121GetCommentsForViewOnTransactionApiResponse> OBPv121GetCommentsForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCommentsForViewOnTransactionApiResponse"/>&gt;</returns>
+        Task<IGetCommentsForViewOnTransactionApiResponse> GetCommentsForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Transaction Comments
@@ -370,8 +370,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121GetCommentsForViewOnTransactionApiResponse"/>?&gt;</returns>
-        Task<IOBPv121GetCommentsForViewOnTransactionApiResponse?> OBPv121GetCommentsForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCommentsForViewOnTransactionApiResponse"/>?&gt;</returns>
+        Task<IGetCommentsForViewOnTransactionApiResponse?> GetCommentsForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Transaction Images
@@ -385,8 +385,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121GetImagesForViewOnTransactionApiResponse"/>&gt;</returns>
-        Task<IOBPv121GetImagesForViewOnTransactionApiResponse> OBPv121GetImagesForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetImagesForViewOnTransactionApiResponse"/>&gt;</returns>
+        Task<IGetImagesForViewOnTransactionApiResponse> GetImagesForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Transaction Images
@@ -399,8 +399,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121GetImagesForViewOnTransactionApiResponse"/>?&gt;</returns>
-        Task<IOBPv121GetImagesForViewOnTransactionApiResponse?> OBPv121GetImagesForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetImagesForViewOnTransactionApiResponse"/>?&gt;</returns>
+        Task<IGetImagesForViewOnTransactionApiResponse?> GetImagesForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Transaction Tags
@@ -414,8 +414,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121GetTagsForViewOnTransactionApiResponse"/>&gt;</returns>
-        Task<IOBPv121GetTagsForViewOnTransactionApiResponse> OBPv121GetTagsForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetTagsForViewOnTransactionApiResponse"/>&gt;</returns>
+        Task<IGetTagsForViewOnTransactionApiResponse> GetTagsForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Transaction Tags
@@ -428,8 +428,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121GetTagsForViewOnTransactionApiResponse"/>?&gt;</returns>
-        Task<IOBPv121GetTagsForViewOnTransactionApiResponse?> OBPv121GetTagsForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetTagsForViewOnTransactionApiResponse"/>?&gt;</returns>
+        Task<IGetTagsForViewOnTransactionApiResponse?> GetTagsForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get a Transaction Narrative
@@ -443,8 +443,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121GetTransactionNarrativeApiResponse"/>&gt;</returns>
-        Task<IOBPv121GetTransactionNarrativeApiResponse> OBPv121GetTransactionNarrativeAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetTransactionNarrativeApiResponse"/>&gt;</returns>
+        Task<IGetTransactionNarrativeApiResponse> GetTransactionNarrativeAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get a Transaction Narrative
@@ -457,8 +457,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121GetTransactionNarrativeApiResponse"/>?&gt;</returns>
-        Task<IOBPv121GetTransactionNarrativeApiResponse?> OBPv121GetTransactionNarrativeOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetTransactionNarrativeApiResponse"/>?&gt;</returns>
+        Task<IGetTransactionNarrativeApiResponse?> GetTransactionNarrativeOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get a Transaction where Tag
@@ -472,8 +472,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121GetWhereTagForViewOnTransactionApiResponse"/>&gt;</returns>
-        Task<IOBPv121GetWhereTagForViewOnTransactionApiResponse> OBPv121GetWhereTagForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetWhereTagForViewOnTransactionApiResponse"/>&gt;</returns>
+        Task<IGetWhereTagForViewOnTransactionApiResponse> GetWhereTagForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get a Transaction where Tag
@@ -486,8 +486,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121GetWhereTagForViewOnTransactionApiResponse"/>?&gt;</returns>
-        Task<IOBPv121GetWhereTagForViewOnTransactionApiResponse?> OBPv121GetWhereTagForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetWhereTagForViewOnTransactionApiResponse"/>?&gt;</returns>
+        Task<IGetWhereTagForViewOnTransactionApiResponse?> GetWhereTagForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update a Transaction Narrative
@@ -500,10 +500,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
-        /// <param name="oBPv121GetTransactionNarrative200Response">Request body</param>
+        /// <param name="getTransactionNarrative200Response">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateTransactionNarrativeApiResponse"/>&gt;</returns>
-        Task<IOBPv121UpdateTransactionNarrativeApiResponse> OBPv121UpdateTransactionNarrativeAsync(string bankid, string accountid, string viewid, string transactionid, OBPv121GetTransactionNarrative200Response oBPv121GetTransactionNarrative200Response, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateTransactionNarrativeApiResponse"/>&gt;</returns>
+        Task<IUpdateTransactionNarrativeApiResponse> UpdateTransactionNarrativeAsync(string bankid, string accountid, string viewid, string transactionid, GetTransactionNarrative200Response getTransactionNarrative200Response, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update a Transaction Narrative
@@ -515,10 +515,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
-        /// <param name="oBPv121GetTransactionNarrative200Response">Request body</param>
+        /// <param name="getTransactionNarrative200Response">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateTransactionNarrativeApiResponse"/>?&gt;</returns>
-        Task<IOBPv121UpdateTransactionNarrativeApiResponse?> OBPv121UpdateTransactionNarrativeOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, OBPv121GetTransactionNarrative200Response oBPv121GetTransactionNarrative200Response, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateTransactionNarrativeApiResponse"/>?&gt;</returns>
+        Task<IUpdateTransactionNarrativeApiResponse?> UpdateTransactionNarrativeOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, GetTransactionNarrative200Response getTransactionNarrative200Response, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update a Transaction where Tag
@@ -531,10 +531,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
-        /// <param name="oBPv121UpdateWhereTagForViewOnTransactionRequest">Request body</param>
+        /// <param name="updateWhereTagForViewOnTransactionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateWhereTagForViewOnTransactionApiResponse"/>&gt;</returns>
-        Task<IOBPv121UpdateWhereTagForViewOnTransactionApiResponse> OBPv121UpdateWhereTagForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, OBPv121UpdateWhereTagForViewOnTransactionRequest oBPv121UpdateWhereTagForViewOnTransactionRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateWhereTagForViewOnTransactionApiResponse"/>&gt;</returns>
+        Task<IUpdateWhereTagForViewOnTransactionApiResponse> UpdateWhereTagForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, UpdateWhereTagForViewOnTransactionRequest updateWhereTagForViewOnTransactionRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update a Transaction where Tag
@@ -546,10 +546,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
-        /// <param name="oBPv121UpdateWhereTagForViewOnTransactionRequest">Request body</param>
+        /// <param name="updateWhereTagForViewOnTransactionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateWhereTagForViewOnTransactionApiResponse"/>?&gt;</returns>
-        Task<IOBPv121UpdateWhereTagForViewOnTransactionApiResponse?> OBPv121UpdateWhereTagForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, OBPv121UpdateWhereTagForViewOnTransactionRequest oBPv121UpdateWhereTagForViewOnTransactionRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateWhereTagForViewOnTransactionApiResponse"/>?&gt;</returns>
+        Task<IUpdateWhereTagForViewOnTransactionApiResponse?> UpdateWhereTagForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, UpdateWhereTagForViewOnTransactionRequest updateWhereTagForViewOnTransactionRequest, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -560,341 +560,341 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121AddCommentForViewOnTransaction;
+        public event EventHandler<ApiResponseEventArgs>? OnAddCommentForViewOnTransaction;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121AddCommentForViewOnTransaction;
+        public event EventHandler<ExceptionEventArgs>? OnErrorAddCommentForViewOnTransaction;
 
-        internal void ExecuteOnOBPv121AddCommentForViewOnTransaction(TransactionApi.OBPv121AddCommentForViewOnTransactionApiResponse apiResponse)
+        internal void ExecuteOnAddCommentForViewOnTransaction(TransactionApi.AddCommentForViewOnTransactionApiResponse apiResponse)
         {
-            OnOBPv121AddCommentForViewOnTransaction?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnAddCommentForViewOnTransaction?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121AddCommentForViewOnTransaction(Exception exception)
+        internal void ExecuteOnErrorAddCommentForViewOnTransaction(Exception exception)
         {
-            OnErrorOBPv121AddCommentForViewOnTransaction?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorAddCommentForViewOnTransaction?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121AddImageForViewOnTransaction;
+        public event EventHandler<ApiResponseEventArgs>? OnAddImageForViewOnTransaction;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121AddImageForViewOnTransaction;
+        public event EventHandler<ExceptionEventArgs>? OnErrorAddImageForViewOnTransaction;
 
-        internal void ExecuteOnOBPv121AddImageForViewOnTransaction(TransactionApi.OBPv121AddImageForViewOnTransactionApiResponse apiResponse)
+        internal void ExecuteOnAddImageForViewOnTransaction(TransactionApi.AddImageForViewOnTransactionApiResponse apiResponse)
         {
-            OnOBPv121AddImageForViewOnTransaction?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnAddImageForViewOnTransaction?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121AddImageForViewOnTransaction(Exception exception)
+        internal void ExecuteOnErrorAddImageForViewOnTransaction(Exception exception)
         {
-            OnErrorOBPv121AddImageForViewOnTransaction?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorAddImageForViewOnTransaction?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121AddTagForViewOnTransaction;
+        public event EventHandler<ApiResponseEventArgs>? OnAddTagForViewOnTransaction;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121AddTagForViewOnTransaction;
+        public event EventHandler<ExceptionEventArgs>? OnErrorAddTagForViewOnTransaction;
 
-        internal void ExecuteOnOBPv121AddTagForViewOnTransaction(TransactionApi.OBPv121AddTagForViewOnTransactionApiResponse apiResponse)
+        internal void ExecuteOnAddTagForViewOnTransaction(TransactionApi.AddTagForViewOnTransactionApiResponse apiResponse)
         {
-            OnOBPv121AddTagForViewOnTransaction?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnAddTagForViewOnTransaction?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121AddTagForViewOnTransaction(Exception exception)
+        internal void ExecuteOnErrorAddTagForViewOnTransaction(Exception exception)
         {
-            OnErrorOBPv121AddTagForViewOnTransaction?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorAddTagForViewOnTransaction?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121AddTransactionNarrative;
+        public event EventHandler<ApiResponseEventArgs>? OnAddTransactionNarrative;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121AddTransactionNarrative;
+        public event EventHandler<ExceptionEventArgs>? OnErrorAddTransactionNarrative;
 
-        internal void ExecuteOnOBPv121AddTransactionNarrative(TransactionApi.OBPv121AddTransactionNarrativeApiResponse apiResponse)
+        internal void ExecuteOnAddTransactionNarrative(TransactionApi.AddTransactionNarrativeApiResponse apiResponse)
         {
-            OnOBPv121AddTransactionNarrative?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnAddTransactionNarrative?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121AddTransactionNarrative(Exception exception)
+        internal void ExecuteOnErrorAddTransactionNarrative(Exception exception)
         {
-            OnErrorOBPv121AddTransactionNarrative?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorAddTransactionNarrative?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121AddWhereTagForViewOnTransaction;
+        public event EventHandler<ApiResponseEventArgs>? OnAddWhereTagForViewOnTransaction;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121AddWhereTagForViewOnTransaction;
+        public event EventHandler<ExceptionEventArgs>? OnErrorAddWhereTagForViewOnTransaction;
 
-        internal void ExecuteOnOBPv121AddWhereTagForViewOnTransaction(TransactionApi.OBPv121AddWhereTagForViewOnTransactionApiResponse apiResponse)
+        internal void ExecuteOnAddWhereTagForViewOnTransaction(TransactionApi.AddWhereTagForViewOnTransactionApiResponse apiResponse)
         {
-            OnOBPv121AddWhereTagForViewOnTransaction?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnAddWhereTagForViewOnTransaction?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121AddWhereTagForViewOnTransaction(Exception exception)
+        internal void ExecuteOnErrorAddWhereTagForViewOnTransaction(Exception exception)
         {
-            OnErrorOBPv121AddWhereTagForViewOnTransaction?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorAddWhereTagForViewOnTransaction?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121DeleteCommentForViewOnTransaction;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteCommentForViewOnTransaction;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121DeleteCommentForViewOnTransaction;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteCommentForViewOnTransaction;
 
-        internal void ExecuteOnOBPv121DeleteCommentForViewOnTransaction(TransactionApi.OBPv121DeleteCommentForViewOnTransactionApiResponse apiResponse)
+        internal void ExecuteOnDeleteCommentForViewOnTransaction(TransactionApi.DeleteCommentForViewOnTransactionApiResponse apiResponse)
         {
-            OnOBPv121DeleteCommentForViewOnTransaction?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteCommentForViewOnTransaction?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121DeleteCommentForViewOnTransaction(Exception exception)
+        internal void ExecuteOnErrorDeleteCommentForViewOnTransaction(Exception exception)
         {
-            OnErrorOBPv121DeleteCommentForViewOnTransaction?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteCommentForViewOnTransaction?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121DeleteImageForViewOnTransaction;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteImageForViewOnTransaction;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121DeleteImageForViewOnTransaction;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteImageForViewOnTransaction;
 
-        internal void ExecuteOnOBPv121DeleteImageForViewOnTransaction(TransactionApi.OBPv121DeleteImageForViewOnTransactionApiResponse apiResponse)
+        internal void ExecuteOnDeleteImageForViewOnTransaction(TransactionApi.DeleteImageForViewOnTransactionApiResponse apiResponse)
         {
-            OnOBPv121DeleteImageForViewOnTransaction?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteImageForViewOnTransaction?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121DeleteImageForViewOnTransaction(Exception exception)
+        internal void ExecuteOnErrorDeleteImageForViewOnTransaction(Exception exception)
         {
-            OnErrorOBPv121DeleteImageForViewOnTransaction?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteImageForViewOnTransaction?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121DeleteTagForViewOnTransaction;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteTagForViewOnTransaction;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121DeleteTagForViewOnTransaction;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteTagForViewOnTransaction;
 
-        internal void ExecuteOnOBPv121DeleteTagForViewOnTransaction(TransactionApi.OBPv121DeleteTagForViewOnTransactionApiResponse apiResponse)
+        internal void ExecuteOnDeleteTagForViewOnTransaction(TransactionApi.DeleteTagForViewOnTransactionApiResponse apiResponse)
         {
-            OnOBPv121DeleteTagForViewOnTransaction?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteTagForViewOnTransaction?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121DeleteTagForViewOnTransaction(Exception exception)
+        internal void ExecuteOnErrorDeleteTagForViewOnTransaction(Exception exception)
         {
-            OnErrorOBPv121DeleteTagForViewOnTransaction?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteTagForViewOnTransaction?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121DeleteTransactionNarrative;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteTransactionNarrative;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121DeleteTransactionNarrative;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteTransactionNarrative;
 
-        internal void ExecuteOnOBPv121DeleteTransactionNarrative(TransactionApi.OBPv121DeleteTransactionNarrativeApiResponse apiResponse)
+        internal void ExecuteOnDeleteTransactionNarrative(TransactionApi.DeleteTransactionNarrativeApiResponse apiResponse)
         {
-            OnOBPv121DeleteTransactionNarrative?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteTransactionNarrative?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121DeleteTransactionNarrative(Exception exception)
+        internal void ExecuteOnErrorDeleteTransactionNarrative(Exception exception)
         {
-            OnErrorOBPv121DeleteTransactionNarrative?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteTransactionNarrative?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121DeleteWhereTagForViewOnTransaction;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteWhereTagForViewOnTransaction;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121DeleteWhereTagForViewOnTransaction;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteWhereTagForViewOnTransaction;
 
-        internal void ExecuteOnOBPv121DeleteWhereTagForViewOnTransaction(TransactionApi.OBPv121DeleteWhereTagForViewOnTransactionApiResponse apiResponse)
+        internal void ExecuteOnDeleteWhereTagForViewOnTransaction(TransactionApi.DeleteWhereTagForViewOnTransactionApiResponse apiResponse)
         {
-            OnOBPv121DeleteWhereTagForViewOnTransaction?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteWhereTagForViewOnTransaction?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121DeleteWhereTagForViewOnTransaction(Exception exception)
+        internal void ExecuteOnErrorDeleteWhereTagForViewOnTransaction(Exception exception)
         {
-            OnErrorOBPv121DeleteWhereTagForViewOnTransaction?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteWhereTagForViewOnTransaction?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121GetCommentsForViewOnTransaction;
+        public event EventHandler<ApiResponseEventArgs>? OnGetCommentsForViewOnTransaction;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121GetCommentsForViewOnTransaction;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetCommentsForViewOnTransaction;
 
-        internal void ExecuteOnOBPv121GetCommentsForViewOnTransaction(TransactionApi.OBPv121GetCommentsForViewOnTransactionApiResponse apiResponse)
+        internal void ExecuteOnGetCommentsForViewOnTransaction(TransactionApi.GetCommentsForViewOnTransactionApiResponse apiResponse)
         {
-            OnOBPv121GetCommentsForViewOnTransaction?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetCommentsForViewOnTransaction?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121GetCommentsForViewOnTransaction(Exception exception)
+        internal void ExecuteOnErrorGetCommentsForViewOnTransaction(Exception exception)
         {
-            OnErrorOBPv121GetCommentsForViewOnTransaction?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetCommentsForViewOnTransaction?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121GetImagesForViewOnTransaction;
+        public event EventHandler<ApiResponseEventArgs>? OnGetImagesForViewOnTransaction;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121GetImagesForViewOnTransaction;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetImagesForViewOnTransaction;
 
-        internal void ExecuteOnOBPv121GetImagesForViewOnTransaction(TransactionApi.OBPv121GetImagesForViewOnTransactionApiResponse apiResponse)
+        internal void ExecuteOnGetImagesForViewOnTransaction(TransactionApi.GetImagesForViewOnTransactionApiResponse apiResponse)
         {
-            OnOBPv121GetImagesForViewOnTransaction?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetImagesForViewOnTransaction?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121GetImagesForViewOnTransaction(Exception exception)
+        internal void ExecuteOnErrorGetImagesForViewOnTransaction(Exception exception)
         {
-            OnErrorOBPv121GetImagesForViewOnTransaction?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetImagesForViewOnTransaction?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121GetTagsForViewOnTransaction;
+        public event EventHandler<ApiResponseEventArgs>? OnGetTagsForViewOnTransaction;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121GetTagsForViewOnTransaction;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetTagsForViewOnTransaction;
 
-        internal void ExecuteOnOBPv121GetTagsForViewOnTransaction(TransactionApi.OBPv121GetTagsForViewOnTransactionApiResponse apiResponse)
+        internal void ExecuteOnGetTagsForViewOnTransaction(TransactionApi.GetTagsForViewOnTransactionApiResponse apiResponse)
         {
-            OnOBPv121GetTagsForViewOnTransaction?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetTagsForViewOnTransaction?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121GetTagsForViewOnTransaction(Exception exception)
+        internal void ExecuteOnErrorGetTagsForViewOnTransaction(Exception exception)
         {
-            OnErrorOBPv121GetTagsForViewOnTransaction?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetTagsForViewOnTransaction?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121GetTransactionNarrative;
+        public event EventHandler<ApiResponseEventArgs>? OnGetTransactionNarrative;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121GetTransactionNarrative;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetTransactionNarrative;
 
-        internal void ExecuteOnOBPv121GetTransactionNarrative(TransactionApi.OBPv121GetTransactionNarrativeApiResponse apiResponse)
+        internal void ExecuteOnGetTransactionNarrative(TransactionApi.GetTransactionNarrativeApiResponse apiResponse)
         {
-            OnOBPv121GetTransactionNarrative?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetTransactionNarrative?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121GetTransactionNarrative(Exception exception)
+        internal void ExecuteOnErrorGetTransactionNarrative(Exception exception)
         {
-            OnErrorOBPv121GetTransactionNarrative?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetTransactionNarrative?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121GetWhereTagForViewOnTransaction;
+        public event EventHandler<ApiResponseEventArgs>? OnGetWhereTagForViewOnTransaction;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121GetWhereTagForViewOnTransaction;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetWhereTagForViewOnTransaction;
 
-        internal void ExecuteOnOBPv121GetWhereTagForViewOnTransaction(TransactionApi.OBPv121GetWhereTagForViewOnTransactionApiResponse apiResponse)
+        internal void ExecuteOnGetWhereTagForViewOnTransaction(TransactionApi.GetWhereTagForViewOnTransactionApiResponse apiResponse)
         {
-            OnOBPv121GetWhereTagForViewOnTransaction?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetWhereTagForViewOnTransaction?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121GetWhereTagForViewOnTransaction(Exception exception)
+        internal void ExecuteOnErrorGetWhereTagForViewOnTransaction(Exception exception)
         {
-            OnErrorOBPv121GetWhereTagForViewOnTransaction?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetWhereTagForViewOnTransaction?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121UpdateTransactionNarrative;
+        public event EventHandler<ApiResponseEventArgs>? OnUpdateTransactionNarrative;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121UpdateTransactionNarrative;
+        public event EventHandler<ExceptionEventArgs>? OnErrorUpdateTransactionNarrative;
 
-        internal void ExecuteOnOBPv121UpdateTransactionNarrative(TransactionApi.OBPv121UpdateTransactionNarrativeApiResponse apiResponse)
+        internal void ExecuteOnUpdateTransactionNarrative(TransactionApi.UpdateTransactionNarrativeApiResponse apiResponse)
         {
-            OnOBPv121UpdateTransactionNarrative?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnUpdateTransactionNarrative?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121UpdateTransactionNarrative(Exception exception)
+        internal void ExecuteOnErrorUpdateTransactionNarrative(Exception exception)
         {
-            OnErrorOBPv121UpdateTransactionNarrative?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorUpdateTransactionNarrative?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121UpdateWhereTagForViewOnTransaction;
+        public event EventHandler<ApiResponseEventArgs>? OnUpdateWhereTagForViewOnTransaction;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121UpdateWhereTagForViewOnTransaction;
+        public event EventHandler<ExceptionEventArgs>? OnErrorUpdateWhereTagForViewOnTransaction;
 
-        internal void ExecuteOnOBPv121UpdateWhereTagForViewOnTransaction(TransactionApi.OBPv121UpdateWhereTagForViewOnTransactionApiResponse apiResponse)
+        internal void ExecuteOnUpdateWhereTagForViewOnTransaction(TransactionApi.UpdateWhereTagForViewOnTransactionApiResponse apiResponse)
         {
-            OnOBPv121UpdateWhereTagForViewOnTransaction?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnUpdateWhereTagForViewOnTransaction?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121UpdateWhereTagForViewOnTransaction(Exception exception)
+        internal void ExecuteOnErrorUpdateWhereTagForViewOnTransaction(Exception exception)
         {
-            OnErrorOBPv121UpdateWhereTagForViewOnTransaction?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorUpdateWhereTagForViewOnTransaction?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -952,7 +952,7 @@ namespace OpenBankProject.Api
             OauthTokenProvider = oauthTokenProvider;
         }
 
-        partial void FormatOBPv121AddCommentForViewOnTransaction(ref string bankid, ref string accountid, ref string viewid, ref string transactionid, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response);
+        partial void FormatAddCommentForViewOnTransaction(ref string bankid, ref string accountid, ref string viewid, ref string transactionid, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId);
 
         /// <summary>
         /// Validates the request parameters
@@ -961,9 +961,9 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        /// <param name="oBPv400DeleteSystemLevelEndpointTag200Response"></param>
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInnerId"></param>
         /// <returns></returns>
-        private void ValidateOBPv121AddCommentForViewOnTransaction(string bankid, string accountid, string viewid, string transactionid, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response)
+        private void ValidateAddCommentForViewOnTransaction(string bankid, string accountid, string viewid, string transactionid, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -977,8 +977,8 @@ namespace OpenBankProject.Api
             if (transactionid == null)
                 throw new ArgumentNullException(nameof(transactionid));
 
-            if (oBPv400DeleteSystemLevelEndpointTag200Response == null)
-                throw new ArgumentNullException(nameof(oBPv400DeleteSystemLevelEndpointTag200Response));
+            if (getTransactionTypes200ResponseTransactionTypesInnerId == null)
+                throw new ArgumentNullException(nameof(getTransactionTypes200ResponseTransactionTypesInnerId));
         }
 
         /// <summary>
@@ -989,11 +989,11 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        /// <param name="oBPv400DeleteSystemLevelEndpointTag200Response"></param>
-        private void AfterOBPv121AddCommentForViewOnTransactionDefaultImplementation(IOBPv121AddCommentForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response)
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInnerId"></param>
+        private void AfterAddCommentForViewOnTransactionDefaultImplementation(IAddCommentForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv121AddCommentForViewOnTransaction(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, transactionid, oBPv400DeleteSystemLevelEndpointTag200Response);
+            AfterAddCommentForViewOnTransaction(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, transactionid, getTransactionTypes200ResponseTransactionTypesInnerId);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1007,8 +1007,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        /// <param name="oBPv400DeleteSystemLevelEndpointTag200Response"></param>
-        partial void AfterOBPv121AddCommentForViewOnTransaction(ref bool suppressDefaultLog, IOBPv121AddCommentForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response);
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInnerId"></param>
+        partial void AfterAddCommentForViewOnTransaction(ref bool suppressDefaultLog, IAddCommentForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1020,11 +1020,11 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        /// <param name="oBPv400DeleteSystemLevelEndpointTag200Response"></param>
-        private void OnErrorOBPv121AddCommentForViewOnTransactionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response)
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInnerId"></param>
+        private void OnErrorAddCommentForViewOnTransactionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121AddCommentForViewOnTransaction(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, transactionid, oBPv400DeleteSystemLevelEndpointTag200Response);
+            OnErrorAddCommentForViewOnTransaction(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, transactionid, getTransactionTypes200ResponseTransactionTypesInnerId);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1040,8 +1040,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        /// <param name="oBPv400DeleteSystemLevelEndpointTag200Response"></param>
-        partial void OnErrorOBPv121AddCommentForViewOnTransaction(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response);
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInnerId"></param>
+        partial void OnErrorAddCommentForViewOnTransaction(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId);
 
         /// <summary>
         /// Add a Transaction Comment &lt;p&gt;Posts a comment about a transaction TRANSACTION_ID on a &lt;a href&#x3D;\&quot;#1_2_1-getViewsForBankAccount\&quot;&gt;view&lt;/a&gt; VIEW_ID.&lt;/p&gt; &lt;p&gt;${authenticationRequiredMessage(false)}&lt;/p&gt; &lt;p&gt;Authentication is required since the comment is linked with the user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
@@ -1050,14 +1050,14 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
-        /// <param name="oBPv400DeleteSystemLevelEndpointTag200Response">Request body</param>
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInnerId">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddCommentForViewOnTransactionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121AddCommentForViewOnTransactionApiResponse?> OBPv121AddCommentForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddCommentForViewOnTransactionApiResponse"/>&gt;</returns>
+        public async Task<IAddCommentForViewOnTransactionApiResponse?> AddCommentForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv121AddCommentForViewOnTransactionAsync(bankid, accountid, viewid, transactionid, oBPv400DeleteSystemLevelEndpointTag200Response, cancellationToken).ConfigureAwait(false);
+                return await AddCommentForViewOnTransactionAsync(bankid, accountid, viewid, transactionid, getTransactionTypes200ResponseTransactionTypesInnerId, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1073,18 +1073,18 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
-        /// <param name="oBPv400DeleteSystemLevelEndpointTag200Response">Request body</param>
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInnerId">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddCommentForViewOnTransactionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121AddCommentForViewOnTransactionApiResponse> OBPv121AddCommentForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddCommentForViewOnTransactionApiResponse"/>&gt;</returns>
+        public async Task<IAddCommentForViewOnTransactionApiResponse> AddCommentForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv121AddCommentForViewOnTransaction(bankid, accountid, viewid, transactionid, oBPv400DeleteSystemLevelEndpointTag200Response);
+                ValidateAddCommentForViewOnTransaction(bankid, accountid, viewid, transactionid, getTransactionTypes200ResponseTransactionTypesInnerId);
 
-                FormatOBPv121AddCommentForViewOnTransaction(ref bankid, ref accountid, ref viewid, ref transactionid, oBPv400DeleteSystemLevelEndpointTag200Response);
+                FormatAddCommentForViewOnTransaction(ref bankid, ref accountid, ref viewid, ref transactionid, getTransactionTypes200ResponseTransactionTypesInnerId);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1099,16 +1099,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Btransactionid%7D", Uri.EscapeDataString(transactionid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv400DeleteSystemLevelEndpointTag200Response as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (getTransactionTypes200ResponseTransactionTypesInnerId as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400DeleteSystemLevelEndpointTag200Response, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(getTransactionTypes200ResponseTransactionTypesInnerId, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1144,8 +1144,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<TransactionApi.OBPv121AddCommentForViewOnTransactionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<TransactionApi.OBPv121AddCommentForViewOnTransactionApiResponse>();
-                        TransactionApi.OBPv121AddCommentForViewOnTransactionApiResponse apiResponseLocalVar;
+                        ILogger<TransactionApi.AddCommentForViewOnTransactionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<TransactionApi.AddCommentForViewOnTransactionApiResponse>();
+                        TransactionApi.AddCommentForViewOnTransactionApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1156,9 +1156,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv121AddCommentForViewOnTransactionDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, transactionid, oBPv400DeleteSystemLevelEndpointTag200Response);
+                        AfterAddCommentForViewOnTransactionDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, transactionid, getTransactionTypes200ResponseTransactionTypesInnerId);
 
-                        Events.ExecuteOnOBPv121AddCommentForViewOnTransaction(apiResponseLocalVar);
+                        Events.ExecuteOnAddCommentForViewOnTransaction(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1170,13 +1170,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv121AddCommentForViewOnTransactionDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments", uriBuilderLocalVar.Path, bankid, accountid, viewid, transactionid, oBPv400DeleteSystemLevelEndpointTag200Response);
-                Events.ExecuteOnErrorOBPv121AddCommentForViewOnTransaction(e);
+                OnErrorAddCommentForViewOnTransactionDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments", uriBuilderLocalVar.Path, bankid, accountid, viewid, transactionid, getTransactionTypes200ResponseTransactionTypesInnerId);
+                Events.ExecuteOnErrorAddCommentForViewOnTransaction(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv121AddImageForViewOnTransaction(ref string bankid, ref string accountid, ref string viewid, ref string transactionid, OBPv121AddImageForViewOnTransactionRequest oBPv121AddImageForViewOnTransactionRequest);
+        partial void FormatAddImageForViewOnTransaction(ref string bankid, ref string accountid, ref string viewid, ref string transactionid, AddImageForViewOnTransactionRequest addImageForViewOnTransactionRequest);
 
         /// <summary>
         /// Validates the request parameters
@@ -1185,9 +1185,9 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        /// <param name="oBPv121AddImageForViewOnTransactionRequest"></param>
+        /// <param name="addImageForViewOnTransactionRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv121AddImageForViewOnTransaction(string bankid, string accountid, string viewid, string transactionid, OBPv121AddImageForViewOnTransactionRequest oBPv121AddImageForViewOnTransactionRequest)
+        private void ValidateAddImageForViewOnTransaction(string bankid, string accountid, string viewid, string transactionid, AddImageForViewOnTransactionRequest addImageForViewOnTransactionRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -1201,8 +1201,8 @@ namespace OpenBankProject.Api
             if (transactionid == null)
                 throw new ArgumentNullException(nameof(transactionid));
 
-            if (oBPv121AddImageForViewOnTransactionRequest == null)
-                throw new ArgumentNullException(nameof(oBPv121AddImageForViewOnTransactionRequest));
+            if (addImageForViewOnTransactionRequest == null)
+                throw new ArgumentNullException(nameof(addImageForViewOnTransactionRequest));
         }
 
         /// <summary>
@@ -1213,11 +1213,11 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        /// <param name="oBPv121AddImageForViewOnTransactionRequest"></param>
-        private void AfterOBPv121AddImageForViewOnTransactionDefaultImplementation(IOBPv121AddImageForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, OBPv121AddImageForViewOnTransactionRequest oBPv121AddImageForViewOnTransactionRequest)
+        /// <param name="addImageForViewOnTransactionRequest"></param>
+        private void AfterAddImageForViewOnTransactionDefaultImplementation(IAddImageForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, AddImageForViewOnTransactionRequest addImageForViewOnTransactionRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv121AddImageForViewOnTransaction(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, transactionid, oBPv121AddImageForViewOnTransactionRequest);
+            AfterAddImageForViewOnTransaction(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, transactionid, addImageForViewOnTransactionRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1231,8 +1231,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        /// <param name="oBPv121AddImageForViewOnTransactionRequest"></param>
-        partial void AfterOBPv121AddImageForViewOnTransaction(ref bool suppressDefaultLog, IOBPv121AddImageForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, OBPv121AddImageForViewOnTransactionRequest oBPv121AddImageForViewOnTransactionRequest);
+        /// <param name="addImageForViewOnTransactionRequest"></param>
+        partial void AfterAddImageForViewOnTransaction(ref bool suppressDefaultLog, IAddImageForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, AddImageForViewOnTransactionRequest addImageForViewOnTransactionRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1244,11 +1244,11 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        /// <param name="oBPv121AddImageForViewOnTransactionRequest"></param>
-        private void OnErrorOBPv121AddImageForViewOnTransactionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, OBPv121AddImageForViewOnTransactionRequest oBPv121AddImageForViewOnTransactionRequest)
+        /// <param name="addImageForViewOnTransactionRequest"></param>
+        private void OnErrorAddImageForViewOnTransactionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, AddImageForViewOnTransactionRequest addImageForViewOnTransactionRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121AddImageForViewOnTransaction(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, transactionid, oBPv121AddImageForViewOnTransactionRequest);
+            OnErrorAddImageForViewOnTransaction(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, transactionid, addImageForViewOnTransactionRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1264,8 +1264,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        /// <param name="oBPv121AddImageForViewOnTransactionRequest"></param>
-        partial void OnErrorOBPv121AddImageForViewOnTransaction(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, OBPv121AddImageForViewOnTransactionRequest oBPv121AddImageForViewOnTransactionRequest);
+        /// <param name="addImageForViewOnTransactionRequest"></param>
+        partial void OnErrorAddImageForViewOnTransaction(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, AddImageForViewOnTransactionRequest addImageForViewOnTransactionRequest);
 
         /// <summary>
         /// Add a Transaction Image &lt;p&gt;Posts an image about a transaction TRANSACTION_ID on a &lt;a href&#x3D;\&quot;#1_2_1-getViewsForBankAccount\&quot;&gt;view&lt;/a&gt; VIEW_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;The image is linked with the user.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;URL&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;label&lt;/strong&gt;&lt;/a&gt;: My Account&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;URL&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;label&lt;/strong&gt;&lt;/a&gt;: My Account&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
@@ -1274,14 +1274,14 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
-        /// <param name="oBPv121AddImageForViewOnTransactionRequest">Request body</param>
+        /// <param name="addImageForViewOnTransactionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddImageForViewOnTransactionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121AddImageForViewOnTransactionApiResponse?> OBPv121AddImageForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, OBPv121AddImageForViewOnTransactionRequest oBPv121AddImageForViewOnTransactionRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddImageForViewOnTransactionApiResponse"/>&gt;</returns>
+        public async Task<IAddImageForViewOnTransactionApiResponse?> AddImageForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, AddImageForViewOnTransactionRequest addImageForViewOnTransactionRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv121AddImageForViewOnTransactionAsync(bankid, accountid, viewid, transactionid, oBPv121AddImageForViewOnTransactionRequest, cancellationToken).ConfigureAwait(false);
+                return await AddImageForViewOnTransactionAsync(bankid, accountid, viewid, transactionid, addImageForViewOnTransactionRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1297,18 +1297,18 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
-        /// <param name="oBPv121AddImageForViewOnTransactionRequest">Request body</param>
+        /// <param name="addImageForViewOnTransactionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddImageForViewOnTransactionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121AddImageForViewOnTransactionApiResponse> OBPv121AddImageForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, OBPv121AddImageForViewOnTransactionRequest oBPv121AddImageForViewOnTransactionRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddImageForViewOnTransactionApiResponse"/>&gt;</returns>
+        public async Task<IAddImageForViewOnTransactionApiResponse> AddImageForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, AddImageForViewOnTransactionRequest addImageForViewOnTransactionRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv121AddImageForViewOnTransaction(bankid, accountid, viewid, transactionid, oBPv121AddImageForViewOnTransactionRequest);
+                ValidateAddImageForViewOnTransaction(bankid, accountid, viewid, transactionid, addImageForViewOnTransactionRequest);
 
-                FormatOBPv121AddImageForViewOnTransaction(ref bankid, ref accountid, ref viewid, ref transactionid, oBPv121AddImageForViewOnTransactionRequest);
+                FormatAddImageForViewOnTransaction(ref bankid, ref accountid, ref viewid, ref transactionid, addImageForViewOnTransactionRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1323,16 +1323,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Btransactionid%7D", Uri.EscapeDataString(transactionid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv121AddImageForViewOnTransactionRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (addImageForViewOnTransactionRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv121AddImageForViewOnTransactionRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(addImageForViewOnTransactionRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1368,8 +1368,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<TransactionApi.OBPv121AddImageForViewOnTransactionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<TransactionApi.OBPv121AddImageForViewOnTransactionApiResponse>();
-                        TransactionApi.OBPv121AddImageForViewOnTransactionApiResponse apiResponseLocalVar;
+                        ILogger<TransactionApi.AddImageForViewOnTransactionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<TransactionApi.AddImageForViewOnTransactionApiResponse>();
+                        TransactionApi.AddImageForViewOnTransactionApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1380,9 +1380,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv121AddImageForViewOnTransactionDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, transactionid, oBPv121AddImageForViewOnTransactionRequest);
+                        AfterAddImageForViewOnTransactionDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, transactionid, addImageForViewOnTransactionRequest);
 
-                        Events.ExecuteOnOBPv121AddImageForViewOnTransaction(apiResponseLocalVar);
+                        Events.ExecuteOnAddImageForViewOnTransaction(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1394,13 +1394,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv121AddImageForViewOnTransactionDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images", uriBuilderLocalVar.Path, bankid, accountid, viewid, transactionid, oBPv121AddImageForViewOnTransactionRequest);
-                Events.ExecuteOnErrorOBPv121AddImageForViewOnTransaction(e);
+                OnErrorAddImageForViewOnTransactionDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images", uriBuilderLocalVar.Path, bankid, accountid, viewid, transactionid, addImageForViewOnTransactionRequest);
+                Events.ExecuteOnErrorAddImageForViewOnTransaction(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv121AddTagForViewOnTransaction(ref string bankid, ref string accountid, ref string viewid, ref string transactionid, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response);
+        partial void FormatAddTagForViewOnTransaction(ref string bankid, ref string accountid, ref string viewid, ref string transactionid, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId);
 
         /// <summary>
         /// Validates the request parameters
@@ -1409,9 +1409,9 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        /// <param name="oBPv400DeleteSystemLevelEndpointTag200Response"></param>
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInnerId"></param>
         /// <returns></returns>
-        private void ValidateOBPv121AddTagForViewOnTransaction(string bankid, string accountid, string viewid, string transactionid, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response)
+        private void ValidateAddTagForViewOnTransaction(string bankid, string accountid, string viewid, string transactionid, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -1425,8 +1425,8 @@ namespace OpenBankProject.Api
             if (transactionid == null)
                 throw new ArgumentNullException(nameof(transactionid));
 
-            if (oBPv400DeleteSystemLevelEndpointTag200Response == null)
-                throw new ArgumentNullException(nameof(oBPv400DeleteSystemLevelEndpointTag200Response));
+            if (getTransactionTypes200ResponseTransactionTypesInnerId == null)
+                throw new ArgumentNullException(nameof(getTransactionTypes200ResponseTransactionTypesInnerId));
         }
 
         /// <summary>
@@ -1437,11 +1437,11 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        /// <param name="oBPv400DeleteSystemLevelEndpointTag200Response"></param>
-        private void AfterOBPv121AddTagForViewOnTransactionDefaultImplementation(IOBPv121AddTagForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response)
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInnerId"></param>
+        private void AfterAddTagForViewOnTransactionDefaultImplementation(IAddTagForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv121AddTagForViewOnTransaction(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, transactionid, oBPv400DeleteSystemLevelEndpointTag200Response);
+            AfterAddTagForViewOnTransaction(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, transactionid, getTransactionTypes200ResponseTransactionTypesInnerId);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1455,8 +1455,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        /// <param name="oBPv400DeleteSystemLevelEndpointTag200Response"></param>
-        partial void AfterOBPv121AddTagForViewOnTransaction(ref bool suppressDefaultLog, IOBPv121AddTagForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response);
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInnerId"></param>
+        partial void AfterAddTagForViewOnTransaction(ref bool suppressDefaultLog, IAddTagForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1468,11 +1468,11 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        /// <param name="oBPv400DeleteSystemLevelEndpointTag200Response"></param>
-        private void OnErrorOBPv121AddTagForViewOnTransactionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response)
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInnerId"></param>
+        private void OnErrorAddTagForViewOnTransactionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121AddTagForViewOnTransaction(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, transactionid, oBPv400DeleteSystemLevelEndpointTag200Response);
+            OnErrorAddTagForViewOnTransaction(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, transactionid, getTransactionTypes200ResponseTransactionTypesInnerId);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1488,8 +1488,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        /// <param name="oBPv400DeleteSystemLevelEndpointTag200Response"></param>
-        partial void OnErrorOBPv121AddTagForViewOnTransaction(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response);
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInnerId"></param>
+        partial void OnErrorAddTagForViewOnTransaction(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId);
 
         /// <summary>
         /// Add a Transaction Tag &lt;p&gt;Posts a tag about a transaction TRANSACTION_ID on a &lt;a href&#x3D;\&quot;#1_2_1-getViewsForBankAccount\&quot;&gt;view&lt;/a&gt; VIEW_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;Authentication is required as the tag is linked with the user.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
@@ -1498,14 +1498,14 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
-        /// <param name="oBPv400DeleteSystemLevelEndpointTag200Response">Request body</param>
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInnerId">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddTagForViewOnTransactionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121AddTagForViewOnTransactionApiResponse?> OBPv121AddTagForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddTagForViewOnTransactionApiResponse"/>&gt;</returns>
+        public async Task<IAddTagForViewOnTransactionApiResponse?> AddTagForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv121AddTagForViewOnTransactionAsync(bankid, accountid, viewid, transactionid, oBPv400DeleteSystemLevelEndpointTag200Response, cancellationToken).ConfigureAwait(false);
+                return await AddTagForViewOnTransactionAsync(bankid, accountid, viewid, transactionid, getTransactionTypes200ResponseTransactionTypesInnerId, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1521,18 +1521,18 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
-        /// <param name="oBPv400DeleteSystemLevelEndpointTag200Response">Request body</param>
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInnerId">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddTagForViewOnTransactionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121AddTagForViewOnTransactionApiResponse> OBPv121AddTagForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddTagForViewOnTransactionApiResponse"/>&gt;</returns>
+        public async Task<IAddTagForViewOnTransactionApiResponse> AddTagForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv121AddTagForViewOnTransaction(bankid, accountid, viewid, transactionid, oBPv400DeleteSystemLevelEndpointTag200Response);
+                ValidateAddTagForViewOnTransaction(bankid, accountid, viewid, transactionid, getTransactionTypes200ResponseTransactionTypesInnerId);
 
-                FormatOBPv121AddTagForViewOnTransaction(ref bankid, ref accountid, ref viewid, ref transactionid, oBPv400DeleteSystemLevelEndpointTag200Response);
+                FormatAddTagForViewOnTransaction(ref bankid, ref accountid, ref viewid, ref transactionid, getTransactionTypes200ResponseTransactionTypesInnerId);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1547,16 +1547,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Btransactionid%7D", Uri.EscapeDataString(transactionid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv400DeleteSystemLevelEndpointTag200Response as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (getTransactionTypes200ResponseTransactionTypesInnerId as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400DeleteSystemLevelEndpointTag200Response, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(getTransactionTypes200ResponseTransactionTypesInnerId, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1592,8 +1592,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<TransactionApi.OBPv121AddTagForViewOnTransactionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<TransactionApi.OBPv121AddTagForViewOnTransactionApiResponse>();
-                        TransactionApi.OBPv121AddTagForViewOnTransactionApiResponse apiResponseLocalVar;
+                        ILogger<TransactionApi.AddTagForViewOnTransactionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<TransactionApi.AddTagForViewOnTransactionApiResponse>();
+                        TransactionApi.AddTagForViewOnTransactionApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1604,9 +1604,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv121AddTagForViewOnTransactionDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, transactionid, oBPv400DeleteSystemLevelEndpointTag200Response);
+                        AfterAddTagForViewOnTransactionDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, transactionid, getTransactionTypes200ResponseTransactionTypesInnerId);
 
-                        Events.ExecuteOnOBPv121AddTagForViewOnTransaction(apiResponseLocalVar);
+                        Events.ExecuteOnAddTagForViewOnTransaction(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1618,13 +1618,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv121AddTagForViewOnTransactionDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags", uriBuilderLocalVar.Path, bankid, accountid, viewid, transactionid, oBPv400DeleteSystemLevelEndpointTag200Response);
-                Events.ExecuteOnErrorOBPv121AddTagForViewOnTransaction(e);
+                OnErrorAddTagForViewOnTransactionDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags", uriBuilderLocalVar.Path, bankid, accountid, viewid, transactionid, getTransactionTypes200ResponseTransactionTypesInnerId);
+                Events.ExecuteOnErrorAddTagForViewOnTransaction(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv121AddTransactionNarrative(ref string bankid, ref string accountid, ref string viewid, ref string transactionid, OBPv121GetTransactionNarrative200Response oBPv121GetTransactionNarrative200Response);
+        partial void FormatAddTransactionNarrative(ref string bankid, ref string accountid, ref string viewid, ref string transactionid, GetTransactionNarrative200Response getTransactionNarrative200Response);
 
         /// <summary>
         /// Validates the request parameters
@@ -1633,9 +1633,9 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        /// <param name="oBPv121GetTransactionNarrative200Response"></param>
+        /// <param name="getTransactionNarrative200Response"></param>
         /// <returns></returns>
-        private void ValidateOBPv121AddTransactionNarrative(string bankid, string accountid, string viewid, string transactionid, OBPv121GetTransactionNarrative200Response oBPv121GetTransactionNarrative200Response)
+        private void ValidateAddTransactionNarrative(string bankid, string accountid, string viewid, string transactionid, GetTransactionNarrative200Response getTransactionNarrative200Response)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -1649,8 +1649,8 @@ namespace OpenBankProject.Api
             if (transactionid == null)
                 throw new ArgumentNullException(nameof(transactionid));
 
-            if (oBPv121GetTransactionNarrative200Response == null)
-                throw new ArgumentNullException(nameof(oBPv121GetTransactionNarrative200Response));
+            if (getTransactionNarrative200Response == null)
+                throw new ArgumentNullException(nameof(getTransactionNarrative200Response));
         }
 
         /// <summary>
@@ -1661,11 +1661,11 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        /// <param name="oBPv121GetTransactionNarrative200Response"></param>
-        private void AfterOBPv121AddTransactionNarrativeDefaultImplementation(IOBPv121AddTransactionNarrativeApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, OBPv121GetTransactionNarrative200Response oBPv121GetTransactionNarrative200Response)
+        /// <param name="getTransactionNarrative200Response"></param>
+        private void AfterAddTransactionNarrativeDefaultImplementation(IAddTransactionNarrativeApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, GetTransactionNarrative200Response getTransactionNarrative200Response)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv121AddTransactionNarrative(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, transactionid, oBPv121GetTransactionNarrative200Response);
+            AfterAddTransactionNarrative(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, transactionid, getTransactionNarrative200Response);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1679,8 +1679,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        /// <param name="oBPv121GetTransactionNarrative200Response"></param>
-        partial void AfterOBPv121AddTransactionNarrative(ref bool suppressDefaultLog, IOBPv121AddTransactionNarrativeApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, OBPv121GetTransactionNarrative200Response oBPv121GetTransactionNarrative200Response);
+        /// <param name="getTransactionNarrative200Response"></param>
+        partial void AfterAddTransactionNarrative(ref bool suppressDefaultLog, IAddTransactionNarrativeApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, GetTransactionNarrative200Response getTransactionNarrative200Response);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1692,11 +1692,11 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        /// <param name="oBPv121GetTransactionNarrative200Response"></param>
-        private void OnErrorOBPv121AddTransactionNarrativeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, OBPv121GetTransactionNarrative200Response oBPv121GetTransactionNarrative200Response)
+        /// <param name="getTransactionNarrative200Response"></param>
+        private void OnErrorAddTransactionNarrativeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, GetTransactionNarrative200Response getTransactionNarrative200Response)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121AddTransactionNarrative(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, transactionid, oBPv121GetTransactionNarrative200Response);
+            OnErrorAddTransactionNarrative(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, transactionid, getTransactionNarrative200Response);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1712,8 +1712,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        /// <param name="oBPv121GetTransactionNarrative200Response"></param>
-        partial void OnErrorOBPv121AddTransactionNarrative(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, OBPv121GetTransactionNarrative200Response oBPv121GetTransactionNarrative200Response);
+        /// <param name="getTransactionNarrative200Response"></param>
+        partial void OnErrorAddTransactionNarrative(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, GetTransactionNarrative200Response getTransactionNarrative200Response);
 
         /// <summary>
         /// Add a Transaction Narrative &lt;p&gt;Creates a description of the transaction TRANSACTION_ID.&lt;/p&gt; &lt;p&gt;Note: Unlike other items of metadata, there is only one &amp;quot;narrative&amp;quot; per transaction accross all views.&lt;br /&gt; If you set narrative via a view e.g. view-x it will be seen via view-y (as long as view-y has permission to see the narrative).&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;br /&gt; Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#narrative\&quot;&gt;&lt;strong&gt;narrative&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
@@ -1722,14 +1722,14 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
-        /// <param name="oBPv121GetTransactionNarrative200Response">Request body</param>
+        /// <param name="getTransactionNarrative200Response">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddTransactionNarrativeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121AddTransactionNarrativeApiResponse?> OBPv121AddTransactionNarrativeOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, OBPv121GetTransactionNarrative200Response oBPv121GetTransactionNarrative200Response, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddTransactionNarrativeApiResponse"/>&gt;</returns>
+        public async Task<IAddTransactionNarrativeApiResponse?> AddTransactionNarrativeOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, GetTransactionNarrative200Response getTransactionNarrative200Response, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv121AddTransactionNarrativeAsync(bankid, accountid, viewid, transactionid, oBPv121GetTransactionNarrative200Response, cancellationToken).ConfigureAwait(false);
+                return await AddTransactionNarrativeAsync(bankid, accountid, viewid, transactionid, getTransactionNarrative200Response, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1745,18 +1745,18 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
-        /// <param name="oBPv121GetTransactionNarrative200Response">Request body</param>
+        /// <param name="getTransactionNarrative200Response">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddTransactionNarrativeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121AddTransactionNarrativeApiResponse> OBPv121AddTransactionNarrativeAsync(string bankid, string accountid, string viewid, string transactionid, OBPv121GetTransactionNarrative200Response oBPv121GetTransactionNarrative200Response, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddTransactionNarrativeApiResponse"/>&gt;</returns>
+        public async Task<IAddTransactionNarrativeApiResponse> AddTransactionNarrativeAsync(string bankid, string accountid, string viewid, string transactionid, GetTransactionNarrative200Response getTransactionNarrative200Response, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv121AddTransactionNarrative(bankid, accountid, viewid, transactionid, oBPv121GetTransactionNarrative200Response);
+                ValidateAddTransactionNarrative(bankid, accountid, viewid, transactionid, getTransactionNarrative200Response);
 
-                FormatOBPv121AddTransactionNarrative(ref bankid, ref accountid, ref viewid, ref transactionid, oBPv121GetTransactionNarrative200Response);
+                FormatAddTransactionNarrative(ref bankid, ref accountid, ref viewid, ref transactionid, getTransactionNarrative200Response);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1771,16 +1771,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Btransactionid%7D", Uri.EscapeDataString(transactionid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv121GetTransactionNarrative200Response as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (getTransactionNarrative200Response as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv121GetTransactionNarrative200Response, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(getTransactionNarrative200Response, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1816,8 +1816,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<TransactionApi.OBPv121AddTransactionNarrativeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<TransactionApi.OBPv121AddTransactionNarrativeApiResponse>();
-                        TransactionApi.OBPv121AddTransactionNarrativeApiResponse apiResponseLocalVar;
+                        ILogger<TransactionApi.AddTransactionNarrativeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<TransactionApi.AddTransactionNarrativeApiResponse>();
+                        TransactionApi.AddTransactionNarrativeApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1828,9 +1828,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv121AddTransactionNarrativeDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, transactionid, oBPv121GetTransactionNarrative200Response);
+                        AfterAddTransactionNarrativeDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, transactionid, getTransactionNarrative200Response);
 
-                        Events.ExecuteOnOBPv121AddTransactionNarrative(apiResponseLocalVar);
+                        Events.ExecuteOnAddTransactionNarrative(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1842,13 +1842,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv121AddTransactionNarrativeDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative", uriBuilderLocalVar.Path, bankid, accountid, viewid, transactionid, oBPv121GetTransactionNarrative200Response);
-                Events.ExecuteOnErrorOBPv121AddTransactionNarrative(e);
+                OnErrorAddTransactionNarrativeDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative", uriBuilderLocalVar.Path, bankid, accountid, viewid, transactionid, getTransactionNarrative200Response);
+                Events.ExecuteOnErrorAddTransactionNarrative(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv121AddWhereTagForViewOnTransaction(ref string bankid, ref string accountid, ref string viewid, ref string transactionid, OBPv121UpdateWhereTagForViewOnTransactionRequest oBPv121UpdateWhereTagForViewOnTransactionRequest);
+        partial void FormatAddWhereTagForViewOnTransaction(ref string bankid, ref string accountid, ref string viewid, ref string transactionid, UpdateWhereTagForViewOnTransactionRequest updateWhereTagForViewOnTransactionRequest);
 
         /// <summary>
         /// Validates the request parameters
@@ -1857,9 +1857,9 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        /// <param name="oBPv121UpdateWhereTagForViewOnTransactionRequest"></param>
+        /// <param name="updateWhereTagForViewOnTransactionRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv121AddWhereTagForViewOnTransaction(string bankid, string accountid, string viewid, string transactionid, OBPv121UpdateWhereTagForViewOnTransactionRequest oBPv121UpdateWhereTagForViewOnTransactionRequest)
+        private void ValidateAddWhereTagForViewOnTransaction(string bankid, string accountid, string viewid, string transactionid, UpdateWhereTagForViewOnTransactionRequest updateWhereTagForViewOnTransactionRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -1873,8 +1873,8 @@ namespace OpenBankProject.Api
             if (transactionid == null)
                 throw new ArgumentNullException(nameof(transactionid));
 
-            if (oBPv121UpdateWhereTagForViewOnTransactionRequest == null)
-                throw new ArgumentNullException(nameof(oBPv121UpdateWhereTagForViewOnTransactionRequest));
+            if (updateWhereTagForViewOnTransactionRequest == null)
+                throw new ArgumentNullException(nameof(updateWhereTagForViewOnTransactionRequest));
         }
 
         /// <summary>
@@ -1885,11 +1885,11 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        /// <param name="oBPv121UpdateWhereTagForViewOnTransactionRequest"></param>
-        private void AfterOBPv121AddWhereTagForViewOnTransactionDefaultImplementation(IOBPv121AddWhereTagForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, OBPv121UpdateWhereTagForViewOnTransactionRequest oBPv121UpdateWhereTagForViewOnTransactionRequest)
+        /// <param name="updateWhereTagForViewOnTransactionRequest"></param>
+        private void AfterAddWhereTagForViewOnTransactionDefaultImplementation(IAddWhereTagForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, UpdateWhereTagForViewOnTransactionRequest updateWhereTagForViewOnTransactionRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv121AddWhereTagForViewOnTransaction(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, transactionid, oBPv121UpdateWhereTagForViewOnTransactionRequest);
+            AfterAddWhereTagForViewOnTransaction(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, transactionid, updateWhereTagForViewOnTransactionRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1903,8 +1903,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        /// <param name="oBPv121UpdateWhereTagForViewOnTransactionRequest"></param>
-        partial void AfterOBPv121AddWhereTagForViewOnTransaction(ref bool suppressDefaultLog, IOBPv121AddWhereTagForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, OBPv121UpdateWhereTagForViewOnTransactionRequest oBPv121UpdateWhereTagForViewOnTransactionRequest);
+        /// <param name="updateWhereTagForViewOnTransactionRequest"></param>
+        partial void AfterAddWhereTagForViewOnTransaction(ref bool suppressDefaultLog, IAddWhereTagForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, UpdateWhereTagForViewOnTransactionRequest updateWhereTagForViewOnTransactionRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1916,11 +1916,11 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        /// <param name="oBPv121UpdateWhereTagForViewOnTransactionRequest"></param>
-        private void OnErrorOBPv121AddWhereTagForViewOnTransactionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, OBPv121UpdateWhereTagForViewOnTransactionRequest oBPv121UpdateWhereTagForViewOnTransactionRequest)
+        /// <param name="updateWhereTagForViewOnTransactionRequest"></param>
+        private void OnErrorAddWhereTagForViewOnTransactionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, UpdateWhereTagForViewOnTransactionRequest updateWhereTagForViewOnTransactionRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121AddWhereTagForViewOnTransaction(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, transactionid, oBPv121UpdateWhereTagForViewOnTransactionRequest);
+            OnErrorAddWhereTagForViewOnTransaction(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, transactionid, updateWhereTagForViewOnTransactionRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1936,8 +1936,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        /// <param name="oBPv121UpdateWhereTagForViewOnTransactionRequest"></param>
-        partial void OnErrorOBPv121AddWhereTagForViewOnTransaction(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, OBPv121UpdateWhereTagForViewOnTransactionRequest oBPv121UpdateWhereTagForViewOnTransactionRequest);
+        /// <param name="updateWhereTagForViewOnTransactionRequest"></param>
+        partial void OnErrorAddWhereTagForViewOnTransaction(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, UpdateWhereTagForViewOnTransactionRequest updateWhereTagForViewOnTransactionRequest);
 
         /// <summary>
         /// Add a Transaction where Tag &lt;p&gt;Creates a &amp;quot;where&amp;quot; Geo tag on a transaction TRANSACTION_ID in a &lt;a href&#x3D;\&quot;#1_2_1-getViewsForBankAccount\&quot;&gt;view&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;The geo tag is linked with the user.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#where\&quot;&gt;&lt;strong&gt;where&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
@@ -1946,14 +1946,14 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
-        /// <param name="oBPv121UpdateWhereTagForViewOnTransactionRequest">Request body</param>
+        /// <param name="updateWhereTagForViewOnTransactionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddWhereTagForViewOnTransactionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121AddWhereTagForViewOnTransactionApiResponse?> OBPv121AddWhereTagForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, OBPv121UpdateWhereTagForViewOnTransactionRequest oBPv121UpdateWhereTagForViewOnTransactionRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddWhereTagForViewOnTransactionApiResponse"/>&gt;</returns>
+        public async Task<IAddWhereTagForViewOnTransactionApiResponse?> AddWhereTagForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, UpdateWhereTagForViewOnTransactionRequest updateWhereTagForViewOnTransactionRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv121AddWhereTagForViewOnTransactionAsync(bankid, accountid, viewid, transactionid, oBPv121UpdateWhereTagForViewOnTransactionRequest, cancellationToken).ConfigureAwait(false);
+                return await AddWhereTagForViewOnTransactionAsync(bankid, accountid, viewid, transactionid, updateWhereTagForViewOnTransactionRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1969,18 +1969,18 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
-        /// <param name="oBPv121UpdateWhereTagForViewOnTransactionRequest">Request body</param>
+        /// <param name="updateWhereTagForViewOnTransactionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddWhereTagForViewOnTransactionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121AddWhereTagForViewOnTransactionApiResponse> OBPv121AddWhereTagForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, OBPv121UpdateWhereTagForViewOnTransactionRequest oBPv121UpdateWhereTagForViewOnTransactionRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddWhereTagForViewOnTransactionApiResponse"/>&gt;</returns>
+        public async Task<IAddWhereTagForViewOnTransactionApiResponse> AddWhereTagForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, UpdateWhereTagForViewOnTransactionRequest updateWhereTagForViewOnTransactionRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv121AddWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid, oBPv121UpdateWhereTagForViewOnTransactionRequest);
+                ValidateAddWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid, updateWhereTagForViewOnTransactionRequest);
 
-                FormatOBPv121AddWhereTagForViewOnTransaction(ref bankid, ref accountid, ref viewid, ref transactionid, oBPv121UpdateWhereTagForViewOnTransactionRequest);
+                FormatAddWhereTagForViewOnTransaction(ref bankid, ref accountid, ref viewid, ref transactionid, updateWhereTagForViewOnTransactionRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1995,16 +1995,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Btransactionid%7D", Uri.EscapeDataString(transactionid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv121UpdateWhereTagForViewOnTransactionRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (updateWhereTagForViewOnTransactionRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv121UpdateWhereTagForViewOnTransactionRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateWhereTagForViewOnTransactionRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -2040,8 +2040,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<TransactionApi.OBPv121AddWhereTagForViewOnTransactionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<TransactionApi.OBPv121AddWhereTagForViewOnTransactionApiResponse>();
-                        TransactionApi.OBPv121AddWhereTagForViewOnTransactionApiResponse apiResponseLocalVar;
+                        ILogger<TransactionApi.AddWhereTagForViewOnTransactionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<TransactionApi.AddWhereTagForViewOnTransactionApiResponse>();
+                        TransactionApi.AddWhereTagForViewOnTransactionApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -2052,9 +2052,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv121AddWhereTagForViewOnTransactionDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, transactionid, oBPv121UpdateWhereTagForViewOnTransactionRequest);
+                        AfterAddWhereTagForViewOnTransactionDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, transactionid, updateWhereTagForViewOnTransactionRequest);
 
-                        Events.ExecuteOnOBPv121AddWhereTagForViewOnTransaction(apiResponseLocalVar);
+                        Events.ExecuteOnAddWhereTagForViewOnTransaction(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -2066,13 +2066,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv121AddWhereTagForViewOnTransactionDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where", uriBuilderLocalVar.Path, bankid, accountid, viewid, transactionid, oBPv121UpdateWhereTagForViewOnTransactionRequest);
-                Events.ExecuteOnErrorOBPv121AddWhereTagForViewOnTransaction(e);
+                OnErrorAddWhereTagForViewOnTransactionDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where", uriBuilderLocalVar.Path, bankid, accountid, viewid, transactionid, updateWhereTagForViewOnTransactionRequest);
+                Events.ExecuteOnErrorAddWhereTagForViewOnTransaction(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv121DeleteCommentForViewOnTransaction(ref string bankid, ref string accountid, ref string viewid, ref string transactionid, ref string commentid);
+        partial void FormatDeleteCommentForViewOnTransaction(ref string bankid, ref string accountid, ref string viewid, ref string transactionid, ref string commentid);
 
         /// <summary>
         /// Validates the request parameters
@@ -2083,7 +2083,7 @@ namespace OpenBankProject.Api
         /// <param name="transactionid"></param>
         /// <param name="commentid"></param>
         /// <returns></returns>
-        private void ValidateOBPv121DeleteCommentForViewOnTransaction(string bankid, string accountid, string viewid, string transactionid, string commentid)
+        private void ValidateDeleteCommentForViewOnTransaction(string bankid, string accountid, string viewid, string transactionid, string commentid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -2110,10 +2110,10 @@ namespace OpenBankProject.Api
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
         /// <param name="commentid"></param>
-        private void AfterOBPv121DeleteCommentForViewOnTransactionDefaultImplementation(IOBPv121DeleteCommentForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, string commentid)
+        private void AfterDeleteCommentForViewOnTransactionDefaultImplementation(IDeleteCommentForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, string commentid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv121DeleteCommentForViewOnTransaction(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, transactionid, commentid);
+            AfterDeleteCommentForViewOnTransaction(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, transactionid, commentid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2128,7 +2128,7 @@ namespace OpenBankProject.Api
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
         /// <param name="commentid"></param>
-        partial void AfterOBPv121DeleteCommentForViewOnTransaction(ref bool suppressDefaultLog, IOBPv121DeleteCommentForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, string commentid);
+        partial void AfterDeleteCommentForViewOnTransaction(ref bool suppressDefaultLog, IDeleteCommentForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, string commentid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2141,10 +2141,10 @@ namespace OpenBankProject.Api
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
         /// <param name="commentid"></param>
-        private void OnErrorOBPv121DeleteCommentForViewOnTransactionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, string commentid)
+        private void OnErrorDeleteCommentForViewOnTransactionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, string commentid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121DeleteCommentForViewOnTransaction(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, transactionid, commentid);
+            OnErrorDeleteCommentForViewOnTransaction(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, transactionid, commentid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2161,7 +2161,7 @@ namespace OpenBankProject.Api
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
         /// <param name="commentid"></param>
-        partial void OnErrorOBPv121DeleteCommentForViewOnTransaction(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, string commentid);
+        partial void OnErrorDeleteCommentForViewOnTransaction(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, string commentid);
 
         /// <summary>
         /// Delete a Transaction Comment &lt;p&gt;Delete the comment COMMENT_ID about the transaction TRANSACTION_ID made on &lt;a href&#x3D;\&quot;#1_2_1-getViewsForBankAccount\&quot;&gt;view&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required. The user must either have owner privileges for this account, or must be the user that posted the comment.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#comment_id\&quot;&gt;COMMENT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
@@ -2172,12 +2172,12 @@ namespace OpenBankProject.Api
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="commentid">The COMMENTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteCommentForViewOnTransactionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121DeleteCommentForViewOnTransactionApiResponse?> OBPv121DeleteCommentForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, string commentid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCommentForViewOnTransactionApiResponse"/>&gt;</returns>
+        public async Task<IDeleteCommentForViewOnTransactionApiResponse?> DeleteCommentForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, string commentid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv121DeleteCommentForViewOnTransactionAsync(bankid, accountid, viewid, transactionid, commentid, cancellationToken).ConfigureAwait(false);
+                return await DeleteCommentForViewOnTransactionAsync(bankid, accountid, viewid, transactionid, commentid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2195,16 +2195,16 @@ namespace OpenBankProject.Api
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="commentid">The COMMENTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteCommentForViewOnTransactionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121DeleteCommentForViewOnTransactionApiResponse> OBPv121DeleteCommentForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, string commentid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCommentForViewOnTransactionApiResponse"/>&gt;</returns>
+        public async Task<IDeleteCommentForViewOnTransactionApiResponse> DeleteCommentForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, string commentid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv121DeleteCommentForViewOnTransaction(bankid, accountid, viewid, transactionid, commentid);
+                ValidateDeleteCommentForViewOnTransaction(bankid, accountid, viewid, transactionid, commentid);
 
-                FormatOBPv121DeleteCommentForViewOnTransaction(ref bankid, ref accountid, ref viewid, ref transactionid, ref commentid);
+                FormatDeleteCommentForViewOnTransaction(ref bankid, ref accountid, ref viewid, ref transactionid, ref commentid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -2225,7 +2225,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -2243,8 +2243,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<TransactionApi.OBPv121DeleteCommentForViewOnTransactionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<TransactionApi.OBPv121DeleteCommentForViewOnTransactionApiResponse>();
-                        TransactionApi.OBPv121DeleteCommentForViewOnTransactionApiResponse apiResponseLocalVar;
+                        ILogger<TransactionApi.DeleteCommentForViewOnTransactionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<TransactionApi.DeleteCommentForViewOnTransactionApiResponse>();
+                        TransactionApi.DeleteCommentForViewOnTransactionApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -2255,9 +2255,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv121DeleteCommentForViewOnTransactionDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, transactionid, commentid);
+                        AfterDeleteCommentForViewOnTransactionDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, transactionid, commentid);
 
-                        Events.ExecuteOnOBPv121DeleteCommentForViewOnTransaction(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteCommentForViewOnTransaction(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -2269,13 +2269,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv121DeleteCommentForViewOnTransactionDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments/{commentid}", uriBuilderLocalVar.Path, bankid, accountid, viewid, transactionid, commentid);
-                Events.ExecuteOnErrorOBPv121DeleteCommentForViewOnTransaction(e);
+                OnErrorDeleteCommentForViewOnTransactionDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments/{commentid}", uriBuilderLocalVar.Path, bankid, accountid, viewid, transactionid, commentid);
+                Events.ExecuteOnErrorDeleteCommentForViewOnTransaction(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv121DeleteImageForViewOnTransaction(ref string bankid, ref string accountid, ref string viewid, ref string transactionid, ref string imageid);
+        partial void FormatDeleteImageForViewOnTransaction(ref string bankid, ref string accountid, ref string viewid, ref string transactionid, ref string imageid);
 
         /// <summary>
         /// Validates the request parameters
@@ -2286,7 +2286,7 @@ namespace OpenBankProject.Api
         /// <param name="transactionid"></param>
         /// <param name="imageid"></param>
         /// <returns></returns>
-        private void ValidateOBPv121DeleteImageForViewOnTransaction(string bankid, string accountid, string viewid, string transactionid, string imageid)
+        private void ValidateDeleteImageForViewOnTransaction(string bankid, string accountid, string viewid, string transactionid, string imageid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -2313,10 +2313,10 @@ namespace OpenBankProject.Api
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
         /// <param name="imageid"></param>
-        private void AfterOBPv121DeleteImageForViewOnTransactionDefaultImplementation(IOBPv121DeleteImageForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, string imageid)
+        private void AfterDeleteImageForViewOnTransactionDefaultImplementation(IDeleteImageForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, string imageid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv121DeleteImageForViewOnTransaction(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, transactionid, imageid);
+            AfterDeleteImageForViewOnTransaction(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, transactionid, imageid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2331,7 +2331,7 @@ namespace OpenBankProject.Api
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
         /// <param name="imageid"></param>
-        partial void AfterOBPv121DeleteImageForViewOnTransaction(ref bool suppressDefaultLog, IOBPv121DeleteImageForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, string imageid);
+        partial void AfterDeleteImageForViewOnTransaction(ref bool suppressDefaultLog, IDeleteImageForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, string imageid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2344,10 +2344,10 @@ namespace OpenBankProject.Api
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
         /// <param name="imageid"></param>
-        private void OnErrorOBPv121DeleteImageForViewOnTransactionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, string imageid)
+        private void OnErrorDeleteImageForViewOnTransactionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, string imageid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121DeleteImageForViewOnTransaction(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, transactionid, imageid);
+            OnErrorDeleteImageForViewOnTransaction(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, transactionid, imageid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2364,7 +2364,7 @@ namespace OpenBankProject.Api
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
         /// <param name="imageid"></param>
-        partial void OnErrorOBPv121DeleteImageForViewOnTransaction(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, string imageid);
+        partial void OnErrorDeleteImageForViewOnTransaction(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, string imageid);
 
         /// <summary>
         /// Delete a Transaction Image &lt;p&gt;Deletes the image IMAGE_ID about the transaction TRANSACTION_ID made on &lt;a href&#x3D;\&quot;#1_2_1-getViewsForBankAccount\&quot;&gt;view&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required. The user must either have owner privileges for this account, or must be the user that posted the image.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#image_id\&quot;&gt;IMAGE_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
@@ -2375,12 +2375,12 @@ namespace OpenBankProject.Api
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="imageid">The IMAGEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteImageForViewOnTransactionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121DeleteImageForViewOnTransactionApiResponse?> OBPv121DeleteImageForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, string imageid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteImageForViewOnTransactionApiResponse"/>&gt;</returns>
+        public async Task<IDeleteImageForViewOnTransactionApiResponse?> DeleteImageForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, string imageid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv121DeleteImageForViewOnTransactionAsync(bankid, accountid, viewid, transactionid, imageid, cancellationToken).ConfigureAwait(false);
+                return await DeleteImageForViewOnTransactionAsync(bankid, accountid, viewid, transactionid, imageid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2398,16 +2398,16 @@ namespace OpenBankProject.Api
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="imageid">The IMAGEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteImageForViewOnTransactionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121DeleteImageForViewOnTransactionApiResponse> OBPv121DeleteImageForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, string imageid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteImageForViewOnTransactionApiResponse"/>&gt;</returns>
+        public async Task<IDeleteImageForViewOnTransactionApiResponse> DeleteImageForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, string imageid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv121DeleteImageForViewOnTransaction(bankid, accountid, viewid, transactionid, imageid);
+                ValidateDeleteImageForViewOnTransaction(bankid, accountid, viewid, transactionid, imageid);
 
-                FormatOBPv121DeleteImageForViewOnTransaction(ref bankid, ref accountid, ref viewid, ref transactionid, ref imageid);
+                FormatDeleteImageForViewOnTransaction(ref bankid, ref accountid, ref viewid, ref transactionid, ref imageid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -2428,7 +2428,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -2446,8 +2446,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<TransactionApi.OBPv121DeleteImageForViewOnTransactionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<TransactionApi.OBPv121DeleteImageForViewOnTransactionApiResponse>();
-                        TransactionApi.OBPv121DeleteImageForViewOnTransactionApiResponse apiResponseLocalVar;
+                        ILogger<TransactionApi.DeleteImageForViewOnTransactionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<TransactionApi.DeleteImageForViewOnTransactionApiResponse>();
+                        TransactionApi.DeleteImageForViewOnTransactionApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -2458,9 +2458,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv121DeleteImageForViewOnTransactionDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, transactionid, imageid);
+                        AfterDeleteImageForViewOnTransactionDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, transactionid, imageid);
 
-                        Events.ExecuteOnOBPv121DeleteImageForViewOnTransaction(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteImageForViewOnTransaction(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -2472,13 +2472,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv121DeleteImageForViewOnTransactionDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images/{imageid}", uriBuilderLocalVar.Path, bankid, accountid, viewid, transactionid, imageid);
-                Events.ExecuteOnErrorOBPv121DeleteImageForViewOnTransaction(e);
+                OnErrorDeleteImageForViewOnTransactionDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images/{imageid}", uriBuilderLocalVar.Path, bankid, accountid, viewid, transactionid, imageid);
+                Events.ExecuteOnErrorDeleteImageForViewOnTransaction(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv121DeleteTagForViewOnTransaction(ref string bankid, ref string accountid, ref string viewid, ref string transactionid, ref string tagid);
+        partial void FormatDeleteTagForViewOnTransaction(ref string bankid, ref string accountid, ref string viewid, ref string transactionid, ref string tagid);
 
         /// <summary>
         /// Validates the request parameters
@@ -2489,7 +2489,7 @@ namespace OpenBankProject.Api
         /// <param name="transactionid"></param>
         /// <param name="tagid"></param>
         /// <returns></returns>
-        private void ValidateOBPv121DeleteTagForViewOnTransaction(string bankid, string accountid, string viewid, string transactionid, string tagid)
+        private void ValidateDeleteTagForViewOnTransaction(string bankid, string accountid, string viewid, string transactionid, string tagid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -2516,10 +2516,10 @@ namespace OpenBankProject.Api
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
         /// <param name="tagid"></param>
-        private void AfterOBPv121DeleteTagForViewOnTransactionDefaultImplementation(IOBPv121DeleteTagForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, string tagid)
+        private void AfterDeleteTagForViewOnTransactionDefaultImplementation(IDeleteTagForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, string tagid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv121DeleteTagForViewOnTransaction(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, transactionid, tagid);
+            AfterDeleteTagForViewOnTransaction(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, transactionid, tagid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2534,7 +2534,7 @@ namespace OpenBankProject.Api
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
         /// <param name="tagid"></param>
-        partial void AfterOBPv121DeleteTagForViewOnTransaction(ref bool suppressDefaultLog, IOBPv121DeleteTagForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, string tagid);
+        partial void AfterDeleteTagForViewOnTransaction(ref bool suppressDefaultLog, IDeleteTagForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, string tagid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2547,10 +2547,10 @@ namespace OpenBankProject.Api
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
         /// <param name="tagid"></param>
-        private void OnErrorOBPv121DeleteTagForViewOnTransactionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, string tagid)
+        private void OnErrorDeleteTagForViewOnTransactionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, string tagid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121DeleteTagForViewOnTransaction(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, transactionid, tagid);
+            OnErrorDeleteTagForViewOnTransaction(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, transactionid, tagid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2567,7 +2567,7 @@ namespace OpenBankProject.Api
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
         /// <param name="tagid"></param>
-        partial void OnErrorOBPv121DeleteTagForViewOnTransaction(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, string tagid);
+        partial void OnErrorDeleteTagForViewOnTransaction(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, string tagid);
 
         /// <summary>
         /// Delete a Transaction Tag &lt;p&gt;Deletes the tag TAG_ID about the transaction TRANSACTION_ID made on &lt;a href&#x3D;\&quot;#1_2_1-getViewsForBankAccount\&quot;&gt;view&lt;/a&gt;.&lt;br /&gt; Authentication via OAuth is required. The user must either have owner privileges for this account,&lt;br /&gt; or must be the user that posted the tag.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tag_id\&quot;&gt;TAG_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
@@ -2578,12 +2578,12 @@ namespace OpenBankProject.Api
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="tagid">The TAGID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteTagForViewOnTransactionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121DeleteTagForViewOnTransactionApiResponse?> OBPv121DeleteTagForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, string tagid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteTagForViewOnTransactionApiResponse"/>&gt;</returns>
+        public async Task<IDeleteTagForViewOnTransactionApiResponse?> DeleteTagForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, string tagid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv121DeleteTagForViewOnTransactionAsync(bankid, accountid, viewid, transactionid, tagid, cancellationToken).ConfigureAwait(false);
+                return await DeleteTagForViewOnTransactionAsync(bankid, accountid, viewid, transactionid, tagid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2601,16 +2601,16 @@ namespace OpenBankProject.Api
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="tagid">The TAGID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteTagForViewOnTransactionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121DeleteTagForViewOnTransactionApiResponse> OBPv121DeleteTagForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, string tagid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteTagForViewOnTransactionApiResponse"/>&gt;</returns>
+        public async Task<IDeleteTagForViewOnTransactionApiResponse> DeleteTagForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, string tagid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv121DeleteTagForViewOnTransaction(bankid, accountid, viewid, transactionid, tagid);
+                ValidateDeleteTagForViewOnTransaction(bankid, accountid, viewid, transactionid, tagid);
 
-                FormatOBPv121DeleteTagForViewOnTransaction(ref bankid, ref accountid, ref viewid, ref transactionid, ref tagid);
+                FormatDeleteTagForViewOnTransaction(ref bankid, ref accountid, ref viewid, ref transactionid, ref tagid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -2634,8 +2634,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<TransactionApi.OBPv121DeleteTagForViewOnTransactionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<TransactionApi.OBPv121DeleteTagForViewOnTransactionApiResponse>();
-                        TransactionApi.OBPv121DeleteTagForViewOnTransactionApiResponse apiResponseLocalVar;
+                        ILogger<TransactionApi.DeleteTagForViewOnTransactionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<TransactionApi.DeleteTagForViewOnTransactionApiResponse>();
+                        TransactionApi.DeleteTagForViewOnTransactionApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -2646,9 +2646,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv121DeleteTagForViewOnTransactionDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, transactionid, tagid);
+                        AfterDeleteTagForViewOnTransactionDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, transactionid, tagid);
 
-                        Events.ExecuteOnOBPv121DeleteTagForViewOnTransaction(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteTagForViewOnTransaction(apiResponseLocalVar);
 
                         return apiResponseLocalVar;
                     }
@@ -2656,13 +2656,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv121DeleteTagForViewOnTransactionDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags/{tagid}", uriBuilderLocalVar.Path, bankid, accountid, viewid, transactionid, tagid);
-                Events.ExecuteOnErrorOBPv121DeleteTagForViewOnTransaction(e);
+                OnErrorDeleteTagForViewOnTransactionDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags/{tagid}", uriBuilderLocalVar.Path, bankid, accountid, viewid, transactionid, tagid);
+                Events.ExecuteOnErrorDeleteTagForViewOnTransaction(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv121DeleteTransactionNarrative(ref string bankid, ref string accountid, ref string viewid, ref string transactionid);
+        partial void FormatDeleteTransactionNarrative(ref string bankid, ref string accountid, ref string viewid, ref string transactionid);
 
         /// <summary>
         /// Validates the request parameters
@@ -2672,7 +2672,7 @@ namespace OpenBankProject.Api
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
         /// <returns></returns>
-        private void ValidateOBPv121DeleteTransactionNarrative(string bankid, string accountid, string viewid, string transactionid)
+        private void ValidateDeleteTransactionNarrative(string bankid, string accountid, string viewid, string transactionid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -2695,10 +2695,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        private void AfterOBPv121DeleteTransactionNarrativeDefaultImplementation(IOBPv121DeleteTransactionNarrativeApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid)
+        private void AfterDeleteTransactionNarrativeDefaultImplementation(IDeleteTransactionNarrativeApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv121DeleteTransactionNarrative(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, transactionid);
+            AfterDeleteTransactionNarrative(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, transactionid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2712,7 +2712,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        partial void AfterOBPv121DeleteTransactionNarrative(ref bool suppressDefaultLog, IOBPv121DeleteTransactionNarrativeApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid);
+        partial void AfterDeleteTransactionNarrative(ref bool suppressDefaultLog, IDeleteTransactionNarrativeApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2724,10 +2724,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        private void OnErrorOBPv121DeleteTransactionNarrativeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid)
+        private void OnErrorDeleteTransactionNarrativeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121DeleteTransactionNarrative(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, transactionid);
+            OnErrorDeleteTransactionNarrative(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, transactionid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2743,7 +2743,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        partial void OnErrorOBPv121DeleteTransactionNarrative(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid);
+        partial void OnErrorDeleteTransactionNarrative(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid);
 
         /// <summary>
         /// Delete a Transaction Narrative &lt;p&gt;Deletes the description of the transaction TRANSACTION_ID.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
@@ -2753,12 +2753,12 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteTransactionNarrativeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121DeleteTransactionNarrativeApiResponse?> OBPv121DeleteTransactionNarrativeOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteTransactionNarrativeApiResponse"/>&gt;</returns>
+        public async Task<IDeleteTransactionNarrativeApiResponse?> DeleteTransactionNarrativeOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv121DeleteTransactionNarrativeAsync(bankid, accountid, viewid, transactionid, cancellationToken).ConfigureAwait(false);
+                return await DeleteTransactionNarrativeAsync(bankid, accountid, viewid, transactionid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2775,16 +2775,16 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteTransactionNarrativeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121DeleteTransactionNarrativeApiResponse> OBPv121DeleteTransactionNarrativeAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteTransactionNarrativeApiResponse"/>&gt;</returns>
+        public async Task<IDeleteTransactionNarrativeApiResponse> DeleteTransactionNarrativeAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv121DeleteTransactionNarrative(bankid, accountid, viewid, transactionid);
+                ValidateDeleteTransactionNarrative(bankid, accountid, viewid, transactionid);
 
-                FormatOBPv121DeleteTransactionNarrative(ref bankid, ref accountid, ref viewid, ref transactionid);
+                FormatDeleteTransactionNarrative(ref bankid, ref accountid, ref viewid, ref transactionid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -2804,7 +2804,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -2822,8 +2822,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<TransactionApi.OBPv121DeleteTransactionNarrativeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<TransactionApi.OBPv121DeleteTransactionNarrativeApiResponse>();
-                        TransactionApi.OBPv121DeleteTransactionNarrativeApiResponse apiResponseLocalVar;
+                        ILogger<TransactionApi.DeleteTransactionNarrativeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<TransactionApi.DeleteTransactionNarrativeApiResponse>();
+                        TransactionApi.DeleteTransactionNarrativeApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -2834,9 +2834,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv121DeleteTransactionNarrativeDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, transactionid);
+                        AfterDeleteTransactionNarrativeDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, transactionid);
 
-                        Events.ExecuteOnOBPv121DeleteTransactionNarrative(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteTransactionNarrative(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -2848,13 +2848,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv121DeleteTransactionNarrativeDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative", uriBuilderLocalVar.Path, bankid, accountid, viewid, transactionid);
-                Events.ExecuteOnErrorOBPv121DeleteTransactionNarrative(e);
+                OnErrorDeleteTransactionNarrativeDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative", uriBuilderLocalVar.Path, bankid, accountid, viewid, transactionid);
+                Events.ExecuteOnErrorDeleteTransactionNarrative(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv121DeleteWhereTagForViewOnTransaction(ref string bankid, ref string accountid, ref string viewid, ref string transactionid);
+        partial void FormatDeleteWhereTagForViewOnTransaction(ref string bankid, ref string accountid, ref string viewid, ref string transactionid);
 
         /// <summary>
         /// Validates the request parameters
@@ -2864,7 +2864,7 @@ namespace OpenBankProject.Api
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
         /// <returns></returns>
-        private void ValidateOBPv121DeleteWhereTagForViewOnTransaction(string bankid, string accountid, string viewid, string transactionid)
+        private void ValidateDeleteWhereTagForViewOnTransaction(string bankid, string accountid, string viewid, string transactionid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -2887,10 +2887,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        private void AfterOBPv121DeleteWhereTagForViewOnTransactionDefaultImplementation(IOBPv121DeleteWhereTagForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid)
+        private void AfterDeleteWhereTagForViewOnTransactionDefaultImplementation(IDeleteWhereTagForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv121DeleteWhereTagForViewOnTransaction(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, transactionid);
+            AfterDeleteWhereTagForViewOnTransaction(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, transactionid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2904,7 +2904,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        partial void AfterOBPv121DeleteWhereTagForViewOnTransaction(ref bool suppressDefaultLog, IOBPv121DeleteWhereTagForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid);
+        partial void AfterDeleteWhereTagForViewOnTransaction(ref bool suppressDefaultLog, IDeleteWhereTagForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2916,10 +2916,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        private void OnErrorOBPv121DeleteWhereTagForViewOnTransactionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid)
+        private void OnErrorDeleteWhereTagForViewOnTransactionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121DeleteWhereTagForViewOnTransaction(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, transactionid);
+            OnErrorDeleteWhereTagForViewOnTransaction(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, transactionid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2935,7 +2935,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        partial void OnErrorOBPv121DeleteWhereTagForViewOnTransaction(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid);
+        partial void OnErrorDeleteWhereTagForViewOnTransaction(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid);
 
         /// <summary>
         /// Delete a Transaction Tag &lt;p&gt;Deletes the where tag of the transaction TRANSACTION_ID made on &lt;a href&#x3D;\&quot;#1_2_1-getViewsForBankAccount\&quot;&gt;view&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;The user must either have owner privileges for this account, or must be the user that posted the geo tag.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
@@ -2945,12 +2945,12 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteWhereTagForViewOnTransactionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121DeleteWhereTagForViewOnTransactionApiResponse?> OBPv121DeleteWhereTagForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteWhereTagForViewOnTransactionApiResponse"/>&gt;</returns>
+        public async Task<IDeleteWhereTagForViewOnTransactionApiResponse?> DeleteWhereTagForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv121DeleteWhereTagForViewOnTransactionAsync(bankid, accountid, viewid, transactionid, cancellationToken).ConfigureAwait(false);
+                return await DeleteWhereTagForViewOnTransactionAsync(bankid, accountid, viewid, transactionid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2967,16 +2967,16 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteWhereTagForViewOnTransactionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121DeleteWhereTagForViewOnTransactionApiResponse> OBPv121DeleteWhereTagForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteWhereTagForViewOnTransactionApiResponse"/>&gt;</returns>
+        public async Task<IDeleteWhereTagForViewOnTransactionApiResponse> DeleteWhereTagForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv121DeleteWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid);
+                ValidateDeleteWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid);
 
-                FormatOBPv121DeleteWhereTagForViewOnTransaction(ref bankid, ref accountid, ref viewid, ref transactionid);
+                FormatDeleteWhereTagForViewOnTransaction(ref bankid, ref accountid, ref viewid, ref transactionid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -2996,7 +2996,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -3014,8 +3014,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<TransactionApi.OBPv121DeleteWhereTagForViewOnTransactionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<TransactionApi.OBPv121DeleteWhereTagForViewOnTransactionApiResponse>();
-                        TransactionApi.OBPv121DeleteWhereTagForViewOnTransactionApiResponse apiResponseLocalVar;
+                        ILogger<TransactionApi.DeleteWhereTagForViewOnTransactionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<TransactionApi.DeleteWhereTagForViewOnTransactionApiResponse>();
+                        TransactionApi.DeleteWhereTagForViewOnTransactionApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -3026,9 +3026,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv121DeleteWhereTagForViewOnTransactionDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, transactionid);
+                        AfterDeleteWhereTagForViewOnTransactionDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, transactionid);
 
-                        Events.ExecuteOnOBPv121DeleteWhereTagForViewOnTransaction(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteWhereTagForViewOnTransaction(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -3040,13 +3040,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv121DeleteWhereTagForViewOnTransactionDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where", uriBuilderLocalVar.Path, bankid, accountid, viewid, transactionid);
-                Events.ExecuteOnErrorOBPv121DeleteWhereTagForViewOnTransaction(e);
+                OnErrorDeleteWhereTagForViewOnTransactionDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where", uriBuilderLocalVar.Path, bankid, accountid, viewid, transactionid);
+                Events.ExecuteOnErrorDeleteWhereTagForViewOnTransaction(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv121GetCommentsForViewOnTransaction(ref string bankid, ref string accountid, ref string viewid, ref string transactionid);
+        partial void FormatGetCommentsForViewOnTransaction(ref string bankid, ref string accountid, ref string viewid, ref string transactionid);
 
         /// <summary>
         /// Validates the request parameters
@@ -3056,7 +3056,7 @@ namespace OpenBankProject.Api
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
         /// <returns></returns>
-        private void ValidateOBPv121GetCommentsForViewOnTransaction(string bankid, string accountid, string viewid, string transactionid)
+        private void ValidateGetCommentsForViewOnTransaction(string bankid, string accountid, string viewid, string transactionid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -3079,10 +3079,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        private void AfterOBPv121GetCommentsForViewOnTransactionDefaultImplementation(IOBPv121GetCommentsForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid)
+        private void AfterGetCommentsForViewOnTransactionDefaultImplementation(IGetCommentsForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv121GetCommentsForViewOnTransaction(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, transactionid);
+            AfterGetCommentsForViewOnTransaction(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, transactionid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -3096,7 +3096,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        partial void AfterOBPv121GetCommentsForViewOnTransaction(ref bool suppressDefaultLog, IOBPv121GetCommentsForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid);
+        partial void AfterGetCommentsForViewOnTransaction(ref bool suppressDefaultLog, IGetCommentsForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -3108,10 +3108,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        private void OnErrorOBPv121GetCommentsForViewOnTransactionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid)
+        private void OnErrorGetCommentsForViewOnTransactionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121GetCommentsForViewOnTransaction(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, transactionid);
+            OnErrorGetCommentsForViewOnTransaction(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, transactionid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -3127,7 +3127,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        partial void OnErrorOBPv121GetCommentsForViewOnTransaction(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid);
+        partial void OnErrorGetCommentsForViewOnTransaction(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid);
 
         /// <summary>
         /// Get Transaction Comments &lt;p&gt;Returns the transaction TRANSACTION_ID comments made on a &lt;a href&#x3D;\&quot;#1_2_1-getViewsForBankAccount\&quot;&gt;view&lt;/a&gt; (VIEW_ID).&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#comments\&quot;&gt;&lt;strong&gt;comments&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
@@ -3137,12 +3137,12 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121GetCommentsForViewOnTransactionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121GetCommentsForViewOnTransactionApiResponse?> OBPv121GetCommentsForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCommentsForViewOnTransactionApiResponse"/>&gt;</returns>
+        public async Task<IGetCommentsForViewOnTransactionApiResponse?> GetCommentsForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv121GetCommentsForViewOnTransactionAsync(bankid, accountid, viewid, transactionid, cancellationToken).ConfigureAwait(false);
+                return await GetCommentsForViewOnTransactionAsync(bankid, accountid, viewid, transactionid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -3159,16 +3159,16 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121GetCommentsForViewOnTransactionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121GetCommentsForViewOnTransactionApiResponse> OBPv121GetCommentsForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCommentsForViewOnTransactionApiResponse"/>&gt;</returns>
+        public async Task<IGetCommentsForViewOnTransactionApiResponse> GetCommentsForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv121GetCommentsForViewOnTransaction(bankid, accountid, viewid, transactionid);
+                ValidateGetCommentsForViewOnTransaction(bankid, accountid, viewid, transactionid);
 
-                FormatOBPv121GetCommentsForViewOnTransaction(ref bankid, ref accountid, ref viewid, ref transactionid);
+                FormatGetCommentsForViewOnTransaction(ref bankid, ref accountid, ref viewid, ref transactionid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -3188,7 +3188,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -3215,8 +3215,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<TransactionApi.OBPv121GetCommentsForViewOnTransactionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<TransactionApi.OBPv121GetCommentsForViewOnTransactionApiResponse>();
-                        TransactionApi.OBPv121GetCommentsForViewOnTransactionApiResponse apiResponseLocalVar;
+                        ILogger<TransactionApi.GetCommentsForViewOnTransactionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<TransactionApi.GetCommentsForViewOnTransactionApiResponse>();
+                        TransactionApi.GetCommentsForViewOnTransactionApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -3227,9 +3227,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv121GetCommentsForViewOnTransactionDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, transactionid);
+                        AfterGetCommentsForViewOnTransactionDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, transactionid);
 
-                        Events.ExecuteOnOBPv121GetCommentsForViewOnTransaction(apiResponseLocalVar);
+                        Events.ExecuteOnGetCommentsForViewOnTransaction(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -3241,13 +3241,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv121GetCommentsForViewOnTransactionDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments", uriBuilderLocalVar.Path, bankid, accountid, viewid, transactionid);
-                Events.ExecuteOnErrorOBPv121GetCommentsForViewOnTransaction(e);
+                OnErrorGetCommentsForViewOnTransactionDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments", uriBuilderLocalVar.Path, bankid, accountid, viewid, transactionid);
+                Events.ExecuteOnErrorGetCommentsForViewOnTransaction(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv121GetImagesForViewOnTransaction(ref string bankid, ref string accountid, ref string viewid, ref string transactionid);
+        partial void FormatGetImagesForViewOnTransaction(ref string bankid, ref string accountid, ref string viewid, ref string transactionid);
 
         /// <summary>
         /// Validates the request parameters
@@ -3257,7 +3257,7 @@ namespace OpenBankProject.Api
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
         /// <returns></returns>
-        private void ValidateOBPv121GetImagesForViewOnTransaction(string bankid, string accountid, string viewid, string transactionid)
+        private void ValidateGetImagesForViewOnTransaction(string bankid, string accountid, string viewid, string transactionid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -3280,10 +3280,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        private void AfterOBPv121GetImagesForViewOnTransactionDefaultImplementation(IOBPv121GetImagesForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid)
+        private void AfterGetImagesForViewOnTransactionDefaultImplementation(IGetImagesForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv121GetImagesForViewOnTransaction(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, transactionid);
+            AfterGetImagesForViewOnTransaction(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, transactionid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -3297,7 +3297,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        partial void AfterOBPv121GetImagesForViewOnTransaction(ref bool suppressDefaultLog, IOBPv121GetImagesForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid);
+        partial void AfterGetImagesForViewOnTransaction(ref bool suppressDefaultLog, IGetImagesForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -3309,10 +3309,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        private void OnErrorOBPv121GetImagesForViewOnTransactionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid)
+        private void OnErrorGetImagesForViewOnTransactionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121GetImagesForViewOnTransaction(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, transactionid);
+            OnErrorGetImagesForViewOnTransaction(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, transactionid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -3328,7 +3328,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        partial void OnErrorOBPv121GetImagesForViewOnTransaction(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid);
+        partial void OnErrorGetImagesForViewOnTransaction(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid);
 
         /// <summary>
         /// Get Transaction Images &lt;p&gt;Returns the transaction TRANSACTION_ID images made on a &lt;a href&#x3D;\&quot;#1_2_1-getViewsForBankAccount\&quot;&gt;view&lt;/a&gt; (VIEW_ID).&lt;br /&gt; Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;URL&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#images\&quot;&gt;&lt;strong&gt;images&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;label&lt;/strong&gt;&lt;/a&gt;: My Account&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
@@ -3338,12 +3338,12 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121GetImagesForViewOnTransactionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121GetImagesForViewOnTransactionApiResponse?> OBPv121GetImagesForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetImagesForViewOnTransactionApiResponse"/>&gt;</returns>
+        public async Task<IGetImagesForViewOnTransactionApiResponse?> GetImagesForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv121GetImagesForViewOnTransactionAsync(bankid, accountid, viewid, transactionid, cancellationToken).ConfigureAwait(false);
+                return await GetImagesForViewOnTransactionAsync(bankid, accountid, viewid, transactionid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -3360,16 +3360,16 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121GetImagesForViewOnTransactionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121GetImagesForViewOnTransactionApiResponse> OBPv121GetImagesForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetImagesForViewOnTransactionApiResponse"/>&gt;</returns>
+        public async Task<IGetImagesForViewOnTransactionApiResponse> GetImagesForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv121GetImagesForViewOnTransaction(bankid, accountid, viewid, transactionid);
+                ValidateGetImagesForViewOnTransaction(bankid, accountid, viewid, transactionid);
 
-                FormatOBPv121GetImagesForViewOnTransaction(ref bankid, ref accountid, ref viewid, ref transactionid);
+                FormatGetImagesForViewOnTransaction(ref bankid, ref accountid, ref viewid, ref transactionid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -3389,7 +3389,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -3416,8 +3416,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<TransactionApi.OBPv121GetImagesForViewOnTransactionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<TransactionApi.OBPv121GetImagesForViewOnTransactionApiResponse>();
-                        TransactionApi.OBPv121GetImagesForViewOnTransactionApiResponse apiResponseLocalVar;
+                        ILogger<TransactionApi.GetImagesForViewOnTransactionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<TransactionApi.GetImagesForViewOnTransactionApiResponse>();
+                        TransactionApi.GetImagesForViewOnTransactionApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -3428,9 +3428,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv121GetImagesForViewOnTransactionDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, transactionid);
+                        AfterGetImagesForViewOnTransactionDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, transactionid);
 
-                        Events.ExecuteOnOBPv121GetImagesForViewOnTransaction(apiResponseLocalVar);
+                        Events.ExecuteOnGetImagesForViewOnTransaction(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -3442,13 +3442,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv121GetImagesForViewOnTransactionDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images", uriBuilderLocalVar.Path, bankid, accountid, viewid, transactionid);
-                Events.ExecuteOnErrorOBPv121GetImagesForViewOnTransaction(e);
+                OnErrorGetImagesForViewOnTransactionDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images", uriBuilderLocalVar.Path, bankid, accountid, viewid, transactionid);
+                Events.ExecuteOnErrorGetImagesForViewOnTransaction(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv121GetTagsForViewOnTransaction(ref string bankid, ref string accountid, ref string viewid, ref string transactionid);
+        partial void FormatGetTagsForViewOnTransaction(ref string bankid, ref string accountid, ref string viewid, ref string transactionid);
 
         /// <summary>
         /// Validates the request parameters
@@ -3458,7 +3458,7 @@ namespace OpenBankProject.Api
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
         /// <returns></returns>
-        private void ValidateOBPv121GetTagsForViewOnTransaction(string bankid, string accountid, string viewid, string transactionid)
+        private void ValidateGetTagsForViewOnTransaction(string bankid, string accountid, string viewid, string transactionid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -3481,10 +3481,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        private void AfterOBPv121GetTagsForViewOnTransactionDefaultImplementation(IOBPv121GetTagsForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid)
+        private void AfterGetTagsForViewOnTransactionDefaultImplementation(IGetTagsForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv121GetTagsForViewOnTransaction(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, transactionid);
+            AfterGetTagsForViewOnTransaction(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, transactionid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -3498,7 +3498,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        partial void AfterOBPv121GetTagsForViewOnTransaction(ref bool suppressDefaultLog, IOBPv121GetTagsForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid);
+        partial void AfterGetTagsForViewOnTransaction(ref bool suppressDefaultLog, IGetTagsForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -3510,10 +3510,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        private void OnErrorOBPv121GetTagsForViewOnTransactionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid)
+        private void OnErrorGetTagsForViewOnTransactionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121GetTagsForViewOnTransaction(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, transactionid);
+            OnErrorGetTagsForViewOnTransaction(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, transactionid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -3529,7 +3529,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        partial void OnErrorOBPv121GetTagsForViewOnTransaction(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid);
+        partial void OnErrorGetTagsForViewOnTransaction(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid);
 
         /// <summary>
         /// Get Transaction Tags &lt;p&gt;Returns the transaction TRANSACTION_ID tags made on a &lt;a href&#x3D;\&quot;#1_2_1-getViewsForBankAccount\&quot;&gt;view&lt;/a&gt; (VIEW_ID).&lt;br /&gt; Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
@@ -3539,12 +3539,12 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121GetTagsForViewOnTransactionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121GetTagsForViewOnTransactionApiResponse?> OBPv121GetTagsForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetTagsForViewOnTransactionApiResponse"/>&gt;</returns>
+        public async Task<IGetTagsForViewOnTransactionApiResponse?> GetTagsForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv121GetTagsForViewOnTransactionAsync(bankid, accountid, viewid, transactionid, cancellationToken).ConfigureAwait(false);
+                return await GetTagsForViewOnTransactionAsync(bankid, accountid, viewid, transactionid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -3561,16 +3561,16 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121GetTagsForViewOnTransactionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121GetTagsForViewOnTransactionApiResponse> OBPv121GetTagsForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetTagsForViewOnTransactionApiResponse"/>&gt;</returns>
+        public async Task<IGetTagsForViewOnTransactionApiResponse> GetTagsForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv121GetTagsForViewOnTransaction(bankid, accountid, viewid, transactionid);
+                ValidateGetTagsForViewOnTransaction(bankid, accountid, viewid, transactionid);
 
-                FormatOBPv121GetTagsForViewOnTransaction(ref bankid, ref accountid, ref viewid, ref transactionid);
+                FormatGetTagsForViewOnTransaction(ref bankid, ref accountid, ref viewid, ref transactionid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -3602,8 +3602,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<TransactionApi.OBPv121GetTagsForViewOnTransactionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<TransactionApi.OBPv121GetTagsForViewOnTransactionApiResponse>();
-                        TransactionApi.OBPv121GetTagsForViewOnTransactionApiResponse apiResponseLocalVar;
+                        ILogger<TransactionApi.GetTagsForViewOnTransactionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<TransactionApi.GetTagsForViewOnTransactionApiResponse>();
+                        TransactionApi.GetTagsForViewOnTransactionApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -3614,9 +3614,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv121GetTagsForViewOnTransactionDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, transactionid);
+                        AfterGetTagsForViewOnTransactionDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, transactionid);
 
-                        Events.ExecuteOnOBPv121GetTagsForViewOnTransaction(apiResponseLocalVar);
+                        Events.ExecuteOnGetTagsForViewOnTransaction(apiResponseLocalVar);
 
                         return apiResponseLocalVar;
                     }
@@ -3624,13 +3624,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv121GetTagsForViewOnTransactionDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags", uriBuilderLocalVar.Path, bankid, accountid, viewid, transactionid);
-                Events.ExecuteOnErrorOBPv121GetTagsForViewOnTransaction(e);
+                OnErrorGetTagsForViewOnTransactionDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags", uriBuilderLocalVar.Path, bankid, accountid, viewid, transactionid);
+                Events.ExecuteOnErrorGetTagsForViewOnTransaction(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv121GetTransactionNarrative(ref string bankid, ref string accountid, ref string viewid, ref string transactionid);
+        partial void FormatGetTransactionNarrative(ref string bankid, ref string accountid, ref string viewid, ref string transactionid);
 
         /// <summary>
         /// Validates the request parameters
@@ -3640,7 +3640,7 @@ namespace OpenBankProject.Api
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
         /// <returns></returns>
-        private void ValidateOBPv121GetTransactionNarrative(string bankid, string accountid, string viewid, string transactionid)
+        private void ValidateGetTransactionNarrative(string bankid, string accountid, string viewid, string transactionid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -3663,10 +3663,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        private void AfterOBPv121GetTransactionNarrativeDefaultImplementation(IOBPv121GetTransactionNarrativeApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid)
+        private void AfterGetTransactionNarrativeDefaultImplementation(IGetTransactionNarrativeApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv121GetTransactionNarrative(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, transactionid);
+            AfterGetTransactionNarrative(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, transactionid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -3680,7 +3680,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        partial void AfterOBPv121GetTransactionNarrative(ref bool suppressDefaultLog, IOBPv121GetTransactionNarrativeApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid);
+        partial void AfterGetTransactionNarrative(ref bool suppressDefaultLog, IGetTransactionNarrativeApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -3692,10 +3692,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        private void OnErrorOBPv121GetTransactionNarrativeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid)
+        private void OnErrorGetTransactionNarrativeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121GetTransactionNarrative(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, transactionid);
+            OnErrorGetTransactionNarrative(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, transactionid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -3711,7 +3711,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        partial void OnErrorOBPv121GetTransactionNarrative(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid);
+        partial void OnErrorGetTransactionNarrative(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid);
 
         /// <summary>
         /// Get a Transaction Narrative &lt;p&gt;Returns the account owner description of the transaction &lt;a href&#x3D;\&quot;#1_2_1-getViewsForBankAccount\&quot;&gt;moderated&lt;/a&gt; by the view.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#narrative\&quot;&gt;&lt;strong&gt;narrative&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
@@ -3721,12 +3721,12 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121GetTransactionNarrativeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121GetTransactionNarrativeApiResponse?> OBPv121GetTransactionNarrativeOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetTransactionNarrativeApiResponse"/>&gt;</returns>
+        public async Task<IGetTransactionNarrativeApiResponse?> GetTransactionNarrativeOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv121GetTransactionNarrativeAsync(bankid, accountid, viewid, transactionid, cancellationToken).ConfigureAwait(false);
+                return await GetTransactionNarrativeAsync(bankid, accountid, viewid, transactionid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -3743,16 +3743,16 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121GetTransactionNarrativeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121GetTransactionNarrativeApiResponse> OBPv121GetTransactionNarrativeAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetTransactionNarrativeApiResponse"/>&gt;</returns>
+        public async Task<IGetTransactionNarrativeApiResponse> GetTransactionNarrativeAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv121GetTransactionNarrative(bankid, accountid, viewid, transactionid);
+                ValidateGetTransactionNarrative(bankid, accountid, viewid, transactionid);
 
-                FormatOBPv121GetTransactionNarrative(ref bankid, ref accountid, ref viewid, ref transactionid);
+                FormatGetTransactionNarrative(ref bankid, ref accountid, ref viewid, ref transactionid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -3784,8 +3784,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<TransactionApi.OBPv121GetTransactionNarrativeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<TransactionApi.OBPv121GetTransactionNarrativeApiResponse>();
-                        TransactionApi.OBPv121GetTransactionNarrativeApiResponse apiResponseLocalVar;
+                        ILogger<TransactionApi.GetTransactionNarrativeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<TransactionApi.GetTransactionNarrativeApiResponse>();
+                        TransactionApi.GetTransactionNarrativeApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -3796,9 +3796,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv121GetTransactionNarrativeDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, transactionid);
+                        AfterGetTransactionNarrativeDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, transactionid);
 
-                        Events.ExecuteOnOBPv121GetTransactionNarrative(apiResponseLocalVar);
+                        Events.ExecuteOnGetTransactionNarrative(apiResponseLocalVar);
 
                         return apiResponseLocalVar;
                     }
@@ -3806,13 +3806,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv121GetTransactionNarrativeDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative", uriBuilderLocalVar.Path, bankid, accountid, viewid, transactionid);
-                Events.ExecuteOnErrorOBPv121GetTransactionNarrative(e);
+                OnErrorGetTransactionNarrativeDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative", uriBuilderLocalVar.Path, bankid, accountid, viewid, transactionid);
+                Events.ExecuteOnErrorGetTransactionNarrative(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv121GetWhereTagForViewOnTransaction(ref string bankid, ref string accountid, ref string viewid, ref string transactionid);
+        partial void FormatGetWhereTagForViewOnTransaction(ref string bankid, ref string accountid, ref string viewid, ref string transactionid);
 
         /// <summary>
         /// Validates the request parameters
@@ -3822,7 +3822,7 @@ namespace OpenBankProject.Api
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
         /// <returns></returns>
-        private void ValidateOBPv121GetWhereTagForViewOnTransaction(string bankid, string accountid, string viewid, string transactionid)
+        private void ValidateGetWhereTagForViewOnTransaction(string bankid, string accountid, string viewid, string transactionid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -3845,10 +3845,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        private void AfterOBPv121GetWhereTagForViewOnTransactionDefaultImplementation(IOBPv121GetWhereTagForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid)
+        private void AfterGetWhereTagForViewOnTransactionDefaultImplementation(IGetWhereTagForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv121GetWhereTagForViewOnTransaction(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, transactionid);
+            AfterGetWhereTagForViewOnTransaction(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, transactionid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -3862,7 +3862,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        partial void AfterOBPv121GetWhereTagForViewOnTransaction(ref bool suppressDefaultLog, IOBPv121GetWhereTagForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid);
+        partial void AfterGetWhereTagForViewOnTransaction(ref bool suppressDefaultLog, IGetWhereTagForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -3874,10 +3874,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        private void OnErrorOBPv121GetWhereTagForViewOnTransactionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid)
+        private void OnErrorGetWhereTagForViewOnTransactionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121GetWhereTagForViewOnTransaction(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, transactionid);
+            OnErrorGetWhereTagForViewOnTransaction(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, transactionid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -3893,7 +3893,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        partial void OnErrorOBPv121GetWhereTagForViewOnTransaction(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid);
+        partial void OnErrorGetWhereTagForViewOnTransaction(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid);
 
         /// <summary>
         /// Get a Transaction where Tag &lt;p&gt;Returns the &amp;quot;where&amp;quot; Geo tag added to the transaction TRANSACTION_ID made on a &lt;a href&#x3D;\&quot;#1_2_1-getViewsForBankAccount\&quot;&gt;view&lt;/a&gt; (VIEW_ID).&lt;br /&gt; It represents the location where the transaction has been initiated.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#where\&quot;&gt;&lt;strong&gt;where&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
@@ -3903,12 +3903,12 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121GetWhereTagForViewOnTransactionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121GetWhereTagForViewOnTransactionApiResponse?> OBPv121GetWhereTagForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetWhereTagForViewOnTransactionApiResponse"/>&gt;</returns>
+        public async Task<IGetWhereTagForViewOnTransactionApiResponse?> GetWhereTagForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv121GetWhereTagForViewOnTransactionAsync(bankid, accountid, viewid, transactionid, cancellationToken).ConfigureAwait(false);
+                return await GetWhereTagForViewOnTransactionAsync(bankid, accountid, viewid, transactionid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -3925,16 +3925,16 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121GetWhereTagForViewOnTransactionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121GetWhereTagForViewOnTransactionApiResponse> OBPv121GetWhereTagForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetWhereTagForViewOnTransactionApiResponse"/>&gt;</returns>
+        public async Task<IGetWhereTagForViewOnTransactionApiResponse> GetWhereTagForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv121GetWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid);
+                ValidateGetWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid);
 
-                FormatOBPv121GetWhereTagForViewOnTransaction(ref bankid, ref accountid, ref viewid, ref transactionid);
+                FormatGetWhereTagForViewOnTransaction(ref bankid, ref accountid, ref viewid, ref transactionid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -3966,8 +3966,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<TransactionApi.OBPv121GetWhereTagForViewOnTransactionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<TransactionApi.OBPv121GetWhereTagForViewOnTransactionApiResponse>();
-                        TransactionApi.OBPv121GetWhereTagForViewOnTransactionApiResponse apiResponseLocalVar;
+                        ILogger<TransactionApi.GetWhereTagForViewOnTransactionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<TransactionApi.GetWhereTagForViewOnTransactionApiResponse>();
+                        TransactionApi.GetWhereTagForViewOnTransactionApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -3978,9 +3978,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv121GetWhereTagForViewOnTransactionDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, transactionid);
+                        AfterGetWhereTagForViewOnTransactionDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, transactionid);
 
-                        Events.ExecuteOnOBPv121GetWhereTagForViewOnTransaction(apiResponseLocalVar);
+                        Events.ExecuteOnGetWhereTagForViewOnTransaction(apiResponseLocalVar);
 
                         return apiResponseLocalVar;
                     }
@@ -3988,13 +3988,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv121GetWhereTagForViewOnTransactionDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where", uriBuilderLocalVar.Path, bankid, accountid, viewid, transactionid);
-                Events.ExecuteOnErrorOBPv121GetWhereTagForViewOnTransaction(e);
+                OnErrorGetWhereTagForViewOnTransactionDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where", uriBuilderLocalVar.Path, bankid, accountid, viewid, transactionid);
+                Events.ExecuteOnErrorGetWhereTagForViewOnTransaction(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv121UpdateTransactionNarrative(ref string bankid, ref string accountid, ref string viewid, ref string transactionid, OBPv121GetTransactionNarrative200Response oBPv121GetTransactionNarrative200Response);
+        partial void FormatUpdateTransactionNarrative(ref string bankid, ref string accountid, ref string viewid, ref string transactionid, GetTransactionNarrative200Response getTransactionNarrative200Response);
 
         /// <summary>
         /// Validates the request parameters
@@ -4003,9 +4003,9 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        /// <param name="oBPv121GetTransactionNarrative200Response"></param>
+        /// <param name="getTransactionNarrative200Response"></param>
         /// <returns></returns>
-        private void ValidateOBPv121UpdateTransactionNarrative(string bankid, string accountid, string viewid, string transactionid, OBPv121GetTransactionNarrative200Response oBPv121GetTransactionNarrative200Response)
+        private void ValidateUpdateTransactionNarrative(string bankid, string accountid, string viewid, string transactionid, GetTransactionNarrative200Response getTransactionNarrative200Response)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -4019,8 +4019,8 @@ namespace OpenBankProject.Api
             if (transactionid == null)
                 throw new ArgumentNullException(nameof(transactionid));
 
-            if (oBPv121GetTransactionNarrative200Response == null)
-                throw new ArgumentNullException(nameof(oBPv121GetTransactionNarrative200Response));
+            if (getTransactionNarrative200Response == null)
+                throw new ArgumentNullException(nameof(getTransactionNarrative200Response));
         }
 
         /// <summary>
@@ -4031,11 +4031,11 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        /// <param name="oBPv121GetTransactionNarrative200Response"></param>
-        private void AfterOBPv121UpdateTransactionNarrativeDefaultImplementation(IOBPv121UpdateTransactionNarrativeApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, OBPv121GetTransactionNarrative200Response oBPv121GetTransactionNarrative200Response)
+        /// <param name="getTransactionNarrative200Response"></param>
+        private void AfterUpdateTransactionNarrativeDefaultImplementation(IUpdateTransactionNarrativeApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, GetTransactionNarrative200Response getTransactionNarrative200Response)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv121UpdateTransactionNarrative(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, transactionid, oBPv121GetTransactionNarrative200Response);
+            AfterUpdateTransactionNarrative(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, transactionid, getTransactionNarrative200Response);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -4049,8 +4049,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        /// <param name="oBPv121GetTransactionNarrative200Response"></param>
-        partial void AfterOBPv121UpdateTransactionNarrative(ref bool suppressDefaultLog, IOBPv121UpdateTransactionNarrativeApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, OBPv121GetTransactionNarrative200Response oBPv121GetTransactionNarrative200Response);
+        /// <param name="getTransactionNarrative200Response"></param>
+        partial void AfterUpdateTransactionNarrative(ref bool suppressDefaultLog, IUpdateTransactionNarrativeApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, GetTransactionNarrative200Response getTransactionNarrative200Response);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -4062,11 +4062,11 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        /// <param name="oBPv121GetTransactionNarrative200Response"></param>
-        private void OnErrorOBPv121UpdateTransactionNarrativeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, OBPv121GetTransactionNarrative200Response oBPv121GetTransactionNarrative200Response)
+        /// <param name="getTransactionNarrative200Response"></param>
+        private void OnErrorUpdateTransactionNarrativeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, GetTransactionNarrative200Response getTransactionNarrative200Response)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121UpdateTransactionNarrative(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, transactionid, oBPv121GetTransactionNarrative200Response);
+            OnErrorUpdateTransactionNarrative(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, transactionid, getTransactionNarrative200Response);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -4082,8 +4082,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        /// <param name="oBPv121GetTransactionNarrative200Response"></param>
-        partial void OnErrorOBPv121UpdateTransactionNarrative(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, OBPv121GetTransactionNarrative200Response oBPv121GetTransactionNarrative200Response);
+        /// <param name="getTransactionNarrative200Response"></param>
+        partial void OnErrorUpdateTransactionNarrative(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, GetTransactionNarrative200Response getTransactionNarrative200Response);
 
         /// <summary>
         /// Update a Transaction Narrative &lt;p&gt;Updates the description of the transaction TRANSACTION_ID.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
@@ -4092,14 +4092,14 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
-        /// <param name="oBPv121GetTransactionNarrative200Response">Request body</param>
+        /// <param name="getTransactionNarrative200Response">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateTransactionNarrativeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121UpdateTransactionNarrativeApiResponse?> OBPv121UpdateTransactionNarrativeOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, OBPv121GetTransactionNarrative200Response oBPv121GetTransactionNarrative200Response, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateTransactionNarrativeApiResponse"/>&gt;</returns>
+        public async Task<IUpdateTransactionNarrativeApiResponse?> UpdateTransactionNarrativeOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, GetTransactionNarrative200Response getTransactionNarrative200Response, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv121UpdateTransactionNarrativeAsync(bankid, accountid, viewid, transactionid, oBPv121GetTransactionNarrative200Response, cancellationToken).ConfigureAwait(false);
+                return await UpdateTransactionNarrativeAsync(bankid, accountid, viewid, transactionid, getTransactionNarrative200Response, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -4115,18 +4115,18 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
-        /// <param name="oBPv121GetTransactionNarrative200Response">Request body</param>
+        /// <param name="getTransactionNarrative200Response">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateTransactionNarrativeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121UpdateTransactionNarrativeApiResponse> OBPv121UpdateTransactionNarrativeAsync(string bankid, string accountid, string viewid, string transactionid, OBPv121GetTransactionNarrative200Response oBPv121GetTransactionNarrative200Response, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateTransactionNarrativeApiResponse"/>&gt;</returns>
+        public async Task<IUpdateTransactionNarrativeApiResponse> UpdateTransactionNarrativeAsync(string bankid, string accountid, string viewid, string transactionid, GetTransactionNarrative200Response getTransactionNarrative200Response, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv121UpdateTransactionNarrative(bankid, accountid, viewid, transactionid, oBPv121GetTransactionNarrative200Response);
+                ValidateUpdateTransactionNarrative(bankid, accountid, viewid, transactionid, getTransactionNarrative200Response);
 
-                FormatOBPv121UpdateTransactionNarrative(ref bankid, ref accountid, ref viewid, ref transactionid, oBPv121GetTransactionNarrative200Response);
+                FormatUpdateTransactionNarrative(ref bankid, ref accountid, ref viewid, ref transactionid, getTransactionNarrative200Response);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -4141,9 +4141,9 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Btransactionid%7D", Uri.EscapeDataString(transactionid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv121GetTransactionNarrative200Response as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (getTransactionNarrative200Response as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv121GetTransactionNarrative200Response, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(getTransactionNarrative200Response, _jsonSerializerOptions));
 
                     httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
 
@@ -4171,8 +4171,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<TransactionApi.OBPv121UpdateTransactionNarrativeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<TransactionApi.OBPv121UpdateTransactionNarrativeApiResponse>();
-                        TransactionApi.OBPv121UpdateTransactionNarrativeApiResponse apiResponseLocalVar;
+                        ILogger<TransactionApi.UpdateTransactionNarrativeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<TransactionApi.UpdateTransactionNarrativeApiResponse>();
+                        TransactionApi.UpdateTransactionNarrativeApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -4183,9 +4183,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv121UpdateTransactionNarrativeDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, transactionid, oBPv121GetTransactionNarrative200Response);
+                        AfterUpdateTransactionNarrativeDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, transactionid, getTransactionNarrative200Response);
 
-                        Events.ExecuteOnOBPv121UpdateTransactionNarrative(apiResponseLocalVar);
+                        Events.ExecuteOnUpdateTransactionNarrative(apiResponseLocalVar);
 
                         return apiResponseLocalVar;
                     }
@@ -4193,13 +4193,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv121UpdateTransactionNarrativeDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative", uriBuilderLocalVar.Path, bankid, accountid, viewid, transactionid, oBPv121GetTransactionNarrative200Response);
-                Events.ExecuteOnErrorOBPv121UpdateTransactionNarrative(e);
+                OnErrorUpdateTransactionNarrativeDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative", uriBuilderLocalVar.Path, bankid, accountid, viewid, transactionid, getTransactionNarrative200Response);
+                Events.ExecuteOnErrorUpdateTransactionNarrative(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv121UpdateWhereTagForViewOnTransaction(ref string bankid, ref string accountid, ref string viewid, ref string transactionid, OBPv121UpdateWhereTagForViewOnTransactionRequest oBPv121UpdateWhereTagForViewOnTransactionRequest);
+        partial void FormatUpdateWhereTagForViewOnTransaction(ref string bankid, ref string accountid, ref string viewid, ref string transactionid, UpdateWhereTagForViewOnTransactionRequest updateWhereTagForViewOnTransactionRequest);
 
         /// <summary>
         /// Validates the request parameters
@@ -4208,9 +4208,9 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        /// <param name="oBPv121UpdateWhereTagForViewOnTransactionRequest"></param>
+        /// <param name="updateWhereTagForViewOnTransactionRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv121UpdateWhereTagForViewOnTransaction(string bankid, string accountid, string viewid, string transactionid, OBPv121UpdateWhereTagForViewOnTransactionRequest oBPv121UpdateWhereTagForViewOnTransactionRequest)
+        private void ValidateUpdateWhereTagForViewOnTransaction(string bankid, string accountid, string viewid, string transactionid, UpdateWhereTagForViewOnTransactionRequest updateWhereTagForViewOnTransactionRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -4224,8 +4224,8 @@ namespace OpenBankProject.Api
             if (transactionid == null)
                 throw new ArgumentNullException(nameof(transactionid));
 
-            if (oBPv121UpdateWhereTagForViewOnTransactionRequest == null)
-                throw new ArgumentNullException(nameof(oBPv121UpdateWhereTagForViewOnTransactionRequest));
+            if (updateWhereTagForViewOnTransactionRequest == null)
+                throw new ArgumentNullException(nameof(updateWhereTagForViewOnTransactionRequest));
         }
 
         /// <summary>
@@ -4236,11 +4236,11 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        /// <param name="oBPv121UpdateWhereTagForViewOnTransactionRequest"></param>
-        private void AfterOBPv121UpdateWhereTagForViewOnTransactionDefaultImplementation(IOBPv121UpdateWhereTagForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, OBPv121UpdateWhereTagForViewOnTransactionRequest oBPv121UpdateWhereTagForViewOnTransactionRequest)
+        /// <param name="updateWhereTagForViewOnTransactionRequest"></param>
+        private void AfterUpdateWhereTagForViewOnTransactionDefaultImplementation(IUpdateWhereTagForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, UpdateWhereTagForViewOnTransactionRequest updateWhereTagForViewOnTransactionRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv121UpdateWhereTagForViewOnTransaction(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, transactionid, oBPv121UpdateWhereTagForViewOnTransactionRequest);
+            AfterUpdateWhereTagForViewOnTransaction(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, transactionid, updateWhereTagForViewOnTransactionRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -4254,8 +4254,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        /// <param name="oBPv121UpdateWhereTagForViewOnTransactionRequest"></param>
-        partial void AfterOBPv121UpdateWhereTagForViewOnTransaction(ref bool suppressDefaultLog, IOBPv121UpdateWhereTagForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, OBPv121UpdateWhereTagForViewOnTransactionRequest oBPv121UpdateWhereTagForViewOnTransactionRequest);
+        /// <param name="updateWhereTagForViewOnTransactionRequest"></param>
+        partial void AfterUpdateWhereTagForViewOnTransaction(ref bool suppressDefaultLog, IUpdateWhereTagForViewOnTransactionApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string transactionid, UpdateWhereTagForViewOnTransactionRequest updateWhereTagForViewOnTransactionRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -4267,11 +4267,11 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        /// <param name="oBPv121UpdateWhereTagForViewOnTransactionRequest"></param>
-        private void OnErrorOBPv121UpdateWhereTagForViewOnTransactionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, OBPv121UpdateWhereTagForViewOnTransactionRequest oBPv121UpdateWhereTagForViewOnTransactionRequest)
+        /// <param name="updateWhereTagForViewOnTransactionRequest"></param>
+        private void OnErrorUpdateWhereTagForViewOnTransactionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, UpdateWhereTagForViewOnTransactionRequest updateWhereTagForViewOnTransactionRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121UpdateWhereTagForViewOnTransaction(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, transactionid, oBPv121UpdateWhereTagForViewOnTransactionRequest);
+            OnErrorUpdateWhereTagForViewOnTransaction(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, transactionid, updateWhereTagForViewOnTransactionRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -4287,8 +4287,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="transactionid"></param>
-        /// <param name="oBPv121UpdateWhereTagForViewOnTransactionRequest"></param>
-        partial void OnErrorOBPv121UpdateWhereTagForViewOnTransaction(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, OBPv121UpdateWhereTagForViewOnTransactionRequest oBPv121UpdateWhereTagForViewOnTransactionRequest);
+        /// <param name="updateWhereTagForViewOnTransactionRequest"></param>
+        partial void OnErrorUpdateWhereTagForViewOnTransaction(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string transactionid, UpdateWhereTagForViewOnTransactionRequest updateWhereTagForViewOnTransactionRequest);
 
         /// <summary>
         /// Update a Transaction where Tag &lt;p&gt;Updates the &amp;quot;where&amp;quot; Geo tag on a transaction TRANSACTION_ID in a &lt;a href&#x3D;\&quot;#1_2_1-getViewsForBankAccount\&quot;&gt;view&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;The geo tag is linked with the user.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
@@ -4297,14 +4297,14 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
-        /// <param name="oBPv121UpdateWhereTagForViewOnTransactionRequest">Request body</param>
+        /// <param name="updateWhereTagForViewOnTransactionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateWhereTagForViewOnTransactionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121UpdateWhereTagForViewOnTransactionApiResponse?> OBPv121UpdateWhereTagForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, OBPv121UpdateWhereTagForViewOnTransactionRequest oBPv121UpdateWhereTagForViewOnTransactionRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateWhereTagForViewOnTransactionApiResponse"/>&gt;</returns>
+        public async Task<IUpdateWhereTagForViewOnTransactionApiResponse?> UpdateWhereTagForViewOnTransactionOrDefaultAsync(string bankid, string accountid, string viewid, string transactionid, UpdateWhereTagForViewOnTransactionRequest updateWhereTagForViewOnTransactionRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv121UpdateWhereTagForViewOnTransactionAsync(bankid, accountid, viewid, transactionid, oBPv121UpdateWhereTagForViewOnTransactionRequest, cancellationToken).ConfigureAwait(false);
+                return await UpdateWhereTagForViewOnTransactionAsync(bankid, accountid, viewid, transactionid, updateWhereTagForViewOnTransactionRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -4320,18 +4320,18 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="transactionid">The TRANSACTIONID identifier</param>
-        /// <param name="oBPv121UpdateWhereTagForViewOnTransactionRequest">Request body</param>
+        /// <param name="updateWhereTagForViewOnTransactionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateWhereTagForViewOnTransactionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121UpdateWhereTagForViewOnTransactionApiResponse> OBPv121UpdateWhereTagForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, OBPv121UpdateWhereTagForViewOnTransactionRequest oBPv121UpdateWhereTagForViewOnTransactionRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateWhereTagForViewOnTransactionApiResponse"/>&gt;</returns>
+        public async Task<IUpdateWhereTagForViewOnTransactionApiResponse> UpdateWhereTagForViewOnTransactionAsync(string bankid, string accountid, string viewid, string transactionid, UpdateWhereTagForViewOnTransactionRequest updateWhereTagForViewOnTransactionRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv121UpdateWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid, oBPv121UpdateWhereTagForViewOnTransactionRequest);
+                ValidateUpdateWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid, updateWhereTagForViewOnTransactionRequest);
 
-                FormatOBPv121UpdateWhereTagForViewOnTransaction(ref bankid, ref accountid, ref viewid, ref transactionid, oBPv121UpdateWhereTagForViewOnTransactionRequest);
+                FormatUpdateWhereTagForViewOnTransaction(ref bankid, ref accountid, ref viewid, ref transactionid, updateWhereTagForViewOnTransactionRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -4346,16 +4346,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Btransactionid%7D", Uri.EscapeDataString(transactionid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv121UpdateWhereTagForViewOnTransactionRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (updateWhereTagForViewOnTransactionRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv121UpdateWhereTagForViewOnTransactionRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateWhereTagForViewOnTransactionRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -4391,8 +4391,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<TransactionApi.OBPv121UpdateWhereTagForViewOnTransactionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<TransactionApi.OBPv121UpdateWhereTagForViewOnTransactionApiResponse>();
-                        TransactionApi.OBPv121UpdateWhereTagForViewOnTransactionApiResponse apiResponseLocalVar;
+                        ILogger<TransactionApi.UpdateWhereTagForViewOnTransactionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<TransactionApi.UpdateWhereTagForViewOnTransactionApiResponse>();
+                        TransactionApi.UpdateWhereTagForViewOnTransactionApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -4403,9 +4403,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv121UpdateWhereTagForViewOnTransactionDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, transactionid, oBPv121UpdateWhereTagForViewOnTransactionRequest);
+                        AfterUpdateWhereTagForViewOnTransactionDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, transactionid, updateWhereTagForViewOnTransactionRequest);
 
-                        Events.ExecuteOnOBPv121UpdateWhereTagForViewOnTransaction(apiResponseLocalVar);
+                        Events.ExecuteOnUpdateWhereTagForViewOnTransaction(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -4417,8 +4417,8 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv121UpdateWhereTagForViewOnTransactionDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where", uriBuilderLocalVar.Path, bankid, accountid, viewid, transactionid, oBPv121UpdateWhereTagForViewOnTransactionRequest);
-                Events.ExecuteOnErrorOBPv121UpdateWhereTagForViewOnTransaction(e);
+                OnErrorUpdateWhereTagForViewOnTransactionDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where", uriBuilderLocalVar.Path, bankid, accountid, viewid, transactionid, updateWhereTagForViewOnTransactionRequest);
+                Events.ExecuteOnErrorUpdateWhereTagForViewOnTransaction(e);
                 throw;
             }
         }

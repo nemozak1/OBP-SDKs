@@ -1,18 +1,18 @@
 # OpenBankProject::ApiProductAttributeApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**o_bpv6_0_0_create_api_product_attribute**](ApiProductAttributeApi.md#o_bpv6_0_0_create_api_product_attribute) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attribute | Create Api Product Attribute |
-| [**o_bpv6_0_0_delete_api_product_attribute**](ApiProductAttributeApi.md#o_bpv6_0_0_delete_api_product_attribute) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Delete Api Product Attribute |
-| [**o_bpv6_0_0_get_api_product_attribute**](ApiProductAttributeApi.md#o_bpv6_0_0_get_api_product_attribute) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Get Api Product Attribute |
-| [**o_bpv6_0_0_update_api_product_attribute**](ApiProductAttributeApi.md#o_bpv6_0_0_update_api_product_attribute) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Update Api Product Attribute |
+| [**create_api_product_attribute**](ApiProductAttributeApi.md#create_api_product_attribute) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attribute | Create Api Product Attribute |
+| [**delete_api_product_attribute**](ApiProductAttributeApi.md#delete_api_product_attribute) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Delete Api Product Attribute |
+| [**get_api_product_attribute**](ApiProductAttributeApi.md#get_api_product_attribute) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Get Api Product Attribute |
+| [**update_api_product_attribute**](ApiProductAttributeApi.md#update_api_product_attribute) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Update Api Product Attribute |
 
 
-## o_bpv6_0_0_create_api_product_attribute
+## create_api_product_attribute
 
-> <OBPv600CreateApiProductAttribute200Response> o_bpv6_0_0_create_api_product_attribute(bankid, apiproductcode, obpv510_update_atm_attribute_request)
+> <CreateApiProductAttribute200Response> create_api_product_attribute(bankid, apiproductcode, update_atm_attribute_request)
 
 Create Api Product Attribute
 
@@ -34,40 +34,40 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::ApiProductAttributeApi.new
 bankid = 'bankid_example' # String | The BANKID identifier
 apiproductcode = 'apiproductcode_example' # String | The APIPRODUCTCODE identifier
-obpv510_update_atm_attribute_request = OpenBankProject::OBPv510UpdateAtmAttributeRequest.new({type: 'type_example', properties: OpenBankProject::OBPv510UpdateAtmAttributeRequestProperties.new({name: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), value: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), is_active: , type: })}) # OBPv510UpdateAtmAttributeRequest | Request body
+update_atm_attribute_request = OpenBankProject::UpdateAtmAttributeRequest.new # UpdateAtmAttributeRequest | Request body
 
 begin
   # Create Api Product Attribute
-  result = api_instance.o_bpv6_0_0_create_api_product_attribute(bankid, apiproductcode, obpv510_update_atm_attribute_request)
+  result = api_instance.create_api_product_attribute(bankid, apiproductcode, update_atm_attribute_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ApiProductAttributeApi->o_bpv6_0_0_create_api_product_attribute: #{e}"
+  puts "Error when calling ApiProductAttributeApi->create_api_product_attribute: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_create_api_product_attribute_with_http_info variant
+#### Using the create_api_product_attribute_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600CreateApiProductAttribute200Response>, Integer, Hash)> o_bpv6_0_0_create_api_product_attribute_with_http_info(bankid, apiproductcode, obpv510_update_atm_attribute_request)
+> <Array(<CreateApiProductAttribute200Response>, Integer, Hash)> create_api_product_attribute_with_http_info(bankid, apiproductcode, update_atm_attribute_request)
 
 ```ruby
 begin
   # Create Api Product Attribute
-  data, status_code, headers = api_instance.o_bpv6_0_0_create_api_product_attribute_with_http_info(bankid, apiproductcode, obpv510_update_atm_attribute_request)
+  data, status_code, headers = api_instance.create_api_product_attribute_with_http_info(bankid, apiproductcode, update_atm_attribute_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600CreateApiProductAttribute200Response>
+  p data # => <CreateApiProductAttribute200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ApiProductAttributeApi->o_bpv6_0_0_create_api_product_attribute_with_http_info: #{e}"
+  puts "Error when calling ApiProductAttributeApi->create_api_product_attribute_with_http_info: #{e}"
 end
 ```
 
@@ -77,11 +77,11 @@ end
 | ---- | ---- | ----------- | ----- |
 | **bankid** | **String** | The BANKID identifier |  |
 | **apiproductcode** | **String** | The APIPRODUCTCODE identifier |  |
-| **obpv510_update_atm_attribute_request** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md) | Request body |  |
+| **update_atm_attribute_request** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600CreateApiProductAttribute200Response**](OBPv600CreateApiProductAttribute200Response.md)
+[**CreateApiProductAttribute200Response**](CreateApiProductAttribute200Response.md)
 
 ### Authorization
 
@@ -93,9 +93,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_delete_api_product_attribute
+## delete_api_product_attribute
 
-> o_bpv6_0_0_delete_api_product_attribute(bankid, apiproductcode, apiproductattributeid)
+> delete_api_product_attribute(bankid, apiproductcode, apiproductattributeid)
 
 Delete Api Product Attribute
 
@@ -117,9 +117,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::ApiProductAttributeApi.new
@@ -129,27 +129,27 @@ apiproductattributeid = 'apiproductattributeid_example' # String | The APIPRODUC
 
 begin
   # Delete Api Product Attribute
-  api_instance.o_bpv6_0_0_delete_api_product_attribute(bankid, apiproductcode, apiproductattributeid)
+  api_instance.delete_api_product_attribute(bankid, apiproductcode, apiproductattributeid)
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ApiProductAttributeApi->o_bpv6_0_0_delete_api_product_attribute: #{e}"
+  puts "Error when calling ApiProductAttributeApi->delete_api_product_attribute: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_delete_api_product_attribute_with_http_info variant
+#### Using the delete_api_product_attribute_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> o_bpv6_0_0_delete_api_product_attribute_with_http_info(bankid, apiproductcode, apiproductattributeid)
+> <Array(nil, Integer, Hash)> delete_api_product_attribute_with_http_info(bankid, apiproductcode, apiproductattributeid)
 
 ```ruby
 begin
   # Delete Api Product Attribute
-  data, status_code, headers = api_instance.o_bpv6_0_0_delete_api_product_attribute_with_http_info(bankid, apiproductcode, apiproductattributeid)
+  data, status_code, headers = api_instance.delete_api_product_attribute_with_http_info(bankid, apiproductcode, apiproductattributeid)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ApiProductAttributeApi->o_bpv6_0_0_delete_api_product_attribute_with_http_info: #{e}"
+  puts "Error when calling ApiProductAttributeApi->delete_api_product_attribute_with_http_info: #{e}"
 end
 ```
 
@@ -175,9 +175,9 @@ nil (empty response body)
 - **Accept**: Not defined
 
 
-## o_bpv6_0_0_get_api_product_attribute
+## get_api_product_attribute
 
-> <OBPv600CreateApiProductAttribute200Response> o_bpv6_0_0_get_api_product_attribute(bankid, apiproductcode, apiproductattributeid)
+> <CreateApiProductAttribute200Response> get_api_product_attribute(bankid, apiproductcode, apiproductattributeid)
 
 Get Api Product Attribute
 
@@ -196,28 +196,28 @@ apiproductattributeid = 'apiproductattributeid_example' # String | The APIPRODUC
 
 begin
   # Get Api Product Attribute
-  result = api_instance.o_bpv6_0_0_get_api_product_attribute(bankid, apiproductcode, apiproductattributeid)
+  result = api_instance.get_api_product_attribute(bankid, apiproductcode, apiproductattributeid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ApiProductAttributeApi->o_bpv6_0_0_get_api_product_attribute: #{e}"
+  puts "Error when calling ApiProductAttributeApi->get_api_product_attribute: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_api_product_attribute_with_http_info variant
+#### Using the get_api_product_attribute_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600CreateApiProductAttribute200Response>, Integer, Hash)> o_bpv6_0_0_get_api_product_attribute_with_http_info(bankid, apiproductcode, apiproductattributeid)
+> <Array(<CreateApiProductAttribute200Response>, Integer, Hash)> get_api_product_attribute_with_http_info(bankid, apiproductcode, apiproductattributeid)
 
 ```ruby
 begin
   # Get Api Product Attribute
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_api_product_attribute_with_http_info(bankid, apiproductcode, apiproductattributeid)
+  data, status_code, headers = api_instance.get_api_product_attribute_with_http_info(bankid, apiproductcode, apiproductattributeid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600CreateApiProductAttribute200Response>
+  p data # => <CreateApiProductAttribute200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ApiProductAttributeApi->o_bpv6_0_0_get_api_product_attribute_with_http_info: #{e}"
+  puts "Error when calling ApiProductAttributeApi->get_api_product_attribute_with_http_info: #{e}"
 end
 ```
 
@@ -231,7 +231,7 @@ end
 
 ### Return type
 
-[**OBPv600CreateApiProductAttribute200Response**](OBPv600CreateApiProductAttribute200Response.md)
+[**CreateApiProductAttribute200Response**](CreateApiProductAttribute200Response.md)
 
 ### Authorization
 
@@ -243,9 +243,9 @@ No authorization required
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_update_api_product_attribute
+## update_api_product_attribute
 
-> <OBPv600CreateApiProductAttribute200Response> o_bpv6_0_0_update_api_product_attribute(bankid, apiproductcode, apiproductattributeid, obpv510_update_atm_attribute_request)
+> <CreateApiProductAttribute200Response> update_api_product_attribute(bankid, apiproductcode, apiproductattributeid, update_atm_attribute_request)
 
 Update Api Product Attribute
 
@@ -267,41 +267,41 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::ApiProductAttributeApi.new
 bankid = 'bankid_example' # String | The BANKID identifier
 apiproductcode = 'apiproductcode_example' # String | The APIPRODUCTCODE identifier
 apiproductattributeid = 'apiproductattributeid_example' # String | The APIPRODUCTATTRIBUTEID identifier
-obpv510_update_atm_attribute_request = OpenBankProject::OBPv510UpdateAtmAttributeRequest.new({type: 'type_example', properties: OpenBankProject::OBPv510UpdateAtmAttributeRequestProperties.new({name: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), value: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), is_active: , type: })}) # OBPv510UpdateAtmAttributeRequest | Request body
+update_atm_attribute_request = OpenBankProject::UpdateAtmAttributeRequest.new # UpdateAtmAttributeRequest | Request body
 
 begin
   # Update Api Product Attribute
-  result = api_instance.o_bpv6_0_0_update_api_product_attribute(bankid, apiproductcode, apiproductattributeid, obpv510_update_atm_attribute_request)
+  result = api_instance.update_api_product_attribute(bankid, apiproductcode, apiproductattributeid, update_atm_attribute_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ApiProductAttributeApi->o_bpv6_0_0_update_api_product_attribute: #{e}"
+  puts "Error when calling ApiProductAttributeApi->update_api_product_attribute: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_update_api_product_attribute_with_http_info variant
+#### Using the update_api_product_attribute_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600CreateApiProductAttribute200Response>, Integer, Hash)> o_bpv6_0_0_update_api_product_attribute_with_http_info(bankid, apiproductcode, apiproductattributeid, obpv510_update_atm_attribute_request)
+> <Array(<CreateApiProductAttribute200Response>, Integer, Hash)> update_api_product_attribute_with_http_info(bankid, apiproductcode, apiproductattributeid, update_atm_attribute_request)
 
 ```ruby
 begin
   # Update Api Product Attribute
-  data, status_code, headers = api_instance.o_bpv6_0_0_update_api_product_attribute_with_http_info(bankid, apiproductcode, apiproductattributeid, obpv510_update_atm_attribute_request)
+  data, status_code, headers = api_instance.update_api_product_attribute_with_http_info(bankid, apiproductcode, apiproductattributeid, update_atm_attribute_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600CreateApiProductAttribute200Response>
+  p data # => <CreateApiProductAttribute200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ApiProductAttributeApi->o_bpv6_0_0_update_api_product_attribute_with_http_info: #{e}"
+  puts "Error when calling ApiProductAttributeApi->update_api_product_attribute_with_http_info: #{e}"
 end
 ```
 
@@ -312,11 +312,11 @@ end
 | **bankid** | **String** | The BANKID identifier |  |
 | **apiproductcode** | **String** | The APIPRODUCTCODE identifier |  |
 | **apiproductattributeid** | **String** | The APIPRODUCTATTRIBUTEID identifier |  |
-| **obpv510_update_atm_attribute_request** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md) | Request body |  |
+| **update_atm_attribute_request** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600CreateApiProductAttribute200Response**](OBPv600CreateApiProductAttribute200Response.md)
+[**CreateApiProductAttribute200Response**](CreateApiProductAttribute200Response.md)
 
 ### Authorization
 

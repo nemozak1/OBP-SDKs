@@ -1,7 +1,7 @@
 =begin
 #Open Bank Project API v6.0.0
 
-#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 The version of the OpenAPI document: 6.0.0
 Contact: contact@tesobe.com
@@ -22,31 +22,31 @@ module OpenBankProject
     # Create Bank Level Dynamic Endpoint
     # <p>Create dynamic endpoints.</p> <p>Create dynamic endpoints with one json format swagger content.</p> <p>If the host of swagger is <code>dynamic_entity</code>, then you need link the swagger fields to the dynamic entity fields,<br /> please check <code>Endpoint Mapping</code> endpoints.</p> <p>If the host of swagger is <code>obp_mock</code>, every dynamic endpoint will return example response of swagger,</p> <p>when create MethodRouting for given dynamic endpoint, it will be routed to given url.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
     # @param bankid [String] The BANKID identifier
-    # @param obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString] Request body
+    # @param get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string [GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems]
-    def o_bpv4_0_0_create_bank_level_dynamic_endpoint(bankid, obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_create_bank_level_dynamic_endpoint_with_http_info(bankid, obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string, opts)
+    # @return [GetDynamicEndpoints200ResponseDynamicEndpointsInner]
+    def create_bank_level_dynamic_endpoint(bankid, get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string, opts = {})
+      data, _status_code, _headers = create_bank_level_dynamic_endpoint_with_http_info(bankid, get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string, opts)
       data
     end
 
     # Create Bank Level Dynamic Endpoint
     # &lt;p&gt;Create dynamic endpoints.&lt;/p&gt; &lt;p&gt;Create dynamic endpoints with one json format swagger content.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;dynamic_entity&lt;/code&gt;, then you need link the swagger fields to the dynamic entity fields,&lt;br /&gt; please check &lt;code&gt;Endpoint Mapping&lt;/code&gt; endpoints.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;obp_mock&lt;/code&gt;, every dynamic endpoint will return example response of swagger,&lt;/p&gt; &lt;p&gt;when create MethodRouting for given dynamic endpoint, it will be routed to given url.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
     # @param bankid [String] The BANKID identifier
-    # @param obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString] Request body
+    # @param get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string [GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems, Integer, Hash)>] OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems data, response status code and response headers
-    def o_bpv4_0_0_create_bank_level_dynamic_endpoint_with_http_info(bankid, obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string, opts = {})
+    # @return [Array<(GetDynamicEndpoints200ResponseDynamicEndpointsInner, Integer, Hash)>] GetDynamicEndpoints200ResponseDynamicEndpointsInner data, response status code and response headers
+    def create_bank_level_dynamic_endpoint_with_http_info(bankid, get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicEndpointManageApi.o_bpv4_0_0_create_bank_level_dynamic_endpoint ...'
+        @api_client.config.logger.debug 'Calling API: DynamicEndpointManageApi.create_bank_level_dynamic_endpoint ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicEndpointManageApi.o_bpv4_0_0_create_bank_level_dynamic_endpoint"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicEndpointManageApi.create_bank_level_dynamic_endpoint"
       end
-      # verify the required parameter 'obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string' is set
-      if @api_client.config.client_side_validation && obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string' when calling DynamicEndpointManageApi.o_bpv4_0_0_create_bank_level_dynamic_endpoint"
+      # verify the required parameter 'get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string' is set
+      if @api_client.config.client_side_validation && get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string.nil?
+        fail ArgumentError, "Missing the required parameter 'get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string' when calling DynamicEndpointManageApi.create_bank_level_dynamic_endpoint"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s))
@@ -68,16 +68,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems'
+      return_type = opts[:debug_return_type] || 'GetDynamicEndpoints200ResponseDynamicEndpointsInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicEndpointManageApi.o_bpv4_0_0_create_bank_level_dynamic_endpoint",
+        :operation => :"DynamicEndpointManageApi.create_bank_level_dynamic_endpoint",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -88,33 +88,33 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicEndpointManageApi#o_bpv4_0_0_create_bank_level_dynamic_endpoint\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicEndpointManageApi#create_bank_level_dynamic_endpoint\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
 
     # Create Dynamic Endpoint
     # <p>Create dynamic endpoints.</p> <p>Create dynamic endpoints with one json format swagger content.</p> <p>If the host of swagger is <code>dynamic_entity</code>, then you need link the swagger fields to the dynamic entity fields,<br /> please check <code>Endpoint Mapping</code> endpoints.</p> <p>If the host of swagger is <code>obp_mock</code>, every dynamic endpoint will return example response of swagger,</p> <p>when create MethodRouting for given dynamic endpoint, it will be routed to given url.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
-    # @param obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString] Request body
+    # @param get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string [GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems]
-    def o_bpv4_0_0_create_dynamic_endpoint(obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_create_dynamic_endpoint_with_http_info(obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string, opts)
+    # @return [GetDynamicEndpoints200ResponseDynamicEndpointsInner]
+    def create_dynamic_endpoint(get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string, opts = {})
+      data, _status_code, _headers = create_dynamic_endpoint_with_http_info(get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string, opts)
       data
     end
 
     # Create Dynamic Endpoint
     # &lt;p&gt;Create dynamic endpoints.&lt;/p&gt; &lt;p&gt;Create dynamic endpoints with one json format swagger content.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;dynamic_entity&lt;/code&gt;, then you need link the swagger fields to the dynamic entity fields,&lt;br /&gt; please check &lt;code&gt;Endpoint Mapping&lt;/code&gt; endpoints.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;obp_mock&lt;/code&gt;, every dynamic endpoint will return example response of swagger,&lt;/p&gt; &lt;p&gt;when create MethodRouting for given dynamic endpoint, it will be routed to given url.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-    # @param obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString] Request body
+    # @param get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string [GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems, Integer, Hash)>] OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems data, response status code and response headers
-    def o_bpv4_0_0_create_dynamic_endpoint_with_http_info(obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string, opts = {})
+    # @return [Array<(GetDynamicEndpoints200ResponseDynamicEndpointsInner, Integer, Hash)>] GetDynamicEndpoints200ResponseDynamicEndpointsInner data, response status code and response headers
+    def create_dynamic_endpoint_with_http_info(get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicEndpointManageApi.o_bpv4_0_0_create_dynamic_endpoint ...'
+        @api_client.config.logger.debug 'Calling API: DynamicEndpointManageApi.create_dynamic_endpoint ...'
       end
-      # verify the required parameter 'obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string' is set
-      if @api_client.config.client_side_validation && obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string' when calling DynamicEndpointManageApi.o_bpv4_0_0_create_dynamic_endpoint"
+      # verify the required parameter 'get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string' is set
+      if @api_client.config.client_side_validation && get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string.nil?
+        fail ArgumentError, "Missing the required parameter 'get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string' when calling DynamicEndpointManageApi.create_dynamic_endpoint"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/dynamic-endpoints'
@@ -136,16 +136,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems'
+      return_type = opts[:debug_return_type] || 'GetDynamicEndpoints200ResponseDynamicEndpointsInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicEndpointManageApi.o_bpv4_0_0_create_dynamic_endpoint",
+        :operation => :"DynamicEndpointManageApi.create_dynamic_endpoint",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -156,7 +156,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicEndpointManageApi#o_bpv4_0_0_create_dynamic_endpoint\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicEndpointManageApi#create_dynamic_endpoint\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -167,8 +167,8 @@ module OpenBankProject
     # @param dynamicendpointid [String] The DYNAMICENDPOINTID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv4_0_0_delete_bank_level_dynamic_endpoint(bankid, dynamicendpointid, opts = {})
-      o_bpv4_0_0_delete_bank_level_dynamic_endpoint_with_http_info(bankid, dynamicendpointid, opts)
+    def delete_bank_level_dynamic_endpoint(bankid, dynamicendpointid, opts = {})
+      delete_bank_level_dynamic_endpoint_with_http_info(bankid, dynamicendpointid, opts)
       nil
     end
 
@@ -178,17 +178,17 @@ module OpenBankProject
     # @param dynamicendpointid [String] The DYNAMICENDPOINTID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv4_0_0_delete_bank_level_dynamic_endpoint_with_http_info(bankid, dynamicendpointid, opts = {})
+    def delete_bank_level_dynamic_endpoint_with_http_info(bankid, dynamicendpointid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicEndpointManageApi.o_bpv4_0_0_delete_bank_level_dynamic_endpoint ...'
+        @api_client.config.logger.debug 'Calling API: DynamicEndpointManageApi.delete_bank_level_dynamic_endpoint ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicEndpointManageApi.o_bpv4_0_0_delete_bank_level_dynamic_endpoint"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicEndpointManageApi.delete_bank_level_dynamic_endpoint"
       end
       # verify the required parameter 'dynamicendpointid' is set
       if @api_client.config.client_side_validation && dynamicendpointid.nil?
-        fail ArgumentError, "Missing the required parameter 'dynamicendpointid' when calling DynamicEndpointManageApi.o_bpv4_0_0_delete_bank_level_dynamic_endpoint"
+        fail ArgumentError, "Missing the required parameter 'dynamicendpointid' when calling DynamicEndpointManageApi.delete_bank_level_dynamic_endpoint"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'dynamicendpointid' + '}', CGI.escape(dynamicendpointid.to_s))
@@ -212,7 +212,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicEndpointManageApi.o_bpv4_0_0_delete_bank_level_dynamic_endpoint",
+        :operation => :"DynamicEndpointManageApi.delete_bank_level_dynamic_endpoint",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -223,7 +223,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicEndpointManageApi#o_bpv4_0_0_delete_bank_level_dynamic_endpoint\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicEndpointManageApi#delete_bank_level_dynamic_endpoint\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -233,8 +233,8 @@ module OpenBankProject
     # @param dynamicendpointid [String] The DYNAMICENDPOINTID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv4_0_0_delete_dynamic_endpoint(dynamicendpointid, opts = {})
-      o_bpv4_0_0_delete_dynamic_endpoint_with_http_info(dynamicendpointid, opts)
+    def delete_dynamic_endpoint(dynamicendpointid, opts = {})
+      delete_dynamic_endpoint_with_http_info(dynamicendpointid, opts)
       nil
     end
 
@@ -243,13 +243,13 @@ module OpenBankProject
     # @param dynamicendpointid [String] The DYNAMICENDPOINTID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv4_0_0_delete_dynamic_endpoint_with_http_info(dynamicendpointid, opts = {})
+    def delete_dynamic_endpoint_with_http_info(dynamicendpointid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicEndpointManageApi.o_bpv4_0_0_delete_dynamic_endpoint ...'
+        @api_client.config.logger.debug 'Calling API: DynamicEndpointManageApi.delete_dynamic_endpoint ...'
       end
       # verify the required parameter 'dynamicendpointid' is set
       if @api_client.config.client_side_validation && dynamicendpointid.nil?
-        fail ArgumentError, "Missing the required parameter 'dynamicendpointid' when calling DynamicEndpointManageApi.o_bpv4_0_0_delete_dynamic_endpoint"
+        fail ArgumentError, "Missing the required parameter 'dynamicendpointid' when calling DynamicEndpointManageApi.delete_dynamic_endpoint"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}'.sub('{' + 'dynamicendpointid' + '}', CGI.escape(dynamicendpointid.to_s))
@@ -273,7 +273,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicEndpointManageApi.o_bpv4_0_0_delete_dynamic_endpoint",
+        :operation => :"DynamicEndpointManageApi.delete_dynamic_endpoint",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -284,7 +284,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicEndpointManageApi#o_bpv4_0_0_delete_dynamic_endpoint\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicEndpointManageApi#delete_dynamic_endpoint\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -294,8 +294,8 @@ module OpenBankProject
     # @param dynamicendpointid [String] The DYNAMICENDPOINTID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv4_0_0_delete_my_dynamic_endpoint(dynamicendpointid, opts = {})
-      o_bpv4_0_0_delete_my_dynamic_endpoint_with_http_info(dynamicendpointid, opts)
+    def delete_my_dynamic_endpoint(dynamicendpointid, opts = {})
+      delete_my_dynamic_endpoint_with_http_info(dynamicendpointid, opts)
       nil
     end
 
@@ -304,13 +304,13 @@ module OpenBankProject
     # @param dynamicendpointid [String] The DYNAMICENDPOINTID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv4_0_0_delete_my_dynamic_endpoint_with_http_info(dynamicendpointid, opts = {})
+    def delete_my_dynamic_endpoint_with_http_info(dynamicendpointid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicEndpointManageApi.o_bpv4_0_0_delete_my_dynamic_endpoint ...'
+        @api_client.config.logger.debug 'Calling API: DynamicEndpointManageApi.delete_my_dynamic_endpoint ...'
       end
       # verify the required parameter 'dynamicendpointid' is set
       if @api_client.config.client_side_validation && dynamicendpointid.nil?
-        fail ArgumentError, "Missing the required parameter 'dynamicendpointid' when calling DynamicEndpointManageApi.o_bpv4_0_0_delete_my_dynamic_endpoint"
+        fail ArgumentError, "Missing the required parameter 'dynamicendpointid' when calling DynamicEndpointManageApi.delete_my_dynamic_endpoint"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/my/dynamic-endpoints/{dynamicendpointid}'.sub('{' + 'dynamicendpointid' + '}', CGI.escape(dynamicendpointid.to_s))
@@ -334,7 +334,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicEndpointManageApi.o_bpv4_0_0_delete_my_dynamic_endpoint",
+        :operation => :"DynamicEndpointManageApi.delete_my_dynamic_endpoint",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -345,7 +345,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicEndpointManageApi#o_bpv4_0_0_delete_my_dynamic_endpoint\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicEndpointManageApi#delete_my_dynamic_endpoint\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -355,9 +355,9 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param dynamicendpointid [String] The DYNAMICENDPOINTID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems]
-    def o_bpv4_0_0_get_bank_level_dynamic_endpoint(bankid, dynamicendpointid, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_bank_level_dynamic_endpoint_with_http_info(bankid, dynamicendpointid, opts)
+    # @return [GetDynamicEndpoints200ResponseDynamicEndpointsInner]
+    def get_bank_level_dynamic_endpoint(bankid, dynamicendpointid, opts = {})
+      data, _status_code, _headers = get_bank_level_dynamic_endpoint_with_http_info(bankid, dynamicendpointid, opts)
       data
     end
 
@@ -366,18 +366,18 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param dynamicendpointid [String] The DYNAMICENDPOINTID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems, Integer, Hash)>] OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems data, response status code and response headers
-    def o_bpv4_0_0_get_bank_level_dynamic_endpoint_with_http_info(bankid, dynamicendpointid, opts = {})
+    # @return [Array<(GetDynamicEndpoints200ResponseDynamicEndpointsInner, Integer, Hash)>] GetDynamicEndpoints200ResponseDynamicEndpointsInner data, response status code and response headers
+    def get_bank_level_dynamic_endpoint_with_http_info(bankid, dynamicendpointid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicEndpointManageApi.o_bpv4_0_0_get_bank_level_dynamic_endpoint ...'
+        @api_client.config.logger.debug 'Calling API: DynamicEndpointManageApi.get_bank_level_dynamic_endpoint ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicEndpointManageApi.o_bpv4_0_0_get_bank_level_dynamic_endpoint"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicEndpointManageApi.get_bank_level_dynamic_endpoint"
       end
       # verify the required parameter 'dynamicendpointid' is set
       if @api_client.config.client_side_validation && dynamicendpointid.nil?
-        fail ArgumentError, "Missing the required parameter 'dynamicendpointid' when calling DynamicEndpointManageApi.o_bpv4_0_0_get_bank_level_dynamic_endpoint"
+        fail ArgumentError, "Missing the required parameter 'dynamicendpointid' when calling DynamicEndpointManageApi.get_bank_level_dynamic_endpoint"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'dynamicendpointid' + '}', CGI.escape(dynamicendpointid.to_s))
@@ -397,13 +397,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems'
+      return_type = opts[:debug_return_type] || 'GetDynamicEndpoints200ResponseDynamicEndpointsInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicEndpointManageApi.o_bpv4_0_0_get_bank_level_dynamic_endpoint",
+        :operation => :"DynamicEndpointManageApi.get_bank_level_dynamic_endpoint",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -414,7 +414,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicEndpointManageApi#o_bpv4_0_0_get_bank_level_dynamic_endpoint\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicEndpointManageApi#get_bank_level_dynamic_endpoint\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -423,9 +423,9 @@ module OpenBankProject
     # <p>Get Bank Level Dynamic Endpoints.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
     # @param bankid [String] The BANKID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetDynamicEndpoints200Response]
-    def o_bpv4_0_0_get_bank_level_dynamic_endpoints(bankid, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_bank_level_dynamic_endpoints_with_http_info(bankid, opts)
+    # @return [GetDynamicEndpoints200Response]
+    def get_bank_level_dynamic_endpoints(bankid, opts = {})
+      data, _status_code, _headers = get_bank_level_dynamic_endpoints_with_http_info(bankid, opts)
       data
     end
 
@@ -433,14 +433,14 @@ module OpenBankProject
     # &lt;p&gt;Get Bank Level Dynamic Endpoints.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
     # @param bankid [String] The BANKID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetDynamicEndpoints200Response, Integer, Hash)>] OBPv400GetDynamicEndpoints200Response data, response status code and response headers
-    def o_bpv4_0_0_get_bank_level_dynamic_endpoints_with_http_info(bankid, opts = {})
+    # @return [Array<(GetDynamicEndpoints200Response, Integer, Hash)>] GetDynamicEndpoints200Response data, response status code and response headers
+    def get_bank_level_dynamic_endpoints_with_http_info(bankid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicEndpointManageApi.o_bpv4_0_0_get_bank_level_dynamic_endpoints ...'
+        @api_client.config.logger.debug 'Calling API: DynamicEndpointManageApi.get_bank_level_dynamic_endpoints ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicEndpointManageApi.o_bpv4_0_0_get_bank_level_dynamic_endpoints"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicEndpointManageApi.get_bank_level_dynamic_endpoints"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s))
@@ -460,13 +460,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetDynamicEndpoints200Response'
+      return_type = opts[:debug_return_type] || 'GetDynamicEndpoints200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicEndpointManageApi.o_bpv4_0_0_get_bank_level_dynamic_endpoints",
+        :operation => :"DynamicEndpointManageApi.get_bank_level_dynamic_endpoints",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -477,7 +477,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicEndpointManageApi#o_bpv4_0_0_get_bank_level_dynamic_endpoints\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicEndpointManageApi#get_bank_level_dynamic_endpoints\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -486,9 +486,9 @@ module OpenBankProject
     # <p>Get a Dynamic Endpoint.</p> <p>Get one DynamicEndpoint,</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
     # @param dynamicendpointid [String] The DYNAMICENDPOINTID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems]
-    def o_bpv4_0_0_get_dynamic_endpoint(dynamicendpointid, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_dynamic_endpoint_with_http_info(dynamicendpointid, opts)
+    # @return [GetDynamicEndpoints200ResponseDynamicEndpointsInner]
+    def get_dynamic_endpoint(dynamicendpointid, opts = {})
+      data, _status_code, _headers = get_dynamic_endpoint_with_http_info(dynamicendpointid, opts)
       data
     end
 
@@ -496,14 +496,14 @@ module OpenBankProject
     # &lt;p&gt;Get a Dynamic Endpoint.&lt;/p&gt; &lt;p&gt;Get one DynamicEndpoint,&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
     # @param dynamicendpointid [String] The DYNAMICENDPOINTID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems, Integer, Hash)>] OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems data, response status code and response headers
-    def o_bpv4_0_0_get_dynamic_endpoint_with_http_info(dynamicendpointid, opts = {})
+    # @return [Array<(GetDynamicEndpoints200ResponseDynamicEndpointsInner, Integer, Hash)>] GetDynamicEndpoints200ResponseDynamicEndpointsInner data, response status code and response headers
+    def get_dynamic_endpoint_with_http_info(dynamicendpointid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicEndpointManageApi.o_bpv4_0_0_get_dynamic_endpoint ...'
+        @api_client.config.logger.debug 'Calling API: DynamicEndpointManageApi.get_dynamic_endpoint ...'
       end
       # verify the required parameter 'dynamicendpointid' is set
       if @api_client.config.client_side_validation && dynamicendpointid.nil?
-        fail ArgumentError, "Missing the required parameter 'dynamicendpointid' when calling DynamicEndpointManageApi.o_bpv4_0_0_get_dynamic_endpoint"
+        fail ArgumentError, "Missing the required parameter 'dynamicendpointid' when calling DynamicEndpointManageApi.get_dynamic_endpoint"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}'.sub('{' + 'dynamicendpointid' + '}', CGI.escape(dynamicendpointid.to_s))
@@ -523,13 +523,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems'
+      return_type = opts[:debug_return_type] || 'GetDynamicEndpoints200ResponseDynamicEndpointsInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicEndpointManageApi.o_bpv4_0_0_get_dynamic_endpoint",
+        :operation => :"DynamicEndpointManageApi.get_dynamic_endpoint",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -540,7 +540,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicEndpointManageApi#o_bpv4_0_0_get_dynamic_endpoint\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicEndpointManageApi#get_dynamic_endpoint\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -548,19 +548,19 @@ module OpenBankProject
     #  Get Dynamic Endpoints
     # <p>Get Dynamic Endpoints.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetDynamicEndpoints200Response]
-    def o_bpv4_0_0_get_dynamic_endpoints(opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_dynamic_endpoints_with_http_info(opts)
+    # @return [GetDynamicEndpoints200Response]
+    def get_dynamic_endpoints(opts = {})
+      data, _status_code, _headers = get_dynamic_endpoints_with_http_info(opts)
       data
     end
 
     #  Get Dynamic Endpoints
     # &lt;p&gt;Get Dynamic Endpoints.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetDynamicEndpoints200Response, Integer, Hash)>] OBPv400GetDynamicEndpoints200Response data, response status code and response headers
-    def o_bpv4_0_0_get_dynamic_endpoints_with_http_info(opts = {})
+    # @return [Array<(GetDynamicEndpoints200Response, Integer, Hash)>] GetDynamicEndpoints200Response data, response status code and response headers
+    def get_dynamic_endpoints_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicEndpointManageApi.o_bpv4_0_0_get_dynamic_endpoints ...'
+        @api_client.config.logger.debug 'Calling API: DynamicEndpointManageApi.get_dynamic_endpoints ...'
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/dynamic-endpoints'
@@ -580,13 +580,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetDynamicEndpoints200Response'
+      return_type = opts[:debug_return_type] || 'GetDynamicEndpoints200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicEndpointManageApi.o_bpv4_0_0_get_dynamic_endpoints",
+        :operation => :"DynamicEndpointManageApi.get_dynamic_endpoints",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -597,7 +597,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicEndpointManageApi#o_bpv4_0_0_get_dynamic_endpoints\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicEndpointManageApi#get_dynamic_endpoints\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -605,19 +605,19 @@ module OpenBankProject
     # Get My Dynamic Endpoints
     # <p>Get My Dynamic Endpoints.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetDynamicEndpoints200Response]
-    def o_bpv4_0_0_get_my_dynamic_endpoints(opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_my_dynamic_endpoints_with_http_info(opts)
+    # @return [GetDynamicEndpoints200Response]
+    def get_my_dynamic_endpoints(opts = {})
+      data, _status_code, _headers = get_my_dynamic_endpoints_with_http_info(opts)
       data
     end
 
     # Get My Dynamic Endpoints
     # &lt;p&gt;Get My Dynamic Endpoints.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetDynamicEndpoints200Response, Integer, Hash)>] OBPv400GetDynamicEndpoints200Response data, response status code and response headers
-    def o_bpv4_0_0_get_my_dynamic_endpoints_with_http_info(opts = {})
+    # @return [Array<(GetDynamicEndpoints200Response, Integer, Hash)>] GetDynamicEndpoints200Response data, response status code and response headers
+    def get_my_dynamic_endpoints_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicEndpointManageApi.o_bpv4_0_0_get_my_dynamic_endpoints ...'
+        @api_client.config.logger.debug 'Calling API: DynamicEndpointManageApi.get_my_dynamic_endpoints ...'
       end
       # resource path
       local_var_path = '/obp/v4.0.0/my/dynamic-endpoints'
@@ -637,13 +637,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetDynamicEndpoints200Response'
+      return_type = opts[:debug_return_type] || 'GetDynamicEndpoints200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicEndpointManageApi.o_bpv4_0_0_get_my_dynamic_endpoints",
+        :operation => :"DynamicEndpointManageApi.get_my_dynamic_endpoints",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -654,7 +654,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicEndpointManageApi#o_bpv4_0_0_get_my_dynamic_endpoints\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicEndpointManageApi#get_my_dynamic_endpoints\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -663,11 +663,11 @@ module OpenBankProject
     # <p>Update Bank Level  dynamic endpoint Host.<br /> The value can be obp_mock, dynamic_entity, or some service url.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
     # @param bankid [String] The BANKID identifier
     # @param dynamicendpointid [String] The DYNAMICENDPOINTID identifier
-    # @param obpv400_update_bank_level_dynamic_endpoint_host_request [OBPv400UpdateBankLevelDynamicEndpointHostRequest] Request body
+    # @param update_bank_level_dynamic_endpoint_host_request [UpdateBankLevelDynamicEndpointHostRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400UpdateBankLevelDynamicEndpointHostRequest]
-    def o_bpv4_0_0_update_bank_level_dynamic_endpoint_host(bankid, dynamicendpointid, obpv400_update_bank_level_dynamic_endpoint_host_request, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_update_bank_level_dynamic_endpoint_host_with_http_info(bankid, dynamicendpointid, obpv400_update_bank_level_dynamic_endpoint_host_request, opts)
+    # @return [UpdateBankLevelDynamicEndpointHostRequest]
+    def update_bank_level_dynamic_endpoint_host(bankid, dynamicendpointid, update_bank_level_dynamic_endpoint_host_request, opts = {})
+      data, _status_code, _headers = update_bank_level_dynamic_endpoint_host_with_http_info(bankid, dynamicendpointid, update_bank_level_dynamic_endpoint_host_request, opts)
       data
     end
 
@@ -675,24 +675,24 @@ module OpenBankProject
     # &lt;p&gt;Update Bank Level  dynamic endpoint Host.&lt;br /&gt; The value can be obp_mock, dynamic_entity, or some service url.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
     # @param bankid [String] The BANKID identifier
     # @param dynamicendpointid [String] The DYNAMICENDPOINTID identifier
-    # @param obpv400_update_bank_level_dynamic_endpoint_host_request [OBPv400UpdateBankLevelDynamicEndpointHostRequest] Request body
+    # @param update_bank_level_dynamic_endpoint_host_request [UpdateBankLevelDynamicEndpointHostRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400UpdateBankLevelDynamicEndpointHostRequest, Integer, Hash)>] OBPv400UpdateBankLevelDynamicEndpointHostRequest data, response status code and response headers
-    def o_bpv4_0_0_update_bank_level_dynamic_endpoint_host_with_http_info(bankid, dynamicendpointid, obpv400_update_bank_level_dynamic_endpoint_host_request, opts = {})
+    # @return [Array<(UpdateBankLevelDynamicEndpointHostRequest, Integer, Hash)>] UpdateBankLevelDynamicEndpointHostRequest data, response status code and response headers
+    def update_bank_level_dynamic_endpoint_host_with_http_info(bankid, dynamicendpointid, update_bank_level_dynamic_endpoint_host_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicEndpointManageApi.o_bpv4_0_0_update_bank_level_dynamic_endpoint_host ...'
+        @api_client.config.logger.debug 'Calling API: DynamicEndpointManageApi.update_bank_level_dynamic_endpoint_host ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicEndpointManageApi.o_bpv4_0_0_update_bank_level_dynamic_endpoint_host"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicEndpointManageApi.update_bank_level_dynamic_endpoint_host"
       end
       # verify the required parameter 'dynamicendpointid' is set
       if @api_client.config.client_side_validation && dynamicendpointid.nil?
-        fail ArgumentError, "Missing the required parameter 'dynamicendpointid' when calling DynamicEndpointManageApi.o_bpv4_0_0_update_bank_level_dynamic_endpoint_host"
+        fail ArgumentError, "Missing the required parameter 'dynamicendpointid' when calling DynamicEndpointManageApi.update_bank_level_dynamic_endpoint_host"
       end
-      # verify the required parameter 'obpv400_update_bank_level_dynamic_endpoint_host_request' is set
-      if @api_client.config.client_side_validation && obpv400_update_bank_level_dynamic_endpoint_host_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv400_update_bank_level_dynamic_endpoint_host_request' when calling DynamicEndpointManageApi.o_bpv4_0_0_update_bank_level_dynamic_endpoint_host"
+      # verify the required parameter 'update_bank_level_dynamic_endpoint_host_request' is set
+      if @api_client.config.client_side_validation && update_bank_level_dynamic_endpoint_host_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_bank_level_dynamic_endpoint_host_request' when calling DynamicEndpointManageApi.update_bank_level_dynamic_endpoint_host"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}/host'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'dynamicendpointid' + '}', CGI.escape(dynamicendpointid.to_s))
@@ -714,16 +714,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv400_update_bank_level_dynamic_endpoint_host_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_bank_level_dynamic_endpoint_host_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400UpdateBankLevelDynamicEndpointHostRequest'
+      return_type = opts[:debug_return_type] || 'UpdateBankLevelDynamicEndpointHostRequest'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicEndpointManageApi.o_bpv4_0_0_update_bank_level_dynamic_endpoint_host",
+        :operation => :"DynamicEndpointManageApi.update_bank_level_dynamic_endpoint_host",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -734,7 +734,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicEndpointManageApi#o_bpv4_0_0_update_bank_level_dynamic_endpoint_host\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicEndpointManageApi#update_bank_level_dynamic_endpoint_host\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -742,31 +742,31 @@ module OpenBankProject
     #  Update Dynamic Endpoint Host
     # <p>Update dynamic endpoint Host.<br /> The value can be obp_mock, dynamic_entity, or some service url.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
     # @param dynamicendpointid [String] The DYNAMICENDPOINTID identifier
-    # @param obpv400_update_bank_level_dynamic_endpoint_host_request [OBPv400UpdateBankLevelDynamicEndpointHostRequest] Request body
+    # @param update_bank_level_dynamic_endpoint_host_request [UpdateBankLevelDynamicEndpointHostRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400UpdateBankLevelDynamicEndpointHostRequest]
-    def o_bpv4_0_0_update_dynamic_endpoint_host(dynamicendpointid, obpv400_update_bank_level_dynamic_endpoint_host_request, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_update_dynamic_endpoint_host_with_http_info(dynamicendpointid, obpv400_update_bank_level_dynamic_endpoint_host_request, opts)
+    # @return [UpdateBankLevelDynamicEndpointHostRequest]
+    def update_dynamic_endpoint_host(dynamicendpointid, update_bank_level_dynamic_endpoint_host_request, opts = {})
+      data, _status_code, _headers = update_dynamic_endpoint_host_with_http_info(dynamicendpointid, update_bank_level_dynamic_endpoint_host_request, opts)
       data
     end
 
     #  Update Dynamic Endpoint Host
     # &lt;p&gt;Update dynamic endpoint Host.&lt;br /&gt; The value can be obp_mock, dynamic_entity, or some service url.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
     # @param dynamicendpointid [String] The DYNAMICENDPOINTID identifier
-    # @param obpv400_update_bank_level_dynamic_endpoint_host_request [OBPv400UpdateBankLevelDynamicEndpointHostRequest] Request body
+    # @param update_bank_level_dynamic_endpoint_host_request [UpdateBankLevelDynamicEndpointHostRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400UpdateBankLevelDynamicEndpointHostRequest, Integer, Hash)>] OBPv400UpdateBankLevelDynamicEndpointHostRequest data, response status code and response headers
-    def o_bpv4_0_0_update_dynamic_endpoint_host_with_http_info(dynamicendpointid, obpv400_update_bank_level_dynamic_endpoint_host_request, opts = {})
+    # @return [Array<(UpdateBankLevelDynamicEndpointHostRequest, Integer, Hash)>] UpdateBankLevelDynamicEndpointHostRequest data, response status code and response headers
+    def update_dynamic_endpoint_host_with_http_info(dynamicendpointid, update_bank_level_dynamic_endpoint_host_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicEndpointManageApi.o_bpv4_0_0_update_dynamic_endpoint_host ...'
+        @api_client.config.logger.debug 'Calling API: DynamicEndpointManageApi.update_dynamic_endpoint_host ...'
       end
       # verify the required parameter 'dynamicendpointid' is set
       if @api_client.config.client_side_validation && dynamicendpointid.nil?
-        fail ArgumentError, "Missing the required parameter 'dynamicendpointid' when calling DynamicEndpointManageApi.o_bpv4_0_0_update_dynamic_endpoint_host"
+        fail ArgumentError, "Missing the required parameter 'dynamicendpointid' when calling DynamicEndpointManageApi.update_dynamic_endpoint_host"
       end
-      # verify the required parameter 'obpv400_update_bank_level_dynamic_endpoint_host_request' is set
-      if @api_client.config.client_side_validation && obpv400_update_bank_level_dynamic_endpoint_host_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv400_update_bank_level_dynamic_endpoint_host_request' when calling DynamicEndpointManageApi.o_bpv4_0_0_update_dynamic_endpoint_host"
+      # verify the required parameter 'update_bank_level_dynamic_endpoint_host_request' is set
+      if @api_client.config.client_side_validation && update_bank_level_dynamic_endpoint_host_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_bank_level_dynamic_endpoint_host_request' when calling DynamicEndpointManageApi.update_dynamic_endpoint_host"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}/host'.sub('{' + 'dynamicendpointid' + '}', CGI.escape(dynamicendpointid.to_s))
@@ -788,16 +788,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv400_update_bank_level_dynamic_endpoint_host_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_bank_level_dynamic_endpoint_host_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400UpdateBankLevelDynamicEndpointHostRequest'
+      return_type = opts[:debug_return_type] || 'UpdateBankLevelDynamicEndpointHostRequest'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicEndpointManageApi.o_bpv4_0_0_update_dynamic_endpoint_host",
+        :operation => :"DynamicEndpointManageApi.update_dynamic_endpoint_host",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -808,7 +808,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicEndpointManageApi#o_bpv4_0_0_update_dynamic_endpoint_host\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicEndpointManageApi#update_dynamic_endpoint_host\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

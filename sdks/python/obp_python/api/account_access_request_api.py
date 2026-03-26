@@ -18,10 +18,10 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
-from obp_python.models.obpv600_create_account_access_request_request import OBPv600CreateAccountAccessRequestRequest
-from obp_python.models.obpv600_get_account_access_requests_for_account200_response import OBPv600GetAccountAccessRequestsForAccount200Response
-from obp_python.models.obpv600_reject_account_access_request200_response import OBPv600RejectAccountAccessRequest200Response
-from obp_python.models.obpv600_reject_account_access_request_request import OBPv600RejectAccountAccessRequestRequest
+from obp_python.models.create_account_access_request_request import CreateAccountAccessRequestRequest
+from obp_python.models.get_account_access_requests_for_account200_response import GetAccountAccessRequestsForAccount200Response
+from obp_python.models.reject_account_access_request200_response import RejectAccountAccessRequest200Response
+from obp_python.models.reject_account_access_request_request import RejectAccountAccessRequestRequest
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -42,12 +42,12 @@ class AccountAccessRequestApi:
 
 
     @validate_call
-    def o_bpv6_0_0_approve_account_access_request(
+    def approve_account_access_request(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         accountaccessrequestid: Annotated[StrictStr, Field(description="The ACCOUNTACCESSREQUESTID identifier")],
-        obpv600_reject_account_access_request_request: Annotated[OBPv600RejectAccountAccessRequestRequest, Field(description="Request body")],
+        reject_account_access_request_request: Annotated[RejectAccountAccessRequestRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -60,7 +60,7 @@ class AccountAccessRequestApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600RejectAccountAccessRequest200Response:
+    ) -> RejectAccountAccessRequest200Response:
         """Approve Account Access Request
 
         <p>Approve an Account Access Request (checker step in maker/checker workflow).</p> <p>The checker must be a different user than the maker (requestor). This enforces dual control / maker-checker separation.</p> <p>Only requests with status INITIATED can be approved.</p> <p>On approval, the system automatically grants the target user access to the specified view.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ACCOUNT_ACCESS_REQUEST_ID</a>: ACCOUNT_ACCESS_REQUEST_ID</p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\">comment</a>: comment</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_access_request_id</strong></a>: account_access_request_id</p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>business_justification</strong></a>: business_justification</p> <p><a href=\"/glossary#\"><strong>checker_comment</strong></a>: checker_comment</p> <p><a href=\"/glossary#\"><strong>checker_user_id</strong></a>: checker_user_id</p> <p><a href=\"/glossary#created\"><strong>created</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_system_view</strong></a>: is_system_view</p> <p><a href=\"/glossary#\"><strong>requestor_user_id</strong></a>: requestor_user_id</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#\"><strong>target_user_id</strong></a>: target_user_id</p> <p><a href=\"/glossary#\"><strong>updated</strong></a>: updated</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
@@ -71,8 +71,8 @@ class AccountAccessRequestApi:
         :type accountid: str
         :param accountaccessrequestid: The ACCOUNTACCESSREQUESTID identifier (required)
         :type accountaccessrequestid: str
-        :param obpv600_reject_account_access_request_request: Request body (required)
-        :type obpv600_reject_account_access_request_request: OBPv600RejectAccountAccessRequestRequest
+        :param reject_account_access_request_request: Request body (required)
+        :type reject_account_access_request_request: RejectAccountAccessRequestRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -95,11 +95,11 @@ class AccountAccessRequestApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_approve_account_access_request_serialize(
+        _param = self._approve_account_access_request_serialize(
             bankid=bankid,
             accountid=accountid,
             accountaccessrequestid=accountaccessrequestid,
-            obpv600_reject_account_access_request_request=obpv600_reject_account_access_request_request,
+            reject_account_access_request_request=reject_account_access_request_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -107,7 +107,7 @@ class AccountAccessRequestApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600RejectAccountAccessRequest200Response",
+            '200': "RejectAccountAccessRequest200Response",
             '404': None,
             '500': None,
         }
@@ -123,12 +123,12 @@ class AccountAccessRequestApi:
 
 
     @validate_call
-    def o_bpv6_0_0_approve_account_access_request_with_http_info(
+    def approve_account_access_request_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         accountaccessrequestid: Annotated[StrictStr, Field(description="The ACCOUNTACCESSREQUESTID identifier")],
-        obpv600_reject_account_access_request_request: Annotated[OBPv600RejectAccountAccessRequestRequest, Field(description="Request body")],
+        reject_account_access_request_request: Annotated[RejectAccountAccessRequestRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -141,7 +141,7 @@ class AccountAccessRequestApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600RejectAccountAccessRequest200Response]:
+    ) -> ApiResponse[RejectAccountAccessRequest200Response]:
         """Approve Account Access Request
 
         <p>Approve an Account Access Request (checker step in maker/checker workflow).</p> <p>The checker must be a different user than the maker (requestor). This enforces dual control / maker-checker separation.</p> <p>Only requests with status INITIATED can be approved.</p> <p>On approval, the system automatically grants the target user access to the specified view.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ACCOUNT_ACCESS_REQUEST_ID</a>: ACCOUNT_ACCESS_REQUEST_ID</p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\">comment</a>: comment</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_access_request_id</strong></a>: account_access_request_id</p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>business_justification</strong></a>: business_justification</p> <p><a href=\"/glossary#\"><strong>checker_comment</strong></a>: checker_comment</p> <p><a href=\"/glossary#\"><strong>checker_user_id</strong></a>: checker_user_id</p> <p><a href=\"/glossary#created\"><strong>created</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_system_view</strong></a>: is_system_view</p> <p><a href=\"/glossary#\"><strong>requestor_user_id</strong></a>: requestor_user_id</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#\"><strong>target_user_id</strong></a>: target_user_id</p> <p><a href=\"/glossary#\"><strong>updated</strong></a>: updated</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
@@ -152,8 +152,8 @@ class AccountAccessRequestApi:
         :type accountid: str
         :param accountaccessrequestid: The ACCOUNTACCESSREQUESTID identifier (required)
         :type accountaccessrequestid: str
-        :param obpv600_reject_account_access_request_request: Request body (required)
-        :type obpv600_reject_account_access_request_request: OBPv600RejectAccountAccessRequestRequest
+        :param reject_account_access_request_request: Request body (required)
+        :type reject_account_access_request_request: RejectAccountAccessRequestRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -176,11 +176,11 @@ class AccountAccessRequestApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_approve_account_access_request_serialize(
+        _param = self._approve_account_access_request_serialize(
             bankid=bankid,
             accountid=accountid,
             accountaccessrequestid=accountaccessrequestid,
-            obpv600_reject_account_access_request_request=obpv600_reject_account_access_request_request,
+            reject_account_access_request_request=reject_account_access_request_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -188,7 +188,7 @@ class AccountAccessRequestApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600RejectAccountAccessRequest200Response",
+            '200': "RejectAccountAccessRequest200Response",
             '404': None,
             '500': None,
         }
@@ -204,12 +204,12 @@ class AccountAccessRequestApi:
 
 
     @validate_call
-    def o_bpv6_0_0_approve_account_access_request_without_preload_content(
+    def approve_account_access_request_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         accountaccessrequestid: Annotated[StrictStr, Field(description="The ACCOUNTACCESSREQUESTID identifier")],
-        obpv600_reject_account_access_request_request: Annotated[OBPv600RejectAccountAccessRequestRequest, Field(description="Request body")],
+        reject_account_access_request_request: Annotated[RejectAccountAccessRequestRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -233,8 +233,8 @@ class AccountAccessRequestApi:
         :type accountid: str
         :param accountaccessrequestid: The ACCOUNTACCESSREQUESTID identifier (required)
         :type accountaccessrequestid: str
-        :param obpv600_reject_account_access_request_request: Request body (required)
-        :type obpv600_reject_account_access_request_request: OBPv600RejectAccountAccessRequestRequest
+        :param reject_account_access_request_request: Request body (required)
+        :type reject_account_access_request_request: RejectAccountAccessRequestRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -257,11 +257,11 @@ class AccountAccessRequestApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_approve_account_access_request_serialize(
+        _param = self._approve_account_access_request_serialize(
             bankid=bankid,
             accountid=accountid,
             accountaccessrequestid=accountaccessrequestid,
-            obpv600_reject_account_access_request_request=obpv600_reject_account_access_request_request,
+            reject_account_access_request_request=reject_account_access_request_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -269,7 +269,7 @@ class AccountAccessRequestApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600RejectAccountAccessRequest200Response",
+            '200': "RejectAccountAccessRequest200Response",
             '404': None,
             '500': None,
         }
@@ -280,12 +280,12 @@ class AccountAccessRequestApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_approve_account_access_request_serialize(
+    def _approve_account_access_request_serialize(
         self,
         bankid,
         accountid,
         accountaccessrequestid,
-        obpv600_reject_account_access_request_request,
+        reject_account_access_request_request,
         _request_auth,
         _content_type,
         _headers,
@@ -317,8 +317,8 @@ class AccountAccessRequestApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv600_reject_account_access_request_request is not None:
-            _body_params = obpv600_reject_account_access_request_request
+        if reject_account_access_request_request is not None:
+            _body_params = reject_account_access_request_request
 
 
         # set the HTTP header `Accept`
@@ -369,11 +369,11 @@ class AccountAccessRequestApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_account_access_request(
+    def create_account_access_request(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        obpv600_create_account_access_request_request: Annotated[OBPv600CreateAccountAccessRequestRequest, Field(description="Request body")],
+        create_account_access_request_request: Annotated[CreateAccountAccessRequestRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -386,7 +386,7 @@ class AccountAccessRequestApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600RejectAccountAccessRequest200Response:
+    ) -> RejectAccountAccessRequest200Response:
         """Create Account Access Request
 
         <p>Create a new Account Access Request (maker step in maker/checker workflow).</p> <p>The requestor (maker) creates a request to grant a target user access to a specific view on an account.<br /> A business justification is required.</p> <p>The request is created with status INITIATED and must be approved or rejected by a different user (checker).</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>business_justification</strong></a>: business_justification</p> <p><a href=\"/glossary#\"><strong>is_system_view</strong></a>: is_system_view</p> <p><a href=\"/glossary#\"><strong>target_user_id</strong></a>: target_user_id</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_access_request_id</strong></a>: account_access_request_id</p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>business_justification</strong></a>: business_justification</p> <p><a href=\"/glossary#\"><strong>checker_comment</strong></a>: checker_comment</p> <p><a href=\"/glossary#\"><strong>checker_user_id</strong></a>: checker_user_id</p> <p><a href=\"/glossary#created\"><strong>created</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_system_view</strong></a>: is_system_view</p> <p><a href=\"/glossary#\"><strong>requestor_user_id</strong></a>: requestor_user_id</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#\"><strong>target_user_id</strong></a>: target_user_id</p> <p><a href=\"/glossary#\"><strong>updated</strong></a>: updated</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
@@ -395,8 +395,8 @@ class AccountAccessRequestApi:
         :type bankid: str
         :param accountid: The ACCOUNTID identifier (required)
         :type accountid: str
-        :param obpv600_create_account_access_request_request: Request body (required)
-        :type obpv600_create_account_access_request_request: OBPv600CreateAccountAccessRequestRequest
+        :param create_account_access_request_request: Request body (required)
+        :type create_account_access_request_request: CreateAccountAccessRequestRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -419,10 +419,10 @@ class AccountAccessRequestApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_account_access_request_serialize(
+        _param = self._create_account_access_request_serialize(
             bankid=bankid,
             accountid=accountid,
-            obpv600_create_account_access_request_request=obpv600_create_account_access_request_request,
+            create_account_access_request_request=create_account_access_request_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -430,7 +430,7 @@ class AccountAccessRequestApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600RejectAccountAccessRequest200Response",
+            '200': "RejectAccountAccessRequest200Response",
             '404': None,
             '500': None,
         }
@@ -446,11 +446,11 @@ class AccountAccessRequestApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_account_access_request_with_http_info(
+    def create_account_access_request_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        obpv600_create_account_access_request_request: Annotated[OBPv600CreateAccountAccessRequestRequest, Field(description="Request body")],
+        create_account_access_request_request: Annotated[CreateAccountAccessRequestRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -463,7 +463,7 @@ class AccountAccessRequestApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600RejectAccountAccessRequest200Response]:
+    ) -> ApiResponse[RejectAccountAccessRequest200Response]:
         """Create Account Access Request
 
         <p>Create a new Account Access Request (maker step in maker/checker workflow).</p> <p>The requestor (maker) creates a request to grant a target user access to a specific view on an account.<br /> A business justification is required.</p> <p>The request is created with status INITIATED and must be approved or rejected by a different user (checker).</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>business_justification</strong></a>: business_justification</p> <p><a href=\"/glossary#\"><strong>is_system_view</strong></a>: is_system_view</p> <p><a href=\"/glossary#\"><strong>target_user_id</strong></a>: target_user_id</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_access_request_id</strong></a>: account_access_request_id</p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>business_justification</strong></a>: business_justification</p> <p><a href=\"/glossary#\"><strong>checker_comment</strong></a>: checker_comment</p> <p><a href=\"/glossary#\"><strong>checker_user_id</strong></a>: checker_user_id</p> <p><a href=\"/glossary#created\"><strong>created</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_system_view</strong></a>: is_system_view</p> <p><a href=\"/glossary#\"><strong>requestor_user_id</strong></a>: requestor_user_id</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#\"><strong>target_user_id</strong></a>: target_user_id</p> <p><a href=\"/glossary#\"><strong>updated</strong></a>: updated</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
@@ -472,8 +472,8 @@ class AccountAccessRequestApi:
         :type bankid: str
         :param accountid: The ACCOUNTID identifier (required)
         :type accountid: str
-        :param obpv600_create_account_access_request_request: Request body (required)
-        :type obpv600_create_account_access_request_request: OBPv600CreateAccountAccessRequestRequest
+        :param create_account_access_request_request: Request body (required)
+        :type create_account_access_request_request: CreateAccountAccessRequestRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -496,10 +496,10 @@ class AccountAccessRequestApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_account_access_request_serialize(
+        _param = self._create_account_access_request_serialize(
             bankid=bankid,
             accountid=accountid,
-            obpv600_create_account_access_request_request=obpv600_create_account_access_request_request,
+            create_account_access_request_request=create_account_access_request_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -507,7 +507,7 @@ class AccountAccessRequestApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600RejectAccountAccessRequest200Response",
+            '200': "RejectAccountAccessRequest200Response",
             '404': None,
             '500': None,
         }
@@ -523,11 +523,11 @@ class AccountAccessRequestApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_account_access_request_without_preload_content(
+    def create_account_access_request_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        obpv600_create_account_access_request_request: Annotated[OBPv600CreateAccountAccessRequestRequest, Field(description="Request body")],
+        create_account_access_request_request: Annotated[CreateAccountAccessRequestRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -549,8 +549,8 @@ class AccountAccessRequestApi:
         :type bankid: str
         :param accountid: The ACCOUNTID identifier (required)
         :type accountid: str
-        :param obpv600_create_account_access_request_request: Request body (required)
-        :type obpv600_create_account_access_request_request: OBPv600CreateAccountAccessRequestRequest
+        :param create_account_access_request_request: Request body (required)
+        :type create_account_access_request_request: CreateAccountAccessRequestRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -573,10 +573,10 @@ class AccountAccessRequestApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_account_access_request_serialize(
+        _param = self._create_account_access_request_serialize(
             bankid=bankid,
             accountid=accountid,
-            obpv600_create_account_access_request_request=obpv600_create_account_access_request_request,
+            create_account_access_request_request=create_account_access_request_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -584,7 +584,7 @@ class AccountAccessRequestApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600RejectAccountAccessRequest200Response",
+            '200': "RejectAccountAccessRequest200Response",
             '404': None,
             '500': None,
         }
@@ -595,11 +595,11 @@ class AccountAccessRequestApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_create_account_access_request_serialize(
+    def _create_account_access_request_serialize(
         self,
         bankid,
         accountid,
-        obpv600_create_account_access_request_request,
+        create_account_access_request_request,
         _request_auth,
         _content_type,
         _headers,
@@ -629,8 +629,8 @@ class AccountAccessRequestApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv600_create_account_access_request_request is not None:
-            _body_params = obpv600_create_account_access_request_request
+        if create_account_access_request_request is not None:
+            _body_params = create_account_access_request_request
 
 
         # set the HTTP header `Accept`
@@ -681,7 +681,7 @@ class AccountAccessRequestApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_account_access_request_by_id(
+    def get_account_access_request_by_id(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -698,7 +698,7 @@ class AccountAccessRequestApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600RejectAccountAccessRequest200Response:
+    ) -> RejectAccountAccessRequest200Response:
         """Get Account Access Request by Id
 
         <p>Get a single Account Access Request by its ID.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ACCOUNT_ACCESS_REQUEST_ID</a>: ACCOUNT_ACCESS_REQUEST_ID</p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_access_request_id</strong></a>: account_access_request_id</p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>business_justification</strong></a>: business_justification</p> <p><a href=\"/glossary#\"><strong>checker_comment</strong></a>: checker_comment</p> <p><a href=\"/glossary#\"><strong>checker_user_id</strong></a>: checker_user_id</p> <p><a href=\"/glossary#created\"><strong>created</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_system_view</strong></a>: is_system_view</p> <p><a href=\"/glossary#\"><strong>requestor_user_id</strong></a>: requestor_user_id</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#\"><strong>target_user_id</strong></a>: target_user_id</p> <p><a href=\"/glossary#\"><strong>updated</strong></a>: updated</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
@@ -731,7 +731,7 @@ class AccountAccessRequestApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_account_access_request_by_id_serialize(
+        _param = self._get_account_access_request_by_id_serialize(
             bankid=bankid,
             accountid=accountid,
             accountaccessrequestid=accountaccessrequestid,
@@ -742,7 +742,7 @@ class AccountAccessRequestApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600RejectAccountAccessRequest200Response",
+            '200': "RejectAccountAccessRequest200Response",
             '404': None,
             '500': None,
         }
@@ -758,7 +758,7 @@ class AccountAccessRequestApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_account_access_request_by_id_with_http_info(
+    def get_account_access_request_by_id_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -775,7 +775,7 @@ class AccountAccessRequestApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600RejectAccountAccessRequest200Response]:
+    ) -> ApiResponse[RejectAccountAccessRequest200Response]:
         """Get Account Access Request by Id
 
         <p>Get a single Account Access Request by its ID.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ACCOUNT_ACCESS_REQUEST_ID</a>: ACCOUNT_ACCESS_REQUEST_ID</p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_access_request_id</strong></a>: account_access_request_id</p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>business_justification</strong></a>: business_justification</p> <p><a href=\"/glossary#\"><strong>checker_comment</strong></a>: checker_comment</p> <p><a href=\"/glossary#\"><strong>checker_user_id</strong></a>: checker_user_id</p> <p><a href=\"/glossary#created\"><strong>created</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_system_view</strong></a>: is_system_view</p> <p><a href=\"/glossary#\"><strong>requestor_user_id</strong></a>: requestor_user_id</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#\"><strong>target_user_id</strong></a>: target_user_id</p> <p><a href=\"/glossary#\"><strong>updated</strong></a>: updated</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
@@ -808,7 +808,7 @@ class AccountAccessRequestApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_account_access_request_by_id_serialize(
+        _param = self._get_account_access_request_by_id_serialize(
             bankid=bankid,
             accountid=accountid,
             accountaccessrequestid=accountaccessrequestid,
@@ -819,7 +819,7 @@ class AccountAccessRequestApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600RejectAccountAccessRequest200Response",
+            '200': "RejectAccountAccessRequest200Response",
             '404': None,
             '500': None,
         }
@@ -835,7 +835,7 @@ class AccountAccessRequestApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_account_access_request_by_id_without_preload_content(
+    def get_account_access_request_by_id_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -885,7 +885,7 @@ class AccountAccessRequestApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_account_access_request_by_id_serialize(
+        _param = self._get_account_access_request_by_id_serialize(
             bankid=bankid,
             accountid=accountid,
             accountaccessrequestid=accountaccessrequestid,
@@ -896,7 +896,7 @@ class AccountAccessRequestApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600RejectAccountAccessRequest200Response",
+            '200': "RejectAccountAccessRequest200Response",
             '404': None,
             '500': None,
         }
@@ -907,7 +907,7 @@ class AccountAccessRequestApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_get_account_access_request_by_id_serialize(
+    def _get_account_access_request_by_id_serialize(
         self,
         bankid,
         accountid,
@@ -980,7 +980,7 @@ class AccountAccessRequestApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_account_access_requests_for_account(
+    def get_account_access_requests_for_account(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -996,7 +996,7 @@ class AccountAccessRequestApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetAccountAccessRequestsForAccount200Response:
+    ) -> GetAccountAccessRequestsForAccount200Response:
         """Get Account Access Requests for Account
 
         <p>Get Account Access Requests for a specific account (checker view).</p> <p>Optionally filter by status using the query parameter: ?status=INITIATED</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_access_request_id</strong></a>: account_access_request_id</p> <p><a href=\"/glossary#\"><strong>account_access_requests</strong></a>: account_access_requests</p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>business_justification</strong></a>: business_justification</p> <p><a href=\"/glossary#\"><strong>checker_comment</strong></a>: checker_comment</p> <p><a href=\"/glossary#\"><strong>checker_user_id</strong></a>: checker_user_id</p> <p><a href=\"/glossary#created\"><strong>created</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_system_view</strong></a>: is_system_view</p> <p><a href=\"/glossary#\"><strong>requestor_user_id</strong></a>: requestor_user_id</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#\"><strong>target_user_id</strong></a>: target_user_id</p> <p><a href=\"/glossary#\"><strong>updated</strong></a>: updated</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
@@ -1027,7 +1027,7 @@ class AccountAccessRequestApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_account_access_requests_for_account_serialize(
+        _param = self._get_account_access_requests_for_account_serialize(
             bankid=bankid,
             accountid=accountid,
             _request_auth=_request_auth,
@@ -1037,7 +1037,7 @@ class AccountAccessRequestApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetAccountAccessRequestsForAccount200Response",
+            '200': "GetAccountAccessRequestsForAccount200Response",
             '404': None,
             '500': None,
         }
@@ -1053,7 +1053,7 @@ class AccountAccessRequestApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_account_access_requests_for_account_with_http_info(
+    def get_account_access_requests_for_account_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -1069,7 +1069,7 @@ class AccountAccessRequestApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetAccountAccessRequestsForAccount200Response]:
+    ) -> ApiResponse[GetAccountAccessRequestsForAccount200Response]:
         """Get Account Access Requests for Account
 
         <p>Get Account Access Requests for a specific account (checker view).</p> <p>Optionally filter by status using the query parameter: ?status=INITIATED</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_access_request_id</strong></a>: account_access_request_id</p> <p><a href=\"/glossary#\"><strong>account_access_requests</strong></a>: account_access_requests</p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>business_justification</strong></a>: business_justification</p> <p><a href=\"/glossary#\"><strong>checker_comment</strong></a>: checker_comment</p> <p><a href=\"/glossary#\"><strong>checker_user_id</strong></a>: checker_user_id</p> <p><a href=\"/glossary#created\"><strong>created</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_system_view</strong></a>: is_system_view</p> <p><a href=\"/glossary#\"><strong>requestor_user_id</strong></a>: requestor_user_id</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#\"><strong>target_user_id</strong></a>: target_user_id</p> <p><a href=\"/glossary#\"><strong>updated</strong></a>: updated</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
@@ -1100,7 +1100,7 @@ class AccountAccessRequestApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_account_access_requests_for_account_serialize(
+        _param = self._get_account_access_requests_for_account_serialize(
             bankid=bankid,
             accountid=accountid,
             _request_auth=_request_auth,
@@ -1110,7 +1110,7 @@ class AccountAccessRequestApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetAccountAccessRequestsForAccount200Response",
+            '200': "GetAccountAccessRequestsForAccount200Response",
             '404': None,
             '500': None,
         }
@@ -1126,7 +1126,7 @@ class AccountAccessRequestApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_account_access_requests_for_account_without_preload_content(
+    def get_account_access_requests_for_account_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -1173,7 +1173,7 @@ class AccountAccessRequestApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_account_access_requests_for_account_serialize(
+        _param = self._get_account_access_requests_for_account_serialize(
             bankid=bankid,
             accountid=accountid,
             _request_auth=_request_auth,
@@ -1183,7 +1183,7 @@ class AccountAccessRequestApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetAccountAccessRequestsForAccount200Response",
+            '200': "GetAccountAccessRequestsForAccount200Response",
             '404': None,
             '500': None,
         }
@@ -1194,7 +1194,7 @@ class AccountAccessRequestApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_get_account_access_requests_for_account_serialize(
+    def _get_account_access_requests_for_account_serialize(
         self,
         bankid,
         accountid,
@@ -1264,7 +1264,7 @@ class AccountAccessRequestApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_my_account_access_requests(
+    def get_my_account_access_requests(
         self,
         _request_timeout: Union[
             None,
@@ -1278,7 +1278,7 @@ class AccountAccessRequestApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetAccountAccessRequestsForAccount200Response:
+    ) -> GetAccountAccessRequestsForAccount200Response:
         """Get My Account Access Requests
 
         <p>Get Account Access Requests created by the current user (maker view).</p> <p>No special roles are required — a user can always see their own requests.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_access_request_id</strong></a>: account_access_request_id</p> <p><a href=\"/glossary#\"><strong>account_access_requests</strong></a>: account_access_requests</p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>business_justification</strong></a>: business_justification</p> <p><a href=\"/glossary#\"><strong>checker_comment</strong></a>: checker_comment</p> <p><a href=\"/glossary#\"><strong>checker_user_id</strong></a>: checker_user_id</p> <p><a href=\"/glossary#created\"><strong>created</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_system_view</strong></a>: is_system_view</p> <p><a href=\"/glossary#\"><strong>requestor_user_id</strong></a>: requestor_user_id</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#\"><strong>target_user_id</strong></a>: target_user_id</p> <p><a href=\"/glossary#\"><strong>updated</strong></a>: updated</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
@@ -1305,7 +1305,7 @@ class AccountAccessRequestApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_my_account_access_requests_serialize(
+        _param = self._get_my_account_access_requests_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1313,7 +1313,7 @@ class AccountAccessRequestApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetAccountAccessRequestsForAccount200Response",
+            '200': "GetAccountAccessRequestsForAccount200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1328,7 +1328,7 @@ class AccountAccessRequestApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_my_account_access_requests_with_http_info(
+    def get_my_account_access_requests_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -1342,7 +1342,7 @@ class AccountAccessRequestApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetAccountAccessRequestsForAccount200Response]:
+    ) -> ApiResponse[GetAccountAccessRequestsForAccount200Response]:
         """Get My Account Access Requests
 
         <p>Get Account Access Requests created by the current user (maker view).</p> <p>No special roles are required — a user can always see their own requests.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_access_request_id</strong></a>: account_access_request_id</p> <p><a href=\"/glossary#\"><strong>account_access_requests</strong></a>: account_access_requests</p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>business_justification</strong></a>: business_justification</p> <p><a href=\"/glossary#\"><strong>checker_comment</strong></a>: checker_comment</p> <p><a href=\"/glossary#\"><strong>checker_user_id</strong></a>: checker_user_id</p> <p><a href=\"/glossary#created\"><strong>created</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_system_view</strong></a>: is_system_view</p> <p><a href=\"/glossary#\"><strong>requestor_user_id</strong></a>: requestor_user_id</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#\"><strong>target_user_id</strong></a>: target_user_id</p> <p><a href=\"/glossary#\"><strong>updated</strong></a>: updated</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
@@ -1369,7 +1369,7 @@ class AccountAccessRequestApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_my_account_access_requests_serialize(
+        _param = self._get_my_account_access_requests_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1377,7 +1377,7 @@ class AccountAccessRequestApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetAccountAccessRequestsForAccount200Response",
+            '200': "GetAccountAccessRequestsForAccount200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1392,7 +1392,7 @@ class AccountAccessRequestApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_my_account_access_requests_without_preload_content(
+    def get_my_account_access_requests_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -1433,7 +1433,7 @@ class AccountAccessRequestApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_my_account_access_requests_serialize(
+        _param = self._get_my_account_access_requests_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1441,7 +1441,7 @@ class AccountAccessRequestApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetAccountAccessRequestsForAccount200Response",
+            '200': "GetAccountAccessRequestsForAccount200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1451,7 +1451,7 @@ class AccountAccessRequestApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_get_my_account_access_requests_serialize(
+    def _get_my_account_access_requests_serialize(
         self,
         _request_auth,
         _content_type,
@@ -1515,12 +1515,12 @@ class AccountAccessRequestApi:
 
 
     @validate_call
-    def o_bpv6_0_0_reject_account_access_request(
+    def reject_account_access_request(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         accountaccessrequestid: Annotated[StrictStr, Field(description="The ACCOUNTACCESSREQUESTID identifier")],
-        obpv600_reject_account_access_request_request: Annotated[OBPv600RejectAccountAccessRequestRequest, Field(description="Request body")],
+        reject_account_access_request_request: Annotated[RejectAccountAccessRequestRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1533,7 +1533,7 @@ class AccountAccessRequestApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600RejectAccountAccessRequest200Response:
+    ) -> RejectAccountAccessRequest200Response:
         """Reject Account Access Request
 
         <p>Reject an Account Access Request (checker step in maker/checker workflow).</p> <p>The checker must be a different user than the maker (requestor). This enforces dual control / maker-checker separation.</p> <p>Only requests with status INITIATED can be rejected.</p> <p>A comment is required when rejecting a request.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ACCOUNT_ACCESS_REQUEST_ID</a>: ACCOUNT_ACCESS_REQUEST_ID</p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>comment</strong></a>: comment</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_access_request_id</strong></a>: account_access_request_id</p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>business_justification</strong></a>: business_justification</p> <p><a href=\"/glossary#\"><strong>checker_comment</strong></a>: checker_comment</p> <p><a href=\"/glossary#\"><strong>checker_user_id</strong></a>: checker_user_id</p> <p><a href=\"/glossary#created\"><strong>created</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_system_view</strong></a>: is_system_view</p> <p><a href=\"/glossary#\"><strong>requestor_user_id</strong></a>: requestor_user_id</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#\"><strong>target_user_id</strong></a>: target_user_id</p> <p><a href=\"/glossary#\"><strong>updated</strong></a>: updated</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
@@ -1544,8 +1544,8 @@ class AccountAccessRequestApi:
         :type accountid: str
         :param accountaccessrequestid: The ACCOUNTACCESSREQUESTID identifier (required)
         :type accountaccessrequestid: str
-        :param obpv600_reject_account_access_request_request: Request body (required)
-        :type obpv600_reject_account_access_request_request: OBPv600RejectAccountAccessRequestRequest
+        :param reject_account_access_request_request: Request body (required)
+        :type reject_account_access_request_request: RejectAccountAccessRequestRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1568,11 +1568,11 @@ class AccountAccessRequestApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_reject_account_access_request_serialize(
+        _param = self._reject_account_access_request_serialize(
             bankid=bankid,
             accountid=accountid,
             accountaccessrequestid=accountaccessrequestid,
-            obpv600_reject_account_access_request_request=obpv600_reject_account_access_request_request,
+            reject_account_access_request_request=reject_account_access_request_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1580,7 +1580,7 @@ class AccountAccessRequestApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600RejectAccountAccessRequest200Response",
+            '200': "RejectAccountAccessRequest200Response",
             '404': None,
             '500': None,
         }
@@ -1596,12 +1596,12 @@ class AccountAccessRequestApi:
 
 
     @validate_call
-    def o_bpv6_0_0_reject_account_access_request_with_http_info(
+    def reject_account_access_request_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         accountaccessrequestid: Annotated[StrictStr, Field(description="The ACCOUNTACCESSREQUESTID identifier")],
-        obpv600_reject_account_access_request_request: Annotated[OBPv600RejectAccountAccessRequestRequest, Field(description="Request body")],
+        reject_account_access_request_request: Annotated[RejectAccountAccessRequestRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1614,7 +1614,7 @@ class AccountAccessRequestApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600RejectAccountAccessRequest200Response]:
+    ) -> ApiResponse[RejectAccountAccessRequest200Response]:
         """Reject Account Access Request
 
         <p>Reject an Account Access Request (checker step in maker/checker workflow).</p> <p>The checker must be a different user than the maker (requestor). This enforces dual control / maker-checker separation.</p> <p>Only requests with status INITIATED can be rejected.</p> <p>A comment is required when rejecting a request.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ACCOUNT_ACCESS_REQUEST_ID</a>: ACCOUNT_ACCESS_REQUEST_ID</p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>comment</strong></a>: comment</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_access_request_id</strong></a>: account_access_request_id</p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>business_justification</strong></a>: business_justification</p> <p><a href=\"/glossary#\"><strong>checker_comment</strong></a>: checker_comment</p> <p><a href=\"/glossary#\"><strong>checker_user_id</strong></a>: checker_user_id</p> <p><a href=\"/glossary#created\"><strong>created</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_system_view</strong></a>: is_system_view</p> <p><a href=\"/glossary#\"><strong>requestor_user_id</strong></a>: requestor_user_id</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#\"><strong>target_user_id</strong></a>: target_user_id</p> <p><a href=\"/glossary#\"><strong>updated</strong></a>: updated</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
@@ -1625,8 +1625,8 @@ class AccountAccessRequestApi:
         :type accountid: str
         :param accountaccessrequestid: The ACCOUNTACCESSREQUESTID identifier (required)
         :type accountaccessrequestid: str
-        :param obpv600_reject_account_access_request_request: Request body (required)
-        :type obpv600_reject_account_access_request_request: OBPv600RejectAccountAccessRequestRequest
+        :param reject_account_access_request_request: Request body (required)
+        :type reject_account_access_request_request: RejectAccountAccessRequestRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1649,11 +1649,11 @@ class AccountAccessRequestApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_reject_account_access_request_serialize(
+        _param = self._reject_account_access_request_serialize(
             bankid=bankid,
             accountid=accountid,
             accountaccessrequestid=accountaccessrequestid,
-            obpv600_reject_account_access_request_request=obpv600_reject_account_access_request_request,
+            reject_account_access_request_request=reject_account_access_request_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1661,7 +1661,7 @@ class AccountAccessRequestApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600RejectAccountAccessRequest200Response",
+            '200': "RejectAccountAccessRequest200Response",
             '404': None,
             '500': None,
         }
@@ -1677,12 +1677,12 @@ class AccountAccessRequestApi:
 
 
     @validate_call
-    def o_bpv6_0_0_reject_account_access_request_without_preload_content(
+    def reject_account_access_request_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         accountaccessrequestid: Annotated[StrictStr, Field(description="The ACCOUNTACCESSREQUESTID identifier")],
-        obpv600_reject_account_access_request_request: Annotated[OBPv600RejectAccountAccessRequestRequest, Field(description="Request body")],
+        reject_account_access_request_request: Annotated[RejectAccountAccessRequestRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1706,8 +1706,8 @@ class AccountAccessRequestApi:
         :type accountid: str
         :param accountaccessrequestid: The ACCOUNTACCESSREQUESTID identifier (required)
         :type accountaccessrequestid: str
-        :param obpv600_reject_account_access_request_request: Request body (required)
-        :type obpv600_reject_account_access_request_request: OBPv600RejectAccountAccessRequestRequest
+        :param reject_account_access_request_request: Request body (required)
+        :type reject_account_access_request_request: RejectAccountAccessRequestRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1730,11 +1730,11 @@ class AccountAccessRequestApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_reject_account_access_request_serialize(
+        _param = self._reject_account_access_request_serialize(
             bankid=bankid,
             accountid=accountid,
             accountaccessrequestid=accountaccessrequestid,
-            obpv600_reject_account_access_request_request=obpv600_reject_account_access_request_request,
+            reject_account_access_request_request=reject_account_access_request_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1742,7 +1742,7 @@ class AccountAccessRequestApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600RejectAccountAccessRequest200Response",
+            '200': "RejectAccountAccessRequest200Response",
             '404': None,
             '500': None,
         }
@@ -1753,12 +1753,12 @@ class AccountAccessRequestApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_reject_account_access_request_serialize(
+    def _reject_account_access_request_serialize(
         self,
         bankid,
         accountid,
         accountaccessrequestid,
-        obpv600_reject_account_access_request_request,
+        reject_account_access_request_request,
         _request_auth,
         _content_type,
         _headers,
@@ -1790,8 +1790,8 @@ class AccountAccessRequestApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv600_reject_account_access_request_request is not None:
-            _body_params = obpv600_reject_account_access_request_request
+        if reject_account_access_request_request is not None:
+            _body_params = reject_account_access_request_request
 
 
         # set the HTTP header `Accept`

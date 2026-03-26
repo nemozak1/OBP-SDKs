@@ -1,21 +1,21 @@
 # SignalApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv600DeleteSignalChannel**](SignalApi.md#obpv600deletesignalchannel) | **DELETE** /obp/v6.0.0/signal/channels/{channelname} | Delete Signal Channel |
-| [**oBPv600GetSignalChannelInfo**](SignalApi.md#obpv600getsignalchannelinfo) | **GET** /obp/v6.0.0/signal/channels/{channelname}/info | Get Signal Channel Info |
-| [**oBPv600GetSignalChannels**](SignalApi.md#obpv600getsignalchannels) | **GET** /obp/v6.0.0/signal/channels | List Signal Channels |
-| [**oBPv600GetSignalMessages**](SignalApi.md#obpv600getsignalmessages) | **GET** /obp/v6.0.0/signal/channels/{channelname}/messages | Get Signal Messages |
-| [**oBPv600GetSignalStats**](SignalApi.md#obpv600getsignalstats) | **GET** /obp/v6.0.0/signal/channels/stats | Get Signal Channel Stats |
-| [**oBPv600PublishSignalMessage**](SignalApi.md#obpv600publishsignalmessageoperation) | **POST** /obp/v6.0.0/signal/channels/{channelname}/messages | Publish Signal Message |
+| [**deleteSignalChannel**](SignalApi.md#deletesignalchannel) | **DELETE** /obp/v6.0.0/signal/channels/{channelname} | Delete Signal Channel |
+| [**getSignalChannelInfo**](SignalApi.md#getsignalchannelinfo) | **GET** /obp/v6.0.0/signal/channels/{channelname}/info | Get Signal Channel Info |
+| [**getSignalChannels**](SignalApi.md#getsignalchannels) | **GET** /obp/v6.0.0/signal/channels | List Signal Channels |
+| [**getSignalMessages**](SignalApi.md#getsignalmessages) | **GET** /obp/v6.0.0/signal/channels/{channelname}/messages | Get Signal Messages |
+| [**getSignalStats**](SignalApi.md#getsignalstats) | **GET** /obp/v6.0.0/signal/channels/stats | Get Signal Channel Stats |
+| [**publishSignalMessage**](SignalApi.md#publishsignalmessageoperation) | **POST** /obp/v6.0.0/signal/channels/{channelname}/messages | Publish Signal Message |
 
 
 
-## oBPv600DeleteSignalChannel
+## deleteSignalChannel
 
-> OBPv600DeleteSignalChannel200Response oBPv600DeleteSignalChannel(channelname)
+> DeleteSignalChannel200Response deleteSignalChannel(channelname)
 
 Delete Signal Channel
 
@@ -28,7 +28,7 @@ import {
   Configuration,
   SignalApi,
 } from 'obp-typescript';
-import type { OBPv600DeleteSignalChannelRequest } from 'obp-typescript';
+import type { DeleteSignalChannelRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -45,10 +45,10 @@ async function example() {
   const body = {
     // string | The CHANNELNAME identifier
     channelname: channelname_example,
-  } satisfies OBPv600DeleteSignalChannelRequest;
+  } satisfies DeleteSignalChannelRequest;
 
   try {
-    const data = await api.oBPv600DeleteSignalChannel(body);
+    const data = await api.deleteSignalChannel(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -68,7 +68,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv600DeleteSignalChannel200Response**](OBPv600DeleteSignalChannel200Response.md)
+[**DeleteSignalChannel200Response**](DeleteSignalChannel200Response.md)
 
 ### Authorization
 
@@ -89,9 +89,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600GetSignalChannelInfo
+## getSignalChannelInfo
 
-> OBPv600GetSignalChannelInfo200Response oBPv600GetSignalChannelInfo(channelname)
+> GetSignalChannelInfo200Response getSignalChannelInfo(channelname)
 
 Get Signal Channel Info
 
@@ -104,7 +104,7 @@ import {
   Configuration,
   SignalApi,
 } from 'obp-typescript';
-import type { OBPv600GetSignalChannelInfoRequest } from 'obp-typescript';
+import type { GetSignalChannelInfoRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -121,10 +121,10 @@ async function example() {
   const body = {
     // string | The CHANNELNAME identifier
     channelname: channelname_example,
-  } satisfies OBPv600GetSignalChannelInfoRequest;
+  } satisfies GetSignalChannelInfoRequest;
 
   try {
-    const data = await api.oBPv600GetSignalChannelInfo(body);
+    const data = await api.getSignalChannelInfo(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -144,7 +144,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv600GetSignalChannelInfo200Response**](OBPv600GetSignalChannelInfo200Response.md)
+[**GetSignalChannelInfo200Response**](GetSignalChannelInfo200Response.md)
 
 ### Authorization
 
@@ -165,9 +165,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600GetSignalChannels
+## getSignalChannels
 
-> OBPv600GetSignalChannels200Response oBPv600GetSignalChannels()
+> GetSignalChannels200Response getSignalChannels()
 
 List Signal Channels
 
@@ -180,7 +180,7 @@ import {
   Configuration,
   SignalApi,
 } from 'obp-typescript';
-import type { OBPv600GetSignalChannelsRequest } from 'obp-typescript';
+import type { GetSignalChannelsRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -195,7 +195,7 @@ async function example() {
   const api = new SignalApi(config);
 
   try {
-    const data = await api.oBPv600GetSignalChannels();
+    const data = await api.getSignalChannels();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -212,7 +212,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetSignalChannels200Response**](OBPv600GetSignalChannels200Response.md)
+[**GetSignalChannels200Response**](GetSignalChannels200Response.md)
 
 ### Authorization
 
@@ -233,9 +233,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600GetSignalMessages
+## getSignalMessages
 
-> OBPv600GetSignalMessages200Response oBPv600GetSignalMessages(channelname)
+> GetSignalMessages200Response getSignalMessages(channelname)
 
 Get Signal Messages
 
@@ -248,7 +248,7 @@ import {
   Configuration,
   SignalApi,
 } from 'obp-typescript';
-import type { OBPv600GetSignalMessagesRequest } from 'obp-typescript';
+import type { GetSignalMessagesRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -265,10 +265,10 @@ async function example() {
   const body = {
     // string | The CHANNELNAME identifier
     channelname: channelname_example,
-  } satisfies OBPv600GetSignalMessagesRequest;
+  } satisfies GetSignalMessagesRequest;
 
   try {
-    const data = await api.oBPv600GetSignalMessages(body);
+    const data = await api.getSignalMessages(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -288,7 +288,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv600GetSignalMessages200Response**](OBPv600GetSignalMessages200Response.md)
+[**GetSignalMessages200Response**](GetSignalMessages200Response.md)
 
 ### Authorization
 
@@ -309,9 +309,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600GetSignalStats
+## getSignalStats
 
-> OBPv600GetSignalStats200Response oBPv600GetSignalStats()
+> GetSignalStats200Response getSignalStats()
 
 Get Signal Channel Stats
 
@@ -324,7 +324,7 @@ import {
   Configuration,
   SignalApi,
 } from 'obp-typescript';
-import type { OBPv600GetSignalStatsRequest } from 'obp-typescript';
+import type { GetSignalStatsRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -339,7 +339,7 @@ async function example() {
   const api = new SignalApi(config);
 
   try {
-    const data = await api.oBPv600GetSignalStats();
+    const data = await api.getSignalStats();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -356,7 +356,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetSignalStats200Response**](OBPv600GetSignalStats200Response.md)
+[**GetSignalStats200Response**](GetSignalStats200Response.md)
 
 ### Authorization
 
@@ -377,9 +377,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600PublishSignalMessage
+## publishSignalMessage
 
-> OBPv600PublishSignalMessage200Response oBPv600PublishSignalMessage(channelname, oBPv600PublishSignalMessageRequest)
+> PublishSignalMessage200Response publishSignalMessage(channelname, publishSignalMessageRequest)
 
 Publish Signal Message
 
@@ -392,7 +392,7 @@ import {
   Configuration,
   SignalApi,
 } from 'obp-typescript';
-import type { OBPv600PublishSignalMessageOperationRequest } from 'obp-typescript';
+import type { PublishSignalMessageOperationRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -409,12 +409,12 @@ async function example() {
   const body = {
     // string | The CHANNELNAME identifier
     channelname: channelname_example,
-    // OBPv600PublishSignalMessageRequest | Request body
-    oBPv600PublishSignalMessageRequest: {"type":"object","properties":{"message_type":{"type":"string"},"payload":{"type":"object","properties":{"agent_name":{"type":"string"},"capabilities":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}}}},
-  } satisfies OBPv600PublishSignalMessageOperationRequest;
+    // PublishSignalMessageRequest | Request body
+    publishSignalMessageRequest: {"type":"object","properties":{"message_type":{"type":"string"},"payload":{"type":"object","properties":{"agent_name":{"type":"string"},"capabilities":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}}}},
+  } satisfies PublishSignalMessageOperationRequest;
 
   try {
-    const data = await api.oBPv600PublishSignalMessage(body);
+    const data = await api.publishSignalMessage(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -431,11 +431,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **channelname** | `string` | The CHANNELNAME identifier | [Defaults to `undefined`] |
-| **oBPv600PublishSignalMessageRequest** | [OBPv600PublishSignalMessageRequest](OBPv600PublishSignalMessageRequest.md) | Request body | |
+| **publishSignalMessageRequest** | [PublishSignalMessageRequest](PublishSignalMessageRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv600PublishSignalMessage200Response**](OBPv600PublishSignalMessage200Response.md)
+[**PublishSignalMessage200Response**](PublishSignalMessage200Response.md)
 
 ### Authorization
 

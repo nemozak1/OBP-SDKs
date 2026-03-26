@@ -12,12 +12,12 @@ open class ABACAPI {
     /**
      Create ABAC Rule
      
-     - parameter oBPv600UpdateAbacRuleRequest: (body) Request body 
+     - parameter updateAbacRuleRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetAbacRule200Response
+     - returns: GetAbacRule200Response
      */
-    open class func oBPv600CreateAbacRule(oBPv600UpdateAbacRuleRequest: OBPv600UpdateAbacRuleRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetAbacRule200Response {
-        return try await oBPv600CreateAbacRuleWithRequestBuilder(oBPv600UpdateAbacRuleRequest: oBPv600UpdateAbacRuleRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func createAbacRule(updateAbacRuleRequest: UpdateAbacRuleRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAbacRule200Response {
+        return try await createAbacRuleWithRequestBuilder(updateAbacRuleRequest: updateAbacRuleRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -31,16 +31,16 @@ open class ABACAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
-     - parameter oBPv600UpdateAbacRuleRequest: (body) Request body 
+     - parameter updateAbacRuleRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetAbacRule200Response> 
+     - returns: RequestBuilder<GetAbacRule200Response> 
      */
-    open class func oBPv600CreateAbacRuleWithRequestBuilder(oBPv600UpdateAbacRuleRequest: OBPv600UpdateAbacRuleRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetAbacRule200Response> {
+    open class func createAbacRuleWithRequestBuilder(updateAbacRuleRequest: UpdateAbacRuleRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAbacRule200Response> {
         let localVariablePath = "/obp/v6.0.0/management/abac-rules"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv600UpdateAbacRuleRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateAbacRuleRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -50,7 +50,7 @@ open class ABACAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetAbacRule200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAbacRule200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -62,8 +62,8 @@ open class ABACAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv600DeleteAbacRule(abacruleid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv600DeleteAbacRuleWithRequestBuilder(abacruleid: abacruleid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteAbacRule(abacruleid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteAbacRuleWithRequestBuilder(abacruleid: abacruleid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -77,13 +77,13 @@ open class ABACAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter abacruleid: (path) The ABACRULEID identifier 
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv600DeleteAbacRuleWithRequestBuilder(abacruleid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteAbacRuleWithRequestBuilder(abacruleid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v6.0.0/management/abac-rules/{abacruleid}"
         let abacruleidPreEscape = "\(APIHelper.mapValueToPathItem(abacruleid))"
         let abacruleidPostEscape = abacruleidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -108,12 +108,12 @@ open class ABACAPI {
      Execute ABAC Policy
      
      - parameter policy: (path) The POLICY identifier 
-     - parameter oBPv600ExecuteAbacPolicyRequest: (body) Request body 
+     - parameter executeAbacPolicyRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600ExecuteAbacPolicy200Response
+     - returns: ExecuteAbacPolicy200Response
      */
-    open class func oBPv600ExecuteAbacPolicy(policy: String, oBPv600ExecuteAbacPolicyRequest: OBPv600ExecuteAbacPolicyRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600ExecuteAbacPolicy200Response {
-        return try await oBPv600ExecuteAbacPolicyWithRequestBuilder(policy: policy, oBPv600ExecuteAbacPolicyRequest: oBPv600ExecuteAbacPolicyRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func executeAbacPolicy(policy: String, executeAbacPolicyRequest: ExecuteAbacPolicyRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> ExecuteAbacPolicy200Response {
+        return try await executeAbacPolicyWithRequestBuilder(policy: policy, executeAbacPolicyRequest: executeAbacPolicyRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -127,20 +127,20 @@ open class ABACAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter policy: (path) The POLICY identifier 
-     - parameter oBPv600ExecuteAbacPolicyRequest: (body) Request body 
+     - parameter executeAbacPolicyRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600ExecuteAbacPolicy200Response> 
+     - returns: RequestBuilder<ExecuteAbacPolicy200Response> 
      */
-    open class func oBPv600ExecuteAbacPolicyWithRequestBuilder(policy: String, oBPv600ExecuteAbacPolicyRequest: OBPv600ExecuteAbacPolicyRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600ExecuteAbacPolicy200Response> {
+    open class func executeAbacPolicyWithRequestBuilder(policy: String, executeAbacPolicyRequest: ExecuteAbacPolicyRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<ExecuteAbacPolicy200Response> {
         var localVariablePath = "/obp/v6.0.0/management/abac-policies/{policy}/execute"
         let policyPreEscape = "\(APIHelper.mapValueToPathItem(policy))"
         let policyPostEscape = policyPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{policy}", with: policyPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv600ExecuteAbacPolicyRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: executeAbacPolicyRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -150,7 +150,7 @@ open class ABACAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600ExecuteAbacPolicy200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<ExecuteAbacPolicy200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -159,12 +159,12 @@ open class ABACAPI {
      Execute ABAC Rule
      
      - parameter abacruleid: (path) The ABACRULEID identifier 
-     - parameter oBPv600ExecuteAbacPolicyRequest: (body) Request body 
+     - parameter executeAbacPolicyRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600ExecuteAbacPolicy200Response
+     - returns: ExecuteAbacPolicy200Response
      */
-    open class func oBPv600ExecuteAbacRule(abacruleid: String, oBPv600ExecuteAbacPolicyRequest: OBPv600ExecuteAbacPolicyRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600ExecuteAbacPolicy200Response {
-        return try await oBPv600ExecuteAbacRuleWithRequestBuilder(abacruleid: abacruleid, oBPv600ExecuteAbacPolicyRequest: oBPv600ExecuteAbacPolicyRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func executeAbacRule(abacruleid: String, executeAbacPolicyRequest: ExecuteAbacPolicyRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> ExecuteAbacPolicy200Response {
+        return try await executeAbacRuleWithRequestBuilder(abacruleid: abacruleid, executeAbacPolicyRequest: executeAbacPolicyRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -178,20 +178,20 @@ open class ABACAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter abacruleid: (path) The ABACRULEID identifier 
-     - parameter oBPv600ExecuteAbacPolicyRequest: (body) Request body 
+     - parameter executeAbacPolicyRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600ExecuteAbacPolicy200Response> 
+     - returns: RequestBuilder<ExecuteAbacPolicy200Response> 
      */
-    open class func oBPv600ExecuteAbacRuleWithRequestBuilder(abacruleid: String, oBPv600ExecuteAbacPolicyRequest: OBPv600ExecuteAbacPolicyRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600ExecuteAbacPolicy200Response> {
+    open class func executeAbacRuleWithRequestBuilder(abacruleid: String, executeAbacPolicyRequest: ExecuteAbacPolicyRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<ExecuteAbacPolicy200Response> {
         var localVariablePath = "/obp/v6.0.0/management/abac-rules/{abacruleid}/execute"
         let abacruleidPreEscape = "\(APIHelper.mapValueToPathItem(abacruleid))"
         let abacruleidPostEscape = abacruleidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{abacruleid}", with: abacruleidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv600ExecuteAbacPolicyRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: executeAbacPolicyRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -201,7 +201,7 @@ open class ABACAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600ExecuteAbacPolicy200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<ExecuteAbacPolicy200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -210,10 +210,10 @@ open class ABACAPI {
      Get ABAC Policies
      
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetAbacPolicies200Response
+     - returns: GetAbacPolicies200Response
      */
-    open class func oBPv600GetAbacPolicies(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetAbacPolicies200Response {
-        return try await oBPv600GetAbacPoliciesWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    open class func getAbacPolicies(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAbacPolicies200Response {
+        return try await getAbacPoliciesWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -227,12 +227,12 @@ open class ABACAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetAbacPolicies200Response> 
+     - returns: RequestBuilder<GetAbacPolicies200Response> 
      */
-    open class func oBPv600GetAbacPoliciesWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetAbacPolicies200Response> {
+    open class func getAbacPoliciesWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAbacPolicies200Response> {
         let localVariablePath = "/obp/v6.0.0/management/abac-policies"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -245,7 +245,7 @@ open class ABACAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetAbacPolicies200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAbacPolicies200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -255,10 +255,10 @@ open class ABACAPI {
      
      - parameter abacruleid: (path) The ABACRULEID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetAbacRule200Response
+     - returns: GetAbacRule200Response
      */
-    open class func oBPv600GetAbacRule(abacruleid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetAbacRule200Response {
-        return try await oBPv600GetAbacRuleWithRequestBuilder(abacruleid: abacruleid, apiConfiguration: apiConfiguration).execute().body
+    open class func getAbacRule(abacruleid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAbacRule200Response {
+        return try await getAbacRuleWithRequestBuilder(abacruleid: abacruleid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -272,13 +272,13 @@ open class ABACAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter abacruleid: (path) The ABACRULEID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetAbacRule200Response> 
+     - returns: RequestBuilder<GetAbacRule200Response> 
      */
-    open class func oBPv600GetAbacRuleWithRequestBuilder(abacruleid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetAbacRule200Response> {
+    open class func getAbacRuleWithRequestBuilder(abacruleid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAbacRule200Response> {
         var localVariablePath = "/obp/v6.0.0/management/abac-rules/{abacruleid}"
         let abacruleidPreEscape = "\(APIHelper.mapValueToPathItem(abacruleid))"
         let abacruleidPostEscape = abacruleidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -294,7 +294,7 @@ open class ABACAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetAbacRule200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAbacRule200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -303,10 +303,10 @@ open class ABACAPI {
      Get ABAC Rule Schema
      
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetAbacRuleSchema200Response
+     - returns: GetAbacRuleSchema200Response
      */
-    open class func oBPv600GetAbacRuleSchema(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetAbacRuleSchema200Response {
-        return try await oBPv600GetAbacRuleSchemaWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    open class func getAbacRuleSchema(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAbacRuleSchema200Response {
+        return try await getAbacRuleSchemaWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -320,12 +320,12 @@ open class ABACAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetAbacRuleSchema200Response> 
+     - returns: RequestBuilder<GetAbacRuleSchema200Response> 
      */
-    open class func oBPv600GetAbacRuleSchemaWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetAbacRuleSchema200Response> {
+    open class func getAbacRuleSchemaWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAbacRuleSchema200Response> {
         let localVariablePath = "/obp/v6.0.0/management/abac-rules-schema"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -338,7 +338,7 @@ open class ABACAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetAbacRuleSchema200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAbacRuleSchema200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -347,10 +347,10 @@ open class ABACAPI {
      Get ABAC Rules
      
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetAbacRulesByPolicy200Response
+     - returns: GetAbacRulesByPolicy200Response
      */
-    open class func oBPv600GetAbacRules(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetAbacRulesByPolicy200Response {
-        return try await oBPv600GetAbacRulesWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    open class func getAbacRules(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAbacRulesByPolicy200Response {
+        return try await getAbacRulesWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -364,12 +364,12 @@ open class ABACAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetAbacRulesByPolicy200Response> 
+     - returns: RequestBuilder<GetAbacRulesByPolicy200Response> 
      */
-    open class func oBPv600GetAbacRulesWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetAbacRulesByPolicy200Response> {
+    open class func getAbacRulesWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAbacRulesByPolicy200Response> {
         let localVariablePath = "/obp/v6.0.0/management/abac-rules"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -382,7 +382,7 @@ open class ABACAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetAbacRulesByPolicy200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAbacRulesByPolicy200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -392,10 +392,10 @@ open class ABACAPI {
      
      - parameter policy: (path) The POLICY identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetAbacRulesByPolicy200Response
+     - returns: GetAbacRulesByPolicy200Response
      */
-    open class func oBPv600GetAbacRulesByPolicy(policy: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetAbacRulesByPolicy200Response {
-        return try await oBPv600GetAbacRulesByPolicyWithRequestBuilder(policy: policy, apiConfiguration: apiConfiguration).execute().body
+    open class func getAbacRulesByPolicy(policy: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAbacRulesByPolicy200Response {
+        return try await getAbacRulesByPolicyWithRequestBuilder(policy: policy, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -409,13 +409,13 @@ open class ABACAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter policy: (path) The POLICY identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetAbacRulesByPolicy200Response> 
+     - returns: RequestBuilder<GetAbacRulesByPolicy200Response> 
      */
-    open class func oBPv600GetAbacRulesByPolicyWithRequestBuilder(policy: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetAbacRulesByPolicy200Response> {
+    open class func getAbacRulesByPolicyWithRequestBuilder(policy: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAbacRulesByPolicy200Response> {
         var localVariablePath = "/obp/v6.0.0/management/abac-rules/policy/{policy}"
         let policyPreEscape = "\(APIHelper.mapValueToPathItem(policy))"
         let policyPostEscape = policyPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -431,7 +431,7 @@ open class ABACAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetAbacRulesByPolicy200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAbacRulesByPolicy200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -440,12 +440,12 @@ open class ABACAPI {
      Update ABAC Rule
      
      - parameter abacruleid: (path) The ABACRULEID identifier 
-     - parameter oBPv600UpdateAbacRuleRequest: (body) Request body 
+     - parameter updateAbacRuleRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetAbacRule200Response
+     - returns: GetAbacRule200Response
      */
-    open class func oBPv600UpdateAbacRule(abacruleid: String, oBPv600UpdateAbacRuleRequest: OBPv600UpdateAbacRuleRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetAbacRule200Response {
-        return try await oBPv600UpdateAbacRuleWithRequestBuilder(abacruleid: abacruleid, oBPv600UpdateAbacRuleRequest: oBPv600UpdateAbacRuleRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func updateAbacRule(abacruleid: String, updateAbacRuleRequest: UpdateAbacRuleRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAbacRule200Response {
+        return try await updateAbacRuleWithRequestBuilder(abacruleid: abacruleid, updateAbacRuleRequest: updateAbacRuleRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -459,20 +459,20 @@ open class ABACAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter abacruleid: (path) The ABACRULEID identifier 
-     - parameter oBPv600UpdateAbacRuleRequest: (body) Request body 
+     - parameter updateAbacRuleRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetAbacRule200Response> 
+     - returns: RequestBuilder<GetAbacRule200Response> 
      */
-    open class func oBPv600UpdateAbacRuleWithRequestBuilder(abacruleid: String, oBPv600UpdateAbacRuleRequest: OBPv600UpdateAbacRuleRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetAbacRule200Response> {
+    open class func updateAbacRuleWithRequestBuilder(abacruleid: String, updateAbacRuleRequest: UpdateAbacRuleRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAbacRule200Response> {
         var localVariablePath = "/obp/v6.0.0/management/abac-rules/{abacruleid}"
         let abacruleidPreEscape = "\(APIHelper.mapValueToPathItem(abacruleid))"
         let abacruleidPostEscape = abacruleidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{abacruleid}", with: abacruleidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv600UpdateAbacRuleRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateAbacRuleRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -482,7 +482,7 @@ open class ABACAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetAbacRule200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAbacRule200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -490,12 +490,12 @@ open class ABACAPI {
     /**
      Validate ABAC Rule
      
-     - parameter oBPv600ValidateAbacRuleRequest: (body) Request body 
+     - parameter validateAbacRuleRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600ValidateAbacRule200Response
+     - returns: ValidateAbacRule200Response
      */
-    open class func oBPv600ValidateAbacRule(oBPv600ValidateAbacRuleRequest: OBPv600ValidateAbacRuleRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600ValidateAbacRule200Response {
-        return try await oBPv600ValidateAbacRuleWithRequestBuilder(oBPv600ValidateAbacRuleRequest: oBPv600ValidateAbacRuleRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func validateAbacRule(validateAbacRuleRequest: ValidateAbacRuleRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> ValidateAbacRule200Response {
+        return try await validateAbacRuleWithRequestBuilder(validateAbacRuleRequest: validateAbacRuleRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -509,16 +509,16 @@ open class ABACAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
-     - parameter oBPv600ValidateAbacRuleRequest: (body) Request body 
+     - parameter validateAbacRuleRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600ValidateAbacRule200Response> 
+     - returns: RequestBuilder<ValidateAbacRule200Response> 
      */
-    open class func oBPv600ValidateAbacRuleWithRequestBuilder(oBPv600ValidateAbacRuleRequest: OBPv600ValidateAbacRuleRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600ValidateAbacRule200Response> {
+    open class func validateAbacRuleWithRequestBuilder(validateAbacRuleRequest: ValidateAbacRuleRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<ValidateAbacRule200Response> {
         let localVariablePath = "/obp/v6.0.0/management/abac-rules/validate"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv600ValidateAbacRuleRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: validateAbacRuleRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -528,7 +528,7 @@ open class ABACAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600ValidateAbacRule200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<ValidateAbacRule200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }

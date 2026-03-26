@@ -1,16 +1,16 @@
 # AggregateMetricsApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv600GetAggregateMetrics**](AggregateMetricsApi.md#obpv600getaggregatemetrics) | **GET** /obp/v6.0.0/management/aggregate-metrics | Get Aggregate Metrics |
+| [**getAggregateMetrics**](AggregateMetricsApi.md#getaggregatemetrics) | **GET** /obp/v6.0.0/management/aggregate-metrics | Get Aggregate Metrics |
 
 
 
-## oBPv600GetAggregateMetrics
+## getAggregateMetrics
 
-> OBPv600GetAggregateMetrics200Response oBPv600GetAggregateMetrics()
+> GetAggregateMetrics200Response getAggregateMetrics()
 
 Get Aggregate Metrics
 
@@ -23,7 +23,7 @@ import {
   Configuration,
   AggregateMetricsApi,
 } from 'obp-typescript';
-import type { OBPv600GetAggregateMetricsRequest } from 'obp-typescript';
+import type { GetAggregateMetricsRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -38,7 +38,7 @@ async function example() {
   const api = new AggregateMetricsApi(config);
 
   try {
-    const data = await api.oBPv600GetAggregateMetrics();
+    const data = await api.getAggregateMetrics();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -55,7 +55,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAggregateMetrics200Response**](OBPv600GetAggregateMetrics200Response.md)
+[**GetAggregateMetrics200Response**](GetAggregateMetrics200Response.md)
 
 ### Authorization
 

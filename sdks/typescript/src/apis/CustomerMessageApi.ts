@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,44 +15,44 @@
 
 import * as runtime from '../runtime';
 import type {
-  OBPv121UpdateTransactionNarrative200Response,
-  OBPv140AddCustomerMessageRequest,
-  OBPv140GetCustomersMessages200Response,
-  OBPv400CreateCustomerMessageRequest,
-  OBPv400GetCustomerMessages200Response,
+  AddCustomerMessageRequest,
+  CreateCustomerMessageRequest,
+  GetCustomerMessages200Response,
+  GetCustomersMessages200Response,
+  UpdateTransactionNarrative200Response,
 } from '../models/index';
 import {
-    OBPv121UpdateTransactionNarrative200ResponseFromJSON,
-    OBPv121UpdateTransactionNarrative200ResponseToJSON,
-    OBPv140AddCustomerMessageRequestFromJSON,
-    OBPv140AddCustomerMessageRequestToJSON,
-    OBPv140GetCustomersMessages200ResponseFromJSON,
-    OBPv140GetCustomersMessages200ResponseToJSON,
-    OBPv400CreateCustomerMessageRequestFromJSON,
-    OBPv400CreateCustomerMessageRequestToJSON,
-    OBPv400GetCustomerMessages200ResponseFromJSON,
-    OBPv400GetCustomerMessages200ResponseToJSON,
+    AddCustomerMessageRequestFromJSON,
+    AddCustomerMessageRequestToJSON,
+    CreateCustomerMessageRequestFromJSON,
+    CreateCustomerMessageRequestToJSON,
+    GetCustomerMessages200ResponseFromJSON,
+    GetCustomerMessages200ResponseToJSON,
+    GetCustomersMessages200ResponseFromJSON,
+    GetCustomersMessages200ResponseToJSON,
+    UpdateTransactionNarrative200ResponseFromJSON,
+    UpdateTransactionNarrative200ResponseToJSON,
 } from '../models/index';
 
-export interface OBPv140AddCustomerMessageOperationRequest {
+export interface AddCustomerMessageOperationRequest {
     bankid: string;
     customerid: string;
-    oBPv140AddCustomerMessageRequest: OBPv140AddCustomerMessageRequest;
+    addCustomerMessageRequest: AddCustomerMessageRequest;
 }
 
-export interface OBPv140GetCustomersMessagesRequest {
-    bankid: string;
-}
-
-export interface OBPv400CreateCustomerMessageOperationRequest {
+export interface CreateCustomerMessageOperationRequest {
     bankid: string;
     customerid: string;
-    oBPv400CreateCustomerMessageRequest: OBPv400CreateCustomerMessageRequest;
+    createCustomerMessageRequest: CreateCustomerMessageRequest;
 }
 
-export interface OBPv400GetCustomerMessagesRequest {
+export interface GetCustomerMessagesRequest {
     bankid: string;
     customerid: string;
+}
+
+export interface GetCustomersMessagesRequest {
+    bankid: string;
 }
 
 /**
@@ -61,27 +61,27 @@ export interface OBPv400GetCustomerMessagesRequest {
 export class CustomerMessageApi extends runtime.BaseAPI {
 
     /**
-     * Creates request options for oBPv140AddCustomerMessage without sending the request
+     * Creates request options for addCustomerMessage without sending the request
      */
-    async oBPv140AddCustomerMessageRequestOpts(requestParameters: OBPv140AddCustomerMessageOperationRequest): Promise<runtime.RequestOpts> {
+    async addCustomerMessageRequestOpts(requestParameters: AddCustomerMessageOperationRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv140AddCustomerMessage().'
+                'Required parameter "bankid" was null or undefined when calling addCustomerMessage().'
             );
         }
 
         if (requestParameters['customerid'] == null) {
             throw new runtime.RequiredError(
                 'customerid',
-                'Required parameter "customerid" was null or undefined when calling oBPv140AddCustomerMessage().'
+                'Required parameter "customerid" was null or undefined when calling addCustomerMessage().'
             );
         }
 
-        if (requestParameters['oBPv140AddCustomerMessageRequest'] == null) {
+        if (requestParameters['addCustomerMessageRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv140AddCustomerMessageRequest',
-                'Required parameter "oBPv140AddCustomerMessageRequest" was null or undefined when calling oBPv140AddCustomerMessage().'
+                'addCustomerMessageRequest',
+                'Required parameter "addCustomerMessageRequest" was null or undefined when calling addCustomerMessage().'
             );
         }
 
@@ -101,7 +101,7 @@ export class CustomerMessageApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -114,7 +114,7 @@ export class CustomerMessageApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv140AddCustomerMessageRequestToJSON(requestParameters['oBPv140AddCustomerMessageRequest']),
+            body: AddCustomerMessageRequestToJSON(requestParameters['addCustomerMessageRequest']),
         };
     }
 
@@ -122,30 +122,115 @@ export class CustomerMessageApi extends runtime.BaseAPI {
      * <p>Create a message for the customer specified by CUSTOMER_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
      * Create Customer Message
      */
-    async oBPv140AddCustomerMessageRaw(requestParameters: OBPv140AddCustomerMessageOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv121UpdateTransactionNarrative200Response>> {
-        const requestOptions = await this.oBPv140AddCustomerMessageRequestOpts(requestParameters);
+    async addCustomerMessageRaw(requestParameters: AddCustomerMessageOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateTransactionNarrative200Response>> {
+        const requestOptions = await this.addCustomerMessageRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv121UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Create a message for the customer specified by CUSTOMER_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
      * Create Customer Message
      */
-    async oBPv140AddCustomerMessage(requestParameters: OBPv140AddCustomerMessageOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv121UpdateTransactionNarrative200Response> {
-        const response = await this.oBPv140AddCustomerMessageRaw(requestParameters, initOverrides);
+    async addCustomerMessage(requestParameters: AddCustomerMessageOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateTransactionNarrative200Response> {
+        const response = await this.addCustomerMessageRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv140GetCustomersMessages without sending the request
+     * Creates request options for createCustomerMessage without sending the request
      */
-    async oBPv140GetCustomersMessagesRequestOpts(requestParameters: OBPv140GetCustomersMessagesRequest): Promise<runtime.RequestOpts> {
+    async createCustomerMessageRequestOpts(requestParameters: CreateCustomerMessageOperationRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv140GetCustomersMessages().'
+                'Required parameter "bankid" was null or undefined when calling createCustomerMessage().'
+            );
+        }
+
+        if (requestParameters['customerid'] == null) {
+            throw new runtime.RequiredError(
+                'customerid',
+                'Required parameter "customerid" was null or undefined when calling createCustomerMessage().'
+            );
+        }
+
+        if (requestParameters['createCustomerMessageRequest'] == null) {
+            throw new runtime.RequiredError(
+                'createCustomerMessageRequest',
+                'Required parameter "createCustomerMessageRequest" was null or undefined when calling createCustomerMessage().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.accessToken) {
+            // oauth required
+            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
+        }
+
+
+        let urlPath = `/obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages`;
+        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
+        urlPath = urlPath.replace(`{${"customerid"}}`, encodeURIComponent(String(requestParameters['customerid'])));
+
+        return {
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateCustomerMessageRequestToJSON(requestParameters['createCustomerMessageRequest']),
+        };
+    }
+
+    /**
+     * <p>Create a message for the customer specified by CUSTOMER_ID<br /> User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><a href=\"/glossary#transport\"><strong>transport</strong></a>: SMS</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+     * Create Customer Message
+     */
+    async createCustomerMessageRaw(requestParameters: CreateCustomerMessageOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateTransactionNarrative200Response>> {
+        const requestOptions = await this.createCustomerMessageRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * <p>Create a message for the customer specified by CUSTOMER_ID<br /> User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><a href=\"/glossary#transport\"><strong>transport</strong></a>: SMS</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+     * Create Customer Message
+     */
+    async createCustomerMessage(requestParameters: CreateCustomerMessageOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateTransactionNarrative200Response> {
+        const response = await this.createCustomerMessageRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for getCustomerMessages without sending the request
+     */
+    async getCustomerMessagesRequestOpts(requestParameters: GetCustomerMessagesRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['bankid'] == null) {
+            throw new runtime.RequiredError(
+                'bankid',
+                'Required parameter "bankid" was null or undefined when calling getCustomerMessages().'
+            );
+        }
+
+        if (requestParameters['customerid'] == null) {
+            throw new runtime.RequiredError(
+                'customerid',
+                'Required parameter "customerid" was null or undefined when calling getCustomerMessages().'
             );
         }
 
@@ -163,7 +248,68 @@ export class CustomerMessageApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
+        }
+
+
+        let urlPath = `/obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages`;
+        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
+        urlPath = urlPath.replace(`{${"customerid"}}`, encodeURIComponent(String(requestParameters['customerid'])));
+
+        return {
+            path: urlPath,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        };
+    }
+
+    /**
+     * <p>Get messages for the customer specified by CUSTOMER_ID<br /> User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><a href=\"/glossary#messages\"><strong>messages</strong></a>:</p> <p><a href=\"/glossary#transport\"><strong>transport</strong></a>: SMS</p> 
+     * Get Customer Messages for a Customer
+     */
+    async getCustomerMessagesRaw(requestParameters: GetCustomerMessagesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetCustomerMessages200Response>> {
+        const requestOptions = await this.getCustomerMessagesRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetCustomerMessages200ResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * <p>Get messages for the customer specified by CUSTOMER_ID<br /> User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><a href=\"/glossary#messages\"><strong>messages</strong></a>:</p> <p><a href=\"/glossary#transport\"><strong>transport</strong></a>: SMS</p> 
+     * Get Customer Messages for a Customer
+     */
+    async getCustomerMessages(requestParameters: GetCustomerMessagesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetCustomerMessages200Response> {
+        const response = await this.getCustomerMessagesRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for getCustomersMessages without sending the request
+     */
+    async getCustomersMessagesRequestOpts(requestParameters: GetCustomersMessagesRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['bankid'] == null) {
+            throw new runtime.RequiredError(
+                'bankid',
+                'Required parameter "bankid" was null or undefined when calling getCustomersMessages().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            // oauth required
+            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -182,165 +328,19 @@ export class CustomerMessageApi extends runtime.BaseAPI {
      * <p>Get messages for the logged in customer<br /> Messages sent to the currently authenticated user.</p> <p>Authentication via OAuth is required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><a href=\"/glossary#messages\"><strong>messages</strong></a>:</p> 
      * Get Customer Messages for all Customers
      */
-    async oBPv140GetCustomersMessagesRaw(requestParameters: OBPv140GetCustomersMessagesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv140GetCustomersMessages200Response>> {
-        const requestOptions = await this.oBPv140GetCustomersMessagesRequestOpts(requestParameters);
+    async getCustomersMessagesRaw(requestParameters: GetCustomersMessagesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetCustomersMessages200Response>> {
+        const requestOptions = await this.getCustomersMessagesRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv140GetCustomersMessages200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetCustomersMessages200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get messages for the logged in customer<br /> Messages sent to the currently authenticated user.</p> <p>Authentication via OAuth is required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><a href=\"/glossary#messages\"><strong>messages</strong></a>:</p> 
      * Get Customer Messages for all Customers
      */
-    async oBPv140GetCustomersMessages(requestParameters: OBPv140GetCustomersMessagesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv140GetCustomersMessages200Response> {
-        const response = await this.oBPv140GetCustomersMessagesRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for oBPv400CreateCustomerMessage without sending the request
-     */
-    async oBPv400CreateCustomerMessageRequestOpts(requestParameters: OBPv400CreateCustomerMessageOperationRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['bankid'] == null) {
-            throw new runtime.RequiredError(
-                'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400CreateCustomerMessage().'
-            );
-        }
-
-        if (requestParameters['customerid'] == null) {
-            throw new runtime.RequiredError(
-                'customerid',
-                'Required parameter "customerid" was null or undefined when calling oBPv400CreateCustomerMessage().'
-            );
-        }
-
-        if (requestParameters['oBPv400CreateCustomerMessageRequest'] == null) {
-            throw new runtime.RequiredError(
-                'oBPv400CreateCustomerMessageRequest',
-                'Required parameter "oBPv400CreateCustomerMessageRequest" was null or undefined when calling oBPv400CreateCustomerMessage().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.accessToken) {
-            // oauth required
-            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
-        }
-
-
-        let urlPath = `/obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages`;
-        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
-        urlPath = urlPath.replace(`{${"customerid"}}`, encodeURIComponent(String(requestParameters['customerid'])));
-
-        return {
-            path: urlPath,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: OBPv400CreateCustomerMessageRequestToJSON(requestParameters['oBPv400CreateCustomerMessageRequest']),
-        };
-    }
-
-    /**
-     * <p>Create a message for the customer specified by CUSTOMER_ID<br /> User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><a href=\"/glossary#transport\"><strong>transport</strong></a>: SMS</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-     * Create Customer Message
-     */
-    async oBPv400CreateCustomerMessageRaw(requestParameters: OBPv400CreateCustomerMessageOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv121UpdateTransactionNarrative200Response>> {
-        const requestOptions = await this.oBPv400CreateCustomerMessageRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv121UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * <p>Create a message for the customer specified by CUSTOMER_ID<br /> User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><a href=\"/glossary#transport\"><strong>transport</strong></a>: SMS</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-     * Create Customer Message
-     */
-    async oBPv400CreateCustomerMessage(requestParameters: OBPv400CreateCustomerMessageOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv121UpdateTransactionNarrative200Response> {
-        const response = await this.oBPv400CreateCustomerMessageRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for oBPv400GetCustomerMessages without sending the request
-     */
-    async oBPv400GetCustomerMessagesRequestOpts(requestParameters: OBPv400GetCustomerMessagesRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['bankid'] == null) {
-            throw new runtime.RequiredError(
-                'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400GetCustomerMessages().'
-            );
-        }
-
-        if (requestParameters['customerid'] == null) {
-            throw new runtime.RequiredError(
-                'customerid',
-                'Required parameter "customerid" was null or undefined when calling oBPv400GetCustomerMessages().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.accessToken) {
-            // oauth required
-            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
-        }
-
-
-        let urlPath = `/obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages`;
-        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
-        urlPath = urlPath.replace(`{${"customerid"}}`, encodeURIComponent(String(requestParameters['customerid'])));
-
-        return {
-            path: urlPath,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * <p>Get messages for the customer specified by CUSTOMER_ID<br /> User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><a href=\"/glossary#messages\"><strong>messages</strong></a>:</p> <p><a href=\"/glossary#transport\"><strong>transport</strong></a>: SMS</p> 
-     * Get Customer Messages for a Customer
-     */
-    async oBPv400GetCustomerMessagesRaw(requestParameters: OBPv400GetCustomerMessagesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetCustomerMessages200Response>> {
-        const requestOptions = await this.oBPv400GetCustomerMessagesRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetCustomerMessages200ResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * <p>Get messages for the customer specified by CUSTOMER_ID<br /> User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><a href=\"/glossary#messages\"><strong>messages</strong></a>:</p> <p><a href=\"/glossary#transport\"><strong>transport</strong></a>: SMS</p> 
-     * Get Customer Messages for a Customer
-     */
-    async oBPv400GetCustomerMessages(requestParameters: OBPv400GetCustomerMessagesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetCustomerMessages200Response> {
-        const response = await this.oBPv400GetCustomerMessagesRaw(requestParameters, initOverrides);
+    async getCustomersMessages(requestParameters: GetCustomersMessagesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetCustomersMessages200Response> {
+        const response = await this.getCustomersMessagesRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

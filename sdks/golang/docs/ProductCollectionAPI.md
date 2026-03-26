@@ -1,17 +1,17 @@
 # \ProductCollectionAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv310CreateProductCollection**](ProductCollectionAPI.md#OBPv310CreateProductCollection) | **Put** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Create Product Collection
-[**OBPv310GetProductCollection**](ProductCollectionAPI.md#OBPv310GetProductCollection) | **Get** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Get Product Collection
+[**CreateProductCollection**](ProductCollectionAPI.md#CreateProductCollection) | **Put** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Create Product Collection
+[**GetProductCollection**](ProductCollectionAPI.md#GetProductCollection) | **Get** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Get Product Collection
 
 
 
-## OBPv310CreateProductCollection
+## CreateProductCollection
 
-> OBPv310CreateProductCollection200Response OBPv310CreateProductCollection(ctx, bankid, collectioncode).OBPv310CreateProductCollectionRequest(oBPv310CreateProductCollectionRequest).Execute()
+> CreateProductCollection200Response CreateProductCollection(ctx, bankid, collectioncode).CreateProductCollectionRequest(createProductCollectionRequest).Execute()
 
 Create Product Collection
 
@@ -32,17 +32,17 @@ import (
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	collectioncode := "collectioncode_example" // string | The COLLECTIONCODE identifier
-	oBPv310CreateProductCollectionRequest := *openapiclient.NewOBPv310CreateProductCollectionRequest("Type_example", *openapiclient.NewOBPv310CreateProductCollectionRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds("Type_example", *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example")))) // OBPv310CreateProductCollectionRequest | Request body
+	createProductCollectionRequest := *openapiclient.NewCreateProductCollectionRequest() // CreateProductCollectionRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProductCollectionAPI.OBPv310CreateProductCollection(context.Background(), bankid, collectioncode).OBPv310CreateProductCollectionRequest(oBPv310CreateProductCollectionRequest).Execute()
+	resp, r, err := apiClient.ProductCollectionAPI.CreateProductCollection(context.Background(), bankid, collectioncode).CreateProductCollectionRequest(createProductCollectionRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ProductCollectionAPI.OBPv310CreateProductCollection``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ProductCollectionAPI.CreateProductCollection``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv310CreateProductCollection`: OBPv310CreateProductCollection200Response
-	fmt.Fprintf(os.Stdout, "Response from `ProductCollectionAPI.OBPv310CreateProductCollection`: %v\n", resp)
+	// response from `CreateProductCollection`: CreateProductCollection200Response
+	fmt.Fprintf(os.Stdout, "Response from `ProductCollectionAPI.CreateProductCollection`: %v\n", resp)
 }
 ```
 
@@ -57,18 +57,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv310CreateProductCollectionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateProductCollectionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **oBPv310CreateProductCollectionRequest** | [**OBPv310CreateProductCollectionRequest**](OBPv310CreateProductCollectionRequest.md) | Request body | 
+ **createProductCollectionRequest** | [**CreateProductCollectionRequest**](CreateProductCollectionRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv310CreateProductCollection200Response**](OBPv310CreateProductCollection200Response.md)
+[**CreateProductCollection200Response**](CreateProductCollection200Response.md)
 
 ### Authorization
 
@@ -84,9 +84,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv310GetProductCollection
+## GetProductCollection
 
-> OBPv310GetProductCollection200Response OBPv310GetProductCollection(ctx, bankid, collectioncode).Execute()
+> GetProductCollection200Response GetProductCollection(ctx, bankid, collectioncode).Execute()
 
 Get Product Collection
 
@@ -110,13 +110,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProductCollectionAPI.OBPv310GetProductCollection(context.Background(), bankid, collectioncode).Execute()
+	resp, r, err := apiClient.ProductCollectionAPI.GetProductCollection(context.Background(), bankid, collectioncode).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ProductCollectionAPI.OBPv310GetProductCollection``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ProductCollectionAPI.GetProductCollection``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv310GetProductCollection`: OBPv310GetProductCollection200Response
-	fmt.Fprintf(os.Stdout, "Response from `ProductCollectionAPI.OBPv310GetProductCollection`: %v\n", resp)
+	// response from `GetProductCollection`: GetProductCollection200Response
+	fmt.Fprintf(os.Stdout, "Response from `ProductCollectionAPI.GetProductCollection`: %v\n", resp)
 }
 ```
 
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv310GetProductCollectionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetProductCollectionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv310GetProductCollection200Response**](OBPv310GetProductCollection200Response.md)
+[**GetProductCollection200Response**](GetProductCollection200Response.md)
 
 ### Authorization
 

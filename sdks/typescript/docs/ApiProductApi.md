@@ -1,20 +1,20 @@
 # ApiProductApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv600CreateApiProduct**](ApiProductApi.md#obpv600createapiproduct) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create Api Product |
-| [**oBPv600CreateOrUpdateApiProduct**](ApiProductApi.md#obpv600createorupdateapiproductoperation) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create or Update Api Product |
-| [**oBPv600DeleteApiProduct**](ApiProductApi.md#obpv600deleteapiproduct) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Delete Api Product |
-| [**oBPv600GetApiProduct**](ApiProductApi.md#obpv600getapiproduct) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Get Api Product |
-| [**oBPv600GetApiProducts**](ApiProductApi.md#obpv600getapiproducts) | **GET** /obp/v6.0.0/banks/{bankid}/api-products | Get Api Products |
+| [**createApiProduct**](ApiProductApi.md#createapiproduct) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create Api Product |
+| [**createOrUpdateApiProduct**](ApiProductApi.md#createorupdateapiproductoperation) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create or Update Api Product |
+| [**deleteApiProduct**](ApiProductApi.md#deleteapiproduct) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Delete Api Product |
+| [**getApiProduct**](ApiProductApi.md#getapiproduct) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Get Api Product |
+| [**getApiProducts**](ApiProductApi.md#getapiproducts) | **GET** /obp/v6.0.0/banks/{bankid}/api-products | Get Api Products |
 
 
 
-## oBPv600CreateApiProduct
+## createApiProduct
 
-> OBPv600GetApiProducts200ResponsePropertiesApiProductsItems oBPv600CreateApiProduct(bankid, apiproductcode, oBPv600CreateOrUpdateApiProductRequest)
+> GetApiProducts200ResponseApiProductsInner createApiProduct(bankid, apiproductcode, createOrUpdateApiProductRequest)
 
 Create Api Product
 
@@ -27,7 +27,7 @@ import {
   Configuration,
   ApiProductApi,
 } from 'obp-typescript';
-import type { OBPv600CreateApiProductRequest } from 'obp-typescript';
+import type { CreateApiProductRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -46,12 +46,12 @@ async function example() {
     bankid: bankid_example,
     // string | The APIPRODUCTCODE identifier
     apiproductcode: apiproductcode_example,
-    // OBPv600CreateOrUpdateApiProductRequest | Request body
-    oBPv600CreateOrUpdateApiProductRequest: {type=object, properties={name={type=string}, category={type=string}, monthly_subscription_currency={type=string}, description={type=string}, monthly_subscription_amount={type=string}, terms_and_conditions_url={type=string}, collection_id={type=string}, per_month_call_limit={type=integer}, per_second_call_limit={type=integer}, parent_api_product_code={type=string}, per_minute_call_limit={type=integer}, per_hour_call_limit={type=integer}, more_info_url={type=string}, per_week_call_limit={type=integer}, per_day_call_limit={type=integer}}},
-  } satisfies OBPv600CreateApiProductRequest;
+    // CreateOrUpdateApiProductRequest | Request body
+    createOrUpdateApiProductRequest: {type=object, properties={name={type=string}, category={type=string}, monthly_subscription_currency={type=string}, description={type=string}, monthly_subscription_amount={type=string}, terms_and_conditions_url={type=string}, collection_id={type=string}, per_month_call_limit={type=integer}, per_second_call_limit={type=integer}, parent_api_product_code={type=string}, per_minute_call_limit={type=integer}, per_hour_call_limit={type=integer}, more_info_url={type=string}, per_week_call_limit={type=integer}, per_day_call_limit={type=integer}}},
+  } satisfies CreateApiProductRequest;
 
   try {
-    const data = await api.oBPv600CreateApiProduct(body);
+    const data = await api.createApiProduct(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -69,11 +69,11 @@ example().catch(console.error);
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
 | **apiproductcode** | `string` | The APIPRODUCTCODE identifier | [Defaults to `undefined`] |
-| **oBPv600CreateOrUpdateApiProductRequest** | [OBPv600CreateOrUpdateApiProductRequest](OBPv600CreateOrUpdateApiProductRequest.md) | Request body | |
+| **createOrUpdateApiProductRequest** | [CreateOrUpdateApiProductRequest](CreateOrUpdateApiProductRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv600GetApiProducts200ResponsePropertiesApiProductsItems**](OBPv600GetApiProducts200ResponsePropertiesApiProductsItems.md)
+[**GetApiProducts200ResponseApiProductsInner**](GetApiProducts200ResponseApiProductsInner.md)
 
 ### Authorization
 
@@ -94,9 +94,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600CreateOrUpdateApiProduct
+## createOrUpdateApiProduct
 
-> OBPv600GetApiProducts200ResponsePropertiesApiProductsItems oBPv600CreateOrUpdateApiProduct(bankid, apiproductcode, oBPv600CreateOrUpdateApiProductRequest)
+> GetApiProducts200ResponseApiProductsInner createOrUpdateApiProduct(bankid, apiproductcode, createOrUpdateApiProductRequest)
 
 Create or Update Api Product
 
@@ -109,7 +109,7 @@ import {
   Configuration,
   ApiProductApi,
 } from 'obp-typescript';
-import type { OBPv600CreateOrUpdateApiProductOperationRequest } from 'obp-typescript';
+import type { CreateOrUpdateApiProductOperationRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -128,12 +128,12 @@ async function example() {
     bankid: bankid_example,
     // string | The APIPRODUCTCODE identifier
     apiproductcode: apiproductcode_example,
-    // OBPv600CreateOrUpdateApiProductRequest | Request body
-    oBPv600CreateOrUpdateApiProductRequest: {"type":"object","properties":{"name":{"type":"string"},"category":{"type":"string"},"monthly_subscription_currency":{"type":"string"},"description":{"type":"string"},"monthly_subscription_amount":{"type":"string"},"terms_and_conditions_url":{"type":"string"},"collection_id":{"type":"string"},"per_month_call_limit":{"type":"integer"},"per_second_call_limit":{"type":"integer"},"parent_api_product_code":{"type":"string"},"per_minute_call_limit":{"type":"integer"},"per_hour_call_limit":{"type":"integer"},"more_info_url":{"type":"string"},"per_week_call_limit":{"type":"integer"},"per_day_call_limit":{"type":"integer"}}},
-  } satisfies OBPv600CreateOrUpdateApiProductOperationRequest;
+    // CreateOrUpdateApiProductRequest | Request body
+    createOrUpdateApiProductRequest: {"type":"object","properties":{"name":{"type":"string"},"category":{"type":"string"},"monthly_subscription_currency":{"type":"string"},"description":{"type":"string"},"monthly_subscription_amount":{"type":"string"},"terms_and_conditions_url":{"type":"string"},"collection_id":{"type":"string"},"per_month_call_limit":{"type":"integer"},"per_second_call_limit":{"type":"integer"},"parent_api_product_code":{"type":"string"},"per_minute_call_limit":{"type":"integer"},"per_hour_call_limit":{"type":"integer"},"more_info_url":{"type":"string"},"per_week_call_limit":{"type":"integer"},"per_day_call_limit":{"type":"integer"}}},
+  } satisfies CreateOrUpdateApiProductOperationRequest;
 
   try {
-    const data = await api.oBPv600CreateOrUpdateApiProduct(body);
+    const data = await api.createOrUpdateApiProduct(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -151,11 +151,11 @@ example().catch(console.error);
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
 | **apiproductcode** | `string` | The APIPRODUCTCODE identifier | [Defaults to `undefined`] |
-| **oBPv600CreateOrUpdateApiProductRequest** | [OBPv600CreateOrUpdateApiProductRequest](OBPv600CreateOrUpdateApiProductRequest.md) | Request body | |
+| **createOrUpdateApiProductRequest** | [CreateOrUpdateApiProductRequest](CreateOrUpdateApiProductRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv600GetApiProducts200ResponsePropertiesApiProductsItems**](OBPv600GetApiProducts200ResponsePropertiesApiProductsItems.md)
+[**GetApiProducts200ResponseApiProductsInner**](GetApiProducts200ResponseApiProductsInner.md)
 
 ### Authorization
 
@@ -176,9 +176,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600DeleteApiProduct
+## deleteApiProduct
 
-> oBPv600DeleteApiProduct(bankid, apiproductcode)
+> deleteApiProduct(bankid, apiproductcode)
 
 Delete Api Product
 
@@ -191,7 +191,7 @@ import {
   Configuration,
   ApiProductApi,
 } from 'obp-typescript';
-import type { OBPv600DeleteApiProductRequest } from 'obp-typescript';
+import type { DeleteApiProductRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -210,10 +210,10 @@ async function example() {
     bankid: bankid_example,
     // string | The APIPRODUCTCODE identifier
     apiproductcode: apiproductcode_example,
-  } satisfies OBPv600DeleteApiProductRequest;
+  } satisfies DeleteApiProductRequest;
 
   try {
-    const data = await api.oBPv600DeleteApiProduct(body);
+    const data = await api.deleteApiProduct(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -256,9 +256,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600GetApiProduct
+## getApiProduct
 
-> OBPv600GetApiProducts200ResponsePropertiesApiProductsItems oBPv600GetApiProduct(bankid, apiproductcode)
+> GetApiProducts200ResponseApiProductsInner getApiProduct(bankid, apiproductcode)
 
 Get Api Product
 
@@ -271,7 +271,7 @@ import {
   Configuration,
   ApiProductApi,
 } from 'obp-typescript';
-import type { OBPv600GetApiProductRequest } from 'obp-typescript';
+import type { GetApiProductRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -282,10 +282,10 @@ async function example() {
     bankid: bankid_example,
     // string | The APIPRODUCTCODE identifier
     apiproductcode: apiproductcode_example,
-  } satisfies OBPv600GetApiProductRequest;
+  } satisfies GetApiProductRequest;
 
   try {
-    const data = await api.oBPv600GetApiProduct(body);
+    const data = await api.getApiProduct(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -306,7 +306,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv600GetApiProducts200ResponsePropertiesApiProductsItems**](OBPv600GetApiProducts200ResponsePropertiesApiProductsItems.md)
+[**GetApiProducts200ResponseApiProductsInner**](GetApiProducts200ResponseApiProductsInner.md)
 
 ### Authorization
 
@@ -328,9 +328,9 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600GetApiProducts
+## getApiProducts
 
-> OBPv600GetApiProducts200Response oBPv600GetApiProducts(bankid)
+> GetApiProducts200Response getApiProducts(bankid)
 
 Get Api Products
 
@@ -343,7 +343,7 @@ import {
   Configuration,
   ApiProductApi,
 } from 'obp-typescript';
-import type { OBPv600GetApiProductsRequest } from 'obp-typescript';
+import type { GetApiProductsRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -352,10 +352,10 @@ async function example() {
   const body = {
     // string | The BANKID identifier
     bankid: bankid_example,
-  } satisfies OBPv600GetApiProductsRequest;
+  } satisfies GetApiProductsRequest;
 
   try {
-    const data = await api.oBPv600GetApiProducts(body);
+    const data = await api.getApiProducts(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -375,7 +375,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv600GetApiProducts200Response**](OBPv600GetApiProducts200Response.md)
+[**GetApiProducts200Response**](GetApiProducts200Response.md)
 
 ### Authorization
 

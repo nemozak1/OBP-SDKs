@@ -1,18 +1,18 @@
 # FXApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv220CreateFx**](FXApi.md#obpv220createfxoperation) | **PUT** /obp/v2.2.0/banks/{bankid}/fx | Create Fx |
-| [**oBPv220GetCurrentFxRate**](FXApi.md#obpv220getcurrentfxrate) | **GET** /obp/v2.2.0/banks/{bankid}/fx/{fromcurrencycode}/{tocurrencycode} | Get Current FxRate |
-| [**oBPv510GetCurrenciesAtBank**](FXApi.md#obpv510getcurrenciesatbank) | **GET** /obp/v5.1.0/banks/{bankid}/currencies | Get Currencies at a Bank |
+| [**createFx**](FXApi.md#createfxoperation) | **PUT** /obp/v2.2.0/banks/{bankid}/fx | Create Fx |
+| [**getCurrenciesAtBank**](FXApi.md#getcurrenciesatbank) | **GET** /obp/v5.1.0/banks/{bankid}/currencies | Get Currencies at a Bank |
+| [**getCurrentFxRate**](FXApi.md#getcurrentfxrate) | **GET** /obp/v2.2.0/banks/{bankid}/fx/{fromcurrencycode}/{tocurrencycode} | Get Current FxRate |
 
 
 
-## oBPv220CreateFx
+## createFx
 
-> OBPv220CreateFxRequest oBPv220CreateFx(bankid, oBPv220CreateFxRequest)
+> CreateFxRequest createFx(bankid, createFxRequest)
 
 Create Fx
 
@@ -25,7 +25,7 @@ import {
   Configuration,
   FXApi,
 } from 'obp-typescript';
-import type { OBPv220CreateFxOperationRequest } from 'obp-typescript';
+import type { CreateFxOperationRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -42,12 +42,12 @@ async function example() {
   const body = {
     // string | The BANKID identifier
     bankid: bankid_example,
-    // OBPv220CreateFxRequest | Request body
-    oBPv220CreateFxRequest: {"type":"object","properties":{"effective_date":{"type":"string","format":"date-time"},"conversion_value":{"type":"number"},"from_currency_code":{"type":"string"},"bank_id":{"type":"string"},"inverse_conversion_value":{"type":"number"},"to_currency_code":{"type":"string"}}},
-  } satisfies OBPv220CreateFxOperationRequest;
+    // CreateFxRequest | Request body
+    createFxRequest: {"type":"object","properties":{"conversion_value":{"type":"number"},"from_currency_code":{"type":"string"},"bank_id":{"type":"string"},"inverse_conversion_value":{"type":"number"},"to_currency_code":{"type":"string"},"effective_date":{"type":"string","format":"date-time"}}},
+  } satisfies CreateFxOperationRequest;
 
   try {
-    const data = await api.oBPv220CreateFx(body);
+    const data = await api.createFx(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -64,11 +64,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
-| **oBPv220CreateFxRequest** | [OBPv220CreateFxRequest](OBPv220CreateFxRequest.md) | Request body | |
+| **createFxRequest** | [CreateFxRequest](CreateFxRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv220CreateFxRequest**](OBPv220CreateFxRequest.md)
+[**CreateFxRequest**](CreateFxRequest.md)
 
 ### Authorization
 
@@ -90,9 +90,85 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv220GetCurrentFxRate
+## getCurrenciesAtBank
 
-> OBPv220CreateFxRequest oBPv220GetCurrentFxRate(bankid, fromcurrencycode, tocurrencycode)
+> GetCurrenciesAtBank200Response getCurrenciesAtBank(bankid)
+
+Get Currencies at a Bank
+
+&lt;p&gt;Get Currencies specified by BANK_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;alphanumeric_code&lt;/strong&gt;&lt;/a&gt;: alphanumeric_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currencies&lt;/strong&gt;&lt;/a&gt;: currencies&lt;/p&gt; 
+
+### Example
+
+```ts
+import {
+  Configuration,
+  FXApi,
+} from 'obp-typescript';
+import type { GetCurrenciesAtBankRequest } from 'obp-typescript';
+
+async function example() {
+  console.log("🚀 Testing obp-typescript SDK...");
+  const config = new Configuration({ 
+    // To configure OAuth2 access token for authorization: OAuth2 accessCode
+    accessToken: "YOUR ACCESS TOKEN",
+    // To configure API key authorization: GatewayLogin
+    apiKey: "YOUR API KEY",
+    // To configure API key authorization: DirectLogin
+    apiKey: "YOUR API KEY",
+  });
+  const api = new FXApi(config);
+
+  const body = {
+    // string | The BANKID identifier
+    bankid: bankid_example,
+  } satisfies GetCurrenciesAtBankRequest;
+
+  try {
+    const data = await api.getCurrenciesAtBank(body);
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
+
+### Return type
+
+[**GetCurrenciesAtBank200Response**](GetCurrenciesAtBank200Response.md)
+
+### Authorization
+
+[OAuth2 accessCode](../README.md#OAuth2-accessCode), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+
+## getCurrentFxRate
+
+> CreateFxRequest getCurrentFxRate(bankid, fromcurrencycode, tocurrencycode)
 
 Get Current FxRate
 
@@ -105,7 +181,7 @@ import {
   Configuration,
   FXApi,
 } from 'obp-typescript';
-import type { OBPv220GetCurrentFxRateRequest } from 'obp-typescript';
+import type { GetCurrentFxRateRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -126,10 +202,10 @@ async function example() {
     fromcurrencycode: fromcurrencycode_example,
     // string | The TOCURRENCYCODE identifier
     tocurrencycode: tocurrencycode_example,
-  } satisfies OBPv220GetCurrentFxRateRequest;
+  } satisfies GetCurrentFxRateRequest;
 
   try {
-    const data = await api.oBPv220GetCurrentFxRate(body);
+    const data = await api.getCurrentFxRate(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -151,83 +227,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv220CreateFxRequest**](OBPv220CreateFxRequest.md)
-
-### Authorization
-
-[OAuth2 accessCode](../README.md#OAuth2-accessCode), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
-
-
-## oBPv510GetCurrenciesAtBank
-
-> OBPv510GetCurrenciesAtBank200Response oBPv510GetCurrenciesAtBank(bankid)
-
-Get Currencies at a Bank
-
-&lt;p&gt;Get Currencies specified by BANK_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;alphanumeric_code&lt;/strong&gt;&lt;/a&gt;: alphanumeric_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currencies&lt;/strong&gt;&lt;/a&gt;: currencies&lt;/p&gt; 
-
-### Example
-
-```ts
-import {
-  Configuration,
-  FXApi,
-} from 'obp-typescript';
-import type { OBPv510GetCurrenciesAtBankRequest } from 'obp-typescript';
-
-async function example() {
-  console.log("🚀 Testing obp-typescript SDK...");
-  const config = new Configuration({ 
-    // To configure OAuth2 access token for authorization: OAuth2 accessCode
-    accessToken: "YOUR ACCESS TOKEN",
-    // To configure API key authorization: GatewayLogin
-    apiKey: "YOUR API KEY",
-    // To configure API key authorization: DirectLogin
-    apiKey: "YOUR API KEY",
-  });
-  const api = new FXApi(config);
-
-  const body = {
-    // string | The BANKID identifier
-    bankid: bankid_example,
-  } satisfies OBPv510GetCurrenciesAtBankRequest;
-
-  try {
-    const data = await api.oBPv510GetCurrenciesAtBank(body);
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
-
-### Return type
-
-[**OBPv510GetCurrenciesAtBank200Response**](OBPv510GetCurrenciesAtBank200Response.md)
+[**CreateFxRequest**](CreateFxRequest.md)
 
 ### Authorization
 

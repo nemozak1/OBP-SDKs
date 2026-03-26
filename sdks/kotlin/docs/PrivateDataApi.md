@@ -1,16 +1,16 @@
 # PrivateDataApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv300CorePrivateAccountsAllBanks**](PrivateDataApi.md#oBPv300CorePrivateAccountsAllBanks) | **GET** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private) |
-| [**oBPv600GetAccountsAtBank**](PrivateDataApi.md#oBPv600GetAccountsAtBank) | **GET** /obp/v6.0.0/banks/{bankid}/accounts | Get Accounts at Bank |
+| [**corePrivateAccountsAllBanks**](PrivateDataApi.md#corePrivateAccountsAllBanks) | **GET** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private) |
+| [**getAccountsAtBank**](PrivateDataApi.md#getAccountsAtBank) | **GET** /obp/v6.0.0/banks/{bankid}/accounts | Get Accounts at Bank |
 
 
-<a id="oBPv300CorePrivateAccountsAllBanks"></a>
-# **oBPv300CorePrivateAccountsAllBanks**
-> OBPv300PrivateAccountsAtOneBank200Response oBPv300CorePrivateAccountsAllBanks()
+<a id="corePrivateAccountsAllBanks"></a>
+# **corePrivateAccountsAllBanks**
+> PrivateAccountsAtOneBank200Response corePrivateAccountsAllBanks()
 
 Get Accounts at all Banks (private)
 
@@ -24,13 +24,13 @@ Get Accounts at all Banks (private)
 
 val apiInstance = PrivateDataApi()
 try {
-    val result : OBPv300PrivateAccountsAtOneBank200Response = apiInstance.oBPv300CorePrivateAccountsAllBanks()
+    val result : PrivateAccountsAtOneBank200Response = apiInstance.corePrivateAccountsAllBanks()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling PrivateDataApi#oBPv300CorePrivateAccountsAllBanks")
+    println("4xx response calling PrivateDataApi#corePrivateAccountsAllBanks")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling PrivateDataApi#oBPv300CorePrivateAccountsAllBanks")
+    println("5xx response calling PrivateDataApi#corePrivateAccountsAllBanks")
     e.printStackTrace()
 }
 ```
@@ -40,7 +40,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv300PrivateAccountsAtOneBank200Response**](OBPv300PrivateAccountsAtOneBank200Response.md)
+[**PrivateAccountsAtOneBank200Response**](PrivateAccountsAtOneBank200Response.md)
 
 ### Authorization
 
@@ -51,17 +51,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600GetAccountsAtBank"></a>
-# **oBPv600GetAccountsAtBank**
-> OBPv600GetAccountsAtBank200Response oBPv600GetAccountsAtBank(bankid)
+<a id="getAccountsAtBank"></a>
+# **getAccountsAtBank**
+> GetAccountsAtBank200Response getAccountsAtBank(bankid)
 
 Get Accounts at Bank
 
@@ -76,13 +76,13 @@ Get Accounts at Bank
 val apiInstance = PrivateDataApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 try {
-    val result : OBPv600GetAccountsAtBank200Response = apiInstance.oBPv600GetAccountsAtBank(bankid)
+    val result : GetAccountsAtBank200Response = apiInstance.getAccountsAtBank(bankid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling PrivateDataApi#oBPv600GetAccountsAtBank")
+    println("4xx response calling PrivateDataApi#getAccountsAtBank")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling PrivateDataApi#oBPv600GetAccountsAtBank")
+    println("5xx response calling PrivateDataApi#getAccountsAtBank")
     e.printStackTrace()
 }
 ```
@@ -94,7 +94,7 @@ try {
 
 ### Return type
 
-[**OBPv600GetAccountsAtBank200Response**](OBPv600GetAccountsAtBank200Response.md)
+[**GetAccountsAtBank200Response**](GetAccountsAtBank200Response.md)
 
 ### Authorization
 
@@ -105,8 +105,8 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 

@@ -9,10 +9,10 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:obp_dart/src/api_util.dart';
-import 'package:obp_dart/src/model/obpv400_get_dynamic_endpoints200_response.dart';
-import 'package:obp_dart/src/model/obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items.dart';
-import 'package:obp_dart/src/model/obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string.dart';
-import 'package:obp_dart/src/model/obpv400_update_bank_level_dynamic_endpoint_host_request.dart';
+import 'package:obp_dart/src/model/get_dynamic_endpoints200_response.dart';
+import 'package:obp_dart/src/model/get_dynamic_endpoints200_response_dynamic_endpoints_inner.dart';
+import 'package:obp_dart/src/model/get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string.dart';
+import 'package:obp_dart/src/model/update_bank_level_dynamic_endpoint_host_request.dart';
 
 class DynamicEndpointManageApi {
 
@@ -27,7 +27,7 @@ class DynamicEndpointManageApi {
   ///
   /// Parameters:
   /// * [bankid] - The BANKID identifier
-  /// * [oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString] - Request body
+  /// * [getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -35,11 +35,11 @@ class DynamicEndpointManageApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetDynamicEndpoints200ResponseDynamicEndpointsInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems>> oBPv400CreateBankLevelDynamicEndpoint({ 
+  Future<Response<GetDynamicEndpoints200ResponseDynamicEndpointsInner>> createBankLevelDynamicEndpoint({ 
     required String bankid,
-    required OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString,
+    required GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -66,7 +66,7 @@ class DynamicEndpointManageApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -79,8 +79,8 @@ class DynamicEndpointManageApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString);
-      _bodyData = _serializers.serialize(oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, specifiedType: _type);
+      const _type = FullType(GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString);
+      _bodyData = _serializers.serialize(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -103,14 +103,14 @@ class DynamicEndpointManageApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems? _responseData;
+    GetDynamicEndpoints200ResponseDynamicEndpointsInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems),
-      ) as OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems;
+        specifiedType: const FullType(GetDynamicEndpoints200ResponseDynamicEndpointsInner),
+      ) as GetDynamicEndpoints200ResponseDynamicEndpointsInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -122,7 +122,7 @@ class DynamicEndpointManageApi {
       );
     }
 
-    return Response<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems>(
+    return Response<GetDynamicEndpoints200ResponseDynamicEndpointsInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -138,7 +138,7 @@ class DynamicEndpointManageApi {
   /// &lt;p&gt;Create dynamic endpoints.&lt;/p&gt; &lt;p&gt;Create dynamic endpoints with one json format swagger content.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;dynamic_entity&lt;/code&gt;, then you need link the swagger fields to the dynamic entity fields,&lt;br /&gt; please check &lt;code&gt;Endpoint Mapping&lt;/code&gt; endpoints.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;obp_mock&lt;/code&gt;, every dynamic endpoint will return example response of swagger,&lt;/p&gt; &lt;p&gt;when create MethodRouting for given dynamic endpoint, it will be routed to given url.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
   ///
   /// Parameters:
-  /// * [oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString] - Request body
+  /// * [getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -146,10 +146,10 @@ class DynamicEndpointManageApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetDynamicEndpoints200ResponseDynamicEndpointsInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems>> oBPv400CreateDynamicEndpoint({ 
-    required OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString,
+  Future<Response<GetDynamicEndpoints200ResponseDynamicEndpointsInner>> createDynamicEndpoint({ 
+    required GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -176,7 +176,7 @@ class DynamicEndpointManageApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -189,8 +189,8 @@ class DynamicEndpointManageApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString);
-      _bodyData = _serializers.serialize(oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, specifiedType: _type);
+      const _type = FullType(GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString);
+      _bodyData = _serializers.serialize(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -213,14 +213,14 @@ class DynamicEndpointManageApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems? _responseData;
+    GetDynamicEndpoints200ResponseDynamicEndpointsInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems),
-      ) as OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems;
+        specifiedType: const FullType(GetDynamicEndpoints200ResponseDynamicEndpointsInner),
+      ) as GetDynamicEndpoints200ResponseDynamicEndpointsInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -232,7 +232,7 @@ class DynamicEndpointManageApi {
       );
     }
 
-    return Response<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems>(
+    return Response<GetDynamicEndpoints200ResponseDynamicEndpointsInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -259,7 +259,7 @@ class DynamicEndpointManageApi {
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> oBPv400DeleteBankLevelDynamicEndpoint({ 
+  Future<Response<void>> deleteBankLevelDynamicEndpoint({ 
     required String bankid,
     required String dynamicendpointid,
     CancelToken? cancelToken,
@@ -288,7 +288,7 @@ class DynamicEndpointManageApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -322,7 +322,7 @@ class DynamicEndpointManageApi {
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> oBPv400DeleteDynamicEndpoint({ 
+  Future<Response<void>> deleteDynamicEndpoint({ 
     required String dynamicendpointid,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -350,7 +350,7 @@ class DynamicEndpointManageApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -384,7 +384,7 @@ class DynamicEndpointManageApi {
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> oBPv400DeleteMyDynamicEndpoint({ 
+  Future<Response<void>> deleteMyDynamicEndpoint({ 
     required String dynamicendpointid,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -412,7 +412,7 @@ class DynamicEndpointManageApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -445,9 +445,9 @@ class DynamicEndpointManageApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetDynamicEndpoints200ResponseDynamicEndpointsInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems>> oBPv400GetBankLevelDynamicEndpoint({ 
+  Future<Response<GetDynamicEndpoints200ResponseDynamicEndpointsInner>> getBankLevelDynamicEndpoint({ 
     required String bankid,
     required String dynamicendpointid,
     CancelToken? cancelToken,
@@ -476,7 +476,7 @@ class DynamicEndpointManageApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -493,14 +493,14 @@ class DynamicEndpointManageApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems? _responseData;
+    GetDynamicEndpoints200ResponseDynamicEndpointsInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems),
-      ) as OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems;
+        specifiedType: const FullType(GetDynamicEndpoints200ResponseDynamicEndpointsInner),
+      ) as GetDynamicEndpoints200ResponseDynamicEndpointsInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -512,7 +512,7 @@ class DynamicEndpointManageApi {
       );
     }
 
-    return Response<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems>(
+    return Response<GetDynamicEndpoints200ResponseDynamicEndpointsInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -536,9 +536,9 @@ class DynamicEndpointManageApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetDynamicEndpoints200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetDynamicEndpoints200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetDynamicEndpoints200Response>> oBPv400GetBankLevelDynamicEndpoints({ 
+  Future<Response<GetDynamicEndpoints200Response>> getBankLevelDynamicEndpoints({ 
     required String bankid,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -566,7 +566,7 @@ class DynamicEndpointManageApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -583,14 +583,14 @@ class DynamicEndpointManageApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetDynamicEndpoints200Response? _responseData;
+    GetDynamicEndpoints200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetDynamicEndpoints200Response),
-      ) as OBPv400GetDynamicEndpoints200Response;
+        specifiedType: const FullType(GetDynamicEndpoints200Response),
+      ) as GetDynamicEndpoints200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -602,7 +602,7 @@ class DynamicEndpointManageApi {
       );
     }
 
-    return Response<OBPv400GetDynamicEndpoints200Response>(
+    return Response<GetDynamicEndpoints200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -626,9 +626,9 @@ class DynamicEndpointManageApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetDynamicEndpoints200ResponseDynamicEndpointsInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems>> oBPv400GetDynamicEndpoint({ 
+  Future<Response<GetDynamicEndpoints200ResponseDynamicEndpointsInner>> getDynamicEndpoint({ 
     required String dynamicendpointid,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -656,7 +656,7 @@ class DynamicEndpointManageApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -673,14 +673,14 @@ class DynamicEndpointManageApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems? _responseData;
+    GetDynamicEndpoints200ResponseDynamicEndpointsInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems),
-      ) as OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems;
+        specifiedType: const FullType(GetDynamicEndpoints200ResponseDynamicEndpointsInner),
+      ) as GetDynamicEndpoints200ResponseDynamicEndpointsInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -692,7 +692,7 @@ class DynamicEndpointManageApi {
       );
     }
 
-    return Response<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems>(
+    return Response<GetDynamicEndpoints200ResponseDynamicEndpointsInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -715,9 +715,9 @@ class DynamicEndpointManageApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetDynamicEndpoints200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetDynamicEndpoints200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetDynamicEndpoints200Response>> oBPv400GetDynamicEndpoints({ 
+  Future<Response<GetDynamicEndpoints200Response>> getDynamicEndpoints({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -744,7 +744,7 @@ class DynamicEndpointManageApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -761,14 +761,14 @@ class DynamicEndpointManageApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetDynamicEndpoints200Response? _responseData;
+    GetDynamicEndpoints200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetDynamicEndpoints200Response),
-      ) as OBPv400GetDynamicEndpoints200Response;
+        specifiedType: const FullType(GetDynamicEndpoints200Response),
+      ) as GetDynamicEndpoints200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -780,7 +780,7 @@ class DynamicEndpointManageApi {
       );
     }
 
-    return Response<OBPv400GetDynamicEndpoints200Response>(
+    return Response<GetDynamicEndpoints200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -803,9 +803,9 @@ class DynamicEndpointManageApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetDynamicEndpoints200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetDynamicEndpoints200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetDynamicEndpoints200Response>> oBPv400GetMyDynamicEndpoints({ 
+  Future<Response<GetDynamicEndpoints200Response>> getMyDynamicEndpoints({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -832,7 +832,7 @@ class DynamicEndpointManageApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -849,14 +849,14 @@ class DynamicEndpointManageApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetDynamicEndpoints200Response? _responseData;
+    GetDynamicEndpoints200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetDynamicEndpoints200Response),
-      ) as OBPv400GetDynamicEndpoints200Response;
+        specifiedType: const FullType(GetDynamicEndpoints200Response),
+      ) as GetDynamicEndpoints200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -868,7 +868,7 @@ class DynamicEndpointManageApi {
       );
     }
 
-    return Response<OBPv400GetDynamicEndpoints200Response>(
+    return Response<GetDynamicEndpoints200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -886,7 +886,7 @@ class DynamicEndpointManageApi {
   /// Parameters:
   /// * [bankid] - The BANKID identifier
   /// * [dynamicendpointid] - The DYNAMICENDPOINTID identifier
-  /// * [oBPv400UpdateBankLevelDynamicEndpointHostRequest] - Request body
+  /// * [updateBankLevelDynamicEndpointHostRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -894,12 +894,12 @@ class DynamicEndpointManageApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400UpdateBankLevelDynamicEndpointHostRequest] as data
+  /// Returns a [Future] containing a [Response] with a [UpdateBankLevelDynamicEndpointHostRequest] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400UpdateBankLevelDynamicEndpointHostRequest>> oBPv400UpdateBankLevelDynamicEndpointHost({ 
+  Future<Response<UpdateBankLevelDynamicEndpointHostRequest>> updateBankLevelDynamicEndpointHost({ 
     required String bankid,
     required String dynamicendpointid,
-    required OBPv400UpdateBankLevelDynamicEndpointHostRequest oBPv400UpdateBankLevelDynamicEndpointHostRequest,
+    required UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHostRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -926,7 +926,7 @@ class DynamicEndpointManageApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -939,8 +939,8 @@ class DynamicEndpointManageApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv400UpdateBankLevelDynamicEndpointHostRequest);
-      _bodyData = _serializers.serialize(oBPv400UpdateBankLevelDynamicEndpointHostRequest, specifiedType: _type);
+      const _type = FullType(UpdateBankLevelDynamicEndpointHostRequest);
+      _bodyData = _serializers.serialize(updateBankLevelDynamicEndpointHostRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -963,14 +963,14 @@ class DynamicEndpointManageApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400UpdateBankLevelDynamicEndpointHostRequest? _responseData;
+    UpdateBankLevelDynamicEndpointHostRequest? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400UpdateBankLevelDynamicEndpointHostRequest),
-      ) as OBPv400UpdateBankLevelDynamicEndpointHostRequest;
+        specifiedType: const FullType(UpdateBankLevelDynamicEndpointHostRequest),
+      ) as UpdateBankLevelDynamicEndpointHostRequest;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -982,7 +982,7 @@ class DynamicEndpointManageApi {
       );
     }
 
-    return Response<OBPv400UpdateBankLevelDynamicEndpointHostRequest>(
+    return Response<UpdateBankLevelDynamicEndpointHostRequest>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -999,7 +999,7 @@ class DynamicEndpointManageApi {
   ///
   /// Parameters:
   /// * [dynamicendpointid] - The DYNAMICENDPOINTID identifier
-  /// * [oBPv400UpdateBankLevelDynamicEndpointHostRequest] - Request body
+  /// * [updateBankLevelDynamicEndpointHostRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1007,11 +1007,11 @@ class DynamicEndpointManageApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400UpdateBankLevelDynamicEndpointHostRequest] as data
+  /// Returns a [Future] containing a [Response] with a [UpdateBankLevelDynamicEndpointHostRequest] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400UpdateBankLevelDynamicEndpointHostRequest>> oBPv400UpdateDynamicEndpointHost({ 
+  Future<Response<UpdateBankLevelDynamicEndpointHostRequest>> updateDynamicEndpointHost({ 
     required String dynamicendpointid,
-    required OBPv400UpdateBankLevelDynamicEndpointHostRequest oBPv400UpdateBankLevelDynamicEndpointHostRequest,
+    required UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHostRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1038,7 +1038,7 @@ class DynamicEndpointManageApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -1051,8 +1051,8 @@ class DynamicEndpointManageApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv400UpdateBankLevelDynamicEndpointHostRequest);
-      _bodyData = _serializers.serialize(oBPv400UpdateBankLevelDynamicEndpointHostRequest, specifiedType: _type);
+      const _type = FullType(UpdateBankLevelDynamicEndpointHostRequest);
+      _bodyData = _serializers.serialize(updateBankLevelDynamicEndpointHostRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -1075,14 +1075,14 @@ class DynamicEndpointManageApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400UpdateBankLevelDynamicEndpointHostRequest? _responseData;
+    UpdateBankLevelDynamicEndpointHostRequest? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400UpdateBankLevelDynamicEndpointHostRequest),
-      ) as OBPv400UpdateBankLevelDynamicEndpointHostRequest;
+        specifiedType: const FullType(UpdateBankLevelDynamicEndpointHostRequest),
+      ) as UpdateBankLevelDynamicEndpointHostRequest;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -1094,7 +1094,7 @@ class DynamicEndpointManageApi {
       );
     }
 
-    return Response<OBPv400UpdateBankLevelDynamicEndpointHostRequest>(
+    return Response<UpdateBankLevelDynamicEndpointHostRequest>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

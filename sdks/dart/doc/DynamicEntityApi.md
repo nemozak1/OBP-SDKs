@@ -5,18 +5,18 @@
 import 'package:obp_dart/api.dart';
 ```
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv600CleanupOrphanedDynamicEntityRecords**](DynamicEntityApi.md#obpv600cleanuporphaneddynamicentityrecords) | **DELETE** /obp/v6.0.0/management/diagnostics/dynamic-entities/orphaned-records | Cleanup Orphaned Dynamic Entity Records
-[**oBPv600GetAvailablePersonalDynamicEntities**](DynamicEntityApi.md#obpv600getavailablepersonaldynamicentities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities
-[**oBPv600GetDynamicEntityDiagnostics**](DynamicEntityApi.md#obpv600getdynamicentitydiagnostics) | **GET** /obp/v6.0.0/management/diagnostics/dynamic-entities | Get Dynamic Entity Diagnostics
-[**oBPv600GetReferenceTypes**](DynamicEntityApi.md#obpv600getreferencetypes) | **GET** /obp/v6.0.0/management/dynamic-entities/reference-types | Get Reference Types for Dynamic Entities
+[**cleanupOrphanedDynamicEntityRecords**](DynamicEntityApi.md#cleanuporphaneddynamicentityrecords) | **DELETE** /obp/v6.0.0/management/diagnostics/dynamic-entities/orphaned-records | Cleanup Orphaned Dynamic Entity Records
+[**getAvailablePersonalDynamicEntities**](DynamicEntityApi.md#getavailablepersonaldynamicentities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities
+[**getDynamicEntityDiagnostics**](DynamicEntityApi.md#getdynamicentitydiagnostics) | **GET** /obp/v6.0.0/management/diagnostics/dynamic-entities | Get Dynamic Entity Diagnostics
+[**getReferenceTypes**](DynamicEntityApi.md#getreferencetypes) | **GET** /obp/v6.0.0/management/dynamic-entities/reference-types | Get Reference Types for Dynamic Entities
 
 
-# **oBPv600CleanupOrphanedDynamicEntityRecords**
-> OBPv600CleanupOrphanedDynamicEntityRecords200Response oBPv600CleanupOrphanedDynamicEntityRecords()
+# **cleanupOrphanedDynamicEntityRecords**
+> CleanupOrphanedDynamicEntityRecords200Response cleanupOrphanedDynamicEntityRecords()
 
 Cleanup Orphaned Dynamic Entity Records
 
@@ -39,10 +39,10 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getDynamicEntityApi();
 
 try {
-    final response = api.oBPv600CleanupOrphanedDynamicEntityRecords();
+    final response = api.cleanupOrphanedDynamicEntityRecords();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling DynamicEntityApi->oBPv600CleanupOrphanedDynamicEntityRecords: $e\n');
+    print('Exception when calling DynamicEntityApi->cleanupOrphanedDynamicEntityRecords: $e\n');
 }
 ```
 
@@ -51,7 +51,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600CleanupOrphanedDynamicEntityRecords200Response**](OBPv600CleanupOrphanedDynamicEntityRecords200Response.md)
+[**CleanupOrphanedDynamicEntityRecords200Response**](CleanupOrphanedDynamicEntityRecords200Response.md)
 
 ### Authorization
 
@@ -64,8 +64,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetAvailablePersonalDynamicEntities**
-> OBPv600GetAvailablePersonalDynamicEntities200Response oBPv600GetAvailablePersonalDynamicEntities()
+# **getAvailablePersonalDynamicEntities**
+> GetAvailablePersonalDynamicEntities200Response getAvailablePersonalDynamicEntities()
 
 Get Available Personal Dynamic Entities
 
@@ -88,10 +88,10 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getDynamicEntityApi();
 
 try {
-    final response = api.oBPv600GetAvailablePersonalDynamicEntities();
+    final response = api.getAvailablePersonalDynamicEntities();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling DynamicEntityApi->oBPv600GetAvailablePersonalDynamicEntities: $e\n');
+    print('Exception when calling DynamicEntityApi->getAvailablePersonalDynamicEntities: $e\n');
 }
 ```
 
@@ -100,7 +100,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAvailablePersonalDynamicEntities200Response**](OBPv600GetAvailablePersonalDynamicEntities200Response.md)
+[**GetAvailablePersonalDynamicEntities200Response**](GetAvailablePersonalDynamicEntities200Response.md)
 
 ### Authorization
 
@@ -113,8 +113,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetDynamicEntityDiagnostics**
-> OBPv600GetDynamicEntityDiagnostics200Response oBPv600GetDynamicEntityDiagnostics()
+# **getDynamicEntityDiagnostics**
+> GetDynamicEntityDiagnostics200Response getDynamicEntityDiagnostics()
 
 Get Dynamic Entity Diagnostics
 
@@ -137,10 +137,10 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getDynamicEntityApi();
 
 try {
-    final response = api.oBPv600GetDynamicEntityDiagnostics();
+    final response = api.getDynamicEntityDiagnostics();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling DynamicEntityApi->oBPv600GetDynamicEntityDiagnostics: $e\n');
+    print('Exception when calling DynamicEntityApi->getDynamicEntityDiagnostics: $e\n');
 }
 ```
 
@@ -149,7 +149,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetDynamicEntityDiagnostics200Response**](OBPv600GetDynamicEntityDiagnostics200Response.md)
+[**GetDynamicEntityDiagnostics200Response**](GetDynamicEntityDiagnostics200Response.md)
 
 ### Authorization
 
@@ -162,8 +162,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetReferenceTypes**
-> OBPv600GetReferenceTypes200Response oBPv600GetReferenceTypes()
+# **getReferenceTypes**
+> GetReferenceTypes200Response getReferenceTypes()
 
 Get Reference Types for Dynamic Entities
 
@@ -186,10 +186,10 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getDynamicEntityApi();
 
 try {
-    final response = api.oBPv600GetReferenceTypes();
+    final response = api.getReferenceTypes();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling DynamicEntityApi->oBPv600GetReferenceTypes: $e\n');
+    print('Exception when calling DynamicEntityApi->getReferenceTypes: $e\n');
 }
 ```
 
@@ -198,7 +198,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetReferenceTypes200Response**](OBPv600GetReferenceTypes200Response.md)
+[**GetReferenceTypes200Response**](GetReferenceTypes200Response.md)
 
 ### Authorization
 

@@ -1,21 +1,21 @@
 # TransactionAttributeAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv400CreateOrUpdateTransactionAttributeDefinition**](TransactionAttributeAPI.md#obpv400createorupdatetransactionattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Create or Update Transaction Attribute Definition
-[**oBPv400CreateTransactionAttribute**](TransactionAttributeAPI.md#obpv400createtransactionattribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attribute | Create Transaction Attribute
-[**oBPv400DeleteTransactionAttributeDefinition**](TransactionAttributeAPI.md#obpv400deletetransactionattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction | Delete Transaction Attribute Definition
-[**oBPv400GetTransactionAttributeById**](TransactionAttributeAPI.md#obpv400gettransactionattributebyid) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{attributeid} | Get Transaction Attribute By Id
-[**oBPv400GetTransactionAttributeDefinition**](TransactionAttributeAPI.md#obpv400gettransactionattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Get Transaction Attribute Definition
-[**oBPv400GetTransactionAttributes**](TransactionAttributeAPI.md#obpv400gettransactionattributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes | Get Transaction Attributes
-[**oBPv400UpdateTransactionAttribute**](TransactionAttributeAPI.md#obpv400updatetransactionattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{accountattributeid} | Update Transaction Attribute
+[**createOrUpdateTransactionAttributeDefinition**](TransactionAttributeAPI.md#createorupdatetransactionattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Create or Update Transaction Attribute Definition
+[**createTransactionAttribute**](TransactionAttributeAPI.md#createtransactionattribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attribute | Create Transaction Attribute
+[**deleteTransactionAttributeDefinition**](TransactionAttributeAPI.md#deletetransactionattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction | Delete Transaction Attribute Definition
+[**getTransactionAttributeById**](TransactionAttributeAPI.md#gettransactionattributebyid) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{attributeid} | Get Transaction Attribute By Id
+[**getTransactionAttributeDefinition**](TransactionAttributeAPI.md#gettransactionattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Get Transaction Attribute Definition
+[**getTransactionAttributes**](TransactionAttributeAPI.md#gettransactionattributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes | Get Transaction Attributes
+[**updateTransactionAttribute**](TransactionAttributeAPI.md#updatetransactionattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{accountattributeid} | Update Transaction Attribute
 
 
-# **oBPv400CreateOrUpdateTransactionAttributeDefinition**
+# **createOrUpdateTransactionAttributeDefinition**
 ```swift
-    open class func oBPv400CreateOrUpdateTransactionAttributeDefinition(bankid: String, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, completion: @escaping (_ data: OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems?, _ error: Error?) -> Void)
+    open class func createOrUpdateTransactionAttributeDefinition(bankid: String, createOrUpdateTransactionRequestAttributeDefinitionRequest: CreateOrUpdateTransactionRequestAttributeDefinitionRequest, completion: @escaping (_ data: GetTransactionRequestAttributeDefinition200ResponseAttributesInner?, _ error: Error?) -> Void)
 ```
 
 Create or Update Transaction Attribute Definition
@@ -28,10 +28,10 @@ Create or Update Transaction Attribute Definition
 import OBPSwift
 
 let bankid = "bankid_example" // String | The BANKID identifier
-let oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest = OBPv4_0_0_createOrUpdateTransactionRequestAttributeDefinition_request(type: "type_example", properties: OBPv4_0_0_createOrUpdateTransactionRequestAttributeDefinition_request_properties(name: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), isActive: nil, description: nil, alias: nil, canBeSeenOnViews: OBPv6_0_0_getActiveRateLimitsAtDate_200_response_properties_considered_rate_limit_ids(type: "type_example", items: nil), category: nil, type: nil)) // OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+let createOrUpdateTransactionRequestAttributeDefinitionRequest = createOrUpdateTransactionRequestAttributeDefinition_request(name: "name_example", isActive: false, description: "description_example", alias: "alias_example", canBeSeenOnViews: ["canBeSeenOnViews_example"], category: "category_example", type: "type_example") // CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
 
 // Create or Update Transaction Attribute Definition
-TransactionAttributeAPI.oBPv400CreateOrUpdateTransactionAttributeDefinition(bankid: bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest) { (response, error) in
+TransactionAttributeAPI.createOrUpdateTransactionAttributeDefinition(bankid: bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest: createOrUpdateTransactionRequestAttributeDefinitionRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -48,11 +48,11 @@ TransactionAttributeAPI.oBPv400CreateOrUpdateTransactionAttributeDefinition(bank
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String** | The BANKID identifier | 
- **oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest** | [**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body | 
+ **createOrUpdateTransactionRequestAttributeDefinitionRequest** | [**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
+[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
 
 ### Authorization
 
@@ -65,9 +65,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400CreateTransactionAttribute**
+# **createTransactionAttribute**
 ```swift
-    open class func oBPv400CreateTransactionAttribute(bankid: String, accountid: String, transactionid: String, oBPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest, completion: @escaping (_ data: OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems?, _ error: Error?) -> Void)
+    open class func createTransactionAttribute(bankid: String, accountid: String, transactionid: String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest, completion: @escaping (_ data: GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner?, _ error: Error?) -> Void)
 ```
 
 Create Transaction Attribute
@@ -82,10 +82,10 @@ import OBPSwift
 let bankid = "bankid_example" // String | The BANKID identifier
 let accountid = "accountid_example" // String | The ACCOUNTID identifier
 let transactionid = "transactionid_example" // String | The TRANSACTIONID identifier
-let oBPv600CreatePersonalDataFieldRequest = OBPv6_0_0_createPersonalDataField_request(type: "type_example", properties: OBPv6_0_0_createPersonalDataField_request_properties(name: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), type: nil, value: nil)) // OBPv600CreatePersonalDataFieldRequest | Request body
+let createPersonalDataFieldRequest = createPersonalDataField_request(name: "name_example", type: "type_example", value: "value_example") // CreatePersonalDataFieldRequest | Request body
 
 // Create Transaction Attribute
-TransactionAttributeAPI.oBPv400CreateTransactionAttribute(bankid: bankid, accountid: accountid, transactionid: transactionid, oBPv600CreatePersonalDataFieldRequest: oBPv600CreatePersonalDataFieldRequest) { (response, error) in
+TransactionAttributeAPI.createTransactionAttribute(bankid: bankid, accountid: accountid, transactionid: transactionid, createPersonalDataFieldRequest: createPersonalDataFieldRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -104,11 +104,11 @@ Name | Type | Description  | Notes
  **bankid** | **String** | The BANKID identifier | 
  **accountid** | **String** | The ACCOUNTID identifier | 
  **transactionid** | **String** | The TRANSACTIONID identifier | 
- **oBPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md) | Request body | 
+ **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems**](OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems.md)
+[**GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner**](GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner.md)
 
 ### Authorization
 
@@ -121,9 +121,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400DeleteTransactionAttributeDefinition**
+# **deleteTransactionAttributeDefinition**
 ```swift
-    open class func oBPv400DeleteTransactionAttributeDefinition(bankid: String, attributedefinitionid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func deleteTransactionAttributeDefinition(bankid: String, attributedefinitionid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete Transaction Attribute Definition
@@ -139,7 +139,7 @@ let bankid = "bankid_example" // String | The BANKID identifier
 let attributedefinitionid = "attributedefinitionid_example" // String | The ATTRIBUTEDEFINITIONID identifier
 
 // Delete Transaction Attribute Definition
-TransactionAttributeAPI.oBPv400DeleteTransactionAttributeDefinition(bankid: bankid, attributedefinitionid: attributedefinitionid) { (response, error) in
+TransactionAttributeAPI.deleteTransactionAttributeDefinition(bankid: bankid, attributedefinitionid: attributedefinitionid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -173,9 +173,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetTransactionAttributeById**
+# **getTransactionAttributeById**
 ```swift
-    open class func oBPv400GetTransactionAttributeById(bankid: String, accountid: String, transactionid: String, attributeid: String, completion: @escaping (_ data: OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems?, _ error: Error?) -> Void)
+    open class func getTransactionAttributeById(bankid: String, accountid: String, transactionid: String, attributeid: String, completion: @escaping (_ data: GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner?, _ error: Error?) -> Void)
 ```
 
 Get Transaction Attribute By Id
@@ -193,7 +193,7 @@ let transactionid = "transactionid_example" // String | The TRANSACTIONID identi
 let attributeid = "attributeid_example" // String | The ATTRIBUTEID identifier
 
 // Get Transaction Attribute By Id
-TransactionAttributeAPI.oBPv400GetTransactionAttributeById(bankid: bankid, accountid: accountid, transactionid: transactionid, attributeid: attributeid) { (response, error) in
+TransactionAttributeAPI.getTransactionAttributeById(bankid: bankid, accountid: accountid, transactionid: transactionid, attributeid: attributeid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems**](OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems.md)
+[**GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner**](GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner.md)
 
 ### Authorization
 
@@ -229,9 +229,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetTransactionAttributeDefinition**
+# **getTransactionAttributeDefinition**
 ```swift
-    open class func oBPv400GetTransactionAttributeDefinition(bankid: String, completion: @escaping (_ data: OBPv400GetTransactionRequestAttributeDefinition200Response?, _ error: Error?) -> Void)
+    open class func getTransactionAttributeDefinition(bankid: String, completion: @escaping (_ data: GetTransactionRequestAttributeDefinition200Response?, _ error: Error?) -> Void)
 ```
 
 Get Transaction Attribute Definition
@@ -246,7 +246,7 @@ import OBPSwift
 let bankid = "bankid_example" // String | The BANKID identifier
 
 // Get Transaction Attribute Definition
-TransactionAttributeAPI.oBPv400GetTransactionAttributeDefinition(bankid: bankid) { (response, error) in
+TransactionAttributeAPI.getTransactionAttributeDefinition(bankid: bankid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -266,7 +266,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200Response**](OBPv400GetTransactionRequestAttributeDefinition200Response.md)
+[**GetTransactionRequestAttributeDefinition200Response**](GetTransactionRequestAttributeDefinition200Response.md)
 
 ### Authorization
 
@@ -279,9 +279,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetTransactionAttributes**
+# **getTransactionAttributes**
 ```swift
-    open class func oBPv400GetTransactionAttributes(bankid: String, accountid: String, transactionid: String, completion: @escaping (_ data: OBPv400GetTransactionAttributes200Response?, _ error: Error?) -> Void)
+    open class func getTransactionAttributes(bankid: String, accountid: String, transactionid: String, completion: @escaping (_ data: GetTransactionAttributes200Response?, _ error: Error?) -> Void)
 ```
 
 Get Transaction Attributes
@@ -298,7 +298,7 @@ let accountid = "accountid_example" // String | The ACCOUNTID identifier
 let transactionid = "transactionid_example" // String | The TRANSACTIONID identifier
 
 // Get Transaction Attributes
-TransactionAttributeAPI.oBPv400GetTransactionAttributes(bankid: bankid, accountid: accountid, transactionid: transactionid) { (response, error) in
+TransactionAttributeAPI.getTransactionAttributes(bankid: bankid, accountid: accountid, transactionid: transactionid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -320,7 +320,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetTransactionAttributes200Response**](OBPv400GetTransactionAttributes200Response.md)
+[**GetTransactionAttributes200Response**](GetTransactionAttributes200Response.md)
 
 ### Authorization
 
@@ -333,9 +333,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400UpdateTransactionAttribute**
+# **updateTransactionAttribute**
 ```swift
-    open class func oBPv400UpdateTransactionAttribute(bankid: String, accountid: String, transactionid: String, accountattributeid: String, oBPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest, completion: @escaping (_ data: OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems?, _ error: Error?) -> Void)
+    open class func updateTransactionAttribute(bankid: String, accountid: String, transactionid: String, accountattributeid: String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest, completion: @escaping (_ data: GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner?, _ error: Error?) -> Void)
 ```
 
 Update Transaction Attribute
@@ -351,10 +351,10 @@ let bankid = "bankid_example" // String | The BANKID identifier
 let accountid = "accountid_example" // String | The ACCOUNTID identifier
 let transactionid = "transactionid_example" // String | The TRANSACTIONID identifier
 let accountattributeid = "accountattributeid_example" // String | The ACCOUNTATTRIBUTEID identifier
-let oBPv600CreatePersonalDataFieldRequest = OBPv6_0_0_createPersonalDataField_request(type: "type_example", properties: OBPv6_0_0_createPersonalDataField_request_properties(name: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), type: nil, value: nil)) // OBPv600CreatePersonalDataFieldRequest | Request body
+let createPersonalDataFieldRequest = createPersonalDataField_request(name: "name_example", type: "type_example", value: "value_example") // CreatePersonalDataFieldRequest | Request body
 
 // Update Transaction Attribute
-TransactionAttributeAPI.oBPv400UpdateTransactionAttribute(bankid: bankid, accountid: accountid, transactionid: transactionid, accountattributeid: accountattributeid, oBPv600CreatePersonalDataFieldRequest: oBPv600CreatePersonalDataFieldRequest) { (response, error) in
+TransactionAttributeAPI.updateTransactionAttribute(bankid: bankid, accountid: accountid, transactionid: transactionid, accountattributeid: accountattributeid, createPersonalDataFieldRequest: createPersonalDataFieldRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -374,11 +374,11 @@ Name | Type | Description  | Notes
  **accountid** | **String** | The ACCOUNTID identifier | 
  **transactionid** | **String** | The TRANSACTIONID identifier | 
  **accountattributeid** | **String** | The ACCOUNTATTRIBUTEID identifier | 
- **oBPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md) | Request body | 
+ **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems**](OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems.md)
+[**GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner**](GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner.md)
 
 ### Authorization
 

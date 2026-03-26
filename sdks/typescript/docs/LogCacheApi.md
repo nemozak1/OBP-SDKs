@@ -1,21 +1,21 @@
 # LogCacheApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv510LogCacheAllEndpoint**](LogCacheApi.md#obpv510logcacheallendpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache |
-| [**oBPv510LogCacheDebugEndpoint**](LogCacheApi.md#obpv510logcachedebugendpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache |
-| [**oBPv510LogCacheErrorEndpoint**](LogCacheApi.md#obpv510logcacheerrorendpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache |
-| [**oBPv510LogCacheInfoEndpoint**](LogCacheApi.md#obpv510logcacheinfoendpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache |
-| [**oBPv510LogCacheTraceEndpoint**](LogCacheApi.md#obpv510logcachetraceendpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache |
-| [**oBPv510LogCacheWarningEndpoint**](LogCacheApi.md#obpv510logcachewarningendpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache |
+| [**logCacheAllEndpoint**](LogCacheApi.md#logcacheallendpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache |
+| [**logCacheDebugEndpoint**](LogCacheApi.md#logcachedebugendpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache |
+| [**logCacheErrorEndpoint**](LogCacheApi.md#logcacheerrorendpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache |
+| [**logCacheInfoEndpoint**](LogCacheApi.md#logcacheinfoendpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache |
+| [**logCacheTraceEndpoint**](LogCacheApi.md#logcachetraceendpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache |
+| [**logCacheWarningEndpoint**](LogCacheApi.md#logcachewarningendpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache |
 
 
 
-## oBPv510LogCacheAllEndpoint
+## logCacheAllEndpoint
 
-> oBPv510LogCacheAllEndpoint()
+> logCacheAllEndpoint()
 
 Get All Level Log Cache
 
@@ -28,7 +28,7 @@ import {
   Configuration,
   LogCacheApi,
 } from 'obp-typescript';
-import type { OBPv510LogCacheAllEndpointRequest } from 'obp-typescript';
+import type { LogCacheAllEndpointRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -43,7 +43,7 @@ async function example() {
   const api = new LogCacheApi(config);
 
   try {
-    const data = await api.oBPv510LogCacheAllEndpoint();
+    const data = await api.logCacheAllEndpoint();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -81,9 +81,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv510LogCacheDebugEndpoint
+## logCacheDebugEndpoint
 
-> oBPv510LogCacheDebugEndpoint()
+> logCacheDebugEndpoint()
 
 Get Debug Level Log Cache
 
@@ -96,7 +96,7 @@ import {
   Configuration,
   LogCacheApi,
 } from 'obp-typescript';
-import type { OBPv510LogCacheDebugEndpointRequest } from 'obp-typescript';
+import type { LogCacheDebugEndpointRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -111,7 +111,7 @@ async function example() {
   const api = new LogCacheApi(config);
 
   try {
-    const data = await api.oBPv510LogCacheDebugEndpoint();
+    const data = await api.logCacheDebugEndpoint();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -149,9 +149,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv510LogCacheErrorEndpoint
+## logCacheErrorEndpoint
 
-> oBPv510LogCacheErrorEndpoint()
+> logCacheErrorEndpoint()
 
 Get Error Level Log Cache
 
@@ -164,7 +164,7 @@ import {
   Configuration,
   LogCacheApi,
 } from 'obp-typescript';
-import type { OBPv510LogCacheErrorEndpointRequest } from 'obp-typescript';
+import type { LogCacheErrorEndpointRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -179,7 +179,7 @@ async function example() {
   const api = new LogCacheApi(config);
 
   try {
-    const data = await api.oBPv510LogCacheErrorEndpoint();
+    const data = await api.logCacheErrorEndpoint();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -217,9 +217,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv510LogCacheInfoEndpoint
+## logCacheInfoEndpoint
 
-> oBPv510LogCacheInfoEndpoint()
+> logCacheInfoEndpoint()
 
 Get Info Level Log Cache
 
@@ -232,7 +232,7 @@ import {
   Configuration,
   LogCacheApi,
 } from 'obp-typescript';
-import type { OBPv510LogCacheInfoEndpointRequest } from 'obp-typescript';
+import type { LogCacheInfoEndpointRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -247,7 +247,7 @@ async function example() {
   const api = new LogCacheApi(config);
 
   try {
-    const data = await api.oBPv510LogCacheInfoEndpoint();
+    const data = await api.logCacheInfoEndpoint();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -285,9 +285,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv510LogCacheTraceEndpoint
+## logCacheTraceEndpoint
 
-> oBPv510LogCacheTraceEndpoint()
+> logCacheTraceEndpoint()
 
 Get Trace Level Log Cache
 
@@ -300,7 +300,7 @@ import {
   Configuration,
   LogCacheApi,
 } from 'obp-typescript';
-import type { OBPv510LogCacheTraceEndpointRequest } from 'obp-typescript';
+import type { LogCacheTraceEndpointRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -315,7 +315,7 @@ async function example() {
   const api = new LogCacheApi(config);
 
   try {
-    const data = await api.oBPv510LogCacheTraceEndpoint();
+    const data = await api.logCacheTraceEndpoint();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -353,9 +353,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv510LogCacheWarningEndpoint
+## logCacheWarningEndpoint
 
-> oBPv510LogCacheWarningEndpoint()
+> logCacheWarningEndpoint()
 
 Get Warning Level Log Cache
 
@@ -368,7 +368,7 @@ import {
   Configuration,
   LogCacheApi,
 } from 'obp-typescript';
-import type { OBPv510LogCacheWarningEndpointRequest } from 'obp-typescript';
+import type { LogCacheWarningEndpointRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -383,7 +383,7 @@ async function example() {
   const api = new LogCacheApi(config);
 
   try {
-    const data = await api.oBPv510LogCacheWarningEndpoint();
+    const data = await api.logCacheWarningEndpoint();
     console.log(data);
   } catch (error) {
     console.error(error);

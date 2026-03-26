@@ -1,6 +1,6 @@
 generatorName: go
 outputDir: ../sdks/golang
-inputSpec: ../openapi-spec/obp-openapi.json
+inputSpec: ../openapi-spec/obp-openapi-simplified.json
 additionalProperties:
   packageName: obp
   moduleName: github.com/OpenBankProject/OBP-SDKs/golang

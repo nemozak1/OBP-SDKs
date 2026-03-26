@@ -18,8 +18,8 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
-from obp_python.models.obpv510_update_atm_attribute_request import OBPv510UpdateAtmAttributeRequest
-from obp_python.models.obpv600_create_api_product_attribute200_response import OBPv600CreateApiProductAttribute200Response
+from obp_python.models.create_api_product_attribute200_response import CreateApiProductAttribute200Response
+from obp_python.models.update_atm_attribute_request import UpdateAtmAttributeRequest
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -40,11 +40,11 @@ class ApiProductAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_api_product_attribute(
+    def create_api_product_attribute(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         apiproductcode: Annotated[StrictStr, Field(description="The APIPRODUCTCODE identifier")],
-        obpv510_update_atm_attribute_request: Annotated[OBPv510UpdateAtmAttributeRequest, Field(description="Request body")],
+        update_atm_attribute_request: Annotated[UpdateAtmAttributeRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -57,7 +57,7 @@ class ApiProductAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600CreateApiProductAttribute200Response:
+    ) -> CreateApiProductAttribute200Response:
         """Create Api Product Attribute
 
         <p>Create an Api Product Attribute.</p> <p>Authentication is Required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_PRODUCT_CODE</a>: API_PRODUCT_CODE</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_product_attribute_id</strong></a>: api_product_attribute_id</p> <p><a href=\"/glossary#\"><strong>api_product_code</strong></a>: api_product_code</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -66,8 +66,8 @@ class ApiProductAttributeApi:
         :type bankid: str
         :param apiproductcode: The APIPRODUCTCODE identifier (required)
         :type apiproductcode: str
-        :param obpv510_update_atm_attribute_request: Request body (required)
-        :type obpv510_update_atm_attribute_request: OBPv510UpdateAtmAttributeRequest
+        :param update_atm_attribute_request: Request body (required)
+        :type update_atm_attribute_request: UpdateAtmAttributeRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -90,10 +90,10 @@ class ApiProductAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_api_product_attribute_serialize(
+        _param = self._create_api_product_attribute_serialize(
             bankid=bankid,
             apiproductcode=apiproductcode,
-            obpv510_update_atm_attribute_request=obpv510_update_atm_attribute_request,
+            update_atm_attribute_request=update_atm_attribute_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -101,7 +101,7 @@ class ApiProductAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600CreateApiProductAttribute200Response",
+            '200': "CreateApiProductAttribute200Response",
             '404': None,
             '500': None,
         }
@@ -117,11 +117,11 @@ class ApiProductAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_api_product_attribute_with_http_info(
+    def create_api_product_attribute_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         apiproductcode: Annotated[StrictStr, Field(description="The APIPRODUCTCODE identifier")],
-        obpv510_update_atm_attribute_request: Annotated[OBPv510UpdateAtmAttributeRequest, Field(description="Request body")],
+        update_atm_attribute_request: Annotated[UpdateAtmAttributeRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -134,7 +134,7 @@ class ApiProductAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600CreateApiProductAttribute200Response]:
+    ) -> ApiResponse[CreateApiProductAttribute200Response]:
         """Create Api Product Attribute
 
         <p>Create an Api Product Attribute.</p> <p>Authentication is Required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_PRODUCT_CODE</a>: API_PRODUCT_CODE</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_product_attribute_id</strong></a>: api_product_attribute_id</p> <p><a href=\"/glossary#\"><strong>api_product_code</strong></a>: api_product_code</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -143,8 +143,8 @@ class ApiProductAttributeApi:
         :type bankid: str
         :param apiproductcode: The APIPRODUCTCODE identifier (required)
         :type apiproductcode: str
-        :param obpv510_update_atm_attribute_request: Request body (required)
-        :type obpv510_update_atm_attribute_request: OBPv510UpdateAtmAttributeRequest
+        :param update_atm_attribute_request: Request body (required)
+        :type update_atm_attribute_request: UpdateAtmAttributeRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -167,10 +167,10 @@ class ApiProductAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_api_product_attribute_serialize(
+        _param = self._create_api_product_attribute_serialize(
             bankid=bankid,
             apiproductcode=apiproductcode,
-            obpv510_update_atm_attribute_request=obpv510_update_atm_attribute_request,
+            update_atm_attribute_request=update_atm_attribute_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -178,7 +178,7 @@ class ApiProductAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600CreateApiProductAttribute200Response",
+            '200': "CreateApiProductAttribute200Response",
             '404': None,
             '500': None,
         }
@@ -194,11 +194,11 @@ class ApiProductAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_api_product_attribute_without_preload_content(
+    def create_api_product_attribute_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         apiproductcode: Annotated[StrictStr, Field(description="The APIPRODUCTCODE identifier")],
-        obpv510_update_atm_attribute_request: Annotated[OBPv510UpdateAtmAttributeRequest, Field(description="Request body")],
+        update_atm_attribute_request: Annotated[UpdateAtmAttributeRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -220,8 +220,8 @@ class ApiProductAttributeApi:
         :type bankid: str
         :param apiproductcode: The APIPRODUCTCODE identifier (required)
         :type apiproductcode: str
-        :param obpv510_update_atm_attribute_request: Request body (required)
-        :type obpv510_update_atm_attribute_request: OBPv510UpdateAtmAttributeRequest
+        :param update_atm_attribute_request: Request body (required)
+        :type update_atm_attribute_request: UpdateAtmAttributeRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -244,10 +244,10 @@ class ApiProductAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_api_product_attribute_serialize(
+        _param = self._create_api_product_attribute_serialize(
             bankid=bankid,
             apiproductcode=apiproductcode,
-            obpv510_update_atm_attribute_request=obpv510_update_atm_attribute_request,
+            update_atm_attribute_request=update_atm_attribute_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -255,7 +255,7 @@ class ApiProductAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600CreateApiProductAttribute200Response",
+            '200': "CreateApiProductAttribute200Response",
             '404': None,
             '500': None,
         }
@@ -266,11 +266,11 @@ class ApiProductAttributeApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_create_api_product_attribute_serialize(
+    def _create_api_product_attribute_serialize(
         self,
         bankid,
         apiproductcode,
-        obpv510_update_atm_attribute_request,
+        update_atm_attribute_request,
         _request_auth,
         _content_type,
         _headers,
@@ -300,8 +300,8 @@ class ApiProductAttributeApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv510_update_atm_attribute_request is not None:
-            _body_params = obpv510_update_atm_attribute_request
+        if update_atm_attribute_request is not None:
+            _body_params = update_atm_attribute_request
 
 
         # set the HTTP header `Accept`
@@ -352,7 +352,7 @@ class ApiProductAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_delete_api_product_attribute(
+    def delete_api_product_attribute(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         apiproductcode: Annotated[StrictStr, Field(description="The APIPRODUCTCODE identifier")],
@@ -402,7 +402,7 @@ class ApiProductAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_delete_api_product_attribute_serialize(
+        _param = self._delete_api_product_attribute_serialize(
             bankid=bankid,
             apiproductcode=apiproductcode,
             apiproductattributeid=apiproductattributeid,
@@ -429,7 +429,7 @@ class ApiProductAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_delete_api_product_attribute_with_http_info(
+    def delete_api_product_attribute_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         apiproductcode: Annotated[StrictStr, Field(description="The APIPRODUCTCODE identifier")],
@@ -479,7 +479,7 @@ class ApiProductAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_delete_api_product_attribute_serialize(
+        _param = self._delete_api_product_attribute_serialize(
             bankid=bankid,
             apiproductcode=apiproductcode,
             apiproductattributeid=apiproductattributeid,
@@ -506,7 +506,7 @@ class ApiProductAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_delete_api_product_attribute_without_preload_content(
+    def delete_api_product_attribute_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         apiproductcode: Annotated[StrictStr, Field(description="The APIPRODUCTCODE identifier")],
@@ -556,7 +556,7 @@ class ApiProductAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_delete_api_product_attribute_serialize(
+        _param = self._delete_api_product_attribute_serialize(
             bankid=bankid,
             apiproductcode=apiproductcode,
             apiproductattributeid=apiproductattributeid,
@@ -578,7 +578,7 @@ class ApiProductAttributeApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_delete_api_product_attribute_serialize(
+    def _delete_api_product_attribute_serialize(
         self,
         bankid,
         apiproductcode,
@@ -644,7 +644,7 @@ class ApiProductAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_api_product_attribute(
+    def get_api_product_attribute(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         apiproductcode: Annotated[StrictStr, Field(description="The APIPRODUCTCODE identifier")],
@@ -661,7 +661,7 @@ class ApiProductAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600CreateApiProductAttribute200Response:
+    ) -> CreateApiProductAttribute200Response:
         """Get Api Product Attribute
 
         <p>Get an Api Product Attribute by API_PRODUCT_ATTRIBUTE_ID.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_PRODUCT_ATTRIBUTE_ID</a>: API_PRODUCT_ATTRIBUTE_ID</p> <p><a href=\"/glossary#\">API_PRODUCT_CODE</a>: API_PRODUCT_CODE</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_product_attribute_id</strong></a>: api_product_attribute_id</p> <p><a href=\"/glossary#\"><strong>api_product_code</strong></a>: api_product_code</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -694,7 +694,7 @@ class ApiProductAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_api_product_attribute_serialize(
+        _param = self._get_api_product_attribute_serialize(
             bankid=bankid,
             apiproductcode=apiproductcode,
             apiproductattributeid=apiproductattributeid,
@@ -705,7 +705,7 @@ class ApiProductAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600CreateApiProductAttribute200Response",
+            '200': "CreateApiProductAttribute200Response",
             '404': None,
             '500': None,
         }
@@ -721,7 +721,7 @@ class ApiProductAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_api_product_attribute_with_http_info(
+    def get_api_product_attribute_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         apiproductcode: Annotated[StrictStr, Field(description="The APIPRODUCTCODE identifier")],
@@ -738,7 +738,7 @@ class ApiProductAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600CreateApiProductAttribute200Response]:
+    ) -> ApiResponse[CreateApiProductAttribute200Response]:
         """Get Api Product Attribute
 
         <p>Get an Api Product Attribute by API_PRODUCT_ATTRIBUTE_ID.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_PRODUCT_ATTRIBUTE_ID</a>: API_PRODUCT_ATTRIBUTE_ID</p> <p><a href=\"/glossary#\">API_PRODUCT_CODE</a>: API_PRODUCT_CODE</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_product_attribute_id</strong></a>: api_product_attribute_id</p> <p><a href=\"/glossary#\"><strong>api_product_code</strong></a>: api_product_code</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -771,7 +771,7 @@ class ApiProductAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_api_product_attribute_serialize(
+        _param = self._get_api_product_attribute_serialize(
             bankid=bankid,
             apiproductcode=apiproductcode,
             apiproductattributeid=apiproductattributeid,
@@ -782,7 +782,7 @@ class ApiProductAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600CreateApiProductAttribute200Response",
+            '200': "CreateApiProductAttribute200Response",
             '404': None,
             '500': None,
         }
@@ -798,7 +798,7 @@ class ApiProductAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_api_product_attribute_without_preload_content(
+    def get_api_product_attribute_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         apiproductcode: Annotated[StrictStr, Field(description="The APIPRODUCTCODE identifier")],
@@ -848,7 +848,7 @@ class ApiProductAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_api_product_attribute_serialize(
+        _param = self._get_api_product_attribute_serialize(
             bankid=bankid,
             apiproductcode=apiproductcode,
             apiproductattributeid=apiproductattributeid,
@@ -859,7 +859,7 @@ class ApiProductAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600CreateApiProductAttribute200Response",
+            '200': "CreateApiProductAttribute200Response",
             '404': None,
             '500': None,
         }
@@ -870,7 +870,7 @@ class ApiProductAttributeApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_get_api_product_attribute_serialize(
+    def _get_api_product_attribute_serialize(
         self,
         bankid,
         apiproductcode,
@@ -940,12 +940,12 @@ class ApiProductAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_update_api_product_attribute(
+    def update_api_product_attribute(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         apiproductcode: Annotated[StrictStr, Field(description="The APIPRODUCTCODE identifier")],
         apiproductattributeid: Annotated[StrictStr, Field(description="The APIPRODUCTATTRIBUTEID identifier")],
-        obpv510_update_atm_attribute_request: Annotated[OBPv510UpdateAtmAttributeRequest, Field(description="Request body")],
+        update_atm_attribute_request: Annotated[UpdateAtmAttributeRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -958,7 +958,7 @@ class ApiProductAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600CreateApiProductAttribute200Response:
+    ) -> CreateApiProductAttribute200Response:
         """Update Api Product Attribute
 
         <p>Update an Api Product Attribute.</p> <p>Authentication is Required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_PRODUCT_ATTRIBUTE_ID</a>: API_PRODUCT_ATTRIBUTE_ID</p> <p><a href=\"/glossary#\">API_PRODUCT_CODE</a>: API_PRODUCT_CODE</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_product_attribute_id</strong></a>: api_product_attribute_id</p> <p><a href=\"/glossary#\"><strong>api_product_code</strong></a>: api_product_code</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -969,8 +969,8 @@ class ApiProductAttributeApi:
         :type apiproductcode: str
         :param apiproductattributeid: The APIPRODUCTATTRIBUTEID identifier (required)
         :type apiproductattributeid: str
-        :param obpv510_update_atm_attribute_request: Request body (required)
-        :type obpv510_update_atm_attribute_request: OBPv510UpdateAtmAttributeRequest
+        :param update_atm_attribute_request: Request body (required)
+        :type update_atm_attribute_request: UpdateAtmAttributeRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -993,11 +993,11 @@ class ApiProductAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_update_api_product_attribute_serialize(
+        _param = self._update_api_product_attribute_serialize(
             bankid=bankid,
             apiproductcode=apiproductcode,
             apiproductattributeid=apiproductattributeid,
-            obpv510_update_atm_attribute_request=obpv510_update_atm_attribute_request,
+            update_atm_attribute_request=update_atm_attribute_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1005,7 +1005,7 @@ class ApiProductAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600CreateApiProductAttribute200Response",
+            '200': "CreateApiProductAttribute200Response",
             '404': None,
             '500': None,
         }
@@ -1021,12 +1021,12 @@ class ApiProductAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_update_api_product_attribute_with_http_info(
+    def update_api_product_attribute_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         apiproductcode: Annotated[StrictStr, Field(description="The APIPRODUCTCODE identifier")],
         apiproductattributeid: Annotated[StrictStr, Field(description="The APIPRODUCTATTRIBUTEID identifier")],
-        obpv510_update_atm_attribute_request: Annotated[OBPv510UpdateAtmAttributeRequest, Field(description="Request body")],
+        update_atm_attribute_request: Annotated[UpdateAtmAttributeRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1039,7 +1039,7 @@ class ApiProductAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600CreateApiProductAttribute200Response]:
+    ) -> ApiResponse[CreateApiProductAttribute200Response]:
         """Update Api Product Attribute
 
         <p>Update an Api Product Attribute.</p> <p>Authentication is Required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_PRODUCT_ATTRIBUTE_ID</a>: API_PRODUCT_ATTRIBUTE_ID</p> <p><a href=\"/glossary#\">API_PRODUCT_CODE</a>: API_PRODUCT_CODE</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_product_attribute_id</strong></a>: api_product_attribute_id</p> <p><a href=\"/glossary#\"><strong>api_product_code</strong></a>: api_product_code</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -1050,8 +1050,8 @@ class ApiProductAttributeApi:
         :type apiproductcode: str
         :param apiproductattributeid: The APIPRODUCTATTRIBUTEID identifier (required)
         :type apiproductattributeid: str
-        :param obpv510_update_atm_attribute_request: Request body (required)
-        :type obpv510_update_atm_attribute_request: OBPv510UpdateAtmAttributeRequest
+        :param update_atm_attribute_request: Request body (required)
+        :type update_atm_attribute_request: UpdateAtmAttributeRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1074,11 +1074,11 @@ class ApiProductAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_update_api_product_attribute_serialize(
+        _param = self._update_api_product_attribute_serialize(
             bankid=bankid,
             apiproductcode=apiproductcode,
             apiproductattributeid=apiproductattributeid,
-            obpv510_update_atm_attribute_request=obpv510_update_atm_attribute_request,
+            update_atm_attribute_request=update_atm_attribute_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1086,7 +1086,7 @@ class ApiProductAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600CreateApiProductAttribute200Response",
+            '200': "CreateApiProductAttribute200Response",
             '404': None,
             '500': None,
         }
@@ -1102,12 +1102,12 @@ class ApiProductAttributeApi:
 
 
     @validate_call
-    def o_bpv6_0_0_update_api_product_attribute_without_preload_content(
+    def update_api_product_attribute_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         apiproductcode: Annotated[StrictStr, Field(description="The APIPRODUCTCODE identifier")],
         apiproductattributeid: Annotated[StrictStr, Field(description="The APIPRODUCTATTRIBUTEID identifier")],
-        obpv510_update_atm_attribute_request: Annotated[OBPv510UpdateAtmAttributeRequest, Field(description="Request body")],
+        update_atm_attribute_request: Annotated[UpdateAtmAttributeRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1131,8 +1131,8 @@ class ApiProductAttributeApi:
         :type apiproductcode: str
         :param apiproductattributeid: The APIPRODUCTATTRIBUTEID identifier (required)
         :type apiproductattributeid: str
-        :param obpv510_update_atm_attribute_request: Request body (required)
-        :type obpv510_update_atm_attribute_request: OBPv510UpdateAtmAttributeRequest
+        :param update_atm_attribute_request: Request body (required)
+        :type update_atm_attribute_request: UpdateAtmAttributeRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1155,11 +1155,11 @@ class ApiProductAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_update_api_product_attribute_serialize(
+        _param = self._update_api_product_attribute_serialize(
             bankid=bankid,
             apiproductcode=apiproductcode,
             apiproductattributeid=apiproductattributeid,
-            obpv510_update_atm_attribute_request=obpv510_update_atm_attribute_request,
+            update_atm_attribute_request=update_atm_attribute_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1167,7 +1167,7 @@ class ApiProductAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600CreateApiProductAttribute200Response",
+            '200': "CreateApiProductAttribute200Response",
             '404': None,
             '500': None,
         }
@@ -1178,12 +1178,12 @@ class ApiProductAttributeApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_update_api_product_attribute_serialize(
+    def _update_api_product_attribute_serialize(
         self,
         bankid,
         apiproductcode,
         apiproductattributeid,
-        obpv510_update_atm_attribute_request,
+        update_atm_attribute_request,
         _request_auth,
         _content_type,
         _headers,
@@ -1215,8 +1215,8 @@ class ApiProductAttributeApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv510_update_atm_attribute_request is not None:
-            _body_params = obpv510_update_atm_attribute_request
+        if update_atm_attribute_request is not None:
+            _body_params = update_atm_attribute_request
 
 
         # set the HTTP header `Accept`

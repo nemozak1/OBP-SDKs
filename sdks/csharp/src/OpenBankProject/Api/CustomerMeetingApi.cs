@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -46,10 +46,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv310CreateMeetingRequest">Request body</param>
+        /// <param name="createMeetingRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310CreateMeetingApiResponse"/>&gt;</returns>
-        Task<IOBPv310CreateMeetingApiResponse> OBPv310CreateMeetingAsync(string bankid, OBPv310CreateMeetingRequest oBPv310CreateMeetingRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateMeetingApiResponse"/>&gt;</returns>
+        Task<ICreateMeetingApiResponse> CreateMeetingAsync(string bankid, CreateMeetingRequest createMeetingRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Meeting (video conference/call)
@@ -58,10 +58,10 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Create Meeting: Initiate a video conference/call with the bank.&lt;/p&gt; &lt;p&gt;The Meetings resource contains meta data about video/other conference sessions&lt;/p&gt; &lt;p&gt;provider_id determines the provider of the meeting / video chat service. MUST be url friendly (no spaces).&lt;/p&gt; &lt;p&gt;purpose_id explains the purpose of the chat. onboarding | mortgage | complaint etc. MUST be url friendly (no spaces).&lt;/p&gt; &lt;p&gt;Login is required.&lt;/p&gt; &lt;p&gt;This call is &lt;strong&gt;experimental&lt;/strong&gt;. Currently staff_user_id is not set. Further calls will be needed to correctly set this.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#contact_details\&quot;&gt;&lt;strong&gt;contact_details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creator\&quot;&gt;&lt;strong&gt;creator&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#email_address\&quot;&gt;&lt;strong&gt;email_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#invitees\&quot;&gt;&lt;strong&gt;invitees&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone\&quot;&gt;&lt;strong&gt;mobile_phone&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider_id\&quot;&gt;&lt;strong&gt;provider_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#purpose_id\&quot;&gt;&lt;strong&gt;purpose_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#contact_details\&quot;&gt;&lt;strong&gt;contact_details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creator\&quot;&gt;&lt;strong&gt;creator&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#customer_token\&quot;&gt;&lt;strong&gt;customer_token&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#customer_user_id\&quot;&gt;&lt;strong&gt;customer_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#email_address\&quot;&gt;&lt;strong&gt;email_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#invitees\&quot;&gt;&lt;strong&gt;invitees&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#keys\&quot;&gt;&lt;strong&gt;keys&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meeting_id\&quot;&gt;&lt;strong&gt;meeting_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone\&quot;&gt;&lt;strong&gt;mobile_phone&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#present\&quot;&gt;&lt;strong&gt;present&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider_id\&quot;&gt;&lt;strong&gt;provider_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#purpose_id\&quot;&gt;&lt;strong&gt;purpose_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;session_id&lt;/strong&gt;&lt;/a&gt;: b4e0352a-9a0f-4bfa-b30b-9003aa467f50&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#staff_token\&quot;&gt;&lt;strong&gt;staff_token&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#staff_user_id\&quot;&gt;&lt;strong&gt;staff_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#when\&quot;&gt;&lt;strong&gt;when&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; 
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv310CreateMeetingRequest">Request body</param>
+        /// <param name="createMeetingRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310CreateMeetingApiResponse"/>?&gt;</returns>
-        Task<IOBPv310CreateMeetingApiResponse?> OBPv310CreateMeetingOrDefaultAsync(string bankid, OBPv310CreateMeetingRequest oBPv310CreateMeetingRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateMeetingApiResponse"/>?&gt;</returns>
+        Task<ICreateMeetingApiResponse?> CreateMeetingOrDefaultAsync(string bankid, CreateMeetingRequest createMeetingRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Meeting
@@ -73,8 +73,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="meetingid">The MEETINGID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310GetMeetingApiResponse"/>&gt;</returns>
-        Task<IOBPv310GetMeetingApiResponse> OBPv310GetMeetingAsync(string bankid, string meetingid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMeetingApiResponse"/>&gt;</returns>
+        Task<IGetMeetingApiResponse> GetMeetingAsync(string bankid, string meetingid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Meeting
@@ -85,8 +85,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="meetingid">The MEETINGID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310GetMeetingApiResponse"/>?&gt;</returns>
-        Task<IOBPv310GetMeetingApiResponse?> OBPv310GetMeetingOrDefaultAsync(string bankid, string meetingid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMeetingApiResponse"/>?&gt;</returns>
+        Task<IGetMeetingApiResponse?> GetMeetingOrDefaultAsync(string bankid, string meetingid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Meetings
@@ -97,8 +97,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310GetMeetingsApiResponse"/>&gt;</returns>
-        Task<IOBPv310GetMeetingsApiResponse> OBPv310GetMeetingsAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMeetingsApiResponse"/>&gt;</returns>
+        Task<IGetMeetingsApiResponse> GetMeetingsAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Meetings
@@ -108,8 +108,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310GetMeetingsApiResponse"/>?&gt;</returns>
-        Task<IOBPv310GetMeetingsApiResponse?> OBPv310GetMeetingsOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMeetingsApiResponse"/>?&gt;</returns>
+        Task<IGetMeetingsApiResponse?> GetMeetingsOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -120,61 +120,61 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv310CreateMeeting;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateMeeting;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv310CreateMeeting;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateMeeting;
 
-        internal void ExecuteOnOBPv310CreateMeeting(CustomerApi.OBPv310CreateMeetingApiResponse apiResponse)
+        internal void ExecuteOnCreateMeeting(CustomerApi.CreateMeetingApiResponse apiResponse)
         {
-            OnOBPv310CreateMeeting?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateMeeting?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv310CreateMeeting(Exception exception)
+        internal void ExecuteOnErrorCreateMeeting(Exception exception)
         {
-            OnErrorOBPv310CreateMeeting?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateMeeting?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv310GetMeeting;
+        public event EventHandler<ApiResponseEventArgs>? OnGetMeeting;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv310GetMeeting;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetMeeting;
 
-        internal void ExecuteOnOBPv310GetMeeting(CustomerApi.OBPv310GetMeetingApiResponse apiResponse)
+        internal void ExecuteOnGetMeeting(CustomerApi.GetMeetingApiResponse apiResponse)
         {
-            OnOBPv310GetMeeting?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetMeeting?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv310GetMeeting(Exception exception)
+        internal void ExecuteOnErrorGetMeeting(Exception exception)
         {
-            OnErrorOBPv310GetMeeting?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetMeeting?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv310GetMeetings;
+        public event EventHandler<ApiResponseEventArgs>? OnGetMeetings;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv310GetMeetings;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetMeetings;
 
-        internal void ExecuteOnOBPv310GetMeetings(CustomerApi.OBPv310GetMeetingsApiResponse apiResponse)
+        internal void ExecuteOnGetMeetings(CustomerApi.GetMeetingsApiResponse apiResponse)
         {
-            OnOBPv310GetMeetings?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetMeetings?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv310GetMeetings(Exception exception)
+        internal void ExecuteOnErrorGetMeetings(Exception exception)
         {
-            OnErrorOBPv310GetMeetings?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetMeetings?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -232,21 +232,21 @@ namespace OpenBankProject.Api
             OauthTokenProvider = oauthTokenProvider;
         }
 
-        partial void FormatOBPv310CreateMeeting(ref string bankid, OBPv310CreateMeetingRequest oBPv310CreateMeetingRequest);
+        partial void FormatCreateMeeting(ref string bankid, CreateMeetingRequest createMeetingRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
-        /// <param name="oBPv310CreateMeetingRequest"></param>
+        /// <param name="createMeetingRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv310CreateMeeting(string bankid, OBPv310CreateMeetingRequest oBPv310CreateMeetingRequest)
+        private void ValidateCreateMeeting(string bankid, CreateMeetingRequest createMeetingRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
 
-            if (oBPv310CreateMeetingRequest == null)
-                throw new ArgumentNullException(nameof(oBPv310CreateMeetingRequest));
+            if (createMeetingRequest == null)
+                throw new ArgumentNullException(nameof(createMeetingRequest));
         }
 
         /// <summary>
@@ -254,11 +254,11 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="oBPv310CreateMeetingRequest"></param>
-        private void AfterOBPv310CreateMeetingDefaultImplementation(IOBPv310CreateMeetingApiResponse apiResponseLocalVar, string bankid, OBPv310CreateMeetingRequest oBPv310CreateMeetingRequest)
+        /// <param name="createMeetingRequest"></param>
+        private void AfterCreateMeetingDefaultImplementation(ICreateMeetingApiResponse apiResponseLocalVar, string bankid, CreateMeetingRequest createMeetingRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv310CreateMeeting(ref suppressDefaultLog, apiResponseLocalVar, bankid, oBPv310CreateMeetingRequest);
+            AfterCreateMeeting(ref suppressDefaultLog, apiResponseLocalVar, bankid, createMeetingRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -269,8 +269,8 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="oBPv310CreateMeetingRequest"></param>
-        partial void AfterOBPv310CreateMeeting(ref bool suppressDefaultLog, IOBPv310CreateMeetingApiResponse apiResponseLocalVar, string bankid, OBPv310CreateMeetingRequest oBPv310CreateMeetingRequest);
+        /// <param name="createMeetingRequest"></param>
+        partial void AfterCreateMeeting(ref bool suppressDefaultLog, ICreateMeetingApiResponse apiResponseLocalVar, string bankid, CreateMeetingRequest createMeetingRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -279,11 +279,11 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="oBPv310CreateMeetingRequest"></param>
-        private void OnErrorOBPv310CreateMeetingDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, OBPv310CreateMeetingRequest oBPv310CreateMeetingRequest)
+        /// <param name="createMeetingRequest"></param>
+        private void OnErrorCreateMeetingDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, CreateMeetingRequest createMeetingRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv310CreateMeeting(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, oBPv310CreateMeetingRequest);
+            OnErrorCreateMeeting(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, createMeetingRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -296,21 +296,21 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="oBPv310CreateMeetingRequest"></param>
-        partial void OnErrorOBPv310CreateMeeting(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, OBPv310CreateMeetingRequest oBPv310CreateMeetingRequest);
+        /// <param name="createMeetingRequest"></param>
+        partial void OnErrorCreateMeeting(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, CreateMeetingRequest createMeetingRequest);
 
         /// <summary>
         /// Create Meeting (video conference/call) &lt;p&gt;Create Meeting: Initiate a video conference/call with the bank.&lt;/p&gt; &lt;p&gt;The Meetings resource contains meta data about video/other conference sessions&lt;/p&gt; &lt;p&gt;provider_id determines the provider of the meeting / video chat service. MUST be url friendly (no spaces).&lt;/p&gt; &lt;p&gt;purpose_id explains the purpose of the chat. onboarding | mortgage | complaint etc. MUST be url friendly (no spaces).&lt;/p&gt; &lt;p&gt;Login is required.&lt;/p&gt; &lt;p&gt;This call is &lt;strong&gt;experimental&lt;/strong&gt;. Currently staff_user_id is not set. Further calls will be needed to correctly set this.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#contact_details\&quot;&gt;&lt;strong&gt;contact_details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creator\&quot;&gt;&lt;strong&gt;creator&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#email_address\&quot;&gt;&lt;strong&gt;email_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#invitees\&quot;&gt;&lt;strong&gt;invitees&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone\&quot;&gt;&lt;strong&gt;mobile_phone&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider_id\&quot;&gt;&lt;strong&gt;provider_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#purpose_id\&quot;&gt;&lt;strong&gt;purpose_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#contact_details\&quot;&gt;&lt;strong&gt;contact_details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creator\&quot;&gt;&lt;strong&gt;creator&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#customer_token\&quot;&gt;&lt;strong&gt;customer_token&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#customer_user_id\&quot;&gt;&lt;strong&gt;customer_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#email_address\&quot;&gt;&lt;strong&gt;email_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#invitees\&quot;&gt;&lt;strong&gt;invitees&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#keys\&quot;&gt;&lt;strong&gt;keys&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meeting_id\&quot;&gt;&lt;strong&gt;meeting_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone\&quot;&gt;&lt;strong&gt;mobile_phone&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#present\&quot;&gt;&lt;strong&gt;present&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider_id\&quot;&gt;&lt;strong&gt;provider_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#purpose_id\&quot;&gt;&lt;strong&gt;purpose_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;session_id&lt;/strong&gt;&lt;/a&gt;: b4e0352a-9a0f-4bfa-b30b-9003aa467f50&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#staff_token\&quot;&gt;&lt;strong&gt;staff_token&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#staff_user_id\&quot;&gt;&lt;strong&gt;staff_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#when\&quot;&gt;&lt;strong&gt;when&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv310CreateMeetingRequest">Request body</param>
+        /// <param name="createMeetingRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310CreateMeetingApiResponse"/>&gt;</returns>
-        public async Task<IOBPv310CreateMeetingApiResponse?> OBPv310CreateMeetingOrDefaultAsync(string bankid, OBPv310CreateMeetingRequest oBPv310CreateMeetingRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateMeetingApiResponse"/>&gt;</returns>
+        public async Task<ICreateMeetingApiResponse?> CreateMeetingOrDefaultAsync(string bankid, CreateMeetingRequest createMeetingRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv310CreateMeetingAsync(bankid, oBPv310CreateMeetingRequest, cancellationToken).ConfigureAwait(false);
+                return await CreateMeetingAsync(bankid, createMeetingRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -323,18 +323,18 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv310CreateMeetingRequest">Request body</param>
+        /// <param name="createMeetingRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310CreateMeetingApiResponse"/>&gt;</returns>
-        public async Task<IOBPv310CreateMeetingApiResponse> OBPv310CreateMeetingAsync(string bankid, OBPv310CreateMeetingRequest oBPv310CreateMeetingRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateMeetingApiResponse"/>&gt;</returns>
+        public async Task<ICreateMeetingApiResponse> CreateMeetingAsync(string bankid, CreateMeetingRequest createMeetingRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv310CreateMeeting(bankid, oBPv310CreateMeetingRequest);
+                ValidateCreateMeeting(bankid, createMeetingRequest);
 
-                FormatOBPv310CreateMeeting(ref bankid, oBPv310CreateMeetingRequest);
+                FormatCreateMeeting(ref bankid, createMeetingRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -346,16 +346,16 @@ namespace OpenBankProject.Api
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v3.1.0/banks/{bankid}/meetings");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv310CreateMeetingRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (createMeetingRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv310CreateMeetingRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createMeetingRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -391,8 +391,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<CustomerApi.OBPv310CreateMeetingApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CustomerApi.OBPv310CreateMeetingApiResponse>();
-                        CustomerApi.OBPv310CreateMeetingApiResponse apiResponseLocalVar;
+                        ILogger<CustomerApi.CreateMeetingApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CustomerApi.CreateMeetingApiResponse>();
+                        CustomerApi.CreateMeetingApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -403,9 +403,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv310CreateMeetingDefaultImplementation(apiResponseLocalVar, bankid, oBPv310CreateMeetingRequest);
+                        AfterCreateMeetingDefaultImplementation(apiResponseLocalVar, bankid, createMeetingRequest);
 
-                        Events.ExecuteOnOBPv310CreateMeeting(apiResponseLocalVar);
+                        Events.ExecuteOnCreateMeeting(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -417,13 +417,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv310CreateMeetingDefaultImplementation(e, "/obp/v3.1.0/banks/{bankid}/meetings", uriBuilderLocalVar.Path, bankid, oBPv310CreateMeetingRequest);
-                Events.ExecuteOnErrorOBPv310CreateMeeting(e);
+                OnErrorCreateMeetingDefaultImplementation(e, "/obp/v3.1.0/banks/{bankid}/meetings", uriBuilderLocalVar.Path, bankid, createMeetingRequest);
+                Events.ExecuteOnErrorCreateMeeting(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv310GetMeeting(ref string bankid, ref string meetingid);
+        partial void FormatGetMeeting(ref string bankid, ref string meetingid);
 
         /// <summary>
         /// Validates the request parameters
@@ -431,7 +431,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="meetingid"></param>
         /// <returns></returns>
-        private void ValidateOBPv310GetMeeting(string bankid, string meetingid)
+        private void ValidateGetMeeting(string bankid, string meetingid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -446,10 +446,10 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="meetingid"></param>
-        private void AfterOBPv310GetMeetingDefaultImplementation(IOBPv310GetMeetingApiResponse apiResponseLocalVar, string bankid, string meetingid)
+        private void AfterGetMeetingDefaultImplementation(IGetMeetingApiResponse apiResponseLocalVar, string bankid, string meetingid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv310GetMeeting(ref suppressDefaultLog, apiResponseLocalVar, bankid, meetingid);
+            AfterGetMeeting(ref suppressDefaultLog, apiResponseLocalVar, bankid, meetingid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -461,7 +461,7 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="meetingid"></param>
-        partial void AfterOBPv310GetMeeting(ref bool suppressDefaultLog, IOBPv310GetMeetingApiResponse apiResponseLocalVar, string bankid, string meetingid);
+        partial void AfterGetMeeting(ref bool suppressDefaultLog, IGetMeetingApiResponse apiResponseLocalVar, string bankid, string meetingid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -471,10 +471,10 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="meetingid"></param>
-        private void OnErrorOBPv310GetMeetingDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string meetingid)
+        private void OnErrorGetMeetingDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string meetingid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv310GetMeeting(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, meetingid);
+            OnErrorGetMeeting(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, meetingid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -488,7 +488,7 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="meetingid"></param>
-        partial void OnErrorOBPv310GetMeeting(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string meetingid);
+        partial void OnErrorGetMeeting(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string meetingid);
 
         /// <summary>
         /// Get Meeting &lt;p&gt;Get Meeting specified by BANK_ID / MEETING_ID&lt;br /&gt; Meetings contain meta data about, and are used to facilitate, video conferences / chats etc.&lt;/p&gt; &lt;p&gt;The actual conference/chats are handled by external services.&lt;/p&gt; &lt;p&gt;Login is required.&lt;/p&gt; &lt;p&gt;This call is &lt;strong&gt;experimental&lt;/strong&gt; and will require further authorisation in the future.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meeting_id\&quot;&gt;MEETING_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#contact_details\&quot;&gt;&lt;strong&gt;contact_details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creator\&quot;&gt;&lt;strong&gt;creator&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#customer_token\&quot;&gt;&lt;strong&gt;customer_token&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#customer_user_id\&quot;&gt;&lt;strong&gt;customer_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#email_address\&quot;&gt;&lt;strong&gt;email_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#invitees\&quot;&gt;&lt;strong&gt;invitees&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#keys\&quot;&gt;&lt;strong&gt;keys&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meeting_id\&quot;&gt;&lt;strong&gt;meeting_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone\&quot;&gt;&lt;strong&gt;mobile_phone&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#present\&quot;&gt;&lt;strong&gt;present&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider_id\&quot;&gt;&lt;strong&gt;provider_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#purpose_id\&quot;&gt;&lt;strong&gt;purpose_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;session_id&lt;/strong&gt;&lt;/a&gt;: b4e0352a-9a0f-4bfa-b30b-9003aa467f50&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#staff_token\&quot;&gt;&lt;strong&gt;staff_token&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#staff_user_id\&quot;&gt;&lt;strong&gt;staff_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#when\&quot;&gt;&lt;strong&gt;when&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; 
@@ -496,12 +496,12 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="meetingid">The MEETINGID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310GetMeetingApiResponse"/>&gt;</returns>
-        public async Task<IOBPv310GetMeetingApiResponse?> OBPv310GetMeetingOrDefaultAsync(string bankid, string meetingid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMeetingApiResponse"/>&gt;</returns>
+        public async Task<IGetMeetingApiResponse?> GetMeetingOrDefaultAsync(string bankid, string meetingid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv310GetMeetingAsync(bankid, meetingid, cancellationToken).ConfigureAwait(false);
+                return await GetMeetingAsync(bankid, meetingid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -516,16 +516,16 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="meetingid">The MEETINGID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310GetMeetingApiResponse"/>&gt;</returns>
-        public async Task<IOBPv310GetMeetingApiResponse> OBPv310GetMeetingAsync(string bankid, string meetingid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMeetingApiResponse"/>&gt;</returns>
+        public async Task<IGetMeetingApiResponse> GetMeetingAsync(string bankid, string meetingid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv310GetMeeting(bankid, meetingid);
+                ValidateGetMeeting(bankid, meetingid);
 
-                FormatOBPv310GetMeeting(ref bankid, ref meetingid);
+                FormatGetMeeting(ref bankid, ref meetingid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -543,7 +543,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -570,8 +570,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<CustomerApi.OBPv310GetMeetingApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CustomerApi.OBPv310GetMeetingApiResponse>();
-                        CustomerApi.OBPv310GetMeetingApiResponse apiResponseLocalVar;
+                        ILogger<CustomerApi.GetMeetingApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CustomerApi.GetMeetingApiResponse>();
+                        CustomerApi.GetMeetingApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -582,9 +582,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv310GetMeetingDefaultImplementation(apiResponseLocalVar, bankid, meetingid);
+                        AfterGetMeetingDefaultImplementation(apiResponseLocalVar, bankid, meetingid);
 
-                        Events.ExecuteOnOBPv310GetMeeting(apiResponseLocalVar);
+                        Events.ExecuteOnGetMeeting(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -596,20 +596,20 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv310GetMeetingDefaultImplementation(e, "/obp/v3.1.0/banks/{bankid}/meetings/{meetingid}", uriBuilderLocalVar.Path, bankid, meetingid);
-                Events.ExecuteOnErrorOBPv310GetMeeting(e);
+                OnErrorGetMeetingDefaultImplementation(e, "/obp/v3.1.0/banks/{bankid}/meetings/{meetingid}", uriBuilderLocalVar.Path, bankid, meetingid);
+                Events.ExecuteOnErrorGetMeeting(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv310GetMeetings(ref string bankid);
+        partial void FormatGetMeetings(ref string bankid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
         /// <returns></returns>
-        private void ValidateOBPv310GetMeetings(string bankid)
+        private void ValidateGetMeetings(string bankid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -620,10 +620,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        private void AfterOBPv310GetMeetingsDefaultImplementation(IOBPv310GetMeetingsApiResponse apiResponseLocalVar, string bankid)
+        private void AfterGetMeetingsDefaultImplementation(IGetMeetingsApiResponse apiResponseLocalVar, string bankid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv310GetMeetings(ref suppressDefaultLog, apiResponseLocalVar, bankid);
+            AfterGetMeetings(ref suppressDefaultLog, apiResponseLocalVar, bankid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -634,7 +634,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void AfterOBPv310GetMeetings(ref bool suppressDefaultLog, IOBPv310GetMeetingsApiResponse apiResponseLocalVar, string bankid);
+        partial void AfterGetMeetings(ref bool suppressDefaultLog, IGetMeetingsApiResponse apiResponseLocalVar, string bankid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -643,10 +643,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        private void OnErrorOBPv310GetMeetingsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
+        private void OnErrorGetMeetingsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv310GetMeetings(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
+            OnErrorGetMeetings(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -659,19 +659,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void OnErrorOBPv310GetMeetings(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
+        partial void OnErrorGetMeetings(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
 
         /// <summary>
         /// Get Meetings &lt;p&gt;Meetings contain meta data about, and are used to facilitate, video conferences / chats etc.&lt;/p&gt; &lt;p&gt;The actual conference/chats are handled by external services.&lt;/p&gt; &lt;p&gt;Login is required.&lt;/p&gt; &lt;p&gt;This call is &lt;strong&gt;experimental&lt;/strong&gt; and will require further authorisation in the future.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#contact_details\&quot;&gt;&lt;strong&gt;contact_details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creator\&quot;&gt;&lt;strong&gt;creator&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#customer_token\&quot;&gt;&lt;strong&gt;customer_token&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#customer_user_id\&quot;&gt;&lt;strong&gt;customer_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#email_address\&quot;&gt;&lt;strong&gt;email_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#invitees\&quot;&gt;&lt;strong&gt;invitees&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#keys\&quot;&gt;&lt;strong&gt;keys&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meeting_id\&quot;&gt;&lt;strong&gt;meeting_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meetings\&quot;&gt;&lt;strong&gt;meetings&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone\&quot;&gt;&lt;strong&gt;mobile_phone&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#present\&quot;&gt;&lt;strong&gt;present&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider_id\&quot;&gt;&lt;strong&gt;provider_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#purpose_id\&quot;&gt;&lt;strong&gt;purpose_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;session_id&lt;/strong&gt;&lt;/a&gt;: b4e0352a-9a0f-4bfa-b30b-9003aa467f50&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#staff_token\&quot;&gt;&lt;strong&gt;staff_token&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#staff_user_id\&quot;&gt;&lt;strong&gt;staff_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#when\&quot;&gt;&lt;strong&gt;when&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310GetMeetingsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv310GetMeetingsApiResponse?> OBPv310GetMeetingsOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMeetingsApiResponse"/>&gt;</returns>
+        public async Task<IGetMeetingsApiResponse?> GetMeetingsOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv310GetMeetingsAsync(bankid, cancellationToken).ConfigureAwait(false);
+                return await GetMeetingsAsync(bankid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -685,16 +685,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310GetMeetingsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv310GetMeetingsApiResponse> OBPv310GetMeetingsAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMeetingsApiResponse"/>&gt;</returns>
+        public async Task<IGetMeetingsApiResponse> GetMeetingsAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv310GetMeetings(bankid);
+                ValidateGetMeetings(bankid);
 
-                FormatOBPv310GetMeetings(ref bankid);
+                FormatGetMeetings(ref bankid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -711,7 +711,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -738,8 +738,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<CustomerApi.OBPv310GetMeetingsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CustomerApi.OBPv310GetMeetingsApiResponse>();
-                        CustomerApi.OBPv310GetMeetingsApiResponse apiResponseLocalVar;
+                        ILogger<CustomerApi.GetMeetingsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CustomerApi.GetMeetingsApiResponse>();
+                        CustomerApi.GetMeetingsApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -750,9 +750,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv310GetMeetingsDefaultImplementation(apiResponseLocalVar, bankid);
+                        AfterGetMeetingsDefaultImplementation(apiResponseLocalVar, bankid);
 
-                        Events.ExecuteOnOBPv310GetMeetings(apiResponseLocalVar);
+                        Events.ExecuteOnGetMeetings(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -764,8 +764,8 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv310GetMeetingsDefaultImplementation(e, "/obp/v3.1.0/banks/{bankid}/meetings", uriBuilderLocalVar.Path, bankid);
-                Events.ExecuteOnErrorOBPv310GetMeetings(e);
+                OnErrorGetMeetingsDefaultImplementation(e, "/obp/v3.1.0/banks/{bankid}/meetings", uriBuilderLocalVar.Path, bankid);
+                Events.ExecuteOnErrorGetMeetings(e);
                 throw;
             }
         }

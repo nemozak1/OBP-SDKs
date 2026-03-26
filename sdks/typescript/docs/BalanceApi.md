@@ -1,20 +1,20 @@
 # BalanceApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv510CreateBankAccountBalance**](BalanceApi.md#obpv510createbankaccountbalanceoperation) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Create Bank Account Balance |
-| [**oBPv510DeleteBankAccountBalance**](BalanceApi.md#obpv510deletebankaccountbalance) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Delete Bank Account Balance |
-| [**oBPv510GetAllBankAccountBalances**](BalanceApi.md#obpv510getallbankaccountbalances) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Get All Bank Account Balances |
-| [**oBPv510GetBankAccountBalanceById**](BalanceApi.md#obpv510getbankaccountbalancebyid) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Get Bank Account Balance By ID |
-| [**oBPv510UpdateBankAccountBalance**](BalanceApi.md#obpv510updatebankaccountbalance) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Update Bank Account Balance |
+| [**createBankAccountBalance**](BalanceApi.md#createbankaccountbalanceoperation) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Create Bank Account Balance |
+| [**deleteBankAccountBalance**](BalanceApi.md#deletebankaccountbalance) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Delete Bank Account Balance |
+| [**getAllBankAccountBalances**](BalanceApi.md#getallbankaccountbalances) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Get All Bank Account Balances |
+| [**getBankAccountBalanceById**](BalanceApi.md#getbankaccountbalancebyid) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Get Bank Account Balance By ID |
+| [**updateBankAccountBalance**](BalanceApi.md#updatebankaccountbalance) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Update Bank Account Balance |
 
 
 
-## oBPv510CreateBankAccountBalance
+## createBankAccountBalance
 
-> OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems oBPv510CreateBankAccountBalance(bankid, accountid, oBPv510CreateBankAccountBalanceRequest)
+> GetAllBankAccountBalances200ResponseBalancesInner createBankAccountBalance(bankid, accountid, createBankAccountBalanceRequest)
 
 Create Bank Account Balance
 
@@ -27,7 +27,7 @@ import {
   Configuration,
   BalanceApi,
 } from 'obp-typescript';
-import type { OBPv510CreateBankAccountBalanceOperationRequest } from 'obp-typescript';
+import type { CreateBankAccountBalanceOperationRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -46,12 +46,12 @@ async function example() {
     bankid: bankid_example,
     // string | The ACCOUNTID identifier
     accountid: accountid_example,
-    // OBPv510CreateBankAccountBalanceRequest | Request body
-    oBPv510CreateBankAccountBalanceRequest: {"type":"object","properties":{"balance_amount":{"type":"string"},"balance_type":{"type":"string"}}},
-  } satisfies OBPv510CreateBankAccountBalanceOperationRequest;
+    // CreateBankAccountBalanceRequest | Request body
+    createBankAccountBalanceRequest: {"type":"object","properties":{"balance_amount":{"type":"string"},"balance_type":{"type":"string"}}},
+  } satisfies CreateBankAccountBalanceOperationRequest;
 
   try {
-    const data = await api.oBPv510CreateBankAccountBalance(body);
+    const data = await api.createBankAccountBalance(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -69,11 +69,11 @@ example().catch(console.error);
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
 | **accountid** | `string` | The ACCOUNTID identifier | [Defaults to `undefined`] |
-| **oBPv510CreateBankAccountBalanceRequest** | [OBPv510CreateBankAccountBalanceRequest](OBPv510CreateBankAccountBalanceRequest.md) | Request body | |
+| **createBankAccountBalanceRequest** | [CreateBankAccountBalanceRequest](CreateBankAccountBalanceRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems**](OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems.md)
+[**GetAllBankAccountBalances200ResponseBalancesInner**](GetAllBankAccountBalances200ResponseBalancesInner.md)
 
 ### Authorization
 
@@ -94,9 +94,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv510DeleteBankAccountBalance
+## deleteBankAccountBalance
 
-> oBPv510DeleteBankAccountBalance(bankid, accountid, balanceid)
+> deleteBankAccountBalance(bankid, accountid, balanceid)
 
 Delete Bank Account Balance
 
@@ -109,7 +109,7 @@ import {
   Configuration,
   BalanceApi,
 } from 'obp-typescript';
-import type { OBPv510DeleteBankAccountBalanceRequest } from 'obp-typescript';
+import type { DeleteBankAccountBalanceRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -130,10 +130,10 @@ async function example() {
     accountid: accountid_example,
     // string | The BALANCEID identifier
     balanceid: balanceid_example,
-  } satisfies OBPv510DeleteBankAccountBalanceRequest;
+  } satisfies DeleteBankAccountBalanceRequest;
 
   try {
-    const data = await api.oBPv510DeleteBankAccountBalance(body);
+    const data = await api.deleteBankAccountBalance(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -176,9 +176,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv510GetAllBankAccountBalances
+## getAllBankAccountBalances
 
-> OBPv510GetAllBankAccountBalances200Response oBPv510GetAllBankAccountBalances(bankid, accountid)
+> GetAllBankAccountBalances200Response getAllBankAccountBalances(bankid, accountid)
 
 Get All Bank Account Balances
 
@@ -191,7 +191,7 @@ import {
   Configuration,
   BalanceApi,
 } from 'obp-typescript';
-import type { OBPv510GetAllBankAccountBalancesRequest } from 'obp-typescript';
+import type { GetAllBankAccountBalancesRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -210,10 +210,10 @@ async function example() {
     bankid: bankid_example,
     // string | The ACCOUNTID identifier
     accountid: accountid_example,
-  } satisfies OBPv510GetAllBankAccountBalancesRequest;
+  } satisfies GetAllBankAccountBalancesRequest;
 
   try {
-    const data = await api.oBPv510GetAllBankAccountBalances(body);
+    const data = await api.getAllBankAccountBalances(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -234,7 +234,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200Response**](OBPv510GetAllBankAccountBalances200Response.md)
+[**GetAllBankAccountBalances200Response**](GetAllBankAccountBalances200Response.md)
 
 ### Authorization
 
@@ -255,9 +255,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv510GetBankAccountBalanceById
+## getBankAccountBalanceById
 
-> OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems oBPv510GetBankAccountBalanceById(bankid, accountid, balanceid)
+> GetAllBankAccountBalances200ResponseBalancesInner getBankAccountBalanceById(bankid, accountid, balanceid)
 
 Get Bank Account Balance By ID
 
@@ -270,7 +270,7 @@ import {
   Configuration,
   BalanceApi,
 } from 'obp-typescript';
-import type { OBPv510GetBankAccountBalanceByIdRequest } from 'obp-typescript';
+import type { GetBankAccountBalanceByIdRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -291,10 +291,10 @@ async function example() {
     accountid: accountid_example,
     // string | The BALANCEID identifier
     balanceid: balanceid_example,
-  } satisfies OBPv510GetBankAccountBalanceByIdRequest;
+  } satisfies GetBankAccountBalanceByIdRequest;
 
   try {
-    const data = await api.oBPv510GetBankAccountBalanceById(body);
+    const data = await api.getBankAccountBalanceById(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -316,7 +316,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems**](OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems.md)
+[**GetAllBankAccountBalances200ResponseBalancesInner**](GetAllBankAccountBalances200ResponseBalancesInner.md)
 
 ### Authorization
 
@@ -337,9 +337,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv510UpdateBankAccountBalance
+## updateBankAccountBalance
 
-> OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems oBPv510UpdateBankAccountBalance(bankid, accountid, balanceid, oBPv510CreateBankAccountBalanceRequest)
+> GetAllBankAccountBalances200ResponseBalancesInner updateBankAccountBalance(bankid, accountid, balanceid, createBankAccountBalanceRequest)
 
 Update Bank Account Balance
 
@@ -352,7 +352,7 @@ import {
   Configuration,
   BalanceApi,
 } from 'obp-typescript';
-import type { OBPv510UpdateBankAccountBalanceRequest } from 'obp-typescript';
+import type { UpdateBankAccountBalanceRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -373,12 +373,12 @@ async function example() {
     accountid: accountid_example,
     // string | The BALANCEID identifier
     balanceid: balanceid_example,
-    // OBPv510CreateBankAccountBalanceRequest | Request body
-    oBPv510CreateBankAccountBalanceRequest: {type=object, properties={balance_amount={type=string}, balance_type={type=string}}},
-  } satisfies OBPv510UpdateBankAccountBalanceRequest;
+    // CreateBankAccountBalanceRequest | Request body
+    createBankAccountBalanceRequest: {type=object, properties={balance_amount={type=string}, balance_type={type=string}}},
+  } satisfies UpdateBankAccountBalanceRequest;
 
   try {
-    const data = await api.oBPv510UpdateBankAccountBalance(body);
+    const data = await api.updateBankAccountBalance(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -397,11 +397,11 @@ example().catch(console.error);
 | **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
 | **accountid** | `string` | The ACCOUNTID identifier | [Defaults to `undefined`] |
 | **balanceid** | `string` | The BALANCEID identifier | [Defaults to `undefined`] |
-| **oBPv510CreateBankAccountBalanceRequest** | [OBPv510CreateBankAccountBalanceRequest](OBPv510CreateBankAccountBalanceRequest.md) | Request body | |
+| **createBankAccountBalanceRequest** | [CreateBankAccountBalanceRequest](CreateBankAccountBalanceRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems**](OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems.md)
+[**GetAllBankAccountBalances200ResponseBalancesInner**](GetAllBankAccountBalances200ResponseBalancesInner.md)
 
 ### Authorization
 

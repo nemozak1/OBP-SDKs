@@ -2,128 +2,19 @@
 
 
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv200PublicAccountsAllBanks()**](AccountPublicApi.md#oBPv200PublicAccountsAllBanks) | **GET** /obp/v2.0.0/accounts/public | Get Public Accounts at all Banks |
-| [**oBPv200PublicAccountsAtOneBank()**](AccountPublicApi.md#oBPv200PublicAccountsAtOneBank) | **GET** /obp/v2.0.0/banks/{bankid}/accounts/public | Get Public Accounts at Bank |
-| [**oBPv300GetPublicAccountById()**](AccountPublicApi.md#oBPv300GetPublicAccountById) | **GET** /obp/v3.0.0/banks/{bankid}/public/accounts/{accountid}/{viewid}/account | Get Public Account by Id |
+| [**getPublicAccountById()**](AccountPublicApi.md#getPublicAccountById) | **GET** /obp/v3.0.0/banks/{bankid}/public/accounts/{accountid}/{viewid}/account | Get Public Account by Id |
+| [**publicAccountsAllBanks()**](AccountPublicApi.md#publicAccountsAllBanks) | **GET** /obp/v2.0.0/accounts/public | Get Public Accounts at all Banks |
+| [**publicAccountsAtOneBank()**](AccountPublicApi.md#publicAccountsAtOneBank) | **GET** /obp/v2.0.0/banks/{bankid}/accounts/public | Get Public Accounts at Bank |
 
 
-## `oBPv200PublicAccountsAllBanks()`
-
-```php
-oBPv200PublicAccountsAllBanks(): \OpenBankProject\Model\OBPv200PublicAccountsAllBanks200Response
-```
-
-Get Public Accounts at all Banks
-
-<p>Get public accounts at all banks (Anonymous access).<br /> Returns accounts that contain at least one public view (a view where is_public is true)<br /> For each account the API returns the ID and the available views.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#accounts\"><strong>accounts</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#is_public\"><strong>is_public</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#short_name\"><strong>short_name</strong></a>:</p> <p><a href=\"/glossary#views_available\"><strong>views_available</strong></a>:</p>
-
-### Example
+## `getPublicAccountById()`
 
 ```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new OpenBankProject\Api\AccountPublicApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-
-try {
-    $result = $apiInstance->oBPv200PublicAccountsAllBanks();
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling AccountPublicApi->oBPv200PublicAccountsAllBanks: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**\OpenBankProject\Model\OBPv200PublicAccountsAllBanks200Response**](../Model/OBPv200PublicAccountsAllBanks200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `oBPv200PublicAccountsAtOneBank()`
-
-```php
-oBPv200PublicAccountsAtOneBank($bankid): \OpenBankProject\Model\OBPv200PublicAccountsAllBanks200Response
-```
-
-Get Public Accounts at Bank
-
-<p>Returns a list of the public accounts (Anonymous access) at BANK_ID. For each account the API returns the ID and the available views.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#accounts\"><strong>accounts</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#is_public\"><strong>is_public</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#short_name\"><strong>short_name</strong></a>:</p> <p><a href=\"/glossary#views_available\"><strong>views_available</strong></a>:</p>
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new OpenBankProject\Api\AccountPublicApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$bankid = 'bankid_example'; // string | The BANKID identifier
-
-try {
-    $result = $apiInstance->oBPv200PublicAccountsAtOneBank($bankid);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling AccountPublicApi->oBPv200PublicAccountsAtOneBank: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **bankid** | **string**| The BANKID identifier | |
-
-### Return type
-
-[**\OpenBankProject\Model\OBPv200PublicAccountsAllBanks200Response**](../Model/OBPv200PublicAccountsAllBanks200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `oBPv300GetPublicAccountById()`
-
-```php
-oBPv300GetPublicAccountById($bankid, $accountid, $viewid): \OpenBankProject\Model\OBPv300GetPublicAccountById200Response
+getPublicAccountById($bankid, $accountid, $viewid): \OpenBankProject\Model\GetPublicAccountById200Response
 ```
 
 Get Public Account by Id
@@ -148,10 +39,10 @@ $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $viewid = 'viewid_example'; // string | The VIEWID identifier
 
 try {
-    $result = $apiInstance->oBPv300GetPublicAccountById($bankid, $accountid, $viewid);
+    $result = $apiInstance->getPublicAccountById($bankid, $accountid, $viewid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AccountPublicApi->oBPv300GetPublicAccountById: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AccountPublicApi->getPublicAccountById: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -165,7 +56,116 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv300GetPublicAccountById200Response**](../Model/OBPv300GetPublicAccountById200Response.md)
+[**\OpenBankProject\Model\GetPublicAccountById200Response**](../Model/GetPublicAccountById200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `publicAccountsAllBanks()`
+
+```php
+publicAccountsAllBanks(): \OpenBankProject\Model\PublicAccountsAllBanks200Response
+```
+
+Get Public Accounts at all Banks
+
+<p>Get public accounts at all banks (Anonymous access).<br /> Returns accounts that contain at least one public view (a view where is_public is true)<br /> For each account the API returns the ID and the available views.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#accounts\"><strong>accounts</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#is_public\"><strong>is_public</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#short_name\"><strong>short_name</strong></a>:</p> <p><a href=\"/glossary#views_available\"><strong>views_available</strong></a>:</p>
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenBankProject\Api\AccountPublicApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+
+try {
+    $result = $apiInstance->publicAccountsAllBanks();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AccountPublicApi->publicAccountsAllBanks: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\OpenBankProject\Model\PublicAccountsAllBanks200Response**](../Model/PublicAccountsAllBanks200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `publicAccountsAtOneBank()`
+
+```php
+publicAccountsAtOneBank($bankid): \OpenBankProject\Model\PublicAccountsAllBanks200Response
+```
+
+Get Public Accounts at Bank
+
+<p>Returns a list of the public accounts (Anonymous access) at BANK_ID. For each account the API returns the ID and the available views.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#accounts\"><strong>accounts</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#is_public\"><strong>is_public</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#short_name\"><strong>short_name</strong></a>:</p> <p><a href=\"/glossary#views_available\"><strong>views_available</strong></a>:</p>
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenBankProject\Api\AccountPublicApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$bankid = 'bankid_example'; // string | The BANKID identifier
+
+try {
+    $result = $apiInstance->publicAccountsAtOneBank($bankid);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AccountPublicApi->publicAccountsAtOneBank: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **bankid** | **string**| The BANKID identifier | |
+
+### Return type
+
+[**\OpenBankProject\Model\PublicAccountsAllBanks200Response**](../Model/PublicAccountsAllBanks200Response.md)
 
 ### Authorization
 

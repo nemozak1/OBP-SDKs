@@ -1,16 +1,16 @@
 # DataWarehouseAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv300DataWarehouseSearch**](DataWarehouseAPI.md#obpv300datawarehousesearch) | **POST** /obp/v3.0.0/search/warehouse/{index} | Data Warehouse Search
-[**oBPv300DataWarehouseStatistics**](DataWarehouseAPI.md#obpv300datawarehousestatistics) | **POST** /obp/v3.0.0/search/warehouse/statistics/{index}/{field} | Data Warehouse Statistics
+[**dataWarehouseSearch**](DataWarehouseAPI.md#datawarehousesearch) | **POST** /obp/v3.0.0/search/warehouse/{index} | Data Warehouse Search
+[**dataWarehouseStatistics**](DataWarehouseAPI.md#datawarehousestatistics) | **POST** /obp/v3.0.0/search/warehouse/statistics/{index}/{field} | Data Warehouse Statistics
 
 
-# **oBPv300DataWarehouseSearch**
+# **dataWarehouseSearch**
 ```swift
-    open class func oBPv300DataWarehouseSearch(index: String, oBPv300DataWarehouseSearchRequest: OBPv300DataWarehouseSearchRequest, completion: @escaping (_ data: OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage?, _ error: Error?) -> Void)
+    open class func dataWarehouseSearch(index: String, dataWarehouseSearchRequest: DataWarehouseSearchRequest, completion: @escaping (_ data: JSONValue?, _ error: Error?) -> Void)
 ```
 
 Data Warehouse Search
@@ -23,10 +23,10 @@ Data Warehouse Search
 import OBPSwift
 
 let index = "index_example" // String | The INDEX identifier
-let oBPv300DataWarehouseSearchRequest = OBPv3_0_0_dataWarehouseSearch_request(type: "type_example", properties: OBPv3_0_0_dataWarehouseSearch_request_properties(query: OBPv3_0_0_dataWarehouseSearch_request_properties_query(type: "type_example", properties: OBPv3_0_0_dataWarehouseSearch_request_properties_query_properties(matchAll: OBPv4_0_0_getDynamicMessageDoc_200_response_properties_example_inbound_message(type: "type_example", properties: 123))))) // OBPv300DataWarehouseSearchRequest | Request body
+let dataWarehouseSearchRequest = dataWarehouseSearch_request(query: dataWarehouseSearch_request_query(matchAll: 123)) // DataWarehouseSearchRequest | Request body
 
 // Data Warehouse Search
-DataWarehouseAPI.oBPv300DataWarehouseSearch(index: index, oBPv300DataWarehouseSearchRequest: oBPv300DataWarehouseSearchRequest) { (response, error) in
+DataWarehouseAPI.dataWarehouseSearch(index: index, dataWarehouseSearchRequest: dataWarehouseSearchRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -43,11 +43,11 @@ DataWarehouseAPI.oBPv300DataWarehouseSearch(index: index, oBPv300DataWarehouseSe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **index** | **String** | The INDEX identifier | 
- **oBPv300DataWarehouseSearchRequest** | [**OBPv300DataWarehouseSearchRequest**](OBPv300DataWarehouseSearchRequest.md) | Request body | 
+ **dataWarehouseSearchRequest** | [**DataWarehouseSearchRequest**](DataWarehouseSearchRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage**](OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.md)
+**JSONValue**
 
 ### Authorization
 
@@ -60,9 +60,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv300DataWarehouseStatistics**
+# **dataWarehouseStatistics**
 ```swift
-    open class func oBPv300DataWarehouseStatistics(index: String, field: String, oBPv300DataWarehouseSearchRequest: OBPv300DataWarehouseSearchRequest, completion: @escaping (_ data: OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage?, _ error: Error?) -> Void)
+    open class func dataWarehouseStatistics(index: String, field: String, dataWarehouseSearchRequest: DataWarehouseSearchRequest, completion: @escaping (_ data: JSONValue?, _ error: Error?) -> Void)
 ```
 
 Data Warehouse Statistics
@@ -76,10 +76,10 @@ import OBPSwift
 
 let index = "index_example" // String | The INDEX identifier
 let field = "field_example" // String | The FIELD identifier
-let oBPv300DataWarehouseSearchRequest = OBPv3_0_0_dataWarehouseSearch_request(type: "type_example", properties: OBPv3_0_0_dataWarehouseSearch_request_properties(query: OBPv3_0_0_dataWarehouseSearch_request_properties_query(type: "type_example", properties: OBPv3_0_0_dataWarehouseSearch_request_properties_query_properties(matchAll: OBPv4_0_0_getDynamicMessageDoc_200_response_properties_example_inbound_message(type: "type_example", properties: 123))))) // OBPv300DataWarehouseSearchRequest | Request body
+let dataWarehouseSearchRequest = dataWarehouseSearch_request(query: dataWarehouseSearch_request_query(matchAll: 123)) // DataWarehouseSearchRequest | Request body
 
 // Data Warehouse Statistics
-DataWarehouseAPI.oBPv300DataWarehouseStatistics(index: index, field: field, oBPv300DataWarehouseSearchRequest: oBPv300DataWarehouseSearchRequest) { (response, error) in
+DataWarehouseAPI.dataWarehouseStatistics(index: index, field: field, dataWarehouseSearchRequest: dataWarehouseSearchRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -97,11 +97,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **index** | **String** | The INDEX identifier | 
  **field** | **String** | The FIELD identifier | 
- **oBPv300DataWarehouseSearchRequest** | [**OBPv300DataWarehouseSearchRequest**](OBPv300DataWarehouseSearchRequest.md) | Request body | 
+ **dataWarehouseSearchRequest** | [**DataWarehouseSearchRequest**](DataWarehouseSearchRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage**](OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.md)
+**JSONValue**
 
 ### Authorization
 

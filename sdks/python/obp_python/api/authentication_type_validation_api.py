@@ -18,9 +18,9 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
-from obp_python.models.obpv400_get_all_authentication_type_validations_public200_response import OBPv400GetAllAuthenticationTypeValidationsPublic200Response
-from obp_python.models.obpv400_get_all_authentication_type_validations_public200_response_authentication_types_validations_inner import OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
-from obp_python.models.obpv400_update_authentication_type_validation_request import OBPv400UpdateAuthenticationTypeValidationRequest
+from obp_python.models.get_all_authentication_type_validations_public200_response import GetAllAuthenticationTypeValidationsPublic200Response
+from obp_python.models.get_all_authentication_type_validations_public200_response_authentication_types_validations_inner import GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
+from obp_python.models.update_authentication_type_validation_request import UpdateAuthenticationTypeValidationRequest
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -41,10 +41,10 @@ class AuthenticationTypeValidationApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_authentication_type_validation(
+    def create_authentication_type_validation(
         self,
         operationid: Annotated[StrictStr, Field(description="The OPERATIONID identifier")],
-        obpv400_update_authentication_type_validation_request: Annotated[OBPv400UpdateAuthenticationTypeValidationRequest, Field(description="Request body")],
+        update_authentication_type_validation_request: Annotated[UpdateAuthenticationTypeValidationRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -57,15 +57,15 @@ class AuthenticationTypeValidationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner:
+    ) -> GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner:
         """Create an Authentication Type Validation
 
         <p>Create an Authentication Type Validation.</p> <p>Please supply allowed authentication types.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON request body fields:</strong></p> <p><strong>JSON response body fields:</strong></p> 
 
         :param operationid: The OPERATIONID identifier (required)
         :type operationid: str
-        :param obpv400_update_authentication_type_validation_request: Request body (required)
-        :type obpv400_update_authentication_type_validation_request: OBPv400UpdateAuthenticationTypeValidationRequest
+        :param update_authentication_type_validation_request: Request body (required)
+        :type update_authentication_type_validation_request: UpdateAuthenticationTypeValidationRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -88,9 +88,9 @@ class AuthenticationTypeValidationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_authentication_type_validation_serialize(
+        _param = self._create_authentication_type_validation_serialize(
             operationid=operationid,
-            obpv400_update_authentication_type_validation_request=obpv400_update_authentication_type_validation_request,
+            update_authentication_type_validation_request=update_authentication_type_validation_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -98,7 +98,7 @@ class AuthenticationTypeValidationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner",
+            '200': "GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -113,10 +113,10 @@ class AuthenticationTypeValidationApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_authentication_type_validation_with_http_info(
+    def create_authentication_type_validation_with_http_info(
         self,
         operationid: Annotated[StrictStr, Field(description="The OPERATIONID identifier")],
-        obpv400_update_authentication_type_validation_request: Annotated[OBPv400UpdateAuthenticationTypeValidationRequest, Field(description="Request body")],
+        update_authentication_type_validation_request: Annotated[UpdateAuthenticationTypeValidationRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -129,15 +129,15 @@ class AuthenticationTypeValidationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner]:
+    ) -> ApiResponse[GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner]:
         """Create an Authentication Type Validation
 
         <p>Create an Authentication Type Validation.</p> <p>Please supply allowed authentication types.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON request body fields:</strong></p> <p><strong>JSON response body fields:</strong></p> 
 
         :param operationid: The OPERATIONID identifier (required)
         :type operationid: str
-        :param obpv400_update_authentication_type_validation_request: Request body (required)
-        :type obpv400_update_authentication_type_validation_request: OBPv400UpdateAuthenticationTypeValidationRequest
+        :param update_authentication_type_validation_request: Request body (required)
+        :type update_authentication_type_validation_request: UpdateAuthenticationTypeValidationRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -160,9 +160,9 @@ class AuthenticationTypeValidationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_authentication_type_validation_serialize(
+        _param = self._create_authentication_type_validation_serialize(
             operationid=operationid,
-            obpv400_update_authentication_type_validation_request=obpv400_update_authentication_type_validation_request,
+            update_authentication_type_validation_request=update_authentication_type_validation_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -170,7 +170,7 @@ class AuthenticationTypeValidationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner",
+            '200': "GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -185,10 +185,10 @@ class AuthenticationTypeValidationApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_authentication_type_validation_without_preload_content(
+    def create_authentication_type_validation_without_preload_content(
         self,
         operationid: Annotated[StrictStr, Field(description="The OPERATIONID identifier")],
-        obpv400_update_authentication_type_validation_request: Annotated[OBPv400UpdateAuthenticationTypeValidationRequest, Field(description="Request body")],
+        update_authentication_type_validation_request: Annotated[UpdateAuthenticationTypeValidationRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -208,8 +208,8 @@ class AuthenticationTypeValidationApi:
 
         :param operationid: The OPERATIONID identifier (required)
         :type operationid: str
-        :param obpv400_update_authentication_type_validation_request: Request body (required)
-        :type obpv400_update_authentication_type_validation_request: OBPv400UpdateAuthenticationTypeValidationRequest
+        :param update_authentication_type_validation_request: Request body (required)
+        :type update_authentication_type_validation_request: UpdateAuthenticationTypeValidationRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -232,9 +232,9 @@ class AuthenticationTypeValidationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_authentication_type_validation_serialize(
+        _param = self._create_authentication_type_validation_serialize(
             operationid=operationid,
-            obpv400_update_authentication_type_validation_request=obpv400_update_authentication_type_validation_request,
+            update_authentication_type_validation_request=update_authentication_type_validation_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -242,7 +242,7 @@ class AuthenticationTypeValidationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner",
+            '200': "GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -252,10 +252,10 @@ class AuthenticationTypeValidationApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_create_authentication_type_validation_serialize(
+    def _create_authentication_type_validation_serialize(
         self,
         operationid,
-        obpv400_update_authentication_type_validation_request,
+        update_authentication_type_validation_request,
         _request_auth,
         _content_type,
         _headers,
@@ -283,8 +283,8 @@ class AuthenticationTypeValidationApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_update_authentication_type_validation_request is not None:
-            _body_params = obpv400_update_authentication_type_validation_request
+        if update_authentication_type_validation_request is not None:
+            _body_params = update_authentication_type_validation_request
 
 
         # set the HTTP header `Accept`
@@ -335,7 +335,7 @@ class AuthenticationTypeValidationApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_authentication_type_validation(
+    def delete_authentication_type_validation(
         self,
         operationid: Annotated[StrictStr, Field(description="The OPERATIONID identifier")],
         _request_timeout: Union[
@@ -379,7 +379,7 @@ class AuthenticationTypeValidationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_authentication_type_validation_serialize(
+        _param = self._delete_authentication_type_validation_serialize(
             operationid=operationid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -403,7 +403,7 @@ class AuthenticationTypeValidationApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_authentication_type_validation_with_http_info(
+    def delete_authentication_type_validation_with_http_info(
         self,
         operationid: Annotated[StrictStr, Field(description="The OPERATIONID identifier")],
         _request_timeout: Union[
@@ -447,7 +447,7 @@ class AuthenticationTypeValidationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_authentication_type_validation_serialize(
+        _param = self._delete_authentication_type_validation_serialize(
             operationid=operationid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -471,7 +471,7 @@ class AuthenticationTypeValidationApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_authentication_type_validation_without_preload_content(
+    def delete_authentication_type_validation_without_preload_content(
         self,
         operationid: Annotated[StrictStr, Field(description="The OPERATIONID identifier")],
         _request_timeout: Union[
@@ -515,7 +515,7 @@ class AuthenticationTypeValidationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_authentication_type_validation_serialize(
+        _param = self._delete_authentication_type_validation_serialize(
             operationid=operationid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -534,7 +534,7 @@ class AuthenticationTypeValidationApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_delete_authentication_type_validation_serialize(
+    def _delete_authentication_type_validation_serialize(
         self,
         operationid,
         _request_auth,
@@ -594,7 +594,7 @@ class AuthenticationTypeValidationApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_all_authentication_type_validations(
+    def get_all_authentication_type_validations(
         self,
         _request_timeout: Union[
             None,
@@ -608,7 +608,7 @@ class AuthenticationTypeValidationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetAllAuthenticationTypeValidationsPublic200Response:
+    ) -> GetAllAuthenticationTypeValidationsPublic200Response:
         """Get all Authentication Type Validations
 
         <p>Get all Authentication Type Validations.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
@@ -635,7 +635,7 @@ class AuthenticationTypeValidationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_all_authentication_type_validations_serialize(
+        _param = self._get_all_authentication_type_validations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -643,7 +643,7 @@ class AuthenticationTypeValidationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllAuthenticationTypeValidationsPublic200Response",
+            '200': "GetAllAuthenticationTypeValidationsPublic200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -658,7 +658,7 @@ class AuthenticationTypeValidationApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_all_authentication_type_validations_with_http_info(
+    def get_all_authentication_type_validations_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -672,7 +672,7 @@ class AuthenticationTypeValidationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetAllAuthenticationTypeValidationsPublic200Response]:
+    ) -> ApiResponse[GetAllAuthenticationTypeValidationsPublic200Response]:
         """Get all Authentication Type Validations
 
         <p>Get all Authentication Type Validations.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
@@ -699,7 +699,7 @@ class AuthenticationTypeValidationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_all_authentication_type_validations_serialize(
+        _param = self._get_all_authentication_type_validations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -707,7 +707,7 @@ class AuthenticationTypeValidationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllAuthenticationTypeValidationsPublic200Response",
+            '200': "GetAllAuthenticationTypeValidationsPublic200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -722,7 +722,7 @@ class AuthenticationTypeValidationApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_all_authentication_type_validations_without_preload_content(
+    def get_all_authentication_type_validations_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -763,7 +763,7 @@ class AuthenticationTypeValidationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_all_authentication_type_validations_serialize(
+        _param = self._get_all_authentication_type_validations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -771,7 +771,7 @@ class AuthenticationTypeValidationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllAuthenticationTypeValidationsPublic200Response",
+            '200': "GetAllAuthenticationTypeValidationsPublic200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -781,7 +781,7 @@ class AuthenticationTypeValidationApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_all_authentication_type_validations_serialize(
+    def _get_all_authentication_type_validations_serialize(
         self,
         _request_auth,
         _content_type,
@@ -845,7 +845,7 @@ class AuthenticationTypeValidationApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_all_authentication_type_validations_public(
+    def get_all_authentication_type_validations_public(
         self,
         _request_timeout: Union[
             None,
@@ -859,7 +859,7 @@ class AuthenticationTypeValidationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetAllAuthenticationTypeValidationsPublic200Response:
+    ) -> GetAllAuthenticationTypeValidationsPublic200Response:
         """Get all Authentication Type Validations - public
 
         <p>Get all Authentication Type Validations - public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> 
@@ -886,7 +886,7 @@ class AuthenticationTypeValidationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_all_authentication_type_validations_public_serialize(
+        _param = self._get_all_authentication_type_validations_public_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -894,7 +894,7 @@ class AuthenticationTypeValidationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllAuthenticationTypeValidationsPublic200Response",
+            '200': "GetAllAuthenticationTypeValidationsPublic200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -909,7 +909,7 @@ class AuthenticationTypeValidationApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_all_authentication_type_validations_public_with_http_info(
+    def get_all_authentication_type_validations_public_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -923,7 +923,7 @@ class AuthenticationTypeValidationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetAllAuthenticationTypeValidationsPublic200Response]:
+    ) -> ApiResponse[GetAllAuthenticationTypeValidationsPublic200Response]:
         """Get all Authentication Type Validations - public
 
         <p>Get all Authentication Type Validations - public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> 
@@ -950,7 +950,7 @@ class AuthenticationTypeValidationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_all_authentication_type_validations_public_serialize(
+        _param = self._get_all_authentication_type_validations_public_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -958,7 +958,7 @@ class AuthenticationTypeValidationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllAuthenticationTypeValidationsPublic200Response",
+            '200': "GetAllAuthenticationTypeValidationsPublic200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -973,7 +973,7 @@ class AuthenticationTypeValidationApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_all_authentication_type_validations_public_without_preload_content(
+    def get_all_authentication_type_validations_public_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -1014,7 +1014,7 @@ class AuthenticationTypeValidationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_all_authentication_type_validations_public_serialize(
+        _param = self._get_all_authentication_type_validations_public_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1022,7 +1022,7 @@ class AuthenticationTypeValidationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllAuthenticationTypeValidationsPublic200Response",
+            '200': "GetAllAuthenticationTypeValidationsPublic200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1032,7 +1032,7 @@ class AuthenticationTypeValidationApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_all_authentication_type_validations_public_serialize(
+    def _get_all_authentication_type_validations_public_serialize(
         self,
         _request_auth,
         _content_type,
@@ -1093,7 +1093,7 @@ class AuthenticationTypeValidationApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_authentication_type_validation(
+    def get_authentication_type_validation(
         self,
         operationid: Annotated[StrictStr, Field(description="The OPERATIONID identifier")],
         _request_timeout: Union[
@@ -1108,7 +1108,7 @@ class AuthenticationTypeValidationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner:
+    ) -> GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner:
         """Get an Authentication Type Validation
 
         <p>Get an Authentication Type Validation by operation_id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
@@ -1137,7 +1137,7 @@ class AuthenticationTypeValidationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_authentication_type_validation_serialize(
+        _param = self._get_authentication_type_validation_serialize(
             operationid=operationid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1146,7 +1146,7 @@ class AuthenticationTypeValidationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner",
+            '200': "GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1161,7 +1161,7 @@ class AuthenticationTypeValidationApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_authentication_type_validation_with_http_info(
+    def get_authentication_type_validation_with_http_info(
         self,
         operationid: Annotated[StrictStr, Field(description="The OPERATIONID identifier")],
         _request_timeout: Union[
@@ -1176,7 +1176,7 @@ class AuthenticationTypeValidationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner]:
+    ) -> ApiResponse[GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner]:
         """Get an Authentication Type Validation
 
         <p>Get an Authentication Type Validation by operation_id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
@@ -1205,7 +1205,7 @@ class AuthenticationTypeValidationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_authentication_type_validation_serialize(
+        _param = self._get_authentication_type_validation_serialize(
             operationid=operationid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1214,7 +1214,7 @@ class AuthenticationTypeValidationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner",
+            '200': "GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1229,7 +1229,7 @@ class AuthenticationTypeValidationApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_authentication_type_validation_without_preload_content(
+    def get_authentication_type_validation_without_preload_content(
         self,
         operationid: Annotated[StrictStr, Field(description="The OPERATIONID identifier")],
         _request_timeout: Union[
@@ -1273,7 +1273,7 @@ class AuthenticationTypeValidationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_authentication_type_validation_serialize(
+        _param = self._get_authentication_type_validation_serialize(
             operationid=operationid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1282,7 +1282,7 @@ class AuthenticationTypeValidationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner",
+            '200': "GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1292,7 +1292,7 @@ class AuthenticationTypeValidationApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_authentication_type_validation_serialize(
+    def _get_authentication_type_validation_serialize(
         self,
         operationid,
         _request_auth,
@@ -1359,10 +1359,10 @@ class AuthenticationTypeValidationApi:
 
 
     @validate_call
-    def o_bpv4_0_0_update_authentication_type_validation(
+    def update_authentication_type_validation(
         self,
         operationid: Annotated[StrictStr, Field(description="The OPERATIONID identifier")],
-        obpv400_update_authentication_type_validation_request: Annotated[OBPv400UpdateAuthenticationTypeValidationRequest, Field(description="Request body")],
+        update_authentication_type_validation_request: Annotated[UpdateAuthenticationTypeValidationRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1375,15 +1375,15 @@ class AuthenticationTypeValidationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner:
+    ) -> GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner:
         """Update an Authentication Type Validation
 
         <p>Update an Authentication Type Validation.</p> <p>Please supply allowed authentication types.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
 
         :param operationid: The OPERATIONID identifier (required)
         :type operationid: str
-        :param obpv400_update_authentication_type_validation_request: Request body (required)
-        :type obpv400_update_authentication_type_validation_request: OBPv400UpdateAuthenticationTypeValidationRequest
+        :param update_authentication_type_validation_request: Request body (required)
+        :type update_authentication_type_validation_request: UpdateAuthenticationTypeValidationRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1406,9 +1406,9 @@ class AuthenticationTypeValidationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_update_authentication_type_validation_serialize(
+        _param = self._update_authentication_type_validation_serialize(
             operationid=operationid,
-            obpv400_update_authentication_type_validation_request=obpv400_update_authentication_type_validation_request,
+            update_authentication_type_validation_request=update_authentication_type_validation_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1416,7 +1416,7 @@ class AuthenticationTypeValidationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner",
+            '200': "GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1431,10 +1431,10 @@ class AuthenticationTypeValidationApi:
 
 
     @validate_call
-    def o_bpv4_0_0_update_authentication_type_validation_with_http_info(
+    def update_authentication_type_validation_with_http_info(
         self,
         operationid: Annotated[StrictStr, Field(description="The OPERATIONID identifier")],
-        obpv400_update_authentication_type_validation_request: Annotated[OBPv400UpdateAuthenticationTypeValidationRequest, Field(description="Request body")],
+        update_authentication_type_validation_request: Annotated[UpdateAuthenticationTypeValidationRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1447,15 +1447,15 @@ class AuthenticationTypeValidationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner]:
+    ) -> ApiResponse[GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner]:
         """Update an Authentication Type Validation
 
         <p>Update an Authentication Type Validation.</p> <p>Please supply allowed authentication types.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
 
         :param operationid: The OPERATIONID identifier (required)
         :type operationid: str
-        :param obpv400_update_authentication_type_validation_request: Request body (required)
-        :type obpv400_update_authentication_type_validation_request: OBPv400UpdateAuthenticationTypeValidationRequest
+        :param update_authentication_type_validation_request: Request body (required)
+        :type update_authentication_type_validation_request: UpdateAuthenticationTypeValidationRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1478,9 +1478,9 @@ class AuthenticationTypeValidationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_update_authentication_type_validation_serialize(
+        _param = self._update_authentication_type_validation_serialize(
             operationid=operationid,
-            obpv400_update_authentication_type_validation_request=obpv400_update_authentication_type_validation_request,
+            update_authentication_type_validation_request=update_authentication_type_validation_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1488,7 +1488,7 @@ class AuthenticationTypeValidationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner",
+            '200': "GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1503,10 +1503,10 @@ class AuthenticationTypeValidationApi:
 
 
     @validate_call
-    def o_bpv4_0_0_update_authentication_type_validation_without_preload_content(
+    def update_authentication_type_validation_without_preload_content(
         self,
         operationid: Annotated[StrictStr, Field(description="The OPERATIONID identifier")],
-        obpv400_update_authentication_type_validation_request: Annotated[OBPv400UpdateAuthenticationTypeValidationRequest, Field(description="Request body")],
+        update_authentication_type_validation_request: Annotated[UpdateAuthenticationTypeValidationRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1526,8 +1526,8 @@ class AuthenticationTypeValidationApi:
 
         :param operationid: The OPERATIONID identifier (required)
         :type operationid: str
-        :param obpv400_update_authentication_type_validation_request: Request body (required)
-        :type obpv400_update_authentication_type_validation_request: OBPv400UpdateAuthenticationTypeValidationRequest
+        :param update_authentication_type_validation_request: Request body (required)
+        :type update_authentication_type_validation_request: UpdateAuthenticationTypeValidationRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1550,9 +1550,9 @@ class AuthenticationTypeValidationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_update_authentication_type_validation_serialize(
+        _param = self._update_authentication_type_validation_serialize(
             operationid=operationid,
-            obpv400_update_authentication_type_validation_request=obpv400_update_authentication_type_validation_request,
+            update_authentication_type_validation_request=update_authentication_type_validation_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1560,7 +1560,7 @@ class AuthenticationTypeValidationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner",
+            '200': "GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1570,10 +1570,10 @@ class AuthenticationTypeValidationApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_update_authentication_type_validation_serialize(
+    def _update_authentication_type_validation_serialize(
         self,
         operationid,
-        obpv400_update_authentication_type_validation_request,
+        update_authentication_type_validation_request,
         _request_auth,
         _content_type,
         _headers,
@@ -1601,8 +1601,8 @@ class AuthenticationTypeValidationApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_update_authentication_type_validation_request is not None:
-            _body_params = obpv400_update_authentication_type_validation_request
+        if update_authentication_type_validation_request is not None:
+            _body_params = update_authentication_type_validation_request
 
 
         # set the HTTP header `Accept`

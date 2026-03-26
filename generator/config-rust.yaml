@@ -1,6 +1,6 @@
 generatorName: rust
 outputDir: ../sdks/rust
-inputSpec: ../openapi-spec/obp-openapi.json
+inputSpec: ../openapi-spec/obp-openapi-simplified.json
 additionalProperties:
   packageName: obp_rust
   packageVersion: "1.0.0"

@@ -2,27 +2,27 @@
 
 Operations related to ABAC
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv600CreateAbacRule()**](ABACApi.md#oBPv600CreateAbacRule) | **POST** /obp/v6.0.0/management/abac-rules | Create ABAC Rule |
-| [**oBPv600DeleteAbacRule()**](ABACApi.md#oBPv600DeleteAbacRule) | **DELETE** /obp/v6.0.0/management/abac-rules/{abacruleid} | Delete ABAC Rule |
-| [**oBPv600ExecuteAbacPolicy()**](ABACApi.md#oBPv600ExecuteAbacPolicy) | **POST** /obp/v6.0.0/management/abac-policies/{policy}/execute | Execute ABAC Policy |
-| [**oBPv600ExecuteAbacRule()**](ABACApi.md#oBPv600ExecuteAbacRule) | **POST** /obp/v6.0.0/management/abac-rules/{abacruleid}/execute | Execute ABAC Rule |
-| [**oBPv600GetAbacPolicies()**](ABACApi.md#oBPv600GetAbacPolicies) | **GET** /obp/v6.0.0/management/abac-policies | Get ABAC Policies |
-| [**oBPv600GetAbacRule()**](ABACApi.md#oBPv600GetAbacRule) | **GET** /obp/v6.0.0/management/abac-rules/{abacruleid} | Get ABAC Rule |
-| [**oBPv600GetAbacRuleSchema()**](ABACApi.md#oBPv600GetAbacRuleSchema) | **GET** /obp/v6.0.0/management/abac-rules-schema | Get ABAC Rule Schema |
-| [**oBPv600GetAbacRules()**](ABACApi.md#oBPv600GetAbacRules) | **GET** /obp/v6.0.0/management/abac-rules | Get ABAC Rules |
-| [**oBPv600GetAbacRulesByPolicy()**](ABACApi.md#oBPv600GetAbacRulesByPolicy) | **GET** /obp/v6.0.0/management/abac-rules/policy/{policy} | Get ABAC Rules by Policy |
-| [**oBPv600UpdateAbacRule()**](ABACApi.md#oBPv600UpdateAbacRule) | **PUT** /obp/v6.0.0/management/abac-rules/{abacruleid} | Update ABAC Rule |
-| [**oBPv600ValidateAbacRule()**](ABACApi.md#oBPv600ValidateAbacRule) | **POST** /obp/v6.0.0/management/abac-rules/validate | Validate ABAC Rule |
+| [**createAbacRule()**](ABACApi.md#createAbacRule) | **POST** /obp/v6.0.0/management/abac-rules | Create ABAC Rule |
+| [**deleteAbacRule()**](ABACApi.md#deleteAbacRule) | **DELETE** /obp/v6.0.0/management/abac-rules/{abacruleid} | Delete ABAC Rule |
+| [**executeAbacPolicy()**](ABACApi.md#executeAbacPolicy) | **POST** /obp/v6.0.0/management/abac-policies/{policy}/execute | Execute ABAC Policy |
+| [**executeAbacRule()**](ABACApi.md#executeAbacRule) | **POST** /obp/v6.0.0/management/abac-rules/{abacruleid}/execute | Execute ABAC Rule |
+| [**getAbacPolicies()**](ABACApi.md#getAbacPolicies) | **GET** /obp/v6.0.0/management/abac-policies | Get ABAC Policies |
+| [**getAbacRule()**](ABACApi.md#getAbacRule) | **GET** /obp/v6.0.0/management/abac-rules/{abacruleid} | Get ABAC Rule |
+| [**getAbacRuleSchema()**](ABACApi.md#getAbacRuleSchema) | **GET** /obp/v6.0.0/management/abac-rules-schema | Get ABAC Rule Schema |
+| [**getAbacRules()**](ABACApi.md#getAbacRules) | **GET** /obp/v6.0.0/management/abac-rules | Get ABAC Rules |
+| [**getAbacRulesByPolicy()**](ABACApi.md#getAbacRulesByPolicy) | **GET** /obp/v6.0.0/management/abac-rules/policy/{policy} | Get ABAC Rules by Policy |
+| [**updateAbacRule()**](ABACApi.md#updateAbacRule) | **PUT** /obp/v6.0.0/management/abac-rules/{abacruleid} | Update ABAC Rule |
+| [**validateAbacRule()**](ABACApi.md#validateAbacRule) | **POST** /obp/v6.0.0/management/abac-rules/validate | Validate ABAC Rule |
 
 
-## `oBPv600CreateAbacRule()`
+## `createAbacRule()`
 
 ```php
-oBPv600CreateAbacRule($obpv600_update_abac_rule_request): \OpenBankProject\Model\OBPv600GetAbacRule200Response
+createAbacRule($update_abac_rule_request): \OpenBankProject\Model\GetAbacRule200Response
 ```
 
 Create ABAC Rule
@@ -45,9 +45,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\ABACApi(
@@ -56,13 +56,13 @@ $apiInstance = new OpenBankProject\Api\ABACApi(
     new GuzzleHttp\Client(),
     $config
 );
-$obpv600_update_abac_rule_request = {type=object, properties={rule_name={type=string}, is_active={type=boolean}, description={type=string}, rule_code={type=string}, policy={type=string}}}; // \OpenBankProject\Model\OBPv600UpdateAbacRuleRequest | Request body
+$update_abac_rule_request = {type=object, properties={rule_name={type=string}, is_active={type=boolean}, description={type=string}, rule_code={type=string}, policy={type=string}}}; // \OpenBankProject\Model\UpdateAbacRuleRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv600CreateAbacRule($obpv600_update_abac_rule_request);
+    $result = $apiInstance->createAbacRule($update_abac_rule_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ABACApi->oBPv600CreateAbacRule: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ABACApi->createAbacRule: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -70,11 +70,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obpv600_update_abac_rule_request** | [**\OpenBankProject\Model\OBPv600UpdateAbacRuleRequest**](../Model/OBPv600UpdateAbacRuleRequest.md)| Request body | |
+| **update_abac_rule_request** | [**\OpenBankProject\Model\UpdateAbacRuleRequest**](../Model/UpdateAbacRuleRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetAbacRule200Response**](../Model/OBPv600GetAbacRule200Response.md)
+[**\OpenBankProject\Model\GetAbacRule200Response**](../Model/GetAbacRule200Response.md)
 
 ### Authorization
 
@@ -89,10 +89,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600DeleteAbacRule()`
+## `deleteAbacRule()`
 
 ```php
-oBPv600DeleteAbacRule($abacruleid)
+deleteAbacRule($abacruleid)
 ```
 
 Delete ABAC Rule
@@ -115,9 +115,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\ABACApi(
@@ -129,9 +129,9 @@ $apiInstance = new OpenBankProject\Api\ABACApi(
 $abacruleid = 'abacruleid_example'; // string | The ABACRULEID identifier
 
 try {
-    $apiInstance->oBPv600DeleteAbacRule($abacruleid);
+    $apiInstance->deleteAbacRule($abacruleid);
 } catch (Exception $e) {
-    echo 'Exception when calling ABACApi->oBPv600DeleteAbacRule: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ABACApi->deleteAbacRule: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -158,10 +158,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600ExecuteAbacPolicy()`
+## `executeAbacPolicy()`
 
 ```php
-oBPv600ExecuteAbacPolicy($policy, $obpv600_execute_abac_policy_request): \OpenBankProject\Model\OBPv600ExecuteAbacPolicy200Response
+executeAbacPolicy($policy, $execute_abac_policy_request): \OpenBankProject\Model\ExecuteAbacPolicy200Response
 ```
 
 Execute ABAC Policy
@@ -184,9 +184,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\ABACApi(
@@ -196,13 +196,13 @@ $apiInstance = new OpenBankProject\Api\ABACApi(
     $config
 );
 $policy = 'policy_example'; // string | The POLICY identifier
-$obpv600_execute_abac_policy_request = {"type":"object","properties":{"customer_id":{"type":"string"},"bank_id":{"type":"string"},"authenticated_user_id":{"type":"string"},"transaction_id":{"type":"string"},"view_id":{"type":"string"},"on_behalf_of_user_id":{"type":"string"},"user_id":{"type":"string"},"account_id":{"type":"string"},"transaction_request_id":{"type":"string"}}}; // \OpenBankProject\Model\OBPv600ExecuteAbacPolicyRequest | Request body
+$execute_abac_policy_request = {"type":"object","properties":{"customer_id":{"type":"string"},"bank_id":{"type":"string"},"authenticated_user_id":{"type":"string"},"transaction_id":{"type":"string"},"view_id":{"type":"string"},"on_behalf_of_user_id":{"type":"string"},"user_id":{"type":"string"},"account_id":{"type":"string"},"transaction_request_id":{"type":"string"}}}; // \OpenBankProject\Model\ExecuteAbacPolicyRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv600ExecuteAbacPolicy($policy, $obpv600_execute_abac_policy_request);
+    $result = $apiInstance->executeAbacPolicy($policy, $execute_abac_policy_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ABACApi->oBPv600ExecuteAbacPolicy: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ABACApi->executeAbacPolicy: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -211,11 +211,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **policy** | **string**| The POLICY identifier | |
-| **obpv600_execute_abac_policy_request** | [**\OpenBankProject\Model\OBPv600ExecuteAbacPolicyRequest**](../Model/OBPv600ExecuteAbacPolicyRequest.md)| Request body | |
+| **execute_abac_policy_request** | [**\OpenBankProject\Model\ExecuteAbacPolicyRequest**](../Model/ExecuteAbacPolicyRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600ExecuteAbacPolicy200Response**](../Model/OBPv600ExecuteAbacPolicy200Response.md)
+[**\OpenBankProject\Model\ExecuteAbacPolicy200Response**](../Model/ExecuteAbacPolicy200Response.md)
 
 ### Authorization
 
@@ -230,10 +230,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600ExecuteAbacRule()`
+## `executeAbacRule()`
 
 ```php
-oBPv600ExecuteAbacRule($abacruleid, $obpv600_execute_abac_policy_request): \OpenBankProject\Model\OBPv600ExecuteAbacPolicy200Response
+executeAbacRule($abacruleid, $execute_abac_policy_request): \OpenBankProject\Model\ExecuteAbacPolicy200Response
 ```
 
 Execute ABAC Rule
@@ -256,9 +256,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\ABACApi(
@@ -268,13 +268,13 @@ $apiInstance = new OpenBankProject\Api\ABACApi(
     $config
 );
 $abacruleid = 'abacruleid_example'; // string | The ABACRULEID identifier
-$obpv600_execute_abac_policy_request = {type=object, properties={customer_id={type=string}, bank_id={type=string}, authenticated_user_id={type=string}, transaction_id={type=string}, view_id={type=string}, on_behalf_of_user_id={type=string}, user_id={type=string}, account_id={type=string}, transaction_request_id={type=string}}}; // \OpenBankProject\Model\OBPv600ExecuteAbacPolicyRequest | Request body
+$execute_abac_policy_request = {type=object, properties={customer_id={type=string}, bank_id={type=string}, authenticated_user_id={type=string}, transaction_id={type=string}, view_id={type=string}, on_behalf_of_user_id={type=string}, user_id={type=string}, account_id={type=string}, transaction_request_id={type=string}}}; // \OpenBankProject\Model\ExecuteAbacPolicyRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv600ExecuteAbacRule($abacruleid, $obpv600_execute_abac_policy_request);
+    $result = $apiInstance->executeAbacRule($abacruleid, $execute_abac_policy_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ABACApi->oBPv600ExecuteAbacRule: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ABACApi->executeAbacRule: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -283,11 +283,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **abacruleid** | **string**| The ABACRULEID identifier | |
-| **obpv600_execute_abac_policy_request** | [**\OpenBankProject\Model\OBPv600ExecuteAbacPolicyRequest**](../Model/OBPv600ExecuteAbacPolicyRequest.md)| Request body | |
+| **execute_abac_policy_request** | [**\OpenBankProject\Model\ExecuteAbacPolicyRequest**](../Model/ExecuteAbacPolicyRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600ExecuteAbacPolicy200Response**](../Model/OBPv600ExecuteAbacPolicy200Response.md)
+[**\OpenBankProject\Model\ExecuteAbacPolicy200Response**](../Model/ExecuteAbacPolicy200Response.md)
 
 ### Authorization
 
@@ -302,10 +302,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600GetAbacPolicies()`
+## `getAbacPolicies()`
 
 ```php
-oBPv600GetAbacPolicies(): \OpenBankProject\Model\OBPv600GetAbacPolicies200Response
+getAbacPolicies(): \OpenBankProject\Model\GetAbacPolicies200Response
 ```
 
 Get ABAC Policies
@@ -328,9 +328,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\ABACApi(
@@ -341,10 +341,10 @@ $apiInstance = new OpenBankProject\Api\ABACApi(
 );
 
 try {
-    $result = $apiInstance->oBPv600GetAbacPolicies();
+    $result = $apiInstance->getAbacPolicies();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ABACApi->oBPv600GetAbacPolicies: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ABACApi->getAbacPolicies: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -354,7 +354,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetAbacPolicies200Response**](../Model/OBPv600GetAbacPolicies200Response.md)
+[**\OpenBankProject\Model\GetAbacPolicies200Response**](../Model/GetAbacPolicies200Response.md)
 
 ### Authorization
 
@@ -369,10 +369,10 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600GetAbacRule()`
+## `getAbacRule()`
 
 ```php
-oBPv600GetAbacRule($abacruleid): \OpenBankProject\Model\OBPv600GetAbacRule200Response
+getAbacRule($abacruleid): \OpenBankProject\Model\GetAbacRule200Response
 ```
 
 Get ABAC Rule
@@ -395,9 +395,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\ABACApi(
@@ -409,10 +409,10 @@ $apiInstance = new OpenBankProject\Api\ABACApi(
 $abacruleid = 'abacruleid_example'; // string | The ABACRULEID identifier
 
 try {
-    $result = $apiInstance->oBPv600GetAbacRule($abacruleid);
+    $result = $apiInstance->getAbacRule($abacruleid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ABACApi->oBPv600GetAbacRule: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ABACApi->getAbacRule: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -424,7 +424,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetAbacRule200Response**](../Model/OBPv600GetAbacRule200Response.md)
+[**\OpenBankProject\Model\GetAbacRule200Response**](../Model/GetAbacRule200Response.md)
 
 ### Authorization
 
@@ -439,10 +439,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600GetAbacRuleSchema()`
+## `getAbacRuleSchema()`
 
 ```php
-oBPv600GetAbacRuleSchema(): \OpenBankProject\Model\OBPv600GetAbacRuleSchema200Response
+getAbacRuleSchema(): \OpenBankProject\Model\GetAbacRuleSchema200Response
 ```
 
 Get ABAC Rule Schema
@@ -465,9 +465,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\ABACApi(
@@ -478,10 +478,10 @@ $apiInstance = new OpenBankProject\Api\ABACApi(
 );
 
 try {
-    $result = $apiInstance->oBPv600GetAbacRuleSchema();
+    $result = $apiInstance->getAbacRuleSchema();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ABACApi->oBPv600GetAbacRuleSchema: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ABACApi->getAbacRuleSchema: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -491,7 +491,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetAbacRuleSchema200Response**](../Model/OBPv600GetAbacRuleSchema200Response.md)
+[**\OpenBankProject\Model\GetAbacRuleSchema200Response**](../Model/GetAbacRuleSchema200Response.md)
 
 ### Authorization
 
@@ -506,10 +506,10 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600GetAbacRules()`
+## `getAbacRules()`
 
 ```php
-oBPv600GetAbacRules(): \OpenBankProject\Model\OBPv600GetAbacRulesByPolicy200Response
+getAbacRules(): \OpenBankProject\Model\GetAbacRulesByPolicy200Response
 ```
 
 Get ABAC Rules
@@ -532,9 +532,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\ABACApi(
@@ -545,10 +545,10 @@ $apiInstance = new OpenBankProject\Api\ABACApi(
 );
 
 try {
-    $result = $apiInstance->oBPv600GetAbacRules();
+    $result = $apiInstance->getAbacRules();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ABACApi->oBPv600GetAbacRules: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ABACApi->getAbacRules: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -558,7 +558,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetAbacRulesByPolicy200Response**](../Model/OBPv600GetAbacRulesByPolicy200Response.md)
+[**\OpenBankProject\Model\GetAbacRulesByPolicy200Response**](../Model/GetAbacRulesByPolicy200Response.md)
 
 ### Authorization
 
@@ -573,10 +573,10 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600GetAbacRulesByPolicy()`
+## `getAbacRulesByPolicy()`
 
 ```php
-oBPv600GetAbacRulesByPolicy($policy): \OpenBankProject\Model\OBPv600GetAbacRulesByPolicy200Response
+getAbacRulesByPolicy($policy): \OpenBankProject\Model\GetAbacRulesByPolicy200Response
 ```
 
 Get ABAC Rules by Policy
@@ -599,9 +599,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\ABACApi(
@@ -613,10 +613,10 @@ $apiInstance = new OpenBankProject\Api\ABACApi(
 $policy = 'policy_example'; // string | The POLICY identifier
 
 try {
-    $result = $apiInstance->oBPv600GetAbacRulesByPolicy($policy);
+    $result = $apiInstance->getAbacRulesByPolicy($policy);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ABACApi->oBPv600GetAbacRulesByPolicy: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ABACApi->getAbacRulesByPolicy: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -628,7 +628,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetAbacRulesByPolicy200Response**](../Model/OBPv600GetAbacRulesByPolicy200Response.md)
+[**\OpenBankProject\Model\GetAbacRulesByPolicy200Response**](../Model/GetAbacRulesByPolicy200Response.md)
 
 ### Authorization
 
@@ -643,10 +643,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600UpdateAbacRule()`
+## `updateAbacRule()`
 
 ```php
-oBPv600UpdateAbacRule($abacruleid, $obpv600_update_abac_rule_request): \OpenBankProject\Model\OBPv600GetAbacRule200Response
+updateAbacRule($abacruleid, $update_abac_rule_request): \OpenBankProject\Model\GetAbacRule200Response
 ```
 
 Update ABAC Rule
@@ -669,9 +669,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\ABACApi(
@@ -681,13 +681,13 @@ $apiInstance = new OpenBankProject\Api\ABACApi(
     $config
 );
 $abacruleid = 'abacruleid_example'; // string | The ABACRULEID identifier
-$obpv600_update_abac_rule_request = {"type":"object","properties":{"rule_name":{"type":"string"},"is_active":{"type":"boolean"},"description":{"type":"string"},"rule_code":{"type":"string"},"policy":{"type":"string"}}}; // \OpenBankProject\Model\OBPv600UpdateAbacRuleRequest | Request body
+$update_abac_rule_request = {"type":"object","properties":{"rule_name":{"type":"string"},"is_active":{"type":"boolean"},"description":{"type":"string"},"rule_code":{"type":"string"},"policy":{"type":"string"}}}; // \OpenBankProject\Model\UpdateAbacRuleRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv600UpdateAbacRule($abacruleid, $obpv600_update_abac_rule_request);
+    $result = $apiInstance->updateAbacRule($abacruleid, $update_abac_rule_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ABACApi->oBPv600UpdateAbacRule: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ABACApi->updateAbacRule: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -696,11 +696,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **abacruleid** | **string**| The ABACRULEID identifier | |
-| **obpv600_update_abac_rule_request** | [**\OpenBankProject\Model\OBPv600UpdateAbacRuleRequest**](../Model/OBPv600UpdateAbacRuleRequest.md)| Request body | |
+| **update_abac_rule_request** | [**\OpenBankProject\Model\UpdateAbacRuleRequest**](../Model/UpdateAbacRuleRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetAbacRule200Response**](../Model/OBPv600GetAbacRule200Response.md)
+[**\OpenBankProject\Model\GetAbacRule200Response**](../Model/GetAbacRule200Response.md)
 
 ### Authorization
 
@@ -715,10 +715,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600ValidateAbacRule()`
+## `validateAbacRule()`
 
 ```php
-oBPv600ValidateAbacRule($obpv600_validate_abac_rule_request): \OpenBankProject\Model\OBPv600ValidateAbacRule200Response
+validateAbacRule($validate_abac_rule_request): \OpenBankProject\Model\ValidateAbacRule200Response
 ```
 
 Validate ABAC Rule
@@ -741,9 +741,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\ABACApi(
@@ -752,13 +752,13 @@ $apiInstance = new OpenBankProject\Api\ABACApi(
     new GuzzleHttp\Client(),
     $config
 );
-$obpv600_validate_abac_rule_request = {"type":"object","properties":{"rule_code":{"type":"string"}}}; // \OpenBankProject\Model\OBPv600ValidateAbacRuleRequest | Request body
+$validate_abac_rule_request = {"type":"object","properties":{"rule_code":{"type":"string"}}}; // \OpenBankProject\Model\ValidateAbacRuleRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv600ValidateAbacRule($obpv600_validate_abac_rule_request);
+    $result = $apiInstance->validateAbacRule($validate_abac_rule_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ABACApi->oBPv600ValidateAbacRule: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ABACApi->validateAbacRule: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -766,11 +766,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obpv600_validate_abac_rule_request** | [**\OpenBankProject\Model\OBPv600ValidateAbacRuleRequest**](../Model/OBPv600ValidateAbacRuleRequest.md)| Request body | |
+| **validate_abac_rule_request** | [**\OpenBankProject\Model\ValidateAbacRuleRequest**](../Model/ValidateAbacRuleRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600ValidateAbacRule200Response**](../Model/OBPv600ValidateAbacRule200Response.md)
+[**\OpenBankProject\Model\ValidateAbacRule200Response**](../Model/ValidateAbacRule200Response.md)
 
 ### Authorization
 

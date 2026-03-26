@@ -4,11 +4,11 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv3_1_0_check_funds_available**](ConfirmationOfFundsServicePIISApi.md#o_bpv3_1_0_check_funds_available) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available | Check Available Funds
+[**check_funds_available**](ConfirmationOfFundsServicePIISApi.md#check_funds_available) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available | Check Available Funds
 
 
-# **o_bpv3_1_0_check_funds_available**
-> OBPv310CheckFundsAvailable200Response o_bpv3_1_0_check_funds_available(bankid, accountid, viewid)
+# **check_funds_available**
+> CheckFundsAvailable200Response check_funds_available(bankid, accountid, viewid)
 
 Check Available Funds
 
@@ -37,7 +37,7 @@ Mandatory URL parameters:</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv310_check_funds_available200_response import OBPv310CheckFundsAvailable200Response
+from obp_python.models.check_funds_available200_response import CheckFundsAvailable200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -76,11 +76,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Check Available Funds
-        api_response = api_instance.o_bpv3_1_0_check_funds_available(bankid, accountid, viewid)
-        print("The response of ConfirmationOfFundsServicePIISApi->o_bpv3_1_0_check_funds_available:\n")
+        api_response = api_instance.check_funds_available(bankid, accountid, viewid)
+        print("The response of ConfirmationOfFundsServicePIISApi->check_funds_available:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConfirmationOfFundsServicePIISApi->o_bpv3_1_0_check_funds_available: %s\n" % e)
+        print("Exception when calling ConfirmationOfFundsServicePIISApi->check_funds_available: %s\n" % e)
 ```
 
 
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv310CheckFundsAvailable200Response**](OBPv310CheckFundsAvailable200Response.md)
+[**CheckFundsAvailable200Response**](CheckFundsAvailable200Response.md)
 
 ### Authorization
 

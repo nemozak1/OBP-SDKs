@@ -33,3 +33,6 @@ echo "Spec saved to: ${SPEC_DIR}/obp-openapi.json"
 python3 -c "import json; json.load(open('${SPEC_DIR}/obp-openapi.json'))" 2>/dev/null \
   && echo "Spec is valid JSON." \
   || echo "Warning: Could not validate JSON (python3 not available)."
+
+echo "Simplifying spec (stripping version prefixes from operationIds)..."
+python3 "${SCRIPT_DIR}/simplify-spec.py"

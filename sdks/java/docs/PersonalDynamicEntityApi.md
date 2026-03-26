@@ -1,17 +1,17 @@
 # PersonalDynamicEntityApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv600GetAvailablePersonalDynamicEntities**](PersonalDynamicEntityApi.md#oBPv600GetAvailablePersonalDynamicEntities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities |
-| [**oBPv600GetAvailablePersonalDynamicEntitiesWithHttpInfo**](PersonalDynamicEntityApi.md#oBPv600GetAvailablePersonalDynamicEntitiesWithHttpInfo) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities |
+| [**getAvailablePersonalDynamicEntities**](PersonalDynamicEntityApi.md#getAvailablePersonalDynamicEntities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities |
+| [**getAvailablePersonalDynamicEntitiesWithHttpInfo**](PersonalDynamicEntityApi.md#getAvailablePersonalDynamicEntitiesWithHttpInfo) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities |
 
 
 
-## oBPv600GetAvailablePersonalDynamicEntities
+## getAvailablePersonalDynamicEntities
 
-> OBPv600GetAvailablePersonalDynamicEntities200Response oBPv600GetAvailablePersonalDynamicEntities()
+> GetAvailablePersonalDynamicEntities200Response getAvailablePersonalDynamicEntities()
 
 Get Available Personal Dynamic Entities
 
@@ -31,7 +31,7 @@ import com.openbankproject.api.PersonalDynamicEntityApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -51,10 +51,10 @@ public class Example {
 
         PersonalDynamicEntityApi apiInstance = new PersonalDynamicEntityApi(defaultClient);
         try {
-            OBPv600GetAvailablePersonalDynamicEntities200Response result = apiInstance.oBPv600GetAvailablePersonalDynamicEntities();
+            GetAvailablePersonalDynamicEntities200Response result = apiInstance.getAvailablePersonalDynamicEntities();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling PersonalDynamicEntityApi#oBPv600GetAvailablePersonalDynamicEntities");
+            System.err.println("Exception when calling PersonalDynamicEntityApi#getAvailablePersonalDynamicEntities");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -70,7 +70,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAvailablePersonalDynamicEntities200Response**](OBPv600GetAvailablePersonalDynamicEntities200Response.md)
+[**GetAvailablePersonalDynamicEntities200Response**](GetAvailablePersonalDynamicEntities200Response.md)
 
 
 ### Authorization
@@ -88,9 +88,9 @@ This endpoint does not need any parameter.
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600GetAvailablePersonalDynamicEntitiesWithHttpInfo
+## getAvailablePersonalDynamicEntitiesWithHttpInfo
 
-> ApiResponse<OBPv600GetAvailablePersonalDynamicEntities200Response> oBPv600GetAvailablePersonalDynamicEntities oBPv600GetAvailablePersonalDynamicEntitiesWithHttpInfo()
+> ApiResponse<GetAvailablePersonalDynamicEntities200Response> getAvailablePersonalDynamicEntities getAvailablePersonalDynamicEntitiesWithHttpInfo()
 
 Get Available Personal Dynamic Entities
 
@@ -111,7 +111,7 @@ import com.openbankproject.api.PersonalDynamicEntityApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -131,12 +131,12 @@ public class Example {
 
         PersonalDynamicEntityApi apiInstance = new PersonalDynamicEntityApi(defaultClient);
         try {
-            ApiResponse<OBPv600GetAvailablePersonalDynamicEntities200Response> response = apiInstance.oBPv600GetAvailablePersonalDynamicEntitiesWithHttpInfo();
+            ApiResponse<GetAvailablePersonalDynamicEntities200Response> response = apiInstance.getAvailablePersonalDynamicEntitiesWithHttpInfo();
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling PersonalDynamicEntityApi#oBPv600GetAvailablePersonalDynamicEntities");
+            System.err.println("Exception when calling PersonalDynamicEntityApi#getAvailablePersonalDynamicEntities");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -152,7 +152,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-ApiResponse<[**OBPv600GetAvailablePersonalDynamicEntities200Response**](OBPv600GetAvailablePersonalDynamicEntities200Response.md)>
+ApiResponse<[**GetAvailablePersonalDynamicEntities200Response**](GetAvailablePersonalDynamicEntities200Response.md)>
 
 
 ### Authorization

@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,22 +75,22 @@ class AIAgentApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv600DeleteSignalChannel' => [
+        'deleteSignalChannel' => [
             'application/json',
         ],
-        'oBPv600GetSignalChannelInfo' => [
+        'getSignalChannelInfo' => [
             'application/json',
         ],
-        'oBPv600GetSignalChannels' => [
+        'getSignalChannels' => [
             'application/json',
         ],
-        'oBPv600GetSignalMessages' => [
+        'getSignalMessages' => [
             'application/json',
         ],
-        'oBPv600GetSignalStats' => [
+        'getSignalStats' => [
             'application/json',
         ],
-        'oBPv600PublishSignalMessage' => [
+        'publishSignalMessage' => [
             'application/json',
         ],
     ];
@@ -142,38 +142,38 @@ class AIAgentApi
     }
 
     /**
-     * Operation oBPv600DeleteSignalChannel
+     * Operation deleteSignalChannel
      *
      * Delete Signal Channel
      *
      * @param  string $channelname The CHANNELNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteSignalChannel'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSignalChannel'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600DeleteSignalChannel200Response
+     * @return \OpenBankProject\Model\DeleteSignalChannel200Response
      */
-    public function oBPv600DeleteSignalChannel($channelname, string $contentType = self::contentTypes['oBPv600DeleteSignalChannel'][0])
+    public function deleteSignalChannel($channelname, string $contentType = self::contentTypes['deleteSignalChannel'][0])
     {
-        list($response) = $this->oBPv600DeleteSignalChannelWithHttpInfo($channelname, $contentType);
+        list($response) = $this->deleteSignalChannelWithHttpInfo($channelname, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600DeleteSignalChannelWithHttpInfo
+     * Operation deleteSignalChannelWithHttpInfo
      *
      * Delete Signal Channel
      *
      * @param  string $channelname The CHANNELNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteSignalChannel'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSignalChannel'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600DeleteSignalChannel200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\DeleteSignalChannel200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600DeleteSignalChannelWithHttpInfo($channelname, string $contentType = self::contentTypes['oBPv600DeleteSignalChannel'][0])
+    public function deleteSignalChannelWithHttpInfo($channelname, string $contentType = self::contentTypes['deleteSignalChannel'][0])
     {
-        $request = $this->oBPv600DeleteSignalChannelRequest($channelname, $contentType);
+        $request = $this->deleteSignalChannelRequest($channelname, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -201,7 +201,7 @@ class AIAgentApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600DeleteSignalChannel200Response',
+                        '\OpenBankProject\Model\DeleteSignalChannel200Response',
                         $request,
                         $response,
                     );
@@ -223,7 +223,7 @@ class AIAgentApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600DeleteSignalChannel200Response',
+                '\OpenBankProject\Model\DeleteSignalChannel200Response',
                 $request,
                 $response,
             );
@@ -232,7 +232,7 @@ class AIAgentApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600DeleteSignalChannel200Response',
+                        '\OpenBankProject\Model\DeleteSignalChannel200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -245,19 +245,19 @@ class AIAgentApi
     }
 
     /**
-     * Operation oBPv600DeleteSignalChannelAsync
+     * Operation deleteSignalChannelAsync
      *
      * Delete Signal Channel
      *
      * @param  string $channelname The CHANNELNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteSignalChannel'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSignalChannel'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600DeleteSignalChannelAsync($channelname, string $contentType = self::contentTypes['oBPv600DeleteSignalChannel'][0])
+    public function deleteSignalChannelAsync($channelname, string $contentType = self::contentTypes['deleteSignalChannel'][0])
     {
-        return $this->oBPv600DeleteSignalChannelAsyncWithHttpInfo($channelname, $contentType)
+        return $this->deleteSignalChannelAsyncWithHttpInfo($channelname, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -266,20 +266,20 @@ class AIAgentApi
     }
 
     /**
-     * Operation oBPv600DeleteSignalChannelAsyncWithHttpInfo
+     * Operation deleteSignalChannelAsyncWithHttpInfo
      *
      * Delete Signal Channel
      *
      * @param  string $channelname The CHANNELNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteSignalChannel'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSignalChannel'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600DeleteSignalChannelAsyncWithHttpInfo($channelname, string $contentType = self::contentTypes['oBPv600DeleteSignalChannel'][0])
+    public function deleteSignalChannelAsyncWithHttpInfo($channelname, string $contentType = self::contentTypes['deleteSignalChannel'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600DeleteSignalChannel200Response';
-        $request = $this->oBPv600DeleteSignalChannelRequest($channelname, $contentType);
+        $returnType = '\OpenBankProject\Model\DeleteSignalChannel200Response';
+        $request = $this->deleteSignalChannelRequest($channelname, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -318,21 +318,21 @@ class AIAgentApi
     }
 
     /**
-     * Create request for operation 'oBPv600DeleteSignalChannel'
+     * Create request for operation 'deleteSignalChannel'
      *
      * @param  string $channelname The CHANNELNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteSignalChannel'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSignalChannel'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600DeleteSignalChannelRequest($channelname, string $contentType = self::contentTypes['oBPv600DeleteSignalChannel'][0])
+    public function deleteSignalChannelRequest($channelname, string $contentType = self::contentTypes['deleteSignalChannel'][0])
     {
 
         // verify the required parameter 'channelname' is set
         if ($channelname === null || (is_array($channelname) && count($channelname) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $channelname when calling oBPv600DeleteSignalChannel'
+                'Missing the required parameter $channelname when calling deleteSignalChannel'
             );
         }
 
@@ -397,9 +397,9 @@ class AIAgentApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -424,38 +424,38 @@ class AIAgentApi
     }
 
     /**
-     * Operation oBPv600GetSignalChannelInfo
+     * Operation getSignalChannelInfo
      *
      * Get Signal Channel Info
      *
      * @param  string $channelname The CHANNELNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetSignalChannelInfo'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSignalChannelInfo'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetSignalChannelInfo200Response
+     * @return \OpenBankProject\Model\GetSignalChannelInfo200Response
      */
-    public function oBPv600GetSignalChannelInfo($channelname, string $contentType = self::contentTypes['oBPv600GetSignalChannelInfo'][0])
+    public function getSignalChannelInfo($channelname, string $contentType = self::contentTypes['getSignalChannelInfo'][0])
     {
-        list($response) = $this->oBPv600GetSignalChannelInfoWithHttpInfo($channelname, $contentType);
+        list($response) = $this->getSignalChannelInfoWithHttpInfo($channelname, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetSignalChannelInfoWithHttpInfo
+     * Operation getSignalChannelInfoWithHttpInfo
      *
      * Get Signal Channel Info
      *
      * @param  string $channelname The CHANNELNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetSignalChannelInfo'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSignalChannelInfo'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetSignalChannelInfo200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetSignalChannelInfo200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetSignalChannelInfoWithHttpInfo($channelname, string $contentType = self::contentTypes['oBPv600GetSignalChannelInfo'][0])
+    public function getSignalChannelInfoWithHttpInfo($channelname, string $contentType = self::contentTypes['getSignalChannelInfo'][0])
     {
-        $request = $this->oBPv600GetSignalChannelInfoRequest($channelname, $contentType);
+        $request = $this->getSignalChannelInfoRequest($channelname, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -483,7 +483,7 @@ class AIAgentApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetSignalChannelInfo200Response',
+                        '\OpenBankProject\Model\GetSignalChannelInfo200Response',
                         $request,
                         $response,
                     );
@@ -505,7 +505,7 @@ class AIAgentApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetSignalChannelInfo200Response',
+                '\OpenBankProject\Model\GetSignalChannelInfo200Response',
                 $request,
                 $response,
             );
@@ -514,7 +514,7 @@ class AIAgentApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetSignalChannelInfo200Response',
+                        '\OpenBankProject\Model\GetSignalChannelInfo200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -527,19 +527,19 @@ class AIAgentApi
     }
 
     /**
-     * Operation oBPv600GetSignalChannelInfoAsync
+     * Operation getSignalChannelInfoAsync
      *
      * Get Signal Channel Info
      *
      * @param  string $channelname The CHANNELNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetSignalChannelInfo'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSignalChannelInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetSignalChannelInfoAsync($channelname, string $contentType = self::contentTypes['oBPv600GetSignalChannelInfo'][0])
+    public function getSignalChannelInfoAsync($channelname, string $contentType = self::contentTypes['getSignalChannelInfo'][0])
     {
-        return $this->oBPv600GetSignalChannelInfoAsyncWithHttpInfo($channelname, $contentType)
+        return $this->getSignalChannelInfoAsyncWithHttpInfo($channelname, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -548,20 +548,20 @@ class AIAgentApi
     }
 
     /**
-     * Operation oBPv600GetSignalChannelInfoAsyncWithHttpInfo
+     * Operation getSignalChannelInfoAsyncWithHttpInfo
      *
      * Get Signal Channel Info
      *
      * @param  string $channelname The CHANNELNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetSignalChannelInfo'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSignalChannelInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetSignalChannelInfoAsyncWithHttpInfo($channelname, string $contentType = self::contentTypes['oBPv600GetSignalChannelInfo'][0])
+    public function getSignalChannelInfoAsyncWithHttpInfo($channelname, string $contentType = self::contentTypes['getSignalChannelInfo'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetSignalChannelInfo200Response';
-        $request = $this->oBPv600GetSignalChannelInfoRequest($channelname, $contentType);
+        $returnType = '\OpenBankProject\Model\GetSignalChannelInfo200Response';
+        $request = $this->getSignalChannelInfoRequest($channelname, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -600,21 +600,21 @@ class AIAgentApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetSignalChannelInfo'
+     * Create request for operation 'getSignalChannelInfo'
      *
      * @param  string $channelname The CHANNELNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetSignalChannelInfo'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSignalChannelInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetSignalChannelInfoRequest($channelname, string $contentType = self::contentTypes['oBPv600GetSignalChannelInfo'][0])
+    public function getSignalChannelInfoRequest($channelname, string $contentType = self::contentTypes['getSignalChannelInfo'][0])
     {
 
         // verify the required parameter 'channelname' is set
         if ($channelname === null || (is_array($channelname) && count($channelname) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $channelname when calling oBPv600GetSignalChannelInfo'
+                'Missing the required parameter $channelname when calling getSignalChannelInfo'
             );
         }
 
@@ -679,9 +679,9 @@ class AIAgentApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -706,36 +706,36 @@ class AIAgentApi
     }
 
     /**
-     * Operation oBPv600GetSignalChannels
+     * Operation getSignalChannels
      *
      * List Signal Channels
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetSignalChannels'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSignalChannels'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetSignalChannels200Response
+     * @return \OpenBankProject\Model\GetSignalChannels200Response
      */
-    public function oBPv600GetSignalChannels(string $contentType = self::contentTypes['oBPv600GetSignalChannels'][0])
+    public function getSignalChannels(string $contentType = self::contentTypes['getSignalChannels'][0])
     {
-        list($response) = $this->oBPv600GetSignalChannelsWithHttpInfo($contentType);
+        list($response) = $this->getSignalChannelsWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetSignalChannelsWithHttpInfo
+     * Operation getSignalChannelsWithHttpInfo
      *
      * List Signal Channels
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetSignalChannels'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSignalChannels'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetSignalChannels200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetSignalChannels200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetSignalChannelsWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetSignalChannels'][0])
+    public function getSignalChannelsWithHttpInfo(string $contentType = self::contentTypes['getSignalChannels'][0])
     {
-        $request = $this->oBPv600GetSignalChannelsRequest($contentType);
+        $request = $this->getSignalChannelsRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -763,7 +763,7 @@ class AIAgentApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetSignalChannels200Response',
+                        '\OpenBankProject\Model\GetSignalChannels200Response',
                         $request,
                         $response,
                     );
@@ -785,7 +785,7 @@ class AIAgentApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetSignalChannels200Response',
+                '\OpenBankProject\Model\GetSignalChannels200Response',
                 $request,
                 $response,
             );
@@ -794,7 +794,7 @@ class AIAgentApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetSignalChannels200Response',
+                        '\OpenBankProject\Model\GetSignalChannels200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -807,18 +807,18 @@ class AIAgentApi
     }
 
     /**
-     * Operation oBPv600GetSignalChannelsAsync
+     * Operation getSignalChannelsAsync
      *
      * List Signal Channels
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetSignalChannels'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSignalChannels'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetSignalChannelsAsync(string $contentType = self::contentTypes['oBPv600GetSignalChannels'][0])
+    public function getSignalChannelsAsync(string $contentType = self::contentTypes['getSignalChannels'][0])
     {
-        return $this->oBPv600GetSignalChannelsAsyncWithHttpInfo($contentType)
+        return $this->getSignalChannelsAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -827,19 +827,19 @@ class AIAgentApi
     }
 
     /**
-     * Operation oBPv600GetSignalChannelsAsyncWithHttpInfo
+     * Operation getSignalChannelsAsyncWithHttpInfo
      *
      * List Signal Channels
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetSignalChannels'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSignalChannels'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetSignalChannelsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetSignalChannels'][0])
+    public function getSignalChannelsAsyncWithHttpInfo(string $contentType = self::contentTypes['getSignalChannels'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetSignalChannels200Response';
-        $request = $this->oBPv600GetSignalChannelsRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetSignalChannels200Response';
+        $request = $this->getSignalChannelsRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -878,14 +878,14 @@ class AIAgentApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetSignalChannels'
+     * Create request for operation 'getSignalChannels'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetSignalChannels'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSignalChannels'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetSignalChannelsRequest(string $contentType = self::contentTypes['oBPv600GetSignalChannels'][0])
+    public function getSignalChannelsRequest(string $contentType = self::contentTypes['getSignalChannels'][0])
     {
 
 
@@ -941,9 +941,9 @@ class AIAgentApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -968,38 +968,38 @@ class AIAgentApi
     }
 
     /**
-     * Operation oBPv600GetSignalMessages
+     * Operation getSignalMessages
      *
      * Get Signal Messages
      *
      * @param  string $channelname The CHANNELNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetSignalMessages'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSignalMessages'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetSignalMessages200Response
+     * @return \OpenBankProject\Model\GetSignalMessages200Response
      */
-    public function oBPv600GetSignalMessages($channelname, string $contentType = self::contentTypes['oBPv600GetSignalMessages'][0])
+    public function getSignalMessages($channelname, string $contentType = self::contentTypes['getSignalMessages'][0])
     {
-        list($response) = $this->oBPv600GetSignalMessagesWithHttpInfo($channelname, $contentType);
+        list($response) = $this->getSignalMessagesWithHttpInfo($channelname, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetSignalMessagesWithHttpInfo
+     * Operation getSignalMessagesWithHttpInfo
      *
      * Get Signal Messages
      *
      * @param  string $channelname The CHANNELNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetSignalMessages'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSignalMessages'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetSignalMessages200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetSignalMessages200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetSignalMessagesWithHttpInfo($channelname, string $contentType = self::contentTypes['oBPv600GetSignalMessages'][0])
+    public function getSignalMessagesWithHttpInfo($channelname, string $contentType = self::contentTypes['getSignalMessages'][0])
     {
-        $request = $this->oBPv600GetSignalMessagesRequest($channelname, $contentType);
+        $request = $this->getSignalMessagesRequest($channelname, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1027,7 +1027,7 @@ class AIAgentApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetSignalMessages200Response',
+                        '\OpenBankProject\Model\GetSignalMessages200Response',
                         $request,
                         $response,
                     );
@@ -1049,7 +1049,7 @@ class AIAgentApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetSignalMessages200Response',
+                '\OpenBankProject\Model\GetSignalMessages200Response',
                 $request,
                 $response,
             );
@@ -1058,7 +1058,7 @@ class AIAgentApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetSignalMessages200Response',
+                        '\OpenBankProject\Model\GetSignalMessages200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1071,19 +1071,19 @@ class AIAgentApi
     }
 
     /**
-     * Operation oBPv600GetSignalMessagesAsync
+     * Operation getSignalMessagesAsync
      *
      * Get Signal Messages
      *
      * @param  string $channelname The CHANNELNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetSignalMessages'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSignalMessages'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetSignalMessagesAsync($channelname, string $contentType = self::contentTypes['oBPv600GetSignalMessages'][0])
+    public function getSignalMessagesAsync($channelname, string $contentType = self::contentTypes['getSignalMessages'][0])
     {
-        return $this->oBPv600GetSignalMessagesAsyncWithHttpInfo($channelname, $contentType)
+        return $this->getSignalMessagesAsyncWithHttpInfo($channelname, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1092,20 +1092,20 @@ class AIAgentApi
     }
 
     /**
-     * Operation oBPv600GetSignalMessagesAsyncWithHttpInfo
+     * Operation getSignalMessagesAsyncWithHttpInfo
      *
      * Get Signal Messages
      *
      * @param  string $channelname The CHANNELNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetSignalMessages'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSignalMessages'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetSignalMessagesAsyncWithHttpInfo($channelname, string $contentType = self::contentTypes['oBPv600GetSignalMessages'][0])
+    public function getSignalMessagesAsyncWithHttpInfo($channelname, string $contentType = self::contentTypes['getSignalMessages'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetSignalMessages200Response';
-        $request = $this->oBPv600GetSignalMessagesRequest($channelname, $contentType);
+        $returnType = '\OpenBankProject\Model\GetSignalMessages200Response';
+        $request = $this->getSignalMessagesRequest($channelname, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1144,21 +1144,21 @@ class AIAgentApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetSignalMessages'
+     * Create request for operation 'getSignalMessages'
      *
      * @param  string $channelname The CHANNELNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetSignalMessages'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSignalMessages'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetSignalMessagesRequest($channelname, string $contentType = self::contentTypes['oBPv600GetSignalMessages'][0])
+    public function getSignalMessagesRequest($channelname, string $contentType = self::contentTypes['getSignalMessages'][0])
     {
 
         // verify the required parameter 'channelname' is set
         if ($channelname === null || (is_array($channelname) && count($channelname) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $channelname when calling oBPv600GetSignalMessages'
+                'Missing the required parameter $channelname when calling getSignalMessages'
             );
         }
 
@@ -1223,9 +1223,9 @@ class AIAgentApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1250,36 +1250,36 @@ class AIAgentApi
     }
 
     /**
-     * Operation oBPv600GetSignalStats
+     * Operation getSignalStats
      *
      * Get Signal Channel Stats
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetSignalStats'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSignalStats'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetSignalStats200Response
+     * @return \OpenBankProject\Model\GetSignalStats200Response
      */
-    public function oBPv600GetSignalStats(string $contentType = self::contentTypes['oBPv600GetSignalStats'][0])
+    public function getSignalStats(string $contentType = self::contentTypes['getSignalStats'][0])
     {
-        list($response) = $this->oBPv600GetSignalStatsWithHttpInfo($contentType);
+        list($response) = $this->getSignalStatsWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetSignalStatsWithHttpInfo
+     * Operation getSignalStatsWithHttpInfo
      *
      * Get Signal Channel Stats
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetSignalStats'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSignalStats'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetSignalStats200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetSignalStats200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetSignalStatsWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetSignalStats'][0])
+    public function getSignalStatsWithHttpInfo(string $contentType = self::contentTypes['getSignalStats'][0])
     {
-        $request = $this->oBPv600GetSignalStatsRequest($contentType);
+        $request = $this->getSignalStatsRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1307,7 +1307,7 @@ class AIAgentApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetSignalStats200Response',
+                        '\OpenBankProject\Model\GetSignalStats200Response',
                         $request,
                         $response,
                     );
@@ -1329,7 +1329,7 @@ class AIAgentApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetSignalStats200Response',
+                '\OpenBankProject\Model\GetSignalStats200Response',
                 $request,
                 $response,
             );
@@ -1338,7 +1338,7 @@ class AIAgentApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetSignalStats200Response',
+                        '\OpenBankProject\Model\GetSignalStats200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1351,18 +1351,18 @@ class AIAgentApi
     }
 
     /**
-     * Operation oBPv600GetSignalStatsAsync
+     * Operation getSignalStatsAsync
      *
      * Get Signal Channel Stats
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetSignalStats'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSignalStats'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetSignalStatsAsync(string $contentType = self::contentTypes['oBPv600GetSignalStats'][0])
+    public function getSignalStatsAsync(string $contentType = self::contentTypes['getSignalStats'][0])
     {
-        return $this->oBPv600GetSignalStatsAsyncWithHttpInfo($contentType)
+        return $this->getSignalStatsAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1371,19 +1371,19 @@ class AIAgentApi
     }
 
     /**
-     * Operation oBPv600GetSignalStatsAsyncWithHttpInfo
+     * Operation getSignalStatsAsyncWithHttpInfo
      *
      * Get Signal Channel Stats
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetSignalStats'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSignalStats'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetSignalStatsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetSignalStats'][0])
+    public function getSignalStatsAsyncWithHttpInfo(string $contentType = self::contentTypes['getSignalStats'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetSignalStats200Response';
-        $request = $this->oBPv600GetSignalStatsRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetSignalStats200Response';
+        $request = $this->getSignalStatsRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1422,14 +1422,14 @@ class AIAgentApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetSignalStats'
+     * Create request for operation 'getSignalStats'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetSignalStats'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSignalStats'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetSignalStatsRequest(string $contentType = self::contentTypes['oBPv600GetSignalStats'][0])
+    public function getSignalStatsRequest(string $contentType = self::contentTypes['getSignalStats'][0])
     {
 
 
@@ -1485,9 +1485,9 @@ class AIAgentApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1512,40 +1512,40 @@ class AIAgentApi
     }
 
     /**
-     * Operation oBPv600PublishSignalMessage
+     * Operation publishSignalMessage
      *
      * Publish Signal Message
      *
      * @param  string $channelname The CHANNELNAME identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600PublishSignalMessageRequest $obpv600_publish_signal_message_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600PublishSignalMessage'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\PublishSignalMessageRequest $publish_signal_message_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['publishSignalMessage'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600PublishSignalMessage200Response
+     * @return \OpenBankProject\Model\PublishSignalMessage200Response
      */
-    public function oBPv600PublishSignalMessage($channelname, $obpv600_publish_signal_message_request, string $contentType = self::contentTypes['oBPv600PublishSignalMessage'][0])
+    public function publishSignalMessage($channelname, $publish_signal_message_request, string $contentType = self::contentTypes['publishSignalMessage'][0])
     {
-        list($response) = $this->oBPv600PublishSignalMessageWithHttpInfo($channelname, $obpv600_publish_signal_message_request, $contentType);
+        list($response) = $this->publishSignalMessageWithHttpInfo($channelname, $publish_signal_message_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600PublishSignalMessageWithHttpInfo
+     * Operation publishSignalMessageWithHttpInfo
      *
      * Publish Signal Message
      *
      * @param  string $channelname The CHANNELNAME identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600PublishSignalMessageRequest $obpv600_publish_signal_message_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600PublishSignalMessage'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\PublishSignalMessageRequest $publish_signal_message_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['publishSignalMessage'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600PublishSignalMessage200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\PublishSignalMessage200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600PublishSignalMessageWithHttpInfo($channelname, $obpv600_publish_signal_message_request, string $contentType = self::contentTypes['oBPv600PublishSignalMessage'][0])
+    public function publishSignalMessageWithHttpInfo($channelname, $publish_signal_message_request, string $contentType = self::contentTypes['publishSignalMessage'][0])
     {
-        $request = $this->oBPv600PublishSignalMessageRequest($channelname, $obpv600_publish_signal_message_request, $contentType);
+        $request = $this->publishSignalMessageRequest($channelname, $publish_signal_message_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1573,7 +1573,7 @@ class AIAgentApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600PublishSignalMessage200Response',
+                        '\OpenBankProject\Model\PublishSignalMessage200Response',
                         $request,
                         $response,
                     );
@@ -1595,7 +1595,7 @@ class AIAgentApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600PublishSignalMessage200Response',
+                '\OpenBankProject\Model\PublishSignalMessage200Response',
                 $request,
                 $response,
             );
@@ -1604,7 +1604,7 @@ class AIAgentApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600PublishSignalMessage200Response',
+                        '\OpenBankProject\Model\PublishSignalMessage200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1617,20 +1617,20 @@ class AIAgentApi
     }
 
     /**
-     * Operation oBPv600PublishSignalMessageAsync
+     * Operation publishSignalMessageAsync
      *
      * Publish Signal Message
      *
      * @param  string $channelname The CHANNELNAME identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600PublishSignalMessageRequest $obpv600_publish_signal_message_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600PublishSignalMessage'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\PublishSignalMessageRequest $publish_signal_message_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['publishSignalMessage'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600PublishSignalMessageAsync($channelname, $obpv600_publish_signal_message_request, string $contentType = self::contentTypes['oBPv600PublishSignalMessage'][0])
+    public function publishSignalMessageAsync($channelname, $publish_signal_message_request, string $contentType = self::contentTypes['publishSignalMessage'][0])
     {
-        return $this->oBPv600PublishSignalMessageAsyncWithHttpInfo($channelname, $obpv600_publish_signal_message_request, $contentType)
+        return $this->publishSignalMessageAsyncWithHttpInfo($channelname, $publish_signal_message_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1639,21 +1639,21 @@ class AIAgentApi
     }
 
     /**
-     * Operation oBPv600PublishSignalMessageAsyncWithHttpInfo
+     * Operation publishSignalMessageAsyncWithHttpInfo
      *
      * Publish Signal Message
      *
      * @param  string $channelname The CHANNELNAME identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600PublishSignalMessageRequest $obpv600_publish_signal_message_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600PublishSignalMessage'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\PublishSignalMessageRequest $publish_signal_message_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['publishSignalMessage'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600PublishSignalMessageAsyncWithHttpInfo($channelname, $obpv600_publish_signal_message_request, string $contentType = self::contentTypes['oBPv600PublishSignalMessage'][0])
+    public function publishSignalMessageAsyncWithHttpInfo($channelname, $publish_signal_message_request, string $contentType = self::contentTypes['publishSignalMessage'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600PublishSignalMessage200Response';
-        $request = $this->oBPv600PublishSignalMessageRequest($channelname, $obpv600_publish_signal_message_request, $contentType);
+        $returnType = '\OpenBankProject\Model\PublishSignalMessage200Response';
+        $request = $this->publishSignalMessageRequest($channelname, $publish_signal_message_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1692,29 +1692,29 @@ class AIAgentApi
     }
 
     /**
-     * Create request for operation 'oBPv600PublishSignalMessage'
+     * Create request for operation 'publishSignalMessage'
      *
      * @param  string $channelname The CHANNELNAME identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600PublishSignalMessageRequest $obpv600_publish_signal_message_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600PublishSignalMessage'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\PublishSignalMessageRequest $publish_signal_message_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['publishSignalMessage'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600PublishSignalMessageRequest($channelname, $obpv600_publish_signal_message_request, string $contentType = self::contentTypes['oBPv600PublishSignalMessage'][0])
+    public function publishSignalMessageRequest($channelname, $publish_signal_message_request, string $contentType = self::contentTypes['publishSignalMessage'][0])
     {
 
         // verify the required parameter 'channelname' is set
         if ($channelname === null || (is_array($channelname) && count($channelname) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $channelname when calling oBPv600PublishSignalMessage'
+                'Missing the required parameter $channelname when calling publishSignalMessage'
             );
         }
 
-        // verify the required parameter 'obpv600_publish_signal_message_request' is set
-        if ($obpv600_publish_signal_message_request === null || (is_array($obpv600_publish_signal_message_request) && count($obpv600_publish_signal_message_request) === 0)) {
+        // verify the required parameter 'publish_signal_message_request' is set
+        if ($publish_signal_message_request === null || (is_array($publish_signal_message_request) && count($publish_signal_message_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_publish_signal_message_request when calling oBPv600PublishSignalMessage'
+                'Missing the required parameter $publish_signal_message_request when calling publishSignalMessage'
             );
         }
 
@@ -1745,12 +1745,12 @@ class AIAgentApi
         );
 
         // for model (json/xml)
-        if (isset($obpv600_publish_signal_message_request)) {
+        if (isset($publish_signal_message_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_publish_signal_message_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($publish_signal_message_request));
             } else {
-                $httpBody = $obpv600_publish_signal_message_request;
+                $httpBody = $publish_signal_message_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1786,9 +1786,9 @@ class AIAgentApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

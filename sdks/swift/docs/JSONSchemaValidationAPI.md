@@ -1,20 +1,20 @@
 # JSONSchemaValidationAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv400CreateJsonSchemaValidation**](JSONSchemaValidationAPI.md#obpv400createjsonschemavalidation) | **POST** /obp/v4.0.0/management/json-schema-validations/{operationid} | Create a JSON Schema Validation
-[**oBPv400DeleteJsonSchemaValidation**](JSONSchemaValidationAPI.md#obpv400deletejsonschemavalidation) | **DELETE** /obp/v4.0.0/management/json-schema-validations/{operationid} | Delete a JSON Schema Validation
-[**oBPv400GetAllJsonSchemaValidations**](JSONSchemaValidationAPI.md#obpv400getalljsonschemavalidations) | **GET** /obp/v4.0.0/management/json-schema-validations | Get all JSON Schema Validations
-[**oBPv400GetAllJsonSchemaValidationsPublic**](JSONSchemaValidationAPI.md#obpv400getalljsonschemavalidationspublic) | **GET** /obp/v4.0.0/endpoints/json-schema-validations | Get all JSON Schema Validations - public
-[**oBPv400GetJsonSchemaValidation**](JSONSchemaValidationAPI.md#obpv400getjsonschemavalidation) | **GET** /obp/v4.0.0/management/json-schema-validations/{operationid} | Get a JSON Schema Validation
-[**oBPv400UpdateJsonSchemaValidation**](JSONSchemaValidationAPI.md#obpv400updatejsonschemavalidation) | **PUT** /obp/v4.0.0/management/json-schema-validations/{operationid} | Update a JSON Schema Validation
+[**createJsonSchemaValidation**](JSONSchemaValidationAPI.md#createjsonschemavalidation) | **POST** /obp/v4.0.0/management/json-schema-validations/{operationid} | Create a JSON Schema Validation
+[**deleteJsonSchemaValidation**](JSONSchemaValidationAPI.md#deletejsonschemavalidation) | **DELETE** /obp/v4.0.0/management/json-schema-validations/{operationid} | Delete a JSON Schema Validation
+[**getAllJsonSchemaValidations**](JSONSchemaValidationAPI.md#getalljsonschemavalidations) | **GET** /obp/v4.0.0/management/json-schema-validations | Get all JSON Schema Validations
+[**getAllJsonSchemaValidationsPublic**](JSONSchemaValidationAPI.md#getalljsonschemavalidationspublic) | **GET** /obp/v4.0.0/endpoints/json-schema-validations | Get all JSON Schema Validations - public
+[**getJsonSchemaValidation**](JSONSchemaValidationAPI.md#getjsonschemavalidation) | **GET** /obp/v4.0.0/management/json-schema-validations/{operationid} | Get a JSON Schema Validation
+[**updateJsonSchemaValidation**](JSONSchemaValidationAPI.md#updatejsonschemavalidation) | **PUT** /obp/v4.0.0/management/json-schema-validations/{operationid} | Update a JSON Schema Validation
 
 
-# **oBPv400CreateJsonSchemaValidation**
+# **createJsonSchemaValidation**
 ```swift
-    open class func oBPv400CreateJsonSchemaValidation(operationid: String, oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema: OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema, completion: @escaping (_ data: OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems?, _ error: Error?) -> Void)
+    open class func createJsonSchemaValidation(operationid: String, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema: GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema, completion: @escaping (_ data: GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner?, _ error: Error?) -> Void)
 ```
 
 Create a JSON Schema Validation
@@ -27,10 +27,10 @@ Create a JSON Schema Validation
 import OBPSwift
 
 let operationid = "operationid_example" // String | The OPERATIONID identifier
-let oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema = OBPv4_0_0_getAllJsonSchemaValidationsPublic_200_response_properties_json_schema_validations_items_properties_json_schema(type: "type_example", properties: OBPv4_0_0_getAllJsonSchemaValidationsPublic_200_response_properties_json_schema_validations_items_properties_json_schema_properties(description: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), properties: OBPv4_0_0_getAllJsonSchemaValidationsPublic_200_response_properties_json_schema_validations_items_properties_json_schema_properties_properties(type: "type_example", properties: OBPv4_0_0_getAllJsonSchemaValidationsPublic_200_response_properties_json_schema_validations_items_properties_json_schema_properties_properties_properties(xxxId: OBPv4_0_0_getAllJsonSchemaValidationsPublic_200_response_properties_json_schema_validations_items_properties_json_schema_properties_properties_properties_xxx_id(type: "type_example", properties: OBPv4_0_0_getAllJsonSchemaValidationsPublic_200_response_properties_json_schema_validations_items_properties_json_schema_properties_properties_properties_xxx_id_properties(minLength: nil, maxLength: nil, type: nil, examples: OBPv6_0_0_getActiveRateLimitsAtDate_200_response_properties_considered_rate_limit_ids(type: "type_example", items: nil))))), additionalProperties: nil, title: nil, type: nil, _required: nil, schema: nil)) // OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema | Request body
+let getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema = getAllJsonSchemaValidationsPublic_200_response_json_schema_validations_inner_json_schema(description: "description_example", properties: getAllJsonSchemaValidationsPublic_200_response_json_schema_validations_inner_json_schema_properties(xxxId: getAllJsonSchemaValidationsPublic_200_response_json_schema_validations_inner_json_schema_properties_xxx_id(minLength: 123, maxLength: 123, type: "type_example", examples: ["examples_example"])), additionalProperties: false, title: "title_example", type: "type_example", _required: ["_required_example"], schema: "schema_example") // GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema | Request body
 
 // Create a JSON Schema Validation
-JSONSchemaValidationAPI.oBPv400CreateJsonSchemaValidation(operationid: operationid, oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema: oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema) { (response, error) in
+JSONSchemaValidationAPI.createJsonSchemaValidation(operationid: operationid, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema: getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -47,11 +47,11 @@ JSONSchemaValidationAPI.oBPv400CreateJsonSchemaValidation(operationid: operation
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **operationid** | **String** | The OPERATIONID identifier | 
- **oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema** | [**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema.md) | Request body | 
+ **getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema** | [**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems.md)
+[**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md)
 
 ### Authorization
 
@@ -64,9 +64,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400DeleteJsonSchemaValidation**
+# **deleteJsonSchemaValidation**
 ```swift
-    open class func oBPv400DeleteJsonSchemaValidation(operationid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func deleteJsonSchemaValidation(operationid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete a JSON Schema Validation
@@ -81,7 +81,7 @@ import OBPSwift
 let operationid = "operationid_example" // String | The OPERATIONID identifier
 
 // Delete a JSON Schema Validation
-JSONSchemaValidationAPI.oBPv400DeleteJsonSchemaValidation(operationid: operationid) { (response, error) in
+JSONSchemaValidationAPI.deleteJsonSchemaValidation(operationid: operationid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -114,9 +114,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetAllJsonSchemaValidations**
+# **getAllJsonSchemaValidations**
 ```swift
-    open class func oBPv400GetAllJsonSchemaValidations(completion: @escaping (_ data: OBPv400GetAllJsonSchemaValidationsPublic200Response?, _ error: Error?) -> Void)
+    open class func getAllJsonSchemaValidations(completion: @escaping (_ data: GetAllJsonSchemaValidationsPublic200Response?, _ error: Error?) -> Void)
 ```
 
 Get all JSON Schema Validations
@@ -130,7 +130,7 @@ import OBPSwift
 
 
 // Get all JSON Schema Validations
-JSONSchemaValidationAPI.oBPv400GetAllJsonSchemaValidations() { (response, error) in
+JSONSchemaValidationAPI.getAllJsonSchemaValidations() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -147,7 +147,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200Response**](OBPv400GetAllJsonSchemaValidationsPublic200Response.md)
+[**GetAllJsonSchemaValidationsPublic200Response**](GetAllJsonSchemaValidationsPublic200Response.md)
 
 ### Authorization
 
@@ -160,9 +160,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetAllJsonSchemaValidationsPublic**
+# **getAllJsonSchemaValidationsPublic**
 ```swift
-    open class func oBPv400GetAllJsonSchemaValidationsPublic(completion: @escaping (_ data: OBPv400GetAllJsonSchemaValidationsPublic200Response?, _ error: Error?) -> Void)
+    open class func getAllJsonSchemaValidationsPublic(completion: @escaping (_ data: GetAllJsonSchemaValidationsPublic200Response?, _ error: Error?) -> Void)
 ```
 
 Get all JSON Schema Validations - public
@@ -176,7 +176,7 @@ import OBPSwift
 
 
 // Get all JSON Schema Validations - public
-JSONSchemaValidationAPI.oBPv400GetAllJsonSchemaValidationsPublic() { (response, error) in
+JSONSchemaValidationAPI.getAllJsonSchemaValidationsPublic() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -193,7 +193,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200Response**](OBPv400GetAllJsonSchemaValidationsPublic200Response.md)
+[**GetAllJsonSchemaValidationsPublic200Response**](GetAllJsonSchemaValidationsPublic200Response.md)
 
 ### Authorization
 
@@ -206,9 +206,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetJsonSchemaValidation**
+# **getJsonSchemaValidation**
 ```swift
-    open class func oBPv400GetJsonSchemaValidation(operationid: String, completion: @escaping (_ data: OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems?, _ error: Error?) -> Void)
+    open class func getJsonSchemaValidation(operationid: String, completion: @escaping (_ data: GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner?, _ error: Error?) -> Void)
 ```
 
 Get a JSON Schema Validation
@@ -223,7 +223,7 @@ import OBPSwift
 let operationid = "operationid_example" // String | The OPERATIONID identifier
 
 // Get a JSON Schema Validation
-JSONSchemaValidationAPI.oBPv400GetJsonSchemaValidation(operationid: operationid) { (response, error) in
+JSONSchemaValidationAPI.getJsonSchemaValidation(operationid: operationid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -243,7 +243,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems.md)
+[**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md)
 
 ### Authorization
 
@@ -256,9 +256,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400UpdateJsonSchemaValidation**
+# **updateJsonSchemaValidation**
 ```swift
-    open class func oBPv400UpdateJsonSchemaValidation(operationid: String, oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema: OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema, completion: @escaping (_ data: OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems?, _ error: Error?) -> Void)
+    open class func updateJsonSchemaValidation(operationid: String, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema: GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema, completion: @escaping (_ data: GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner?, _ error: Error?) -> Void)
 ```
 
 Update a JSON Schema Validation
@@ -271,10 +271,10 @@ Update a JSON Schema Validation
 import OBPSwift
 
 let operationid = "operationid_example" // String | The OPERATIONID identifier
-let oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema = OBPv4_0_0_getAllJsonSchemaValidationsPublic_200_response_properties_json_schema_validations_items_properties_json_schema(type: "type_example", properties: OBPv4_0_0_getAllJsonSchemaValidationsPublic_200_response_properties_json_schema_validations_items_properties_json_schema_properties(description: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), properties: OBPv4_0_0_getAllJsonSchemaValidationsPublic_200_response_properties_json_schema_validations_items_properties_json_schema_properties_properties(type: "type_example", properties: OBPv4_0_0_getAllJsonSchemaValidationsPublic_200_response_properties_json_schema_validations_items_properties_json_schema_properties_properties_properties(xxxId: OBPv4_0_0_getAllJsonSchemaValidationsPublic_200_response_properties_json_schema_validations_items_properties_json_schema_properties_properties_properties_xxx_id(type: "type_example", properties: OBPv4_0_0_getAllJsonSchemaValidationsPublic_200_response_properties_json_schema_validations_items_properties_json_schema_properties_properties_properties_xxx_id_properties(minLength: nil, maxLength: nil, type: nil, examples: OBPv6_0_0_getActiveRateLimitsAtDate_200_response_properties_considered_rate_limit_ids(type: "type_example", items: nil))))), additionalProperties: nil, title: nil, type: nil, _required: nil, schema: nil)) // OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema | Request body
+let getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema = getAllJsonSchemaValidationsPublic_200_response_json_schema_validations_inner_json_schema(description: "description_example", properties: getAllJsonSchemaValidationsPublic_200_response_json_schema_validations_inner_json_schema_properties(xxxId: getAllJsonSchemaValidationsPublic_200_response_json_schema_validations_inner_json_schema_properties_xxx_id(minLength: 123, maxLength: 123, type: "type_example", examples: ["examples_example"])), additionalProperties: false, title: "title_example", type: "type_example", _required: ["_required_example"], schema: "schema_example") // GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema | Request body
 
 // Update a JSON Schema Validation
-JSONSchemaValidationAPI.oBPv400UpdateJsonSchemaValidation(operationid: operationid, oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema: oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema) { (response, error) in
+JSONSchemaValidationAPI.updateJsonSchemaValidation(operationid: operationid, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema: getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -291,11 +291,11 @@ JSONSchemaValidationAPI.oBPv400UpdateJsonSchemaValidation(operationid: operation
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **operationid** | **String** | The OPERATIONID identifier | 
- **oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema** | [**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema.md) | Request body | 
+ **getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema** | [**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems.md)
+[**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md)
 
 ### Authorization
 

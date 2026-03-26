@@ -1,49 +1,49 @@
 # TransactionMetadataApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv121AddCommentForViewOnTransaction**](TransactionMetadataApi.md#oBPv121AddCommentForViewOnTransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Add a Transaction Comment |
-| [**oBPv121AddCommentForViewOnTransactionWithHttpInfo**](TransactionMetadataApi.md#oBPv121AddCommentForViewOnTransactionWithHttpInfo) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Add a Transaction Comment |
-| [**oBPv121AddImageForViewOnTransaction**](TransactionMetadataApi.md#oBPv121AddImageForViewOnTransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Add a Transaction Image |
-| [**oBPv121AddImageForViewOnTransactionWithHttpInfo**](TransactionMetadataApi.md#oBPv121AddImageForViewOnTransactionWithHttpInfo) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Add a Transaction Image |
-| [**oBPv121AddTagForViewOnTransaction**](TransactionMetadataApi.md#oBPv121AddTagForViewOnTransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Add a Transaction Tag |
-| [**oBPv121AddTagForViewOnTransactionWithHttpInfo**](TransactionMetadataApi.md#oBPv121AddTagForViewOnTransactionWithHttpInfo) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Add a Transaction Tag |
-| [**oBPv121AddTransactionNarrative**](TransactionMetadataApi.md#oBPv121AddTransactionNarrative) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Add a Transaction Narrative |
-| [**oBPv121AddTransactionNarrativeWithHttpInfo**](TransactionMetadataApi.md#oBPv121AddTransactionNarrativeWithHttpInfo) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Add a Transaction Narrative |
-| [**oBPv121AddWhereTagForViewOnTransaction**](TransactionMetadataApi.md#oBPv121AddWhereTagForViewOnTransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Add a Transaction where Tag |
-| [**oBPv121AddWhereTagForViewOnTransactionWithHttpInfo**](TransactionMetadataApi.md#oBPv121AddWhereTagForViewOnTransactionWithHttpInfo) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Add a Transaction where Tag |
-| [**oBPv121DeleteCommentForViewOnTransaction**](TransactionMetadataApi.md#oBPv121DeleteCommentForViewOnTransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments/{commentid} | Delete a Transaction Comment |
-| [**oBPv121DeleteCommentForViewOnTransactionWithHttpInfo**](TransactionMetadataApi.md#oBPv121DeleteCommentForViewOnTransactionWithHttpInfo) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments/{commentid} | Delete a Transaction Comment |
-| [**oBPv121DeleteImageForViewOnTransaction**](TransactionMetadataApi.md#oBPv121DeleteImageForViewOnTransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images/{imageid} | Delete a Transaction Image |
-| [**oBPv121DeleteImageForViewOnTransactionWithHttpInfo**](TransactionMetadataApi.md#oBPv121DeleteImageForViewOnTransactionWithHttpInfo) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images/{imageid} | Delete a Transaction Image |
-| [**oBPv121DeleteTagForViewOnTransaction**](TransactionMetadataApi.md#oBPv121DeleteTagForViewOnTransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags/{tagid} | Delete a Transaction Tag |
-| [**oBPv121DeleteTagForViewOnTransactionWithHttpInfo**](TransactionMetadataApi.md#oBPv121DeleteTagForViewOnTransactionWithHttpInfo) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags/{tagid} | Delete a Transaction Tag |
-| [**oBPv121DeleteTransactionNarrative**](TransactionMetadataApi.md#oBPv121DeleteTransactionNarrative) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Delete a Transaction Narrative |
-| [**oBPv121DeleteTransactionNarrativeWithHttpInfo**](TransactionMetadataApi.md#oBPv121DeleteTransactionNarrativeWithHttpInfo) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Delete a Transaction Narrative |
-| [**oBPv121DeleteWhereTagForViewOnTransaction**](TransactionMetadataApi.md#oBPv121DeleteWhereTagForViewOnTransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Delete a Transaction Tag |
-| [**oBPv121DeleteWhereTagForViewOnTransactionWithHttpInfo**](TransactionMetadataApi.md#oBPv121DeleteWhereTagForViewOnTransactionWithHttpInfo) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Delete a Transaction Tag |
-| [**oBPv121GetCommentsForViewOnTransaction**](TransactionMetadataApi.md#oBPv121GetCommentsForViewOnTransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Get Transaction Comments |
-| [**oBPv121GetCommentsForViewOnTransactionWithHttpInfo**](TransactionMetadataApi.md#oBPv121GetCommentsForViewOnTransactionWithHttpInfo) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Get Transaction Comments |
-| [**oBPv121GetImagesForViewOnTransaction**](TransactionMetadataApi.md#oBPv121GetImagesForViewOnTransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Get Transaction Images |
-| [**oBPv121GetImagesForViewOnTransactionWithHttpInfo**](TransactionMetadataApi.md#oBPv121GetImagesForViewOnTransactionWithHttpInfo) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Get Transaction Images |
-| [**oBPv121GetTagsForViewOnTransaction**](TransactionMetadataApi.md#oBPv121GetTagsForViewOnTransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Get Transaction Tags |
-| [**oBPv121GetTagsForViewOnTransactionWithHttpInfo**](TransactionMetadataApi.md#oBPv121GetTagsForViewOnTransactionWithHttpInfo) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Get Transaction Tags |
-| [**oBPv121GetTransactionNarrative**](TransactionMetadataApi.md#oBPv121GetTransactionNarrative) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Get a Transaction Narrative |
-| [**oBPv121GetTransactionNarrativeWithHttpInfo**](TransactionMetadataApi.md#oBPv121GetTransactionNarrativeWithHttpInfo) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Get a Transaction Narrative |
-| [**oBPv121GetWhereTagForViewOnTransaction**](TransactionMetadataApi.md#oBPv121GetWhereTagForViewOnTransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Get a Transaction where Tag |
-| [**oBPv121GetWhereTagForViewOnTransactionWithHttpInfo**](TransactionMetadataApi.md#oBPv121GetWhereTagForViewOnTransactionWithHttpInfo) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Get a Transaction where Tag |
-| [**oBPv121UpdateTransactionNarrative**](TransactionMetadataApi.md#oBPv121UpdateTransactionNarrative) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Update a Transaction Narrative |
-| [**oBPv121UpdateTransactionNarrativeWithHttpInfo**](TransactionMetadataApi.md#oBPv121UpdateTransactionNarrativeWithHttpInfo) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Update a Transaction Narrative |
-| [**oBPv121UpdateWhereTagForViewOnTransaction**](TransactionMetadataApi.md#oBPv121UpdateWhereTagForViewOnTransaction) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Update a Transaction where Tag |
-| [**oBPv121UpdateWhereTagForViewOnTransactionWithHttpInfo**](TransactionMetadataApi.md#oBPv121UpdateWhereTagForViewOnTransactionWithHttpInfo) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Update a Transaction where Tag |
+| [**addCommentForViewOnTransaction**](TransactionMetadataApi.md#addCommentForViewOnTransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Add a Transaction Comment |
+| [**addCommentForViewOnTransactionWithHttpInfo**](TransactionMetadataApi.md#addCommentForViewOnTransactionWithHttpInfo) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Add a Transaction Comment |
+| [**addImageForViewOnTransaction**](TransactionMetadataApi.md#addImageForViewOnTransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Add a Transaction Image |
+| [**addImageForViewOnTransactionWithHttpInfo**](TransactionMetadataApi.md#addImageForViewOnTransactionWithHttpInfo) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Add a Transaction Image |
+| [**addTagForViewOnTransaction**](TransactionMetadataApi.md#addTagForViewOnTransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Add a Transaction Tag |
+| [**addTagForViewOnTransactionWithHttpInfo**](TransactionMetadataApi.md#addTagForViewOnTransactionWithHttpInfo) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Add a Transaction Tag |
+| [**addTransactionNarrative**](TransactionMetadataApi.md#addTransactionNarrative) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Add a Transaction Narrative |
+| [**addTransactionNarrativeWithHttpInfo**](TransactionMetadataApi.md#addTransactionNarrativeWithHttpInfo) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Add a Transaction Narrative |
+| [**addWhereTagForViewOnTransaction**](TransactionMetadataApi.md#addWhereTagForViewOnTransaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Add a Transaction where Tag |
+| [**addWhereTagForViewOnTransactionWithHttpInfo**](TransactionMetadataApi.md#addWhereTagForViewOnTransactionWithHttpInfo) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Add a Transaction where Tag |
+| [**deleteCommentForViewOnTransaction**](TransactionMetadataApi.md#deleteCommentForViewOnTransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments/{commentid} | Delete a Transaction Comment |
+| [**deleteCommentForViewOnTransactionWithHttpInfo**](TransactionMetadataApi.md#deleteCommentForViewOnTransactionWithHttpInfo) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments/{commentid} | Delete a Transaction Comment |
+| [**deleteImageForViewOnTransaction**](TransactionMetadataApi.md#deleteImageForViewOnTransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images/{imageid} | Delete a Transaction Image |
+| [**deleteImageForViewOnTransactionWithHttpInfo**](TransactionMetadataApi.md#deleteImageForViewOnTransactionWithHttpInfo) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images/{imageid} | Delete a Transaction Image |
+| [**deleteTagForViewOnTransaction**](TransactionMetadataApi.md#deleteTagForViewOnTransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags/{tagid} | Delete a Transaction Tag |
+| [**deleteTagForViewOnTransactionWithHttpInfo**](TransactionMetadataApi.md#deleteTagForViewOnTransactionWithHttpInfo) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags/{tagid} | Delete a Transaction Tag |
+| [**deleteTransactionNarrative**](TransactionMetadataApi.md#deleteTransactionNarrative) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Delete a Transaction Narrative |
+| [**deleteTransactionNarrativeWithHttpInfo**](TransactionMetadataApi.md#deleteTransactionNarrativeWithHttpInfo) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Delete a Transaction Narrative |
+| [**deleteWhereTagForViewOnTransaction**](TransactionMetadataApi.md#deleteWhereTagForViewOnTransaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Delete a Transaction Tag |
+| [**deleteWhereTagForViewOnTransactionWithHttpInfo**](TransactionMetadataApi.md#deleteWhereTagForViewOnTransactionWithHttpInfo) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Delete a Transaction Tag |
+| [**getCommentsForViewOnTransaction**](TransactionMetadataApi.md#getCommentsForViewOnTransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Get Transaction Comments |
+| [**getCommentsForViewOnTransactionWithHttpInfo**](TransactionMetadataApi.md#getCommentsForViewOnTransactionWithHttpInfo) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Get Transaction Comments |
+| [**getImagesForViewOnTransaction**](TransactionMetadataApi.md#getImagesForViewOnTransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Get Transaction Images |
+| [**getImagesForViewOnTransactionWithHttpInfo**](TransactionMetadataApi.md#getImagesForViewOnTransactionWithHttpInfo) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Get Transaction Images |
+| [**getTagsForViewOnTransaction**](TransactionMetadataApi.md#getTagsForViewOnTransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Get Transaction Tags |
+| [**getTagsForViewOnTransactionWithHttpInfo**](TransactionMetadataApi.md#getTagsForViewOnTransactionWithHttpInfo) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Get Transaction Tags |
+| [**getTransactionNarrative**](TransactionMetadataApi.md#getTransactionNarrative) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Get a Transaction Narrative |
+| [**getTransactionNarrativeWithHttpInfo**](TransactionMetadataApi.md#getTransactionNarrativeWithHttpInfo) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Get a Transaction Narrative |
+| [**getWhereTagForViewOnTransaction**](TransactionMetadataApi.md#getWhereTagForViewOnTransaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Get a Transaction where Tag |
+| [**getWhereTagForViewOnTransactionWithHttpInfo**](TransactionMetadataApi.md#getWhereTagForViewOnTransactionWithHttpInfo) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Get a Transaction where Tag |
+| [**updateTransactionNarrative**](TransactionMetadataApi.md#updateTransactionNarrative) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Update a Transaction Narrative |
+| [**updateTransactionNarrativeWithHttpInfo**](TransactionMetadataApi.md#updateTransactionNarrativeWithHttpInfo) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Update a Transaction Narrative |
+| [**updateWhereTagForViewOnTransaction**](TransactionMetadataApi.md#updateWhereTagForViewOnTransaction) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Update a Transaction where Tag |
+| [**updateWhereTagForViewOnTransactionWithHttpInfo**](TransactionMetadataApi.md#updateWhereTagForViewOnTransactionWithHttpInfo) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Update a Transaction where Tag |
 
 
 
-## oBPv121AddCommentForViewOnTransaction
+## addCommentForViewOnTransaction
 
-> OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems oBPv121AddCommentForViewOnTransaction(bankid, accountid, viewid, transactionid, obPv400DeleteSystemLevelEndpointTag200Response)
+> GetTagsForViewOnAccount200ResponseTagsInner addCommentForViewOnTransaction(bankid, accountid, viewid, transactionid, getTransactionTypes200ResponseTransactionTypesInnerId)
 
 Add a Transaction Comment
 
@@ -63,7 +63,7 @@ import com.openbankproject.api.TransactionMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -86,12 +86,12 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String transactionid = "transactionid_example"; // String | The TRANSACTIONID identifier
-        OBPv400DeleteSystemLevelEndpointTag200Response obPv400DeleteSystemLevelEndpointTag200Response = new OBPv400DeleteSystemLevelEndpointTag200Response(); // OBPv400DeleteSystemLevelEndpointTag200Response | Request body
+        GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId = new GetTransactionTypes200ResponseTransactionTypesInnerId(); // GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
         try {
-            OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems result = apiInstance.oBPv121AddCommentForViewOnTransaction(bankid, accountid, viewid, transactionid, obPv400DeleteSystemLevelEndpointTag200Response);
+            GetTagsForViewOnAccount200ResponseTagsInner result = apiInstance.addCommentForViewOnTransaction(bankid, accountid, viewid, transactionid, getTransactionTypes200ResponseTransactionTypesInnerId);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionMetadataApi#oBPv121AddCommentForViewOnTransaction");
+            System.err.println("Exception when calling TransactionMetadataApi#addCommentForViewOnTransaction");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -110,11 +110,11 @@ public class Example {
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **viewid** | **String**| The VIEWID identifier | |
 | **transactionid** | **String**| The TRANSACTIONID identifier | |
-| **obPv400DeleteSystemLevelEndpointTag200Response** | [**OBPv400DeleteSystemLevelEndpointTag200Response**](OBPv400DeleteSystemLevelEndpointTag200Response.md)| Request body | |
+| **getTransactionTypes200ResponseTransactionTypesInnerId** | [**GetTransactionTypes200ResponseTransactionTypesInnerId**](GetTransactionTypes200ResponseTransactionTypesInnerId.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)
+[**GetTagsForViewOnAccount200ResponseTagsInner**](GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 
 ### Authorization
@@ -133,9 +133,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv121AddCommentForViewOnTransactionWithHttpInfo
+## addCommentForViewOnTransactionWithHttpInfo
 
-> ApiResponse<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems> oBPv121AddCommentForViewOnTransaction oBPv121AddCommentForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid, obPv400DeleteSystemLevelEndpointTag200Response)
+> ApiResponse<GetTagsForViewOnAccount200ResponseTagsInner> addCommentForViewOnTransaction addCommentForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid, getTransactionTypes200ResponseTransactionTypesInnerId)
 
 Add a Transaction Comment
 
@@ -156,7 +156,7 @@ import com.openbankproject.api.TransactionMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -179,14 +179,14 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String transactionid = "transactionid_example"; // String | The TRANSACTIONID identifier
-        OBPv400DeleteSystemLevelEndpointTag200Response obPv400DeleteSystemLevelEndpointTag200Response = new OBPv400DeleteSystemLevelEndpointTag200Response(); // OBPv400DeleteSystemLevelEndpointTag200Response | Request body
+        GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId = new GetTransactionTypes200ResponseTransactionTypesInnerId(); // GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
         try {
-            ApiResponse<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems> response = apiInstance.oBPv121AddCommentForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid, obPv400DeleteSystemLevelEndpointTag200Response);
+            ApiResponse<GetTagsForViewOnAccount200ResponseTagsInner> response = apiInstance.addCommentForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid, getTransactionTypes200ResponseTransactionTypesInnerId);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionMetadataApi#oBPv121AddCommentForViewOnTransaction");
+            System.err.println("Exception when calling TransactionMetadataApi#addCommentForViewOnTransaction");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -205,11 +205,11 @@ public class Example {
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **viewid** | **String**| The VIEWID identifier | |
 | **transactionid** | **String**| The TRANSACTIONID identifier | |
-| **obPv400DeleteSystemLevelEndpointTag200Response** | [**OBPv400DeleteSystemLevelEndpointTag200Response**](OBPv400DeleteSystemLevelEndpointTag200Response.md)| Request body | |
+| **getTransactionTypes200ResponseTransactionTypesInnerId** | [**GetTransactionTypes200ResponseTransactionTypesInnerId**](GetTransactionTypes200ResponseTransactionTypesInnerId.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)>
+ApiResponse<[**GetTagsForViewOnAccount200ResponseTagsInner**](GetTagsForViewOnAccount200ResponseTagsInner.md)>
 
 
 ### Authorization
@@ -229,9 +229,9 @@ ApiResponse<[**OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](O
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv121AddImageForViewOnTransaction
+## addImageForViewOnTransaction
 
-> OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems oBPv121AddImageForViewOnTransaction(bankid, accountid, viewid, transactionid, obPv121AddImageForViewOnTransactionRequest)
+> GetTransactionByIdForBankAccount200ResponseMetadataImagesInner addImageForViewOnTransaction(bankid, accountid, viewid, transactionid, addImageForViewOnTransactionRequest)
 
 Add a Transaction Image
 
@@ -251,7 +251,7 @@ import com.openbankproject.api.TransactionMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -274,12 +274,12 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String transactionid = "transactionid_example"; // String | The TRANSACTIONID identifier
-        OBPv121AddImageForViewOnTransactionRequest obPv121AddImageForViewOnTransactionRequest = new OBPv121AddImageForViewOnTransactionRequest(); // OBPv121AddImageForViewOnTransactionRequest | Request body
+        AddImageForViewOnTransactionRequest addImageForViewOnTransactionRequest = new AddImageForViewOnTransactionRequest(); // AddImageForViewOnTransactionRequest | Request body
         try {
-            OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems result = apiInstance.oBPv121AddImageForViewOnTransaction(bankid, accountid, viewid, transactionid, obPv121AddImageForViewOnTransactionRequest);
+            GetTransactionByIdForBankAccount200ResponseMetadataImagesInner result = apiInstance.addImageForViewOnTransaction(bankid, accountid, viewid, transactionid, addImageForViewOnTransactionRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionMetadataApi#oBPv121AddImageForViewOnTransaction");
+            System.err.println("Exception when calling TransactionMetadataApi#addImageForViewOnTransaction");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -298,11 +298,11 @@ public class Example {
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **viewid** | **String**| The VIEWID identifier | |
 | **transactionid** | **String**| The TRANSACTIONID identifier | |
-| **obPv121AddImageForViewOnTransactionRequest** | [**OBPv121AddImageForViewOnTransactionRequest**](OBPv121AddImageForViewOnTransactionRequest.md)| Request body | |
+| **addImageForViewOnTransactionRequest** | [**AddImageForViewOnTransactionRequest**](AddImageForViewOnTransactionRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems**](OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems.md)
+[**GetTransactionByIdForBankAccount200ResponseMetadataImagesInner**](GetTransactionByIdForBankAccount200ResponseMetadataImagesInner.md)
 
 
 ### Authorization
@@ -321,9 +321,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv121AddImageForViewOnTransactionWithHttpInfo
+## addImageForViewOnTransactionWithHttpInfo
 
-> ApiResponse<OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems> oBPv121AddImageForViewOnTransaction oBPv121AddImageForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid, obPv121AddImageForViewOnTransactionRequest)
+> ApiResponse<GetTransactionByIdForBankAccount200ResponseMetadataImagesInner> addImageForViewOnTransaction addImageForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid, addImageForViewOnTransactionRequest)
 
 Add a Transaction Image
 
@@ -344,7 +344,7 @@ import com.openbankproject.api.TransactionMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -367,14 +367,14 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String transactionid = "transactionid_example"; // String | The TRANSACTIONID identifier
-        OBPv121AddImageForViewOnTransactionRequest obPv121AddImageForViewOnTransactionRequest = new OBPv121AddImageForViewOnTransactionRequest(); // OBPv121AddImageForViewOnTransactionRequest | Request body
+        AddImageForViewOnTransactionRequest addImageForViewOnTransactionRequest = new AddImageForViewOnTransactionRequest(); // AddImageForViewOnTransactionRequest | Request body
         try {
-            ApiResponse<OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems> response = apiInstance.oBPv121AddImageForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid, obPv121AddImageForViewOnTransactionRequest);
+            ApiResponse<GetTransactionByIdForBankAccount200ResponseMetadataImagesInner> response = apiInstance.addImageForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid, addImageForViewOnTransactionRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionMetadataApi#oBPv121AddImageForViewOnTransaction");
+            System.err.println("Exception when calling TransactionMetadataApi#addImageForViewOnTransaction");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -393,11 +393,11 @@ public class Example {
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **viewid** | **String**| The VIEWID identifier | |
 | **transactionid** | **String**| The TRANSACTIONID identifier | |
-| **obPv121AddImageForViewOnTransactionRequest** | [**OBPv121AddImageForViewOnTransactionRequest**](OBPv121AddImageForViewOnTransactionRequest.md)| Request body | |
+| **addImageForViewOnTransactionRequest** | [**AddImageForViewOnTransactionRequest**](AddImageForViewOnTransactionRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems**](OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems.md)>
+ApiResponse<[**GetTransactionByIdForBankAccount200ResponseMetadataImagesInner**](GetTransactionByIdForBankAccount200ResponseMetadataImagesInner.md)>
 
 
 ### Authorization
@@ -417,9 +417,9 @@ ApiResponse<[**OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetad
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv121AddTagForViewOnTransaction
+## addTagForViewOnTransaction
 
-> OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems oBPv121AddTagForViewOnTransaction(bankid, accountid, viewid, transactionid, obPv400DeleteSystemLevelEndpointTag200Response)
+> GetTagsForViewOnAccount200ResponseTagsInner addTagForViewOnTransaction(bankid, accountid, viewid, transactionid, getTransactionTypes200ResponseTransactionTypesInnerId)
 
 Add a Transaction Tag
 
@@ -439,7 +439,7 @@ import com.openbankproject.api.TransactionMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -462,12 +462,12 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String transactionid = "transactionid_example"; // String | The TRANSACTIONID identifier
-        OBPv400DeleteSystemLevelEndpointTag200Response obPv400DeleteSystemLevelEndpointTag200Response = new OBPv400DeleteSystemLevelEndpointTag200Response(); // OBPv400DeleteSystemLevelEndpointTag200Response | Request body
+        GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId = new GetTransactionTypes200ResponseTransactionTypesInnerId(); // GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
         try {
-            OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems result = apiInstance.oBPv121AddTagForViewOnTransaction(bankid, accountid, viewid, transactionid, obPv400DeleteSystemLevelEndpointTag200Response);
+            GetTagsForViewOnAccount200ResponseTagsInner result = apiInstance.addTagForViewOnTransaction(bankid, accountid, viewid, transactionid, getTransactionTypes200ResponseTransactionTypesInnerId);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionMetadataApi#oBPv121AddTagForViewOnTransaction");
+            System.err.println("Exception when calling TransactionMetadataApi#addTagForViewOnTransaction");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -486,11 +486,11 @@ public class Example {
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **viewid** | **String**| The VIEWID identifier | |
 | **transactionid** | **String**| The TRANSACTIONID identifier | |
-| **obPv400DeleteSystemLevelEndpointTag200Response** | [**OBPv400DeleteSystemLevelEndpointTag200Response**](OBPv400DeleteSystemLevelEndpointTag200Response.md)| Request body | |
+| **getTransactionTypes200ResponseTransactionTypesInnerId** | [**GetTransactionTypes200ResponseTransactionTypesInnerId**](GetTransactionTypes200ResponseTransactionTypesInnerId.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)
+[**GetTagsForViewOnAccount200ResponseTagsInner**](GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 
 ### Authorization
@@ -509,9 +509,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv121AddTagForViewOnTransactionWithHttpInfo
+## addTagForViewOnTransactionWithHttpInfo
 
-> ApiResponse<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems> oBPv121AddTagForViewOnTransaction oBPv121AddTagForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid, obPv400DeleteSystemLevelEndpointTag200Response)
+> ApiResponse<GetTagsForViewOnAccount200ResponseTagsInner> addTagForViewOnTransaction addTagForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid, getTransactionTypes200ResponseTransactionTypesInnerId)
 
 Add a Transaction Tag
 
@@ -532,7 +532,7 @@ import com.openbankproject.api.TransactionMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -555,14 +555,14 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String transactionid = "transactionid_example"; // String | The TRANSACTIONID identifier
-        OBPv400DeleteSystemLevelEndpointTag200Response obPv400DeleteSystemLevelEndpointTag200Response = new OBPv400DeleteSystemLevelEndpointTag200Response(); // OBPv400DeleteSystemLevelEndpointTag200Response | Request body
+        GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId = new GetTransactionTypes200ResponseTransactionTypesInnerId(); // GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
         try {
-            ApiResponse<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems> response = apiInstance.oBPv121AddTagForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid, obPv400DeleteSystemLevelEndpointTag200Response);
+            ApiResponse<GetTagsForViewOnAccount200ResponseTagsInner> response = apiInstance.addTagForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid, getTransactionTypes200ResponseTransactionTypesInnerId);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionMetadataApi#oBPv121AddTagForViewOnTransaction");
+            System.err.println("Exception when calling TransactionMetadataApi#addTagForViewOnTransaction");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -581,11 +581,11 @@ public class Example {
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **viewid** | **String**| The VIEWID identifier | |
 | **transactionid** | **String**| The TRANSACTIONID identifier | |
-| **obPv400DeleteSystemLevelEndpointTag200Response** | [**OBPv400DeleteSystemLevelEndpointTag200Response**](OBPv400DeleteSystemLevelEndpointTag200Response.md)| Request body | |
+| **getTransactionTypes200ResponseTransactionTypesInnerId** | [**GetTransactionTypes200ResponseTransactionTypesInnerId**](GetTransactionTypes200ResponseTransactionTypesInnerId.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)>
+ApiResponse<[**GetTagsForViewOnAccount200ResponseTagsInner**](GetTagsForViewOnAccount200ResponseTagsInner.md)>
 
 
 ### Authorization
@@ -605,9 +605,9 @@ ApiResponse<[**OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](O
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv121AddTransactionNarrative
+## addTransactionNarrative
 
-> OBPv121UpdateTransactionNarrative200Response oBPv121AddTransactionNarrative(bankid, accountid, viewid, transactionid, obPv121GetTransactionNarrative200Response)
+> UpdateTransactionNarrative200Response addTransactionNarrative(bankid, accountid, viewid, transactionid, getTransactionNarrative200Response)
 
 Add a Transaction Narrative
 
@@ -627,7 +627,7 @@ import com.openbankproject.api.TransactionMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -650,12 +650,12 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String transactionid = "transactionid_example"; // String | The TRANSACTIONID identifier
-        OBPv121GetTransactionNarrative200Response obPv121GetTransactionNarrative200Response = new OBPv121GetTransactionNarrative200Response(); // OBPv121GetTransactionNarrative200Response | Request body
+        GetTransactionNarrative200Response getTransactionNarrative200Response = new GetTransactionNarrative200Response(); // GetTransactionNarrative200Response | Request body
         try {
-            OBPv121UpdateTransactionNarrative200Response result = apiInstance.oBPv121AddTransactionNarrative(bankid, accountid, viewid, transactionid, obPv121GetTransactionNarrative200Response);
+            UpdateTransactionNarrative200Response result = apiInstance.addTransactionNarrative(bankid, accountid, viewid, transactionid, getTransactionNarrative200Response);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionMetadataApi#oBPv121AddTransactionNarrative");
+            System.err.println("Exception when calling TransactionMetadataApi#addTransactionNarrative");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -674,11 +674,11 @@ public class Example {
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **viewid** | **String**| The VIEWID identifier | |
 | **transactionid** | **String**| The TRANSACTIONID identifier | |
-| **obPv121GetTransactionNarrative200Response** | [**OBPv121GetTransactionNarrative200Response**](OBPv121GetTransactionNarrative200Response.md)| Request body | |
+| **getTransactionNarrative200Response** | [**GetTransactionNarrative200Response**](GetTransactionNarrative200Response.md)| Request body | |
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 
 ### Authorization
@@ -697,9 +697,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv121AddTransactionNarrativeWithHttpInfo
+## addTransactionNarrativeWithHttpInfo
 
-> ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv121AddTransactionNarrative oBPv121AddTransactionNarrativeWithHttpInfo(bankid, accountid, viewid, transactionid, obPv121GetTransactionNarrative200Response)
+> ApiResponse<UpdateTransactionNarrative200Response> addTransactionNarrative addTransactionNarrativeWithHttpInfo(bankid, accountid, viewid, transactionid, getTransactionNarrative200Response)
 
 Add a Transaction Narrative
 
@@ -720,7 +720,7 @@ import com.openbankproject.api.TransactionMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -743,14 +743,14 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String transactionid = "transactionid_example"; // String | The TRANSACTIONID identifier
-        OBPv121GetTransactionNarrative200Response obPv121GetTransactionNarrative200Response = new OBPv121GetTransactionNarrative200Response(); // OBPv121GetTransactionNarrative200Response | Request body
+        GetTransactionNarrative200Response getTransactionNarrative200Response = new GetTransactionNarrative200Response(); // GetTransactionNarrative200Response | Request body
         try {
-            ApiResponse<OBPv121UpdateTransactionNarrative200Response> response = apiInstance.oBPv121AddTransactionNarrativeWithHttpInfo(bankid, accountid, viewid, transactionid, obPv121GetTransactionNarrative200Response);
+            ApiResponse<UpdateTransactionNarrative200Response> response = apiInstance.addTransactionNarrativeWithHttpInfo(bankid, accountid, viewid, transactionid, getTransactionNarrative200Response);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionMetadataApi#oBPv121AddTransactionNarrative");
+            System.err.println("Exception when calling TransactionMetadataApi#addTransactionNarrative");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -769,11 +769,11 @@ public class Example {
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **viewid** | **String**| The VIEWID identifier | |
 | **transactionid** | **String**| The TRANSACTIONID identifier | |
-| **obPv121GetTransactionNarrative200Response** | [**OBPv121GetTransactionNarrative200Response**](OBPv121GetTransactionNarrative200Response.md)| Request body | |
+| **getTransactionNarrative200Response** | [**GetTransactionNarrative200Response**](GetTransactionNarrative200Response.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)>
+ApiResponse<[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)>
 
 
 ### Authorization
@@ -793,9 +793,9 @@ ApiResponse<[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTran
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv121AddWhereTagForViewOnTransaction
+## addWhereTagForViewOnTransaction
 
-> OBPv121UpdateTransactionNarrative200Response oBPv121AddWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid, obPv121UpdateWhereTagForViewOnTransactionRequest)
+> UpdateTransactionNarrative200Response addWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid, updateWhereTagForViewOnTransactionRequest)
 
 Add a Transaction where Tag
 
@@ -815,7 +815,7 @@ import com.openbankproject.api.TransactionMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -838,12 +838,12 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String transactionid = "transactionid_example"; // String | The TRANSACTIONID identifier
-        OBPv121UpdateWhereTagForViewOnTransactionRequest obPv121UpdateWhereTagForViewOnTransactionRequest = new OBPv121UpdateWhereTagForViewOnTransactionRequest(); // OBPv121UpdateWhereTagForViewOnTransactionRequest | Request body
+        UpdateWhereTagForViewOnTransactionRequest updateWhereTagForViewOnTransactionRequest = new UpdateWhereTagForViewOnTransactionRequest(); // UpdateWhereTagForViewOnTransactionRequest | Request body
         try {
-            OBPv121UpdateTransactionNarrative200Response result = apiInstance.oBPv121AddWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid, obPv121UpdateWhereTagForViewOnTransactionRequest);
+            UpdateTransactionNarrative200Response result = apiInstance.addWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid, updateWhereTagForViewOnTransactionRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionMetadataApi#oBPv121AddWhereTagForViewOnTransaction");
+            System.err.println("Exception when calling TransactionMetadataApi#addWhereTagForViewOnTransaction");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -862,11 +862,11 @@ public class Example {
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **viewid** | **String**| The VIEWID identifier | |
 | **transactionid** | **String**| The TRANSACTIONID identifier | |
-| **obPv121UpdateWhereTagForViewOnTransactionRequest** | [**OBPv121UpdateWhereTagForViewOnTransactionRequest**](OBPv121UpdateWhereTagForViewOnTransactionRequest.md)| Request body | |
+| **updateWhereTagForViewOnTransactionRequest** | [**UpdateWhereTagForViewOnTransactionRequest**](UpdateWhereTagForViewOnTransactionRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 
 ### Authorization
@@ -885,9 +885,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv121AddWhereTagForViewOnTransactionWithHttpInfo
+## addWhereTagForViewOnTransactionWithHttpInfo
 
-> ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv121AddWhereTagForViewOnTransaction oBPv121AddWhereTagForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid, obPv121UpdateWhereTagForViewOnTransactionRequest)
+> ApiResponse<UpdateTransactionNarrative200Response> addWhereTagForViewOnTransaction addWhereTagForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid, updateWhereTagForViewOnTransactionRequest)
 
 Add a Transaction where Tag
 
@@ -908,7 +908,7 @@ import com.openbankproject.api.TransactionMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -931,14 +931,14 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String transactionid = "transactionid_example"; // String | The TRANSACTIONID identifier
-        OBPv121UpdateWhereTagForViewOnTransactionRequest obPv121UpdateWhereTagForViewOnTransactionRequest = new OBPv121UpdateWhereTagForViewOnTransactionRequest(); // OBPv121UpdateWhereTagForViewOnTransactionRequest | Request body
+        UpdateWhereTagForViewOnTransactionRequest updateWhereTagForViewOnTransactionRequest = new UpdateWhereTagForViewOnTransactionRequest(); // UpdateWhereTagForViewOnTransactionRequest | Request body
         try {
-            ApiResponse<OBPv121UpdateTransactionNarrative200Response> response = apiInstance.oBPv121AddWhereTagForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid, obPv121UpdateWhereTagForViewOnTransactionRequest);
+            ApiResponse<UpdateTransactionNarrative200Response> response = apiInstance.addWhereTagForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid, updateWhereTagForViewOnTransactionRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionMetadataApi#oBPv121AddWhereTagForViewOnTransaction");
+            System.err.println("Exception when calling TransactionMetadataApi#addWhereTagForViewOnTransaction");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -957,11 +957,11 @@ public class Example {
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **viewid** | **String**| The VIEWID identifier | |
 | **transactionid** | **String**| The TRANSACTIONID identifier | |
-| **obPv121UpdateWhereTagForViewOnTransactionRequest** | [**OBPv121UpdateWhereTagForViewOnTransactionRequest**](OBPv121UpdateWhereTagForViewOnTransactionRequest.md)| Request body | |
+| **updateWhereTagForViewOnTransactionRequest** | [**UpdateWhereTagForViewOnTransactionRequest**](UpdateWhereTagForViewOnTransactionRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)>
+ApiResponse<[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)>
 
 
 ### Authorization
@@ -981,9 +981,9 @@ ApiResponse<[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTran
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv121DeleteCommentForViewOnTransaction
+## deleteCommentForViewOnTransaction
 
-> void oBPv121DeleteCommentForViewOnTransaction(bankid, accountid, viewid, transactionid, commentid)
+> void deleteCommentForViewOnTransaction(bankid, accountid, viewid, transactionid, commentid)
 
 Delete a Transaction Comment
 
@@ -1003,7 +1003,7 @@ import com.openbankproject.api.TransactionMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1028,9 +1028,9 @@ public class Example {
         String transactionid = "transactionid_example"; // String | The TRANSACTIONID identifier
         String commentid = "commentid_example"; // String | The COMMENTID identifier
         try {
-            apiInstance.oBPv121DeleteCommentForViewOnTransaction(bankid, accountid, viewid, transactionid, commentid);
+            apiInstance.deleteCommentForViewOnTransaction(bankid, accountid, viewid, transactionid, commentid);
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionMetadataApi#oBPv121DeleteCommentForViewOnTransaction");
+            System.err.println("Exception when calling TransactionMetadataApi#deleteCommentForViewOnTransaction");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1072,9 +1072,9 @@ null (empty response body)
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv121DeleteCommentForViewOnTransactionWithHttpInfo
+## deleteCommentForViewOnTransactionWithHttpInfo
 
-> ApiResponse<Void> oBPv121DeleteCommentForViewOnTransaction oBPv121DeleteCommentForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid, commentid)
+> ApiResponse<Void> deleteCommentForViewOnTransaction deleteCommentForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid, commentid)
 
 Delete a Transaction Comment
 
@@ -1095,7 +1095,7 @@ import com.openbankproject.api.TransactionMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1120,11 +1120,11 @@ public class Example {
         String transactionid = "transactionid_example"; // String | The TRANSACTIONID identifier
         String commentid = "commentid_example"; // String | The COMMENTID identifier
         try {
-            ApiResponse<Void> response = apiInstance.oBPv121DeleteCommentForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid, commentid);
+            ApiResponse<Void> response = apiInstance.deleteCommentForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid, commentid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionMetadataApi#oBPv121DeleteCommentForViewOnTransaction");
+            System.err.println("Exception when calling TransactionMetadataApi#deleteCommentForViewOnTransaction");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1167,9 +1167,9 @@ ApiResponse<Void>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv121DeleteImageForViewOnTransaction
+## deleteImageForViewOnTransaction
 
-> void oBPv121DeleteImageForViewOnTransaction(bankid, accountid, viewid, transactionid, imageid)
+> void deleteImageForViewOnTransaction(bankid, accountid, viewid, transactionid, imageid)
 
 Delete a Transaction Image
 
@@ -1189,7 +1189,7 @@ import com.openbankproject.api.TransactionMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1214,9 +1214,9 @@ public class Example {
         String transactionid = "transactionid_example"; // String | The TRANSACTIONID identifier
         String imageid = "imageid_example"; // String | The IMAGEID identifier
         try {
-            apiInstance.oBPv121DeleteImageForViewOnTransaction(bankid, accountid, viewid, transactionid, imageid);
+            apiInstance.deleteImageForViewOnTransaction(bankid, accountid, viewid, transactionid, imageid);
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionMetadataApi#oBPv121DeleteImageForViewOnTransaction");
+            System.err.println("Exception when calling TransactionMetadataApi#deleteImageForViewOnTransaction");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1258,9 +1258,9 @@ null (empty response body)
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv121DeleteImageForViewOnTransactionWithHttpInfo
+## deleteImageForViewOnTransactionWithHttpInfo
 
-> ApiResponse<Void> oBPv121DeleteImageForViewOnTransaction oBPv121DeleteImageForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid, imageid)
+> ApiResponse<Void> deleteImageForViewOnTransaction deleteImageForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid, imageid)
 
 Delete a Transaction Image
 
@@ -1281,7 +1281,7 @@ import com.openbankproject.api.TransactionMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1306,11 +1306,11 @@ public class Example {
         String transactionid = "transactionid_example"; // String | The TRANSACTIONID identifier
         String imageid = "imageid_example"; // String | The IMAGEID identifier
         try {
-            ApiResponse<Void> response = apiInstance.oBPv121DeleteImageForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid, imageid);
+            ApiResponse<Void> response = apiInstance.deleteImageForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid, imageid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionMetadataApi#oBPv121DeleteImageForViewOnTransaction");
+            System.err.println("Exception when calling TransactionMetadataApi#deleteImageForViewOnTransaction");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1353,9 +1353,9 @@ ApiResponse<Void>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv121DeleteTagForViewOnTransaction
+## deleteTagForViewOnTransaction
 
-> void oBPv121DeleteTagForViewOnTransaction(bankid, accountid, viewid, transactionid, tagid)
+> void deleteTagForViewOnTransaction(bankid, accountid, viewid, transactionid, tagid)
 
 Delete a Transaction Tag
 
@@ -1374,7 +1374,7 @@ import com.openbankproject.api.TransactionMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
 
         TransactionMetadataApi apiInstance = new TransactionMetadataApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
@@ -1383,9 +1383,9 @@ public class Example {
         String transactionid = "transactionid_example"; // String | The TRANSACTIONID identifier
         String tagid = "tagid_example"; // String | The TAGID identifier
         try {
-            apiInstance.oBPv121DeleteTagForViewOnTransaction(bankid, accountid, viewid, transactionid, tagid);
+            apiInstance.deleteTagForViewOnTransaction(bankid, accountid, viewid, transactionid, tagid);
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionMetadataApi#oBPv121DeleteTagForViewOnTransaction");
+            System.err.println("Exception when calling TransactionMetadataApi#deleteTagForViewOnTransaction");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1427,9 +1427,9 @@ No authorization required
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv121DeleteTagForViewOnTransactionWithHttpInfo
+## deleteTagForViewOnTransactionWithHttpInfo
 
-> ApiResponse<Void> oBPv121DeleteTagForViewOnTransaction oBPv121DeleteTagForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid, tagid)
+> ApiResponse<Void> deleteTagForViewOnTransaction deleteTagForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid, tagid)
 
 Delete a Transaction Tag
 
@@ -1449,7 +1449,7 @@ import com.openbankproject.api.TransactionMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
 
         TransactionMetadataApi apiInstance = new TransactionMetadataApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
@@ -1458,11 +1458,11 @@ public class Example {
         String transactionid = "transactionid_example"; // String | The TRANSACTIONID identifier
         String tagid = "tagid_example"; // String | The TAGID identifier
         try {
-            ApiResponse<Void> response = apiInstance.oBPv121DeleteTagForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid, tagid);
+            ApiResponse<Void> response = apiInstance.deleteTagForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid, tagid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionMetadataApi#oBPv121DeleteTagForViewOnTransaction");
+            System.err.println("Exception when calling TransactionMetadataApi#deleteTagForViewOnTransaction");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1505,9 +1505,9 @@ No authorization required
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv121DeleteTransactionNarrative
+## deleteTransactionNarrative
 
-> void oBPv121DeleteTransactionNarrative(bankid, accountid, viewid, transactionid)
+> void deleteTransactionNarrative(bankid, accountid, viewid, transactionid)
 
 Delete a Transaction Narrative
 
@@ -1527,7 +1527,7 @@ import com.openbankproject.api.TransactionMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1551,9 +1551,9 @@ public class Example {
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String transactionid = "transactionid_example"; // String | The TRANSACTIONID identifier
         try {
-            apiInstance.oBPv121DeleteTransactionNarrative(bankid, accountid, viewid, transactionid);
+            apiInstance.deleteTransactionNarrative(bankid, accountid, viewid, transactionid);
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionMetadataApi#oBPv121DeleteTransactionNarrative");
+            System.err.println("Exception when calling TransactionMetadataApi#deleteTransactionNarrative");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1594,9 +1594,9 @@ null (empty response body)
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv121DeleteTransactionNarrativeWithHttpInfo
+## deleteTransactionNarrativeWithHttpInfo
 
-> ApiResponse<Void> oBPv121DeleteTransactionNarrative oBPv121DeleteTransactionNarrativeWithHttpInfo(bankid, accountid, viewid, transactionid)
+> ApiResponse<Void> deleteTransactionNarrative deleteTransactionNarrativeWithHttpInfo(bankid, accountid, viewid, transactionid)
 
 Delete a Transaction Narrative
 
@@ -1617,7 +1617,7 @@ import com.openbankproject.api.TransactionMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1641,11 +1641,11 @@ public class Example {
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String transactionid = "transactionid_example"; // String | The TRANSACTIONID identifier
         try {
-            ApiResponse<Void> response = apiInstance.oBPv121DeleteTransactionNarrativeWithHttpInfo(bankid, accountid, viewid, transactionid);
+            ApiResponse<Void> response = apiInstance.deleteTransactionNarrativeWithHttpInfo(bankid, accountid, viewid, transactionid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionMetadataApi#oBPv121DeleteTransactionNarrative");
+            System.err.println("Exception when calling TransactionMetadataApi#deleteTransactionNarrative");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1687,9 +1687,9 @@ ApiResponse<Void>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv121DeleteWhereTagForViewOnTransaction
+## deleteWhereTagForViewOnTransaction
 
-> void oBPv121DeleteWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid)
+> void deleteWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid)
 
 Delete a Transaction Tag
 
@@ -1709,7 +1709,7 @@ import com.openbankproject.api.TransactionMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1733,9 +1733,9 @@ public class Example {
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String transactionid = "transactionid_example"; // String | The TRANSACTIONID identifier
         try {
-            apiInstance.oBPv121DeleteWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid);
+            apiInstance.deleteWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid);
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionMetadataApi#oBPv121DeleteWhereTagForViewOnTransaction");
+            System.err.println("Exception when calling TransactionMetadataApi#deleteWhereTagForViewOnTransaction");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1776,9 +1776,9 @@ null (empty response body)
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv121DeleteWhereTagForViewOnTransactionWithHttpInfo
+## deleteWhereTagForViewOnTransactionWithHttpInfo
 
-> ApiResponse<Void> oBPv121DeleteWhereTagForViewOnTransaction oBPv121DeleteWhereTagForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid)
+> ApiResponse<Void> deleteWhereTagForViewOnTransaction deleteWhereTagForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid)
 
 Delete a Transaction Tag
 
@@ -1799,7 +1799,7 @@ import com.openbankproject.api.TransactionMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1823,11 +1823,11 @@ public class Example {
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String transactionid = "transactionid_example"; // String | The TRANSACTIONID identifier
         try {
-            ApiResponse<Void> response = apiInstance.oBPv121DeleteWhereTagForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid);
+            ApiResponse<Void> response = apiInstance.deleteWhereTagForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionMetadataApi#oBPv121DeleteWhereTagForViewOnTransaction");
+            System.err.println("Exception when calling TransactionMetadataApi#deleteWhereTagForViewOnTransaction");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1869,9 +1869,9 @@ ApiResponse<Void>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv121GetCommentsForViewOnTransaction
+## getCommentsForViewOnTransaction
 
-> OBPv121GetCommentsForViewOnTransaction200Response oBPv121GetCommentsForViewOnTransaction(bankid, accountid, viewid, transactionid)
+> GetCommentsForViewOnTransaction200Response getCommentsForViewOnTransaction(bankid, accountid, viewid, transactionid)
 
 Get Transaction Comments
 
@@ -1891,7 +1891,7 @@ import com.openbankproject.api.TransactionMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1915,10 +1915,10 @@ public class Example {
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String transactionid = "transactionid_example"; // String | The TRANSACTIONID identifier
         try {
-            OBPv121GetCommentsForViewOnTransaction200Response result = apiInstance.oBPv121GetCommentsForViewOnTransaction(bankid, accountid, viewid, transactionid);
+            GetCommentsForViewOnTransaction200Response result = apiInstance.getCommentsForViewOnTransaction(bankid, accountid, viewid, transactionid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionMetadataApi#oBPv121GetCommentsForViewOnTransaction");
+            System.err.println("Exception when calling TransactionMetadataApi#getCommentsForViewOnTransaction");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1940,7 +1940,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv121GetCommentsForViewOnTransaction200Response**](OBPv121GetCommentsForViewOnTransaction200Response.md)
+[**GetCommentsForViewOnTransaction200Response**](GetCommentsForViewOnTransaction200Response.md)
 
 
 ### Authorization
@@ -1959,9 +1959,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv121GetCommentsForViewOnTransactionWithHttpInfo
+## getCommentsForViewOnTransactionWithHttpInfo
 
-> ApiResponse<OBPv121GetCommentsForViewOnTransaction200Response> oBPv121GetCommentsForViewOnTransaction oBPv121GetCommentsForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid)
+> ApiResponse<GetCommentsForViewOnTransaction200Response> getCommentsForViewOnTransaction getCommentsForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid)
 
 Get Transaction Comments
 
@@ -1982,7 +1982,7 @@ import com.openbankproject.api.TransactionMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -2006,12 +2006,12 @@ public class Example {
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String transactionid = "transactionid_example"; // String | The TRANSACTIONID identifier
         try {
-            ApiResponse<OBPv121GetCommentsForViewOnTransaction200Response> response = apiInstance.oBPv121GetCommentsForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid);
+            ApiResponse<GetCommentsForViewOnTransaction200Response> response = apiInstance.getCommentsForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionMetadataApi#oBPv121GetCommentsForViewOnTransaction");
+            System.err.println("Exception when calling TransactionMetadataApi#getCommentsForViewOnTransaction");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -2033,7 +2033,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv121GetCommentsForViewOnTransaction200Response**](OBPv121GetCommentsForViewOnTransaction200Response.md)>
+ApiResponse<[**GetCommentsForViewOnTransaction200Response**](GetCommentsForViewOnTransaction200Response.md)>
 
 
 ### Authorization
@@ -2053,9 +2053,9 @@ ApiResponse<[**OBPv121GetCommentsForViewOnTransaction200Response**](OBPv121GetCo
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv121GetImagesForViewOnTransaction
+## getImagesForViewOnTransaction
 
-> OBPv121GetImagesForViewOnTransaction200Response oBPv121GetImagesForViewOnTransaction(bankid, accountid, viewid, transactionid)
+> GetImagesForViewOnTransaction200Response getImagesForViewOnTransaction(bankid, accountid, viewid, transactionid)
 
 Get Transaction Images
 
@@ -2075,7 +2075,7 @@ import com.openbankproject.api.TransactionMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -2099,10 +2099,10 @@ public class Example {
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String transactionid = "transactionid_example"; // String | The TRANSACTIONID identifier
         try {
-            OBPv121GetImagesForViewOnTransaction200Response result = apiInstance.oBPv121GetImagesForViewOnTransaction(bankid, accountid, viewid, transactionid);
+            GetImagesForViewOnTransaction200Response result = apiInstance.getImagesForViewOnTransaction(bankid, accountid, viewid, transactionid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionMetadataApi#oBPv121GetImagesForViewOnTransaction");
+            System.err.println("Exception when calling TransactionMetadataApi#getImagesForViewOnTransaction");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -2124,7 +2124,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv121GetImagesForViewOnTransaction200Response**](OBPv121GetImagesForViewOnTransaction200Response.md)
+[**GetImagesForViewOnTransaction200Response**](GetImagesForViewOnTransaction200Response.md)
 
 
 ### Authorization
@@ -2143,9 +2143,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv121GetImagesForViewOnTransactionWithHttpInfo
+## getImagesForViewOnTransactionWithHttpInfo
 
-> ApiResponse<OBPv121GetImagesForViewOnTransaction200Response> oBPv121GetImagesForViewOnTransaction oBPv121GetImagesForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid)
+> ApiResponse<GetImagesForViewOnTransaction200Response> getImagesForViewOnTransaction getImagesForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid)
 
 Get Transaction Images
 
@@ -2166,7 +2166,7 @@ import com.openbankproject.api.TransactionMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -2190,12 +2190,12 @@ public class Example {
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String transactionid = "transactionid_example"; // String | The TRANSACTIONID identifier
         try {
-            ApiResponse<OBPv121GetImagesForViewOnTransaction200Response> response = apiInstance.oBPv121GetImagesForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid);
+            ApiResponse<GetImagesForViewOnTransaction200Response> response = apiInstance.getImagesForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionMetadataApi#oBPv121GetImagesForViewOnTransaction");
+            System.err.println("Exception when calling TransactionMetadataApi#getImagesForViewOnTransaction");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -2217,7 +2217,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv121GetImagesForViewOnTransaction200Response**](OBPv121GetImagesForViewOnTransaction200Response.md)>
+ApiResponse<[**GetImagesForViewOnTransaction200Response**](GetImagesForViewOnTransaction200Response.md)>
 
 
 ### Authorization
@@ -2237,9 +2237,9 @@ ApiResponse<[**OBPv121GetImagesForViewOnTransaction200Response**](OBPv121GetImag
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv121GetTagsForViewOnTransaction
+## getTagsForViewOnTransaction
 
-> OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems oBPv121GetTagsForViewOnTransaction(bankid, accountid, viewid, transactionid)
+> GetTagsForViewOnAccount200ResponseTagsInner getTagsForViewOnTransaction(bankid, accountid, viewid, transactionid)
 
 Get Transaction Tags
 
@@ -2258,7 +2258,7 @@ import com.openbankproject.api.TransactionMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
 
         TransactionMetadataApi apiInstance = new TransactionMetadataApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
@@ -2266,10 +2266,10 @@ public class Example {
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String transactionid = "transactionid_example"; // String | The TRANSACTIONID identifier
         try {
-            OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems result = apiInstance.oBPv121GetTagsForViewOnTransaction(bankid, accountid, viewid, transactionid);
+            GetTagsForViewOnAccount200ResponseTagsInner result = apiInstance.getTagsForViewOnTransaction(bankid, accountid, viewid, transactionid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionMetadataApi#oBPv121GetTagsForViewOnTransaction");
+            System.err.println("Exception when calling TransactionMetadataApi#getTagsForViewOnTransaction");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -2291,7 +2291,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)
+[**GetTagsForViewOnAccount200ResponseTagsInner**](GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 
 ### Authorization
@@ -2310,9 +2310,9 @@ No authorization required
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv121GetTagsForViewOnTransactionWithHttpInfo
+## getTagsForViewOnTransactionWithHttpInfo
 
-> ApiResponse<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems> oBPv121GetTagsForViewOnTransaction oBPv121GetTagsForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid)
+> ApiResponse<GetTagsForViewOnAccount200ResponseTagsInner> getTagsForViewOnTransaction getTagsForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid)
 
 Get Transaction Tags
 
@@ -2332,7 +2332,7 @@ import com.openbankproject.api.TransactionMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
 
         TransactionMetadataApi apiInstance = new TransactionMetadataApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
@@ -2340,12 +2340,12 @@ public class Example {
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String transactionid = "transactionid_example"; // String | The TRANSACTIONID identifier
         try {
-            ApiResponse<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems> response = apiInstance.oBPv121GetTagsForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid);
+            ApiResponse<GetTagsForViewOnAccount200ResponseTagsInner> response = apiInstance.getTagsForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionMetadataApi#oBPv121GetTagsForViewOnTransaction");
+            System.err.println("Exception when calling TransactionMetadataApi#getTagsForViewOnTransaction");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -2367,7 +2367,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)>
+ApiResponse<[**GetTagsForViewOnAccount200ResponseTagsInner**](GetTagsForViewOnAccount200ResponseTagsInner.md)>
 
 
 ### Authorization
@@ -2387,9 +2387,9 @@ No authorization required
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv121GetTransactionNarrative
+## getTransactionNarrative
 
-> OBPv121GetTransactionNarrative200Response oBPv121GetTransactionNarrative(bankid, accountid, viewid, transactionid)
+> GetTransactionNarrative200Response getTransactionNarrative(bankid, accountid, viewid, transactionid)
 
 Get a Transaction Narrative
 
@@ -2408,7 +2408,7 @@ import com.openbankproject.api.TransactionMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
 
         TransactionMetadataApi apiInstance = new TransactionMetadataApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
@@ -2416,10 +2416,10 @@ public class Example {
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String transactionid = "transactionid_example"; // String | The TRANSACTIONID identifier
         try {
-            OBPv121GetTransactionNarrative200Response result = apiInstance.oBPv121GetTransactionNarrative(bankid, accountid, viewid, transactionid);
+            GetTransactionNarrative200Response result = apiInstance.getTransactionNarrative(bankid, accountid, viewid, transactionid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionMetadataApi#oBPv121GetTransactionNarrative");
+            System.err.println("Exception when calling TransactionMetadataApi#getTransactionNarrative");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -2441,7 +2441,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv121GetTransactionNarrative200Response**](OBPv121GetTransactionNarrative200Response.md)
+[**GetTransactionNarrative200Response**](GetTransactionNarrative200Response.md)
 
 
 ### Authorization
@@ -2460,9 +2460,9 @@ No authorization required
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv121GetTransactionNarrativeWithHttpInfo
+## getTransactionNarrativeWithHttpInfo
 
-> ApiResponse<OBPv121GetTransactionNarrative200Response> oBPv121GetTransactionNarrative oBPv121GetTransactionNarrativeWithHttpInfo(bankid, accountid, viewid, transactionid)
+> ApiResponse<GetTransactionNarrative200Response> getTransactionNarrative getTransactionNarrativeWithHttpInfo(bankid, accountid, viewid, transactionid)
 
 Get a Transaction Narrative
 
@@ -2482,7 +2482,7 @@ import com.openbankproject.api.TransactionMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
 
         TransactionMetadataApi apiInstance = new TransactionMetadataApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
@@ -2490,12 +2490,12 @@ public class Example {
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String transactionid = "transactionid_example"; // String | The TRANSACTIONID identifier
         try {
-            ApiResponse<OBPv121GetTransactionNarrative200Response> response = apiInstance.oBPv121GetTransactionNarrativeWithHttpInfo(bankid, accountid, viewid, transactionid);
+            ApiResponse<GetTransactionNarrative200Response> response = apiInstance.getTransactionNarrativeWithHttpInfo(bankid, accountid, viewid, transactionid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionMetadataApi#oBPv121GetTransactionNarrative");
+            System.err.println("Exception when calling TransactionMetadataApi#getTransactionNarrative");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -2517,7 +2517,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv121GetTransactionNarrative200Response**](OBPv121GetTransactionNarrative200Response.md)>
+ApiResponse<[**GetTransactionNarrative200Response**](GetTransactionNarrative200Response.md)>
 
 
 ### Authorization
@@ -2537,9 +2537,9 @@ No authorization required
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv121GetWhereTagForViewOnTransaction
+## getWhereTagForViewOnTransaction
 
-> OBPv121GetWhereTagForViewOnTransaction200Response oBPv121GetWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid)
+> GetWhereTagForViewOnTransaction200Response getWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid)
 
 Get a Transaction where Tag
 
@@ -2558,7 +2558,7 @@ import com.openbankproject.api.TransactionMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
 
         TransactionMetadataApi apiInstance = new TransactionMetadataApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
@@ -2566,10 +2566,10 @@ public class Example {
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String transactionid = "transactionid_example"; // String | The TRANSACTIONID identifier
         try {
-            OBPv121GetWhereTagForViewOnTransaction200Response result = apiInstance.oBPv121GetWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid);
+            GetWhereTagForViewOnTransaction200Response result = apiInstance.getWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionMetadataApi#oBPv121GetWhereTagForViewOnTransaction");
+            System.err.println("Exception when calling TransactionMetadataApi#getWhereTagForViewOnTransaction");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -2591,7 +2591,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv121GetWhereTagForViewOnTransaction200Response**](OBPv121GetWhereTagForViewOnTransaction200Response.md)
+[**GetWhereTagForViewOnTransaction200Response**](GetWhereTagForViewOnTransaction200Response.md)
 
 
 ### Authorization
@@ -2610,9 +2610,9 @@ No authorization required
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv121GetWhereTagForViewOnTransactionWithHttpInfo
+## getWhereTagForViewOnTransactionWithHttpInfo
 
-> ApiResponse<OBPv121GetWhereTagForViewOnTransaction200Response> oBPv121GetWhereTagForViewOnTransaction oBPv121GetWhereTagForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid)
+> ApiResponse<GetWhereTagForViewOnTransaction200Response> getWhereTagForViewOnTransaction getWhereTagForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid)
 
 Get a Transaction where Tag
 
@@ -2632,7 +2632,7 @@ import com.openbankproject.api.TransactionMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
 
         TransactionMetadataApi apiInstance = new TransactionMetadataApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
@@ -2640,12 +2640,12 @@ public class Example {
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String transactionid = "transactionid_example"; // String | The TRANSACTIONID identifier
         try {
-            ApiResponse<OBPv121GetWhereTagForViewOnTransaction200Response> response = apiInstance.oBPv121GetWhereTagForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid);
+            ApiResponse<GetWhereTagForViewOnTransaction200Response> response = apiInstance.getWhereTagForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionMetadataApi#oBPv121GetWhereTagForViewOnTransaction");
+            System.err.println("Exception when calling TransactionMetadataApi#getWhereTagForViewOnTransaction");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -2667,7 +2667,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv121GetWhereTagForViewOnTransaction200Response**](OBPv121GetWhereTagForViewOnTransaction200Response.md)>
+ApiResponse<[**GetWhereTagForViewOnTransaction200Response**](GetWhereTagForViewOnTransaction200Response.md)>
 
 
 ### Authorization
@@ -2687,9 +2687,9 @@ No authorization required
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv121UpdateTransactionNarrative
+## updateTransactionNarrative
 
-> OBPv121UpdateTransactionNarrative200Response oBPv121UpdateTransactionNarrative(bankid, accountid, viewid, transactionid, obPv121GetTransactionNarrative200Response)
+> UpdateTransactionNarrative200Response updateTransactionNarrative(bankid, accountid, viewid, transactionid, getTransactionNarrative200Response)
 
 Update a Transaction Narrative
 
@@ -2708,19 +2708,19 @@ import com.openbankproject.api.TransactionMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
 
         TransactionMetadataApi apiInstance = new TransactionMetadataApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String transactionid = "transactionid_example"; // String | The TRANSACTIONID identifier
-        OBPv121GetTransactionNarrative200Response obPv121GetTransactionNarrative200Response = new OBPv121GetTransactionNarrative200Response(); // OBPv121GetTransactionNarrative200Response | Request body
+        GetTransactionNarrative200Response getTransactionNarrative200Response = new GetTransactionNarrative200Response(); // GetTransactionNarrative200Response | Request body
         try {
-            OBPv121UpdateTransactionNarrative200Response result = apiInstance.oBPv121UpdateTransactionNarrative(bankid, accountid, viewid, transactionid, obPv121GetTransactionNarrative200Response);
+            UpdateTransactionNarrative200Response result = apiInstance.updateTransactionNarrative(bankid, accountid, viewid, transactionid, getTransactionNarrative200Response);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionMetadataApi#oBPv121UpdateTransactionNarrative");
+            System.err.println("Exception when calling TransactionMetadataApi#updateTransactionNarrative");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -2739,11 +2739,11 @@ public class Example {
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **viewid** | **String**| The VIEWID identifier | |
 | **transactionid** | **String**| The TRANSACTIONID identifier | |
-| **obPv121GetTransactionNarrative200Response** | [**OBPv121GetTransactionNarrative200Response**](OBPv121GetTransactionNarrative200Response.md)| Request body | |
+| **getTransactionNarrative200Response** | [**GetTransactionNarrative200Response**](GetTransactionNarrative200Response.md)| Request body | |
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 
 ### Authorization
@@ -2762,9 +2762,9 @@ No authorization required
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv121UpdateTransactionNarrativeWithHttpInfo
+## updateTransactionNarrativeWithHttpInfo
 
-> ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv121UpdateTransactionNarrative oBPv121UpdateTransactionNarrativeWithHttpInfo(bankid, accountid, viewid, transactionid, obPv121GetTransactionNarrative200Response)
+> ApiResponse<UpdateTransactionNarrative200Response> updateTransactionNarrative updateTransactionNarrativeWithHttpInfo(bankid, accountid, viewid, transactionid, getTransactionNarrative200Response)
 
 Update a Transaction Narrative
 
@@ -2784,21 +2784,21 @@ import com.openbankproject.api.TransactionMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
 
         TransactionMetadataApi apiInstance = new TransactionMetadataApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String transactionid = "transactionid_example"; // String | The TRANSACTIONID identifier
-        OBPv121GetTransactionNarrative200Response obPv121GetTransactionNarrative200Response = new OBPv121GetTransactionNarrative200Response(); // OBPv121GetTransactionNarrative200Response | Request body
+        GetTransactionNarrative200Response getTransactionNarrative200Response = new GetTransactionNarrative200Response(); // GetTransactionNarrative200Response | Request body
         try {
-            ApiResponse<OBPv121UpdateTransactionNarrative200Response> response = apiInstance.oBPv121UpdateTransactionNarrativeWithHttpInfo(bankid, accountid, viewid, transactionid, obPv121GetTransactionNarrative200Response);
+            ApiResponse<UpdateTransactionNarrative200Response> response = apiInstance.updateTransactionNarrativeWithHttpInfo(bankid, accountid, viewid, transactionid, getTransactionNarrative200Response);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionMetadataApi#oBPv121UpdateTransactionNarrative");
+            System.err.println("Exception when calling TransactionMetadataApi#updateTransactionNarrative");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -2817,11 +2817,11 @@ public class Example {
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **viewid** | **String**| The VIEWID identifier | |
 | **transactionid** | **String**| The TRANSACTIONID identifier | |
-| **obPv121GetTransactionNarrative200Response** | [**OBPv121GetTransactionNarrative200Response**](OBPv121GetTransactionNarrative200Response.md)| Request body | |
+| **getTransactionNarrative200Response** | [**GetTransactionNarrative200Response**](GetTransactionNarrative200Response.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)>
+ApiResponse<[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)>
 
 
 ### Authorization
@@ -2841,9 +2841,9 @@ No authorization required
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv121UpdateWhereTagForViewOnTransaction
+## updateWhereTagForViewOnTransaction
 
-> OBPv121UpdateTransactionNarrative200Response oBPv121UpdateWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid, obPv121UpdateWhereTagForViewOnTransactionRequest)
+> UpdateTransactionNarrative200Response updateWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid, updateWhereTagForViewOnTransactionRequest)
 
 Update a Transaction where Tag
 
@@ -2863,7 +2863,7 @@ import com.openbankproject.api.TransactionMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -2886,12 +2886,12 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String transactionid = "transactionid_example"; // String | The TRANSACTIONID identifier
-        OBPv121UpdateWhereTagForViewOnTransactionRequest obPv121UpdateWhereTagForViewOnTransactionRequest = new OBPv121UpdateWhereTagForViewOnTransactionRequest(); // OBPv121UpdateWhereTagForViewOnTransactionRequest | Request body
+        UpdateWhereTagForViewOnTransactionRequest updateWhereTagForViewOnTransactionRequest = new UpdateWhereTagForViewOnTransactionRequest(); // UpdateWhereTagForViewOnTransactionRequest | Request body
         try {
-            OBPv121UpdateTransactionNarrative200Response result = apiInstance.oBPv121UpdateWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid, obPv121UpdateWhereTagForViewOnTransactionRequest);
+            UpdateTransactionNarrative200Response result = apiInstance.updateWhereTagForViewOnTransaction(bankid, accountid, viewid, transactionid, updateWhereTagForViewOnTransactionRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionMetadataApi#oBPv121UpdateWhereTagForViewOnTransaction");
+            System.err.println("Exception when calling TransactionMetadataApi#updateWhereTagForViewOnTransaction");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -2910,11 +2910,11 @@ public class Example {
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **viewid** | **String**| The VIEWID identifier | |
 | **transactionid** | **String**| The TRANSACTIONID identifier | |
-| **obPv121UpdateWhereTagForViewOnTransactionRequest** | [**OBPv121UpdateWhereTagForViewOnTransactionRequest**](OBPv121UpdateWhereTagForViewOnTransactionRequest.md)| Request body | |
+| **updateWhereTagForViewOnTransactionRequest** | [**UpdateWhereTagForViewOnTransactionRequest**](UpdateWhereTagForViewOnTransactionRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 
 ### Authorization
@@ -2933,9 +2933,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv121UpdateWhereTagForViewOnTransactionWithHttpInfo
+## updateWhereTagForViewOnTransactionWithHttpInfo
 
-> ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv121UpdateWhereTagForViewOnTransaction oBPv121UpdateWhereTagForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid, obPv121UpdateWhereTagForViewOnTransactionRequest)
+> ApiResponse<UpdateTransactionNarrative200Response> updateWhereTagForViewOnTransaction updateWhereTagForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid, updateWhereTagForViewOnTransactionRequest)
 
 Update a Transaction where Tag
 
@@ -2956,7 +2956,7 @@ import com.openbankproject.api.TransactionMetadataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -2979,14 +2979,14 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String transactionid = "transactionid_example"; // String | The TRANSACTIONID identifier
-        OBPv121UpdateWhereTagForViewOnTransactionRequest obPv121UpdateWhereTagForViewOnTransactionRequest = new OBPv121UpdateWhereTagForViewOnTransactionRequest(); // OBPv121UpdateWhereTagForViewOnTransactionRequest | Request body
+        UpdateWhereTagForViewOnTransactionRequest updateWhereTagForViewOnTransactionRequest = new UpdateWhereTagForViewOnTransactionRequest(); // UpdateWhereTagForViewOnTransactionRequest | Request body
         try {
-            ApiResponse<OBPv121UpdateTransactionNarrative200Response> response = apiInstance.oBPv121UpdateWhereTagForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid, obPv121UpdateWhereTagForViewOnTransactionRequest);
+            ApiResponse<UpdateTransactionNarrative200Response> response = apiInstance.updateWhereTagForViewOnTransactionWithHttpInfo(bankid, accountid, viewid, transactionid, updateWhereTagForViewOnTransactionRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionMetadataApi#oBPv121UpdateWhereTagForViewOnTransaction");
+            System.err.println("Exception when calling TransactionMetadataApi#updateWhereTagForViewOnTransaction");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -3005,11 +3005,11 @@ public class Example {
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **viewid** | **String**| The VIEWID identifier | |
 | **transactionid** | **String**| The TRANSACTIONID identifier | |
-| **obPv121UpdateWhereTagForViewOnTransactionRequest** | [**OBPv121UpdateWhereTagForViewOnTransactionRequest**](OBPv121UpdateWhereTagForViewOnTransactionRequest.md)| Request body | |
+| **updateWhereTagForViewOnTransactionRequest** | [**UpdateWhereTagForViewOnTransactionRequest**](UpdateWhereTagForViewOnTransactionRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)>
+ApiResponse<[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)>
 
 
 ### Authorization

@@ -1,15 +1,15 @@
 # OpenBankProject.Api.StandingOrderApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OBPv400CreateStandingOrder**](StandingOrderApi.md#obpv400createstandingorder) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/standing-order | Create Standing Order |
-| [**OBPv400CreateStandingOrderManagement**](StandingOrderApi.md#obpv400createstandingordermanagement) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/standing-order | Create Standing Order (management) |
+| [**CreateStandingOrder**](StandingOrderApi.md#createstandingorder) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/standing-order | Create Standing Order |
+| [**CreateStandingOrderManagement**](StandingOrderApi.md#createstandingordermanagement) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/standing-order | Create Standing Order (management) |
 
-<a id="obpv400createstandingorder"></a>
-# **OBPv400CreateStandingOrder**
-> OBPv400CreateStandingOrder200Response OBPv400CreateStandingOrder (string bankid, string accountid, string viewid, OBPv400CreateStandingOrderRequest oBPv400CreateStandingOrderRequest)
+<a id="createstandingorder"></a>
+# **CreateStandingOrder**
+> CreateStandingOrder200Response CreateStandingOrder (string bankid, string accountid, string viewid, CreateStandingOrderRequest createStandingOrderRequest)
 
 Create Standing Order
 
@@ -23,11 +23,11 @@ Create Standing Order
 | **bankid** | **string** | The BANKID identifier |  |
 | **accountid** | **string** | The ACCOUNTID identifier |  |
 | **viewid** | **string** | The VIEWID identifier |  |
-| **oBPv400CreateStandingOrderRequest** | [**OBPv400CreateStandingOrderRequest**](OBPv400CreateStandingOrderRequest.md) | Request body |  |
+| **createStandingOrderRequest** | [**CreateStandingOrderRequest**](CreateStandingOrderRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400CreateStandingOrder200Response**](OBPv400CreateStandingOrder200Response.md)
+[**CreateStandingOrder200Response**](CreateStandingOrder200Response.md)
 
 ### Authorization
 
@@ -48,9 +48,9 @@ Create Standing Order
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400createstandingordermanagement"></a>
-# **OBPv400CreateStandingOrderManagement**
-> OBPv400CreateStandingOrder200Response OBPv400CreateStandingOrderManagement (string bankid, string accountid, OBPv400CreateStandingOrderRequest oBPv400CreateStandingOrderRequest)
+<a id="createstandingordermanagement"></a>
+# **CreateStandingOrderManagement**
+> CreateStandingOrder200Response CreateStandingOrderManagement (string bankid, string accountid, CreateStandingOrderRequest createStandingOrderRequest)
 
 Create Standing Order (management)
 
@@ -63,11 +63,11 @@ Create Standing Order (management)
 |------|------|-------------|-------|
 | **bankid** | **string** | The BANKID identifier |  |
 | **accountid** | **string** | The ACCOUNTID identifier |  |
-| **oBPv400CreateStandingOrderRequest** | [**OBPv400CreateStandingOrderRequest**](OBPv400CreateStandingOrderRequest.md) | Request body |  |
+| **createStandingOrderRequest** | [**CreateStandingOrderRequest**](CreateStandingOrderRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400CreateStandingOrder200Response**](OBPv400CreateStandingOrder200Response.md)
+[**CreateStandingOrder200Response**](CreateStandingOrder200Response.md)
 
 ### Authorization
 

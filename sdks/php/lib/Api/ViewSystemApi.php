@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,37 +75,40 @@ class ViewSystemApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv500CreateSystemView' => [
+        'addSystemViewPermission' => [
             'application/json',
         ],
-        'oBPv500DeleteSystemView' => [
+        'createSystemView' => [
             'application/json',
         ],
-        'oBPv500GetSystemView' => [
+        'deleteSystemView' => [
             'application/json',
         ],
-        'oBPv500GetSystemViewsIds' => [
+        'deleteSystemViewPermission' => [
             'application/json',
         ],
-        'oBPv510AddSystemViewPermission' => [
+        'getCustomViewById' => [
             'application/json',
         ],
-        'oBPv510DeleteSystemViewPermission' => [
+        'getCustomViews' => [
             'application/json',
         ],
-        'oBPv600GetCustomViews' => [
+        'getSystemView' => [
             'application/json',
         ],
-        'oBPv600GetSystemViewById' => [
+        'getSystemViewById' => [
             'application/json',
         ],
-        'oBPv600GetSystemViews' => [
+        'getSystemViews' => [
             'application/json',
         ],
-        'oBPv600GetViewPermissions' => [
+        'getSystemViewsIds' => [
             'application/json',
         ],
-        'oBPv600UpdateSystemView' => [
+        'getViewPermissions' => [
+            'application/json',
+        ],
+        'updateSystemView' => [
             'application/json',
         ],
     ];
@@ -157,38 +160,40 @@ class ViewSystemApi
     }
 
     /**
-     * Operation oBPv500CreateSystemView
+     * Operation addSystemViewPermission
      *
-     * Create System View
+     * Add Permission to a System View
      *
-     * @param  \OpenBankProject\Model\OBPv500CreateSystemViewRequest $obpv500_create_system_view_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500CreateSystemView'] to see the possible values for this operation
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  \OpenBankProject\Model\AddSystemViewPermissionRequest $add_system_view_permission_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addSystemViewPermission'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv500GetViewsForBankAccount200ResponsePropertiesViewsItems
+     * @return \OpenBankProject\Model\AddSystemViewPermission200Response
      */
-    public function oBPv500CreateSystemView($obpv500_create_system_view_request, string $contentType = self::contentTypes['oBPv500CreateSystemView'][0])
+    public function addSystemViewPermission($viewid, $add_system_view_permission_request, string $contentType = self::contentTypes['addSystemViewPermission'][0])
     {
-        list($response) = $this->oBPv500CreateSystemViewWithHttpInfo($obpv500_create_system_view_request, $contentType);
+        list($response) = $this->addSystemViewPermissionWithHttpInfo($viewid, $add_system_view_permission_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv500CreateSystemViewWithHttpInfo
+     * Operation addSystemViewPermissionWithHttpInfo
      *
-     * Create System View
+     * Add Permission to a System View
      *
-     * @param  \OpenBankProject\Model\OBPv500CreateSystemViewRequest $obpv500_create_system_view_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500CreateSystemView'] to see the possible values for this operation
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  \OpenBankProject\Model\AddSystemViewPermissionRequest $add_system_view_permission_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addSystemViewPermission'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv500GetViewsForBankAccount200ResponsePropertiesViewsItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\AddSystemViewPermission200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv500CreateSystemViewWithHttpInfo($obpv500_create_system_view_request, string $contentType = self::contentTypes['oBPv500CreateSystemView'][0])
+    public function addSystemViewPermissionWithHttpInfo($viewid, $add_system_view_permission_request, string $contentType = self::contentTypes['addSystemViewPermission'][0])
     {
-        $request = $this->oBPv500CreateSystemViewRequest($obpv500_create_system_view_request, $contentType);
+        $request = $this->addSystemViewPermissionRequest($viewid, $add_system_view_permission_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -216,7 +221,7 @@ class ViewSystemApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv500GetViewsForBankAccount200ResponsePropertiesViewsItems',
+                        '\OpenBankProject\Model\AddSystemViewPermission200Response',
                         $request,
                         $response,
                     );
@@ -238,7 +243,7 @@ class ViewSystemApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv500GetViewsForBankAccount200ResponsePropertiesViewsItems',
+                '\OpenBankProject\Model\AddSystemViewPermission200Response',
                 $request,
                 $response,
             );
@@ -247,7 +252,7 @@ class ViewSystemApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv500GetViewsForBankAccount200ResponsePropertiesViewsItems',
+                        '\OpenBankProject\Model\AddSystemViewPermission200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -260,19 +265,20 @@ class ViewSystemApi
     }
 
     /**
-     * Operation oBPv500CreateSystemViewAsync
+     * Operation addSystemViewPermissionAsync
      *
-     * Create System View
+     * Add Permission to a System View
      *
-     * @param  \OpenBankProject\Model\OBPv500CreateSystemViewRequest $obpv500_create_system_view_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500CreateSystemView'] to see the possible values for this operation
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  \OpenBankProject\Model\AddSystemViewPermissionRequest $add_system_view_permission_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addSystemViewPermission'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv500CreateSystemViewAsync($obpv500_create_system_view_request, string $contentType = self::contentTypes['oBPv500CreateSystemView'][0])
+    public function addSystemViewPermissionAsync($viewid, $add_system_view_permission_request, string $contentType = self::contentTypes['addSystemViewPermission'][0])
     {
-        return $this->oBPv500CreateSystemViewAsyncWithHttpInfo($obpv500_create_system_view_request, $contentType)
+        return $this->addSystemViewPermissionAsyncWithHttpInfo($viewid, $add_system_view_permission_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -281,20 +287,21 @@ class ViewSystemApi
     }
 
     /**
-     * Operation oBPv500CreateSystemViewAsyncWithHttpInfo
+     * Operation addSystemViewPermissionAsyncWithHttpInfo
      *
-     * Create System View
+     * Add Permission to a System View
      *
-     * @param  \OpenBankProject\Model\OBPv500CreateSystemViewRequest $obpv500_create_system_view_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500CreateSystemView'] to see the possible values for this operation
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  \OpenBankProject\Model\AddSystemViewPermissionRequest $add_system_view_permission_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addSystemViewPermission'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv500CreateSystemViewAsyncWithHttpInfo($obpv500_create_system_view_request, string $contentType = self::contentTypes['oBPv500CreateSystemView'][0])
+    public function addSystemViewPermissionAsyncWithHttpInfo($viewid, $add_system_view_permission_request, string $contentType = self::contentTypes['addSystemViewPermission'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv500GetViewsForBankAccount200ResponsePropertiesViewsItems';
-        $request = $this->oBPv500CreateSystemViewRequest($obpv500_create_system_view_request, $contentType);
+        $returnType = '\OpenBankProject\Model\AddSystemViewPermission200Response';
+        $request = $this->addSystemViewPermissionRequest($viewid, $add_system_view_permission_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -333,26 +340,34 @@ class ViewSystemApi
     }
 
     /**
-     * Create request for operation 'oBPv500CreateSystemView'
+     * Create request for operation 'addSystemViewPermission'
      *
-     * @param  \OpenBankProject\Model\OBPv500CreateSystemViewRequest $obpv500_create_system_view_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500CreateSystemView'] to see the possible values for this operation
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  \OpenBankProject\Model\AddSystemViewPermissionRequest $add_system_view_permission_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addSystemViewPermission'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv500CreateSystemViewRequest($obpv500_create_system_view_request, string $contentType = self::contentTypes['oBPv500CreateSystemView'][0])
+    public function addSystemViewPermissionRequest($viewid, $add_system_view_permission_request, string $contentType = self::contentTypes['addSystemViewPermission'][0])
     {
 
-        // verify the required parameter 'obpv500_create_system_view_request' is set
-        if ($obpv500_create_system_view_request === null || (is_array($obpv500_create_system_view_request) && count($obpv500_create_system_view_request) === 0)) {
+        // verify the required parameter 'viewid' is set
+        if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv500_create_system_view_request when calling oBPv500CreateSystemView'
+                'Missing the required parameter $viewid when calling addSystemViewPermission'
+            );
+        }
+
+        // verify the required parameter 'add_system_view_permission_request' is set
+        if ($add_system_view_permission_request === null || (is_array($add_system_view_permission_request) && count($add_system_view_permission_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $add_system_view_permission_request when calling addSystemViewPermission'
             );
         }
 
 
-        $resourcePath = '/obp/v5.0.0/system-views';
+        $resourcePath = '/obp/v5.1.0/system-views/{viewid}/permissions';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -361,6 +376,14 @@ class ViewSystemApi
 
 
 
+        // path params
+        if ($viewid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'viewid' . '}',
+                ObjectSerializer::toPathValue($viewid),
+                $resourcePath
+            );
+        }
 
 
         $headers = $this->headerSelector->selectHeaders(
@@ -370,12 +393,12 @@ class ViewSystemApi
         );
 
         // for model (json/xml)
-        if (isset($obpv500_create_system_view_request)) {
+        if (isset($add_system_view_permission_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv500_create_system_view_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($add_system_view_permission_request));
             } else {
-                $httpBody = $obpv500_create_system_view_request;
+                $httpBody = $add_system_view_permission_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -411,9 +434,9 @@ class ViewSystemApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -438,37 +461,318 @@ class ViewSystemApi
     }
 
     /**
-     * Operation oBPv500DeleteSystemView
+     * Operation createSystemView
+     *
+     * Create System View
+     *
+     * @param  \OpenBankProject\Model\CreateSystemViewRequest $create_system_view_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSystemView'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetViewsForBankAccount200ResponseViewsInner
+     */
+    public function createSystemView($create_system_view_request, string $contentType = self::contentTypes['createSystemView'][0])
+    {
+        list($response) = $this->createSystemViewWithHttpInfo($create_system_view_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation createSystemViewWithHttpInfo
+     *
+     * Create System View
+     *
+     * @param  \OpenBankProject\Model\CreateSystemViewRequest $create_system_view_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSystemView'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetViewsForBankAccount200ResponseViewsInner, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createSystemViewWithHttpInfo($create_system_view_request, string $contentType = self::contentTypes['createSystemView'][0])
+    {
+        $request = $this->createSystemViewRequest($create_system_view_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetViewsForBankAccount200ResponseViewsInner',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetViewsForBankAccount200ResponseViewsInner',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetViewsForBankAccount200ResponseViewsInner',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createSystemViewAsync
+     *
+     * Create System View
+     *
+     * @param  \OpenBankProject\Model\CreateSystemViewRequest $create_system_view_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSystemView'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createSystemViewAsync($create_system_view_request, string $contentType = self::contentTypes['createSystemView'][0])
+    {
+        return $this->createSystemViewAsyncWithHttpInfo($create_system_view_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation createSystemViewAsyncWithHttpInfo
+     *
+     * Create System View
+     *
+     * @param  \OpenBankProject\Model\CreateSystemViewRequest $create_system_view_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSystemView'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createSystemViewAsyncWithHttpInfo($create_system_view_request, string $contentType = self::contentTypes['createSystemView'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetViewsForBankAccount200ResponseViewsInner';
+        $request = $this->createSystemViewRequest($create_system_view_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'createSystemView'
+     *
+     * @param  \OpenBankProject\Model\CreateSystemViewRequest $create_system_view_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSystemView'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createSystemViewRequest($create_system_view_request, string $contentType = self::contentTypes['createSystemView'][0])
+    {
+
+        // verify the required parameter 'create_system_view_request' is set
+        if ($create_system_view_request === null || (is_array($create_system_view_request) && count($create_system_view_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $create_system_view_request when calling createSystemView'
+            );
+        }
+
+
+        $resourcePath = '/obp/v5.0.0/system-views';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($create_system_view_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_system_view_request));
+            } else {
+                $httpBody = $create_system_view_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation deleteSystemView
      *
      * Delete System View
      *
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500DeleteSystemView'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSystemView'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv500DeleteSystemView($viewid, string $contentType = self::contentTypes['oBPv500DeleteSystemView'][0])
+    public function deleteSystemView($viewid, string $contentType = self::contentTypes['deleteSystemView'][0])
     {
-        $this->oBPv500DeleteSystemViewWithHttpInfo($viewid, $contentType);
+        $this->deleteSystemViewWithHttpInfo($viewid, $contentType);
     }
 
     /**
-     * Operation oBPv500DeleteSystemViewWithHttpInfo
+     * Operation deleteSystemViewWithHttpInfo
      *
      * Delete System View
      *
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500DeleteSystemView'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSystemView'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv500DeleteSystemViewWithHttpInfo($viewid, string $contentType = self::contentTypes['oBPv500DeleteSystemView'][0])
+    public function deleteSystemViewWithHttpInfo($viewid, string $contentType = self::contentTypes['deleteSystemView'][0])
     {
-        $request = $this->oBPv500DeleteSystemViewRequest($viewid, $contentType);
+        $request = $this->deleteSystemViewRequest($viewid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -504,19 +808,19 @@ class ViewSystemApi
     }
 
     /**
-     * Operation oBPv500DeleteSystemViewAsync
+     * Operation deleteSystemViewAsync
      *
      * Delete System View
      *
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500DeleteSystemView'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSystemView'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv500DeleteSystemViewAsync($viewid, string $contentType = self::contentTypes['oBPv500DeleteSystemView'][0])
+    public function deleteSystemViewAsync($viewid, string $contentType = self::contentTypes['deleteSystemView'][0])
     {
-        return $this->oBPv500DeleteSystemViewAsyncWithHttpInfo($viewid, $contentType)
+        return $this->deleteSystemViewAsyncWithHttpInfo($viewid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -525,20 +829,20 @@ class ViewSystemApi
     }
 
     /**
-     * Operation oBPv500DeleteSystemViewAsyncWithHttpInfo
+     * Operation deleteSystemViewAsyncWithHttpInfo
      *
      * Delete System View
      *
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500DeleteSystemView'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSystemView'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv500DeleteSystemViewAsyncWithHttpInfo($viewid, string $contentType = self::contentTypes['oBPv500DeleteSystemView'][0])
+    public function deleteSystemViewAsyncWithHttpInfo($viewid, string $contentType = self::contentTypes['deleteSystemView'][0])
     {
         $returnType = '';
-        $request = $this->oBPv500DeleteSystemViewRequest($viewid, $contentType);
+        $request = $this->deleteSystemViewRequest($viewid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -564,21 +868,21 @@ class ViewSystemApi
     }
 
     /**
-     * Create request for operation 'oBPv500DeleteSystemView'
+     * Create request for operation 'deleteSystemView'
      *
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500DeleteSystemView'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSystemView'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv500DeleteSystemViewRequest($viewid, string $contentType = self::contentTypes['oBPv500DeleteSystemView'][0])
+    public function deleteSystemViewRequest($viewid, string $contentType = self::contentTypes['deleteSystemView'][0])
     {
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv500DeleteSystemView'
+                'Missing the required parameter $viewid when calling deleteSystemView'
             );
         }
 
@@ -643,9 +947,9 @@ class ViewSystemApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -670,884 +974,39 @@ class ViewSystemApi
     }
 
     /**
-     * Operation oBPv500GetSystemView
-     *
-     * Get System View
-     *
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500GetSystemView'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv500GetViewsForBankAccount200ResponsePropertiesViewsItems
-     */
-    public function oBPv500GetSystemView($viewid, string $contentType = self::contentTypes['oBPv500GetSystemView'][0])
-    {
-        list($response) = $this->oBPv500GetSystemViewWithHttpInfo($viewid, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv500GetSystemViewWithHttpInfo
-     *
-     * Get System View
-     *
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500GetSystemView'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv500GetViewsForBankAccount200ResponsePropertiesViewsItems, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv500GetSystemViewWithHttpInfo($viewid, string $contentType = self::contentTypes['oBPv500GetSystemView'][0])
-    {
-        $request = $this->oBPv500GetSystemViewRequest($viewid, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv500GetViewsForBankAccount200ResponsePropertiesViewsItems',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv500GetViewsForBankAccount200ResponsePropertiesViewsItems',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv500GetViewsForBankAccount200ResponsePropertiesViewsItems',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv500GetSystemViewAsync
-     *
-     * Get System View
-     *
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500GetSystemView'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv500GetSystemViewAsync($viewid, string $contentType = self::contentTypes['oBPv500GetSystemView'][0])
-    {
-        return $this->oBPv500GetSystemViewAsyncWithHttpInfo($viewid, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv500GetSystemViewAsyncWithHttpInfo
-     *
-     * Get System View
-     *
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500GetSystemView'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv500GetSystemViewAsyncWithHttpInfo($viewid, string $contentType = self::contentTypes['oBPv500GetSystemView'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv500GetViewsForBankAccount200ResponsePropertiesViewsItems';
-        $request = $this->oBPv500GetSystemViewRequest($viewid, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv500GetSystemView'
-     *
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500GetSystemView'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv500GetSystemViewRequest($viewid, string $contentType = self::contentTypes['oBPv500GetSystemView'][0])
-    {
-
-        // verify the required parameter 'viewid' is set
-        if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv500GetSystemView'
-            );
-        }
-
-
-        $resourcePath = '/obp/v5.0.0/system-views/{viewid}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($viewid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'viewid' . '}',
-                ObjectSerializer::toPathValue($viewid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv500GetSystemViewsIds
-     *
-     * Get Ids of System Views
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500GetSystemViewsIds'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv500GetSystemViewsIds200Response
-     */
-    public function oBPv500GetSystemViewsIds(string $contentType = self::contentTypes['oBPv500GetSystemViewsIds'][0])
-    {
-        list($response) = $this->oBPv500GetSystemViewsIdsWithHttpInfo($contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv500GetSystemViewsIdsWithHttpInfo
-     *
-     * Get Ids of System Views
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500GetSystemViewsIds'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv500GetSystemViewsIds200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv500GetSystemViewsIdsWithHttpInfo(string $contentType = self::contentTypes['oBPv500GetSystemViewsIds'][0])
-    {
-        $request = $this->oBPv500GetSystemViewsIdsRequest($contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv500GetSystemViewsIds200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv500GetSystemViewsIds200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv500GetSystemViewsIds200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv500GetSystemViewsIdsAsync
-     *
-     * Get Ids of System Views
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500GetSystemViewsIds'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv500GetSystemViewsIdsAsync(string $contentType = self::contentTypes['oBPv500GetSystemViewsIds'][0])
-    {
-        return $this->oBPv500GetSystemViewsIdsAsyncWithHttpInfo($contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv500GetSystemViewsIdsAsyncWithHttpInfo
-     *
-     * Get Ids of System Views
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500GetSystemViewsIds'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv500GetSystemViewsIdsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv500GetSystemViewsIds'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv500GetSystemViewsIds200Response';
-        $request = $this->oBPv500GetSystemViewsIdsRequest($contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv500GetSystemViewsIds'
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500GetSystemViewsIds'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv500GetSystemViewsIdsRequest(string $contentType = self::contentTypes['oBPv500GetSystemViewsIds'][0])
-    {
-
-
-        $resourcePath = '/obp/v5.0.0/system-views-ids';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv510AddSystemViewPermission
-     *
-     * Add Permission to a System View
-     *
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510AddSystemViewPermissionRequest $obpv510_add_system_view_permission_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510AddSystemViewPermission'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510AddSystemViewPermission200Response
-     */
-    public function oBPv510AddSystemViewPermission($viewid, $obpv510_add_system_view_permission_request, string $contentType = self::contentTypes['oBPv510AddSystemViewPermission'][0])
-    {
-        list($response) = $this->oBPv510AddSystemViewPermissionWithHttpInfo($viewid, $obpv510_add_system_view_permission_request, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv510AddSystemViewPermissionWithHttpInfo
-     *
-     * Add Permission to a System View
-     *
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510AddSystemViewPermissionRequest $obpv510_add_system_view_permission_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510AddSystemViewPermission'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510AddSystemViewPermission200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv510AddSystemViewPermissionWithHttpInfo($viewid, $obpv510_add_system_view_permission_request, string $contentType = self::contentTypes['oBPv510AddSystemViewPermission'][0])
-    {
-        $request = $this->oBPv510AddSystemViewPermissionRequest($viewid, $obpv510_add_system_view_permission_request, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510AddSystemViewPermission200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510AddSystemViewPermission200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510AddSystemViewPermission200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv510AddSystemViewPermissionAsync
-     *
-     * Add Permission to a System View
-     *
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510AddSystemViewPermissionRequest $obpv510_add_system_view_permission_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510AddSystemViewPermission'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510AddSystemViewPermissionAsync($viewid, $obpv510_add_system_view_permission_request, string $contentType = self::contentTypes['oBPv510AddSystemViewPermission'][0])
-    {
-        return $this->oBPv510AddSystemViewPermissionAsyncWithHttpInfo($viewid, $obpv510_add_system_view_permission_request, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv510AddSystemViewPermissionAsyncWithHttpInfo
-     *
-     * Add Permission to a System View
-     *
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510AddSystemViewPermissionRequest $obpv510_add_system_view_permission_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510AddSystemViewPermission'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510AddSystemViewPermissionAsyncWithHttpInfo($viewid, $obpv510_add_system_view_permission_request, string $contentType = self::contentTypes['oBPv510AddSystemViewPermission'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv510AddSystemViewPermission200Response';
-        $request = $this->oBPv510AddSystemViewPermissionRequest($viewid, $obpv510_add_system_view_permission_request, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv510AddSystemViewPermission'
-     *
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510AddSystemViewPermissionRequest $obpv510_add_system_view_permission_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510AddSystemViewPermission'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv510AddSystemViewPermissionRequest($viewid, $obpv510_add_system_view_permission_request, string $contentType = self::contentTypes['oBPv510AddSystemViewPermission'][0])
-    {
-
-        // verify the required parameter 'viewid' is set
-        if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv510AddSystemViewPermission'
-            );
-        }
-
-        // verify the required parameter 'obpv510_add_system_view_permission_request' is set
-        if ($obpv510_add_system_view_permission_request === null || (is_array($obpv510_add_system_view_permission_request) && count($obpv510_add_system_view_permission_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv510_add_system_view_permission_request when calling oBPv510AddSystemViewPermission'
-            );
-        }
-
-
-        $resourcePath = '/obp/v5.1.0/system-views/{viewid}/permissions';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($viewid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'viewid' . '}',
-                ObjectSerializer::toPathValue($viewid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($obpv510_add_system_view_permission_request)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv510_add_system_view_permission_request));
-            } else {
-                $httpBody = $obpv510_add_system_view_permission_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv510DeleteSystemViewPermission
+     * Operation deleteSystemViewPermission
      *
      * Delete Permission to a System View
      *
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $permissionname The PERMISSIONNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510DeleteSystemViewPermission'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSystemViewPermission'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv510DeleteSystemViewPermission($viewid, $permissionname, string $contentType = self::contentTypes['oBPv510DeleteSystemViewPermission'][0])
+    public function deleteSystemViewPermission($viewid, $permissionname, string $contentType = self::contentTypes['deleteSystemViewPermission'][0])
     {
-        $this->oBPv510DeleteSystemViewPermissionWithHttpInfo($viewid, $permissionname, $contentType);
+        $this->deleteSystemViewPermissionWithHttpInfo($viewid, $permissionname, $contentType);
     }
 
     /**
-     * Operation oBPv510DeleteSystemViewPermissionWithHttpInfo
+     * Operation deleteSystemViewPermissionWithHttpInfo
      *
      * Delete Permission to a System View
      *
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $permissionname The PERMISSIONNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510DeleteSystemViewPermission'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSystemViewPermission'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510DeleteSystemViewPermissionWithHttpInfo($viewid, $permissionname, string $contentType = self::contentTypes['oBPv510DeleteSystemViewPermission'][0])
+    public function deleteSystemViewPermissionWithHttpInfo($viewid, $permissionname, string $contentType = self::contentTypes['deleteSystemViewPermission'][0])
     {
-        $request = $this->oBPv510DeleteSystemViewPermissionRequest($viewid, $permissionname, $contentType);
+        $request = $this->deleteSystemViewPermissionRequest($viewid, $permissionname, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1583,20 +1042,20 @@ class ViewSystemApi
     }
 
     /**
-     * Operation oBPv510DeleteSystemViewPermissionAsync
+     * Operation deleteSystemViewPermissionAsync
      *
      * Delete Permission to a System View
      *
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $permissionname The PERMISSIONNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510DeleteSystemViewPermission'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSystemViewPermission'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510DeleteSystemViewPermissionAsync($viewid, $permissionname, string $contentType = self::contentTypes['oBPv510DeleteSystemViewPermission'][0])
+    public function deleteSystemViewPermissionAsync($viewid, $permissionname, string $contentType = self::contentTypes['deleteSystemViewPermission'][0])
     {
-        return $this->oBPv510DeleteSystemViewPermissionAsyncWithHttpInfo($viewid, $permissionname, $contentType)
+        return $this->deleteSystemViewPermissionAsyncWithHttpInfo($viewid, $permissionname, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1605,21 +1064,21 @@ class ViewSystemApi
     }
 
     /**
-     * Operation oBPv510DeleteSystemViewPermissionAsyncWithHttpInfo
+     * Operation deleteSystemViewPermissionAsyncWithHttpInfo
      *
      * Delete Permission to a System View
      *
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $permissionname The PERMISSIONNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510DeleteSystemViewPermission'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSystemViewPermission'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510DeleteSystemViewPermissionAsyncWithHttpInfo($viewid, $permissionname, string $contentType = self::contentTypes['oBPv510DeleteSystemViewPermission'][0])
+    public function deleteSystemViewPermissionAsyncWithHttpInfo($viewid, $permissionname, string $contentType = self::contentTypes['deleteSystemViewPermission'][0])
     {
         $returnType = '';
-        $request = $this->oBPv510DeleteSystemViewPermissionRequest($viewid, $permissionname, $contentType);
+        $request = $this->deleteSystemViewPermissionRequest($viewid, $permissionname, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1645,29 +1104,29 @@ class ViewSystemApi
     }
 
     /**
-     * Create request for operation 'oBPv510DeleteSystemViewPermission'
+     * Create request for operation 'deleteSystemViewPermission'
      *
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $permissionname The PERMISSIONNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510DeleteSystemViewPermission'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSystemViewPermission'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510DeleteSystemViewPermissionRequest($viewid, $permissionname, string $contentType = self::contentTypes['oBPv510DeleteSystemViewPermission'][0])
+    public function deleteSystemViewPermissionRequest($viewid, $permissionname, string $contentType = self::contentTypes['deleteSystemViewPermission'][0])
     {
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv510DeleteSystemViewPermission'
+                'Missing the required parameter $viewid when calling deleteSystemViewPermission'
             );
         }
 
         // verify the required parameter 'permissionname' is set
         if ($permissionname === null || (is_array($permissionname) && count($permissionname) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $permissionname when calling oBPv510DeleteSystemViewPermission'
+                'Missing the required parameter $permissionname when calling deleteSystemViewPermission'
             );
         }
 
@@ -1740,9 +1199,9 @@ class ViewSystemApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1767,36 +1226,42 @@ class ViewSystemApi
     }
 
     /**
-     * Operation oBPv600GetCustomViews
+     * Operation getCustomViewById
      *
-     * Get Custom Views
+     * Get Custom View
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCustomViews'] to see the possible values for this operation
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCustomViewById'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetCustomViews200Response
+     * @return \OpenBankProject\Model\GetSystemViewById200Response
      */
-    public function oBPv600GetCustomViews(string $contentType = self::contentTypes['oBPv600GetCustomViews'][0])
+    public function getCustomViewById($bankid, $accountid, $viewid, string $contentType = self::contentTypes['getCustomViewById'][0])
     {
-        list($response) = $this->oBPv600GetCustomViewsWithHttpInfo($contentType);
+        list($response) = $this->getCustomViewByIdWithHttpInfo($bankid, $accountid, $viewid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetCustomViewsWithHttpInfo
+     * Operation getCustomViewByIdWithHttpInfo
      *
-     * Get Custom Views
+     * Get Custom View
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCustomViews'] to see the possible values for this operation
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCustomViewById'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetCustomViews200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetSystemViewById200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetCustomViewsWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetCustomViews'][0])
+    public function getCustomViewByIdWithHttpInfo($bankid, $accountid, $viewid, string $contentType = self::contentTypes['getCustomViewById'][0])
     {
-        $request = $this->oBPv600GetCustomViewsRequest($contentType);
+        $request = $this->getCustomViewByIdRequest($bankid, $accountid, $viewid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1824,7 +1289,7 @@ class ViewSystemApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetCustomViews200Response',
+                        '\OpenBankProject\Model\GetSystemViewById200Response',
                         $request,
                         $response,
                     );
@@ -1846,7 +1311,7 @@ class ViewSystemApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetCustomViews200Response',
+                '\OpenBankProject\Model\GetSystemViewById200Response',
                 $request,
                 $response,
             );
@@ -1855,7 +1320,7 @@ class ViewSystemApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetCustomViews200Response',
+                        '\OpenBankProject\Model\GetSystemViewById200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1868,18 +1333,21 @@ class ViewSystemApi
     }
 
     /**
-     * Operation oBPv600GetCustomViewsAsync
+     * Operation getCustomViewByIdAsync
      *
-     * Get Custom Views
+     * Get Custom View
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCustomViews'] to see the possible values for this operation
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCustomViewById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetCustomViewsAsync(string $contentType = self::contentTypes['oBPv600GetCustomViews'][0])
+    public function getCustomViewByIdAsync($bankid, $accountid, $viewid, string $contentType = self::contentTypes['getCustomViewById'][0])
     {
-        return $this->oBPv600GetCustomViewsAsyncWithHttpInfo($contentType)
+        return $this->getCustomViewByIdAsyncWithHttpInfo($bankid, $accountid, $viewid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1888,19 +1356,22 @@ class ViewSystemApi
     }
 
     /**
-     * Operation oBPv600GetCustomViewsAsyncWithHttpInfo
+     * Operation getCustomViewByIdAsyncWithHttpInfo
      *
-     * Get Custom Views
+     * Get Custom View
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCustomViews'] to see the possible values for this operation
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCustomViewById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetCustomViewsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetCustomViews'][0])
+    public function getCustomViewByIdAsyncWithHttpInfo($bankid, $accountid, $viewid, string $contentType = self::contentTypes['getCustomViewById'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetCustomViews200Response';
-        $request = $this->oBPv600GetCustomViewsRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetSystemViewById200Response';
+        $request = $this->getCustomViewByIdRequest($bankid, $accountid, $viewid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1939,14 +1410,324 @@ class ViewSystemApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetCustomViews'
+     * Create request for operation 'getCustomViewById'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCustomViews'] to see the possible values for this operation
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCustomViewById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetCustomViewsRequest(string $contentType = self::contentTypes['oBPv600GetCustomViews'][0])
+    public function getCustomViewByIdRequest($bankid, $accountid, $viewid, string $contentType = self::contentTypes['getCustomViewById'][0])
+    {
+
+        // verify the required parameter 'bankid' is set
+        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $bankid when calling getCustomViewById'
+            );
+        }
+
+        // verify the required parameter 'accountid' is set
+        if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $accountid when calling getCustomViewById'
+            );
+        }
+
+        // verify the required parameter 'viewid' is set
+        if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $viewid when calling getCustomViewById'
+            );
+        }
+
+
+        $resourcePath = '/obp/v6.0.0/management/banks/{bankid}/accounts/{accountid}/views/{viewid}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($bankid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'bankid' . '}',
+                ObjectSerializer::toPathValue($bankid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($accountid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'accountid' . '}',
+                ObjectSerializer::toPathValue($accountid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($viewid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'viewid' . '}',
+                ObjectSerializer::toPathValue($viewid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getCustomViews
+     *
+     * Get Custom Views
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCustomViews'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetCustomViews200Response
+     */
+    public function getCustomViews(string $contentType = self::contentTypes['getCustomViews'][0])
+    {
+        list($response) = $this->getCustomViewsWithHttpInfo($contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getCustomViewsWithHttpInfo
+     *
+     * Get Custom Views
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCustomViews'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetCustomViews200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getCustomViewsWithHttpInfo(string $contentType = self::contentTypes['getCustomViews'][0])
+    {
+        $request = $this->getCustomViewsRequest($contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetCustomViews200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetCustomViews200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetCustomViews200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getCustomViewsAsync
+     *
+     * Get Custom Views
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCustomViews'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getCustomViewsAsync(string $contentType = self::contentTypes['getCustomViews'][0])
+    {
+        return $this->getCustomViewsAsyncWithHttpInfo($contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getCustomViewsAsyncWithHttpInfo
+     *
+     * Get Custom Views
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCustomViews'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getCustomViewsAsyncWithHttpInfo(string $contentType = self::contentTypes['getCustomViews'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetCustomViews200Response';
+        $request = $this->getCustomViewsRequest($contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getCustomViews'
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCustomViews'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getCustomViewsRequest(string $contentType = self::contentTypes['getCustomViews'][0])
     {
 
 
@@ -2002,9 +1783,9 @@ class ViewSystemApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2029,38 +1810,38 @@ class ViewSystemApi
     }
 
     /**
-     * Operation oBPv600GetSystemViewById
+     * Operation getSystemView
      *
      * Get System View
      *
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetSystemViewById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSystemView'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetSystemViewById200Response
+     * @return \OpenBankProject\Model\GetViewsForBankAccount200ResponseViewsInner
      */
-    public function oBPv600GetSystemViewById($viewid, string $contentType = self::contentTypes['oBPv600GetSystemViewById'][0])
+    public function getSystemView($viewid, string $contentType = self::contentTypes['getSystemView'][0])
     {
-        list($response) = $this->oBPv600GetSystemViewByIdWithHttpInfo($viewid, $contentType);
+        list($response) = $this->getSystemViewWithHttpInfo($viewid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetSystemViewByIdWithHttpInfo
+     * Operation getSystemViewWithHttpInfo
      *
      * Get System View
      *
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetSystemViewById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSystemView'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetSystemViewById200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetViewsForBankAccount200ResponseViewsInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetSystemViewByIdWithHttpInfo($viewid, string $contentType = self::contentTypes['oBPv600GetSystemViewById'][0])
+    public function getSystemViewWithHttpInfo($viewid, string $contentType = self::contentTypes['getSystemView'][0])
     {
-        $request = $this->oBPv600GetSystemViewByIdRequest($viewid, $contentType);
+        $request = $this->getSystemViewRequest($viewid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2088,7 +1869,7 @@ class ViewSystemApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetSystemViewById200Response',
+                        '\OpenBankProject\Model\GetViewsForBankAccount200ResponseViewsInner',
                         $request,
                         $response,
                     );
@@ -2110,7 +1891,7 @@ class ViewSystemApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetSystemViewById200Response',
+                '\OpenBankProject\Model\GetViewsForBankAccount200ResponseViewsInner',
                 $request,
                 $response,
             );
@@ -2119,7 +1900,7 @@ class ViewSystemApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetSystemViewById200Response',
+                        '\OpenBankProject\Model\GetViewsForBankAccount200ResponseViewsInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2132,19 +1913,19 @@ class ViewSystemApi
     }
 
     /**
-     * Operation oBPv600GetSystemViewByIdAsync
+     * Operation getSystemViewAsync
      *
      * Get System View
      *
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetSystemViewById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSystemView'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetSystemViewByIdAsync($viewid, string $contentType = self::contentTypes['oBPv600GetSystemViewById'][0])
+    public function getSystemViewAsync($viewid, string $contentType = self::contentTypes['getSystemView'][0])
     {
-        return $this->oBPv600GetSystemViewByIdAsyncWithHttpInfo($viewid, $contentType)
+        return $this->getSystemViewAsyncWithHttpInfo($viewid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2153,20 +1934,20 @@ class ViewSystemApi
     }
 
     /**
-     * Operation oBPv600GetSystemViewByIdAsyncWithHttpInfo
+     * Operation getSystemViewAsyncWithHttpInfo
      *
      * Get System View
      *
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetSystemViewById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSystemView'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetSystemViewByIdAsyncWithHttpInfo($viewid, string $contentType = self::contentTypes['oBPv600GetSystemViewById'][0])
+    public function getSystemViewAsyncWithHttpInfo($viewid, string $contentType = self::contentTypes['getSystemView'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetSystemViewById200Response';
-        $request = $this->oBPv600GetSystemViewByIdRequest($viewid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetViewsForBankAccount200ResponseViewsInner';
+        $request = $this->getSystemViewRequest($viewid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2205,21 +1986,303 @@ class ViewSystemApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetSystemViewById'
+     * Create request for operation 'getSystemView'
      *
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetSystemViewById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSystemView'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetSystemViewByIdRequest($viewid, string $contentType = self::contentTypes['oBPv600GetSystemViewById'][0])
+    public function getSystemViewRequest($viewid, string $contentType = self::contentTypes['getSystemView'][0])
     {
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv600GetSystemViewById'
+                'Missing the required parameter $viewid when calling getSystemView'
+            );
+        }
+
+
+        $resourcePath = '/obp/v5.0.0/system-views/{viewid}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($viewid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'viewid' . '}',
+                ObjectSerializer::toPathValue($viewid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getSystemViewById
+     *
+     * Get System View
+     *
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSystemViewById'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetSystemViewById200Response
+     */
+    public function getSystemViewById($viewid, string $contentType = self::contentTypes['getSystemViewById'][0])
+    {
+        list($response) = $this->getSystemViewByIdWithHttpInfo($viewid, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getSystemViewByIdWithHttpInfo
+     *
+     * Get System View
+     *
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSystemViewById'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetSystemViewById200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getSystemViewByIdWithHttpInfo($viewid, string $contentType = self::contentTypes['getSystemViewById'][0])
+    {
+        $request = $this->getSystemViewByIdRequest($viewid, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetSystemViewById200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetSystemViewById200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetSystemViewById200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getSystemViewByIdAsync
+     *
+     * Get System View
+     *
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSystemViewById'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getSystemViewByIdAsync($viewid, string $contentType = self::contentTypes['getSystemViewById'][0])
+    {
+        return $this->getSystemViewByIdAsyncWithHttpInfo($viewid, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getSystemViewByIdAsyncWithHttpInfo
+     *
+     * Get System View
+     *
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSystemViewById'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getSystemViewByIdAsyncWithHttpInfo($viewid, string $contentType = self::contentTypes['getSystemViewById'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetSystemViewById200Response';
+        $request = $this->getSystemViewByIdRequest($viewid, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getSystemViewById'
+     *
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSystemViewById'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getSystemViewByIdRequest($viewid, string $contentType = self::contentTypes['getSystemViewById'][0])
+    {
+
+        // verify the required parameter 'viewid' is set
+        if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $viewid when calling getSystemViewById'
             );
         }
 
@@ -2284,9 +2347,9 @@ class ViewSystemApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2311,36 +2374,36 @@ class ViewSystemApi
     }
 
     /**
-     * Operation oBPv600GetSystemViews
+     * Operation getSystemViews
      *
      * Get System Views
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetSystemViews'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSystemViews'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetSystemViews200Response
+     * @return \OpenBankProject\Model\GetSystemViews200Response
      */
-    public function oBPv600GetSystemViews(string $contentType = self::contentTypes['oBPv600GetSystemViews'][0])
+    public function getSystemViews(string $contentType = self::contentTypes['getSystemViews'][0])
     {
-        list($response) = $this->oBPv600GetSystemViewsWithHttpInfo($contentType);
+        list($response) = $this->getSystemViewsWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetSystemViewsWithHttpInfo
+     * Operation getSystemViewsWithHttpInfo
      *
      * Get System Views
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetSystemViews'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSystemViews'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetSystemViews200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetSystemViews200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetSystemViewsWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetSystemViews'][0])
+    public function getSystemViewsWithHttpInfo(string $contentType = self::contentTypes['getSystemViews'][0])
     {
-        $request = $this->oBPv600GetSystemViewsRequest($contentType);
+        $request = $this->getSystemViewsRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2368,7 +2431,7 @@ class ViewSystemApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetSystemViews200Response',
+                        '\OpenBankProject\Model\GetSystemViews200Response',
                         $request,
                         $response,
                     );
@@ -2390,7 +2453,7 @@ class ViewSystemApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetSystemViews200Response',
+                '\OpenBankProject\Model\GetSystemViews200Response',
                 $request,
                 $response,
             );
@@ -2399,7 +2462,7 @@ class ViewSystemApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetSystemViews200Response',
+                        '\OpenBankProject\Model\GetSystemViews200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2412,18 +2475,18 @@ class ViewSystemApi
     }
 
     /**
-     * Operation oBPv600GetSystemViewsAsync
+     * Operation getSystemViewsAsync
      *
      * Get System Views
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetSystemViews'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSystemViews'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetSystemViewsAsync(string $contentType = self::contentTypes['oBPv600GetSystemViews'][0])
+    public function getSystemViewsAsync(string $contentType = self::contentTypes['getSystemViews'][0])
     {
-        return $this->oBPv600GetSystemViewsAsyncWithHttpInfo($contentType)
+        return $this->getSystemViewsAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2432,19 +2495,19 @@ class ViewSystemApi
     }
 
     /**
-     * Operation oBPv600GetSystemViewsAsyncWithHttpInfo
+     * Operation getSystemViewsAsyncWithHttpInfo
      *
      * Get System Views
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetSystemViews'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSystemViews'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetSystemViewsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetSystemViews'][0])
+    public function getSystemViewsAsyncWithHttpInfo(string $contentType = self::contentTypes['getSystemViews'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetSystemViews200Response';
-        $request = $this->oBPv600GetSystemViewsRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetSystemViews200Response';
+        $request = $this->getSystemViewsRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2483,14 +2546,14 @@ class ViewSystemApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetSystemViews'
+     * Create request for operation 'getSystemViews'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetSystemViews'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSystemViews'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetSystemViewsRequest(string $contentType = self::contentTypes['oBPv600GetSystemViews'][0])
+    public function getSystemViewsRequest(string $contentType = self::contentTypes['getSystemViews'][0])
     {
 
 
@@ -2546,9 +2609,9 @@ class ViewSystemApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2573,36 +2636,36 @@ class ViewSystemApi
     }
 
     /**
-     * Operation oBPv600GetViewPermissions
+     * Operation getSystemViewsIds
      *
-     * Get View Permissions
+     * Get Ids of System Views
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetViewPermissions'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSystemViewsIds'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetViewPermissions200Response
+     * @return \OpenBankProject\Model\GetSystemViewsIds200Response
      */
-    public function oBPv600GetViewPermissions(string $contentType = self::contentTypes['oBPv600GetViewPermissions'][0])
+    public function getSystemViewsIds(string $contentType = self::contentTypes['getSystemViewsIds'][0])
     {
-        list($response) = $this->oBPv600GetViewPermissionsWithHttpInfo($contentType);
+        list($response) = $this->getSystemViewsIdsWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetViewPermissionsWithHttpInfo
+     * Operation getSystemViewsIdsWithHttpInfo
      *
-     * Get View Permissions
+     * Get Ids of System Views
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetViewPermissions'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSystemViewsIds'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetViewPermissions200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetSystemViewsIds200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetViewPermissionsWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetViewPermissions'][0])
+    public function getSystemViewsIdsWithHttpInfo(string $contentType = self::contentTypes['getSystemViewsIds'][0])
     {
-        $request = $this->oBPv600GetViewPermissionsRequest($contentType);
+        $request = $this->getSystemViewsIdsRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2630,7 +2693,7 @@ class ViewSystemApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetViewPermissions200Response',
+                        '\OpenBankProject\Model\GetSystemViewsIds200Response',
                         $request,
                         $response,
                     );
@@ -2652,7 +2715,7 @@ class ViewSystemApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetViewPermissions200Response',
+                '\OpenBankProject\Model\GetSystemViewsIds200Response',
                 $request,
                 $response,
             );
@@ -2661,7 +2724,7 @@ class ViewSystemApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetViewPermissions200Response',
+                        '\OpenBankProject\Model\GetSystemViewsIds200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2674,18 +2737,18 @@ class ViewSystemApi
     }
 
     /**
-     * Operation oBPv600GetViewPermissionsAsync
+     * Operation getSystemViewsIdsAsync
      *
-     * Get View Permissions
+     * Get Ids of System Views
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetViewPermissions'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSystemViewsIds'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetViewPermissionsAsync(string $contentType = self::contentTypes['oBPv600GetViewPermissions'][0])
+    public function getSystemViewsIdsAsync(string $contentType = self::contentTypes['getSystemViewsIds'][0])
     {
-        return $this->oBPv600GetViewPermissionsAsyncWithHttpInfo($contentType)
+        return $this->getSystemViewsIdsAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2694,19 +2757,19 @@ class ViewSystemApi
     }
 
     /**
-     * Operation oBPv600GetViewPermissionsAsyncWithHttpInfo
+     * Operation getSystemViewsIdsAsyncWithHttpInfo
      *
-     * Get View Permissions
+     * Get Ids of System Views
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetViewPermissions'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSystemViewsIds'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetViewPermissionsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetViewPermissions'][0])
+    public function getSystemViewsIdsAsyncWithHttpInfo(string $contentType = self::contentTypes['getSystemViewsIds'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetViewPermissions200Response';
-        $request = $this->oBPv600GetViewPermissionsRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetSystemViewsIds200Response';
+        $request = $this->getSystemViewsIdsRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2745,14 +2808,276 @@ class ViewSystemApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetViewPermissions'
+     * Create request for operation 'getSystemViewsIds'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetViewPermissions'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSystemViewsIds'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetViewPermissionsRequest(string $contentType = self::contentTypes['oBPv600GetViewPermissions'][0])
+    public function getSystemViewsIdsRequest(string $contentType = self::contentTypes['getSystemViewsIds'][0])
+    {
+
+
+        $resourcePath = '/obp/v5.0.0/system-views-ids';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getViewPermissions
+     *
+     * Get View Permissions
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getViewPermissions'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetViewPermissions200Response
+     */
+    public function getViewPermissions(string $contentType = self::contentTypes['getViewPermissions'][0])
+    {
+        list($response) = $this->getViewPermissionsWithHttpInfo($contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getViewPermissionsWithHttpInfo
+     *
+     * Get View Permissions
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getViewPermissions'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetViewPermissions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getViewPermissionsWithHttpInfo(string $contentType = self::contentTypes['getViewPermissions'][0])
+    {
+        $request = $this->getViewPermissionsRequest($contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetViewPermissions200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetViewPermissions200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetViewPermissions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getViewPermissionsAsync
+     *
+     * Get View Permissions
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getViewPermissions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getViewPermissionsAsync(string $contentType = self::contentTypes['getViewPermissions'][0])
+    {
+        return $this->getViewPermissionsAsyncWithHttpInfo($contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getViewPermissionsAsyncWithHttpInfo
+     *
+     * Get View Permissions
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getViewPermissions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getViewPermissionsAsyncWithHttpInfo(string $contentType = self::contentTypes['getViewPermissions'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetViewPermissions200Response';
+        $request = $this->getViewPermissionsRequest($contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getViewPermissions'
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getViewPermissions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getViewPermissionsRequest(string $contentType = self::contentTypes['getViewPermissions'][0])
     {
 
 
@@ -2808,9 +3133,9 @@ class ViewSystemApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2835,40 +3160,40 @@ class ViewSystemApi
     }
 
     /**
-     * Operation oBPv600UpdateSystemView
+     * Operation updateSystemView
      *
      * Update System View
      *
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateSystemViewRequest $obpv600_update_system_view_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateSystemView'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateSystemViewRequest $update_system_view_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateSystemView'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetSystemViewById200Response
+     * @return \OpenBankProject\Model\GetSystemViewById200Response
      */
-    public function oBPv600UpdateSystemView($viewid, $obpv600_update_system_view_request, string $contentType = self::contentTypes['oBPv600UpdateSystemView'][0])
+    public function updateSystemView($viewid, $update_system_view_request, string $contentType = self::contentTypes['updateSystemView'][0])
     {
-        list($response) = $this->oBPv600UpdateSystemViewWithHttpInfo($viewid, $obpv600_update_system_view_request, $contentType);
+        list($response) = $this->updateSystemViewWithHttpInfo($viewid, $update_system_view_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600UpdateSystemViewWithHttpInfo
+     * Operation updateSystemViewWithHttpInfo
      *
      * Update System View
      *
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateSystemViewRequest $obpv600_update_system_view_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateSystemView'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateSystemViewRequest $update_system_view_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateSystemView'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetSystemViewById200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetSystemViewById200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600UpdateSystemViewWithHttpInfo($viewid, $obpv600_update_system_view_request, string $contentType = self::contentTypes['oBPv600UpdateSystemView'][0])
+    public function updateSystemViewWithHttpInfo($viewid, $update_system_view_request, string $contentType = self::contentTypes['updateSystemView'][0])
     {
-        $request = $this->oBPv600UpdateSystemViewRequest($viewid, $obpv600_update_system_view_request, $contentType);
+        $request = $this->updateSystemViewRequest($viewid, $update_system_view_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2896,7 +3221,7 @@ class ViewSystemApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetSystemViewById200Response',
+                        '\OpenBankProject\Model\GetSystemViewById200Response',
                         $request,
                         $response,
                     );
@@ -2918,7 +3243,7 @@ class ViewSystemApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetSystemViewById200Response',
+                '\OpenBankProject\Model\GetSystemViewById200Response',
                 $request,
                 $response,
             );
@@ -2927,7 +3252,7 @@ class ViewSystemApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetSystemViewById200Response',
+                        '\OpenBankProject\Model\GetSystemViewById200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2940,20 +3265,20 @@ class ViewSystemApi
     }
 
     /**
-     * Operation oBPv600UpdateSystemViewAsync
+     * Operation updateSystemViewAsync
      *
      * Update System View
      *
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateSystemViewRequest $obpv600_update_system_view_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateSystemView'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateSystemViewRequest $update_system_view_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateSystemView'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600UpdateSystemViewAsync($viewid, $obpv600_update_system_view_request, string $contentType = self::contentTypes['oBPv600UpdateSystemView'][0])
+    public function updateSystemViewAsync($viewid, $update_system_view_request, string $contentType = self::contentTypes['updateSystemView'][0])
     {
-        return $this->oBPv600UpdateSystemViewAsyncWithHttpInfo($viewid, $obpv600_update_system_view_request, $contentType)
+        return $this->updateSystemViewAsyncWithHttpInfo($viewid, $update_system_view_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2962,21 +3287,21 @@ class ViewSystemApi
     }
 
     /**
-     * Operation oBPv600UpdateSystemViewAsyncWithHttpInfo
+     * Operation updateSystemViewAsyncWithHttpInfo
      *
      * Update System View
      *
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateSystemViewRequest $obpv600_update_system_view_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateSystemView'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateSystemViewRequest $update_system_view_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateSystemView'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600UpdateSystemViewAsyncWithHttpInfo($viewid, $obpv600_update_system_view_request, string $contentType = self::contentTypes['oBPv600UpdateSystemView'][0])
+    public function updateSystemViewAsyncWithHttpInfo($viewid, $update_system_view_request, string $contentType = self::contentTypes['updateSystemView'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetSystemViewById200Response';
-        $request = $this->oBPv600UpdateSystemViewRequest($viewid, $obpv600_update_system_view_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetSystemViewById200Response';
+        $request = $this->updateSystemViewRequest($viewid, $update_system_view_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3015,29 +3340,29 @@ class ViewSystemApi
     }
 
     /**
-     * Create request for operation 'oBPv600UpdateSystemView'
+     * Create request for operation 'updateSystemView'
      *
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateSystemViewRequest $obpv600_update_system_view_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateSystemView'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateSystemViewRequest $update_system_view_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateSystemView'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600UpdateSystemViewRequest($viewid, $obpv600_update_system_view_request, string $contentType = self::contentTypes['oBPv600UpdateSystemView'][0])
+    public function updateSystemViewRequest($viewid, $update_system_view_request, string $contentType = self::contentTypes['updateSystemView'][0])
     {
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv600UpdateSystemView'
+                'Missing the required parameter $viewid when calling updateSystemView'
             );
         }
 
-        // verify the required parameter 'obpv600_update_system_view_request' is set
-        if ($obpv600_update_system_view_request === null || (is_array($obpv600_update_system_view_request) && count($obpv600_update_system_view_request) === 0)) {
+        // verify the required parameter 'update_system_view_request' is set
+        if ($update_system_view_request === null || (is_array($update_system_view_request) && count($update_system_view_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_update_system_view_request when calling oBPv600UpdateSystemView'
+                'Missing the required parameter $update_system_view_request when calling updateSystemView'
             );
         }
 
@@ -3068,12 +3393,12 @@ class ViewSystemApi
         );
 
         // for model (json/xml)
-        if (isset($obpv600_update_system_view_request)) {
+        if (isset($update_system_view_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_update_system_view_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_system_view_request));
             } else {
-                $httpBody = $obpv600_update_system_view_request;
+                $httpBody = $update_system_view_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -3109,9 +3434,9 @@ class ViewSystemApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

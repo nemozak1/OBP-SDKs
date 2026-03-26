@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,291 +24,27 @@ import (
 // DAuthAPIService DAuthAPI service
 type DAuthAPIService service
 
-type ApiOBPv400CreateUserWithRolesRequest struct {
-	ctx context.Context
-	ApiService *DAuthAPIService
-	oBPv400CreateUserWithRolesRequest *OBPv400CreateUserWithRolesRequest
-}
-
-// Request body
-func (r ApiOBPv400CreateUserWithRolesRequest) OBPv400CreateUserWithRolesRequest(oBPv400CreateUserWithRolesRequest OBPv400CreateUserWithRolesRequest) ApiOBPv400CreateUserWithRolesRequest {
-	r.oBPv400CreateUserWithRolesRequest = &oBPv400CreateUserWithRolesRequest
-	return r
-}
-
-func (r ApiOBPv400CreateUserWithRolesRequest) Execute() (*OBPv400GetEntitlements200Response, *http.Response, error) {
-	return r.ApiService.OBPv400CreateUserWithRolesExecute(r)
-}
-
-/*
-OBPv400CreateUserWithRoles Create (DAuth) User with Roles
-
-<p>This endpoint is used as part of the DAuth solution to grant Entitlements for Roles to a smart contract on the blockchain.</p>
-<p>Put the smart contract address in username</p>
-<p>For provider use &quot;dauth&quot;</p>
-<p>This endpoint will create the User with username and provider if the User does not already exist.</p>
-<p>Then it will create Entitlements i.e. grant Roles to the User.</p>
-<p>Entitlements are used to grant System or Bank level roles to Users. (For Account level privileges, see Views)</p>
-<p>i.e. Entitlements are used to create / consume system or bank level resources where as views / account access are used to consume / create customer level resources.</p>
-<p>For a System level Role (.e.g CanGetAnyUser), set bank_id to an empty string i.e. &quot;bank_id&quot;:&quot;&quot;</p>
-<p>For a Bank level Role (e.g. CanCreateAccount), set bank_id to a valid value e.g. &quot;bank_id&quot;:&quot;my-bank-id&quot;</p>
-<p>Note: The Roles actually granted will depend on the Roles that the calling user has.</p>
-<p>If you try to grant Entitlements to a user that already exist (duplicate entitilements) you will get an error.</p>
-<p>For information about DAuth see below:</p>
-<details>
-  <summary style="display:list-item;cursor:s-resize;">DAuth</summary>
-  <h3><a href="#dauth-introduction-setup-and-usage" id="dauth-introduction-setup-and-usage">DAuth Introduction, Setup and Usage</a></h3>
-<p>DAuth is an experimental authentication mechanism that aims to pin an ethereum or other blockchain Smart Contract to an OBP &quot;User&quot;.</p>
-<p>In the future, it might be possible to be more specific and pin specific actors (wallets) that are acting within the smart contract, but so far, one smart contract acts on behalf of one User.</p>
-<p>Thus, if a smart contract &quot;X&quot; calls the OBP API using the DAuth header, OBP will get or create a user called X and the call will proceed in the context of that User &quot;X&quot;.</p>
-<p>DAuth is invoked by the REST client (caller) including a specific header (see step 3 below) in any OBP REST call.</p>
-<p>When OBP receives the DAuth token, it creates or gets a User with a username based on the smart_contract_address and the provider based on the network_name. The combination of username and provider is unique in OBP.</p>
-<p>If you are calling OBP-API via an API3 Airnode, the Airnode will take care of constructing the required header.</p>
-<p>When OBP detects a DAuth header / token it first checks if the Consumer is allowed to make such a call. OBP will validate the Consumer ip address and signature etc.</p>
-<p>Note: The DAuth flow does <em>not</em> require an explicit POST like Direct Login to create the token.</p>
-<p>Permissions may be assigned to an OBP User at any time, via the UserAuthContext, Views, Entitlements to Roles or Consents.</p>
-<p>Note: <em>DAuth is NOT enabled on this instance!</em></p>
-<p>Note: <em>The DAuth client is responsible for creating a token which will be trusted by OBP absolutely</em>!</p>
-<p>To use DAuth:</p>
-<h3><a href="#1-configure-obp-api-to-accept-dauth" id="1-configure-obp-api-to-accept-dauth">1) Configure OBP API to accept DAuth.</a></h3>
-<p>Set up properties in your props file</p>
-<pre><code># -- DAuth --------------------------------------
-# Define secret used to validate JWT token
-# jwt.public_key_rsa=path-to-the-pem-file
-# Enable/Disable DAuth communication at all
-# In case isn't defined default value is false
-# allow_dauth=false
-# Define comma separated list of allowed IP addresses
-# dauth.host=127.0.0.1
-# -------------------------------------- DAuth--
-</code></pre>
-<p>Please keep in mind that property jwt.public_key_rsa is used to validate JWT token to check it is not changed or corrupted during transport.</p>
-<h3><a href="#2-create-have-access-to-a-jwt" id="2-create-have-access-to-a-jwt">2) Create / have access to a JWT</a></h3>
-<p>The following videos are available:<br />
-* <a href="https://vimeo.com/644315074">DAuth in local environment</a></p>
-<p>HEADER:ALGORITHM &amp; TOKEN TYPE</p>
-<pre><code>{
-  &quot;alg&quot;: &quot;RS256&quot;,
-  &quot;typ&quot;: &quot;JWT&quot;
-}
-</code></pre>
-<p>PAYLOAD:DATA</p>
-<pre><code>{
-  &quot;smart_contract_address&quot;: &quot;0xe123425E7734CE288F8367e1Bb143E90bb3F051224&quot;,
-  &quot;network_name&quot;: &quot;AIRNODE.TESTNET.ETHEREUM&quot;,
-  &quot;msg_sender&quot;: &quot;0xe12340927f1725E7734CE288F8367e1Bb143E90fhku767&quot;,
-  &quot;consumer_key&quot;: &quot;0x1234a4ec31e89cea54d1f125db7536e874ab4a96b4d4f6438668b6bb10a6adb&quot;,
-  &quot;timestamp&quot;: &quot;2021-11-04T14:13:40Z&quot;,
-  &quot;request_id&quot;: &quot;0Xe876987694328763492876348928736497869273649&quot;
-}
-</code></pre>
-<p>VERIFY SIGNATURE</p>
-<pre><code>RSASHA256(
-  base64UrlEncode(header) + &quot;.&quot; +
-  base64UrlEncode(payload),
-<p>) your-RSA-key-pair</p>
-</code></pre>
-<p>Here is an example token:</p>
-<pre><code>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzbWFydF9jb250cmFjdF9hZGRyZXNzIjoiMHhlMTIzNDI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGJiM0YwNTEyMjQiLCJuZXR3b3JrX25hbWUiOiJFVEhFUkVVTSIsIm1zZ19zZW5kZXIiOiIweGUxMjM0MDkyN2YxNzI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGZoa3U3NjciLCJjb25zdW1lcl9rZXkiOiIweDEyMzRhNGVjMzFlODljZWE1NGQxZjEyNWRiNzUzNmU4NzRhYjRhOTZiNGQ0ZjY0Mzg2NjhiNmJiMTBhNmFkYiIsInRpbWVzdGFtcCI6IjIwMjEtMTEtMDRUMTQ6MTM6NDBaIiwicmVxdWVzdF9pZCI6IjBYZTg3Njk4NzY5NDMyODc2MzQ5Mjg3NjM0ODkyODczNjQ5Nzg2OTI3MzY0OSJ9.XSiQxjEVyCouf7zT8MubEKsbOBZuReGVhnt9uck6z6k
-</code></pre>
-<h3><a href="#3-try-a-rest-call-using-the-header" id="3-try-a-rest-call-using-the-header">3) Try a REST call using the header</a></h3>
-<p>Using your favorite http client:</p>
-<p>GET <a href="https://apisandbox.openbankproject.com/obp/v3.0.0/users/current">https://apisandbox.openbankproject.com/obp/v3.0.0/users/current</a></p>
-<p>Body</p>
-<p>Leave Empty!</p>
-<p>Headers:</p>
-<pre><code>   DAuth: your-jwt-from-step-above
-</code></pre>
-<p>Here is it all together:</p>
-<p>GET <a href="https://apisandbox.openbankproject.com/obp/v3.0.0/users/current">https://apisandbox.openbankproject.com/obp/v3.0.0/users/current</a> HTTP/1.1<br />
-Host: localhost:8080<br />
-User-Agent: curl/7.47.0<br />
-Accept: <em>/</em><br />
-DAuth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzbWFydF9jb250cmFjdF9hZGRyZXNzIjoiMHhlMTIzNDI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGJiM0YwNTEyMjQiLCJuZXR3b3JrX25hbWUiOiJFVEhFUkVVTSIsIm1zZ19zZW5kZXIiOiIweGUxMjM0MDkyN2YxNzI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGZoa3U3NjciLCJjb25zdW1lcl9rZXkiOiIweDEyMzRhNGVjMzFlODljZWE1NGQxZjEyNWRiNzUzNmU4NzRhYjRhOTZiNGQ0ZjY0Mzg2NjhiNmJiMTBhNmFkYiIsInRpbWVzdGFtcCI6IjIwMjEtMTEtMDRUMTQ6MTM6NDBaIiwicmVxdWVzdF9pZCI6IjBYZTg3Njk4NzY5NDMyODc2MzQ5Mjg3NjM0ODkyODczNjQ5Nzg2OTI3MzY0OSJ9.XSiQxjEVyCouf7zT8MubEKsbOBZuReGVhnt9uck6z6k</p>
-<p>CURL example</p>
-<pre><code>curl -v -H 'DAuth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzbWFydF9jb250cmFjdF9hZGRyZXNzIjoiMHhlMTIzNDI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGJiM0YwNTEyMjQiLCJuZXR3b3JrX25hbWUiOiJFVEhFUkVVTSIsIm1zZ19zZW5kZXIiOiIweGUxMjM0MDkyN2YxNzI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGZoa3U3NjciLCJjb25zdW1lcl9rZXkiOiIweDEyMzRhNGVjMzFlODljZWE1NGQxZjEyNWRiNzUzNmU4NzRhYjRhOTZiNGQ0ZjY0Mzg2NjhiNmJiMTBhNmFkYiIsInRpbWVzdGFtcCI6IjIwMjEtMTEtMDRUMTQ6MTM6NDBaIiwicmVxdWVzdF9pZCI6IjBYZTg3Njk4NzY5NDMyODc2MzQ5Mjg3NjM0ODkyODczNjQ5Nzg2OTI3MzY0OSJ9.XSiQxjEVyCouf7zT8MubEKsbOBZuReGVhnt9uck6z6k' https://apisandbox.openbankproject.com/obp/v3.0.0/users/current
-</code></pre>
-<p>You should receive a response like:</p>
-<pre><code>{
-    &quot;user_id&quot;: &quot;4c4d3175-1e5c-4cfd-9b08-dcdc209d8221&quot;,
-    &quot;email&quot;: &quot;&quot;,
-    &quot;provider_id&quot;: &quot;0xe123425E7734CE288F8367e1Bb143E90bb3F051224&quot;,
-    &quot;provider&quot;: &quot;ETHEREUM&quot;,
-    &quot;username&quot;: &quot;0xe123425E7734CE288F8367e1Bb143E90bb3F051224&quot;,
-    &quot;entitlements&quot;: {
-        &quot;list&quot;: []
-    }
-}
-</code></pre>
-<h3><a href="#under-the-hood" id="under-the-hood">Under the hood</a></h3>
-<p>The file, dauth.scala handles the DAuth,</p>
-<p>We:</p>
-<pre><code>-&gt; Check if Props allow_dauth is true
-  -&gt; Check if DAuth header exists
-    -&gt; Check if getRemoteIpAddress is OK
-      -&gt; Look for &quot;token&quot;
-        -&gt; parse the JWT token and getOrCreate the user
-          -&gt; get the data of the user
-</code></pre>
-<h3><a href="#more-information" id="more-information">More information</a></h3>
-<p>Parameter names and values are case sensitive.<br />
-Each parameter MUST NOT appear more than once per request.</p>
-</details>
-<p><br></br></p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
-<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
-<p><a href="/glossary#roles"><strong>roles</strong></a>: CanCreateMyUser</p>
-<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#entitlement_id"><strong>entitlement_id</strong></a>:</p>
-<p><a href="/glossary#list"><strong>list</strong></a>:</p>
-<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv400CreateUserWithRolesRequest
-*/
-func (a *DAuthAPIService) OBPv400CreateUserWithRoles(ctx context.Context) ApiOBPv400CreateUserWithRolesRequest {
-	return ApiOBPv400CreateUserWithRolesRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400GetEntitlements200Response
-func (a *DAuthAPIService) OBPv400CreateUserWithRolesExecute(r ApiOBPv400CreateUserWithRolesRequest) (*OBPv400GetEntitlements200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetEntitlements200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DAuthAPIService.OBPv400CreateUserWithRoles")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/user-entitlements"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv400CreateUserWithRolesRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateUserWithRolesRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv400CreateUserWithRolesRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv510CreateUserWithAccountAccessByIdRequest struct {
+type ApiCreateUserWithAccountAccessByIdRequest struct {
 	ctx context.Context
 	ApiService *DAuthAPIService
 	bankid string
 	accountid string
 	viewid string
-	oBPv510CreateUserWithAccountAccessByIdRequest *OBPv510CreateUserWithAccountAccessByIdRequest
+	createUserWithAccountAccessByIdRequest *CreateUserWithAccountAccessByIdRequest
 }
 
 // Request body
-func (r ApiOBPv510CreateUserWithAccountAccessByIdRequest) OBPv510CreateUserWithAccountAccessByIdRequest(oBPv510CreateUserWithAccountAccessByIdRequest OBPv510CreateUserWithAccountAccessByIdRequest) ApiOBPv510CreateUserWithAccountAccessByIdRequest {
-	r.oBPv510CreateUserWithAccountAccessByIdRequest = &oBPv510CreateUserWithAccountAccessByIdRequest
+func (r ApiCreateUserWithAccountAccessByIdRequest) CreateUserWithAccountAccessByIdRequest(createUserWithAccountAccessByIdRequest CreateUserWithAccountAccessByIdRequest) ApiCreateUserWithAccountAccessByIdRequest {
+	r.createUserWithAccountAccessByIdRequest = &createUserWithAccountAccessByIdRequest
 	return r
 }
 
-func (r ApiOBPv510CreateUserWithAccountAccessByIdRequest) Execute() (*OBPv510CreateUserWithAccountAccessById200Response, *http.Response, error) {
-	return r.ApiService.OBPv510CreateUserWithAccountAccessByIdExecute(r)
+func (r ApiCreateUserWithAccountAccessByIdRequest) Execute() (*CreateUserWithAccountAccessById200Response, *http.Response, error) {
+	return r.ApiService.CreateUserWithAccountAccessByIdExecute(r)
 }
 
 /*
-OBPv510CreateUserWithAccountAccessById Create (DAuth) User with Account Access
+CreateUserWithAccountAccessById Create (DAuth) User with Account Access
 
 <p>This endpoint is used as part of the DAuth solution to grant access to account and transaction data to a smart contract on the blockchain.</p>
 <p>Put the smart contract address in username</p>
@@ -374,20 +110,20 @@ OBPv510CreateUserWithAccountAccessById Create (DAuth) User with Account Access
 </code></pre>
 <h3><a href="#3-try-a-rest-call-using-the-header" id="3-try-a-rest-call-using-the-header">3) Try a REST call using the header</a></h3>
 <p>Using your favorite http client:</p>
-<p>GET <a href="https://apisandbox.openbankproject.com/obp/v3.0.0/users/current">https://apisandbox.openbankproject.com/obp/v3.0.0/users/current</a></p>
+<p>GET <a href="http://127.0.0.1:8080/obp/v3.0.0/users/current">http://127.0.0.1:8080/obp/v3.0.0/users/current</a></p>
 <p>Body</p>
 <p>Leave Empty!</p>
 <p>Headers:</p>
 <pre><code>   DAuth: your-jwt-from-step-above
 </code></pre>
 <p>Here is it all together:</p>
-<p>GET <a href="https://apisandbox.openbankproject.com/obp/v3.0.0/users/current">https://apisandbox.openbankproject.com/obp/v3.0.0/users/current</a> HTTP/1.1<br />
+<p>GET <a href="http://127.0.0.1:8080/obp/v3.0.0/users/current">http://127.0.0.1:8080/obp/v3.0.0/users/current</a> HTTP/1.1<br />
 Host: localhost:8080<br />
 User-Agent: curl/7.47.0<br />
 Accept: <em>/</em><br />
 DAuth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzbWFydF9jb250cmFjdF9hZGRyZXNzIjoiMHhlMTIzNDI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGJiM0YwNTEyMjQiLCJuZXR3b3JrX25hbWUiOiJFVEhFUkVVTSIsIm1zZ19zZW5kZXIiOiIweGUxMjM0MDkyN2YxNzI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGZoa3U3NjciLCJjb25zdW1lcl9rZXkiOiIweDEyMzRhNGVjMzFlODljZWE1NGQxZjEyNWRiNzUzNmU4NzRhYjRhOTZiNGQ0ZjY0Mzg2NjhiNmJiMTBhNmFkYiIsInRpbWVzdGFtcCI6IjIwMjEtMTEtMDRUMTQ6MTM6NDBaIiwicmVxdWVzdF9pZCI6IjBYZTg3Njk4NzY5NDMyODc2MzQ5Mjg3NjM0ODkyODczNjQ5Nzg2OTI3MzY0OSJ9.XSiQxjEVyCouf7zT8MubEKsbOBZuReGVhnt9uck6z6k</p>
 <p>CURL example</p>
-<pre><code>curl -v -H 'DAuth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzbWFydF9jb250cmFjdF9hZGRyZXNzIjoiMHhlMTIzNDI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGJiM0YwNTEyMjQiLCJuZXR3b3JrX25hbWUiOiJFVEhFUkVVTSIsIm1zZ19zZW5kZXIiOiIweGUxMjM0MDkyN2YxNzI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGZoa3U3NjciLCJjb25zdW1lcl9rZXkiOiIweDEyMzRhNGVjMzFlODljZWE1NGQxZjEyNWRiNzUzNmU4NzRhYjRhOTZiNGQ0ZjY0Mzg2NjhiNmJiMTBhNmFkYiIsInRpbWVzdGFtcCI6IjIwMjEtMTEtMDRUMTQ6MTM6NDBaIiwicmVxdWVzdF9pZCI6IjBYZTg3Njk4NzY5NDMyODc2MzQ5Mjg3NjM0ODkyODczNjQ5Nzg2OTI3MzY0OSJ9.XSiQxjEVyCouf7zT8MubEKsbOBZuReGVhnt9uck6z6k' https://apisandbox.openbankproject.com/obp/v3.0.0/users/current
+<pre><code>curl -v -H 'DAuth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzbWFydF9jb250cmFjdF9hZGRyZXNzIjoiMHhlMTIzNDI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGJiM0YwNTEyMjQiLCJuZXR3b3JrX25hbWUiOiJFVEhFUkVVTSIsIm1zZ19zZW5kZXIiOiIweGUxMjM0MDkyN2YxNzI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGZoa3U3NjciLCJjb25zdW1lcl9rZXkiOiIweDEyMzRhNGVjMzFlODljZWE1NGQxZjEyNWRiNzUzNmU4NzRhYjRhOTZiNGQ0ZjY0Mzg2NjhiNmJiMTBhNmFkYiIsInRpbWVzdGFtcCI6IjIwMjEtMTEtMDRUMTQ6MTM6NDBaIiwicmVxdWVzdF9pZCI6IjBYZTg3Njk4NzY5NDMyODc2MzQ5Mjg3NjM0ODkyODczNjQ5Nzg2OTI3MzY0OSJ9.XSiQxjEVyCouf7zT8MubEKsbOBZuReGVhnt9uck6z6k' http://127.0.0.1:8080/obp/v3.0.0/users/current
 </code></pre>
 <p>You should receive a response like:</p>
 <pre><code>{
@@ -516,10 +252,10 @@ Each parameter MUST NOT appear more than once per request.</p>
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
- @return ApiOBPv510CreateUserWithAccountAccessByIdRequest
+ @return ApiCreateUserWithAccountAccessByIdRequest
 */
-func (a *DAuthAPIService) OBPv510CreateUserWithAccountAccessById(ctx context.Context, bankid string, accountid string, viewid string) ApiOBPv510CreateUserWithAccountAccessByIdRequest {
-	return ApiOBPv510CreateUserWithAccountAccessByIdRequest{
+func (a *DAuthAPIService) CreateUserWithAccountAccessById(ctx context.Context, bankid string, accountid string, viewid string) ApiCreateUserWithAccountAccessByIdRequest {
+	return ApiCreateUserWithAccountAccessByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -529,16 +265,16 @@ func (a *DAuthAPIService) OBPv510CreateUserWithAccountAccessById(ctx context.Con
 }
 
 // Execute executes the request
-//  @return OBPv510CreateUserWithAccountAccessById200Response
-func (a *DAuthAPIService) OBPv510CreateUserWithAccountAccessByIdExecute(r ApiOBPv510CreateUserWithAccountAccessByIdRequest) (*OBPv510CreateUserWithAccountAccessById200Response, *http.Response, error) {
+//  @return CreateUserWithAccountAccessById200Response
+func (a *DAuthAPIService) CreateUserWithAccountAccessByIdExecute(r ApiCreateUserWithAccountAccessByIdRequest) (*CreateUserWithAccountAccessById200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510CreateUserWithAccountAccessById200Response
+		localVarReturnValue  *CreateUserWithAccountAccessById200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DAuthAPIService.OBPv510CreateUserWithAccountAccessById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DAuthAPIService.CreateUserWithAccountAccessById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -551,8 +287,8 @@ func (a *DAuthAPIService) OBPv510CreateUserWithAccountAccessByIdExecute(r ApiOBP
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv510CreateUserWithAccountAccessByIdRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510CreateUserWithAccountAccessByIdRequest is required and must be specified")
+	if r.createUserWithAccountAccessByIdRequest == nil {
+		return localVarReturnValue, nil, reportError("createUserWithAccountAccessByIdRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -573,7 +309,7 @@ func (a *DAuthAPIService) OBPv510CreateUserWithAccountAccessByIdExecute(r ApiOBP
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv510CreateUserWithAccountAccessByIdRequest
+	localVarPostBody = r.createUserWithAccountAccessByIdRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -598,7 +334,271 @@ func (a *DAuthAPIService) OBPv510CreateUserWithAccountAccessByIdExecute(r ApiOBP
 				} else {
 					key = apiKey.Key
 				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreateUserWithRolesRequest struct {
+	ctx context.Context
+	ApiService *DAuthAPIService
+	createUserWithRolesRequest *CreateUserWithRolesRequest
+}
+
+// Request body
+func (r ApiCreateUserWithRolesRequest) CreateUserWithRolesRequest(createUserWithRolesRequest CreateUserWithRolesRequest) ApiCreateUserWithRolesRequest {
+	r.createUserWithRolesRequest = &createUserWithRolesRequest
+	return r
+}
+
+func (r ApiCreateUserWithRolesRequest) Execute() (*GetEntitlements200Response, *http.Response, error) {
+	return r.ApiService.CreateUserWithRolesExecute(r)
+}
+
+/*
+CreateUserWithRoles Create (DAuth) User with Roles
+
+<p>This endpoint is used as part of the DAuth solution to grant Entitlements for Roles to a smart contract on the blockchain.</p>
+<p>Put the smart contract address in username</p>
+<p>For provider use &quot;dauth&quot;</p>
+<p>This endpoint will create the User with username and provider if the User does not already exist.</p>
+<p>Then it will create Entitlements i.e. grant Roles to the User.</p>
+<p>Entitlements are used to grant System or Bank level roles to Users. (For Account level privileges, see Views)</p>
+<p>i.e. Entitlements are used to create / consume system or bank level resources where as views / account access are used to consume / create customer level resources.</p>
+<p>For a System level Role (.e.g CanGetAnyUser), set bank_id to an empty string i.e. &quot;bank_id&quot;:&quot;&quot;</p>
+<p>For a Bank level Role (e.g. CanCreateAccount), set bank_id to a valid value e.g. &quot;bank_id&quot;:&quot;my-bank-id&quot;</p>
+<p>Note: The Roles actually granted will depend on the Roles that the calling user has.</p>
+<p>If you try to grant Entitlements to a user that already exist (duplicate entitilements) you will get an error.</p>
+<p>For information about DAuth see below:</p>
+<details>
+  <summary style="display:list-item;cursor:s-resize;">DAuth</summary>
+  <h3><a href="#dauth-introduction-setup-and-usage" id="dauth-introduction-setup-and-usage">DAuth Introduction, Setup and Usage</a></h3>
+<p>DAuth is an experimental authentication mechanism that aims to pin an ethereum or other blockchain Smart Contract to an OBP &quot;User&quot;.</p>
+<p>In the future, it might be possible to be more specific and pin specific actors (wallets) that are acting within the smart contract, but so far, one smart contract acts on behalf of one User.</p>
+<p>Thus, if a smart contract &quot;X&quot; calls the OBP API using the DAuth header, OBP will get or create a user called X and the call will proceed in the context of that User &quot;X&quot;.</p>
+<p>DAuth is invoked by the REST client (caller) including a specific header (see step 3 below) in any OBP REST call.</p>
+<p>When OBP receives the DAuth token, it creates or gets a User with a username based on the smart_contract_address and the provider based on the network_name. The combination of username and provider is unique in OBP.</p>
+<p>If you are calling OBP-API via an API3 Airnode, the Airnode will take care of constructing the required header.</p>
+<p>When OBP detects a DAuth header / token it first checks if the Consumer is allowed to make such a call. OBP will validate the Consumer ip address and signature etc.</p>
+<p>Note: The DAuth flow does <em>not</em> require an explicit POST like Direct Login to create the token.</p>
+<p>Permissions may be assigned to an OBP User at any time, via the UserAuthContext, Views, Entitlements to Roles or Consents.</p>
+<p>Note: <em>DAuth is NOT enabled on this instance!</em></p>
+<p>Note: <em>The DAuth client is responsible for creating a token which will be trusted by OBP absolutely</em>!</p>
+<p>To use DAuth:</p>
+<h3><a href="#1-configure-obp-api-to-accept-dauth" id="1-configure-obp-api-to-accept-dauth">1) Configure OBP API to accept DAuth.</a></h3>
+<p>Set up properties in your props file</p>
+<pre><code># -- DAuth --------------------------------------
+# Define secret used to validate JWT token
+# jwt.public_key_rsa=path-to-the-pem-file
+# Enable/Disable DAuth communication at all
+# In case isn't defined default value is false
+# allow_dauth=false
+# Define comma separated list of allowed IP addresses
+# dauth.host=127.0.0.1
+# -------------------------------------- DAuth--
+</code></pre>
+<p>Please keep in mind that property jwt.public_key_rsa is used to validate JWT token to check it is not changed or corrupted during transport.</p>
+<h3><a href="#2-create-have-access-to-a-jwt" id="2-create-have-access-to-a-jwt">2) Create / have access to a JWT</a></h3>
+<p>The following videos are available:<br />
+* <a href="https://vimeo.com/644315074">DAuth in local environment</a></p>
+<p>HEADER:ALGORITHM &amp; TOKEN TYPE</p>
+<pre><code>{
+  &quot;alg&quot;: &quot;RS256&quot;,
+  &quot;typ&quot;: &quot;JWT&quot;
+}
+</code></pre>
+<p>PAYLOAD:DATA</p>
+<pre><code>{
+  &quot;smart_contract_address&quot;: &quot;0xe123425E7734CE288F8367e1Bb143E90bb3F051224&quot;,
+  &quot;network_name&quot;: &quot;AIRNODE.TESTNET.ETHEREUM&quot;,
+  &quot;msg_sender&quot;: &quot;0xe12340927f1725E7734CE288F8367e1Bb143E90fhku767&quot;,
+  &quot;consumer_key&quot;: &quot;0x1234a4ec31e89cea54d1f125db7536e874ab4a96b4d4f6438668b6bb10a6adb&quot;,
+  &quot;timestamp&quot;: &quot;2021-11-04T14:13:40Z&quot;,
+  &quot;request_id&quot;: &quot;0Xe876987694328763492876348928736497869273649&quot;
+}
+</code></pre>
+<p>VERIFY SIGNATURE</p>
+<pre><code>RSASHA256(
+  base64UrlEncode(header) + &quot;.&quot; +
+  base64UrlEncode(payload),
+<p>) your-RSA-key-pair</p>
+</code></pre>
+<p>Here is an example token:</p>
+<pre><code>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzbWFydF9jb250cmFjdF9hZGRyZXNzIjoiMHhlMTIzNDI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGJiM0YwNTEyMjQiLCJuZXR3b3JrX25hbWUiOiJFVEhFUkVVTSIsIm1zZ19zZW5kZXIiOiIweGUxMjM0MDkyN2YxNzI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGZoa3U3NjciLCJjb25zdW1lcl9rZXkiOiIweDEyMzRhNGVjMzFlODljZWE1NGQxZjEyNWRiNzUzNmU4NzRhYjRhOTZiNGQ0ZjY0Mzg2NjhiNmJiMTBhNmFkYiIsInRpbWVzdGFtcCI6IjIwMjEtMTEtMDRUMTQ6MTM6NDBaIiwicmVxdWVzdF9pZCI6IjBYZTg3Njk4NzY5NDMyODc2MzQ5Mjg3NjM0ODkyODczNjQ5Nzg2OTI3MzY0OSJ9.XSiQxjEVyCouf7zT8MubEKsbOBZuReGVhnt9uck6z6k
+</code></pre>
+<h3><a href="#3-try-a-rest-call-using-the-header" id="3-try-a-rest-call-using-the-header">3) Try a REST call using the header</a></h3>
+<p>Using your favorite http client:</p>
+<p>GET <a href="http://127.0.0.1:8080/obp/v3.0.0/users/current">http://127.0.0.1:8080/obp/v3.0.0/users/current</a></p>
+<p>Body</p>
+<p>Leave Empty!</p>
+<p>Headers:</p>
+<pre><code>   DAuth: your-jwt-from-step-above
+</code></pre>
+<p>Here is it all together:</p>
+<p>GET <a href="http://127.0.0.1:8080/obp/v3.0.0/users/current">http://127.0.0.1:8080/obp/v3.0.0/users/current</a> HTTP/1.1<br />
+Host: localhost:8080<br />
+User-Agent: curl/7.47.0<br />
+Accept: <em>/</em><br />
+DAuth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzbWFydF9jb250cmFjdF9hZGRyZXNzIjoiMHhlMTIzNDI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGJiM0YwNTEyMjQiLCJuZXR3b3JrX25hbWUiOiJFVEhFUkVVTSIsIm1zZ19zZW5kZXIiOiIweGUxMjM0MDkyN2YxNzI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGZoa3U3NjciLCJjb25zdW1lcl9rZXkiOiIweDEyMzRhNGVjMzFlODljZWE1NGQxZjEyNWRiNzUzNmU4NzRhYjRhOTZiNGQ0ZjY0Mzg2NjhiNmJiMTBhNmFkYiIsInRpbWVzdGFtcCI6IjIwMjEtMTEtMDRUMTQ6MTM6NDBaIiwicmVxdWVzdF9pZCI6IjBYZTg3Njk4NzY5NDMyODc2MzQ5Mjg3NjM0ODkyODczNjQ5Nzg2OTI3MzY0OSJ9.XSiQxjEVyCouf7zT8MubEKsbOBZuReGVhnt9uck6z6k</p>
+<p>CURL example</p>
+<pre><code>curl -v -H 'DAuth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzbWFydF9jb250cmFjdF9hZGRyZXNzIjoiMHhlMTIzNDI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGJiM0YwNTEyMjQiLCJuZXR3b3JrX25hbWUiOiJFVEhFUkVVTSIsIm1zZ19zZW5kZXIiOiIweGUxMjM0MDkyN2YxNzI1RTc3MzRDRTI4OEY4MzY3ZTFCYjE0M0U5MGZoa3U3NjciLCJjb25zdW1lcl9rZXkiOiIweDEyMzRhNGVjMzFlODljZWE1NGQxZjEyNWRiNzUzNmU4NzRhYjRhOTZiNGQ0ZjY0Mzg2NjhiNmJiMTBhNmFkYiIsInRpbWVzdGFtcCI6IjIwMjEtMTEtMDRUMTQ6MTM6NDBaIiwicmVxdWVzdF9pZCI6IjBYZTg3Njk4NzY5NDMyODc2MzQ5Mjg3NjM0ODkyODczNjQ5Nzg2OTI3MzY0OSJ9.XSiQxjEVyCouf7zT8MubEKsbOBZuReGVhnt9uck6z6k' http://127.0.0.1:8080/obp/v3.0.0/users/current
+</code></pre>
+<p>You should receive a response like:</p>
+<pre><code>{
+    &quot;user_id&quot;: &quot;4c4d3175-1e5c-4cfd-9b08-dcdc209d8221&quot;,
+    &quot;email&quot;: &quot;&quot;,
+    &quot;provider_id&quot;: &quot;0xe123425E7734CE288F8367e1Bb143E90bb3F051224&quot;,
+    &quot;provider&quot;: &quot;ETHEREUM&quot;,
+    &quot;username&quot;: &quot;0xe123425E7734CE288F8367e1Bb143E90bb3F051224&quot;,
+    &quot;entitlements&quot;: {
+        &quot;list&quot;: []
+    }
+}
+</code></pre>
+<h3><a href="#under-the-hood" id="under-the-hood">Under the hood</a></h3>
+<p>The file, dauth.scala handles the DAuth,</p>
+<p>We:</p>
+<pre><code>-&gt; Check if Props allow_dauth is true
+  -&gt; Check if DAuth header exists
+    -&gt; Check if getRemoteIpAddress is OK
+      -&gt; Look for &quot;token&quot;
+        -&gt; parse the JWT token and getOrCreate the user
+          -&gt; get the data of the user
+</code></pre>
+<h3><a href="#more-information" id="more-information">More information</a></h3>
+<p>Parameter names and values are case sensitive.<br />
+Each parameter MUST NOT appear more than once per request.</p>
+</details>
+<p><br></br></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
+<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
+<p><a href="/glossary#roles"><strong>roles</strong></a>: CanCreateMyUser</p>
+<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#entitlement_id"><strong>entitlement_id</strong></a>:</p>
+<p><a href="/glossary#list"><strong>list</strong></a>:</p>
+<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiCreateUserWithRolesRequest
+*/
+func (a *DAuthAPIService) CreateUserWithRoles(ctx context.Context) ApiCreateUserWithRolesRequest {
+	return ApiCreateUserWithRolesRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return GetEntitlements200Response
+func (a *DAuthAPIService) CreateUserWithRolesExecute(r ApiCreateUserWithRolesRequest) (*GetEntitlements200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetEntitlements200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DAuthAPIService.CreateUserWithRoles")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/user-entitlements"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createUserWithRolesRequest == nil {
+		return localVarReturnValue, nil, reportError("createUserWithRolesRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createUserWithRolesRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
 				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

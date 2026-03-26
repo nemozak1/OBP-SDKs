@@ -1,7 +1,7 @@
 =begin
 #Open Bank Project API v6.0.0
 
-#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 The version of the OpenAPI document: 6.0.0
 Contact: contact@tesobe.com
@@ -22,31 +22,31 @@ module OpenBankProject
     # Create Meeting (video conference/call)
     # <p>Create Meeting: Initiate a video conference/call with the bank.</p> <p>The Meetings resource contains meta data about video/other conference sessions</p> <p>provider_id determines the provider of the meeting / video chat service. MUST be url friendly (no spaces).</p> <p>purpose_id explains the purpose of the chat. onboarding | mortgage | complaint etc. MUST be url friendly (no spaces).</p> <p>Login is required.</p> <p>This call is <strong>experimental</strong>. Currently staff_user_id is not set. Further calls will be needed to correctly set this.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#contact_details\"><strong>contact_details</strong></a>:</p> <p><a href=\"/glossary#creator\"><strong>creator</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#email_address\"><strong>email_address</strong></a>:</p> <p><a href=\"/glossary#invitees\"><strong>invitees</strong></a>:</p> <p><a href=\"/glossary#mobile_phone\"><strong>mobile_phone</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#provider_id\"><strong>provider_id</strong></a>:</p> <p><a href=\"/glossary#purpose_id\"><strong>purpose_id</strong></a>:</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#contact_details\"><strong>contact_details</strong></a>:</p> <p><a href=\"/glossary#creator\"><strong>creator</strong></a>:</p> <p><a href=\"/glossary#customer_token\"><strong>customer_token</strong></a>:</p> <p><a href=\"/glossary#customer_user_id\"><strong>customer_user_id</strong></a>:</p> <p><a href=\"/glossary#email_address\"><strong>email_address</strong></a>:</p> <p><a href=\"/glossary#invitees\"><strong>invitees</strong></a>:</p> <p><a href=\"/glossary#keys\"><strong>keys</strong></a>:</p> <p><a href=\"/glossary#meeting_id\"><strong>meeting_id</strong></a>:</p> <p><a href=\"/glossary#mobile_phone\"><strong>mobile_phone</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#present\"><strong>present</strong></a>:</p> <p><a href=\"/glossary#provider_id\"><strong>provider_id</strong></a>:</p> <p><a href=\"/glossary#purpose_id\"><strong>purpose_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>session_id</strong></a>: b4e0352a-9a0f-4bfa-b30b-9003aa467f50</p> <p><a href=\"/glossary#staff_token\"><strong>staff_token</strong></a>:</p> <p><a href=\"/glossary#staff_user_id\"><strong>staff_user_id</strong></a>:</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#when\"><strong>when</strong></a>: 2020-01-27</p> 
     # @param bankid [String] The BANKID identifier
-    # @param obpv310_create_meeting_request [OBPv310CreateMeetingRequest] Request body
+    # @param create_meeting_request [CreateMeetingRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv310GetMeeting200Response]
-    def o_bpv3_1_0_create_meeting(bankid, obpv310_create_meeting_request, opts = {})
-      data, _status_code, _headers = o_bpv3_1_0_create_meeting_with_http_info(bankid, obpv310_create_meeting_request, opts)
+    # @return [GetMeeting200Response]
+    def create_meeting(bankid, create_meeting_request, opts = {})
+      data, _status_code, _headers = create_meeting_with_http_info(bankid, create_meeting_request, opts)
       data
     end
 
     # Create Meeting (video conference/call)
     # &lt;p&gt;Create Meeting: Initiate a video conference/call with the bank.&lt;/p&gt; &lt;p&gt;The Meetings resource contains meta data about video/other conference sessions&lt;/p&gt; &lt;p&gt;provider_id determines the provider of the meeting / video chat service. MUST be url friendly (no spaces).&lt;/p&gt; &lt;p&gt;purpose_id explains the purpose of the chat. onboarding | mortgage | complaint etc. MUST be url friendly (no spaces).&lt;/p&gt; &lt;p&gt;Login is required.&lt;/p&gt; &lt;p&gt;This call is &lt;strong&gt;experimental&lt;/strong&gt;. Currently staff_user_id is not set. Further calls will be needed to correctly set this.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#contact_details\&quot;&gt;&lt;strong&gt;contact_details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creator\&quot;&gt;&lt;strong&gt;creator&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#email_address\&quot;&gt;&lt;strong&gt;email_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#invitees\&quot;&gt;&lt;strong&gt;invitees&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone\&quot;&gt;&lt;strong&gt;mobile_phone&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider_id\&quot;&gt;&lt;strong&gt;provider_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#purpose_id\&quot;&gt;&lt;strong&gt;purpose_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#contact_details\&quot;&gt;&lt;strong&gt;contact_details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creator\&quot;&gt;&lt;strong&gt;creator&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#customer_token\&quot;&gt;&lt;strong&gt;customer_token&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#customer_user_id\&quot;&gt;&lt;strong&gt;customer_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#email_address\&quot;&gt;&lt;strong&gt;email_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#invitees\&quot;&gt;&lt;strong&gt;invitees&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#keys\&quot;&gt;&lt;strong&gt;keys&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meeting_id\&quot;&gt;&lt;strong&gt;meeting_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone\&quot;&gt;&lt;strong&gt;mobile_phone&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#present\&quot;&gt;&lt;strong&gt;present&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider_id\&quot;&gt;&lt;strong&gt;provider_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#purpose_id\&quot;&gt;&lt;strong&gt;purpose_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;session_id&lt;/strong&gt;&lt;/a&gt;: b4e0352a-9a0f-4bfa-b30b-9003aa467f50&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#staff_token\&quot;&gt;&lt;strong&gt;staff_token&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#staff_user_id\&quot;&gt;&lt;strong&gt;staff_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#when\&quot;&gt;&lt;strong&gt;when&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; 
     # @param bankid [String] The BANKID identifier
-    # @param obpv310_create_meeting_request [OBPv310CreateMeetingRequest] Request body
+    # @param create_meeting_request [CreateMeetingRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv310GetMeeting200Response, Integer, Hash)>] OBPv310GetMeeting200Response data, response status code and response headers
-    def o_bpv3_1_0_create_meeting_with_http_info(bankid, obpv310_create_meeting_request, opts = {})
+    # @return [Array<(GetMeeting200Response, Integer, Hash)>] GetMeeting200Response data, response status code and response headers
+    def create_meeting_with_http_info(bankid, create_meeting_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ExperimentalApi.o_bpv3_1_0_create_meeting ...'
+        @api_client.config.logger.debug 'Calling API: ExperimentalApi.create_meeting ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling ExperimentalApi.o_bpv3_1_0_create_meeting"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling ExperimentalApi.create_meeting"
       end
-      # verify the required parameter 'obpv310_create_meeting_request' is set
-      if @api_client.config.client_side_validation && obpv310_create_meeting_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv310_create_meeting_request' when calling ExperimentalApi.o_bpv3_1_0_create_meeting"
+      # verify the required parameter 'create_meeting_request' is set
+      if @api_client.config.client_side_validation && create_meeting_request.nil?
+        fail ArgumentError, "Missing the required parameter 'create_meeting_request' when calling ExperimentalApi.create_meeting"
       end
       # resource path
       local_var_path = '/obp/v3.1.0/banks/{bankid}/meetings'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s))
@@ -68,16 +68,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv310_create_meeting_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_meeting_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv310GetMeeting200Response'
+      return_type = opts[:debug_return_type] || 'GetMeeting200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"ExperimentalApi.o_bpv3_1_0_create_meeting",
+        :operation => :"ExperimentalApi.create_meeting",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -88,7 +88,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ExperimentalApi#o_bpv3_1_0_create_meeting\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ExperimentalApi#create_meeting\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -98,9 +98,9 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param meetingid [String] The MEETINGID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv310GetMeeting200Response]
-    def o_bpv3_1_0_get_meeting(bankid, meetingid, opts = {})
-      data, _status_code, _headers = o_bpv3_1_0_get_meeting_with_http_info(bankid, meetingid, opts)
+    # @return [GetMeeting200Response]
+    def get_meeting(bankid, meetingid, opts = {})
+      data, _status_code, _headers = get_meeting_with_http_info(bankid, meetingid, opts)
       data
     end
 
@@ -109,18 +109,18 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param meetingid [String] The MEETINGID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv310GetMeeting200Response, Integer, Hash)>] OBPv310GetMeeting200Response data, response status code and response headers
-    def o_bpv3_1_0_get_meeting_with_http_info(bankid, meetingid, opts = {})
+    # @return [Array<(GetMeeting200Response, Integer, Hash)>] GetMeeting200Response data, response status code and response headers
+    def get_meeting_with_http_info(bankid, meetingid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ExperimentalApi.o_bpv3_1_0_get_meeting ...'
+        @api_client.config.logger.debug 'Calling API: ExperimentalApi.get_meeting ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling ExperimentalApi.o_bpv3_1_0_get_meeting"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling ExperimentalApi.get_meeting"
       end
       # verify the required parameter 'meetingid' is set
       if @api_client.config.client_side_validation && meetingid.nil?
-        fail ArgumentError, "Missing the required parameter 'meetingid' when calling ExperimentalApi.o_bpv3_1_0_get_meeting"
+        fail ArgumentError, "Missing the required parameter 'meetingid' when calling ExperimentalApi.get_meeting"
       end
       # resource path
       local_var_path = '/obp/v3.1.0/banks/{bankid}/meetings/{meetingid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'meetingid' + '}', CGI.escape(meetingid.to_s))
@@ -140,13 +140,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv310GetMeeting200Response'
+      return_type = opts[:debug_return_type] || 'GetMeeting200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"ExperimentalApi.o_bpv3_1_0_get_meeting",
+        :operation => :"ExperimentalApi.get_meeting",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -157,7 +157,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ExperimentalApi#o_bpv3_1_0_get_meeting\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ExperimentalApi#get_meeting\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -166,9 +166,9 @@ module OpenBankProject
     # <p>Meetings contain meta data about, and are used to facilitate, video conferences / chats etc.</p> <p>The actual conference/chats are handled by external services.</p> <p>Login is required.</p> <p>This call is <strong>experimental</strong> and will require further authorisation in the future.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#contact_details\"><strong>contact_details</strong></a>:</p> <p><a href=\"/glossary#creator\"><strong>creator</strong></a>:</p> <p><a href=\"/glossary#customer_token\"><strong>customer_token</strong></a>:</p> <p><a href=\"/glossary#customer_user_id\"><strong>customer_user_id</strong></a>:</p> <p><a href=\"/glossary#email_address\"><strong>email_address</strong></a>:</p> <p><a href=\"/glossary#invitees\"><strong>invitees</strong></a>:</p> <p><a href=\"/glossary#keys\"><strong>keys</strong></a>:</p> <p><a href=\"/glossary#meeting_id\"><strong>meeting_id</strong></a>:</p> <p><a href=\"/glossary#meetings\"><strong>meetings</strong></a>:</p> <p><a href=\"/glossary#mobile_phone\"><strong>mobile_phone</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#present\"><strong>present</strong></a>:</p> <p><a href=\"/glossary#provider_id\"><strong>provider_id</strong></a>:</p> <p><a href=\"/glossary#purpose_id\"><strong>purpose_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>session_id</strong></a>: b4e0352a-9a0f-4bfa-b30b-9003aa467f50</p> <p><a href=\"/glossary#staff_token\"><strong>staff_token</strong></a>:</p> <p><a href=\"/glossary#staff_user_id\"><strong>staff_user_id</strong></a>:</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#when\"><strong>when</strong></a>: 2020-01-27</p> 
     # @param bankid [String] The BANKID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv310GetMeetings200Response]
-    def o_bpv3_1_0_get_meetings(bankid, opts = {})
-      data, _status_code, _headers = o_bpv3_1_0_get_meetings_with_http_info(bankid, opts)
+    # @return [GetMeetings200Response]
+    def get_meetings(bankid, opts = {})
+      data, _status_code, _headers = get_meetings_with_http_info(bankid, opts)
       data
     end
 
@@ -176,14 +176,14 @@ module OpenBankProject
     # &lt;p&gt;Meetings contain meta data about, and are used to facilitate, video conferences / chats etc.&lt;/p&gt; &lt;p&gt;The actual conference/chats are handled by external services.&lt;/p&gt; &lt;p&gt;Login is required.&lt;/p&gt; &lt;p&gt;This call is &lt;strong&gt;experimental&lt;/strong&gt; and will require further authorisation in the future.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#contact_details\&quot;&gt;&lt;strong&gt;contact_details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creator\&quot;&gt;&lt;strong&gt;creator&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#customer_token\&quot;&gt;&lt;strong&gt;customer_token&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#customer_user_id\&quot;&gt;&lt;strong&gt;customer_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#email_address\&quot;&gt;&lt;strong&gt;email_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#invitees\&quot;&gt;&lt;strong&gt;invitees&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#keys\&quot;&gt;&lt;strong&gt;keys&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meeting_id\&quot;&gt;&lt;strong&gt;meeting_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meetings\&quot;&gt;&lt;strong&gt;meetings&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone\&quot;&gt;&lt;strong&gt;mobile_phone&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#present\&quot;&gt;&lt;strong&gt;present&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider_id\&quot;&gt;&lt;strong&gt;provider_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#purpose_id\&quot;&gt;&lt;strong&gt;purpose_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;session_id&lt;/strong&gt;&lt;/a&gt;: b4e0352a-9a0f-4bfa-b30b-9003aa467f50&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#staff_token\&quot;&gt;&lt;strong&gt;staff_token&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#staff_user_id\&quot;&gt;&lt;strong&gt;staff_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#when\&quot;&gt;&lt;strong&gt;when&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; 
     # @param bankid [String] The BANKID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv310GetMeetings200Response, Integer, Hash)>] OBPv310GetMeetings200Response data, response status code and response headers
-    def o_bpv3_1_0_get_meetings_with_http_info(bankid, opts = {})
+    # @return [Array<(GetMeetings200Response, Integer, Hash)>] GetMeetings200Response data, response status code and response headers
+    def get_meetings_with_http_info(bankid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ExperimentalApi.o_bpv3_1_0_get_meetings ...'
+        @api_client.config.logger.debug 'Calling API: ExperimentalApi.get_meetings ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling ExperimentalApi.o_bpv3_1_0_get_meetings"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling ExperimentalApi.get_meetings"
       end
       # resource path
       local_var_path = '/obp/v3.1.0/banks/{bankid}/meetings'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s))
@@ -203,13 +203,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv310GetMeetings200Response'
+      return_type = opts[:debug_return_type] || 'GetMeetings200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"ExperimentalApi.o_bpv3_1_0_get_meetings",
+        :operation => :"ExperimentalApi.get_meetings",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -220,7 +220,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ExperimentalApi#o_bpv3_1_0_get_meetings\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ExperimentalApi#get_meetings\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

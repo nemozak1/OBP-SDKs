@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -45,10 +45,10 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Create an internal connector.&lt;/p&gt; &lt;p&gt;The method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oBPv400CreateConnectorMethodRequest">Request body</param>
+        /// <param name="createConnectorMethodRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateConnectorMethodApiResponse"/>&gt;</returns>
-        Task<IOBPv400CreateConnectorMethodApiResponse> OBPv400CreateConnectorMethodAsync(OBPv400CreateConnectorMethodRequest oBPv400CreateConnectorMethodRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateConnectorMethodApiResponse"/>&gt;</returns>
+        Task<ICreateConnectorMethodApiResponse> CreateConnectorMethodAsync(CreateConnectorMethodRequest createConnectorMethodRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Connector Method
@@ -56,10 +56,10 @@ namespace OpenBankProject.Api
         /// <remarks>
         /// &lt;p&gt;Create an internal connector.&lt;/p&gt; &lt;p&gt;The method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </remarks>
-        /// <param name="oBPv400CreateConnectorMethodRequest">Request body</param>
+        /// <param name="createConnectorMethodRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateConnectorMethodApiResponse"/>?&gt;</returns>
-        Task<IOBPv400CreateConnectorMethodApiResponse?> OBPv400CreateConnectorMethodOrDefaultAsync(OBPv400CreateConnectorMethodRequest oBPv400CreateConnectorMethodRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateConnectorMethodApiResponse"/>?&gt;</returns>
+        Task<ICreateConnectorMethodApiResponse?> CreateConnectorMethodOrDefaultAsync(CreateConnectorMethodRequest createConnectorMethodRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get all Connector Methods
@@ -69,8 +69,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAllConnectorMethodsApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetAllConnectorMethodsApiResponse> OBPv400GetAllConnectorMethodsAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllConnectorMethodsApiResponse"/>&gt;</returns>
+        Task<IGetAllConnectorMethodsApiResponse> GetAllConnectorMethodsAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get all Connector Methods
@@ -79,8 +79,8 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Get all Connector Methods.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAllConnectorMethodsApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetAllConnectorMethodsApiResponse?> OBPv400GetAllConnectorMethodsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllConnectorMethodsApiResponse"/>?&gt;</returns>
+        Task<IGetAllConnectorMethodsApiResponse?> GetAllConnectorMethodsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Connector Method by Id
@@ -91,8 +91,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="connectormethodid">The CONNECTORMETHODID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetConnectorMethodApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetConnectorMethodApiResponse> OBPv400GetConnectorMethodAsync(string connectormethodid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetConnectorMethodApiResponse"/>&gt;</returns>
+        Task<IGetConnectorMethodApiResponse> GetConnectorMethodAsync(string connectormethodid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Connector Method by Id
@@ -102,33 +102,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="connectormethodid">The CONNECTORMETHODID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetConnectorMethodApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetConnectorMethodApiResponse?> OBPv400GetConnectorMethodOrDefaultAsync(string connectormethodid, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Update Connector Method
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Update an internal connector.&lt;/p&gt; &lt;p&gt;The method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONNECTOR_METHOD_ID&lt;/a&gt;: ace0352a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="connectormethodid">The CONNECTORMETHODID identifier</param>
-        /// <param name="oBPv400UpdateConnectorMethodRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateConnectorMethodApiResponse"/>&gt;</returns>
-        Task<IOBPv400UpdateConnectorMethodApiResponse> OBPv400UpdateConnectorMethodAsync(string connectormethodid, OBPv400UpdateConnectorMethodRequest oBPv400UpdateConnectorMethodRequest, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Update Connector Method
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Update an internal connector.&lt;/p&gt; &lt;p&gt;The method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONNECTOR_METHOD_ID&lt;/a&gt;: ace0352a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="connectormethodid">The CONNECTORMETHODID identifier</param>
-        /// <param name="oBPv400UpdateConnectorMethodRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateConnectorMethodApiResponse"/>?&gt;</returns>
-        Task<IOBPv400UpdateConnectorMethodApiResponse?> OBPv400UpdateConnectorMethodOrDefaultAsync(string connectormethodid, OBPv400UpdateConnectorMethodRequest oBPv400UpdateConnectorMethodRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetConnectorMethodApiResponse"/>?&gt;</returns>
+        Task<IGetConnectorMethodApiResponse?> GetConnectorMethodOrDefaultAsync(string connectormethodid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Connector Method Names
@@ -138,8 +113,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetConnectorMethodNamesApiResponse"/>&gt;</returns>
-        Task<IOBPv600GetConnectorMethodNamesApiResponse> OBPv600GetConnectorMethodNamesAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetConnectorMethodNamesApiResponse"/>&gt;</returns>
+        Task<IGetConnectorMethodNamesApiResponse> GetConnectorMethodNamesAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Connector Method Names
@@ -148,14 +123,39 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Get the list of all available connector method names.&lt;/p&gt; &lt;p&gt;These are the method names that can be used in Method Routing configuration.&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#data-source\&quot; id&#x3D;\&quot;data-source\&quot;&gt;Data Source&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;The data comes from &lt;strong&gt;scanning the actual Scala connector code at runtime&lt;/strong&gt; using reflection, NOT from a database or configuration file.&lt;/p&gt; &lt;p&gt;The endpoint:&lt;br /&gt; 1. Reads the connector name from props (e.g., &lt;code&gt;connector&#x3D;mapped&lt;/code&gt;)&lt;br /&gt; 2. Gets the connector instance (e.g., LocalMappedConnector, KafkaConnector, StarConnector)&lt;br /&gt; 3. Uses Scala reflection to scan all public methods that override the base Connector trait&lt;br /&gt; 4. Filters for valid connector methods (public, has parameters, overrides base trait)&lt;br /&gt; 5. Returns the method names as a sorted list&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#which-connector\&quot; id&#x3D;\&quot;which-connector\&quot;&gt;Which Connector?&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;Depends on your &lt;code&gt;connector&lt;/code&gt; property:&lt;br /&gt; * &lt;code&gt;connector&#x3D;mapped&lt;/code&gt; → Returns methods from LocalMappedConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;kafka_vSept2018&lt;/code&gt; → Returns methods from KafkaConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;star&lt;/code&gt; → Returns methods from StarConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;rest_vMar2019&lt;/code&gt; → Returns methods from RestConnector&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#when-does-it-change\&quot; id&#x3D;\&quot;when-does-it-change\&quot;&gt;When Does It Change?&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;The list only changes when:&lt;br /&gt; * Code is deployed with new/modified connector methods&lt;br /&gt; * The &lt;code&gt;connector&lt;/code&gt; property is changed to point to a different connector&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#performance\&quot; id&#x3D;\&quot;performance\&quot;&gt;Performance&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;This endpoint uses caching (default: 1 hour) because Scala reflection is expensive.&lt;br /&gt; Configure via: &lt;code&gt;getConnectorMethodNames.cache.ttl.seconds&#x3D;3600&lt;/code&gt;&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#use-case\&quot; id&#x3D;\&quot;use-case\&quot;&gt;Use Case&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;Use this endpoint to discover which connector methods are available when configuring Method Routing.&lt;br /&gt; These method names are different from API endpoint operation IDs (which you get from /resource-docs).&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;CanGetSystemConnectorMethodNames entitlement is required.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;connector_method_names&lt;/strong&gt;&lt;/a&gt;: connector_method_names&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetConnectorMethodNamesApiResponse"/>?&gt;</returns>
-        Task<IOBPv600GetConnectorMethodNamesApiResponse?> OBPv600GetConnectorMethodNamesOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetConnectorMethodNamesApiResponse"/>?&gt;</returns>
+        Task<IGetConnectorMethodNamesApiResponse?> GetConnectorMethodNamesOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Update Connector Method
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Update an internal connector.&lt;/p&gt; &lt;p&gt;The method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONNECTOR_METHOD_ID&lt;/a&gt;: ace0352a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectormethodid">The CONNECTORMETHODID identifier</param>
+        /// <param name="updateConnectorMethodRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateConnectorMethodApiResponse"/>&gt;</returns>
+        Task<IUpdateConnectorMethodApiResponse> UpdateConnectorMethodAsync(string connectormethodid, UpdateConnectorMethodRequest updateConnectorMethodRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Update Connector Method
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Update an internal connector.&lt;/p&gt; &lt;p&gt;The method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONNECTOR_METHOD_ID&lt;/a&gt;: ace0352a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="connectormethodid">The CONNECTORMETHODID identifier</param>
+        /// <param name="updateConnectorMethodRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateConnectorMethodApiResponse"/>?&gt;</returns>
+        Task<IUpdateConnectorMethodApiResponse?> UpdateConnectorMethodOrDefaultAsync(string connectormethodid, UpdateConnectorMethodRequest updateConnectorMethodRequest, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400CreateConnectorMethodApiResponse"/>
+    /// The <see cref="ICreateConnectorMethodApiResponse"/>
     /// </summary>
-    public interface IOBPv400CreateConnectorMethodApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems?>
+    public interface ICreateConnectorMethodApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetAllConnectorMethods200ResponseConnectorsMethodsInner?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -171,9 +171,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400GetAllConnectorMethodsApiResponse"/>
+    /// The <see cref="IGetAllConnectorMethodsApiResponse"/>
     /// </summary>
-    public interface IOBPv400GetAllConnectorMethodsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetAllConnectorMethods200Response?>
+    public interface IGetAllConnectorMethodsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetAllConnectorMethods200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -189,9 +189,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400GetConnectorMethodApiResponse"/>
+    /// The <see cref="IGetConnectorMethodApiResponse"/>
     /// </summary>
-    public interface IOBPv400GetConnectorMethodApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems?>
+    public interface IGetConnectorMethodApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetAllConnectorMethods200ResponseConnectorsMethodsInner?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -207,9 +207,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400UpdateConnectorMethodApiResponse"/>
+    /// The <see cref="IUpdateConnectorMethodApiResponse"/>
     /// </summary>
-    public interface IOBPv400UpdateConnectorMethodApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems?>
+    public interface IUpdateConnectorMethodApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetAllConnectorMethods200ResponseConnectorsMethodsInner?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -232,101 +232,101 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400CreateConnectorMethod;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateConnectorMethod;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400CreateConnectorMethod;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateConnectorMethod;
 
-        internal void ExecuteOnOBPv400CreateConnectorMethod(ConnectorMethodApi.OBPv400CreateConnectorMethodApiResponse apiResponse)
+        internal void ExecuteOnCreateConnectorMethod(ConnectorMethodApi.CreateConnectorMethodApiResponse apiResponse)
         {
-            OnOBPv400CreateConnectorMethod?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateConnectorMethod?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400CreateConnectorMethod(Exception exception)
+        internal void ExecuteOnErrorCreateConnectorMethod(Exception exception)
         {
-            OnErrorOBPv400CreateConnectorMethod?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateConnectorMethod?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetAllConnectorMethods;
+        public event EventHandler<ApiResponseEventArgs>? OnGetAllConnectorMethods;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetAllConnectorMethods;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetAllConnectorMethods;
 
-        internal void ExecuteOnOBPv400GetAllConnectorMethods(ConnectorMethodApi.OBPv400GetAllConnectorMethodsApiResponse apiResponse)
+        internal void ExecuteOnGetAllConnectorMethods(ConnectorMethodApi.GetAllConnectorMethodsApiResponse apiResponse)
         {
-            OnOBPv400GetAllConnectorMethods?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetAllConnectorMethods?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetAllConnectorMethods(Exception exception)
+        internal void ExecuteOnErrorGetAllConnectorMethods(Exception exception)
         {
-            OnErrorOBPv400GetAllConnectorMethods?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetAllConnectorMethods?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetConnectorMethod;
+        public event EventHandler<ApiResponseEventArgs>? OnGetConnectorMethod;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetConnectorMethod;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetConnectorMethod;
 
-        internal void ExecuteOnOBPv400GetConnectorMethod(ConnectorMethodApi.OBPv400GetConnectorMethodApiResponse apiResponse)
+        internal void ExecuteOnGetConnectorMethod(ConnectorMethodApi.GetConnectorMethodApiResponse apiResponse)
         {
-            OnOBPv400GetConnectorMethod?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetConnectorMethod?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetConnectorMethod(Exception exception)
+        internal void ExecuteOnErrorGetConnectorMethod(Exception exception)
         {
-            OnErrorOBPv400GetConnectorMethod?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetConnectorMethod?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400UpdateConnectorMethod;
+        public event EventHandler<ApiResponseEventArgs>? OnGetConnectorMethodNames;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400UpdateConnectorMethod;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetConnectorMethodNames;
 
-        internal void ExecuteOnOBPv400UpdateConnectorMethod(ConnectorMethodApi.OBPv400UpdateConnectorMethodApiResponse apiResponse)
+        internal void ExecuteOnGetConnectorMethodNames(APIApi.GetConnectorMethodNamesApiResponse apiResponse)
         {
-            OnOBPv400UpdateConnectorMethod?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetConnectorMethodNames?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400UpdateConnectorMethod(Exception exception)
+        internal void ExecuteOnErrorGetConnectorMethodNames(Exception exception)
         {
-            OnErrorOBPv400UpdateConnectorMethod?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetConnectorMethodNames?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600GetConnectorMethodNames;
+        public event EventHandler<ApiResponseEventArgs>? OnUpdateConnectorMethod;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600GetConnectorMethodNames;
+        public event EventHandler<ExceptionEventArgs>? OnErrorUpdateConnectorMethod;
 
-        internal void ExecuteOnOBPv600GetConnectorMethodNames(APIApi.OBPv600GetConnectorMethodNamesApiResponse apiResponse)
+        internal void ExecuteOnUpdateConnectorMethod(ConnectorMethodApi.UpdateConnectorMethodApiResponse apiResponse)
         {
-            OnOBPv600GetConnectorMethodNames?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnUpdateConnectorMethod?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600GetConnectorMethodNames(Exception exception)
+        internal void ExecuteOnErrorUpdateConnectorMethod(Exception exception)
         {
-            OnErrorOBPv600GetConnectorMethodNames?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorUpdateConnectorMethod?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -384,28 +384,28 @@ namespace OpenBankProject.Api
             OauthTokenProvider = oauthTokenProvider;
         }
 
-        partial void FormatOBPv400CreateConnectorMethod(OBPv400CreateConnectorMethodRequest oBPv400CreateConnectorMethodRequest);
+        partial void FormatCreateConnectorMethod(CreateConnectorMethodRequest createConnectorMethodRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
-        /// <param name="oBPv400CreateConnectorMethodRequest"></param>
+        /// <param name="createConnectorMethodRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv400CreateConnectorMethod(OBPv400CreateConnectorMethodRequest oBPv400CreateConnectorMethodRequest)
+        private void ValidateCreateConnectorMethod(CreateConnectorMethodRequest createConnectorMethodRequest)
         {
-            if (oBPv400CreateConnectorMethodRequest == null)
-                throw new ArgumentNullException(nameof(oBPv400CreateConnectorMethodRequest));
+            if (createConnectorMethodRequest == null)
+                throw new ArgumentNullException(nameof(createConnectorMethodRequest));
         }
 
         /// <summary>
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        /// <param name="oBPv400CreateConnectorMethodRequest"></param>
-        private void AfterOBPv400CreateConnectorMethodDefaultImplementation(IOBPv400CreateConnectorMethodApiResponse apiResponseLocalVar, OBPv400CreateConnectorMethodRequest oBPv400CreateConnectorMethodRequest)
+        /// <param name="createConnectorMethodRequest"></param>
+        private void AfterCreateConnectorMethodDefaultImplementation(ICreateConnectorMethodApiResponse apiResponseLocalVar, CreateConnectorMethodRequest createConnectorMethodRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400CreateConnectorMethod(ref suppressDefaultLog, apiResponseLocalVar, oBPv400CreateConnectorMethodRequest);
+            AfterCreateConnectorMethod(ref suppressDefaultLog, apiResponseLocalVar, createConnectorMethodRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -415,8 +415,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        /// <param name="oBPv400CreateConnectorMethodRequest"></param>
-        partial void AfterOBPv400CreateConnectorMethod(ref bool suppressDefaultLog, IOBPv400CreateConnectorMethodApiResponse apiResponseLocalVar, OBPv400CreateConnectorMethodRequest oBPv400CreateConnectorMethodRequest);
+        /// <param name="createConnectorMethodRequest"></param>
+        partial void AfterCreateConnectorMethod(ref bool suppressDefaultLog, ICreateConnectorMethodApiResponse apiResponseLocalVar, CreateConnectorMethodRequest createConnectorMethodRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -424,11 +424,11 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        /// <param name="oBPv400CreateConnectorMethodRequest"></param>
-        private void OnErrorOBPv400CreateConnectorMethodDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, OBPv400CreateConnectorMethodRequest oBPv400CreateConnectorMethodRequest)
+        /// <param name="createConnectorMethodRequest"></param>
+        private void OnErrorCreateConnectorMethodDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, CreateConnectorMethodRequest createConnectorMethodRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400CreateConnectorMethod(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, oBPv400CreateConnectorMethodRequest);
+            OnErrorCreateConnectorMethod(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, createConnectorMethodRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -440,20 +440,20 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        /// <param name="oBPv400CreateConnectorMethodRequest"></param>
-        partial void OnErrorOBPv400CreateConnectorMethod(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, OBPv400CreateConnectorMethodRequest oBPv400CreateConnectorMethodRequest);
+        /// <param name="createConnectorMethodRequest"></param>
+        partial void OnErrorCreateConnectorMethod(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, CreateConnectorMethodRequest createConnectorMethodRequest);
 
         /// <summary>
         /// Create Connector Method &lt;p&gt;Create an internal connector.&lt;/p&gt; &lt;p&gt;The method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </summary>
-        /// <param name="oBPv400CreateConnectorMethodRequest">Request body</param>
+        /// <param name="createConnectorMethodRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateConnectorMethodApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateConnectorMethodApiResponse?> OBPv400CreateConnectorMethodOrDefaultAsync(OBPv400CreateConnectorMethodRequest oBPv400CreateConnectorMethodRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateConnectorMethodApiResponse"/>&gt;</returns>
+        public async Task<ICreateConnectorMethodApiResponse?> CreateConnectorMethodOrDefaultAsync(CreateConnectorMethodRequest createConnectorMethodRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400CreateConnectorMethodAsync(oBPv400CreateConnectorMethodRequest, cancellationToken).ConfigureAwait(false);
+                return await CreateConnectorMethodAsync(createConnectorMethodRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -465,18 +465,18 @@ namespace OpenBankProject.Api
         /// Create Connector Method &lt;p&gt;Create an internal connector.&lt;/p&gt; &lt;p&gt;The method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oBPv400CreateConnectorMethodRequest">Request body</param>
+        /// <param name="createConnectorMethodRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateConnectorMethodApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateConnectorMethodApiResponse> OBPv400CreateConnectorMethodAsync(OBPv400CreateConnectorMethodRequest oBPv400CreateConnectorMethodRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateConnectorMethodApiResponse"/>&gt;</returns>
+        public async Task<ICreateConnectorMethodApiResponse> CreateConnectorMethodAsync(CreateConnectorMethodRequest createConnectorMethodRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400CreateConnectorMethod(oBPv400CreateConnectorMethodRequest);
+                ValidateCreateConnectorMethod(createConnectorMethodRequest);
 
-                FormatOBPv400CreateConnectorMethod(oBPv400CreateConnectorMethodRequest);
+                FormatCreateConnectorMethod(createConnectorMethodRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -487,16 +487,16 @@ namespace OpenBankProject.Api
                         ? "/obp/v4.0.0/management/connector-methods"
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/management/connector-methods");
 
-                    httpRequestMessageLocalVar.Content = (oBPv400CreateConnectorMethodRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (createConnectorMethodRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400CreateConnectorMethodRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createConnectorMethodRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -532,8 +532,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400CreateConnectorMethodApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400CreateConnectorMethodApiResponse>();
-                        OBPv400CreateConnectorMethodApiResponse apiResponseLocalVar;
+                        ILogger<CreateConnectorMethodApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CreateConnectorMethodApiResponse>();
+                        CreateConnectorMethodApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -544,9 +544,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400CreateConnectorMethodDefaultImplementation(apiResponseLocalVar, oBPv400CreateConnectorMethodRequest);
+                        AfterCreateConnectorMethodDefaultImplementation(apiResponseLocalVar, createConnectorMethodRequest);
 
-                        Events.ExecuteOnOBPv400CreateConnectorMethod(apiResponseLocalVar);
+                        Events.ExecuteOnCreateConnectorMethod(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -558,24 +558,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400CreateConnectorMethodDefaultImplementation(e, "/obp/v4.0.0/management/connector-methods", uriBuilderLocalVar.Path, oBPv400CreateConnectorMethodRequest);
-                Events.ExecuteOnErrorOBPv400CreateConnectorMethod(e);
+                OnErrorCreateConnectorMethodDefaultImplementation(e, "/obp/v4.0.0/management/connector-methods", uriBuilderLocalVar.Path, createConnectorMethodRequest);
+                Events.ExecuteOnErrorCreateConnectorMethod(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400CreateConnectorMethodApiResponse"/>
+        /// The <see cref="CreateConnectorMethodApiResponse"/>
         /// </summary>
-        public partial class OBPv400CreateConnectorMethodApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400CreateConnectorMethodApiResponse
+        public partial class CreateConnectorMethodApiResponse : OpenBankProject.Client.ApiResponse, ICreateConnectorMethodApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400CreateConnectorMethodApiResponse> Logger { get; }
+            public ILogger<CreateConnectorMethodApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400CreateConnectorMethodApiResponse"/>
+            /// The <see cref="CreateConnectorMethodApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -584,14 +584,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400CreateConnectorMethodApiResponse(ILogger<OBPv400CreateConnectorMethodApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public CreateConnectorMethodApiResponse(ILogger<CreateConnectorMethodApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400CreateConnectorMethodApiResponse"/>
+            /// The <see cref="CreateConnectorMethodApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -600,7 +600,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400CreateConnectorMethodApiResponse(ILogger<OBPv400CreateConnectorMethodApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public CreateConnectorMethodApiResponse(ILogger<CreateConnectorMethodApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -618,11 +618,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems? Ok()
+            public OpenBankProject.Model.GetAllConnectorMethods200ResponseConnectorsMethodsInner? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetAllConnectorMethods200ResponseConnectorsMethodsInner>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -631,7 +631,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetAllConnectorMethods200ResponseConnectorsMethodsInner? result)
             {
                 result = null;
 
@@ -667,10 +667,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv400GetAllConnectorMethodsDefaultImplementation(IOBPv400GetAllConnectorMethodsApiResponse apiResponseLocalVar)
+        private void AfterGetAllConnectorMethodsDefaultImplementation(IGetAllConnectorMethodsApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetAllConnectorMethods(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterGetAllConnectorMethods(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -680,7 +680,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv400GetAllConnectorMethods(ref bool suppressDefaultLog, IOBPv400GetAllConnectorMethodsApiResponse apiResponseLocalVar);
+        partial void AfterGetAllConnectorMethods(ref bool suppressDefaultLog, IGetAllConnectorMethodsApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -688,10 +688,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv400GetAllConnectorMethodsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorGetAllConnectorMethodsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetAllConnectorMethods(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorGetAllConnectorMethods(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -703,18 +703,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv400GetAllConnectorMethods(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorGetAllConnectorMethods(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// Get all Connector Methods &lt;p&gt;Get all Connector Methods.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAllConnectorMethodsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetAllConnectorMethodsApiResponse?> OBPv400GetAllConnectorMethodsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllConnectorMethodsApiResponse"/>&gt;</returns>
+        public async Task<IGetAllConnectorMethodsApiResponse?> GetAllConnectorMethodsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetAllConnectorMethodsAsync(cancellationToken).ConfigureAwait(false);
+                return await GetAllConnectorMethodsAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -727,8 +727,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAllConnectorMethodsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetAllConnectorMethodsApiResponse> OBPv400GetAllConnectorMethodsAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllConnectorMethodsApiResponse"/>&gt;</returns>
+        public async Task<IGetAllConnectorMethodsApiResponse> GetAllConnectorMethodsAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -748,7 +748,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -775,8 +775,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400GetAllConnectorMethodsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400GetAllConnectorMethodsApiResponse>();
-                        OBPv400GetAllConnectorMethodsApiResponse apiResponseLocalVar;
+                        ILogger<GetAllConnectorMethodsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetAllConnectorMethodsApiResponse>();
+                        GetAllConnectorMethodsApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -787,9 +787,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetAllConnectorMethodsDefaultImplementation(apiResponseLocalVar);
+                        AfterGetAllConnectorMethodsDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv400GetAllConnectorMethods(apiResponseLocalVar);
+                        Events.ExecuteOnGetAllConnectorMethods(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -801,24 +801,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetAllConnectorMethodsDefaultImplementation(e, "/obp/v4.0.0/management/connector-methods", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv400GetAllConnectorMethods(e);
+                OnErrorGetAllConnectorMethodsDefaultImplementation(e, "/obp/v4.0.0/management/connector-methods", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorGetAllConnectorMethods(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400GetAllConnectorMethodsApiResponse"/>
+        /// The <see cref="GetAllConnectorMethodsApiResponse"/>
         /// </summary>
-        public partial class OBPv400GetAllConnectorMethodsApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400GetAllConnectorMethodsApiResponse
+        public partial class GetAllConnectorMethodsApiResponse : OpenBankProject.Client.ApiResponse, IGetAllConnectorMethodsApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400GetAllConnectorMethodsApiResponse> Logger { get; }
+            public ILogger<GetAllConnectorMethodsApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400GetAllConnectorMethodsApiResponse"/>
+            /// The <see cref="GetAllConnectorMethodsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -827,14 +827,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetAllConnectorMethodsApiResponse(ILogger<OBPv400GetAllConnectorMethodsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetAllConnectorMethodsApiResponse(ILogger<GetAllConnectorMethodsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400GetAllConnectorMethodsApiResponse"/>
+            /// The <see cref="GetAllConnectorMethodsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -843,7 +843,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetAllConnectorMethodsApiResponse(ILogger<OBPv400GetAllConnectorMethodsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetAllConnectorMethodsApiResponse(ILogger<GetAllConnectorMethodsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -861,11 +861,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetAllConnectorMethods200Response? Ok()
+            public OpenBankProject.Model.GetAllConnectorMethods200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetAllConnectorMethods200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetAllConnectorMethods200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -874,7 +874,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetAllConnectorMethods200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetAllConnectorMethods200Response? result)
             {
                 result = null;
 
@@ -906,14 +906,14 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400GetConnectorMethod(ref string connectormethodid);
+        partial void FormatGetConnectorMethod(ref string connectormethodid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="connectormethodid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400GetConnectorMethod(string connectormethodid)
+        private void ValidateGetConnectorMethod(string connectormethodid)
         {
             if (connectormethodid == null)
                 throw new ArgumentNullException(nameof(connectormethodid));
@@ -924,10 +924,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="connectormethodid"></param>
-        private void AfterOBPv400GetConnectorMethodDefaultImplementation(IOBPv400GetConnectorMethodApiResponse apiResponseLocalVar, string connectormethodid)
+        private void AfterGetConnectorMethodDefaultImplementation(IGetConnectorMethodApiResponse apiResponseLocalVar, string connectormethodid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetConnectorMethod(ref suppressDefaultLog, apiResponseLocalVar, connectormethodid);
+            AfterGetConnectorMethod(ref suppressDefaultLog, apiResponseLocalVar, connectormethodid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -938,7 +938,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="connectormethodid"></param>
-        partial void AfterOBPv400GetConnectorMethod(ref bool suppressDefaultLog, IOBPv400GetConnectorMethodApiResponse apiResponseLocalVar, string connectormethodid);
+        partial void AfterGetConnectorMethod(ref bool suppressDefaultLog, IGetConnectorMethodApiResponse apiResponseLocalVar, string connectormethodid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -947,10 +947,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="connectormethodid"></param>
-        private void OnErrorOBPv400GetConnectorMethodDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string connectormethodid)
+        private void OnErrorGetConnectorMethodDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string connectormethodid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetConnectorMethod(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, connectormethodid);
+            OnErrorGetConnectorMethod(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, connectormethodid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -963,19 +963,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="connectormethodid"></param>
-        partial void OnErrorOBPv400GetConnectorMethod(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string connectormethodid);
+        partial void OnErrorGetConnectorMethod(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string connectormethodid);
 
         /// <summary>
         /// Get Connector Method by Id &lt;p&gt;Get an internal connector by CONNECTOR_METHOD_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONNECTOR_METHOD_ID&lt;/a&gt;: ace0352a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </summary>
         /// <param name="connectormethodid">The CONNECTORMETHODID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetConnectorMethodApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetConnectorMethodApiResponse?> OBPv400GetConnectorMethodOrDefaultAsync(string connectormethodid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetConnectorMethodApiResponse"/>&gt;</returns>
+        public async Task<IGetConnectorMethodApiResponse?> GetConnectorMethodOrDefaultAsync(string connectormethodid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetConnectorMethodAsync(connectormethodid, cancellationToken).ConfigureAwait(false);
+                return await GetConnectorMethodAsync(connectormethodid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -989,16 +989,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="connectormethodid">The CONNECTORMETHODID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetConnectorMethodApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetConnectorMethodApiResponse> OBPv400GetConnectorMethodAsync(string connectormethodid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetConnectorMethodApiResponse"/>&gt;</returns>
+        public async Task<IGetConnectorMethodApiResponse> GetConnectorMethodAsync(string connectormethodid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400GetConnectorMethod(connectormethodid);
+                ValidateGetConnectorMethod(connectormethodid);
 
-                FormatOBPv400GetConnectorMethod(ref connectormethodid);
+                FormatGetConnectorMethod(ref connectormethodid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1015,7 +1015,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1042,8 +1042,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400GetConnectorMethodApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400GetConnectorMethodApiResponse>();
-                        OBPv400GetConnectorMethodApiResponse apiResponseLocalVar;
+                        ILogger<GetConnectorMethodApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetConnectorMethodApiResponse>();
+                        GetConnectorMethodApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1054,9 +1054,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetConnectorMethodDefaultImplementation(apiResponseLocalVar, connectormethodid);
+                        AfterGetConnectorMethodDefaultImplementation(apiResponseLocalVar, connectormethodid);
 
-                        Events.ExecuteOnOBPv400GetConnectorMethod(apiResponseLocalVar);
+                        Events.ExecuteOnGetConnectorMethod(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1068,24 +1068,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetConnectorMethodDefaultImplementation(e, "/obp/v4.0.0/management/connector-methods/{connectormethodid}", uriBuilderLocalVar.Path, connectormethodid);
-                Events.ExecuteOnErrorOBPv400GetConnectorMethod(e);
+                OnErrorGetConnectorMethodDefaultImplementation(e, "/obp/v4.0.0/management/connector-methods/{connectormethodid}", uriBuilderLocalVar.Path, connectormethodid);
+                Events.ExecuteOnErrorGetConnectorMethod(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400GetConnectorMethodApiResponse"/>
+        /// The <see cref="GetConnectorMethodApiResponse"/>
         /// </summary>
-        public partial class OBPv400GetConnectorMethodApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400GetConnectorMethodApiResponse
+        public partial class GetConnectorMethodApiResponse : OpenBankProject.Client.ApiResponse, IGetConnectorMethodApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400GetConnectorMethodApiResponse> Logger { get; }
+            public ILogger<GetConnectorMethodApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400GetConnectorMethodApiResponse"/>
+            /// The <see cref="GetConnectorMethodApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1094,14 +1094,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetConnectorMethodApiResponse(ILogger<OBPv400GetConnectorMethodApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetConnectorMethodApiResponse(ILogger<GetConnectorMethodApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400GetConnectorMethodApiResponse"/>
+            /// The <see cref="GetConnectorMethodApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1110,7 +1110,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetConnectorMethodApiResponse(ILogger<OBPv400GetConnectorMethodApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetConnectorMethodApiResponse(ILogger<GetConnectorMethodApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1128,11 +1128,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems? Ok()
+            public OpenBankProject.Model.GetAllConnectorMethods200ResponseConnectorsMethodsInner? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetAllConnectorMethods200ResponseConnectorsMethodsInner>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1141,7 +1141,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetAllConnectorMethods200ResponseConnectorsMethodsInner? result)
             {
                 result = null;
 
@@ -1173,21 +1173,165 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400UpdateConnectorMethod(ref string connectormethodid, OBPv400UpdateConnectorMethodRequest oBPv400UpdateConnectorMethodRequest);
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        private void AfterGetConnectorMethodNamesDefaultImplementation(IGetConnectorMethodNamesApiResponse apiResponseLocalVar)
+        {
+            bool suppressDefaultLog = false;
+            AfterGetConnectorMethodNames(ref suppressDefaultLog, apiResponseLocalVar);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        partial void AfterGetConnectorMethodNames(ref bool suppressDefaultLog, IGetConnectorMethodNamesApiResponse apiResponseLocalVar);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        private void OnErrorGetConnectorMethodNamesDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorGetConnectorMethodNames(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        partial void OnErrorGetConnectorMethodNames(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+
+        /// <summary>
+        /// Get Connector Method Names &lt;p&gt;Get the list of all available connector method names.&lt;/p&gt; &lt;p&gt;These are the method names that can be used in Method Routing configuration.&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#data-source\&quot; id&#x3D;\&quot;data-source\&quot;&gt;Data Source&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;The data comes from &lt;strong&gt;scanning the actual Scala connector code at runtime&lt;/strong&gt; using reflection, NOT from a database or configuration file.&lt;/p&gt; &lt;p&gt;The endpoint:&lt;br /&gt; 1. Reads the connector name from props (e.g., &lt;code&gt;connector&#x3D;mapped&lt;/code&gt;)&lt;br /&gt; 2. Gets the connector instance (e.g., LocalMappedConnector, KafkaConnector, StarConnector)&lt;br /&gt; 3. Uses Scala reflection to scan all public methods that override the base Connector trait&lt;br /&gt; 4. Filters for valid connector methods (public, has parameters, overrides base trait)&lt;br /&gt; 5. Returns the method names as a sorted list&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#which-connector\&quot; id&#x3D;\&quot;which-connector\&quot;&gt;Which Connector?&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;Depends on your &lt;code&gt;connector&lt;/code&gt; property:&lt;br /&gt; * &lt;code&gt;connector&#x3D;mapped&lt;/code&gt; → Returns methods from LocalMappedConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;kafka_vSept2018&lt;/code&gt; → Returns methods from KafkaConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;star&lt;/code&gt; → Returns methods from StarConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;rest_vMar2019&lt;/code&gt; → Returns methods from RestConnector&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#when-does-it-change\&quot; id&#x3D;\&quot;when-does-it-change\&quot;&gt;When Does It Change?&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;The list only changes when:&lt;br /&gt; * Code is deployed with new/modified connector methods&lt;br /&gt; * The &lt;code&gt;connector&lt;/code&gt; property is changed to point to a different connector&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#performance\&quot; id&#x3D;\&quot;performance\&quot;&gt;Performance&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;This endpoint uses caching (default: 1 hour) because Scala reflection is expensive.&lt;br /&gt; Configure via: &lt;code&gt;getConnectorMethodNames.cache.ttl.seconds&#x3D;3600&lt;/code&gt;&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#use-case\&quot; id&#x3D;\&quot;use-case\&quot;&gt;Use Case&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;Use this endpoint to discover which connector methods are available when configuring Method Routing.&lt;br /&gt; These method names are different from API endpoint operation IDs (which you get from /resource-docs).&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;CanGetSystemConnectorMethodNames entitlement is required.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;connector_method_names&lt;/strong&gt;&lt;/a&gt;: connector_method_names&lt;/p&gt; 
+        /// </summary>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetConnectorMethodNamesApiResponse"/>&gt;</returns>
+        public async Task<IGetConnectorMethodNamesApiResponse?> GetConnectorMethodNamesOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await GetConnectorMethodNamesAsync(cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Get Connector Method Names &lt;p&gt;Get the list of all available connector method names.&lt;/p&gt; &lt;p&gt;These are the method names that can be used in Method Routing configuration.&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#data-source\&quot; id&#x3D;\&quot;data-source\&quot;&gt;Data Source&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;The data comes from &lt;strong&gt;scanning the actual Scala connector code at runtime&lt;/strong&gt; using reflection, NOT from a database or configuration file.&lt;/p&gt; &lt;p&gt;The endpoint:&lt;br /&gt; 1. Reads the connector name from props (e.g., &lt;code&gt;connector&#x3D;mapped&lt;/code&gt;)&lt;br /&gt; 2. Gets the connector instance (e.g., LocalMappedConnector, KafkaConnector, StarConnector)&lt;br /&gt; 3. Uses Scala reflection to scan all public methods that override the base Connector trait&lt;br /&gt; 4. Filters for valid connector methods (public, has parameters, overrides base trait)&lt;br /&gt; 5. Returns the method names as a sorted list&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#which-connector\&quot; id&#x3D;\&quot;which-connector\&quot;&gt;Which Connector?&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;Depends on your &lt;code&gt;connector&lt;/code&gt; property:&lt;br /&gt; * &lt;code&gt;connector&#x3D;mapped&lt;/code&gt; → Returns methods from LocalMappedConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;kafka_vSept2018&lt;/code&gt; → Returns methods from KafkaConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;star&lt;/code&gt; → Returns methods from StarConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;rest_vMar2019&lt;/code&gt; → Returns methods from RestConnector&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#when-does-it-change\&quot; id&#x3D;\&quot;when-does-it-change\&quot;&gt;When Does It Change?&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;The list only changes when:&lt;br /&gt; * Code is deployed with new/modified connector methods&lt;br /&gt; * The &lt;code&gt;connector&lt;/code&gt; property is changed to point to a different connector&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#performance\&quot; id&#x3D;\&quot;performance\&quot;&gt;Performance&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;This endpoint uses caching (default: 1 hour) because Scala reflection is expensive.&lt;br /&gt; Configure via: &lt;code&gt;getConnectorMethodNames.cache.ttl.seconds&#x3D;3600&lt;/code&gt;&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#use-case\&quot; id&#x3D;\&quot;use-case\&quot;&gt;Use Case&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;Use this endpoint to discover which connector methods are available when configuring Method Routing.&lt;br /&gt; These method names are different from API endpoint operation IDs (which you get from /resource-docs).&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;CanGetSystemConnectorMethodNames entitlement is required.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;connector_method_names&lt;/strong&gt;&lt;/a&gt;: connector_method_names&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetConnectorMethodNamesApiResponse"/>&gt;</returns>
+        public async Task<IGetConnectorMethodNamesApiResponse> GetConnectorMethodNamesAsync(System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v6.0.0/system/connector-method-names"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v6.0.0/system/connector-method-names");
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    string[] acceptLocalVars = new string[] {
+                        "application/json"
+                    };
+
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
+
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Get;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<APIApi.GetConnectorMethodNamesApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.GetConnectorMethodNamesApiResponse>();
+                        APIApi.GetConnectorMethodNamesApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v6.0.0/system/connector-method-names", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterGetConnectorMethodNamesDefaultImplementation(apiResponseLocalVar);
+
+                        Events.ExecuteOnGetConnectorMethodNames(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorGetConnectorMethodNamesDefaultImplementation(e, "/obp/v6.0.0/system/connector-method-names", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorGetConnectorMethodNames(e);
+                throw;
+            }
+        }
+
+        partial void FormatUpdateConnectorMethod(ref string connectormethodid, UpdateConnectorMethodRequest updateConnectorMethodRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="connectormethodid"></param>
-        /// <param name="oBPv400UpdateConnectorMethodRequest"></param>
+        /// <param name="updateConnectorMethodRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv400UpdateConnectorMethod(string connectormethodid, OBPv400UpdateConnectorMethodRequest oBPv400UpdateConnectorMethodRequest)
+        private void ValidateUpdateConnectorMethod(string connectormethodid, UpdateConnectorMethodRequest updateConnectorMethodRequest)
         {
             if (connectormethodid == null)
                 throw new ArgumentNullException(nameof(connectormethodid));
 
-            if (oBPv400UpdateConnectorMethodRequest == null)
-                throw new ArgumentNullException(nameof(oBPv400UpdateConnectorMethodRequest));
+            if (updateConnectorMethodRequest == null)
+                throw new ArgumentNullException(nameof(updateConnectorMethodRequest));
         }
 
         /// <summary>
@@ -1195,11 +1339,11 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="connectormethodid"></param>
-        /// <param name="oBPv400UpdateConnectorMethodRequest"></param>
-        private void AfterOBPv400UpdateConnectorMethodDefaultImplementation(IOBPv400UpdateConnectorMethodApiResponse apiResponseLocalVar, string connectormethodid, OBPv400UpdateConnectorMethodRequest oBPv400UpdateConnectorMethodRequest)
+        /// <param name="updateConnectorMethodRequest"></param>
+        private void AfterUpdateConnectorMethodDefaultImplementation(IUpdateConnectorMethodApiResponse apiResponseLocalVar, string connectormethodid, UpdateConnectorMethodRequest updateConnectorMethodRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400UpdateConnectorMethod(ref suppressDefaultLog, apiResponseLocalVar, connectormethodid, oBPv400UpdateConnectorMethodRequest);
+            AfterUpdateConnectorMethod(ref suppressDefaultLog, apiResponseLocalVar, connectormethodid, updateConnectorMethodRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1210,8 +1354,8 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="connectormethodid"></param>
-        /// <param name="oBPv400UpdateConnectorMethodRequest"></param>
-        partial void AfterOBPv400UpdateConnectorMethod(ref bool suppressDefaultLog, IOBPv400UpdateConnectorMethodApiResponse apiResponseLocalVar, string connectormethodid, OBPv400UpdateConnectorMethodRequest oBPv400UpdateConnectorMethodRequest);
+        /// <param name="updateConnectorMethodRequest"></param>
+        partial void AfterUpdateConnectorMethod(ref bool suppressDefaultLog, IUpdateConnectorMethodApiResponse apiResponseLocalVar, string connectormethodid, UpdateConnectorMethodRequest updateConnectorMethodRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1220,11 +1364,11 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="connectormethodid"></param>
-        /// <param name="oBPv400UpdateConnectorMethodRequest"></param>
-        private void OnErrorOBPv400UpdateConnectorMethodDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string connectormethodid, OBPv400UpdateConnectorMethodRequest oBPv400UpdateConnectorMethodRequest)
+        /// <param name="updateConnectorMethodRequest"></param>
+        private void OnErrorUpdateConnectorMethodDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string connectormethodid, UpdateConnectorMethodRequest updateConnectorMethodRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400UpdateConnectorMethod(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, connectormethodid, oBPv400UpdateConnectorMethodRequest);
+            OnErrorUpdateConnectorMethod(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, connectormethodid, updateConnectorMethodRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1237,21 +1381,21 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="connectormethodid"></param>
-        /// <param name="oBPv400UpdateConnectorMethodRequest"></param>
-        partial void OnErrorOBPv400UpdateConnectorMethod(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string connectormethodid, OBPv400UpdateConnectorMethodRequest oBPv400UpdateConnectorMethodRequest);
+        /// <param name="updateConnectorMethodRequest"></param>
+        partial void OnErrorUpdateConnectorMethod(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string connectormethodid, UpdateConnectorMethodRequest updateConnectorMethodRequest);
 
         /// <summary>
         /// Update Connector Method &lt;p&gt;Update an internal connector.&lt;/p&gt; &lt;p&gt;The method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONNECTOR_METHOD_ID&lt;/a&gt;: ace0352a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </summary>
         /// <param name="connectormethodid">The CONNECTORMETHODID identifier</param>
-        /// <param name="oBPv400UpdateConnectorMethodRequest">Request body</param>
+        /// <param name="updateConnectorMethodRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateConnectorMethodApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400UpdateConnectorMethodApiResponse?> OBPv400UpdateConnectorMethodOrDefaultAsync(string connectormethodid, OBPv400UpdateConnectorMethodRequest oBPv400UpdateConnectorMethodRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateConnectorMethodApiResponse"/>&gt;</returns>
+        public async Task<IUpdateConnectorMethodApiResponse?> UpdateConnectorMethodOrDefaultAsync(string connectormethodid, UpdateConnectorMethodRequest updateConnectorMethodRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400UpdateConnectorMethodAsync(connectormethodid, oBPv400UpdateConnectorMethodRequest, cancellationToken).ConfigureAwait(false);
+                return await UpdateConnectorMethodAsync(connectormethodid, updateConnectorMethodRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1264,18 +1408,18 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="connectormethodid">The CONNECTORMETHODID identifier</param>
-        /// <param name="oBPv400UpdateConnectorMethodRequest">Request body</param>
+        /// <param name="updateConnectorMethodRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateConnectorMethodApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400UpdateConnectorMethodApiResponse> OBPv400UpdateConnectorMethodAsync(string connectormethodid, OBPv400UpdateConnectorMethodRequest oBPv400UpdateConnectorMethodRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateConnectorMethodApiResponse"/>&gt;</returns>
+        public async Task<IUpdateConnectorMethodApiResponse> UpdateConnectorMethodAsync(string connectormethodid, UpdateConnectorMethodRequest updateConnectorMethodRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400UpdateConnectorMethod(connectormethodid, oBPv400UpdateConnectorMethodRequest);
+                ValidateUpdateConnectorMethod(connectormethodid, updateConnectorMethodRequest);
 
-                FormatOBPv400UpdateConnectorMethod(ref connectormethodid, oBPv400UpdateConnectorMethodRequest);
+                FormatUpdateConnectorMethod(ref connectormethodid, updateConnectorMethodRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1287,16 +1431,16 @@ namespace OpenBankProject.Api
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/management/connector-methods/{connectormethodid}");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bconnectormethodid%7D", Uri.EscapeDataString(connectormethodid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv400UpdateConnectorMethodRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (updateConnectorMethodRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400UpdateConnectorMethodRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateConnectorMethodRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1332,8 +1476,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400UpdateConnectorMethodApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400UpdateConnectorMethodApiResponse>();
-                        OBPv400UpdateConnectorMethodApiResponse apiResponseLocalVar;
+                        ILogger<UpdateConnectorMethodApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<UpdateConnectorMethodApiResponse>();
+                        UpdateConnectorMethodApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1344,9 +1488,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400UpdateConnectorMethodDefaultImplementation(apiResponseLocalVar, connectormethodid, oBPv400UpdateConnectorMethodRequest);
+                        AfterUpdateConnectorMethodDefaultImplementation(apiResponseLocalVar, connectormethodid, updateConnectorMethodRequest);
 
-                        Events.ExecuteOnOBPv400UpdateConnectorMethod(apiResponseLocalVar);
+                        Events.ExecuteOnUpdateConnectorMethod(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1358,24 +1502,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400UpdateConnectorMethodDefaultImplementation(e, "/obp/v4.0.0/management/connector-methods/{connectormethodid}", uriBuilderLocalVar.Path, connectormethodid, oBPv400UpdateConnectorMethodRequest);
-                Events.ExecuteOnErrorOBPv400UpdateConnectorMethod(e);
+                OnErrorUpdateConnectorMethodDefaultImplementation(e, "/obp/v4.0.0/management/connector-methods/{connectormethodid}", uriBuilderLocalVar.Path, connectormethodid, updateConnectorMethodRequest);
+                Events.ExecuteOnErrorUpdateConnectorMethod(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400UpdateConnectorMethodApiResponse"/>
+        /// The <see cref="UpdateConnectorMethodApiResponse"/>
         /// </summary>
-        public partial class OBPv400UpdateConnectorMethodApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400UpdateConnectorMethodApiResponse
+        public partial class UpdateConnectorMethodApiResponse : OpenBankProject.Client.ApiResponse, IUpdateConnectorMethodApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400UpdateConnectorMethodApiResponse> Logger { get; }
+            public ILogger<UpdateConnectorMethodApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400UpdateConnectorMethodApiResponse"/>
+            /// The <see cref="UpdateConnectorMethodApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1384,14 +1528,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400UpdateConnectorMethodApiResponse(ILogger<OBPv400UpdateConnectorMethodApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public UpdateConnectorMethodApiResponse(ILogger<UpdateConnectorMethodApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400UpdateConnectorMethodApiResponse"/>
+            /// The <see cref="UpdateConnectorMethodApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1400,7 +1544,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400UpdateConnectorMethodApiResponse(ILogger<OBPv400UpdateConnectorMethodApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public UpdateConnectorMethodApiResponse(ILogger<UpdateConnectorMethodApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1418,11 +1562,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems? Ok()
+            public OpenBankProject.Model.GetAllConnectorMethods200ResponseConnectorsMethodsInner? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetAllConnectorMethods200ResponseConnectorsMethodsInner>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1431,7 +1575,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetAllConnectorMethods200ResponseConnectorsMethodsInner? result)
             {
                 result = null;
 
@@ -1461,150 +1605,6 @@ namespace OpenBankProject.Api
             }
 
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv600GetConnectorMethodNamesDefaultImplementation(IOBPv600GetConnectorMethodNamesApiResponse apiResponseLocalVar)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv600GetConnectorMethodNames(ref suppressDefaultLog, apiResponseLocalVar);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv600GetConnectorMethodNames(ref bool suppressDefaultLog, IOBPv600GetConnectorMethodNamesApiResponse apiResponseLocalVar);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv600GetConnectorMethodNamesDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600GetConnectorMethodNames(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv600GetConnectorMethodNames(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
-
-        /// <summary>
-        /// Get Connector Method Names &lt;p&gt;Get the list of all available connector method names.&lt;/p&gt; &lt;p&gt;These are the method names that can be used in Method Routing configuration.&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#data-source\&quot; id&#x3D;\&quot;data-source\&quot;&gt;Data Source&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;The data comes from &lt;strong&gt;scanning the actual Scala connector code at runtime&lt;/strong&gt; using reflection, NOT from a database or configuration file.&lt;/p&gt; &lt;p&gt;The endpoint:&lt;br /&gt; 1. Reads the connector name from props (e.g., &lt;code&gt;connector&#x3D;mapped&lt;/code&gt;)&lt;br /&gt; 2. Gets the connector instance (e.g., LocalMappedConnector, KafkaConnector, StarConnector)&lt;br /&gt; 3. Uses Scala reflection to scan all public methods that override the base Connector trait&lt;br /&gt; 4. Filters for valid connector methods (public, has parameters, overrides base trait)&lt;br /&gt; 5. Returns the method names as a sorted list&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#which-connector\&quot; id&#x3D;\&quot;which-connector\&quot;&gt;Which Connector?&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;Depends on your &lt;code&gt;connector&lt;/code&gt; property:&lt;br /&gt; * &lt;code&gt;connector&#x3D;mapped&lt;/code&gt; → Returns methods from LocalMappedConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;kafka_vSept2018&lt;/code&gt; → Returns methods from KafkaConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;star&lt;/code&gt; → Returns methods from StarConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;rest_vMar2019&lt;/code&gt; → Returns methods from RestConnector&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#when-does-it-change\&quot; id&#x3D;\&quot;when-does-it-change\&quot;&gt;When Does It Change?&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;The list only changes when:&lt;br /&gt; * Code is deployed with new/modified connector methods&lt;br /&gt; * The &lt;code&gt;connector&lt;/code&gt; property is changed to point to a different connector&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#performance\&quot; id&#x3D;\&quot;performance\&quot;&gt;Performance&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;This endpoint uses caching (default: 1 hour) because Scala reflection is expensive.&lt;br /&gt; Configure via: &lt;code&gt;getConnectorMethodNames.cache.ttl.seconds&#x3D;3600&lt;/code&gt;&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#use-case\&quot; id&#x3D;\&quot;use-case\&quot;&gt;Use Case&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;Use this endpoint to discover which connector methods are available when configuring Method Routing.&lt;br /&gt; These method names are different from API endpoint operation IDs (which you get from /resource-docs).&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;CanGetSystemConnectorMethodNames entitlement is required.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;connector_method_names&lt;/strong&gt;&lt;/a&gt;: connector_method_names&lt;/p&gt; 
-        /// </summary>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetConnectorMethodNamesApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetConnectorMethodNamesApiResponse?> OBPv600GetConnectorMethodNamesOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv600GetConnectorMethodNamesAsync(cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Get Connector Method Names &lt;p&gt;Get the list of all available connector method names.&lt;/p&gt; &lt;p&gt;These are the method names that can be used in Method Routing configuration.&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#data-source\&quot; id&#x3D;\&quot;data-source\&quot;&gt;Data Source&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;The data comes from &lt;strong&gt;scanning the actual Scala connector code at runtime&lt;/strong&gt; using reflection, NOT from a database or configuration file.&lt;/p&gt; &lt;p&gt;The endpoint:&lt;br /&gt; 1. Reads the connector name from props (e.g., &lt;code&gt;connector&#x3D;mapped&lt;/code&gt;)&lt;br /&gt; 2. Gets the connector instance (e.g., LocalMappedConnector, KafkaConnector, StarConnector)&lt;br /&gt; 3. Uses Scala reflection to scan all public methods that override the base Connector trait&lt;br /&gt; 4. Filters for valid connector methods (public, has parameters, overrides base trait)&lt;br /&gt; 5. Returns the method names as a sorted list&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#which-connector\&quot; id&#x3D;\&quot;which-connector\&quot;&gt;Which Connector?&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;Depends on your &lt;code&gt;connector&lt;/code&gt; property:&lt;br /&gt; * &lt;code&gt;connector&#x3D;mapped&lt;/code&gt; → Returns methods from LocalMappedConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;kafka_vSept2018&lt;/code&gt; → Returns methods from KafkaConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;star&lt;/code&gt; → Returns methods from StarConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;rest_vMar2019&lt;/code&gt; → Returns methods from RestConnector&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#when-does-it-change\&quot; id&#x3D;\&quot;when-does-it-change\&quot;&gt;When Does It Change?&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;The list only changes when:&lt;br /&gt; * Code is deployed with new/modified connector methods&lt;br /&gt; * The &lt;code&gt;connector&lt;/code&gt; property is changed to point to a different connector&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#performance\&quot; id&#x3D;\&quot;performance\&quot;&gt;Performance&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;This endpoint uses caching (default: 1 hour) because Scala reflection is expensive.&lt;br /&gt; Configure via: &lt;code&gt;getConnectorMethodNames.cache.ttl.seconds&#x3D;3600&lt;/code&gt;&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#use-case\&quot; id&#x3D;\&quot;use-case\&quot;&gt;Use Case&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;Use this endpoint to discover which connector methods are available when configuring Method Routing.&lt;br /&gt; These method names are different from API endpoint operation IDs (which you get from /resource-docs).&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;CanGetSystemConnectorMethodNames entitlement is required.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;connector_method_names&lt;/strong&gt;&lt;/a&gt;: connector_method_names&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetConnectorMethodNamesApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetConnectorMethodNamesApiResponse> OBPv600GetConnectorMethodNamesAsync(System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v6.0.0/system/connector-method-names"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v6.0.0/system/connector-method-names");
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Get;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<APIApi.OBPv600GetConnectorMethodNamesApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv600GetConnectorMethodNamesApiResponse>();
-                        APIApi.OBPv600GetConnectorMethodNamesApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v6.0.0/system/connector-method-names", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv600GetConnectorMethodNamesDefaultImplementation(apiResponseLocalVar);
-
-                        Events.ExecuteOnOBPv600GetConnectorMethodNames(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv600GetConnectorMethodNamesDefaultImplementation(e, "/obp/v6.0.0/system/connector-method-names", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv600GetConnectorMethodNames(e);
-                throw;
-            }
         }
     }
 }

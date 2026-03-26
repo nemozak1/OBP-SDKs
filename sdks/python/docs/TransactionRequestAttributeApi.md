@@ -4,17 +4,17 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv4_0_0_create_or_update_transaction_request_attribute_definition**](TransactionRequestAttributeApi.md#o_bpv4_0_0_create_or_update_transaction_request_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Create or Update Transaction Request Attribute Definition
-[**o_bpv4_0_0_create_transaction_request_attribute**](TransactionRequestAttributeApi.md#o_bpv4_0_0_create_transaction_request_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attribute | Create Transaction Request Attribute
-[**o_bpv4_0_0_delete_transaction_request_attribute_definition**](TransactionRequestAttributeApi.md#o_bpv4_0_0_delete_transaction_request_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction-request | Delete Transaction Request Attribute Definition
-[**o_bpv4_0_0_get_transaction_request_attribute_by_id**](TransactionRequestAttributeApi.md#o_bpv4_0_0_get_transaction_request_attribute_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Get Transaction Request Attribute By Id
-[**o_bpv4_0_0_get_transaction_request_attribute_definition**](TransactionRequestAttributeApi.md#o_bpv4_0_0_get_transaction_request_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Get Transaction Request Attribute Definition
-[**o_bpv4_0_0_get_transaction_request_attributes**](TransactionRequestAttributeApi.md#o_bpv4_0_0_get_transaction_request_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes | Get Transaction Request Attributes
-[**o_bpv4_0_0_update_transaction_request_attribute**](TransactionRequestAttributeApi.md#o_bpv4_0_0_update_transaction_request_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Update Transaction Request Attribute
+[**create_or_update_transaction_request_attribute_definition**](TransactionRequestAttributeApi.md#create_or_update_transaction_request_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Create or Update Transaction Request Attribute Definition
+[**create_transaction_request_attribute**](TransactionRequestAttributeApi.md#create_transaction_request_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attribute | Create Transaction Request Attribute
+[**delete_transaction_request_attribute_definition**](TransactionRequestAttributeApi.md#delete_transaction_request_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction-request | Delete Transaction Request Attribute Definition
+[**get_transaction_request_attribute_by_id**](TransactionRequestAttributeApi.md#get_transaction_request_attribute_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Get Transaction Request Attribute By Id
+[**get_transaction_request_attribute_definition**](TransactionRequestAttributeApi.md#get_transaction_request_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Get Transaction Request Attribute Definition
+[**get_transaction_request_attributes**](TransactionRequestAttributeApi.md#get_transaction_request_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes | Get Transaction Request Attributes
+[**update_transaction_request_attribute**](TransactionRequestAttributeApi.md#update_transaction_request_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Update Transaction Request Attribute
 
 
-# **o_bpv4_0_0_create_or_update_transaction_request_attribute_definition**
-> OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner o_bpv4_0_0_create_or_update_transaction_request_attribute_definition(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request)
+# **create_or_update_transaction_request_attribute_definition**
+> GetTransactionRequestAttributeDefinition200ResponseAttributesInner create_or_update_transaction_request_attribute_definition(bankid, create_or_update_transaction_request_attribute_definition_request)
 
 Create or Update Transaction Request Attribute Definition
 
@@ -44,8 +44,8 @@ Create or Update Transaction Request Attribute Definition
 
 ```python
 import obp_python
-from obp_python.models.obpv400_create_or_update_transaction_request_attribute_definition_request import OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
-from obp_python.models.obpv400_get_transaction_request_attribute_definition200_response_attributes_inner import OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner
+from obp_python.models.create_or_update_transaction_request_attribute_definition_request import CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+from obp_python.models.get_transaction_request_attribute_definition200_response_attributes_inner import GetTransactionRequestAttributeDefinition200ResponseAttributesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -79,15 +79,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.TransactionRequestAttributeApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
-    obpv400_create_or_update_transaction_request_attribute_definition_request = {"type":"object","properties":{"can_be_seen_on_views":{"type":"array","items":{"type":"string"}},"description":{"type":"string"},"is_active":{"type":"boolean"},"name":{"type":"string"},"type":{"type":"string"},"category":{"type":"string"},"alias":{"type":"string"}}} # OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+    create_or_update_transaction_request_attribute_definition_request = {"type":"object","properties":{"can_be_seen_on_views":{"type":"array","items":{"type":"string"}},"description":{"type":"string"},"is_active":{"type":"boolean"},"name":{"type":"string"},"type":{"type":"string"},"category":{"type":"string"},"alias":{"type":"string"}}} # CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
 
     try:
         # Create or Update Transaction Request Attribute Definition
-        api_response = api_instance.o_bpv4_0_0_create_or_update_transaction_request_attribute_definition(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request)
-        print("The response of TransactionRequestAttributeApi->o_bpv4_0_0_create_or_update_transaction_request_attribute_definition:\n")
+        api_response = api_instance.create_or_update_transaction_request_attribute_definition(bankid, create_or_update_transaction_request_attribute_definition_request)
+        print("The response of TransactionRequestAttributeApi->create_or_update_transaction_request_attribute_definition:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TransactionRequestAttributeApi->o_bpv4_0_0_create_or_update_transaction_request_attribute_definition: %s\n" % e)
+        print("Exception when calling TransactionRequestAttributeApi->create_or_update_transaction_request_attribute_definition: %s\n" % e)
 ```
 
 
@@ -98,11 +98,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
- **obpv400_create_or_update_transaction_request_attribute_definition_request** | [**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | 
+ **create_or_update_transaction_request_attribute_definition_request** | [**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
+[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
 
 ### Authorization
 
@@ -123,8 +123,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_create_transaction_request_attribute**
-> OBPv400GetTransactionRequestAttributeById200Response o_bpv4_0_0_create_transaction_request_attribute(bankid, accountid, transactionrequestid, obpv400_create_transaction_request_counterparty_request_attributes_inner)
+# **create_transaction_request_attribute**
+> GetTransactionRequestAttributeById200Response create_transaction_request_attribute(bankid, accountid, transactionrequestid, create_transaction_request_counterparty_request_attributes_inner)
 
 Create Transaction Request Attribute
 
@@ -154,8 +154,8 @@ Create Transaction Request Attribute
 
 ```python
 import obp_python
-from obp_python.models.obpv400_create_transaction_request_counterparty_request_attributes_inner import OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner
-from obp_python.models.obpv400_get_transaction_request_attribute_by_id200_response import OBPv400GetTransactionRequestAttributeById200Response
+from obp_python.models.create_transaction_request_counterparty_request_attributes_inner import CreateTransactionRequestCounterpartyRequestAttributesInner
+from obp_python.models.get_transaction_request_attribute_by_id200_response import GetTransactionRequestAttributeById200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -191,15 +191,15 @@ with obp_python.ApiClient(configuration) as api_client:
     bankid = 'bankid_example' # str | The BANKID identifier
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     transactionrequestid = 'transactionrequestid_example' # str | The TRANSACTIONREQUESTID identifier
-    obpv400_create_transaction_request_counterparty_request_attributes_inner = {type=object, properties={attribute_type={type=string}, name={type=string}, value={type=string}}} # OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner | Request body
+    create_transaction_request_counterparty_request_attributes_inner = {type=object, properties={attribute_type={type=string}, name={type=string}, value={type=string}}} # CreateTransactionRequestCounterpartyRequestAttributesInner | Request body
 
     try:
         # Create Transaction Request Attribute
-        api_response = api_instance.o_bpv4_0_0_create_transaction_request_attribute(bankid, accountid, transactionrequestid, obpv400_create_transaction_request_counterparty_request_attributes_inner)
-        print("The response of TransactionRequestAttributeApi->o_bpv4_0_0_create_transaction_request_attribute:\n")
+        api_response = api_instance.create_transaction_request_attribute(bankid, accountid, transactionrequestid, create_transaction_request_counterparty_request_attributes_inner)
+        print("The response of TransactionRequestAttributeApi->create_transaction_request_attribute:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TransactionRequestAttributeApi->o_bpv4_0_0_create_transaction_request_attribute: %s\n" % e)
+        print("Exception when calling TransactionRequestAttributeApi->create_transaction_request_attribute: %s\n" % e)
 ```
 
 
@@ -212,11 +212,11 @@ Name | Type | Description  | Notes
  **bankid** | **str**| The BANKID identifier | 
  **accountid** | **str**| The ACCOUNTID identifier | 
  **transactionrequestid** | **str**| The TRANSACTIONREQUESTID identifier | 
- **obpv400_create_transaction_request_counterparty_request_attributes_inner** | [**OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner**](OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner.md)| Request body | 
+ **create_transaction_request_counterparty_request_attributes_inner** | [**CreateTransactionRequestCounterpartyRequestAttributesInner**](CreateTransactionRequestCounterpartyRequestAttributesInner.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeById200Response**](OBPv400GetTransactionRequestAttributeById200Response.md)
+[**GetTransactionRequestAttributeById200Response**](GetTransactionRequestAttributeById200Response.md)
 
 ### Authorization
 
@@ -237,8 +237,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_delete_transaction_request_attribute_definition**
-> OBPv400DeleteSystemLevelEndpointTag200Response o_bpv4_0_0_delete_transaction_request_attribute_definition(bankid, attributedefinitionid)
+# **delete_transaction_request_attribute_definition**
+> DeleteSystemLevelEndpointTag200Response delete_transaction_request_attribute_definition(bankid, attributedefinitionid)
 
 Delete Transaction Request Attribute Definition
 
@@ -258,7 +258,7 @@ Delete Transaction Request Attribute Definition
 
 ```python
 import obp_python
-from obp_python.models.obpv400_delete_system_level_endpoint_tag200_response import OBPv400DeleteSystemLevelEndpointTag200Response
+from obp_python.models.delete_system_level_endpoint_tag200_response import DeleteSystemLevelEndpointTag200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -296,11 +296,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete Transaction Request Attribute Definition
-        api_response = api_instance.o_bpv4_0_0_delete_transaction_request_attribute_definition(bankid, attributedefinitionid)
-        print("The response of TransactionRequestAttributeApi->o_bpv4_0_0_delete_transaction_request_attribute_definition:\n")
+        api_response = api_instance.delete_transaction_request_attribute_definition(bankid, attributedefinitionid)
+        print("The response of TransactionRequestAttributeApi->delete_transaction_request_attribute_definition:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TransactionRequestAttributeApi->o_bpv4_0_0_delete_transaction_request_attribute_definition: %s\n" % e)
+        print("Exception when calling TransactionRequestAttributeApi->delete_transaction_request_attribute_definition: %s\n" % e)
 ```
 
 
@@ -315,7 +315,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400DeleteSystemLevelEndpointTag200Response**](OBPv400DeleteSystemLevelEndpointTag200Response.md)
+[**DeleteSystemLevelEndpointTag200Response**](DeleteSystemLevelEndpointTag200Response.md)
 
 ### Authorization
 
@@ -336,8 +336,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_get_transaction_request_attribute_by_id**
-> OBPv400GetTransactionRequestAttributeById200Response o_bpv4_0_0_get_transaction_request_attribute_by_id(bankid, accountid, transactionrequestid, attributeid)
+# **get_transaction_request_attribute_by_id**
+> GetTransactionRequestAttributeById200Response get_transaction_request_attribute_by_id(bankid, accountid, transactionrequestid, attributeid)
 
 Get Transaction Request Attribute By Id
 
@@ -363,7 +363,7 @@ Get Transaction Request Attribute By Id
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_transaction_request_attribute_by_id200_response import OBPv400GetTransactionRequestAttributeById200Response
+from obp_python.models.get_transaction_request_attribute_by_id200_response import GetTransactionRequestAttributeById200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -403,11 +403,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Transaction Request Attribute By Id
-        api_response = api_instance.o_bpv4_0_0_get_transaction_request_attribute_by_id(bankid, accountid, transactionrequestid, attributeid)
-        print("The response of TransactionRequestAttributeApi->o_bpv4_0_0_get_transaction_request_attribute_by_id:\n")
+        api_response = api_instance.get_transaction_request_attribute_by_id(bankid, accountid, transactionrequestid, attributeid)
+        print("The response of TransactionRequestAttributeApi->get_transaction_request_attribute_by_id:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TransactionRequestAttributeApi->o_bpv4_0_0_get_transaction_request_attribute_by_id: %s\n" % e)
+        print("Exception when calling TransactionRequestAttributeApi->get_transaction_request_attribute_by_id: %s\n" % e)
 ```
 
 
@@ -424,7 +424,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeById200Response**](OBPv400GetTransactionRequestAttributeById200Response.md)
+[**GetTransactionRequestAttributeById200Response**](GetTransactionRequestAttributeById200Response.md)
 
 ### Authorization
 
@@ -445,8 +445,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_get_transaction_request_attribute_definition**
-> OBPv400GetTransactionRequestAttributeDefinition200Response o_bpv4_0_0_get_transaction_request_attribute_definition(bankid)
+# **get_transaction_request_attribute_definition**
+> GetTransactionRequestAttributeDefinition200Response get_transaction_request_attribute_definition(bankid)
 
 Get Transaction Request Attribute Definition
 
@@ -475,7 +475,7 @@ Get Transaction Request Attribute Definition
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_transaction_request_attribute_definition200_response import OBPv400GetTransactionRequestAttributeDefinition200Response
+from obp_python.models.get_transaction_request_attribute_definition200_response import GetTransactionRequestAttributeDefinition200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -512,11 +512,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Transaction Request Attribute Definition
-        api_response = api_instance.o_bpv4_0_0_get_transaction_request_attribute_definition(bankid)
-        print("The response of TransactionRequestAttributeApi->o_bpv4_0_0_get_transaction_request_attribute_definition:\n")
+        api_response = api_instance.get_transaction_request_attribute_definition(bankid)
+        print("The response of TransactionRequestAttributeApi->get_transaction_request_attribute_definition:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TransactionRequestAttributeApi->o_bpv4_0_0_get_transaction_request_attribute_definition: %s\n" % e)
+        print("Exception when calling TransactionRequestAttributeApi->get_transaction_request_attribute_definition: %s\n" % e)
 ```
 
 
@@ -530,7 +530,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200Response**](OBPv400GetTransactionRequestAttributeDefinition200Response.md)
+[**GetTransactionRequestAttributeDefinition200Response**](GetTransactionRequestAttributeDefinition200Response.md)
 
 ### Authorization
 
@@ -551,8 +551,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_get_transaction_request_attributes**
-> OBPv400GetTransactionRequestAttributes200Response o_bpv4_0_0_get_transaction_request_attributes(bankid, accountid, transactionrequestid)
+# **get_transaction_request_attributes**
+> GetTransactionRequestAttributes200Response get_transaction_request_attributes(bankid, accountid, transactionrequestid)
 
 Get Transaction Request Attributes
 
@@ -578,7 +578,7 @@ Get Transaction Request Attributes
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_transaction_request_attributes200_response import OBPv400GetTransactionRequestAttributes200Response
+from obp_python.models.get_transaction_request_attributes200_response import GetTransactionRequestAttributes200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -617,11 +617,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Transaction Request Attributes
-        api_response = api_instance.o_bpv4_0_0_get_transaction_request_attributes(bankid, accountid, transactionrequestid)
-        print("The response of TransactionRequestAttributeApi->o_bpv4_0_0_get_transaction_request_attributes:\n")
+        api_response = api_instance.get_transaction_request_attributes(bankid, accountid, transactionrequestid)
+        print("The response of TransactionRequestAttributeApi->get_transaction_request_attributes:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TransactionRequestAttributeApi->o_bpv4_0_0_get_transaction_request_attributes: %s\n" % e)
+        print("Exception when calling TransactionRequestAttributeApi->get_transaction_request_attributes: %s\n" % e)
 ```
 
 
@@ -637,7 +637,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributes200Response**](OBPv400GetTransactionRequestAttributes200Response.md)
+[**GetTransactionRequestAttributes200Response**](GetTransactionRequestAttributes200Response.md)
 
 ### Authorization
 
@@ -658,8 +658,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_update_transaction_request_attribute**
-> OBPv400GetTransactionRequestAttributeById200Response o_bpv4_0_0_update_transaction_request_attribute(bankid, accountid, transactionrequestid, attributeid, obpv400_create_transaction_request_counterparty_request_attributes_inner)
+# **update_transaction_request_attribute**
+> GetTransactionRequestAttributeById200Response update_transaction_request_attribute(bankid, accountid, transactionrequestid, attributeid, create_transaction_request_counterparty_request_attributes_inner)
 
 Update Transaction Request Attribute
 
@@ -685,8 +685,8 @@ Update Transaction Request Attribute
 
 ```python
 import obp_python
-from obp_python.models.obpv400_create_transaction_request_counterparty_request_attributes_inner import OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner
-from obp_python.models.obpv400_get_transaction_request_attribute_by_id200_response import OBPv400GetTransactionRequestAttributeById200Response
+from obp_python.models.create_transaction_request_counterparty_request_attributes_inner import CreateTransactionRequestCounterpartyRequestAttributesInner
+from obp_python.models.get_transaction_request_attribute_by_id200_response import GetTransactionRequestAttributeById200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -723,15 +723,15 @@ with obp_python.ApiClient(configuration) as api_client:
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     transactionrequestid = 'transactionrequestid_example' # str | The TRANSACTIONREQUESTID identifier
     attributeid = 'attributeid_example' # str | The ATTRIBUTEID identifier
-    obpv400_create_transaction_request_counterparty_request_attributes_inner = {"type":"object","properties":{"attribute_type":{"type":"string"},"name":{"type":"string"},"value":{"type":"string"}}} # OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner | Request body
+    create_transaction_request_counterparty_request_attributes_inner = {"type":"object","properties":{"attribute_type":{"type":"string"},"name":{"type":"string"},"value":{"type":"string"}}} # CreateTransactionRequestCounterpartyRequestAttributesInner | Request body
 
     try:
         # Update Transaction Request Attribute
-        api_response = api_instance.o_bpv4_0_0_update_transaction_request_attribute(bankid, accountid, transactionrequestid, attributeid, obpv400_create_transaction_request_counterparty_request_attributes_inner)
-        print("The response of TransactionRequestAttributeApi->o_bpv4_0_0_update_transaction_request_attribute:\n")
+        api_response = api_instance.update_transaction_request_attribute(bankid, accountid, transactionrequestid, attributeid, create_transaction_request_counterparty_request_attributes_inner)
+        print("The response of TransactionRequestAttributeApi->update_transaction_request_attribute:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TransactionRequestAttributeApi->o_bpv4_0_0_update_transaction_request_attribute: %s\n" % e)
+        print("Exception when calling TransactionRequestAttributeApi->update_transaction_request_attribute: %s\n" % e)
 ```
 
 
@@ -745,11 +745,11 @@ Name | Type | Description  | Notes
  **accountid** | **str**| The ACCOUNTID identifier | 
  **transactionrequestid** | **str**| The TRANSACTIONREQUESTID identifier | 
  **attributeid** | **str**| The ATTRIBUTEID identifier | 
- **obpv400_create_transaction_request_counterparty_request_attributes_inner** | [**OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner**](OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner.md)| Request body | 
+ **create_transaction_request_counterparty_request_attributes_inner** | [**CreateTransactionRequestCounterpartyRequestAttributesInner**](CreateTransactionRequestCounterpartyRequestAttributesInner.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeById200Response**](OBPv400GetTransactionRequestAttributeById200Response.md)
+[**GetTransactionRequestAttributeById200Response**](GetTransactionRequestAttributeById200Response.md)
 
 ### Authorization
 

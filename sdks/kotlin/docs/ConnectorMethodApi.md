@@ -1,19 +1,19 @@
 # ConnectorMethodApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv400CreateConnectorMethod**](ConnectorMethodApi.md#oBPv400CreateConnectorMethod) | **POST** /obp/v4.0.0/management/connector-methods | Create Connector Method |
-| [**oBPv400GetAllConnectorMethods**](ConnectorMethodApi.md#oBPv400GetAllConnectorMethods) | **GET** /obp/v4.0.0/management/connector-methods | Get all Connector Methods |
-| [**oBPv400GetConnectorMethod**](ConnectorMethodApi.md#oBPv400GetConnectorMethod) | **GET** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Get Connector Method by Id |
-| [**oBPv400UpdateConnectorMethod**](ConnectorMethodApi.md#oBPv400UpdateConnectorMethod) | **PUT** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Update Connector Method |
-| [**oBPv600GetConnectorMethodNames**](ConnectorMethodApi.md#oBPv600GetConnectorMethodNames) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names |
+| [**createConnectorMethod**](ConnectorMethodApi.md#createConnectorMethod) | **POST** /obp/v4.0.0/management/connector-methods | Create Connector Method |
+| [**getAllConnectorMethods**](ConnectorMethodApi.md#getAllConnectorMethods) | **GET** /obp/v4.0.0/management/connector-methods | Get all Connector Methods |
+| [**getConnectorMethod**](ConnectorMethodApi.md#getConnectorMethod) | **GET** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Get Connector Method by Id |
+| [**getConnectorMethodNames**](ConnectorMethodApi.md#getConnectorMethodNames) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names |
+| [**updateConnectorMethod**](ConnectorMethodApi.md#updateConnectorMethod) | **PUT** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Update Connector Method |
 
 
-<a id="oBPv400CreateConnectorMethod"></a>
-# **oBPv400CreateConnectorMethod**
-> OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems oBPv400CreateConnectorMethod(obPv400CreateConnectorMethodRequest)
+<a id="createConnectorMethod"></a>
+# **createConnectorMethod**
+> GetAllConnectorMethods200ResponseConnectorsMethodsInner createConnectorMethod(createConnectorMethodRequest)
 
 Create Connector Method
 
@@ -26,15 +26,15 @@ Create Connector Method
 //import com.openbankproject.models.*
 
 val apiInstance = ConnectorMethodApi()
-val obPv400CreateConnectorMethodRequest : OBPv400CreateConnectorMethodRequest = {"type":"object","properties":{"method_name":{"type":"string"},"programming_lang":{"type":"string"},"method_body":{"type":"string"}}} // OBPv400CreateConnectorMethodRequest | Request body
+val createConnectorMethodRequest : CreateConnectorMethodRequest = {"type":"object","properties":{"method_name":{"type":"string"},"programming_lang":{"type":"string"},"method_body":{"type":"string"}}} // CreateConnectorMethodRequest | Request body
 try {
-    val result : OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems = apiInstance.oBPv400CreateConnectorMethod(obPv400CreateConnectorMethodRequest)
+    val result : GetAllConnectorMethods200ResponseConnectorsMethodsInner = apiInstance.createConnectorMethod(createConnectorMethodRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ConnectorMethodApi#oBPv400CreateConnectorMethod")
+    println("4xx response calling ConnectorMethodApi#createConnectorMethod")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ConnectorMethodApi#oBPv400CreateConnectorMethod")
+    println("5xx response calling ConnectorMethodApi#createConnectorMethod")
     e.printStackTrace()
 }
 ```
@@ -42,11 +42,11 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv400CreateConnectorMethodRequest** | [**OBPv400CreateConnectorMethodRequest**](OBPv400CreateConnectorMethodRequest.md)| Request body | |
+| **createConnectorMethodRequest** | [**CreateConnectorMethodRequest**](CreateConnectorMethodRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems**](OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems.md)
+[**GetAllConnectorMethods200ResponseConnectorsMethodsInner**](GetAllConnectorMethods200ResponseConnectorsMethodsInner.md)
 
 ### Authorization
 
@@ -57,17 +57,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv400GetAllConnectorMethods"></a>
-# **oBPv400GetAllConnectorMethods**
-> OBPv400GetAllConnectorMethods200Response oBPv400GetAllConnectorMethods()
+<a id="getAllConnectorMethods"></a>
+# **getAllConnectorMethods**
+> GetAllConnectorMethods200Response getAllConnectorMethods()
 
 Get all Connector Methods
 
@@ -81,13 +81,13 @@ Get all Connector Methods
 
 val apiInstance = ConnectorMethodApi()
 try {
-    val result : OBPv400GetAllConnectorMethods200Response = apiInstance.oBPv400GetAllConnectorMethods()
+    val result : GetAllConnectorMethods200Response = apiInstance.getAllConnectorMethods()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ConnectorMethodApi#oBPv400GetAllConnectorMethods")
+    println("4xx response calling ConnectorMethodApi#getAllConnectorMethods")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ConnectorMethodApi#oBPv400GetAllConnectorMethods")
+    println("5xx response calling ConnectorMethodApi#getAllConnectorMethods")
     e.printStackTrace()
 }
 ```
@@ -97,7 +97,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllConnectorMethods200Response**](OBPv400GetAllConnectorMethods200Response.md)
+[**GetAllConnectorMethods200Response**](GetAllConnectorMethods200Response.md)
 
 ### Authorization
 
@@ -108,17 +108,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv400GetConnectorMethod"></a>
-# **oBPv400GetConnectorMethod**
-> OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems oBPv400GetConnectorMethod(connectormethodid)
+<a id="getConnectorMethod"></a>
+# **getConnectorMethod**
+> GetAllConnectorMethods200ResponseConnectorsMethodsInner getConnectorMethod(connectormethodid)
 
 Get Connector Method by Id
 
@@ -133,13 +133,13 @@ Get Connector Method by Id
 val apiInstance = ConnectorMethodApi()
 val connectormethodid : kotlin.String = connectormethodid_example // kotlin.String | The CONNECTORMETHODID identifier
 try {
-    val result : OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems = apiInstance.oBPv400GetConnectorMethod(connectormethodid)
+    val result : GetAllConnectorMethods200ResponseConnectorsMethodsInner = apiInstance.getConnectorMethod(connectormethodid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ConnectorMethodApi#oBPv400GetConnectorMethod")
+    println("4xx response calling ConnectorMethodApi#getConnectorMethod")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ConnectorMethodApi#oBPv400GetConnectorMethod")
+    println("5xx response calling ConnectorMethodApi#getConnectorMethod")
     e.printStackTrace()
 }
 ```
@@ -151,7 +151,7 @@ try {
 
 ### Return type
 
-[**OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems**](OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems.md)
+[**GetAllConnectorMethods200ResponseConnectorsMethodsInner**](GetAllConnectorMethods200ResponseConnectorsMethodsInner.md)
 
 ### Authorization
 
@@ -162,73 +162,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv400UpdateConnectorMethod"></a>
-# **oBPv400UpdateConnectorMethod**
-> OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems oBPv400UpdateConnectorMethod(connectormethodid, obPv400UpdateConnectorMethodRequest)
-
-Update Connector Method
-
-&lt;p&gt;Update an internal connector.&lt;/p&gt; &lt;p&gt;The method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONNECTOR_METHOD_ID&lt;/a&gt;: ace0352a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-
-### Example
-```kotlin
-// Import classes:
-//import com.openbankproject.infrastructure.*
-//import com.openbankproject.models.*
-
-val apiInstance = ConnectorMethodApi()
-val connectormethodid : kotlin.String = connectormethodid_example // kotlin.String | The CONNECTORMETHODID identifier
-val obPv400UpdateConnectorMethodRequest : OBPv400UpdateConnectorMethodRequest = {"type":"object","properties":{"programming_lang":{"type":"string"},"method_body":{"type":"string"}}} // OBPv400UpdateConnectorMethodRequest | Request body
-try {
-    val result : OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems = apiInstance.oBPv400UpdateConnectorMethod(connectormethodid, obPv400UpdateConnectorMethodRequest)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling ConnectorMethodApi#oBPv400UpdateConnectorMethod")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling ConnectorMethodApi#oBPv400UpdateConnectorMethod")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| **connectormethodid** | **kotlin.String**| The CONNECTORMETHODID identifier | |
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **obPv400UpdateConnectorMethodRequest** | [**OBPv400UpdateConnectorMethodRequest**](OBPv400UpdateConnectorMethodRequest.md)| Request body | |
-
-### Return type
-
-[**OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems**](OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems.md)
-
-### Authorization
-
-
-Configure OAuth2:
-    ApiClient.accessToken = ""
-Configure GatewayLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a id="oBPv600GetConnectorMethodNames"></a>
-# **oBPv600GetConnectorMethodNames**
-> OBPv600GetConnectorMethodNames200Response oBPv600GetConnectorMethodNames()
+<a id="getConnectorMethodNames"></a>
+# **getConnectorMethodNames**
+> GetConnectorMethodNames200Response getConnectorMethodNames()
 
 Get Connector Method Names
 
@@ -242,13 +186,13 @@ Get Connector Method Names
 
 val apiInstance = ConnectorMethodApi()
 try {
-    val result : OBPv600GetConnectorMethodNames200Response = apiInstance.oBPv600GetConnectorMethodNames()
+    val result : GetConnectorMethodNames200Response = apiInstance.getConnectorMethodNames()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ConnectorMethodApi#oBPv600GetConnectorMethodNames")
+    println("4xx response calling ConnectorMethodApi#getConnectorMethodNames")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ConnectorMethodApi#oBPv600GetConnectorMethodNames")
+    println("5xx response calling ConnectorMethodApi#getConnectorMethodNames")
     e.printStackTrace()
 }
 ```
@@ -258,7 +202,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetConnectorMethodNames200Response**](OBPv600GetConnectorMethodNames200Response.md)
+[**GetConnectorMethodNames200Response**](GetConnectorMethodNames200Response.md)
 
 ### Authorization
 
@@ -269,11 +213,67 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a id="updateConnectorMethod"></a>
+# **updateConnectorMethod**
+> GetAllConnectorMethods200ResponseConnectorsMethodsInner updateConnectorMethod(connectormethodid, updateConnectorMethodRequest)
+
+Update Connector Method
+
+&lt;p&gt;Update an internal connector.&lt;/p&gt; &lt;p&gt;The method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONNECTOR_METHOD_ID&lt;/a&gt;: ace0352a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+
+### Example
+```kotlin
+// Import classes:
+//import com.openbankproject.infrastructure.*
+//import com.openbankproject.models.*
+
+val apiInstance = ConnectorMethodApi()
+val connectormethodid : kotlin.String = connectormethodid_example // kotlin.String | The CONNECTORMETHODID identifier
+val updateConnectorMethodRequest : UpdateConnectorMethodRequest = {"type":"object","properties":{"programming_lang":{"type":"string"},"method_body":{"type":"string"}}} // UpdateConnectorMethodRequest | Request body
+try {
+    val result : GetAllConnectorMethods200ResponseConnectorsMethodsInner = apiInstance.updateConnectorMethod(connectormethodid, updateConnectorMethodRequest)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling ConnectorMethodApi#updateConnectorMethod")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling ConnectorMethodApi#updateConnectorMethod")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| **connectormethodid** | **kotlin.String**| The CONNECTORMETHODID identifier | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **updateConnectorMethodRequest** | [**UpdateConnectorMethodRequest**](UpdateConnectorMethodRequest.md)| Request body | |
+
+### Return type
+
+[**GetAllConnectorMethods200ResponseConnectorsMethodsInner**](GetAllConnectorMethods200ResponseConnectorsMethodsInner.md)
+
+### Authorization
+
+
+Configure OAuth2:
+    ApiClient.accessToken = ""
+Configure GatewayLogin:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure DirectLogin:
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 

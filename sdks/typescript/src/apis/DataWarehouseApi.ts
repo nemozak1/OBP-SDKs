@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,25 +15,22 @@
 
 import * as runtime from '../runtime';
 import type {
-  OBPv300DataWarehouseSearchRequest,
-  OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage,
+  DataWarehouseSearchRequest,
 } from '../models/index';
 import {
-    OBPv300DataWarehouseSearchRequestFromJSON,
-    OBPv300DataWarehouseSearchRequestToJSON,
-    OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessageFromJSON,
-    OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessageToJSON,
+    DataWarehouseSearchRequestFromJSON,
+    DataWarehouseSearchRequestToJSON,
 } from '../models/index';
 
-export interface OBPv300DataWarehouseSearchOperationRequest {
+export interface DataWarehouseSearchOperationRequest {
     index: string;
-    oBPv300DataWarehouseSearchRequest: OBPv300DataWarehouseSearchRequest;
+    dataWarehouseSearchRequest: DataWarehouseSearchRequest;
 }
 
-export interface OBPv300DataWarehouseStatisticsRequest {
+export interface DataWarehouseStatisticsRequest {
     index: string;
     field: string;
-    oBPv300DataWarehouseSearchRequest: OBPv300DataWarehouseSearchRequest;
+    dataWarehouseSearchRequest: DataWarehouseSearchRequest;
 }
 
 /**
@@ -42,20 +39,20 @@ export interface OBPv300DataWarehouseStatisticsRequest {
 export class DataWarehouseApi extends runtime.BaseAPI {
 
     /**
-     * Creates request options for oBPv300DataWarehouseSearch without sending the request
+     * Creates request options for dataWarehouseSearch without sending the request
      */
-    async oBPv300DataWarehouseSearchRequestOpts(requestParameters: OBPv300DataWarehouseSearchOperationRequest): Promise<runtime.RequestOpts> {
+    async dataWarehouseSearchRequestOpts(requestParameters: DataWarehouseSearchOperationRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['index'] == null) {
             throw new runtime.RequiredError(
                 'index',
-                'Required parameter "index" was null or undefined when calling oBPv300DataWarehouseSearch().'
+                'Required parameter "index" was null or undefined when calling dataWarehouseSearch().'
             );
         }
 
-        if (requestParameters['oBPv300DataWarehouseSearchRequest'] == null) {
+        if (requestParameters['dataWarehouseSearchRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv300DataWarehouseSearchRequest',
-                'Required parameter "oBPv300DataWarehouseSearchRequest" was null or undefined when calling oBPv300DataWarehouseSearch().'
+                'dataWarehouseSearchRequest',
+                'Required parameter "dataWarehouseSearchRequest" was null or undefined when calling dataWarehouseSearch().'
             );
         }
 
@@ -75,7 +72,7 @@ export class DataWarehouseApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -87,7 +84,7 @@ export class DataWarehouseApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv300DataWarehouseSearchRequestToJSON(requestParameters['oBPv300DataWarehouseSearchRequest']),
+            body: DataWarehouseSearchRequestToJSON(requestParameters['dataWarehouseSearchRequest']),
         };
     }
 
@@ -95,44 +92,44 @@ export class DataWarehouseApi extends runtime.BaseAPI {
      * <p>Search the data warehouse and get row level results.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>CanSearchWarehouse entitlement is required. You can request the Role below.</p> <p>Elastic (search) is used in the background. See links below for syntax.</p> <p>Examples of usage:</p> <p>POST /search/warehouse/THE_INDEX_YOU_WANT_TO_USE</p> <p>POST /search/warehouse/INDEX1,INDEX2</p> <p>POST /search/warehouse/ALL</p> <p>{ Any valid elasticsearch query DSL in the body }</p> <p><a href=\"https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html\">Elasticsearch query DSL</a></p> <p><a href=\"https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-request-body.html\">Elastic simple query</a></p> <p><a href=\"https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-aggregations.html\">Elastic aggregations</a></p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#index\">INDEX</a>:</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#match_all\"><strong>match_all</strong></a>:</p> <p><a href=\"/glossary#query\"><strong>query</strong></a>:</p> <p><a href=\"/glossary#none\">none</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#none\">none</a>:</p> 
      * Data Warehouse Search
      */
-    async oBPv300DataWarehouseSearchRaw(requestParameters: OBPv300DataWarehouseSearchOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage>> {
-        const requestOptions = await this.oBPv300DataWarehouseSearchRequestOpts(requestParameters);
+    async dataWarehouseSearchRaw(requestParameters: DataWarehouseSearchOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
+        const requestOptions = await this.dataWarehouseSearchRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessageFromJSON(jsonValue));
+        return new runtime.JSONApiResponse<any>(response);
     }
 
     /**
      * <p>Search the data warehouse and get row level results.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>CanSearchWarehouse entitlement is required. You can request the Role below.</p> <p>Elastic (search) is used in the background. See links below for syntax.</p> <p>Examples of usage:</p> <p>POST /search/warehouse/THE_INDEX_YOU_WANT_TO_USE</p> <p>POST /search/warehouse/INDEX1,INDEX2</p> <p>POST /search/warehouse/ALL</p> <p>{ Any valid elasticsearch query DSL in the body }</p> <p><a href=\"https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html\">Elasticsearch query DSL</a></p> <p><a href=\"https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-request-body.html\">Elastic simple query</a></p> <p><a href=\"https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-aggregations.html\">Elastic aggregations</a></p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#index\">INDEX</a>:</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#match_all\"><strong>match_all</strong></a>:</p> <p><a href=\"/glossary#query\"><strong>query</strong></a>:</p> <p><a href=\"/glossary#none\">none</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#none\">none</a>:</p> 
      * Data Warehouse Search
      */
-    async oBPv300DataWarehouseSearch(requestParameters: OBPv300DataWarehouseSearchOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage> {
-        const response = await this.oBPv300DataWarehouseSearchRaw(requestParameters, initOverrides);
+    async dataWarehouseSearch(requestParameters: DataWarehouseSearchOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
+        const response = await this.dataWarehouseSearchRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv300DataWarehouseStatistics without sending the request
+     * Creates request options for dataWarehouseStatistics without sending the request
      */
-    async oBPv300DataWarehouseStatisticsRequestOpts(requestParameters: OBPv300DataWarehouseStatisticsRequest): Promise<runtime.RequestOpts> {
+    async dataWarehouseStatisticsRequestOpts(requestParameters: DataWarehouseStatisticsRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['index'] == null) {
             throw new runtime.RequiredError(
                 'index',
-                'Required parameter "index" was null or undefined when calling oBPv300DataWarehouseStatistics().'
+                'Required parameter "index" was null or undefined when calling dataWarehouseStatistics().'
             );
         }
 
         if (requestParameters['field'] == null) {
             throw new runtime.RequiredError(
                 'field',
-                'Required parameter "field" was null or undefined when calling oBPv300DataWarehouseStatistics().'
+                'Required parameter "field" was null or undefined when calling dataWarehouseStatistics().'
             );
         }
 
-        if (requestParameters['oBPv300DataWarehouseSearchRequest'] == null) {
+        if (requestParameters['dataWarehouseSearchRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv300DataWarehouseSearchRequest',
-                'Required parameter "oBPv300DataWarehouseSearchRequest" was null or undefined when calling oBPv300DataWarehouseStatistics().'
+                'dataWarehouseSearchRequest',
+                'Required parameter "dataWarehouseSearchRequest" was null or undefined when calling dataWarehouseStatistics().'
             );
         }
 
@@ -152,7 +149,7 @@ export class DataWarehouseApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -165,7 +162,7 @@ export class DataWarehouseApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv300DataWarehouseSearchRequestToJSON(requestParameters['oBPv300DataWarehouseSearchRequest']),
+            body: DataWarehouseSearchRequestToJSON(requestParameters['dataWarehouseSearchRequest']),
         };
     }
 
@@ -173,19 +170,19 @@ export class DataWarehouseApi extends runtime.BaseAPI {
      * <p>Search the data warehouse and get statistical aggregations over a warehouse field</p> <p>Does a stats aggregation over some numeric field:</p> <p><a href=\"https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-stats-aggregation.html\">https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-stats-aggregation.html</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>CanSearchWarehouseStats Role is required. You can request this below.</p> <p>Elastic (search) is used in the background. See links below for syntax.</p> <p>Examples of usage:</p> <p>POST /search/warehouse/statistics/INDEX/FIELD</p> <p>POST /search/warehouse/statistics/ALL/FIELD</p> <p>{ Any valid elasticsearch query DSL in the body }</p> <p><a href=\"https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html\">Elasticsearch query DSL</a></p> <p><a href=\"https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-request-body.html\">Elastic simple query</a></p> <p><a href=\"https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-aggregations.html\">Elastic aggregations</a></p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#field\">FIELD</a>:</p> <p><a href=\"/glossary#index\">INDEX</a>:</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#match_all\"><strong>match_all</strong></a>:</p> <p><a href=\"/glossary#query\"><strong>query</strong></a>:</p> <p><a href=\"/glossary#none\">none</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#none\">none</a>:</p> 
      * Data Warehouse Statistics
      */
-    async oBPv300DataWarehouseStatisticsRaw(requestParameters: OBPv300DataWarehouseStatisticsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage>> {
-        const requestOptions = await this.oBPv300DataWarehouseStatisticsRequestOpts(requestParameters);
+    async dataWarehouseStatisticsRaw(requestParameters: DataWarehouseStatisticsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
+        const requestOptions = await this.dataWarehouseStatisticsRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessageFromJSON(jsonValue));
+        return new runtime.JSONApiResponse<any>(response);
     }
 
     /**
      * <p>Search the data warehouse and get statistical aggregations over a warehouse field</p> <p>Does a stats aggregation over some numeric field:</p> <p><a href=\"https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-stats-aggregation.html\">https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-stats-aggregation.html</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>CanSearchWarehouseStats Role is required. You can request this below.</p> <p>Elastic (search) is used in the background. See links below for syntax.</p> <p>Examples of usage:</p> <p>POST /search/warehouse/statistics/INDEX/FIELD</p> <p>POST /search/warehouse/statistics/ALL/FIELD</p> <p>{ Any valid elasticsearch query DSL in the body }</p> <p><a href=\"https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html\">Elasticsearch query DSL</a></p> <p><a href=\"https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-request-body.html\">Elastic simple query</a></p> <p><a href=\"https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-aggregations.html\">Elastic aggregations</a></p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#field\">FIELD</a>:</p> <p><a href=\"/glossary#index\">INDEX</a>:</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#match_all\"><strong>match_all</strong></a>:</p> <p><a href=\"/glossary#query\"><strong>query</strong></a>:</p> <p><a href=\"/glossary#none\">none</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#none\">none</a>:</p> 
      * Data Warehouse Statistics
      */
-    async oBPv300DataWarehouseStatistics(requestParameters: OBPv300DataWarehouseStatisticsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage> {
-        const response = await this.oBPv300DataWarehouseStatisticsRaw(requestParameters, initOverrides);
+    async dataWarehouseStatistics(requestParameters: DataWarehouseStatisticsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
+        const response = await this.dataWarehouseStatisticsRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

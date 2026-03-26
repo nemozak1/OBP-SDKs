@@ -1,0 +1,11 @@
+# # CheckFundsAvailable200Response
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**date** | **\DateTime** |  | [optional]
+**available_funds_request_id** | **string** |  | [optional]
+**answer** | **string** |  | [optional]
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,24 +24,24 @@ import (
 // DirectoryAPIService DirectoryAPI service
 type DirectoryAPIService service
 
-type ApiOBPv510CreateConsumerDynamicRegistrationRequest struct {
+type ApiCreateConsumerDynamicRegistrationRequest struct {
 	ctx context.Context
 	ApiService *DirectoryAPIService
-	oBPv510CreateConsumerDynamicRegistrationRequest *OBPv510CreateConsumerDynamicRegistrationRequest
+	createConsumerDynamicRegistrationRequest *CreateConsumerDynamicRegistrationRequest
 }
 
 // Request body
-func (r ApiOBPv510CreateConsumerDynamicRegistrationRequest) OBPv510CreateConsumerDynamicRegistrationRequest(oBPv510CreateConsumerDynamicRegistrationRequest OBPv510CreateConsumerDynamicRegistrationRequest) ApiOBPv510CreateConsumerDynamicRegistrationRequest {
-	r.oBPv510CreateConsumerDynamicRegistrationRequest = &oBPv510CreateConsumerDynamicRegistrationRequest
+func (r ApiCreateConsumerDynamicRegistrationRequest) CreateConsumerDynamicRegistrationRequest(createConsumerDynamicRegistrationRequest CreateConsumerDynamicRegistrationRequest) ApiCreateConsumerDynamicRegistrationRequest {
+	r.createConsumerDynamicRegistrationRequest = &createConsumerDynamicRegistrationRequest
 	return r
 }
 
-func (r ApiOBPv510CreateConsumerDynamicRegistrationRequest) Execute() (*OBPv510UpdateConsumerName200Response, *http.Response, error) {
-	return r.ApiService.OBPv510CreateConsumerDynamicRegistrationExecute(r)
+func (r ApiCreateConsumerDynamicRegistrationRequest) Execute() (*UpdateConsumerName200Response, *http.Response, error) {
+	return r.ApiService.CreateConsumerDynamicRegistrationExecute(r)
 }
 
 /*
-OBPv510CreateConsumerDynamicRegistration Create a Consumer(Dynamic Registration)
+CreateConsumerDynamicRegistration Create a Consumer(Dynamic Registration)
 
 <p>Create a Consumer with full certificate validation (mTLS access) - <strong>Recommended for PSD2/Berlin Group compliance</strong>.</p>
 <p>This endpoint provides <strong>secure, validated consumer registration</strong> unlike the standard <code>/management/consumers</code> endpoint.</p>
@@ -126,7 +126,7 @@ OBPv510CreateConsumerDynamicRegistration Create a Consumer(Dynamic Registration)
 <p><a href="/glossary#created_by_user"><strong>created_by_user</strong></a>:</p>
 <p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
 <p><a href="/glossary#developer_email"><strong>developer_email</strong></a>:</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#x6d;&#97;il&#116;o&#58;&#102;e&#x6c;ix&#x73;&#x6d;&#x69;&#116;&#104;&#x40;e&#120;&#97;&#109;&#x70;&#x6c;&#x65;&#x2e;&#99;&#x6f;&#x6d;">&#102;&#101;&#108;i&#x78;s&#109;i&#x74;&#104;&#64;&#101;&#120;&#97;m&#x70;&#x6c;&#x65;&#x2e;&#99;&#x6f;&#109;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#x6d;&#97;&#x69;&#108;to&#x3a;&#102;&#101;&#x6c;i&#x78;&#x73;m&#x69;&#116;&#x68;&#x40;&#101;&#x78;am&#112;l&#x65;&#x2e;c&#x6f;&#109;">f&#x65;&#108;&#x69;&#120;&#x73;&#109;&#x69;&#116;&#x68;&#64;&#101;&#120;&#x61;&#x6d;p&#108;&#x65;&#x2e;&#x63;&#111;&#x6d;</a></p>
 <p><a href="/glossary#enabled"><strong>enabled</strong></a>: false</p>
 <p><a href="/glossary#"><strong>issuer_domain_name</strong></a>: issuer_domain_name</p>
 <p><a href="/glossary#"><strong>not_after</strong></a>: not_after</p>
@@ -144,26 +144,26 @@ OBPv510CreateConsumerDynamicRegistration Create a Consumer(Dynamic Registration)
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv510CreateConsumerDynamicRegistrationRequest
+ @return ApiCreateConsumerDynamicRegistrationRequest
 */
-func (a *DirectoryAPIService) OBPv510CreateConsumerDynamicRegistration(ctx context.Context) ApiOBPv510CreateConsumerDynamicRegistrationRequest {
-	return ApiOBPv510CreateConsumerDynamicRegistrationRequest{
+func (a *DirectoryAPIService) CreateConsumerDynamicRegistration(ctx context.Context) ApiCreateConsumerDynamicRegistrationRequest {
+	return ApiCreateConsumerDynamicRegistrationRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv510UpdateConsumerName200Response
-func (a *DirectoryAPIService) OBPv510CreateConsumerDynamicRegistrationExecute(r ApiOBPv510CreateConsumerDynamicRegistrationRequest) (*OBPv510UpdateConsumerName200Response, *http.Response, error) {
+//  @return UpdateConsumerName200Response
+func (a *DirectoryAPIService) CreateConsumerDynamicRegistrationExecute(r ApiCreateConsumerDynamicRegistrationRequest) (*UpdateConsumerName200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510UpdateConsumerName200Response
+		localVarReturnValue  *UpdateConsumerName200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DirectoryAPIService.OBPv510CreateConsumerDynamicRegistration")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DirectoryAPIService.CreateConsumerDynamicRegistration")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -173,8 +173,8 @@ func (a *DirectoryAPIService) OBPv510CreateConsumerDynamicRegistrationExecute(r 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv510CreateConsumerDynamicRegistrationRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510CreateConsumerDynamicRegistrationRequest is required and must be specified")
+	if r.createConsumerDynamicRegistrationRequest == nil {
+		return localVarReturnValue, nil, reportError("createConsumerDynamicRegistrationRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -195,7 +195,7 @@ func (a *DirectoryAPIService) OBPv510CreateConsumerDynamicRegistrationExecute(r 
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv510CreateConsumerDynamicRegistrationRequest
+	localVarPostBody = r.createConsumerDynamicRegistrationRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -220,7 +220,7 @@ func (a *DirectoryAPIService) OBPv510CreateConsumerDynamicRegistrationExecute(r 
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -261,24 +261,24 @@ func (a *DirectoryAPIService) OBPv510CreateConsumerDynamicRegistrationExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510CreateRegulatedEntityRequest struct {
+type ApiCreateRegulatedEntityRequest struct {
 	ctx context.Context
 	ApiService *DirectoryAPIService
-	oBPv510CreateRegulatedEntityRequest *OBPv510CreateRegulatedEntityRequest
+	createRegulatedEntityRequest *CreateRegulatedEntityRequest
 }
 
 // Request body
-func (r ApiOBPv510CreateRegulatedEntityRequest) OBPv510CreateRegulatedEntityRequest(oBPv510CreateRegulatedEntityRequest OBPv510CreateRegulatedEntityRequest) ApiOBPv510CreateRegulatedEntityRequest {
-	r.oBPv510CreateRegulatedEntityRequest = &oBPv510CreateRegulatedEntityRequest
+func (r ApiCreateRegulatedEntityRequest) CreateRegulatedEntityRequest(createRegulatedEntityRequest CreateRegulatedEntityRequest) ApiCreateRegulatedEntityRequest {
+	r.createRegulatedEntityRequest = &createRegulatedEntityRequest
 	return r
 }
 
-func (r ApiOBPv510CreateRegulatedEntityRequest) Execute() (*OBPv510GetRegulatedEntityById200Response, *http.Response, error) {
-	return r.ApiService.OBPv510CreateRegulatedEntityExecute(r)
+func (r ApiCreateRegulatedEntityRequest) Execute() (*GetRegulatedEntityById200Response, *http.Response, error) {
+	return r.ApiService.CreateRegulatedEntityExecute(r)
 }
 
 /*
-OBPv510CreateRegulatedEntity Create Regulated Entity
+CreateRegulatedEntity Create Regulated Entity
 
 <p>Create Regulated Entity</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -318,26 +318,26 @@ OBPv510CreateRegulatedEntity Create Regulated Entity
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv510CreateRegulatedEntityRequest
+ @return ApiCreateRegulatedEntityRequest
 */
-func (a *DirectoryAPIService) OBPv510CreateRegulatedEntity(ctx context.Context) ApiOBPv510CreateRegulatedEntityRequest {
-	return ApiOBPv510CreateRegulatedEntityRequest{
+func (a *DirectoryAPIService) CreateRegulatedEntity(ctx context.Context) ApiCreateRegulatedEntityRequest {
+	return ApiCreateRegulatedEntityRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv510GetRegulatedEntityById200Response
-func (a *DirectoryAPIService) OBPv510CreateRegulatedEntityExecute(r ApiOBPv510CreateRegulatedEntityRequest) (*OBPv510GetRegulatedEntityById200Response, *http.Response, error) {
+//  @return GetRegulatedEntityById200Response
+func (a *DirectoryAPIService) CreateRegulatedEntityExecute(r ApiCreateRegulatedEntityRequest) (*GetRegulatedEntityById200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetRegulatedEntityById200Response
+		localVarReturnValue  *GetRegulatedEntityById200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DirectoryAPIService.OBPv510CreateRegulatedEntity")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DirectoryAPIService.CreateRegulatedEntity")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -347,8 +347,8 @@ func (a *DirectoryAPIService) OBPv510CreateRegulatedEntityExecute(r ApiOBPv510Cr
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv510CreateRegulatedEntityRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510CreateRegulatedEntityRequest is required and must be specified")
+	if r.createRegulatedEntityRequest == nil {
+		return localVarReturnValue, nil, reportError("createRegulatedEntityRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -369,7 +369,7 @@ func (a *DirectoryAPIService) OBPv510CreateRegulatedEntityExecute(r ApiOBPv510Cr
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv510CreateRegulatedEntityRequest
+	localVarPostBody = r.createRegulatedEntityRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -394,7 +394,7 @@ func (a *DirectoryAPIService) OBPv510CreateRegulatedEntityExecute(r ApiOBPv510Cr
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -435,25 +435,25 @@ func (a *DirectoryAPIService) OBPv510CreateRegulatedEntityExecute(r ApiOBPv510Cr
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510CreateRegulatedEntityAttributeRequest struct {
+type ApiCreateRegulatedEntityAttributeRequest struct {
 	ctx context.Context
 	ApiService *DirectoryAPIService
 	regulatedentityid string
-	oBPv510UpdateRegulatedEntityAttributeRequest *OBPv510UpdateRegulatedEntityAttributeRequest
+	createCounterpartyAttributeRequest *CreateCounterpartyAttributeRequest
 }
 
 // Request body
-func (r ApiOBPv510CreateRegulatedEntityAttributeRequest) OBPv510UpdateRegulatedEntityAttributeRequest(oBPv510UpdateRegulatedEntityAttributeRequest OBPv510UpdateRegulatedEntityAttributeRequest) ApiOBPv510CreateRegulatedEntityAttributeRequest {
-	r.oBPv510UpdateRegulatedEntityAttributeRequest = &oBPv510UpdateRegulatedEntityAttributeRequest
+func (r ApiCreateRegulatedEntityAttributeRequest) CreateCounterpartyAttributeRequest(createCounterpartyAttributeRequest CreateCounterpartyAttributeRequest) ApiCreateRegulatedEntityAttributeRequest {
+	r.createCounterpartyAttributeRequest = &createCounterpartyAttributeRequest
 	return r
 }
 
-func (r ApiOBPv510CreateRegulatedEntityAttributeRequest) Execute() (*OBPv510GetRegulatedEntityAttributeById200Response, *http.Response, error) {
-	return r.ApiService.OBPv510CreateRegulatedEntityAttributeExecute(r)
+func (r ApiCreateRegulatedEntityAttributeRequest) Execute() (*GetRegulatedEntityAttributeById200Response, *http.Response, error) {
+	return r.ApiService.CreateRegulatedEntityAttributeExecute(r)
 }
 
 /*
-OBPv510CreateRegulatedEntityAttribute Create Regulated Entity Attribute
+CreateRegulatedEntityAttribute Create Regulated Entity Attribute
 
 <p>Create a new Regulated Entity Attribute for a given REGULATED_ENTITY_ID.</p>
 <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or &quot;DATE_WITH_DAY&quot;.<br />
@@ -476,10 +476,10 @@ User Authentication is Required. The User must be logged in. The Application mus
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param regulatedentityid The REGULATEDENTITYID identifier
- @return ApiOBPv510CreateRegulatedEntityAttributeRequest
+ @return ApiCreateRegulatedEntityAttributeRequest
 */
-func (a *DirectoryAPIService) OBPv510CreateRegulatedEntityAttribute(ctx context.Context, regulatedentityid string) ApiOBPv510CreateRegulatedEntityAttributeRequest {
-	return ApiOBPv510CreateRegulatedEntityAttributeRequest{
+func (a *DirectoryAPIService) CreateRegulatedEntityAttribute(ctx context.Context, regulatedentityid string) ApiCreateRegulatedEntityAttributeRequest {
+	return ApiCreateRegulatedEntityAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		regulatedentityid: regulatedentityid,
@@ -487,16 +487,16 @@ func (a *DirectoryAPIService) OBPv510CreateRegulatedEntityAttribute(ctx context.
 }
 
 // Execute executes the request
-//  @return OBPv510GetRegulatedEntityAttributeById200Response
-func (a *DirectoryAPIService) OBPv510CreateRegulatedEntityAttributeExecute(r ApiOBPv510CreateRegulatedEntityAttributeRequest) (*OBPv510GetRegulatedEntityAttributeById200Response, *http.Response, error) {
+//  @return GetRegulatedEntityAttributeById200Response
+func (a *DirectoryAPIService) CreateRegulatedEntityAttributeExecute(r ApiCreateRegulatedEntityAttributeRequest) (*GetRegulatedEntityAttributeById200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetRegulatedEntityAttributeById200Response
+		localVarReturnValue  *GetRegulatedEntityAttributeById200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DirectoryAPIService.OBPv510CreateRegulatedEntityAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DirectoryAPIService.CreateRegulatedEntityAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -507,8 +507,8 @@ func (a *DirectoryAPIService) OBPv510CreateRegulatedEntityAttributeExecute(r Api
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv510UpdateRegulatedEntityAttributeRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510UpdateRegulatedEntityAttributeRequest is required and must be specified")
+	if r.createCounterpartyAttributeRequest == nil {
+		return localVarReturnValue, nil, reportError("createCounterpartyAttributeRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -529,7 +529,7 @@ func (a *DirectoryAPIService) OBPv510CreateRegulatedEntityAttributeExecute(r Api
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv510UpdateRegulatedEntityAttributeRequest
+	localVarPostBody = r.createCounterpartyAttributeRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -554,7 +554,7 @@ func (a *DirectoryAPIService) OBPv510CreateRegulatedEntityAttributeExecute(r Api
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -595,18 +595,18 @@ func (a *DirectoryAPIService) OBPv510CreateRegulatedEntityAttributeExecute(r Api
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510DeleteRegulatedEntityRequest struct {
+type ApiDeleteRegulatedEntityRequest struct {
 	ctx context.Context
 	ApiService *DirectoryAPIService
 	regulatedentityid string
 }
 
-func (r ApiOBPv510DeleteRegulatedEntityRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv510DeleteRegulatedEntityExecute(r)
+func (r ApiDeleteRegulatedEntityRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteRegulatedEntityExecute(r)
 }
 
 /*
-OBPv510DeleteRegulatedEntity Delete Regulated Entity
+DeleteRegulatedEntity Delete Regulated Entity
 
 <p>Delete Regulated Entity specified by REGULATED_ENTITY_ID</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -617,10 +617,10 @@ OBPv510DeleteRegulatedEntity Delete Regulated Entity
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param regulatedentityid The REGULATEDENTITYID identifier
- @return ApiOBPv510DeleteRegulatedEntityRequest
+ @return ApiDeleteRegulatedEntityRequest
 */
-func (a *DirectoryAPIService) OBPv510DeleteRegulatedEntity(ctx context.Context, regulatedentityid string) ApiOBPv510DeleteRegulatedEntityRequest {
-	return ApiOBPv510DeleteRegulatedEntityRequest{
+func (a *DirectoryAPIService) DeleteRegulatedEntity(ctx context.Context, regulatedentityid string) ApiDeleteRegulatedEntityRequest {
+	return ApiDeleteRegulatedEntityRequest{
 		ApiService: a,
 		ctx: ctx,
 		regulatedentityid: regulatedentityid,
@@ -628,14 +628,14 @@ func (a *DirectoryAPIService) OBPv510DeleteRegulatedEntity(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *DirectoryAPIService) OBPv510DeleteRegulatedEntityExecute(r ApiOBPv510DeleteRegulatedEntityRequest) (*http.Response, error) {
+func (a *DirectoryAPIService) DeleteRegulatedEntityExecute(r ApiDeleteRegulatedEntityRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DirectoryAPIService.OBPv510DeleteRegulatedEntity")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DirectoryAPIService.DeleteRegulatedEntity")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -688,7 +688,7 @@ func (a *DirectoryAPIService) OBPv510DeleteRegulatedEntityExecute(r ApiOBPv510De
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -720,19 +720,19 @@ func (a *DirectoryAPIService) OBPv510DeleteRegulatedEntityExecute(r ApiOBPv510De
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv510DeleteRegulatedEntityAttributeRequest struct {
+type ApiDeleteRegulatedEntityAttributeRequest struct {
 	ctx context.Context
 	ApiService *DirectoryAPIService
 	regulatedentityid string
 	regulatedentityattributeid string
 }
 
-func (r ApiOBPv510DeleteRegulatedEntityAttributeRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv510DeleteRegulatedEntityAttributeExecute(r)
+func (r ApiDeleteRegulatedEntityAttributeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteRegulatedEntityAttributeExecute(r)
 }
 
 /*
-OBPv510DeleteRegulatedEntityAttribute Delete Regulated Entity Attribute
+DeleteRegulatedEntityAttribute Delete Regulated Entity Attribute
 
 <p>Delete a Regulated Entity Attribute specified by REGULATED_ENTITY_ATTRIBUTE_ID.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -745,10 +745,10 @@ OBPv510DeleteRegulatedEntityAttribute Delete Regulated Entity Attribute
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param regulatedentityid The REGULATEDENTITYID identifier
  @param regulatedentityattributeid The REGULATEDENTITYATTRIBUTEID identifier
- @return ApiOBPv510DeleteRegulatedEntityAttributeRequest
+ @return ApiDeleteRegulatedEntityAttributeRequest
 */
-func (a *DirectoryAPIService) OBPv510DeleteRegulatedEntityAttribute(ctx context.Context, regulatedentityid string, regulatedentityattributeid string) ApiOBPv510DeleteRegulatedEntityAttributeRequest {
-	return ApiOBPv510DeleteRegulatedEntityAttributeRequest{
+func (a *DirectoryAPIService) DeleteRegulatedEntityAttribute(ctx context.Context, regulatedentityid string, regulatedentityattributeid string) ApiDeleteRegulatedEntityAttributeRequest {
+	return ApiDeleteRegulatedEntityAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		regulatedentityid: regulatedentityid,
@@ -757,14 +757,14 @@ func (a *DirectoryAPIService) OBPv510DeleteRegulatedEntityAttribute(ctx context.
 }
 
 // Execute executes the request
-func (a *DirectoryAPIService) OBPv510DeleteRegulatedEntityAttributeExecute(r ApiOBPv510DeleteRegulatedEntityAttributeRequest) (*http.Response, error) {
+func (a *DirectoryAPIService) DeleteRegulatedEntityAttributeExecute(r ApiDeleteRegulatedEntityAttributeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DirectoryAPIService.OBPv510DeleteRegulatedEntityAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DirectoryAPIService.DeleteRegulatedEntityAttribute")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -818,7 +818,7 @@ func (a *DirectoryAPIService) OBPv510DeleteRegulatedEntityAttributeExecute(r Api
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -850,18 +850,18 @@ func (a *DirectoryAPIService) OBPv510DeleteRegulatedEntityAttributeExecute(r Api
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv510GetAllRegulatedEntityAttributesRequest struct {
+type ApiGetAllRegulatedEntityAttributesRequest struct {
 	ctx context.Context
 	ApiService *DirectoryAPIService
 	regulatedentityid string
 }
 
-func (r ApiOBPv510GetAllRegulatedEntityAttributesRequest) Execute() (*OBPv510GetAllRegulatedEntityAttributes200Response, *http.Response, error) {
-	return r.ApiService.OBPv510GetAllRegulatedEntityAttributesExecute(r)
+func (r ApiGetAllRegulatedEntityAttributesRequest) Execute() (*GetAllRegulatedEntityAttributes200Response, *http.Response, error) {
+	return r.ApiService.GetAllRegulatedEntityAttributesExecute(r)
 }
 
 /*
-OBPv510GetAllRegulatedEntityAttributes Get All Regulated Entity Attributes
+GetAllRegulatedEntityAttributes Get All Regulated Entity Attributes
 
 <p>Get all attributes for the specified Regulated Entity.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -879,10 +879,10 @@ OBPv510GetAllRegulatedEntityAttributes Get All Regulated Entity Attributes
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param regulatedentityid The REGULATEDENTITYID identifier
- @return ApiOBPv510GetAllRegulatedEntityAttributesRequest
+ @return ApiGetAllRegulatedEntityAttributesRequest
 */
-func (a *DirectoryAPIService) OBPv510GetAllRegulatedEntityAttributes(ctx context.Context, regulatedentityid string) ApiOBPv510GetAllRegulatedEntityAttributesRequest {
-	return ApiOBPv510GetAllRegulatedEntityAttributesRequest{
+func (a *DirectoryAPIService) GetAllRegulatedEntityAttributes(ctx context.Context, regulatedentityid string) ApiGetAllRegulatedEntityAttributesRequest {
+	return ApiGetAllRegulatedEntityAttributesRequest{
 		ApiService: a,
 		ctx: ctx,
 		regulatedentityid: regulatedentityid,
@@ -890,16 +890,16 @@ func (a *DirectoryAPIService) OBPv510GetAllRegulatedEntityAttributes(ctx context
 }
 
 // Execute executes the request
-//  @return OBPv510GetAllRegulatedEntityAttributes200Response
-func (a *DirectoryAPIService) OBPv510GetAllRegulatedEntityAttributesExecute(r ApiOBPv510GetAllRegulatedEntityAttributesRequest) (*OBPv510GetAllRegulatedEntityAttributes200Response, *http.Response, error) {
+//  @return GetAllRegulatedEntityAttributes200Response
+func (a *DirectoryAPIService) GetAllRegulatedEntityAttributesExecute(r ApiGetAllRegulatedEntityAttributesRequest) (*GetAllRegulatedEntityAttributes200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetAllRegulatedEntityAttributes200Response
+		localVarReturnValue  *GetAllRegulatedEntityAttributes200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DirectoryAPIService.OBPv510GetAllRegulatedEntityAttributes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DirectoryAPIService.GetAllRegulatedEntityAttributes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -952,7 +952,7 @@ func (a *DirectoryAPIService) OBPv510GetAllRegulatedEntityAttributesExecute(r Ap
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -993,19 +993,19 @@ func (a *DirectoryAPIService) OBPv510GetAllRegulatedEntityAttributesExecute(r Ap
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510GetRegulatedEntityAttributeByIdRequest struct {
+type ApiGetRegulatedEntityAttributeByIdRequest struct {
 	ctx context.Context
 	ApiService *DirectoryAPIService
 	regulatedentityid string
 	regulatedentityattributeid string
 }
 
-func (r ApiOBPv510GetRegulatedEntityAttributeByIdRequest) Execute() (*OBPv510GetRegulatedEntityAttributeById200Response, *http.Response, error) {
-	return r.ApiService.OBPv510GetRegulatedEntityAttributeByIdExecute(r)
+func (r ApiGetRegulatedEntityAttributeByIdRequest) Execute() (*GetRegulatedEntityAttributeById200Response, *http.Response, error) {
+	return r.ApiService.GetRegulatedEntityAttributeByIdExecute(r)
 }
 
 /*
-OBPv510GetRegulatedEntityAttributeById Get Regulated Entity Attribute By ID
+GetRegulatedEntityAttributeById Get Regulated Entity Attribute By ID
 
 <p>Get a specific Regulated Entity Attribute by its REGULATED_ENTITY_ATTRIBUTE_ID.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -1024,10 +1024,10 @@ OBPv510GetRegulatedEntityAttributeById Get Regulated Entity Attribute By ID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param regulatedentityid The REGULATEDENTITYID identifier
  @param regulatedentityattributeid The REGULATEDENTITYATTRIBUTEID identifier
- @return ApiOBPv510GetRegulatedEntityAttributeByIdRequest
+ @return ApiGetRegulatedEntityAttributeByIdRequest
 */
-func (a *DirectoryAPIService) OBPv510GetRegulatedEntityAttributeById(ctx context.Context, regulatedentityid string, regulatedentityattributeid string) ApiOBPv510GetRegulatedEntityAttributeByIdRequest {
-	return ApiOBPv510GetRegulatedEntityAttributeByIdRequest{
+func (a *DirectoryAPIService) GetRegulatedEntityAttributeById(ctx context.Context, regulatedentityid string, regulatedentityattributeid string) ApiGetRegulatedEntityAttributeByIdRequest {
+	return ApiGetRegulatedEntityAttributeByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		regulatedentityid: regulatedentityid,
@@ -1036,16 +1036,16 @@ func (a *DirectoryAPIService) OBPv510GetRegulatedEntityAttributeById(ctx context
 }
 
 // Execute executes the request
-//  @return OBPv510GetRegulatedEntityAttributeById200Response
-func (a *DirectoryAPIService) OBPv510GetRegulatedEntityAttributeByIdExecute(r ApiOBPv510GetRegulatedEntityAttributeByIdRequest) (*OBPv510GetRegulatedEntityAttributeById200Response, *http.Response, error) {
+//  @return GetRegulatedEntityAttributeById200Response
+func (a *DirectoryAPIService) GetRegulatedEntityAttributeByIdExecute(r ApiGetRegulatedEntityAttributeByIdRequest) (*GetRegulatedEntityAttributeById200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetRegulatedEntityAttributeById200Response
+		localVarReturnValue  *GetRegulatedEntityAttributeById200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DirectoryAPIService.OBPv510GetRegulatedEntityAttributeById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DirectoryAPIService.GetRegulatedEntityAttributeById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1099,7 +1099,7 @@ func (a *DirectoryAPIService) OBPv510GetRegulatedEntityAttributeByIdExecute(r Ap
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1140,18 +1140,18 @@ func (a *DirectoryAPIService) OBPv510GetRegulatedEntityAttributeByIdExecute(r Ap
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510GetRegulatedEntityByIdRequest struct {
+type ApiGetRegulatedEntityByIdRequest struct {
 	ctx context.Context
 	ApiService *DirectoryAPIService
 	regulatedentityid string
 }
 
-func (r ApiOBPv510GetRegulatedEntityByIdRequest) Execute() (*OBPv510GetRegulatedEntityById200Response, *http.Response, error) {
-	return r.ApiService.OBPv510GetRegulatedEntityByIdExecute(r)
+func (r ApiGetRegulatedEntityByIdRequest) Execute() (*GetRegulatedEntityById200Response, *http.Response, error) {
+	return r.ApiService.GetRegulatedEntityByIdExecute(r)
 }
 
 /*
-OBPv510GetRegulatedEntityById Get Regulated Entity
+GetRegulatedEntityById Get Regulated Entity
 
 <p>Get Regulated Entity By REGULATED_ENTITY_ID</p>
 <p>User Authentication is Optional. The User need not be logged in.</p>
@@ -1178,10 +1178,10 @@ OBPv510GetRegulatedEntityById Get Regulated Entity
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param regulatedentityid The REGULATEDENTITYID identifier
- @return ApiOBPv510GetRegulatedEntityByIdRequest
+ @return ApiGetRegulatedEntityByIdRequest
 */
-func (a *DirectoryAPIService) OBPv510GetRegulatedEntityById(ctx context.Context, regulatedentityid string) ApiOBPv510GetRegulatedEntityByIdRequest {
-	return ApiOBPv510GetRegulatedEntityByIdRequest{
+func (a *DirectoryAPIService) GetRegulatedEntityById(ctx context.Context, regulatedentityid string) ApiGetRegulatedEntityByIdRequest {
+	return ApiGetRegulatedEntityByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		regulatedentityid: regulatedentityid,
@@ -1189,16 +1189,16 @@ func (a *DirectoryAPIService) OBPv510GetRegulatedEntityById(ctx context.Context,
 }
 
 // Execute executes the request
-//  @return OBPv510GetRegulatedEntityById200Response
-func (a *DirectoryAPIService) OBPv510GetRegulatedEntityByIdExecute(r ApiOBPv510GetRegulatedEntityByIdRequest) (*OBPv510GetRegulatedEntityById200Response, *http.Response, error) {
+//  @return GetRegulatedEntityById200Response
+func (a *DirectoryAPIService) GetRegulatedEntityByIdExecute(r ApiGetRegulatedEntityByIdRequest) (*GetRegulatedEntityById200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetRegulatedEntityById200Response
+		localVarReturnValue  *GetRegulatedEntityById200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DirectoryAPIService.OBPv510GetRegulatedEntityById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DirectoryAPIService.GetRegulatedEntityById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1264,17 +1264,17 @@ func (a *DirectoryAPIService) OBPv510GetRegulatedEntityByIdExecute(r ApiOBPv510G
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510RegulatedEntitiesRequest struct {
+type ApiRegulatedEntitiesRequest struct {
 	ctx context.Context
 	ApiService *DirectoryAPIService
 }
 
-func (r ApiOBPv510RegulatedEntitiesRequest) Execute() (*OBPv510RegulatedEntities200Response, *http.Response, error) {
-	return r.ApiService.OBPv510RegulatedEntitiesExecute(r)
+func (r ApiRegulatedEntitiesRequest) Execute() (*RegulatedEntities200Response, *http.Response, error) {
+	return r.ApiService.RegulatedEntitiesExecute(r)
 }
 
 /*
-OBPv510RegulatedEntities Get Regulated Entities
+RegulatedEntities Get Regulated Entities
 
 <p>Returns information about:</p>
 <ul>
@@ -1302,26 +1302,26 @@ OBPv510RegulatedEntities Get Regulated Entities
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv510RegulatedEntitiesRequest
+ @return ApiRegulatedEntitiesRequest
 */
-func (a *DirectoryAPIService) OBPv510RegulatedEntities(ctx context.Context) ApiOBPv510RegulatedEntitiesRequest {
-	return ApiOBPv510RegulatedEntitiesRequest{
+func (a *DirectoryAPIService) RegulatedEntities(ctx context.Context) ApiRegulatedEntitiesRequest {
+	return ApiRegulatedEntitiesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv510RegulatedEntities200Response
-func (a *DirectoryAPIService) OBPv510RegulatedEntitiesExecute(r ApiOBPv510RegulatedEntitiesRequest) (*OBPv510RegulatedEntities200Response, *http.Response, error) {
+//  @return RegulatedEntities200Response
+func (a *DirectoryAPIService) RegulatedEntitiesExecute(r ApiRegulatedEntitiesRequest) (*RegulatedEntities200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510RegulatedEntities200Response
+		localVarReturnValue  *RegulatedEntities200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DirectoryAPIService.OBPv510RegulatedEntities")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DirectoryAPIService.RegulatedEntities")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1386,26 +1386,26 @@ func (a *DirectoryAPIService) OBPv510RegulatedEntitiesExecute(r ApiOBPv510Regula
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510UpdateRegulatedEntityAttributeRequest struct {
+type ApiUpdateRegulatedEntityAttributeRequest struct {
 	ctx context.Context
 	ApiService *DirectoryAPIService
 	regulatedentityid string
 	regulatedentityattributeid string
-	oBPv510UpdateRegulatedEntityAttributeRequest *OBPv510UpdateRegulatedEntityAttributeRequest
+	createCounterpartyAttributeRequest *CreateCounterpartyAttributeRequest
 }
 
 // Request body
-func (r ApiOBPv510UpdateRegulatedEntityAttributeRequest) OBPv510UpdateRegulatedEntityAttributeRequest(oBPv510UpdateRegulatedEntityAttributeRequest OBPv510UpdateRegulatedEntityAttributeRequest) ApiOBPv510UpdateRegulatedEntityAttributeRequest {
-	r.oBPv510UpdateRegulatedEntityAttributeRequest = &oBPv510UpdateRegulatedEntityAttributeRequest
+func (r ApiUpdateRegulatedEntityAttributeRequest) CreateCounterpartyAttributeRequest(createCounterpartyAttributeRequest CreateCounterpartyAttributeRequest) ApiUpdateRegulatedEntityAttributeRequest {
+	r.createCounterpartyAttributeRequest = &createCounterpartyAttributeRequest
 	return r
 }
 
-func (r ApiOBPv510UpdateRegulatedEntityAttributeRequest) Execute() (*OBPv510GetRegulatedEntityAttributeById200Response, *http.Response, error) {
-	return r.ApiService.OBPv510UpdateRegulatedEntityAttributeExecute(r)
+func (r ApiUpdateRegulatedEntityAttributeRequest) Execute() (*GetRegulatedEntityAttributeById200Response, *http.Response, error) {
+	return r.ApiService.UpdateRegulatedEntityAttributeExecute(r)
 }
 
 /*
-OBPv510UpdateRegulatedEntityAttribute Update Regulated Entity Attribute
+UpdateRegulatedEntityAttribute Update Regulated Entity Attribute
 
 <p>Update an existing Regulated Entity Attribute specified by ATTRIBUTE_ID.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -1424,10 +1424,10 @@ OBPv510UpdateRegulatedEntityAttribute Update Regulated Entity Attribute
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param regulatedentityid The REGULATEDENTITYID identifier
  @param regulatedentityattributeid The REGULATEDENTITYATTRIBUTEID identifier
- @return ApiOBPv510UpdateRegulatedEntityAttributeRequest
+ @return ApiUpdateRegulatedEntityAttributeRequest
 */
-func (a *DirectoryAPIService) OBPv510UpdateRegulatedEntityAttribute(ctx context.Context, regulatedentityid string, regulatedentityattributeid string) ApiOBPv510UpdateRegulatedEntityAttributeRequest {
-	return ApiOBPv510UpdateRegulatedEntityAttributeRequest{
+func (a *DirectoryAPIService) UpdateRegulatedEntityAttribute(ctx context.Context, regulatedentityid string, regulatedentityattributeid string) ApiUpdateRegulatedEntityAttributeRequest {
+	return ApiUpdateRegulatedEntityAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		regulatedentityid: regulatedentityid,
@@ -1436,16 +1436,16 @@ func (a *DirectoryAPIService) OBPv510UpdateRegulatedEntityAttribute(ctx context.
 }
 
 // Execute executes the request
-//  @return OBPv510GetRegulatedEntityAttributeById200Response
-func (a *DirectoryAPIService) OBPv510UpdateRegulatedEntityAttributeExecute(r ApiOBPv510UpdateRegulatedEntityAttributeRequest) (*OBPv510GetRegulatedEntityAttributeById200Response, *http.Response, error) {
+//  @return GetRegulatedEntityAttributeById200Response
+func (a *DirectoryAPIService) UpdateRegulatedEntityAttributeExecute(r ApiUpdateRegulatedEntityAttributeRequest) (*GetRegulatedEntityAttributeById200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetRegulatedEntityAttributeById200Response
+		localVarReturnValue  *GetRegulatedEntityAttributeById200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DirectoryAPIService.OBPv510UpdateRegulatedEntityAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DirectoryAPIService.UpdateRegulatedEntityAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1457,8 +1457,8 @@ func (a *DirectoryAPIService) OBPv510UpdateRegulatedEntityAttributeExecute(r Api
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv510UpdateRegulatedEntityAttributeRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510UpdateRegulatedEntityAttributeRequest is required and must be specified")
+	if r.createCounterpartyAttributeRequest == nil {
+		return localVarReturnValue, nil, reportError("createCounterpartyAttributeRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1479,7 +1479,7 @@ func (a *DirectoryAPIService) OBPv510UpdateRegulatedEntityAttributeExecute(r Api
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv510UpdateRegulatedEntityAttributeRequest
+	localVarPostBody = r.createCounterpartyAttributeRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1504,7 +1504,7 @@ func (a *DirectoryAPIService) OBPv510UpdateRegulatedEntityAttributeExecute(r Api
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

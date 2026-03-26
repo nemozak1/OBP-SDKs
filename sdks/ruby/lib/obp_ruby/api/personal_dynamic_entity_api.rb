@@ -1,7 +1,7 @@
 =begin
 #Open Bank Project API v6.0.0
 
-#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 The version of the OpenAPI document: 6.0.0
 Contact: contact@tesobe.com
@@ -22,19 +22,19 @@ module OpenBankProject
     # Get Available Personal Dynamic Entities
     # <p>Get all Dynamic Entities that support personal data storage (hasPersonalEntity == true).</p> <p>This endpoint allows regular users (without admin roles) to discover which dynamic entities<br /> they can interact with for storing personal data via the /my/ENTITY_NAME endpoints.</p> <p>Authentication: User must be logged in (no special roles required).</p> <p>Use case: Portals and apps can show users what personal data types are available<br /> without needing admin access to view all dynamic entity definitions.</p> <p>For more information see <a href=\"/glossary#My-Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600GetAvailablePersonalDynamicEntities200Response]
-    def o_bpv6_0_0_get_available_personal_dynamic_entities(opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_get_available_personal_dynamic_entities_with_http_info(opts)
+    # @return [GetAvailablePersonalDynamicEntities200Response]
+    def get_available_personal_dynamic_entities(opts = {})
+      data, _status_code, _headers = get_available_personal_dynamic_entities_with_http_info(opts)
       data
     end
 
     # Get Available Personal Dynamic Entities
     # &lt;p&gt;Get all Dynamic Entities that support personal data storage (hasPersonalEntity &#x3D;&#x3D; true).&lt;/p&gt; &lt;p&gt;This endpoint allows regular users (without admin roles) to discover which dynamic entities&lt;br /&gt; they can interact with for storing personal data via the /my/ENTITY_NAME endpoints.&lt;/p&gt; &lt;p&gt;Authentication: User must be logged in (no special roles required).&lt;/p&gt; &lt;p&gt;Use case: Portals and apps can show users what personal data types are available&lt;br /&gt; without needing admin access to view all dynamic entity definitions.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#My-Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600GetAvailablePersonalDynamicEntities200Response, Integer, Hash)>] OBPv600GetAvailablePersonalDynamicEntities200Response data, response status code and response headers
-    def o_bpv6_0_0_get_available_personal_dynamic_entities_with_http_info(opts = {})
+    # @return [Array<(GetAvailablePersonalDynamicEntities200Response, Integer, Hash)>] GetAvailablePersonalDynamicEntities200Response data, response status code and response headers
+    def get_available_personal_dynamic_entities_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: PersonalDynamicEntityApi.o_bpv6_0_0_get_available_personal_dynamic_entities ...'
+        @api_client.config.logger.debug 'Calling API: PersonalDynamicEntityApi.get_available_personal_dynamic_entities ...'
       end
       # resource path
       local_var_path = '/obp/v6.0.0/personal-dynamic-entities/available'
@@ -54,13 +54,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600GetAvailablePersonalDynamicEntities200Response'
+      return_type = opts[:debug_return_type] || 'GetAvailablePersonalDynamicEntities200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"PersonalDynamicEntityApi.o_bpv6_0_0_get_available_personal_dynamic_entities",
+        :operation => :"PersonalDynamicEntityApi.get_available_personal_dynamic_entities",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -71,7 +71,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: PersonalDynamicEntityApi#o_bpv6_0_0_get_available_personal_dynamic_entities\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: PersonalDynamicEntityApi#get_available_personal_dynamic_entities\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

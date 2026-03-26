@@ -1,16 +1,16 @@
 # \PersonalDynamicEntityAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv600GetAvailablePersonalDynamicEntities**](PersonalDynamicEntityAPI.md#OBPv600GetAvailablePersonalDynamicEntities) | **Get** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities
+[**GetAvailablePersonalDynamicEntities**](PersonalDynamicEntityAPI.md#GetAvailablePersonalDynamicEntities) | **Get** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities
 
 
 
-## OBPv600GetAvailablePersonalDynamicEntities
+## GetAvailablePersonalDynamicEntities
 
-> OBPv600GetAvailablePersonalDynamicEntities200Response OBPv600GetAvailablePersonalDynamicEntities(ctx).Execute()
+> GetAvailablePersonalDynamicEntities200Response GetAvailablePersonalDynamicEntities(ctx).Execute()
 
 Get Available Personal Dynamic Entities
 
@@ -32,13 +32,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PersonalDynamicEntityAPI.OBPv600GetAvailablePersonalDynamicEntities(context.Background()).Execute()
+	resp, r, err := apiClient.PersonalDynamicEntityAPI.GetAvailablePersonalDynamicEntities(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `PersonalDynamicEntityAPI.OBPv600GetAvailablePersonalDynamicEntities``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `PersonalDynamicEntityAPI.GetAvailablePersonalDynamicEntities``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetAvailablePersonalDynamicEntities`: OBPv600GetAvailablePersonalDynamicEntities200Response
-	fmt.Fprintf(os.Stdout, "Response from `PersonalDynamicEntityAPI.OBPv600GetAvailablePersonalDynamicEntities`: %v\n", resp)
+	// response from `GetAvailablePersonalDynamicEntities`: GetAvailablePersonalDynamicEntities200Response
+	fmt.Fprintf(os.Stdout, "Response from `PersonalDynamicEntityAPI.GetAvailablePersonalDynamicEntities`: %v\n", resp)
 }
 ```
 
@@ -48,12 +48,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetAvailablePersonalDynamicEntitiesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAvailablePersonalDynamicEntitiesRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetAvailablePersonalDynamicEntities200Response**](OBPv600GetAvailablePersonalDynamicEntities200Response.md)
+[**GetAvailablePersonalDynamicEntities200Response**](GetAvailablePersonalDynamicEntities200Response.md)
 
 ### Authorization
 
